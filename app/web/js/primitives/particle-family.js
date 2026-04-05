@@ -107,6 +107,24 @@ function createShaderParticleCloud({ primitive, palette, seed, index, sceneCfg }
   });
 
   const points = new THREE.Points(geometry, material);
+  const params = primitive?.params || {};
+  const pos = Array.isArray(params.position) ? params.position : null;
+  if (pos && pos.length === 3 && pos.every(Number.isFinite)) {
+    points.position.set(pos[0], pos[1], pos[2]);
+  } else {
+    points.position.set(
+      Number(params.offsetX ?? primitive.offsetX ?? 0),
+      Number(params.offsetY ?? primitive.offsetY ?? 0),
+      Number(params.offsetZ ?? primitive.offsetZ ?? 0)
+    );
+  }
+  points.scale.set(
+    Number(params.scaleX ?? primitive.scaleX ?? 1),
+    Number(params.scaleY ?? primitive.scaleY ?? 1),
+    1
+  );
+  const rotationZ = Number(params.rotationZ ?? primitive.rotationZ ?? 0);
+  if (Number.isFinite(rotationZ)) points.rotation.z = rotationZ;
   return { obj: points, uniforms };
 }
 

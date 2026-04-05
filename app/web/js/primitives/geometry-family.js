@@ -133,6 +133,8 @@ function createRibbon({ primitive, sceneCfg, style }) {
     Number(params.scaleY ?? primitive.scaleY ?? 1),
     1
   );
+  const rotationZ = Number(params.rotationZ ?? primitive.rotationZ ?? 0);
+  if (Number.isFinite(rotationZ)) line.rotation.z = rotationZ;
   return line;
 }
 
@@ -145,6 +147,7 @@ function createFaultLine({ primitive, sceneCfg }) {
   const offsetX = Number(params.offsetX ?? primitive.offsetX ?? 0);
   const offsetY = Number(params.offsetY ?? primitive.offsetY ?? 0);
   const offsetZ = Number(params.offsetZ ?? primitive.offsetZ ?? 0);
+  const rotationZ = Number(params.rotationZ ?? primitive.rotationZ ?? 0);
   const points = [];
 
   for (let i = 0; i < 18; i += 1) {
@@ -159,6 +162,7 @@ function createFaultLine({ primitive, sceneCfg }) {
     new THREE.LineBasicMaterial({ color, transparent: true, opacity: primitive.opacity ?? 0.46 })
   );
   line.position.set(offsetX, offsetY, offsetZ);
+  if (Number.isFinite(rotationZ)) line.rotation.z = rotationZ;
   return line;
 }
 

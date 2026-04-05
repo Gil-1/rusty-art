@@ -254,6 +254,7 @@ function createAnchorCore({ primitive, sceneCfg }) {
   const group = new THREE.Group();
   const motif = primitive.motif || sceneCfg.motif || 'flow';
   const scale = primitive.size ?? 1;
+  const params = primitive?.params || {};
 
   let geometry;
   if (motif === 'grid') {
@@ -324,7 +325,19 @@ function createAnchorCore({ primitive, sceneCfg }) {
   ring.scale.setScalar(scale * 1.04);
   group.add(ring);
 
-  group.position.x = sceneCfg.anchorOffsetX || 0;
+  const pos = Array.isArray(params.position) ? params.position : null;
+  if (pos && pos.length === 3 && pos.every(Number.isFinite)) {
+    group.position.set(pos[0], pos[1], pos[2]);
+  } else {
+    group.position.set(
+      Number(params.offsetX ?? primitive.offsetX ?? sceneCfg.anchorOffsetX ?? 0),
+      Number(params.offsetY ?? primitive.offsetY ?? 0),
+      Number(params.offsetZ ?? primitive.offsetZ ?? 0)
+    );
+  }
+  group.scale.setScalar(Number(params.scale ?? primitive.scale ?? 1) * scale);
+  const rotationZ = Number(params.rotationZ ?? primitive.rotationZ ?? 0);
+  if (Number.isFinite(rotationZ)) group.rotation.z = rotationZ;
 
   return { obj: group, uniforms };
 }
