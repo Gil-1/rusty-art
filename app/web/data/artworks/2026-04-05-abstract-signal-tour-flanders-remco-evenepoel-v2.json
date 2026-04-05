@@ -1,0 +1,947 @@
+{
+  "id": "2026-04-05-abstract-signal-tour-flanders-remco-evenepoel-v2",
+  "date": "2026-04-05",
+  "title": "Abstract Signal: Tour Flanders Remco Evenepoel",
+  "generatedAt": "2026-04-05T18:50:06.149Z",
+  "news": {
+    "source": "lavenir",
+    "title": "Tour of Flanders: why Remco Evenepoel and Tadej Pogacar could have been disqualified and will be questioned by the courts? (video)",
+    "link": "https://www.lavenir.net/sports/cyclisme/2026/04/05/tour-des-flandres-pourquoi-remco-evenepoel-et-tadej-pogacar-auraient-pu-etre-exclus-et-vont-etre-entendus-par-la-justice-video-KBESJ3PRRRAUTONNUE3ISEEP7Q/",
+    "score": 140.819
+  },
+  "inspiration": {
+    "artist": "Hilma af Klint",
+    "tags": [
+      "symbolic",
+      "spiral",
+      "organic"
+    ],
+    "links": {
+      "wikipedia": "https://en.wikipedia.org/wiki/Hilma_af_Klint",
+      "reference": "https://www.modernamuseet.se/stockholm/en/exhibitions/hilma-af-klint/"
+    }
+  },
+  "seed": 3059435467,
+  "scene": {
+    "motif": "fracture",
+    "shapeCount": 172,
+    "turbulence": 0.524,
+    "spiralBias": 0.946,
+    "motionSpeed": 0.001722,
+    "bloom": 0.27,
+    "grain": 0.049,
+    "fogDensity": 0.073,
+    "distortion": 0.17,
+    "flowField": 0.38,
+    "anchorStrength": 0.739,
+    "anchorOffsetX": -0.016,
+    "layerBalance": {
+      "structure": 0.644,
+      "chaos": 0.381
+    },
+    "expression": {
+      "tension": 0.622,
+      "structure": 0.51,
+      "motion": 0.803,
+      "noise": 0.567,
+      "urgency": 0.874,
+      "contrast": 0.266
+    },
+    "palette": {
+      "bg": "#c76148",
+      "primary": "#4684cc",
+      "secondary": "#3b2c3d",
+      "glow": "#ddb65c",
+      "anchor": "#ffffff"
+    },
+    "elements": [
+      {
+        "id": "el-01-shader-field-plane",
+        "moduleType": "shader-field-plane",
+        "capabilities": [
+          "fluid-drift",
+          "layered-field"
+        ],
+        "stackFamilies": [
+          "shader-field",
+          "post-heavy",
+          "sdf-raymarch"
+        ],
+        "styleTags": [
+          "shader",
+          "field"
+        ],
+        "libraryRef": "element.shader-field-plane.v1",
+        "color": "bg",
+        "opacity": 0.84,
+        "intensity": 0.55,
+        "layer": "background",
+        "splitX": 0.5,
+        "ringRadius": 0.44,
+        "fieldSoftness": 0.2,
+        "animation": {
+          "rotationZ": 0.01,
+          "pulse": 0.08,
+          "wobbleX": 0.04,
+          "wobbleY": 0.04,
+          "drift": 0.17
+        },
+        "techniqueRef": "r3.plane",
+        "role": "atmosphere-field",
+        "motif": "fracture",
+        "intentCadence": "drift"
+      },
+      {
+        "id": "el-02-volumetric-haze",
+        "moduleType": "volumetric-haze",
+        "capabilities": [
+          "atmosphere-plume",
+          "fluid-drift",
+          "layered-field"
+        ],
+        "stackFamilies": [
+          "shader-field",
+          "post-heavy",
+          "particle-heavy",
+          "sdf-raymarch"
+        ],
+        "styleTags": [
+          "atmosphere",
+          "depth",
+          "diffusion"
+        ],
+        "libraryRef": "element.volumetric-haze.v1",
+        "colorA": "bg",
+        "colorB": "secondary",
+        "opacity": 0.25,
+        "intensity": 0.33,
+        "layer": "background",
+        "density": 0.23,
+        "falloff": 0.71,
+        "color": "secondary",
+        "animation": {
+          "rotationZ": 0.02,
+          "pulse": 0.08,
+          "wobbleX": 0.05,
+          "wobbleY": 0.05,
+          "drift": 0.17
+        },
+        "techniqueRef": "r3.plane",
+        "role": "atmosphere-field",
+        "motif": "fracture",
+        "intentCadence": "drift"
+      },
+      {
+        "id": "el-03-polyhedron-array",
+        "moduleType": "polyhedron-array",
+        "capabilities": [
+          "geometric-structure",
+          "focal-anchor"
+        ],
+        "stackFamilies": [
+          "instancing",
+          "geometry-heavy"
+        ],
+        "styleTags": [
+          "polyhedra",
+          "array"
+        ],
+        "libraryRef": "element.polyhedron-array.v1",
+        "color": "secondary",
+        "opacity": 0.35,
+        "intensity": 0.46,
+        "layer": "midground",
+        "instances": 10,
+        "spread": 0.58,
+        "scale": 0.12,
+        "animation": {
+          "rotationZ": 0.06,
+          "pulse": 0.1,
+          "wobbleX": 0.07,
+          "wobbleY": 0.07,
+          "drift": 0.14
+        },
+        "techniqueRef": "r3.poly",
+        "role": "structural-spine",
+        "motif": "fracture",
+        "intentCadence": "drift"
+      },
+      {
+        "id": "el-04-klee-cells",
+        "moduleType": "klee-cells",
+        "capabilities": [
+          "geometric-structure",
+          "clustered-actors"
+        ],
+        "stackFamilies": [
+          "geometry-heavy",
+          "instancing"
+        ],
+        "styleTags": [
+          "cells",
+          "grid"
+        ],
+        "libraryRef": "element.klee-cells.v1",
+        "color": "anchor",
+        "opacity": 0.25,
+        "intensity": 0.36,
+        "layer": "midground",
+        "cellCount": 18,
+        "variance": 0.24,
+        "animation": {
+          "rotationZ": 0.05,
+          "pulse": 0.11,
+          "wobbleX": 0.06,
+          "wobbleY": 0.06,
+          "drift": 0.15
+        },
+        "techniqueRef": "r3.poly",
+        "role": "accent-gesture",
+        "motif": "fracture",
+        "intentCadence": "drift"
+      },
+      {
+        "id": "el-05-particle-shell",
+        "moduleType": "particle-shell",
+        "capabilities": [
+          "orbital-forms",
+          "debris-particles"
+        ],
+        "stackFamilies": [
+          "particle-heavy",
+          "sdf-raymarch"
+        ],
+        "styleTags": [
+          "shell",
+          "orbital"
+        ],
+        "libraryRef": "element.particle-shell.v1",
+        "color": "anchor",
+        "opacity": 0.61,
+        "intensity": 0.67,
+        "layer": "foreground",
+        "particles": 520,
+        "rimBias": 0.76,
+        "radius": 0.34,
+        "animation": {
+          "rotationZ": 0.08,
+          "pulse": 0.18,
+          "wobbleX": 0.07,
+          "wobbleY": 0.07,
+          "drift": 0.11
+        },
+        "techniqueRef": "r3.shell",
+        "role": "support-rhythm",
+        "motif": "fracture",
+        "intentCadence": "drift"
+      },
+      {
+        "id": "el-06-anchor-core",
+        "moduleType": "anchor-core",
+        "capabilities": [
+          "focal-anchor",
+          "layered-field"
+        ],
+        "stackFamilies": [
+          "shader-field",
+          "geometry-heavy",
+          "particle-heavy",
+          "instancing",
+          "sdf-raymarch"
+        ],
+        "styleTags": [
+          "anchor",
+          "center",
+          "stability"
+        ],
+        "libraryRef": "element.anchor-core.v1",
+        "color": "anchor",
+        "opacity": 0.85,
+        "intensity": 0.9,
+        "layer": "foreground",
+        "nucleusRadius": 0.14,
+        "haloRadius": 0.28,
+        "animation": {
+          "rotationZ": 0.05,
+          "pulse": 0.27,
+          "wobbleX": 0.03,
+          "wobbleY": 0.03,
+          "drift": 0.06
+        },
+        "aura": 0.66,
+        "techniqueRef": "r3.core",
+        "role": "focal-anchor",
+        "motif": "fracture",
+        "intentCadence": "drift"
+      },
+      {
+        "id": "el-07-signal-weave",
+        "moduleType": "signal-weave",
+        "capabilities": [
+          "kinetic-motion",
+          "layered-field"
+        ],
+        "stackFamilies": [
+          "geometry-heavy",
+          "post-heavy",
+          "shader-field"
+        ],
+        "styleTags": [
+          "rhythm",
+          "support"
+        ],
+        "libraryRef": "element.signal-weave.v1",
+        "color": "primary",
+        "opacity": 0.21,
+        "intensity": 0.35,
+        "layer": "foreground",
+        "lanes": 4,
+        "crossDensity": 0.26,
+        "tension": 0.47,
+        "animation": {
+          "rotationZ": 0.08,
+          "pulse": 0.14,
+          "wobbleX": 0.07,
+          "wobbleY": 0.07,
+          "drift": 0.13
+        },
+        "techniqueRef": "r3.shell",
+        "role": "support-rhythm",
+        "motif": "fracture",
+        "intentCadence": "drift"
+      },
+      {
+        "id": "el-08-fault-line",
+        "moduleType": "fault-line",
+        "capabilities": [
+          "fracture-destruction",
+          "focal-anchor"
+        ],
+        "stackFamilies": [
+          "post-heavy",
+          "particle-heavy",
+          "geometry-heavy"
+        ],
+        "styleTags": [
+          "fault",
+          "break"
+        ],
+        "libraryRef": "element.fault-line.v1",
+        "color": "primary",
+        "opacity": 0.82,
+        "intensity": 0.9,
+        "layer": "accent",
+        "angle": -0.5,
+        "width": 0.024,
+        "segments": 3,
+        "animation": {
+          "rotationZ": 0.11,
+          "pulse": 0.22,
+          "wobbleX": 0.08,
+          "wobbleY": 0.07,
+          "drift": 0.12
+        },
+        "techniqueRef": "r3.fault",
+        "role": "primary-signal",
+        "motif": "fracture",
+        "intentCadence": "drift"
+      },
+      {
+        "id": "el-09-motif-armature",
+        "moduleType": "motif-armature",
+        "capabilities": [
+          "geometric-structure",
+          "layered-field"
+        ],
+        "stackFamilies": [
+          "geometry-heavy",
+          "instancing",
+          "shader-field"
+        ],
+        "styleTags": [
+          "structure",
+          "spine"
+        ],
+        "libraryRef": "element.motif-armature.v1",
+        "color": "anchor",
+        "opacity": 0.56,
+        "layer": "foreground",
+        "motif": "fracture",
+        "scaleY": 1.34,
+        "scaleX": 0.42,
+        "intensity": 0.78,
+        "role": "structural-spine",
+        "intentCadence": "drift"
+      },
+      {
+        "id": "el-10-shader-field-plane",
+        "moduleType": "shader-field-plane",
+        "capabilities": [
+          "fluid-drift",
+          "layered-field"
+        ],
+        "stackFamilies": [
+          "shader-field",
+          "post-heavy",
+          "sdf-raymarch"
+        ],
+        "styleTags": [
+          "shader",
+          "field"
+        ],
+        "libraryRef": "element.shader-field-plane.v1",
+        "color": "secondary",
+        "opacity": 0.24,
+        "intensity": 0.34,
+        "layer": "background",
+        "radialBias": 0.52,
+        "hemisphereContrast": 0.38,
+        "role": "atmosphere-field",
+        "motif": "fracture",
+        "intentCadence": "drift"
+      }
+    ],
+    "shaderLayers": 4,
+    "elementDiversity": 9,
+    "paletteVariance": 0,
+    "motionSpeedNormalized": 0.781,
+    "camera": {
+      "autoRotate": false,
+      "autoRotateSpeed": 0.156,
+      "minDistance": 6,
+      "maxDistance": 24,
+      "cycleSeconds": 24,
+      "beats": [
+        {
+          "t": 0,
+          "radius": 12.552,
+          "theta": 0.108,
+          "phi": 1.232,
+          "hold": 1.072
+        },
+        {
+          "t": 0.34,
+          "radius": 10.668,
+          "theta": 0.924,
+          "phi": 1.053,
+          "hold": 0.507
+        },
+        {
+          "t": 0.68,
+          "radius": 11.224,
+          "theta": 1.691,
+          "phi": 1.327,
+          "hold": 0.818
+        },
+        {
+          "t": 1,
+          "radius": 12.24,
+          "theta": 2.336,
+          "phi": 1.143,
+          "hold": 1.124
+        }
+      ],
+      "target": [
+        0,
+        0,
+        0
+      ]
+    },
+    "post": {
+      "vignette": 0.15,
+      "contrast": 1.177,
+      "saturation": 0.94,
+      "exposure": 0.99,
+      "breathing": {
+        "hueShift": 0.037,
+        "saturationAmplitude": 0.065,
+        "exposureAmplitude": 0.05,
+        "phaseA": 0.0304,
+        "phaseB": 0.0572
+      }
+    },
+    "styleFingerprint": {
+      "pulseFamily": "ascending",
+      "stripeWarp": 0.06,
+      "edgeSoftness": 0.34,
+      "cameraSway": 0.12,
+      "edgeHardness": 0.64,
+      "temperatureBias": 0,
+      "verticalBias": 0,
+      "cadenceBias": 0.1
+    },
+    "sceneAuthoring": {
+      "mode": "agent-dsl",
+      "planner": "openclaw-agent-scene-planner",
+      "representation": {
+        "id": "rep.split-swan-verdict.v1",
+        "label": "Split Swan Verdict",
+        "description": "A bisected emblem floats within a warm field while sparse witness forms and a restrained shell gather around a gold center severed by one judicial slash.",
+        "scoreHint": 0.8,
+        "motif": "dual witness seal",
+        "cadence": "drift",
+        "rationale": {
+          "headlineMapping": "The two protagonists become opposing halves of one shared sign, with the shell and fault translating surveillance, controversy, and unresolved consequence.",
+          "hilmaBridge": "This leans into Svanen: a split circular identity, simplified field logic, and symbolic warm-cool opposition.",
+          "antiRepetition": "It sidesteps earlier ribbon and cloud habits by using a bisected plane, sparse polyhedra, cell accents, and a tight shell instead of sprawling motion."
+        },
+        "techniques": [
+          {
+            "id": "r3.plane",
+            "name": "Bisected Emblem Plane",
+            "type": "atmosphere-field",
+            "purpose": "Make the split identity immediately readable.",
+            "reuseModuleType": null,
+            "params": {
+              "splitX": 0.5,
+              "ringRadius": 0.44
+            }
+          },
+          {
+            "id": "r3.poly",
+            "name": "Witness Polyhedra",
+            "type": "geometry-structure",
+            "purpose": "Place distributed consequences around the center.",
+            "reuseModuleType": null,
+            "params": {
+              "count": 10,
+              "spread": 0.58
+            }
+          },
+          {
+            "id": "r3.shell",
+            "name": "Verdict Shell",
+            "type": "particle-focal",
+            "purpose": "Surround the core with contained attention.",
+            "reuseModuleType": null,
+            "params": {
+              "particles": 520,
+              "rimBias": 0.76
+            }
+          },
+          {
+            "id": "r3.core",
+            "name": "Verdict Core",
+            "type": "focal-anchor",
+            "purpose": "Hold the emotional center bright and spare.",
+            "reuseModuleType": null,
+            "params": {
+              "radius": 0.14,
+              "halo": 0.28
+            }
+          },
+          {
+            "id": "r3.fault",
+            "name": "Judicial Slash",
+            "type": "rupture-signal",
+            "purpose": "Keep tension directional and unmistakable.",
+            "reuseModuleType": null,
+            "params": {
+              "angle": -0.5,
+              "width": 0.024
+            }
+          }
+        ]
+      },
+      "artisticIntent": {
+        "statement": "Turn the headline into an abstract rite of scrutiny: two celebrated riders become a single ceremonial emblem held between triumph and sanction, with the legal threat rendered as a bright, disciplined rupture rather than chaos.",
+        "motif": "Bisected tribunal seal over an altar of procedure.",
+        "emotionalArc": "From public acclaim and formal order, through tightening procedural pressure, into a concentrated unresolved break at the center.",
+        "compositionLogic": "Use Hilma af Klint’s symbolic geometry as the scaffold: a warm field and cool counterfield in the back, stepped or striped judicial structures in the midground, and a gold-white focal nucleus in the foreground cut by one clean fault that keeps the scene tense "
+      },
+      "executionPlan": {
+        "palette": {
+          "bg": "#c76148",
+          "primary": "#4684cc",
+          "secondary": "#3b2c3d",
+          "glow": "#ddb65c",
+          "anchor": "#ffffff"
+        },
+        "camera": {
+          "autoRotate": false,
+          "cycleSeconds": 24,
+          "target": [
+            0,
+            0,
+            0
+          ]
+        },
+        "post": {
+          "contrast": 1.1,
+          "saturation": 0.94,
+          "vignette": 0.15,
+          "exposure": 0.99
+        },
+        "global": {
+          "shapeCountHint": 172,
+          "flowField": 0.38,
+          "distortion": 0.17,
+          "bloom": 0.27
+        },
+        "techniques": [
+          {
+            "id": "t.split-meridian",
+            "name": "Split Meridian Field",
+            "type": "atmosphere-field",
+            "purpose": "Create a warm-cool symbolic divide that frames scrutiny and opposition.",
+            "reuseModuleType": "color-field-stack",
+            "params": {
+              "splitX": 0.5,
+              "warmWeight": 0.6,
+              "coolWeight": 0.4,
+              "softness": 0.18
+            }
+          },
+          {
+            "id": "t.altar-axis",
+            "name": "Altarpiece Axis",
+            "type": "geometry-structure",
+            "purpose": "Give the composition a ceremonial spine derived from Hilma-like stepped altar geometry.",
+            "reuseModuleType": "motif-armature",
+            "params": {
+              "tiers": 5,
+              "axisCount": 3,
+              "taper": 0.3
+            }
+          },
+          {
+            "id": "t.procedural-bars",
+            "name": "Procedural Bars",
+            "type": "planar-rhythm",
+            "purpose": "Translate rules, lanes, and adjudication pressure into vertical order.",
+            "reuseModuleType": "op-stripes",
+            "params": {
+              "count": 9,
+              "orientation": "vertical",
+              "thickness": 0.045
+            }
+          },
+          {
+            "id": "t.seal-core",
+            "name": "Seal Core",
+            "type": "focal-anchor",
+            "purpose": "Hold a bright emotional center that reads as judgment, not mere decoration.",
+            "reuseModuleType": "anchor-core",
+            "params": {
+              "nucleusRadius": 0.15,
+              "haloRadius": 0.31
+            }
+          },
+          {
+            "id": "t.inquiry-fault",
+            "name": "Inquiry Fault",
+            "type": "rupture-signal",
+            "purpose": "Render potential disqualification and legal questioning as one decisive cut.",
+            "reuseModuleType": "fault-line",
+            "params": {
+              "angle": -0.42,
+              "width": 0.026,
+              "segments": 4
+            }
+          },
+          {
+            "id": "t.witness-weave",
+            "name": "Witness Weave",
+            "type": "line-pressure",
+            "purpose": "Add distributed civic observation around the focal event without making the scene noisy.",
+            "reuseModuleType": "signal-weave",
+            "params": {
+              "lanes": 6,
+              "crossDensity": 0.34,
+              "tension": 0.57
+            }
+          },
+          {
+            "id": "t.docket-grid",
+            "name": "Docket Grid",
+            "type": "index-structure",
+            "purpose": "Suggest legal indexing, evidence, and procedural review at the base or edges.",
+            "reuseModuleType": "instance-grid",
+            "params": {
+              "rows": 6,
+              "cols": 6,
+              "jitter": 0.02
+            }
+          }
+        ]
+      },
+      "moduleOverrides": [
+        {
+          "id": "ov.meridian-haze.v1",
+          "target": {
+            "moduleType": "volumetric-haze",
+            "elementId": "r1.bg.haze"
+          },
+          "mode": "replace",
+          "params": {
+            "blend": "soft-light",
+            "deterministicPhase": true
+          },
+          "uniforms": {
+            "uSplit": 0.5,
+            "uSeamLift": 0.32
+          },
+          "glsl": {
+            "vertex": "vec3 p=position; p.xy+=normal.xy*0.002*sin(time*0.4+position.y*1.7);",
+            "fragment": "float seam=smoothstep(0.1,0.0,abs(vUv.x-uSplit)); vec3 warm=vec3(0.69,0.31,0.22); vec3 cool=vec3(0.18,0.39,0.67); outColor.rgb=mix(warm,cool,step(uSplit,vUv.x)); outColor.rgb+=seam*vec3(0.16,0.12,0.05)*uSeamLift;"
+          }
+        },
+        {
+          "id": "ov.anchor-gilded-bands.v1",
+          "target": {
+            "moduleType": "anchor-core",
+            "elementId": "r2.fg.core"
+          },
+          "mode": "hooks",
+          "params": {
+            "coreClamp": 0.94
+          },
+          "uniforms": {
+            "uRingFreq": 16,
+            "uGoldBoost": 0.36
+          },
+          "hooks": {
+            "fragmentMain": "float bands=0.5+0.5*sin(radialDist*uRingFreq-time*0.6); color.rgb=mix(color.rgb,color.rgb+glowColor*uGoldBoost,bands*0.28);"
+          }
+        },
+        {
+          "id": "ov.split-swan-plane.v1",
+          "target": {
+            "moduleType": "shader-field-plane",
+            "elementId": "r3.bg.plane"
+          },
+          "mode": "replace",
+          "params": {
+            "blend": "normal",
+            "deterministicPhase": true
+          },
+          "uniforms": {
+            "uSplit": 0.5,
+            "uRingRadius": 0.44
+          },
+          "glsl": {
+            "vertex": "vec3 p=position; p.z+=0.01*sin((position.x+position.y)*2.0+time*0.3);",
+            "fragment": "vec2 uv=vUv*2.0-1.0; float r=length(uv); vec3 warm=vec3(0.70,0.31,0.22); vec3 leftCol=vec3(0.95,0.91,0.85); vec3 rightCol=vec3(0.20,0.41,0.68); vec3 emblem=mix(leftCol,rightCol,step(0.0,uv.x)); float disc=smoothstep(0.82,0.18,r); float ring=smoothstep(0.48,0.45,abs(r-uRingRadius)); outColor.rgb=mix(warm,emblem,disc); outColor.rgb+=ring*vec3(0.78,0.63,0.28);"
+          }
+        },
+        {
+          "id": "ov.verdict-shell.v1",
+          "target": {
+            "moduleType": "particle-shell",
+            "elementId": "r3.fg.shell"
+          },
+          "mode": "hooks",
+          "params": {
+            "preserveAlpha": true
+          },
+          "uniforms": {
+            "uRimBoost": 0.42
+          },
+          "hooks": {
+            "vertexMain": "position.xyz+=normal*(0.015*sin(time*0.9+seedPhase));",
+            "fragmentMain": "float rim=pow(1.0-abs(dot(normalize(vNormal),normalize(vViewDir))),2.2); color.rgb+=glowColor*rim*uRimBoost;"
+          }
+        }
+      ],
+      "customModules": [],
+      "policyPasses": {
+        "advisoryOnly": true,
+        "skipped": [
+          "focal-hierarchy",
+          "envelope-clamp",
+          "composition-plan",
+          "artist-visual-profile",
+          "scene-element-module-enforcement",
+          "stack-pipeline-apply",
+          "gap-focused-pass",
+          "artist-hard-constraints"
+        ]
+      }
+    },
+    "seedVersion": 2,
+    "seeds": {
+      "baseSeed": 1844173910,
+      "runSeed": 3059435467,
+      "geomSeed": 3810193595,
+      "animSeed": 1377648290,
+      "colorSeed": 354117098,
+      "cameraSeed": 1385324348
+    },
+    "customModuleReport": {
+      "declaredCustomModules": 0,
+      "accepted": [],
+      "rejected": [],
+      "moduleOverrideCount": 4,
+      "fingerprint": "234d0109"
+    },
+    "techStack": {
+      "id": "post-kinetic",
+      "name": "Post-Heavy Kinetic",
+      "family": "post-heavy",
+      "strategyFamilies": [
+        "hybrid",
+        "fracture",
+        "flow"
+      ],
+      "rationale": {
+        "source": "loop-adjustment-alternate-stack",
+        "score": 3.5143,
+        "penalties": []
+      },
+      "dominantPrimitive": "shader-field-plane",
+      "moduleSet": [
+        "shader-field-plane",
+        "volumetric-haze",
+        "polyhedron-array",
+        "klee-cells",
+        "particle-shell",
+        "anchor-core",
+        "signal-weave",
+        "fault-line",
+        "motif-armature"
+      ],
+      "pipelineKind": "post-heavy"
+    },
+    "renderPipeline": {
+      "kind": "post-heavy",
+      "family": "post-heavy",
+      "fallback": false,
+      "advisoryOnly": true,
+      "dominantPrimitive": "shader-field-plane",
+      "moduleSet": [
+        "shader-field-plane",
+        "volumetric-haze",
+        "polyhedron-array",
+        "klee-cells",
+        "particle-shell",
+        "anchor-core",
+        "signal-weave",
+        "fault-line",
+        "motif-armature"
+      ]
+    }
+  },
+  "sceneStrategy": {
+    "selected": {
+      "id": "atomic-balanced-flow",
+      "name": "Balanced Flow Field",
+      "type": "atomic",
+      "family": "flow"
+    },
+    "applied": false,
+    "fallbackReason": "agent-authored-scene-elements"
+  },
+  "techStack": {
+    "id": "post-kinetic",
+    "name": "Post-Heavy Kinetic",
+    "family": "post-heavy"
+  },
+  "newsVisualMappings": [
+    {
+      "signal": "title evidence [justice] -> motif fracture",
+      "from": "justice",
+      "visualDecision": "structural motif armature set to fracture"
+    },
+    {
+      "signal": "composition foreground conflict",
+      "from": "justice",
+      "visualDecision": "foreground role tension-knot at pressure 0.323"
+    },
+    {
+      "signal": "composition midground context",
+      "from": "justice",
+      "visualDecision": "midground role context-drift with density 0.245"
+    },
+    {
+      "signal": "composition background mood",
+      "from": "justice",
+      "visualDecision": "background mood watchful depth 0.523"
+    },
+    {
+      "signal": "urgency -> motion",
+      "from": "ageHours=3.54",
+      "visualDecision": "motionSpeedNormalized=0.781"
+    },
+    {
+      "signal": "title semantics -> palette/edge cadence",
+      "from": "temp=0 edge=0.64",
+      "visualDecision": "postContrast=1.177 accentType=klee-cells"
+    },
+    {
+      "signal": "article institutional/conflict polarity",
+      "from": "justice",
+      "visualDecision": "accent element klee-cells with opacity 0.25"
+    },
+    {
+      "signal": "artist research context Hilma af Klint",
+      "from": "tags symbolic, spiral, organic",
+      "visualDecision": "artist profile captured as metadata only; no technical routing applied"
+    }
+  ],
+  "qualityScore": {
+    "score": 52.1,
+    "summary": "Alignment 64.2 with strongest channel emotional.",
+    "heuristic": {
+      "score": 67.6,
+      "breakdown": {
+        "legibility": 77.5,
+        "emotionalReadability": 72.7,
+        "coherence": 87.9,
+        "focalAnchor": 76,
+        "technicalRichness": 100,
+        "restraint": 44.9,
+        "alignment": 64.2
+      }
+    },
+    "calibration": {
+      "sampleCount": 1,
+      "trustWeight": 0.4
+    },
+    "alignment": {
+      "totalAlign": 64.2,
+      "components": {
+        "title": {
+          "score": 61.7
+        },
+        "style": {
+          "score": 58.2
+        },
+        "emotional": {
+          "score": 74.7
+        }
+      }
+    }
+  },
+  "rationale": {
+    "intent": {
+      "signal": null,
+      "emotion": null,
+      "tension": null,
+      "balance": null,
+      "motion": null
+    },
+    "selection": {
+      "whyHeadline": "Selected as top-ranked Belgian headline (score 140.819 = frequency 135 + priority 3 + recency 2.819).",
+      "priorityTerms": [
+        "justice"
+      ]
+    },
+    "qualitySummary": "TOTAL_ALIGN 64.2."
+  },
+  "runPolicy": {
+    "artworksPerRun": 1,
+    "multiVariant": false
+  },
+  "artFramework": {
+    "version": 3,
+    "intent": {
+      "statement": "Hilma af Klint did not ascribe to any of the established avant-garde movements of her time. In response to \"Tour of Flanders: why Remco Evenepoel and Tadej Pogacar could have been disqualified and will be questioned by the courts? (video)\", the artwork should translate civic signal into an abstract composition with a clear emotional center. In Hilma af Klint: Paintings for the Temple (paintings by Hilma af Klint) Af Klint concluded Paintings for the Temple with a triptych she called Altarpieces, featuring geometric shapes, bold primary colors, and gold l...",
+      "narrativeBridge": "In Hilma af Klint: Paintings for the Temple (paintings by Hilma af Klint) Af Klint concluded Paintings for the Temple with a triptych she called Altarpieces, featuring geometric shapes, bold primary colors, and gold l... In Hilma af Klint: Paintings for the Temple (paintings by Hilma af Klint) Af Klint concluded Paintings for the Temple with a triptych she called Altarpieces, featuring geometric shapes, bold primary colors, and gold l...",
+      "motifHint": "pogacar",
+      "emotionalCenter": "high-tension focal rupture",
+      "motifPressure": "medium",
+      "compositionAnchor": "high-contrast foreground focal anchor"
+    }
+  },
+  "debugFile": "./data/artworks-debug/2026-04-05-abstract-signal-tour-flanders-remco-evenepoel-v2.json"
+}

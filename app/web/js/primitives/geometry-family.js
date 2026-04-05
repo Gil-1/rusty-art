@@ -95,6 +95,7 @@ function createMotifArmature({ primitive, sceneCfg, seed }) {
 function createRibbon({ primitive, sceneCfg, style }) {
   const color = sceneCfg.palette[primitive.color] || sceneCfg.palette.secondary;
   const intensity = primitive.intensity ?? 0.6;
+  const params = primitive?.params || {};
   const points = [];
 
   for (let i = 0; i < 100; i += 1) {
@@ -118,36 +119,62 @@ function createRibbon({ primitive, sceneCfg, style }) {
   }
 
   const geometry = new THREE.BufferGeometry().setFromPoints(points);
-  return new THREE.Line(
+  const line = new THREE.Line(
     geometry,
     new THREE.LineBasicMaterial({ color, transparent: true, opacity: primitive.opacity ?? 0.45 })
   );
+  line.position.set(
+    Number(params.offsetX ?? primitive.offsetX ?? 0),
+    Number(params.offsetY ?? primitive.offsetY ?? 0),
+    Number(params.offsetZ ?? primitive.offsetZ ?? 0)
+  );
+  line.scale.set(
+    Number(params.scaleX ?? primitive.scaleX ?? 1),
+    Number(params.scaleY ?? primitive.scaleY ?? 1),
+    1
+  );
+  return line;
 }
 
 function createFaultLine({ primitive, sceneCfg }) {
   const color = sceneCfg.palette[primitive.color] || sceneCfg.palette.glow;
   const intensity = primitive.intensity ?? 0.6;
+  const params = primitive?.params || {};
+  const width = Math.max(0.02, Math.min(0.32, Number(params.width ?? primitive.width ?? 0.14) || 0.14));
+  const jitter = Math.max(0.02, Math.min(0.6, Number(params.jitter ?? primitive.jitter ?? 0.14) || 0.14));
+  const offsetX = Number(params.offsetX ?? primitive.offsetX ?? 0);
+  const offsetY = Number(params.offsetY ?? primitive.offsetY ?? 0);
+  const offsetZ = Number(params.offsetZ ?? primitive.offsetZ ?? 0);
   const points = [];
 
   for (let i = 0; i < 18; i += 1) {
     const x = -5 + i * (10 / 17);
-    const y = (i % 2 === 0 ? -1 : 1) * (0.2 + intensity * 0.54 + (i % 3) * 0.09);
-    const z = ((i % 4) - 1.5) * 0.22;
+    const y = (i % 2 === 0 ? -1 : 1) * (width + intensity * 0.54 + (i % 3) * jitter * 0.42);
+    const z = ((i % 4) - 1.5) * (0.08 + jitter * 0.7);
     points.push(new THREE.Vector3(x, y, z));
   }
 
-  return new THREE.Line(
+  const line = new THREE.Line(
     new THREE.BufferGeometry().setFromPoints(points),
     new THREE.LineBasicMaterial({ color, transparent: true, opacity: primitive.opacity ?? 0.46 })
   );
+  line.position.set(offsetX, offsetY, offsetZ);
+  return line;
 }
 
 function createSignalWeave({ primitive, sceneCfg, seed, index }) {
   const color = sceneCfg.palette[primitive.color] || sceneCfg.palette.secondary;
   const rand = mulberry32((seed ^ hashString(`weave:${index}`)) >>> 0);
   const group = new THREE.Group();
-  const strands = Math.max(3, Math.round(3 + (primitive.intensity ?? 0.5) * 6));
+  const params = primitive?.params || {};
+  const strandCountHint = Number(params.laneCount ?? params.strandCount ?? primitive.strandCount ?? 0);
+  const strands = Math.max(3, Math.round(Number.isFinite(strandCountHint) && strandCountHint > 0 ? strandCountHint : 3 + (primitive.intensity ?? 0.5) * 6));
   const opacity = primitive.opacity ?? 0.36;
+  const offsetX = Number(params.offsetX ?? primitive.offsetX ?? 0);
+  const offsetY = Number(params.offsetY ?? primitive.offsetY ?? 0);
+  const offsetZ = Number(params.offsetZ ?? primitive.offsetZ ?? 0);
+  const scaleX = Number(params.scaleX ?? primitive.scaleX ?? 1);
+  const scaleY = Number(params.scaleY ?? primitive.scaleY ?? 1);
 
   for (let s = 0; s < strands; s += 1) {
     const phase = rand() * Math.PI * 2;
@@ -170,6 +197,8 @@ function createSignalWeave({ primitive, sceneCfg, seed, index }) {
     ));
   }
 
+  group.position.set(offsetX, offsetY, offsetZ);
+  group.scale.set(scaleX, scaleY, 1);
   return group;
 }
 
@@ -407,6 +436,8 @@ function createAgentGeometry({ primitive, sceneCfg, seed, index }) {
   const group = new THREE.Group();
   const params = primitive?.params || {};
   const geometryName = String(params.geometry || params.shape || primitive.geometry || primitive.shape || 'icosahedron').toLowerCase();
+  const shapeFamily = String(params.shapeFamily || params.family || '').toLowerCase();
+  const tierCount = Math.max(0, Math.round(Number(params.tierCount ?? primitive.tierCount ?? 0) || 0));
   const count = Math.max(1, Math.round(Number(params.count ?? primitive.count ?? 10) || 10));
   const spread = Math.max(0.5, Math.min(12, Number(params.spread ?? primitive.spread ?? 4.4) || 4.4));
   const depth = Math.max(0.2, Math.min(6, Number(params.depth ?? primitive.depth ?? 2.1) || 2.1));
@@ -414,6 +445,10 @@ function createAgentGeometry({ primitive, sceneCfg, seed, index }) {
   const opacity = primitive.opacity ?? (Number(params.opacity ?? 0.44) || 0.44);
   const intensity = primitive.intensity ?? (Number(params.intensity ?? 0.58) || 0.58);
   const color = sceneCfg.palette[primitive.color] || sceneCfg.palette.secondary;
+  const offsetX = Number(params.offsetX ?? primitive.offsetX ?? 0);
+  const offsetY = Number(params.offsetY ?? primitive.offsetY ?? 0);
+  const offsetZ = Number(params.offsetZ ?? primitive.offsetZ ?? 0);
+  const shouldBuildTiered = tierCount >= 2 || /(step|tier|altar|podium|triptych)/.test(shapeFamily);
 
   function makeGeometry(size = 0.3) {
     if (geometryName.includes('sphere')) return new THREE.SphereGeometry(size, 18, 18);
@@ -422,6 +457,30 @@ function createAgentGeometry({ primitive, sceneCfg, seed, index }) {
     if (geometryName.includes('cone')) return new THREE.ConeGeometry(size * 0.8, size * 1.7, 12);
     if (geometryName.includes('line')) return new THREE.TorusKnotGeometry(size * 0.7, size * 0.12, 72, 12);
     return new THREE.IcosahedronGeometry(size, 0);
+  }
+
+  if (shouldBuildTiered) {
+    const resolvedTiers = Math.max(2, tierCount || 3);
+    const tierSpread = Math.max(0.8, Math.min(8, Number(params.spread ?? primitive.spread ?? 2.4) || 2.4));
+    const tierDepth = Math.max(0.18, Math.min(2.8, Number(params.depth ?? primitive.depth ?? 0.8) || 0.8));
+    const tierHeight = Math.max(0.14, Math.min(0.9, Number(params.tierHeight ?? primitive.tierHeight ?? 0.28) || 0.28));
+    for (let i = 0; i < resolvedTiers; i += 1) {
+      const width = Math.max(0.7, tierSpread * (1 - i * 0.16));
+      const height = Math.max(0.16, tierHeight * (1 + (resolvedTiers - i) * 0.14));
+      const box = new THREE.Mesh(
+        new THREE.BoxGeometry(width, height, tierDepth),
+        new THREE.MeshBasicMaterial({
+          color,
+          transparent: true,
+          wireframe,
+          opacity: opacity * (0.88 - i * 0.08)
+        })
+      );
+      box.position.set(0, -0.8 + i * (height + 0.08), -i * 0.08);
+      group.add(box);
+    }
+    group.position.set(offsetX, offsetY, offsetZ);
+    return group;
   }
 
   for (let i = 0; i < count; i += 1) {
@@ -444,7 +503,7 @@ function createAgentGeometry({ primitive, sceneCfg, seed, index }) {
     group.add(mesh);
   }
 
-  group.position.z = Number(params.offsetZ ?? primitive.offsetZ ?? 0);
+  group.position.set(offsetX, offsetY, offsetZ);
   return group;
 }
 
