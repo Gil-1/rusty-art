@@ -5,10 +5,7 @@
   "type": "module",
   "description": "Public Rusty Art website and published artwork archive",
   "scripts": {
-    "web:dev": "vite",
-    "web:build": "vite build",
-    "web:preview": "vite preview",
-    "serve": "python3 -m http.server 8080"
+    "web:build": "vite build"
   },
   "dependencies": {
     "three": "^0.169.0"

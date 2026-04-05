@@ -11,16 +11,10 @@ This repository contains only the website-facing subset:
 The private generation workflow lives elsewhere and syncs this repo automatically after successful daily runs.
 Cloudflare Pages deploys this repo directly from GitHub.
 
-## Development
-
-```bash
-npm install
-npm run web:dev
-```
-
 ## Build
 
 ```bash
+npm install
 npm run web:build
 ```
 
