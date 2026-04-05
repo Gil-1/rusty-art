@@ -1,0 +1,532 @@
+{
+  "id": "2026-02-23-fragments-of-budget-negotiations-continue",
+  "date": "2026-02-23",
+  "title": "Fragments of Budget negotiations continue",
+  "generatedAt": "2026-02-23T14:32:51.335Z",
+  "news": {
+    "source": "rtl",
+    "title": "Budget negotiations continue as coalition deadline approaches",
+    "link": "https://example.com/rtl-budget-negotiations",
+    "score": 13
+  },
+  "inspiration": {
+    "artist": "Frank Stella",
+    "tags": [
+      "hard-edge abstraction",
+      "protractor arcs",
+      "structured repetition"
+    ],
+    "links": {
+      "wikipedia": "https://en.wikipedia.org/wiki/Frank_Stella",
+      "reference": "https://whitney.org/artists/1296"
+    }
+  },
+  "seed": 3266171586,
+  "scene": {
+    "motif": "clusters",
+    "shapeCount": 114,
+    "turbulence": 0.518,
+    "spiralBias": 0.639,
+    "motionSpeed": 0.000556,
+    "bloom": 0.326,
+    "grain": 0.044,
+    "fogDensity": 0.056,
+    "distortion": 0.31,
+    "flowField": 0.492,
+    "anchorStrength": 0.684,
+    "anchorOffsetX": -0.203,
+    "layerBalance": {
+      "structure": 0.723,
+      "chaos": 0.336
+    },
+    "expression": {
+      "tension": 0.54,
+      "structure": 0.673,
+      "motion": 0.42,
+      "noise": 0.482,
+      "urgency": 0.18,
+      "contrast": 0.261
+    },
+    "palette": {
+      "bg": "hsl(278, 48%, 6%)",
+      "primary": "hsl(30, 78%, 62%)",
+      "secondary": "hsl(152, 70%, 64%)",
+      "glow": "hsl(50, 90%, 74%)",
+      "anchor": "hsl(113, 83%, 70%)"
+    },
+    "elements": [
+      {
+        "id": "el-04-motif-armature",
+        "moduleType": "motif-armature",
+        "capabilities": [
+          "geometric-structure",
+          "layered-field"
+        ],
+        "stackFamilies": [
+          "geometry-heavy",
+          "instancing",
+          "shader-field"
+        ],
+        "styleTags": [
+          "structure",
+          "spine"
+        ],
+        "libraryRef": "element.motif-armature.v1",
+        "color": "glow",
+        "opacity": 0.385,
+        "layer": "midground",
+        "role": "structural-spine",
+        "motif": "clusters",
+        "emphasis": 0.67,
+        "animation": {
+          "rotationZ": 0.265,
+          "wobbleY": 0.167
+        },
+        "intentCadence": "steady",
+        "intensity": 0.528
+      },
+      {
+        "id": "el-05-signal-weave",
+        "moduleType": "signal-weave",
+        "capabilities": [
+          "kinetic-motion",
+          "layered-field"
+        ],
+        "stackFamilies": [
+          "geometry-heavy",
+          "post-heavy",
+          "shader-field"
+        ],
+        "styleTags": [
+          "rhythm",
+          "support"
+        ],
+        "libraryRef": "element.signal-weave.v1",
+        "color": "secondary",
+        "opacity": 0.582,
+        "intensity": 0.812,
+        "layer": "midground",
+        "role": "structural-spine",
+        "animation": {
+          "rotationZ": 0.169,
+          "pulse": 0.241
+        },
+        "motif": "clusters",
+        "intentCadence": "steady"
+      },
+      {
+        "id": "el-02-anchor-core",
+        "moduleType": "anchor-core",
+        "capabilities": [
+          "focal-anchor",
+          "layered-field"
+        ],
+        "stackFamilies": [
+          "shader-field",
+          "geometry-heavy",
+          "particle-heavy",
+          "instancing",
+          "sdf-raymarch"
+        ],
+        "styleTags": [
+          "anchor",
+          "center",
+          "stability"
+        ],
+        "libraryRef": "element.anchor-core.v1",
+        "color": "anchor",
+        "opacity": 0.631,
+        "intensity": 0.767,
+        "layer": "foreground",
+        "role": "primary-signal",
+        "motif": "clusters",
+        "auraColor": "glow",
+        "size": 1.056,
+        "animation": {
+          "rotationZ": 0.144,
+          "wobbleY": 0.127,
+          "pulse": 0.285
+        },
+        "intentCadence": "steady"
+      },
+      {
+        "id": "el-10-instance-grid",
+        "moduleType": "instance-grid",
+        "capabilities": [
+          "geometric-structure",
+          "layered-field"
+        ],
+        "stackFamilies": [
+          "instancing",
+          "geometry-heavy"
+        ],
+        "styleTags": [
+          "instancing",
+          "grid"
+        ],
+        "libraryRef": "element.instance-grid.v1",
+        "color": "glow",
+        "opacity": 0.34,
+        "intensity": 0.52,
+        "layer": "midground",
+        "animation": {
+          "rotationZ": 0.14,
+          "pulse": 0.2
+        },
+        "role": "support-rhythm",
+        "motif": "clusters"
+      },
+      {
+        "moduleType": "polyhedron-array",
+        "role": "structural-spine",
+        "layer": "midground",
+        "color": "secondary",
+        "opacity": 0.36,
+        "intensity": 0.56,
+        "animation": {
+          "rotationZ": 0.12,
+          "pulse": 0.2
+        }
+      }
+    ],
+    "shaderLayers": 4,
+    "elementDiversity": 5,
+    "paletteVariance": 0.72,
+    "motionSpeedNormalized": 0.081,
+    "camera": {
+      "autoRotate": false,
+      "autoRotateSpeed": 0.1,
+      "minDistance": 6,
+      "maxDistance": 24,
+      "cycleSeconds": 24,
+      "beats": [
+        {
+          "t": 0,
+          "radius": 12.6,
+          "theta": -0.063,
+          "phi": 1.219,
+          "hold": 1
+        },
+        {
+          "t": 0.34,
+          "radius": 10.7,
+          "theta": 0.676,
+          "phi": 1.051,
+          "hold": 0.5
+        },
+        {
+          "t": 0.68,
+          "radius": 11.2,
+          "theta": 1.416,
+          "phi": 1.319,
+          "hold": 0.8
+        },
+        {
+          "t": 1,
+          "radius": 12.2,
+          "theta": 2.335,
+          "phi": 1.143,
+          "hold": 1.1
+        }
+      ]
+    },
+    "post": {
+      "vignette": 0.375,
+      "contrast": 1.152,
+      "saturation": 1.03,
+      "exposure": 0.956,
+      "breathing": {
+        "hueShift": 0.01,
+        "saturationAmplitude": 0.06,
+        "exposureAmplitude": 0.04,
+        "phaseA": 0.1796,
+        "phaseB": 0.7682
+      }
+    },
+    "styleFingerprint": {
+      "pulseFamily": "balanced",
+      "stripeWarp": 0.14,
+      "edgeSoftness": 0.26,
+      "cameraSway": 0.16,
+      "edgeHardness": 0.36,
+      "temperatureBias": 0.24,
+      "verticalBias": 0,
+      "cadenceBias": -0.1
+    },
+    "seedVersion": 2,
+    "seeds": {
+      "baseSeed": 2972730848,
+      "runSeed": 3266171586,
+      "geomSeed": 1773856270,
+      "animSeed": 3905940735,
+      "colorSeed": 1620327561,
+      "cameraSeed": 2526260773
+    },
+    "techStack": {
+      "id": "instancing-wavegrid",
+      "name": "Instancing Wave Grid",
+      "family": "instancing",
+      "strategyFamilies": [
+        "grid",
+        "flow"
+      ],
+      "rationale": {
+        "signals": {
+          "conflict": 0.4,
+          "context": 1,
+          "motion": 0.45,
+          "turbulence": 0.426,
+          "structureBias": 0,
+          "densityBias": 0,
+          "edgeBias": 0,
+          "motionBias": 0,
+          "visualProfile": {
+            "profileCadence": "steady",
+            "preferredFamilies": []
+          }
+        },
+        "familyHits": 0,
+        "idHits": 0,
+        "penalties": [],
+        "visualAffinity": 0,
+        "elementCoverage": {
+          "score": 2.388571428571429,
+          "coverage": 0.8,
+          "moduleCoverage": 0.571,
+          "missingCapabilities": [
+            "kinetic-motion"
+          ]
+        },
+        "preferredFamilies": [],
+        "preferredFamilyLocked": false,
+        "notPreferredPenalty": 0
+      },
+      "dominantPrimitive": "instance-grid",
+      "moduleSet": [
+        "motif-armature",
+        "signal-weave",
+        "anchor-core",
+        "instance-grid",
+        "polyhedron-array"
+      ],
+      "pipelineKind": "geometry-heavy"
+    },
+    "visualProfileHints": {
+      "cadence": "steady",
+      "motionEnergy": null,
+      "preferredModules": [
+        {
+          "name": "motif-armature",
+          "weight": 0.5,
+          "reason": "fallback baseline"
+        }
+      ],
+      "preferredStackFamilies": [
+        {
+          "family": "shader-field",
+          "weight": 0.5,
+          "reason": "neutral fallback"
+        }
+      ],
+      "sourceAnalysis": {
+        "mode": "computer-vision",
+        "status": "ok",
+        "analyzedReferences": 2,
+        "failedReferences": 0,
+        "texture": {
+          "edgeEnergy": 0.042
+        },
+        "failures": [],
+        "note": null
+      }
+    },
+    "strategy": {
+      "id": "atomic-balanced-flow",
+      "name": "Balanced Flow Field",
+      "type": "atomic",
+      "family": "flow",
+      "cooldown": {
+        "window": 3,
+        "recentFamilies": [],
+        "family": "flow",
+        "applied": false
+      },
+      "compositeDemanded": true,
+      "signals": {
+        "conflict": 0.368,
+        "context": 0.683,
+        "moodDepth": 0.35
+      }
+    },
+    "layers": [
+      {
+        "role": "background",
+        "modules": [
+          "volumetric-haze",
+          "particle-cloud"
+        ]
+      },
+      {
+        "role": "midground",
+        "modules": [
+          "motif-armature",
+          "signal-weave"
+        ]
+      },
+      {
+        "role": "foreground",
+        "modules": [
+          "anchor-core",
+          "drift-ribbon"
+        ]
+      },
+      {
+        "role": "accent",
+        "modules": [
+          "orbit-ribbon"
+        ]
+      },
+      {
+        "role": "post",
+        "modules": [
+          "post-breathing"
+        ]
+      }
+    ],
+    "renderPipeline": {
+      "kind": "geometry-heavy",
+      "family": "instancing",
+      "fallback": false,
+      "dominantPrimitive": "instance-grid",
+      "moduleSet": [
+        "motif-armature",
+        "signal-weave",
+        "anchor-core",
+        "instance-grid",
+        "polyhedron-array"
+      ]
+    }
+  },
+  "sceneStrategy": {
+    "selected": {
+      "id": "atomic-balanced-flow",
+      "name": "Balanced Flow Field",
+      "type": "atomic",
+      "family": "flow"
+    },
+    "applied": true,
+    "fallbackReason": null
+  },
+  "techStack": {
+    "id": "instancing-wavegrid",
+    "name": "Instancing Wave Grid",
+    "family": "instancing"
+  },
+  "newsVisualMappings": [
+    {
+      "signal": "title evidence [budget, coalition] -> motif clusters",
+      "from": "budget, coalition",
+      "visualDecision": "structural motif armature set to clusters"
+    },
+    {
+      "signal": "composition foreground conflict",
+      "from": "budget, budget, budget",
+      "visualDecision": "foreground role tension-knot at pressure 0.401"
+    },
+    {
+      "signal": "composition midground context",
+      "from": "budget, coalition, budget, coalition, budget",
+      "visualDecision": "midground role context-drift with density 0.543"
+    },
+    {
+      "signal": "composition background mood",
+      "from": "budget, coalition",
+      "visualDecision": "background mood watchful depth 0.286"
+    },
+    {
+      "signal": "urgency -> motion",
+      "from": "ageHours=244.21",
+      "visualDecision": "motionSpeedNormalized=0.081"
+    },
+    {
+      "signal": "title semantics -> palette/edge cadence",
+      "from": "temp=0.24 edge=0.36",
+      "visualDecision": "postContrast=1.152 accentType=n/a"
+    },
+    {
+      "signal": "article institutional/conflict polarity",
+      "from": "budget, intent-motif-hint",
+      "visualDecision": "accent element n/a with opacity n/a"
+    },
+    {
+      "signal": "artist research context Frank Stella",
+      "from": "tags hard-edge abstraction, protractor arcs, structured repetition",
+      "visualDecision": "artist profile captured as metadata only; no technical routing applied"
+    }
+  ],
+  "qualityScore": {
+    "score": 54.4,
+    "summary": "Alignment 77.3 with strongest channel style.",
+    "heuristic": {
+      "score": 69.8,
+      "breakdown": {
+        "legibility": 74.8,
+        "emotionalReadability": 76.4,
+        "coherence": 84.5,
+        "focalAnchor": 68.8,
+        "technicalRichness": 98.7,
+        "restraint": 66.6,
+        "alignment": 77.3
+      }
+    },
+    "calibration": {
+      "sampleCount": 1,
+      "trustWeight": 0.4
+    },
+    "alignment": {
+      "totalAlign": 77.3,
+      "components": {
+        "title": {
+          "score": 66.2
+        },
+        "style": {
+          "score": 86.8
+        },
+        "emotional": {
+          "score": 75.6
+        }
+      }
+    }
+  },
+  "rationale": {
+    "intent": {
+      "signal": null,
+      "emotion": null,
+      "tension": null,
+      "balance": null,
+      "motion": null
+    },
+    "selection": {
+      "whyHeadline": "Selected as top-ranked Belgian headline (score 13 = frequency 7 + priority 6 + recency 0).",
+      "priorityTerms": [
+        "budget",
+        "coalition"
+      ]
+    },
+    "qualitySummary": "TOTAL_ALIGN 77.3."
+  },
+  "runPolicy": {
+    "artworksPerRun": 1,
+    "multiVariant": false
+  },
+  "artFramework": {
+    "version": 3,
+    "intent": {
+      "statement": "Frank Stella is profiled in this dossier as an influential modern artist whose work is grounded in abstraction, color, and viewer experience. In response to \"Budget negotiations continue as coalition deadline approaches\", the artwork should translate civic signal into an abstract composition with a clear emotional center. He moved to New York City in the late 1950s, where he created works which emphasized the picture-as-object.",
+      "narrativeBridge": "Frank Philip Stella was an American painter, sculptor, and printmaker, noted for his work in the areas of minimalism and post-painterly abstraction. He developed a reductionist approach to his art, saying he wanted to demonstrate that for him, every painting is \"a flat surface with paint on it—nothing more\", and disavowed conceptions of art as a means of expressing emotion.",
+      "motifHint": "clusters",
+      "emotionalCenter": "measured structural drift"
+    }
+  },
+  "debugFile": "./data/artworks-debug/2026-02-23-fragments-of-budget-negotiations-continue.json"
+}

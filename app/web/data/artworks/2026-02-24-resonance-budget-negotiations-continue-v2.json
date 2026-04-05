@@ -1,0 +1,816 @@
+{
+  "id": "2026-02-24-resonance-budget-negotiations-continue-v2",
+  "date": "2026-02-24",
+  "title": "Resonance: Budget negotiations continue",
+  "generatedAt": "2026-02-24T16:36:19.688Z",
+  "news": {
+    "source": "rtl",
+    "title": "Budget negotiations continue as coalition deadline approaches",
+    "link": "https://example.com/rtl-budget-negotiations",
+    "score": 13
+  },
+  "inspiration": {
+    "artist": "John D. Graham",
+    "tags": [
+      "figurative"
+    ],
+    "links": {
+      "wikipedia": "https://en.wikipedia.org/wiki/John_D._Graham",
+      "reference": "https://en.wikipedia.org/wiki/John_D._Graham"
+    }
+  },
+  "seed": 3497246621,
+  "scene": {
+    "motif": "clusters",
+    "shapeCount": 51,
+    "turbulence": 0.587,
+    "spiralBias": 0.646,
+    "motionSpeed": 0.000781,
+    "bloom": 0.06,
+    "grain": 0.05,
+    "fogDensity": 0.046,
+    "distortion": 0.09,
+    "flowField": 0.38,
+    "anchorStrength": 0.715,
+    "anchorOffsetX": -0.014,
+    "layerBalance": {
+      "structure": 0.601,
+      "chaos": 0.462
+    },
+    "expression": {
+      "tension": 0.625,
+      "structure": 0.437,
+      "motion": 0.4,
+      "noise": 0.599,
+      "urgency": 0.18,
+      "contrast": 0.206
+    },
+    "palette": {
+      "bg": "#EEE9E1",
+      "primary": "#2E4057",
+      "secondary": "#A23B3B",
+      "glow": "#D6A23D",
+      "anchor": "#1B1D24"
+    },
+    "elements": [
+      {
+        "id": "el-01-agent-shader-plane",
+        "moduleType": "agent-shader-plane",
+        "capabilities": [],
+        "stackFamilies": [],
+        "styleTags": [],
+        "libraryRef": null,
+        "bands": 7,
+        "phase": 0.31,
+        "color": "bg",
+        "opacity": 0.72,
+        "intensity": 0.5,
+        "animation": {
+          "rotationZ": 0.02,
+          "pulse": 0.08,
+          "wobbleX": 0.03,
+          "wobbleY": 0.03,
+          "drift": 0.1
+        },
+        "techniqueRef": "r1_t1",
+        "role": "atmosphere-field",
+        "layer": "background",
+        "motif": "clusters",
+        "intentCadence": "measured"
+      },
+      {
+        "id": "el-02-node-cluster",
+        "moduleType": "node-cluster",
+        "capabilities": [
+          "clustered-actors",
+          "layered-field"
+        ],
+        "stackFamilies": [
+          "particle-heavy",
+          "instancing",
+          "geometry-heavy"
+        ],
+        "styleTags": [
+          "cluster",
+          "nodes"
+        ],
+        "libraryRef": "element.node-cluster.v1",
+        "color": "primary",
+        "opacity": 0.414,
+        "intensity": 0.61,
+        "layer": "midground",
+        "clusterCount": 6,
+        "nodePerCluster": 20,
+        "animation": {
+          "rotationZ": 0.05,
+          "pulse": 0.12,
+          "wobbleX": 0.05,
+          "wobbleY": 0.04,
+          "drift": 0.14
+        },
+        "techniqueRef": "r1_t1",
+        "role": "structural-spine",
+        "motif": "clusters",
+        "intentCadence": "measured"
+      },
+      {
+        "id": "el-03-spiral-sigil",
+        "moduleType": "spiral-sigil",
+        "capabilities": [
+          "orbital-forms",
+          "focal-anchor"
+        ],
+        "stackFamilies": [
+          "sdf-raymarch",
+          "shader-field"
+        ],
+        "styleTags": [
+          "spiral",
+          "symbolic"
+        ],
+        "libraryRef": "element.spiral-sigil.v1",
+        "color": "secondary",
+        "opacity": 0.33,
+        "intensity": 0.54,
+        "layer": "foreground",
+        "turns": 2.1,
+        "thickness": 0.017,
+        "animation": {
+          "rotationZ": 0.1,
+          "pulse": 0.1,
+          "wobbleX": 0.03,
+          "wobbleY": 0.03,
+          "drift": 0.12
+        },
+        "techniqueRef": "r1_t1",
+        "role": "support-rhythm",
+        "motif": "clusters",
+        "intentCadence": "measured"
+      },
+      {
+        "id": "el-04-particle-shell",
+        "moduleType": "particle-shell",
+        "capabilities": [
+          "orbital-forms",
+          "debris-particles"
+        ],
+        "stackFamilies": [
+          "particle-heavy",
+          "sdf-raymarch"
+        ],
+        "styleTags": [
+          "shell",
+          "orbital"
+        ],
+        "libraryRef": "element.particle-shell.v1",
+        "color": "glow",
+        "opacity": 0.31,
+        "intensity": 0.58,
+        "layer": "accent",
+        "particleCount": 1300,
+        "radius": 0.44,
+        "animation": {
+          "rotationZ": 0.06,
+          "pulse": 0.2,
+          "wobbleX": 0.02,
+          "wobbleY": 0.02,
+          "drift": 0.09
+        },
+        "techniqueRef": "r1_t2",
+        "role": "focal-anchor",
+        "motif": "clusters",
+        "intentCadence": "measured"
+      },
+      {
+        "id": "el-05-shear-ribbon",
+        "moduleType": "shear-ribbon",
+        "capabilities": [
+          "fracture-destruction",
+          "kinetic-motion"
+        ],
+        "stackFamilies": [
+          "post-heavy",
+          "particle-heavy",
+          "geometry-heavy"
+        ],
+        "styleTags": [
+          "shear",
+          "rupture"
+        ],
+        "libraryRef": "element.shear-ribbon.v1",
+        "color": "anchor",
+        "opacity": 0.324,
+        "intensity": 0.47,
+        "layer": "midground",
+        "ribbonCount": 4,
+        "thickness": 0.028,
+        "animation": {
+          "rotationZ": 0.04,
+          "pulse": 0.09,
+          "wobbleX": 0.06,
+          "wobbleY": 0.04,
+          "drift": 0.16
+        },
+        "techniqueRef": "r1_t1",
+        "role": "primary-signal",
+        "motif": "clusters",
+        "intentCadence": "measured"
+      },
+      {
+        "id": "el-06-miro-glyphs",
+        "moduleType": "miro-glyphs",
+        "capabilities": [
+          "clustered-actors",
+          "kinetic-motion"
+        ],
+        "stackFamilies": [
+          "geometry-heavy",
+          "particle-heavy"
+        ],
+        "styleTags": [
+          "glyph",
+          "playful"
+        ],
+        "libraryRef": "element.miro-glyphs.v1",
+        "color": "glow",
+        "opacity": 0.411,
+        "intensity": 0.631,
+        "layer": "foreground",
+        "glyphCount": 18,
+        "spread": 0.62,
+        "animation": {
+          "rotationZ": 0.12,
+          "pulse": 0.22,
+          "wobbleX": 0.06,
+          "wobbleY": 0.05,
+          "drift": 0.18
+        },
+        "techniqueRef": "r1_t2",
+        "role": "accent-gesture",
+        "motif": "clusters",
+        "intentCadence": "measured"
+      },
+      {
+        "id": "el-07-cm.deadline-arcfield.v1",
+        "moduleType": "cm.deadline-arcfield.v1",
+        "capabilities": [],
+        "stackFamilies": [],
+        "styleTags": [],
+        "libraryRef": null,
+        "color": "glow",
+        "opacity": 0.34,
+        "intensity": 0.52,
+        "animation": {
+          "rotationZ": 0.14,
+          "pulse": 0.2
+        },
+        "role": "support-rhythm",
+        "layer": "midground",
+        "motif": "clusters"
+      }
+    ],
+    "shaderLayers": 3,
+    "elementDiversity": 7,
+    "paletteVariance": 0,
+    "motionSpeedNormalized": 0.215,
+    "camera": {
+      "autoRotate": false,
+      "autoRotateSpeed": 0.098,
+      "minDistance": 6,
+      "maxDistance": 24,
+      "cycleSeconds": 24,
+      "beats": [
+        {
+          "t": 0,
+          "radius": 12.6,
+          "theta": 0.107,
+          "phi": 1.225,
+          "hold": 1
+        },
+        {
+          "t": 0.34,
+          "radius": 10.7,
+          "theta": 0.903,
+          "phi": 1.056,
+          "hold": 0.5
+        },
+        {
+          "t": 0.68,
+          "radius": 11.2,
+          "theta": 1.662,
+          "phi": 1.325,
+          "hold": 0.8
+        },
+        {
+          "t": 1,
+          "radius": 12.2,
+          "theta": 2.332,
+          "phi": 1.147,
+          "hold": 1.1
+        }
+      ],
+      "target": [
+        0,
+        0,
+        0
+      ]
+    },
+    "post": {
+      "vignette": 0.24,
+      "contrast": 1.133,
+      "saturation": 0.9,
+      "exposure": 0.98,
+      "breathing": {
+        "hueShift": 0.01,
+        "saturationAmplitude": 0.06,
+        "exposureAmplitude": 0.04,
+        "phaseA": 0.7227,
+        "phaseB": 0.5901
+      }
+    },
+    "styleFingerprint": {
+      "pulseFamily": "balanced",
+      "stripeWarp": 0.14,
+      "edgeSoftness": 0.26,
+      "cameraSway": 0.16,
+      "edgeHardness": 0.36,
+      "temperatureBias": 0.24,
+      "verticalBias": 0,
+      "cadenceBias": -0.1
+    },
+    "sceneAuthoring": {
+      "mode": "agent-dsl",
+      "planner": "openclaw-agent-scene-planner",
+      "representation": {
+        "id": "rep_coalition_constellation",
+        "label": "Coalition Constellation",
+        "description": "Clustered blocs orbit a procedural civic field while a thin shell marks fragile consensus.",
+        "scoreHint": 0.69,
+        "motif": "clusters",
+        "cadence": "measured",
+        "rationale": {
+          "newsMapping": "factions converge without full merger",
+          "styleAnchor": "modernist clustered geometry with restrained drift",
+          "novelty": "shader-phase override plus shell focus"
+        },
+        "techniques": [
+          {
+            "id": "r1_t1",
+            "name": "Bloc Clustering",
+            "type": "layout",
+            "purpose": "Place weighted blocs around center.",
+            "reuseModuleType": null,
+            "params": {
+              "rings": 3
+            }
+          },
+          {
+            "id": "r1_t2",
+            "name": "Consensus Containment",
+            "type": "focus",
+            "purpose": "Frame unstable agreement.",
+            "reuseModuleType": null,
+            "params": {
+              "radius": 0.43
+            }
+          }
+        ]
+      },
+      "artisticIntent": {
+        "statement": "Translate budget coalition talks into a civic field of clustered positions that repeatedly approach, stall, and reconfigure under deadline pressure.",
+        "motif": "negotiation clusters around a moving quorum",
+        "emotionalArc": "fragmented stance-taking → tense alignment attempts → provisional coherence",
+        "compositionLogic": "Use clustered nuclei and curved connective vectors around a central procedural axis; maintain measured drift so tension stays legible rather than explosive."
+      },
+      "executionPlan": {
+        "palette": {
+          "bg": "#EEE9E1",
+          "primary": "#2E4057",
+          "secondary": "#A23B3B",
+          "glow": "#D6A23D",
+          "anchor": "#1B1D24"
+        },
+        "camera": {
+          "autoRotate": false,
+          "cycleSeconds": 24,
+          "target": [
+            0,
+            0,
+            0
+          ]
+        },
+        "post": {
+          "contrast": 1.09,
+          "saturation": 0.9,
+          "vignette": 0.24,
+          "exposure": 0.98
+        },
+        "global": {
+          "shapeCountHint": 118,
+          "flowField": 0.38,
+          "distortion": 0.16,
+          "bloom": 0.2
+        },
+        "techniques": [
+          {
+            "id": "t_cluster_quorum",
+            "name": "Cluster Quorum Mapping",
+            "type": "composition",
+            "purpose": "Organize negotiation factions into weighted clusters with deterministic spacing.",
+            "reuseModuleType": "node-cluster",
+            "params": {
+              "clusterBands": 4,
+              "centerBias": 0.52
+            }
+          },
+          {
+            "id": "t_deadline_curves",
+            "name": "Deadline Curves",
+            "type": "motion-structure",
+            "purpose": "Represent approaching deadline as converging arc tension.",
+            "reuseModuleType": "spiral-sigil",
+            "params": {
+              "turns": 2.2,
+              "arcTightness": 0.58
+            }
+          },
+          {
+            "id": "t_ledger_planes",
+            "name": "Ledger Plane Encoding",
+            "type": "field-encoding",
+            "purpose": "Encode concessions and red lines as layered procedural planes.",
+            "reuseModuleType": "agent-shader-plane",
+            "params": {
+              "bandCount": 7,
+              "phaseShift": 0.31
+            }
+          },
+          {
+            "id": "t_shell_consensus",
+            "name": "Consensus Shell",
+            "type": "focus",
+            "purpose": "Contain the emotional center in a constrained shell to suggest fragile agreement.",
+            "reuseModuleType": "particle-shell",
+            "params": {
+              "shellRadius": 0.44,
+              "noise": 0.14
+            }
+          }
+        ]
+      },
+      "moduleOverrides": [
+        {
+          "id": "ov.agent-shader-plane.caucus-phase.v1",
+          "target": {
+            "moduleType": "agent-shader-plane",
+            "elementId": null
+          },
+          "mode": "replace",
+          "params": {
+            "deterministicPhaseSteps": 8
+          },
+          "glsl": {
+            "vertex": "varying vec2 vUv;void main(){vUv=uv;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0);}",
+            "fragment": "varying vec2 vUv;uniform float uTime;float h(vec2 p){return fract(sin(dot(p,vec2(91.7,37.3)))*43758.5453);}void main(){vec2 p=vUv-0.5;float rings=sin(length(p)*24.0-0.35*uTime);float bands=sin((p.x*8.0+p.y*3.0)+floor(h(floor(vUv*10.0))*6.0));float m=smoothstep(-0.25,0.45,0.55*rings+0.45*bands);vec3 c=mix(vec3(0.17,0.20,0.29),vec3(0.64,0.23,0.23),m);gl_FragColor=vec4(c,0.34);}"
+          }
+        },
+        {
+          "id": "ov.particle-shell.consensus-jitter.v1",
+          "target": {
+            "moduleType": "particle-shell",
+            "elementId": null
+          },
+          "mode": "uniforms",
+          "params": {
+            "maxParticles": 1600
+          },
+          "uniforms": {
+            "uNoiseAmp": 0.12,
+            "uPulseGain": 0.26,
+            "uEdgeFade": 0.68
+          }
+        }
+      ],
+      "customModules": [
+        {
+          "id": "cm.vote-ledger-grid.v1",
+          "family": "geometry",
+          "kind": "dsl",
+          "allowOverride": false,
+          "seedPolicy": "deterministic",
+          "paramsSchema": {
+            "rows": {
+              "type": "number",
+              "min": 6,
+              "max": 36
+            },
+            "cols": {
+              "type": "number",
+              "min": 6,
+              "max": 36
+            },
+            "jitter": {
+              "type": "number",
+              "min": 0,
+              "max": 0.25
+            }
+          },
+          "source": {
+            "dsl": {
+              "generator": "gridPoints",
+              "topology": "planar",
+              "passes": [
+                {
+                  "op": "jitterBySeed"
+                },
+                {
+                  "op": "weightByCenterDistance"
+                }
+              ]
+            },
+            "glsl": {
+              "vertex": "varying vec2 vUv;void main(){vUv=uv;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0);}",
+              "fragment": "varying vec2 vUv;uniform float uSeed;float n=fract(sin(dot(vUv*321.3,vec2(12.9,78.2))+uSeed)*43758.5);void main(){float g=step(0.93,n);gl_FragColor=vec4(vec3(0.12,0.14,0.18),g*0.26);}"
+            },
+            "js": null
+          },
+          "budgets": {
+            "maxInstances": 1400,
+            "maxShaderOpsHint": 0.54,
+            "mobileSafe": true
+          }
+        },
+        {
+          "id": "cm.deadline-arcfield.v1",
+          "family": "shader",
+          "kind": "dsl",
+          "allowOverride": false,
+          "seedPolicy": "deterministic",
+          "paramsSchema": {
+            "arcCount": {
+              "type": "number",
+              "min": 2,
+              "max": 14
+            },
+            "falloff": {
+              "type": "number",
+              "min": 0.1,
+              "max": 0.95
+            }
+          },
+          "source": {
+            "dsl": {
+              "pipeline": "arcField",
+              "blend": "alpha",
+              "passes": [
+                {
+                  "op": "arcDistance"
+                },
+                {
+                  "op": "temporalOffset"
+                }
+              ]
+            },
+            "glsl": {
+              "vertex": "varying vec2 vUv;void main(){vUv=uv;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0);}",
+              "fragment": "varying vec2 vUv;uniform float uTime;void main(){vec2 p=vUv-0.5;float a=atan(p.y,p.x);float r=length(p);float s=sin(6.0*a-3.0*r-0.2*uTime);float m=smoothstep(0.2,0.9,s*(1.0-r));gl_FragColor=vec4(vec3(0.84,0.64,0.24),m*0.22);}"
+            },
+            "js": null
+          },
+          "budgets": {
+            "maxInstances": 4,
+            "maxShaderOpsHint": 0.61,
+            "mobileSafe": true
+          }
+        }
+      ]
+    },
+    "seedVersion": 2,
+    "seeds": {
+      "baseSeed": 3233681569,
+      "runSeed": 3497246621,
+      "geomSeed": 3545075789,
+      "animSeed": 3598424160,
+      "colorSeed": 1479468648,
+      "cameraSeed": 3612184958
+    },
+    "customModuleReport": {
+      "declaredCustomModules": 2,
+      "accepted": [
+        {
+          "id": "cm.vote-ledger-grid.v1",
+          "family": "geometry",
+          "kind": "dsl",
+          "fingerprint": "44c3e44a"
+        },
+        {
+          "id": "cm.deadline-arcfield.v1",
+          "family": "shader",
+          "kind": "dsl",
+          "fingerprint": "48cc44fe"
+        }
+      ],
+      "rejected": [],
+      "moduleOverrideCount": 2,
+      "fingerprint": "149a04a0"
+    },
+    "techStack": {
+      "id": "geometry-construct",
+      "name": "Geometry-Heavy Construct",
+      "family": "geometry-heavy",
+      "strategyFamilies": [
+        "grid",
+        "fracture",
+        "hybrid"
+      ],
+      "rationale": {
+        "source": "loop-adjustment-alternate-stack",
+        "score": 3.2,
+        "penalties": []
+      },
+      "dominantPrimitive": "polyhedron-array",
+      "moduleSet": [
+        "agent-shader-plane",
+        "node-cluster",
+        "spiral-sigil",
+        "particle-shell",
+        "shear-ribbon",
+        "miro-glyphs",
+        "cm.deadline-arcfield.v1"
+      ],
+      "pipelineKind": "geometry-heavy"
+    },
+    "visualProfileHints": {
+      "cadence": "steady",
+      "motionEnergy": null,
+      "preferredModules": [
+        {
+          "name": "motif-armature",
+          "weight": 0.5,
+          "reason": "fallback baseline"
+        }
+      ],
+      "preferredStackFamilies": [
+        {
+          "family": "shader-field",
+          "weight": 0.5,
+          "reason": "neutral fallback"
+        }
+      ],
+      "sourceAnalysis": {
+        "mode": "computer-vision",
+        "status": "ok",
+        "analyzedReferences": 3,
+        "failedReferences": 1,
+        "texture": {
+          "edgeEnergy": 0.038
+        },
+        "failures": [
+          {
+            "referenceId": "john-d-graham-04",
+            "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Melons%2C_by_John_D._Graham.jpg/960px-Melons%2C_by_John_D._Graham.jpg",
+            "reason": "Request failed 429 for https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Melons%2C_by_John_D._Graham.jpg/960px-Melons%2C_by_John_D._Graham.jpg"
+          }
+        ],
+        "note": null
+      }
+    },
+    "renderPipeline": {
+      "kind": "geometry-heavy",
+      "family": "geometry-heavy",
+      "fallback": false,
+      "dominantPrimitive": "polyhedron-array",
+      "moduleSet": [
+        "agent-shader-plane",
+        "node-cluster",
+        "spiral-sigil",
+        "particle-shell",
+        "shear-ribbon",
+        "miro-glyphs",
+        "cm.deadline-arcfield.v1"
+      ]
+    }
+  },
+  "sceneStrategy": {
+    "selected": {
+      "id": "atomic-grid-lattice",
+      "name": "Institutional Lattice",
+      "type": "atomic",
+      "family": "grid"
+    },
+    "applied": false,
+    "fallbackReason": "agent-authored-scene-elements"
+  },
+  "techStack": {
+    "id": "geometry-construct",
+    "name": "Geometry-Heavy Construct",
+    "family": "geometry-heavy"
+  },
+  "newsVisualMappings": [
+    {
+      "signal": "title evidence [budget, coalition] -> motif clusters",
+      "from": "budget, coalition",
+      "visualDecision": "structural motif armature set to clusters"
+    },
+    {
+      "signal": "composition foreground conflict",
+      "from": "budget, budget, budget",
+      "visualDecision": "foreground role tension-knot at pressure 0.445"
+    },
+    {
+      "signal": "composition midground context",
+      "from": "budget, coalition, budget, coalition, budget",
+      "visualDecision": "midground role context-drift with density 0.43"
+    },
+    {
+      "signal": "composition background mood",
+      "from": "budget, coalition",
+      "visualDecision": "background mood watchful depth 0.322"
+    },
+    {
+      "signal": "urgency -> motion",
+      "from": "ageHours=270.23",
+      "visualDecision": "motionSpeedNormalized=0.215"
+    },
+    {
+      "signal": "title semantics -> palette/edge cadence",
+      "from": "temp=0.24 edge=0.36",
+      "visualDecision": "postContrast=1.133 accentType=miro-glyphs"
+    },
+    {
+      "signal": "article institutional/conflict polarity",
+      "from": "budget, intent-motif-hint",
+      "visualDecision": "accent element miro-glyphs with opacity 0.411"
+    },
+    {
+      "signal": "artist research context John D. Graham",
+      "from": "tags figurative",
+      "visualDecision": "artist profile captured as metadata only; no technical routing applied"
+    }
+  ],
+  "qualityScore": {
+    "score": 53.8,
+    "summary": "Alignment 78.9 with strongest channel style.",
+    "heuristic": {
+      "score": 69.3,
+      "breakdown": {
+        "legibility": 73.9,
+        "emotionalReadability": 66.2,
+        "coherence": 84.1,
+        "focalAnchor": 74.7,
+        "technicalRichness": 92.1,
+        "restraint": 78.6,
+        "alignment": 78.9
+      }
+    },
+    "calibration": {
+      "sampleCount": 1,
+      "trustWeight": 0.4
+    },
+    "alignment": {
+      "totalAlign": 78.9,
+      "components": {
+        "title": {
+          "score": 67.3
+        },
+        "style": {
+          "score": 88
+        },
+        "emotional": {
+          "score": 78.3
+        }
+      }
+    }
+  },
+  "rationale": {
+    "intent": {
+      "signal": null,
+      "emotion": null,
+      "tension": null,
+      "balance": null,
+      "motion": null
+    },
+    "selection": {
+      "whyHeadline": "Selected as top-ranked Belgian headline (score 13 = frequency 7 + priority 6 + recency 0).",
+      "priorityTerms": [
+        "budget",
+        "coalition"
+      ]
+    },
+    "qualitySummary": "TOTAL_ALIGN 78.9."
+  },
+  "runPolicy": {
+    "artworksPerRun": 1,
+    "multiVariant": false
+  },
+  "artFramework": {
+    "version": 3,
+    "intent": {
+      "statement": "John D. In response to \"Budget negotiations continue as coalition deadline approaches\", the artwork should translate civic signal into an abstract composition with a clear emotional center. Graham was a Ukrainian–born American modernist and figurative painter, art collector, and a mentor of modernist artists in New York City.",
+      "narrativeBridge": "Graham was a Ukrainian–born American modernist and figurative painter, art collector, and a mentor of modernist artists in New York City. Graham was a Ukrainian–born American modernist and figurative painter, art collector, and a mentor of modernist artists in New York City.",
+      "motifHint": "clusters",
+      "emotionalCenter": "measured structural drift"
+    }
+  },
+  "debugFile": "./data/artworks-debug/2026-02-24-resonance-budget-negotiations-continue-v2.json"
+}

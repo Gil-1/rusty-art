@@ -1,0 +1,213 @@
+{
+  "id": "2026-02-13-resonance-accord-gouvernement-bruxellois",
+  "date": "2026-02-13",
+  "title": "Resonance: Accord gouvernement bruxellois",
+  "generatedAt": "2026-02-13T12:58:51.625Z",
+  "news": {
+    "source": "rtbf",
+    "title": "Accord de gouvernement bruxellois : \"tout le monde s’est rendu compte de l’urgence\", explique le formateur Georges-Louis Bouchez",
+    "link": "https://www.rtbf.be/article/accord-de-gouvernement-bruxellois-tout-le-monde-s-est-rendu-compte-de-l-urgence-explique-le-formateur-georges-louis-bouchez-11678766",
+    "score": 31
+  },
+  "inspiration": {
+    "artist": "Bridget Riley",
+    "tags": [
+      "optical",
+      "stripes",
+      "vibration"
+    ],
+    "links": {}
+  },
+  "seed": 435251901,
+  "scene": {
+    "motif": "flow",
+    "shapeCount": 101,
+    "turbulence": 0.505,
+    "spiralBias": 0.954,
+    "motionSpeed": 0.001304,
+    "bloom": 0.41,
+    "grain": 0.045,
+    "fogDensity": 0.059,
+    "distortion": 0.414,
+    "flowField": 0.595,
+    "anchorStrength": 0.632,
+    "anchorOffsetX": 0.049,
+    "layerBalance": {
+      "structure": 0.665,
+      "chaos": 0.329
+    },
+    "palette": {
+      "bg": "hsl(138, 52%, 6%)",
+      "primary": "hsl(265, 78%, 62%)",
+      "secondary": "hsl(357, 72%, 64%)",
+      "glow": "hsl(287, 92%, 74%)",
+      "anchor": "hsl(335, 88%, 70%)"
+    },
+    "shaderLayers": 4,
+    "paletteVariance": 0.78,
+    "motionSpeedNormalized": 0.526,
+    "camera": {
+      "autoRotate": true,
+      "autoRotateSpeed": 0.164,
+      "minDistance": 6,
+      "maxDistance": 24
+    },
+    "post": {
+      "vignette": 0.336,
+      "contrast": 1.137,
+      "saturation": 1.001,
+      "exposure": 1.01
+    },
+    "elements": [
+      {
+        "role": "atmosphere-field",
+        "colorA": "bg",
+        "colorB": "secondary",
+        "opacity": 0.384,
+        "intensity": 0.643,
+        "animation": {
+          "drift": 0.371
+        },
+        "moduleType": "volumetric-haze"
+      },
+      {
+        "role": "focal-anchor",
+        "motif": "flow",
+        "color": "anchor",
+        "auraColor": "glow",
+        "opacity": 0.631,
+        "size": 1.059,
+        "intensity": 0.65,
+        "animation": {
+          "rotationZ": 0.196,
+          "wobbleY": 0.133,
+          "pulse": 0.384
+        },
+        "moduleType": "anchor-core"
+      },
+      {
+        "role": "primary-signal",
+        "count": 101,
+        "spread": 5.347,
+        "jitter": 0.458,
+        "depth": 2.12,
+        "swirl": 0.486,
+        "color": "primary",
+        "size": 0.228,
+        "opacity": 0.88,
+        "blend": "additive",
+        "animation": {
+          "rotationZ": 1.409,
+          "wobbleX": 0.187
+        },
+        "moduleType": "particle-cloud"
+      },
+      {
+        "role": "echo-field",
+        "count": 75,
+        "spread": 4.431,
+        "jitter": 0.342,
+        "depth": 1.535,
+        "swirl": 0.291,
+        "color": "secondary",
+        "size": 0.106,
+        "opacity": 0.57,
+        "blend": "normal",
+        "animation": {
+          "rotationZ": -0.914,
+          "wobbleY": 0.202
+        },
+        "moduleType": "particle-cloud"
+      },
+      {
+        "role": "structural-spine",
+        "motif": "flow",
+        "emphasis": 0.632,
+        "color": "glow",
+        "opacity": 0.299,
+        "animation": {
+          "rotationZ": 0.394,
+          "wobbleY": 0.187
+        },
+        "moduleType": "motif-armature"
+      },
+      {
+        "role": "accent-gesture",
+        "color": "secondary",
+        "opacity": 0.434,
+        "intensity": 0.744,
+        "animation": {
+          "rotationZ": 0.238,
+          "pulse": 0.413
+        },
+        "moduleType": "drift-ribbon"
+      }
+    ],
+    "elementDiversity": 5
+  },
+  "sceneStrategy": null,
+  "techStack": null,
+  "newsVisualMappings": [],
+  "qualityScore": {
+    "score": 58.2,
+    "summary": "Strongest: technicalRichness (100). Watch: restraint (62.5). Penalties: low-complexity 0, unclear-expression 0.",
+    "heuristic": {
+      "score": 69.9,
+      "breakdown": {
+        "legibility": 75.9,
+        "emotionalReadability": 70.5,
+        "coherence": 89.1,
+        "focalAnchor": 69.3,
+        "technicalRichness": 100,
+        "restraint": 62.5
+      }
+    },
+    "calibration": {
+      "sampleCount": 1,
+      "trustWeight": 0.4
+    },
+    "alignment": {
+      "totalAlign": null,
+      "components": {
+        "title": {
+          "score": null
+        },
+        "style": {
+          "score": null
+        },
+        "emotional": {
+          "score": null
+        }
+      }
+    }
+  },
+  "rationale": {
+    "intent": {
+      "signal": "Signals spread across contexts and recombine.",
+      "emotion": "Alert curiosity rather than panic.",
+      "tension": "Continuity vs turbulence.",
+      "balance": "Soft gradients with a readable backbone.",
+      "motion": "Progressive drift with gentle oscillation."
+    },
+    "selection": {
+      "whyHeadline": "Selected as top-ranked Belgian headline (score 31 = frequency 31 + priority 0 + recency 0).",
+      "priorityTerms": []
+    },
+    "qualitySummary": "Strongest: technicalRichness (100). Watch: restraint (62.5). Penalties: low-complexity 0, unclear-expression 0."
+  },
+  "runPolicy": {
+    "artworksPerRun": 1,
+    "multiVariant": false
+  },
+  "artFramework": {
+    "version": 2,
+    "intent": {
+      "signal": "Signals spread across contexts and recombine.",
+      "emotion": "Alert curiosity rather than panic.",
+      "tension": "Continuity vs turbulence.",
+      "balance": "Soft gradients with a readable backbone.",
+      "motion": "Progressive drift with gentle oscillation."
+    }
+  },
+  "debugFile": "./data/artworks-debug/2026-02-13-resonance-accord-gouvernement-bruxellois.json"
+}

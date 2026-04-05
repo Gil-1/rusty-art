@@ -1,0 +1,558 @@
+{
+  "id": "2026-02-23-echoes-of-belgian-climate-package",
+  "date": "2026-02-23",
+  "title": "Echoes of Belgian climate package",
+  "generatedAt": "2026-02-23T15:48:50.655Z",
+  "news": {
+    "source": "rtbf",
+    "title": "New Belgian climate package sparks debate across regions",
+    "link": "https://example.com/rtbf-climate-package",
+    "score": 10
+  },
+  "inspiration": {
+    "artist": "Frank Stella",
+    "tags": [
+      "hard-edge abstraction",
+      "protractor arcs",
+      "structured repetition"
+    ],
+    "links": {
+      "wikipedia": "https://en.wikipedia.org/wiki/Frank_Stella",
+      "reference": "https://whitney.org/artists/1296"
+    }
+  },
+  "seed": 3106582035,
+  "scene": {
+    "motif": "grid",
+    "shapeCount": 119,
+    "turbulence": 0.476,
+    "spiralBias": 0.619,
+    "motionSpeed": 0.000504,
+    "bloom": 0.102,
+    "grain": 0.038,
+    "fogDensity": 0.092,
+    "distortion": 0.209,
+    "flowField": 0.467,
+    "anchorStrength": 0.637,
+    "anchorOffsetX": -0.156,
+    "layerBalance": {
+      "structure": 0.766,
+      "chaos": 0.352
+    },
+    "expression": {
+      "tension": 0.438,
+      "structure": 0.792,
+      "motion": 0.379,
+      "noise": 0.377,
+      "urgency": 0.18,
+      "contrast": 0.561
+    },
+    "palette": {
+      "bg": "hsl(29, 48%, 6%)",
+      "primary": "hsl(156, 78%, 62%)",
+      "secondary": "hsl(247, 70%, 64%)",
+      "glow": "hsl(176, 90%, 74%)",
+      "anchor": "hsl(193, 83%, 70%)"
+    },
+    "elements": [
+      {
+        "id": "el-04-motif-armature",
+        "moduleType": "motif-armature",
+        "capabilities": [
+          "geometric-structure",
+          "layered-field"
+        ],
+        "stackFamilies": [
+          "geometry-heavy",
+          "instancing",
+          "shader-field"
+        ],
+        "styleTags": [
+          "structure",
+          "spine"
+        ],
+        "libraryRef": "element.motif-armature.v1",
+        "color": "glow",
+        "opacity": 0.35,
+        "layer": "midground",
+        "role": "structural-spine",
+        "motif": "grid",
+        "emphasis": 0.732,
+        "animation": {
+          "rotationZ": 0.247,
+          "wobbleY": 0.148
+        },
+        "intentCadence": "steady",
+        "intensity": 0.54
+      },
+      {
+        "id": "el-06-suprematist-planes",
+        "moduleType": "suprematist-planes",
+        "capabilities": [
+          "geometric-structure",
+          "layered-field"
+        ],
+        "stackFamilies": [
+          "geometry-heavy",
+          "instancing"
+        ],
+        "styleTags": [
+          "planes",
+          "geometric"
+        ],
+        "libraryRef": "element.suprematist-planes.v1",
+        "color": "secondary",
+        "opacity": 0.431,
+        "intensity": 0.567,
+        "layer": "midground",
+        "animation": {
+          "rotationZ": 0.28,
+          "pulse": 0.246
+        },
+        "role": "structural-spine",
+        "motif": "grid"
+      },
+      {
+        "id": "el-02-anchor-core",
+        "moduleType": "anchor-core",
+        "capabilities": [
+          "focal-anchor",
+          "layered-field"
+        ],
+        "stackFamilies": [
+          "shader-field",
+          "geometry-heavy",
+          "particle-heavy",
+          "instancing",
+          "sdf-raymarch"
+        ],
+        "styleTags": [
+          "anchor",
+          "center",
+          "stability"
+        ],
+        "libraryRef": "element.anchor-core.v1",
+        "color": "anchor",
+        "opacity": 0.603,
+        "intensity": 0.712,
+        "layer": "foreground",
+        "role": "primary-signal",
+        "motif": "grid",
+        "auraColor": "glow",
+        "size": 1.116,
+        "animation": {
+          "rotationZ": 0.136,
+          "wobbleY": 0.108,
+          "pulse": 0.285
+        },
+        "intentCadence": "steady"
+      },
+      {
+        "id": "el-05-signal-weave",
+        "moduleType": "signal-weave",
+        "capabilities": [
+          "kinetic-motion",
+          "layered-field"
+        ],
+        "stackFamilies": [
+          "geometry-heavy",
+          "post-heavy",
+          "shader-field"
+        ],
+        "styleTags": [
+          "rhythm",
+          "support"
+        ],
+        "libraryRef": "element.signal-weave.v1",
+        "color": "glow",
+        "opacity": 0.615,
+        "intensity": 0.85,
+        "layer": "foreground",
+        "role": "accent-gesture",
+        "animation": {
+          "rotationZ": 0.159,
+          "pulse": 0.321
+        },
+        "motif": "grid",
+        "intentCadence": "steady"
+      },
+      {
+        "id": "el-09-instance-grid",
+        "moduleType": "instance-grid",
+        "capabilities": [
+          "geometric-structure",
+          "layered-field"
+        ],
+        "stackFamilies": [
+          "instancing",
+          "geometry-heavy"
+        ],
+        "styleTags": [
+          "instancing",
+          "grid"
+        ],
+        "libraryRef": "element.instance-grid.v1",
+        "color": "glow",
+        "opacity": 0.34,
+        "intensity": 0.52,
+        "layer": "midground",
+        "animation": {
+          "rotationZ": 0.14,
+          "pulse": 0.2
+        },
+        "role": "support-rhythm",
+        "motif": "grid"
+      },
+      {
+        "moduleType": "polyhedron-array",
+        "role": "accent-gesture",
+        "layer": "accent",
+        "color": "glow",
+        "opacity": 0.52,
+        "intensity": 0.72,
+        "animation": {
+          "rotationZ": 0.12,
+          "pulse": 0.2
+        }
+      }
+    ],
+    "shaderLayers": 3,
+    "elementDiversity": 6,
+    "paletteVariance": 0.72,
+    "motionSpeedNormalized": 0.05,
+    "camera": {
+      "autoRotate": false,
+      "autoRotateSpeed": 0.095,
+      "minDistance": 6,
+      "maxDistance": 24,
+      "cycleSeconds": 24,
+      "beats": [
+        {
+          "t": 0,
+          "radius": 12.6,
+          "theta": -0.02,
+          "phi": 1.212,
+          "hold": 1
+        },
+        {
+          "t": 0.34,
+          "radius": 10.7,
+          "theta": 0.733,
+          "phi": 1.045,
+          "hold": 0.5
+        },
+        {
+          "t": 0.68,
+          "radius": 11.2,
+          "theta": 1.477,
+          "phi": 1.312,
+          "hold": 0.8
+        },
+        {
+          "t": 1,
+          "radius": 12.2,
+          "theta": 2.391,
+          "phi": 1.139,
+          "hold": 1.1
+        }
+      ]
+    },
+    "post": {
+      "vignette": 0.346,
+      "contrast": 1.271,
+      "saturation": 1.005,
+      "exposure": 0.956,
+      "breathing": {
+        "hueShift": 0.01,
+        "saturationAmplitude": 0.06,
+        "exposureAmplitude": 0.04,
+        "phaseA": 0.0554,
+        "phaseB": 0.3981
+      }
+    },
+    "styleFingerprint": {
+      "pulseFamily": "balanced",
+      "stripeWarp": 0.14,
+      "edgeSoftness": 0.26,
+      "cameraSway": 0.16,
+      "edgeHardness": 0.5,
+      "temperatureBias": -0.24,
+      "verticalBias": 0,
+      "cadenceBias": 0
+    },
+    "seedVersion": 2,
+    "seeds": {
+      "baseSeed": 1838395112,
+      "runSeed": 3106582035,
+      "geomSeed": 3779230266,
+      "animSeed": 3906929531,
+      "colorSeed": 105996533,
+      "cameraSeed": 2046646081
+    },
+    "techStack": {
+      "id": "geometry-construct",
+      "name": "Geometry-Heavy Construct",
+      "family": "geometry-heavy",
+      "strategyFamilies": [
+        "grid",
+        "fracture",
+        "hybrid"
+      ],
+      "rationale": {
+        "signals": {
+          "conflict": 0.4,
+          "context": 1,
+          "motion": 0.45,
+          "turbulence": 0.426,
+          "structureBias": 0,
+          "densityBias": 0,
+          "edgeBias": 0,
+          "motionBias": 0,
+          "visualProfile": {
+            "profileCadence": "steady",
+            "preferredFamilies": []
+          }
+        },
+        "familyHits": 0,
+        "idHits": 0,
+        "penalties": [],
+        "visualAffinity": 0,
+        "elementCoverage": {
+          "score": 3.3000000000000003,
+          "coverage": 1,
+          "moduleCoverage": 1,
+          "missingCapabilities": []
+        },
+        "preferredFamilies": [],
+        "preferredFamilyLocked": false,
+        "notPreferredPenalty": 0
+      },
+      "dominantPrimitive": "polyhedron-array",
+      "moduleSet": [
+        "motif-armature",
+        "suprematist-planes",
+        "anchor-core",
+        "signal-weave",
+        "instance-grid",
+        "polyhedron-array"
+      ],
+      "pipelineKind": "geometry-heavy"
+    },
+    "visualProfileHints": {
+      "cadence": "steady",
+      "motionEnergy": null,
+      "preferredModules": [
+        {
+          "name": "motif-armature",
+          "weight": 0.5,
+          "reason": "fallback baseline"
+        }
+      ],
+      "preferredStackFamilies": [
+        {
+          "family": "shader-field",
+          "weight": 0.5,
+          "reason": "neutral fallback"
+        }
+      ],
+      "sourceAnalysis": {
+        "mode": "computer-vision",
+        "status": "ok",
+        "analyzedReferences": 2,
+        "failedReferences": 0,
+        "texture": {
+          "edgeEnergy": 0.042
+        },
+        "failures": [],
+        "note": null
+      }
+    },
+    "strategy": {
+      "id": "atomic-grid-lattice",
+      "name": "Institutional Lattice",
+      "type": "atomic",
+      "family": "grid",
+      "cooldown": {
+        "window": 3,
+        "recentFamilies": [],
+        "family": "grid",
+        "applied": false
+      },
+      "compositeDemanded": true,
+      "signals": {
+        "conflict": 0.368,
+        "context": 0.683,
+        "moodDepth": 0.35
+      }
+    },
+    "layers": [
+      {
+        "role": "background",
+        "modules": [
+          "volumetric-haze"
+        ]
+      },
+      {
+        "role": "midground",
+        "modules": [
+          "motif-armature",
+          "suprematist-planes"
+        ]
+      },
+      {
+        "role": "foreground",
+        "modules": [
+          "anchor-core"
+        ]
+      },
+      {
+        "role": "accent",
+        "modules": [
+          "concentric-discs",
+          "shear-ribbon"
+        ]
+      },
+      {
+        "role": "post",
+        "modules": [
+          "post-contrast"
+        ]
+      }
+    ],
+    "renderPipeline": {
+      "kind": "geometry-heavy",
+      "family": "geometry-heavy",
+      "fallback": false,
+      "dominantPrimitive": "polyhedron-array",
+      "moduleSet": [
+        "motif-armature",
+        "suprematist-planes",
+        "anchor-core",
+        "signal-weave",
+        "instance-grid",
+        "polyhedron-array"
+      ]
+    }
+  },
+  "sceneStrategy": {
+    "selected": {
+      "id": "atomic-grid-lattice",
+      "name": "Institutional Lattice",
+      "type": "atomic",
+      "family": "grid"
+    },
+    "applied": true,
+    "fallbackReason": null
+  },
+  "techStack": {
+    "id": "geometry-construct",
+    "name": "Geometry-Heavy Construct",
+    "family": "geometry-heavy"
+  },
+  "newsVisualMappings": [
+    {
+      "signal": "title evidence [climate] -> motif grid",
+      "from": "climate",
+      "visualDecision": "structural motif armature set to grid"
+    },
+    {
+      "signal": "composition foreground conflict",
+      "from": "climate",
+      "visualDecision": "foreground role tension-knot at pressure 0.228"
+    },
+    {
+      "signal": "composition midground context",
+      "from": "climate, climate, climate",
+      "visualDecision": "midground role context-drift with density 0.49"
+    },
+    {
+      "signal": "composition background mood",
+      "from": "climate, climate, climate",
+      "visualDecision": "background mood watchful depth 0.338"
+    },
+    {
+      "signal": "urgency -> motion",
+      "from": "ageHours=246.81",
+      "visualDecision": "motionSpeedNormalized=0.05"
+    },
+    {
+      "signal": "title semantics -> palette/edge cadence",
+      "from": "temp=-0.24 edge=0.5",
+      "visualDecision": "postContrast=1.271 accentType=signal-weave"
+    },
+    {
+      "signal": "article institutional/conflict polarity",
+      "from": "climate, intent-motif-hint",
+      "visualDecision": "accent element signal-weave with opacity 0.615"
+    },
+    {
+      "signal": "artist research context Frank Stella",
+      "from": "tags hard-edge abstraction, protractor arcs, structured repetition",
+      "visualDecision": "artist profile captured as metadata only; no technical routing applied"
+    }
+  ],
+  "qualityScore": {
+    "score": 55,
+    "summary": "Alignment 77.4 with strongest channel style.",
+    "heuristic": {
+      "score": 70.4,
+      "breakdown": {
+        "legibility": 72,
+        "emotionalReadability": 81.5,
+        "coherence": 85.3,
+        "focalAnchor": 67.2,
+        "technicalRichness": 91.6,
+        "restraint": 78.2,
+        "alignment": 77.4
+      }
+    },
+    "calibration": {
+      "sampleCount": 1,
+      "trustWeight": 0.4
+    },
+    "alignment": {
+      "totalAlign": 77.4,
+      "components": {
+        "title": {
+          "score": 65.1
+        },
+        "style": {
+          "score": 85.6
+        },
+        "emotional": {
+          "score": 78.8
+        }
+      }
+    }
+  },
+  "rationale": {
+    "intent": {
+      "signal": null,
+      "emotion": null,
+      "tension": null,
+      "balance": null,
+      "motion": null
+    },
+    "selection": {
+      "whyHeadline": "Selected as top-ranked Belgian headline (score 10 = frequency 7 + priority 3 + recency 0).",
+      "priorityTerms": [
+        "climate"
+      ]
+    },
+    "qualitySummary": "TOTAL_ALIGN 77.4."
+  },
+  "runPolicy": {
+    "artworksPerRun": 1,
+    "multiVariant": false
+  },
+  "artFramework": {
+    "version": 3,
+    "intent": {
+      "statement": "Frank Stella is profiled in this dossier as an influential modern artist whose work is grounded in abstraction, color, and viewer experience. In response to \"New Belgian climate package sparks debate across regions\", the artwork should translate civic signal into an abstract composition with a clear emotional center. He moved to New York City in the late 1950s, where he created works which emphasized the picture-as-object.",
+      "narrativeBridge": "Frank Philip Stella was an American painter, sculptor, and printmaker, noted for his work in the areas of minimalism and post-painterly abstraction. He developed a reductionist approach to his art, saying he wanted to demonstrate that for him, every painting is \"a flat surface with paint on it—nothing more\", and disavowed conceptions of art as a means of expressing emotion.",
+      "motifHint": "grid",
+      "emotionalCenter": "measured structural drift"
+    }
+  },
+  "debugFile": "./data/artworks-debug/2026-02-23-echoes-of-belgian-climate-package.json"
+}

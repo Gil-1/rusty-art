@@ -1,0 +1,426 @@
+{
+  "id": "2026-02-14-resonance-gouvernement-bruxellois-enfin",
+  "date": "2026-02-14",
+  "title": "Resonance: gouvernement bruxellois enfin",
+  "generatedAt": "2026-02-14T14:15:49.291Z",
+  "news": {
+    "source": "dh",
+    "title": "Un gouvernement bruxellois enfin au complet et deux changements de bourgmestre : “C’est bien que ce soit la Saint-Valentin, ça prouve un amour pour Bruxelles”",
+    "link": "https://www.dhnet.be/regions/bruxelles/2026/02/14/un-gouvernement-bruxellois-enfin-au-complet-et-deux-changements-de-bourgmestre-cest-bien-que-ce-soit-la-saint-valentin-ca-prouve-un-amour-pour-bruxelles-7VGEVAO535DUDAXQBBWXPO3IAU/",
+    "score": 121.996
+  },
+  "inspiration": {
+    "artist": "Caroline Walker",
+    "tags": [
+      "modern",
+      "visual"
+    ],
+    "links": {
+      "wikipedia": "https://en.wikipedia.org/wiki/Caroline_Walker_(artist)",
+      "reference": "https://en.wikipedia.org/wiki/Caroline_Walker_(artist)"
+    }
+  },
+  "seed": 92566402,
+  "scene": {
+    "motif": "clusters",
+    "shapeCount": 136,
+    "turbulence": 0.452,
+    "spiralBias": 0.915,
+    "motionSpeed": 0.001982,
+    "bloom": 0.289,
+    "grain": 0.038,
+    "fogDensity": 0.08,
+    "distortion": 0.602,
+    "flowField": 0.674,
+    "anchorStrength": 0.622,
+    "anchorOffsetX": 0.028,
+    "layerBalance": {
+      "structure": 0.697,
+      "chaos": 0.327
+    },
+    "expression": {
+      "tension": 0.397,
+      "structure": 0.656,
+      "motion": 0.724,
+      "noise": 0.375,
+      "urgency": 0.892,
+      "contrast": 0.281
+    },
+    "palette": {
+      "bg": "hsl(255, 48%, 6%)",
+      "primary": "hsl(8, 76%, 62%)",
+      "secondary": "hsl(128, 68%, 64%)",
+      "glow": "hsl(28, 88%, 74%)",
+      "anchor": "hsl(81, 80%, 70%)"
+    },
+    "shaderLayers": 5,
+    "paletteVariance": 0.72,
+    "motionSpeedNormalized": 0.93,
+    "camera": {
+      "autoRotate": false,
+      "autoRotateSpeed": 0.137,
+      "minDistance": 6,
+      "maxDistance": 24,
+      "cycleSeconds": 24,
+      "beats": [
+        {
+          "t": 0,
+          "radius": 12.6,
+          "theta": 0.145,
+          "phi": 1.209,
+          "hold": 1
+        },
+        {
+          "t": 0.34,
+          "radius": 10.7,
+          "theta": 0.954,
+          "phi": 1.043,
+          "hold": 0.5
+        },
+        {
+          "t": 0.68,
+          "radius": 11.2,
+          "theta": 1.716,
+          "phi": 1.309,
+          "hold": 0.8
+        },
+        {
+          "t": 1,
+          "radius": 12.2,
+          "theta": 2.224,
+          "phi": 1.137,
+          "hold": 1.1
+        }
+      ]
+    },
+    "post": {
+      "vignette": 0.345,
+      "contrast": 1.176,
+      "saturation": 0.995,
+      "exposure": 1.098,
+      "breathing": {
+        "hueShift": 0.01,
+        "saturationAmplitude": 0.06,
+        "exposureAmplitude": 0.04,
+        "phaseA": 0.7298,
+        "phaseB": 0.9775
+      }
+    },
+    "styleFingerprint": {
+      "pulseFamily": "balanced",
+      "stripeWarp": 0.14,
+      "edgeSoftness": 0.26,
+      "cameraSway": 0.16,
+      "edgeHardness": 0.5,
+      "temperatureBias": 0,
+      "verticalBias": 0,
+      "cadenceBias": 0
+    },
+    "seedVersion": 2,
+    "seeds": {
+      "baseSeed": 2954243799,
+      "runSeed": 92566402,
+      "geomSeed": 2964585777,
+      "animSeed": 446876004,
+      "colorSeed": 2087887036,
+      "cameraSeed": 1931595698
+    },
+    "strategy": {
+      "id": "atomic-fracture-pulse",
+      "name": "Fracture Pulse",
+      "type": "atomic",
+      "family": "fracture",
+      "cooldown": {
+        "window": 3,
+        "recentFamilies": [],
+        "family": "fracture",
+        "applied": false
+      },
+      "compositeDemanded": false,
+      "signals": {
+        "conflict": 0.438,
+        "context": 0.21,
+        "moodDepth": 0.35
+      }
+    },
+    "layers": [
+      {
+        "role": "background",
+        "modules": [
+          "volumetric-haze",
+          "drift-ribbon"
+        ]
+      },
+      {
+        "role": "midground",
+        "modules": [
+          "motif-armature"
+        ]
+      },
+      {
+        "role": "foreground",
+        "modules": [
+          "fault-line",
+          "anchor-core"
+        ]
+      },
+      {
+        "role": "accent",
+        "modules": [
+          "kandinsky-burst"
+        ]
+      },
+      {
+        "role": "post",
+        "modules": [
+          "post-contrast"
+        ]
+      }
+    ],
+    "elements": [
+      {
+        "role": "atmosphere-field",
+        "colorA": "bg",
+        "colorB": "secondary",
+        "opacity": 0.29,
+        "intensity": 0.664,
+        "animation": {
+          "drift": 0.404
+        },
+        "layer": "background",
+        "moduleType": "volumetric-haze"
+      },
+      {
+        "role": "echo-field",
+        "count": 50,
+        "spread": 4.196,
+        "jitter": 0.297,
+        "depth": 1.078,
+        "swirl": 0.321,
+        "color": "secondary",
+        "size": 0.09,
+        "opacity": 0.537,
+        "blend": "normal",
+        "animation": {
+          "rotationZ": -0.807,
+          "wobbleY": 0.205
+        },
+        "layer": "background",
+        "moduleType": "particle-cloud"
+      },
+      {
+        "role": "atmosphere-field",
+        "layer": "background",
+        "color": "secondary",
+        "opacity": 0.305,
+        "intensity": 0.455,
+        "animation": {
+          "rotationZ": 0.242,
+          "pulse": 0.152
+        },
+        "moduleType": "drift-ribbon"
+      },
+      {
+        "role": "primary-signal",
+        "count": 100,
+        "spread": 5.403,
+        "jitter": 0.367,
+        "depth": 1.55,
+        "swirl": 0.516,
+        "color": "primary",
+        "size": 0.199,
+        "opacity": 0.854,
+        "blend": "additive",
+        "animation": {
+          "rotationZ": 1.349,
+          "wobbleX": 0.148
+        },
+        "layer": "midground",
+        "moduleType": "particle-cloud"
+      },
+      {
+        "role": "structural-spine",
+        "motif": "clusters",
+        "emphasis": 0.661,
+        "color": "glow",
+        "opacity": 0.333,
+        "animation": {
+          "rotationZ": 0.399,
+          "wobbleY": 0.148
+        },
+        "layer": "midground",
+        "intensity": 0.518,
+        "moduleType": "motif-armature"
+      },
+      {
+        "role": "primary-signal",
+        "motif": "clusters",
+        "color": "anchor",
+        "auraColor": "glow",
+        "opacity": 0.591,
+        "size": 1.048,
+        "intensity": 0.69,
+        "animation": {
+          "rotationZ": 0.205,
+          "wobbleY": 0.108,
+          "pulse": 0.541
+        },
+        "layer": "foreground",
+        "moduleType": "anchor-core"
+      },
+      {
+        "role": "accent-gesture",
+        "color": "glow",
+        "opacity": 0.601,
+        "intensity": 0.92,
+        "animation": {
+          "rotationZ": 0.248,
+          "pulse": 0.563
+        },
+        "layer": "foreground",
+        "moduleType": "signal-weave"
+      },
+      {
+        "role": "primary-signal",
+        "layer": "foreground",
+        "color": "secondary",
+        "opacity": 0.56,
+        "intensity": 0.78,
+        "animation": {
+          "rotationZ": 0.294,
+          "pulse": 0.346
+        },
+        "moduleType": "fault-line"
+      },
+      {
+        "role": "accent-gesture",
+        "layer": "accent",
+        "color": "glow",
+        "opacity": 0.453,
+        "intensity": 0.511,
+        "animation": {
+          "rotationZ": 0.253,
+          "pulse": 0.267
+        },
+        "moduleType": "kandinsky-burst"
+      }
+    ],
+    "elementDiversity": 5
+  },
+  "sceneStrategy": {
+    "selected": {
+      "id": "atomic-fracture-pulse",
+      "name": "Fracture Pulse",
+      "type": "atomic",
+      "family": "fracture"
+    },
+    "applied": true,
+    "fallbackReason": null
+  },
+  "techStack": null,
+  "newsVisualMappings": [
+    {
+      "signal": "title evidence [gouvernement, bruxellois, enfin, complet] -> motif clusters",
+      "from": "gouvernement, bruxellois, enfin, complet",
+      "visualDecision": "structural motif armature set to clusters"
+    },
+    {
+      "signal": "composition foreground conflict",
+      "from": "gouvernement, bruxellois, enfin, complet",
+      "visualDecision": "foreground role tension-knot at pressure 0.206"
+    },
+    {
+      "signal": "composition midground context",
+      "from": "gouvernement, gouvernement",
+      "visualDecision": "midground role context-drift with density 0.425"
+    },
+    {
+      "signal": "composition background mood",
+      "from": "gouvernement, bruxellois, enfin, complet",
+      "visualDecision": "background mood watchful depth 0.334"
+    },
+    {
+      "signal": "urgency -> motion",
+      "from": "ageHours=3.01",
+      "visualDecision": "motionSpeedNormalized=0.93"
+    },
+    {
+      "signal": "title semantics -> palette/edge cadence",
+      "from": "temp=0 edge=0.5",
+      "visualDecision": "postContrast=1.176 accentType=signal-weave"
+    },
+    {
+      "signal": "article institutional/conflict polarity",
+      "from": "gouvernement",
+      "visualDecision": "accent primitive signal-weave with opacity 0.601"
+    },
+    {
+      "signal": "artist grammar Caroline Walker",
+      "from": "style card radial-burst · musical-pulse · high-contrast-prism · core-centered",
+      "visualDecision": "camera beat choreography + palette topology constrained to artist envelope"
+    }
+  ],
+  "qualityScore": {
+    "score": 56.4,
+    "summary": "Alignment 80.6 with strongest channel style.",
+    "heuristic": {
+      "score": 71.9,
+      "breakdown": {
+        "legibility": 74.7,
+        "emotionalReadability": 80.5,
+        "coherence": 87.1,
+        "focalAnchor": 69.2,
+        "technicalRichness": 100,
+        "restraint": 69.2,
+        "alignment": 80.6
+      }
+    },
+    "calibration": {
+      "sampleCount": 1,
+      "trustWeight": 0.4
+    },
+    "alignment": {
+      "totalAlign": 80.6,
+      "components": {
+        "title": {
+          "score": 75.4
+        },
+        "style": {
+          "score": 88.1
+        },
+        "emotional": {
+          "score": 75.9
+        }
+      }
+    }
+  },
+  "rationale": {
+    "intent": {
+      "signal": "Competing actors converge and diverge around temporary alliances.",
+      "emotion": "Negotiation anxiety and unstable proximity.",
+      "tension": "Fragmentation vs coalition pull.",
+      "balance": "Distributed centers with uneven gravity.",
+      "motion": "Local swarms with asynchronous tempo."
+    },
+    "selection": {
+      "whyHeadline": "Selected as top-ranked Belgian headline (score 121.996 = frequency 119 + priority 0 + recency 2.996).",
+      "priorityTerms": []
+    },
+    "qualitySummary": "TOTAL_ALIGN 80.6."
+  },
+  "runPolicy": {
+    "artworksPerRun": 1,
+    "multiVariant": false
+  },
+  "artFramework": {
+    "version": 3,
+    "intent": {
+      "signal": "Competing actors converge and diverge around temporary alliances.",
+      "emotion": "Negotiation anxiety and unstable proximity.",
+      "tension": "Fragmentation vs coalition pull.",
+      "balance": "Distributed centers with uneven gravity.",
+      "motion": "Local swarms with asynchronous tempo."
+    }
+  },
+  "debugFile": "./data/artworks-debug/2026-02-14-resonance-gouvernement-bruxellois-enfin.json"
+}

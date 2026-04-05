@@ -1,0 +1,502 @@
+{
+  "id": "2026-02-24-fragments-of-puzzle-pieces-falling-v2",
+  "date": "2026-02-24",
+  "title": "Fragments of puzzle pieces falling",
+  "generatedAt": "2026-02-24T14:00:13.610Z",
+  "news": {
+    "source": "nieuwsblad",
+    "title": "“The puzzle pieces are falling nicely into place”: despite his hat-trick and VVG Alveringem’s crushing win over rival Beaufort, Sam Vanhee does not want to talk about the title",
+    "link": "https://www.nieuwsblad.be/sport/sportregio/de-puzzelstukken-vallen-mooi-in-elkaar-sam-vanhee-wil-ondanks-hattrick-en-monsterzege-van-vvg-alveringem-tegen-concurrent-beaufort-niet-over-titel-spreken/133417420.html",
+    "score": 75.85
+  },
+  "inspiration": {
+    "artist": "Hilma af Klint",
+    "tags": [
+      "symbolic",
+      "spiral",
+      "organic"
+    ],
+    "links": {
+      "wikipedia": "https://en.wikipedia.org/wiki/Hilma_af_Klint",
+      "reference": "https://www.modernamuseet.se/stockholm/en/exhibitions/hilma-af-klint/"
+    }
+  },
+  "seed": 1181553387,
+  "scene": {
+    "motif": "flow",
+    "shapeCount": 50,
+    "turbulence": 0.413,
+    "spiralBias": 0.927,
+    "motionSpeed": 0.00163,
+    "bloom": 0.358,
+    "grain": 0.034,
+    "fogDensity": 0.042,
+    "distortion": 0.844,
+    "flowField": 0.96,
+    "anchorStrength": 0.592,
+    "anchorOffsetX": -0.197,
+    "layerBalance": {
+      "structure": 0.719,
+      "chaos": 0.235
+    },
+    "expression": {
+      "tension": 0.31,
+      "structure": 0.735,
+      "motion": 0.767,
+      "noise": 0.291,
+      "urgency": 0.984,
+      "contrast": 0.441
+    },
+    "palette": {
+      "bg": "hsl(149, 48%, 6%)",
+      "primary": "hsl(274, 76%, 61%)",
+      "secondary": "hsl(9, 68%, 63%)",
+      "glow": "hsl(294, 88%, 73%)",
+      "anchor": "hsl(326, 80%, 69%)"
+    },
+    "elements": [
+      {
+        "id": "el-01-volumetric-haze",
+        "moduleType": "volumetric-haze",
+        "capabilities": [
+          "atmosphere-plume",
+          "fluid-drift",
+          "layered-field"
+        ],
+        "stackFamilies": [
+          "shader-field",
+          "post-heavy",
+          "particle-heavy",
+          "sdf-raymarch"
+        ],
+        "styleTags": [
+          "atmosphere",
+          "depth",
+          "diffusion"
+        ],
+        "libraryRef": "element.volumetric-haze.v1",
+        "colorA": "bg",
+        "colorB": "secondary",
+        "opacity": 0.265,
+        "intensity": 0.743,
+        "layer": "background",
+        "role": "atmosphere-field",
+        "animation": {
+          "drift": 0.422
+        },
+        "motif": "flow",
+        "intentCadence": "steady"
+      },
+      {
+        "id": "el-02-anchor-core",
+        "moduleType": "anchor-core",
+        "capabilities": [
+          "focal-anchor",
+          "layered-field"
+        ],
+        "stackFamilies": [
+          "shader-field",
+          "geometry-heavy",
+          "particle-heavy",
+          "instancing",
+          "sdf-raymarch"
+        ],
+        "styleTags": [
+          "anchor",
+          "center",
+          "stability"
+        ],
+        "libraryRef": "element.anchor-core.v1",
+        "color": "anchor",
+        "opacity": 0.567,
+        "intensity": 0.67,
+        "layer": "foreground",
+        "role": "primary-signal",
+        "motif": "flow",
+        "auraColor": "glow",
+        "size": 1.087,
+        "animation": {
+          "rotationZ": 0.213,
+          "wobbleY": 0.092,
+          "pulse": 0.574
+        },
+        "intentCadence": "steady"
+      },
+      {
+        "id": "el-08-shader-field-plane",
+        "moduleType": "shader-field-plane",
+        "capabilities": [
+          "fluid-drift",
+          "layered-field"
+        ],
+        "stackFamilies": [
+          "shader-field",
+          "post-heavy",
+          "sdf-raymarch"
+        ],
+        "styleTags": [
+          "shader",
+          "field"
+        ],
+        "libraryRef": "element.shader-field-plane.v1",
+        "color": "glow",
+        "opacity": 0.34,
+        "intensity": 0.52,
+        "layer": "midground",
+        "animation": {
+          "rotationZ": 0.14,
+          "pulse": 0.2
+        },
+        "role": "support-rhythm",
+        "motif": "flow"
+      },
+      {
+        "moduleType": "flow-noise-slab",
+        "role": "structural-spine",
+        "layer": "midground",
+        "color": "secondary",
+        "opacity": 0.36,
+        "intensity": 0.56,
+        "animation": {
+          "rotationZ": 0.12,
+          "pulse": 0.2
+        }
+      }
+    ],
+    "shaderLayers": 6,
+    "elementDiversity": 4,
+    "paletteVariance": 0.72,
+    "motionSpeedNormalized": 0.72,
+    "camera": {
+      "autoRotate": false,
+      "autoRotateSpeed": 0.142,
+      "minDistance": 6,
+      "maxDistance": 24,
+      "cycleSeconds": 24,
+      "beats": [
+        {
+          "t": 0,
+          "radius": 12.6,
+          "theta": -0.045,
+          "phi": 1.202,
+          "hold": 1
+        },
+        {
+          "t": 0.34,
+          "radius": 10.7,
+          "theta": 0.7,
+          "phi": 1.038,
+          "hold": 0.5
+        },
+        {
+          "t": 0.68,
+          "radius": 11.2,
+          "theta": 1.442,
+          "phi": 1.302,
+          "hold": 0.8
+        },
+        {
+          "t": 1,
+          "radius": 12.2,
+          "theta": 2.308,
+          "phi": 1.133,
+          "hold": 1.1
+        }
+      ]
+    },
+    "post": {
+      "vignette": 0.321,
+      "contrast": 1.23,
+      "saturation": 0.974,
+      "exposure": 1.117,
+      "breathing": {
+        "hueShift": 0.01,
+        "saturationAmplitude": 0.06,
+        "exposureAmplitude": 0.04,
+        "phaseA": 0.0421,
+        "phaseB": 0.2897
+      }
+    },
+    "styleFingerprint": {
+      "pulseFamily": "balanced",
+      "stripeWarp": 0.14,
+      "edgeSoftness": 0.26,
+      "cameraSway": 0.16,
+      "edgeHardness": 0.5,
+      "temperatureBias": 0,
+      "verticalBias": -0.18,
+      "cadenceBias": 0.1
+    },
+    "seedVersion": 2,
+    "seeds": {
+      "baseSeed": 1132273827,
+      "runSeed": 1181553387,
+      "geomSeed": 3748891965,
+      "animSeed": 995052368,
+      "colorSeed": 513619032,
+      "cameraSeed": 37957198
+    },
+    "techStack": {
+      "id": "shader-field-balanced",
+      "name": "Shader Field Layering",
+      "family": "shader-field",
+      "strategyFamilies": [
+        "flow",
+        "hybrid",
+        "orbits"
+      ],
+      "rationale": {
+        "signals": {
+          "conflict": 0.286,
+          "context": 0.238,
+          "motion": 0.45,
+          "turbulence": 0.426,
+          "structureBias": 0,
+          "densityBias": 0,
+          "edgeBias": 0,
+          "motionBias": 0,
+          "visualProfile": {
+            "profileCadence": null,
+            "preferredFamilies": []
+          }
+        },
+        "familyHits": 0,
+        "idHits": 0,
+        "penalties": [],
+        "visualAffinity": 0,
+        "elementCoverage": {
+          "score": 2.388571428571429,
+          "coverage": 0.8,
+          "moduleCoverage": 0.571,
+          "missingCapabilities": [
+            "geometric-structure"
+          ]
+        },
+        "preferredFamilies": [],
+        "preferredFamilyLocked": false,
+        "notPreferredPenalty": 0
+      },
+      "dominantPrimitive": "shader-field-plane",
+      "moduleSet": [
+        "volumetric-haze",
+        "anchor-core",
+        "shader-field-plane",
+        "flow-noise-slab"
+      ],
+      "pipelineKind": "shader-field"
+    },
+    "visualProfileHints": {
+      "cadence": "kinetic",
+      "motionEnergy": null,
+      "preferredModules": [
+        {
+          "name": "motif-armature",
+          "weight": 0.5,
+          "reason": "fallback baseline"
+        }
+      ],
+      "preferredStackFamilies": [
+        {
+          "family": "shader-field",
+          "weight": 0.5,
+          "reason": "neutral fallback"
+        }
+      ],
+      "sourceAnalysis": {
+        "mode": "computer-vision",
+        "status": "ok",
+        "analyzedReferences": 4,
+        "failedReferences": 0,
+        "texture": {
+          "edgeEnergy": 0.012
+        },
+        "failures": [],
+        "note": null
+      }
+    },
+    "strategy": {
+      "id": "atomic-balanced-flow",
+      "name": "Balanced Flow Field",
+      "type": "atomic",
+      "family": "flow",
+      "cooldown": {
+        "window": 3,
+        "recentFamilies": [],
+        "family": "flow",
+        "applied": false
+      },
+      "compositeDemanded": false,
+      "signals": {
+        "conflict": 0.304,
+        "context": 0.264,
+        "moodDepth": 0.35
+      }
+    },
+    "layers": [
+      {
+        "role": "background",
+        "modules": [
+          "volumetric-haze"
+        ]
+      },
+      {
+        "role": "midground",
+        "modules": [
+          "motif-armature",
+          "signal-weave"
+        ]
+      },
+      {
+        "role": "foreground",
+        "modules": [
+          "anchor-core",
+          "drift-ribbon"
+        ]
+      },
+      {
+        "role": "accent",
+        "modules": [
+          "orbit-ribbon"
+        ]
+      },
+      {
+        "role": "post",
+        "modules": [
+          "post-breathing"
+        ]
+      }
+    ],
+    "renderPipeline": {
+      "kind": "shader-field",
+      "family": "shader-field",
+      "fallback": false,
+      "dominantPrimitive": "shader-field-plane",
+      "moduleSet": [
+        "volumetric-haze",
+        "anchor-core",
+        "shader-field-plane",
+        "flow-noise-slab"
+      ]
+    }
+  },
+  "sceneStrategy": {
+    "selected": {
+      "id": "atomic-balanced-flow",
+      "name": "Balanced Flow Field",
+      "type": "atomic",
+      "family": "flow"
+    },
+    "applied": true,
+    "fallbackReason": null
+  },
+  "techStack": {
+    "id": "shader-field-balanced",
+    "name": "Shader Field Layering",
+    "family": "shader-field"
+  },
+  "newsVisualMappings": [
+    {
+      "signal": "title evidence [vallen, mooi, elkaar, hattrick] -> motif flow",
+      "from": "vallen, mooi, elkaar, hattrick",
+      "visualDecision": "structural motif armature set to flow"
+    },
+    {
+      "signal": "composition foreground conflict",
+      "from": "vallen, mooi, elkaar, hattrick",
+      "visualDecision": "foreground role tension-knot at pressure 0.18"
+    },
+    {
+      "signal": "composition midground context",
+      "from": "vallen, mooi, elkaar, hattrick",
+      "visualDecision": "midground role context-drift with density 0.353"
+    },
+    {
+      "signal": "composition background mood",
+      "from": "vallen, mooi, elkaar, hattrick",
+      "visualDecision": "background mood watchful depth 0.317"
+    },
+    {
+      "signal": "urgency -> motion",
+      "from": "ageHours=0.45",
+      "visualDecision": "motionSpeedNormalized=0.72"
+    },
+    {
+      "signal": "title semantics -> palette/edge cadence",
+      "from": "temp=0 edge=0.5",
+      "visualDecision": "postContrast=1.23 accentType=n/a"
+    },
+    {
+      "signal": "article institutional/conflict polarity",
+      "from": "vallen, mooi, elkaar, hattrick",
+      "visualDecision": "accent element n/a with opacity n/a"
+    },
+    {
+      "signal": "artist research context Hilma af Klint",
+      "from": "tags symbolic, spiral, organic",
+      "visualDecision": "artist profile captured as metadata only; no technical routing applied"
+    }
+  ],
+  "qualityScore": {
+    "score": 54.7,
+    "summary": "Alignment 74.2 with strongest channel style.",
+    "heuristic": {
+      "score": 70.1,
+      "breakdown": {
+        "legibility": 75.5,
+        "emotionalReadability": 78.4,
+        "coherence": 90.7,
+        "focalAnchor": 63.8,
+        "technicalRichness": 100,
+        "restraint": 66.4,
+        "alignment": 74.2
+      }
+    },
+    "calibration": {
+      "sampleCount": 1,
+      "trustWeight": 0.4
+    },
+    "alignment": {
+      "totalAlign": 74.2,
+      "components": {
+        "title": {
+          "score": 61
+        },
+        "style": {
+          "score": 87.1
+        },
+        "emotional": {
+          "score": 70.3
+        }
+      }
+    }
+  },
+  "rationale": {
+    "intent": {
+      "signal": null,
+      "emotion": null,
+      "tension": null,
+      "balance": null,
+      "motion": null
+    },
+    "selection": {
+      "whyHeadline": "Selected as top-ranked Belgian headline (score 75.85 = frequency 72 + priority 0 + recency 3.85).",
+      "priorityTerms": []
+    },
+    "qualitySummary": "TOTAL_ALIGN 74.2."
+  },
+  "runPolicy": {
+    "artworksPerRun": 1,
+    "multiVariant": false
+  },
+  "artFramework": {
+    "version": 3,
+    "intent": {
+      "statement": "Hilma af Klint did not ascribe to any of the established avant-garde movements of her time. In response to \"“The puzzle pieces are falling nicely into place”: despite his hat-trick and VVG Alveringem’s crushing win over rival Beaufort, Sam Vanhee does not want to talk about the title\", the artwork should translate civic signal into an abstract composition with a clear emotional center. Paintings for the Temple (paintings by Hilma af Klint) Af Klint concluded Paintings for the Temple with a triptych she called Altarpieces, featuring geometric shapes, bold primary colors, and gold leaf.",
+      "narrativeBridge": "Paintings for the Temple (paintings by Hilma af Klint) Af Klint concluded Paintings for the Temple with a triptych she called Altarpieces, featuring geometric shapes, bold primary colors, and gold leaf. Paintings for the Temple (paintings by Hilma af Klint) Af Klint concluded Paintings for the Temple with a triptych she called Altarpieces, featuring geometric shapes, bold primary colors, and gold leaf.",
+      "motifHint": "tegen",
+      "emotionalCenter": "measured structural drift",
+      "motifPressure": "medium"
+    }
+  },
+  "debugFile": "./data/artworks-debug/2026-02-24-fragments-of-puzzle-pieces-falling-v2.json"
+}

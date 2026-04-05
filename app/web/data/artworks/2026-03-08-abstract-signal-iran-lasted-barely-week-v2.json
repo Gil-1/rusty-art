@@ -1,0 +1,860 @@
+{
+  "id": "2026-03-08-abstract-signal-iran-lasted-barely-week-v2",
+  "date": "2026-03-08",
+  "title": "Abstract Signal: Iran lasted barely week",
+  "generatedAt": "2026-03-08T16:57:17.373Z",
+  "news": {
+    "source": "vrt",
+    "title": "War against Iran has lasted barely a week and an oil crisis no longer seems far off: \"Risk of a much bigger shock is real\"",
+    "link": "https://vrtnws.be/p.vLe8W4v4p",
+    "score": 151.036
+  },
+  "inspiration": {
+    "artist": "Clyfford Still",
+    "tags": [
+      "abstract",
+      "surreal",
+      "expressionist",
+      "figurative",
+      "surrealist"
+    ],
+    "links": {
+      "wikipedia": "https://en.wikipedia.org/wiki/Clyfford_Still",
+      "reference": "http://www.clyffordstill.net/"
+    }
+  },
+  "seed": 3149617685,
+  "scene": {
+    "motif": "fracture",
+    "shapeCount": 88,
+    "turbulence": 0.639,
+    "spiralBias": 0.877,
+    "motionSpeed": 0.001653,
+    "bloom": 0.22,
+    "grain": 0.051,
+    "fogDensity": 0.076,
+    "distortion": 0.16,
+    "flowField": 0.28,
+    "anchorStrength": 0.679,
+    "anchorOffsetX": -0.057,
+    "layerBalance": {
+      "structure": 0.589,
+      "chaos": 0.398
+    },
+    "expression": {
+      "tension": 0.622,
+      "structure": 0.385,
+      "motion": 0.694,
+      "noise": 0.619,
+      "urgency": 0.575,
+      "contrast": 0.392
+    },
+    "palette": {
+      "bg": "#0f0d0b",
+      "primary": "#2a1d1a",
+      "secondary": "#9a6a2f",
+      "glow": "#c64a2a",
+      "anchor": "#d9c98d"
+    },
+    "elements": [
+      {
+        "id": "el-01-cm.still-cleft-monolith.v1",
+        "moduleType": "cm.still-cleft-monolith.v1",
+        "capabilities": [],
+        "stackFamilies": [],
+        "styleTags": [],
+        "libraryRef": null,
+        "columns": 5,
+        "spread": 1.4,
+        "heightBias": 0.94,
+        "tearDepth": 0.48,
+        "color": "primary",
+        "opacity": 0.95,
+        "intensity": 0.9,
+        "animation": {
+          "rotationZ": 0.02,
+          "pulse": 0.05,
+          "wobbleX": 0.03,
+          "wobbleY": 0.02,
+          "drift": 0.08
+        },
+        "techniqueRef": "t.cleft-monoliths",
+        "role": "structural-spine",
+        "layer": "midground",
+        "motif": "fracture",
+        "intentCadence": "steady"
+      },
+      {
+        "id": "el-02-agent-shader-plane",
+        "moduleType": "agent-shader-plane",
+        "capabilities": [],
+        "stackFamilies": [],
+        "styleTags": [],
+        "libraryRef": null,
+        "scale": [
+          2.6,
+          2.1,
+          1
+        ],
+        "offset": [
+          0,
+          0,
+          -0.4
+        ],
+        "color": "secondary",
+        "opacity": 0.48,
+        "intensity": 0.56,
+        "animation": {
+          "pulse": 0.08,
+          "wobbleX": 0.02,
+          "wobbleY": 0.02,
+          "drift": 0.06
+        },
+        "techniqueRef": "t.pressure-plane",
+        "role": "atmosphere-field",
+        "layer": "background",
+        "motif": "fracture",
+        "intentCadence": "steady"
+      },
+      {
+        "id": "el-03-cm.tar-seam-anchor.v1",
+        "moduleType": "cm.tar-seam-anchor.v1",
+        "capabilities": [],
+        "stackFamilies": [],
+        "styleTags": [],
+        "libraryRef": null,
+        "position": [
+          0.08,
+          -0.24,
+          0.18
+        ],
+        "scale": 0.78,
+        "color": "anchor",
+        "opacity": 0.9,
+        "intensity": 0.74,
+        "animation": {
+          "pulse": 0.07,
+          "wobbleX": 0.01,
+          "wobbleY": 0.01,
+          "drift": 0.03
+        },
+        "techniqueRef": "t.tar-anchor",
+        "role": "focal-anchor",
+        "layer": "foreground",
+        "motif": "fracture",
+        "intentCadence": "steady"
+      },
+      {
+        "id": "el-04-particle-cloud",
+        "moduleType": "particle-cloud",
+        "capabilities": [
+          "clustered-actors",
+          "debris-particles",
+          "kinetic-motion"
+        ],
+        "stackFamilies": [
+          "particle-heavy",
+          "instancing",
+          "shader-field"
+        ],
+        "styleTags": [
+          "particles",
+          "field",
+          "noise"
+        ],
+        "libraryRef": "element.particle-cloud.v1",
+        "color": "glow",
+        "opacity": 0.22,
+        "intensity": 0.32,
+        "layer": "accent",
+        "count": 160,
+        "spread": 1.2,
+        "height": 0.9,
+        "animation": {
+          "pulse": 0.11,
+          "wobbleX": 0.05,
+          "wobbleY": 0.05,
+          "drift": 0.2
+        },
+        "techniqueRef": "t.ash-residue",
+        "role": "support-rhythm",
+        "motif": "fracture",
+        "intentCadence": "steady"
+      },
+      {
+        "id": "el-05-cm.low-sun-rake.v1",
+        "moduleType": "cm.low-sun-rake.v1",
+        "capabilities": [],
+        "stackFamilies": [],
+        "styleTags": [],
+        "libraryRef": null,
+        "ambient": 0.17,
+        "rim": 0.28,
+        "color": "anchor",
+        "opacity": 0.95,
+        "intensity": 0.68,
+        "animation": {},
+        "techniqueRef": "t.rake-light",
+        "role": "atmosphere-field",
+        "layer": "background",
+        "motif": "fracture",
+        "intentCadence": "steady"
+      }
+    ],
+    "shaderLayers": 4,
+    "elementDiversity": 5,
+    "paletteVariance": 0,
+    "motionSpeedNormalized": 0.74,
+    "camera": {
+      "autoRotate": false,
+      "autoRotateSpeed": 0.133,
+      "minDistance": 6,
+      "maxDistance": 24,
+      "cycleSeconds": 24,
+      "beats": [
+        {
+          "t": 0,
+          "radius": 12.6,
+          "theta": 0.069,
+          "phi": 1.225,
+          "hold": 1
+        },
+        {
+          "t": 0.34,
+          "radius": 10.7,
+          "theta": 0.852,
+          "phi": 1.056,
+          "hold": 0.5
+        },
+        {
+          "t": 0.68,
+          "radius": 11.2,
+          "theta": 1.606,
+          "phi": 1.325,
+          "hold": 0.8
+        },
+        {
+          "t": 1,
+          "radius": 12.2,
+          "theta": 2.385,
+          "phi": 1.147,
+          "hold": 1.1
+        }
+      ],
+      "target": [
+        0,
+        0.06,
+        0
+      ]
+    },
+    "post": {
+      "vignette": 0.27,
+      "contrast": 1.197,
+      "saturation": 0.84,
+      "exposure": 0.95,
+      "breathing": {
+        "hueShift": 0.01,
+        "saturationAmplitude": 0.06,
+        "exposureAmplitude": 0.04,
+        "phaseA": 0.129,
+        "phaseB": 0.7544
+      }
+    },
+    "styleFingerprint": {
+      "pulseFamily": "balanced",
+      "stripeWarp": 0.14,
+      "edgeSoftness": 0.26,
+      "cameraSway": 0.16,
+      "edgeHardness": 0.64,
+      "temperatureBias": 0.48,
+      "verticalBias": 0,
+      "cadenceBias": 0.1
+    },
+    "sceneAuthoring": {
+      "mode": "agent-dsl",
+      "planner": "openclaw-agent-scene-planner",
+      "representation": {
+        "id": "rep.embargo-seam",
+        "label": "Embargo Seam",
+        "description": "A heavy wall of torn earth tones is split by a thin ember seam, turning macroeconomic fear into a restrained geological wound.",
+        "scoreHint": 0.86,
+        "motif": "vertical fracture",
+        "cadence": "steady",
+        "rationale": {
+          "headlineSignal": "A fast conflict threatens slower, wider systemic consequences.",
+          "artistEcho": "Jagged vertical masses and dry chromatic fields echo Still without imitation."
+        },
+        "techniques": [
+          {
+            "id": "t.cleft-monoliths",
+            "name": "Cleft Monolith Field",
+            "type": "geometry",
+            "purpose": "Create the dominant torn body.",
+            "reuseModuleType": null,
+            "params": {
+              "columns": 5,
+              "tearDepth": 0.48,
+              "spread": 1.4
+            }
+          },
+          {
+            "id": "t.pressure-plane",
+            "name": "Pressure Strata Plane",
+            "type": "shader",
+            "purpose": "Introduce background heat and systemic tension.",
+            "reuseModuleType": null,
+            "params": {
+              "banding": 8,
+              "fractureFreq": 4.4
+            }
+          },
+          {
+            "id": "t.tar-anchor",
+            "name": "Tar Seam Anchor",
+            "type": "geometry",
+            "purpose": "Hold the eye at the fissure.",
+            "reuseModuleType": null,
+            "params": {
+              "scale": 0.78,
+              "tilt": 0.04
+            }
+          },
+          {
+            "id": "t.ash-residue",
+            "name": "Ash Residue Drift",
+            "type": "particle",
+            "purpose": "Keep the air active but sparse.",
+            "reuseModuleType": null,
+            "params": {
+              "count": 160,
+              "drift": 0.18
+            }
+          },
+          {
+            "id": "t.rake-light",
+            "name": "Low Sun Rake",
+            "type": "lighting",
+            "purpose": "Carve edge contrast.",
+            "reuseModuleType": null,
+            "params": {
+              "ambient": 0.17,
+              "rim": 0.28
+            }
+          }
+        ]
+      },
+      "artisticIntent": {
+        "statement": "Translate the headline into a restrained field of civic dread: not spectacle, but a slow widening tear where energy, war, and consequence meet. The work borrows Clyfford Still’s jagged vertical ruptures and dry chromatic gravity to stage a looming systems shock rather than a literal battlefield.",
+        "motif": "Fractured monoliths split by ember seams",
+        "emotionalArc": "Compressed stability gives way to a thin rupture, then settles into uneasy, heat-retaining stillness.",
+        "compositionLogic": "Build the scene as asymmetrical vertical masses with torn edges, leaving negative space to carry pressure. A narrow luminous seam acts as the emotional center, while sparse ash and raking light suggest a shock propagating through material rather than an event "
+      },
+      "executionPlan": {
+        "palette": {
+          "bg": "#0f0d0b",
+          "primary": "#2a1d1a",
+          "secondary": "#9a6a2f",
+          "glow": "#c64a2a",
+          "anchor": "#d9c98d"
+        },
+        "camera": {
+          "autoRotate": false,
+          "cycleSeconds": 24,
+          "target": [
+            0,
+            0.06,
+            0
+          ]
+        },
+        "post": {
+          "contrast": 1.12,
+          "saturation": 0.84,
+          "vignette": 0.27,
+          "exposure": 0.95
+        },
+        "global": {
+          "shapeCountHint": 88,
+          "flowField": 0.28,
+          "distortion": 0.16,
+          "bloom": 0.22
+        },
+        "techniques": [
+          {
+            "id": "t.cleft-monoliths",
+            "name": "Cleft Monolith Field",
+            "type": "geometry",
+            "purpose": "Establish Still-like torn vertical masses as the structural body of the piece.",
+            "reuseModuleType": "cm.still-cleft-monolith.v1",
+            "params": {
+              "columns": 5,
+              "tearDepth": 0.46,
+              "edgeJitter": 0.2,
+              "verticalBias": 0.9
+            }
+          },
+          {
+            "id": "t.pressure-plane",
+            "name": "Pressure Strata Plane",
+            "type": "shader",
+            "purpose": "Lay a restrained field of subterranean pressure and stratified heat behind the main forms.",
+            "reuseModuleType": "agent-shader-plane",
+            "params": {
+              "banding": 9,
+              "fractureFreq": 4.6,
+              "glowBias": 0.68
+            }
+          },
+          {
+            "id": "t.tar-anchor",
+            "name": "Tar Seam Anchor",
+            "type": "geometry",
+            "purpose": "Place a dense focal wedge at the rupture to hold the eye and imply resource gravity.",
+            "reuseModuleType": "cm.tar-seam-anchor.v1",
+            "params": {
+              "scale": 0.72,
+              "tilt": 0.06,
+              "notch": 0.18
+            }
+          },
+          {
+            "id": "t.ash-residue",
+            "name": "Ash Residue Drift",
+            "type": "particle",
+            "purpose": "Add minimal suspended matter so the scene breathes without becoming decorative.",
+            "reuseModuleType": "particle-cloud",
+            "params": {
+              "count": 180,
+              "spread": 1.4,
+              "size": 0.018,
+              "drift": 0.22
+            }
+          },
+          {
+            "id": "t.rake-light",
+            "name": "Low Sun Rake",
+            "type": "lighting",
+            "purpose": "Rake across torn edges to separate masses and emphasize dryness, age, and stress.",
+            "reuseModuleType": "cm.low-sun-rake.v1",
+            "params": {
+              "ambient": 0.18,
+              "rim": 0.26
+            }
+          }
+        ]
+      },
+      "moduleOverrides": [
+        {
+          "id": "ov.agent-shader-plane.fracture-strata.v1",
+          "target": {
+            "moduleType": "agent-shader-plane",
+            "elementId": null
+          },
+          "mode": "replace",
+          "params": {
+            "visibleNovelty": "high",
+            "blend": "normal"
+          },
+          "uniforms": {
+            "uFractureFreq": 4.6,
+            "uStrataTilt": 0.14,
+            "uGlowBias": 0.68,
+            "uBanding": 9
+          },
+          "glsl": {
+            "fragment": "precision highp float; varying vec2 vUv; uniform float uTime; uniform float uFractureFreq; uniform float uStrataTilt; uniform float uGlowBias; uniform float uBanding; float hash(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453123);} float noise(vec2 p){vec2 i=floor(p); vec2 f=fract(p); vec2 u=f*f*(3.0-2.0*f); return mix(mix(hash(i+vec2(0.0,0.0)),hash(i+vec2(1.0,0.0)),u.x),mix(hash(i+vec2(0.0,1.0)),hash(i+vec2(1.0,1.0)),u.x),u.y);} void main(){vec2 uv=vUv; uv.x += (uv.y-0.5)*uStrataTilt; float n=noise(uv*vec2(uFractureFreq,2.4)); float bands=abs(sin((uv.y+n*0.16)*uBanding)); float seam=smoothstep(0.47,0.505,n)-smoothstep(0.505,0.54,n); vec3 bg=vec3(0.06,0.05,0.04); vec3 primary=vec3(0.165,0.114,0.102); vec3 secondary=vec3(0.604,0.416,0.184); vec3 glow=vec3(0.776,0.290,0.165); vec3 col=mix(primary,secondary,bands*0.18 + pow(max(uv.y,0.0),1.7)*0.07); col=mix(bg,col,0.88); col += glow*seam*uGlowBias; float alpha=0.78 + seam*0.14; gl_FragColor=vec4(col,alpha);}"
+          }
+        },
+        {
+          "id": "ov.particle-cloud.ash-flicker.v1",
+          "target": {
+            "moduleType": "particle-cloud",
+            "elementId": null
+          },
+          "mode": "hooks",
+          "params": {
+            "blend": "soft-add",
+            "visibleNovelty": "medium"
+          },
+          "uniforms": {
+            "uAshFlicker": 0.18,
+            "uAshWarmth": 0.22
+          },
+          "hooks": {
+            "fragmentColor": "color.rgb = mix(color.rgb, color.rgb * 0.74 + vec3(0.16, 0.06, 0.02), uAshWarmth); color.a *= 0.82 + 0.18 * sin(uTime * 0.65 + instanceSeed * 6.2831);",
+            "pointSize": "size *= mix(0.88, 1.18, fract(instanceSeed * 17.13));"
+          }
+        }
+      ],
+      "customModules": [
+        {
+          "id": "cm.still-cleft-monolith.v1",
+          "family": "geometry",
+          "kind": "dsl",
+          "allowOverride": false,
+          "seedPolicy": "deterministic",
+          "paramsSchema": {
+            "columns": {
+              "type": "number",
+              "min": 2,
+              "max": 8,
+              "default": 5
+            },
+            "tearDepth": {
+              "type": "number",
+              "min": 0,
+              "max": 1,
+              "default": 0.46
+            },
+            "edgeJitter": {
+              "type": "number",
+              "min": 0,
+              "max": 0.5,
+              "default": 0.2
+            },
+            "verticalBias": {
+              "type": "number",
+              "min": 0.5,
+              "max": 1,
+              "default": 0.9
+            },
+            "spread": {
+              "type": "number",
+              "min": 0.6,
+              "max": 2,
+              "default": 1.3
+            }
+          },
+          "source": {
+            "dsl": {
+              "generator": "jaggedMonolithField",
+              "profile": "still-fracture",
+              "columns": 5,
+              "tearDepth": 0.46,
+              "edgeJitter": 0.2,
+              "verticalBias": 0.9,
+              "spread": 1.3,
+              "depthLayers": 3,
+              "baseLift": -0.08
+            },
+            "glsl": {},
+            "js": null
+          },
+          "budgets": {
+            "maxInstances": 24,
+            "maxShaderOpsHint": 0.45,
+            "mobileSafe": true
+          }
+        },
+        {
+          "id": "cm.tar-seam-anchor.v1",
+          "family": "geometry",
+          "kind": "dsl",
+          "allowOverride": false,
+          "seedPolicy": "deterministic",
+          "paramsSchema": {
+            "scale": {
+              "type": "number",
+              "min": 0.2,
+              "max": 1.2,
+              "default": 0.72
+            },
+            "tilt": {
+              "type": "number",
+              "min": -0.3,
+              "max": 0.3,
+              "default": 0.06
+            },
+            "notch": {
+              "type": "number",
+              "min": 0,
+              "max": 0.4,
+              "default": 0.18
+            }
+          },
+          "source": {
+            "dsl": {
+              "generator": "wedgeAnchor",
+              "profile": "dense-seam",
+              "scale": 0.72,
+              "tilt": 0.06,
+              "notch": 0.18,
+              "facetCount": 5,
+              "edgeSharpness": 0.84
+            },
+            "glsl": {},
+            "js": null
+          },
+          "budgets": {
+            "maxInstances": 6,
+            "maxShaderOpsHint": 0.18,
+            "mobileSafe": true
+          }
+        },
+        {
+          "id": "cm.low-sun-rake.v1",
+          "family": "lighting",
+          "kind": "dsl",
+          "allowOverride": false,
+          "seedPolicy": "deterministic",
+          "paramsSchema": {
+            "ambient": {
+              "type": "number",
+              "min": 0,
+              "max": 1,
+              "default": 0.18
+            },
+            "rim": {
+              "type": "number",
+              "min": 0,
+              "max": 1,
+              "default": 0.26
+            }
+          },
+          "source": {
+            "dsl": {
+              "lighting": {
+                "model": "dual-rake",
+                "key": {
+                  "color": "anchor",
+                  "intensity": 1.15,
+                  "position": [
+                    -2.4,
+                    1.1,
+                    1.8
+                  ]
+                },
+                "fill": {
+                  "color": "secondary",
+                  "intensity": 0.38,
+                  "position": [
+                    1.7,
+                    -0.2,
+                    1.2
+                  ]
+                },
+                "ambient": 0.18,
+                "rim": 0.26
+              }
+            },
+            "glsl": {},
+            "js": null
+          },
+          "budgets": {
+            "maxInstances": 1,
+            "maxShaderOpsHint": 0.08,
+            "mobileSafe": true
+          }
+        }
+      ],
+      "policyPasses": {
+        "advisoryOnly": true,
+        "skipped": [
+          "focal-hierarchy",
+          "envelope-clamp",
+          "composition-plan",
+          "artist-visual-profile",
+          "scene-element-module-enforcement",
+          "stack-pipeline-apply",
+          "gap-focused-pass",
+          "artist-hard-constraints"
+        ]
+      }
+    },
+    "seedVersion": 2,
+    "seeds": {
+      "baseSeed": 2308414046,
+      "runSeed": 3149617685,
+      "geomSeed": 312741377,
+      "animSeed": 3068123700,
+      "colorSeed": 3860783692,
+      "cameraSeed": 618438050
+    },
+    "customModuleReport": {
+      "declaredCustomModules": 3,
+      "accepted": [
+        {
+          "id": "cm.still-cleft-monolith.v1",
+          "family": "geometry",
+          "kind": "dsl",
+          "fingerprint": "ef8824b8"
+        },
+        {
+          "id": "cm.tar-seam-anchor.v1",
+          "family": "geometry",
+          "kind": "dsl",
+          "fingerprint": "cdf163dc"
+        },
+        {
+          "id": "cm.low-sun-rake.v1",
+          "family": "lighting",
+          "kind": "dsl",
+          "fingerprint": "ce7fdc31"
+        }
+      ],
+      "rejected": [],
+      "moduleOverrideCount": 2,
+      "fingerprint": "9250d1e6"
+    },
+    "techStack": {
+      "id": "sdf-raymarch-lite",
+      "name": "SDF/Raymarch Lite",
+      "family": "sdf-raymarch",
+      "strategyFamilies": [
+        "orbits",
+        "flow",
+        "hybrid"
+      ],
+      "rationale": {
+        "source": "loop-adjustment-alternate-stack",
+        "score": 2.2848,
+        "penalties": [
+          "context<0.2"
+        ]
+      },
+      "dominantPrimitive": "cm.still-cleft-monolith.v1",
+      "moduleSet": [
+        "cm.still-cleft-monolith.v1",
+        "agent-shader-plane",
+        "cm.tar-seam-anchor.v1",
+        "particle-cloud",
+        "cm.low-sun-rake.v1"
+      ],
+      "pipelineKind": "sdf-raymarch"
+    },
+    "renderPipeline": {
+      "kind": "sdf-raymarch",
+      "family": "sdf-raymarch",
+      "fallback": false,
+      "advisoryOnly": true,
+      "dominantPrimitive": "cm.still-cleft-monolith.v1",
+      "moduleSet": [
+        "cm.still-cleft-monolith.v1",
+        "agent-shader-plane",
+        "cm.tar-seam-anchor.v1",
+        "particle-cloud",
+        "cm.low-sun-rake.v1"
+      ]
+    }
+  },
+  "sceneStrategy": {
+    "selected": {
+      "id": "atomic-balanced-flow",
+      "name": "Balanced Flow Field",
+      "type": "atomic",
+      "family": "flow"
+    },
+    "applied": false,
+    "fallbackReason": "agent-authored-scene-elements"
+  },
+  "techStack": {
+    "id": "sdf-raymarch-lite",
+    "name": "SDF/Raymarch Lite",
+    "family": "sdf-raymarch"
+  },
+  "newsVisualMappings": [
+    {
+      "signal": "title evidence [oliecrisis] -> motif fracture",
+      "from": "oliecrisis",
+      "visualDecision": "structural motif armature set to fracture"
+    },
+    {
+      "signal": "composition foreground conflict",
+      "from": "war, crisis, oliecrisis",
+      "visualDecision": "foreground role tension-knot at pressure 0.563"
+    },
+    {
+      "signal": "composition midground context",
+      "from": "oliecrisis",
+      "visualDecision": "midground role context-drift with density 0.2"
+    },
+    {
+      "signal": "composition background mood",
+      "from": "risk",
+      "visualDecision": "background mood watchful depth 0.511"
+    },
+    {
+      "signal": "urgency -> motion",
+      "from": "ageHours=11.89",
+      "visualDecision": "motionSpeedNormalized=0.74"
+    },
+    {
+      "signal": "title semantics -> palette/edge cadence",
+      "from": "temp=0.48 edge=0.64",
+      "visualDecision": "postContrast=1.197 accentType=n/a"
+    },
+    {
+      "signal": "article institutional/conflict polarity",
+      "from": "crisis, intent-motif-hint",
+      "visualDecision": "accent element n/a with opacity n/a"
+    },
+    {
+      "signal": "artist research context Clyfford Still",
+      "from": "tags abstract, surreal, expressionist, figurative, surrealist",
+      "visualDecision": "artist profile captured as metadata only; no technical routing applied"
+    }
+  ],
+  "qualityScore": {
+    "score": 54.8,
+    "summary": "Alignment 77.4 with strongest channel style.",
+    "heuristic": {
+      "score": 70.2,
+      "breakdown": {
+        "legibility": 74.3,
+        "emotionalReadability": 76.9,
+        "coherence": 85.5,
+        "focalAnchor": 71.8,
+        "technicalRichness": 92.6,
+        "restraint": 70.8,
+        "alignment": 77.4
+      }
+    },
+    "calibration": {
+      "sampleCount": 1,
+      "trustWeight": 0.4
+    },
+    "alignment": {
+      "totalAlign": 77.4,
+      "components": {
+        "title": {
+          "score": 61.5
+        },
+        "style": {
+          "score": 87.7
+        },
+        "emotional": {
+          "score": 79.6
+        }
+      }
+    }
+  },
+  "rationale": {
+    "intent": {
+      "signal": null,
+      "emotion": null,
+      "tension": null,
+      "balance": null,
+      "motion": null
+    },
+    "selection": {
+      "whyHeadline": "Selected as top-ranked Belgian headline (score 151.036 = frequency 148 + priority 3 + recency 0.036).",
+      "priorityTerms": [
+        "oliecrisis"
+      ]
+    },
+    "qualitySummary": "TOTAL_ALIGN 77.4."
+  },
+  "runPolicy": {
+    "artworksPerRun": 1,
+    "multiVariant": false
+  },
+  "artFramework": {
+    "version": 3,
+    "intent": {
+      "statement": "Clyfford Still, born on November 30, 1904, in Grandin, North Dakota, emerged as one of the most influential American artists of the 20th century, playing a pivotal role in shaping the trajectory of abstract expression... In response to \"War against Iran has lasted barely a week and an oil crisis no longer seems far off: \"Risk of a much bigger shock is real\"\", the artwork should translate civic signal into an abstract composition with a clear emotional center. Clyfford Still, born on November 30, 1904, in Grandin, North Dakota, emerged as one of the most influential American artists of the 20th century, playing a pivotal role in shaping the trajectory of abstract expression...",
+      "narrativeBridge": "Clyfford Still Art Artist Paintings Biography Abstract Expressionism CLYFFORD STILL Master of Abstract Expressionism Clyfford Still (November 30, 1904 - June 23, 1980) was an American artist, a painter, and one of the... Clyfford Still, born on November 30, 1904, in Grandin, North Dakota, emerged as one of the most influential American artists of the 20th century, playing a pivotal role in shaping the trajectory of abstract expression...",
+      "motifHint": "fracture",
+      "emotionalCenter": "measured structural drift"
+    }
+  },
+  "debugFile": "./data/artworks-debug/2026-03-08-abstract-signal-iran-lasted-barely-week-v2.json"
+}

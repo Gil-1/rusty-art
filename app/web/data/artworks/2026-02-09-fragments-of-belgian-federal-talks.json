@@ -1,0 +1,430 @@
+{
+  "id": "2026-02-09-fragments-of-belgian-federal-talks",
+  "date": "2026-02-09",
+  "title": "Fragments of Belgian federal talks",
+  "generatedAt": "2026-02-14T13:32:19.933Z",
+  "news": {
+    "source": "rtbf",
+    "title": "Belgian federal talks intensify around budget and climate priorities",
+    "link": "https://example.com/rtbf-federal-talks",
+    "score": 18
+  },
+  "inspiration": {
+    "artist": "Dave Dave",
+    "tags": [
+      "conceptual"
+    ],
+    "links": {
+      "wikipedia": "https://en.wikipedia.org/wiki/Dave_Dave",
+      "reference": "https://en.wikipedia.org/wiki/Dave_Dave"
+    }
+  },
+  "seed": 738433265,
+  "scene": {
+    "motif": "orbits",
+    "shapeCount": 102,
+    "turbulence": 0.637,
+    "spiralBias": 0.699,
+    "motionSpeed": 0.001173,
+    "bloom": 0.385,
+    "grain": 0.052,
+    "fogDensity": 0.069,
+    "distortion": 0.312,
+    "flowField": 0.494,
+    "anchorStrength": 0.752,
+    "anchorOffsetX": 0.059,
+    "layerBalance": {
+      "structure": 0.636,
+      "chaos": 0.421
+    },
+    "expression": {
+      "tension": 0.702,
+      "structure": 0.47,
+      "motion": 0.424,
+      "noise": 0.63,
+      "urgency": 0.18,
+      "contrast": 0.267
+    },
+    "palette": {
+      "bg": "hsl(188, 48%, 6%)",
+      "primary": "hsl(310, 76%, 64%)",
+      "secondary": "hsl(57, 68%, 64%)",
+      "glow": "hsl(330, 88%, 74%)",
+      "anchor": "hsl(13, 80%, 70%)"
+    },
+    "shaderLayers": 4,
+    "paletteVariance": 0.72,
+    "motionSpeedNormalized": 0.448,
+    "camera": {
+      "autoRotate": false,
+      "autoRotateSpeed": 0.101,
+      "minDistance": 6,
+      "maxDistance": 24,
+      "cycleSeconds": 24,
+      "beats": [
+        {
+          "t": 0,
+          "radius": 12.6,
+          "theta": 0.173,
+          "phi": 1.231,
+          "hold": 1
+        },
+        {
+          "t": 0.34,
+          "radius": 10.7,
+          "theta": 0.991,
+          "phi": 1.06,
+          "hold": 0.5
+        },
+        {
+          "t": 0.68,
+          "radius": 11.2,
+          "theta": 1.757,
+          "phi": 1.331,
+          "hold": 0.8
+        },
+        {
+          "t": 1,
+          "radius": 12.2,
+          "theta": 2.226,
+          "phi": 1.15,
+          "hold": 1.1
+        }
+      ]
+    },
+    "post": {
+      "vignette": 0.416,
+      "contrast": 1.154,
+      "saturation": 1.068,
+      "exposure": 0.956,
+      "breathing": {
+        "hueShift": 0.01,
+        "saturationAmplitude": 0.06,
+        "exposureAmplitude": 0.04,
+        "phaseA": 0.6758,
+        "phaseB": 0.2713
+      }
+    },
+    "styleFingerprint": {
+      "pulseFamily": "balanced",
+      "stripeWarp": 0.14,
+      "edgeSoftness": 0.26,
+      "cameraSway": 0.16,
+      "edgeHardness": 0.36,
+      "temperatureBias": 0,
+      "verticalBias": 0,
+      "cadenceBias": -0.1
+    },
+    "seedVersion": 2,
+    "seeds": {
+      "baseSeed": 3618568903,
+      "runSeed": 738433265,
+      "geomSeed": 1523904518,
+      "animSeed": 1276979751,
+      "colorSeed": 495067393,
+      "cameraSeed": 3587158509
+    },
+    "strategy": {
+      "id": "atomic-grid-lattice",
+      "name": "Institutional Lattice",
+      "type": "atomic",
+      "family": "grid",
+      "cooldown": {
+        "window": 3,
+        "recentFamilies": [],
+        "family": "grid",
+        "applied": false
+      },
+      "compositeDemanded": false,
+      "signals": {
+        "conflict": 0,
+        "context": 0.683,
+        "moodDepth": 0.434
+      }
+    },
+    "layers": [
+      {
+        "role": "background",
+        "modules": [
+          "volumetric-haze",
+          "klee-cells"
+        ]
+      },
+      {
+        "role": "midground",
+        "modules": [
+          "motif-armature"
+        ]
+      },
+      {
+        "role": "foreground",
+        "modules": [
+          "anchor-core",
+          "signal-weave"
+        ]
+      },
+      {
+        "role": "accent",
+        "modules": [
+          "concentric-discs",
+          "shear-ribbon"
+        ]
+      },
+      {
+        "role": "post",
+        "modules": [
+          "post-contrast"
+        ]
+      }
+    ],
+    "elements": [
+      {
+        "role": "atmosphere-field",
+        "colorA": "bg",
+        "colorB": "secondary",
+        "opacity": 0.366,
+        "intensity": 0.53,
+        "animation": {
+          "drift": 0.278
+        },
+        "layer": "background",
+        "moduleType": "volumetric-haze"
+      },
+      {
+        "role": "echo-field",
+        "count": 51,
+        "spread": 3.866,
+        "jitter": 0.405,
+        "depth": 1.283,
+        "swirl": 0.213,
+        "color": "secondary",
+        "size": 0.11,
+        "opacity": 0.542,
+        "blend": "normal",
+        "animation": {
+          "rotationZ": -0.597,
+          "wobbleY": 0.105
+        },
+        "layer": "background",
+        "moduleType": "particle-cloud"
+      },
+      {
+        "role": "atmosphere-field",
+        "layer": "background",
+        "color": "secondary",
+        "opacity": 0.342,
+        "intensity": 0.528,
+        "animation": {
+          "rotationZ": 0.303,
+          "pulse": 0.226
+        },
+        "moduleType": "klee-cells"
+      },
+      {
+        "role": "primary-signal",
+        "count": 114,
+        "spread": 4.863,
+        "jitter": 0.495,
+        "depth": 1.848,
+        "swirl": 0.36,
+        "color": "primary",
+        "size": 0.26,
+        "opacity": 0.864,
+        "blend": "additive",
+        "animation": {
+          "rotationZ": 0.989,
+          "wobbleX": 0.193
+        },
+        "layer": "midground",
+        "moduleType": "particle-cloud"
+      },
+      {
+        "role": "structural-spine",
+        "motif": "orbits",
+        "emphasis": 0.564,
+        "color": "glow",
+        "opacity": 0.435,
+        "animation": {
+          "rotationZ": 0.267,
+          "wobbleY": 0.193
+        },
+        "layer": "midground",
+        "intensity": 0.54,
+        "moduleType": "motif-armature"
+      },
+      {
+        "role": "primary-signal",
+        "motif": "orbits",
+        "color": "anchor",
+        "auraColor": "glow",
+        "opacity": 0.677,
+        "size": 0.955,
+        "intensity": 0.823,
+        "animation": {
+          "rotationZ": 0.145,
+          "wobbleY": 0.153,
+          "pulse": 0.285
+        },
+        "layer": "foreground",
+        "moduleType": "anchor-core"
+      },
+      {
+        "role": "primary-signal",
+        "layer": "foreground",
+        "color": "secondary",
+        "opacity": 0.492,
+        "intensity": 0.668,
+        "animation": {
+          "rotationZ": 0.151,
+          "pulse": 0.142
+        },
+        "moduleType": "signal-weave"
+      },
+      {
+        "role": "accent-gesture",
+        "layer": "accent",
+        "color": "glow",
+        "opacity": 0.461,
+        "intensity": 0.523,
+        "animation": {
+          "rotationZ": 0.126,
+          "pulse": 0.353
+        },
+        "moduleType": "concentric-discs"
+      },
+      {
+        "role": "accent-gesture",
+        "layer": "accent",
+        "color": "glow",
+        "opacity": 0.445,
+        "intensity": 0.5,
+        "animation": {
+          "rotationZ": 0.313,
+          "pulse": 0.334
+        },
+        "moduleType": "shear-ribbon"
+      }
+    ],
+    "elementDiversity": 5
+  },
+  "sceneStrategy": {
+    "selected": {
+      "id": "atomic-grid-lattice",
+      "name": "Institutional Lattice",
+      "type": "atomic",
+      "family": "grid"
+    },
+    "applied": true,
+    "fallbackReason": null
+  },
+  "techStack": null,
+  "newsVisualMappings": [
+    {
+      "signal": "title evidence [federal, budget, climate] -> motif orbits",
+      "from": "federal, budget, climate",
+      "visualDecision": "structural motif armature set to orbits"
+    },
+    {
+      "signal": "composition foreground conflict",
+      "from": "intensify, budget, budget, budget",
+      "visualDecision": "foreground role tension-knot at pressure 0.605"
+    },
+    {
+      "signal": "composition midground context",
+      "from": "federal, budget, climate, federal, budget, climate",
+      "visualDecision": "midground role context-drift with density 0.556"
+    },
+    {
+      "signal": "composition background mood",
+      "from": "climate, climate, climate",
+      "visualDecision": "background mood watchful depth 0.439"
+    },
+    {
+      "signal": "urgency -> motion",
+      "from": "ageHours=30.04",
+      "visualDecision": "motionSpeedNormalized=0.448"
+    },
+    {
+      "signal": "title semantics -> palette/edge cadence",
+      "from": "temp=0 edge=0.36",
+      "visualDecision": "postContrast=1.154 accentType=n/a"
+    },
+    {
+      "signal": "article institutional/conflict polarity",
+      "from": "climate",
+      "visualDecision": "accent primitive n/a with opacity 0.726"
+    },
+    {
+      "signal": "artist grammar Dave Dave",
+      "from": "style card poetic-grid · gentle-tick · warm-muted-notes · vertical-axis",
+      "visualDecision": "camera beat choreography + palette topology constrained to artist envelope"
+    }
+  ],
+  "qualityScore": {
+    "score": 57.5,
+    "summary": "Alignment 86.4 with strongest channel title.",
+    "heuristic": {
+      "score": 73,
+      "breakdown": {
+        "legibility": 76.8,
+        "emotionalReadability": 77.3,
+        "coherence": 86.9,
+        "focalAnchor": 75.8,
+        "technicalRichness": 98.7,
+        "restraint": 62.8,
+        "alignment": 86.4
+      }
+    },
+    "calibration": {
+      "sampleCount": 1,
+      "trustWeight": 0.4
+    },
+    "alignment": {
+      "totalAlign": 86.4,
+      "components": {
+        "title": {
+          "score": 88.2
+        },
+        "style": {
+          "score": 87.7
+        },
+        "emotional": {
+          "score": 82.9
+        }
+      }
+    }
+  },
+  "rationale": {
+    "intent": {
+      "signal": "Interdependent systems are pulling against each other in unstable cycles.",
+      "emotion": "Focused unease with recurring pressure loops.",
+      "tension": "Orbit stability vs drift.",
+      "balance": "Central coherence with stretched periphery.",
+      "motion": "Circular momentum with precession."
+    },
+    "selection": {
+      "whyHeadline": "Selected as top-ranked Belgian headline (score 18 = frequency 9 + priority 9 + recency 0).",
+      "priorityTerms": [
+        "federal",
+        "budget",
+        "climate"
+      ]
+    },
+    "qualitySummary": "TOTAL_ALIGN 86.4."
+  },
+  "runPolicy": {
+    "artworksPerRun": 1,
+    "multiVariant": false
+  },
+  "artFramework": {
+    "version": 3,
+    "intent": {
+      "signal": "Interdependent systems are pulling against each other in unstable cycles.",
+      "emotion": "Focused unease with recurring pressure loops.",
+      "tension": "Orbit stability vs drift.",
+      "balance": "Central coherence with stretched periphery.",
+      "motion": "Circular momentum with precession."
+    }
+  },
+  "debugFile": "./data/artworks-debug/2026-02-09-fragments-of-belgian-federal-talks.json"
+}

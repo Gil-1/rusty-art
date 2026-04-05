@@ -1,0 +1,492 @@
+{
+  "id": "2026-02-22-echoes-of-belgian-federal-talks-v2",
+  "date": "2026-02-22",
+  "title": "Echoes of Belgian federal talks",
+  "generatedAt": "2026-02-22T23:09:11.622Z",
+  "news": {
+    "source": "rtbf",
+    "title": "Belgian federal talks intensify around budget and climate priorities",
+    "link": "https://example.com/rtbf-federal-talks",
+    "score": 18
+  },
+  "inspiration": {
+    "artist": "Jack Roth",
+    "tags": [
+      "abstract",
+      "expressionist",
+      "color"
+    ],
+    "links": {
+      "wikipedia": "https://en.wikipedia.org/wiki/Jack_Roth",
+      "reference": "https://en.wikipedia.org/wiki/Jack_Roth"
+    }
+  },
+  "seed": 1455244233,
+  "scene": {
+    "motif": "fracture",
+    "shapeCount": 95,
+    "turbulence": 0.593,
+    "spiralBias": 0.686,
+    "motionSpeed": 0.000764,
+    "bloom": 0.357,
+    "grain": 0.049,
+    "fogDensity": 0.064,
+    "distortion": 0.331,
+    "flowField": 0.517,
+    "anchorStrength": 0.723,
+    "anchorOffsetX": 0.111,
+    "layerBalance": {
+      "structure": 0.609,
+      "chaos": 0.392
+    },
+    "expression": {
+      "tension": 0.621,
+      "structure": 0.418,
+      "motion": 0.462,
+      "noise": 0.566,
+      "urgency": 0.18,
+      "contrast": 0.214
+    },
+    "palette": {
+      "bg": "hsl(351, 48%, 6%)",
+      "primary": "hsl(160, 76%, 63%)",
+      "secondary": "hsl(221, 68%, 64%)",
+      "glow": "hsl(127, 77%, 66%)",
+      "anchor": "hsl(170, 77%, 66%)"
+    },
+    "elements": [
+      {
+        "id": "el-04-motif-armature",
+        "moduleType": "motif-armature",
+        "capabilities": [
+          "geometric-structure",
+          "layered-field"
+        ],
+        "stackFamilies": [
+          "geometry-heavy",
+          "instancing",
+          "shader-field"
+        ],
+        "styleTags": [
+          "structure",
+          "spine"
+        ],
+        "libraryRef": "element.motif-armature.v1",
+        "color": "glow",
+        "opacity": 0.408,
+        "layer": "midground",
+        "role": "structural-spine",
+        "motif": "fracture",
+        "emphasis": 0.537,
+        "animation": {
+          "rotationZ": 0.283,
+          "wobbleY": 0.182
+        },
+        "intentCadence": "steady",
+        "intensity": 0.528
+      },
+      {
+        "id": "el-05-signal-weave",
+        "moduleType": "signal-weave",
+        "capabilities": [
+          "kinetic-motion",
+          "layered-field"
+        ],
+        "stackFamilies": [
+          "geometry-heavy",
+          "post-heavy",
+          "shader-field"
+        ],
+        "styleTags": [
+          "rhythm",
+          "support"
+        ],
+        "libraryRef": "element.signal-weave.v1",
+        "color": "glow",
+        "opacity": 0.622,
+        "intensity": 0.862,
+        "layer": "midground",
+        "role": "structural-spine",
+        "animation": {
+          "rotationZ": 0.18,
+          "pulse": 0.241
+        },
+        "motif": "fracture",
+        "intentCadence": "steady"
+      },
+      {
+        "id": "el-02-anchor-core",
+        "moduleType": "anchor-core",
+        "capabilities": [
+          "focal-anchor",
+          "layered-field"
+        ],
+        "stackFamilies": [
+          "shader-field",
+          "geometry-heavy",
+          "particle-heavy",
+          "instancing",
+          "sdf-raymarch"
+        ],
+        "styleTags": [
+          "anchor",
+          "center",
+          "stability"
+        ],
+        "libraryRef": "element.anchor-core.v1",
+        "color": "anchor",
+        "opacity": 0.654,
+        "intensity": 0.801,
+        "layer": "foreground",
+        "role": "primary-signal",
+        "motif": "fracture",
+        "auraColor": "glow",
+        "size": 0.929,
+        "animation": {
+          "rotationZ": 0.152,
+          "wobbleY": 0.142,
+          "pulse": 0.285
+        },
+        "intentCadence": "steady"
+      },
+      {
+        "moduleType": "instance-grid",
+        "role": "accent-gesture",
+        "layer": "accent",
+        "color": "glow",
+        "opacity": 0.6,
+        "intensity": 0.84,
+        "animation": {
+          "rotationZ": 0.12,
+          "pulse": 0.28
+        }
+      },
+      {
+        "moduleType": "polyhedron-array",
+        "role": "structural-spine",
+        "layer": "midground",
+        "color": "secondary",
+        "opacity": 0.36,
+        "intensity": 0.56,
+        "animation": {
+          "rotationZ": 0.12,
+          "pulse": 0.2
+        }
+      }
+    ],
+    "shaderLayers": 4,
+    "elementDiversity": 5,
+    "paletteVariance": 0.72,
+    "motionSpeedNormalized": 0.205,
+    "camera": {
+      "autoRotate": false,
+      "autoRotateSpeed": 0.105,
+      "minDistance": 6,
+      "maxDistance": 24,
+      "cycleSeconds": 24,
+      "beats": [
+        {
+          "t": 0,
+          "radius": 12.6,
+          "theta": 0.22,
+          "phi": 1.225,
+          "hold": 1
+        },
+        {
+          "t": 0.34,
+          "radius": 10.7,
+          "theta": 1.053,
+          "phi": 1.056,
+          "hold": 0.5
+        },
+        {
+          "t": 0.68,
+          "radius": 11.2,
+          "theta": 1.824,
+          "phi": 1.325,
+          "hold": 0.8
+        },
+        {
+          "t": 1,
+          "radius": 12.2,
+          "theta": 2.246,
+          "phi": 1.147,
+          "hold": 1.1
+        }
+      ]
+    },
+    "post": {
+      "vignette": 0.398,
+      "contrast": 1.136,
+      "saturation": 1.049,
+      "exposure": 0.956,
+      "breathing": {
+        "hueShift": 0.01,
+        "saturationAmplitude": 0.06,
+        "exposureAmplitude": 0.04,
+        "phaseA": 0.7978,
+        "phaseB": 0.0771
+      }
+    },
+    "styleFingerprint": {
+      "pulseFamily": "balanced",
+      "stripeWarp": 0.14,
+      "edgeSoftness": 0.26,
+      "cameraSway": 0.16,
+      "edgeHardness": 0.36,
+      "temperatureBias": 0,
+      "verticalBias": 0,
+      "cadenceBias": -0.1
+    },
+    "seedVersion": 2,
+    "seeds": {
+      "baseSeed": 3184876212,
+      "runSeed": 1455244233,
+      "geomSeed": 1756822822,
+      "animSeed": 1510001223,
+      "colorSeed": 2504825761,
+      "cameraSeed": 3022098957
+    },
+    "techStack": {
+      "id": "instancing-wavegrid",
+      "name": "Instancing Wave Grid",
+      "family": "instancing",
+      "strategyFamilies": [
+        "grid",
+        "flow"
+      ],
+      "rationale": {
+        "source": "loop-adjustment-alternate-stack",
+        "score": 2.5301,
+        "penalties": [
+          "motion<0.35"
+        ]
+      },
+      "dominantPrimitive": "instance-grid",
+      "moduleSet": [
+        "motif-armature",
+        "signal-weave",
+        "anchor-core",
+        "instance-grid",
+        "polyhedron-array"
+      ],
+      "pipelineKind": "geometry-heavy"
+    },
+    "visualProfileHints": {
+      "cadence": "steady",
+      "motionEnergy": 0.42,
+      "preferredModules": [
+        {
+          "name": "motif-armature",
+          "weight": 0.5,
+          "reason": "fallback baseline"
+        }
+      ],
+      "preferredStackFamilies": [
+        {
+          "family": "shader-field",
+          "weight": 0.5,
+          "reason": "neutral fallback"
+        }
+      ],
+      "sourceAnalysis": {
+        "mode": "computer-vision",
+        "status": "unavailable",
+        "analyzedReferences": 0,
+        "failedReferences": 0,
+        "texture": null,
+        "failures": [],
+        "note": "No image URLs available in reference set for computer-vision analysis."
+      }
+    },
+    "strategy": {
+      "id": "atomic-balanced-flow",
+      "name": "Balanced Flow Field",
+      "type": "atomic",
+      "family": "flow",
+      "cooldown": {
+        "window": 3,
+        "recentFamilies": [],
+        "family": "flow",
+        "applied": false
+      },
+      "compositeDemanded": false,
+      "signals": {
+        "conflict": 0.332,
+        "context": 0.628,
+        "moodDepth": 0.35
+      }
+    },
+    "layers": [
+      {
+        "role": "background",
+        "modules": [
+          "volumetric-haze"
+        ]
+      },
+      {
+        "role": "midground",
+        "modules": [
+          "motif-armature",
+          "signal-weave"
+        ]
+      },
+      {
+        "role": "foreground",
+        "modules": [
+          "anchor-core",
+          "drift-ribbon"
+        ]
+      },
+      {
+        "role": "accent",
+        "modules": [
+          "orbit-ribbon",
+          "node-cluster"
+        ]
+      },
+      {
+        "role": "post",
+        "modules": [
+          "post-breathing"
+        ]
+      }
+    ],
+    "renderPipeline": {
+      "kind": "geometry-heavy",
+      "family": "instancing",
+      "fallback": false,
+      "dominantPrimitive": "instance-grid",
+      "moduleSet": [
+        "motif-armature",
+        "signal-weave",
+        "anchor-core",
+        "instance-grid",
+        "polyhedron-array"
+      ]
+    }
+  },
+  "sceneStrategy": {
+    "selected": {
+      "id": "atomic-balanced-flow",
+      "name": "Balanced Flow Field",
+      "type": "atomic",
+      "family": "flow"
+    },
+    "applied": true,
+    "fallbackReason": null
+  },
+  "techStack": {
+    "id": "instancing-wavegrid",
+    "name": "Instancing Wave Grid",
+    "family": "instancing"
+  },
+  "newsVisualMappings": [
+    {
+      "signal": "title evidence [federal, budget, climate] -> motif fracture",
+      "from": "federal, budget, climate",
+      "visualDecision": "structural motif armature set to fracture"
+    },
+    {
+      "signal": "composition foreground conflict",
+      "from": "intensify, budget, budget, budget",
+      "visualDecision": "foreground role tension-knot at pressure 0.563"
+    },
+    {
+      "signal": "composition midground context",
+      "from": "federal, budget, climate, federal, budget, climate",
+      "visualDecision": "midground role context-drift with density 0.531"
+    },
+    {
+      "signal": "composition background mood",
+      "from": "climate, climate, climate",
+      "visualDecision": "background mood watchful depth 0.427"
+    },
+    {
+      "signal": "urgency -> motion",
+      "from": "ageHours=231.65",
+      "visualDecision": "motionSpeedNormalized=0.205"
+    },
+    {
+      "signal": "title semantics -> palette/edge cadence",
+      "from": "temp=0 edge=0.36",
+      "visualDecision": "postContrast=1.136 accentType=instance-grid"
+    },
+    {
+      "signal": "article institutional/conflict polarity",
+      "from": "climate, intent-motif-hint",
+      "visualDecision": "accent element instance-grid with opacity 0.6"
+    },
+    {
+      "signal": "artist grammar Jack Roth",
+      "from": "style card color-fields · slow-breath · luminous-near-monochrome · dissolved-anchor",
+      "visualDecision": "camera beat choreography + palette topology constrained to artist envelope"
+    }
+  ],
+  "qualityScore": {
+    "score": 55,
+    "summary": "Alignment 78.0 with strongest channel style.",
+    "heuristic": {
+      "score": 70.4,
+      "breakdown": {
+        "legibility": 76,
+        "emotionalReadability": 76.9,
+        "coherence": 82,
+        "focalAnchor": 73,
+        "technicalRichness": 99.4,
+        "restraint": 64.5,
+        "alignment": 78
+      }
+    },
+    "calibration": {
+      "sampleCount": 1,
+      "trustWeight": 0.4
+    },
+    "alignment": {
+      "totalAlign": 78,
+      "components": {
+        "title": {
+          "score": 68.6
+        },
+        "style": {
+          "score": 84.4
+        },
+        "emotional": {
+          "score": 78.7
+        }
+      }
+    }
+  },
+  "rationale": {
+    "intent": {
+      "signal": null,
+      "emotion": null,
+      "tension": null,
+      "balance": null,
+      "motion": null
+    },
+    "selection": {
+      "whyHeadline": "Selected as top-ranked Belgian headline (score 18 = frequency 9 + priority 9 + recency 0).",
+      "priorityTerms": [
+        "federal",
+        "budget",
+        "climate"
+      ]
+    },
+    "qualitySummary": "TOTAL_ALIGN 78.0."
+  },
+  "runPolicy": {
+    "artworksPerRun": 1,
+    "multiVariant": false
+  },
+  "artFramework": {
+    "version": 3,
+    "intent": {
+      "statement": "Jack Roth (1927–2004), also known as \"Rodney Jack Roth\", was an American painter who developed a style as an Abstract Expressionist, and as a Color Field painter. In response to \"Belgian federal talks intensify around budget and climate priorities\", the artwork should translate civic signal into an abstract composition with a clear emotional center. Jack Roth (1927–2004), also known as \"Rodney Jack Roth\", was an American painter who developed a style as an Abstract Expressionist, and as a Color Field painter.",
+      "narrativeBridge": "Jack Roth (1927–2004), also known as \"Rodney Jack Roth\", was an American painter who developed a style as an Abstract Expressionist, and as a Color Field painter. Jack Roth (1927–2004), also known as \"Rodney Jack Roth\", was an American painter who developed a style as an Abstract Expressionist, and as a Color Field painter.",
+      "motifHint": "fracture",
+      "emotionalCenter": "measured structural drift"
+    }
+  },
+  "debugFile": "./data/artworks-debug/2026-02-22-echoes-of-belgian-federal-talks-v2.json"
+}

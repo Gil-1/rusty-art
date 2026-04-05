@@ -1,0 +1,470 @@
+{
+  "id": "2026-02-24-abstract-signal-white-enige-ambassadeur",
+  "date": "2026-02-24",
+  "title": "Abstract Signal: White enige ambassadeur",
+  "generatedAt": "2026-02-24T13:17:42.767Z",
+  "news": {
+    "source": "vrt",
+    "title": "Bill White is niet enige VS-ambassadeur die voor confrontatie kiest: ook deze gezanten van Donald Trump schoppen keet",
+    "link": "https://vrtnws.be/p.Yb0A9llqM",
+    "score": 90
+  },
+  "inspiration": {
+    "artist": "Hilma af Klint",
+    "tags": [
+      "symbolic",
+      "spiral",
+      "organic"
+    ],
+    "links": {
+      "wikipedia": "https://en.wikipedia.org/wiki/Hilma_af_Klint",
+      "reference": "https://www.modernamuseet.se/stockholm/en/exhibitions/hilma-af-klint/"
+    }
+  },
+  "seed": 1232068876,
+  "scene": {
+    "motif": "flow",
+    "shapeCount": 36,
+    "turbulence": 0.451,
+    "spiralBias": 0.673,
+    "motionSpeed": 0.001158,
+    "bloom": 0.372,
+    "grain": 0.037,
+    "fogDensity": 0.045,
+    "distortion": 0.572,
+    "flowField": 0.862,
+    "anchorStrength": 0.613,
+    "anchorOffsetX": 0.299,
+    "layerBalance": {
+      "structure": 0.611,
+      "chaos": 0.256
+    },
+    "expression": {
+      "tension": 0.371,
+      "structure": 0.524,
+      "motion": 0.437,
+      "noise": 0.346,
+      "urgency": 0.18,
+      "contrast": 0.196
+    },
+    "palette": {
+      "bg": "hsl(144, 48%, 6%)",
+      "primary": "hsl(267, 76%, 62%)",
+      "secondary": "hsl(358, 68%, 64%)",
+      "glow": "hsl(287, 88%, 74%)",
+      "anchor": "hsl(329, 80%, 70%)"
+    },
+    "elements": [
+      {
+        "id": "el-01-volumetric-haze",
+        "moduleType": "volumetric-haze",
+        "capabilities": [
+          "atmosphere-plume",
+          "fluid-drift",
+          "layered-field"
+        ],
+        "stackFamilies": [
+          "shader-field",
+          "post-heavy",
+          "particle-heavy",
+          "sdf-raymarch"
+        ],
+        "styleTags": [
+          "atmosphere",
+          "depth",
+          "diffusion"
+        ],
+        "libraryRef": "element.volumetric-haze.v1",
+        "colorA": "bg",
+        "colorB": "secondary",
+        "opacity": 0.277,
+        "intensity": 0.578,
+        "layer": "background",
+        "role": "atmosphere-field",
+        "animation": {
+          "drift": 0.284
+        },
+        "motif": "flow",
+        "intentCadence": "steady"
+      },
+      {
+        "id": "el-08-shader-field-plane",
+        "moduleType": "shader-field-plane",
+        "capabilities": [
+          "fluid-drift",
+          "layered-field"
+        ],
+        "stackFamilies": [
+          "shader-field",
+          "post-heavy",
+          "sdf-raymarch"
+        ],
+        "styleTags": [
+          "shader",
+          "field"
+        ],
+        "libraryRef": "element.shader-field-plane.v1",
+        "color": "glow",
+        "opacity": 0.34,
+        "intensity": 0.52,
+        "layer": "midground",
+        "animation": {
+          "rotationZ": 0.14,
+          "pulse": 0.2
+        },
+        "role": "support-rhythm",
+        "motif": "flow"
+      },
+      {
+        "moduleType": "flow-noise-slab",
+        "role": "structural-spine",
+        "layer": "midground",
+        "color": "secondary",
+        "opacity": 0.36,
+        "intensity": 0.56,
+        "animation": {
+          "rotationZ": 0.12,
+          "pulse": 0.2
+        }
+      }
+    ],
+    "shaderLayers": 6,
+    "elementDiversity": 3,
+    "paletteVariance": 0.72,
+    "motionSpeedNormalized": 0.439,
+    "camera": {
+      "autoRotate": false,
+      "autoRotateSpeed": 0.102,
+      "minDistance": 6,
+      "maxDistance": 24,
+      "cycleSeconds": 24,
+      "beats": [
+        {
+          "t": 0,
+          "radius": 12.6,
+          "theta": 0.025,
+          "phi": 1.207,
+          "hold": 1
+        },
+        {
+          "t": 0.34,
+          "radius": 10.7,
+          "theta": 0.794,
+          "phi": 1.041,
+          "hold": 0.5
+        },
+        {
+          "t": 0.68,
+          "radius": 11.2,
+          "theta": 1.543,
+          "phi": 1.307,
+          "hold": 0.8
+        },
+        {
+          "t": 1,
+          "radius": 12.2,
+          "theta": 2.23,
+          "phi": 1.136,
+          "hold": 1.1
+        }
+      ]
+    },
+    "post": {
+      "vignette": 0.337,
+      "contrast": 1.147,
+      "saturation": 0.989,
+      "exposure": 0.956,
+      "breathing": {
+        "hueShift": 0.01,
+        "saturationAmplitude": 0.06,
+        "exposureAmplitude": 0.04,
+        "phaseA": 0.0603,
+        "phaseB": 0.6027
+      }
+    },
+    "styleFingerprint": {
+      "pulseFamily": "balanced",
+      "stripeWarp": 0.14,
+      "edgeSoftness": 0.26,
+      "cameraSway": 0.16,
+      "edgeHardness": 0.5,
+      "temperatureBias": 0,
+      "verticalBias": 0,
+      "cadenceBias": 0
+    },
+    "seedVersion": 2,
+    "seeds": {
+      "baseSeed": 2191272424,
+      "runSeed": 1232068876,
+      "geomSeed": 2715437006,
+      "animSeed": 552554175,
+      "colorSeed": 3068720969,
+      "cameraSeed": 3652976357
+    },
+    "techStack": {
+      "id": "shader-field-balanced",
+      "name": "Shader Field Layering",
+      "family": "shader-field",
+      "strategyFamilies": [
+        "flow",
+        "hybrid",
+        "orbits"
+      ],
+      "rationale": {
+        "signals": {
+          "conflict": 0.471,
+          "context": 0.471,
+          "motion": 0.45,
+          "turbulence": 0.426,
+          "structureBias": 0,
+          "densityBias": 0,
+          "edgeBias": 0,
+          "motionBias": 0,
+          "visualProfile": {
+            "profileCadence": "steady",
+            "preferredFamilies": []
+          }
+        },
+        "familyHits": 0,
+        "idHits": 0,
+        "penalties": [],
+        "visualAffinity": 0,
+        "elementCoverage": {
+          "score": 3.08,
+          "coverage": 1,
+          "moduleCoverage": 0.8,
+          "missingCapabilities": []
+        },
+        "preferredFamilies": [],
+        "preferredFamilyLocked": false,
+        "notPreferredPenalty": 0
+      },
+      "dominantPrimitive": "shader-field-plane",
+      "moduleSet": [
+        "volumetric-haze",
+        "shader-field-plane",
+        "flow-noise-slab"
+      ],
+      "pipelineKind": "shader-field"
+    },
+    "visualProfileHints": {
+      "cadence": "steady",
+      "motionEnergy": null,
+      "preferredModules": [
+        {
+          "name": "motif-armature",
+          "weight": 0.5,
+          "reason": "fallback baseline"
+        }
+      ],
+      "preferredStackFamilies": [
+        {
+          "family": "shader-field",
+          "weight": 0.5,
+          "reason": "neutral fallback"
+        }
+      ],
+      "sourceAnalysis": {
+        "mode": "computer-vision",
+        "status": "ok",
+        "analyzedReferences": 4,
+        "failedReferences": 0,
+        "texture": {
+          "edgeEnergy": 0.012
+        },
+        "failures": [],
+        "note": null
+      }
+    },
+    "strategy": {
+      "id": "atomic-balanced-flow",
+      "name": "Balanced Flow Field",
+      "type": "atomic",
+      "family": "flow",
+      "cooldown": {
+        "window": 3,
+        "recentFamilies": [],
+        "family": "flow",
+        "applied": false
+      },
+      "compositeDemanded": true,
+      "signals": {
+        "conflict": 0.408,
+        "context": 0.459,
+        "moodDepth": 0.35
+      }
+    },
+    "layers": [
+      {
+        "role": "background",
+        "modules": [
+          "volumetric-haze",
+          "particle-cloud"
+        ]
+      },
+      {
+        "role": "midground",
+        "modules": [
+          "motif-armature"
+        ]
+      },
+      {
+        "role": "foreground",
+        "modules": [
+          "anchor-core",
+          "drift-ribbon"
+        ]
+      },
+      {
+        "role": "accent",
+        "modules": [
+          "orbit-ribbon"
+        ]
+      },
+      {
+        "role": "post",
+        "modules": [
+          "post-breathing"
+        ]
+      }
+    ],
+    "renderPipeline": {
+      "kind": "shader-field",
+      "family": "shader-field",
+      "fallback": false,
+      "dominantPrimitive": "shader-field-plane",
+      "moduleSet": [
+        "volumetric-haze",
+        "shader-field-plane",
+        "flow-noise-slab"
+      ]
+    },
+    "lowDivergenceNoveltyPass": {
+      "applied": true,
+      "profile": "generic-high-overlap",
+      "boundedRandomness": true,
+      "deterministicVariantIndex": true,
+      "moduleOverlapBefore": 1,
+      "regimeShiftsBefore": 1
+    }
+  },
+  "sceneStrategy": {
+    "selected": {
+      "id": "atomic-balanced-flow",
+      "name": "Balanced Flow Field",
+      "type": "atomic",
+      "family": "flow"
+    },
+    "applied": true,
+    "fallbackReason": null
+  },
+  "techStack": {
+    "id": "shader-field-balanced",
+    "name": "Shader Field Layering",
+    "family": "shader-field"
+  },
+  "newsVisualMappings": [
+    {
+      "signal": "title evidence [bill, white, niet, ambassadeur] -> motif flow",
+      "from": "bill, white, niet, ambassadeur",
+      "visualDecision": "structural motif armature set to flow"
+    },
+    {
+      "signal": "composition foreground conflict",
+      "from": "bill, white, niet, ambassadeur",
+      "visualDecision": "foreground role tension-knot at pressure 0.193"
+    },
+    {
+      "signal": "composition midground context",
+      "from": "bill, white, niet, ambassadeur",
+      "visualDecision": "midground role context-drift with density 0.252"
+    },
+    {
+      "signal": "composition background mood",
+      "from": "bill, white, niet, ambassadeur",
+      "visualDecision": "background mood watchful depth 0.243"
+    },
+    {
+      "signal": "urgency -> motion",
+      "from": "ageHours=25.1",
+      "visualDecision": "motionSpeedNormalized=0.439"
+    },
+    {
+      "signal": "title semantics -> palette/edge cadence",
+      "from": "temp=0 edge=0.5",
+      "visualDecision": "postContrast=1.147 accentType=n/a"
+    },
+    {
+      "signal": "article institutional/conflict polarity",
+      "from": "bill, white, niet, ambassadeur",
+      "visualDecision": "accent element n/a with opacity n/a"
+    },
+    {
+      "signal": "artist research context Hilma af Klint",
+      "from": "tags symbolic, spiral, organic",
+      "visualDecision": "artist profile captured as metadata only; no technical routing applied"
+    }
+  ],
+  "qualityScore": {
+    "score": 54.8,
+    "summary": "Alignment 75.4 with strongest channel style.",
+    "heuristic": {
+      "score": 70.2,
+      "breakdown": {
+        "legibility": 77.1,
+        "emotionalReadability": 79,
+        "coherence": 89.5,
+        "focalAnchor": 62.8,
+        "technicalRichness": 100,
+        "restraint": 65.3,
+        "alignment": 75.4
+      }
+    },
+    "calibration": {
+      "sampleCount": 1,
+      "trustWeight": 0.4
+    },
+    "alignment": {
+      "totalAlign": 75.4,
+      "components": {
+        "title": {
+          "score": 65.3
+        },
+        "style": {
+          "score": 86.3
+        },
+        "emotional": {
+          "score": 71.1
+        }
+      }
+    }
+  },
+  "rationale": {
+    "intent": {
+      "signal": null,
+      "emotion": null,
+      "tension": null,
+      "balance": null,
+      "motion": null
+    },
+    "selection": {
+      "whyHeadline": "Selected as top-ranked Belgian headline (score 90 = frequency 90 + priority 0 + recency 0).",
+      "priorityTerms": []
+    },
+    "qualitySummary": "TOTAL_ALIGN 75.4."
+  },
+  "runPolicy": {
+    "artworksPerRun": 1,
+    "multiVariant": false
+  },
+  "artFramework": {
+    "version": 3,
+    "intent": {
+      "statement": "Hilma af Klint did not ascribe to any of the established avant-garde movements of her time. In response to \"Bill White is niet enige VS-ambassadeur die voor confrontatie kiest: ook deze gezanten van Donald Trump schoppen keet\", the artwork should translate civic signal into an abstract composition with a clear emotional center. Paintings for the Temple (paintings by Hilma af Klint) Af Klint concluded Paintings for the Temple with a triptych she called Altarpieces, featuring geometric shapes, bold primary colors, and gold leaf.",
+      "narrativeBridge": "Paintings for the Temple (paintings by Hilma af Klint) Af Klint concluded Paintings for the Temple with a triptych she called Altarpieces, featuring geometric shapes, bold primary colors, and gold leaf. Paintings for the Temple (paintings by Hilma af Klint) Af Klint concluded Paintings for the Temple with a triptych she called Altarpieces, featuring geometric shapes, bold primary colors, and gold leaf.",
+      "motifHint": "ambassadeur",
+      "emotionalCenter": "measured structural drift"
+    }
+  },
+  "debugFile": "./data/artworks-debug/2026-02-24-abstract-signal-white-enige-ambassadeur.json"
+}

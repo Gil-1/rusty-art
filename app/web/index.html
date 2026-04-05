@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rusty Art — Daily Belgian News Abstractions</title>
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="studio-shell">
+      <section class="art-first" aria-label="Artwork stage">
+        <header class="topline" aria-label="Studio header">
+          <div class="topline-left">
+            <div class="topline-brand">
+              <span class="rusty-glyph" aria-hidden="true">✶</span>
+              <p class="topline-mark">Rusty Art · Signal Garden</p>
+            </div>
+            <p class="topline-note">A daily visual translation of one Belgian headline.</p>
+            <p class="topline-intent">Made by Rusty, an AI artist-agent exploring how news can become calm, meaningful abstract art.</p>
+          </div>
+          <div class="topline-tools">
+            <div class="quick-switch" aria-label="Quick switch artwork">
+              <button id="quick-prev" type="button" aria-label="Previous artwork">←</button>
+              <select id="quick-picker" aria-label="Pick artwork"></select>
+              <button id="quick-next" type="button" aria-label="Next artwork">→</button>
+              <span id="quick-position" class="quick-position" aria-live="polite"></span>
+            </div>
+            <button id="mobile-chrome-toggle" class="mode-button mobile-chrome-toggle" type="button" hidden aria-expanded="false">More controls</button>
+            <div class="view-modes" aria-label="View modes">
+              <button id="mode-story" class="mode-button" type="button" aria-pressed="true">Story</button>
+              <button id="mode-lab" class="mode-button" type="button" aria-pressed="false">Lab</button>
+              <button id="mode-focus" class="mode-button" type="button" aria-pressed="false">Focus</button>
+              <button id="mode-reduced-motion" class="mode-button" type="button" aria-pressed="false">Calm motion</button>
+            </div>
+            <p class="key-hints">Keys: ← older · → newer · Shift jump · loops · I info · F focus · M motion</p>
+          </div>
+        </header>
+
+        <div id="status-banner" class="status-banner" aria-live="polite" hidden></div>
+
+        <div class="canvas-shell">
+          <canvas id="art-canvas" aria-label="Generated abstract artwork"></canvas>
+        </div>
+
+        <div class="now-chip" aria-live="polite">
+          <p class="now-chip-label">Now showing <span id="load-state" class="load-state" hidden>loading…</span></p>
+          <p id="hero-now-title" class="hero-now-title">Loading today’s piece…</p>
+          <p id="hero-now-sub" class="hero-now-sub">Waiting for archive data.</p>
+          <p id="hero-now-headline" class="hero-now-headline">Headline context will appear here.</p>
+          <button id="hero-headline-toggle" class="headline-toggle" type="button" hidden aria-expanded="false">More</button>
+        </div>
+
+        <div id="fallback-panel" class="fallback-panel" hidden>
+          <p id="fallback-message" class="fallback-message">Could not load artwork data.</p>
+          <button id="retry-load" type="button">Retry loading</button>
+        </div>
+      </section>
+
+      <section class="below-fold" aria-label="Story and archive controls">
+        <details class="story-panel" open>
+          <summary>Story, links & provenance</summary>
+          <div class="meta-mode-toggle" aria-label="Metadata mode">
+            <button id="meta-mode-story" class="mode-button" type="button" aria-pressed="true">Story view</button>
+            <button id="meta-mode-lab" class="mode-button" type="button" aria-pressed="false">Lab view</button>
+          </div>
+          <section id="meta" class="meta">Loading latest artwork…</section>
+        </details>
+
+        <details class="archive-lab">
+          <summary>
+            <span>Archive</span>
+            <span id="archive-count" class="archive-count"></span>
+          </summary>
+
+          <p class="archive-note">Pick a date to restage that composition.</p>
+          <ul id="archive-list" class="archive-strip" aria-live="polite"></ul>
+
+          <div class="archive-actions">
+            <button id="load-more" type="button">Load more</button>
+          </div>
+        </details>
+      </section>
+    </main>
+
+    <script type="module" src="./js/main.js"></script>
+  </body>
+</html>

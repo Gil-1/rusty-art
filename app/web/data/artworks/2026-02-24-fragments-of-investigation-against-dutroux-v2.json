@@ -1,0 +1,922 @@
+{
+  "id": "2026-02-24-fragments-of-investigation-against-dutroux-v2",
+  "date": "2026-02-24",
+  "title": "Fragments of investigation against Dutroux",
+  "generatedAt": "2026-02-24T17:34:19.823Z",
+  "news": {
+    "source": "knack",
+    "title": "New investigation against Marc Dutroux for possession of child sexual abuse images",
+    "link": "https://www.knack.be/nieuws/belgie/maatschappij/nieuw-onderzoek-tegen-marc-dutroux-wegens-bezit-beelden-seksueel-kindermisbruik/",
+    "score": 79.01
+  },
+  "inspiration": {
+    "artist": "Hilma af Klint",
+    "tags": [
+      "symbolic",
+      "spiral",
+      "organic"
+    ],
+    "links": {
+      "wikipedia": "https://en.wikipedia.org/wiki/Hilma_af_Klint",
+      "reference": "https://www.modernamuseet.se/stockholm/en/exhibitions/hilma-af-klint/"
+    }
+  },
+  "seed": 4281080975,
+  "scene": {
+    "motif": "flow",
+    "shapeCount": 126,
+    "turbulence": 0.427,
+    "spiralBias": 0.873,
+    "motionSpeed": 0.001628,
+    "bloom": 0.18,
+    "grain": 0.035,
+    "fogDensity": 0.053,
+    "distortion": 0.14,
+    "flowField": 0.32,
+    "anchorStrength": 0.579,
+    "anchorOffsetX": 0.094,
+    "layerBalance": {
+      "structure": 0.727,
+      "chaos": 0.298
+    },
+    "expression": {
+      "tension": 0.31,
+      "structure": 0.697,
+      "motion": 0.729,
+      "noise": 0.307,
+      "urgency": 0.894,
+      "contrast": 0.403
+    },
+    "palette": {
+      "bg": "#F1EDE2",
+      "primary": "#2C3E73",
+      "secondary": "#7F2F3A",
+      "glow": "#C9A24A",
+      "anchor": "#1C1E26"
+    },
+    "elements": [
+      {
+        "id": "el-01-cm.glyph-lattice.v1",
+        "moduleType": "cm.glyph-lattice.v1",
+        "capabilities": [],
+        "stackFamilies": [],
+        "styleTags": [],
+        "libraryRef": null,
+        "cellCount": 88,
+        "jitter": 0.1,
+        "color": "primary",
+        "opacity": 0.21,
+        "intensity": 0.34,
+        "animation": {
+          "rotationZ": 0.02,
+          "pulse": 0.07,
+          "wobbleX": 0.04,
+          "wobbleY": 0.04,
+          "drift": 0.13
+        },
+        "techniqueRef": "r3_t1",
+        "role": "atmosphere-field",
+        "layer": "background",
+        "motif": "flow",
+        "intentCadence": "drift"
+      },
+      {
+        "id": "el-02-cm.altarpiece-triptych-grid.v1",
+        "moduleType": "cm.altarpiece-triptych-grid.v1",
+        "capabilities": [],
+        "stackFamilies": [],
+        "styleTags": [],
+        "libraryRef": null,
+        "panelCount": 3,
+        "gap": 0.07,
+        "centerWeight": 1.15,
+        "color": "anchor",
+        "opacity": 0.42,
+        "intensity": 0.5,
+        "animation": {
+          "rotationZ": 0.01,
+          "pulse": 0.05,
+          "wobbleX": 0.02,
+          "wobbleY": 0.02,
+          "drift": 0.08
+        },
+        "techniqueRef": "r3_t1",
+        "role": "structural-spine",
+        "layer": "midground",
+        "motif": "flow",
+        "intentCadence": "drift"
+      },
+      {
+        "id": "el-03-cm.verdict-ringfield.v1",
+        "moduleType": "cm.verdict-ringfield.v1",
+        "capabilities": [],
+        "stackFamilies": [],
+        "styleTags": [],
+        "libraryRef": null,
+        "ringCount": 6,
+        "falloff": 0.7,
+        "color": "glow",
+        "opacity": 0.3,
+        "intensity": 0.56,
+        "animation": {
+          "rotationZ": 0.04,
+          "pulse": 0.13,
+          "wobbleX": 0.02,
+          "wobbleY": 0.02,
+          "drift": 0.08
+        },
+        "techniqueRef": "r3_t2",
+        "role": "focal-anchor",
+        "layer": "foreground",
+        "motif": "flow",
+        "intentCadence": "drift"
+      },
+      {
+        "id": "el-04-agent-geometry",
+        "moduleType": "agent-geometry",
+        "capabilities": [],
+        "stackFamilies": [],
+        "styleTags": [],
+        "libraryRef": null,
+        "form": "split-arc",
+        "segments": 30,
+        "color": "secondary",
+        "opacity": 0.28,
+        "intensity": 0.45,
+        "animation": {
+          "rotationZ": 0.05,
+          "pulse": 0.1,
+          "wobbleX": 0.03,
+          "wobbleY": 0.03,
+          "drift": 0.12
+        },
+        "techniqueRef": "r3_t1",
+        "role": "primary-signal",
+        "layer": "foreground",
+        "motif": "flow",
+        "intentCadence": "drift"
+      },
+      {
+        "id": "el-05-particle-stream",
+        "moduleType": "particle-stream",
+        "capabilities": [
+          "kinetic-motion",
+          "debris-particles"
+        ],
+        "stackFamilies": [
+          "particle-heavy",
+          "post-heavy"
+        ],
+        "styleTags": [
+          "flow",
+          "streak"
+        ],
+        "libraryRef": "element.particle-stream.v1",
+        "color": "glow",
+        "opacity": 0.21,
+        "intensity": 0.35,
+        "layer": "accent",
+        "streamCount": 5,
+        "speed": 0.3,
+        "animation": {
+          "rotationZ": 0.07,
+          "pulse": 0.11,
+          "wobbleX": 0.05,
+          "wobbleY": 0.05,
+          "drift": 0.19
+        },
+        "techniqueRef": "r3_t2",
+        "role": "support-rhythm",
+        "motif": "flow",
+        "intentCadence": "drift"
+      },
+      {
+        "id": "el-06-orbit-ribbon",
+        "moduleType": "orbit-ribbon",
+        "capabilities": [
+          "orbital-forms",
+          "kinetic-motion"
+        ],
+        "stackFamilies": [
+          "sdf-raymarch",
+          "shader-field",
+          "geometry-heavy"
+        ],
+        "styleTags": [
+          "orbit",
+          "curve"
+        ],
+        "libraryRef": "element.orbit-ribbon.v1",
+        "color": "primary",
+        "opacity": 0.19,
+        "intensity": 0.33,
+        "layer": "accent",
+        "loops": 2.1,
+        "radius": 0.35,
+        "animation": {
+          "rotationZ": 0.09,
+          "pulse": 0.1,
+          "wobbleX": 0.04,
+          "wobbleY": 0.04,
+          "drift": 0.15
+        },
+        "techniqueRef": "r3_t2",
+        "role": "accent-gesture",
+        "motif": "flow",
+        "intentCadence": "drift"
+      },
+      {
+        "id": "el-07-agent-composite-rig",
+        "moduleType": "agent-composite-rig",
+        "capabilities": [],
+        "stackFamilies": [],
+        "styleTags": [],
+        "libraryRef": null,
+        "subLayers": 3,
+        "layout": "choir-arc",
+        "color": "bg",
+        "opacity": 0.5,
+        "intensity": 0.39,
+        "animation": {
+          "rotationZ": 0.01,
+          "pulse": 0.06,
+          "wobbleX": 0.03,
+          "wobbleY": 0.03,
+          "drift": 0.1
+        },
+        "techniqueRef": "r3_t1",
+        "role": "support-rhythm",
+        "layer": "midground",
+        "motif": "flow",
+        "intentCadence": "drift"
+      }
+    ],
+    "shaderLayers": 4,
+    "elementDiversity": 7,
+    "paletteVariance": 0,
+    "motionSpeedNormalized": 0.719,
+    "camera": {
+      "autoRotate": false,
+      "autoRotateSpeed": 0.137,
+      "minDistance": 6,
+      "maxDistance": 24,
+      "cycleSeconds": 24,
+      "beats": [
+        {
+          "t": 0,
+          "radius": 12.6,
+          "theta": 0.205,
+          "phi": 1.202,
+          "hold": 1
+        },
+        {
+          "t": 0.34,
+          "radius": 10.7,
+          "theta": 1.033,
+          "phi": 1.038,
+          "hold": 0.5
+        },
+        {
+          "t": 0.68,
+          "radius": 11.2,
+          "theta": 1.802,
+          "phi": 1.302,
+          "hold": 0.8
+        },
+        {
+          "t": 1,
+          "radius": 12.2,
+          "theta": 2.286,
+          "phi": 1.133,
+          "hold": 1.1
+        }
+      ],
+      "target": [
+        0,
+        0,
+        0
+      ]
+    },
+    "post": {
+      "vignette": 0.28,
+      "contrast": 1.16,
+      "saturation": 0.86,
+      "exposure": 0.97,
+      "breathing": {
+        "hueShift": 0.01,
+        "saturationAmplitude": 0.06,
+        "exposureAmplitude": 0.04,
+        "phaseA": 0.0436,
+        "phaseB": 0.612
+      }
+    },
+    "styleFingerprint": {
+      "pulseFamily": "balanced",
+      "stripeWarp": 0.14,
+      "edgeSoftness": 0.26,
+      "cameraSway": 0.16,
+      "edgeHardness": 0.5,
+      "temperatureBias": 0,
+      "verticalBias": 0,
+      "cadenceBias": 0
+    },
+    "sceneAuthoring": {
+      "mode": "agent-dsl",
+      "planner": "openclaw-agent-scene-planner",
+      "representation": {
+        "id": "rep_sealed_chorus",
+        "label": "Sealed Chorus",
+        "description": "Layered civic geometry forms a quiet chorus around a restrained central witness zone.",
+        "scoreHint": 0.71,
+        "motif": "sealed witness",
+        "cadence": "drift",
+        "rationale": {
+          "novelty": "custom modules drive composition, minimal dependence on recent dominant stacks",
+          "intent": "solemn persistence",
+          "center": "measured structural drift preserved"
+        },
+        "techniques": [
+          {
+            "id": "r3_t1",
+            "name": "Witness Lattice",
+            "type": "layout",
+            "purpose": "Assemble balanced geometric choir.",
+            "reuseModuleType": null,
+            "params": {
+              "density": 0.58
+            }
+          },
+          {
+            "id": "r3_t2",
+            "name": "Gold Drift",
+            "type": "accent",
+            "purpose": "Introduce controlled sacred warmth without spectacle.",
+            "reuseModuleType": null,
+            "params": {
+              "gain": 0.22
+            }
+          }
+        ]
+      },
+      "artisticIntent": {
+        "statement": "A solemn abstract vigil: institutional silence is translated into disciplined geometry, where opposing forces hold tension around a protected center.",
+        "motif": "counter-forces around a sealed civic core",
+        "emotionalArc": "shock and rupture → procedural containment → guarded resolve",
+        "compositionLogic": "Triptych-like vertical structure with weighted columns and curved trajectories; central pressure is framed, not illustrated, using strict symmetry breaks and low-frequency drift."
+      },
+      "executionPlan": {
+        "palette": {
+          "bg": "#F1EDE2",
+          "primary": "#2C3E73",
+          "secondary": "#7F2F3A",
+          "glow": "#C9A24A",
+          "anchor": "#1C1E26"
+        },
+        "camera": {
+          "autoRotate": false,
+          "cycleSeconds": 24,
+          "target": [
+            0,
+            0,
+            0
+          ]
+        },
+        "post": {
+          "contrast": 1.1,
+          "saturation": 0.86,
+          "vignette": 0.28,
+          "exposure": 0.97
+        },
+        "global": {
+          "shapeCountHint": 126,
+          "flowField": 0.32,
+          "distortion": 0.14,
+          "bloom": 0.18
+        },
+        "techniques": [
+          {
+            "id": "t_triptych_seal",
+            "name": "Triptych Seal",
+            "type": "structural",
+            "purpose": "Create a sacred three-panel scaffold with a constrained central chamber.",
+            "reuseModuleType": "cm.altarpiece-triptych-grid.v1",
+            "params": {
+              "panelCount": 3,
+              "gap": 0.08,
+              "centerWeight": 1.2
+            }
+          },
+          {
+            "id": "t_counter_orbit",
+            "name": "Counter Orbit",
+            "type": "motion",
+            "purpose": "Set opposing vectors into slow procedural negotiation.",
+            "reuseModuleType": "orbit-ribbon",
+            "params": {
+              "orbitCount": 3,
+              "phaseSplit": 0.5
+            }
+          },
+          {
+            "id": "t_verdict_field",
+            "name": "Verdict Field",
+            "type": "shader",
+            "purpose": "Encode legal pressure as ring interference around the core.",
+            "reuseModuleType": "cm.verdict-ringfield.v1",
+            "params": {
+              "ringCount": 7,
+              "falloff": 0.66
+            }
+          },
+          {
+            "id": "t_memorial_drift",
+            "name": "Memorial Drift",
+            "type": "atmospheric",
+            "purpose": "Maintain a low, continuous pulse without spectacle.",
+            "reuseModuleType": "particle-stream",
+            "params": {
+              "streamCount": 4,
+              "drag": 0.84
+            }
+          }
+        ]
+      },
+      "moduleOverrides": [
+        {
+          "id": "ov.shader-field-plane.triptych-v1",
+          "target": {
+            "moduleType": "shader-field-plane",
+            "elementId": null
+          },
+          "mode": "replace",
+          "params": {
+            "deterministicPhaseSteps": 9
+          },
+          "glsl": {
+            "vertex": "varying vec2 vUv;void main(){vUv=uv;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0);}",
+            "fragment": "varying vec2 vUv;uniform float uTime;float h(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}void main(){vec2 p=vUv-0.5;float triptych=step(0.01,abs(p.x)-0.14)+step(0.01,abs(p.x)-0.31);float rings=sin(length(p)*26.0-0.18*uTime);float grain=h(floor(vUv*32.0));float m=smoothstep(-0.2,0.55,0.62*rings+0.38*(1.0-triptych));vec3 c=mix(vec3(0.11,0.12,0.16),vec3(0.78,0.63,0.30),m);gl_FragColor=vec4(c,(0.18+0.24*m)*(0.82+0.18*grain));}"
+          }
+        },
+        {
+          "id": "ov.agent-particle-system.vigil-hooks-v1",
+          "target": {
+            "moduleType": "agent-particle-system",
+            "elementId": null
+          },
+          "mode": "hooks",
+          "params": {
+            "maxParticleCount": 1200,
+            "trailDecay": 0.86
+          },
+          "uniforms": {
+            "uPulseFloor": 0.12,
+            "uPulseCeil": 0.34,
+            "uNoiseAmp": 0.08
+          },
+          "hooks": {
+            "onInit": "seededScatter",
+            "onUpdate": "boundedSpiralDrift"
+          }
+        }
+      ],
+      "customModules": [
+        {
+          "id": "cm.altarpiece-triptych-grid.v1",
+          "family": "geometry",
+          "kind": "dsl",
+          "allowOverride": false,
+          "seedPolicy": "deterministic",
+          "paramsSchema": {
+            "panelCount": {
+              "type": "number",
+              "min": 3,
+              "max": 5
+            },
+            "gap": {
+              "type": "number",
+              "min": 0.02,
+              "max": 0.2
+            },
+            "centerWeight": {
+              "type": "number",
+              "min": 0.6,
+              "max": 1.6
+            }
+          },
+          "source": {
+            "dsl": {
+              "generator": "columnPanels",
+              "topology": "planar",
+              "passes": [
+                {
+                  "op": "centerBias"
+                },
+                {
+                  "op": "edgeFade"
+                }
+              ]
+            },
+            "glsl": {
+              "vertex": "varying vec2 vUv;void main(){vUv=uv;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0);}",
+              "fragment": "varying vec2 vUv;void main(){float l=step(abs(vUv.x-0.2),0.11);float c=step(abs(vUv.x-0.5),0.13);float r=step(abs(vUv.x-0.8),0.11);float a=(l+r)*0.18+c*0.28;gl_FragColor=vec4(vec3(0.16,0.17,0.22),a);}"
+            },
+            "js": null
+          },
+          "budgets": {
+            "maxInstances": 180,
+            "maxShaderOpsHint": 0.42,
+            "mobileSafe": true
+          }
+        },
+        {
+          "id": "cm.verdict-ringfield.v1",
+          "family": "shader",
+          "kind": "dsl",
+          "allowOverride": false,
+          "seedPolicy": "deterministic",
+          "paramsSchema": {
+            "ringCount": {
+              "type": "number",
+              "min": 3,
+              "max": 12
+            },
+            "falloff": {
+              "type": "number",
+              "min": 0.2,
+              "max": 0.9
+            }
+          },
+          "source": {
+            "dsl": {
+              "pipeline": "ringInterference",
+              "blend": "alpha",
+              "passes": [
+                {
+                  "op": "radialBands"
+                },
+                {
+                  "op": "seededWarp"
+                }
+              ]
+            },
+            "glsl": {
+              "vertex": "varying vec2 vUv;void main(){vUv=uv;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0);}",
+              "fragment": "varying vec2 vUv;uniform float uTime;void main(){vec2 p=vUv-0.5;float r=length(p);float w=sin(38.0*r-0.2*uTime)*0.5+0.5;float mask=smoothstep(0.62,0.14,r);gl_FragColor=vec4(vec3(0.79,0.63,0.29),w*mask*0.22);}"
+            },
+            "js": null
+          },
+          "budgets": {
+            "maxInstances": 6,
+            "maxShaderOpsHint": 0.58,
+            "mobileSafe": true
+          }
+        },
+        {
+          "id": "cm.glyph-lattice.v1",
+          "family": "geometry",
+          "kind": "dsl",
+          "allowOverride": false,
+          "seedPolicy": "deterministic",
+          "paramsSchema": {
+            "cellCount": {
+              "type": "number",
+              "min": 16,
+              "max": 160
+            },
+            "jitter": {
+              "type": "number",
+              "min": 0,
+              "max": 0.25
+            }
+          },
+          "source": {
+            "dsl": {
+              "generator": "latticeGlyphs",
+              "topology": "planar",
+              "passes": [
+                {
+                  "op": "seededJitter"
+                },
+                {
+                  "op": "clusterWeight"
+                }
+              ]
+            },
+            "glsl": {
+              "vertex": "varying vec2 vUv;void main(){vUv=uv;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0);}",
+              "fragment": "varying vec2 vUv;float n=fract(sin(dot(floor(vUv*24.0),vec2(12.9,78.2)))*43758.5);void main(){float g=step(0.86,n);gl_FragColor=vec4(vec3(0.20,0.24,0.43),g*0.24);}"
+            },
+            "js": null
+          },
+          "budgets": {
+            "maxInstances": 900,
+            "maxShaderOpsHint": 0.37,
+            "mobileSafe": true
+          }
+        },
+        {
+          "id": "cm.threshold-columns.v1",
+          "family": "geometry",
+          "kind": "dsl",
+          "allowOverride": false,
+          "seedPolicy": "deterministic",
+          "paramsSchema": {
+            "columnCount": {
+              "type": "number",
+              "min": 2,
+              "max": 12
+            },
+            "heightVariance": {
+              "type": "number",
+              "min": 0,
+              "max": 0.4
+            }
+          },
+          "source": {
+            "dsl": {
+              "generator": "verticalColumns",
+              "topology": "planar",
+              "passes": [
+                {
+                  "op": "heightBySeed"
+                },
+                {
+                  "op": "centerCompression"
+                }
+              ]
+            },
+            "glsl": {
+              "vertex": "varying vec2 vUv;void main(){vUv=uv;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0);}",
+              "fragment": "varying vec2 vUv;void main(){float c=step(0.06,abs(fract(vUv.x*6.0)-0.5));gl_FragColor=vec4(vec3(0.14,0.15,0.19),0.2*(1.0-c));}"
+            },
+            "js": null
+          },
+          "budgets": {
+            "maxInstances": 240,
+            "maxShaderOpsHint": 0.33,
+            "mobileSafe": true
+          }
+        },
+        {
+          "id": "cm.civic-vigil-post.v1",
+          "family": "post",
+          "kind": "dsl",
+          "allowOverride": false,
+          "seedPolicy": "deterministic",
+          "paramsSchema": {
+            "contrastLift": {
+              "type": "number",
+              "min": 0.9,
+              "max": 1.2
+            },
+            "shadowSoft": {
+              "type": "number",
+              "min": 0.1,
+              "max": 0.8
+            }
+          },
+          "source": {
+            "dsl": {
+              "patch": {
+                "post": {
+                  "vignette": 0.3,
+                  "grain": 0.06,
+                  "toneCurve": "soft-s"
+                }
+              }
+            },
+            "glsl": {},
+            "js": null
+          },
+          "budgets": {
+            "maxInstances": 1,
+            "maxShaderOpsHint": 0.2,
+            "mobileSafe": true
+          }
+        }
+      ],
+      "policyPasses": {
+        "advisoryOnly": true,
+        "skipped": [
+          "focal-hierarchy",
+          "envelope-clamp",
+          "composition-plan",
+          "artist-visual-profile",
+          "scene-element-module-enforcement",
+          "stack-pipeline-apply",
+          "gap-focused-pass",
+          "artist-hard-constraints"
+        ]
+      }
+    },
+    "seedVersion": 2,
+    "seeds": {
+      "baseSeed": 1579007894,
+      "runSeed": 4281080975,
+      "geomSeed": 1118107059,
+      "animSeed": 725413738,
+      "colorSeed": 4038234850,
+      "cameraSeed": 3183842500
+    },
+    "customModuleReport": {
+      "declaredCustomModules": 5,
+      "accepted": [
+        {
+          "id": "cm.altarpiece-triptych-grid.v1",
+          "family": "geometry",
+          "kind": "dsl",
+          "fingerprint": "97e0bbcd"
+        },
+        {
+          "id": "cm.verdict-ringfield.v1",
+          "family": "shader",
+          "kind": "dsl",
+          "fingerprint": "576a385c"
+        },
+        {
+          "id": "cm.glyph-lattice.v1",
+          "family": "geometry",
+          "kind": "dsl",
+          "fingerprint": "2367bb80"
+        },
+        {
+          "id": "cm.threshold-columns.v1",
+          "family": "geometry",
+          "kind": "dsl",
+          "fingerprint": "50add50d"
+        },
+        {
+          "id": "cm.civic-vigil-post.v1",
+          "family": "post",
+          "kind": "dsl",
+          "fingerprint": "a8a0ac9e"
+        }
+      ],
+      "rejected": [],
+      "moduleOverrideCount": 2,
+      "fingerprint": "bdf10f89"
+    },
+    "techStack": {
+      "id": "shader-field-balanced",
+      "name": "Shader Field Layering",
+      "family": "shader-field",
+      "strategyFamilies": [
+        "flow",
+        "hybrid",
+        "orbits"
+      ],
+      "rationale": {
+        "source": "loop-adjustment-alternate-stack",
+        "score": 3.2,
+        "penalties": []
+      },
+      "dominantPrimitive": "cm.glyph-lattice.v1",
+      "moduleSet": [
+        "cm.glyph-lattice.v1",
+        "cm.altarpiece-triptych-grid.v1",
+        "cm.verdict-ringfield.v1",
+        "agent-geometry",
+        "particle-stream",
+        "orbit-ribbon",
+        "agent-composite-rig"
+      ],
+      "pipelineKind": "shader-field"
+    },
+    "renderPipeline": {
+      "kind": "shader-field",
+      "family": "shader-field",
+      "fallback": false,
+      "advisoryOnly": true,
+      "dominantPrimitive": "cm.glyph-lattice.v1",
+      "moduleSet": [
+        "cm.glyph-lattice.v1",
+        "cm.altarpiece-triptych-grid.v1",
+        "cm.verdict-ringfield.v1",
+        "agent-geometry",
+        "particle-stream",
+        "orbit-ribbon",
+        "agent-composite-rig"
+      ]
+    }
+  },
+  "sceneStrategy": {
+    "selected": {
+      "id": "atomic-balanced-flow",
+      "name": "Balanced Flow Field",
+      "type": "atomic",
+      "family": "flow"
+    },
+    "applied": false,
+    "fallbackReason": "agent-authored-scene-elements"
+  },
+  "techStack": {
+    "id": "shader-field-balanced",
+    "name": "Shader Field Layering",
+    "family": "shader-field"
+  },
+  "newsVisualMappings": [
+    {
+      "signal": "title evidence [nieuw, onderzoek, tegen, marc] -> motif flow",
+      "from": "nieuw, onderzoek, tegen, marc",
+      "visualDecision": "structural motif armature set to flow"
+    },
+    {
+      "signal": "composition foreground conflict",
+      "from": "nieuw, onderzoek, tegen, marc",
+      "visualDecision": "foreground role tension-knot at pressure 0.18"
+    },
+    {
+      "signal": "composition midground context",
+      "from": "nieuw, onderzoek, tegen, marc",
+      "visualDecision": "midground role context-drift with density 0.335"
+    },
+    {
+      "signal": "composition background mood",
+      "from": "nieuw, onderzoek, tegen, marc",
+      "visualDecision": "background mood watchful depth 0.312"
+    },
+    {
+      "signal": "urgency -> motion",
+      "from": "ageHours=2.97",
+      "visualDecision": "motionSpeedNormalized=0.719"
+    },
+    {
+      "signal": "title semantics -> palette/edge cadence",
+      "from": "temp=0 edge=0.5",
+      "visualDecision": "postContrast=1.16 accentType=orbit-ribbon"
+    },
+    {
+      "signal": "article institutional/conflict polarity",
+      "from": "nieuw, onderzoek, tegen, marc",
+      "visualDecision": "accent element orbit-ribbon with opacity 0.19"
+    },
+    {
+      "signal": "artist research context Hilma af Klint",
+      "from": "tags symbolic, spiral, organic",
+      "visualDecision": "artist profile captured as metadata only; no technical routing applied"
+    }
+  ],
+  "qualityScore": {
+    "score": 53.5,
+    "summary": "Alignment 75.2 with strongest channel style.",
+    "heuristic": {
+      "score": 68.9,
+      "breakdown": {
+        "legibility": 73.5,
+        "emotionalReadability": 67.3,
+        "coherence": 91,
+        "focalAnchor": 65.4,
+        "technicalRichness": 100,
+        "restraint": 74.8,
+        "alignment": 75.2
+      }
+    },
+    "calibration": {
+      "sampleCount": 1,
+      "trustWeight": 0.4
+    },
+    "alignment": {
+      "totalAlign": 75.2,
+      "components": {
+        "title": {
+          "score": 63
+        },
+        "style": {
+          "score": 87.8
+        },
+        "emotional": {
+          "score": 70.6
+        }
+      }
+    }
+  },
+  "rationale": {
+    "intent": {
+      "signal": null,
+      "emotion": null,
+      "tension": null,
+      "balance": null,
+      "motion": null
+    },
+    "selection": {
+      "whyHeadline": "Selected as top-ranked Belgian headline (score 79.01 = frequency 76 + priority 0 + recency 3.01).",
+      "priorityTerms": []
+    },
+    "qualitySummary": "TOTAL_ALIGN 75.2."
+  },
+  "runPolicy": {
+    "artworksPerRun": 1,
+    "multiVariant": false
+  },
+  "artFramework": {
+    "version": 3,
+    "intent": {
+      "statement": "Hilma af Klint did not ascribe to any of the established avant-garde movements of her time. In response to \"New investigation against Marc Dutroux for possession of child sexual abuse images\", the artwork should translate civic signal into an abstract composition with a clear emotional center. Paintings for the Temple (paintings by Hilma af Klint) Af Klint concluded Paintings for the Temple with a triptych she called Altarpieces, featuring geometric shapes, bold primary colors, and gold leaf.",
+      "narrativeBridge": "Paintings for the Temple (paintings by Hilma af Klint) Af Klint concluded Paintings for the Temple with a triptych she called Altarpieces, featuring geometric shapes, bold primary colors, and gold leaf. Paintings for the Temple (paintings by Hilma af Klint) Af Klint concluded Paintings for the Temple with a triptych she called Altarpieces, featuring geometric shapes, bold primary colors, and gold leaf.",
+      "motifHint": "tegen",
+      "emotionalCenter": "measured structural drift",
+      "motifPressure": "medium"
+    }
+  },
+  "debugFile": "./data/artworks-debug/2026-02-24-fragments-of-investigation-against-dutroux-v2.json"
+}

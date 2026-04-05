@@ -1,0 +1,449 @@
+{
+  "id": "2026-02-18-abstract-signal-belgian-federal-talks",
+  "date": "2026-02-18",
+  "title": "Abstract Signal: Belgian federal talks",
+  "generatedAt": "2026-02-18T15:37:08.184Z",
+  "news": {
+    "source": "rtbf",
+    "title": "Belgian federal talks intensify around budget and climate priorities",
+    "link": "https://example.com/rtbf-federal-talks",
+    "score": 18
+  },
+  "inspiration": {
+    "artist": "John D. Graham",
+    "tags": [
+      "figurative"
+    ],
+    "links": {
+      "wikipedia": "https://en.wikipedia.org/wiki/John_D._Graham",
+      "reference": "https://en.wikipedia.org/wiki/John_D._Graham"
+    }
+  },
+  "seed": 3014592930,
+  "scene": {
+    "motif": "clusters",
+    "shapeCount": 23,
+    "turbulence": 0.547,
+    "spiralBias": 0.675,
+    "motionSpeed": 0.00099,
+    "bloom": 0.433,
+    "grain": 0.045,
+    "fogDensity": 0.059,
+    "distortion": 0.508,
+    "flowField": 0.831,
+    "anchorStrength": 0.698,
+    "anchorOffsetX": 0.378,
+    "layerBalance": {
+      "structure": 0.637,
+      "chaos": 0.367
+    },
+    "expression": {
+      "tension": 0.54,
+      "structure": 0.473,
+      "motion": 0.403,
+      "noise": 0.505,
+      "urgency": 0.18,
+      "contrast": 0.102
+    },
+    "palette": {
+      "bg": "hsl(248, 48%, 6%)",
+      "primary": "hsl(111, 76%, 62%)",
+      "secondary": "hsl(114, 68%, 64%)",
+      "glow": "hsl(38, 77%, 66%)",
+      "anchor": "hsl(71, 77%, 66%)"
+    },
+    "shaderLayers": 6,
+    "paletteVariance": 0.72,
+    "motionSpeedNormalized": 0.339,
+    "camera": {
+      "autoRotate": false,
+      "autoRotateSpeed": 0.096,
+      "minDistance": 6,
+      "maxDistance": 24,
+      "cycleSeconds": 24,
+      "beats": [
+        {
+          "t": 0,
+          "radius": 12.6,
+          "theta": 0.149,
+          "phi": 1.22,
+          "hold": 1
+        },
+        {
+          "t": 0.34,
+          "radius": 10.7,
+          "theta": 0.958,
+          "phi": 1.052,
+          "hold": 0.5
+        },
+        {
+          "t": 0.68,
+          "radius": 11.2,
+          "theta": 1.722,
+          "phi": 1.32,
+          "hold": 0.8
+        },
+        {
+          "t": 1,
+          "radius": 12.2,
+          "theta": 2.256,
+          "phi": 1.144,
+          "hold": 1.1
+        }
+      ]
+    },
+    "post": {
+      "vignette": 0.381,
+      "contrast": 1.109,
+      "saturation": 1.032,
+      "exposure": 0.956,
+      "breathing": {
+        "hueShift": 0.01,
+        "saturationAmplitude": 0.06,
+        "exposureAmplitude": 0.04,
+        "phaseA": 0.5114,
+        "phaseB": 0.4451
+      }
+    },
+    "styleFingerprint": {
+      "pulseFamily": "balanced",
+      "stripeWarp": 0.14,
+      "edgeSoftness": 0.26,
+      "cameraSway": 0.16,
+      "edgeHardness": 0.36,
+      "temperatureBias": 0,
+      "verticalBias": 0,
+      "cadenceBias": -0.1
+    },
+    "seedVersion": 2,
+    "seeds": {
+      "baseSeed": 439511702,
+      "runSeed": 3014592930,
+      "geomSeed": 610823635,
+      "animSeed": 684164490,
+      "colorSeed": 187250562,
+      "cameraSeed": 3372531940
+    },
+    "techStack": {
+      "id": "shader-field-balanced",
+      "name": "Shader Field Layering",
+      "family": "shader-field",
+      "strategyFamilies": [
+        "flow",
+        "hybrid",
+        "orbits"
+      ],
+      "rationale": {
+        "signals": {
+          "conflict": 0.21239999999999998,
+          "context": 0.62785,
+          "motion": 0.2208,
+          "turbulence": 0.28,
+          "structureBias": -0.0096,
+          "densityBias": 0.0072,
+          "edgeBias": 0,
+          "motionBias": 0.12,
+          "visualProfile": {
+            "structureBias": -0.0096,
+            "densityBias": 0.0072,
+            "motionBias": 0,
+            "turbulenceBias": 0,
+            "motionEnergy": 0.42,
+            "centerDispersion": 0.12,
+            "profileCadence": "steady",
+            "preferredFamilies": [
+              "shader-field"
+            ]
+          }
+        },
+        "familyHits": 0,
+        "idHits": 0,
+        "penalties": [
+          "conflict<0.24",
+          "motion<0.28"
+        ],
+        "visualAffinity": 0.55,
+        "elementCoverage": {
+          "score": 2.0603174603174605,
+          "coverage": 0.714,
+          "moduleCoverage": 0.444,
+          "missingCapabilities": [
+            "clustered-actors",
+            "kinetic-motion"
+          ]
+        },
+        "preferredFamilies": [
+          "shader-field"
+        ],
+        "preferredFamilyLocked": true,
+        "notPreferredPenalty": 0
+      },
+      "dominantPrimitive": "shader-field-plane",
+      "moduleSet": [
+        "volumetric-haze",
+        "shader-field-plane",
+        "flow-noise-slab"
+      ],
+      "pipelineKind": "shader-field"
+    },
+    "visualProfileHints": {
+      "cadence": "steady",
+      "motionEnergy": 0.42,
+      "preferredModules": [
+        {
+          "name": "motif-armature",
+          "weight": 0.5,
+          "reason": "fallback baseline"
+        }
+      ],
+      "preferredStackFamilies": [
+        {
+          "family": "shader-field",
+          "weight": 0.5,
+          "reason": "neutral fallback"
+        }
+      ],
+      "sourceAnalysis": {
+        "mode": "computer-vision",
+        "status": "unavailable",
+        "analyzedReferences": 0,
+        "failedReferences": 0,
+        "texture": null,
+        "failures": [],
+        "note": "No image URLs available in reference set for computer-vision analysis."
+      }
+    },
+    "strategy": {
+      "id": "atomic-balanced-flow",
+      "name": "Balanced Flow Field",
+      "type": "atomic",
+      "family": "flow",
+      "cooldown": {
+        "window": 3,
+        "recentFamilies": [],
+        "family": "flow",
+        "applied": false
+      },
+      "compositeDemanded": false,
+      "signals": {
+        "conflict": 0.332,
+        "context": 0.628,
+        "moodDepth": 0.35
+      }
+    },
+    "layers": [
+      {
+        "role": "background",
+        "modules": [
+          "volumetric-haze",
+          "particle-cloud"
+        ]
+      },
+      {
+        "role": "midground",
+        "modules": [
+          "motif-armature"
+        ]
+      },
+      {
+        "role": "foreground",
+        "modules": [
+          "anchor-core",
+          "drift-ribbon"
+        ]
+      },
+      {
+        "role": "accent",
+        "modules": [
+          "orbit-ribbon"
+        ]
+      },
+      {
+        "role": "post",
+        "modules": [
+          "post-breathing"
+        ]
+      }
+    ],
+    "renderPipeline": {
+      "kind": "shader-field",
+      "family": "shader-field",
+      "fallback": false,
+      "dominantPrimitive": "shader-field-plane",
+      "moduleSet": [
+        "volumetric-haze",
+        "shader-field-plane",
+        "flow-noise-slab"
+      ]
+    },
+    "lowDivergenceNoveltyPass": {
+      "applied": true,
+      "profile": "generic-high-overlap",
+      "boundedRandomness": true,
+      "deterministicVariantIndex": true,
+      "regimeShiftsBefore": 1,
+      "elementOverlapBefore": 1
+    },
+    "elements": [
+      {
+        "role": "atmosphere-field",
+        "colorA": "bg",
+        "colorB": "secondary",
+        "opacity": 0.328,
+        "intensity": 0.552,
+        "animation": {
+          "drift": 0.262
+        },
+        "layer": "background",
+        "moduleType": "volumetric-haze"
+      },
+      {
+        "role": "support-rhythm",
+        "color": "glow",
+        "opacity": 0.34,
+        "intensity": 0.52,
+        "animation": {
+          "rotationZ": 0.14,
+          "pulse": 0.2
+        },
+        "moduleType": "shader-field-plane"
+      },
+      {
+        "role": "structural-spine",
+        "layer": "midground",
+        "color": "secondary",
+        "opacity": 0.36,
+        "intensity": 0.56,
+        "animation": {
+          "rotationZ": 0.12,
+          "pulse": 0.2
+        },
+        "moduleType": "flow-noise-slab"
+      }
+    ],
+    "elementDiversity": 3
+  },
+  "sceneStrategy": {
+    "selected": {
+      "id": "atomic-balanced-flow",
+      "name": "Balanced Flow Field",
+      "type": "atomic",
+      "family": "flow"
+    },
+    "applied": true,
+    "fallbackReason": null
+  },
+  "techStack": {
+    "id": "shader-field-balanced",
+    "name": "Shader Field Layering",
+    "family": "shader-field"
+  },
+  "newsVisualMappings": [
+    {
+      "signal": "title evidence [federal, budget, climate] -> motif clusters",
+      "from": "federal, budget, climate",
+      "visualDecision": "structural motif armature set to clusters"
+    },
+    {
+      "signal": "composition foreground conflict",
+      "from": "intensify, budget, budget, budget",
+      "visualDecision": "foreground role tension-knot at pressure 0.527"
+    },
+    {
+      "signal": "composition midground context",
+      "from": "federal, budget, climate, federal, budget, climate",
+      "visualDecision": "midground role context-drift with density 0.557"
+    },
+    {
+      "signal": "composition background mood",
+      "from": "climate, climate, climate",
+      "visualDecision": "background mood watchful depth 0.385"
+    },
+    {
+      "signal": "urgency -> motion",
+      "from": "ageHours=128.12",
+      "visualDecision": "motionSpeedNormalized=0.339"
+    },
+    {
+      "signal": "title semantics -> palette/edge cadence",
+      "from": "temp=0 edge=0.36",
+      "visualDecision": "postContrast=1.109 accentType=n/a"
+    },
+    {
+      "signal": "article institutional/conflict polarity",
+      "from": "climate, intent-motif-hint",
+      "visualDecision": "accent primitive n/a with opacity n/a"
+    },
+    {
+      "signal": "artist grammar John D. Graham",
+      "from": "style card radial-burst · musical-pulse · high-contrast-prism · core-centered",
+      "visualDecision": "camera beat choreography + palette topology constrained to artist envelope"
+    }
+  ],
+  "qualityScore": {
+    "score": 54.2,
+    "summary": "Alignment 76.3 with strongest channel style.",
+    "heuristic": {
+      "score": 69.6,
+      "breakdown": {
+        "legibility": 77,
+        "emotionalReadability": 76.9,
+        "coherence": 86.3,
+        "focalAnchor": 65.8,
+        "technicalRichness": 100,
+        "restraint": 61.4,
+        "alignment": 76.3
+      }
+    },
+    "calibration": {
+      "sampleCount": 1,
+      "trustWeight": 0.4
+    },
+    "alignment": {
+      "totalAlign": 76.3,
+      "components": {
+        "title": {
+          "score": 67
+        },
+        "style": {
+          "score": 84.6
+        },
+        "emotional": {
+          "score": 74.5
+        }
+      }
+    }
+  },
+  "rationale": {
+    "intent": {
+      "signal": null,
+      "emotion": null,
+      "tension": null,
+      "balance": null,
+      "motion": null
+    },
+    "selection": {
+      "whyHeadline": "Selected as top-ranked Belgian headline (score 18 = frequency 9 + priority 9 + recency 0).",
+      "priorityTerms": [
+        "federal",
+        "budget",
+        "climate"
+      ]
+    },
+    "qualitySummary": "TOTAL_ALIGN 76.3."
+  },
+  "runPolicy": {
+    "artworksPerRun": 1,
+    "multiVariant": false
+  },
+  "artFramework": {
+    "version": 3,
+    "intent": {
+      "statement": "John D. In response to \"Belgian federal talks intensify around budget and climate priorities\", the artwork should translate civic signal into an abstract composition with a clear emotional center. Art is a diverse range of cultural activity centered around works utilizing creative or imaginative talents, which are expected to evoke a worthwhile experience, generally through an expression of emotional power, conceptual ideas, technical proficiency, or beauty.",
+      "narrativeBridge": "Watercolor or watercolour, also aquarelle, is a painting method in which the paints are made of pigments suspended in a water-based solution. Art is a diverse range of cultural activity centered around works utilizing creative or imaginative talents, which are expected to evoke a worthwhile experience, generally through an expression of emotional power, conceptual ideas, technical proficiency, or beauty.",
+      "motifHint": "clusters",
+      "emotionalCenter": "measured structural drift"
+    }
+  },
+  "debugFile": "./data/artworks-debug/2026-02-18-abstract-signal-belgian-federal-talks.json"
+}
