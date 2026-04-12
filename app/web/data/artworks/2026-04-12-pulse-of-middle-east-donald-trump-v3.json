@@ -1,0 +1,1240 @@
+{
+  "id": "2026-04-12-pulse-of-middle-east-donald-trump-v3",
+  "date": "2026-04-12",
+  "title": "Pulse of Middle East Donald Trump",
+  "generatedAt": "2026-04-12T06:09:01.226Z",
+  "news": {
+    "source": "lalibre",
+    "title": "War in the Middle East: Donald Trump says he \"doesn't care\" whether a peace deal is reached with Iran",
+    "link": "https://www.lalibre.be/international/moyen-orient/iran/2026/04/11/direct-guerre-au-moyen-orient-jd-vance-en-route-vers-le-pakistan-pour-les-negociations-entre-les-etats-unis-et-liran-SBDAPOUMLBD6LJN5YND4ISH2BU/",
+    "score": 92
+  },
+  "inspiration": {
+    "artist": "Hilma af Klint",
+    "tags": [
+      "symbolic",
+      "spiral",
+      "organic"
+    ],
+    "links": {
+      "wikipedia": "https://en.wikipedia.org/wiki/Hilma_af_Klint",
+      "reference": "https://www.modernamuseet.se/stockholm/en/exhibitions/hilma-af-klint/"
+    }
+  },
+  "seed": 2917564098,
+  "scene": {
+    "motif": "flow",
+    "shapeCount": 120,
+    "turbulence": 0.38,
+    "spiralBias": 0.679,
+    "motionSpeed": 0.001151,
+    "bloom": 0.24,
+    "grain": 0.038,
+    "fogDensity": 0.056,
+    "distortion": 0.16,
+    "flowField": 0.22,
+    "anchorStrength": 0.639,
+    "anchorOffsetX": 0.068,
+    "layerBalance": {
+      "structure": 0.667,
+      "chaos": 0.316
+    },
+    "expression": {
+      "tension": 0.31,
+      "structure": 0.562,
+      "motion": 0.413,
+      "noise": 0.364,
+      "urgency": 0.18,
+      "contrast": 0.318
+    },
+    "palette": {
+      "bg": "#fcf9f2",
+      "primary": "#d67566",
+      "secondary": "#3067c7",
+      "glow": "#ddbc5b",
+      "anchor": "#974d34"
+    },
+    "elements": [
+      {
+        "id": "el-01-shader-field-plane",
+        "moduleType": "shader-field-plane",
+        "capabilities": [
+          "fluid-drift",
+          "layered-field"
+        ],
+        "stackFamilies": [
+          "shader-field",
+          "post-heavy",
+          "sdf-raymarch"
+        ],
+        "styleTags": [
+          "shader",
+          "field"
+        ],
+        "libraryRef": "element.shader-field-plane.v1",
+        "color": "bg",
+        "opacity": 0.87,
+        "intensity": 0.47,
+        "layer": "background",
+        "scale": 8,
+        "noise": 0.12,
+        "animation": {
+          "pulse": 0.03,
+          "wobbleX": 0.02,
+          "wobbleY": 0.02,
+          "drift": 0.09
+        },
+        "scaleX": 0.84,
+        "scaleY": 0.94,
+        "techniqueRef": "t1",
+        "role": "atmosphere-field",
+        "motif": "flow",
+        "intentCadence": "pulsed"
+      },
+      {
+        "id": "el-02-volumetric-haze",
+        "moduleType": "volumetric-haze",
+        "capabilities": [
+          "atmosphere-plume",
+          "fluid-drift",
+          "layered-field"
+        ],
+        "stackFamilies": [
+          "shader-field",
+          "post-heavy",
+          "particle-heavy",
+          "sdf-raymarch"
+        ],
+        "styleTags": [
+          "atmosphere",
+          "depth",
+          "diffusion"
+        ],
+        "libraryRef": "element.volumetric-haze.v1",
+        "colorA": "bg",
+        "colorB": "secondary",
+        "opacity": 0.22,
+        "intensity": 0.34,
+        "layer": "background",
+        "heightBias": 0.44,
+        "color": "glow",
+        "animation": {
+          "pulse": 0.04,
+          "wobbleX": 0.03,
+          "wobbleY": 0.02,
+          "drift": 0.13
+        },
+        "techniqueRef": "t4",
+        "role": "support-rhythm",
+        "motif": "flow",
+        "intentCadence": "pulsed"
+      },
+      {
+        "id": "el-03-concentric-discs",
+        "moduleType": "concentric-discs",
+        "capabilities": [
+          "orbital-forms",
+          "focal-anchor"
+        ],
+        "stackFamilies": [
+          "sdf-raymarch",
+          "geometry-heavy",
+          "shader-field"
+        ],
+        "styleTags": [
+          "discs",
+          "radial"
+        ],
+        "libraryRef": "element.concentric-discs.v1",
+        "color": "secondary",
+        "opacity": 0.68,
+        "intensity": 0.7,
+        "layer": "midground",
+        "count": 6,
+        "spacing": 0.58,
+        "radius": 0.86,
+        "verticalSpread": 3.6,
+        "animation": {
+          "rotationZ": 0.02,
+          "pulse": 0.08,
+          "wobbleX": 0.02,
+          "wobbleY": 0.02,
+          "drift": 0.05
+        },
+        "techniqueRef": "t2",
+        "role": "structural-spine",
+        "motif": "flow",
+        "intentCadence": "pulsed"
+      },
+      {
+        "id": "el-04-fault-line",
+        "moduleType": "fault-line",
+        "capabilities": [
+          "fracture-destruction",
+          "focal-anchor"
+        ],
+        "stackFamilies": [
+          "post-heavy",
+          "particle-heavy",
+          "geometry-heavy"
+        ],
+        "styleTags": [
+          "fault",
+          "break"
+        ],
+        "libraryRef": "element.fault-line.v1",
+        "color": "anchor",
+        "opacity": 0.94,
+        "intensity": 0.9,
+        "layer": "foreground",
+        "vertical": true,
+        "thickness": 0.06,
+        "height": 4.2,
+        "animation": {
+          "pulse": 0.14,
+          "wobbleX": 0.01,
+          "wobbleY": 0.01,
+          "drift": 0.03
+        },
+        "aura": 0.66,
+        "techniqueRef": "t2",
+        "role": "focal-anchor",
+        "motif": "flow",
+        "intentCadence": "pulsed"
+      },
+      {
+        "id": "el-05-anchor-core",
+        "moduleType": "anchor-core",
+        "capabilities": [
+          "focal-anchor",
+          "layered-field"
+        ],
+        "stackFamilies": [
+          "shader-field",
+          "geometry-heavy",
+          "particle-heavy",
+          "instancing",
+          "sdf-raymarch"
+        ],
+        "styleTags": [
+          "anchor",
+          "center",
+          "stability"
+        ],
+        "libraryRef": "element.anchor-core.v1",
+        "color": "anchor",
+        "opacity": 0.9,
+        "intensity": 0.82,
+        "layer": "foreground",
+        "x": -0.22,
+        "y": -0.8,
+        "radius": 0.28,
+        "animation": {
+          "pulse": 0.03,
+          "wobbleX": 0.02,
+          "wobbleY": 0.02,
+          "drift": 0.08
+        },
+        "techniqueRef": "t3",
+        "role": "accent-gesture",
+        "motif": "flow",
+        "intentCadence": "pulsed"
+      },
+      {
+        "id": "el-06-anchor-core",
+        "moduleType": "anchor-core",
+        "capabilities": [
+          "focal-anchor",
+          "layered-field"
+        ],
+        "stackFamilies": [
+          "shader-field",
+          "geometry-heavy",
+          "particle-heavy",
+          "instancing",
+          "sdf-raymarch"
+        ],
+        "styleTags": [
+          "anchor",
+          "center",
+          "stability"
+        ],
+        "libraryRef": "element.anchor-core.v1",
+        "color": "anchor",
+        "opacity": 0.9,
+        "intensity": 0.82,
+        "layer": "foreground",
+        "x": 0.24,
+        "y": 0.42,
+        "radius": 0.31,
+        "animation": {
+          "rotationZ": 0.02,
+          "pulse": 0.03,
+          "wobbleX": 0.02,
+          "wobbleY": 0.02,
+          "drift": 0.08
+        },
+        "techniqueRef": "t3",
+        "role": "accent-gesture",
+        "motif": "flow",
+        "intentCadence": "pulsed"
+      },
+      {
+        "id": "el-07-anchor-core",
+        "moduleType": "anchor-core",
+        "capabilities": [
+          "focal-anchor",
+          "layered-field"
+        ],
+        "stackFamilies": [
+          "shader-field",
+          "geometry-heavy",
+          "particle-heavy",
+          "instancing",
+          "sdf-raymarch"
+        ],
+        "styleTags": [
+          "anchor",
+          "center",
+          "stability"
+        ],
+        "libraryRef": "element.anchor-core.v1",
+        "color": "anchor",
+        "opacity": 0.9,
+        "intensity": 0.82,
+        "layer": "foreground",
+        "x": -0.18,
+        "y": 1.52,
+        "radius": 0.26,
+        "animation": {
+          "pulse": 0.03,
+          "wobbleX": 0.02,
+          "wobbleY": 0.02,
+          "drift": 0.08
+        },
+        "techniqueRef": "t3",
+        "role": "accent-gesture",
+        "motif": "flow",
+        "intentCadence": "pulsed"
+      },
+      {
+        "id": "el-08-cm.split-halo-sigil.v1",
+        "moduleType": "cm.split-halo-sigil.v1",
+        "capabilities": [],
+        "stackFamilies": [],
+        "styleTags": [],
+        "libraryRef": null,
+        "radius": 0.46,
+        "gap": 0.18,
+        "thickness": 0.07,
+        "rotation": 0,
+        "y": 2.08,
+        "color": "secondary",
+        "opacity": 0.62,
+        "intensity": 0.76,
+        "animation": {
+          "rotationZ": 0.03,
+          "pulse": 0.09,
+          "wobbleX": 0.02,
+          "wobbleY": 0.02,
+          "drift": 0.05
+        },
+        "techniqueRef": "cm.split-halo-sigil.v1",
+        "role": "primary-signal",
+        "layer": "midground",
+        "motif": "flow",
+        "intentCadence": "pulsed"
+      },
+      {
+        "id": "el-09-drift-ribbon",
+        "moduleType": "drift-ribbon",
+        "capabilities": [
+          "fluid-drift",
+          "kinetic-motion"
+        ],
+        "stackFamilies": [
+          "geometry-heavy",
+          "particle-heavy",
+          "post-heavy"
+        ],
+        "styleTags": [
+          "ribbon",
+          "drift"
+        ],
+        "libraryRef": "element.drift-ribbon.v1",
+        "color": "anchor",
+        "opacity": 0.42,
+        "intensity": 0.74,
+        "layer": "foreground",
+        "offsetX": 0.22,
+        "offsetY": -0.34,
+        "rotationZ": 0.56,
+        "scaleX": 0.82,
+        "scaleY": 1.26,
+        "role": "primary-signal",
+        "motif": "flow",
+        "intentCadence": "pulsed"
+      },
+      {
+        "id": "el-10-drift-ribbon",
+        "moduleType": "drift-ribbon",
+        "capabilities": [
+          "fluid-drift",
+          "kinetic-motion"
+        ],
+        "stackFamilies": [
+          "geometry-heavy",
+          "particle-heavy",
+          "post-heavy"
+        ],
+        "styleTags": [
+          "ribbon",
+          "drift"
+        ],
+        "libraryRef": "element.drift-ribbon.v1",
+        "color": "secondary",
+        "opacity": 0.22,
+        "intensity": 0.38,
+        "layer": "midground",
+        "offsetX": -1.08,
+        "offsetY": -0.56,
+        "rotationZ": 0.42,
+        "scaleX": 0.74,
+        "scaleY": 1.04,
+        "role": "support-rhythm",
+        "motif": "flow",
+        "intentCadence": "pulsed"
+      },
+      {
+        "id": "el-11-drift-ribbon",
+        "moduleType": "drift-ribbon",
+        "capabilities": [
+          "fluid-drift",
+          "kinetic-motion"
+        ],
+        "stackFamilies": [
+          "geometry-heavy",
+          "particle-heavy",
+          "post-heavy"
+        ],
+        "styleTags": [
+          "ribbon",
+          "drift"
+        ],
+        "libraryRef": "element.drift-ribbon.v1",
+        "color": "glow",
+        "opacity": 0.2,
+        "intensity": 0.34,
+        "layer": "midground",
+        "offsetX": 1.14,
+        "offsetY": -0.52,
+        "rotationZ": 0.36,
+        "scaleX": 0.7,
+        "scaleY": 0.98,
+        "role": "support-rhythm",
+        "motif": "flow",
+        "intentCadence": "pulsed"
+      },
+      {
+        "id": "el-12-anchor-core",
+        "moduleType": "anchor-core",
+        "capabilities": [
+          "focal-anchor",
+          "layered-field"
+        ],
+        "stackFamilies": [
+          "shader-field",
+          "geometry-heavy",
+          "particle-heavy",
+          "instancing",
+          "sdf-raymarch"
+        ],
+        "styleTags": [
+          "anchor",
+          "center",
+          "stability"
+        ],
+        "libraryRef": "element.anchor-core.v1",
+        "color": "anchor",
+        "opacity": 0.72,
+        "intensity": 0.82,
+        "layer": "foreground",
+        "position": [
+          0.88,
+          1.72,
+          0.12
+        ],
+        "scale": 0.9,
+        "rotationZ": 0.06,
+        "aura": 0.62,
+        "role": "focal-anchor",
+        "motif": "flow",
+        "intentCadence": "pulsed"
+      },
+      {
+        "id": "el-13-signal-weave",
+        "moduleType": "signal-weave",
+        "capabilities": [
+          "kinetic-motion",
+          "layered-field"
+        ],
+        "stackFamilies": [
+          "geometry-heavy",
+          "post-heavy",
+          "shader-field"
+        ],
+        "styleTags": [
+          "rhythm",
+          "support"
+        ],
+        "libraryRef": "element.signal-weave.v1",
+        "color": "secondary",
+        "opacity": 0.34,
+        "intensity": 0.58,
+        "layer": "foreground",
+        "offsetX": -1.22,
+        "height": 1.18,
+        "spread": 0.42,
+        "role": "support-rhythm",
+        "motif": "flow",
+        "intentCadence": "pulsed"
+      },
+      {
+        "id": "el-14-signal-weave",
+        "moduleType": "signal-weave",
+        "capabilities": [
+          "kinetic-motion",
+          "layered-field"
+        ],
+        "stackFamilies": [
+          "geometry-heavy",
+          "post-heavy",
+          "shader-field"
+        ],
+        "styleTags": [
+          "rhythm",
+          "support"
+        ],
+        "libraryRef": "element.signal-weave.v1",
+        "color": "secondary",
+        "opacity": 0.34,
+        "intensity": 0.58,
+        "layer": "foreground",
+        "offsetX": 1.22,
+        "height": 1.18,
+        "spread": 0.42,
+        "role": "support-rhythm",
+        "motif": "flow",
+        "intentCadence": "pulsed"
+      },
+      {
+        "id": "el-15-fault-line",
+        "moduleType": "fault-line",
+        "capabilities": [
+          "fracture-destruction",
+          "focal-anchor"
+        ],
+        "stackFamilies": [
+          "post-heavy",
+          "particle-heavy",
+          "geometry-heavy"
+        ],
+        "styleTags": [
+          "fault",
+          "break"
+        ],
+        "libraryRef": "element.fault-line.v1",
+        "color": "anchor",
+        "opacity": 0.52,
+        "intensity": 0.68,
+        "layer": "foreground",
+        "width": 0.08,
+        "jitter": 0.16,
+        "role": "accent-gesture",
+        "motif": "flow",
+        "intentCadence": "pulsed"
+      },
+      {
+        "id": "el-16-shader-field-plane",
+        "moduleType": "shader-field-plane",
+        "capabilities": [
+          "fluid-drift",
+          "layered-field"
+        ],
+        "stackFamilies": [
+          "shader-field",
+          "post-heavy",
+          "sdf-raymarch"
+        ],
+        "styleTags": [
+          "shader",
+          "field"
+        ],
+        "libraryRef": "element.shader-field-plane.v1",
+        "color": "secondary",
+        "opacity": 0.24,
+        "intensity": 0.34,
+        "layer": "background",
+        "radialBias": 0.52,
+        "hemisphereContrast": 0.38,
+        "role": "atmosphere-field",
+        "motif": "flow",
+        "intentCadence": "pulsed"
+      }
+    ],
+    "shaderLayers": 4,
+    "elementDiversity": 8,
+    "paletteVariance": 0,
+    "motionSpeedNormalized": 0.435,
+    "camera": {
+      "autoRotate": false,
+      "autoRotateSpeed": 0.109,
+      "minDistance": 6,
+      "maxDistance": 24,
+      "cycleSeconds": 24,
+      "beats": [
+        {
+          "t": 0,
+          "radius": 12.552,
+          "theta": 0.165,
+          "phi": 1.21,
+          "hold": 1.072
+        },
+        {
+          "t": 0.34,
+          "radius": 10.668,
+          "theta": 0.994,
+          "phi": 1.035,
+          "hold": 0.507
+        },
+        {
+          "t": 0.68,
+          "radius": 11.224,
+          "theta": 1.767,
+          "phi": 1.305,
+          "hold": 0.818
+        },
+        {
+          "t": 1,
+          "radius": 12.24,
+          "theta": 2.23,
+          "phi": 1.13,
+          "hold": 1.124
+        }
+      ],
+      "target": [
+        0,
+        0,
+        0
+      ]
+    },
+    "post": {
+      "vignette": 0.14,
+      "contrast": 1.14,
+      "saturation": 0.92,
+      "exposure": 1.02,
+      "breathing": {
+        "hueShift": 0.037,
+        "saturationAmplitude": 0.065,
+        "exposureAmplitude": 0.05,
+        "phaseA": 0.3181,
+        "phaseB": 0.7094
+      }
+    },
+    "styleFingerprint": {
+      "pulseFamily": "ascending",
+      "stripeWarp": 0.06,
+      "edgeSoftness": 0.34,
+      "cameraSway": 0.12,
+      "edgeHardness": 0.5,
+      "temperatureBias": 0.24,
+      "verticalBias": 0.36,
+      "cadenceBias": 0
+    },
+    "sceneAuthoring": {
+      "mode": "agent-dsl",
+      "planner": "openclaw-agent-scene-planner",
+      "representation": {
+        "id": "rep.oracular-no-covenant",
+        "label": "Oracular No-Covenant",
+        "description": "A taller, more ascensional diagram where a gold ascent is repeatedly interrupted by dark circular verdicts, suggesting the ritual of agreement being denied at each level.",
+        "scoreHint": 0.74,
+        "motif": "ascent denied in stages",
+        "cadence": "pulsed",
+        "scenePrompt": "A vertically ascending mystical diagram made of stacked discs, glyph-like pathways and soft red-gold fields, with three rust-dark circular verdict forms interrupting the climb toward a blue-gold upper opening.",
+        "colorMood": "sun-warmed cream and ochre with sharper rust interruptions and a final cool blue opening",
+        "spatialIntent": "Background is softly radiant and layered, midground organizes the ascent, foreground places interrupting verdict discs and fine glyph traces.",
+        "mustShow": [
+          "a clear upward path or ascent through stacked symbolic levels",
+          "interrupting dark verdict discs crossing that ascent",
+          "a cool blue-gold upper opening as distant possibility",
+          "distinct background, midground and foreground readability"
+        ],
+        "mustAvoid": [
+          "straight sci-fi tunnel look",
+          "uniform repeated circles with no hierarchy",
+          "too much bloom flattening the painted feel",
+          "random decorative symbols with no compositional function"
+        ],
+        "reviewFocus": [
+          "does the ascent read immediately",
+          "are the interruptions spaced with meaningful rhythm",
+          "does the upper opening remain hopeful but unresolved"
+        ],
+        "artistTechniqueObservations": {
+          "medium": "painting",
+          "primaryTechnique": null,
+          "markMakingTraits": [],
+          "surfaceQualities": [
+            "painted surface behavior matters more than object literalism"
+          ],
+          "paletteTendencies": [
+            "dominant hues: red, orange, yellow"
+          ],
+          "spatialHabits": []
+        },
+        "rationale": {
+          "headlineTranslation": "Agreement is repeatedly interrupted by detached declarations, yet the possibility of accord remains at the far end.",
+          "artistTranslation": "Transforms mystical ascent and symbolic sequencing into a political emotional structure."
+        },
+        "techniques": [
+          {
+            "id": "t2",
+            "name": "Sacred Axis Stack",
+            "type": "geometry-stack",
+            "purpose": "Build the ascent",
+            "reuseModuleType": null,
+            "params": {
+              "layers": 6
+            }
+          },
+          {
+            "id": "t3",
+            "name": "Detached Emblem",
+            "type": "symbolic-anchor",
+            "purpose": "Interrupt the path",
+            "reuseModuleType": null,
+            "params": {
+              "offsetX": 0.18
+            }
+          },
+          {
+            "id": "t4",
+            "name": "Temple Veil Haze",
+            "type": "atmosphere",
+            "purpose": "Separate levels in depth",
+            "reuseModuleType": null,
+            "params": {
+              "density": 0.16
+            }
+          }
+        ]
+      },
+      "artisticIntent": {
+        "statement": "A temple-like abstract painting in motion, where spiritual geometry is asked to contain political indifference. The scene turns a careless public statement about war into a stratified rite of imbalance: a radiant axis of possible accord, ringed by divided chambers, interrupted by a detached descending emblem that refuses moral contact.",
+        "motif": "Altarpiece geometry under stress: sacred circles, split petals, suspended seals, and",
+        "emotionalArc": "Begins in ceremonial stillness, moves into estrangement and asymmetry, and resolves in uneasy suspension rather than peace.",
+        "compositionLogic": "Use Hilma af Klint's painting logic, not literal conflict imagery: stacked symbolic zones, a readable central axis, bilateral forms that nearly reconcile, and a contrasting emblem of indifference offset against a field of spiritual order. Depth separation shou",
+        "imagePrompt": "A Hilma af Klint-inspired abstract altarpiece responding to geopolitical indifference: luminous cream ground, bold red, ochre, ultramarine and gold geometry, concentric spiritual diagrams, split circular emblems, petal and seal forms, a central vertical gold pathway interrupted by an aloof dark-orange disc, layered pai"
+      },
+      "executionPlan": {
+        "palette": {
+          "bg": "#fcf9f2",
+          "primary": "#d67566",
+          "secondary": "#3067c7",
+          "glow": "#ddbc5b",
+          "anchor": "#974d34"
+        },
+        "camera": {
+          "autoRotate": false,
+          "cycleSeconds": 24,
+          "target": [
+            0,
+            0,
+            0
+          ]
+        },
+        "post": {
+          "contrast": 1.08,
+          "saturation": 0.92,
+          "vignette": 0.14,
+          "exposure": 1.02
+        },
+        "global": {
+          "shapeCountHint": 120,
+          "flowField": 0.22,
+          "distortion": 0.16,
+          "bloom": 0.24
+        },
+        "techniques": [
+          {
+            "id": "t1",
+            "name": "Painted Altarpiece Ground",
+            "type": "shader-field",
+            "purpose": "Create a warm painted substrate with subtle pigment drift and paper-like lift so the scene begins as a painting surface, not empty 3D space.",
+            "reuseModuleType": "shader-field-plane",
+            "params": {
+              "grain": 0.18,
+              "edgeSoftness": 0.34,
+              "verticalBias": 0.21
+            }
+          },
+          {
+            "id": "t2",
+            "name": "Sacred Axis Stack",
+            "type": "geometry-stack",
+            "purpose": "Build a legible vertical hierarchy of discs, vesicas, petals, and path markers to carry the ceremonial center.",
+            "reuseModuleType": "concentric-discs",
+            "params": {
+              "layers": 5,
+              "axialCompression": 0.88,
+              "lineWeight": 0.07
+            }
+          },
+          {
+            "id": "t3",
+            "name": "Detached Emblem",
+            "type": "symbolic-anchor",
+            "purpose": "Introduce an offset seal or disc whose emotional role is indifference, refusing full integration with the sacred order.",
+            "reuseModuleType": "anchor-core",
+            "params": {
+              "offsetX": 0.44,
+              "hardEdge": 0.62,
+              "halo": 0.18
+            }
+          },
+          {
+            "id": "t4",
+            "name": "Temple Veil Haze",
+            "type": "atmosphere",
+            "purpose": "Separate background from symbolic forms with a soft luminous veil that feels like spiritual distance.",
+            "reuseModuleType": "volumetric-haze",
+            "params": {
+              "density": 0.14,
+              "falloff": 0.7,
+              "goldLift": 0.24
+            }
+          },
+          {
+            "id": "t5",
+            "name": "Scripted Orbit Lines",
+            "type": "line-geometry",
+            "purpose": "Add thin orbital marks and curving notations that evoke esoteric diagramming without becoming decorative clutter.",
+            "reuseModuleType": "orbit-ribbon",
+            "params": {
+              "count": 6,
+              "thickness": 0.01,
+              "eccentricity": 0.22
+            }
+          },
+          {
+            "id": "cm.temple-petal-array.v1",
+            "name": "Temple Petal Array",
+            "type": "custom-geometry",
+            "purpose": "Form Hilma-like petal and vesica structures around the axis with deterministic spacing and slight painted irregularity.",
+            "reuseModuleType": "cm.temple-petal-array.v1",
+            "params": {
+              "petalCount": 12,
+              "radius": 1.45,
+              "taper": 0.42,
+              "jitter": 0.03
+            }
+          },
+          {
+            "id": "cm.gilded-divider-post.v1",
+            "name": "Gilded Divider Glow",
+            "type": "custom-post",
+            "purpose": "Accentuate gold path moments and ring edges without turning the composition into neon.",
+            "reuseModuleType": "cm.gilded-divider-post.v1",
+            "params": {
+              "threshold": 0.72,
+              "intensity": 0.24,
+              "warmth": 0.8
+            }
+          }
+        ]
+      },
+      "moduleOverrides": [
+        {
+          "id": "mo.shader-field-plane.altarpiece-ground",
+          "target": {
+            "moduleType": "shader-field-plane",
+            "elementId": null
+          },
+          "mode": "uniforms",
+          "params": {
+            "blend": "multiply-soft",
+            "paintedSurface": true
+          },
+          "uniforms": {
+            "uPaletteBg": "#F4E9D1",
+            "uPrimaryTint": "#E5D6B8",
+            "uNoiseScale": 1.6,
+            "uVerticalFade": 0.28
+          }
+        },
+        {
+          "id": "mo.concentric-discs.gold-rim",
+          "target": {
+            "moduleType": "concentric-discs",
+            "elementId": null
+          },
+          "mode": "uniforms",
+          "params": {
+            "rimAccent": "glow"
+          },
+          "uniforms": {
+            "uRingSoftness": 0.08,
+            "uGoldEdgeMix": 0.36,
+            "uOpacity": 0.9
+          }
+        },
+        {
+          "id": "mo.anchor-core.detached-seal",
+          "target": {
+            "moduleType": "anchor-core",
+            "elementId": null
+          },
+          "mode": "uniforms",
+          "params": {
+            "innerCut": 0.18,
+            "detachment": 0.44
+          },
+          "uniforms": {
+            "uCoreContrast": 1.14,
+            "uHaloStrength": 0.16,
+            "uEdgeHardness": 0.66
+          }
+        }
+      ],
+      "customModules": [
+        {
+          "id": "cm.temple-petal-array.v1",
+          "family": "geometry",
+          "kind": "dsl",
+          "allowOverride": false,
+          "seedPolicy": "deterministic",
+          "paramsSchema": {
+            "petalCount": "number",
+            "radius": "number",
+            "taper": "number",
+            "jitter": "number",
+            "innerRadius": "number"
+          },
+          "source": {
+            "dsl": {
+              "geometry": {
+                "primitive": "petal-array",
+                "arrangement": "radial-axis",
+                "deform": {
+                  "taper": "@params.taper",
+                  "jitter": "@params.jitter"
+                }
+              }
+            },
+            "glsl": {},
+            "js": null
+          },
+          "budgets": {
+            "maxInstances": 240,
+            "maxShaderOpsHint": 0.42,
+            "mobileSafe": true
+          }
+        },
+        {
+          "id": "cm.split-halo-sigil.v1",
+          "family": "geometry",
+          "kind": "dsl",
+          "allowOverride": false,
+          "seedPolicy": "deterministic",
+          "paramsSchema": {
+            "radius": "number",
+            "gap": "number",
+            "thickness": "number",
+            "rotation": "number"
+          },
+          "source": {
+            "dsl": {
+              "geometry": {
+                "primitive": "split-ring-sigil",
+                "segments": 2,
+                "symmetry": "axial"
+              }
+            },
+            "glsl": {},
+            "js": null
+          },
+          "budgets": {
+            "maxInstances": 64,
+            "maxShaderOpsHint": 0.28,
+            "mobileSafe": true
+          }
+        },
+        {
+          "id": "cm.gilded-divider-post.v1",
+          "family": "post",
+          "kind": "dsl",
+          "allowOverride": false,
+          "seedPolicy": "deterministic",
+          "paramsSchema": {
+            "threshold": "number",
+            "intensity": "number",
+            "warmth": "number"
+          },
+          "source": {
+            "dsl": {
+              "post": {
+                "passes": [
+                  {
+                    "type": "selective-bloom",
+                    "threshold": "@params.threshold",
+                    "intensity": "@params.intensity",
+                    "colorBias": "@params.warmth"
+                  }
+                ]
+              }
+            },
+            "glsl": {},
+            "js": null
+          },
+          "budgets": {
+            "maxInstances": 1,
+            "maxShaderOpsHint": 0.34,
+            "mobileSafe": true
+          }
+        }
+      ],
+      "policyPasses": {
+        "advisoryOnly": true,
+        "skipped": [
+          "focal-hierarchy",
+          "envelope-clamp",
+          "composition-plan",
+          "artist-visual-profile",
+          "scene-element-module-enforcement",
+          "stack-pipeline-apply",
+          "gap-focused-pass",
+          "artist-hard-constraints"
+        ]
+      }
+    },
+    "seedVersion": 2,
+    "seeds": {
+      "baseSeed": 3501611434,
+      "runSeed": 2917564098,
+      "geomSeed": 799896940,
+      "animSeed": 561073921,
+      "colorSeed": 2977532019,
+      "cameraSeed": 685972379
+    },
+    "customModuleReport": {
+      "declaredCustomModules": 3,
+      "accepted": [
+        {
+          "id": "cm.temple-petal-array.v1",
+          "family": "geometry",
+          "kind": "dsl",
+          "fingerprint": "26695964"
+        },
+        {
+          "id": "cm.split-halo-sigil.v1",
+          "family": "geometry",
+          "kind": "dsl",
+          "fingerprint": "586ca187"
+        },
+        {
+          "id": "cm.gilded-divider-post.v1",
+          "family": "post",
+          "kind": "dsl",
+          "fingerprint": "0b65c9bf"
+        }
+      ],
+      "rejected": [],
+      "moduleOverrideCount": 3,
+      "fingerprint": "59b3b1e2"
+    },
+    "techStack": {
+      "id": "post-kinetic",
+      "name": "Post-Heavy Kinetic",
+      "family": "post-heavy",
+      "strategyFamilies": [
+        "hybrid",
+        "fracture",
+        "flow"
+      ],
+      "rationale": {
+        "source": "loop-adjustment-alternate-stack",
+        "score": 1.578,
+        "penalties": [
+          "conflict<0.42"
+        ]
+      },
+      "dominantPrimitive": "shader-field-plane",
+      "moduleSet": [
+        "shader-field-plane",
+        "volumetric-haze",
+        "concentric-discs",
+        "fault-line",
+        "anchor-core",
+        "cm.split-halo-sigil.v1",
+        "drift-ribbon",
+        "signal-weave"
+      ],
+      "pipelineKind": "post-heavy"
+    },
+    "renderPipeline": {
+      "kind": "post-heavy",
+      "family": "post-heavy",
+      "fallback": false,
+      "advisoryOnly": true,
+      "dominantPrimitive": "shader-field-plane",
+      "moduleSet": [
+        "shader-field-plane",
+        "volumetric-haze",
+        "concentric-discs",
+        "fault-line",
+        "anchor-core",
+        "cm.split-halo-sigil.v1",
+        "drift-ribbon",
+        "signal-weave"
+      ]
+    }
+  },
+  "sceneStrategy": {
+    "selected": {
+      "id": "atomic-balanced-flow",
+      "name": "Balanced Flow Field",
+      "type": "atomic",
+      "family": "flow"
+    },
+    "applied": false,
+    "fallbackReason": "agent-authored-scene-elements"
+  },
+  "techStack": {
+    "id": "post-kinetic",
+    "name": "Post-Heavy Kinetic",
+    "family": "post-heavy"
+  },
+  "newsVisualMappings": [
+    {
+      "signal": "title evidence [guerre, moyen, orient, donald] -> motif flow",
+      "from": "guerre, moyen, orient, donald",
+      "visualDecision": "structural motif armature set to flow"
+    },
+    {
+      "signal": "composition foreground conflict",
+      "from": "war",
+      "visualDecision": "foreground role tension-knot at pressure 0.281"
+    },
+    {
+      "signal": "composition midground context",
+      "from": "accord",
+      "visualDecision": "midground role context-drift with density 0.38"
+    },
+    {
+      "signal": "composition background mood",
+      "from": "guerre, moyen, orient, donald",
+      "visualDecision": "background mood watchful depth 0.243"
+    },
+    {
+      "signal": "urgency -> motion",
+      "from": "ageHours=24.1",
+      "visualDecision": "motionSpeedNormalized=0.435"
+    },
+    {
+      "signal": "title semantics -> palette/edge cadence",
+      "from": "temp=0.24 edge=0.5",
+      "visualDecision": "postContrast=1.14 accentType=anchor-core"
+    },
+    {
+      "signal": "article institutional/conflict polarity",
+      "from": "guerre, moyen, orient, donald",
+      "visualDecision": "accent element anchor-core with opacity 0.9"
+    },
+    {
+      "signal": "artist research context Hilma af Klint",
+      "from": "tags symbolic, spiral, organic",
+      "visualDecision": "artist profile captured as metadata only; no technical routing applied"
+    }
+  ],
+  "qualityScore": {
+    "score": 53.9,
+    "summary": "Alignment 70.2 with strongest channel emotional.",
+    "heuristic": {
+      "score": 69.3,
+      "breakdown": {
+        "legibility": 76.3,
+        "emotionalReadability": 71.7,
+        "coherence": 88.7,
+        "focalAnchor": 69.3,
+        "technicalRichness": 100,
+        "restraint": 71.5,
+        "alignment": 70.2
+      }
+    },
+    "calibration": {
+      "sampleCount": 1,
+      "trustWeight": 0.4
+    },
+    "alignment": {
+      "totalAlign": 70.2,
+      "components": {
+        "title": {
+          "score": 65.5
+        },
+        "style": {
+          "score": 64
+        },
+        "emotional": {
+          "score": 83.3
+        }
+      }
+    }
+  },
+  "rationale": {
+    "intent": {
+      "signal": null,
+      "emotion": null,
+      "tension": null,
+      "balance": null,
+      "motion": null
+    },
+    "selection": {
+      "whyHeadline": "Selected as top-ranked Belgian headline (score 92 = frequency 92 + priority 0 + recency 0).",
+      "priorityTerms": []
+    },
+    "qualitySummary": "TOTAL_ALIGN 70.2."
+  },
+  "runPolicy": {
+    "artworksPerRun": 1,
+    "multiVariant": false
+  },
+  "artFramework": {
+    "version": 3,
+    "intent": {
+      "statement": "War in the Middle East: Donald Trump says he \"doesn't care\" whether a peace deal is reached with Iran rendered through Hilma af Klint's visual language.",
+      "motifHint": "In Hilma af Klint: Paintings for the Temple (paintings by Hilma af Klint) Af Klint concluded Paintings for the Temple with a triptych she called Altarpieces, featuring geometric shapes, bold primary colors, and gold l... Hilma af Klint was a Swedish artist and mystic whose paintings are considered to be among the first major abstract works in Western art history. After studying at the Royal Academy of Art in Stockholm, Hilma af Klint embarked on a major suite of paintings in 1904-06. Hilma af Klint did not ascribe to any of the established avant-garde movements of her time.",
+      "emotionalCenter": "In Hilma af Klint: Paintings for the Temple (paintings by Hilma af Klint) Af Klint concluded Paintings for the Temple with a triptych she called Altarpieces, featuring geometric shapes, bold primary colors, and gold l... Hilma af Klint was a Swedish artist and mystic whose paintings are considered to be among the first major abstract works in Western art history. After studying at the Royal Academy of Art in Stockholm, Hilma af Klint embarked on a major suite of paintings in 1904-06. Hilma af Klint did not ascribe to any of the established avant-garde movements of her time.",
+      "narrativeBridge": "Hilma af Klint did not ascribe to any of the established avant-garde movements of her time. Hilma af Klint was a Swedish artist and mystic whose paintings are considered to be among the first major abstract works in Western art history. In Hilma af Klint: Paintings for the Temple (paintings by Hilma af Klint) Af Klint concluded Paintings for the Temple with a triptych she called Altarpieces, featuring geometric shapes, bold primary colors, and gold l... In Hilma af Klint: Paintings for the Temple (paintings by Hilma af Klint) Af Klint concluded Paintings for the Temple with a triptych she called Altarpieces, featuring geometric shapes, bold primary colors, and gold l...",
+      "compositionAnchor": "high-contrast foreground focal anchor",
+      "cadence": "steady",
+      "preferredStackFamilies": [
+        "shader-field"
+      ],
+      "artistAnchors": {
+        "formalLogic": [],
+        "motifVocabulary": [],
+        "compositionCues": [],
+        "paletteSignals": [],
+        "surfaceBehavior": [],
+        "spatialHabits": [],
+        "translationDirectives": []
+      },
+      "threeJsFreedomEnvelope": [],
+      "avoidSignals": [],
+      "threeJsTranslationExamples": [],
+      "motifPressure": "high"
+    }
+  },
+  "debugFile": "./data/artworks-debug/2026-04-12-pulse-of-middle-east-donald-trump-v3.json"
+}
