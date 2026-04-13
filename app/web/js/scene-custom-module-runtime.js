@@ -5,6 +5,12 @@ import { sanitizeShaderSource } from './primitives/shader-overrides.js';
 const CUSTOM_FAMILIES = new Set(['shader', 'geometry', 'particle', 'post', 'camera', 'lighting']);
 const CUSTOM_KINDS = new Set(['dsl', 'js']);
 const PIPELINE_FAMILIES = new Set(['post', 'camera', 'lighting']);
+const EXECUTABLE_DSL_KEYS = Object.freeze({
+  shader: new Set(['width', 'height', 'opacity', 'position', 'rotation', 'scale', 'blend']),
+  geometry: new Set(['count', 'spread', 'depth', 'shape', 'wireframe', 'opacity', 'position', 'rotation', 'scale', 'width', 'height', 'gridWidth', 'gridHeight', 'segmentsX', 'segmentsY', 'cellCount', 'blend']),
+  particle: new Set(['count', 'spread', 'size', 'opacity', 'position', 'rotation', 'scale', 'blend'])
+});
+const NON_EXECUTABLE_PATCH_KEYS = new Set(['moduleType', 'generate', 'material', 'animation', 'description', 'notes', 'intent', 'previewIntent']);
 
 const DEFAULT_SHADER_VERTEX = `
 varying vec2 vUv;
@@ -105,6 +111,63 @@ function normalizeSource(raw = {}) {
     },
     js: asText(source.js, 32_000)
   };
+}
+
+function hasNonEmptyValue(value) {
+  if (Array.isArray(value)) return value.length > 0;
+  if (isObject(value)) return Object.keys(value).length > 0;
+  if (typeof value === 'string') return value.trim().length > 0;
+  return value != null;
+}
+
+function hasExecutableDslConfig(family, dsl = {}) {
+  const source = isObject(dsl) ? dsl : {};
+  const allowedKeys = EXECUTABLE_DSL_KEYS[family];
+  if (!allowedKeys) return false;
+  return Object.entries(source).some(([key, value]) => allowedKeys.has(key) && hasNonEmptyValue(value));
+}
+
+function hasExecutablePipelinePatch(spec) {
+  const sourceDsl = isObject(spec?.source?.dsl) ? spec.source.dsl : {};
+  const patch = isObject(sourceDsl.patch) ? sourceDsl.patch : sourceDsl;
+  return Object.entries(patch).some(([key, value]) => !NON_EXECUTABLE_PATCH_KEYS.has(key) && hasNonEmptyValue(value));
+}
+
+function isPlaceholderFragmentShader(source = '') {
+  const fragment = String(source || '').replace(/\s+/g, ' ').trim();
+  if (!fragment) return false;
+  return /gl_FragColor\s*=\s*vec4\(\s*1(?:\.0+)?\s*\)\s*;/i.test(fragment)
+    || /gl_FragColor\s*=\s*vec4\(\s*1(?:\.0+)?\s*,\s*1(?:\.0+)?\s*,\s*1(?:\.0+)?\s*,\s*1(?:\.0+)?\s*\)\s*;/i.test(fragment)
+    || /gl_FragColor\s*=\s*vec4\(\s*vec3\(\s*1(?:\.0+)?\s*\)\s*,\s*1(?:\.0+)?\s*\)\s*;/i.test(fragment);
+}
+
+function validateCustomModuleSpec(spec) {
+  if (PIPELINE_FAMILIES.has(spec.family)) {
+    return hasExecutablePipelinePatch(spec)
+      ? { ok: true, reason: null }
+      : { ok: false, reason: 'pipeline-patch-not-executable' };
+  }
+
+  if (spec.kind === 'js') {
+    return { ok: true, reason: null };
+  }
+
+  const hasShaderSource = Boolean(spec?.source?.glsl?.vertex || spec?.source?.glsl?.fragment);
+  const hasExecutableDsl = hasExecutableDslConfig(spec.family, spec?.source?.dsl || {});
+  const hasPatchOnlyDsl = isObject(spec?.source?.dsl?.patch);
+
+  if (isPlaceholderFragmentShader(spec?.source?.glsl?.fragment || '')) {
+    return { ok: false, reason: 'placeholder-fragment-shader' };
+  }
+
+  if (!hasShaderSource && !hasExecutableDsl) {
+    return {
+      ok: false,
+      reason: hasPatchOnlyDsl ? 'prose-only-dsl-patch' : 'missing-executable-source'
+    };
+  }
+
+  return { ok: true, reason: null };
 }
 
 function hasMainFunction(source = '') {
@@ -755,6 +818,12 @@ export function compileCustomModuleRegistry({ customModules = [], baseModuleType
       source: normalizeSource(raw.source),
       budgets: normalizeBudgets(raw.budgets)
     };
+
+    const executableValidation = validateCustomModuleSpec(spec);
+    if (!executableValidation.ok) {
+      registry.report.rejected.push({ id, reason: executableValidation.reason || 'missing-executable-source' });
+      return;
+    }
 
     if (PIPELINE_FAMILIES.has(spec.family)) {
       const patch = normalizePipelinePatch(spec, raw);
