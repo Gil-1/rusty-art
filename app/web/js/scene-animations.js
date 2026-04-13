@@ -42,25 +42,36 @@ function pulseWaveByFamily(family, phase) {
 }
 
 export function applyPrimitiveAnimations({ animations = [], motionT, speed, motion, styleFingerprint = {} } = {}) {
-  animations.forEach(({ obj, animation }) => {
-    if (animation.rotationZ) obj.rotation.z = motionT * speed * 20 * animation.rotationZ;
-    if (animation.wobbleX) obj.rotation.x = Math.sin(motionT * 0.22) * animation.wobbleX * motion;
-    if (animation.wobbleY) obj.rotation.y = Math.cos(motionT * 0.17) * animation.wobbleY * motion;
+  animations.forEach(({ obj, animation, baseTransform = null, seedPhase = 0 }) => {
+    const base = baseTransform || {
+      position: { x: obj.position.x, y: obj.position.y, z: obj.position.z },
+      rotation: { x: obj.rotation.x, y: obj.rotation.y, z: obj.rotation.z },
+      scale: { x: obj.scale.x, y: obj.scale.y, z: obj.scale.z }
+    };
+    const phase = motionT + seedPhase;
+
+    obj.rotation.set(base.rotation.x, base.rotation.y, base.rotation.z);
+    obj.position.set(base.position.x, base.position.y, base.position.z);
+    obj.scale.set(base.scale.x, base.scale.y, base.scale.z);
+
+    if (animation.rotationZ) obj.rotation.z = base.rotation.z + phase * speed * 20 * animation.rotationZ;
+    if (animation.wobbleX) obj.rotation.x = base.rotation.x + Math.sin(phase * 0.22) * animation.wobbleX * motion;
+    if (animation.wobbleY) obj.rotation.y = base.rotation.y + Math.cos(phase * 0.17) * animation.wobbleY * motion;
     if (animation.pulse) {
       const family = styleFingerprint.pulseFamily;
       const profile = PULSE_PROFILES[family] || PULSE_PROFILES.balanced;
       const cadenceBias = styleFingerprint.cadenceBias || 0;
       const edgeSoftness = styleFingerprint.edgeSoftness || 0.25;
       const baseFreq = (profile.freq + animation.pulse) * (1 + cadenceBias * 0.12);
-      const phase = motionT * baseFreq;
-      const wave = pulseWaveByFamily(family, phase);
+      const pulsePhase = phase * baseFreq;
+      const wave = pulseWaveByFamily(family, pulsePhase);
       const softnessDamping = 1 - Math.min(0.18, edgeSoftness * 0.12);
       const pulse = 1 + wave * profile.amp * softnessDamping * motion;
-      obj.scale.set(pulse, pulse, pulse);
+      obj.scale.set(base.scale.x * pulse, base.scale.y * pulse, base.scale.z * pulse);
     }
     if (animation.drift) {
-      obj.position.x = Math.sin(motionT * animation.drift * 0.3) * 0.2 * motion;
-      obj.position.y = Math.cos(motionT * animation.drift * 0.22) * 0.14 * motion;
+      obj.position.x = base.position.x + Math.sin(phase * animation.drift * 0.3) * 0.2 * motion;
+      obj.position.y = base.position.y + Math.cos(phase * animation.drift * 0.22) * 0.14 * motion;
     }
   });
 }

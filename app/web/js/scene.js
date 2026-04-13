@@ -31,6 +31,16 @@ function toFiniteNumber(value, fallback = null) {
   return Number.isFinite(numeric) ? numeric : fallback;
 }
 
+function hashAnimationSeed(value = '') {
+  let hash = 2166136261;
+  const text = String(value || 'seed');
+  for (let index = 0; index < text.length; index += 1) {
+    hash ^= text.charCodeAt(index);
+    hash = Math.imul(hash, 16777619);
+  }
+  return hash >>> 0;
+}
+
 function normalizeVector3(value, fallback = [0, 0, 0]) {
   if (Array.isArray(value) && value.length === 3 && value.every((entry) => Number.isFinite(Number(entry)))) {
     return [Number(value[0]), Number(value[1]), Number(value[2])];
@@ -393,7 +403,17 @@ export class ArtworkScene {
       });
       if (!built?.obj) return;
       this.group.add(built.obj);
-      this.animations.push({ obj: built.obj, animation: builderElement.animation || {} });
+      const animationSeed = hashAnimationSeed(`${config.seed || 0}:${builderElement.id || builderElement.moduleType || index}`);
+      this.animations.push({
+        obj: built.obj,
+        animation: builderElement.animation || {},
+        baseTransform: {
+          position: { x: built.obj.position.x, y: built.obj.position.y, z: built.obj.position.z },
+          rotation: { x: built.obj.rotation.x, y: built.obj.rotation.y, z: built.obj.rotation.z },
+          scale: { x: built.obj.scale.x, y: built.obj.scale.y, z: built.obj.scale.z }
+        },
+        seedPhase: (animationSeed / 0xffffffff) * Math.PI * 2
+      });
       if (Array.isArray(built.uniforms)) {
         built.uniforms.filter(Boolean).forEach((uniformSet) => this.uniformTargets.push(uniformSet));
       } else if (built.uniforms) {
