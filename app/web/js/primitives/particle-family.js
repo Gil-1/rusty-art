@@ -55,6 +55,26 @@ void main() {
 }
 `;
 
+function toFiniteNumber(value, fallback) {
+  const numeric = Number(value);
+  return Number.isFinite(numeric) ? numeric : fallback;
+}
+
+function normalizeSpreadVector(value, fallback = [4.6, 4.6, 1.6]) {
+  if (Array.isArray(value) && value.length >= 3 && value.every((entry) => Number.isFinite(Number(entry)))) {
+    return [Number(value[0]), Number(value[1]), Number(value[2])];
+  }
+  if (value && typeof value === 'object') {
+    const x = toFiniteNumber(value.x, null);
+    const y = toFiniteNumber(value.y, null);
+    const z = toFiniteNumber(value.z, null);
+    if (x != null && y != null && z != null) return [x, y, z];
+  }
+  const numeric = toFiniteNumber(value, null);
+  if (numeric != null) return [numeric, numeric, fallback[2]];
+  return fallback;
+}
+
 function createShaderParticleCloud({ primitive, palette, seed, index, sceneCfg }) {
   const rand = mulberry32((seed ^ hashString(`${primitive.type}:${primitive.role}:${index}`)) >>> 0);
   const count = primitive.count || 100;
@@ -62,16 +82,17 @@ function createShaderParticleCloud({ primitive, palette, seed, index, sceneCfg }
   const scales = new Float32Array(count);
   const phases = new Float32Array(count);
 
-  const spread = primitive.spread ?? 4.6;
-  const depth = primitive.depth ?? 1.6;
+  const [spreadX, spreadY, spreadZ] = normalizeSpreadVector(primitive.spread, [4.6, 4.6, 1.6]);
+  const spread = Math.max(spreadX, spreadY, 0.2);
+  const depth = primitive.depth ?? spreadZ;
   const jitter = primitive.jitter ?? 0.3;
   const swirl = primitive.swirl ?? 0.2;
 
   for (let i = 0; i < count; i += 1) {
     const radial = 1.2 + rand() * spread;
     const angle = i * (0.08 + swirl * 0.08) + rand() * 1.5;
-    positions[i * 3 + 0] = Math.cos(angle) * radial + (rand() - 0.5) * jitter;
-    positions[i * 3 + 1] = Math.sin(angle) * radial + (rand() - 0.5) * jitter;
+    positions[i * 3 + 0] = Math.cos(angle) * radial * (spreadX / spread) + (rand() - 0.5) * jitter;
+    positions[i * 3 + 1] = Math.sin(angle) * radial * (spreadY / spread) + (rand() - 0.5) * jitter;
     positions[i * 3 + 2] = (rand() - 0.5) * depth;
     scales[i] = 0.75 + rand() * 1.5;
     phases[i] = rand();
