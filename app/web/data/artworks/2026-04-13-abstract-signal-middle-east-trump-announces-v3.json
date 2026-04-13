@@ -1,0 +1,1033 @@
+{
+  "id": "2026-04-13-abstract-signal-middle-east-trump-announces-v3",
+  "date": "2026-04-13",
+  "title": "Abstract Signal: Middle East Trump announces",
+  "generatedAt": "2026-04-13T12:30:09.418Z",
+  "news": {
+    "source": "lalibre",
+    "title": "War in the Middle East: Trump announces that the United States will impose a naval blockade on the Strait of Hormuz",
+    "link": "https://www.lalibre.be/international/moyen-orient/iran/2026/04/12/direct-guerre-au-moyen-orient-les-etats-unis-et-liran-echouent-a-trouver-un-accord-CDVEILDMOVCHLCOZLLVYRXIZDU/",
+    "score": 81
+  },
+  "inspiration": {
+    "artist": "Clyfford Still",
+    "tags": [
+      "abstract",
+      "surreal",
+      "expressionist",
+      "figurative",
+      "surrealist"
+    ],
+    "links": {
+      "wikipedia": "https://en.wikipedia.org/wiki/Clyfford_Still",
+      "reference": "http://www.clyffordstill.net/"
+    }
+  },
+  "seed": 931648448,
+  "scene": {
+    "motif": "flow",
+    "shapeCount": 120,
+    "turbulence": 0.58,
+    "spiralBias": 0.671,
+    "motionSpeed": 0.001292,
+    "bloom": 0.12,
+    "grain": 0.038,
+    "fogDensity": 0.056,
+    "distortion": 0.24,
+    "flowField": 0.22,
+    "anchorStrength": 0.639,
+    "anchorOffsetX": -0.085,
+    "layerBalance": {
+      "structure": 0.607,
+      "chaos": 0.436
+    },
+    "expression": {
+      "tension": 0.31,
+      "structure": 0.562,
+      "motion": 0.453,
+      "noise": 0.364,
+      "urgency": 0.18,
+      "contrast": 0.318
+    },
+    "palette": {
+      "bg": "#6b2d1f",
+      "primary": "#c24e24",
+      "secondary": "#2f4f63",
+      "glow": "#e8d7b8",
+      "anchor": "#f3e7c9"
+    },
+    "elements": [
+      {
+        "id": "el-01-shader-field-plane",
+        "moduleType": "shader-field-plane",
+        "capabilities": [
+          "fluid-drift",
+          "layered-field"
+        ],
+        "stackFamilies": [
+          "shader-field",
+          "post-heavy",
+          "sdf-raymarch"
+        ],
+        "styleTags": [
+          "shader",
+          "field"
+        ],
+        "libraryRef": "element.shader-field-plane.v1",
+        "color": "bg",
+        "opacity": 0.95,
+        "intensity": 0.72,
+        "layer": "background",
+        "surfaceNoise": 0.22,
+        "stainBands": 0.31,
+        "darkPockets": 0.18,
+        "animation": {
+          "pulse": 0.03,
+          "wobbleX": 0.02,
+          "wobbleY": 0.02,
+          "drift": 0.05
+        },
+        "techniqueRef": "tech.stratified-field-compression",
+        "role": "atmosphere-field",
+        "motif": "flow",
+        "intentCadence": "measured"
+      },
+      {
+        "id": "el-02-cm.still-mass-field.v1",
+        "moduleType": "cm.still-mass-field.v1",
+        "capabilities": [],
+        "stackFamilies": [],
+        "styleTags": [],
+        "libraryRef": null,
+        "side": "left",
+        "lobeCount": 4,
+        "jaggedness": 0.79,
+        "verticalBias": 0.74,
+        "inwardBias": 0.84,
+        "edgeChips": 0.58,
+        "color": "primary",
+        "opacity": 0.94,
+        "intensity": 0.82,
+        "animation": {
+          "pulse": 0.02,
+          "wobbleX": 0.03,
+          "wobbleY": 0.01,
+          "drift": 0.04
+        },
+        "techniqueRef": "tech.stratified-field-compression",
+        "role": "structural-spine",
+        "layer": "midground",
+        "motif": "flow",
+        "intentCadence": "measured"
+      },
+      {
+        "id": "el-03-cm.still-mass-field.v1",
+        "moduleType": "cm.still-mass-field.v1",
+        "capabilities": [],
+        "stackFamilies": [],
+        "styleTags": [],
+        "libraryRef": null,
+        "side": "right",
+        "lobeCount": 3,
+        "jaggedness": 0.73,
+        "verticalBias": 0.88,
+        "inwardBias": 0.8,
+        "edgeChips": 0.47,
+        "color": "primary",
+        "opacity": 0.91,
+        "intensity": 0.77,
+        "animation": {
+          "rotationZ": 0.02,
+          "pulse": 0.02,
+          "wobbleX": 0.02,
+          "wobbleY": 0.02,
+          "drift": 0.04
+        },
+        "techniqueRef": "tech.stratified-field-compression",
+        "role": "structural-spine",
+        "layer": "midground",
+        "motif": "flow",
+        "intentCadence": "measured"
+      },
+      {
+        "id": "el-04-shader-field-plane",
+        "moduleType": "shader-field-plane",
+        "capabilities": [
+          "fluid-drift",
+          "layered-field"
+        ],
+        "stackFamilies": [
+          "shader-field",
+          "post-heavy",
+          "sdf-raymarch"
+        ],
+        "styleTags": [
+          "shader",
+          "field"
+        ],
+        "libraryRef": "element.shader-field-plane.v1",
+        "color": "secondary",
+        "opacity": 0.34,
+        "intensity": 0.39,
+        "layer": "midground",
+        "wedge": true,
+        "buried": true,
+        "offsetX": 0.08,
+        "offsetY": 0.06,
+        "animation": {
+          "pulse": 0.02,
+          "wobbleX": 0.01,
+          "wobbleY": 0.02,
+          "drift": 0.03
+        },
+        "techniqueRef": "tech.recessed-cyan-wound",
+        "role": "support-rhythm",
+        "motif": "flow",
+        "intentCadence": "measured"
+      },
+      {
+        "id": "el-05-cm.still-cleft-anchor.v1",
+        "moduleType": "cm.still-cleft-anchor.v1",
+        "capabilities": [],
+        "stackFamilies": [],
+        "styleTags": [],
+        "libraryRef": null,
+        "width": 0.08,
+        "jagged": 0.64,
+        "heatHalo": 0.16,
+        "breakup": 0.55,
+        "color": "anchor",
+        "opacity": 0.95,
+        "intensity": 0.95,
+        "animation": {
+          "pulse": 0.07,
+          "wobbleX": 0.01,
+          "wobbleY": 0.01,
+          "drift": 0.02
+        },
+        "techniqueRef": "tech.pale-canal-anchor",
+        "role": "primary-signal",
+        "layer": "accent",
+        "motif": "flow",
+        "intentCadence": "measured"
+      },
+      {
+        "id": "el-06-cm.scrape-band-fragments.v1",
+        "moduleType": "cm.scrape-band-fragments.v1",
+        "capabilities": [],
+        "stackFamilies": [],
+        "styleTags": [],
+        "libraryRef": null,
+        "chipCount": 18,
+        "bandHeight": 0.17,
+        "sizeJitter": 0.61,
+        "tiltJitter": 0.44,
+        "color": "glow",
+        "opacity": 0.82,
+        "intensity": 0.56,
+        "animation": {
+          "rotationZ": 0.01,
+          "pulse": 0.03,
+          "wobbleX": 0.04,
+          "wobbleY": 0.02,
+          "drift": 0.06
+        },
+        "techniqueRef": "tech.foreground-chip-band",
+        "role": "focal-anchor",
+        "layer": "foreground",
+        "motif": "flow",
+        "intentCadence": "measured"
+      }
+    ],
+    "shaderLayers": 4,
+    "elementDiversity": 4,
+    "paletteVariance": 0,
+    "motionSpeedNormalized": 0.519,
+    "camera": {
+      "autoRotate": false,
+      "autoRotateSpeed": 0.122,
+      "minDistance": 6,
+      "maxDistance": 24,
+      "cycleSeconds": 24,
+      "beats": [
+        {
+          "t": 0,
+          "radius": 12.504,
+          "theta": 0.034,
+          "phi": 1.229,
+          "hold": 1.064
+        },
+        {
+          "t": 0.34,
+          "radius": 10.636,
+          "theta": 0.895,
+          "phi": 1.031,
+          "hold": 0.514
+        },
+        {
+          "t": 0.68,
+          "radius": 11.248,
+          "theta": 1.677,
+          "phi": 1.307,
+          "hold": 0.866
+        },
+        {
+          "t": 1,
+          "radius": 12.28,
+          "theta": 2.388,
+          "phi": 1.12,
+          "hold": 1.144
+        }
+      ],
+      "target": [
+        0,
+        0,
+        0
+      ]
+    },
+    "post": {
+      "vignette": 0.26,
+      "contrast": 1.18,
+      "saturation": 0.88,
+      "exposure": 0.97,
+      "breathing": {
+        "hueShift": 0.053,
+        "saturationAmplitude": 0.067,
+        "exposureAmplitude": 0.058,
+        "phaseA": 0.1716,
+        "phaseB": 0.221
+      }
+    },
+    "styleFingerprint": {
+      "pulseFamily": "musical",
+      "stripeWarp": 0.22,
+      "edgeSoftness": 0.22,
+      "cameraSway": 0.22,
+      "edgeHardness": 0.5,
+      "temperatureBias": 0.24,
+      "verticalBias": 0,
+      "cadenceBias": 0
+    },
+    "sceneAuthoring": {
+      "mode": "agent-dsl",
+      "planner": "openclaw-agent-scene-planner",
+      "representation": {
+        "id": "rep.canal-under-siege",
+        "label": "Canal Under Siege",
+        "description": "A monumental vertical fracture nearly sealed by red-brown and orange masses from both sides and the lower edge, with only a buried cyan recess hinting at space beyond.",
+        "scoreHint": 0.92,
+        "motif": "Besieged passage",
+        "cadence": "measured",
+        "scenePrompt": "Build a tall, compressed painted field where a narrow chalk-lit split is the first thing visible. Left and right masses should feel like torn landforms or pressure walls, not objects. The lower foreground should chip upward into the passage. Cyan exists only a",
+        "colorMood": "Heated rust, iron red, ash-chalk, buried cyan.",
+        "spatialIntent": "Background is a dense red-brown atmospheric field, midground holds the major torn masses, foreground is a chipped lower band pressing into the vertical opening.",
+        "imageAuthorship": {
+          "structuralLaw": "A single vertical cleft organizes all pressure; every mass exists to narrow, expose, or threaten that passage.",
+          "dominantForms": [
+            "jagged inward-leaning side masses",
+            "narrow heated vertical split",
+            "low chipped rise from the bottom",
+            "small buried recess shape behind the split"
+          ],
+          "edgeBehavior": "Edges are torn, scraped, and intermittently feathered, with abrupt chips where pigment seems to have broken away.",
+          "surfaceBehavior": "Surfaces feel dry, stained, abraded, and dragged, with matte accumulation instead of glossy atmosphere.",
+          "depthLogic": "The rear field is broad and dense, the middle masses overlap and occlude, and the foreground chips sit clearly nearer through scale and sharper breakage.",
+          "motionLogic": "Motion is almost static, limited to slow breathing in surface parallax and slight tightening around the cleft.",
+          "forbiddenDrift": [
+            "clean geometric paneling",
+            "scattershot particle activity",
+            "empty center surrounded by darkness",
+            "cyan becoming a second dominant theme"
+          ]
+        },
+        "technicalTranslation": {
+          "realizationStrategy": "Use two or three custom torn field masses, one custom cleft shader, a restrained hazed background, and a near-plane chip band with seeded scrape masks.",
+          "reuseBias": "hybrid",
+          "whyThisApproach": "The composition is specific enough to need custom silhouette language, but a few existing field and haze modules can still support painterly depth if heavily overridden.",
+          "notes": [
+            "Keep camera nearly frontal with only subtle perspective.",
+            "Most drama should come from overlap, value separation, and edge abrasion, not motion.",
+            "Use bloom sparingly so the cleft stays chalky, not luminous-tech."
+          ],
+          "motionCadence": "measured"
+        },
+        "mustShow": [
+          "thin chalky heated vertical split",
+          "large asymmetrical masses pressing inward from left and right",
+          "heavy red-brown background field presence",
+          "dry scraped paint breakup across major surfaces",
+          "foreground chip band along lower edge",
+          "small subordinate cyan wedge recessed behind the fracture"
+        ],
+        "mustAvoid": [
+          "central rectangular panel silhouette",
+          "floating polygon debris",
+          "pixel-like confetti or speckle",
+          "excess black void",
+          "symmetrical portal read",
+          "glossy digital gradients"
+        ],
+        "reviewFocus": [
+          "Does the pale fracture read first?",
+          "Does the image feel like a worked painting instead of screen graphics?",
+          "Is depth clearly separated across the three field layers?",
+          "Do the side masses feel monumentally asymmetrical and compressive?"
+        ],
+        "artistTechniqueObservations": {
+          "medium": "painting",
+          "primaryTechnique": "radial/orbital construction",
+          "markMakingTraits": [],
+          "surfaceQualities": [
+            "painted surface behavior matters more than object literalism"
+          ],
+          "paletteTendencies": [
+            "dominant hues: orange, red, blue-cyan"
+          ],
+          "spatialHabits": [
+            "layered field organization",
+            "orbital/circular organization"
+          ]
+        },
+        "rationale": {
+          "headlineTranslation": "The blockade becomes a nearly closed channel.",
+          "artistTranslation": "Still-like force comes from torn field collision and monumental vertical pressure, not symbols."
+        },
+        "techniques": [
+          {
+            "id": "tech.stratified-field-compression",
+            "name": "Stratified field compression",
+            "type": "composition",
+            "purpose": "Govern the full image with one central structural law.",
+            "reuseModuleType": null,
+            "params": {
+              "fieldLayers": 4,
+              "inwardBias": 0.78,
+              "verticalBias": 0.86
+            }
+          },
+          {
+            "id": "tech.pale-canal-anchor",
+            "name": "Pale canal anchor",
+            "type": "focal",
+            "purpose": "Establish the cleft as the primary readable signal.",
+            "reuseModuleType": null,
+            "params": {
+              "cleftWidth": 0.08,
+              "heatHalo": 0.16
+            }
+          },
+          {
+            "id": "tech.foreground-chip-band",
+            "name": "Foreground chip band",
+            "type": "geometry",
+            "purpose": "Create a dangerous lower threshold in the near plane.",
+            "reuseModuleType": null,
+            "params": {
+              "chipCount": 18,
+              "bandHeight": 0.17
+            }
+          }
+        ]
+      },
+      "artisticIntent": {
+        "statement": "A besieged vertical passage, rendered as a monumental painted fracture under inward geopolitical pressure, where the blockade is felt as narrowing space rather than depicted event.",
+        "motif": "A thin heated cleft nearly sealed by torn asymmetrical masses from both flanks and b",
+        "emotionalArc": "Smoldering compression, held suspension, then a narrow chalk-lit refusal to fully close.",
+        "compositionLogic": "One dominant vertical structural law governs the image: a pale split rises through a dense red-brown field while heavier jagged masses crowd inward from left, right, and lower foreground; a buried cyan recess appears only as a depth wound behind the main fract",
+        "imagePrompt": "A non-literal Clyfford Still-like painting translated into a spatial image: monumental vertical canvas, dense red-brown ground, torn orange and iron-black field masses pressing inward from both sides and the lower edge, a thin chalky heated vertical split as the primary signal, one recessed blue-cyan wedge partly burie"
+      },
+      "executionPlan": {
+        "palette": {
+          "bg": "#6b2d1f",
+          "primary": "#c24e24",
+          "secondary": "#2f4f63",
+          "glow": "#e8d7b8",
+          "anchor": "#f3e7c9"
+        },
+        "camera": {
+          "autoRotate": false,
+          "cycleSeconds": 24,
+          "target": [
+            0,
+            0,
+            0
+          ]
+        },
+        "post": {
+          "contrast": 1.12,
+          "saturation": 0.88,
+          "vignette": 0.26,
+          "exposure": 0.97
+        },
+        "global": {
+          "shapeCountHint": 120,
+          "flowField": 0.22,
+          "distortion": 0.24,
+          "bloom": 0.12
+        },
+        "techniques": [
+          {
+            "id": "tech.stratified-field-compression",
+            "name": "Stratified field compression",
+            "type": "composition",
+            "purpose": "Build the scene from overlapping painterly masses with one dominant vertical cleft and strong depth separation.",
+            "reuseModuleType": null,
+            "params": {
+              "fieldLayers": 4,
+              "inwardBias": 0.78,
+              "verticalBias": 0.86
+            }
+          },
+          {
+            "id": "tech.dry-scrape-surface",
+            "name": "Dry scrape surface breakup",
+            "type": "surface",
+            "purpose": "Give all major masses abraded, dragged, and chipped paint behavior so the medium reads as worked painting.",
+            "reuseModuleType": "shader-field-plane",
+            "params": {
+              "scrapeIntensity": 0.71,
+              "stainVariance": 0.44,
+              "edgeDryness": 0.69
+            }
+          },
+          {
+            "id": "tech.recessed-cyan-wound",
+            "name": "Recessed cyan wound",
+            "type": "color-depth",
+            "purpose": "Use a single buried cyan recess to sharpen depth without becoming a recurring motif.",
+            "reuseModuleType": null,
+            "params": {
+              "cyanArea": 0.11,
+              "recession": 0.63,
+              "visibility": 0.34
+            }
+          },
+          {
+            "id": "tech.foreground-chip-band",
+            "name": "Foreground chip band",
+            "type": "geometry",
+            "purpose": "Introduce chipped near-plane fragments along the lower edge to reinforce danger, material breakup, and foreground depth.",
+            "reuseModuleType": null,
+            "params": {
+              "chipCount": 18,
+              "bandHeight": 0.17,
+              "jaggedness": 0.73
+            }
+          },
+          {
+            "id": "tech.pale-canal-anchor",
+            "name": "Pale canal anchor",
+            "type": "focal",
+            "purpose": "Make the narrow heated fracture the first readable signal in the image.",
+            "reuseModuleType": null,
+            "params": {
+              "cleftWidth": 0.08,
+              "heatHalo": 0.16,
+              "verticalReach": 0.88
+            }
+          }
+        ]
+      },
+      "moduleOverrides": [
+        {
+          "id": "ov.shader-field-plane.scrape",
+          "target": {
+            "moduleType": "shader-field-plane",
+            "elementId": null
+          },
+          "mode": "uniforms",
+          "params": {
+            "preserveOpacityBands": true
+          },
+          "uniforms": {
+            "uScrapeIntensity": 0.71,
+            "uPigmentDrag": 0.58,
+            "uEdgeDryness": 0.69,
+            "uStainVariance": 0.44
+          },
+          "hooks": {
+            "fragmentColor": "bias toward matte, abraded transitions and irregular dry edge breakup rather than smooth gradients"
+          }
+        },
+        {
+          "id": "ov.volumetric-haze.red-brown-air",
+          "target": {
+            "moduleType": "volumetric-haze",
+            "elementId": null
+          },
+          "mode": "uniforms",
+          "params": {
+            "depthSoftening": 0.21
+          },
+          "uniforms": {
+            "uDensity": 0.14,
+            "uTint": "#6b2d1f",
+            "uVerticalFalloff": 0.22
+          },
+          "hooks": {
+            "fragmentColor": "keep haze subordinate and field-like, never smoky spectacle"
+          }
+        },
+        {
+          "id": "ov.fault-line.chalk-heat",
+          "target": {
+            "moduleType": "fault-line",
+            "elementId": null
+          },
+          "mode": "uniforms",
+          "params": {
+            "halo": 0.16
+          },
+          "uniforms": {
+            "uCoreColor": "#f3e7c9",
+            "uHeatColor": "#e8d7b8",
+            "uWidth": 0.08,
+            "uJagged": 0.64
+          },
+          "hooks": {
+            "fragmentColor": "render as a chalk-heated split with dry broken rims, not neon energy"
+          }
+        }
+      ],
+      "customModules": [
+        {
+          "id": "cm.still-mass-field.v1",
+          "family": "geometry",
+          "kind": "dsl",
+          "allowOverride": false,
+          "seedPolicy": "deterministic",
+          "paramsSchema": {
+            "lobeCount": {
+              "type": "number",
+              "min": 2,
+              "max": 8
+            },
+            "jaggedness": {
+              "type": "number",
+              "min": 0,
+              "max": 1
+            },
+            "verticalBias": {
+              "type": "number",
+              "min": 0,
+              "max": 1
+            },
+            "inwardBias": {
+              "type": "number",
+              "min": 0,
+              "max": 1
+            },
+            "edgeChips": {
+              "type": "number",
+              "min": 0,
+              "max": 1
+            }
+          },
+          "source": {
+            "dsl": {
+              "patch": {
+                "moduleType": "cm.still-mass-field.v1",
+                "generate": "Create asymmetrical torn field silhouettes from layered contour bands with chipped edge subtraction and vertical bias.",
+                "material": "Matte painterly field with scrape mask support.",
+                "animation": "Minimal seeded micro-drift only for living surface parallax."
+              }
+            },
+            "glsl": {
+              "vertex": "varying vec2 vUv; void main(){ vUv = uv; gl_Position = projectionMatrix * modelViewMatrix * vec4(position,1.0); }",
+              "fragment": "varying vec2 vUv; void main(){ gl_FragColor = vec4(1.0); }"
+            },
+            "js": null
+          },
+          "budgets": {
+            "maxInstances": 12,
+            "maxShaderOpsHint": 0.46,
+            "mobileSafe": true
+          }
+        },
+        {
+          "id": "cm.still-cleft-anchor.v1",
+          "family": "shader",
+          "kind": "dsl",
+          "allowOverride": false,
+          "seedPolicy": "deterministic",
+          "paramsSchema": {
+            "width": {
+              "type": "number",
+              "min": 0.02,
+              "max": 0.16
+            },
+            "jagged": {
+              "type": "number",
+              "min": 0,
+              "max": 1
+            },
+            "heatHalo": {
+              "type": "number",
+              "min": 0,
+              "max": 1
+            },
+            "breakup": {
+              "type": "number",
+              "min": 0,
+              "max": 1
+            }
+          },
+          "source": {
+            "dsl": {
+              "patch": {
+                "moduleType": "cm.still-cleft-anchor.v1",
+                "generate": "Render a narrow vertical cleft with irregular torn sides, chalk core, heated edge bleed, and interrupted dry breaks.",
+                "blend": "Screen the core lightly against compressed surrounding masses without turning emissive-neon."
+              }
+            },
+            "glsl": {
+              "vertex": "varying vec2 vUv; void main(){ vUv = uv; gl_Position = projectionMatrix * modelViewMatrix * vec4(position,1.0); }",
+              "fragment": "varying vec2 vUv; void main(){ gl_FragColor = vec4(1.0); }"
+            },
+            "js": null
+          },
+          "budgets": {
+            "maxInstances": 2,
+            "maxShaderOpsHint": 0.42,
+            "mobileSafe": true
+          }
+        },
+        {
+          "id": "cm.scrape-band-fragments.v1",
+          "family": "geometry",
+          "kind": "dsl",
+          "allowOverride": false,
+          "seedPolicy": "deterministic",
+          "paramsSchema": {
+            "chipCount": {
+              "type": "number",
+              "min": 4,
+              "max": 48
+            },
+            "bandHeight": {
+              "type": "number",
+              "min": 0.05,
+              "max": 0.3
+            },
+            "sizeJitter": {
+              "type": "number",
+              "min": 0,
+              "max": 1
+            },
+            "tiltJitter": {
+              "type": "number",
+              "min": 0,
+              "max": 1
+            }
+          },
+          "source": {
+            "dsl": {
+              "patch": {
+                "moduleType": "cm.scrape-band-fragments.v1",
+                "generate": "Place an uneven lower foreground band of paint-chip fragments and torn slivers with strong parallax and matte color variation.",
+                "material": "Opaque chipped fragments with scraped edges and occasional anchor-colored catches."
+              }
+            },
+            "glsl": {
+              "vertex": "varying vec2 vUv; void main(){ vUv = uv; gl_Position = projectionMatrix * modelViewMatrix * vec4(position,1.0); }",
+              "fragment": "varying vec2 vUv; void main(){ gl_FragColor = vec4(1.0); }"
+            },
+            "js": null
+          },
+          "budgets": {
+            "maxInstances": 64,
+            "maxShaderOpsHint": 0.28,
+            "mobileSafe": true
+          }
+        }
+      ],
+      "policyPasses": {
+        "advisoryOnly": true,
+        "skipped": [
+          "focal-hierarchy",
+          "envelope-clamp",
+          "composition-plan",
+          "artist-visual-profile",
+          "scene-element-module-enforcement",
+          "stack-pipeline-apply",
+          "gap-focused-pass",
+          "artist-hard-constraints"
+        ]
+      }
+    },
+    "seedVersion": 2,
+    "seeds": {
+      "baseSeed": 3183811528,
+      "runSeed": 931648448,
+      "geomSeed": 2905071340,
+      "animSeed": 2666248321,
+      "colorSeed": 3106774259,
+      "cameraSeed": 3378471195
+    },
+    "customModuleReport": {
+      "declaredCustomModules": 3,
+      "accepted": [
+        {
+          "id": "cm.still-mass-field.v1",
+          "family": "geometry",
+          "kind": "dsl",
+          "fingerprint": "07edd0f9"
+        },
+        {
+          "id": "cm.still-cleft-anchor.v1",
+          "family": "shader",
+          "kind": "dsl",
+          "fingerprint": "f2829bf9"
+        },
+        {
+          "id": "cm.scrape-band-fragments.v1",
+          "family": "geometry",
+          "kind": "dsl",
+          "fingerprint": "94d3719d"
+        }
+      ],
+      "rejected": [],
+      "moduleOverrideCount": 3,
+      "fingerprint": "4e2667ec"
+    },
+    "techStack": {
+      "id": "sdf-raymarch-lite",
+      "name": "SDF/Raymarch Lite",
+      "family": "sdf-raymarch",
+      "strategyFamilies": [
+        "orbits",
+        "flow",
+        "hybrid"
+      ],
+      "rationale": {
+        "signals": {
+          "conflict": 0.381,
+          "context": 0.238,
+          "motion": 0.45,
+          "turbulence": 0.426,
+          "structureBias": 0,
+          "densityBias": 0,
+          "edgeBias": 0,
+          "motionBias": 0,
+          "visualProfile": {
+            "profileCadence": "steady",
+            "preferredFamilies": []
+          }
+        },
+        "familyHits": 0,
+        "idHits": 0,
+        "penalties": [],
+        "visualAffinity": 0,
+        "elementCoverage": {
+          "score": 0,
+          "coverage": 0,
+          "moduleCoverage": 0,
+          "missingCapabilities": [
+            "custom geometry silhouettes",
+            "shader edge breakup",
+            "layered depth planes"
+          ]
+        },
+        "preferredFamilies": [],
+        "preferredFamilyLocked": false,
+        "notPreferredPenalty": 0
+      },
+      "dominantPrimitive": "shader-field-plane",
+      "moduleSet": [
+        "shader-field-plane",
+        "cm.still-mass-field.v1",
+        "cm.still-cleft-anchor.v1",
+        "cm.scrape-band-fragments.v1"
+      ],
+      "pipelineKind": "sdf-raymarch"
+    },
+    "renderPipeline": {
+      "kind": "sdf-raymarch",
+      "family": "sdf-raymarch",
+      "fallback": false,
+      "advisoryOnly": true,
+      "dominantPrimitive": "shader-field-plane",
+      "moduleSet": [
+        "shader-field-plane",
+        "cm.still-mass-field.v1",
+        "cm.still-cleft-anchor.v1",
+        "cm.scrape-band-fragments.v1"
+      ]
+    }
+  },
+  "sceneStrategy": {
+    "selected": {
+      "id": "atomic-balanced-flow",
+      "name": "Balanced Flow Field",
+      "type": "atomic",
+      "family": "flow"
+    },
+    "applied": false,
+    "fallbackReason": "agent-authored-scene-elements"
+  },
+  "techStack": {
+    "id": "sdf-raymarch-lite",
+    "name": "SDF/Raymarch Lite",
+    "family": "sdf-raymarch"
+  },
+  "newsVisualMappings": [
+    {
+      "signal": "title evidence [guerre, moyen, orient, trump] -> motif flow",
+      "from": "guerre, moyen, orient, trump",
+      "visualDecision": "structural motif armature set to flow"
+    },
+    {
+      "signal": "composition foreground conflict",
+      "from": "war",
+      "visualDecision": "foreground role tension-knot at pressure 0.281"
+    },
+    {
+      "signal": "composition midground context",
+      "from": "guerre, moyen, orient, trump",
+      "visualDecision": "midground role context-drift with density 0.27"
+    },
+    {
+      "signal": "composition background mood",
+      "from": "guerre, moyen, orient, trump",
+      "visualDecision": "background mood watchful depth 0.254"
+    },
+    {
+      "signal": "urgency -> motion",
+      "from": "ageHours=30.23",
+      "visualDecision": "motionSpeedNormalized=0.519"
+    },
+    {
+      "signal": "title semantics -> palette/edge cadence",
+      "from": "temp=0.24 edge=0.5",
+      "visualDecision": "postContrast=1.18 accentType=n/a"
+    },
+    {
+      "signal": "article institutional/conflict polarity",
+      "from": "guerre, moyen, orient, trump",
+      "visualDecision": "accent element n/a with opacity n/a"
+    },
+    {
+      "signal": "artist research context Clyfford Still",
+      "from": "tags abstract, surreal, expressionist, figurative, surrealist",
+      "visualDecision": "artist profile captured as metadata only; no technical routing applied"
+    }
+  ],
+  "qualityScore": {
+    "score": 52.7,
+    "summary": "Alignment 68.1 with strongest channel emotional.",
+    "heuristic": {
+      "score": 68.2,
+      "breakdown": {
+        "legibility": 73.2,
+        "emotionalReadability": 72.9,
+        "coherence": 89.6,
+        "focalAnchor": 68.9,
+        "technicalRichness": 89,
+        "restraint": 77.3,
+        "alignment": 68.1
+      }
+    },
+    "calibration": {
+      "sampleCount": 1,
+      "trustWeight": 0.4
+    },
+    "alignment": {
+      "totalAlign": 68.1,
+      "components": {
+        "title": {
+          "score": 60.4
+        },
+        "style": {
+          "score": 66.5
+        },
+        "emotional": {
+          "score": 77.9
+        }
+      }
+    }
+  },
+  "rationale": {
+    "intent": {
+      "signal": null,
+      "emotion": null,
+      "tension": null,
+      "balance": null,
+      "motion": null
+    },
+    "selection": {
+      "whyHeadline": "Selected as top-ranked Belgian headline (score 81 = frequency 81 + priority 0 + recency 0).",
+      "priorityTerms": []
+    },
+    "qualitySummary": "TOTAL_ALIGN 68.1."
+  },
+  "runPolicy": {
+    "artworksPerRun": 1,
+    "multiVariant": false
+  },
+  "artFramework": {
+    "version": 3,
+    "intent": {
+      "statement": "War in the Middle East: Trump announces that the United States will impose a naval blockade on the Strait of Hormuz translated through Clyfford Still's visual language as a non-literal image.",
+      "coreImpulse": "Clyfford Still, born on November 30, 1904, in Grandin, North Dakota, emerged as one of the most influential American artists of the 20th century, playing a pivotal role in shaping the trajectory of abstract expression... Clyfford Still was an American painter, and one of the leading figures in the first generation of Abstract Expressionists, who developed a new, powerful approach to painting in the years immediately following World Wa... Clyfford Still Art Artist Paintings Biography Abstract Expressionism CLYFFORD STILL Master of Abstract Expressionism Clyfford Still (November 30, 1904 - June 23, 1980) was an American artist, a painter, and one of the... Read more detail in the biography or check out some Clyfford Still quotes about his process.",
+      "artistTranslationLogic": [
+        "Clyfford Still's formal logic should dominate before any spectacle or scenic excess."
+      ],
+      "emotionalClimate": {
+        "summary": "Clyfford Still, born on November 30, 1904, in Grandin, North Dakota, emerged as one of the most influential American artists of the 20th century, playing a pivotal role in shaping the trajectory of abstract expression... Clyfford Still was an American painter, and one of the leading figures in the first generation of Abstract Expressionists, who developed a new, powerful approach to painting in the years immediately following World Wa... Clyfford Still Art Artist Paintings Biography Abstract Expressionism CLYFFORD STILL Master of Abstract Expressionism Clyfford Still (November 30, 1904 - June 23, 1980) was an American artist, a painter, and one of the... Read more detail in the biography or check out some Clyfford Still quotes about his process.",
+        "pressure": "low",
+        "pace": "measured",
+        "socialReach": "concentrated"
+      },
+      "visualGravity": {
+        "anchor": null,
+        "dominantStructure": "Build the image around one readable structural law.",
+        "scaleBehavior": "Keep the space bounded and compositionally intentional."
+      },
+      "materialLogic": {
+        "surfaceBehavior": [],
+        "spatialHabits": [],
+        "handling": "Clyfford Still's surface should feel made, not generic."
+      },
+      "colorField": {
+        "paletteSignals": [],
+        "contrastMode": "measured contrast with restrained vibration"
+      },
+      "symbolicDensity": {
+        "primaryMotif": "fracture",
+        "motifVocabulary": [],
+        "literalness": "non-literal"
+      },
+      "tensionEngine": {
+        "conflictAxis": "Guerre",
+        "escalationMode": "Let tension accumulate through structure, not narration.",
+        "releaseValve": "Allow only a narrow zone of release."
+      },
+      "audiencePosition": {
+        "stance": "Clyfford Still, born on November 30, 1904, in Grandin, North Dakota, emerged as one of the most influential American artists of the 20th century, playing a pivotal role in shaping the trajectory of abstract expression... Clyfford Still, born on November 30, 1904, in Grandin, North Dakota, emerged as one of the most influential American artists of the 20th century, playing a pivotal role in shaping the trajectory of abstract expression... Clyfford Still Art Artist Paintings Biography Abstract Expressionism CLYFFORD STILL Master of Abstract Expressionism Clyfford Still (November 30, 1904 - June 23, 1980) was an American artist, a painter, and one of the... Clyfford Still, born on November 30, 1904, in Grandin, North Dakota, emerged as one of the most influential American artists of the 20th century, playing a pivotal role in shaping the trajectory of abstract expression...",
+        "distance": "immersed but not illustrative"
+      },
+      "controlVsAccident": {
+        "balance": "controlled with selective instability",
+        "motionTemperament": "steady",
+        "accidentRole": "use drift or fracture sparingly to keep the field alive"
+      },
+      "antiDriftRules": [
+        "Do not collapse into biography summary, symbolic cliché, or generic procedural spectacle."
+      ],
+      "finalCompression": "Clyfford Still, born on November 30, 1904, in Grandin, North Dakota, emerged as one of the most influential American artists of the 20th century, playing a pivotal role in shaping the trajectory of abstract expression... Clyfford Still was an American painter, and one of the leading figures in the first generation of Abstract Expressionists, who developed a new, powerful approach to painting in the years immediately following World Wa... Clyfford Still Art Artist Paintings Biography Abstract Expressionism CLYFFORD STILL Master of Abstract Expressionism Clyfford Still (November 30, 1904 - June 23, 1980) was an American artist, a painter, and one of the... Read more detail in the biography or check out some Clyfford Still quotes about his process. Build the image around one readable structural law.",
+      "artistAnchors": {
+        "formalLogic": [],
+        "motifVocabulary": [],
+        "compositionCues": [],
+        "paletteSignals": [],
+        "surfaceBehavior": [],
+        "spatialHabits": [],
+        "translationDirectives": []
+      },
+      "threeJsFreedomEnvelope": [],
+      "avoidSignals": [],
+      "threeJsTranslationExamples": []
+    }
+  },
+  "debugFile": "./data/artworks-debug/2026-04-13-abstract-signal-middle-east-trump-announces-v3.json"
+}

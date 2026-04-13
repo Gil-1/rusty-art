@@ -107,6 +107,95 @@ function normalizeSource(raw = {}) {
   };
 }
 
+function hasMainFunction(source = '') {
+  return /void\s+main\s*\(/.test(String(source || ''));
+}
+
+function normalizeParamUniformName(key = '') {
+  const normalized = String(key || '').trim().replace(/[^A-Za-z0-9_]/g, '_');
+  return normalized ? `uParam_${normalized}` : null;
+}
+
+function inferParamUniformType(schema = {}, value = undefined) {
+  const declared = String(schema?.type || '').trim().toLowerCase();
+  if (declared === 'boolean' || typeof value === 'boolean') return 'bool';
+  if (declared === 'vec2' || (Array.isArray(value) && value.length === 2)) return 'vec2';
+  if (declared === 'vec3' || (Array.isArray(value) && value.length === 3)) return 'vec3';
+  if (declared === 'vec4' || (Array.isArray(value) && value.length === 4)) return 'vec4';
+  if (declared === 'int') return 'int';
+  return 'float';
+}
+
+function buildParamUniformBindings(spec, params = {}, sceneCfg = null) {
+  const schema = isObject(spec?.paramsSchema) ? spec.paramsSchema : {};
+  const bindings = [];
+
+  for (const [key, definition] of Object.entries(schema)) {
+    const uniformName = normalizeParamUniformName(key);
+    if (!uniformName) continue;
+    const explicitValue = params[key];
+    const fallbackValue = isObject(definition) ? definition.default : undefined;
+    const value = explicitValue !== undefined ? explicitValue : fallbackValue;
+    const normalizedValue = normalizeUniformValue(value, sceneCfg);
+    if (normalizedValue == null) continue;
+
+    bindings.push({
+      key,
+      uniformName,
+      glslType: inferParamUniformType(definition, value),
+      value: normalizedValue
+    });
+  }
+
+  return bindings;
+}
+
+function rewriteSnippetParamReferences(source = '', bindings = []) {
+  let next = String(source || '');
+  for (const binding of bindings) {
+    next = next.replace(new RegExp(`\\bparams\\.${binding.key}\\b`, 'g'), binding.uniformName);
+  }
+  return next;
+}
+
+function wrapFragmentSnippet(source = '', bindings = []) {
+  const rewritten = rewriteSnippetParamReferences(source, bindings).trim();
+  const declarations = bindings.map((binding) => `uniform ${binding.glslType} ${binding.uniformName};`).join('\n');
+  return `
+uniform vec3 uColorA;
+uniform vec3 uColorB;
+uniform float uTime;
+uniform float uOpacity;
+${declarations}
+varying vec2 vUv;
+
+void main() {
+  vec3 outColor = mix(uColorA, uColorB, 0.5 + 0.5 * (vUv.y - 0.5));
+  float outAlpha = uOpacity;
+  ${rewritten}
+  gl_FragColor = vec4(outColor, outAlpha);
+}
+`;
+}
+
+function prepareCustomShaderSources({ spec, params = {}, sceneCfg = null, vertexFallback, fragmentFallback } = {}) {
+  const bindings = buildParamUniformBindings(spec, params, sceneCfg);
+  const rawVertex = spec?.source?.glsl?.vertex || vertexFallback;
+  const rawFragment = spec?.source?.glsl?.fragment || fragmentFallback;
+  const vertexShader = sanitizeShaderSource(rawVertex);
+  const fragmentShader = sanitizeShaderSource(
+    hasMainFunction(rawFragment)
+      ? rawFragment
+      : wrapFragmentSnippet(rawFragment, bindings)
+  );
+
+  return {
+    vertexShader,
+    fragmentShader,
+    paramUniforms: Object.fromEntries(bindings.map((binding) => [binding.uniformName, { value: binding.value }]))
+  };
+}
+
 function normalizeUniformValue(value, sceneCfg) {
   if (typeof value === 'number' && Number.isFinite(value)) return value;
   if (typeof value === 'boolean') return value;
@@ -278,15 +367,21 @@ function createDslShaderBuilder(spec) {
     const params = isObject(primitive?.params) ? primitive.params : {};
     const width = clamp(params.width ?? dsl.width, 0.2, 120, 8);
     const height = clamp(params.height ?? dsl.height, 0.2, 120, 6);
-    const vertexShader = sanitizeShaderSource(spec.source.glsl.vertex || DEFAULT_SHADER_VERTEX);
-    const fragmentShader = sanitizeShaderSource(spec.source.glsl.fragment || DEFAULT_SHADER_FRAGMENT);
+    const { vertexShader, fragmentShader, paramUniforms } = prepareCustomShaderSources({
+      spec,
+      params,
+      sceneCfg,
+      vertexFallback: DEFAULT_SHADER_VERTEX,
+      fragmentFallback: DEFAULT_SHADER_FRAGMENT
+    });
 
     const geometry = new THREE.PlaneGeometry(width, height, 1, 1);
     const uniforms = ensureShaderUniformDefaults(applyUniformMap({
       uTime: { value: 0 },
       uOpacity: { value: clamp(params.opacity ?? primitive?.opacity ?? dsl.opacity, 0.02, 1, 0.68) },
       uColorA: { value: hslStringToColor(sceneCfg?.palette?.primary || '#ffffff', '#ffffff') },
-      uColorB: { value: hslStringToColor(sceneCfg?.palette?.secondary || '#99a8ff', '#99a8ff') }
+      uColorB: { value: hslStringToColor(sceneCfg?.palette?.secondary || '#99a8ff', '#99a8ff') },
+      ...paramUniforms
     }, {
       ...(isObject(dsl.uniforms) ? dsl.uniforms : {}),
       ...(isObject(params.uniforms) ? params.uniforms : {})
@@ -340,15 +435,21 @@ function createDslGeometryBuilder(spec) {
       const height = clamp(params.height ?? dsl.height ?? dsl.gridHeight, 0.3, 120, 5.4);
       const segmentsX = Math.round(clamp(params.segmentsX ?? dsl.segmentsX ?? dsl.cellCount, 1, 240, 32));
       const segmentsY = Math.round(clamp(params.segmentsY ?? dsl.segmentsY ?? dsl.cellCount, 1, 240, 20));
-      const vertexShader = sanitizeShaderSource(spec.source.glsl.vertex || DEFAULT_SHADER_VERTEX);
-      const fragmentShader = sanitizeShaderSource(spec.source.glsl.fragment || DEFAULT_SHADER_FRAGMENT);
+      const { vertexShader, fragmentShader, paramUniforms } = prepareCustomShaderSources({
+        spec,
+        params,
+        sceneCfg,
+        vertexFallback: DEFAULT_SHADER_VERTEX,
+        fragmentFallback: DEFAULT_SHADER_FRAGMENT
+      });
 
       const geometry = new THREE.PlaneGeometry(width, height, segmentsX, segmentsY);
       const uniforms = ensureShaderUniformDefaults(applyUniformMap({
         uTime: { value: 0 },
         uOpacity: { value: clamp(params.opacity ?? primitive?.opacity ?? dsl.opacity, 0.02, 1, 0.54) },
         uColorA: { value: hslStringToColor(sceneCfg?.palette?.primary || '#ffffff', '#ffffff') },
-        uColorB: { value: hslStringToColor(sceneCfg?.palette?.secondary || '#99a8ff', '#99a8ff') }
+        uColorB: { value: hslStringToColor(sceneCfg?.palette?.secondary || '#99a8ff', '#99a8ff') },
+        ...paramUniforms
       }, {
         ...(isObject(dsl.uniforms) ? dsl.uniforms : {}),
         ...(isObject(params.uniforms) ? params.uniforms : {})
@@ -455,13 +556,19 @@ function createDslParticleBuilder(spec) {
 
     const hasShaderSource = Boolean(spec.source.glsl.vertex || spec.source.glsl.fragment);
     if (hasShaderSource) {
-      const vertexShader = sanitizeShaderSource(spec.source.glsl.vertex || DEFAULT_PARTICLE_VERTEX);
-      const fragmentShader = sanitizeShaderSource(spec.source.glsl.fragment || DEFAULT_PARTICLE_FRAGMENT);
+      const { vertexShader, fragmentShader, paramUniforms } = prepareCustomShaderSources({
+        spec,
+        params,
+        sceneCfg,
+        vertexFallback: DEFAULT_PARTICLE_VERTEX,
+        fragmentFallback: DEFAULT_PARTICLE_FRAGMENT
+      });
       const uniforms = ensureShaderUniformDefaults(applyUniformMap({
         uTime: { value: 0 },
         uSize: { value: size * 120 },
         uOpacity: { value: clamp(params.opacity ?? primitive?.opacity ?? dsl.opacity, 0.03, 1, 0.72) },
-        uColorA: { value: hslStringToColor(sceneCfg?.palette?.primary || '#ffffff', '#ffffff') }
+        uColorA: { value: hslStringToColor(sceneCfg?.palette?.primary || '#ffffff', '#ffffff') },
+        ...paramUniforms
       }, {
         ...(isObject(dsl.uniforms) ? dsl.uniforms : {}),
         ...(isObject(params.uniforms) ? params.uniforms : {})
