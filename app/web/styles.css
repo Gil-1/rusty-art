@@ -42,6 +42,7 @@ body {
   line-height: 1.35;
   background: #050913;
   overflow-x: hidden;
+  overscroll-behavior-y: none;
 }
 
 body::before {
@@ -296,6 +297,7 @@ body::before {
   min-height: 100dvh;
   display: block;
   background: #050913;
+  touch-action: none;
 }
 
 .now-chip {
