@@ -149,8 +149,27 @@ function createFaultLine({ primitive, sceneCfg }) {
   const offsetZ = Number(params.offsetZ ?? primitive.offsetZ ?? 0);
   const rotationZ = Number(params.rotationZ ?? primitive.rotationZ ?? 0);
   const points = [];
+  const hasSegment = Array.isArray(primitive.start) && primitive.start.length === 3
+    && Array.isArray(primitive.end) && primitive.end.length === 3;
 
   for (let i = 0; i < 18; i += 1) {
+    if (hasSegment) {
+      const t = i / 17;
+      const start = primitive.start.map(Number);
+      const end = primitive.end.map(Number);
+      const centerX = THREE.MathUtils.lerp(start[0], end[0], t);
+      const centerY = THREE.MathUtils.lerp(start[1], end[1], t);
+      const centerZ = THREE.MathUtils.lerp(start[2], end[2], t);
+      const bend = Math.sin(t * Math.PI * 3.0) * (jitter * 0.38);
+      const flare = (i % 2 === 0 ? -1 : 1) * (width * 0.7 + intensity * 0.08);
+      points.push(new THREE.Vector3(
+        centerX + bend,
+        centerY + flare,
+        centerZ + ((i % 3) - 1) * (0.02 + jitter * 0.08)
+      ));
+      continue;
+    }
+
     const x = -5 + i * (10 / 17);
     const y = (i % 2 === 0 ? -1 : 1) * (width + intensity * 0.54 + (i % 3) * jitter * 0.42);
     const z = ((i % 4) - 1.5) * (0.08 + jitter * 0.7);
