@@ -84,3 +84,20 @@ test('agent-shader-plane honors legacy top-level scale, offset, and z fields', (
   assert.equal(built.obj.position.y, 0.06);
   assert.equal(built.obj.position.z, -0.18);
 });
+
+test('anchor-core honors legacy offset arrays', () => {
+  const built = builders['anchor-core']({
+    primitive: {
+      moduleType: 'anchor-core',
+      scale: 0.42,
+      offset: [0.92, 0.38, 0.2],
+      opacity: 0.5,
+      color: 'anchor'
+    },
+    sceneCfg: baseSceneCfg()
+  });
+
+  assert.equal(built.obj.position.x, 0.92);
+  assert.equal(built.obj.position.y, 0.38);
+  assert.equal(built.obj.position.z, 0.2);
+});
