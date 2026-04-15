@@ -98,3 +98,25 @@ test('custom shader modules disable frustum culling for shader-deformed content'
 
   assert.equal(built.obj.frustumCulled, false);
 });
+
+test('custom shader modules honor legacy top-level offset and z fields', () => {
+  const builder = createShaderBuilder({ transparent: true, doubleSided: true });
+  const built = builder({
+    primitive: {
+      moduleType: 'cm.test.material-flags',
+      opacity: 1,
+      offset: [0.18, 0.02, 0.07],
+      scale: [0.34, 1.05, 1]
+    },
+    sceneCfg: { palette: { primary: '#ffffff', secondary: '#000000' } },
+    seed: 1,
+    index: 0
+  });
+
+  assert.equal(built.obj.position.x, 0.18);
+  assert.equal(built.obj.position.y, 0.02);
+  assert.equal(built.obj.position.z, 0.07);
+  assert.equal(built.obj.scale.x, 0.34);
+  assert.equal(built.obj.scale.y, 1.05);
+  assert.equal(built.obj.scale.z, 1);
+});

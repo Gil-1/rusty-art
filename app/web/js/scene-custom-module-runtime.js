@@ -421,8 +421,23 @@ function normalizeVector3(value, fallback = [0, 0, 0]) {
   return fallback;
 }
 
+function resolveLegacyPosition(params = {}, target) {
+  const legacyOffset = Array.isArray(params.offset) && params.offset.length >= 2
+    ? params.offset
+    : null;
+  const fallbackPosition = Array.isArray(params.defaultPosition) && params.defaultPosition.length === 3
+    ? params.defaultPosition
+    : [target.position.x, target.position.y, target.position.z];
+
+  return [
+    Number(params.offsetX ?? legacyOffset?.[0] ?? fallbackPosition[0]),
+    Number(params.offsetY ?? legacyOffset?.[1] ?? fallbackPosition[1]),
+    Number(params.offsetZ ?? params.z ?? legacyOffset?.[2] ?? fallbackPosition[2])
+  ];
+}
+
 function applyTransform(target, params = {}) {
-  const position = normalizeVector3(params.position, [target.position.x, target.position.y, target.position.z]);
+  const position = normalizeVector3(params.position, resolveLegacyPosition(params, target));
   const rotation = normalizeVector3(params.rotation, [target.rotation.x, target.rotation.y, target.rotation.z]);
   const scaleRaw = params.scale;
   const scale = typeof scaleRaw === 'number'
@@ -432,6 +447,21 @@ function applyTransform(target, params = {}) {
   target.position.set(position[0], position[1], position[2]);
   target.rotation.set(rotation[0], rotation[1], rotation[2]);
   target.scale.set(scale[0], scale[1], scale[2]);
+}
+
+function buildTransformParams({ params = {}, primitive = {}, dsl = {}, defaultPosition = [0, 0, 0], defaultRotation = [0, 0, 0], defaultScale = 1 }) {
+  const explicitPosition = params.position || primitive?.position || dsl.position;
+  return {
+    position: explicitPosition,
+    rotation: params.rotation || primitive?.rotation || dsl.rotation || defaultRotation,
+    scale: params.scale || primitive?.scale || dsl.scale || defaultScale,
+    offset: params.offset || primitive?.offset,
+    offsetX: params.offsetX ?? primitive?.offsetX,
+    offsetY: params.offsetY ?? primitive?.offsetY,
+    offsetZ: params.offsetZ ?? primitive?.offsetZ,
+    z: params.z ?? primitive?.z,
+    defaultPosition
+  };
 }
 
 function createDslShaderBuilder(spec) {
@@ -481,11 +511,7 @@ function createDslShaderBuilder(spec) {
 
     const mesh = new THREE.Mesh(geometry, material);
     mesh.frustumCulled = false;
-    applyTransform(mesh, {
-      position: params.position || primitive?.position || dsl.position || [0, 0, -1.2],
-      rotation: params.rotation || primitive?.rotation || dsl.rotation || [0, 0, 0],
-      scale: params.scale || primitive?.scale || dsl.scale || 1
-    });
+    applyTransform(mesh, buildTransformParams({ params, primitive, dsl, defaultPosition: [0, 0, -1.2] }));
 
     return { obj: mesh, uniforms };
   };
@@ -552,11 +578,7 @@ function createDslGeometryBuilder(spec) {
 
       const mesh = new THREE.Mesh(geometry, material);
       mesh.frustumCulled = false;
-      applyTransform(mesh, {
-        position: params.position || primitive?.position || dsl.position || [0, 0, 0],
-        rotation: params.rotation || primitive?.rotation || dsl.rotation || [0, 0, 0],
-        scale: params.scale || primitive?.scale || dsl.scale || 1
-      });
+      applyTransform(mesh, buildTransformParams({ params, primitive, dsl, defaultPosition: [0, 0, 0] }));
       return { obj: mesh, uniforms };
     }
 
@@ -597,11 +619,7 @@ function createDslGeometryBuilder(spec) {
       group.add(mesh);
     }
 
-    applyTransform(group, {
-      position: params.position || primitive?.position || dsl.position || [0, 0, 0],
-      rotation: params.rotation || primitive?.rotation || dsl.rotation || [0, 0, 0],
-      scale: params.scale || primitive?.scale || dsl.scale || 1
-    });
+    applyTransform(group, buildTransformParams({ params, primitive, dsl, defaultPosition: [0, 0, 0] }));
 
     return { obj: group, uniforms: null };
   };
@@ -671,11 +689,7 @@ function createDslParticleBuilder(spec) {
 
       const points = new THREE.Points(geometry, material);
       points.frustumCulled = false;
-      applyTransform(points, {
-        position: params.position || primitive?.position || dsl.position || [0, 0, 0],
-        rotation: params.rotation || primitive?.rotation || dsl.rotation || [0, 0, 0],
-        scale: params.scale || primitive?.scale || dsl.scale || 1
-      });
+      applyTransform(points, buildTransformParams({ params, primitive, dsl, defaultPosition: [0, 0, 0] }));
       return { obj: points, uniforms };
     }
 
@@ -690,11 +704,7 @@ function createDslParticleBuilder(spec) {
 
     const points = new THREE.Points(geometry, material);
     points.frustumCulled = false;
-    applyTransform(points, {
-      position: params.position || primitive?.position || dsl.position || [0, 0, 0],
-      rotation: params.rotation || primitive?.rotation || dsl.rotation || [0, 0, 0],
-      scale: params.scale || primitive?.scale || dsl.scale || 1
-    });
+    applyTransform(points, buildTransformParams({ params, primitive, dsl, defaultPosition: [0, 0, 0] }));
 
     return { obj: points, uniforms: null };
   };
