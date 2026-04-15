@@ -162,7 +162,7 @@ function resolvePlanePosition({ params = {}, primitive = {}, fallback = [0, 0, 0
   return [
     Number(params.offsetX ?? primitive.offsetX ?? legacyOffset?.[0] ?? fallback[0]),
     Number(params.offsetY ?? primitive.offsetY ?? legacyOffset?.[1] ?? fallback[1]),
-    Number(params.offsetZ ?? primitive.offsetZ ?? primitive.z ?? fallback[2])
+    Number(params.offsetZ ?? primitive.offsetZ ?? primitive.z ?? legacyOffset?.[2] ?? fallback[2])
   ];
 }
 
@@ -363,16 +363,8 @@ function createAnchorCore({ primitive, sceneCfg }) {
   ring.scale.setScalar(scale * 1.04);
   group.add(ring);
 
-  const pos = Array.isArray(params.position) ? params.position : null;
-  if (pos && pos.length === 3 && pos.every(Number.isFinite)) {
-    group.position.set(pos[0], pos[1], pos[2]);
-  } else {
-    group.position.set(
-      Number(params.offsetX ?? primitive.offsetX ?? sceneCfg.anchorOffsetX ?? 0),
-      Number(params.offsetY ?? primitive.offsetY ?? 0),
-      Number(params.offsetZ ?? primitive.offsetZ ?? 0)
-    );
-  }
+  const position = resolvePlanePosition({ params, primitive, fallback: [sceneCfg.anchorOffsetX ?? 0, 0, 0] });
+  group.position.set(position[0], position[1], position[2]);
   group.scale.setScalar(Number(params.scale ?? primitive.scale ?? 1) * scale);
   const rotationZ = Number(params.rotationZ ?? primitive.rotationZ ?? 0);
   if (Number.isFinite(rotationZ)) group.rotation.z = rotationZ;

@@ -24,6 +24,31 @@ void main() {
 }
 `;
 
+function legacyOffsetArray(value) {
+  return Array.isArray(value) && value.length >= 2 ? value : null;
+}
+
+function resolveLegacyPosition(primitive = {}, params = {}, fallback = [0, 0, 0]) {
+  const legacyOffset = legacyOffsetArray(primitive.offset);
+  return [
+    Number(params.offsetX ?? primitive.offsetX ?? (typeof primitive.offset === 'number' ? primitive.offset : legacyOffset?.[0]) ?? fallback[0]),
+    Number(params.offsetY ?? primitive.offsetY ?? legacyOffset?.[1] ?? fallback[1]),
+    Number(params.offsetZ ?? primitive.offsetZ ?? primitive.z ?? legacyOffset?.[2] ?? fallback[2])
+  ];
+}
+
+function resolveLegacyScale(primitive = {}, params = {}, fallback = [1, 1, 1]) {
+  if (typeof primitive.scale === 'number' && Number.isFinite(primitive.scale)) {
+    return [primitive.scale, primitive.scale, primitive.scale];
+  }
+  const legacyScale = Array.isArray(primitive.scale) && primitive.scale.length >= 2 ? primitive.scale : null;
+  return [
+    Number(params.scaleX ?? primitive.scaleX ?? legacyScale?.[0] ?? fallback[0]),
+    Number(params.scaleY ?? primitive.scaleY ?? legacyScale?.[1] ?? fallback[1]),
+    Number(params.scaleZ ?? primitive.scaleZ ?? legacyScale?.[2] ?? fallback[2])
+  ];
+}
+
 function createMotifArmature({ primitive, sceneCfg, seed }) {
   const motif = primitive.motif || sceneCfg.motif || 'flow';
   const color = sceneCfg.palette[primitive.color] || sceneCfg.palette.glow;
@@ -144,9 +169,7 @@ function createFaultLine({ primitive, sceneCfg }) {
   const params = primitive?.params || {};
   const width = Math.max(0.02, Math.min(0.32, Number(params.width ?? primitive.width ?? 0.14) || 0.14));
   const jitter = Math.max(0.02, Math.min(0.6, Number(params.jitter ?? primitive.jitter ?? 0.14) || 0.14));
-  const offsetX = Number(params.offsetX ?? primitive.offsetX ?? 0);
-  const offsetY = Number(params.offsetY ?? primitive.offsetY ?? 0);
-  const offsetZ = Number(params.offsetZ ?? primitive.offsetZ ?? 0);
+  const [offsetX, offsetY, offsetZ] = resolveLegacyPosition(primitive, params, [0, 0, 0]);
   const rotationZ = Number(params.rotationZ ?? primitive.rotationZ ?? 0);
   const points = [];
   const hasSegment = Array.isArray(primitive.start) && primitive.start.length === 3
@@ -327,6 +350,7 @@ function createConcentricDiscs({ primitive, sceneCfg }) {
 function createSuprematistPlanes({ primitive, sceneCfg, seed, index }) {
   const rand = mulberry32((seed ^ hashString(`sup:${index}`)) >>> 0);
   const group = new THREE.Group();
+  const params = primitive?.params || {};
   for (let i = 0; i < 6; i += 1) {
     const w = 0.8 + rand() * 2.2;
     const h = 0.4 + rand() * 1.2;
@@ -343,6 +367,10 @@ function createSuprematistPlanes({ primitive, sceneCfg, seed, index }) {
     mesh.rotation.z = (rand() - 0.5) * 1.4;
     group.add(mesh);
   }
+  const position = resolveLegacyPosition(primitive, params, [0, 0, 0]);
+  const scale = resolveLegacyScale(primitive, params, [1, 1, 1]);
+  group.position.set(position[0], position[1], position[2]);
+  group.scale.set(scale[0], scale[1], scale[2]);
   return group;
 }
 
@@ -437,6 +465,7 @@ function createInstanceGrid({ primitive, sceneCfg }) {
 function createPolyhedronArray({ primitive, sceneCfg, seed, index }) {
   const rand = mulberry32((seed ^ hashString(`poly:${index}`)) >>> 0);
   const group = new THREE.Group();
+  const params = primitive?.params || {};
   const count = 12;
   for (let i = 0; i < count; i += 1) {
     const size = 0.2 + rand() * 0.55;
@@ -451,6 +480,10 @@ function createPolyhedronArray({ primitive, sceneCfg, seed, index }) {
     mesh.position.set((rand() - 0.5) * 9, (rand() - 0.5) * 5.4, (rand() - 0.5) * 3.4);
     group.add(mesh);
   }
+  const position = resolveLegacyPosition(primitive, params, [0, 0, 0]);
+  const scale = resolveLegacyScale(primitive, params, [1, 1, 1]);
+  group.position.set(position[0], position[1], position[2]);
+  group.scale.set(scale[0], scale[1], scale[2]);
   return group;
 }
 
