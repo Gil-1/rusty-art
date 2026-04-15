@@ -42,7 +42,7 @@ function createSceneStub() {
   };
 }
 
-test('canvas touch drag prevents default browser panning during orbit interaction', () => {
+test('canvas touch drag prevents default browser panning and uses reduced touch sensitivity', () => {
   const { scene, listeners } = createSceneStub();
   bindOrbitInput(scene);
 
@@ -80,8 +80,8 @@ test('canvas touch drag prevents default browser panning during orbit interactio
   });
 
   assert.equal(preventedMove, true);
-  assert.notEqual(scene.orbit.thetaVel, 0);
-  assert.notEqual(scene.orbit.phiVel, 0);
+  assert.equal(scene.orbit.thetaVel, -(30 * 0.0036 * 0.35));
+  assert.equal(scene.orbit.phiVel, -(30 * 0.0028 * 0.35));
 });
 
 test('art canvas CSS disables touch-action scrolling', () => {
