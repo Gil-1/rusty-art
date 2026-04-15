@@ -4,7 +4,7 @@ import * as THREE from 'three';
 
 import { compileCustomModuleRegistry } from '../app/web/js/scene-custom-module-runtime.js';
 
-function buildCustomShaderMaterial({ transparent, doubleSided }) {
+function createShaderBuilder({ transparent, doubleSided }) {
   const { builders } = compileCustomModuleRegistry({
     customModules: [
       {
@@ -32,25 +32,57 @@ function buildCustomShaderMaterial({ transparent, doubleSided }) {
 
   const builder = builders.get('cm.test.material-flags');
   assert.ok(builder, 'builder should be registered');
+  return builder;
+}
+
+test('custom shader modules honor opaque single-sided authored flags', () => {
+  const builder = createShaderBuilder({ transparent: false, doubleSided: false });
   const built = builder({
     primitive: { moduleType: 'cm.test.material-flags', opacity: 1 },
     sceneCfg: { palette: { primary: '#ffffff', secondary: '#000000' } },
     seed: 1,
     index: 0
   });
-  return built.obj.material;
-}
-
-test('custom shader modules honor opaque single-sided authored flags', () => {
-  const material = buildCustomShaderMaterial({ transparent: false, doubleSided: false });
+  const material = built.obj.material;
   assert.equal(material.transparent, false);
   assert.equal(material.depthWrite, true);
   assert.equal(material.side, THREE.FrontSide);
 });
 
 test('custom shader modules honor transparent double-sided authored flags', () => {
-  const material = buildCustomShaderMaterial({ transparent: true, doubleSided: true });
+  const builder = createShaderBuilder({ transparent: true, doubleSided: true });
+  const built = builder({
+    primitive: { moduleType: 'cm.test.material-flags', opacity: 1 },
+    sceneCfg: { palette: { primary: '#ffffff', secondary: '#000000' } },
+    seed: 1,
+    index: 0
+  });
+  const material = built.obj.material;
   assert.equal(material.transparent, true);
   assert.equal(material.depthWrite, false);
   assert.equal(material.side, THREE.DoubleSide);
+});
+
+test('custom shader modules honor top-level element transforms', () => {
+  const builder = createShaderBuilder({ transparent: true, doubleSided: true });
+  const built = builder({
+    primitive: {
+      moduleType: 'cm.test.material-flags',
+      opacity: 1,
+      position: [0, 0.66, 0.14],
+      scale: [0.42, 0.42, 1],
+      rotation: [0, 0, 0.25]
+    },
+    sceneCfg: { palette: { primary: '#ffffff', secondary: '#000000' } },
+    seed: 1,
+    index: 0
+  });
+
+  assert.equal(built.obj.position.x, 0);
+  assert.equal(built.obj.position.y, 0.66);
+  assert.equal(built.obj.position.z, 0.14);
+  assert.equal(built.obj.scale.x, 0.42);
+  assert.equal(built.obj.scale.y, 0.42);
+  assert.equal(built.obj.scale.z, 1);
+  assert.equal(built.obj.rotation.z, 0.25);
 });

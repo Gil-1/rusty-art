@@ -481,9 +481,9 @@ function createDslShaderBuilder(spec) {
 
     const mesh = new THREE.Mesh(geometry, material);
     applyTransform(mesh, {
-      position: params.position || dsl.position || [0, 0, -1.2],
-      rotation: params.rotation || dsl.rotation || [0, 0, 0],
-      scale: params.scale || dsl.scale || 1
+      position: params.position || primitive?.position || dsl.position || [0, 0, -1.2],
+      rotation: params.rotation || primitive?.rotation || dsl.rotation || [0, 0, 0],
+      scale: params.scale || primitive?.scale || dsl.scale || 1
     });
 
     return { obj: mesh, uniforms };
@@ -551,9 +551,9 @@ function createDslGeometryBuilder(spec) {
 
       const mesh = new THREE.Mesh(geometry, material);
       applyTransform(mesh, {
-        position: params.position || dsl.position || [0, 0, 0],
-        rotation: params.rotation || dsl.rotation || [0, 0, 0],
-        scale: params.scale || dsl.scale || 1
+        position: params.position || primitive?.position || dsl.position || [0, 0, 0],
+        rotation: params.rotation || primitive?.rotation || dsl.rotation || [0, 0, 0],
+        scale: params.scale || primitive?.scale || dsl.scale || 1
       });
       return { obj: mesh, uniforms };
     }
@@ -596,9 +596,9 @@ function createDslGeometryBuilder(spec) {
     }
 
     applyTransform(group, {
-      position: params.position || dsl.position || [0, 0, 0],
-      rotation: params.rotation || dsl.rotation || [0, 0, 0],
-      scale: params.scale || dsl.scale || 1
+      position: params.position || primitive?.position || dsl.position || [0, 0, 0],
+      rotation: params.rotation || primitive?.rotation || dsl.rotation || [0, 0, 0],
+      scale: params.scale || primitive?.scale || dsl.scale || 1
     });
 
     return { obj: group, uniforms: null };
@@ -669,9 +669,9 @@ function createDslParticleBuilder(spec) {
 
       const points = new THREE.Points(geometry, material);
       applyTransform(points, {
-        position: params.position || dsl.position || [0, 0, 0],
-        rotation: params.rotation || dsl.rotation || [0, 0, 0],
-        scale: params.scale || dsl.scale || 1
+        position: params.position || primitive?.position || dsl.position || [0, 0, 0],
+        rotation: params.rotation || primitive?.rotation || dsl.rotation || [0, 0, 0],
+        scale: params.scale || primitive?.scale || dsl.scale || 1
       });
       return { obj: points, uniforms };
     }
@@ -687,9 +687,9 @@ function createDslParticleBuilder(spec) {
 
     const points = new THREE.Points(geometry, material);
     applyTransform(points, {
-      position: params.position || dsl.position || [0, 0, 0],
-      rotation: params.rotation || dsl.rotation || [0, 0, 0],
-      scale: params.scale || dsl.scale || 1
+      position: params.position || primitive?.position || dsl.position || [0, 0, 0],
+      rotation: params.rotation || primitive?.rotation || dsl.rotation || [0, 0, 0],
+      scale: params.scale || primitive?.scale || dsl.scale || 1
     });
 
     return { obj: points, uniforms: null };
