@@ -5,6 +5,7 @@
   "type": "module",
   "description": "Public Rusty Art website and published artwork archive",
   "scripts": {
+    "test": "node --test",
     "web:build": "vite build"
   },
   "dependencies": {
