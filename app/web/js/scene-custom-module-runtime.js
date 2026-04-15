@@ -480,6 +480,7 @@ function createDslShaderBuilder(spec) {
     });
 
     const mesh = new THREE.Mesh(geometry, material);
+    mesh.frustumCulled = false;
     applyTransform(mesh, {
       position: params.position || primitive?.position || dsl.position || [0, 0, -1.2],
       rotation: params.rotation || primitive?.rotation || dsl.rotation || [0, 0, 0],
@@ -550,6 +551,7 @@ function createDslGeometryBuilder(spec) {
       });
 
       const mesh = new THREE.Mesh(geometry, material);
+      mesh.frustumCulled = false;
       applyTransform(mesh, {
         position: params.position || primitive?.position || dsl.position || [0, 0, 0],
         rotation: params.rotation || primitive?.rotation || dsl.rotation || [0, 0, 0],
@@ -668,6 +670,7 @@ function createDslParticleBuilder(spec) {
       });
 
       const points = new THREE.Points(geometry, material);
+      points.frustumCulled = false;
       applyTransform(points, {
         position: params.position || primitive?.position || dsl.position || [0, 0, 0],
         rotation: params.rotation || primitive?.rotation || dsl.rotation || [0, 0, 0],
@@ -686,6 +689,7 @@ function createDslParticleBuilder(spec) {
     });
 
     const points = new THREE.Points(geometry, material);
+    points.frustumCulled = false;
     applyTransform(points, {
       position: params.position || primitive?.position || dsl.position || [0, 0, 0],
       rotation: params.rotation || primitive?.rotation || dsl.rotation || [0, 0, 0],

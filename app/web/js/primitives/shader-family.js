@@ -175,6 +175,7 @@ function createShaderFieldPlane({ primitive, sceneCfg }) {
   });
 
   const mesh = new THREE.Mesh(geometry, material);
+  mesh.frustumCulled = false;
   const pos = Array.isArray(params.position) ? params.position : null;
   if (pos && pos.length === 3 && pos.every(Number.isFinite)) {
     mesh.position.set(pos[0], pos[1], pos[2]);
@@ -196,10 +197,30 @@ function createShaderFieldPlane({ primitive, sceneCfg }) {
 }
 
 function createFlowNoiseSlab({ primitive, sceneCfg }) {
+  const params = primitive?.params || {};
   const out = createShaderFieldPlane({ primitive: { ...primitive, opacity: (primitive.opacity ?? 0.42) * 0.75 }, sceneCfg });
-  out.obj.scale.set(1.1, 0.8, 1);
-  out.obj.position.z = -2.6;
-  out.obj.rotation.z = 0.13;
+
+  const hasScaleOverride = Number.isFinite(Number(params.scaleX))
+    || Number.isFinite(Number(params.scaleY))
+    || Number.isFinite(Number(primitive?.scaleX))
+    || Number.isFinite(Number(primitive?.scaleY));
+  if (!hasScaleOverride) {
+    out.obj.scale.set(1.1, 0.8, 1);
+  }
+
+  const hasPositionOverride = (Array.isArray(params.position) && params.position.length === 3)
+    || Number.isFinite(Number(params.offsetZ))
+    || Number.isFinite(Number(primitive?.offsetZ));
+  if (!hasPositionOverride) {
+    out.obj.position.z = -2.6;
+  }
+
+  const hasRotationOverride = Number.isFinite(Number(params.rotationZ))
+    || Number.isFinite(Number(primitive?.rotationZ));
+  if (!hasRotationOverride) {
+    out.obj.rotation.z = 0.13;
+  }
+
   return out;
 }
 
@@ -230,6 +251,7 @@ function createVolumetricHaze({ primitive, sceneCfg }) {
   });
 
   const mesh = new THREE.Mesh(geometry, material);
+  mesh.frustumCulled = false;
   const pos = Array.isArray(params.position) ? params.position : null;
   if (pos && pos.length === 3 && pos.every(Number.isFinite)) {
     mesh.position.set(pos[0], pos[1], pos[2]);
@@ -338,6 +360,9 @@ function createAnchorCore({ primitive, sceneCfg }) {
   group.scale.setScalar(Number(params.scale ?? primitive.scale ?? 1) * scale);
   const rotationZ = Number(params.rotationZ ?? primitive.rotationZ ?? 0);
   if (Number.isFinite(rotationZ)) group.rotation.z = rotationZ;
+  group.traverse((child) => {
+    child.frustumCulled = false;
+  });
 
   return { obj: group, uniforms };
 }

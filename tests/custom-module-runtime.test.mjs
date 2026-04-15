@@ -86,3 +86,15 @@ test('custom shader modules honor top-level element transforms', () => {
   assert.equal(built.obj.scale.z, 1);
   assert.equal(built.obj.rotation.z, 0.25);
 });
+
+test('custom shader modules disable frustum culling for shader-deformed content', () => {
+  const builder = createShaderBuilder({ transparent: true, doubleSided: true });
+  const built = builder({
+    primitive: { moduleType: 'cm.test.material-flags', opacity: 1 },
+    sceneCfg: { palette: { primary: '#ffffff', secondary: '#000000' } },
+    seed: 1,
+    index: 0
+  });
+
+  assert.equal(built.obj.frustumCulled, false);
+});

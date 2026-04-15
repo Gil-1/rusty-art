@@ -578,11 +578,13 @@ function applyGeometryShaderOverride({ primitive, sceneCfg, built }) {
         if (replacement?.uniforms) collectedUniforms.push(replacement.uniforms);
         return replacement;
       });
+      child.frustumCulled = false;
       return;
     }
 
     const replacement = makeOverrideMaterial({ primitive, sceneCfg, sourceMaterial: child.material });
     child.material = replacement;
+    child.frustumCulled = false;
     if (replacement?.uniforms) collectedUniforms.push(replacement.uniforms);
   });
 
