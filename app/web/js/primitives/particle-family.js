@@ -128,6 +128,7 @@ function createShaderParticleCloud({ primitive, palette, seed, index, sceneCfg }
   });
 
   const points = new THREE.Points(geometry, material);
+  points.frustumCulled = false;
   const params = primitive?.params || {};
   const pos = Array.isArray(params.position) ? params.position : null;
   if (pos && pos.length === 3 && pos.every(Number.isFinite)) {
