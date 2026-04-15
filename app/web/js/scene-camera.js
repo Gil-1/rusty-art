@@ -1,4 +1,4 @@
-const TOUCH_DRAG_SENSITIVITY = 0.35;
+const TOUCH_DRAG_SENSITIVITY = 0.2;
 
 export function bindOrbitInput(scene) {
   scene.canvas.addEventListener('pointerdown', (event) => {
