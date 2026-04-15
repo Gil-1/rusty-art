@@ -65,3 +65,22 @@ test('shader-family plane builders disable frustum culling for shader-deformed c
 
   assert.equal(built.obj.frustumCulled, false);
 });
+
+test('agent-shader-plane honors legacy top-level scale, offset, and z fields', () => {
+  const built = builders['agent-shader-plane']({
+    primitive: {
+      moduleType: 'agent-shader-plane',
+      scale: [5.4, 3.6],
+      offset: [0.32, 0.06],
+      z: -0.18,
+      opacity: 0.5
+    },
+    sceneCfg: baseSceneCfg()
+  });
+
+  assert.equal(built.obj.scale.x, 5.4);
+  assert.equal(built.obj.scale.y, 3.6);
+  assert.equal(built.obj.position.x, 0.32);
+  assert.equal(built.obj.position.y, 0.06);
+  assert.equal(built.obj.position.z, -0.18);
+});

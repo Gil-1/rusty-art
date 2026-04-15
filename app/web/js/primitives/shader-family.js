@@ -147,6 +147,44 @@ void main() {
 }
 `;
 
+function isFiniteVec3Array(value) {
+  return Array.isArray(value) && value.length === 3 && value.every((entry) => Number.isFinite(Number(entry)));
+}
+
+function resolvePlanePosition({ params = {}, primitive = {}, fallback = [0, 0, 0] }) {
+  if (isFiniteVec3Array(params.position)) return params.position.map(Number);
+  if (isFiniteVec3Array(primitive.position)) return primitive.position.map(Number);
+
+  const legacyOffset = Array.isArray(primitive.offset) && primitive.offset.length >= 2
+    ? primitive.offset
+    : null;
+
+  return [
+    Number(params.offsetX ?? primitive.offsetX ?? legacyOffset?.[0] ?? fallback[0]),
+    Number(params.offsetY ?? primitive.offsetY ?? legacyOffset?.[1] ?? fallback[1]),
+    Number(params.offsetZ ?? primitive.offsetZ ?? primitive.z ?? fallback[2])
+  ];
+}
+
+function resolvePlaneScale({ params = {}, primitive = {}, fallback = [1, 1, 1] }) {
+  if (typeof params.scale === 'number' && Number.isFinite(params.scale)) {
+    return [params.scale, params.scale, fallback[2]];
+  }
+  if (typeof primitive.scale === 'number' && Number.isFinite(primitive.scale)) {
+    return [primitive.scale, primitive.scale, fallback[2]];
+  }
+
+  const legacyScale = Array.isArray(primitive.scale) && primitive.scale.length >= 2
+    ? primitive.scale
+    : null;
+
+  return [
+    Number(params.scaleX ?? primitive.scaleX ?? legacyScale?.[0] ?? fallback[0]),
+    Number(params.scaleY ?? primitive.scaleY ?? legacyScale?.[1] ?? fallback[1]),
+    Number(params.scaleZ ?? primitive.scaleZ ?? legacyScale?.[2] ?? fallback[2])
+  ];
+}
+
 function createShaderFieldPlane({ primitive, sceneCfg }) {
   const params = primitive?.params || {};
   const colorAKey = params.colorA || primitive.colorA || primitive.color || 'bg';
@@ -176,21 +214,10 @@ function createShaderFieldPlane({ primitive, sceneCfg }) {
 
   const mesh = new THREE.Mesh(geometry, material);
   mesh.frustumCulled = false;
-  const pos = Array.isArray(params.position) ? params.position : null;
-  if (pos && pos.length === 3 && pos.every(Number.isFinite)) {
-    mesh.position.set(pos[0], pos[1], pos[2]);
-  } else {
-    mesh.position.set(
-      Number(params.offsetX ?? primitive.offsetX ?? 0),
-      Number(params.offsetY ?? primitive.offsetY ?? 0),
-      Number(params.offsetZ ?? primitive.offsetZ ?? -1.8)
-    );
-  }
-  mesh.scale.set(
-    Number(params.scaleX ?? primitive.scaleX ?? 1),
-    Number(params.scaleY ?? primitive.scaleY ?? 1),
-    1
-  );
+  const position = resolvePlanePosition({ params, primitive, fallback: [0, 0, -1.8] });
+  mesh.position.set(position[0], position[1], position[2]);
+  const scale = resolvePlaneScale({ params, primitive, fallback: [1, 1, 1] });
+  mesh.scale.set(scale[0], scale[1], scale[2]);
   const rotationZ = Number(params.rotationZ ?? primitive.rotationZ ?? 0);
   if (Number.isFinite(rotationZ)) mesh.rotation.z = rotationZ;
   return { obj: mesh, uniforms };
@@ -252,21 +279,10 @@ function createVolumetricHaze({ primitive, sceneCfg }) {
 
   const mesh = new THREE.Mesh(geometry, material);
   mesh.frustumCulled = false;
-  const pos = Array.isArray(params.position) ? params.position : null;
-  if (pos && pos.length === 3 && pos.every(Number.isFinite)) {
-    mesh.position.set(pos[0], pos[1], pos[2]);
-  } else {
-    mesh.position.set(
-      Number(params.offsetX ?? primitive.offsetX ?? 0),
-      Number(params.offsetY ?? primitive.offsetY ?? 0),
-      Number(params.offsetZ ?? primitive.offsetZ ?? -4.2)
-    );
-  }
-  mesh.scale.set(
-    Number(params.scaleX ?? primitive.scaleX ?? 1),
-    Number(params.scaleY ?? primitive.scaleY ?? 1),
-    1
-  );
+  const position = resolvePlanePosition({ params, primitive, fallback: [0, 0, -4.2] });
+  mesh.position.set(position[0], position[1], position[2]);
+  const scale = resolvePlaneScale({ params, primitive, fallback: [1, 1, 1] });
+  mesh.scale.set(scale[0], scale[1], scale[2]);
   const rotationZ = Number(params.rotationZ ?? primitive.rotationZ ?? 0);
   if (Number.isFinite(rotationZ)) mesh.rotation.z = rotationZ;
   return { obj: mesh, uniforms };
@@ -381,16 +397,15 @@ function createAgentShaderPlane({ primitive, sceneCfg }) {
     }
   });
 
-  const scaleX = Math.max(0.2, Math.min(6, Number(params.scaleX ?? 1) || 1));
-  const scaleY = Math.max(0.2, Math.min(6, Number(params.scaleY ?? 1) || 1));
-  out.obj.scale.set(scaleX, scaleY, 1);
+  const scale = resolvePlaneScale({ params, primitive, fallback: [1, 1, 1] });
+  out.obj.scale.set(
+    Math.max(0.2, Math.min(6, scale[0] || 1)),
+    Math.max(0.2, Math.min(6, scale[1] || 1)),
+    scale[2] || 1
+  );
 
-  const pos = Array.isArray(params.position) ? params.position : null;
-  if (pos && pos.length === 3 && pos.every(Number.isFinite)) {
-    out.obj.position.set(pos[0], pos[1], pos[2]);
-  } else {
-    out.obj.position.z = Number(params.offsetZ ?? out.obj.position.z ?? -1.8);
-  }
+  const position = resolvePlanePosition({ params, primitive, fallback: [0, 0, out.obj.position.z ?? -1.8] });
+  out.obj.position.set(position[0], position[1], position[2]);
 
   const rotationZ = Number(params.rotationZ ?? 0);
   if (Number.isFinite(rotationZ)) out.obj.rotation.z = rotationZ;
