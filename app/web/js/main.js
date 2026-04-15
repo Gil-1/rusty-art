@@ -18,7 +18,8 @@ const PAGE_SIZE = 12;
 const query = new URLSearchParams(window.location.search);
 const captureMode = query.get('capture') === '1';
 const forcedView = query.get('view');
-const requestedIndex = Number.parseInt(query.get('index') || '0', 10);
+const requestedIndexParam = query.get('index');
+const requestedIndex = requestedIndexParam == null ? null : Number.parseInt(requestedIndexParam, 10);
 
 const artFirst = document.querySelector('.art-first');
 const canvas = document.getElementById('art-canvas');
@@ -689,7 +690,10 @@ async function init() {
   populateQuickPicker();
   updateArchiveCount();
 
-  const targetIndex = Number.isNaN(requestedIndex) ? 0 : Math.max(0, requestedIndex);
+  const defaultIndex = Math.max(0, manifest.items.length - 1);
+  const targetIndex = requestedIndex == null || Number.isNaN(requestedIndex)
+    ? defaultIndex
+    : Math.max(0, requestedIndex);
   await loadArtworkByIndex(targetIndex);
 
   if (captureMode) {
@@ -719,15 +723,15 @@ if (retryLoad) {
 
 if (quickPrev) {
   quickPrev.addEventListener('click', () => {
-    // Left arrow => older artwork in newest-first ordering.
-    loadArtworkByStep(1).catch(() => {});
+    // Left arrow => older artwork in oldest-first ordering.
+    loadArtworkByStep(-1).catch(() => {});
   });
 }
 
 if (quickNext) {
   quickNext.addEventListener('click', () => {
-    // Right arrow => newer artwork in newest-first ordering.
-    loadArtworkByStep(-1).catch(() => {});
+    // Right arrow => newer artwork in oldest-first ordering.
+    loadArtworkByStep(1).catch(() => {});
   });
 }
 
@@ -819,13 +823,13 @@ document.addEventListener('keydown', (event) => {
 
   if (event.key === 'ArrowLeft') {
     event.preventDefault();
-    loadArtworkByStep(step).catch(() => {});
+    loadArtworkByStep(-step).catch(() => {});
     return;
   }
 
   if (event.key === 'ArrowRight') {
     event.preventDefault();
-    loadArtworkByStep(-step).catch(() => {});
+    loadArtworkByStep(step).catch(() => {});
     return;
   }
 
