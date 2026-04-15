@@ -365,6 +365,18 @@ function defaultUniformValue(type, name, { sceneCfg, seed = 0, moduleId = 'cm', 
   }
 
   if (type === 'vec3') {
+    if (key.includes('bg')) {
+      return hslStringToColor(sceneCfg?.palette?.bg || '#10131f', '#10131f');
+    }
+    if (key.includes('anchor')) {
+      return hslStringToColor(sceneCfg?.palette?.anchor || '#ffffff', '#ffffff');
+    }
+    if (key.includes('secondary')) {
+      return hslStringToColor(sceneCfg?.palette?.secondary || '#99a8ff', '#99a8ff');
+    }
+    if (key.includes('primary')) {
+      return hslStringToColor(sceneCfg?.palette?.primary || '#ffffff', '#ffffff');
+    }
     if (key.includes('colorb') || key.endsWith('b')) {
       return hslStringToColor(sceneCfg?.palette?.secondary || '#99a8ff', '#99a8ff');
     }
