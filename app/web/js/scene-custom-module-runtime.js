@@ -67,6 +67,16 @@ function clamp(value, min, max, fallback = min) {
   return Math.max(min, Math.min(max, numeric));
 }
 
+function toBoolean(value, fallback = false) {
+  if (typeof value === 'boolean') return value;
+  if (typeof value === 'string') {
+    const normalized = value.trim().toLowerCase();
+    if (normalized === 'true') return true;
+    if (normalized === 'false') return false;
+  }
+  return fallback;
+}
+
 function isObject(value) {
   return Boolean(value) && typeof value === 'object' && !Array.isArray(value);
 }
@@ -430,6 +440,8 @@ function createDslShaderBuilder(spec) {
     const params = isObject(primitive?.params) ? primitive.params : {};
     const width = clamp(params.width ?? dsl.width, 0.2, 120, 8);
     const height = clamp(params.height ?? dsl.height, 0.2, 120, 6);
+    const isTransparent = toBoolean(params.transparent, toBoolean(dsl.transparent, true));
+    const isDoubleSided = toBoolean(params.doubleSided, toBoolean(dsl.doubleSided, true));
     const { vertexShader, fragmentShader, paramUniforms } = prepareCustomShaderSources({
       spec,
       params,
@@ -461,9 +473,9 @@ function createDslShaderBuilder(spec) {
       uniforms,
       vertexShader,
       fragmentShader,
-      transparent: true,
-      depthWrite: false,
-      side: THREE.DoubleSide,
+      transparent: isTransparent,
+      depthWrite: !isTransparent,
+      side: isDoubleSided ? THREE.DoubleSide : THREE.FrontSide,
       blending: resolveBlend(params.blend || dsl.blend || primitive?.blend || 'normal')
     });
 
@@ -498,6 +510,8 @@ function createDslGeometryBuilder(spec) {
       const height = clamp(params.height ?? dsl.height ?? dsl.gridHeight, 0.3, 120, 5.4);
       const segmentsX = Math.round(clamp(params.segmentsX ?? dsl.segmentsX ?? dsl.cellCount, 1, 240, 32));
       const segmentsY = Math.round(clamp(params.segmentsY ?? dsl.segmentsY ?? dsl.cellCount, 1, 240, 20));
+      const isTransparent = toBoolean(params.transparent, toBoolean(dsl.transparent, true));
+      const isDoubleSided = toBoolean(params.doubleSided, toBoolean(dsl.doubleSided, true));
       const { vertexShader, fragmentShader, paramUniforms } = prepareCustomShaderSources({
         spec,
         params,
@@ -529,9 +543,9 @@ function createDslGeometryBuilder(spec) {
         uniforms,
         vertexShader,
         fragmentShader,
-        transparent: true,
-        depthWrite: false,
-        side: THREE.DoubleSide,
+        transparent: isTransparent,
+        depthWrite: !isTransparent,
+        side: isDoubleSided ? THREE.DoubleSide : THREE.FrontSide,
         blending: resolveBlend(params.blend || dsl.blend || primitive?.blend || 'normal')
       });
 
