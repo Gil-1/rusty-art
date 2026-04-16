@@ -1,21 +1,28 @@
+const TOUCH_DRAG_SENSITIVITY = 0.2;
+
 export function bindOrbitInput(scene) {
   scene.canvas.addEventListener('pointerdown', (event) => {
+    if (event.isPrimary === false) return;
     scene.orbit.dragging = true;
     scene.orbit.userControlLocked = true;
     scene.orbit.lastX = event.clientX;
     scene.orbit.lastY = event.clientY;
+    if (event.pointerType === 'touch') event.preventDefault();
     scene.canvas.setPointerCapture?.(event.pointerId);
-  });
+  }, { passive: false });
 
   scene.canvas.addEventListener('pointermove', (event) => {
     if (!scene.orbit.dragging) return;
+    const isTouch = event.pointerType === 'touch';
+    if (isTouch) event.preventDefault();
     const dx = event.clientX - scene.orbit.lastX;
     const dy = event.clientY - scene.orbit.lastY;
+    const sensitivity = isTouch ? TOUCH_DRAG_SENSITIVITY : 1;
     scene.orbit.lastX = event.clientX;
     scene.orbit.lastY = event.clientY;
-    scene.orbit.thetaVel -= dx * 0.0036;
-    scene.orbit.phiVel -= dy * 0.0028;
-  });
+    scene.orbit.thetaVel -= dx * 0.0036 * sensitivity;
+    scene.orbit.phiVel -= dy * 0.0028 * sensitivity;
+  }, { passive: false });
 
   const endDrag = (event) => {
     scene.orbit.dragging = false;
