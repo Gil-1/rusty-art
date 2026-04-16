@@ -38,30 +38,18 @@ export function normalizeManifestFromArtwork(art, file) {
   };
 }
 
-export function normalizeManifestOrdering(manifest) {
-  if (!manifest || !Array.isArray(manifest.items)) return manifest;
-  const items = manifest.items.slice();
-  if (items.length > 1 && manifest.latestId && items[0]?.id === manifest.latestId) {
-    items.reverse();
-  }
-  return {
-    ...manifest,
-    items
-  };
-}
-
 export async function loadManifestWithFallback() {
   try {
     const data = await fetchJsonWithTimeout('./data/manifest.json');
     if (!Array.isArray(data?.items)) throw new Error('Manifest payload malformed');
-    return { manifest: normalizeManifestOrdering(data), fallback: false };
+    return { manifest: data, fallback: false };
   } catch (manifestError) {
     try {
       const latest = await fetchJsonWithTimeout('./data/latest.json');
       if (!latest?.latestFile) throw new Error('latest.json missing latestFile');
       const art = await fetchJsonWithTimeout(latest.latestFile);
       return {
-        manifest: normalizeManifestOrdering(normalizeManifestFromArtwork(art, latest.latestFile)),
+        manifest: normalizeManifestFromArtwork(art, latest.latestFile),
         fallback: true,
         fallbackReason: `Archive manifest unavailable (${manifestError.message}). Showing latest piece only.`
       };
