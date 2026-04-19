@@ -1,0 +1,982 @@
+{
+  "id": "2026-04-19-abstract-signal-panicked-longer-knew-what",
+  "date": "2026-04-19",
+  "title": "Abstract Signal: panicked longer knew what",
+  "generatedAt": "2026-04-19T11:02:24.804Z",
+  "news": {
+    "source": "nieuwsblad",
+    "title": "“I panicked and no longer knew what to do”: Achel striker misses winning goal against Zepperen-Brustem",
+    "link": "https://www.nieuwsblad.be/sport/sportregio/ik-schoot-in-paniek-en-wist-niet-meer-wat-te-doen-achel-spits-laat-winning-goal-liggen-tegen-zepperen-brustem/146528042.html",
+    "score": 92.862
+  },
+  "inspiration": {
+    "artist": "Hilma af Klint",
+    "tags": [
+      "symbolic",
+      "spiral",
+      "organic"
+    ],
+    "links": {
+      "wikipedia": "https://en.wikipedia.org/wiki/Hilma_af_Klint",
+      "reference": "https://www.modernamuseet.se/stockholm/en/exhibitions/hilma-af-klint/"
+    }
+  },
+  "seed": 1168459795,
+  "scene": {
+    "motif": "flow",
+    "shapeCount": 120,
+    "turbulence": 0.361,
+    "spiralBias": 0.951,
+    "motionSpeed": 0.001653,
+    "bloom": 0.12,
+    "grain": 0.034,
+    "fogDensity": 0.052,
+    "distortion": 0.16,
+    "flowField": 0.34,
+    "anchorStrength": 0.639,
+    "anchorOffsetX": 0.06,
+    "layerBalance": {
+      "structure": 0.743,
+      "chaos": 0.293
+    },
+    "expression": {
+      "tension": 0.31,
+      "structure": 0.735,
+      "motion": 0.752,
+      "noise": 0.291,
+      "urgency": 0.985,
+      "contrast": 0.442
+    },
+    "palette": {
+      "bg": "#efe3c3",
+      "primary": "#d95b2d",
+      "secondary": "#b33a2f",
+      "glow": "#d6ab3d",
+      "anchor": "#3d5a96"
+    },
+    "elements": [
+      {
+        "id": "el-01-agent-shader-plane",
+        "moduleType": "agent-shader-plane",
+        "capabilities": [],
+        "stackFamilies": [],
+        "styleTags": [],
+        "libraryRef": null,
+        "grain": 0.22,
+        "warmth": 0.18,
+        "color": "bg",
+        "opacity": 0.95,
+        "intensity": 0.52,
+        "scenePurpose": "Provide the parchment-like field and keep the whole image cohesive.",
+        "expectedRead": "A warm painted ground, not a digital skybox",
+        "mustNotReadAs": [
+          "wallpaper gradient",
+          "fog"
+        ],
+        "animation": {
+          "pulse": 0.02,
+          "wobbleX": 0.01,
+          "wobbleY": 0.01,
+          "drift": 0.03
+        },
+        "techniqueRef": "t.painted-surface",
+        "role": "atmosphere-field",
+        "layer": "background",
+        "motif": "flow",
+        "intentCadence": "measured"
+      },
+      {
+        "id": "el-02-cm.temple-gate.v1",
+        "moduleType": "cm.temple-gate.v1",
+        "capabilities": [],
+        "stackFamilies": [],
+        "styleTags": [],
+        "libraryRef": null,
+        "height": 4.1,
+        "width": 2.2,
+        "ringCount": 4,
+        "gap": 0.16,
+        "tilt": 0,
+        "color": "primary",
+        "opacity": 0.88,
+        "intensity": 0.74,
+        "scenePurpose": "Carry the vertical ascent and contain the focal opening.",
+        "expectedRead": "A sacred gate-like schema climbing upward",
+        "mustNotReadAs": [
+          "sports emblem",
+          "portal effect"
+        ],
+        "animation": {
+          "rotationZ": 0.015,
+          "pulse": 0.06,
+          "wobbleX": 0.01,
+          "wobbleY": 0.01,
+          "drift": 0.04
+        },
+        "techniqueRef": "t.vertical-altar-law",
+        "role": "structural-spine",
+        "layer": "midground",
+        "motif": "flow",
+        "intentCadence": "measured"
+      },
+      {
+        "id": "el-03-anchor-core",
+        "moduleType": "anchor-core",
+        "capabilities": [
+          "focal-anchor",
+          "layered-field"
+        ],
+        "stackFamilies": [
+          "shader-field",
+          "geometry-heavy",
+          "particle-heavy",
+          "instancing",
+          "sdf-raymarch"
+        ],
+        "styleTags": [
+          "anchor",
+          "center",
+          "stability"
+        ],
+        "libraryRef": "element.anchor-core.v1",
+        "color": "glow",
+        "opacity": 0.92,
+        "intensity": 0.8,
+        "layer": "foreground",
+        "radius": 0.12,
+        "halo": 0.08,
+        "scenePurpose": "Mark the narrow zone where release is almost granted.",
+        "expectedRead": "A small luminous target that concentrates the whole image",
+        "mustNotReadAs": [
+          "sun",
+          "lens flare"
+        ],
+        "animation": {
+          "pulse": 0.14,
+          "wobbleY": 0.02,
+          "drift": 0.01
+        },
+        "techniqueRef": "t.gold-release",
+        "role": "focal-anchor",
+        "motif": "flow",
+        "intentCadence": "measured"
+      },
+      {
+        "id": "el-04-concentric-discs",
+        "moduleType": "concentric-discs",
+        "capabilities": [
+          "orbital-forms",
+          "focal-anchor"
+        ],
+        "stackFamilies": [
+          "sdf-raymarch",
+          "geometry-heavy",
+          "shader-field"
+        ],
+        "styleTags": [
+          "discs",
+          "radial"
+        ],
+        "libraryRef": "element.concentric-discs.v1",
+        "color": "anchor",
+        "opacity": 0.84,
+        "intensity": 0.7,
+        "layer": "foreground",
+        "count": 2,
+        "radius": 0.09,
+        "offsetX": 0.22,
+        "offsetY": 0.18,
+        "scenePurpose": "Register the fatal misalignment as a crisp counter-point near the opening.",
+        "expectedRead": "A displaced blue seed, small but devastating",
+        "mustNotReadAs": [
+          "planet",
+          "button"
+        ],
+        "animation": {
+          "pulse": 0.08,
+          "wobbleX": 0.02,
+          "wobbleY": 0.03,
+          "drift": 0.05
+        },
+        "techniqueRef": "t.counterforce-offset",
+        "role": "primary-signal",
+        "motif": "flow",
+        "intentCadence": "measured"
+      },
+      {
+        "id": "el-05-cm.pollen-choir.v1",
+        "moduleType": "cm.pollen-choir.v1",
+        "capabilities": [],
+        "stackFamilies": [],
+        "styleTags": [],
+        "libraryRef": null,
+        "count": 140,
+        "spreadX": 1.2,
+        "spreadY": 2,
+        "drift": 0.12,
+        "color": "secondary",
+        "opacity": 0.4,
+        "intensity": 0.36,
+        "scenePurpose": "Keep the field alive with restrained devotional drift.",
+        "expectedRead": "Sparse floating pollen or breath around the rite",
+        "mustNotReadAs": [
+          "snow",
+          "starfield"
+        ],
+        "animation": {
+          "pulse": 0.05,
+          "wobbleX": 0.04,
+          "wobbleY": 0.04,
+          "drift": 0.12
+        },
+        "techniqueRef": "t.painted-surface",
+        "role": "support-rhythm",
+        "layer": "accent",
+        "motif": "flow",
+        "intentCadence": "measured"
+      }
+    ],
+    "shaderLayers": 4,
+    "elementDiversity": 5,
+    "paletteVariance": 0,
+    "motionSpeedNormalized": 0.734,
+    "camera": {
+      "autoRotate": false,
+      "autoRotateSpeed": 0.15,
+      "minDistance": 6,
+      "maxDistance": 24,
+      "cycleSeconds": 24,
+      "beats": [
+        {
+          "t": 0,
+          "radius": 12.552,
+          "theta": 0.186,
+          "phi": 1.21,
+          "hold": 1.072
+        },
+        {
+          "t": 0.34,
+          "radius": 10.668,
+          "theta": 1.02,
+          "phi": 1.035,
+          "hold": 0.507
+        },
+        {
+          "t": 0.68,
+          "radius": 11.224,
+          "theta": 1.796,
+          "phi": 1.305,
+          "hold": 0.818
+        },
+        {
+          "t": 1,
+          "radius": 12.24,
+          "theta": 2.337,
+          "phi": 1.13,
+          "hold": 1.124
+        }
+      ],
+      "target": [
+        0,
+        0,
+        0
+      ]
+    },
+    "post": {
+      "vignette": 0.18,
+      "contrast": 1.14,
+      "saturation": 0.94,
+      "exposure": 1.02,
+      "breathing": {
+        "hueShift": 0.037,
+        "saturationAmplitude": 0.065,
+        "exposureAmplitude": 0.05,
+        "phaseA": 0.9227,
+        "phaseB": 0.4331
+      }
+    },
+    "styleFingerprint": {
+      "pulseFamily": "ascending",
+      "stripeWarp": 0.06,
+      "edgeSoftness": 0.34,
+      "cameraSway": 0.12,
+      "edgeHardness": 0.5,
+      "temperatureBias": 0.24,
+      "verticalBias": 0,
+      "cadenceBias": 0
+    },
+    "sceneAuthoring": {
+      "mode": "agent-dsl",
+      "planner": "openclaw-agent-scene-planner",
+      "representation": {
+        "id": "rep.suspended-aperture",
+        "label": "Suspended Aperture",
+        "description": "A near-symmetrical ascent toward a gold opening, held inside warm devotional geometry, with one blue displacement marking the instant of panic.",
+        "scoreHint": 0.86,
+        "motif": "Sanctioned ascent interrupted at the threshold",
+        "cadence": "measured",
+        "scenePrompt": "A vertical abstract rite on parchment, nested ovals and measured discs climbing toward a luminous aperture. The whole image nearly resolves, but a small cool displacement breaks the consecrated alignment and turns fulfillment into absence.",
+        "colorMood": "Warm sacramental orange and muted red, with tempered gold and a single cool blue interruption",
+        "spatialIntent": "Flat-painted depth with a clear layered ascent from grounded base to hovering target",
+        "imageAuthorship": {
+          "structuralLaw": "A central vertical ascent organizes every form, with near-symmetry broken only at the critical moment.",
+          "dominantForms": [
+            "nested ovals",
+            "disc-caps",
+            "crossing bands",
+            "one offset seed"
+          ],
+          "edgeBehavior": "Mostly calm painted edges with a few firmer contour declarations around the focal forms.",
+          "surfaceBehavior": "Warm matte field with faint grain, mild staining, and slightly unequal color fill.",
+          "depthLogic": "Background field holds the whole image, midground rings conduct the eye upward, foreground particles and the offset seed create the final disruption.",
+          "motionLogic": "Slow ascent with barely perceptible inward drift, ending in a held suspension rather than a clean landing.",
+          "forbiddenDrift": [
+            "ornamental mysticism without tension",
+            "perfect symmetry that erases the miss",
+            "cinematic depth fog"
+          ]
+        },
+        "technicalTranslation": {
+          "realizationStrategy": "Use a custom nested gate geometry as the structural spine, a restrained particle veil for sacred atmosphere, and a shader plane only as a subtle field script behind the main forms.",
+          "reuseBias": "hybrid",
+          "whyThisApproach": "The image depends on a precise, bounded geometry but also needs painted irregularity and a slight counter-current that rigid primitives alone would flatten.",
+          "notes": [
+            "Keep the camera orthogonal-feeling even if perspective is used.",
+            "The cool accent must stay isolated.",
+            "Surface imperfection matters more than extra motion."
+          ],
+          "motionCadence": "measured"
+        },
+        "mustShow": [
+          "one clear luminous opening near the upper center",
+          "nested vertical geometry that reads as ascent",
+          "a small cool displaced mark that breaks completion",
+          "warm painted ground with visible surface grain"
+        ],
+        "mustAvoid": [
+          "literal goal-mouth imagery",
+          "dark central blob composition",
+          "neon sci-fi bloom",
+          "busy decorative symbol spam"
+        ],
+        "reviewFocus": [
+          "Does the focal opening stay legible from first glance?",
+          "Does the blue displacement feel decisive but not oversized?",
+          "Does the surface feel painted rather than vector-clean?"
+        ],
+        "artistTechniqueObservations": {
+          "medium": "painting",
+          "primaryTechnique": null,
+          "markMakingTraits": [],
+          "surfaceQualities": [
+            "painted surface behavior matters more than object literalism"
+          ],
+          "paletteTendencies": [
+            "dominant hues: orange, red, yellow"
+          ],
+          "spatialHabits": []
+        },
+        "rationale": {
+          "newsTranslation": "The missed winning goal becomes a composition that nearly seals into triumph but fails by a crucial offset.",
+          "artistTranslation": "The scene inherits Hilma af Klint's devotional geometry and vertical spiritual ordering without collapsing into imitation-by-symbol."
+        },
+        "techniques": [
+          {
+            "id": "t.vertical-altar-law",
+            "name": "Vertical altar law",
+            "type": "composition",
+            "purpose": "Organize the image as an ascent toward a single focal opening.",
+            "reuseModuleType": null,
+            "params": {
+              "symmetry": 0.78
+            }
+          },
+          {
+            "id": "t.counterforce-offset",
+            "name": "Counterforce offset",
+            "type": "tension",
+            "purpose": "Introduce the decisive miss as a lateral displacement.",
+            "reuseModuleType": null,
+            "params": {
+              "offset": 0.14
+            }
+          }
+        ]
+      },
+      "artisticIntent": {
+        "statement": "Translate a missed winning strike into a solemn abstract rite: pressure rises through ordered geometry, then breaks at the last instant into a small but devastating misalignment.",
+        "motif": "A consecrated opening that almost closes",
+        "emotionalArc": "Measured ascent, tightening opposition, abrupt inward collapse, thin surviving radiance",
+        "compositionLogic": "A single vertical law governs the image. Nested forms rise toward a focal aperture, while one counter-current element shifts the balance just enough to turn completion into refusal.",
+        "imagePrompt": "An authored abstract painting in Hilma af Klint's spirit, built as a bounded vertical rite of geometry rather than a scene. Warm parchment ground, orange-red-yellow relations with tempered blue and gold accents, painted surfaces, mixed edges, clear symbolic structure. A central ascent toward a luminous target is interr"
+      },
+      "executionPlan": {
+        "palette": {
+          "bg": "#efe3c3",
+          "primary": "#d95b2d",
+          "secondary": "#b33a2f",
+          "glow": "#d6ab3d",
+          "anchor": "#3d5a96"
+        },
+        "camera": {
+          "autoRotate": false,
+          "cycleSeconds": 24,
+          "target": [
+            0,
+            0,
+            0
+          ]
+        },
+        "post": {
+          "contrast": 1.08,
+          "saturation": 0.94,
+          "vignette": 0.18,
+          "exposure": 1.02
+        },
+        "global": {
+          "shapeCountHint": 120,
+          "flowField": 0.34,
+          "distortion": 0.16,
+          "bloom": 0.12
+        },
+        "techniques": [
+          {
+            "id": "t.vertical-altar-law",
+            "name": "Vertical altar law",
+            "type": "composition",
+            "purpose": "Keep the image governed by one upward structural axis with a single readable focal zone.",
+            "reuseModuleType": null,
+            "params": {
+              "axis": "vertical",
+              "symmetry": 0.78,
+              "topBias": 0.18
+            }
+          },
+          {
+            "id": "t.counterforce-offset",
+            "name": "Counterforce offset",
+            "type": "tension",
+            "purpose": "Express the missed chance by a small, critical lateral deviation instead of narrative illustration.",
+            "reuseModuleType": null,
+            "params": {
+              "offset": 0.14,
+              "breakPointY": 0.31
+            }
+          },
+          {
+            "id": "t.painted-surface",
+            "name": "Painted surface grain",
+            "type": "surface",
+            "purpose": "Prevent sterile digital flatness and preserve made, devotional surface behavior.",
+            "reuseModuleType": "agent-shader-plane",
+            "params": {
+              "grain": 0.22,
+              "edgeSoftness": 0.36,
+              "paperWarmth": 0.18
+            }
+          },
+          {
+            "id": "t.gold-release",
+            "name": "Narrow gold release",
+            "type": "focus",
+            "purpose": "Allow only a thin zone of grace after the structural refusal.",
+            "reuseModuleType": null,
+            "params": {
+              "radius": 0.11,
+              "intensity": 0.64
+            }
+          }
+        ]
+      },
+      "moduleOverrides": [],
+      "customModules": [
+        {
+          "id": "cm.temple-gate.v1",
+          "family": "geometry",
+          "kind": "dsl",
+          "allowOverride": false,
+          "seedPolicy": "deterministic",
+          "paramsSchema": {
+            "height": {
+              "type": "number",
+              "default": 4.2
+            },
+            "width": {
+              "type": "number",
+              "default": 2.4
+            },
+            "ringCount": {
+              "type": "number",
+              "default": 4
+            },
+            "gap": {
+              "type": "number",
+              "default": 0.16
+            },
+            "tilt": {
+              "type": "number",
+              "default": 0
+            }
+          },
+          "source": {
+            "dsl": {
+              "geometry": {
+                "type": "group",
+                "children": [
+                  {
+                    "type": "ellipse-ring",
+                    "rx": 1.2,
+                    "ry": 1.9,
+                    "thickness": 0.1,
+                    "z": -0.08
+                  },
+                  {
+                    "type": "ellipse-ring",
+                    "rx": 0.92,
+                    "ry": 1.46,
+                    "thickness": 0.08,
+                    "z": -0.04
+                  },
+                  {
+                    "type": "ellipse-ring",
+                    "rx": 0.66,
+                    "ry": 1.02,
+                    "thickness": 0.07,
+                    "z": 0
+                  },
+                  {
+                    "type": "ellipse",
+                    "rx": 0.18,
+                    "ry": 0.18,
+                    "y": 1.28,
+                    "z": 0.05
+                  },
+                  {
+                    "type": "rect",
+                    "width": 1.52,
+                    "height": 0.09,
+                    "y": -1.18,
+                    "z": 0.02
+                  }
+                ]
+              },
+              "material": {
+                "kind": "flat",
+                "colorMode": "palette"
+              },
+              "transform": {
+                "rotation": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                }
+              }
+            },
+            "glsl": {},
+            "js": null
+          },
+          "budgets": {
+            "maxInstances": 24,
+            "maxShaderOpsHint": 0.22,
+            "mobileSafe": true
+          }
+        },
+        {
+          "id": "cm.orbit-script.v1",
+          "family": "shader",
+          "kind": "dsl",
+          "allowOverride": false,
+          "seedPolicy": "deterministic",
+          "paramsSchema": {
+            "primaryColor": {
+              "type": "color",
+              "default": "#d95b2d"
+            },
+            "secondaryColor": {
+              "type": "color",
+              "default": "#b33a2f"
+            },
+            "glowColor": {
+              "type": "color",
+              "default": "#d6ab3d"
+            },
+            "anchorColor": {
+              "type": "color",
+              "default": "#3d5a96"
+            },
+            "timeScale": {
+              "type": "number",
+              "default": 0.18
+            }
+          },
+          "source": {
+            "dsl": {
+              "type": "shaderPlane",
+              "transparent": true,
+              "uniforms": {
+                "uPrimary": "#d95b2d",
+                "uSecondary": "#b33a2f",
+                "uGlow": "#d6ab3d",
+                "uAnchor": "#3d5a96",
+                "uTimeScale": 0.18
+              }
+            },
+            "glsl": {
+              "vertex": "varying vec2 vUv;\nvoid main(){\n vUv = uv;\n gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);\n}",
+              "fragment": "precision highp float;\nvarying vec2 vUv;\nuniform vec3 uPrimary;\nuniform vec3 uSecondary;\nuniform vec3 uGlow;\nuniform vec3 uAnchor;\nuniform float uTimeScale;\nuniform float uTime;\n\nfloat ring(vec2 p,float r,float w){\n float d=abs(length(p)-r);\n return 1.0-smoothstep(w,w+0.012,d);\n}\n\nfloat arcMask(vec2 p,float a0,float a1){\n float a=atan(p.y,p.x);\n a = a < 0.0 ? a + 6.28318530718 : a;\n float m0=smoothstep(a0,a0+0.08,a);\n float m1=1.0-smoothstep(a1-0.08,a1,a);\n return m0*m1;\n}\n\nfloat softDisc(vec2 p,float r){\n return 1.0-smoothstep(r,r+0.02,length(p));\n}\n\nvoid main(){\n vec2 uv=vUv*2.0-1.0;\n uv.y*=1.25;\n float t=uTime*uTimeScale;\n vec3 col=vec3(0.95,0.93,0.88);\n\n float paper=0.035*sin(uv.x*11.0+uv.y*7.0)+0.02*sin(uv.x*23.0-uv.y*19.0);\n col += paper;\n\n vec2 p1=uv-vec2(-0.16+0.012*sin(t*0.7),0.08);\n vec2 p2=uv-vec2(0.17+0.01*cos(t*0.6),-0.02);\n float a1=ring(p1,0.58,0.025)*arcMask(p1,0.35,4.95);\n float a2=ring(p2,0.52,0.03)*arcMask(p2,1.15,5.95);\n float core=softDisc(uv-vec2(0.02,0.36+0.01*sin(t)),0.09);\n float miss=softDisc(uv-vec2(0.12,0.32),0.05);\n float veil=smoothstep(0.95,0.15,abs(uv.x*0.72+uv.y*0.24));\n\n col = mix(col,uPrimary,a1*0.82);\n col = mix(col,uSecondary,a2*0.84);\n col = mix(col,uGlow,core*0.88);\n col = mix(col,uAnchor,miss*0.72);\n col += 0.06*veil*uGlow;\n\n float grain=fract(sin(dot(floor(vUv*512.0),vec2(127.1,311.7)))*43758.5453123);\n col += (grain-0.5)*0.04;\n\n gl_FragColor=vec4(col,0.88);\n}"
+            },
+            "js": null
+          },
+          "budgets": {
+            "maxInstances": 8,
+            "maxShaderOpsHint": 0.72,
+            "mobileSafe": true
+          }
+        },
+        {
+          "id": "cm.pollen-choir.v1",
+          "family": "particle",
+          "kind": "dsl",
+          "allowOverride": false,
+          "seedPolicy": "deterministic",
+          "paramsSchema": {
+            "count": {
+              "type": "number",
+              "default": 180
+            },
+            "spreadX": {
+              "type": "number",
+              "default": 1.4
+            },
+            "spreadY": {
+              "type": "number",
+              "default": 2.2
+            },
+            "drift": {
+              "type": "number",
+              "default": 0.18
+            }
+          },
+          "source": {
+            "dsl": {
+              "type": "particleField",
+              "count": 180,
+              "emission": "area",
+              "area": {
+                "x": 1.4,
+                "y": 2.2,
+                "z": 0.2
+              },
+              "sprite": "disc",
+              "size": 0.028,
+              "alpha": 0.52,
+              "motion": {
+                "mode": "float",
+                "drift": 0.18,
+                "wobble": 0.11,
+                "pulse": 0.07
+              },
+              "colorMode": "palette"
+            },
+            "glsl": {},
+            "js": null
+          },
+          "budgets": {
+            "maxInstances": 600,
+            "maxShaderOpsHint": 0.24,
+            "mobileSafe": true
+          }
+        }
+      ],
+      "policyPasses": {
+        "advisoryOnly": true,
+        "skipped": [
+          "focal-hierarchy",
+          "envelope-clamp",
+          "composition-plan",
+          "artist-visual-profile",
+          "scene-element-module-enforcement",
+          "stack-pipeline-apply",
+          "gap-focused-pass",
+          "artist-hard-constraints"
+        ]
+      }
+    },
+    "seedVersion": 2,
+    "seeds": {
+      "baseSeed": 728428105,
+      "runSeed": 1168459795,
+      "geomSeed": 1809883150,
+      "animSeed": 3941967615,
+      "colorSeed": 3254258313,
+      "cameraSeed": 3870357541
+    },
+    "customModuleReport": {
+      "declaredCustomModules": 3,
+      "accepted": [
+        {
+          "id": "cm.temple-gate.v1",
+          "family": "geometry",
+          "kind": "dsl",
+          "fingerprint": "9e938326"
+        },
+        {
+          "id": "cm.orbit-script.v1",
+          "family": "shader",
+          "kind": "dsl",
+          "fingerprint": "28c5106b"
+        },
+        {
+          "id": "cm.pollen-choir.v1",
+          "family": "particle",
+          "kind": "dsl",
+          "fingerprint": "bf1b0037"
+        }
+      ],
+      "rejected": [],
+      "moduleOverrideCount": 0,
+      "fingerprint": "a2460a04"
+    },
+    "techStack": {
+      "id": "sdf-raymarch-lite",
+      "name": "SDF/Raymarch Lite",
+      "family": "sdf-raymarch",
+      "strategyFamilies": [
+        "orbits",
+        "flow",
+        "hybrid"
+      ],
+      "rationale": {
+        "signals": {
+          "conflict": 0.45,
+          "context": 0.3,
+          "motion": 0.45,
+          "turbulence": 0.426,
+          "structureBias": 0,
+          "densityBias": 0,
+          "edgeBias": 0,
+          "motionBias": 0,
+          "visualProfile": {
+            "profileCadence": "steady",
+            "preferredFamilies": []
+          }
+        },
+        "familyHits": 0,
+        "idHits": 0,
+        "penalties": [],
+        "visualAffinity": 0,
+        "elementCoverage": {
+          "score": 0,
+          "coverage": 0,
+          "moduleCoverage": 0,
+          "missingCapabilities": [
+            "geometry",
+            "particles",
+            "shader-layer"
+          ]
+        },
+        "preferredFamilies": [],
+        "preferredFamilyLocked": false,
+        "notPreferredPenalty": 0
+      },
+      "dominantPrimitive": "agent-shader-plane",
+      "moduleSet": [
+        "agent-shader-plane",
+        "cm.temple-gate.v1",
+        "anchor-core",
+        "concentric-discs",
+        "cm.pollen-choir.v1"
+      ],
+      "pipelineKind": "sdf-raymarch"
+    },
+    "renderPipeline": {
+      "kind": "sdf-raymarch",
+      "family": "sdf-raymarch",
+      "fallback": false,
+      "advisoryOnly": true,
+      "dominantPrimitive": "agent-shader-plane",
+      "moduleSet": [
+        "agent-shader-plane",
+        "cm.temple-gate.v1",
+        "anchor-core",
+        "concentric-discs",
+        "cm.pollen-choir.v1"
+      ]
+    }
+  },
+  "sceneStrategy": {
+    "selected": {
+      "id": "atomic-balanced-flow",
+      "name": "Balanced Flow Field",
+      "type": "atomic",
+      "family": "flow"
+    },
+    "applied": false,
+    "fallbackReason": "agent-authored-scene-elements"
+  },
+  "techStack": {
+    "id": "sdf-raymarch-lite",
+    "name": "SDF/Raymarch Lite",
+    "family": "sdf-raymarch"
+  },
+  "newsVisualMappings": [
+    {
+      "signal": "title evidence [niet, meer, doen, laat] -> motif flow",
+      "from": "niet, meer, doen, laat",
+      "visualDecision": "structural motif armature set to flow"
+    },
+    {
+      "signal": "composition foreground conflict",
+      "from": "striker",
+      "visualDecision": "foreground role tension-knot at pressure 0.281"
+    },
+    {
+      "signal": "composition midground context",
+      "from": "niet, meer, doen, laat",
+      "visualDecision": "midground role context-drift with density 0.353"
+    },
+    {
+      "signal": "composition background mood",
+      "from": "niet, meer, doen, laat",
+      "visualDecision": "background mood watchful depth 0.312"
+    },
+    {
+      "signal": "urgency -> motion",
+      "from": "ageHours=0.41",
+      "visualDecision": "motionSpeedNormalized=0.734"
+    },
+    {
+      "signal": "title semantics -> palette/edge cadence",
+      "from": "temp=0.24 edge=0.5",
+      "visualDecision": "postContrast=1.14 accentType=n/a"
+    },
+    {
+      "signal": "article institutional/conflict polarity",
+      "from": "niet, meer, doen, laat",
+      "visualDecision": "accent element n/a with opacity n/a"
+    },
+    {
+      "signal": "artist research context Hilma af Klint",
+      "from": "tags symbolic, spiral, organic",
+      "visualDecision": "artist profile captured as metadata only; no technical routing applied"
+    }
+  ],
+  "qualityScore": {
+    "score": 52.6,
+    "summary": "Alignment 64.8 with strongest channel emotional.",
+    "heuristic": {
+      "score": 68.1,
+      "breakdown": {
+        "legibility": 74.2,
+        "emotionalReadability": 69.5,
+        "coherence": 91.5,
+        "focalAnchor": 69.5,
+        "technicalRichness": 93.5,
+        "restraint": 77.8,
+        "alignment": 64.8
+      }
+    },
+    "calibration": {
+      "sampleCount": 1,
+      "trustWeight": 0.4
+    },
+    "alignment": {
+      "totalAlign": 64.8,
+      "components": {
+        "title": {
+          "score": 62.7
+        },
+        "style": {
+          "score": 59.4
+        },
+        "emotional": {
+          "score": 74.1
+        }
+      }
+    }
+  },
+  "rationale": {
+    "intent": {
+      "signal": null,
+      "emotion": null,
+      "tension": null,
+      "balance": null,
+      "motion": null
+    },
+    "selection": {
+      "whyHeadline": "Selected as top-ranked Belgian headline (score 92.862 = frequency 89 + priority 0 + recency 3.862).",
+      "priorityTerms": []
+    },
+    "qualitySummary": "TOTAL_ALIGN 64.8."
+  },
+  "runPolicy": {
+    "artworksPerRun": 1,
+    "multiVariant": false
+  },
+  "artFramework": {
+    "version": 3,
+    "intent": {
+      "statement": "“I panicked and no longer knew what to do”: Achel striker misses winning goal against Zepperen-Brustem translated through Hilma af Klint's visual language as a non-literal image.",
+      "coreImpulse": "In Hilma af Klint: Paintings for the Temple (paintings by Hilma af Klint) Af Klint concluded Paintings for the Temple with a triptych she called Altarpieces, featuring geometric shapes, bold primary colors, and gold l... Hilma af Klint was a Swedish artist and mystic whose paintings are considered to be among the first major abstract works in Western art history. After studying at the Royal Academy of Art in Stockholm, Hilma af Klint embarked on a major suite of paintings in 1904-06. Hilma af Klint did not ascribe to any of the established avant-garde movements of her time.",
+      "artistTranslationLogic": [
+        "Hilma af Klint's formal logic should dominate before any spectacle or scenic excess."
+      ],
+      "emotionalClimate": {
+        "summary": "In Hilma af Klint: Paintings for the Temple (paintings by Hilma af Klint) Af Klint concluded Paintings for the Temple with a triptych she called Altarpieces, featuring geometric shapes, bold primary colors, and gold l... Hilma af Klint was a Swedish artist and mystic whose paintings are considered to be among the first major abstract works in Western art history. After studying at the Royal Academy of Art in Stockholm, Hilma af Klint embarked on a major suite of paintings in 1904-06. Hilma af Klint did not ascribe to any of the established avant-garde movements of her time.",
+        "pressure": "rising",
+        "pace": "measured",
+        "socialReach": "concentrated"
+      },
+      "visualGravity": {
+        "anchor": null,
+        "dominantStructure": "Build the image around one readable structural law.",
+        "scaleBehavior": "Keep the space bounded and compositionally intentional."
+      },
+      "materialLogic": {
+        "surfaceBehavior": [],
+        "spatialHabits": [],
+        "handling": "Hilma af Klint's surface should feel made, not generic."
+      },
+      "colorField": {
+        "paletteSignals": [],
+        "contrastMode": "measured contrast with restrained vibration"
+      },
+      "symbolicDensity": {
+        "primaryMotif": "flow",
+        "motifVocabulary": [],
+        "literalness": "non-literal"
+      },
+      "tensionEngine": {
+        "conflictAxis": "Tegen",
+        "escalationMode": "Let tension accumulate through structure, not narration.",
+        "releaseValve": "Allow only a narrow zone of release."
+      },
+      "audiencePosition": {
+        "stance": "Hilma af Klint did not ascribe to any of the established avant-garde movements of her time. Hilma af Klint was a Swedish artist and mystic whose paintings are considered to be among the first major abstract works in Western art history. In Hilma af Klint: Paintings for the Temple (paintings by Hilma af Klint) Af Klint concluded Paintings for the Temple with a triptych she called Altarpieces, featuring geometric shapes, bold primary colors, and gold l... In Hilma af Klint: Paintings for the Temple (paintings by Hilma af Klint) Af Klint concluded Paintings for the Temple with a triptych she called Altarpieces, featuring geometric shapes, bold primary colors, and gold l...",
+        "distance": "immersed but not illustrative"
+      },
+      "controlVsAccident": {
+        "balance": "controlled with selective instability",
+        "motionTemperament": "steady",
+        "accidentRole": "use drift or fracture sparingly to keep the field alive"
+      },
+      "antiDriftRules": [
+        "Do not collapse into biography summary, symbolic cliché, or generic procedural spectacle."
+      ],
+      "finalCompression": "In Hilma af Klint: Paintings for the Temple (paintings by Hilma af Klint) Af Klint concluded Paintings for the Temple with a triptych she called Altarpieces, featuring geometric shapes, bold primary colors, and gold l... Hilma af Klint was a Swedish artist and mystic whose paintings are considered to be among the first major abstract works in Western art history. After studying at the Royal Academy of Art in Stockholm, Hilma af Klint embarked on a major suite of paintings in 1904-06. Hilma af Klint did not ascribe to any of the established avant-garde movements of her time. Build the image around one readable structural law.",
+      "artistAnchors": {
+        "formalLogic": [],
+        "motifVocabulary": [],
+        "compositionCues": [],
+        "paletteSignals": [],
+        "surfaceBehavior": [],
+        "spatialHabits": [],
+        "translationDirectives": []
+      },
+      "threeJsFreedomEnvelope": [],
+      "avoidSignals": [],
+      "threeJsTranslationExamples": []
+    }
+  },
+  "debugFile": "./data/artworks-debug/2026-04-19-abstract-signal-panicked-longer-knew-what.json"
+}
