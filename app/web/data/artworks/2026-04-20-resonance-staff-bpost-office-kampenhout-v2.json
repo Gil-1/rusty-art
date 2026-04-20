@@ -1,0 +1,959 @@
+{
+  "id": "2026-04-20-resonance-staff-bpost-office-kampenhout-v2",
+  "date": "2026-04-20",
+  "title": "Resonance: Staff Bpost office Kampenhout",
+  "generatedAt": "2026-04-20T06:12:51.182Z",
+  "news": {
+    "source": "ringtv",
+    "title": "Staff at the Bpost office in Kampenhout stop work: “In protest against new working hours”",
+    "link": "https://www.ringtv.be/economie/personeel-bpost-kantoor-kampenhout-legt-het-werk-neer-uit-protest-tegen-nieuwe-werkuren",
+    "score": 68
+  },
+  "inspiration": {
+    "artist": "Hilma af Klint",
+    "tags": [
+      "symbolic",
+      "spiral",
+      "organic"
+    ],
+    "links": {
+      "wikipedia": "https://en.wikipedia.org/wiki/Hilma_af_Klint",
+      "reference": "https://www.modernamuseet.se/stockholm/en/exhibitions/hilma-af-klint/"
+    }
+  },
+  "seed": 1225379070,
+  "scene": {
+    "motif": "flow",
+    "shapeCount": 120,
+    "turbulence": 0.409,
+    "spiralBias": 0.617,
+    "motionSpeed": 0.001151,
+    "bloom": 0.16,
+    "grain": 0.038,
+    "fogDensity": 0.056,
+    "distortion": 0.12,
+    "flowField": 0.26,
+    "anchorStrength": 0.639,
+    "anchorOffsetX": -0.021,
+    "layerBalance": {
+      "structure": 0.667,
+      "chaos": 0.316
+    },
+    "expression": {
+      "tension": 0.31,
+      "structure": 0.562,
+      "motion": 0.413,
+      "noise": 0.364,
+      "urgency": 0.18,
+      "contrast": 0.318
+    },
+    "palette": {
+      "bg": "#efe4cf",
+      "primary": "#b33a2e",
+      "secondary": "#d48b3a",
+      "glow": "#b59548",
+      "anchor": "#5f8f96"
+    },
+    "elements": [
+      {
+        "id": "el-01-cm.hilma-painted-ground.v1",
+        "moduleType": "cm.hilma-painted-ground.v1",
+        "capabilities": [],
+        "stackFamilies": [],
+        "styleTags": [],
+        "libraryRef": null,
+        "grain": 0.24,
+        "vignette": 0.08,
+        "drift": 0.03,
+        "color": "bg",
+        "opacity": 0.95,
+        "intensity": 0.82,
+        "scenePurpose": "Create the bounded matte cream field and carry the painting logic.",
+        "expectedRead": "A handmade warm ground that already feels inhabited before symbols appear.",
+        "mustNotReadAs": [
+          "Fog",
+          "Sky gradient",
+          "Paper texture wallpaper"
+        ],
+        "animation": {
+          "pulse": 0.03,
+          "drift": 0.04
+        },
+        "techniqueRef": "tech-painted-ground",
+        "role": "atmosphere-field",
+        "layer": "background",
+        "motif": "flow",
+        "intentCadence": "measured"
+      },
+      {
+        "id": "el-02-cm.hilma-altar-spine.v1",
+        "moduleType": "cm.hilma-altar-spine.v1",
+        "capabilities": [],
+        "stackFamilies": [],
+        "styleTags": [],
+        "libraryRef": null,
+        "intervals": 6,
+        "goldNodes": 5,
+        "color": "primary",
+        "opacity": 0.92,
+        "intensity": 0.88,
+        "scenePurpose": "Establish the vertical order that stands in for imposed scheduling and rule sequence.",
+        "expectedRead": "A ceremonial stack with clear interval hierarchy, not a target.",
+        "mustNotReadAs": [
+          "Logo",
+          "Crosshair",
+          "Single line with circle"
+        ],
+        "animation": {
+          "pulse": 0.05,
+          "wobbleX": 0.01,
+          "wobbleY": 0.01,
+          "drift": 0.02
+        },
+        "techniqueRef": "tech-altar-spine",
+        "role": "structural-spine",
+        "layer": "midground",
+        "motif": "flow",
+        "intentCadence": "measured"
+      },
+      {
+        "id": "el-03-cm.hilma-counter-currents.v1",
+        "moduleType": "cm.hilma-counter-currents.v1",
+        "capabilities": [],
+        "stackFamilies": [],
+        "styleTags": [],
+        "libraryRef": null,
+        "spread": 0.72,
+        "curl": 0.6,
+        "opacity": 0.8,
+        "color": "secondary",
+        "intensity": 0.72,
+        "scenePurpose": "Make resistance visible as bilateral inward pressure rather than narrative illustration.",
+        "expectedRead": "Two calm side currents pressing toward the axis.",
+        "mustNotReadAs": [
+          "Wings",
+          "Butterfly",
+          "Tiny center ornament"
+        ],
+        "animation": {
+          "pulse": 0.04,
+          "wobbleX": 0.02,
+          "wobbleY": 0.02,
+          "drift": 0.03
+        },
+        "techniqueRef": "tech-counter-currents",
+        "role": "primary-signal",
+        "layer": "midground",
+        "motif": "flow",
+        "intentCadence": "measured"
+      },
+      {
+        "id": "el-04-cm.hilma-cool-seal.v1",
+        "moduleType": "cm.hilma-cool-seal.v1",
+        "capabilities": [],
+        "stackFamilies": [],
+        "styleTags": [],
+        "libraryRef": null,
+        "y": -0.24,
+        "ringCount": 2,
+        "color": "anchor",
+        "opacity": 0.95,
+        "intensity": 0.86,
+        "scenePurpose": "Interrupt the warm ceremonial order with one decisive cool vow below center.",
+        "expectedRead": "A blue-green elliptical seal that arrests the eye.",
+        "mustNotReadAs": [
+          "Bullseye",
+          "Portal",
+          "Lens flare"
+        ],
+        "animation": {
+          "pulse": 0.06,
+          "wobbleX": 0.01,
+          "wobbleY": 0.01,
+          "drift": 0.02
+        },
+        "techniqueRef": "tech-cool-seal",
+        "role": "focal-anchor",
+        "layer": "foreground",
+        "motif": "flow",
+        "intentCadence": "measured"
+      }
+    ],
+    "shaderLayers": 4,
+    "elementDiversity": 4,
+    "paletteVariance": 0,
+    "motionSpeedNormalized": 0.435,
+    "camera": {
+      "autoRotate": false,
+      "autoRotateSpeed": 0.109,
+      "minDistance": 6,
+      "maxDistance": 24,
+      "cycleSeconds": 24,
+      "beats": [
+        {
+          "t": 0,
+          "radius": 12.552,
+          "theta": 0.103,
+          "phi": 1.21,
+          "hold": 1.072
+        },
+        {
+          "t": 0.34,
+          "radius": 10.668,
+          "theta": 0.917,
+          "phi": 1.035,
+          "hold": 0.507
+        },
+        {
+          "t": 0.68,
+          "radius": 11.224,
+          "theta": 1.684,
+          "phi": 1.305,
+          "hold": 0.818
+        },
+        {
+          "t": 1,
+          "radius": 12.24,
+          "theta": 2.419,
+          "phi": 1.13,
+          "hold": 1.124
+        }
+      ],
+      "target": [
+        0,
+        0,
+        0
+      ]
+    },
+    "post": {
+      "vignette": 0.14,
+      "contrast": 1.12,
+      "saturation": 0.94,
+      "exposure": 1.01,
+      "breathing": {
+        "hueShift": 0.037,
+        "saturationAmplitude": 0.065,
+        "exposureAmplitude": 0.05,
+        "phaseA": 0.8376,
+        "phaseB": 0.6212
+      }
+    },
+    "styleFingerprint": {
+      "pulseFamily": "ascending",
+      "stripeWarp": 0.06,
+      "edgeSoftness": 0.34,
+      "cameraSway": 0.12,
+      "edgeHardness": 0.5,
+      "temperatureBias": 0,
+      "verticalBias": 0,
+      "cadenceBias": 0
+    },
+    "sceneAuthoring": {
+      "mode": "agent-dsl",
+      "planner": "openclaw-agent-scene-planner",
+      "representation": {
+        "id": "rep.altarpiece-resistance",
+        "label": "Altarpiece of resistance",
+        "description": "A strict ceremonial spine rises through a painted cream field while two measured counter-curves gather from the sides. The image reads first as imposed order, then as inward refusal.",
+        "scoreHint": 0.92,
+        "motif": "Order met by inward resistance",
+        "cadence": "measured",
+        "scenePrompt": "Frontal painted abstraction with a tall central sequence, bilateral inward petals, muted gold seals, and a blue-green elliptical vow below center.",
+        "colorMood": "Warm cream, iron red, ochre gold, and one quiet cool seal.",
+        "spatialIntent": "Background is a breathing matte field, midground carries the ceremonial geometry, foreground holds the cool vow and nearest gold punctuations.",
+        "imageAuthorship": {
+          "structuralLaw": "A single frontal vertical order governs the image, and every side force must visibly bend toward that order without dissolving it.",
+          "dominantForms": [
+            "Stacked ovals and discs",
+            "Bilateral petal-spirals",
+            "Small circular seals",
+            "One cool ellipse"
+          ],
+          "edgeBehavior": "Edges breathe softly with occasional firmer outlines at ceremonial intervals.",
+          "surfaceBehavior": "Matte, grain-soft, lightly uneven, with restrained luminosity and no slick gradient polish.",
+          "depthLogic": "Cream field recedes, red-ochre structure sits mid-depth, and the cool seal plus nearest gold points advance slightly.",
+          "motionLogic": "Slow interior gathering, as if side forces are leaning inward while the axis holds.",
+          "forbiddenDrift": [
+            "Target graphic",
+            "Sparse emblem floating in empty space",
+            "Over-glowing sacred kitsch",
+            "Mechanical vector cleanliness"
+          ]
+        },
+        "technicalTranslation": {
+          "realizationStrategy": "Use four stacked shader planes, each responsible for one authored image function: ground, spine, counter-currents, and cool seal.",
+          "reuseBias": "invent",
+          "whyThisApproach": "The critique called for a rebuilt composition law and a painted medium logic. Custom shader planes allow tight image control without falling back into generic reusable motifs.",
+          "notes": [
+            "Keep camera frontal and still.",
+            "Favor opacity layering over extra geometry.",
+            "Gold nodes should be few and obvious, not atmospheric specks."
+          ],
+          "motionCadence": "measured"
+        },
+        "mustShow": [
+          "A readable vertical stack of intervals from top to bottom",
+          "Two larger left and right inward-curving counterforms",
+          "3 to 7 muted-gold seal nodes near the axis",
+          "One blue or blue-green ellipse slightly below center",
+          "A matte painted ground rather than smooth digital fog"
+        ],
+        "mustAvoid": [
+          "Bullseye or target read",
+          "Logo-like symmetry",
+          "Black-heavy central mass",
+          "Generic neon bloom",
+          "Screen or dashboard staging"
+        ],
+        "reviewFocus": [
+          "Does the vertical law dominate before ring logic?",
+          "Do the side forms read as pressure from both sides?",
+          "Is the cool ellipse clearly legible and distinct from the warm spine?",
+          "Does the surface feel painted?"
+        ],
+        "artistTechniqueObservations": {
+          "medium": "painting",
+          "primaryTechnique": null,
+          "markMakingTraits": [],
+          "surfaceQualities": [
+            "painted surface behavior matters more than object literalism"
+          ],
+          "paletteTendencies": [
+            "dominant hues: red, orange, yellow"
+          ],
+          "spatialHabits": []
+        },
+        "rationale": {
+          "critiqueResponse": "Directly replaces the prior bullseye logic with a vertical progression and enlarged side resistance."
+        },
+        "techniques": [
+          {
+            "id": "tech-painted-ground",
+            "name": "Matte pigment field",
+            "type": "shader",
+            "purpose": "Warm painted background",
+            "reuseModuleType": null,
+            "params": {
+              "module": "cm.hilma-painted-ground.v1"
+            }
+          },
+          {
+            "id": "tech-altar-spine",
+            "name": "Ceremonial interval spine",
+            "type": "shader",
+            "purpose": "Primary structural law",
+            "reuseModuleType": null,
+            "params": {
+              "module": "cm.hilma-altar-spine.v1"
+            }
+          },
+          {
+            "id": "tech-counter-currents",
+            "name": "Inward resistance petals",
+            "type": "shader",
+            "purpose": "Oppositional pressure",
+            "reuseModuleType": null,
+            "params": {
+              "module": "cm.hilma-counter-currents.v1"
+            }
+          },
+          {
+            "id": "tech-cool-seal",
+            "name": "Blue elliptical vow",
+            "type": "shader",
+            "purpose": "Focal anchor",
+            "reuseModuleType": null,
+            "params": {
+              "module": "cm.hilma-cool-seal.v1"
+            }
+          }
+        ]
+      },
+      "artisticIntent": {
+        "statement": "Rebuild the image as a frontal ceremonial field where imposed order rises in a strict vertical sequence and is met by two calm but undeniable inward pressures, turning a labor stoppage into a spiritual diagram of refusal without literal illustration.",
+        "motif": "An altar-like spine of stacked intervals, pressed from both sides by petal-spiral co",
+        "emotionalArc": "Composed obedience gives way to gathered resistance, then settles into a narrow, lucid zone of resolve.",
+        "compositionLogic": "The whole image is governed by one central vertical law. All other forms either affirm, test, or punctuate that law. The side forces must read as bilateral pressure rather than ornament, and the cool ellipse must break the warm order just enough to become the ",
+        "imagePrompt": "A Hilma af Klint-inspired abstract altarpiece on a warm matte cream ground, frontal and bounded, with a tall central vertical progression of stacked discs, ovals, and intervals in red, ochre, and muted orange, two larger left and right petal-spiral counterforms curving inward toward the axis as calm resistance, 3 to 7 "
+      },
+      "executionPlan": {
+        "palette": {
+          "bg": "#efe4cf",
+          "primary": "#b33a2e",
+          "secondary": "#d48b3a",
+          "glow": "#b59548",
+          "anchor": "#5f8f96"
+        },
+        "camera": {
+          "autoRotate": false,
+          "cycleSeconds": 24,
+          "target": [
+            0,
+            0,
+            0
+          ]
+        },
+        "post": {
+          "contrast": 1.06,
+          "saturation": 0.94,
+          "vignette": 0.14,
+          "exposure": 1.01
+        },
+        "global": {
+          "shapeCountHint": 120,
+          "flowField": 0.26,
+          "distortion": 0.12,
+          "bloom": 0.16
+        },
+        "techniques": [
+          {
+            "id": "tech-painted-ground",
+            "name": "Matte pigment field",
+            "type": "shader",
+            "purpose": "Establish a warm cream ground with grain, uneven paint density, and soft edge breathing.",
+            "reuseModuleType": null,
+            "params": {
+              "module": "cm.hilma-painted-ground.v1",
+              "grain": 0.22,
+              "vignette": 0.08,
+              "drift": 0.03
+            }
+          },
+          {
+            "id": "tech-altar-spine",
+            "name": "Ceremonial interval spine",
+            "type": "shader",
+            "purpose": "Build a readable top-to-bottom stack so the composition reads as altar law before any ring logic appears.",
+            "reuseModuleType": null,
+            "params": {
+              "module": "cm.hilma-altar-spine.v1",
+              "intervals": 6,
+              "thickness": 0.9,
+              "goldNodes": 5
+            }
+          },
+          {
+            "id": "tech-counter-currents",
+            "name": "Inward resistance petals",
+            "type": "shader",
+            "purpose": "Create bilateral opposing currents that visibly lean inward without breaking the calm geometry.",
+            "reuseModuleType": null,
+            "params": {
+              "module": "cm.hilma-counter-currents.v1",
+              "spread": 0.68,
+              "curl": 0.58,
+              "opacity": 0.78
+            }
+          },
+          {
+            "id": "tech-cool-seal",
+            "name": "Blue elliptical vow",
+            "type": "shader",
+            "purpose": "Place one cool-toned elliptical focal anchor below center to counter the warm field.",
+            "reuseModuleType": null,
+            "params": {
+              "module": "cm.hilma-cool-seal.v1",
+              "ellipse": [
+                0.24,
+                0.15
+              ],
+              "ringCount": 2,
+              "y": -0.24
+            }
+          }
+        ]
+      },
+      "moduleOverrides": [],
+      "customModules": [
+        {
+          "id": "cm.hilma-painted-ground.v1",
+          "family": "shader",
+          "kind": "dsl",
+          "allowOverride": false,
+          "seedPolicy": "deterministic",
+          "paramsSchema": {
+            "bg": {
+              "type": "color",
+              "default": "#efe4cf"
+            },
+            "grain": {
+              "type": "number",
+              "min": 0,
+              "max": 1,
+              "default": 0.22
+            },
+            "vignette": {
+              "type": "number",
+              "min": 0,
+              "max": 1,
+              "default": 0.08
+            },
+            "drift": {
+              "type": "number",
+              "min": 0,
+              "max": 0.2,
+              "default": 0.03
+            }
+          },
+          "source": {
+            "dsl": {
+              "primitive": "plane",
+              "material": "shader",
+              "transparent": true
+            },
+            "glsl": {
+              "vertex": "varying vec2 vUv; void main(){ vUv = uv; gl_Position = projectionMatrix * modelViewMatrix * vec4(position,1.0); }",
+              "fragment": "varying vec2 vUv; uniform float u_time; uniform vec3 bg; uniform float grain; uniform float vignette; uniform float drift; float hash(vec2 p){ return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453123); } float noise(vec2 p){ vec2 i=floor(p), f=fract(p); float a=hash(i), b=hash(i+vec2(1.0,0.0)), c=hash(i+vec2(0.0,1.0)), d=hash(i+vec2(1.0,1.0)); vec2 u=f*f*(3.0-2.0*f); return mix(a,b,u.x)+(c-a)*u.y*(1.0-u.x)+(d-b)*u.x*u.y; } void main(){ vec2 uv=vUv; vec2 p=uv-0.5; float n1=noise(uv*8.0 + vec2(0.0,u_time*drift)); float n2=noise(uv*34.0); float edge=length(p*vec2(1.0,1.18)); float vig=1.0-smoothstep(0.42,0.84,edge)*vignette; vec3 col=bg; col += vec3(0.05,0.025,-0.005)*(n1-0.5); col += vec3(0.03,0.015,0.0)*(n2-0.5)*grain; col *= vig; float fibers = smoothstep(0.35,0.65,noise(vec2(uv.y*120.0, uv.x*7.0))); col -= vec3(0.018,0.012,0.008)*fibers*grain; gl_FragColor = vec4(col,1.0); }"
+            },
+            "js": null
+          },
+          "budgets": {
+            "maxInstances": 1,
+            "maxShaderOpsHint": 0.7,
+            "mobileSafe": true
+          }
+        },
+        {
+          "id": "cm.hilma-altar-spine.v1",
+          "family": "shader",
+          "kind": "dsl",
+          "allowOverride": false,
+          "seedPolicy": "deterministic",
+          "paramsSchema": {
+            "primary": {
+              "type": "color",
+              "default": "#b33a2e"
+            },
+            "secondary": {
+              "type": "color",
+              "default": "#d48b3a"
+            },
+            "glow": {
+              "type": "color",
+              "default": "#b59548"
+            },
+            "intervals": {
+              "type": "number",
+              "min": 4,
+              "max": 8,
+              "default": 6
+            },
+            "goldNodes": {
+              "type": "number",
+              "min": 3,
+              "max": 7,
+              "default": 5
+            }
+          },
+          "source": {
+            "dsl": {
+              "primitive": "plane",
+              "material": "shader",
+              "transparent": true
+            },
+            "glsl": {
+              "vertex": "varying vec2 vUv; void main(){ vUv = uv; gl_Position = projectionMatrix * modelViewMatrix * vec4(position,1.0); }",
+              "fragment": "varying vec2 vUv; uniform vec3 primary; uniform vec3 secondary; uniform vec3 glow; float ellipse(vec2 p, vec2 r){ return 1.0 - smoothstep(0.0, 0.008, length(p/r)-1.0); } float ring(vec2 p, vec2 r, float t){ float d = abs(length(p/r)-1.0); return 1.0 - smoothstep(t, t+0.01, d); } void main(){ vec2 uv=vUv; vec2 p=uv-0.5; vec3 col=vec3(0.0); float a=0.0; float line = smoothstep(0.012,0.0,abs(p.x)); col += mix(primary, secondary, 0.35)*line*0.42; float y0[6]; y0[0]=0.34; y0[1]=0.22; y0[2]=0.09; y0[3]=-0.04; y0[4]=-0.18; y0[5]=-0.32; vec2 rs[6]; rs[0]=vec2(0.07,0.045); rs[1]=vec2(0.10,0.055); rs[2]=vec2(0.08,0.042); rs[3]=vec2(0.13,0.07); rs[4]=vec2(0.075,0.043); rs[5]=vec2(0.055,0.034); for(int i=0;i<6;i++){ vec2 q = p - vec2(0.0,y0[i]); float fill = ellipse(q, rs[i]); float outline = ring(q, rs[i], 0.02); vec3 c = mix(primary, secondary, float(i)/5.0); col += c*fill*0.16 + c*outline*0.48; a = max(a, fill*0.26 + outline*0.52); } vec2 nodePos[5]; nodePos[0]=vec2(0.055,0.28); nodePos[1]=vec2(-0.05,0.13); nodePos[2]=vec2(0.06,-0.01); nodePos[3]=vec2(-0.055,-0.15); nodePos[4]=vec2(0.05,-0.28); for(int i=0;i<5;i++){ vec2 q = p-nodePos[i]; float d = length(q); float node = smoothstep(0.028,0.0,d); float halo = smoothstep(0.07,0.02,d); col += glow*(node*0.82 + halo*0.18); a = max(a, node*0.75 + halo*0.18); } gl_FragColor = vec4(col, clamp(a,0.0,1.0)); }"
+            },
+            "js": null
+          },
+          "budgets": {
+            "maxInstances": 1,
+            "maxShaderOpsHint": 0.82,
+            "mobileSafe": true
+          }
+        },
+        {
+          "id": "cm.hilma-counter-currents.v1",
+          "family": "shader",
+          "kind": "dsl",
+          "allowOverride": false,
+          "seedPolicy": "deterministic",
+          "paramsSchema": {
+            "primary": {
+              "type": "color",
+              "default": "#b33a2e"
+            },
+            "secondary": {
+              "type": "color",
+              "default": "#d48b3a"
+            },
+            "spread": {
+              "type": "number",
+              "min": 0.4,
+              "max": 0.9,
+              "default": 0.68
+            },
+            "curl": {
+              "type": "number",
+              "min": 0.2,
+              "max": 0.8,
+              "default": 0.58
+            },
+            "opacity": {
+              "type": "number",
+              "min": 0.1,
+              "max": 1,
+              "default": 0.78
+            }
+          },
+          "source": {
+            "dsl": {
+              "primitive": "plane",
+              "material": "shader",
+              "transparent": true
+            },
+            "glsl": {
+              "vertex": "varying vec2 vUv; void main(){ vUv = uv; gl_Position = projectionMatrix * modelViewMatrix * vec4(position,1.0); }",
+              "fragment": "varying vec2 vUv; uniform vec3 primary; uniform vec3 secondary; uniform float spread; uniform float curl; uniform float opacity; float lobe(vec2 p, vec2 c, vec2 r, float bend){ vec2 q = p-c; q.x += bend*q.y*q.y; return 1.0 - smoothstep(0.0,0.012,length(q/r)-1.0); } float outline(vec2 p, vec2 c, vec2 r, float bend){ vec2 q = p-c; q.x += bend*q.y*q.y; float d = abs(length(q/r)-1.0); return 1.0 - smoothstep(0.018,0.03,d); } void main(){ vec2 p=vUv-0.5; vec3 col=vec3(0.0); float a=0.0; vec2 cL = vec2(-0.23*spread, 0.01); vec2 cR = vec2(0.23*spread, 0.01); vec2 r1 = vec2(0.16,0.29); vec2 r2 = vec2(0.10,0.21); float f1 = lobe(p,cL,r1, curl) + lobe(p,cR,r1,-curl); float f2 = lobe(p,cL+vec2(0.04,-0.02),r2,curl*0.85) + lobe(p,cR-vec2(0.04,-0.02),r2,-curl*0.85); float o1 = outline(p,cL,r1,curl) + outline(p,cR,r1,-curl); float o2 = outline(p,cL+vec2(0.04,-0.02),r2,curl*0.85) + outline(p,cR-vec2(0.04,-0.02),r2,-curl*0.85); col += primary*f1*0.09 + secondary*f2*0.13 + mix(primary,secondary,0.45)*(o1+o2)*0.36; a = clamp((f1+f2)*0.18 + (o1+o2)*0.42,0.0,1.0)*opacity; gl_FragColor = vec4(col,a); }"
+            },
+            "js": null
+          },
+          "budgets": {
+            "maxInstances": 1,
+            "maxShaderOpsHint": 0.76,
+            "mobileSafe": true
+          }
+        },
+        {
+          "id": "cm.hilma-cool-seal.v1",
+          "family": "shader",
+          "kind": "dsl",
+          "allowOverride": false,
+          "seedPolicy": "deterministic",
+          "paramsSchema": {
+            "anchor": {
+              "type": "color",
+              "default": "#5f8f96"
+            },
+            "primary": {
+              "type": "color",
+              "default": "#b33a2e"
+            },
+            "ringCount": {
+              "type": "number",
+              "min": 1,
+              "max": 3,
+              "default": 2
+            },
+            "y": {
+              "type": "number",
+              "min": -0.4,
+              "max": 0,
+              "default": -0.24
+            }
+          },
+          "source": {
+            "dsl": {
+              "primitive": "plane",
+              "material": "shader",
+              "transparent": true
+            },
+            "glsl": {
+              "vertex": "varying vec2 vUv; void main(){ vUv = uv; gl_Position = projectionMatrix * modelViewMatrix * vec4(position,1.0); }",
+              "fragment": "varying vec2 vUv; uniform vec3 anchor; uniform vec3 primary; uniform float y; float ellipseField(vec2 p, vec2 r){ return length(p/r); } void main(){ vec2 p=vUv-0.5-vec2(0.0,y); vec2 r=vec2(0.16,0.10); float e = ellipseField(p,r); float fill = 1.0 - smoothstep(0.92,1.0,e); float ring1 = 1.0 - smoothstep(0.04,0.055,abs(e-1.0)); float ring2 = 1.0 - smoothstep(0.035,0.05,abs(e-0.63)); float vertical = smoothstep(0.01,0.0,abs(p.x))*smoothstep(0.16,0.02,abs(p.y)); vec3 col = anchor*(fill*0.18 + ring1*0.86 + ring2*0.44) + primary*vertical*0.08; float a = clamp(fill*0.22 + ring1*0.82 + ring2*0.36,0.0,1.0); gl_FragColor = vec4(col,a); }"
+            },
+            "js": null
+          },
+          "budgets": {
+            "maxInstances": 1,
+            "maxShaderOpsHint": 0.54,
+            "mobileSafe": true
+          }
+        }
+      ],
+      "policyPasses": {
+        "advisoryOnly": true,
+        "skipped": [
+          "focal-hierarchy",
+          "envelope-clamp",
+          "composition-plan",
+          "artist-visual-profile",
+          "scene-element-module-enforcement",
+          "stack-pipeline-apply",
+          "gap-focused-pass",
+          "artist-hard-constraints"
+        ]
+      }
+    },
+    "seedVersion": 2,
+    "seeds": {
+      "baseSeed": 132553505,
+      "runSeed": 1225379070,
+      "geomSeed": 1953855383,
+      "animSeed": 383364430,
+      "colorSeed": 51088870,
+      "cameraSeed": 2381692248
+    },
+    "customModuleReport": {
+      "declaredCustomModules": 4,
+      "accepted": [
+        {
+          "id": "cm.hilma-painted-ground.v1",
+          "family": "shader",
+          "kind": "dsl",
+          "fingerprint": "29971b80"
+        },
+        {
+          "id": "cm.hilma-altar-spine.v1",
+          "family": "shader",
+          "kind": "dsl",
+          "fingerprint": "12929ffc"
+        },
+        {
+          "id": "cm.hilma-counter-currents.v1",
+          "family": "shader",
+          "kind": "dsl",
+          "fingerprint": "7fa971fd"
+        },
+        {
+          "id": "cm.hilma-cool-seal.v1",
+          "family": "shader",
+          "kind": "dsl",
+          "fingerprint": "385dd957"
+        }
+      ],
+      "rejected": [],
+      "moduleOverrideCount": 0,
+      "fingerprint": "0ce78afc"
+    },
+    "techStack": {
+      "id": "shader-field-balanced",
+      "name": "Shader Field Layering",
+      "family": "shader-field",
+      "strategyFamilies": [
+        "flow",
+        "hybrid",
+        "orbits"
+      ],
+      "rationale": {
+        "signals": {
+          "conflict": 0.375,
+          "context": 0.313,
+          "motion": 0.45,
+          "turbulence": 0.426,
+          "structureBias": 0,
+          "densityBias": 0,
+          "edgeBias": 0,
+          "motionBias": 0,
+          "visualProfile": {
+            "profileCadence": "steady",
+            "preferredFamilies": []
+          }
+        },
+        "familyHits": 0,
+        "idHits": 0,
+        "penalties": [],
+        "visualAffinity": 0,
+        "elementCoverage": {
+          "score": 0,
+          "coverage": 0,
+          "moduleCoverage": 0,
+          "missingCapabilities": [
+            "shader-layering",
+            "deterministic-alpha-compositing"
+          ]
+        },
+        "preferredFamilies": [],
+        "preferredFamilyLocked": false,
+        "notPreferredPenalty": 0
+      },
+      "dominantPrimitive": "cm.hilma-painted-ground.v1",
+      "moduleSet": [
+        "cm.hilma-painted-ground.v1",
+        "cm.hilma-altar-spine.v1",
+        "cm.hilma-counter-currents.v1",
+        "cm.hilma-cool-seal.v1"
+      ],
+      "pipelineKind": "shader-field"
+    },
+    "renderPipeline": {
+      "kind": "shader-field",
+      "family": "shader-field",
+      "fallback": false,
+      "advisoryOnly": true,
+      "dominantPrimitive": "cm.hilma-painted-ground.v1",
+      "moduleSet": [
+        "cm.hilma-painted-ground.v1",
+        "cm.hilma-altar-spine.v1",
+        "cm.hilma-counter-currents.v1",
+        "cm.hilma-cool-seal.v1"
+      ]
+    }
+  },
+  "sceneStrategy": {
+    "selected": {
+      "id": "atomic-balanced-flow",
+      "name": "Balanced Flow Field",
+      "type": "atomic",
+      "family": "flow"
+    },
+    "applied": false,
+    "fallbackReason": "agent-authored-scene-elements"
+  },
+  "techStack": {
+    "id": "shader-field-balanced",
+    "name": "Shader Field Layering",
+    "family": "shader-field"
+  },
+  "newsVisualMappings": [
+    {
+      "signal": "title evidence [personeel, bpost, kampenhout, legt] -> motif flow",
+      "from": "personeel, bpost, kampenhout, legt",
+      "visualDecision": "structural motif armature set to flow"
+    },
+    {
+      "signal": "composition foreground conflict",
+      "from": "personeel, bpost, kampenhout, legt",
+      "visualDecision": "foreground role tension-knot at pressure 0.18"
+    },
+    {
+      "signal": "composition midground context",
+      "from": "personeel, bpost, kampenhout, legt",
+      "visualDecision": "midground role context-drift with density 0.27"
+    },
+    {
+      "signal": "composition background mood",
+      "from": "personeel, bpost, kampenhout, legt",
+      "visualDecision": "background mood watchful depth 0.243"
+    },
+    {
+      "signal": "urgency -> motion",
+      "from": "ageHours=48",
+      "visualDecision": "motionSpeedNormalized=0.435"
+    },
+    {
+      "signal": "title semantics -> palette/edge cadence",
+      "from": "temp=0 edge=0.5",
+      "visualDecision": "postContrast=1.12 accentType=n/a"
+    },
+    {
+      "signal": "article institutional/conflict polarity",
+      "from": "personeel, bpost, kampenhout, legt",
+      "visualDecision": "accent element n/a with opacity n/a"
+    },
+    {
+      "signal": "artist research context Hilma af Klint",
+      "from": "tags symbolic, spiral, organic",
+      "visualDecision": "artist profile captured as metadata only; no technical routing applied"
+    }
+  ],
+  "qualityScore": {
+    "score": 52.6,
+    "summary": "Alignment 66.8 with strongest channel emotional.",
+    "heuristic": {
+      "score": 68.1,
+      "breakdown": {
+        "legibility": 76.3,
+        "emotionalReadability": 71.9,
+        "coherence": 88.7,
+        "focalAnchor": 70.3,
+        "technicalRichness": 87.5,
+        "restraint": 75.4,
+        "alignment": 66.8
+      }
+    },
+    "calibration": {
+      "sampleCount": 1,
+      "trustWeight": 0.4
+    },
+    "alignment": {
+      "totalAlign": 66.8,
+      "components": {
+        "title": {
+          "score": 61.3
+        },
+        "style": {
+          "score": 62.6
+        },
+        "emotional": {
+          "score": 77.9
+        }
+      }
+    }
+  },
+  "rationale": {
+    "intent": {
+      "signal": null,
+      "emotion": null,
+      "tension": null,
+      "balance": null,
+      "motion": null
+    },
+    "selection": {
+      "whyHeadline": "Selected as top-ranked Belgian headline (score 68 = frequency 68 + priority 0 + recency 0).",
+      "priorityTerms": []
+    },
+    "qualitySummary": "TOTAL_ALIGN 66.8."
+  },
+  "runPolicy": {
+    "artworksPerRun": 1,
+    "multiVariant": false
+  },
+  "artFramework": {
+    "version": 3,
+    "intent": {
+      "statement": "Staff at the Bpost office in Kampenhout stop work: “In protest against new working hours” translated through Hilma af Klint's visual language as a non-literal image.",
+      "coreImpulse": "In Hilma af Klint: Paintings for the Temple (paintings by Hilma af Klint) Af Klint concluded Paintings for the Temple with a triptych she called Altarpieces, featuring geometric shapes, bold primary colors, and gold l... Hilma af Klint was a Swedish artist and mystic whose paintings are considered to be among the first major abstract works in Western art history. After studying at the Royal Academy of Art in Stockholm, Hilma af Klint embarked on a major suite of paintings in 1904-06. Hilma af Klint did not ascribe to any of the established avant-garde movements of her time.",
+      "artistTranslationLogic": [
+        "Hilma af Klint's formal logic should dominate before any spectacle or scenic excess."
+      ],
+      "emotionalClimate": {
+        "summary": "In Hilma af Klint: Paintings for the Temple (paintings by Hilma af Klint) Af Klint concluded Paintings for the Temple with a triptych she called Altarpieces, featuring geometric shapes, bold primary colors, and gold l... Hilma af Klint was a Swedish artist and mystic whose paintings are considered to be among the first major abstract works in Western art history. After studying at the Royal Academy of Art in Stockholm, Hilma af Klint embarked on a major suite of paintings in 1904-06. Hilma af Klint did not ascribe to any of the established avant-garde movements of her time.",
+        "pressure": "low",
+        "pace": "measured",
+        "socialReach": "concentrated"
+      },
+      "visualGravity": {
+        "anchor": null,
+        "dominantStructure": "Build the image around one readable structural law.",
+        "scaleBehavior": "Keep the space bounded and compositionally intentional."
+      },
+      "materialLogic": {
+        "surfaceBehavior": [],
+        "spatialHabits": [],
+        "handling": "Hilma af Klint's surface should feel made, not generic."
+      },
+      "colorField": {
+        "paletteSignals": [],
+        "contrastMode": "measured contrast with restrained vibration"
+      },
+      "symbolicDensity": {
+        "primaryMotif": "flow",
+        "motifVocabulary": [],
+        "literalness": "non-literal"
+      },
+      "tensionEngine": {
+        "conflictAxis": "Tegen",
+        "escalationMode": "Let tension accumulate through structure, not narration.",
+        "releaseValve": "Allow only a narrow zone of release."
+      },
+      "audiencePosition": {
+        "stance": "Hilma af Klint did not ascribe to any of the established avant-garde movements of her time. Hilma af Klint was a Swedish artist and mystic whose paintings are considered to be among the first major abstract works in Western art history. In Hilma af Klint: Paintings for the Temple (paintings by Hilma af Klint) Af Klint concluded Paintings for the Temple with a triptych she called Altarpieces, featuring geometric shapes, bold primary colors, and gold l... In Hilma af Klint: Paintings for the Temple (paintings by Hilma af Klint) Af Klint concluded Paintings for the Temple with a triptych she called Altarpieces, featuring geometric shapes, bold primary colors, and gold l...",
+        "distance": "immersed but not illustrative"
+      },
+      "controlVsAccident": {
+        "balance": "controlled with selective instability",
+        "motionTemperament": "steady",
+        "accidentRole": "use drift or fracture sparingly to keep the field alive"
+      },
+      "antiDriftRules": [
+        "Do not collapse into biography summary, symbolic cliché, or generic procedural spectacle."
+      ],
+      "finalCompression": "In Hilma af Klint: Paintings for the Temple (paintings by Hilma af Klint) Af Klint concluded Paintings for the Temple with a triptych she called Altarpieces, featuring geometric shapes, bold primary colors, and gold l... Hilma af Klint was a Swedish artist and mystic whose paintings are considered to be among the first major abstract works in Western art history. After studying at the Royal Academy of Art in Stockholm, Hilma af Klint embarked on a major suite of paintings in 1904-06. Hilma af Klint did not ascribe to any of the established avant-garde movements of her time. Build the image around one readable structural law.",
+      "artistAnchors": {
+        "formalLogic": [],
+        "motifVocabulary": [],
+        "compositionCues": [],
+        "paletteSignals": [],
+        "surfaceBehavior": [],
+        "spatialHabits": [],
+        "translationDirectives": []
+      },
+      "threeJsFreedomEnvelope": [],
+      "avoidSignals": [],
+      "threeJsTranslationExamples": []
+    }
+  },
+  "debugFile": "./data/artworks-debug/2026-04-20-resonance-staff-bpost-office-kampenhout-v2.json"
+}
