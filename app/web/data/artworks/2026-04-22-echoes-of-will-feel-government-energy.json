@@ -1,0 +1,915 @@
+{
+  "id": "2026-04-22-echoes-of-will-feel-government-energy",
+  "date": "2026-04-22",
+  "title": "Echoes of will feel government energy",
+  "generatedAt": "2026-04-22T06:06:16.455Z",
+  "news": {
+    "source": "hln",
+    "title": "🎧How will we feel the government's energy support? | Trump does end up extending the ceasefire with Iran after all | Michael Jackson film premieres: our journalist saw it in preview",
+    "link": "https://www.hln.be/home/hoe-zullen-we-energiesteun-van-regering-voelen-trump-verlengt-dan-toch-staakt-het-vuren-met-iran-film-michael-jackson-in-premiere-onze-journalist-zag-hem-in-primeur~ae546fd5/",
+    "score": 103.67
+  },
+  "inspiration": {
+    "artist": "Clyfford Still",
+    "tags": [
+      "abstract",
+      "surreal",
+      "expressionist",
+      "figurative",
+      "surrealist"
+    ],
+    "links": {
+      "wikipedia": "https://en.wikipedia.org/wiki/Clyfford_Still",
+      "reference": "http://www.clyffordstill.net/"
+    }
+  },
+  "seed": 618462576,
+  "scene": {
+    "motif": "flow",
+    "shapeCount": 120,
+    "turbulence": 0.556,
+    "spiralBias": 0.904,
+    "motionSpeed": 0.001779,
+    "bloom": 0.18,
+    "grain": 0.034,
+    "fogDensity": 0.052,
+    "distortion": 0.22,
+    "flowField": 0.34,
+    "anchorStrength": 0.639,
+    "anchorOffsetX": -0.086,
+    "layerBalance": {
+      "structure": 0.68,
+      "chaos": 0.414
+    },
+    "expression": {
+      "tension": 0.31,
+      "structure": 0.727,
+      "motion": 0.783,
+      "noise": 0.295,
+      "urgency": 0.965,
+      "contrast": 0.433
+    },
+    "palette": {
+      "bg": "#1f2a33",
+      "primary": "#c96a1f",
+      "secondary": "#58a9b8",
+      "glow": "#f0c56b",
+      "anchor": "#284c78"
+    },
+    "elements": [
+      {
+        "id": "el-01-color-field-stack",
+        "moduleType": "color-field-stack",
+        "capabilities": [
+          "layered-field",
+          "atmosphere-plume"
+        ],
+        "stackFamilies": [
+          "shader-field",
+          "post-heavy"
+        ],
+        "styleTags": [
+          "field",
+          "blocks",
+          "atmospheric"
+        ],
+        "libraryRef": "element.color-field-stack.v1",
+        "color": "bg",
+        "opacity": 0.95,
+        "intensity": 0.72,
+        "layer": "background",
+        "layerCount": 4,
+        "verticalBias": 0.62,
+        "roughness": 0.68,
+        "scenePurpose": "Carry the painting's buried weight and broad emotional pressure",
+        "expectedRead": "A heavy stratified ground with slow chromatic shifts",
+        "mustNotReadAs": [
+          "skybox",
+          "UI panel",
+          "sunset landscape"
+        ],
+        "animation": {
+          "rotationZ": 0.01,
+          "pulse": 0.04,
+          "wobbleX": 0.03,
+          "wobbleY": 0.02,
+          "drift": 0.05
+        },
+        "techniqueRef": "t.layered-ground",
+        "role": "atmosphere-field",
+        "motif": "flow",
+        "intentCadence": "measured"
+      },
+      {
+        "id": "el-02-fault-line",
+        "moduleType": "fault-line",
+        "capabilities": [
+          "fracture-destruction",
+          "focal-anchor"
+        ],
+        "stackFamilies": [
+          "post-heavy",
+          "particle-heavy",
+          "geometry-heavy"
+        ],
+        "styleTags": [
+          "fault",
+          "break"
+        ],
+        "libraryRef": "element.fault-line.v1",
+        "color": "primary",
+        "opacity": 0.9,
+        "intensity": 0.88,
+        "layer": "midground",
+        "height": 3.4,
+        "width": 1.1,
+        "offsetX": -0.18,
+        "scenePurpose": "Assert the singular torn ascent that organizes the entire composition",
+        "expectedRead": "A serrated vertical rupture with compressed energy",
+        "mustNotReadAs": [
+          "lightning bolt",
+          "mountain silhouette",
+          "crack icon"
+        ],
+        "animation": {
+          "rotationZ": 0.02,
+          "pulse": 0.07,
+          "wobbleX": 0.04,
+          "wobbleY": 0.03,
+          "drift": 0.08
+        },
+        "techniqueRef": "t.fissure-spine",
+        "role": "structural-spine",
+        "motif": "flow",
+        "intentCadence": "measured"
+      },
+      {
+        "id": "el-03-shader-field-plane",
+        "moduleType": "shader-field-plane",
+        "capabilities": [
+          "fluid-drift",
+          "layered-field"
+        ],
+        "stackFamilies": [
+          "shader-field",
+          "post-heavy",
+          "sdf-raymarch"
+        ],
+        "styleTags": [
+          "shader",
+          "field"
+        ],
+        "libraryRef": "element.shader-field-plane.v1",
+        "color": "secondary",
+        "opacity": 0.54,
+        "intensity": 0.77,
+        "layer": "midground",
+        "width": 0.34,
+        "height": 2.6,
+        "x": 0.06,
+        "scenePurpose": "Create the narrow cool ceasefire seam and readable focal contrast",
+        "expectedRead": "A thin internal opening that tempers the field without resolving it",
+        "mustNotReadAs": [
+          "laser beam",
+          "doorway",
+          "screen glare"
+        ],
+        "animation": {
+          "pulse": 0.08,
+          "wobbleX": 0.01,
+          "wobbleY": 0.02,
+          "drift": 0.04
+        },
+        "techniqueRef": "t.accent-flare",
+        "role": "primary-signal",
+        "motif": "flow",
+        "intentCadence": "measured"
+      },
+      {
+        "id": "el-04-orbit-ribbon",
+        "moduleType": "orbit-ribbon",
+        "capabilities": [
+          "orbital-forms",
+          "kinetic-motion"
+        ],
+        "stackFamilies": [
+          "sdf-raymarch",
+          "shader-field",
+          "geometry-heavy"
+        ],
+        "styleTags": [
+          "orbit",
+          "curve"
+        ],
+        "libraryRef": "element.orbit-ribbon.v1",
+        "color": "anchor",
+        "opacity": 0.18,
+        "intensity": 0.33,
+        "layer": "background",
+        "radius": 1.3,
+        "arc": 3.9,
+        "offsetX": 0.42,
+        "offsetY": 0.28,
+        "scenePurpose": "Hint at absorbed spectacle and media afterimage without stealing focus",
+        "expectedRead": "A half-lost arc embedded in paint history",
+        "mustNotReadAs": [
+          "portal",
+          "target",
+          "ring UI"
+        ],
+        "animation": {
+          "rotationZ": 0.03,
+          "pulse": 0.02,
+          "wobbleX": 0.02,
+          "wobbleY": 0.02,
+          "drift": 0.06
+        },
+        "techniqueRef": "t.embedded-orbit",
+        "role": "support-rhythm",
+        "motif": "flow",
+        "intentCadence": "measured"
+      },
+      {
+        "id": "el-05-volumetric-haze",
+        "moduleType": "volumetric-haze",
+        "capabilities": [
+          "atmosphere-plume",
+          "fluid-drift",
+          "layered-field"
+        ],
+        "stackFamilies": [
+          "shader-field",
+          "post-heavy",
+          "particle-heavy",
+          "sdf-raymarch"
+        ],
+        "styleTags": [
+          "atmosphere",
+          "depth",
+          "diffusion"
+        ],
+        "libraryRef": "element.volumetric-haze.v1",
+        "colorA": "bg",
+        "colorB": "secondary",
+        "opacity": 0.17,
+        "intensity": 0.26,
+        "layer": "foreground",
+        "depth": 0.42,
+        "spread": 1.8,
+        "color": "glow",
+        "scenePurpose": "Keep the image breathable and preserve painterly depth separation",
+        "expectedRead": "A faint dusty veil crossing the front plane",
+        "mustNotReadAs": [
+          "fog machine",
+          "cloud",
+          "lens blur gimmick"
+        ],
+        "animation": {
+          "pulse": 0.03,
+          "wobbleX": 0.02,
+          "wobbleY": 0.03,
+          "drift": 0.09
+        },
+        "techniqueRef": "t.surface-haze",
+        "role": "accent-gesture",
+        "motif": "flow",
+        "intentCadence": "measured"
+      }
+    ],
+    "shaderLayers": 4,
+    "elementDiversity": 5,
+    "paletteVariance": 0,
+    "motionSpeedNormalized": 0.809,
+    "camera": {
+      "autoRotate": false,
+      "autoRotateSpeed": 0.162,
+      "minDistance": 6,
+      "maxDistance": 24,
+      "cycleSeconds": 24,
+      "beats": [
+        {
+          "t": 0,
+          "radius": 12.504,
+          "theta": 0.033,
+          "phi": 1.229,
+          "hold": 1.064
+        },
+        {
+          "t": 0.34,
+          "radius": 10.636,
+          "theta": 0.893,
+          "phi": 1.031,
+          "hold": 0.514
+        },
+        {
+          "t": 0.68,
+          "radius": 11.248,
+          "theta": 1.676,
+          "phi": 1.307,
+          "hold": 0.866
+        },
+        {
+          "t": 1,
+          "radius": 12.28,
+          "theta": 2.323,
+          "phi": 1.12,
+          "hold": 1.144
+        }
+      ],
+      "target": [
+        0,
+        0,
+        0
+      ]
+    },
+    "post": {
+      "vignette": 0.24,
+      "contrast": 1.18,
+      "saturation": 0.92,
+      "exposure": 0.98,
+      "breathing": {
+        "hueShift": 0.053,
+        "saturationAmplitude": 0.067,
+        "exposureAmplitude": 0.058,
+        "phaseA": 0.5391,
+        "phaseB": 0.4127
+      }
+    },
+    "styleFingerprint": {
+      "pulseFamily": "musical",
+      "stripeWarp": 0.22,
+      "edgeSoftness": 0.22,
+      "cameraSway": 0.22,
+      "edgeHardness": 0.5,
+      "temperatureBias": 0,
+      "verticalBias": 0,
+      "cadenceBias": 0
+    },
+    "sceneAuthoring": {
+      "mode": "agent-dsl",
+      "planner": "openclaw-agent-scene-planner",
+      "representation": {
+        "id": "rep.still-ceasefire-fissure",
+        "label": "Ceasefire Held by a Narrow Seam",
+        "description": "A dominant orange-black field is split by a cool vertical opening that never fully resolves, with buried orbital pressure under the paint.",
+        "scoreHint": 0.84,
+        "motif": "Held fracture",
+        "cadence": "measured",
+        "scenePrompt": "Build a monumental torn field with one cool seam of reprieve inside heavier orange and blue masses. The image should feel excavated rather than assembled.",
+        "colorMood": "Smoldering earth against restrained blue-cyan relief",
+        "spatialIntent": "Deep background weight, a violent midground rupture, and a thin foreground shimmer that reads as temporary breathing room",
+        "imageAuthorship": {
+          "structuralLaw": "A single torn ascent interrupts horizontally weighted strata.",
+          "dominantForms": [
+            "serrated vertical mass",
+            "compressed color fields",
+            "half-buried arc residue"
+          ],
+          "edgeBehavior": "Mostly ruptured edges with selective soft bleeding into adjacent fields.",
+          "surfaceBehavior": "Dry-brushed, scraped, and mineral, with visible drag and stain.",
+          "depthLogic": "Dense low background plane, sharper midground tear, sparse foreground glints.",
+          "motionLogic": "Slow internal heave, no theatrical spinning or pulsing.",
+          "forbiddenDrift": [
+            "portal imagery",
+            "posterized gradients",
+            "central glowing orb",
+            "decorative particle sparkle"
+          ]
+        },
+        "technicalTranslation": {
+          "realizationStrategy": "Use layered field planes for the ground, a jagged fault-line spine for the central tear, thin haze for separation, and a faint orbit ribbon buried behind the fracture.",
+          "reuseBias": "hybrid",
+          "whyThisApproach": "Existing field and fault modules can carry the composition if heavily tuned toward torn paint behavior rather than graphic geometry.",
+          "notes": [
+            "Keep orbital evidence low-contrast and partially occluded.",
+            "The release zone must read as a slit, not a beam.",
+            "Prioritize edge character over quantity of elements."
+          ],
+          "motionCadence": "measured"
+        },
+        "mustShow": [
+          "one tall jagged vertical rupture",
+          "broad layered painted fields",
+          "a narrow cool release zone",
+          "submerged orbital trace rather than a portal"
+        ],
+        "mustAvoid": [
+          "symmetrical split-screen balance",
+          "glossy sci-fi glow",
+          "literal flames, flags, or explosions",
+          "flat backdrop with no material depth"
+        ],
+        "reviewFocus": [
+          "Does the main fissure dominate the whole image?",
+          "Is the cool opening narrow and provisional?",
+          "Do the surfaces feel painted and torn rather than procedural?"
+        ],
+        "artistTechniqueObservations": {
+          "medium": "painting",
+          "primaryTechnique": "radial/orbital construction",
+          "markMakingTraits": [],
+          "surfaceQualities": [
+            "painted surface behavior matters more than object literalism"
+          ],
+          "paletteTendencies": [
+            "dominant hues: orange, blue-cyan, blue"
+          ],
+          "spatialHabits": [
+            "layered field organization",
+            "orbital/circular organization"
+          ]
+        },
+        "rationale": {
+          "newsPressure": "Energy relief and ceasefire both register as partial easing inside a still-unstable field."
+        },
+        "techniques": [
+          {
+            "id": "t.layered-ground",
+            "name": "Layered Ground Field",
+            "type": "field",
+            "purpose": "Base image weight",
+            "reuseModuleType": null,
+            "params": {
+              "layers": 4,
+              "tilt": 0.06
+            }
+          },
+          {
+            "id": "t.fissure-spine",
+            "name": "Fissure Spine",
+            "type": "structural",
+            "purpose": "Primary rupture and anchor",
+            "reuseModuleType": null,
+            "params": {
+              "segments": 8,
+              "jaggedness": 0.71
+            }
+          },
+          {
+            "id": "t.embedded-orbit",
+            "name": "Buried Orbit Trace",
+            "type": "gesture",
+            "purpose": "Submerged orbital pressure",
+            "reuseModuleType": null,
+            "params": {
+              "turns": 1.1,
+              "radius": 1.28
+            }
+          },
+          {
+            "id": "t.surface-haze",
+            "name": "Surface Haze",
+            "type": "atmosphere",
+            "purpose": "Depth separation",
+            "reuseModuleType": null,
+            "params": {
+              "density": 0.2
+            }
+          }
+        ]
+      },
+      "artisticIntent": {
+        "statement": "A painted field split by serrated uprisings of color, where public relief is provisional, conflict is held in suspension, and spectacle arrives only as a thin afterimage. The image should feel like a Clyfford Still canvas translated into depth without losing its torn, mineral gravity.",
+        "motif": "Jagged vertical fissures cutting through layered orange and blue-cyan fields, with o",
+        "emotionalArc": "Buried pressure, partial opening, then a restrained residual glow.",
+        "compositionLogic": "One dominant structural law: a tall fractured ascent interrupts broad layered fields. Background weight holds the image down, midground tears create tension, foreground accents act as brief ignition points. Orbital cues stay subordinate and half-buried inside ",
+        "imagePrompt": "A non-literal abstract expressionist image in the spirit of Clyfford Still, built from torn vertical color masses and layered painted fields. Burnt orange, ash gold, blue-cyan, and deep blue interact across a textured surface with mixed hard and feathered edges. The composition is bounded, monumental, and asymmetrical,"
+      },
+      "executionPlan": {
+        "palette": {
+          "bg": "#1f2a33",
+          "primary": "#c96a1f",
+          "secondary": "#58a9b8",
+          "glow": "#f0c56b",
+          "anchor": "#284c78"
+        },
+        "camera": {
+          "autoRotate": false,
+          "cycleSeconds": 24,
+          "target": [
+            0,
+            0,
+            0
+          ]
+        },
+        "post": {
+          "contrast": 1.12,
+          "saturation": 0.92,
+          "vignette": 0.24,
+          "exposure": 0.98
+        },
+        "global": {
+          "shapeCountHint": 120,
+          "flowField": 0.34,
+          "distortion": 0.22,
+          "bloom": 0.18
+        },
+        "techniques": [
+          {
+            "id": "t.layered-ground",
+            "name": "Layered Ground Field",
+            "type": "field",
+            "purpose": "Establish the heavy painted atmosphere and depth-separated strata",
+            "reuseModuleType": "color-field-stack",
+            "params": {
+              "layers": 4,
+              "tilt": 0.08,
+              "roughness": 0.62
+            }
+          },
+          {
+            "id": "t.fissure-spine",
+            "name": "Fissure Spine",
+            "type": "structural",
+            "purpose": "Create the main torn vertical law that carries the tension",
+            "reuseModuleType": "fault-line",
+            "params": {
+              "segments": 7,
+              "jaggedness": 0.68,
+              "verticalBias": 0.84
+            }
+          },
+          {
+            "id": "t.embedded-orbit",
+            "name": "Buried Orbit Trace",
+            "type": "gesture",
+            "purpose": "Let orbital construction appear as a submerged pressure pattern rather than a portal",
+            "reuseModuleType": "orbit-ribbon",
+            "params": {
+              "turns": 1.2,
+              "radius": 1.35,
+              "opacity": 0.18
+            }
+          },
+          {
+            "id": "t.surface-haze",
+            "name": "Surface Haze",
+            "type": "atmosphere",
+            "purpose": "Separate planes and soften transitions without flattening the painting",
+            "reuseModuleType": "volumetric-haze",
+            "params": {
+              "density": 0.22,
+              "falloff": 0.58
+            }
+          },
+          {
+            "id": "t.accent-flare",
+            "name": "Accent Flare",
+            "type": "signal",
+            "purpose": "Deliver a narrow release zone with meaningful contrast",
+            "reuseModuleType": "shader-field-plane",
+            "params": {
+              "intensity": 0.44,
+              "banding": 0.21
+            }
+          }
+        ]
+      },
+      "moduleOverrides": [
+        {
+          "id": "ov.color-field-stack.still-surface",
+          "target": {
+            "moduleType": "color-field-stack",
+            "elementId": null
+          },
+          "mode": "uniforms",
+          "params": {
+            "blend": "painterly",
+            "strataBias": "low-horizon"
+          },
+          "uniforms": {
+            "grainAmount": 0.22,
+            "edgeWear": 0.31,
+            "verticalDrag": 0.57,
+            "paletteMix": 0.64
+          }
+        },
+        {
+          "id": "ov.fault-line.torn-edges",
+          "target": {
+            "moduleType": "fault-line",
+            "elementId": null
+          },
+          "mode": "uniforms",
+          "params": {
+            "profile": "still-jagged"
+          },
+          "uniforms": {
+            "tearSharpness": 0.83,
+            "feather": 0.12,
+            "noiseScale": 2.4,
+            "edgeGlow": 0.08
+          }
+        },
+        {
+          "id": "ov.orbit-ribbon.buried-trace",
+          "target": {
+            "moduleType": "orbit-ribbon",
+            "elementId": null
+          },
+          "mode": "uniforms",
+          "params": {
+            "read": "submerged"
+          },
+          "uniforms": {
+            "alpha": 0.16,
+            "depthFade": 0.73,
+            "eccentricity": 0.28
+          }
+        },
+        {
+          "id": "ov.shader-field-plane.mineral-flare",
+          "target": {
+            "moduleType": "shader-field-plane",
+            "elementId": null
+          },
+          "mode": "uniforms",
+          "params": {
+            "composite": "screen-soft"
+          },
+          "uniforms": {
+            "flareBand": 0.27,
+            "grain": 0.18,
+            "temperature": 0.61
+          },
+          "glsl": {
+            "fragment": "uniform float time;\nuniform float flareBand;\nuniform float grain;\nuniform float temperature;\nvarying vec2 vUv;\nfloat hash(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453123);}\nfloat noise(vec2 p){vec2 i=floor(p);vec2 f=fract(p);f=f*f*(3.0-2.0*f);float a=hash(i);float b=hash(i+vec2(1.0,0.0));float c=hash(i+vec2(0.0,1.0));float d=hash(i+vec2(1.0,1.0));return mix(mix(a,b,f.x),mix(c,d,f.x),f.y);}\nvoid main(){vec2 uv=vUv;float band=smoothstep(flareBand-0.12,flareBand,uv.y)-smoothstep(flareBand,flareBand+0.14,uv.y);float grit=noise(uv*18.0+time*0.02)*grain;vec3 warm=vec3(0.79,0.42,0.12);vec3 cool=vec3(0.20,0.35,0.52);vec3 col=mix(cool,warm,temperature);col += band*vec3(0.22,0.16,0.08)+grit*0.12;gl_FragColor=vec4(col, clamp(band*0.65+grit*0.3,0.0,0.78));}"
+          }
+        }
+      ],
+      "customModules": [],
+      "policyPasses": {
+        "advisoryOnly": true,
+        "skipped": [
+          "focal-hierarchy",
+          "envelope-clamp",
+          "composition-plan",
+          "artist-visual-profile",
+          "scene-element-module-enforcement",
+          "stack-pipeline-apply",
+          "gap-focused-pass",
+          "artist-hard-constraints"
+        ]
+      }
+    },
+    "seedVersion": 2,
+    "seeds": {
+      "baseSeed": 4086733676,
+      "runSeed": 618462576,
+      "geomSeed": 155926588,
+      "animSeed": 3138406417,
+      "colorSeed": 1536405507,
+      "cameraSeed": 3956870091
+    },
+    "customModuleReport": {
+      "declaredCustomModules": 0,
+      "accepted": [],
+      "rejected": [],
+      "moduleOverrideCount": 4,
+      "fingerprint": "234d0109"
+    },
+    "techStack": {
+      "id": "sdf-raymarch-lite",
+      "name": "SDF/Raymarch Lite",
+      "family": "sdf-raymarch",
+      "strategyFamilies": [
+        "orbits",
+        "flow",
+        "hybrid"
+      ],
+      "rationale": {
+        "signals": {
+          "conflict": 0.333,
+          "context": 0.444,
+          "motion": 0.041,
+          "turbulence": 0.426,
+          "structureBias": 0,
+          "densityBias": 0,
+          "edgeBias": 0,
+          "motionBias": 0,
+          "visualProfile": {
+            "profileCadence": "steady",
+            "preferredFamilies": []
+          }
+        },
+        "familyHits": 0,
+        "idHits": 0,
+        "penalties": [
+          "motion<0.3"
+        ],
+        "visualAffinity": 0,
+        "elementCoverage": {
+          "score": 0,
+          "coverage": 0,
+          "moduleCoverage": 0,
+          "missingCapabilities": [
+            "layered planes",
+            "line or ribbon support",
+            "soft post contrast"
+          ]
+        },
+        "preferredFamilies": [],
+        "preferredFamilyLocked": false,
+        "notPreferredPenalty": 0
+      },
+      "dominantPrimitive": "color-field-stack",
+      "moduleSet": [
+        "color-field-stack",
+        "fault-line",
+        "shader-field-plane",
+        "orbit-ribbon",
+        "volumetric-haze"
+      ],
+      "pipelineKind": "sdf-raymarch"
+    },
+    "renderPipeline": {
+      "kind": "sdf-raymarch",
+      "family": "sdf-raymarch",
+      "fallback": false,
+      "advisoryOnly": true,
+      "dominantPrimitive": "color-field-stack",
+      "moduleSet": [
+        "color-field-stack",
+        "fault-line",
+        "shader-field-plane",
+        "orbit-ribbon",
+        "volumetric-haze"
+      ]
+    }
+  },
+  "sceneStrategy": {
+    "selected": {
+      "id": "atomic-balanced-flow",
+      "name": "Balanced Flow Field",
+      "type": "atomic",
+      "family": "flow"
+    },
+    "applied": false,
+    "fallbackReason": "agent-authored-scene-elements"
+  },
+  "techStack": {
+    "id": "sdf-raymarch-lite",
+    "name": "SDF/Raymarch Lite",
+    "family": "sdf-raymarch"
+  },
+  "newsVisualMappings": [
+    {
+      "signal": "title evidence [zullen, energiesteun, regering, voelen] -> motif flow",
+      "from": "zullen, energiesteun, regering, voelen",
+      "visualDecision": "structural motif armature set to flow"
+    },
+    {
+      "signal": "composition foreground conflict",
+      "from": "zullen, energiesteun, regering, voelen",
+      "visualDecision": "foreground role tension-knot at pressure 0.18"
+    },
+    {
+      "signal": "composition midground context",
+      "from": "government",
+      "visualDecision": "midground role context-drift with density 0.459"
+    },
+    {
+      "signal": "composition background mood",
+      "from": "zullen, energiesteun, regering, voelen",
+      "visualDecision": "background mood watchful depth 0.322"
+    },
+    {
+      "signal": "urgency -> motion",
+      "from": "ageHours=0.99",
+      "visualDecision": "motionSpeedNormalized=0.809"
+    },
+    {
+      "signal": "title semantics -> palette/edge cadence",
+      "from": "temp=0 edge=0.5",
+      "visualDecision": "postContrast=1.18 accentType=volumetric-haze"
+    },
+    {
+      "signal": "article institutional/conflict polarity",
+      "from": "zullen, energiesteun, regering, voelen",
+      "visualDecision": "accent element volumetric-haze with opacity 0.17"
+    },
+    {
+      "signal": "artist research context Clyfford Still",
+      "from": "tags abstract, surreal, expressionist, figurative, surrealist",
+      "visualDecision": "artist profile captured as metadata only; no technical routing applied"
+    }
+  ],
+  "qualityScore": {
+    "score": 52.3,
+    "summary": "Alignment 66.8 with strongest channel emotional.",
+    "heuristic": {
+      "score": 67.7,
+      "breakdown": {
+        "legibility": 73.5,
+        "emotionalReadability": 68.7,
+        "coherence": 90.2,
+        "focalAnchor": 68.9,
+        "technicalRichness": 94.6,
+        "restraint": 74.9,
+        "alignment": 66.8
+      }
+    },
+    "calibration": {
+      "sampleCount": 1,
+      "trustWeight": 0.4
+    },
+    "alignment": {
+      "totalAlign": 66.8,
+      "components": {
+        "title": {
+          "score": 62.4
+        },
+        "style": {
+          "score": 66.2
+        },
+        "emotional": {
+          "score": 72.1
+        }
+      }
+    }
+  },
+  "rationale": {
+    "intent": {
+      "signal": null,
+      "emotion": null,
+      "tension": null,
+      "balance": null,
+      "motion": null
+    },
+    "selection": {
+      "whyHeadline": "Selected as top-ranked Belgian headline (score 103.67 = frequency 100 + priority 0 + recency 3.67).",
+      "priorityTerms": []
+    },
+    "qualitySummary": "TOTAL_ALIGN 66.8."
+  },
+  "runPolicy": {
+    "artworksPerRun": 1,
+    "multiVariant": false
+  },
+  "artFramework": {
+    "version": 3,
+    "intent": {
+      "statement": "🎧How will we feel the government's energy support? | Trump does end up extending the ceasefire with Iran after all | Michael Jackson film premieres: our journalist saw it in preview translated through Clyfford Still's visual language as a non-literal image.",
+      "coreImpulse": "Clyfford Still, born on November 30, 1904, in Grandin, North Dakota, emerged as one of the most influential American artists of the 20th century, playing a pivotal role in shaping the trajectory of abstract expression... Clyfford Still was an American painter, and one of the leading figures in the first generation of Abstract Expressionists, who developed a new, powerful approach to painting in the years immediately following World Wa... Clyfford Still Art Artist Paintings Biography Abstract Expressionism CLYFFORD STILL Master of Abstract Expressionism Clyfford Still (November 30, 1904 - June 23, 1980) was an American artist, a painter, and one of the... Read more detail in the biography or check out some Clyfford Still quotes about his process.",
+      "artistTranslationLogic": [
+        "Clyfford Still's formal logic should dominate before any spectacle or scenic excess."
+      ],
+      "emotionalClimate": {
+        "summary": "Clyfford Still, born on November 30, 1904, in Grandin, North Dakota, emerged as one of the most influential American artists of the 20th century, playing a pivotal role in shaping the trajectory of abstract expression... Clyfford Still was an American painter, and one of the leading figures in the first generation of Abstract Expressionists, who developed a new, powerful approach to painting in the years immediately following World Wa... Clyfford Still Art Artist Paintings Biography Abstract Expressionism CLYFFORD STILL Master of Abstract Expressionism Clyfford Still (November 30, 1904 - June 23, 1980) was an American artist, a painter, and one of the... Read more detail in the biography or check out some Clyfford Still quotes about his process.",
+        "pressure": "low",
+        "pace": "slow",
+        "socialReach": "public"
+      },
+      "visualGravity": {
+        "anchor": null,
+        "dominantStructure": "Build the image around one readable structural law.",
+        "scaleBehavior": "Keep the space bounded and compositionally intentional."
+      },
+      "materialLogic": {
+        "surfaceBehavior": [],
+        "spatialHabits": [],
+        "handling": "Clyfford Still's surface should feel made, not generic."
+      },
+      "colorField": {
+        "paletteSignals": [],
+        "contrastMode": "measured contrast with restrained vibration"
+      },
+      "symbolicDensity": {
+        "primaryMotif": "flow",
+        "motifVocabulary": [],
+        "literalness": "non-literal"
+      },
+      "tensionEngine": {
+        "conflictAxis": "Trump",
+        "escalationMode": "Let tension accumulate through structure, not narration.",
+        "releaseValve": "Allow only a narrow zone of release."
+      },
+      "audiencePosition": {
+        "stance": "Clyfford Still, born on November 30, 1904, in Grandin, North Dakota, emerged as one of the most influential American artists of the 20th century, playing a pivotal role in shaping the trajectory of abstract expression... Clyfford Still, born on November 30, 1904, in Grandin, North Dakota, emerged as one of the most influential American artists of the 20th century, playing a pivotal role in shaping the trajectory of abstract expression... Clyfford Still Art Artist Paintings Biography Abstract Expressionism CLYFFORD STILL Master of Abstract Expressionism Clyfford Still (November 30, 1904 - June 23, 1980) was an American artist, a painter, and one of the... Clyfford Still, born on November 30, 1904, in Grandin, North Dakota, emerged as one of the most influential American artists of the 20th century, playing a pivotal role in shaping the trajectory of abstract expression...",
+        "distance": "immersed but not illustrative"
+      },
+      "controlVsAccident": {
+        "balance": "controlled with selective instability",
+        "motionTemperament": "steady",
+        "accidentRole": "use drift or fracture sparingly to keep the field alive"
+      },
+      "antiDriftRules": [
+        "Do not collapse into biography summary, symbolic cliché, or generic procedural spectacle."
+      ],
+      "finalCompression": "Clyfford Still, born on November 30, 1904, in Grandin, North Dakota, emerged as one of the most influential American artists of the 20th century, playing a pivotal role in shaping the trajectory of abstract expression... Clyfford Still was an American painter, and one of the leading figures in the first generation of Abstract Expressionists, who developed a new, powerful approach to painting in the years immediately following World Wa... Clyfford Still Art Artist Paintings Biography Abstract Expressionism CLYFFORD STILL Master of Abstract Expressionism Clyfford Still (November 30, 1904 - June 23, 1980) was an American artist, a painter, and one of the... Read more detail in the biography or check out some Clyfford Still quotes about his process. Build the image around one readable structural law.",
+      "artistAnchors": {
+        "formalLogic": [],
+        "motifVocabulary": [],
+        "compositionCues": [],
+        "paletteSignals": [],
+        "surfaceBehavior": [],
+        "spatialHabits": [],
+        "translationDirectives": []
+      },
+      "threeJsFreedomEnvelope": [],
+      "avoidSignals": [],
+      "threeJsTranslationExamples": []
+    }
+  },
+  "debugFile": "./data/artworks-debug/2026-04-22-echoes-of-will-feel-government-energy.json"
+}
