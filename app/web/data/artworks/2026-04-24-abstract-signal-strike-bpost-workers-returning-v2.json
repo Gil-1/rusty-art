@@ -1,0 +1,816 @@
+{
+  "id": "2026-04-24-abstract-signal-strike-bpost-workers-returning-v2",
+  "date": "2026-04-24",
+  "title": "Abstract Signal: Strike bpost workers returning",
+  "generatedAt": "2026-04-24T09:52:42.288Z",
+  "news": {
+    "source": "lavenir",
+    "title": "Strike at bpost: \"90% of workers are returning to work without blockades,\" says Vanessa Matz, with strike pickets in Wallonia and Brussels",
+    "link": "https://www.lavenir.net/actu/belgique/2026/04/24/greve-chez-bpost-90-des-travailleurs-reprennent-le-travail-sans-blocage-selon-la-ministre-vanessa-matz-UPTABXBZ4RCLROZV5U2QPXBKHI/",
+    "score": 87.244
+  },
+  "inspiration": {
+    "artist": "Hilma af Klint",
+    "tags": [
+      "symbolic",
+      "spiral",
+      "organic"
+    ],
+    "links": {
+      "wikipedia": "https://en.wikipedia.org/wiki/Hilma_af_Klint",
+      "reference": "https://www.modernamuseet.se/stockholm/en/exhibitions/hilma-af-klint/"
+    }
+  },
+  "seed": 1563821610,
+  "scene": {
+    "motif": "flow",
+    "shapeCount": 90,
+    "turbulence": 0.336,
+    "spiralBias": 0.936,
+    "motionSpeed": 0.001673,
+    "bloom": 0.08,
+    "grain": 0.034,
+    "fogDensity": 0.053,
+    "distortion": 0.12,
+    "flowField": 0.16,
+    "anchorStrength": 0.639,
+    "anchorOffsetX": 0.022,
+    "layerBalance": {
+      "structure": 0.732,
+      "chaos": 0.297
+    },
+    "expression": {
+      "tension": 0.31,
+      "structure": 0.708,
+      "motion": 0.724,
+      "noise": 0.303,
+      "urgency": 0.919,
+      "contrast": 0.414
+    },
+    "palette": {
+      "bg": "#eadfbd",
+      "primary": "#c94a22",
+      "secondary": "#e09a28",
+      "glow": "#b79032",
+      "anchor": "#315f9f"
+    },
+    "elements": [
+      {
+        "id": "el-01-cm.afklint-visible-altarpiece.v2",
+        "moduleType": "cm.afklint-visible-altarpiece.v2",
+        "capabilities": [],
+        "stackFamilies": [],
+        "styleTags": [],
+        "libraryRef": null,
+        "coverage": 0.92,
+        "edgeSoftness": 0.018,
+        "grainStrength": 0.075,
+        "color": "primary",
+        "opacity": 0.95,
+        "intensity": 0.86,
+        "scenePurpose": "Carries the rebuilt altarpiece image and guarantees all central symbolic geometry remains visible.",
+        "expectedRead": "A warm handmade Hilma af Klint-like painted temple field under pressure.",
+        "mustNotReadAs": [
+          "black screen",
+          "digital UI panel",
+          "generic glow portal"
+        ],
+        "animation": {
+          "pulse": 0.04,
+          "wobbleX": 0.01,
+          "wobbleY": 0.01,
+          "drift": 0.02
+        },
+        "techniqueRef": "t.painted-altarpiece-field",
+        "role": "focal-anchor",
+        "layer": "midground",
+        "motif": "flow",
+        "intentCadence": "measured"
+      },
+      {
+        "id": "el-02-cm.afklint-picket-strokes.v2",
+        "moduleType": "cm.afklint-picket-strokes.v2",
+        "capabilities": [],
+        "stackFamilies": [],
+        "styleTags": [],
+        "libraryRef": null,
+        "count": 23,
+        "height": 0.18,
+        "baseY": 0.14,
+        "color": "glow",
+        "opacity": 0.72,
+        "intensity": 0.48,
+        "scenePurpose": "Keeps the strike picket signal present without turning the image into illustration.",
+        "expectedRead": "Small low red-gold ceremonial marks pressed against the lower edge.",
+        "mustNotReadAs": [
+          "large polygonal background",
+          "bar chart",
+          "crowd silhouettes"
+        ],
+        "animation": {
+          "pulse": 0.08,
+          "wobbleX": 0.02,
+          "wobbleY": 0.01,
+          "drift": 0.03
+        },
+        "techniqueRef": "t.low-picket-liturgy",
+        "role": "support-rhythm",
+        "layer": "foreground",
+        "motif": "flow",
+        "intentCadence": "measured"
+      }
+    ],
+    "shaderLayers": 4,
+    "elementDiversity": 2,
+    "paletteVariance": 0,
+    "motionSpeedNormalized": 0.746,
+    "camera": {
+      "autoRotate": false,
+      "autoRotateSpeed": 0.146,
+      "minDistance": 6,
+      "maxDistance": 24,
+      "cycleSeconds": 24,
+      "beats": [
+        {
+          "t": 0,
+          "radius": 12.35,
+          "theta": 0.049,
+          "phi": 1.349,
+          "hold": 1.12
+        },
+        {
+          "t": 0.34,
+          "radius": 11.92,
+          "theta": 0.196,
+          "phi": 1.307,
+          "hold": 0.72
+        },
+        {
+          "t": 0.68,
+          "radius": 12.08,
+          "theta": 0.36,
+          "phi": 1.369,
+          "hold": 0.84
+        },
+        {
+          "t": 1,
+          "radius": 12.26,
+          "theta": 0.124,
+          "phi": 1.326,
+          "hold": 1.16
+        }
+      ],
+      "target": [
+        0,
+        0,
+        0
+      ]
+    },
+    "post": {
+      "vignette": 0.08,
+      "contrast": 1.14,
+      "saturation": 0.92,
+      "exposure": 1.04,
+      "breathing": {
+        "hueShift": 0.037,
+        "saturationAmplitude": 0.065,
+        "exposureAmplitude": 0.05,
+        "phaseA": 0.6452,
+        "phaseB": 0.3173
+      }
+    },
+    "styleFingerprint": {
+      "pulseFamily": "ascending",
+      "stripeWarp": 0.06,
+      "edgeSoftness": 0.34,
+      "cameraSway": 0.12,
+      "edgeHardness": 0.5,
+      "temperatureBias": 0.24,
+      "verticalBias": 0,
+      "cadenceBias": 0
+    },
+    "sceneAuthoring": {
+      "mode": "agent-dsl",
+      "planner": "openclaw-agent-scene-planner",
+      "representation": {
+        "id": "rep.visible-fracture-altarpiece",
+        "label": "Visible Fracture Altarpiece",
+        "description": "A rebuilt single painted plane makes the missing artwork legible: cream field, red-orange ovals, gold gate, blue fracture, and low picket strokes.",
+        "scoreHint": 0.86,
+        "motif": "fractured ceremonial return gate",
+        "cadence": "measured",
+        "scenePrompt": "Frontal painted Hilma af Klint-like altarpiece responding non-literally to bpost strike return, with visible red-orange concentric temple geometry, offset blue fracture seam, narrow dull-gold central gate, and low red-gold picket marks on warm cream pigment gr",
+        "colorMood": "warm cream, red-orange pressure, dull gold release, restrained blue fracture",
+        "spatialIntent": "Flat frontal painted depth with clear background ground, midground temple geometry, and foreground base marks.",
+        "imageAuthorship": {
+          "structuralLaw": "Bilateral sacred geometry is almost stable, but one offset blue seam breaks the symmetry and a narrow gold gate offers limited passage.",
+          "dominantForms": [
+            "concentric red-orange ovals",
+            "slim vertical gold threshold",
+            "single blue fracture seam",
+            "low vertical picket strokes"
+          ],
+          "edgeBehavior": "Soft handmade borders with slight wavering, never hard UI geometry.",
+          "surfaceBehavior": "Matte pigment density, uneven grain, translucent layering of red and gold.",
+          "depthLogic": "Cream ground sits back; oval bands occupy the main painted plane; gold and blue marks sit forward; picket strokes touch the lower foreground.",
+          "motionLogic": "Nearly still, with only slow pigment breathing and tiny seam shimmer.",
+          "forbiddenDrift": [
+            "black void",
+            "generic sacred-core composition",
+            "oversized abstract slabs",
+            "literal news illustration"
+          ]
+        },
+        "technicalTranslation": {
+          "realizationStrategy": "Use a deterministic full-plane shader as the focal image so the key composition cannot disappear, then overlay a transparent shader of small base strokes.",
+          "reuseBias": "invent",
+          "whyThisApproach": "The critique shows the previous modular assembly failed visibility and scale; one authored shader plane guarantees the intended painting is on screen.",
+          "notes": [
+            "Camera must stay frontal.",
+            "Bloom is intentionally low so gold reads as paint.",
+            "The picket layer is transparent and subordinate."
+          ],
+          "motionCadence": "measured"
+        },
+        "mustShow": [
+          "warm cream painted field visible across the canvas",
+          "red-orange concentric oval temple geometry",
+          "thin dull-gold central vertical threshold",
+          "one offset blue fracture seam",
+          "small low red-gold picket-like vertical strokes",
+          "matte grain and softened handmade edges"
+        ],
+        "mustAvoid": [
+          "near-black empty render",
+          "cropped orange-brown polygon slabs",
+          "neon glow",
+          "literal postal logos or workers",
+          "dashboard or screen-panel staging"
+        ],
+        "reviewFocus": [
+          "visibility of full artwork above title card",
+          "legibility of gold gate and blue seam",
+          "whether picket strokes stay low and subordinate",
+          "painted surface read"
+        ],
+        "artistTechniqueObservations": {
+          "medium": "painting",
+          "primaryTechnique": null,
+          "markMakingTraits": [],
+          "surfaceQualities": [
+            "painted surface behavior matters more than object literalism"
+          ],
+          "paletteTendencies": [
+            "dominant hues: orange, red, yellow"
+          ],
+          "spatialHabits": []
+        },
+        "rationale": {
+          "rebuildResponse": "Directly addresses the black render, missing gate, missing seam, missing ovals, and oversized slab failure.",
+          "newsTranslation": "The return without blockades becomes constrained passage; pickets remain as base rhythm rather than literal people."
+        },
+        "techniques": [
+          {
+            "id": "t.painted-altarpiece-field",
+            "name": "Frontal Painted Altarpiece Shader",
+            "type": "shader",
+            "purpose": "Hold the entire composition visibly in one stable painted field.",
+            "reuseModuleType": null,
+            "params": {
+              "coverage": 0.92,
+              "blueSeamOffset": -0.11,
+              "gateWidth": 0.045
+            }
+          },
+          {
+            "id": "t.low-picket-liturgy",
+            "name": "Low Ceremonial Picket Marks",
+            "type": "shader",
+            "purpose": "Make the strike pickets readable as small ritual base presences.",
+            "reuseModuleType": null,
+            "params": {
+              "count": 23,
+              "height": 0.18
+            }
+          }
+        ]
+      },
+      "artisticIntent": {
+        "statement": "A visible frontal painted altarpiece translates the bpost strike into a bounded spiritual geometry: return-to-work order presses inward, while one blue fracture and a narrow dull-gold gate preserve the unresolved social tension.",
+        "motif": "A red-orange temple of concentric ovals interrupted by a blue seam and grounded by s",
+        "emotionalArc": "Slow public pressure gathers in symmetrical ritual order, tightens around a central threshold, then releases only through a thin, uncertain gold passage.",
+        "compositionLogic": "Warm cream ground first; red-orange concentric sacred geometry fills the upper field; a slim gold vertical anchor holds center; one offset blue fracture cuts the order; low red-gold vertical marks sit along the base as subdued picket presences.",
+        "imagePrompt": "A flat frontal Hilma af Klint-inspired painted altarpiece on warm cream matte ground, red-orange concentric oval temple geometry, bounded bilateral symmetry, a narrow dull-gold central vertical gate, one offset blue fracture seam crossing the gate, small low red-gold picket strokes near the lower edge, handmade softene"
+      },
+      "executionPlan": {
+        "palette": {
+          "bg": "#eadfbd",
+          "primary": "#c94a22",
+          "secondary": "#e09a28",
+          "glow": "#b79032",
+          "anchor": "#315f9f"
+        },
+        "camera": {
+          "autoRotate": false,
+          "cycleSeconds": 24,
+          "target": [
+            0,
+            0,
+            0
+          ]
+        },
+        "post": {
+          "contrast": 1.08,
+          "saturation": 0.92,
+          "vignette": 0.08,
+          "exposure": 1.04
+        },
+        "global": {
+          "shapeCountHint": 90,
+          "flowField": 0.16,
+          "distortion": 0.12,
+          "bloom": 0.08
+        },
+        "techniques": [
+          {
+            "id": "t.painted-altarpiece-field",
+            "name": "Frontal Painted Altarpiece Shader",
+            "type": "shader",
+            "purpose": "Guarantee a visible cream ground, concentric red-orange geometry, central gold gate, blue fracture seam, and pigment grain in one readable field.",
+            "reuseModuleType": "cm.afklint-visible-altarpiece.v2",
+            "params": {
+              "coverage": 0.92,
+              "edgeSoftness": 0.018,
+              "grain": 0.08
+            }
+          },
+          {
+            "id": "t.low-picket-liturgy",
+            "name": "Low Ceremonial Picket Marks",
+            "type": "shader",
+            "purpose": "Translate strike pickets into small subordinate red-gold vertical marks at the base instead of literal figures or cropped slabs.",
+            "reuseModuleType": "cm.afklint-picket-strokes.v2",
+            "params": {
+              "count": 23,
+              "height": 0.18,
+              "variation": 0.37
+            }
+          },
+          {
+            "id": "t.matte-pigment",
+            "name": "Matte Pigment Surface",
+            "type": "shader",
+            "purpose": "Add handmade grain and uneven paint density so the result reads as painted surface rather than digital neon.",
+            "reuseModuleType": "cm.afklint-visible-altarpiece.v2",
+            "params": {
+              "grainStrength": 0.075,
+              "opacityLayering": 0.18
+            }
+          }
+        ]
+      },
+      "moduleOverrides": [],
+      "customModules": [
+        {
+          "id": "cm.afklint-visible-altarpiece.v2",
+          "family": "shader",
+          "kind": "dsl",
+          "allowOverride": false,
+          "seedPolicy": "deterministic",
+          "paramsSchema": {
+            "coverage": {
+              "type": "number",
+              "default": 0.92
+            },
+            "edgeSoftness": {
+              "type": "number",
+              "default": 0.018
+            },
+            "grainStrength": {
+              "type": "number",
+              "default": 0.075
+            },
+            "blueSeamOffset": {
+              "type": "number",
+              "default": -0.11
+            },
+            "gateWidth": {
+              "type": "number",
+              "default": 0.045
+            }
+          },
+          "source": {
+            "dsl": {
+              "primitive": "shaderPlane",
+              "fit": "contain",
+              "bounds": {
+                "width": 3.2,
+                "height": 4.15
+              },
+              "transparent": false,
+              "depthWrite": false,
+              "uniforms": {
+                "uCoverage": 0.92,
+                "uEdgeSoftness": 0.018,
+                "uGrainStrength": 0.075,
+                "uBlueSeamOffset": -0.11,
+                "uGateWidth": 0.045
+              }
+            },
+            "glsl": {
+              "vertex": "varying vec2 vUv;\nvoid main(){\n vUv = uv;\n gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);\n}",
+              "fragment": "precision highp float;\nvarying vec2 vUv;\nuniform float uTime;\nuniform float uCoverage;\nuniform float uEdgeSoftness;\nuniform float uGrainStrength;\nuniform float uBlueSeamOffset;\nuniform float uGateWidth;\nfloat hash(vec2 p){ return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453123); }\nfloat noise(vec2 p){ vec2 i=floor(p); vec2 f=fract(p); vec2 u=f*f*(3.0-2.0*f); return mix(mix(hash(i),hash(i+vec2(1.0,0.0)),u.x),mix(hash(i+vec2(0.0,1.0)),hash(i+vec2(1.0,1.0)),u.x),u.y); }\nfloat ellipseBand(vec2 p, vec2 r, float w){ float d=length(p/r); return smoothstep(1.0+w,1.0,d)-smoothstep(1.0,1.0-w,d); }\nfloat softRect(vec2 p, vec2 halfSize, float soft){ vec2 q=abs(p)-halfSize; float outD=length(max(q,0.0))+min(max(q.x,q.y),0.0); return 1.0-smoothstep(0.0,soft,outD); }\nvoid main(){\n vec2 uv=vUv;\n vec2 p=(uv-0.5)*vec2(1.0,1.28);\n vec3 cream=vec3(0.918,0.867,0.725);\n vec3 red=vec3(0.788,0.290,0.133);\n vec3 orange=vec3(0.878,0.604,0.157);\n vec3 gold=vec3(0.718,0.565,0.197);\n vec3 blue=vec3(0.193,0.373,0.624);\n vec3 umber=vec3(0.445,0.190,0.110);\n float paperEdge=softRect(p, vec2(0.455*uCoverage,0.585*uCoverage), 0.018);\n float grain=noise(uv*220.0)+0.45*noise(uv*63.0);\n vec3 col=cream*(0.93+0.10*grain);\n vec2 temple=p-vec2(0.0,0.03);\n float bands=0.0;\n bands+=ellipseBand(temple, vec2(0.36,0.48), 0.020);\n bands+=ellipseBand(temple, vec2(0.29,0.39), 0.018);\n bands+=ellipseBand(temple, vec2(0.22,0.30), 0.016);\n bands+=ellipseBand(temple, vec2(0.145,0.205), 0.014);\n float upper= smoothstep(-0.34,-0.05,p.y);\n float handmade=0.82+0.18*noise(uv*95.0+3.0);\n col=mix(col, mix(red,orange,0.34+0.26*noise(uv*9.0)), clamp(bands*upper*handmade,0.0,0.92));\n float gate=softRect(vec2(p.x,p.y+0.03), vec2(uGateWidth,0.46), 0.010);\n float gateCore=softRect(vec2(p.x,p.y+0.03), vec2(uGateWidth*0.42,0.50), 0.006);\n col=mix(col,gold,gate*0.72);\n col=mix(col,vec3(0.82,0.68,0.31),gateCore*0.42);\n float seamX=uBlueSeamOffset+0.030*sin((p.y+0.45)*9.0)+0.010*sin((p.y+0.2)*31.0);\n float seam=1.0-smoothstep(0.006,0.022,abs(p.x-seamX));\n float seamMask=smoothstep(-0.48,-0.32,p.y)*(1.0-smoothstep(0.52,0.59,p.y));\n col=mix(col,blue,seam*seamMask*0.88);\n float baseLine=softRect(vec2(p.x,p.y+0.465), vec2(0.38,0.007),0.006);\n col=mix(col,umber,baseLine*0.45);\n col=mix(vec3(0.08,0.065,0.052),col,paperEdge);\n col*=0.975+uGrainStrength*(grain-0.65);\n gl_FragColor=vec4(col,1.0);\n}"
+            },
+            "js": null
+          },
+          "budgets": {
+            "maxInstances": 1,
+            "maxShaderOpsHint": 0.72,
+            "mobileSafe": true
+          }
+        },
+        {
+          "id": "cm.afklint-picket-strokes.v2",
+          "family": "shader",
+          "kind": "dsl",
+          "allowOverride": false,
+          "seedPolicy": "deterministic",
+          "paramsSchema": {
+            "count": {
+              "type": "number",
+              "default": 23
+            },
+            "height": {
+              "type": "number",
+              "default": 0.18
+            },
+            "baseY": {
+              "type": "number",
+              "default": 0.14
+            },
+            "variation": {
+              "type": "number",
+              "default": 0.37
+            }
+          },
+          "source": {
+            "dsl": {
+              "primitive": "shaderPlane",
+              "fit": "contain",
+              "bounds": {
+                "width": 3.2,
+                "height": 4.15
+              },
+              "transparent": true,
+              "depthWrite": false,
+              "uniforms": {
+                "uCount": 23,
+                "uHeight": 0.18,
+                "uBaseY": 0.14,
+                "uVariation": 0.37
+              }
+            },
+            "glsl": {
+              "vertex": "varying vec2 vUv;\nvoid main(){ vUv=uv; gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0); }",
+              "fragment": "precision highp float;\nvarying vec2 vUv;\nuniform float uTime;\nuniform float uCount;\nuniform float uHeight;\nuniform float uBaseY;\nuniform float uVariation;\nfloat hash(float n){ return fract(sin(n*91.71)*43758.5453); }\nfloat stroke(vec2 p, float x, float h, float w){ float y0=uBaseY; float y1=uBaseY+h; float taper=mix(0.55,1.0,smoothstep(y0,y1,p.y))*(1.0-0.30*smoothstep(y0,y1,p.y)); float dx=abs(p.x-x); float body=1.0-smoothstep(w*taper,w*taper+0.008,dx); float yr=smoothstep(y0,y0+0.018,p.y)*(1.0-smoothstep(y1-0.018,y1,p.y)); return body*yr; }\nvoid main(){\n vec2 uv=vUv;\n vec2 p=vec2((uv.x-0.5),uv.y);\n vec3 red=vec3(0.71,0.20,0.12);\n vec3 gold=vec3(0.75,0.57,0.22);\n float a=0.0;\n vec3 col=vec3(0.0);\n for(int i=0;i<32;i++){\n if(float(i)>=uCount) break;\n float fi=float(i);\n float x=mix(-0.39,0.39,(fi+0.5)/uCount)+0.010*(hash(fi)-0.5);\n float h=uHeight*(0.62+uVariation*hash(fi+4.0));\n float w=0.006+0.006*hash(fi+9.0);\n float s=stroke(p,x,h,w);\n vec3 c=mix(red,gold,hash(fi+19.0)*0.55);\n col+=c*s*(0.55+0.35*hash(fi+29.0));\n a=max(a,s*0.72);\n }\n gl_FragColor=vec4(col,max(0.0,min(0.78,a)));\n}"
+            },
+            "js": null
+          },
+          "budgets": {
+            "maxInstances": 1,
+            "maxShaderOpsHint": 0.42,
+            "mobileSafe": true
+          }
+        },
+        {
+          "id": "cm.afklint-triptych-return.v1",
+          "family": "shader",
+          "kind": "dsl",
+          "allowOverride": false,
+          "seedPolicy": "deterministic",
+          "paramsSchema": {
+            "panelGap": {
+              "type": "number",
+              "default": 0.035
+            },
+            "fractureLean": {
+              "type": "number",
+              "default": 0.08
+            }
+          },
+          "source": {
+            "dsl": {
+              "primitive": "shaderPlane",
+              "fit": "contain",
+              "bounds": {
+                "width": 3.3,
+                "height": 4.1
+              },
+              "transparent": false,
+              "depthWrite": false,
+              "uniforms": {
+                "uPanelGap": 0.035,
+                "uFractureLean": 0.08
+              }
+            },
+            "glsl": {
+              "vertex": "varying vec2 vUv;\nvoid main(){ vUv=uv; gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0); }",
+              "fragment": "precision highp float;\nvarying vec2 vUv;\nuniform float uTime;\nuniform float uPanelGap;\nuniform float uFractureLean;\nfloat hash(vec2 p){return fract(sin(dot(p,vec2(41.3,289.1)))*43758.5453);} \nfloat ring(vec2 p, vec2 r, float w){float d=length(p/r);return smoothstep(1.0+w,1.0,d)-smoothstep(1.0,1.0-w,d);} \nfloat rect(vec2 p, vec2 h, float s){vec2 q=abs(p)-h;float d=length(max(q,0.0))+min(max(q.x,q.y),0.0);return 1.0-smoothstep(0.0,s,d);} \nvoid main(){\n vec2 p=(vUv-0.5)*vec2(1.0,1.22); vec3 cream=vec3(0.91,0.85,0.69); vec3 red=vec3(0.75,0.25,0.13); vec3 orange=vec3(0.88,0.55,0.12); vec3 gold=vec3(0.70,0.54,0.19); vec3 blue=vec3(0.17,0.34,0.60); float g=hash(floor(vUv*260.0)); vec3 col=cream*(0.95+0.06*g);\n float paper=rect(p,vec2(0.46,0.57),0.02); float gaps=1.0-max(rect(vec2(p.x+0.17,p.y),vec2(uPanelGap,0.56),0.006),rect(vec2(p.x-0.17,p.y),vec2(uPanelGap,0.56),0.006));\n for(int k=0;k<3;k++){ float cx=-0.31+float(k)*0.31; vec2 q=p-vec2(cx,0.03); float rr=ring(q,vec2(0.12,0.28),0.018)+ring(q,vec2(0.08,0.20),0.014); col=mix(col,mix(red,orange,float(k)*0.28),clamp(rr,0.0,0.8)); }\n float gate=rect(vec2(p.x,p.y+0.03),vec2(0.026,0.49),0.007); col=mix(col,gold,gate*0.86);\n float sx=-0.07+uFractureLean*p.y+0.012*sin(p.y*22.0); float seam=1.0-smoothstep(0.006,0.019,abs(p.x-sx)); col=mix(col,blue,seam*0.82);\n col=mix(vec3(0.09,0.07,0.05),col,paper*gaps); gl_FragColor=vec4(col,1.0);\n}"
+            },
+            "js": null
+          },
+          "budgets": {
+            "maxInstances": 1,
+            "maxShaderOpsHint": 0.66,
+            "mobileSafe": true
+          }
+        }
+      ],
+      "policyPasses": {
+        "advisoryOnly": true,
+        "skipped": [
+          "focal-hierarchy",
+          "envelope-clamp",
+          "composition-plan",
+          "artist-visual-profile",
+          "scene-element-module-enforcement",
+          "stack-pipeline-apply",
+          "gap-focused-pass",
+          "artist-hard-constraints"
+        ]
+      }
+    },
+    "seedVersion": 2,
+    "seeds": {
+      "baseSeed": 3152638498,
+      "runSeed": 1563821610,
+      "geomSeed": 8586418,
+      "animSeed": 4162196995,
+      "colorSeed": 4013097933,
+      "cameraSeed": 3246693673
+    },
+    "customModuleReport": {
+      "declaredCustomModules": 3,
+      "accepted": [
+        {
+          "id": "cm.afklint-visible-altarpiece.v2",
+          "family": "shader",
+          "kind": "dsl",
+          "fingerprint": "84c840a2"
+        },
+        {
+          "id": "cm.afklint-picket-strokes.v2",
+          "family": "shader",
+          "kind": "dsl",
+          "fingerprint": "c67b35cc"
+        },
+        {
+          "id": "cm.afklint-triptych-return.v1",
+          "family": "shader",
+          "kind": "dsl",
+          "fingerprint": "5858dbe2"
+        }
+      ],
+      "rejected": [],
+      "moduleOverrideCount": 0,
+      "fingerprint": "0d7b9590"
+    },
+    "techStack": {
+      "id": "shader-field-balanced",
+      "name": "Shader Field Layering",
+      "family": "shader-field",
+      "strategyFamilies": [
+        "flow",
+        "hybrid",
+        "orbits"
+      ],
+      "rationale": {
+        "signals": {
+          "conflict": 0.45,
+          "context": 0.4,
+          "motion": 0.115,
+          "turbulence": 0.426,
+          "structureBias": 0,
+          "densityBias": 0,
+          "edgeBias": 0,
+          "motionBias": 0,
+          "visualProfile": {
+            "profileCadence": "steady",
+            "preferredFamilies": []
+          }
+        },
+        "familyHits": 0,
+        "idHits": 0,
+        "penalties": [
+          "motion<0.28"
+        ],
+        "visualAffinity": 0,
+        "elementCoverage": {
+          "score": 0,
+          "coverage": 0,
+          "moduleCoverage": 0,
+          "missingCapabilities": [
+            "shaderPlane",
+            "transparent overlay",
+            "deterministic grain"
+          ]
+        },
+        "preferredFamilies": [],
+        "preferredFamilyLocked": false,
+        "notPreferredPenalty": 0
+      },
+      "dominantPrimitive": "cm.afklint-visible-altarpiece.v2",
+      "moduleSet": [
+        "cm.afklint-visible-altarpiece.v2",
+        "cm.afklint-picket-strokes.v2"
+      ],
+      "pipelineKind": "shader-field"
+    },
+    "renderPipeline": {
+      "kind": "shader-field",
+      "family": "shader-field",
+      "fallback": false,
+      "advisoryOnly": true,
+      "dominantPrimitive": "cm.afklint-visible-altarpiece.v2",
+      "moduleSet": [
+        "cm.afklint-visible-altarpiece.v2",
+        "cm.afklint-picket-strokes.v2"
+      ]
+    }
+  },
+  "sceneStrategy": {
+    "selected": {
+      "id": "atomic-balanced-flow",
+      "name": "Balanced Flow Field",
+      "type": "atomic",
+      "family": "flow"
+    },
+    "applied": false,
+    "fallbackReason": "agent-authored-scene-elements"
+  },
+  "techStack": {
+    "id": "shader-field-balanced",
+    "name": "Shader Field Layering",
+    "family": "shader-field"
+  },
+  "newsVisualMappings": [
+    {
+      "signal": "title evidence [chez, bpost, travailleurs, reprennent] -> motif flow",
+      "from": "chez, bpost, travailleurs, reprennent",
+      "visualDecision": "structural motif armature set to flow"
+    },
+    {
+      "signal": "composition foreground conflict",
+      "from": "strike",
+      "visualDecision": "foreground role tension-knot at pressure 0.281"
+    },
+    {
+      "signal": "composition midground context",
+      "from": "chez, bpost, travailleurs, reprennent",
+      "visualDecision": "midground role context-drift with density 0.34"
+    },
+    {
+      "signal": "composition background mood",
+      "from": "chez, bpost, travailleurs, reprennent",
+      "visualDecision": "background mood watchful depth 0.309"
+    },
+    {
+      "signal": "urgency -> motion",
+      "from": "ageHours=2.27",
+      "visualDecision": "motionSpeedNormalized=0.746"
+    },
+    {
+      "signal": "title semantics -> palette/edge cadence",
+      "from": "temp=0.24 edge=0.5",
+      "visualDecision": "postContrast=1.14 accentType=n/a"
+    },
+    {
+      "signal": "article institutional/conflict polarity",
+      "from": "chez, bpost, travailleurs, reprennent",
+      "visualDecision": "accent element n/a with opacity n/a"
+    },
+    {
+      "signal": "artist research context Hilma af Klint",
+      "from": "tags symbolic, spiral, organic",
+      "visualDecision": "artist profile captured as metadata only; no technical routing applied"
+    }
+  ],
+  "qualityScore": {
+    "score": 51.4,
+    "summary": "Alignment 66.9 with strongest channel emotional.",
+    "heuristic": {
+      "score": 66.9,
+      "breakdown": {
+        "legibility": 74.5,
+        "emotionalReadability": 68.1,
+        "coherence": 90.9,
+        "focalAnchor": 70.3,
+        "technicalRichness": 77.9,
+        "restraint": 79.7,
+        "alignment": 66.9
+      }
+    },
+    "calibration": {
+      "sampleCount": 1,
+      "trustWeight": 0.4
+    },
+    "alignment": {
+      "totalAlign": 66.9,
+      "components": {
+        "title": {
+          "score": 64.4
+        },
+        "style": {
+          "score": 63
+        },
+        "emotional": {
+          "score": 74.5
+        }
+      }
+    }
+  },
+  "rationale": {
+    "intent": {
+      "signal": null,
+      "emotion": null,
+      "tension": null,
+      "balance": null,
+      "motion": null
+    },
+    "selection": {
+      "whyHeadline": "Selected as top-ranked Belgian headline (score 87.244 = frequency 84 + priority 0 + recency 3.244).",
+      "priorityTerms": []
+    },
+    "qualitySummary": "TOTAL_ALIGN 66.9."
+  },
+  "runPolicy": {
+    "artworksPerRun": 1,
+    "multiVariant": false
+  },
+  "artFramework": {
+    "version": 3,
+    "intent": {
+      "statement": "Strike at bpost: \"90% of workers are returning to work without blockades,\" says Vanessa Matz, with strike pickets in Wallonia and Brussels translated through Hilma af Klint's visual language as a non-literal image.",
+      "coreImpulse": "In Hilma af Klint: Paintings for the Temple (paintings by Hilma af Klint) Af Klint concluded Paintings for the Temple with a triptych she called Altarpieces, featuring geometric shapes, bold primary colors, and gold l... Hilma af Klint was a Swedish artist and mystic whose paintings are considered to be among the first major abstract works in Western art history. After studying at the Royal Academy of Art in Stockholm, Hilma af Klint embarked on a major suite of paintings in 1904-06. Hilma af Klint did not ascribe to any of the established avant-garde movements of her time.",
+      "artistTranslationLogic": [
+        "Hilma af Klint's formal logic should dominate before any spectacle or scenic excess."
+      ],
+      "emotionalClimate": {
+        "summary": "In Hilma af Klint: Paintings for the Temple (paintings by Hilma af Klint) Af Klint concluded Paintings for the Temple with a triptych she called Altarpieces, featuring geometric shapes, bold primary colors, and gold l... Hilma af Klint was a Swedish artist and mystic whose paintings are considered to be among the first major abstract works in Western art history. After studying at the Royal Academy of Art in Stockholm, Hilma af Klint embarked on a major suite of paintings in 1904-06. Hilma af Klint did not ascribe to any of the established avant-garde movements of her time.",
+        "pressure": "rising",
+        "pace": "slow",
+        "socialReach": "public"
+      },
+      "visualGravity": {
+        "anchor": null,
+        "dominantStructure": "Build the image around one readable structural law.",
+        "scaleBehavior": "Keep the space bounded and compositionally intentional."
+      },
+      "materialLogic": {
+        "surfaceBehavior": [],
+        "spatialHabits": [],
+        "handling": "Hilma af Klint's surface should feel made, not generic."
+      },
+      "colorField": {
+        "paletteSignals": [],
+        "contrastMode": "measured contrast with restrained vibration"
+      },
+      "symbolicDensity": {
+        "primaryMotif": "fracture",
+        "motifVocabulary": [],
+        "literalness": "non-literal"
+      },
+      "tensionEngine": {
+        "conflictAxis": "Strike Bpost Workers",
+        "escalationMode": "Let tension accumulate through structure, not narration.",
+        "releaseValve": "Allow only a narrow zone of release."
+      },
+      "audiencePosition": {
+        "stance": "Hilma af Klint did not ascribe to any of the established avant-garde movements of her time. Hilma af Klint was a Swedish artist and mystic whose paintings are considered to be among the first major abstract works in Western art history. In Hilma af Klint: Paintings for the Temple (paintings by Hilma af Klint) Af Klint concluded Paintings for the Temple with a triptych she called Altarpieces, featuring geometric shapes, bold primary colors, and gold l... In Hilma af Klint: Paintings for the Temple (paintings by Hilma af Klint) Af Klint concluded Paintings for the Temple with a triptych she called Altarpieces, featuring geometric shapes, bold primary colors, and gold l...",
+        "distance": "immersed but not illustrative"
+      },
+      "controlVsAccident": {
+        "balance": "controlled with selective instability",
+        "motionTemperament": "steady",
+        "accidentRole": "use drift or fracture sparingly to keep the field alive"
+      },
+      "antiDriftRules": [
+        "Do not collapse into biography summary, symbolic cliché, or generic procedural spectacle."
+      ],
+      "finalCompression": "In Hilma af Klint: Paintings for the Temple (paintings by Hilma af Klint) Af Klint concluded Paintings for the Temple with a triptych she called Altarpieces, featuring geometric shapes, bold primary colors, and gold l... Hilma af Klint was a Swedish artist and mystic whose paintings are considered to be among the first major abstract works in Western art history. After studying at the Royal Academy of Art in Stockholm, Hilma af Klint embarked on a major suite of paintings in 1904-06. Hilma af Klint did not ascribe to any of the established avant-garde movements of her time. Build the image around one readable structural law.",
+      "artistAnchors": {
+        "formalLogic": [],
+        "motifVocabulary": [],
+        "compositionCues": [],
+        "paletteSignals": [],
+        "surfaceBehavior": [],
+        "spatialHabits": [],
+        "translationDirectives": []
+      },
+      "threeJsFreedomEnvelope": [],
+      "avoidSignals": [],
+      "threeJsTranslationExamples": []
+    }
+  },
+  "debugFile": "./data/artworks-debug/2026-04-24-abstract-signal-strike-bpost-workers-returning-v2.json"
+}

@@ -19,6 +19,11 @@ function normalizeStructuredGeometryType(value) {
   if (!normalized) return '';
   if (normalized === 'ellipsering') return 'ellipse-ring';
   if (normalized === 'ellipserings') return 'ellipse-rings';
+  if (normalized === 'ring') return 'ellipse-ring';
+  if (normalized === 'rings') return 'ellipse-rings';
+  if (normalized === 'concentricrings') return 'ellipse-rings';
+  if (normalized === 'ovalrings') return 'ellipse-rings';
+  if (normalized === 'gaterings') return 'ellipse-rings';
   if (normalized === 'stackedrects') return 'stacked-rects';
   if (normalized === 'tubepath') return 'tube-path';
   return normalized;
