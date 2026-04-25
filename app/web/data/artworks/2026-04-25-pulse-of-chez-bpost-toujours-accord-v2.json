@@ -1,0 +1,978 @@
+{
+  "id": "2026-04-25-pulse-of-chez-bpost-toujours-accord-v2",
+  "date": "2026-04-25",
+  "title": "Pulse of chez Bpost toujours accord",
+  "generatedAt": "2026-04-25T07:45:57.738Z",
+  "news": {
+    "source": "dh",
+    "title": "Grève chez Bpost: toujours pas d'accord entre entre syndicats et direction, les discussions reprendront lundi",
+    "link": "https://www.dhnet.be/actu/belgique/2026/04/24/greve-chez-bpost-toujours-pas-daccord-entre-entre-syndicats-et-direction-les-discussions-reprendront-lundi-KZLU35ZUAFHIRDQPBXUJNRO2CM/",
+    "score": 77
+  },
+  "inspiration": {
+    "artist": "Hilma af Klint",
+    "tags": [
+      "symbolic",
+      "spiral",
+      "organic"
+    ],
+    "links": {
+      "wikipedia": "https://en.wikipedia.org/wiki/Hilma_af_Klint",
+      "reference": "https://www.modernamuseet.se/stockholm/en/exhibitions/hilma-af-klint/"
+    }
+  },
+  "seed": 2649571257,
+  "scene": {
+    "motif": "flow",
+    "shapeCount": 96,
+    "turbulence": 0.382,
+    "spiralBias": 0.762,
+    "motionSpeed": 0.001312,
+    "bloom": 0.24,
+    "grain": 0.038,
+    "fogDensity": 0.056,
+    "distortion": 0.18,
+    "flowField": 0.28,
+    "anchorStrength": 0.639,
+    "anchorOffsetX": 0.065,
+    "layerBalance": {
+      "structure": 0.667,
+      "chaos": 0.316
+    },
+    "expression": {
+      "tension": 0.31,
+      "structure": 0.562,
+      "motion": 0.509,
+      "noise": 0.364,
+      "urgency": 0.409,
+      "contrast": 0.27
+    },
+    "palette": {
+      "bg": "#f3dfbd",
+      "primary": "#c8372d",
+      "secondary": "#e6a72e",
+      "glow": "#f5d76b",
+      "anchor": "#2e5f8a"
+    },
+    "elements": [
+      {
+        "id": "el-01-cm.afklint-temple-wash.v1",
+        "moduleType": "cm.afklint-temple-wash.v1",
+        "capabilities": [],
+        "stackFamilies": [],
+        "styleTags": [],
+        "libraryRef": null,
+        "grainScale": 36,
+        "edgeSoftness": 0.2,
+        "warmth": 0.68,
+        "color": "bg",
+        "opacity": 0.82,
+        "intensity": 0.44,
+        "scenePurpose": "Creates a light absorbing surface where the red and yellow currents can feel painted rather than lit.",
+        "expectedRead": "warm parchment-like paint with quiet inner warmth",
+        "mustNotReadAs": [
+          "blank page",
+          "flat UI canvas"
+        ],
+        "animation": {
+          "pulse": 0.06,
+          "wobbleX": 0.02,
+          "wobbleY": 0.02,
+          "drift": 0.1
+        },
+        "techniqueRef": "t.painted-temple-field",
+        "role": "atmosphere-field",
+        "layer": "background",
+        "motif": "flow",
+        "intentCadence": "steady"
+      },
+      {
+        "id": "el-02-drift-ribbon",
+        "moduleType": "drift-ribbon",
+        "capabilities": [
+          "fluid-drift",
+          "kinetic-motion"
+        ],
+        "stackFamilies": [
+          "geometry-heavy",
+          "particle-heavy",
+          "post-heavy"
+        ],
+        "styleTags": [
+          "ribbon",
+          "drift"
+        ],
+        "libraryRef": "element.drift-ribbon.v1",
+        "color": "primary",
+        "opacity": 0.46,
+        "intensity": 0.58,
+        "layer": "midground",
+        "ribbonCount": 2,
+        "mirror": true,
+        "gap": 0.42,
+        "width": 1.35,
+        "height": 3.2,
+        "curve": 0.18,
+        "scenePurpose": "Embodies the two negotiation bodies as warm lateral currents that approach but do not merge.",
+        "expectedRead": "two controlled painted flows pressing toward a central opening",
+        "mustNotReadAs": [
+          "flag",
+          "road",
+          "brand stripe"
+        ],
+        "animation": {
+          "pulse": 0.14,
+          "wobbleX": 0.08,
+          "wobbleY": 0.04,
+          "drift": 0.32
+        },
+        "techniqueRef": "t.negotiation-gate",
+        "role": "primary-signal",
+        "motif": "flow",
+        "intentCadence": "steady"
+      },
+      {
+        "id": "el-03-cm.afklint-gate-lattice.v1",
+        "moduleType": "cm.afklint-gate-lattice.v1",
+        "capabilities": [],
+        "stackFamilies": [],
+        "styleTags": [],
+        "libraryRef": null,
+        "ringCount": 4,
+        "barCount": 7,
+        "openingWidth": 0.18,
+        "scale": [
+          0.72,
+          1.02,
+          1
+        ],
+        "color": "anchor",
+        "opacity": 0.88,
+        "intensity": 0.76,
+        "scenePurpose": "Makes the planned resumption visible as a narrow open threshold rather than a resolution.",
+        "expectedRead": "small blue-gold aperture held open under pressure",
+        "mustNotReadAs": [
+          "eye",
+          "button",
+          "logo mark"
+        ],
+        "animation": {
+          "pulse": 0.1,
+          "wobbleX": 0.01,
+          "wobbleY": 0.01,
+          "drift": 0.02
+        },
+        "techniqueRef": "t.negotiation-gate",
+        "role": "focal-anchor",
+        "layer": "foreground",
+        "motif": "flow",
+        "intentCadence": "steady"
+      },
+      {
+        "id": "el-04-cm.paused-courier-points.v1",
+        "moduleType": "cm.paused-courier-points.v1",
+        "capabilities": [],
+        "stackFamilies": [],
+        "styleTags": [],
+        "libraryRef": null,
+        "count": 180,
+        "pauseBand": 0.24,
+        "drift": 0.055,
+        "color": "glow",
+        "opacity": 0.48,
+        "intensity": 0.46,
+        "scenePurpose": "Shows recency and concentrated attention as small points that move inward but defer crossing.",
+        "expectedRead": "measured punctual motion held near the aperture",
+        "mustNotReadAs": [
+          "confetti",
+          "screen pixels"
+        ],
+        "animation": {
+          "pulse": 0.16,
+          "wobbleX": 0.06,
+          "wobbleY": 0.05,
+          "drift": 0.3
+        },
+        "techniqueRef": "t.courier-points",
+        "role": "support-rhythm",
+        "layer": "accent",
+        "motif": "flow",
+        "intentCadence": "steady"
+      },
+      {
+        "id": "el-05-shader-field-plane",
+        "moduleType": "shader-field-plane",
+        "capabilities": [
+          "fluid-drift",
+          "layered-field"
+        ],
+        "stackFamilies": [
+          "shader-field",
+          "post-heavy",
+          "sdf-raymarch"
+        ],
+        "styleTags": [
+          "shader",
+          "field"
+        ],
+        "libraryRef": "element.shader-field-plane.v1",
+        "color": "secondary",
+        "opacity": 0.24,
+        "intensity": 0.34,
+        "layer": "background",
+        "radialBias": 0.52,
+        "hemisphereContrast": 0.38,
+        "role": "atmosphere-field",
+        "motif": "flow",
+        "intentCadence": "steady"
+      }
+    ],
+    "shaderLayers": 4,
+    "elementDiversity": 5,
+    "paletteVariance": 0,
+    "motionSpeedNormalized": 0.531,
+    "camera": {
+      "autoRotate": false,
+      "autoRotateSpeed": 0.121,
+      "minDistance": 6,
+      "maxDistance": 24,
+      "cycleSeconds": 24,
+      "beats": [
+        {
+          "t": 0,
+          "radius": 12.35,
+          "theta": 0.061,
+          "phi": 1.349,
+          "hold": 1.12
+        },
+        {
+          "t": 0.34,
+          "radius": 11.92,
+          "theta": 0.21,
+          "phi": 1.307,
+          "hold": 0.72
+        },
+        {
+          "t": 0.68,
+          "radius": 12.08,
+          "theta": 0.376,
+          "phi": 1.369,
+          "hold": 0.84
+        },
+        {
+          "t": 1,
+          "radius": 12.26,
+          "theta": 0.175,
+          "phi": 1.326,
+          "hold": 1.16
+        }
+      ],
+      "target": [
+        0,
+        0,
+        0
+      ]
+    },
+    "post": {
+      "vignette": 0.16,
+      "contrast": 1.14,
+      "saturation": 1.04,
+      "exposure": 1.02,
+      "breathing": {
+        "hueShift": 0.037,
+        "saturationAmplitude": 0.065,
+        "exposureAmplitude": 0.05,
+        "phaseA": 0.2442,
+        "phaseB": 0.4416
+      }
+    },
+    "styleFingerprint": {
+      "pulseFamily": "ascending",
+      "stripeWarp": 0.06,
+      "edgeSoftness": 0.34,
+      "cameraSway": 0.12,
+      "edgeHardness": 0.5,
+      "temperatureBias": 0,
+      "verticalBias": 0.18,
+      "cadenceBias": 0
+    },
+    "sceneAuthoring": {
+      "mode": "agent-dsl",
+      "planner": "openclaw-agent-scene-planner",
+      "representation": {
+        "id": "rep.two-currents-monday-aperture",
+        "label": "Two Currents Monday Aperture",
+        "description": "A wider, more lateral composition where two warm currents approach a blue-gold aperture that remains open but unresolved.",
+        "scoreHint": 0.68,
+        "motif": "two currents approaching an unsealed aperture",
+        "cadence": "steady",
+        "scenePrompt": "Create an af Klint-like abstract negotiation field: two opposing red and ochre currents, softened painted ground, nested ovals compressed into a narrow Monday aperture, balanced but not reconciled.",
+        "colorMood": "burnt red and marigold over warm parchment, with muted cobalt as the only cool interruption",
+        "spatialIntent": "left-right tension across a shallow stage, with a foreground aperture and background field separated by haze-free depth",
+        "imageAuthorship": {
+          "structuralLaw": "All forms lean laterally toward a central aperture, but the aperture keeps its own untouched space.",
+          "dominantForms": [
+            "opposed colored currents",
+            "compressed oval opening",
+            "short stepped bars",
+            "scattered pause-points"
+          ],
+          "edgeBehavior": "paint-softened edges at the field, crisp symbolic edges at the aperture",
+          "surfaceBehavior": "thin pigment layers with slight tonal unevenness, like dry paint over absorbent ground",
+          "depthLogic": "currents occupy left and right midground, aperture floats in front, wash recedes behind both",
+          "motionLogic": "left and right particles drift inward, slow near center, then slide upward rather than crossing",
+          "forbiddenDrift": [
+            "do not make it a versus screen",
+            "do not create a tunnel or wormhole",
+            "do not let particle motion dominate the geometry"
+          ]
+        },
+        "technicalTranslation": {
+          "realizationStrategy": "Reuse the custom wash and particle system, combine them with the gate lattice scaled horizontally to stage left-right pressure.",
+          "reuseBias": "hybrid",
+          "whyThisApproach": "The same invented language can be reweighted into a different composition while keeping the prompt-specific Monday aperture clear.",
+          "notes": [
+            "Scale gate narrower and taller than the currents.",
+            "Use particles as punctuation, not atmosphere.",
+            "Keep background light enough for red readability."
+          ],
+          "motionCadence": "steady"
+        },
+        "mustShow": [
+          "two opposing color currents",
+          "narrow gold-blue aperture",
+          "visible warm painted ground",
+          "balanced but separated geometry",
+          "small particle pause band"
+        ],
+        "mustAvoid": [
+          "symmetrical sci-fi reactor",
+          "literal Bpost branding",
+          "postal trucks",
+          "crowd scene",
+          "muddy red-on-black contrast"
+        ],
+        "reviewFocus": [
+          "Are there clearly two sides without a cartoon conflict?",
+          "Does the aperture feel narrow but possible?",
+          "Does the palette organize through orange, red, and yellow?",
+          "Does the scene avoid generic orbital composition?"
+        ],
+        "artistTechniqueObservations": {
+          "medium": "painting",
+          "primaryTechnique": null,
+          "markMakingTraits": [],
+          "surfaceQualities": [
+            "painted surface behavior matters more than object literalism"
+          ],
+          "paletteTendencies": [
+            "dominant hues: orange, red, yellow"
+          ],
+          "spatialHabits": []
+        },
+        "rationale": {
+          "newsTranslation": "The unions and direction are expressed as two currents approaching the same aperture but not sharing it yet.",
+          "artistTranslation": "The image keeps af Klint's diagrammatic mysticism through abstract colored relations and controlled symbolic geometry."
+        },
+        "techniques": [
+          {
+            "id": "t.painted-temple-field",
+            "name": "Painted Temple Field",
+            "type": "shader",
+            "purpose": "Parchment-like painted support.",
+            "reuseModuleType": null,
+            "params": {
+              "opacity": 0.82,
+              "warmth": 0.68
+            }
+          },
+          {
+            "id": "t.negotiation-gate",
+            "name": "Suspended Negotiation Gate",
+            "type": "geometry",
+            "purpose": "Central Monday aperture.",
+            "reuseModuleType": null,
+            "params": {
+              "ringCount": 4,
+              "openingWidth": 0.18
+            }
+          },
+          {
+            "id": "t.courier-points",
+            "name": "Paused Courier Points",
+            "type": "particle",
+            "purpose": "Inbound but halted motion from both sides.",
+            "reuseModuleType": null,
+            "params": {
+              "count": 180,
+              "pauseBand": 0.24
+            }
+          }
+        ]
+      },
+      "artisticIntent": {
+        "statement": "A suspended negotiation becomes a temple-like abstract diagram: not a postal strike illustration, but a measured spiritual machine whose flows pause, divide, and wait for a narrow Monday aperture.",
+        "motif": "paired red-gold currents held apart by oval gates, stepped bars, and a small luminou",
+        "emotionalArc": "calm pressure gathers inside ordered geometry, stalls at a dignified divide, then releases through one restrained opening rather than exploding.",
+        "compositionLogic": "The image is governed by vertical symmetry under stress: warm painted fields form an altar ground, two opposed negotiation bodies orbit without touching, and a central gold threshold keeps the unresolved agreement readable.",
+        "imagePrompt": "Hilma af Klint inspired non-literal abstract painting translated to luminous WebGL: warm ivory ground, orange-red and yellow-gold geometric temple forms, oval rings, stepped rectangular strata, precise but hand-touched edges, two opposing flows halted before a narrow gold aperture, measured tension, no literal mail, no"
+      },
+      "executionPlan": {
+        "palette": {
+          "bg": "#f3dfbd",
+          "primary": "#c8372d",
+          "secondary": "#e6a72e",
+          "glow": "#f5d76b",
+          "anchor": "#2e5f8a"
+        },
+        "camera": {
+          "autoRotate": false,
+          "cycleSeconds": 24,
+          "target": [
+            0,
+            0,
+            0
+          ]
+        },
+        "post": {
+          "contrast": 1.08,
+          "saturation": 1.04,
+          "vignette": 0.16,
+          "exposure": 1.02
+        },
+        "global": {
+          "shapeCountHint": 96,
+          "flowField": 0.28,
+          "distortion": 0.18,
+          "bloom": 0.24
+        },
+        "techniques": [
+          {
+            "id": "t.painted-temple-field",
+            "name": "Painted Temple Field",
+            "type": "shader",
+            "purpose": "Build a warm handmade surface that supports af Klint geometry without becoming a generic backdrop.",
+            "reuseModuleType": "cm.afklint-temple-wash.v1",
+            "params": {
+              "grainScale": 42,
+              "edgeSoftness": 0.18,
+              "warmth": 0.72
+            }
+          },
+          {
+            "id": "t.negotiation-gate",
+            "name": "Suspended Negotiation Gate",
+            "type": "geometry",
+            "purpose": "Make the unresolved divide visible through ordered oval rings and stepped bars.",
+            "reuseModuleType": "cm.afklint-gate-lattice.v1",
+            "params": {
+              "ringCount": 5,
+              "barCount": 11,
+              "openingWidth": 0.22
+            }
+          },
+          {
+            "id": "t.courier-points",
+            "name": "Paused Courier Points",
+            "type": "particle",
+            "purpose": "Show concentrated social reach and low-pressure motion as small deterministic points held near the divide.",
+            "reuseModuleType": "cm.paused-courier-points.v1",
+            "params": {
+              "count": 140,
+              "pauseBand": 0.18,
+              "drift": 0.06
+            }
+          }
+        ]
+      },
+      "moduleOverrides": [
+        {
+          "id": "mo.flow-noise-slab.temple-wash",
+          "target": {
+            "moduleType": "flow-noise-slab",
+            "elementId": "field_warm_wash"
+          },
+          "mode": "uniforms",
+          "params": {
+            "reason": "soften any reused field into painted ground rather than spectacle"
+          },
+          "uniforms": {
+            "uOpacity": 0.38,
+            "uScale": 1.8,
+            "uDrift": 0.06
+          }
+        }
+      ],
+      "customModules": [
+        {
+          "id": "cm.afklint-temple-wash.v1",
+          "family": "shader",
+          "kind": "dsl",
+          "allowOverride": false,
+          "seedPolicy": "deterministic",
+          "paramsSchema": {
+            "grainScale": {
+              "type": "float",
+              "default": 38
+            },
+            "edgeSoftness": {
+              "type": "float",
+              "default": 0.16
+            },
+            "warmth": {
+              "type": "float",
+              "default": 0.7
+            }
+          },
+          "source": {
+            "dsl": {
+              "width": 7.4,
+              "height": 7.4,
+              "opacity": 0.86,
+              "position": [
+                0,
+                0,
+                -1.6
+              ],
+              "blend": "normal"
+            },
+            "glsl": {
+              "vertex": "varying vec2 vUv; void main(){ vUv=uv; gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0); }",
+              "fragment": "uniform vec3 uColorA; uniform vec3 uColorB; uniform float uTime; uniform float uOpacity; uniform float uParam_grainScale; uniform float uParam_edgeSoftness; uniform float uParam_warmth; varying vec2 vUv; float hash(vec2 p){ return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453); } void main(){ vec2 uv=vUv; vec2 c=uv-0.5; float altar=smoothstep(0.72,0.08,abs(c.x)*0.72+abs(c.y)*0.38); float grain=hash(floor(uv*uParam_grainScale))*0.08; float pulse=0.5+0.5*sin((uv.y*5.0+uv.x*2.0)+uTime*0.12); vec3 warm=mix(uColorA,uColorB,0.24+0.18*pulse+grain+uParam_warmth*0.08); float edge=1.0-smoothstep(0.46,0.5+uParam_edgeSoftness*0.08,length(c)); gl_FragColor=vec4(warm*(0.92+0.16*altar),uOpacity*edge); }"
+            },
+            "js": null
+          },
+          "budgets": {
+            "maxInstances": 4,
+            "maxShaderOpsHint": 0.7,
+            "mobileSafe": true
+          }
+        },
+        {
+          "id": "cm.afklint-gate-lattice.v1",
+          "family": "geometry",
+          "kind": "dsl",
+          "allowOverride": false,
+          "seedPolicy": "deterministic",
+          "paramsSchema": {
+            "ringCount": {
+              "type": "int",
+              "default": 5
+            },
+            "barCount": {
+              "type": "int",
+              "default": 11
+            },
+            "openingWidth": {
+              "type": "float",
+              "default": 0.22
+            }
+          },
+          "source": {
+            "dsl": {
+              "count": 1,
+              "opacity": 0.9,
+              "position": [
+                0,
+                0,
+                0
+              ],
+              "geometry": {
+                "type": "group",
+                "children": [
+                  {
+                    "type": "ellipse-rings",
+                    "rings": 5,
+                    "width": 2.55,
+                    "height": 4.25,
+                    "stroke": 0.035,
+                    "segments": 128,
+                    "position": [
+                      0,
+                      0,
+                      0.05
+                    ],
+                    "rotationZ": 0
+                  },
+                  {
+                    "type": "ellipse-ring",
+                    "width": 0.68,
+                    "height": 3.82,
+                    "lineWidth": 0.045,
+                    "color": "#f5d76b",
+                    "position": [
+                      0,
+                      0,
+                      0.12
+                    ]
+                  },
+                  {
+                    "type": "stacked-rects",
+                    "count": 11,
+                    "width": 3.65,
+                    "height": 0.035,
+                    "yRange": [
+                      -1.82,
+                      1.82
+                    ],
+                    "centerBias": 1.35,
+                    "color": "#c8372d",
+                    "position": [
+                      0,
+                      0,
+                      0.02
+                    ]
+                  },
+                  {
+                    "type": "rect",
+                    "width": 0.22,
+                    "height": 4.42,
+                    "color": "#f3dfbd",
+                    "opacity": 0.82,
+                    "position": [
+                      0,
+                      0,
+                      0.18
+                    ]
+                  },
+                  {
+                    "type": "ellipse",
+                    "width": 0.24,
+                    "height": 0.24,
+                    "color": "#2e5f8a",
+                    "opacity": 0.96,
+                    "position": [
+                      0,
+                      1.96,
+                      0.25
+                    ]
+                  }
+                ]
+              },
+              "material": {
+                "palette": [
+                  "#c8372d",
+                  "#e6a72e",
+                  "#f5d76b",
+                  "#2e5f8a"
+                ],
+                "opacity": 0.86
+              }
+            },
+            "glsl": {},
+            "js": null
+          },
+          "budgets": {
+            "maxInstances": 24,
+            "maxShaderOpsHint": 0.2,
+            "mobileSafe": true
+          }
+        },
+        {
+          "id": "cm.paused-courier-points.v1",
+          "family": "particle",
+          "kind": "dsl",
+          "allowOverride": false,
+          "seedPolicy": "deterministic",
+          "paramsSchema": {
+            "pauseBand": {
+              "type": "float",
+              "default": 0.18
+            },
+            "drift": {
+              "type": "float",
+              "default": 0.06
+            }
+          },
+          "source": {
+            "dsl": {
+              "count": 180,
+              "spread": 3.6,
+              "size": 10,
+              "opacity": 0.62,
+              "position": [
+                0,
+                0,
+                0.85
+              ],
+              "blend": "additive"
+            },
+            "glsl": {
+              "vertex": "attribute float aScale; uniform float uTime; uniform float uSize; uniform float uParam_pauseBand; uniform float uParam_drift; void main(){ vec3 p=position; float side=sign(p.x+0.001); float stop=smoothstep(uParam_pauseBand,0.0,abs(p.x)); p.x += side*stop*0.16; p.y += sin(uTime*0.25+p.x*3.0+p.z)*uParam_drift; vec4 mvPosition=modelViewMatrix*vec4(p,1.0); gl_Position=projectionMatrix*mvPosition; gl_PointSize=uSize*aScale*clamp(1.8/(-mvPosition.z+2.4),0.35,2.4); }",
+              "fragment": "uniform vec3 uColorA; uniform float uOpacity; void main(){ vec2 uv=gl_PointCoord.xy-0.5; float d=length(uv); float ring=smoothstep(0.48,0.18,d)-smoothstep(0.18,0.06,d); float core=smoothstep(0.12,0.0,d)*0.55; float alpha=(ring+core)*uOpacity; if(alpha<0.01) discard; gl_FragColor=vec4(uColorA,alpha); }"
+            },
+            "js": null
+          },
+          "budgets": {
+            "maxInstances": 400,
+            "maxShaderOpsHint": 0.8,
+            "mobileSafe": true
+          }
+        }
+      ],
+      "policyPasses": {
+        "advisoryOnly": true,
+        "skipped": [
+          "focal-hierarchy",
+          "envelope-clamp",
+          "composition-plan",
+          "artist-visual-profile",
+          "scene-element-module-enforcement",
+          "stack-pipeline-apply",
+          "gap-focused-pass",
+          "artist-hard-constraints"
+        ]
+      }
+    },
+    "seedVersion": 2,
+    "seeds": {
+      "baseSeed": 317569188,
+      "runSeed": 2649571257,
+      "geomSeed": 663344653,
+      "animSeed": 1141150496,
+      "colorSeed": 856681000,
+      "cameraSeed": 2534259774
+    },
+    "customModuleReport": {
+      "declaredCustomModules": 3,
+      "accepted": [
+        {
+          "id": "cm.afklint-temple-wash.v1",
+          "family": "shader",
+          "kind": "dsl",
+          "fingerprint": "9d7cf4d1"
+        },
+        {
+          "id": "cm.afklint-gate-lattice.v1",
+          "family": "geometry",
+          "kind": "dsl",
+          "fingerprint": "40cd0a33"
+        },
+        {
+          "id": "cm.paused-courier-points.v1",
+          "family": "particle",
+          "kind": "dsl",
+          "fingerprint": "ec20bcf7"
+        }
+      ],
+      "rejected": [],
+      "moduleOverrideCount": 1,
+      "fingerprint": "16edc5da"
+    },
+    "techStack": {
+      "id": "shader-field-balanced",
+      "name": "Shader Field Layering",
+      "family": "shader-field",
+      "strategyFamilies": [
+        "flow",
+        "hybrid",
+        "orbits"
+      ],
+      "rationale": {
+        "source": "loop-adjustment-alternate-stack",
+        "score": 2.168,
+        "penalties": [
+          "conflict<0.24"
+        ]
+      },
+      "dominantPrimitive": "cm.afklint-temple-wash.v1",
+      "moduleSet": [
+        "cm.afklint-temple-wash.v1",
+        "drift-ribbon",
+        "cm.afklint-gate-lattice.v1",
+        "cm.paused-courier-points.v1",
+        "shader-field-plane"
+      ],
+      "pipelineKind": "shader-field"
+    },
+    "renderPipeline": {
+      "kind": "shader-field",
+      "family": "shader-field",
+      "fallback": false,
+      "advisoryOnly": true,
+      "dominantPrimitive": "cm.afklint-temple-wash.v1",
+      "moduleSet": [
+        "cm.afklint-temple-wash.v1",
+        "drift-ribbon",
+        "cm.afklint-gate-lattice.v1",
+        "cm.paused-courier-points.v1",
+        "shader-field-plane"
+      ]
+    }
+  },
+  "sceneStrategy": {
+    "selected": {
+      "id": "atomic-balanced-flow",
+      "name": "Balanced Flow Field",
+      "type": "atomic",
+      "family": "flow"
+    },
+    "applied": false,
+    "fallbackReason": "agent-authored-scene-elements"
+  },
+  "techStack": {
+    "id": "shader-field-balanced",
+    "name": "Shader Field Layering",
+    "family": "shader-field"
+  },
+  "newsVisualMappings": [
+    {
+      "signal": "title evidence [chez, bpost, toujours, accord] -> motif flow",
+      "from": "chez, bpost, toujours, accord",
+      "visualDecision": "structural motif armature set to flow"
+    },
+    {
+      "signal": "composition foreground conflict",
+      "from": "chez, bpost, toujours, accord",
+      "visualDecision": "foreground role tension-knot at pressure 0.18"
+    },
+    {
+      "signal": "composition midground context",
+      "from": "accord",
+      "visualDecision": "midground role context-drift with density 0.38"
+    },
+    {
+      "signal": "composition background mood",
+      "from": "chez, bpost, toujours, accord",
+      "visualDecision": "background mood watchful depth 0.27"
+    },
+    {
+      "signal": "urgency -> motion",
+      "from": "ageHours=16.56",
+      "visualDecision": "motionSpeedNormalized=0.531"
+    },
+    {
+      "signal": "title semantics -> palette/edge cadence",
+      "from": "temp=0 edge=0.5",
+      "visualDecision": "postContrast=1.14 accentType=n/a"
+    },
+    {
+      "signal": "article institutional/conflict polarity",
+      "from": "chez, bpost, toujours, accord",
+      "visualDecision": "accent element n/a with opacity n/a"
+    },
+    {
+      "signal": "artist research context Hilma af Klint",
+      "from": "tags symbolic, spiral, organic",
+      "visualDecision": "artist profile captured as metadata only; no technical routing applied"
+    }
+  ],
+  "qualityScore": {
+    "score": 53.1,
+    "summary": "Alignment 70.0 with strongest channel emotional.",
+    "heuristic": {
+      "score": 68.5,
+      "breakdown": {
+        "legibility": 76.3,
+        "emotionalReadability": 71.3,
+        "coherence": 88.7,
+        "focalAnchor": 69.4,
+        "technicalRichness": 92.9,
+        "restraint": 71.5,
+        "alignment": 70
+      }
+    },
+    "calibration": {
+      "sampleCount": 1,
+      "trustWeight": 0.4
+    },
+    "alignment": {
+      "totalAlign": 70,
+      "components": {
+        "title": {
+          "score": 64.1
+        },
+        "style": {
+          "score": 69.3
+        },
+        "emotional": {
+          "score": 76.9
+        }
+      }
+    }
+  },
+  "rationale": {
+    "intent": {
+      "signal": null,
+      "emotion": null,
+      "tension": null,
+      "balance": null,
+      "motion": null
+    },
+    "selection": {
+      "whyHeadline": "Selected as top-ranked Belgian headline (score 77 = frequency 77 + priority 0 + recency 0).",
+      "priorityTerms": []
+    },
+    "qualitySummary": "TOTAL_ALIGN 70.0."
+  },
+  "runPolicy": {
+    "artworksPerRun": 1,
+    "multiVariant": false
+  },
+  "artFramework": {
+    "version": 3,
+    "intent": {
+      "statement": "Grève chez Bpost: toujours pas d'accord entre entre syndicats et direction, les discussions reprendront lundi translated through Hilma af Klint's visual language as a non-literal image.",
+      "coreImpulse": "In Hilma af Klint: Paintings for the Temple (paintings by Hilma af Klint) Af Klint concluded Paintings for the Temple with a triptych she called Altarpieces, featuring geometric shapes, bold primary colors, and gold l... Hilma af Klint was a Swedish artist and mystic whose paintings are considered to be among the first major abstract works in Western art history. After studying at the Royal Academy of Art in Stockholm, Hilma af Klint embarked on a major suite of paintings in 1904-06. Hilma af Klint did not ascribe to any of the established avant-garde movements of her time.",
+      "artistTranslationLogic": [
+        "Hilma af Klint's formal logic should dominate before any spectacle or scenic excess."
+      ],
+      "emotionalClimate": {
+        "summary": "In Hilma af Klint: Paintings for the Temple (paintings by Hilma af Klint) Af Klint concluded Paintings for the Temple with a triptych she called Altarpieces, featuring geometric shapes, bold primary colors, and gold l... Hilma af Klint was a Swedish artist and mystic whose paintings are considered to be among the first major abstract works in Western art history. After studying at the Royal Academy of Art in Stockholm, Hilma af Klint embarked on a major suite of paintings in 1904-06. Hilma af Klint did not ascribe to any of the established avant-garde movements of her time.",
+        "pressure": "low",
+        "pace": "measured",
+        "socialReach": "concentrated"
+      },
+      "visualGravity": {
+        "anchor": null,
+        "dominantStructure": "Build the image around one readable structural law.",
+        "scaleBehavior": "Keep the space bounded and compositionally intentional."
+      },
+      "materialLogic": {
+        "surfaceBehavior": [],
+        "spatialHabits": [],
+        "handling": "Hilma af Klint's surface should feel made, not generic."
+      },
+      "colorField": {
+        "paletteSignals": [],
+        "contrastMode": "measured contrast with restrained vibration"
+      },
+      "symbolicDensity": {
+        "primaryMotif": "flow",
+        "motifVocabulary": [],
+        "literalness": "non-literal"
+      },
+      "tensionEngine": {
+        "conflictAxis": "Chez Bpost",
+        "escalationMode": "Let tension accumulate through structure, not narration.",
+        "releaseValve": "Allow only a narrow zone of release."
+      },
+      "audiencePosition": {
+        "stance": "Hilma af Klint did not ascribe to any of the established avant-garde movements of her time. Hilma af Klint was a Swedish artist and mystic whose paintings are considered to be among the first major abstract works in Western art history. In Hilma af Klint: Paintings for the Temple (paintings by Hilma af Klint) Af Klint concluded Paintings for the Temple with a triptych she called Altarpieces, featuring geometric shapes, bold primary colors, and gold l... In Hilma af Klint: Paintings for the Temple (paintings by Hilma af Klint) Af Klint concluded Paintings for the Temple with a triptych she called Altarpieces, featuring geometric shapes, bold primary colors, and gold l...",
+        "distance": "immersed but not illustrative"
+      },
+      "controlVsAccident": {
+        "balance": "controlled with selective instability",
+        "motionTemperament": "steady",
+        "accidentRole": "use drift or fracture sparingly to keep the field alive"
+      },
+      "antiDriftRules": [
+        "Do not collapse into biography summary, symbolic cliché, or generic procedural spectacle."
+      ],
+      "finalCompression": "In Hilma af Klint: Paintings for the Temple (paintings by Hilma af Klint) Af Klint concluded Paintings for the Temple with a triptych she called Altarpieces, featuring geometric shapes, bold primary colors, and gold l... Hilma af Klint was a Swedish artist and mystic whose paintings are considered to be among the first major abstract works in Western art history. After studying at the Royal Academy of Art in Stockholm, Hilma af Klint embarked on a major suite of paintings in 1904-06. Hilma af Klint did not ascribe to any of the established avant-garde movements of her time. Build the image around one readable structural law.",
+      "artistAnchors": {
+        "formalLogic": [],
+        "motifVocabulary": [],
+        "compositionCues": [],
+        "paletteSignals": [],
+        "surfaceBehavior": [],
+        "spatialHabits": [],
+        "translationDirectives": []
+      },
+      "threeJsFreedomEnvelope": [],
+      "avoidSignals": [],
+      "threeJsTranslationExamples": []
+    }
+  },
+  "debugFile": "./data/artworks-debug/2026-04-25-pulse-of-chez-bpost-toujours-accord-v2.json"
+}
