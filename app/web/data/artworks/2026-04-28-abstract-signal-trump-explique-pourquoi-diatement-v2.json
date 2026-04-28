@@ -1,0 +1,1040 @@
+{
+  "id": "2026-04-28-abstract-signal-trump-explique-pourquoi-diatement-v2",
+  "date": "2026-04-28",
+  "title": "Abstract Signal: Trump explique pourquoi diatement",
+  "generatedAt": "2026-04-28T06:23:08.572Z",
+  "news": {
+    "source": "lalibre",
+    "title": "Trump explique pourquoi il n’a pas immédiatement été évacué du gala des correspondants après les tirs : “C’est un peu de ma faute”",
+    "link": "https://www.lalibre.be/international/amerique/2026/04/27/trump-explique-pourquoi-il-na-pas-immediatement-ete-evacue-du-gala-des-correspondants-apres-les-tirs-cest-un-peu-de-ma-faute-2UT3U3AKLJGC5AHYPTSAW7POBQ/",
+    "score": 69
+  },
+  "inspiration": {
+    "artist": "Hilma af Klint",
+    "tags": [
+      "symbolic",
+      "spiral",
+      "organic"
+    ],
+    "links": {
+      "wikipedia": "https://en.wikipedia.org/wiki/Hilma_af_Klint",
+      "reference": "https://www.modernamuseet.se/stockholm/en/exhibitions/hilma-af-klint/"
+    }
+  },
+  "seed": 518091850,
+  "scene": {
+    "motif": "flow",
+    "shapeCount": 96,
+    "turbulence": 0.375,
+    "spiralBias": 0.631,
+    "motionSpeed": 0.00121,
+    "bloom": 0.12,
+    "grain": 0.038,
+    "fogDensity": 0.056,
+    "distortion": 0.12,
+    "flowField": 0.18,
+    "anchorStrength": 0.639,
+    "anchorOffsetX": 0.048,
+    "layerBalance": {
+      "structure": 0.667,
+      "chaos": 0.316
+    },
+    "expression": {
+      "tension": 0.31,
+      "structure": 0.562,
+      "motion": 0.448,
+      "noise": 0.364,
+      "urgency": 0.263,
+      "contrast": 0.3
+    },
+    "palette": {
+      "bg": "#c99550",
+      "primary": "#c83f26",
+      "secondary": "#e88a2e",
+      "glow": "#d8ad49",
+      "anchor": "#26455f"
+    },
+    "elements": [
+      {
+        "id": "el-01-cm.afklint-matte-ground.v2",
+        "moduleType": "cm.afklint-matte-ground.v2",
+        "capabilities": [],
+        "stackFamilies": [],
+        "styleTags": [],
+        "libraryRef": null,
+        "z": -0.04,
+        "scale": 1,
+        "grainScale": 115,
+        "grainStrength": 0.16,
+        "color": "bg",
+        "opacity": 0.95,
+        "intensity": 0.5,
+        "scenePurpose": "Establishes the full-frame painted ochre temple surface and prevents the work from reading as a digital stage.",
+        "expectedRead": "aged mineral pigment on matte canvas",
+        "mustNotReadAs": [
+          "flat beige UI panel",
+          "cinematic fog",
+          "empty backdrop"
+        ],
+        "animation": {
+          "pulse": 0.04,
+          "wobbleX": 0.02,
+          "wobbleY": 0.02,
+          "drift": 0.03
+        },
+        "techniqueRef": "tech.matte-mineral-ground",
+        "role": "atmosphere-field",
+        "layer": "background",
+        "motif": "flow",
+        "intentCadence": "measured"
+      },
+      {
+        "id": "el-02-cm.afklint-triangle-altarpiece.v2",
+        "moduleType": "cm.afklint-triangle-altarpiece.v2",
+        "capabilities": [],
+        "stackFamilies": [],
+        "styleTags": [],
+        "libraryRef": null,
+        "z": -0.02,
+        "upperColor": "#c83f26",
+        "lowerColor": "#e88a2e",
+        "edgeGoldWidth": 0.012,
+        "paintSoftness": 0.018,
+        "color": "primary",
+        "opacity": 0.82,
+        "intensity": 0.7,
+        "scenePurpose": "Makes the opposing red-orange altar geometry the main body of the painting, replacing the failed rectangular panel read.",
+        "expectedRead": "authoritative Af Klint-like temple triangles with gold-painted edges",
+        "mustNotReadAs": [
+          "transparent rectangle",
+          "warning sign",
+          "screen overlay"
+        ],
+        "animation": {
+          "pulse": 0.05,
+          "wobbleX": 0.01,
+          "wobbleY": 0.01,
+          "drift": 0.02
+        },
+        "techniqueRef": "tech.opposing-altarpiece-triangles",
+        "role": "structural-spine",
+        "layer": "midground",
+        "motif": "flow",
+        "intentCadence": "measured"
+      },
+      {
+        "id": "el-03-cm.afklint-interrupted-axis.v2",
+        "moduleType": "cm.afklint-interrupted-axis.v2",
+        "capabilities": [],
+        "stackFamilies": [],
+        "styleTags": [],
+        "libraryRef": null,
+        "z": 0.02,
+        "lineWidth": 0.008,
+        "gapCenter": 0.61,
+        "gapSize": 0.105,
+        "color": "glow",
+        "opacity": 0.95,
+        "intensity": 0.72,
+        "scenePurpose": "Declares the main structural law: a ceremonial vertical line that is cleanly interrupted above center.",
+        "expectedRead": "thin gold law with a deliberate missing section",
+        "mustNotReadAs": [
+          "weapon sight",
+          "neon beam",
+          "solid unbroken pole"
+        ],
+        "animation": {
+          "pulse": 0.08
+        },
+        "techniqueRef": "tech.interrupted-gold-axis",
+        "role": "primary-signal",
+        "layer": "foreground",
+        "motif": "flow",
+        "intentCadence": "measured"
+      },
+      {
+        "id": "el-04-cm.afklint-accountability-seal.v2",
+        "moduleType": "cm.afklint-accountability-seal.v2",
+        "capabilities": [],
+        "stackFamilies": [],
+        "styleTags": [],
+        "libraryRef": null,
+        "z": 0.035,
+        "centerY": 0.43,
+        "radius": 0.052,
+        "ringCount": 2,
+        "color": "anchor",
+        "opacity": 0.92,
+        "intensity": 0.62,
+        "scenePurpose": "Turns the admission of partial fault into a small, sober, stable mark below the break.",
+        "expectedRead": "blue responsibility seal with restrained gold contours",
+        "mustNotReadAs": [
+          "reticle",
+          "eye",
+          "planet",
+          "large target"
+        ],
+        "animation": {
+          "pulse": 0.06,
+          "wobbleX": 0.01,
+          "wobbleY": 0.01,
+          "drift": 0.01
+        },
+        "techniqueRef": "tech.accountability-seal",
+        "role": "focal-anchor",
+        "layer": "foreground",
+        "motif": "flow",
+        "intentCadence": "measured"
+      },
+      {
+        "id": "el-05-cm.afklint-fracture-script.v2",
+        "moduleType": "cm.afklint-fracture-script.v2",
+        "capabilities": [],
+        "stackFamilies": [],
+        "styleTags": [],
+        "libraryRef": null,
+        "z": 0.045,
+        "clusterY": 0.61,
+        "markCount": 8,
+        "opacity": 0.46,
+        "color": "primary",
+        "intensity": 0.5,
+        "scenePurpose": "Adds controlled pressure around the interrupted axis so the order feels disturbed without becoming literal violence.",
+        "expectedRead": "thin reddish-brown automatic-writing fractures",
+        "mustNotReadAs": [
+          "random scratches",
+          "blood spatters",
+          "bullet trails"
+        ],
+        "animation": {
+          "pulse": 0.08,
+          "wobbleX": 0.03,
+          "wobbleY": 0.02,
+          "drift": 0.03
+        },
+        "techniqueRef": "tech.fracture-script",
+        "role": "accent-gesture",
+        "layer": "accent",
+        "motif": "flow",
+        "intentCadence": "measured"
+      }
+    ],
+    "shaderLayers": 4,
+    "elementDiversity": 5,
+    "paletteVariance": 0,
+    "motionSpeedNormalized": 0.47,
+    "camera": {
+      "autoRotate": false,
+      "autoRotateSpeed": 0.113,
+      "minDistance": 6,
+      "maxDistance": 24,
+      "cycleSeconds": 24,
+      "beats": [
+        {
+          "t": 0,
+          "radius": 12.35,
+          "theta": 0.06,
+          "phi": 1.349,
+          "hold": 1.12
+        },
+        {
+          "t": 0.34,
+          "radius": 11.92,
+          "theta": 0.209,
+          "phi": 1.307,
+          "hold": 0.72
+        },
+        {
+          "t": 0.68,
+          "radius": 12.08,
+          "theta": 0.374,
+          "phi": 1.369,
+          "hold": 0.84
+        },
+        {
+          "t": 1,
+          "radius": 12.26,
+          "theta": 0.139,
+          "phi": 1.326,
+          "hold": 1.16
+        }
+      ],
+      "target": [
+        0,
+        0,
+        0
+      ]
+    },
+    "post": {
+      "vignette": 0.12,
+      "contrast": 1.14,
+      "saturation": 0.96,
+      "exposure": 0.92,
+      "breathing": {
+        "hueShift": 0.037,
+        "saturationAmplitude": 0.065,
+        "exposureAmplitude": 0.05,
+        "phaseA": 0.0292,
+        "phaseB": 0.6842
+      }
+    },
+    "styleFingerprint": {
+      "pulseFamily": "ascending",
+      "stripeWarp": 0.06,
+      "edgeSoftness": 0.34,
+      "cameraSway": 0.12,
+      "edgeHardness": 0.5,
+      "temperatureBias": 0,
+      "verticalBias": 0,
+      "cadenceBias": 0
+    },
+    "sceneAuthoring": {
+      "mode": "agent-dsl",
+      "planner": "openclaw-agent-scene-planner",
+      "representation": {
+        "id": "rep.interrupted-temple-axis",
+        "label": "Interrupted Temple Axis",
+        "description": "The rebuilt canonical composition: a frontal ochre temple painting organized by a clean broken gold axis, with opposing red-orange triangles carrying the structural weight and a small blue seal below the interruption.",
+        "scoreHint": 0.88,
+        "motif": "broken ceremonial law",
+        "cadence": "measured",
+        "scenePrompt": "Full-frame matte Af Klint temple painting with red-orange opposing altar triangles, thin broken gold vertical axis, small blue accountability seal below the break, and sparse reddish fracture writing around the gap.",
+        "colorMood": "ochre mineral warmth with disciplined red, orange, gold, and one sober blue focal point",
+        "spatialIntent": "flat frontal painted surface with shallow layer separation: ground behind, triangle altar midground, axis and seal foreground, fracture marks accenting the break",
+        "imageAuthorship": {
+          "structuralLaw": "One vertical law organizes the whole canvas and is deliberately interrupted above center.",
+          "dominantForms": [
+            "opposing altar triangles",
+            "thin broken gold axis",
+            "small blue-gold accountability seal",
+            "automatic-writing fracture marks"
+          ],
+          "edgeBehavior": "clean symbolic edges softened by absorbed pigment and slight hand-painted irregularity",
+          "surfaceBehavior": "matte mineral wash with subtle grain, not glossy emission",
+          "depthLogic": "background ground, midground altar triangles, foreground gold law and blue seal, accent linework clustered near the break",
+          "motionLogic": "nearly still, with only slow pigment breathing and a barely perceptible shimmer along the gold line",
+          "forbiddenDrift": [
+            "reticle composition",
+            "political portraiture",
+            "literal gunfire",
+            "digital dashboard overlay",
+            "generic mystical portal"
+          ]
+        },
+        "technicalTranslation": {
+          "realizationStrategy": "Layer deterministic full-frame shader planes in orthographic/frontal alignment. Use custom triangle, axis, seal, ground, and fracture shaders so the composition remains a painted surface rather than a reusable house-styl",
+          "reuseBias": "invent",
+          "whyThisApproach": "The critique requires replacing the governing composition, not tuning an existing reticle-like module. Custom shaders keep exact control over the gap, triangle authority, seal scale, and linework visibility.",
+          "notes": [
+            "Keep all planes coplanar or very shallow in z to avoid screen-stage drift.",
+            "Use alpha layering, not bloom, for gold authority.",
+            "Do not add outer seal rings beyond two contours."
+          ],
+          "motionCadence": "measured"
+        },
+        "mustShow": [
+          "clear empty gap in the vertical gold axis above center",
+          "large opposing red-orange triangles as the main altar geometry",
+          "small blue disc with one or two gold contour rings below the break",
+          "5-8 visible thin reddish-brown fracture marks near the gap",
+          "matte ochre painted ground with mineral variation"
+        ],
+        "mustAvoid": [
+          "large concentric reticle",
+          "target sight reading",
+          "boxy translucent panel",
+          "tilted stage or screen perspective",
+          "blown-out central orb"
+        ],
+        "reviewFocus": [
+          "axis interruption must govern the image",
+          "triangles must read as primary altar structure",
+          "seal must remain small and non-reticle",
+          "fracture marks must be visible but controlled"
+        ],
+        "artistTechniqueObservations": {
+          "medium": "painting",
+          "primaryTechnique": null,
+          "markMakingTraits": [],
+          "surfaceQualities": [
+            "painted surface behavior matters more than object literalism"
+          ],
+          "paletteTendencies": [
+            "dominant hues: red, orange, yellow"
+          ],
+          "spatialHabits": []
+        },
+        "rationale": {
+          "critiqueResponse": "This directly demotes the reticle and makes the interrupted vertical axis plus triangle altarpiece the main read.",
+          "newsTranslation": "The delayed evacuation becomes an interrupted path; the quoted partial fault becomes the small blue seal held below the break."
+        },
+        "techniques": [
+          {
+            "id": "tech.matte-mineral-ground",
+            "name": "absorbed ochre pigment field",
+            "type": "shader-surface",
+            "purpose": "painted ground and depth base",
+            "reuseModuleType": null,
+            "params": {
+              "grainScale": 115
+            }
+          },
+          {
+            "id": "tech.opposing-altarpiece-triangles",
+            "name": "large opposing altar triangles",
+            "type": "shader-geometry",
+            "purpose": "primary temple structure",
+            "reuseModuleType": null,
+            "params": {
+              "edgeGoldWidth": 0.012
+            }
+          },
+          {
+            "id": "tech.interrupted-gold-axis",
+            "name": "broken ceremonial vertical law",
+            "type": "shader-line",
+            "purpose": "governing axis",
+            "reuseModuleType": null,
+            "params": {
+              "gapCenter": 0.61,
+              "gapSize": 0.105
+            }
+          },
+          {
+            "id": "tech.accountability-seal",
+            "name": "small blue accountability seal",
+            "type": "shader-symbol",
+            "purpose": "focal anchor",
+            "reuseModuleType": null,
+            "params": {
+              "radius": 0.052,
+              "centerY": 0.43
+            }
+          },
+          {
+            "id": "tech.fracture-script",
+            "name": "automatic-writing fracture marks",
+            "type": "shader-linework",
+            "purpose": "controlled pressure",
+            "reuseModuleType": null,
+            "params": {
+              "opacity": 0.46
+            }
+          }
+        ]
+      },
+      "artisticIntent": {
+        "statement": "A frontal temple painting about a delayed exit and a partial admission of fault, translated through Hilma af Klint as a broken ceremonial order rather than a political illustration.",
+        "motif": "interrupted vertical law held inside opposing altar triangles, with a small blue-gol",
+        "emotionalArc": "quiet order, sudden structural hesitation, then a restrained admission held in a small sober focal mark",
+        "compositionLogic": "The image is governed by one thin vertical gold axis that visibly stops and resumes above center. Large red-orange opposing triangles form the altar body around it, while sparse automatic-writing fracture marks gather near the interruption. The seal remains sm",
+        "imagePrompt": "A full-frame matte Hilma af Klint-inspired temple painting on warm ochre mineral ground: two large opposing red and orange altar triangles with clean gold edges, a narrow vertical gold line broken by a clear empty gap above center, a small sober blue disc below the gap with one or two thin gold contour rings, and spars"
+      },
+      "executionPlan": {
+        "palette": {
+          "bg": "#c99550",
+          "primary": "#c83f26",
+          "secondary": "#e88a2e",
+          "glow": "#d8ad49",
+          "anchor": "#26455f"
+        },
+        "camera": {
+          "autoRotate": false,
+          "cycleSeconds": 24,
+          "target": [
+            0,
+            0,
+            0
+          ]
+        },
+        "post": {
+          "contrast": 1.08,
+          "saturation": 0.96,
+          "vignette": 0.12,
+          "exposure": 0.92
+        },
+        "global": {
+          "shapeCountHint": 96,
+          "flowField": 0.18,
+          "distortion": 0.12,
+          "bloom": 0.12
+        },
+        "techniques": [
+          {
+            "id": "tech.matte-mineral-ground",
+            "name": "absorbed ochre pigment field",
+            "type": "shader-surface",
+            "purpose": "keeps the work as a painted frontal canvas rather than a digital backdrop",
+            "reuseModuleType": null,
+            "params": {
+              "grainScale": 115,
+              "vignetteStrength": 0.1,
+              "warmVariation": 0.18
+            }
+          },
+          {
+            "id": "tech.opposing-altarpiece-triangles",
+            "name": "large opposing altar triangles",
+            "type": "shader-geometry",
+            "purpose": "replaces the prior boxy panel with the main Af Klint-like temple structure",
+            "reuseModuleType": null,
+            "params": {
+              "upperHeight": 0.47,
+              "lowerHeight": 0.44,
+              "edgeGoldWidth": 0.012,
+              "paintSoftness": 0.018
+            }
+          },
+          {
+            "id": "tech.interrupted-gold-axis",
+            "name": "broken ceremonial vertical law",
+            "type": "shader-line",
+            "purpose": "makes the interruption the governing structure of the image",
+            "reuseModuleType": null,
+            "params": {
+              "lineWidth": 0.008,
+              "gapCenter": 0.61,
+              "gapSize": 0.105,
+              "edgeCrispness": 0.004
+            }
+          },
+          {
+            "id": "tech.accountability-seal",
+            "name": "small blue accountability seal",
+            "type": "shader-symbol",
+            "purpose": "compresses responsibility into a small sober focal anchor without forming a target",
+            "reuseModuleType": null,
+            "params": {
+              "radius": 0.052,
+              "ringCount": 2,
+              "ringWidth": 0.004
+            }
+          },
+          {
+            "id": "tech.fracture-script",
+            "name": "automatic-writing fracture marks",
+            "type": "shader-linework",
+            "purpose": "introduces pressure around the break without literal violence",
+            "reuseModuleType": null,
+            "params": {
+              "markCount": 8,
+              "opacity": 0.46,
+              "clusterY": 0.61
+            }
+          }
+        ]
+      },
+      "moduleOverrides": [],
+      "customModules": [
+        {
+          "id": "cm.afklint-matte-ground.v2",
+          "family": "shader",
+          "kind": "dsl",
+          "allowOverride": false,
+          "seedPolicy": "deterministic",
+          "paramsSchema": {
+            "grainScale": {
+              "type": "number",
+              "default": 115
+            },
+            "ochre": {
+              "type": "color",
+              "default": "#c99550"
+            },
+            "rose": {
+              "type": "color",
+              "default": "#b76a55"
+            }
+          },
+          "source": {
+            "dsl": {
+              "plane": "full-frame",
+              "uniforms": {
+                "grainScale": 115,
+                "grainStrength": 0.16,
+                "vignette": 0.1
+              },
+              "blend": "opaque"
+            },
+            "glsl": {
+              "vertex": "varying vec2 vUv;\nvoid main(){\n vUv=uv;\n gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0);\n}",
+              "fragment": "precision mediump float;\nvarying vec2 vUv;\nuniform float time;\nfloat hash(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453123);}\nfloat noise(vec2 p){vec2 i=floor(p);vec2 f=fract(p);vec2 u=f*f*(3.0-2.0*f);return mix(mix(hash(i),hash(i+vec2(1.0,0.0)),u.x),mix(hash(i+vec2(0.0,1.0)),hash(i+vec2(1.0,1.0)),u.x),u.y);}\nvoid main(){\n vec2 uv=vUv;\n vec3 ochre=vec3(0.788,0.584,0.314);\n vec3 rose=vec3(0.716,0.416,0.333);\n vec3 straw=vec3(0.858,0.704,0.427);\n float n=noise(uv*115.0)+0.5*noise(uv*37.0+4.0);\n float wash=smoothstep(0.15,0.95,noise(uv*5.5));\n vec3 col=mix(ochre,rose,0.16*wash);\n col=mix(col,straw,0.12*n);\n float edge=distance(uv,vec2(0.5));\n col*=1.0-0.12*smoothstep(0.48,0.74,edge);\n col+=0.035*(n-0.5);\n gl_FragColor=vec4(col,1.0);\n}"
+            },
+            "js": null
+          },
+          "budgets": {
+            "maxInstances": 1,
+            "maxShaderOpsHint": 0.55,
+            "mobileSafe": true
+          }
+        },
+        {
+          "id": "cm.afklint-triangle-altarpiece.v2",
+          "family": "shader",
+          "kind": "dsl",
+          "allowOverride": false,
+          "seedPolicy": "deterministic",
+          "paramsSchema": {
+            "upperColor": {
+              "type": "color",
+              "default": "#c83f26"
+            },
+            "lowerColor": {
+              "type": "color",
+              "default": "#e88a2e"
+            },
+            "gold": {
+              "type": "color",
+              "default": "#d8ad49"
+            }
+          },
+          "source": {
+            "dsl": {
+              "plane": "full-frame",
+              "uniforms": {
+                "edgeWidth": 0.012,
+                "paintSoftness": 0.018,
+                "opacity": 0.82
+              },
+              "blend": "normal"
+            },
+            "glsl": {
+              "vertex": "varying vec2 vUv;\nvoid main(){vUv=uv;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0);}",
+              "fragment": "precision mediump float;\nvarying vec2 vUv;\nfloat sdTri(vec2 p, vec2 a, vec2 b, vec2 c){\n vec2 e0=b-a,e1=c-b,e2=a-c;\n vec2 v0=p-a,v1=p-b,v2=p-c;\n vec2 pq0=v0-e0*clamp(dot(v0,e0)/dot(e0,e0),0.0,1.0);\n vec2 pq1=v1-e1*clamp(dot(v1,e1)/dot(e1,e1),0.0,1.0);\n vec2 pq2=v2-e2*clamp(dot(v2,e2)/dot(e2,e2),0.0,1.0);\n float s=sign(e0.x*e2.y-e0.y*e2.x);\n vec2 d=min(min(vec2(dot(pq0,pq0),s*(v0.x*e0.y-v0.y*e0.x)),vec2(dot(pq1,pq1),s*(v1.x*e1.y-v1.y*e1.x))),vec2(dot(pq2,pq2),s*(v2.x*e2.y-v2.y*e2.x)));\n return -sqrt(d.x)*sign(d.y);\n}\nfloat hash(vec2 p){return fract(sin(dot(p,vec2(41.0,289.0)))*9157.13);}\nvoid main(){\n vec2 uv=vUv;\n float top=sdTri(uv,vec2(0.18,0.78),vec2(0.82,0.78),vec2(0.5,0.33));\n float bot=sdTri(uv,vec2(0.18,0.25),vec2(0.82,0.25),vec2(0.5,0.69));\n float topFill=smoothstep(0.018,-0.012,top);\n float botFill=smoothstep(0.018,-0.012,bot);\n float topEdge=smoothstep(0.018,0.0,abs(top))-smoothstep(0.012,0.004,abs(top));\n float botEdge=smoothstep(0.018,0.0,abs(bot))-smoothstep(0.012,0.004,abs(bot));\n float grain=hash(floor(uv*170.0));\n vec3 red=vec3(0.784,0.247,0.149);\n vec3 orange=vec3(0.910,0.541,0.180);\n vec3 gold=vec3(0.847,0.678,0.286);\n vec3 col=red*topFill+orange*botFill;\n float a=max(topFill*0.78,botFill*0.72);\n col=mix(col,col+vec3(0.05,0.025,0.0)*(grain-0.5),0.65);\n float edge=max(topEdge,botEdge);\n col=mix(col,gold,edge);\n a=max(a,edge*0.95);\n gl_FragColor=vec4(col,a);\n}"
+            },
+            "js": null
+          },
+          "budgets": {
+            "maxInstances": 1,
+            "maxShaderOpsHint": 0.8,
+            "mobileSafe": true
+          }
+        },
+        {
+          "id": "cm.afklint-interrupted-axis.v2",
+          "family": "shader",
+          "kind": "dsl",
+          "allowOverride": false,
+          "seedPolicy": "deterministic",
+          "paramsSchema": {
+            "gapCenter": {
+              "type": "number",
+              "default": 0.61
+            },
+            "gapSize": {
+              "type": "number",
+              "default": 0.105
+            },
+            "lineWidth": {
+              "type": "number",
+              "default": 0.008
+            }
+          },
+          "source": {
+            "dsl": {
+              "plane": "full-frame",
+              "uniforms": {
+                "lineWidth": 0.008,
+                "gapCenter": 0.61,
+                "gapSize": 0.105,
+                "opacity": 0.96
+              },
+              "blend": "normal"
+            },
+            "glsl": {
+              "vertex": "varying vec2 vUv;\nvoid main(){vUv=uv;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0);}",
+              "fragment": "precision mediump float;\nvarying vec2 vUv;\nvoid main(){\n vec2 uv=vUv;\n float x=abs(uv.x-0.5);\n float line=smoothstep(0.012,0.004,x);\n float gap=1.0-smoothstep(0.044,0.052,abs(uv.y-0.61));\n float topMask=smoothstep(0.18,0.23,uv.y)*(1.0-smoothstep(0.84,0.9,uv.y));\n float a=line*topMask*(1.0-gap);\n float crisp=line*smoothstep(0.054,0.07,abs(uv.y-0.61));\n vec3 gold=vec3(0.86,0.68,0.26);\n vec3 darkGold=vec3(0.52,0.34,0.10);\n vec3 col=mix(darkGold,gold,crisp);\n gl_FragColor=vec4(col,a*0.96);\n}"
+            },
+            "js": null
+          },
+          "budgets": {
+            "maxInstances": 1,
+            "maxShaderOpsHint": 0.25,
+            "mobileSafe": true
+          }
+        },
+        {
+          "id": "cm.afklint-accountability-seal.v2",
+          "family": "shader",
+          "kind": "dsl",
+          "allowOverride": false,
+          "seedPolicy": "deterministic",
+          "paramsSchema": {
+            "radius": {
+              "type": "number",
+              "default": 0.052
+            },
+            "centerY": {
+              "type": "number",
+              "default": 0.43
+            }
+          },
+          "source": {
+            "dsl": {
+              "plane": "full-frame",
+              "uniforms": {
+                "radius": 0.052,
+                "centerY": 0.43,
+                "ringWidth": 0.004,
+                "opacity": 0.92
+              },
+              "blend": "normal"
+            },
+            "glsl": {
+              "vertex": "varying vec2 vUv;\nvoid main(){vUv=uv;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0);}",
+              "fragment": "precision mediump float;\nvarying vec2 vUv;\nvoid main(){\n vec2 uv=vUv;\n vec2 c=vec2(0.5,0.43);\n vec2 p=uv-c;\n p.x*=1.08;\n float d=length(p);\n float disc=smoothstep(0.056,0.048,d);\n float r1=1.0-smoothstep(0.004,0.008,abs(d-0.068));\n float r2=1.0-smoothstep(0.003,0.006,abs(d-0.083));\n vec3 blue=vec3(0.149,0.271,0.373);\n vec3 blueLit=vec3(0.22,0.37,0.48);\n vec3 gold=vec3(0.86,0.68,0.28);\n vec3 col=mix(blue,blueLit,smoothstep(0.052,0.0,d));\n float ring=max(r1*0.82,r2*0.62);\n col=mix(col,gold,ring);\n float a=max(disc*0.9,ring);\n gl_FragColor=vec4(col,a);\n}"
+            },
+            "js": null
+          },
+          "budgets": {
+            "maxInstances": 1,
+            "maxShaderOpsHint": 0.32,
+            "mobileSafe": true
+          }
+        },
+        {
+          "id": "cm.afklint-fracture-script.v2",
+          "family": "shader",
+          "kind": "dsl",
+          "allowOverride": false,
+          "seedPolicy": "deterministic",
+          "paramsSchema": {
+            "opacity": {
+              "type": "number",
+              "default": 0.46
+            },
+            "clusterY": {
+              "type": "number",
+              "default": 0.61
+            }
+          },
+          "source": {
+            "dsl": {
+              "plane": "full-frame",
+              "uniforms": {
+                "opacity": 0.46,
+                "clusterY": 0.61,
+                "markCount": 8
+              },
+              "blend": "multiply"
+            },
+            "glsl": {
+              "vertex": "varying vec2 vUv;\nvoid main(){vUv=uv;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0);}",
+              "fragment": "precision mediump float;\nvarying vec2 vUv;\nfloat seg(vec2 p, vec2 a, vec2 b){vec2 pa=p-a,ba=b-a;float h=clamp(dot(pa,ba)/dot(ba,ba),0.0,1.0);return length(pa-ba*h);}\nvoid main(){\n vec2 uv=vUv;\n float m=0.0;\n m=max(m,1.0-smoothstep(0.002,0.006,seg(uv,vec2(0.42,0.66),vec2(0.47,0.61))));\n m=max(m,1.0-smoothstep(0.002,0.006,seg(uv,vec2(0.53,0.67),vec2(0.59,0.62))));\n m=max(m,1.0-smoothstep(0.002,0.006,seg(uv,vec2(0.39,0.58),vec2(0.45,0.56))));\n m=max(m,1.0-smoothstep(0.002,0.006,seg(uv,vec2(0.56,0.57),vec2(0.64,0.54))));\n m=max(m,1.0-smoothstep(0.002,0.006,seg(uv,vec2(0.47,0.72),vec2(0.51,0.68))));\n m=max(m,1.0-smoothstep(0.002,0.006,seg(uv,vec2(0.52,0.51),vec2(0.49,0.47))));\n m=max(m,1.0-smoothstep(0.002,0.006,seg(uv,vec2(0.34,0.63),vec2(0.38,0.60))));\n m=max(m,1.0-smoothstep(0.002,0.006,seg(uv,vec2(0.62,0.70),vec2(0.67,0.66))));\n vec3 ink=vec3(0.35,0.12,0.07);\n gl_FragColor=vec4(ink,m*0.46);\n}"
+            },
+            "js": null
+          },
+          "budgets": {
+            "maxInstances": 1,
+            "maxShaderOpsHint": 0.45,
+            "mobileSafe": true
+          }
+        }
+      ],
+      "policyPasses": {
+        "advisoryOnly": true,
+        "skipped": [
+          "focal-hierarchy",
+          "envelope-clamp",
+          "composition-plan",
+          "artist-visual-profile",
+          "scene-element-module-enforcement",
+          "stack-pipeline-apply",
+          "gap-focused-pass",
+          "artist-hard-constraints"
+        ]
+      }
+    },
+    "seedVersion": 2,
+    "seeds": {
+      "baseSeed": 913169518,
+      "runSeed": 518091850,
+      "geomSeed": 3331939712,
+      "animSeed": 3011037429,
+      "colorSeed": 1632037543,
+      "cameraSeed": 3151468671
+    },
+    "customModuleReport": {
+      "declaredCustomModules": 5,
+      "accepted": [
+        {
+          "id": "cm.afklint-matte-ground.v2",
+          "family": "shader",
+          "kind": "dsl",
+          "fingerprint": "43f34a72"
+        },
+        {
+          "id": "cm.afklint-triangle-altarpiece.v2",
+          "family": "shader",
+          "kind": "dsl",
+          "fingerprint": "81da5fb5"
+        },
+        {
+          "id": "cm.afklint-interrupted-axis.v2",
+          "family": "shader",
+          "kind": "dsl",
+          "fingerprint": "cae0f6a8"
+        },
+        {
+          "id": "cm.afklint-accountability-seal.v2",
+          "family": "shader",
+          "kind": "dsl",
+          "fingerprint": "0f2b9926"
+        },
+        {
+          "id": "cm.afklint-fracture-script.v2",
+          "family": "shader",
+          "kind": "dsl",
+          "fingerprint": "b5d7eebb"
+        }
+      ],
+      "rejected": [],
+      "moduleOverrideCount": 0,
+      "fingerprint": "22d5d2f6"
+    },
+    "techStack": {
+      "id": "sdf-raymarch-lite",
+      "name": "SDF/Raymarch Lite",
+      "family": "sdf-raymarch",
+      "strategyFamilies": [
+        "orbits",
+        "flow",
+        "hybrid"
+      ],
+      "rationale": {
+        "signals": {
+          "conflict": 0.167,
+          "context": 0.292,
+          "motion": 0.25,
+          "turbulence": 0.426,
+          "structureBias": 0,
+          "densityBias": 0,
+          "edgeBias": 0,
+          "motionBias": 0,
+          "visualProfile": {
+            "profileCadence": "steady",
+            "preferredFamilies": []
+          }
+        },
+        "familyHits": 0,
+        "idHits": 0,
+        "penalties": [
+          "conflict<0.25",
+          "motion<0.3"
+        ],
+        "visualAffinity": 0,
+        "elementCoverage": {
+          "score": 0,
+          "coverage": 0,
+          "moduleCoverage": 0,
+          "missingCapabilities": [
+            "orthographic frontal layered shader planes",
+            "alpha compositing",
+            "deterministic GLSL noise"
+          ]
+        },
+        "preferredFamilies": [],
+        "preferredFamilyLocked": false,
+        "notPreferredPenalty": 0
+      },
+      "dominantPrimitive": "cm.afklint-matte-ground.v2",
+      "moduleSet": [
+        "cm.afklint-matte-ground.v2",
+        "cm.afklint-triangle-altarpiece.v2",
+        "cm.afklint-interrupted-axis.v2",
+        "cm.afklint-accountability-seal.v2",
+        "cm.afklint-fracture-script.v2"
+      ],
+      "pipelineKind": "sdf-raymarch"
+    },
+    "renderPipeline": {
+      "kind": "sdf-raymarch",
+      "family": "sdf-raymarch",
+      "fallback": false,
+      "advisoryOnly": true,
+      "dominantPrimitive": "cm.afklint-matte-ground.v2",
+      "moduleSet": [
+        "cm.afklint-matte-ground.v2",
+        "cm.afklint-triangle-altarpiece.v2",
+        "cm.afklint-interrupted-axis.v2",
+        "cm.afklint-accountability-seal.v2",
+        "cm.afklint-fracture-script.v2"
+      ]
+    }
+  },
+  "sceneStrategy": {
+    "selected": {
+      "id": "atomic-balanced-flow",
+      "name": "Balanced Flow Field",
+      "type": "atomic",
+      "family": "flow"
+    },
+    "applied": false,
+    "fallbackReason": "agent-authored-scene-elements"
+  },
+  "techStack": {
+    "id": "sdf-raymarch-lite",
+    "name": "SDF/Raymarch Lite",
+    "family": "sdf-raymarch"
+  },
+  "newsVisualMappings": [
+    {
+      "signal": "title evidence [trump, explique, pourquoi, diatement] -> motif flow",
+      "from": "trump, explique, pourquoi, diatement",
+      "visualDecision": "structural motif armature set to flow"
+    },
+    {
+      "signal": "composition foreground conflict",
+      "from": "trump, explique, pourquoi, diatement",
+      "visualDecision": "foreground role tension-knot at pressure 0.18"
+    },
+    {
+      "signal": "composition midground context",
+      "from": "trump, explique, pourquoi, diatement",
+      "visualDecision": "midground role context-drift with density 0.27"
+    },
+    {
+      "signal": "composition background mood",
+      "from": "trump, explique, pourquoi, diatement",
+      "visualDecision": "background mood watchful depth 0.253"
+    },
+    {
+      "signal": "urgency -> motion",
+      "from": "ageHours=20.63",
+      "visualDecision": "motionSpeedNormalized=0.47"
+    },
+    {
+      "signal": "title semantics -> palette/edge cadence",
+      "from": "temp=0 edge=0.5",
+      "visualDecision": "postContrast=1.14 accentType=cm.afklint-fracture-script.v2"
+    },
+    {
+      "signal": "article institutional/conflict polarity",
+      "from": "trump, explique, pourquoi, diatement",
+      "visualDecision": "accent element cm.afklint-fracture-script.v2 with opacity 0.46"
+    },
+    {
+      "signal": "artist research context Hilma af Klint",
+      "from": "tags symbolic, spiral, organic",
+      "visualDecision": "artist profile captured as metadata only; no technical routing applied"
+    }
+  ],
+  "qualityScore": {
+    "score": 52.8,
+    "summary": "Alignment 69.0 with strongest channel emotional.",
+    "heuristic": {
+      "score": 68.2,
+      "breakdown": {
+        "legibility": 76.3,
+        "emotionalReadability": 69,
+        "coherence": 88.7,
+        "focalAnchor": 69.7,
+        "technicalRichness": 90.2,
+        "restraint": 77.3,
+        "alignment": 69
+      }
+    },
+    "calibration": {
+      "sampleCount": 1,
+      "trustWeight": 0.4
+    },
+    "alignment": {
+      "totalAlign": 69,
+      "components": {
+        "title": {
+          "score": 62
+        },
+        "style": {
+          "score": 68
+        },
+        "emotional": {
+          "score": 77.2
+        }
+      }
+    }
+  },
+  "rationale": {
+    "intent": {
+      "signal": null,
+      "emotion": null,
+      "tension": null,
+      "balance": null,
+      "motion": null
+    },
+    "selection": {
+      "whyHeadline": "Selected as top-ranked Belgian headline (score 69 = frequency 69 + priority 0 + recency 0).",
+      "priorityTerms": []
+    },
+    "qualitySummary": "TOTAL_ALIGN 69.0."
+  },
+  "runPolicy": {
+    "artworksPerRun": 1,
+    "multiVariant": false
+  },
+  "artFramework": {
+    "version": 3,
+    "intent": {
+      "statement": "Trump explique pourquoi il n’a pas immédiatement été évacué du gala des correspondants après les tirs : “C’est un peu de ma faute” translated through Hilma af Klint's visual language as a non-literal image.",
+      "coreImpulse": "In Hilma af Klint: Paintings for the Temple (paintings by Hilma af Klint) Af Klint concluded Paintings for the Temple with a triptych she called Altarpieces, featuring geometric shapes, bold primary colors, and gold l... Hilma af Klint was a Swedish artist and mystic whose paintings are considered to be among the first major abstract works in Western art history. After studying at the Royal Academy of Art in Stockholm, Hilma af Klint embarked on a major suite of paintings in 1904-06. Hilma af Klint did not ascribe to any of the established avant-garde movements of her time.",
+      "artistTranslationLogic": [
+        "Hilma af Klint's formal logic should dominate before any spectacle or scenic excess."
+      ],
+      "emotionalClimate": {
+        "summary": "In Hilma af Klint: Paintings for the Temple (paintings by Hilma af Klint) Af Klint concluded Paintings for the Temple with a triptych she called Altarpieces, featuring geometric shapes, bold primary colors, and gold l... Hilma af Klint was a Swedish artist and mystic whose paintings are considered to be among the first major abstract works in Western art history. After studying at the Royal Academy of Art in Stockholm, Hilma af Klint embarked on a major suite of paintings in 1904-06. Hilma af Klint did not ascribe to any of the established avant-garde movements of her time.",
+        "pressure": "low",
+        "pace": "slow",
+        "socialReach": "concentrated"
+      },
+      "visualGravity": {
+        "anchor": null,
+        "dominantStructure": "Build the image around one readable structural law.",
+        "scaleBehavior": "Keep the space bounded and compositionally intentional."
+      },
+      "materialLogic": {
+        "surfaceBehavior": [],
+        "spatialHabits": [],
+        "handling": "Hilma af Klint's surface should feel made, not generic."
+      },
+      "colorField": {
+        "paletteSignals": [],
+        "contrastMode": "measured contrast with restrained vibration"
+      },
+      "symbolicDensity": {
+        "primaryMotif": "flow",
+        "motifVocabulary": [],
+        "literalness": "non-literal"
+      },
+      "tensionEngine": {
+        "conflictAxis": "Trump",
+        "escalationMode": "Let tension accumulate through structure, not narration.",
+        "releaseValve": "Allow only a narrow zone of release."
+      },
+      "audiencePosition": {
+        "stance": "Hilma af Klint did not ascribe to any of the established avant-garde movements of her time. Hilma af Klint was a Swedish artist and mystic whose paintings are considered to be among the first major abstract works in Western art history. In Hilma af Klint: Paintings for the Temple (paintings by Hilma af Klint) Af Klint concluded Paintings for the Temple with a triptych she called Altarpieces, featuring geometric shapes, bold primary colors, and gold l... In Hilma af Klint: Paintings for the Temple (paintings by Hilma af Klint) Af Klint concluded Paintings for the Temple with a triptych she called Altarpieces, featuring geometric shapes, bold primary colors, and gold l...",
+        "distance": "immersed but not illustrative"
+      },
+      "controlVsAccident": {
+        "balance": "controlled with selective instability",
+        "motionTemperament": "steady",
+        "accidentRole": "use drift or fracture sparingly to keep the field alive"
+      },
+      "antiDriftRules": [
+        "Do not collapse into biography summary, symbolic cliché, or generic procedural spectacle."
+      ],
+      "finalCompression": "In Hilma af Klint: Paintings for the Temple (paintings by Hilma af Klint) Af Klint concluded Paintings for the Temple with a triptych she called Altarpieces, featuring geometric shapes, bold primary colors, and gold l... Hilma af Klint was a Swedish artist and mystic whose paintings are considered to be among the first major abstract works in Western art history. After studying at the Royal Academy of Art in Stockholm, Hilma af Klint embarked on a major suite of paintings in 1904-06. Hilma af Klint did not ascribe to any of the established avant-garde movements of her time. Build the image around one readable structural law.",
+      "artistAnchors": {
+        "formalLogic": [],
+        "motifVocabulary": [],
+        "compositionCues": [],
+        "paletteSignals": [],
+        "surfaceBehavior": [],
+        "spatialHabits": [],
+        "translationDirectives": []
+      },
+      "threeJsFreedomEnvelope": [],
+      "avoidSignals": [],
+      "threeJsTranslationExamples": []
+    }
+  },
+  "debugFile": "./data/artworks-debug/2026-04-28-abstract-signal-trump-explique-pourquoi-diatement-v2.json"
+}
