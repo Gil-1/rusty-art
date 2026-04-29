@@ -10,6 +10,16 @@ const PULSE_PROFILES = {
   ticking: { amp: 0.032, freq: 0.78 }
 };
 
+function cycle01(phase) {
+  const cycle = (phase / (Math.PI * 2)) % 1;
+  return cycle < 0 ? cycle + 1 : cycle;
+}
+
+function smoothstep(edge0, edge1, value) {
+  const t = Math.max(0, Math.min(1, (value - edge0) / (edge1 - edge0)));
+  return t * t * (3 - 2 * t);
+}
+
 function pulseWaveByFamily(family, phase) {
   if (family === 'musical') {
     return Math.sin(phase) * 0.66 + Math.sin(phase * 2.01 + 0.8) * 0.34;
@@ -21,8 +31,7 @@ function pulseWaveByFamily(family, phase) {
     return Math.sin(phase) * 0.78 + Math.sin(phase * 0.45 + 1.2) * 0.22;
   }
   if (family === 'ascending') {
-    const cyc = (phase / (Math.PI * 2)) % 1;
-    return cyc * 2 - 1;
+    return -Math.cos(phase);
   }
   if (family === 'playful') {
     return Math.sin(phase + Math.sin(phase * 0.5) * 0.5);
@@ -31,12 +40,12 @@ function pulseWaveByFamily(family, phase) {
     return Math.cos(phase * 1.15 + Math.sin(phase * 0.37) * 0.35);
   }
   if (family === 'minimal') {
-    const cyc = (phase / (Math.PI * 2)) % 1;
-    return cyc < 0.88 ? -0.42 : 0.92;
+    const cyc = cycle01(phase);
+    const pulse = smoothstep(0.78, 0.88, cyc) * (1 - smoothstep(0.88, 0.98, cyc));
+    return -0.42 + pulse * 1.34;
   }
   if (family === 'ticking') {
-    const step = Math.floor(((phase / (Math.PI * 2)) % 1) * 8);
-    return (step % 2 === 0 ? 1 : -1) * 0.8;
+    return Math.sin(phase * 4) * 0.8;
   }
   return Math.sin(phase);
 }
