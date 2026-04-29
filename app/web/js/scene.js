@@ -16,6 +16,28 @@ function clamp(value, min, max) {
   return Math.max(min, Math.min(max, value));
 }
 
+export const MAX_RENDER_PIXEL_RATIO = 2.25;
+export const PREFERRED_RENDER_TARGET_SAMPLES = 4;
+
+export function resolveRendererPixelRatio(devicePixelRatio = 1) {
+  const ratio = Number(devicePixelRatio);
+  return clamp(Number.isFinite(ratio) && ratio > 0 ? ratio : 1, 1, MAX_RENDER_PIXEL_RATIO);
+}
+
+export function resolveRenderTargetSamples(maxSamples = 0, preferredSamples = PREFERRED_RENDER_TARGET_SAMPLES) {
+  const max = Math.max(0, Math.floor(Number(maxSamples) || 0));
+  const preferred = Math.max(0, Math.floor(Number(preferredSamples) || 0));
+  return Math.min(max, preferred);
+}
+
+export function resolveRenderTargetSize(width, height, pixelRatio = 1) {
+  const ratio = resolveRendererPixelRatio(pixelRatio);
+  return {
+    width: Math.max(1, Math.round((Number(width) || 1) * ratio)),
+    height: Math.max(1, Math.round((Number(height) || 1) * ratio))
+  };
+}
+
 function normalizeIdentifier(value, fallback = null) {
   const id = String(value || '').trim();
   return id || fallback;
@@ -244,7 +266,7 @@ export class ArtworkScene {
   constructor(canvas) {
     this.canvas = canvas;
     this.renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: false });
-    this.renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+    this.renderer.setPixelRatio(resolveRendererPixelRatio(window.devicePixelRatio || 1));
     this.renderer.toneMapping = THREE.ACESFilmicToneMapping;
     this.renderer.toneMappingExposure = 1.0;
 
@@ -282,10 +304,11 @@ export class ArtworkScene {
 
     this.postScene = new THREE.Scene();
     this.postCamera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
+    this.renderTargetSamples = resolveRenderTargetSamples(this.renderer.capabilities.maxSamples);
     this.renderTarget = new THREE.WebGLRenderTarget(1, 1, {
       depthBuffer: true,
       stencilBuffer: false,
-      samples: 0
+      samples: this.renderTargetSamples
     });
 
     this.postUniforms = {
@@ -653,10 +676,11 @@ export class ArtworkScene {
     const rect = this.canvas.getBoundingClientRect();
     const width = Math.max(1, Math.round(rect.width || this.canvas.clientWidth || 1));
     const height = Math.max(1, Math.round(rect.height || this.canvas.clientHeight || 1));
+    const renderTargetSize = resolveRenderTargetSize(width, height, this.renderer.getPixelRatio());
 
     this.renderer.setSize(width, height, false);
-    this.renderTarget.setSize(width, height);
-    this.postUniforms.uResolution.value.set(width, height);
+    this.renderTarget.setSize(renderTargetSize.width, renderTargetSize.height);
+    this.postUniforms.uResolution.value.set(renderTargetSize.width, renderTargetSize.height);
     this.camera.aspect = width / height;
     this.camera.updateProjectionMatrix();
     this.applyViewportOrbitFrame();
