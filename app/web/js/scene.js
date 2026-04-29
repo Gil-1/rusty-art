@@ -31,6 +31,37 @@ function toFiniteNumber(value, fallback = null) {
   return Number.isFinite(numeric) ? numeric : fallback;
 }
 
+const ELEMENT_LAYER_RENDER_ORDER = {
+  background: 0,
+  backdrop: 0,
+  atmosphere: 0,
+  midground: 1,
+  middle: 1,
+  foreground: 2,
+  accent: 3,
+  overlay: 4
+};
+
+export function resolveElementRenderOrder(element = {}, index = 0) {
+  const layer = String(element?.layer || element?.params?.layer || '').trim().toLowerCase();
+  const rank = Object.prototype.hasOwnProperty.call(ELEMENT_LAYER_RENDER_ORDER, layer)
+    ? ELEMENT_LAYER_RENDER_ORDER[layer]
+    : 1;
+  return rank * 1000 + Math.max(0, Number(index) || 0);
+}
+
+export function applyElementRenderOrder(obj, element = {}, index = 0) {
+  if (!obj) return null;
+  const renderOrder = resolveElementRenderOrder(element, index);
+  obj.renderOrder = renderOrder;
+  if (typeof obj.traverse === 'function') {
+    obj.traverse((child) => {
+      child.renderOrder = renderOrder;
+    });
+  }
+  return renderOrder;
+}
+
 function hashAnimationSeed(value = '') {
   let hash = 2166136261;
   const text = String(value || 'seed');
@@ -402,6 +433,7 @@ export class ArtworkScene {
         builders: elementBuilders
       });
       if (!built?.obj) return;
+      applyElementRenderOrder(built.obj, builderElement, index);
       this.group.add(built.obj);
       const animationSeed = hashAnimationSeed(`${config.seed || 0}:${builderElement.id || builderElement.moduleType || index}`);
       this.animations.push({

@@ -104,6 +104,19 @@ function toBoolean(value, fallback = false) {
   return fallback;
 }
 
+function isFullscreenPlaneDsl(dsl = {}) {
+  const plane = String(dsl.plane || dsl.primitive || '').trim().toLowerCase();
+  return plane === 'fullscreen' || plane === 'full-screen';
+}
+
+function resolveDepthWrite({ params = {}, dsl = {}, isTransparent = true } = {}) {
+  return toBoolean(params.depthWrite, toBoolean(dsl.depthWrite, !isTransparent));
+}
+
+function resolveDepthTest({ params = {}, dsl = {}, isFullscreenPlane = false } = {}) {
+  return toBoolean(params.depthTest, toBoolean(dsl.depthTest, !isFullscreenPlane));
+}
+
 function isObject(value) {
   return Boolean(value) && typeof value === 'object' && !Array.isArray(value);
 }
@@ -519,6 +532,7 @@ function createDslShaderBuilder(spec) {
     const height = clamp(params.height ?? dsl.height, 0.2, 120, 6);
     const isTransparent = toBoolean(params.transparent, toBoolean(dsl.transparent, true));
     const isDoubleSided = toBoolean(params.doubleSided, toBoolean(dsl.doubleSided, true));
+    const isFullscreenPlane = isFullscreenPlaneDsl(dsl);
     const { vertexShader, fragmentShader, paramUniforms } = prepareCustomShaderSources({
       spec,
       params,
@@ -551,7 +565,8 @@ function createDslShaderBuilder(spec) {
       vertexShader,
       fragmentShader,
       transparent: isTransparent,
-      depthWrite: !isTransparent,
+      depthWrite: resolveDepthWrite({ params, dsl, isTransparent }),
+      depthTest: resolveDepthTest({ params, dsl, isFullscreenPlane }),
       side: isDoubleSided ? THREE.DoubleSide : THREE.FrontSide,
       blending: resolveBlend(params.blend || dsl.blend || primitive?.blend || 'normal')
     });
@@ -926,6 +941,7 @@ function createDslGeometryBuilder(spec) {
       const segmentsY = Math.round(clamp(params.segmentsY ?? dsl.segmentsY ?? dsl.cellCount, 1, 240, 20));
       const isTransparent = toBoolean(params.transparent, toBoolean(dsl.transparent, true));
       const isDoubleSided = toBoolean(params.doubleSided, toBoolean(dsl.doubleSided, true));
+      const isFullscreenPlane = isFullscreenPlaneDsl(dsl);
       const { vertexShader, fragmentShader, paramUniforms } = prepareCustomShaderSources({
         spec,
         params,
@@ -958,7 +974,8 @@ function createDslGeometryBuilder(spec) {
         vertexShader,
         fragmentShader,
         transparent: isTransparent,
-        depthWrite: !isTransparent,
+        depthWrite: resolveDepthWrite({ params, dsl, isTransparent }),
+        depthTest: resolveDepthTest({ params, dsl, isFullscreenPlane }),
         side: isDoubleSided ? THREE.DoubleSide : THREE.FrontSide,
         blending: resolveBlend(params.blend || dsl.blend || primitive?.blend || 'normal')
       });
