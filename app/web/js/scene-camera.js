@@ -1,5 +1,9 @@
 const TOUCH_DRAG_SENSITIVITY = 0.2;
 
+function clamp(value, min, max) {
+  return Math.max(min, Math.min(max, value));
+}
+
 export function bindOrbitInput(scene) {
   scene.canvas.addEventListener('pointerdown', (event) => {
     if (event.isPrimary === false) return;
@@ -114,4 +118,85 @@ export function updateOrbitForFrame(scene, { t, motionT, speed, motion }) {
   }
 
   updateCameraFromOrbit(scene);
+}
+
+export function computeViewportOrbitFrame(aspect = 1) {
+  const portraitInfluence = clamp((1 - aspect) / 0.44, 0, 1);
+  if (portraitInfluence === 0) {
+    return { radiusMultiplier: 1, phiOffset: 0, targetYOffset: 0 };
+  }
+  return {
+    radiusMultiplier: 1 - portraitInfluence * 0.1,
+    phiOffset: -portraitInfluence * 0.05,
+    targetYOffset: -portraitInfluence * 0.24
+  };
+}
+
+export function applyViewportOrbitFrame(scene, { resetOrbit = false } = {}) {
+  const previous = scene.viewportOrbitFrame || { radiusMultiplier: 1, phiOffset: 0, targetYOffset: 0 };
+  const next = computeViewportOrbitFrame(scene.camera.aspect || 1);
+  scene.viewportOrbitFrame = next;
+
+  scene.orbit.target.set(
+    scene.baseOrbitTarget.x,
+    scene.baseOrbitTarget.y + next.targetYOffset,
+    scene.baseOrbitTarget.z
+  );
+
+  if (resetOrbit) {
+    scene.orbit.radius = clamp(
+      scene.baseOrbitPose.radius * next.radiusMultiplier,
+      scene.controls.minDistance,
+      scene.controls.maxDistance
+    );
+    scene.orbit.theta = scene.baseOrbitPose.theta;
+    scene.orbit.phi = scene.baseOrbitPose.phi + next.phiOffset;
+    updateCameraFromOrbit(scene);
+    return;
+  }
+
+  const prevRadiusMultiplier = Math.max(0.01, previous.radiusMultiplier || 1);
+  const radiusRatio = next.radiusMultiplier / prevRadiusMultiplier;
+  scene.orbit.radius = clamp(
+    scene.orbit.radius * radiusRatio,
+    scene.controls.minDistance,
+    scene.controls.maxDistance
+  );
+  scene.orbit.phi += next.phiOffset - (previous.phiOffset || 0);
+  updateCameraFromOrbit(scene);
+}
+
+export function resetCameraForArtwork(scene, camCfg = {}) {
+  const defaultPose = { radius: 12, theta: 0, phi: Math.PI / 2.2 };
+  const firstBeat = Array.isArray(scene.cameraBeats) && scene.cameraBeats.length ? scene.cameraBeats[0] : null;
+
+  const pick = (key) => {
+    const fromCfg = camCfg?.[key];
+    const fromBeat = firstBeat?.[key];
+    if (Number.isFinite(fromCfg)) return fromCfg;
+    if (Number.isFinite(fromBeat)) return fromBeat;
+    return defaultPose[key];
+  };
+
+  scene.baseOrbitPose.radius = clamp(pick('radius'), scene.controls.minDistance, scene.controls.maxDistance);
+  scene.baseOrbitPose.theta = pick('theta');
+  scene.baseOrbitPose.phi = pick('phi');
+
+  const target = camCfg?.target;
+  if (Array.isArray(target) && target.length === 3 && target.every(Number.isFinite)) {
+    scene.baseOrbitTarget.set(target[0], target[1], target[2]);
+  } else if (target && Number.isFinite(target.x) && Number.isFinite(target.y) && Number.isFinite(target.z)) {
+    scene.baseOrbitTarget.set(target.x, target.y, target.z);
+  } else {
+    scene.baseOrbitTarget.set(0, 0, 0);
+  }
+
+  scene.orbit.radius = scene.baseOrbitPose.radius;
+  scene.orbit.theta = scene.baseOrbitPose.theta;
+  scene.orbit.phi = scene.baseOrbitPose.phi;
+  scene.orbit.thetaVel = 0;
+  scene.orbit.phiVel = 0;
+  scene.orbit.dragging = false;
+  scene.orbit.userControlLocked = false;
+  applyViewportOrbitFrame(scene, { resetOrbit: true });
 }
