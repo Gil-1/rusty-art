@@ -1,5 +1,12 @@
 import { createArtworkFetcher, loadManifestWithFallback } from './main-data.js';
-import { clampManifestIndex, findActiveIndex, getNeighborFiles, syncQuickControls, wrapManifestIndex } from './main-navigation.js';
+import {
+  clampManifestIndex,
+  findActiveIndex,
+  findManifestIndexByArtworkSlug,
+  getNeighborFiles,
+  syncQuickControls,
+  wrapManifestIndex
+} from './main-navigation.js';
 import { createCaptureStateController } from './main-capture-state.js';
 import { applyMotionMode as applyMotionModeUi, applyViewMode as applyViewModeUi, setFocusMode as setFocusModeUi } from './main-modes.js';
 import {
@@ -20,6 +27,7 @@ const captureMode = query.get('capture') === '1';
 const forcedView = query.get('view');
 const requestedIndexParam = query.get('index');
 const requestedIndex = requestedIndexParam == null ? null : Number.parseInt(requestedIndexParam, 10);
+const requestedArtworkSlug = query.get('slug');
 
 const artFirst = document.querySelector('.art-first');
 const canvas = document.getElementById('art-canvas');
@@ -691,9 +699,12 @@ async function init() {
   updateArchiveCount();
 
   const defaultIndex = Math.max(0, manifest.items.length - 1);
-  const targetIndex = requestedIndex == null || Number.isNaN(requestedIndex)
-    ? defaultIndex
-    : Math.max(0, requestedIndex);
+  const slugIndex = findManifestIndexByArtworkSlug(manifest, requestedArtworkSlug);
+  const targetIndex = slugIndex != null
+    ? slugIndex
+    : requestedIndex == null || Number.isNaN(requestedIndex)
+      ? defaultIndex
+      : Math.max(0, requestedIndex);
   await loadArtworkByIndex(targetIndex);
 
   if (captureMode) {
