@@ -452,6 +452,7 @@ body.focus-mode .key-hints {
 body.capture-mode .topline,
 body.capture-mode .status-banner,
 body.capture-mode .fallback-panel,
+body.capture-mode .now-chip,
 body.capture-mode .below-fold {
   display: none;
 }
@@ -469,13 +470,6 @@ body.capture-mode .art-first {
 
 body.capture-mode .canvas-shell {
   border-radius: 0;
-}
-
-body.capture-mode .now-chip {
-  left: 0.8rem;
-  right: auto;
-  bottom: 0.8rem;
-  width: min(calc(100vw - 1.6rem), 760px);
 }
 
 .story-panel,

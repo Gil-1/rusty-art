@@ -1,0 +1,936 @@
+{
+  "id": "2026-05-02-resonance-donald-trump-annonce-vouloir",
+  "date": "2026-05-02",
+  "title": "Resonance: Donald Trump annonce vouloir",
+  "generatedAt": "2026-05-02T06:07:34.982Z",
+  "news": {
+    "source": "dh",
+    "title": "Donald Trump annonce vouloir relever \"la semaine prochaine\" les droits de douane sur les véhicules européens",
+    "link": "https://www.dhnet.be/actu/monde/2026/05/01/donald-trump-annonce-vouloir-relever-la-semaine-prochaine-les-droits-de-douane-sur-les-vehicules-europeens-F3FS7HJ33FDV3PUN7R27OCSU7Q/",
+    "score": 88
+  },
+  "inspiration": {
+    "artist": "Clyfford Still",
+    "tags": [
+      "abstract",
+      "surreal",
+      "expressionist",
+      "figurative",
+      "surrealist"
+    ],
+    "links": {
+      "wikipedia": "https://en.wikipedia.org/wiki/Clyfford_Still",
+      "reference": "http://www.clyffordstill.net/"
+    }
+  },
+  "seed": 3988214886,
+  "scene": {
+    "motif": "flow",
+    "shapeCount": 96,
+    "turbulence": 0.593,
+    "spiralBias": 0.799,
+    "motionSpeed": 0.001457,
+    "bloom": 0.08,
+    "grain": 0.038,
+    "fogDensity": 0.056,
+    "distortion": 0.34,
+    "flowField": 0.28,
+    "anchorStrength": 0.639,
+    "anchorOffsetX": 0.098,
+    "layerBalance": {
+      "structure": 0.607,
+      "chaos": 0.436
+    },
+    "expression": {
+      "tension": 0.31,
+      "structure": 0.562,
+      "motion": 0.591,
+      "noise": 0.364,
+      "urgency": 0.506,
+      "contrast": 0.254
+    },
+    "palette": {
+      "bg": "#d56f25",
+      "primary": "#9f1f18",
+      "secondary": "#1f8fa8",
+      "glow": "#f0b14a",
+      "anchor": "#241713"
+    },
+    "elements": [
+      {
+        "id": "el-01-cm.dry-scrape-field.v1",
+        "moduleType": "cm.dry-scrape-field.v1",
+        "capabilities": [],
+        "stackFamilies": [],
+        "styleTags": [],
+        "libraryRef": null,
+        "scale": [
+          3.2,
+          2.1,
+          1
+        ],
+        "grainScale": 48,
+        "scrape": 0.2,
+        "color": "bg",
+        "opacity": 0.95,
+        "intensity": 0.62,
+        "scenePurpose": "Establish the work as a painted field before any symbolic reading begins.",
+        "expectedRead": "warm mineral canvas with dry pigment variation",
+        "mustNotReadAs": [
+          "flat UI backdrop",
+          "sunset sky"
+        ],
+        "animation": {
+          "pulse": 0.04,
+          "wobbleX": 0.02,
+          "wobbleY": 0.02,
+          "drift": 0.08
+        },
+        "techniqueRef": "pigment-grain",
+        "role": "atmosphere-field",
+        "layer": "background",
+        "motif": "flow",
+        "intentCadence": "measured"
+      },
+      {
+        "id": "el-02-cm.still-torn-mass.v1",
+        "moduleType": "cm.still-torn-mass.v1",
+        "capabilities": [],
+        "stackFamilies": [],
+        "styleTags": [],
+        "libraryRef": null,
+        "position": [
+          -0.34,
+          -0.06,
+          0.03
+        ],
+        "width": 0.54,
+        "height": 1.34,
+        "segments": 24,
+        "roughness": 0.2,
+        "tilt": -0.08,
+        "color": "primary",
+        "opacity": 0.9,
+        "intensity": 0.78,
+        "scenePurpose": "Make the announced increase visible as an ascending pressure mass.",
+        "expectedRead": "jagged red field climbing into the center-left seam",
+        "mustNotReadAs": [
+          "flame",
+          "map",
+          "logo"
+        ],
+        "animation": {
+          "pulse": 0.08,
+          "wobbleX": 0.05,
+          "wobbleY": 0.08,
+          "drift": 0.14
+        },
+        "techniqueRef": "torn-field-layering",
+        "role": "primary-signal",
+        "layer": "midground",
+        "motif": "flow",
+        "intentCadence": "measured"
+      },
+      {
+        "id": "el-03-fault-line",
+        "moduleType": "fault-line",
+        "capabilities": [
+          "fracture-destruction",
+          "focal-anchor"
+        ],
+        "stackFamilies": [
+          "post-heavy",
+          "particle-heavy",
+          "geometry-heavy"
+        ],
+        "styleTags": [
+          "fault",
+          "break"
+        ],
+        "libraryRef": "element.fault-line.v1",
+        "color": "secondary",
+        "opacity": 0.76,
+        "intensity": 0.72,
+        "layer": "foreground",
+        "position": [
+          0.08,
+          0.02,
+          0.06
+        ],
+        "length": 1.28,
+        "width": 0.04,
+        "jaggedness": 0.65,
+        "glow": 0.08,
+        "scenePurpose": "Provide the narrow release valve and keep the conflict readable without literal signs.",
+        "expectedRead": "cool torn interval under pressure",
+        "mustNotReadAs": [
+          "neon portal",
+          "laser beam"
+        ],
+        "animation": {
+          "rotationZ": 0.03,
+          "pulse": 0.12,
+          "wobbleX": 0.03,
+          "wobbleY": 0.08,
+          "drift": 0.11
+        },
+        "techniqueRef": "upward-pressure-seam",
+        "role": "focal-anchor",
+        "motif": "flow",
+        "intentCadence": "measured"
+      },
+      {
+        "id": "el-04-cm.still-torn-mass.v1",
+        "moduleType": "cm.still-torn-mass.v1",
+        "capabilities": [],
+        "stackFamilies": [],
+        "styleTags": [],
+        "libraryRef": null,
+        "position": [
+          0.46,
+          0.32,
+          0.04
+        ],
+        "width": 0.38,
+        "height": 0.92,
+        "segments": 20,
+        "roughness": 0.16,
+        "tilt": 0.11,
+        "color": "anchor",
+        "opacity": 0.84,
+        "intensity": 0.5,
+        "scenePurpose": "Counter the upward pressure with a heavy dark field from above.",
+        "expectedRead": "dark torn mass bearing down from the upper right",
+        "mustNotReadAs": [
+          "mountain",
+          "curtain"
+        ],
+        "animation": {
+          "rotationZ": 0.05,
+          "pulse": 0.04,
+          "wobbleX": 0.03,
+          "wobbleY": 0.04,
+          "drift": 0.06
+        },
+        "techniqueRef": "torn-field-layering",
+        "role": "structural-spine",
+        "layer": "midground",
+        "motif": "flow",
+        "intentCadence": "measured"
+      }
+    ],
+    "shaderLayers": 4,
+    "elementDiversity": 3,
+    "paletteVariance": 0,
+    "motionSpeedNormalized": 0.617,
+    "camera": {
+      "autoRotate": false,
+      "autoRotateSpeed": 0.139,
+      "minDistance": 6,
+      "maxDistance": 24,
+      "cycleSeconds": 24,
+      "beats": [
+        {
+          "t": 0,
+          "radius": 12.504,
+          "theta": 0.239,
+          "phi": 1.229,
+          "hold": 1.064
+        },
+        {
+          "t": 0.34,
+          "radius": 10.636,
+          "theta": 1.139,
+          "phi": 1.031,
+          "hold": 0.514
+        },
+        {
+          "t": 0.68,
+          "radius": 11.248,
+          "theta": 1.943,
+          "phi": 1.307,
+          "hold": 0.866
+        },
+        {
+          "t": 1,
+          "radius": 12.28,
+          "theta": 2.319,
+          "phi": 1.12,
+          "hold": 1.144
+        }
+      ],
+      "target": [
+        0,
+        0,
+        0
+      ]
+    },
+    "post": {
+      "vignette": 0.12,
+      "contrast": 1.24,
+      "saturation": 0.92,
+      "exposure": 0.95,
+      "breathing": {
+        "hueShift": 0.053,
+        "saturationAmplitude": 0.067,
+        "exposureAmplitude": 0.058,
+        "phaseA": 0.8116,
+        "phaseB": 0.2219
+      }
+    },
+    "styleFingerprint": {
+      "pulseFamily": "musical",
+      "stripeWarp": 0.22,
+      "edgeSoftness": 0.22,
+      "cameraSway": 0.22,
+      "edgeHardness": 0.5,
+      "temperatureBias": 0,
+      "verticalBias": 0,
+      "cadenceBias": 0
+    },
+    "sceneAuthoring": {
+      "mode": "agent-dsl",
+      "planner": "openclaw-agent-scene-planner",
+      "representation": {
+        "id": "rep.upward-tariff-fracture",
+        "label": "Upward Tariff Fracture",
+        "description": "A Still-like painted surface where a red-orange mass climbs through a cooler seam, making escalation visible as pressure rather than illustration.",
+        "scoreHint": 0.82,
+        "motif": "rising fracture under compression",
+        "cadence": "measured",
+        "scenePrompt": "Full-frame matte abstract expressionist canvas with jagged red-orange fields pressing upward through a narrow blue-cyan fracture, dark umber counterweight, rough torn pigment edges, restrained motion, no literal political imagery.",
+        "colorMood": "burnt orange and deep red under tension, cut by a cool blue-cyan interval and anchored with umber black.",
+        "spatialIntent": "Flat frontal painting logic with shallow parallax only to separate ground, torn masses, seam, and foreground scrape marks.",
+        "imageAuthorship": {
+          "structuralLaw": "One upward rupture divides a warm field, with all masses either pressing into it or yielding from it.",
+          "dominantForms": [
+            "jagged red-orange vertical plate",
+            "narrow blue-cyan seam",
+            "dark upper counter-shard",
+            "dry scraped pigment veils"
+          ],
+          "edgeBehavior": "Edges are torn, irregular, mineral, and slightly feathered, never clean geometric outlines.",
+          "surfaceBehavior": "Matte oil-like fields show granular density, dry scrape, and uneven underpainting.",
+          "depthLogic": "Depth is shallow and painterly: background pigment, midground torn plates, foreground scratches.",
+          "motionLogic": "Motion is nearly still, with slow breathing in grain and a faint upward crawl along the rupture.",
+          "forbiddenDrift": [
+            "Do not turn the seam into a glowing portal.",
+            "Do not add literal cars, maps, or political symbols.",
+            "Do not center everything into a symmetrical target."
+          ]
+        },
+        "technicalTranslation": {
+          "realizationStrategy": "Use a full-frame shader field for the painted ground, custom jagged frontal meshes for the bounded masses, and a restrained fault-line element for the rising seam.",
+          "reuseBias": "hybrid",
+          "whyThisApproach": "Existing field and fault modules can handle broad surface and seam behavior, while the torn masses need a specific Still-like geometry module.",
+          "notes": [
+            "Keep camera orthographic-feeling and frontal.",
+            "Use bloom only as pigment lift, not as luminous effect.",
+            "Layer z offsets under 0.08 to avoid staged 3D."
+          ],
+          "motionCadence": "measured"
+        },
+        "mustShow": [
+          "large matte orange ground",
+          "bounded rising red jagged mass",
+          "thin blue-cyan vertical rupture",
+          "dark umber counter-shard",
+          "visible pigment grain and scraped edges"
+        ],
+        "mustAvoid": [
+          "portrait of Trump",
+          "cars or tariffs as icons",
+          "flags",
+          "portal glow",
+          "HUD or dashboard graphics",
+          "single central orb"
+        ],
+        "reviewFocus": [
+          "Does the blue-cyan seam remain legible?",
+          "Do the forms read as painted torn fields rather than UI panels?",
+          "Is the escalation structural and non-literal?"
+        ],
+        "artistTechniqueObservations": {
+          "medium": "painting",
+          "primaryTechnique": "radial/orbital construction",
+          "markMakingTraits": [],
+          "surfaceQualities": [
+            "painted surface behavior matters more than object literalism"
+          ],
+          "paletteTendencies": [
+            "dominant hues: orange, red, blue-cyan"
+          ],
+          "spatialHabits": [
+            "layered field organization",
+            "orbital/circular organization"
+          ]
+        },
+        "rationale": {
+          "newsTranslation": "The proposed tariff rise becomes vertical pressure and compression.",
+          "artistTranslation": "Still's torn color field scale carries the image, with restrained palette contrast and rough painted surface."
+        },
+        "techniques": [
+          {
+            "id": "torn-field-layering",
+            "name": "Torn Color Field Layering",
+            "type": "geometry",
+            "purpose": "Carry the main image through large irregular color fields.",
+            "reuseModuleType": null,
+            "params": {
+              "roughness": 0.72,
+              "frontal": true
+            }
+          },
+          {
+            "id": "pigment-grain",
+            "name": "Dry Pigment Grain",
+            "type": "shader",
+            "purpose": "Give the fields material density and dry scraped variation.",
+            "reuseModuleType": null,
+            "params": {
+              "grainScale": 46,
+              "scrapeStrength": 0.26
+            }
+          }
+        ]
+      },
+      "artisticIntent": {
+        "statement": "A frontal, painted field where the threatened tariff increase becomes a jagged compression of red-orange mass against a cooler European blue-cyan seam, held in Clyfford Still's torn vertical scale rather than literal politics.",
+        "motif": "A measured upward pressure fracture cutting through layered color fields.",
+        "emotionalArc": "The image begins as broad mineral stillness, tightens into a serrated red-orange escalation, and releases only through a narrow blue-cyan breathing channel.",
+        "compositionLogic": "A full-frame matte ground carries bounded torn fields: one heavy orange-red plate rises from the lower left, a darker anchor shard presses from the upper right, and a thin blue-cyan interval keeps the conflict legible without becoming a symbol or portal.",
+        "imagePrompt": "A Clyfford Still-inspired abstract expressionist painted surface, full-frame matte canvas, jagged torn vertical fields of orange, red, blackened umber, and blue-cyan, a restrained upward pressure fracture suggesting a coming tariff escalation, no text, no vehicles, no portraits, no flags, rough pigment edges, layered s"
+      },
+      "executionPlan": {
+        "palette": {
+          "bg": "#d56f25",
+          "primary": "#9f1f18",
+          "secondary": "#1f8fa8",
+          "glow": "#f0b14a",
+          "anchor": "#241713"
+        },
+        "camera": {
+          "autoRotate": false,
+          "cycleSeconds": 24,
+          "target": [
+            0,
+            0,
+            0
+          ]
+        },
+        "post": {
+          "contrast": 1.18,
+          "saturation": 0.92,
+          "vignette": 0.12,
+          "exposure": 0.95
+        },
+        "global": {
+          "shapeCountHint": 96,
+          "flowField": 0.28,
+          "distortion": 0.34,
+          "bloom": 0.08
+        },
+        "techniques": [
+          {
+            "id": "torn-field-layering",
+            "name": "Torn Color Field Layering",
+            "type": "geometry",
+            "purpose": "Build large bounded jagged painted masses instead of objects or icons.",
+            "reuseModuleType": "suprematist-planes",
+            "params": {
+              "edgeRoughness": 0.72,
+              "layerCount": 5,
+              "frontal": true,
+              "matte": true
+            }
+          },
+          {
+            "id": "pigment-grain",
+            "name": "Dry Pigment Grain",
+            "type": "shader",
+            "purpose": "Make every field feel physically painted with uneven oil-like density.",
+            "reuseModuleType": "shader-field-plane",
+            "params": {
+              "grainScale": 42,
+              "scrapeStrength": 0.28,
+              "edgeBleed": 0.18
+            }
+          },
+          {
+            "id": "upward-pressure-seam",
+            "name": "Upward Pressure Seam",
+            "type": "line-system",
+            "purpose": "Express the announced increase as structural compression through a narrow rising rupture.",
+            "reuseModuleType": "fault-line",
+            "params": {
+              "rise": 0.82,
+              "width": 0.045,
+              "cadence": "measured"
+            }
+          }
+        ]
+      },
+      "moduleOverrides": [
+        {
+          "id": "mo.pigment-field-still.v1",
+          "target": {
+            "moduleType": "cm.dry-scrape-field.v1",
+            "elementId": "field-ground"
+          },
+          "mode": "uniforms",
+          "params": {
+            "preserveMatteSurface": true
+          },
+          "uniforms": {
+            "u_grainScale": 42,
+            "u_scrape": 0.28,
+            "u_motion": 0.04
+          }
+        }
+      ],
+      "customModules": [
+        {
+          "id": "cm.still-torn-mass.v1",
+          "family": "geometry",
+          "kind": "dsl",
+          "allowOverride": false,
+          "seedPolicy": "deterministic",
+          "paramsSchema": {
+            "segments": {
+              "type": "number",
+              "default": 22
+            },
+            "width": {
+              "type": "number",
+              "default": 0.42
+            },
+            "height": {
+              "type": "number",
+              "default": 1.25
+            },
+            "roughness": {
+              "type": "number",
+              "default": 0.18
+            },
+            "tilt": {
+              "type": "number",
+              "default": 0
+            }
+          },
+          "source": {
+            "dsl": {
+              "geometry": {
+                "type": "group",
+                "children": [
+                  {
+                    "type": "stackedRects",
+                    "count": 9,
+                    "width": 1,
+                    "height": 0.118,
+                    "gap": -0.012,
+                    "jitterX": [
+                      -0.08,
+                      0.04,
+                      -0.12,
+                      0.07,
+                      -0.03,
+                      0.11,
+                      -0.05,
+                      0.02,
+                      -0.09
+                    ],
+                    "jitterWidth": [
+                      0.04,
+                      -0.09,
+                      0.08,
+                      -0.03,
+                      0.12,
+                      -0.06,
+                      0.03,
+                      -0.11,
+                      0.05
+                    ],
+                    "anchor": "center"
+                  },
+                  {
+                    "type": "rect",
+                    "x": -0.19,
+                    "y": 0.34,
+                    "width": 0.34,
+                    "height": 0.32,
+                    "rotation": -0.08
+                  },
+                  {
+                    "type": "rect",
+                    "x": 0.17,
+                    "y": -0.27,
+                    "width": 0.28,
+                    "height": 0.38,
+                    "rotation": 0.07
+                  },
+                  {
+                    "type": "rect",
+                    "x": -0.12,
+                    "y": -0.5,
+                    "width": 0.42,
+                    "height": 0.18,
+                    "rotation": -0.04
+                  }
+                ]
+              },
+              "material": {
+                "type": "matte",
+                "roughness": 0.92,
+                "metalness": 0,
+                "vertexColors": false,
+                "grain": 0.32,
+                "opacity": 0.9
+              },
+              "transform": {
+                "scaleFromParams": [
+                  "width",
+                  "height",
+                  1
+                ],
+                "rotationFromParam": "tilt",
+                "coordinateSpace": "frontal"
+              }
+            },
+            "glsl": {},
+            "js": null
+          },
+          "budgets": {
+            "maxInstances": 18,
+            "maxShaderOpsHint": 0.55,
+            "mobileSafe": true
+          }
+        },
+        {
+          "id": "cm.dry-scrape-field.v1",
+          "family": "shader",
+          "kind": "dsl",
+          "allowOverride": false,
+          "seedPolicy": "deterministic",
+          "paramsSchema": {
+            "grainScale": {
+              "type": "number",
+              "default": 48
+            },
+            "scrape": {
+              "type": "number",
+              "default": 0.22
+            },
+            "colorA": {
+              "type": "color",
+              "default": "#d56f25"
+            },
+            "colorB": {
+              "type": "color",
+              "default": "#9f1f18"
+            }
+          },
+          "source": {
+            "dsl": {
+              "uniforms": {
+                "u_grainScale": 48,
+                "u_scrape": 0.22,
+                "u_motion": 0.025
+              }
+            },
+            "glsl": {
+              "vertex": "varying vec2 vUv; void main(){ vUv=uv; gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0); }",
+              "fragment": "precision highp float; varying vec2 vUv; uniform float u_time; uniform vec3 u_colorA; uniform vec3 u_colorB; uniform float u_grainScale; uniform float u_scrape; uniform float u_motion; float hash(vec2 p){ return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453123); } float noise(vec2 p){ vec2 i=floor(p); vec2 f=fract(p); vec2 u=f*f*(3.0-2.0*f); return mix(mix(hash(i),hash(i+vec2(1.0,0.0)),u.x),mix(hash(i+vec2(0.0,1.0)),hash(i+vec2(1.0,1.0)),u.x),u.y); } void main(){ vec2 uv=vUv; float t=u_time*u_motion; float broad=noise(vec2(uv.x*3.1,uv.y*1.45)+vec2(t,-t*0.37)); float grain=noise(uv*u_grainScale)+0.45*noise(uv*u_grainScale*2.07); float torn=smoothstep(0.34,0.68,broad+0.16*sin(uv.y*10.5+broad*2.2)); vec3 col=mix(u_colorA,u_colorB,torn*0.48); float dry=smoothstep(0.56,0.96,grain)*u_scrape; float fiber=0.5+0.5*sin((uv.y+broad*0.08)*145.0); col-=dry*(0.55+0.45*fiber); col+=0.028*(hash(uv*1200.0)-0.5); col=clamp(col,0.0,1.0); gl_FragColor=vec4(col,1.0); }"
+            },
+            "js": null
+          },
+          "budgets": {
+            "maxInstances": 4,
+            "maxShaderOpsHint": 0.8,
+            "mobileSafe": true
+          }
+        }
+      ],
+      "policyPasses": {
+        "advisoryOnly": true,
+        "skipped": [
+          "focal-hierarchy",
+          "envelope-clamp",
+          "composition-plan",
+          "artist-visual-profile",
+          "scene-element-module-enforcement",
+          "stack-pipeline-apply",
+          "gap-focused-pass",
+          "artist-hard-constraints"
+        ]
+      }
+    },
+    "seedVersion": 2,
+    "seeds": {
+      "baseSeed": 1445311195,
+      "runSeed": 3988214886,
+      "geomSeed": 3674415436,
+      "animSeed": 3011238113,
+      "colorSeed": 2663662547,
+      "cameraSeed": 1393430395
+    },
+    "customModuleReport": {
+      "declaredCustomModules": 2,
+      "accepted": [
+        {
+          "id": "cm.still-torn-mass.v1",
+          "family": "geometry",
+          "kind": "dsl",
+          "fingerprint": "ed67ebc0"
+        },
+        {
+          "id": "cm.dry-scrape-field.v1",
+          "family": "shader",
+          "kind": "dsl",
+          "fingerprint": "2a85d92b"
+        }
+      ],
+      "rejected": [],
+      "moduleOverrideCount": 1,
+      "fingerprint": "4ac08fdb"
+    },
+    "techStack": {
+      "id": "shader-field-balanced",
+      "name": "Shader Field Layering",
+      "family": "shader-field",
+      "strategyFamilies": [
+        "flow",
+        "hybrid",
+        "orbits"
+      ],
+      "rationale": {
+        "signals": {
+          "conflict": 0.192,
+          "context": 0.385,
+          "motion": 0.45,
+          "turbulence": 0.426,
+          "structureBias": 0,
+          "densityBias": 0,
+          "edgeBias": 0,
+          "motionBias": 0,
+          "visualProfile": {
+            "profileCadence": "steady",
+            "preferredFamilies": []
+          }
+        },
+        "familyHits": 0,
+        "idHits": 0,
+        "penalties": [
+          "conflict<0.24"
+        ],
+        "visualAffinity": 0,
+        "elementCoverage": {
+          "score": 0,
+          "coverage": 0,
+          "moduleCoverage": 0,
+          "missingCapabilities": [
+            "frontal layered planes",
+            "custom jagged mesh",
+            "matte shader grain"
+          ]
+        },
+        "preferredFamilies": [],
+        "preferredFamilyLocked": false,
+        "notPreferredPenalty": 0
+      },
+      "dominantPrimitive": "cm.dry-scrape-field.v1",
+      "moduleSet": [
+        "cm.dry-scrape-field.v1",
+        "cm.still-torn-mass.v1",
+        "fault-line"
+      ],
+      "pipelineKind": "shader-field"
+    },
+    "renderPipeline": {
+      "kind": "shader-field",
+      "family": "shader-field",
+      "fallback": false,
+      "advisoryOnly": true,
+      "dominantPrimitive": "cm.dry-scrape-field.v1",
+      "moduleSet": [
+        "cm.dry-scrape-field.v1",
+        "cm.still-torn-mass.v1",
+        "fault-line"
+      ]
+    }
+  },
+  "sceneStrategy": {
+    "selected": {
+      "id": "atomic-balanced-flow",
+      "name": "Balanced Flow Field",
+      "type": "atomic",
+      "family": "flow"
+    },
+    "applied": false,
+    "fallbackReason": "agent-authored-scene-elements"
+  },
+  "techStack": {
+    "id": "shader-field-balanced",
+    "name": "Shader Field Layering",
+    "family": "shader-field"
+  },
+  "newsVisualMappings": [
+    {
+      "signal": "title evidence [donald, trump, annonce, vouloir] -> motif flow",
+      "from": "donald, trump, annonce, vouloir",
+      "visualDecision": "structural motif armature set to flow"
+    },
+    {
+      "signal": "composition foreground conflict",
+      "from": "donald, trump, annonce, vouloir",
+      "visualDecision": "foreground role tension-knot at pressure 0.18"
+    },
+    {
+      "signal": "composition midground context",
+      "from": "donald, trump, annonce, vouloir",
+      "visualDecision": "midground role context-drift with density 0.27"
+    },
+    {
+      "signal": "composition background mood",
+      "from": "donald, trump, annonce, vouloir",
+      "visualDecision": "background mood watchful depth 0.293"
+    },
+    {
+      "signal": "urgency -> motion",
+      "from": "ageHours=13.82",
+      "visualDecision": "motionSpeedNormalized=0.617"
+    },
+    {
+      "signal": "title semantics -> palette/edge cadence",
+      "from": "temp=0 edge=0.5",
+      "visualDecision": "postContrast=1.24 accentType=n/a"
+    },
+    {
+      "signal": "article institutional/conflict polarity",
+      "from": "donald, trump, annonce, vouloir",
+      "visualDecision": "accent element n/a with opacity n/a"
+    },
+    {
+      "signal": "artist research context Clyfford Still",
+      "from": "tags abstract, surreal, expressionist, figurative, surrealist",
+      "visualDecision": "artist profile captured as metadata only; no technical routing applied"
+    }
+  ],
+  "qualityScore": {
+    "score": 52.3,
+    "summary": "Alignment 67.6 with strongest channel emotional.",
+    "heuristic": {
+      "score": 67.7,
+      "breakdown": {
+        "legibility": 73.2,
+        "emotionalReadability": 70.4,
+        "coherence": 90.3,
+        "focalAnchor": 68.6,
+        "technicalRichness": 87.8,
+        "restraint": 79.2,
+        "alignment": 67.6
+      }
+    },
+    "calibration": {
+      "sampleCount": 1,
+      "trustWeight": 0.4
+    },
+    "alignment": {
+      "totalAlign": 67.6,
+      "components": {
+        "title": {
+          "score": 63.2
+        },
+        "style": {
+          "score": 65.6
+        },
+        "emotional": {
+          "score": 74.7
+        }
+      }
+    }
+  },
+  "rationale": {
+    "intent": {
+      "signal": null,
+      "emotion": null,
+      "tension": null,
+      "balance": null,
+      "motion": null
+    },
+    "selection": {
+      "whyHeadline": "Selected as top-ranked Belgian headline (score 88 = frequency 88 + priority 0 + recency 0).",
+      "priorityTerms": []
+    },
+    "qualitySummary": "TOTAL_ALIGN 67.6."
+  },
+  "runPolicy": {
+    "artworksPerRun": 1,
+    "multiVariant": false
+  },
+  "artFramework": {
+    "version": 3,
+    "intent": {
+      "statement": "Donald Trump annonce vouloir relever \"la semaine prochaine\" les droits de douane sur les véhicules européens translated through Clyfford Still's visual language as a non-literal image.",
+      "coreImpulse": "Clyfford Still, born on November 30, 1904, in Grandin, North Dakota, emerged as one of the most influential American artists of the 20th century, playing a pivotal role in shaping the trajectory of abstract expression... Clyfford Still was an American painter, and one of the leading figures in the first generation of Abstract Expressionists, who developed a new, powerful approach to painting in the years immediately following World Wa... Clyfford Still Art Artist Paintings Biography Abstract Expressionism CLYFFORD STILL Master of Abstract Expressionism Clyfford Still (November 30, 1904 - June 23, 1980) was an American artist, a painter, and one of the... Read more detail in the biography or check out some Clyfford Still quotes about his process.",
+      "artistTranslationLogic": [
+        "Clyfford Still's formal logic should dominate before any spectacle or scenic excess."
+      ],
+      "emotionalClimate": {
+        "summary": "Clyfford Still, born on November 30, 1904, in Grandin, North Dakota, emerged as one of the most influential American artists of the 20th century, playing a pivotal role in shaping the trajectory of abstract expression... Clyfford Still was an American painter, and one of the leading figures in the first generation of Abstract Expressionists, who developed a new, powerful approach to painting in the years immediately following World Wa... Clyfford Still Art Artist Paintings Biography Abstract Expressionism CLYFFORD STILL Master of Abstract Expressionism Clyfford Still (November 30, 1904 - June 23, 1980) was an American artist, a painter, and one of the... Read more detail in the biography or check out some Clyfford Still quotes about his process.",
+        "pressure": "low",
+        "pace": "measured",
+        "socialReach": "concentrated"
+      },
+      "visualGravity": {
+        "anchor": null,
+        "dominantStructure": "Build the image around one readable structural law.",
+        "scaleBehavior": "Keep the space bounded and compositionally intentional."
+      },
+      "materialLogic": {
+        "surfaceBehavior": [],
+        "spatialHabits": [],
+        "handling": "Clyfford Still's surface should feel made, not generic."
+      },
+      "colorField": {
+        "paletteSignals": [],
+        "contrastMode": "measured contrast with restrained vibration"
+      },
+      "symbolicDensity": {
+        "primaryMotif": "flow",
+        "motifVocabulary": [],
+        "literalness": "non-literal"
+      },
+      "tensionEngine": {
+        "conflictAxis": "Donald Trump",
+        "escalationMode": "Let tension accumulate through structure, not narration.",
+        "releaseValve": "Allow only a narrow zone of release."
+      },
+      "audiencePosition": {
+        "stance": "Clyfford Still, born on November 30, 1904, in Grandin, North Dakota, emerged as one of the most influential American artists of the 20th century, playing a pivotal role in shaping the trajectory of abstract expression... Clyfford Still, born on November 30, 1904, in Grandin, North Dakota, emerged as one of the most influential American artists of the 20th century, playing a pivotal role in shaping the trajectory of abstract expression... Clyfford Still Art Artist Paintings Biography Abstract Expressionism CLYFFORD STILL Master of Abstract Expressionism Clyfford Still (November 30, 1904 - June 23, 1980) was an American artist, a painter, and one of the... Clyfford Still, born on November 30, 1904, in Grandin, North Dakota, emerged as one of the most influential American artists of the 20th century, playing a pivotal role in shaping the trajectory of abstract expression...",
+        "distance": "immersed but not illustrative"
+      },
+      "controlVsAccident": {
+        "balance": "controlled with selective instability",
+        "motionTemperament": "steady",
+        "accidentRole": "use drift or fracture sparingly to keep the field alive"
+      },
+      "antiDriftRules": [
+        "Do not collapse into biography summary, symbolic cliché, or generic procedural spectacle."
+      ],
+      "finalCompression": "Clyfford Still, born on November 30, 1904, in Grandin, North Dakota, emerged as one of the most influential American artists of the 20th century, playing a pivotal role in shaping the trajectory of abstract expression... Clyfford Still was an American painter, and one of the leading figures in the first generation of Abstract Expressionists, who developed a new, powerful approach to painting in the years immediately following World Wa... Clyfford Still Art Artist Paintings Biography Abstract Expressionism CLYFFORD STILL Master of Abstract Expressionism Clyfford Still (November 30, 1904 - June 23, 1980) was an American artist, a painter, and one of the... Read more detail in the biography or check out some Clyfford Still quotes about his process. Build the image around one readable structural law.",
+      "artistAnchors": {
+        "formalLogic": [],
+        "motifVocabulary": [],
+        "compositionCues": [],
+        "paletteSignals": [],
+        "surfaceBehavior": [],
+        "spatialHabits": [],
+        "translationDirectives": []
+      },
+      "threeJsFreedomEnvelope": [],
+      "avoidSignals": [],
+      "threeJsTranslationExamples": []
+    }
+  },
+  "debugFile": "./data/artworks-debug/2026-05-02-resonance-donald-trump-annonce-vouloir.json"
+}
