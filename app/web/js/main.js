@@ -2,13 +2,14 @@ import { createArtworkFetcher, loadManifestWithFallback } from './main-data.js';
 import {
   clampManifestIndex,
   findActiveIndex,
-  findManifestIndexByArtworkSlug,
   getNeighborFiles,
   syncQuickControls,
   wrapManifestIndex
 } from './main-navigation.js';
+import { findManifestIndexByArtworkSlug } from './public-artwork-routes.js';
 import { createCaptureStateController } from './main-capture-state.js';
 import { applyMotionMode as applyMotionModeUi, applyViewMode as applyViewModeUi, setFocusMode as setFocusModeUi } from './main-modes.js';
+import { createRuntimeController } from './main-runtime-controller.js';
 import {
   createArchiveCardElement,
   populateQuickPicker as populateQuickPickerUi,
@@ -58,14 +59,6 @@ const mobileChromeToggle = document.getElementById('mobile-chrome-toggle');
 
 const MOBILE_BREAKPOINT = 700;
 
-let scene = null;
-let sceneInitError = null;
-let sceneLoadPromise = null;
-let deferredSceneObserver = null;
-let deferredSceneIdleHandle = null;
-let deferredSceneTimer = null;
-let deferredSceneBootRequested = false;
-
 let manifest = null;
 let renderedArchiveCount = 0;
 let activeFile = null;
@@ -89,6 +82,19 @@ let viewportRefreshTimer = null;
 
 const fetchArtwork = createArtworkFetcher();
 const captureStateController = createCaptureStateController({ captureMode });
+const runtimeController = createRuntimeController({
+  canvas,
+  captureMode,
+  captureStateController,
+  fetchArtwork,
+  getActiveFile: () => activeFile,
+  getMotionIntensity: () => sceneMotionIntensity(),
+  onSceneBooted: () => {
+    applyAdaptiveOverlay();
+    startAdaptiveOverlayLoop();
+  },
+  onSceneStatusChange: () => syncRenderStatus()
+});
 
 function clamp(value, min, max) {
   return Math.max(min, Math.min(max, value));
@@ -338,54 +344,8 @@ function startAdaptiveOverlayLoop() {
   adaptiveOverlayTimer = window.setInterval(applyAdaptiveOverlay, 1200);
 }
 
-async function ensureScene() {
-  if (scene) return scene;
-  if (sceneLoadPromise) return sceneLoadPromise;
-
-  sceneLoadPromise = (async () => {
-    try {
-      const { ArtworkScene } = await import('./scene.js');
-      scene = new ArtworkScene(canvas);
-      sceneInitError = null;
-      canvas.style.display = '';
-      captureStateController.update({ sceneInitialized: true, sceneInitError: null, error: null });
-      return scene;
-    } catch (err) {
-      sceneInitError = err instanceof Error ? err : new Error(String(err));
-      canvas.style.display = 'none';
-      captureStateController.update({
-        sceneInitialized: false,
-        sceneInitError: sceneInitError.message,
-        renderReady: false,
-        error: sceneInitError.message
-      });
-      return null;
-    } finally {
-      sceneLoadPromise = null;
-    }
-  })();
-
-  return sceneLoadPromise;
-}
-
-function clearDeferredSceneHooks() {
-  if (deferredSceneObserver) {
-    deferredSceneObserver.disconnect();
-    deferredSceneObserver = null;
-  }
-
-  if (deferredSceneIdleHandle != null && typeof window.cancelIdleCallback === 'function') {
-    window.cancelIdleCallback(deferredSceneIdleHandle);
-  }
-  deferredSceneIdleHandle = null;
-
-  if (deferredSceneTimer != null) {
-    clearTimeout(deferredSceneTimer);
-    deferredSceneTimer = null;
-  }
-}
-
 function syncRenderStatus() {
+  const sceneInitError = runtimeController.getSceneInitError();
   const sceneWarning = sceneInitError
     ? `Renderer unavailable (${sceneInitError.message}). Metadata view still works.`
     : '';
@@ -407,78 +367,6 @@ function syncRenderStatus() {
 
 function sceneMotionIntensity() {
   return motionMode === 'reduced' ? 0.42 : 1;
-}
-
-async function applyActiveArtworkToScene() {
-  if (!scene || !activeFile) return;
-  const fileAtStart = activeFile;
-  captureStateController.update({ activeFile: fileAtStart });
-  const art = await fetchArtwork(fileAtStart);
-  if (!scene || activeFile !== fileAtStart) return;
-  captureStateController.update({ artworkLoaded: true, artworkId: art?.id || null });
-  const applied = await scene.applyConfig(art);
-  if (!applied) return;
-  if (typeof scene.waitForRenderedFrame === 'function') {
-    await scene.waitForRenderedFrame(3000);
-  }
-  captureStateController.update({
-    sceneInitialized: true,
-    sceneInitError: null,
-    renderReady: true,
-    error: null,
-    renderedArtworkId: art?.id || null
-  });
-}
-
-async function bootSceneNow() {
-  clearDeferredSceneHooks();
-
-  const loadedScene = await ensureScene();
-  if (!loadedScene) {
-    captureStateController.update({ renderReady: false, error: sceneInitError?.message || 'Scene initialization failed.' });
-    syncRenderStatus();
-    return null;
-  }
-
-  await applyActiveArtworkToScene();
-  if (scene) {
-    scene.setMotionIntensity(sceneMotionIntensity());
-    if (captureMode) scene.setCaptureMode(true, 1.234);
-  }
-  applyAdaptiveOverlay();
-  startAdaptiveOverlayLoop();
-  syncRenderStatus();
-  return loadedScene;
-}
-
-function requestDeferredSceneBoot() {
-  if (captureMode) {
-    void bootSceneNow();
-    return;
-  }
-  if (deferredSceneBootRequested || scene || sceneLoadPromise) return;
-
-  deferredSceneBootRequested = true;
-
-  const trigger = () => {
-    if (scene || sceneLoadPromise) return;
-    void bootSceneNow();
-  };
-
-  if (typeof IntersectionObserver !== 'undefined' && canvas) {
-    deferredSceneObserver = new IntersectionObserver((entries) => {
-      if (entries.some((entry) => entry.isIntersecting)) {
-        trigger();
-      }
-    }, { rootMargin: '120px' });
-    deferredSceneObserver.observe(canvas);
-  }
-
-  if (typeof window.requestIdleCallback === 'function') {
-    deferredSceneIdleHandle = window.requestIdleCallback(trigger, { timeout: 1800 });
-  } else {
-    deferredSceneTimer = window.setTimeout(trigger, 700);
-  }
 }
 
 function showStatus(message = '', level = 'info') {
@@ -525,12 +413,12 @@ function setFocusMode(enabled) {
 function applyMotionMode(nextMode) {
   motionMode = applyMotionModeUi(nextMode, {
     modeReducedMotion,
-    onMotionChange: () => scene?.setMotionIntensity(sceneMotionIntensity())
+    onMotionChange: () => runtimeController.updateMotionIntensity()
   });
 }
 
 function renderMeta(art) {
-  renderMetaUi(meta, art, sceneInitError);
+  renderMetaUi(meta, art, runtimeController.getSceneInitError());
 }
 
 function refreshActiveArchiveItem() {
@@ -553,26 +441,21 @@ async function loadArtworkByFile(file) {
 
     captureStateController.update({ artworkLoaded: true, artworkId: art?.id || null, renderReady: false });
 
-    if (scene) {
-      const applied = await scene.applyConfig(art);
-      if (!applied || token !== loadToken) return;
-      if (captureMode && typeof scene.waitForRenderedFrame === 'function') {
-        await scene.waitForRenderedFrame(3000);
-      }
-      captureStateController.update({
-        sceneInitialized: true,
-        sceneInitError: null,
-        renderReady: true,
-        error: null,
-        renderedArtworkId: art?.id || null
+    if (runtimeController.getScene()) {
+      const applied = await runtimeController.applyArtworkToScene({
+        file,
+        art,
+        shouldContinue: () => token === loadToken,
+        waitForRenderedFrame: captureMode
       });
+      if (!applied) return;
     }
     renderMeta(art);
     updateHeroNow(art);
     activeFile = file;
     activeIndex = findActiveIndex(manifest, file);
 
-    if (!scene && !captureMode) requestDeferredSceneBoot();
+    if (!runtimeController.getScene() && !captureMode) runtimeController.requestDeferredSceneBoot();
 
     const { prevFile, nextFile } = getNeighborFiles(manifest, activeIndex);
     if (prevFile) fetchArtwork(prevFile);
@@ -645,8 +528,7 @@ function resetUiForBoot() {
 }
 
 async function init() {
-  clearDeferredSceneHooks();
-  deferredSceneBootRequested = false;
+  runtimeController.resetDeferredSceneBoot();
   manifestFallbackReason = '';
   mobileChromePinned = isMobileViewport() && window.scrollY > 28;
   mobileChromeExpanded = false;
@@ -708,9 +590,9 @@ async function init() {
   await loadArtworkByIndex(targetIndex);
 
   if (captureMode) {
-    await bootSceneNow();
+    await runtimeController.bootSceneNow();
   } else {
-    requestDeferredSceneBoot();
+    runtimeController.requestDeferredSceneBoot();
     startAdaptiveOverlayLoop();
   }
 

@@ -1,4 +1,4 @@
-import { compileCustomModuleRegistry } from './scene-custom-module-runtime.js';
+import { compileCustomModuleRegistry } from './scene-runtime/custom-module/compiler.js';
 
 const BASE_MODULE_TYPE_TO_FAMILY = {
   'particle-cloud': 'particle',
