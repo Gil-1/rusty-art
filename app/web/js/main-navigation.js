@@ -30,8 +30,8 @@ export function getNeighborFiles(manifest, activeIndex) {
     return { prevFile: null, nextFile: null };
   }
 
-  const prevIndex = (activeIndex + 1) % size;
-  const nextIndex = (activeIndex - 1 + size) % size;
+  const prevIndex = (activeIndex - 1 + size) % size;
+  const nextIndex = (activeIndex + 1) % size;
   return {
     prevFile: manifest.items[prevIndex]?.file,
     nextFile: manifest.items[nextIndex]?.file

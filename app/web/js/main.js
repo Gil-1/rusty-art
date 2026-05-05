@@ -9,7 +9,26 @@ import {
 import { findManifestIndexByArtworkSlug } from './public-artwork-routes.js';
 import { createCaptureStateController } from './main-capture-state.js';
 import { applyMotionMode as applyMotionModeUi, applyViewMode as applyViewModeUi, setFocusMode as setFocusModeUi } from './main-modes.js';
+import {
+  createInitialPresentationState,
+  deriveMobileChromeState,
+  markMobileChromeInteractionState,
+  PRESENTATION_STORAGE_KEYS,
+  resetPresentationBootState,
+  selectInitialArtworkIndex,
+  setActiveArtworkState,
+  setFocusModeState,
+  setHeadlineExpandedState,
+  setMotionModeState,
+  setViewModeState,
+  toggleMobileChromeExpandedState
+} from './main-presentation-state.js';
 import { createRuntimeController } from './main-runtime-controller.js';
+import {
+  clamp,
+  computeAdaptiveOverlayState,
+  estimateArtworkLuma
+} from './main-adaptive-overlay-controller.js';
 import {
   createArchiveCardElement,
   populateQuickPicker as populateQuickPickerUi,
@@ -61,24 +80,26 @@ const MOBILE_BREAKPOINT = 700;
 
 let manifest = null;
 let renderedArchiveCount = 0;
-let activeFile = null;
-let activeIndex = -1;
 let manifestFallbackReason = '';
-let viewMode = localStorage.getItem('rusty:view-mode') || 'story';
-let focusMode = localStorage.getItem('rusty:focus-mode') === '1';
 const prefersReducedMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
-let motionMode = localStorage.getItem('rusty:motion-mode') || (prefersReducedMotion ? 'reduced' : 'full');
 let loadToken = 0;
-let headlineExpanded = false;
 let adaptiveOverlayTimer = null;
 let overlayProbeCanvas = null;
 let overlayProbeCtx = null;
 let smoothedOverlayLuma = null;
 let currentArtworkLumaEstimate = null;
 let quickPickerCompact = false;
-let mobileChromePinned = false;
-let mobileChromeExpanded = false;
 let viewportRefreshTimer = null;
+let presentationState = createInitialPresentationState({
+  storedViewMode: localStorage.getItem(PRESENTATION_STORAGE_KEYS.viewMode),
+  storedFocusMode: localStorage.getItem(PRESENTATION_STORAGE_KEYS.focusMode),
+  storedMotionMode: localStorage.getItem(PRESENTATION_STORAGE_KEYS.motionMode),
+  prefersReducedMotion,
+  captureMode,
+  forcedView,
+  isMobileViewport: isMobileViewport(),
+  scrollY: window.scrollY
+});
 
 const fetchArtwork = createArtworkFetcher();
 const captureStateController = createCaptureStateController({ captureMode });
@@ -87,7 +108,7 @@ const runtimeController = createRuntimeController({
   captureMode,
   captureStateController,
   fetchArtwork,
-  getActiveFile: () => activeFile,
+  getActiveFile: () => presentationState.activeFile,
   getMotionIntensity: () => sceneMotionIntensity(),
   onSceneBooted: () => {
     applyAdaptiveOverlay();
@@ -96,137 +117,42 @@ const runtimeController = createRuntimeController({
   onSceneStatusChange: () => syncRenderStatus()
 });
 
-function clamp(value, min, max) {
-  return Math.max(min, Math.min(max, value));
-}
-
 function isMobileViewport() {
   return window.innerWidth <= MOBILE_BREAKPOINT;
 }
 
-function toLinearSrgb(channel) {
-  const normalized = clamp(channel / 255, 0, 1);
-  return normalized <= 0.04045
-    ? normalized / 12.92
-    : ((normalized + 0.055) / 1.055) ** 2.4;
-}
-
-function rgbToLuma(r, g, b) {
-  const rr = toLinearSrgb(r);
-  const gg = toLinearSrgb(g);
-  const bb = toLinearSrgb(b);
-  return clamp((0.2126 * rr) + (0.7152 * gg) + (0.0722 * bb), 0, 1);
-}
-
-function parseColorToRgb(colorValue) {
-  const raw = String(colorValue || '').trim();
-  if (!raw) return null;
-
-  const hexMatch = raw.match(/^#([0-9a-f]{3}|[0-9a-f]{6})$/i);
-  if (hexMatch) {
-    const hex = hexMatch[1];
-    if (hex.length === 3) {
-      return {
-        r: Number.parseInt(hex[0] + hex[0], 16),
-        g: Number.parseInt(hex[1] + hex[1], 16),
-        b: Number.parseInt(hex[2] + hex[2], 16)
-      };
-    }
-    return {
-      r: Number.parseInt(hex.slice(0, 2), 16),
-      g: Number.parseInt(hex.slice(2, 4), 16),
-      b: Number.parseInt(hex.slice(4, 6), 16)
-    };
-  }
-
-  const rgbMatch = raw.match(/^rgba?\(([^)]+)\)$/i);
-  if (!rgbMatch) return null;
-  const parts = rgbMatch[1].split(',').map((part) => part.trim());
-  if (parts.length < 3) return null;
-
-  const parseChannel = (token) => {
-    if (token.endsWith('%')) {
-      const percent = Number.parseFloat(token.slice(0, -1));
-      if (!Number.isFinite(percent)) return null;
-      return clamp((percent / 100) * 255, 0, 255);
-    }
-    const numeric = Number.parseFloat(token);
-    return Number.isFinite(numeric) ? clamp(numeric, 0, 255) : null;
-  };
-
-  const r = parseChannel(parts[0]);
-  const g = parseChannel(parts[1]);
-  const b = parseChannel(parts[2]);
-  if (r == null || g == null || b == null) return null;
-  return { r, g, b };
-}
-
-function parseColorToLuma(colorValue) {
-  const rgb = parseColorToRgb(colorValue);
-  if (!rgb) return null;
-  return rgbToLuma(rgb.r, rgb.g, rgb.b);
-}
-
-function estimateArtworkLuma(art) {
-  const palette = art?.scene?.palette || {};
-  const weightedPalette = [
-    { color: palette.bg, weight: 0.44 },
-    { color: palette.primary, weight: 0.19 },
-    { color: palette.secondary, weight: 0.17 },
-    { color: palette.anchor, weight: 0.1 },
-    { color: palette.glow, weight: 0.1 }
-  ];
-
-  let weighted = 0;
-  let total = 0;
-
-  weightedPalette.forEach(({ color, weight }) => {
-    const luma = parseColorToLuma(color);
-    if (luma == null) return;
-    weighted += luma * weight;
-    total += weight;
+function updateMobileChromeState() {
+  presentationState = deriveMobileChromeState(presentationState, {
+    captureMode,
+    isMobileViewport: isMobileViewport(),
+    scrollY: window.scrollY
   });
 
-  const baseLuma = total > 0 ? weighted / total : 0.46;
-  const exposure = Number(art?.scene?.post?.exposure || 1);
-  const exposureFactor = Number.isFinite(exposure) ? clamp(exposure, 0.75, 1.45) : 1;
-  return clamp(baseLuma * exposureFactor, 0, 1);
-}
-
-function updateMobileChromeState() {
   if (captureMode || !isMobileViewport()) {
     document.body.classList.remove('mobile-chrome-compact', 'mobile-chrome-expanded');
     if (mobileChromeToggle) {
       mobileChromeToggle.hidden = true;
       mobileChromeToggle.setAttribute('aria-expanded', 'false');
     }
-    mobileChromeExpanded = false;
     return;
   }
 
-  if (window.scrollY > 28) {
-    mobileChromePinned = true;
-  }
-
-  const shouldCompact = mobileChromePinned;
+  const shouldCompact = presentationState.mobileChromeCompact;
   document.body.classList.toggle('mobile-chrome-compact', shouldCompact);
-
-  if (!shouldCompact) {
-    mobileChromeExpanded = false;
-  }
-
-  document.body.classList.toggle('mobile-chrome-expanded', shouldCompact && mobileChromeExpanded);
+  document.body.classList.toggle('mobile-chrome-expanded', shouldCompact && presentationState.mobileChromeExpanded);
 
   if (mobileChromeToggle) {
-    mobileChromeToggle.hidden = !shouldCompact;
-    mobileChromeToggle.textContent = mobileChromeExpanded ? 'Hide controls' : 'More controls';
-    mobileChromeToggle.setAttribute('aria-expanded', mobileChromeExpanded ? 'true' : 'false');
+    mobileChromeToggle.hidden = presentationState.mobileChromeToggleHidden;
+    mobileChromeToggle.textContent = presentationState.mobileChromeExpanded ? 'Hide controls' : 'More controls';
+    mobileChromeToggle.setAttribute('aria-expanded', presentationState.mobileChromeExpanded ? 'true' : 'false');
   }
 }
 
 function markMobileChromeInteraction() {
-  if (!isMobileViewport() || captureMode || mobileChromePinned) return;
-  mobileChromePinned = true;
+  presentationState = markMobileChromeInteractionState(presentationState, {
+    captureMode,
+    isMobileViewport: isMobileViewport()
+  });
   updateMobileChromeState();
 }
 
@@ -241,7 +167,7 @@ function refreshViewportUi() {
       const shouldCompactPicker = isMobileViewport();
       if (shouldCompactPicker !== quickPickerCompact) {
         populateQuickPicker();
-        syncQuickControls({ manifest, activeIndex, quickPrev, quickNext, quickPicker, quickPosition });
+        syncQuickControls({ manifest, activeIndex: presentationState.activeIndex, quickPrev, quickNext, quickPicker, quickPosition });
       }
     }
     updateMobileChromeState();
@@ -254,17 +180,17 @@ function updateHeadlineToggleState() {
   const needsClamp = text.length > 140;
 
   if (!needsClamp) {
-    headlineExpanded = false;
+    presentationState = setHeadlineExpandedState(presentationState, false);
     heroNowHeadline.classList.remove('is-expanded');
     heroHeadlineToggle.hidden = true;
     heroHeadlineToggle.setAttribute('aria-expanded', 'false');
     return;
   }
 
-  heroNowHeadline.classList.toggle('is-expanded', headlineExpanded);
+  heroNowHeadline.classList.toggle('is-expanded', presentationState.headlineExpanded);
   heroHeadlineToggle.hidden = false;
-  heroHeadlineToggle.textContent = headlineExpanded ? 'Less' : 'More';
-  heroHeadlineToggle.setAttribute('aria-expanded', headlineExpanded ? 'true' : 'false');
+  heroHeadlineToggle.textContent = presentationState.headlineExpanded ? 'Less' : 'More';
+  heroHeadlineToggle.setAttribute('aria-expanded', presentationState.headlineExpanded ? 'true' : 'false');
 }
 
 function ensureOverlayProbe() {
@@ -319,23 +245,16 @@ function sampleCanvasLuma() {
 function applyAdaptiveOverlay() {
   if (captureMode) return;
   const sampledLuma = sampleCanvasLuma();
-  const luma = sampledLuma ?? currentArtworkLumaEstimate ?? 0.46;
+  const overlayState = computeAdaptiveOverlayState({
+    sampledLuma,
+    estimatedLuma: currentArtworkLumaEstimate,
+    previousSmoothedLuma: smoothedOverlayLuma
+  });
+  smoothedOverlayLuma = overlayState.smoothedLuma;
 
-  smoothedOverlayLuma = smoothedOverlayLuma == null
-    ? luma
-    : (smoothedOverlayLuma * 0.74) + (luma * 0.26);
-
-  const scrimTop = clamp(0.1 + smoothedOverlayLuma * 0.24, 0.1, 0.34);
-  const scrimMid = clamp(0.52 + smoothedOverlayLuma * 0.38, 0.52, 0.9);
-  const scrimBottom = clamp(0.66 + smoothedOverlayLuma * 0.28, 0.66, 0.94);
-  const panelAlpha = clamp(0.6 + smoothedOverlayLuma * 0.3, 0.6, 0.93);
-  const chipAlpha = clamp(0.74 + smoothedOverlayLuma * 0.24, 0.74, 0.97);
-
-  document.body.style.setProperty('--overlay-scrim-top', scrimTop.toFixed(3));
-  document.body.style.setProperty('--overlay-scrim-mid', scrimMid.toFixed(3));
-  document.body.style.setProperty('--overlay-scrim-bottom', scrimBottom.toFixed(3));
-  document.body.style.setProperty('--overlay-panel-alpha', panelAlpha.toFixed(3));
-  document.body.style.setProperty('--overlay-chip-alpha', chipAlpha.toFixed(3));
+  Object.entries(overlayState.cssVariables).forEach(([name, value]) => {
+    document.body.style.setProperty(name, value.toFixed(3));
+  });
 }
 
 function startAdaptiveOverlayLoop() {
@@ -366,7 +285,7 @@ function syncRenderStatus() {
 }
 
 function sceneMotionIntensity() {
-  return motionMode === 'reduced' ? 0.42 : 1;
+  return presentationState.motionMode === 'reduced' ? 0.42 : 1;
 }
 
 function showStatus(message = '', level = 'info') {
@@ -379,7 +298,7 @@ function showFallback(message = '', showRetry = true) {
 
 function updateHeroNow(art) {
   updateHeroNowUi({ heroNowTitle, heroNowSub, heroNowHeadline }, art);
-  headlineExpanded = false;
+  presentationState = setHeadlineExpandedState(presentationState, false);
   updateHeadlineToggleState();
 }
 
@@ -388,12 +307,12 @@ function updateArchiveCount() {
 }
 
 function setLoading(isLoading) {
-  setLoadingState({ artFirst, loadState, quickPicker, quickPrev, quickNext }, isLoading, manifest, activeIndex);
+  setLoadingState({ artFirst, loadState, quickPicker, quickPrev, quickNext }, isLoading, manifest, presentationState.activeIndex);
 }
 
 function populateQuickPicker() {
   if (!quickPicker || !manifest?.items) return;
-  const selectedValue = activeIndex >= 0 ? String(activeIndex) : quickPicker.value;
+  const selectedValue = presentationState.activeIndex >= 0 ? String(presentationState.activeIndex) : quickPicker.value;
   quickPickerCompact = isMobileViewport();
   populateQuickPickerUi(quickPicker, manifest, { compact: quickPickerCompact });
 
@@ -403,18 +322,21 @@ function populateQuickPicker() {
 }
 
 function applyViewMode(nextMode) {
-  viewMode = applyViewModeUi(nextMode, { modeStory, modeLab, metaModeStory, metaModeLab });
+  presentationState = setViewModeState(presentationState, nextMode);
+  presentationState = setViewModeState(presentationState, applyViewModeUi(presentationState.viewMode, { modeStory, modeLab, metaModeStory, metaModeLab }));
 }
 
 function setFocusMode(enabled) {
-  focusMode = setFocusModeUi(enabled, { modeFocus });
+  presentationState = setFocusModeState(presentationState, enabled);
+  presentationState = setFocusModeState(presentationState, setFocusModeUi(presentationState.focusMode, { modeFocus }));
 }
 
 function applyMotionMode(nextMode) {
-  motionMode = applyMotionModeUi(nextMode, {
+  presentationState = setMotionModeState(presentationState, nextMode);
+  presentationState = setMotionModeState(presentationState, applyMotionModeUi(presentationState.motionMode, {
     modeReducedMotion,
     onMotionChange: () => runtimeController.updateMotionIntensity()
-  });
+  }));
 }
 
 function renderMeta(art) {
@@ -423,7 +345,7 @@ function renderMeta(art) {
 
 function refreshActiveArchiveItem() {
   archiveList.querySelectorAll('li[data-file]').forEach((li) => {
-    const isActive = li.dataset.file === activeFile;
+    const isActive = li.dataset.file === presentationState.activeFile;
     li.classList.toggle('active', isActive);
     li.setAttribute('aria-current', isActive ? 'true' : 'false');
   });
@@ -452,18 +374,17 @@ async function loadArtworkByFile(file) {
     }
     renderMeta(art);
     updateHeroNow(art);
-    activeFile = file;
-    activeIndex = findActiveIndex(manifest, file);
+    presentationState = setActiveArtworkState(presentationState, { file, index: findActiveIndex(manifest, file) });
 
     if (!runtimeController.getScene() && !captureMode) runtimeController.requestDeferredSceneBoot();
 
-    const { prevFile, nextFile } = getNeighborFiles(manifest, activeIndex);
+    const { prevFile, nextFile } = getNeighborFiles(manifest, presentationState.activeIndex);
     if (prevFile) fetchArtwork(prevFile);
     if (nextFile) fetchArtwork(nextFile);
 
     showFallback('');
     refreshActiveArchiveItem();
-    syncQuickControls({ manifest, activeIndex, quickPrev, quickNext, quickPicker, quickPosition });
+    syncQuickControls({ manifest, activeIndex: presentationState.activeIndex, quickPrev, quickNext, quickPicker, quickPosition });
     window.requestAnimationFrame(() => applyAdaptiveOverlay());
   } catch (error) {
     showFallback(`Could not load this artwork: ${error.message}`, true);
@@ -478,12 +399,12 @@ function loadArtworkByIndex(index) {
   const clamped = clampManifestIndex(manifest, index);
   if (clamped == null) return Promise.resolve();
   const file = manifest.items[clamped].file;
-  if (file === activeFile) return Promise.resolve();
+  if (file === presentationState.activeFile) return Promise.resolve();
   return loadArtworkByFile(file);
 }
 
 function loadArtworkByStep(step) {
-  const current = wrapManifestIndex(manifest, activeIndex);
+  const current = wrapManifestIndex(manifest, presentationState.activeIndex);
   if (current == null) return Promise.resolve();
   const next = wrapManifestIndex(manifest, current + step);
   if (next == null) return Promise.resolve();
@@ -513,12 +434,14 @@ function appendArchiveItems() {
 
 function resetUiForBoot() {
   renderedArchiveCount = 0;
-  activeFile = null;
-  activeIndex = -1;
-  headlineExpanded = false;
+  presentationState = setActiveArtworkState(presentationState, { file: null, index: -1 });
+  presentationState = setHeadlineExpandedState(presentationState, false);
   currentArtworkLumaEstimate = null;
   smoothedOverlayLuma = null;
-  mobileChromeExpanded = false;
+  presentationState = deriveMobileChromeState(
+    setHeadlineExpandedState(presentationState, false),
+    { captureMode, isMobileViewport: isMobileViewport(), scrollY: window.scrollY }
+  );
   archiveList.innerHTML = '';
   if (quickPicker) quickPicker.innerHTML = '';
   if (quickPosition) quickPosition.textContent = '';
@@ -530,8 +453,10 @@ function resetUiForBoot() {
 async function init() {
   runtimeController.resetDeferredSceneBoot();
   manifestFallbackReason = '';
-  mobileChromePinned = isMobileViewport() && window.scrollY > 28;
-  mobileChromeExpanded = false;
+  presentationState = resetPresentationBootState(presentationState, {
+    isMobileViewport: isMobileViewport(),
+    scrollY: window.scrollY
+  });
 
   if (captureMode) {
     captureStateController.reset();
@@ -541,9 +466,9 @@ async function init() {
     document.body.classList.add('capture-mode');
   }
 
-  applyViewMode(forcedView === 'lab' ? 'lab' : viewMode);
-  setFocusMode(captureMode ? false : focusMode);
-  applyMotionMode(captureMode ? 'reduced' : motionMode);
+  applyViewMode(presentationState.viewMode);
+  setFocusMode(presentationState.focusMode);
+  applyMotionMode(presentationState.motionMode);
   updateMobileChromeState();
 
   resetUiForBoot();
@@ -580,13 +505,8 @@ async function init() {
   populateQuickPicker();
   updateArchiveCount();
 
-  const defaultIndex = Math.max(0, manifest.items.length - 1);
   const slugIndex = findManifestIndexByArtworkSlug(manifest, requestedArtworkSlug);
-  const targetIndex = slugIndex != null
-    ? slugIndex
-    : requestedIndex == null || Number.isNaN(requestedIndex)
-      ? defaultIndex
-      : Math.max(0, requestedIndex);
+  const targetIndex = selectInitialArtworkIndex({ manifest, requestedIndex, slugIndex });
   await loadArtworkByIndex(targetIndex);
 
   if (captureMode) {
@@ -652,23 +572,23 @@ if (metaModeLab) {
 }
 
 if (modeFocus) {
-  modeFocus.addEventListener('click', () => setFocusMode(!focusMode));
+  modeFocus.addEventListener('click', () => setFocusMode(!presentationState.focusMode));
 }
 
 if (modeReducedMotion) {
-  modeReducedMotion.addEventListener('click', () => applyMotionMode(motionMode === 'reduced' ? 'full' : 'reduced'));
+  modeReducedMotion.addEventListener('click', () => applyMotionMode(presentationState.motionMode === 'reduced' ? 'full' : 'reduced'));
 }
 
 if (mobileChromeToggle) {
   mobileChromeToggle.addEventListener('click', () => {
-    mobileChromeExpanded = !mobileChromeExpanded;
+    presentationState = toggleMobileChromeExpandedState(presentationState);
     updateMobileChromeState();
   });
 }
 
 if (heroHeadlineToggle) {
   heroHeadlineToggle.addEventListener('click', () => {
-    headlineExpanded = !headlineExpanded;
+    presentationState = setHeadlineExpandedState(presentationState, !presentationState.headlineExpanded);
     updateHeadlineToggleState();
   });
 }
@@ -694,19 +614,19 @@ document.addEventListener('keydown', (event) => {
 
   if (event.key.toLowerCase() === 'f') {
     event.preventDefault();
-    setFocusMode(!focusMode);
+    setFocusMode(!presentationState.focusMode);
     return;
   }
 
   if (event.key.toLowerCase() === 'i') {
     event.preventDefault();
-    applyViewMode(viewMode === 'story' ? 'lab' : 'story');
+    applyViewMode(presentationState.viewMode === 'story' ? 'lab' : 'story');
     return;
   }
 
   if (event.key.toLowerCase() === 'm') {
     event.preventDefault();
-    applyMotionMode(motionMode === 'reduced' ? 'full' : 'reduced');
+    applyMotionMode(presentationState.motionMode === 'reduced' ? 'full' : 'reduced');
     return;
   }
 
@@ -751,5 +671,9 @@ init().catch((err) => {
   if (loadMoreButton) loadMoreButton.style.display = 'none';
   showFallback(`Cannot initialize experience: ${err.message}`, true);
   showStatus('Initialization failed. See details below.', 'error');
-  captureStateController.update({ renderReady: false, error: err.message || String(err) });
+  captureStateController.update({
+    renderReady: false,
+    error: err.message || String(err),
+    sceneAssemblyReport: err.sceneAssemblyReport || runtimeController.getScene()?.getAssemblyReport?.() || null
+  });
 });

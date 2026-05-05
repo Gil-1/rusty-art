@@ -1,43 +1,14 @@
 import * as THREE from 'three';
 import { hashString, hslStringToColor, mulberry32, resolveBlend } from '../../primitives/utils.js';
 import { sanitizeShaderSource } from '../../primitives/shader-overrides.js';
+import {
+  PIPELINE_FAMILIES,
+  compileCustomModuleContract,
+  hasStructuredGeometryDsl,
+  normalizeStructuredGeometryType
+} from './compiler-contract.js';
 
-const CUSTOM_FAMILIES = new Set(['shader', 'geometry', 'particle', 'post', 'camera', 'lighting']);
-const CUSTOM_KINDS = new Set(['dsl', 'js']);
-const PIPELINE_FAMILIES = new Set(['post', 'camera', 'lighting']);
-const EXECUTABLE_DSL_KEYS = Object.freeze({
-  shader: new Set(['width', 'height', 'opacity', 'position', 'rotation', 'scale', 'blend']),
-  geometry: new Set(['count', 'spread', 'depth', 'shape', 'wireframe', 'opacity', 'position', 'rotation', 'scale', 'width', 'height', 'gridWidth', 'gridHeight', 'segmentsX', 'segmentsY', 'cellCount', 'blend']),
-  particle: new Set(['count', 'spread', 'size', 'opacity', 'position', 'rotation', 'scale', 'blend'])
-});
-const NON_EXECUTABLE_PATCH_KEYS = new Set(['moduleType', 'generate', 'material', 'animation', 'description', 'notes', 'intent', 'previewIntent']);
-const STRUCTURED_GEOMETRY_TYPES = new Set(['group', 'ellipse-ring', 'ellipse', 'ellipse-rings', 'stacked-rects', 'tube-path', 'rect']);
 const NO_DSL_VALUE = Symbol('structured-dsl-no-value');
-
-function normalizeStructuredGeometryType(value) {
-  const normalized = String(value || '').trim().toLowerCase().replace(/[_\s]+/g, '-');
-  if (!normalized) return '';
-  if (normalized === 'ellipsering') return 'ellipse-ring';
-  if (normalized === 'ellipserings') return 'ellipse-rings';
-  if (normalized === 'ring') return 'ellipse-ring';
-  if (normalized === 'rings') return 'ellipse-rings';
-  if (normalized === 'concentricrings') return 'ellipse-rings';
-  if (normalized === 'ovalrings') return 'ellipse-rings';
-  if (normalized === 'gaterings') return 'ellipse-rings';
-  if (normalized === 'stackedrects') return 'stacked-rects';
-  if (normalized === 'tubepath') return 'tube-path';
-  return normalized;
-}
-
-function hasStructuredGeometryDsl(node) {
-  if (!isObject(node)) return false;
-  const type = normalizeStructuredGeometryType(node.type || node.primitive);
-  if (!type) return false;
-  if (type === 'group') {
-    return Array.isArray(node.children) && node.children.length > 0 && node.children.every((child) => hasStructuredGeometryDsl(child));
-  }
-  return STRUCTURED_GEOMETRY_TYPES.has(type);
-}
 
 const DEFAULT_SHADER_VERTEX = `
 varying vec2 vUv;
@@ -131,107 +102,6 @@ function asText(value, _maxLen = 128) {
   const normalized = String(value || '').trim();
   if (!normalized) return null;
   return normalized;
-}
-
-function normalizeFamily(value) {
-  const family = asText(value, 24)?.toLowerCase();
-  if (!family || !CUSTOM_FAMILIES.has(family)) return null;
-  return family;
-}
-
-function normalizeKind(value) {
-  const kind = asText(value, 16)?.toLowerCase();
-  if (!kind || !CUSTOM_KINDS.has(kind)) return 'dsl';
-  return kind;
-}
-
-function normalizeBudgets(raw = {}) {
-  const source = isObject(raw) ? raw : {};
-  const maxInstances = Number(source.maxInstances);
-  const maxShaderOpsHint = Number(source.maxShaderOpsHint);
-  return {
-    maxInstances: Number.isFinite(maxInstances) && maxInstances > 0 ? Math.round(maxInstances) : 2_000,
-    maxShaderOpsHint: Number.isFinite(maxShaderOpsHint) ? maxShaderOpsHint : 1,
-    mobileSafe: source.mobileSafe !== false
-  };
-}
-
-function normalizeSource(raw = {}) {
-  const source = isObject(raw) ? raw : {};
-  const glsl = isObject(source.glsl) ? source.glsl : {};
-  return {
-    dsl: isObject(source.dsl) ? source.dsl : {},
-    glsl: {
-      vertex: asText(glsl.vertex, 16_000),
-      fragment: asText(glsl.fragment, 20_000)
-    },
-    js: asText(source.js, 32_000)
-  };
-}
-
-function hasNonEmptyValue(value) {
-  if (Array.isArray(value)) return value.length > 0;
-  if (isObject(value)) return Object.keys(value).length > 0;
-  if (typeof value === 'string') return value.trim().length > 0;
-  return value != null;
-}
-
-function hasExecutableDslConfig(family, dsl = {}) {
-  const source = isObject(dsl) ? dsl : {};
-  const allowedKeys = EXECUTABLE_DSL_KEYS[family];
-  if (!allowedKeys) return false;
-  if (family === 'geometry' && hasStructuredGeometryDsl(source.geometry)) return true;
-  return Object.entries(source).some(([key, value]) => allowedKeys.has(key) && hasNonEmptyValue(value));
-}
-
-function hasExecutablePipelinePatch(spec) {
-  const sourceDsl = isObject(spec?.source?.dsl) ? spec.source.dsl : {};
-  const patch = isObject(sourceDsl.patch) ? sourceDsl.patch : sourceDsl;
-  return Object.entries(patch).some(([key, value]) => !NON_EXECUTABLE_PATCH_KEYS.has(key) && hasNonEmptyValue(value));
-}
-
-function isPlaceholderFragmentShader(source = '') {
-  const fragment = String(source || '').replace(/\s+/g, ' ').trim();
-  if (!fragment) return false;
-  return /gl_FragColor\s*=\s*vec4\(\s*1(?:\.0+)?\s*\)\s*;/i.test(fragment)
-    || /gl_FragColor\s*=\s*vec4\(\s*1(?:\.0+)?\s*,\s*1(?:\.0+)?\s*,\s*1(?:\.0+)?\s*,\s*1(?:\.0+)?\s*\)\s*;/i.test(fragment)
-    || /gl_FragColor\s*=\s*vec4\(\s*vec3\(\s*1(?:\.0+)?\s*\)\s*,\s*1(?:\.0+)?\s*\)\s*;/i.test(fragment);
-}
-
-function validateCustomModuleSpec(spec) {
-  if (PIPELINE_FAMILIES.has(spec.family)) {
-    return hasExecutablePipelinePatch(spec)
-      ? { ok: true, reason: null }
-      : { ok: false, reason: 'pipeline-patch-not-executable' };
-  }
-
-  if (spec.kind === 'js') {
-    return { ok: true, reason: null };
-  }
-
-  const hasShaderSource = Boolean(spec?.source?.glsl?.vertex || spec?.source?.glsl?.fragment);
-  const hasExecutableDsl = hasExecutableDslConfig(spec.family, spec?.source?.dsl || {});
-  const hasPatchOnlyDsl = isObject(spec?.source?.dsl?.patch);
-  const hasUnsupportedStructuredGeometry = spec.family === 'geometry'
-    && isObject(spec?.source?.dsl?.geometry)
-    && !hasStructuredGeometryDsl(spec.source.dsl.geometry);
-
-  if (isPlaceholderFragmentShader(spec?.source?.glsl?.fragment || '')) {
-    return { ok: false, reason: 'placeholder-fragment-shader' };
-  }
-
-  if (hasUnsupportedStructuredGeometry) {
-    return { ok: false, reason: 'unsupported-structured-geometry-dsl' };
-  }
-
-  if (!hasShaderSource && !hasExecutableDsl) {
-    return {
-      ok: false,
-      reason: hasPatchOnlyDsl ? 'prose-only-dsl-patch' : 'missing-executable-source'
-    };
-  }
-
-  return { ok: true, reason: null };
 }
 
 function hasMainFunction(source = '') {
@@ -1160,29 +1030,6 @@ function createDslParticleBuilder(spec) {
   };
 }
 
-function fingerprintCustomModule(entry) {
-  return hashString(JSON.stringify(entry)).toString(16).padStart(8, '0');
-}
-
-function normalizePipelinePatch(spec, raw = {}) {
-  const sourceDsl = isObject(spec?.source?.dsl) ? spec.source.dsl : {};
-  const sourcePatch = isObject(sourceDsl.patch) ? sourceDsl.patch : sourceDsl;
-  const rawPatch = isObject(raw?.patch) ? raw.patch : {};
-  const paramsSchema = isObject(spec?.paramsSchema) ? spec.paramsSchema : {};
-  return {
-    id: spec.id,
-    family: spec.family,
-    kind: spec.kind,
-    seedPolicy: spec.seedPolicy,
-    patch: {
-      ...sourcePatch,
-      ...rawPatch
-    },
-    paramsSchema,
-    budgets: spec.budgets
-  };
-}
-
 function createCustomBuilder(spec) {
   if (PIPELINE_FAMILIES.has(spec.family)) {
     return { builder: null, reason: 'pipeline-family' };
@@ -1225,113 +1072,40 @@ export function compileCustomModuleRegistry({ customModules = [], baseModuleType
   const maxModules = Number.isFinite(maxModulesRaw) && maxModulesRaw > 0
     ? Math.floor(maxModulesRaw)
     : null;
-  const baseSet = new Set((Array.isArray(baseModuleTypes) ? baseModuleTypes : []).map((entry) => asText(entry, 64)).filter(Boolean));
+  const contract = compileCustomModuleContract({
+    customModules: requested,
+    baseModuleTypes,
+    maxModules,
+    allowJs: globalThis.__DAILY_SCENE_CUSTOM_JS__ === true
+  });
 
   const registry = {
     builders: new Map(),
     moduleTypeToFamily: {},
-    pipelinePatches: {
-      post: [],
-      camera: [],
-      lighting: []
-    },
+    pipelinePatches: contract.pipelinePatches || { post: [], camera: [], lighting: [] },
     report: {
       requested: requested.length,
       accepted: [],
-      rejected: []
+      rejected: Array.isArray(contract.report?.rejected) ? contract.report.rejected.slice() : []
     }
   };
 
-  const seen = new Set();
-  const entries = maxModules ? requested.slice(0, maxModules) : requested;
-  if (maxModules && requested.length > maxModules) {
-    registry.report.rejected.push({
-      id: null,
-      reason: 'custom-module-soft-limit-truncated',
-      details: { configuredLimit: maxModules }
-    });
-  }
-
-  entries.forEach((raw, index) => {
-    if (!isObject(raw)) {
-      registry.report.rejected.push({ id: null, reason: 'invalid-module-entry', details: { index } });
-      return;
-    }
-
-    const id = asText(raw.id, 64);
-    if (!id) {
-      registry.report.rejected.push({ id: null, reason: 'missing-id', details: { index } });
-      return;
-    }
-    if (seen.has(id)) {
-      registry.report.rejected.push({ id, reason: 'duplicate-id' });
-      return;
-    }
-    seen.add(id);
-
-    const family = normalizeFamily(raw.family);
-    if (!family) {
-      registry.report.rejected.push({ id, reason: 'invalid-family' });
-      return;
-    }
-
-    const kind = normalizeKind(raw.kind);
-    const seedPolicy = asText(raw.seedPolicy, 48) || 'deterministic';
-    if (seedPolicy !== 'deterministic') {
-      registry.report.rejected.push({ id, reason: 'non-deterministic-seed-policy' });
-      return;
-    }
-
-    if (baseSet.has(id) && raw.allowOverride !== true) {
-      registry.report.rejected.push({ id, reason: 'module-id-collides-with-built-in' });
-      return;
-    }
-
-    const spec = {
-      id,
-      family,
-      kind,
-      seedPolicy,
-      paramsSchema: isObject(raw.paramsSchema) ? raw.paramsSchema : {},
-      source: normalizeSource(raw.source),
-      budgets: normalizeBudgets(raw.budgets)
-    };
-
-    const executableValidation = validateCustomModuleSpec(spec);
-    if (!executableValidation.ok) {
-      registry.report.rejected.push({ id, reason: executableValidation.reason || 'missing-executable-source' });
-      return;
-    }
-
+  for (const { spec, reportEntry } of contract.acceptedSpecs || []) {
     if (PIPELINE_FAMILIES.has(spec.family)) {
-      const patch = normalizePipelinePatch(spec, raw);
-      registry.pipelinePatches[spec.family].push(patch);
-      registry.report.accepted.push({
-        id,
-        family,
-        kind,
-        fingerprint: fingerprintCustomModule(spec),
-        budgets: spec.budgets
-      });
-      return;
+      registry.report.accepted.push(reportEntry);
+      continue;
     }
 
     const { builder, reason } = createCustomBuilder(spec);
     if (typeof builder !== 'function') {
-      registry.report.rejected.push({ id, reason: reason || 'builder-unavailable' });
-      return;
+      registry.report.rejected.push({ id: spec.id, reason: reason || 'builder-unavailable' });
+      continue;
     }
 
-    registry.builders.set(id, builder);
-    registry.moduleTypeToFamily[id] = family;
-    registry.report.accepted.push({
-      id,
-      family,
-      kind,
-      fingerprint: fingerprintCustomModule(spec),
-      budgets: spec.budgets
-    });
-  });
+    registry.builders.set(spec.id, builder);
+    registry.moduleTypeToFamily[spec.id] = spec.family;
+    registry.report.accepted.push(reportEntry);
+  }
 
   return registry;
 }

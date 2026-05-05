@@ -1,3 +1,8 @@
+import {
+  resolveRenderingBreathingConfig,
+  resolveRenderingPostBase
+} from './rendering-config-contract.js';
+
 export const DEFAULT_SCENE_PALETTE = Object.freeze({
   bg: '#090b12',
   primary: '#c9a4ff',
@@ -284,21 +289,9 @@ export function appendUniformTargets(targets, uniforms) {
 }
 
 export function resolveBreathingConfig(sceneCfg = {}) {
-  return {
-    hueShift: sceneCfg.post?.breathing?.hueShift ?? 0.01,
-    saturationAmplitude: sceneCfg.post?.breathing?.saturationAmplitude ?? 0.06,
-    exposureAmplitude: sceneCfg.post?.breathing?.exposureAmplitude ?? 0.04,
-    phaseA: sceneCfg.post?.breathing?.phaseA ?? 0.17,
-    phaseB: sceneCfg.post?.breathing?.phaseB ?? 0.43
-  };
+  return resolveRenderingBreathingConfig(sceneCfg);
 }
 
 export function resolvePostBase(sceneCfg = {}) {
-  return {
-    contrast: sceneCfg.post?.contrast || 1.08,
-    saturation: sceneCfg.post?.saturation || 1.04,
-    vignette: sceneCfg.post?.vignette || 0.26,
-    distortion: sceneCfg.distortion || 0.24,
-    exposure: sceneCfg.post?.exposure || 1
-  };
+  return resolveRenderingPostBase(sceneCfg);
 }

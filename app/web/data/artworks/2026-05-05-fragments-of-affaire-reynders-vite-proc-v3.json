@@ -1,0 +1,1064 @@
+{
+  "id": "2026-05-05-fragments-of-affaire-reynders-vite-proc-v3",
+  "date": "2026-05-05",
+  "title": "Fragments of Affaire Reynders vite proc",
+  "generatedAt": "2026-05-05T14:02:28.519Z",
+  "news": {
+    "source": "rtbf",
+    "title": "Affaire Reynders : ING évite un procès en versant 1,6 million d’euros après des soupçons de blanchiment",
+    "link": "https://www.rtbf.be/article/affaire-reynders-ing-evite-un-proces-en-versant-1-6-million-d-euros-apres-des-soupcons-de-blanchiment-11719452",
+    "score": 63.909
+  },
+  "inspiration": {
+    "artist": "Hilma af Klint",
+    "tags": [
+      "symbolic",
+      "spiral",
+      "organic"
+    ],
+    "links": {
+      "wikipedia": "https://en.wikipedia.org/wiki/Hilma_af_Klint",
+      "reference": "https://www.modernamuseet.se/stockholm/en/exhibitions/hilma-af-klint/"
+    }
+  },
+  "seed": 3382636331,
+  "scene": {
+    "motif": "flow",
+    "shapeCount": 160,
+    "turbulence": 0.327,
+    "spiralBias": 0.882,
+    "motionSpeed": 0.001724,
+    "bloom": 0.16,
+    "grain": 0.034,
+    "fogDensity": 0.052,
+    "distortion": 0.18,
+    "flowField": 0.42,
+    "anchorStrength": 0.639,
+    "anchorOffsetX": -0.055,
+    "layerBalance": {
+      "structure": 0.745,
+      "chaos": 0.293
+    },
+    "expression": {
+      "tension": 0.31,
+      "structure": 0.738,
+      "motion": 0.754,
+      "noise": 0.29,
+      "urgency": 0.99,
+      "contrast": 0.444
+    },
+    "palette": {
+      "bg": "#c84a28",
+      "primary": "#f2b13b",
+      "secondary": "#f4e2b8",
+      "glow": "#d9a441",
+      "anchor": "#2f3a74"
+    },
+    "elements": [
+      {
+        "id": "el.knot-ground",
+        "moduleType": "cm.matte-ledger-field.v1",
+        "capabilities": [],
+        "stackFamilies": [],
+        "styleTags": [],
+        "libraryRef": null,
+        "grainScale": 50,
+        "warmBanding": 0.32,
+        "color": "bg",
+        "opacity": 0.95,
+        "intensity": 0.62,
+        "scenePurpose": "sustain the red-orange-yellow painted climate that carries the whole image",
+        "expectedRead": "warm handmade pigment field with subtle tension",
+        "mustNotReadAs": [
+          "lighting environment",
+          "generic gradient",
+          "void"
+        ],
+        "animation": {
+          "pulse": 0.04,
+          "drift": 0.02
+        },
+        "scaleX": 1.54,
+        "scaleY": 1.62,
+        "rotationZ": 0,
+        "offsetX": 0,
+        "offsetY": 0,
+        "techniqueRef": "t.matte-temple-ground",
+        "role": "structural-spine",
+        "layer": "background",
+        "motif": "flow",
+        "intentCadence": "steady"
+      },
+      {
+        "id": "el.left-knot-current",
+        "moduleType": "cm.diverted-flow-bands.v1",
+        "capabilities": [],
+        "stackFamilies": [],
+        "styleTags": [],
+        "libraryRef": null,
+        "pairs": 5,
+        "side": "left",
+        "scale": 0.86,
+        "color": "primary",
+        "opacity": 0.78,
+        "intensity": 0.66,
+        "scenePurpose": "form one side of the pressured settlement knot",
+        "expectedRead": "warm biomorphic current curling inward with restraint",
+        "mustNotReadAs": [
+          "flame",
+          "decorative vine",
+          "loose ribbon"
+        ],
+        "animation": {
+          "pulse": 0.16,
+          "wobbleX": 0.05,
+          "wobbleY": 0.05,
+          "drift": 0.14
+        },
+        "techniqueRef": "t.knot-current",
+        "role": "primary-signal",
+        "layer": "midground",
+        "motif": "flow",
+        "intentCadence": "steady"
+      },
+      {
+        "id": "el.right-knot-current",
+        "moduleType": "cm.diverted-flow-bands.v1",
+        "capabilities": [],
+        "stackFamilies": [],
+        "styleTags": [],
+        "libraryRef": null,
+        "pairs": 5,
+        "side": "right",
+        "mirrorX": true,
+        "scale": 0.86,
+        "color": "glow",
+        "opacity": 0.7,
+        "intensity": 0.58,
+        "scenePurpose": "mirror the pressured flow so the knot feels collective and adversarial",
+        "expectedRead": "opposed warm current curling into the same seal",
+        "mustNotReadAs": [
+          "perfect ornament",
+          "butterfly",
+          "brand mark"
+        ],
+        "animation": {
+          "rotationZ": 1.2,
+          "pulse": 0.14,
+          "wobbleX": 0.05,
+          "wobbleY": 0.05,
+          "drift": 0.12
+        },
+        "techniqueRef": "t.knot-current",
+        "role": "primary-signal",
+        "layer": "midground",
+        "motif": "flow",
+        "intentCadence": "steady"
+      },
+      {
+        "id": "el.cream-knot-seal",
+        "moduleType": "cm.afklint-settlement-seal.v1",
+        "capabilities": [],
+        "stackFamilies": [],
+        "styleTags": [],
+        "libraryRef": null,
+        "ringCount": 5,
+        "radius": 0.7,
+        "color": "secondary",
+        "opacity": 0.88,
+        "intensity": 0.64,
+        "scenePurpose": "fix the converging currents into a visible settlement outcome",
+        "expectedRead": "cream-gold occult seal holding a knot under pressure",
+        "mustNotReadAs": [
+          "coin",
+          "eye",
+          "portal"
+        ],
+        "animation": {
+          "rotationZ": 0.018,
+          "pulse": 0.1,
+          "wobbleX": 0.01,
+          "wobbleY": 0.01
+        },
+        "techniqueRef": "t.settlement-seal",
+        "role": "focal-anchor",
+        "layer": "foreground",
+        "motif": "flow",
+        "intentCadence": "steady"
+      },
+      {
+        "id": "el.blue-edge-records",
+        "moduleType": "cm.temple-ledger-glyphs.v1",
+        "capabilities": [],
+        "stackFamilies": [],
+        "styleTags": [],
+        "libraryRef": null,
+        "cellCount": 56,
+        "edgePlacement": true,
+        "color": "anchor",
+        "opacity": 0.42,
+        "intensity": 0.34,
+        "scenePurpose": "place scrutiny at the edges, as records surrounding but not narrating the affair",
+        "expectedRead": "small dark blue record marks on the painted margins",
+        "mustNotReadAs": [
+          "captions",
+          "binary code",
+          "menu items"
+        ],
+        "animation": {
+          "rotationZ": 0.08,
+          "pulse": 0.04,
+          "wobbleX": 0.01,
+          "wobbleY": 0.01,
+          "drift": 0.03
+        },
+        "techniqueRef": "t.matte-temple-ground",
+        "role": "accent-gesture",
+        "layer": "foreground",
+        "motif": "flow",
+        "intentCadence": "steady"
+      },
+      {
+        "id": "loop-background-field",
+        "moduleType": "shader-field-plane",
+        "capabilities": [
+          "fluid-drift",
+          "layered-field"
+        ],
+        "stackFamilies": [
+          "shader-field",
+          "post-heavy",
+          "sdf-raymarch"
+        ],
+        "styleTags": [
+          "shader",
+          "field"
+        ],
+        "libraryRef": "element.shader-field-plane.v1",
+        "color": "secondary",
+        "opacity": 0.24,
+        "intensity": 0.34,
+        "layer": "background",
+        "radialBias": 0.52,
+        "hemisphereContrast": 0.38,
+        "role": "atmosphere-field",
+        "motif": "flow",
+        "intentCadence": "steady"
+      }
+    ],
+    "shaderLayers": 4,
+    "elementDiversity": 5,
+    "paletteVariance": 0,
+    "motionSpeedNormalized": 0.776,
+    "camera": {
+      "autoRotate": false,
+      "autoRotateSpeed": 0.15,
+      "minDistance": 6,
+      "maxDistance": 24,
+      "cycleSeconds": 24,
+      "beats": [
+        {
+          "t": 0,
+          "radius": 12.35,
+          "theta": 0.017,
+          "phi": 1.349,
+          "hold": 1.12
+        },
+        {
+          "t": 0.34,
+          "radius": 11.92,
+          "theta": 0.157,
+          "phi": 1.307,
+          "hold": 0.72
+        },
+        {
+          "t": 0.68,
+          "radius": 12.08,
+          "theta": 0.316,
+          "phi": 1.369,
+          "hold": 0.84
+        },
+        {
+          "t": 1,
+          "radius": 12.26,
+          "theta": 0.123,
+          "phi": 1.326,
+          "hold": 1.16
+        }
+      ],
+      "target": [
+        0,
+        0,
+        0
+      ]
+    },
+    "post": {
+      "vignette": 0.12,
+      "contrast": 1.14,
+      "saturation": 1.02,
+      "exposure": 0.96,
+      "breathing": {
+        "hueShift": 0.037,
+        "saturationAmplitude": 0.065,
+        "exposureAmplitude": 0.05,
+        "phaseA": 0.1276,
+        "phaseB": 0.6137
+      }
+    },
+    "styleFingerprint": {
+      "pulseFamily": "ascending",
+      "stripeWarp": 0.06,
+      "edgeSoftness": 0.34,
+      "cameraSway": 0.12,
+      "edgeHardness": 0.5,
+      "temperatureBias": 0,
+      "verticalBias": 0,
+      "cadenceBias": 0
+    },
+    "sceneAuthoring": {
+      "mode": "agent-dsl",
+      "planner": "openclaw-agent-scene-planner",
+      "representation": {
+        "id": "rep.accounting-swan-knot",
+        "label": "Accounting Swan Knot",
+        "description": "A biomorphic af Klint-inflected version where mirrored warm currents coil into an abstract knot, held by a cream seal and dark blue accounting marks.",
+        "scoreHint": 0.68,
+        "motif": "flow tied into a settlement knot",
+        "cadence": "steady",
+        "scenePrompt": "Hilma af Klint inspired abstract painting with mirrored red and orange biomorphic flow bands forming a restrained knot, cream central seal, dark blue small accounting glyphs, gold ring pressure, matte surface, frontal paper-like composition, no literal news sy",
+        "colorMood": "orange-red vitality, cream restraint, gold settlement pressure, blue institutional shadow",
+        "spatialIntent": "background warm field, midground mirrored currents, foreground knot-seal and tiny glyphs remain separated and readable",
+        "imageAuthorship": {
+          "structuralLaw": "Two mirrored warm currents approach as if opposed witnesses, curve into a single contained knot, and are fixed by a cream-gold seal.",
+          "dominantForms": [
+            "mirrored curling bands",
+            "central knot-ring",
+            "small blue accounting strokes",
+            "warm pigment field"
+          ],
+          "edgeBehavior": "softened biomorphic curves with crisp symbolic ring edges",
+          "surfaceBehavior": "painted color relationships dominate; motion is embedded in the surface rather than staged in space",
+          "depthLogic": "flow sits above the pigment field, knot seal sits above flow, glyphs punctuate the foreground edges",
+          "motionLogic": "paired currents drift steadily toward and around the knot while the seal breathes in place",
+          "forbiddenDrift": [
+            "literal swan",
+            "vortex portal",
+            "money whirlpool",
+            "data visualization",
+            "spectacle particles"
+          ]
+        },
+        "technicalTranslation": {
+          "realizationStrategy": "Use mirrored instances of the custom tube-path flow module with a centered concentric seal and a matte shader field; add sparse glyph strokes as edge pressure.",
+          "reuseBias": "hybrid",
+          "whyThisApproach": "The invented modules preserve the specific symbolic language, while the runtime can instantiate mirrored geometry deterministically without JS.",
+          "notes": [
+            "The knot should be elegant but tense.",
+            "Keep rotation minimal so the image remains altar-like.",
+            "Use glow as ochre pigment, not light emission."
+          ],
+          "motionCadence": "steady"
+        },
+        "mustShow": [
+          "mirrored biomorphic flow knot",
+          "cream-gold central seal",
+          "dark blue accounting marks",
+          "red-orange-yellow painted relationships",
+          "frontal bounded composition"
+        ],
+        "mustAvoid": [
+          "bird illustration",
+          "decorative spiral wallpaper",
+          "brand colors as logo",
+          "black background",
+          "chaotic particle spectacle"
+        ],
+        "reviewFocus": [
+          "Does the knot read as controlled flow under pressure?",
+          "Does the composition remain Hilma af Klint-like rather than generic abstract ribbons?",
+          "Are foreground, midground, and background distinct?"
+        ],
+        "artistTechniqueObservations": {
+          "medium": "painting",
+          "primaryTechnique": null,
+          "markMakingTraits": [],
+          "surfaceQualities": [
+            "painted surface behavior matters more than object literalism"
+          ],
+          "paletteTendencies": [
+            "dominant hues: red, orange, yellow"
+          ],
+          "spatialHabits": []
+        },
+        "rationale": {
+          "newsMapping": "The knot is the unresolved affair; the seal is the payment that contains it; glyphs imply records and scrutiny.",
+          "artistMapping": "Mirrored biomorphic order, rings, warm fields, and occult diagram marks evoke af Klint's visual logic without copying a specific painting."
+        },
+        "techniques": [
+          {
+            "id": "t.matte-temple-ground",
+            "name": "matte painted temple ground",
+            "type": "shader-surface",
+            "purpose": "retain painting-first authorship",
+            "reuseModuleType": null,
+            "params": {
+              "grainScale": 50,
+              "warmBanding": 0.32
+            }
+          },
+          {
+            "id": "t.knot-current",
+            "name": "mirrored accounting currents",
+            "type": "geometry-flow",
+            "purpose": "create the controlled knot of pressure and diversion",
+            "reuseModuleType": null,
+            "params": {
+              "pairs": 5,
+              "mirror": true,
+              "drift": 0.14
+            }
+          },
+          {
+            "id": "t.settlement-seal",
+            "name": "bounded concentric settlement seal",
+            "type": "geometry-symbol",
+            "purpose": "hold the knot as focal anchor",
+            "reuseModuleType": null,
+            "params": {
+              "ringCount": 5,
+              "scale": 0.28
+            }
+          }
+        ]
+      },
+      "artisticIntent": {
+        "statement": "A non-literal Hilma af Klint response to a settlement that diverts judgment into payment: money, suspicion, and avoided trial become a temple diagram of flow, blockage, cleansing, and sealed consequence.",
+        "motif": "diverted flow through an abstract judicial altar",
+        "emotionalArc": "Measured public pressure gathers as warm currents, tightens around a pale obstruction, then releases into a small gold seal that feels resolved but not absolved.",
+        "compositionLogic": "A frontal painted surface carries a bounded symbolic apparatus: vertical temple axis, triangular judgment mark, concentric settlement seal, and controlled orange-gold streams that bend around a white laundering channel without becoming literal money or courtro",
+        "imagePrompt": "A large matte Hilma af Klint inspired abstract painting surface in red, orange, yellow, cream, and muted gold. A temple-like diagram fills the frame frontally with breathing margins: a central pale triangular obstruction, warm flowing bands bending around it, concentric gold and red rings as a sealed payment mark, smal"
+      },
+      "executionPlan": {
+        "palette": {
+          "bg": "#c84a28",
+          "primary": "#f2b13b",
+          "secondary": "#f4e2b8",
+          "glow": "#d9a441",
+          "anchor": "#2f3a74"
+        },
+        "camera": {
+          "autoRotate": false,
+          "cycleSeconds": 24,
+          "target": [
+            0,
+            0,
+            0
+          ],
+          "frontal": true,
+          "preservePerspective": true
+        },
+        "post": {
+          "contrast": 1.08,
+          "saturation": 1.02,
+          "vignette": 0.12,
+          "exposure": 0.96
+        },
+        "global": {
+          "shapeCountHint": 160,
+          "flowField": 0.42,
+          "distortion": 0.18,
+          "bloom": 0.16
+        },
+        "techniques": [
+          {
+            "id": "t.matte-temple-ground",
+            "name": "matte painted temple ground",
+            "type": "shader-surface",
+            "purpose": "make the render read as a made painted surface before it reads as a 3D scene",
+            "reuseModuleType": null,
+            "params": {
+              "grainScale": 44,
+              "warmBanding": 0.28,
+              "edgeDarken": 0.12
+            }
+          },
+          {
+            "id": "t.diverted-current",
+            "name": "diverted gold-current paths",
+            "type": "geometry-flow",
+            "purpose": "translate payment and avoided prosecution into disciplined streams that bend around judgment",
+            "reuseModuleType": null,
+            "params": {
+              "pathCount": 9,
+              "bend": 0.55,
+              "steadyPulse": 0.18
+            }
+          },
+          {
+            "id": "t.settlement-seal",
+            "name": "bounded concentric settlement seal",
+            "type": "geometry-symbol",
+            "purpose": "give the composition a readable focal anchor without making a literal coin or logo",
+            "reuseModuleType": null,
+            "params": {
+              "ringCount": 7,
+              "innerTriangle": true,
+              "scale": 0.34
+            }
+          }
+        ]
+      },
+      "moduleOverrides": [],
+      "customModules": [
+        {
+          "id": "cm.matte-ledger-field.v1",
+          "family": "shader",
+          "kind": "dsl",
+          "allowOverride": false,
+          "seedPolicy": "deterministic",
+          "paramsSchema": {
+            "grainScale": "number",
+            "bandStrength": "number",
+            "warmBias": "number"
+          },
+          "source": {
+            "dsl": {
+              "width": 7.2,
+              "height": 9.2,
+              "opacity": 1,
+              "position": [
+                0,
+                0,
+                -0.08
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "blend": "normal"
+            },
+            "glsl": {
+              "vertex": "varying vec2 vUv;\nvoid main(){\n vUv=uv;\n gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0);\n}",
+              "fragment": "precision mediump float;\nvarying vec2 vUv;\nuniform float time;\nfloat hash(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453123);}\nfloat noise(vec2 p){vec2 i=floor(p);vec2 f=fract(p);vec2 u=f*f*(3.0-2.0*f);return mix(mix(hash(i),hash(i+vec2(1.0,0.0)),u.x),mix(hash(i+vec2(0.0,1.0)),hash(i+vec2(1.0,1.0)),u.x),u.y);} \nvoid main(){\n vec2 p=vUv;\n float n=noise(p*52.0)+0.45*noise(p*17.0);\n float vertical=sin((p.y*9.0+p.x*1.8)*3.14159)*0.5+0.5;\n float ledger=smoothstep(0.485,0.5,abs(fract(p.y*12.0)-0.5))*0.06;\n vec3 red=vec3(0.75,0.23,0.13);\n vec3 orange=vec3(0.93,0.48,0.18);\n vec3 ochre=vec3(0.86,0.60,0.22);\n vec3 col=mix(red,orange,p.y*0.45+vertical*0.18);\n col=mix(col,ochre,smoothstep(0.42,0.95,p.x)*0.22);\n col+=vec3(n*0.07-ledger);\n float margin=min(min(p.x,1.0-p.x),min(p.y,1.0-p.y));\n col*=0.88+0.18*smoothstep(0.0,0.12,margin);\n gl_FragColor=vec4(col,1.0);\n}"
+            },
+            "js": null
+          },
+          "budgets": {
+            "maxInstances": 1,
+            "maxShaderOpsHint": 0.72,
+            "mobileSafe": true
+          }
+        },
+        {
+          "id": "cm.afklint-settlement-seal.v1",
+          "family": "geometry",
+          "kind": "dsl",
+          "allowOverride": false,
+          "seedPolicy": "deterministic",
+          "paramsSchema": {
+            "ringCount": "number",
+            "radius": "number",
+            "lineWeight": "number"
+          },
+          "source": {
+            "dsl": {
+              "geometry": {
+                "type": "ellipse-rings",
+                "rings": 7,
+                "radiusX": 0.92,
+                "radiusY": 0.92,
+                "strokeWidth": 0.035,
+                "colors": [
+                  "#f4e2b8",
+                  "#d9a441",
+                  "#2f3a74",
+                  "#f2b13b"
+                ]
+              },
+              "position": [
+                0,
+                0.28,
+                0.12
+              ],
+              "rotation": [
+                0,
+                0,
+                0
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "opacity": 0.92,
+              "blend": "normal"
+            },
+            "glsl": {},
+            "js": null
+          },
+          "budgets": {
+            "maxInstances": 80,
+            "maxShaderOpsHint": 0.25,
+            "mobileSafe": true
+          }
+        },
+        {
+          "id": "cm.diverted-flow-bands.v1",
+          "family": "geometry",
+          "kind": "dsl",
+          "allowOverride": false,
+          "seedPolicy": "deterministic",
+          "paramsSchema": {
+            "count": "number",
+            "spread": "number",
+            "bend": "number"
+          },
+          "source": {
+            "dsl": {
+              "geometry": {
+                "type": "tube-path",
+                "path": [
+                  [
+                    -2.8,
+                    -2.9,
+                    0
+                  ],
+                  [
+                    -1.4,
+                    -1,
+                    0
+                  ],
+                  [
+                    -0.72,
+                    0.15,
+                    0
+                  ],
+                  [
+                    -1.05,
+                    1.2,
+                    0
+                  ],
+                  [
+                    -2.35,
+                    3.1,
+                    0
+                  ]
+                ],
+                "radius": 0.032,
+                "segments": 80
+              },
+              "count": 9,
+              "spread": [
+                0.44,
+                0.12,
+                0.035
+              ],
+              "position": [
+                0,
+                0,
+                0.16
+              ],
+              "rotation": [
+                0,
+                0,
+                0
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "opacity": 0.82,
+              "blend": "normal"
+            },
+            "glsl": {},
+            "js": null
+          },
+          "budgets": {
+            "maxInstances": 120,
+            "maxShaderOpsHint": 0.22,
+            "mobileSafe": true
+          }
+        },
+        {
+          "id": "cm.temple-ledger-glyphs.v1",
+          "family": "geometry",
+          "kind": "dsl",
+          "allowOverride": false,
+          "seedPolicy": "deterministic",
+          "paramsSchema": {
+            "cellCount": "number",
+            "opacity": "number"
+          },
+          "source": {
+            "dsl": {
+              "geometry": {
+                "type": "stacked-rects",
+                "rows": 16,
+                "cols": 4,
+                "width": 0.18,
+                "height": 0.032,
+                "gap": 0.085,
+                "color": "#2f3a74"
+              },
+              "position": [
+                0,
+                -2.78,
+                0.22
+              ],
+              "spread": [
+                5.1,
+                0.18,
+                0.02
+              ],
+              "count": 4,
+              "opacity": 0.45,
+              "blend": "normal"
+            },
+            "glsl": {},
+            "js": null
+          },
+          "budgets": {
+            "maxInstances": 96,
+            "maxShaderOpsHint": 0.18,
+            "mobileSafe": true
+          }
+        },
+        {
+          "id": "cm.frontal-painted-camera.v1",
+          "family": "camera",
+          "kind": "dsl",
+          "allowOverride": false,
+          "seedPolicy": "deterministic",
+          "paramsSchema": {
+            "frontal": "boolean"
+          },
+          "source": {
+            "dsl": {
+              "patch": {
+                "frontal": true,
+                "position": [
+                  0,
+                  0,
+                  8.2
+                ],
+                "target": [
+                  0,
+                  0,
+                  0
+                ],
+                "fov": 36,
+                "autoRotate": false
+              }
+            },
+            "glsl": {},
+            "js": null
+          },
+          "budgets": {
+            "maxInstances": 1,
+            "maxShaderOpsHint": 0.05,
+            "mobileSafe": true
+          }
+        }
+      ],
+      "policyPasses": {
+        "advisoryOnly": true,
+        "skipped": [
+          "focal-hierarchy",
+          "envelope-clamp",
+          "composition-plan",
+          "artist-visual-profile",
+          "scene-element-module-enforcement",
+          "stack-pipeline-apply",
+          "gap-focused-pass",
+          "artist-hard-constraints"
+        ]
+      }
+    },
+    "seedVersion": 2,
+    "seeds": {
+      "baseSeed": 4047462880,
+      "runSeed": 3382636331,
+      "geomSeed": 2515806321,
+      "animSeed": 3910183076,
+      "colorSeed": 1286929916,
+      "cameraSeed": 236206834
+    },
+    "customModuleReport": {
+      "requested": 5,
+      "accepted": [
+        {
+          "id": "cm.matte-ledger-field.v1",
+          "family": "shader",
+          "kind": "dsl",
+          "fingerprint": "76b2304a",
+          "budgets": {
+            "maxInstances": 1,
+            "maxShaderOpsHint": 0.72,
+            "mobileSafe": true
+          }
+        },
+        {
+          "id": "cm.afklint-settlement-seal.v1",
+          "family": "geometry",
+          "kind": "dsl",
+          "fingerprint": "3c6610e6",
+          "budgets": {
+            "maxInstances": 80,
+            "maxShaderOpsHint": 0.25,
+            "mobileSafe": true
+          }
+        },
+        {
+          "id": "cm.diverted-flow-bands.v1",
+          "family": "geometry",
+          "kind": "dsl",
+          "fingerprint": "c1f69b25",
+          "budgets": {
+            "maxInstances": 120,
+            "maxShaderOpsHint": 0.22,
+            "mobileSafe": true
+          }
+        },
+        {
+          "id": "cm.temple-ledger-glyphs.v1",
+          "family": "geometry",
+          "kind": "dsl",
+          "fingerprint": "5b38d28b",
+          "budgets": {
+            "maxInstances": 96,
+            "maxShaderOpsHint": 0.18,
+            "mobileSafe": true
+          }
+        },
+        {
+          "id": "cm.frontal-painted-camera.v1",
+          "family": "camera",
+          "kind": "dsl",
+          "fingerprint": "e9e5e92b",
+          "budgets": {
+            "maxInstances": 1,
+            "maxShaderOpsHint": 0.05,
+            "mobileSafe": true
+          }
+        }
+      ],
+      "rejected": [],
+      "moduleOverrideCount": 0,
+      "overrideErrors": []
+    },
+    "techStack": {
+      "id": "particle-surge",
+      "name": "Particle-Heavy Surge",
+      "family": "particle-heavy",
+      "strategyFamilies": [
+        "fracture",
+        "hybrid",
+        "orbits"
+      ],
+      "rationale": {
+        "source": "loop-adjustment-alternate-stack",
+        "score": 3.2,
+        "penalties": []
+      },
+      "dominantPrimitive": "cm.matte-ledger-field.v1",
+      "moduleSet": [
+        "cm.matte-ledger-field.v1",
+        "cm.diverted-flow-bands.v1",
+        "cm.afklint-settlement-seal.v1",
+        "cm.temple-ledger-glyphs.v1",
+        "shader-field-plane"
+      ],
+      "pipelineKind": "particle-heavy"
+    },
+    "renderPipeline": {
+      "kind": "particle-heavy",
+      "family": "particle-heavy",
+      "fallback": false,
+      "advisoryOnly": true,
+      "dominantPrimitive": "cm.matte-ledger-field.v1",
+      "moduleSet": [
+        "cm.matte-ledger-field.v1",
+        "cm.diverted-flow-bands.v1",
+        "cm.afklint-settlement-seal.v1",
+        "cm.temple-ledger-glyphs.v1",
+        "shader-field-plane"
+      ]
+    }
+  },
+  "sceneStrategy": {
+    "selected": {
+      "id": "composite-pressure-atlas",
+      "name": "Pressure Atlas",
+      "type": "composite",
+      "family": "hybrid"
+    },
+    "applied": false,
+    "fallbackReason": "agent-authored-scene-elements"
+  },
+  "techStack": {
+    "id": "particle-surge",
+    "name": "Particle-Heavy Surge",
+    "family": "particle-heavy"
+  },
+  "newsVisualMappings": [
+    {
+      "signal": "title evidence [affaire, reynders, vite, proc] -> motif flow",
+      "from": "affaire, reynders, vite, proc",
+      "visualDecision": "structural motif armature set to flow"
+    },
+    {
+      "signal": "composition foreground conflict",
+      "from": "affaire, reynders, vite, proc",
+      "visualDecision": "foreground role tension-knot at pressure 0.18"
+    },
+    {
+      "signal": "composition midground context",
+      "from": "affaire, reynders, vite, proc",
+      "visualDecision": "midground role context-drift with density 0.354"
+    },
+    {
+      "signal": "composition background mood",
+      "from": "affaire, reynders, vite, proc",
+      "visualDecision": "background mood watchful depth 0.313"
+    },
+    {
+      "signal": "urgency -> motion",
+      "from": "ageHours=0.27",
+      "visualDecision": "motionSpeedNormalized=0.776"
+    },
+    {
+      "signal": "title semantics -> palette/edge cadence",
+      "from": "temp=0 edge=0.5",
+      "visualDecision": "postContrast=1.14 accentType=cm.temple-ledger-glyphs.v1"
+    },
+    {
+      "signal": "article institutional/conflict polarity",
+      "from": "affaire, reynders, vite, proc",
+      "visualDecision": "accent element cm.temple-ledger-glyphs.v1 with opacity 0.42"
+    },
+    {
+      "signal": "artist research context Hilma af Klint",
+      "from": "tags symbolic, spiral, organic",
+      "visualDecision": "artist profile captured as metadata only; no technical routing applied"
+    }
+  ],
+  "qualityScore": {
+    "score": 51.2,
+    "summary": "Alignment 64.3 with strongest channel emotional.",
+    "heuristic": {
+      "score": 66.6,
+      "breakdown": {
+        "legibility": 74.2,
+        "emotionalReadability": 68.6,
+        "coherence": 91.4,
+        "focalAnchor": 69.6,
+        "technicalRichness": 95.2,
+        "restraint": 60.5,
+        "alignment": 64.3
+      }
+    },
+    "calibration": {
+      "sampleCount": 1,
+      "trustWeight": 0.4
+    },
+    "alignment": {
+      "totalAlign": 64.3,
+      "components": {
+        "title": {
+          "score": 62.5
+        },
+        "style": {
+          "score": 59.9
+        },
+        "emotional": {
+          "score": 72.1
+        }
+      }
+    }
+  },
+  "rationale": {
+    "intent": {
+      "signal": null,
+      "emotion": null,
+      "tension": null,
+      "balance": null,
+      "motion": null
+    },
+    "selection": {
+      "whyHeadline": "Selected as top-ranked Belgian headline (score 63.909 = frequency 60 + priority 0 + recency 3.909).",
+      "priorityTerms": []
+    },
+    "qualitySummary": "TOTAL_ALIGN 64.3."
+  },
+  "runPolicy": {
+    "artworksPerRun": 1,
+    "multiVariant": false
+  },
+  "artFramework": {
+    "version": 3,
+    "intent": {
+      "statement": "Affaire Reynders : ING évite un procès en versant 1,6 million d’euros après des soupçons de blanchiment translated through Hilma af Klint's visual language as a non-literal image.",
+      "coreImpulse": "In Hilma af Klint: Paintings for the Temple (paintings by Hilma af Klint) Af Klint concluded Paintings for the Temple with a triptych she called Altarpieces, featuring geometric shapes, bold primary colors, and gold l... Hilma af Klint was a Swedish artist and mystic whose paintings are considered to be among the first major abstract works in Western art history. After studying at the Royal Academy of Art in Stockholm, Hilma af Klint embarked on a major suite of paintings in 1904-06. Hilma af Klint did not ascribe to any of the established avant-garde movements of her time.",
+      "artistTranslationLogic": [
+        "Hilma af Klint's formal logic should dominate before any spectacle or scenic excess."
+      ],
+      "emotionalClimate": {
+        "summary": "In Hilma af Klint: Paintings for the Temple (paintings by Hilma af Klint) Af Klint concluded Paintings for the Temple with a triptych she called Altarpieces, featuring geometric shapes, bold primary colors, and gold l... Hilma af Klint was a Swedish artist and mystic whose paintings are considered to be among the first major abstract works in Western art history. After studying at the Royal Academy of Art in Stockholm, Hilma af Klint embarked on a major suite of paintings in 1904-06. Hilma af Klint did not ascribe to any of the established avant-garde movements of her time.",
+        "pressure": "high",
+        "pace": "urgent",
+        "socialReach": "collective"
+      },
+      "visualGravity": {
+        "anchor": null,
+        "dominantStructure": "Build the image around one readable structural law.",
+        "scaleBehavior": "Keep the space bounded and compositionally intentional."
+      },
+      "materialLogic": {
+        "surfaceBehavior": [],
+        "spatialHabits": [],
+        "handling": "Hilma af Klint's surface should feel made, not generic."
+      },
+      "colorField": {
+        "paletteSignals": [],
+        "contrastMode": "hard contrast with controlled glow"
+      },
+      "symbolicDensity": {
+        "primaryMotif": "flow",
+        "motifVocabulary": [],
+        "literalness": "non-literal"
+      },
+      "tensionEngine": {
+        "conflictAxis": "Affaire Reynders",
+        "escalationMode": "Let tension accumulate through structure, not narration.",
+        "releaseValve": "Allow only a narrow zone of release."
+      },
+      "audiencePosition": {
+        "stance": "Hilma af Klint did not ascribe to any of the established avant-garde movements of her time. Hilma af Klint was a Swedish artist and mystic whose paintings are considered to be among the first major abstract works in Western art history. In Hilma af Klint: Paintings for the Temple (paintings by Hilma af Klint) Af Klint concluded Paintings for the Temple with a triptych she called Altarpieces, featuring geometric shapes, bold primary colors, and gold l... In Hilma af Klint: Paintings for the Temple (paintings by Hilma af Klint) Af Klint concluded Paintings for the Temple with a triptych she called Altarpieces, featuring geometric shapes, bold primary colors, and gold l...",
+        "distance": "immersed but not illustrative"
+      },
+      "controlVsAccident": {
+        "balance": "controlled with selective instability",
+        "motionTemperament": "steady",
+        "accidentRole": "let disruption cut through the structure without dissolving it"
+      },
+      "antiDriftRules": [
+        "Do not collapse into biography summary, symbolic cliché, or generic procedural spectacle."
+      ],
+      "finalCompression": "In Hilma af Klint: Paintings for the Temple (paintings by Hilma af Klint) Af Klint concluded Paintings for the Temple with a triptych she called Altarpieces, featuring geometric shapes, bold primary colors, and gold l... Hilma af Klint was a Swedish artist and mystic whose paintings are considered to be among the first major abstract works in Western art history. After studying at the Royal Academy of Art in Stockholm, Hilma af Klint embarked on a major suite of paintings in 1904-06. Hilma af Klint did not ascribe to any of the established avant-garde movements of her time. Build the image around one readable structural law.",
+      "artistAnchors": {
+        "formalLogic": [],
+        "motifVocabulary": [],
+        "compositionCues": [],
+        "paletteSignals": [],
+        "surfaceBehavior": [],
+        "spatialHabits": [],
+        "translationDirectives": []
+      },
+      "threeJsFreedomEnvelope": [],
+      "avoidSignals": [],
+      "threeJsTranslationExamples": []
+    }
+  }
+}

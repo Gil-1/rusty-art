@@ -13,6 +13,7 @@ export function createCaptureStateController({ captureMode = false, body = docum
       artworkId: null,
       sceneInitialized: false,
       sceneInitError: null,
+      sceneAssemblyReport: null,
       renderReady: false,
       error: null
     };

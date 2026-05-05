@@ -74,6 +74,7 @@ export class ArtworkScene {
 
     this.animations = [];
     this.uniformTargets = [];
+    this.sceneAssemblyReport = null;
     this.motionSpeed = 0.001;
     this.currentTension = 0.5;
     this.cameraBeats = null;
@@ -141,17 +142,25 @@ export class ArtworkScene {
     sceneCfg.customModuleReport = customModuleReport || sceneCfg.customModuleReport || null;
     applyPipelinePatches(sceneCfg, pipelinePatches);
 
-    const rebuilt = rebuildSceneElements({
-      group: this.group,
-      activeElements,
-      sceneCfg,
-      seed: config.seed,
-      elementBuilders,
-      buildElementObject,
-      moduleOverrideResolver
-    });
+    let rebuilt;
+    try {
+      rebuilt = rebuildSceneElements({
+        group: this.group,
+        requestedElements: elements,
+        activeElements,
+        sceneCfg,
+        seed: config.seed,
+        elementBuilders,
+        buildElementObject,
+        moduleOverrideResolver
+      });
+    } catch (error) {
+      this.sceneAssemblyReport = error?.sceneAssemblyReport || null;
+      throw error;
+    }
     this.animations = rebuilt.animations;
     this.uniformTargets = rebuilt.uniformTargets;
+    this.sceneAssemblyReport = rebuilt.assemblyReport || null;
 
     applySceneEnvironment(this.scene, sceneCfg);
     addSceneLighting(this.group, sceneCfg);
@@ -178,6 +187,10 @@ export class ArtworkScene {
     this.postUniforms.uVignette.value = this.postBase.vignette;
     this.postUniforms.uDistortion.value = this.postBase.distortion * this.motionIntensity;
     return true;
+  }
+
+  getAssemblyReport() {
+    return this.sceneAssemblyReport;
   }
 
   setMotionIntensity(intensity = 1) {

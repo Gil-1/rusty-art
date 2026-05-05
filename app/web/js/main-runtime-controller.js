@@ -99,7 +99,18 @@ export function createRuntimeController({
     if (!scene || !file || !shouldContinue()) return false;
 
     captureStateController?.update({ artworkLoaded: true, artworkId: art?.id || null });
-    const applied = await scene.applyConfig(art);
+    let applied;
+    try {
+      applied = await scene.applyConfig(art);
+    } catch (err) {
+      const error = err instanceof Error ? err : new Error(String(err));
+      captureStateController?.update({
+        renderReady: false,
+        error: error.message,
+        sceneAssemblyReport: error.sceneAssemblyReport || scene.getAssemblyReport?.() || null
+      });
+      throw err;
+    }
     if (!applied || !shouldContinue()) return false;
 
     if (waitForRenderedFrame && typeof scene.waitForRenderedFrame === 'function') {
@@ -112,7 +123,8 @@ export function createRuntimeController({
       sceneInitError: null,
       renderReady: true,
       error: null,
-      renderedArtworkId: art?.id || null
+      renderedArtworkId: art?.id || null,
+      sceneAssemblyReport: scene.getAssemblyReport?.() || null
     });
     return true;
   }
