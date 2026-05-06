@@ -2,220 +2,221 @@
   "id": "2026-05-06-resonance-direct-guerre-moyen-orient-v3",
   "date": "2026-05-06",
   "title": "Resonance: DIRECT Guerre Moyen Orient",
-  "generatedAt": "2026-05-06T06:07:52.250Z",
+  "generatedAt": "2026-05-06T06:29:19.591Z",
   "news": {
-    "source": "dh",
-    "title": "DIRECT – Guerre au Moyen-Orient: Donald Trump suspend l'opération américaine dans le détroit d'Ormuz pour escorter des bateaux",
-    "link": "https://www.dhnet.be/actu/monde/2026/05/06/direct-guerre-au-moyen-orient-donald-trump-suspend-loperation-americaine-dans-le-detroit-dormuz-pour-escorter-des-bateaux-7FYLVVFF6VA3VGNR7KJ3274KDE/",
-    "score": 94.676
+    "source": "lalibre",
+    "title": "DIRECT - Guerre au Moyen-Orient : Donald Trump suspend l'opération américaine dans le détroit d'Ormuz pour escorter des bateaux",
+    "link": "https://www.lalibre.be/international/moyen-orient/2026/05/06/direct-guerre-au-moyen-orient-donald-trump-suspend-loperation-americaine-dans-le-detroit-dormuz-pour-escorter-des-bateaux-EDWSHUI24FFZNN42QSJCUW5ZHA/",
+    "score": 94.434
   },
   "inspiration": {
-    "artist": "Arshile Gorky",
+    "artist": "Hilma af Klint",
     "tags": [
-      "abstract",
-      "expressionist"
+      "symbolic",
+      "spiral",
+      "organic"
     ],
     "links": {
-      "wikipedia": "https://en.wikipedia.org/wiki/Arshile_Gorky",
-      "reference": "https://en.wikipedia.org/wiki/Arshile_Gorky"
+      "wikipedia": "https://en.wikipedia.org/wiki/Hilma_af_Klint",
+      "reference": "https://www.modernamuseet.se/stockholm/en/exhibitions/hilma-af-klint/"
     }
   },
-  "seed": 3282800654,
+  "seed": 1052339484,
   "scene": {
     "motif": "flow",
-    "shapeCount": 86,
-    "turbulence": 0.457,
-    "spiralBias": 0.92,
-    "motionSpeed": 0.001735,
+    "shapeCount": 96,
+    "turbulence": 0.321,
+    "spiralBias": 0.933,
+    "motionSpeed": 0.001603,
     "bloom": 0.12,
     "grain": 0.034,
-    "fogDensity": 0.052,
-    "distortion": 0.24,
-    "flowField": 0.46,
-    "anchorStrength": 0.619,
-    "anchorOffsetX": 0.139,
+    "fogDensity": 0.053,
+    "distortion": 0.18,
+    "flowField": 0.42,
+    "anchorStrength": 0.639,
+    "anchorOffsetX": -0.029,
     "layerBalance": {
-      "structure": 0.7,
-      "chaos": 0.374
+      "structure": 0.735,
+      "chaos": 0.296
     },
     "expression": {
       "tension": 0.31,
-      "structure": 0.727,
-      "motion": 0.775,
-      "noise": 0.294,
-      "urgency": 0.965,
-      "contrast": 0.433
+      "structure": 0.716,
+      "motion": 0.732,
+      "noise": 0.299,
+      "urgency": 0.939,
+      "contrast": 0.422
     },
     "palette": {
-      "bg": "#9bb8c8",
-      "primary": "#264f91",
-      "secondary": "#6b4f9a",
-      "glow": "#6ad4d6",
-      "anchor": "#b43843"
+      "bg": "#ead9b8",
+      "primary": "#c9442f",
+      "secondary": "#e69a2e",
+      "glow": "#d8ae3f",
+      "anchor": "#2f4f6f"
     },
     "elements": [
       {
-        "id": "field.armature-ground",
-        "moduleType": "cm.gorky-matte-strait-field.v1",
+        "id": "spiral-ground",
+        "moduleType": "cm.painted-temple-ground.v1",
         "capabilities": [],
         "stackFamilies": [],
         "styleTags": [],
         "libraryRef": null,
         "grain": 0.2,
-        "washStrength": 0.3,
+        "warmth": 0.76,
         "color": "bg",
         "opacity": 0.95,
         "intensity": 0.62,
-        "scenePurpose": "hold the composition as a painted sheet rather than a 3D construction",
-        "expectedRead": "cool matte pigment ground with mild vibration",
+        "scenePurpose": "Provide the warm handmade field that holds the spiral.",
+        "expectedRead": "cream and ochre painted support",
         "mustNotReadAs": [
-          "stage void",
-          "digital fog",
-          "space"
+          "digital gradient",
+          "cloud layer",
+          "blank UI"
         ],
         "animation": {
-          "pulse": 0.02,
-          "wobbleX": 0.02,
-          "wobbleY": 0.02,
-          "drift": 0.1
+          "pulse": 0.015,
+          "drift": 0.04
         },
         "scaleX": 1.54,
         "scaleY": 1.62,
         "rotationZ": 0,
         "offsetX": 0,
         "offsetY": 0,
-        "techniqueRef": "t.matte-field",
+        "techniqueRef": "bounded-spiral-current",
         "role": "structural-spine",
         "layer": "background",
         "motif": "flow",
         "intentCadence": "drift"
       },
       {
-        "id": "armature.open-blue",
-        "moduleType": "cm.biomorphic-strait-rings.v1",
+        "id": "warm-pressure-washes",
+        "moduleType": "cm.altarpiece-warm-blocks.v1",
         "capabilities": [],
         "stackFamilies": [],
         "styleTags": [],
         "libraryRef": null,
-        "ringCount": 6,
-        "asymmetry": 0.52,
-        "scaleX": 1.12,
-        "scaleY": 0.94,
+        "blockCount": 4,
+        "softened": true,
         "color": "primary",
-        "opacity": 0.68,
-        "intensity": 0.68,
-        "scenePurpose": "create a living structural skeleton that carries the pressure of halted movement",
-        "expectedRead": "open blue contour armature with organic gaps",
-        "mustNotReadAs": [
-          "wireframe model",
-          "machine part",
-          "target"
-        ],
-        "animation": {
-          "rotationZ": 0.02,
-          "pulse": 0.06,
-          "wobbleX": 0.07,
-          "wobbleY": 0.07,
-          "drift": 0.15
-        },
-        "techniqueRef": "t.biomorphic-strait",
-        "role": "structural-spine",
-        "layer": "midground",
-        "motif": "flow",
-        "intentCadence": "drift"
-      },
-      {
-        "id": "membranes.violet-held",
-        "moduleType": "cm.escort-biomorphs.v1",
-        "capabilities": [],
-        "stackFamilies": [],
-        "styleTags": [],
-        "libraryRef": null,
-        "count": 4,
-        "spread": 1.25,
-        "color": "secondary",
-        "opacity": 0.46,
+        "opacity": 0.48,
         "intensity": 0.48,
-        "scenePurpose": "soften the armature with organic membranes that imply bodies under pressure",
-        "expectedRead": "violet tissue shapes suspended around the blue structure",
+        "scenePurpose": "Surround the current with warm pressure without enclosing it completely.",
+        "expectedRead": "red-orange painted pressure around a channel",
         "mustNotReadAs": [
-          "cartoon organs",
-          "decorative stickers",
-          "ships"
+          "flames",
+          "explosion",
+          "curtains"
         ],
         "animation": {
           "rotationZ": 0.01,
-          "pulse": 0.05,
-          "wobbleX": 0.08,
-          "wobbleY": 0.06,
-          "drift": 0.17
+          "pulse": 0.06,
+          "wobbleX": 0.04,
+          "wobbleY": 0.03,
+          "drift": 0.08
         },
-        "techniqueRef": "t.biomorphic-strait",
+        "techniqueRef": "bounded-spiral-current",
         "role": "support-rhythm",
         "layer": "midground",
         "motif": "flow",
         "intentCadence": "drift"
       },
       {
-        "id": "threads.armature-current",
-        "moduleType": "cm.suspended-current-threads.v1",
+        "id": "held-spiral-current",
+        "moduleType": "cm.strait-oval-rings.v1",
         "capabilities": [],
         "stackFamilies": [],
         "styleTags": [],
         "libraryRef": null,
-        "count": 12,
-        "strokeWeight": 0.009,
-        "drift": 0.07,
+        "ringCount": 8,
+        "width": 3.4,
+        "height": 5.4,
+        "rotationStep": 0.08,
         "color": "glow",
-        "opacity": 0.38,
-        "intensity": 0.46,
-        "scenePurpose": "add sparse current pressure without turning the composition into a diagram",
-        "expectedRead": "few fine cyan-blue current strokes crossing the armature",
+        "opacity": 0.72,
+        "intensity": 0.66,
+        "scenePurpose": "Make flow visible as an energetic but contained spiral law.",
+        "expectedRead": "gold current lines gathering inside an oval boundary",
         "mustNotReadAs": [
-          "cables",
-          "chart traces",
-          "decorative particles"
+          "hurricane",
+          "galaxy",
+          "tunnel"
         ],
         "animation": {
-          "pulse": 0.02,
-          "wobbleX": 0.07,
-          "wobbleY": 0.04,
-          "drift": 0.28
+          "rotationZ": 0.04,
+          "pulse": 0.11,
+          "wobbleX": 0.05,
+          "wobbleY": 0.03,
+          "drift": 0.18
         },
-        "techniqueRef": "t.calligraphic-current",
-        "role": "accent-gesture",
+        "techniqueRef": "bounded-spiral-current",
+        "role": "primary-signal",
         "layer": "foreground",
         "motif": "flow",
         "intentCadence": "drift"
       },
       {
-        "id": "anchor.red-hinge",
-        "moduleType": "cm.red-pause-scar.v1",
+        "id": "vertical-restraint",
+        "moduleType": "agent-geometry",
         "capabilities": [],
         "stackFamilies": [],
         "styleTags": [],
         "libraryRef": null,
-        "scale": 0.28,
-        "pulse": 0.06,
+        "shape": "rect",
+        "width": 0.18,
+        "height": 1.05,
+        "position": [
+          0.12,
+          0,
+          0.24
+        ],
         "color": "anchor",
-        "opacity": 0.82,
+        "opacity": 0.92,
         "intensity": 0.7,
-        "scenePurpose": "give the whole armature one held political hinge",
-        "expectedRead": "short red hinge nested inside the blue structure",
+        "scenePurpose": "Interrupt the current with one readable sign of suspended motion.",
+        "expectedRead": "upright blue restraint mark over gold flow",
         "mustNotReadAs": [
-          "warning light",
-          "sun",
-          "flag"
+          "letter I",
+          "cursor",
+          "traffic sign"
+        ],
+        "animation": {
+          "pulse": 0.04
+        },
+        "techniqueRef": "restraint-bar",
+        "role": "focal-anchor",
+        "layer": "accent",
+        "motif": "flow",
+        "intentCadence": "drift"
+      },
+      {
+        "id": "returning-escort-beads",
+        "moduleType": "cm.suspended-bead-current.v1",
+        "capabilities": [],
+        "stackFamilies": [],
+        "styleTags": [],
+        "libraryRef": null,
+        "count": 22,
+        "pauseRadius": 0.95,
+        "color": "secondary",
+        "opacity": 0.78,
+        "intensity": 0.52,
+        "scenePurpose": "Keep the escort subject present as repeated small markers around the held current.",
+        "expectedRead": "small ochre beads caught in a returning rhythm",
+        "mustNotReadAs": [
+          "stars",
+          "bullets",
+          "decorative glitter"
         ],
         "animation": {
           "rotationZ": 0.015,
-          "pulse": 0.06,
-          "wobbleX": 0.02,
-          "wobbleY": 0.02,
-          "drift": 0.03
+          "pulse": 0.13,
+          "wobbleX": 0.03,
+          "wobbleY": 0.03,
+          "drift": 0.12
         },
-        "techniqueRef": "t.pause-scar",
-        "role": "focal-anchor",
+        "techniqueRef": "returning-beads",
+        "role": "accent-gesture",
         "layer": "accent",
         "motif": "flow",
         "intentCadence": "drift"
@@ -251,10 +252,10 @@
     "shaderLayers": 4,
     "elementDiversity": 6,
     "paletteVariance": 0,
-    "motionSpeedNormalized": 0.783,
+    "motionSpeedNormalized": 0.704,
     "camera": {
       "autoRotate": false,
-      "autoRotateSpeed": 0.157,
+      "autoRotateSpeed": 0.147,
       "minDistance": 6,
       "maxDistance": 24,
       "cycleSeconds": 24,
@@ -296,23 +297,23 @@
       "motionEnabled": false
     },
     "post": {
-      "vignette": 0.16,
+      "vignette": 0.12,
       "contrast": 1.14,
-      "saturation": 0.94,
+      "saturation": 0.96,
       "exposure": 0.98,
       "breathing": {
-        "hueShift": 0.027,
-        "saturationAmplitude": 0.067,
-        "exposureAmplitude": 0.054,
-        "phaseA": 0.559,
-        "phaseB": 0.9549
+        "hueShift": 0.037,
+        "saturationAmplitude": 0.065,
+        "exposureAmplitude": 0.05,
+        "phaseA": 0.4986,
+        "phaseB": 0.3479
       }
     },
     "styleFingerprint": {
-      "pulseFamily": "musical",
-      "stripeWarp": 0.2,
-      "edgeSoftness": 0.22,
-      "cameraSway": 0.18,
+      "pulseFamily": "ascending",
+      "stripeWarp": 0.06,
+      "edgeSoftness": 0.34,
+      "cameraSway": 0.12,
       "edgeHardness": 0.5,
       "temperatureBias": 0,
       "verticalBias": 0,
@@ -322,126 +323,130 @@
       "mode": "agent-dsl",
       "planner": "openclaw-agent-scene-planner",
       "representation": {
-        "id": "rep.blue-armature-pause",
-        "label": "Blue Armature Pause",
-        "description": "A more diagrammatic but still painterly Gorky armature: a blue organic skeleton carries the flow while violet membranes and a red hinge hold it in suspension.",
-        "scoreHint": 0.69,
-        "motif": "a living structure holding back flow",
+        "id": "rep.held-gulf-spiral",
+        "label": "Held Gulf Spiral",
+        "description": "A warmer, more kinetic variant where the flow gathers into a bounded spiral but is held open by a small vertical blue bar.",
+        "scoreHint": 0.71,
+        "motif": "flow gathered but deliberately held open",
         "cadence": "drift",
-        "scenePrompt": "A frontal Gorky-inspired abstract armature on a cyan-blue matte field: open blue contour skeleton, violet membrane forms, a red hinge near center, thin drifting currents, measured and non-literal.",
-        "colorMood": "blue structural line over muted cyan, violet membranes, red hinge accent",
-        "spatialIntent": "layered frontal surface with visible separation between ground wash, armature, membrane shapes, and last-painted accent",
+        "scenePrompt": "A Hilma af Klint inspired painted abstraction with a restrained spiral of golden current lines inside red-orange fields, cream background, small vertical blue bar interrupting the spiral, tiny ochre beads in a steady procession, mystical but non-literal.",
+        "colorMood": "red and orange warmth, ochre gold current, cream air, blue restraint",
+        "spatialIntent": "Frontal painted field with spiral motion contained inside an oval, ensuring background, current, and anchor remain separate.",
         "imageAuthorship": {
-          "structuralLaw": "An open asymmetrical skeleton spans the canvas, but its joints do not lock; the red hinge is one held breath inside the armature.",
+          "structuralLaw": "A spiral current is allowed to gather energy only inside an oval boundary, then stopped by one upright blue restraint.",
           "dominantForms": [
-            "open contour skeleton",
-            "soft violet membranes",
-            "short red hinge",
-            "low cyan pigment field"
+            "contained spiral",
+            "oval boundary",
+            "vertical blue bar",
+            "small ochre beads",
+            "warm side washes"
           ],
-          "edgeBehavior": "contours are thin, imperfect, and hand-led, with membrane edges fading into wash.",
-          "surfaceBehavior": "dry matte pigment, slight unevenness, no luminous polish.",
-          "depthLogic": "the armature floats just above the wash, membranes sit behind and through it, and the hinge rides forward.",
-          "motionLogic": "armature drift is steady and slight, as if under current pressure without traveling.",
+          "edgeBehavior": "Spiral lines have uneven pigment thickness; the blue bar has a firmer painted edge.",
+          "surfaceBehavior": "Layered translucent pigment with dull gold sitting dry on top of red-orange washes.",
+          "depthLogic": "Warm washes sit behind the oval, spiral lines occupy mid-depth, beads and the blue bar sit forward.",
+          "motionLogic": "The spiral breathes slowly but never rotates into spectacle; beads drift only a short distance before returning.",
           "forbiddenDrift": [
-            "do not become a mechanical skeleton",
-            "do not become a UI graph",
-            "do not make the hinge a central orb"
+            "vortex tunnel",
+            "space nebula",
+            "military simulation"
           ]
         },
         "technicalTranslation": {
-          "realizationStrategy": "Combine the matte shader field with ellipse-ring armature geometry, grouped biomorphic membrane geometry, thread lines, and the small red stacked-rect hinge.",
+          "realizationStrategy": "Use the painted shader ground, adapt oval rings with slight rotation offsets to imply a spiral, add deterministic beads, and use a simple rect geometry as the blue restraint.",
           "reuseBias": "hybrid",
-          "whyThisApproach": "The plan uses invented modules for painterly specificity while allowing the runtime to treat them as standard shader and geometry families.",
+          "whyThisApproach": "The spiral variant benefits from existing simple geometry where it stays subordinate to the invented painted surface logic.",
           "notes": [
-            "more line-led than the first two representations",
-            "foreground lines should remain sparse",
-            "best for review when a clearer structural read is needed"
+            "Keep the spiral within the central third of the image.",
+            "Use low bloom so gold remains pigment-like.",
+            "The blue bar must be visibly vertical and still."
           ],
           "motionCadence": "drift"
         },
         "mustShow": [
-          "open blue armature",
-          "violet biomorphic membranes",
-          "central red hinge",
-          "foreground current tendons"
+          "bounded spiral current",
+          "vertical blue interruption bar",
+          "warm painted field",
+          "small bead rhythm",
+          "clear margins around the symbol"
         ],
         "mustAvoid": [
-          "wireframe chamber",
-          "technical blueprint",
-          "spiral sigil",
-          "central glowing core",
-          "dense particle cloud"
+          "hurricane satellite image",
+          "naval battle scene",
+          "psychedelic vortex",
+          "cropped emblem",
+          "generic particle swirl"
         ],
         "reviewFocus": [
-          "does the armature remain painterly rather than technical",
-          "are membranes bounded with margins",
-          "is the red hinge readable but not dominant"
+          "Does the spiral remain bounded and ceremonial?",
+          "Does the blue interruption read clearly?",
+          "Is the motion steady rather than dramatic?"
         ],
         "artistTechniqueObservations": {
-          "medium": null,
+          "medium": "painting",
           "primaryTechnique": null,
           "markMakingTraits": [],
-          "surfaceQualities": [],
+          "surfaceQualities": [
+            "painted surface behavior matters more than object literalism"
+          ],
           "paletteTendencies": [
-            "dominant hues: blue-cyan, blue, violet"
+            "dominant hues: red, orange, yellow"
           ],
           "spatialHabits": []
         },
         "rationale": {
-          "newsTranslation": "The suspension becomes a hinge in a strained armature of routes and bodies.",
-          "artistTranslation": "Line, membrane, and biomorphic structure foreground Gorky's image logic."
+          "newsTranslation": "A suspended operation becomes restrained current rather than explosion.",
+          "artistTranslation": "The bounded spiral and upright bar keep the image symbolic, diagrammatic, and frontal."
         },
         "techniques": [
           {
-            "id": "t.matte-field",
-            "name": "matte blue pigment field",
-            "type": "shader",
-            "purpose": "keep the armature embedded in a painted surface",
+            "id": "bounded-spiral-current",
+            "name": "Offset Oval Spiral",
+            "type": "geometry",
+            "purpose": "Suggest flow gathering without becoming a vortex.",
             "reuseModuleType": null,
             "params": {
-              "grain": 0.2,
-              "washStrength": 0.3
+              "ringCount": 8,
+              "rotationStep": 0.08
             }
           },
           {
-            "id": "t.biomorphic-strait",
-            "name": "open armature rings",
+            "id": "restraint-bar",
+            "name": "Blue Interruption Bar",
             "type": "geometry",
-            "purpose": "form the strained blue skeleton",
+            "purpose": "Provide a legible focal anchor for suspension.",
             "reuseModuleType": null,
             "params": {
-              "ringCount": 6,
-              "asymmetry": 0.52
+              "width": 0.18,
+              "height": 1.05
             }
           },
           {
-            "id": "t.pause-scar",
-            "name": "red hinge scar",
-            "type": "geometry",
-            "purpose": "provide the compact focal stop",
+            "id": "returning-beads",
+            "name": "Returning Bead Drift",
+            "type": "particle",
+            "purpose": "Keep escort energy present but unresolved.",
             "reuseModuleType": null,
             "params": {
-              "scale": 0.28,
-              "pulse": 0.06
+              "count": 22,
+              "drift": 0.12
             }
           }
         ]
       },
       "artisticIntent": {
-        "statement": "A suspended maritime decision becomes a Gorky-like field of biomorphic pressure: the strait is not mapped, the ships are not pictured, and the political actor is reduced to a tense pause-mark inside a living painted organism.",
-        "motif": "flow arrested by a narrow hinge",
-        "emotionalArc": "measured blue drift gathers into anxious constriction, holds at a red-violet pause, then releases only as thin tremoring lines.",
-        "compositionLogic": "A full-frame matte painted surface holds a bounded central strait-form, with organic escorts, calligraphic tendons, and small signal scars distributed so background, midground, and foreground remain readable.",
-        "imagePrompt": "A non-literal Arshile Gorky-inspired abstract painting in blue-cyan, blue, and violet: a narrow organic strait shape held between biomorphic masses, thin dark calligraphic contour lines, suspended boat-like echoes, restrained red pause marks, soft matte pigment, no literal politician, no military hardware, no sci-fi in"
+        "statement": "A suspended escort operation in the Strait of Hormuz becomes a temple-like abstraction: political interruption translated into a measured spiritual diagram of halted passage, guarded flow, and narrow release.",
+        "motif": "a golden strait held between twin red-orange altarpiece fields, crossed by paused es",
+        "emotionalArc": "The image begins as ordered warmth, tightens into a narrow protected channel, then releases through a small pale-gold passage rather than through spectacle.",
+        "compositionLogic": "A frontal painted surface with bounded symbols: vertical symmetry, an oval current system, two opposing warm fields, a small central pause seal, and directional flow marks kept inside generous margins.",
+        "imagePrompt": "A Hilma af Klint inspired abstract temple painting responding non-literally to a suspended naval escort in the Strait of Hormuz: matte red, orange, yellow, cream and gold painted surface, frontal composition, twin vertical fields, concentric oval current lines, a narrow golden passage, small escort bead forms halted ar"
       },
       "executionPlan": {
         "palette": {
-          "bg": "#9bb8c8",
-          "primary": "#264f91",
-          "secondary": "#6b4f9a",
-          "glow": "#6ad4d6",
-          "anchor": "#b43843"
+          "bg": "#ead9b8",
+          "primary": "#c9442f",
+          "secondary": "#e69a2e",
+          "glow": "#d8ae3f",
+          "anchor": "#2f4f6f"
         },
         "camera": {
           "autoRotate": false,
@@ -456,62 +461,48 @@
         },
         "post": {
           "contrast": 1.08,
-          "saturation": 0.94,
-          "vignette": 0.16,
+          "saturation": 0.96,
+          "vignette": 0.12,
           "exposure": 0.98
         },
         "global": {
-          "shapeCountHint": 86,
-          "flowField": 0.46,
-          "distortion": 0.24,
+          "shapeCountHint": 96,
+          "flowField": 0.42,
+          "distortion": 0.18,
           "bloom": 0.12
         },
         "techniques": [
           {
-            "id": "t.matte-field",
-            "name": "matte blue pigment field",
+            "id": "painted-ground",
+            "name": "Matte Ochre Wash",
             "type": "shader",
-            "purpose": "make the viewport read as a painted surface with restrained cyan-violet vibration",
+            "purpose": "Create a frontal painted surface with subtle pigment variation instead of a screen-like backdrop.",
             "reuseModuleType": null,
             "params": {
               "grain": 0.18,
-              "washStrength": 0.32,
-              "edgeQuiet": 0.62
+              "warmth": 0.72
             }
           },
           {
-            "id": "t.biomorphic-strait",
-            "name": "bounded biomorphic strait hinge",
+            "id": "strait-oval-law",
+            "name": "Concentric Strait Ovals",
             "type": "geometry",
-            "purpose": "hold the headline's suspension as an organic channel rather than a map or diagram",
+            "purpose": "Make the news tension read as bounded flow and suspended passage.",
             "reuseModuleType": null,
             "params": {
-              "widthRatio": 0.32,
-              "heightRatio": 0.58,
-              "asymmetry": 0.38
+              "ringCount": 7,
+              "openGap": 0.16
             }
           },
           {
-            "id": "t.calligraphic-current",
-            "name": "thin current tendons",
-            "type": "geometry",
-            "purpose": "translate escort routes into fragile hand-drawn flow lines",
+            "id": "halted-escort-beads",
+            "name": "Paused Escort Beads",
+            "type": "particle",
+            "purpose": "Suggest escorting vessels without literal boats, freezing them in a ceremonial rhythm.",
             "reuseModuleType": null,
             "params": {
-              "lineCount": 18,
-              "drift": 0.09,
-              "strokeWeight": 0.012
-            }
-          },
-          {
-            "id": "t.pause-scar",
-            "name": "red pause scar",
-            "type": "geometry",
-            "purpose": "provide the focal anchor: an interruption mark where movement is politically suspended",
-            "reuseModuleType": null,
-            "params": {
-              "scale": 0.34,
-              "pulse": 0.07
+              "count": 28,
+              "pulse": 0.16
             }
           }
         ]
@@ -519,25 +510,24 @@
       "moduleOverrides": [],
       "customModules": [
         {
-          "id": "cm.gorky-matte-strait-field.v1",
+          "id": "cm.painted-temple-ground.v1",
           "family": "shader",
           "kind": "dsl",
           "allowOverride": false,
           "seedPolicy": "deterministic",
           "paramsSchema": {
             "grain": "number",
-            "washStrength": "number",
-            "paletteBias": "number"
+            "warmth": "number"
           },
           "source": {
             "dsl": {
-              "width": 12,
-              "height": 8,
+              "width": 10,
+              "height": 14,
               "opacity": 1,
               "position": [
                 0,
                 0,
-                -0.42
+                -0.08
               ],
               "scale": [
                 1,
@@ -547,202 +537,89 @@
               "blend": "normal"
             },
             "glsl": {
-              "vertex": "varying vec2 vUv; void main(){ vUv=uv; gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0); }",
-              "fragment": "precision mediump float; varying vec2 vUv; uniform float time; float hash(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453123);} float noise(vec2 p){vec2 i=floor(p);vec2 f=fract(p);float a=hash(i);float b=hash(i+vec2(1.0,0.0));float c=hash(i+vec2(0.0,1.0));float d=hash(i+vec2(1.0,1.0));vec2 u=f*f*(3.0-2.0*f);return mix(a,b,u.x)+(c-a)*u.y*(1.0-u.x)+(d-b)*u.x*u.y;} void main(){vec2 p=vUv; float wash=noise(p*4.0+vec2(0.0,time*0.015)); float grain=noise(p*80.0); vec3 cyan=vec3(0.58,0.72,0.78); vec3 blue=vec3(0.16,0.31,0.57); vec3 violet=vec3(0.42,0.31,0.60); float band=smoothstep(0.08,0.92,p.y+0.08*sin(p.x*5.2)); vec3 col=mix(cyan,blue,0.34+0.22*wash); col=mix(col,violet,0.22*smoothstep(0.35,0.8,band)); col+=0.035*(grain-0.5); gl_FragColor=vec4(col,1.0); }"
+              "vertex": "varying vec2 vUv;\nvoid main(){\n vUv = uv;\n gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);\n}",
+              "fragment": "precision mediump float;\nvarying vec2 vUv;\nuniform float uTime;\nfloat hash(vec2 p){ return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453); }\nfloat noise(vec2 p){ vec2 i=floor(p); vec2 f=fract(p); vec2 u=f*f*(3.0-2.0*f); return mix(mix(hash(i), hash(i+vec2(1.0,0.0)), u.x), mix(hash(i+vec2(0.0,1.0)), hash(i+vec2(1.0,1.0)), u.x), u.y); }\nvoid main(){\n vec2 p = vUv;\n float n = noise(p * 46.0) * 0.055 + noise(p * 11.0) * 0.035;\n vec3 cream = vec3(0.918, 0.820, 0.650);\n vec3 ochre = vec3(0.835, 0.590, 0.235);\n float wash = smoothstep(0.0, 1.0, p.y) * 0.22 + n;\n vec3 col = mix(cream, ochre, wash);\n float edge = smoothstep(0.0, 0.08, p.x) * smoothstep(0.0, 0.08, p.y) * smoothstep(0.0, 0.08, 1.0-p.x) * smoothstep(0.0, 0.08, 1.0-p.y);\n gl_FragColor = vec4(col * (0.92 + 0.08 * edge), 1.0);\n}"
             },
             "js": null
           },
           "budgets": {
             "maxInstances": 1,
-            "maxShaderOpsHint": 0.72,
+            "maxShaderOpsHint": 0.7,
             "mobileSafe": true
           }
         },
         {
-          "id": "cm.biomorphic-strait-rings.v1",
+          "id": "cm.strait-oval-rings.v1",
           "family": "geometry",
           "kind": "dsl",
           "allowOverride": false,
           "seedPolicy": "deterministic",
           "paramsSchema": {
             "ringCount": "number",
-            "asymmetry": "number",
-            "lineOpacity": "number"
+            "openGap": "number"
           },
           "source": {
             "dsl": {
               "geometry": {
                 "type": "ellipse-rings",
-                "rings": 7
+                "count": 7,
+                "width": 4.2,
+                "height": 7.2,
+                "thickness": 0.035
               },
-              "width": 2.55,
-              "height": 4.15,
-              "depth": 0.04,
+              "opacity": 0.74,
+              "position": [
+                0,
+                0.1,
+                0.05
+              ],
+              "rotation": [
+                0,
+                0,
+                0
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
               "segmentsX": 96,
-              "segmentsY": 16,
-              "opacity": 0.62,
-              "wireframe": true,
-              "position": [
-                -0.08,
-                0.02,
-                0.04
-              ],
-              "rotation": [
-                0,
-                0,
-                -0.08
-              ],
-              "scale": [
-                1,
-                1.08,
-                1
-              ],
+              "segmentsY": 8,
               "blend": "normal"
             },
             "glsl": {},
             "js": null
           },
           "budgets": {
-            "maxInstances": 12,
-            "maxShaderOpsHint": 0.2,
+            "maxInstances": 16,
+            "maxShaderOpsHint": 0.3,
             "mobileSafe": true
           }
         },
         {
-          "id": "cm.escort-biomorphs.v1",
-          "family": "geometry",
+          "id": "cm.suspended-bead-current.v1",
+          "family": "particle",
           "kind": "dsl",
           "allowOverride": false,
           "seedPolicy": "deterministic",
           "paramsSchema": {
             "count": "number",
-            "spread": "number",
-            "opacity": "number"
+            "pauseRadius": "number"
           },
           "source": {
             "dsl": {
-              "geometry": {
-                "type": "group",
-                "children": [
-                  {
-                    "type": "ellipse",
-                    "width": 0.92,
-                    "height": 0.42,
-                    "position": [
-                      -1.65,
-                      0.72,
-                      0
-                    ]
-                  },
-                  {
-                    "type": "ellipse",
-                    "width": 0.66,
-                    "height": 1.08,
-                    "position": [
-                      1.48,
-                      -0.62,
-                      0
-                    ]
-                  },
-                  {
-                    "type": "ellipse-ring",
-                    "width": 0.78,
-                    "height": 0.54,
-                    "position": [
-                      1.2,
-                      1.12,
-                      0
-                    ]
-                  },
-                  {
-                    "type": "rect",
-                    "width": 0.22,
-                    "height": 1.08,
-                    "position": [
-                      -0.74,
-                      -1.18,
-                      0
-                    ]
-                  }
-                ]
-              },
-              "opacity": 0.56,
+              "count": 28,
+              "size": 0.055,
+              "spread": [
+                3.2,
+                5.8,
+                0.1
+              ],
+              "opacity": 0.88,
               "position": [
                 0,
                 0,
-                0.12
-              ],
-              "rotation": [
-                0,
-                0,
-                0.04
-              ],
-              "scale": [
-                1,
-                1,
-                1
-              ],
-              "blend": "normal"
-            },
-            "glsl": {},
-            "js": null
-          },
-          "budgets": {
-            "maxInstances": 48,
-            "maxShaderOpsHint": 0.24,
-            "mobileSafe": true
-          }
-        },
-        {
-          "id": "cm.suspended-current-threads.v1",
-          "family": "geometry",
-          "kind": "dsl",
-          "allowOverride": false,
-          "seedPolicy": "deterministic",
-          "paramsSchema": {
-            "count": "number",
-            "strokeWeight": "number",
-            "drift": "number"
-          },
-          "source": {
-            "dsl": {
-              "geometry": {
-                "type": "tube-path",
-                "points": [
-                  [
-                    -3.4,
-                    -1.4,
-                    0
-                  ],
-                  [
-                    -1.8,
-                    -0.42,
-                    0
-                  ],
-                  [
-                    -0.35,
-                    -0.12,
-                    0
-                  ],
-                  [
-                    1.2,
-                    0.38,
-                    0
-                  ],
-                  [
-                    3.25,
-                    1.18,
-                    0
-                  ]
-                ]
-              },
-              "count": 18,
-              "width": 0.026,
-              "opacity": 0.48,
-              "position": [
-                0,
-                0,
-                0.22
+                0.16
               ],
               "rotation": [
                 0,
@@ -760,41 +637,39 @@
             "js": null
           },
           "budgets": {
-            "maxInstances": 240,
-            "maxShaderOpsHint": 0.18,
+            "maxInstances": 64,
+            "maxShaderOpsHint": 0.25,
             "mobileSafe": true
           }
         },
         {
-          "id": "cm.red-pause-scar.v1",
+          "id": "cm.altarpiece-warm-blocks.v1",
           "family": "geometry",
           "kind": "dsl",
           "allowOverride": false,
           "seedPolicy": "deterministic",
           "paramsSchema": {
-            "scale": "number",
-            "opacity": "number",
-            "pulse": "number"
+            "blockCount": "number"
           },
           "source": {
             "dsl": {
               "geometry": {
                 "type": "stacked-rects",
-                "layers": 3
+                "count": 6,
+                "width": 1.25,
+                "height": 1.65,
+                "gap": 0.18
               },
-              "width": 0.32,
-              "height": 1.28,
-              "depth": 0.02,
-              "opacity": 0.86,
+              "opacity": 0.62,
               "position": [
-                0.12,
-                0.03,
-                0.34
+                0,
+                0,
+                0.02
               ],
               "rotation": [
                 0,
                 0,
-                0.18
+                0
               ],
               "scale": [
                 1,
@@ -807,36 +682,8 @@
             "js": null
           },
           "budgets": {
-            "maxInstances": 8,
-            "maxShaderOpsHint": 0.12,
-            "mobileSafe": true
-          }
-        },
-        {
-          "id": "cm.soft-gallery-light.v1",
-          "family": "lighting",
-          "kind": "dsl",
-          "allowOverride": false,
-          "seedPolicy": "deterministic",
-          "paramsSchema": {
-            "ambient": "number",
-            "side": "number"
-          },
-          "source": {
-            "dsl": {
-              "patch": {
-                "ambientIntensity": 0.74,
-                "keyIntensity": 0.42,
-                "fillIntensity": 0.31,
-                "temperature": "cool-neutral"
-              }
-            },
-            "glsl": {},
-            "js": null
-          },
-          "budgets": {
-            "maxInstances": 1,
-            "maxShaderOpsHint": 0.05,
+            "maxInstances": 24,
+            "maxShaderOpsHint": 0.2,
             "mobileSafe": true
           }
         }
@@ -857,12 +704,12 @@
     },
     "seedVersion": 2,
     "seeds": {
-      "baseSeed": 231695325,
-      "runSeed": 3282800654,
-      "geomSeed": 3767726733,
-      "animSeed": 4245532576,
-      "colorSeed": 4234659752,
-      "cameraSeed": 207580350
+      "baseSeed": 2292213823,
+      "runSeed": 1052339484,
+      "geomSeed": 1838129022,
+      "animSeed": 1727035439,
+      "colorSeed": 2797026681,
+      "cameraSeed": 1265899445
     },
     "techStack": {
       "id": "instancing-wavegrid",
@@ -879,13 +726,13 @@
           "context<0.45"
         ]
       },
-      "dominantPrimitive": "cm.gorky-matte-strait-field.v1",
+      "dominantPrimitive": "cm.painted-temple-ground.v1",
       "moduleSet": [
-        "cm.gorky-matte-strait-field.v1",
-        "cm.biomorphic-strait-rings.v1",
-        "cm.escort-biomorphs.v1",
-        "cm.suspended-current-threads.v1",
-        "cm.red-pause-scar.v1",
+        "cm.painted-temple-ground.v1",
+        "cm.altarpiece-warm-blocks.v1",
+        "cm.strait-oval-rings.v1",
+        "agent-geometry",
+        "cm.suspended-bead-current.v1",
         "shader-field-plane"
       ],
       "pipelineKind": "instancing"
@@ -895,82 +742,60 @@
       "family": "instancing",
       "fallback": false,
       "advisoryOnly": true,
-      "dominantPrimitive": "cm.gorky-matte-strait-field.v1",
+      "dominantPrimitive": "cm.painted-temple-ground.v1",
       "moduleSet": [
-        "cm.gorky-matte-strait-field.v1",
-        "cm.biomorphic-strait-rings.v1",
-        "cm.escort-biomorphs.v1",
-        "cm.suspended-current-threads.v1",
-        "cm.red-pause-scar.v1",
+        "cm.painted-temple-ground.v1",
+        "cm.altarpiece-warm-blocks.v1",
+        "cm.strait-oval-rings.v1",
+        "agent-geometry",
+        "cm.suspended-bead-current.v1",
         "shader-field-plane"
       ]
     },
     "customModuleReport": {
-      "requested": 6,
+      "requested": 4,
       "accepted": [
         {
-          "id": "cm.gorky-matte-strait-field.v1",
+          "id": "cm.painted-temple-ground.v1",
           "family": "shader",
           "kind": "dsl",
-          "fingerprint": "ab5a5d4a",
+          "fingerprint": "074d45d6",
           "budgets": {
             "maxInstances": 1,
-            "maxShaderOpsHint": 0.72,
+            "maxShaderOpsHint": 0.7,
             "mobileSafe": true
           }
         },
         {
-          "id": "cm.biomorphic-strait-rings.v1",
+          "id": "cm.strait-oval-rings.v1",
           "family": "geometry",
           "kind": "dsl",
-          "fingerprint": "2678c8b8",
+          "fingerprint": "4452dff8",
           "budgets": {
-            "maxInstances": 12,
+            "maxInstances": 16,
+            "maxShaderOpsHint": 0.3,
+            "mobileSafe": true
+          }
+        },
+        {
+          "id": "cm.suspended-bead-current.v1",
+          "family": "particle",
+          "kind": "dsl",
+          "fingerprint": "42261af7",
+          "budgets": {
+            "maxInstances": 64,
+            "maxShaderOpsHint": 0.25,
+            "mobileSafe": true
+          }
+        },
+        {
+          "id": "cm.altarpiece-warm-blocks.v1",
+          "family": "geometry",
+          "kind": "dsl",
+          "fingerprint": "2cd383c0",
+          "budgets": {
+            "maxInstances": 24,
             "maxShaderOpsHint": 0.2,
-            "mobileSafe": true
-          }
-        },
-        {
-          "id": "cm.escort-biomorphs.v1",
-          "family": "geometry",
-          "kind": "dsl",
-          "fingerprint": "e8c230a6",
-          "budgets": {
-            "maxInstances": 48,
-            "maxShaderOpsHint": 0.24,
-            "mobileSafe": true
-          }
-        },
-        {
-          "id": "cm.suspended-current-threads.v1",
-          "family": "geometry",
-          "kind": "dsl",
-          "fingerprint": "09e31972",
-          "budgets": {
-            "maxInstances": 240,
-            "maxShaderOpsHint": 0.18,
-            "mobileSafe": true
-          }
-        },
-        {
-          "id": "cm.red-pause-scar.v1",
-          "family": "geometry",
-          "kind": "dsl",
-          "fingerprint": "14a32f48",
-          "budgets": {
-            "maxInstances": 8,
-            "maxShaderOpsHint": 0.12,
-            "mobileSafe": true
-          }
-        },
-        {
-          "id": "cm.soft-gallery-light.v1",
-          "family": "lighting",
-          "kind": "dsl",
-          "fingerprint": "5a6914e9",
-          "budgets": {
-            "maxInstances": 1,
-            "maxShaderOpsHint": 0.05,
             "mobileSafe": true
           }
         }
@@ -1010,47 +835,47 @@
     {
       "signal": "composition midground context",
       "from": "direct, guerre, moyen, orient",
-      "visualDecision": "midground role context-drift with density 0.349"
+      "visualDecision": "midground role context-drift with density 0.344"
     },
     {
       "signal": "composition background mood",
       "from": "direct, guerre, moyen, orient",
-      "visualDecision": "background mood watchful depth 0.32"
+      "visualDecision": "background mood watchful depth 0.31"
     },
     {
       "signal": "urgency -> motion",
-      "from": "ageHours=0.97",
-      "visualDecision": "motionSpeedNormalized=0.783"
+      "from": "ageHours=1.7",
+      "visualDecision": "motionSpeedNormalized=0.704"
     },
     {
       "signal": "title semantics -> palette/edge cadence",
       "from": "temp=0 edge=0.5",
-      "visualDecision": "postContrast=1.14 accentType=cm.suspended-current-threads.v1"
+      "visualDecision": "postContrast=1.14 accentType=cm.suspended-bead-current.v1"
     },
     {
       "signal": "article institutional/conflict polarity",
       "from": "direct, guerre, moyen, orient",
-      "visualDecision": "accent element cm.suspended-current-threads.v1 with opacity 0.38"
+      "visualDecision": "accent element cm.suspended-bead-current.v1 with opacity 0.78"
     },
     {
-      "signal": "artist research context Arshile Gorky",
-      "from": "tags abstract, expressionist",
+      "signal": "artist research context Hilma af Klint",
+      "from": "tags symbolic, spiral, organic",
       "visualDecision": "artist profile captured as metadata only; no technical routing applied"
     }
   ],
   "qualityScore": {
-    "score": 52.7,
-    "summary": "Alignment 67.1 with strongest channel emotional.",
+    "score": 53.6,
+    "summary": "Alignment 67.5 with strongest channel emotional.",
     "heuristic": {
-      "score": 68.2,
+      "score": 69,
       "breakdown": {
-        "legibility": 73.4,
-        "emotionalReadability": 68,
-        "coherence": 91.1,
-        "focalAnchor": 66.6,
-        "technicalRichness": 100,
+        "legibility": 74.4,
+        "emotionalReadability": 68.8,
+        "coherence": 91,
+        "focalAnchor": 70.1,
+        "technicalRichness": 99.2,
         "restraint": 77.8,
-        "alignment": 67.1
+        "alignment": 67.5
       }
     },
     "calibration": {
@@ -1058,16 +883,16 @@
       "trustWeight": 0.4
     },
     "alignment": {
-      "totalAlign": 67.1,
+      "totalAlign": 67.5,
       "components": {
         "title": {
-          "score": 62
+          "score": 62.1
         },
         "style": {
-          "score": 67.8
+          "score": 65.3
         },
         "emotional": {
-          "score": 71.4
+          "score": 76
         }
       }
     }
@@ -1081,10 +906,10 @@
       "motion": null
     },
     "selection": {
-      "whyHeadline": "Selected as top-ranked Belgian headline (score 94.676 = frequency 91 + priority 0 + recency 3.676).",
+      "whyHeadline": "Selected as top-ranked Belgian headline (score 94.434 = frequency 91 + priority 0 + recency 3.434).",
       "priorityTerms": []
     },
-    "qualitySummary": "TOTAL_ALIGN 67.1."
+    "qualitySummary": "TOTAL_ALIGN 67.5."
   },
   "runPolicy": {
     "artworksPerRun": 1,
@@ -1093,57 +918,43 @@
   "artFramework": {
     "version": 3,
     "intent": {
-      "statement": "DIRECT – Guerre au Moyen-Orient: Donald Trump suspend l'opération américaine dans le détroit d'Ormuz pour escorter des bateaux translated through Arshile Gorky's visual language as a non-literal image.",
-      "coreImpulse": "Arshile Gorky was an Armenian-American painter who had a seminal influence on Abstract Expressionism. The Liver Is the Cock's Comb (painting by Gorky) Arshile Gorky (born April 15, 1904, The suffering and loss he experienced in the Armenian genocide had crucial influence on Gorky's development as an artist. Along with Mark Rothko, Jackson Pollock and Willem de Kooning, Gorky has been hailed as one of the most powerful American painters of the 20th century.",
+      "statement": "DIRECT - Guerre au Moyen-Orient : Donald Trump suspend l'opération américaine dans le détroit d'Ormuz pour escorter des bateaux translated through Hilma af Klint's visual language as a non-literal image.",
+      "coreImpulse": "In Hilma af Klint: Paintings for the Temple (paintings by Hilma af Klint) Af Klint concluded Paintings for the Temple with a triptych she called Altarpieces, featuring geometric shapes, bold primary colors, and gold l... Hilma af Klint was a Swedish artist and mystic whose paintings are considered to be among the first major abstract works in Western art history. After studying at the Royal Academy of Art in Stockholm, Hilma af Klint embarked on a major suite of paintings in 1904-06. Hilma af Klint did not ascribe to any of the established avant-garde movements of her time.",
       "artistTranslationLogic": [
-        "Keep The Liver Is the Cock's Comb (painting by Gorky) Arshile Gorky (born April 15, 1904, as the dominant image rule before adding spectacle or atmospheric effects.",
-        "Make Arshile Gorky was an Armenian-American painter who had a seminal influence on Abstract Expressionism. legible as a compositional driver rather than a decorative afterthought.",
-        "Translate Arshile Gorky was an Armenian-American painter who had a seminal influence on Abstract Expressionism. The Liver Is the Cock's Comb (painting by Gorky) Arshile Gorky (born April 15, 1904, Along with Mark Rothko, Jackson Pollock and Willem de Kooning, Gorky has been hailed as one of the most powerful American painters of the 20th century. Abstract Expressionism summary - Britannica Abstract Expressionism, Movement in US painting that began in the late 1940s. The suffering and loss he experienced in the Armenian genocide had crucial influence on Gorky's development as an artist. into readable render behavior so the result still feels made, not merely simulated.",
-        "Preserve Arshile Gorky was an Armenian-American painter who had a seminal influence on Abstract Expressionism. The Liver Is the Cock's Comb (painting by Gorky) Arshile Gorky (born April 15, 1904, Along with Mark Rothko, Jackson Pollock and Willem de Kooning, Gorky has been hailed as one of the most powerful American painters of the 20th century. Abstract Expressionism summary - Britannica Abstract Expressionism, Movement in US painting that began in the late 1940s. The suffering and loss he experienced in the Armenian genocide had crucial influence on Gorky's development as an artist. so the final scene follows the artist's spatial habits instead of drifting into a generic environment."
+        "Hilma af Klint's formal logic should dominate before any spectacle or scenic excess."
       ],
       "emotionalClimate": {
-        "summary": "Arshile Gorky was an Armenian-American painter who had a seminal influence on Abstract Expressionism. The Liver Is the Cock's Comb (painting by Gorky) Arshile Gorky (born April 15, 1904, The suffering and loss he experienced in the Armenian genocide had crucial influence on Gorky's development as an artist. Along with Mark Rothko, Jackson Pollock and Willem de Kooning, Gorky has been hailed as one of the most powerful American painters of the 20th century.",
+        "summary": "In Hilma af Klint: Paintings for the Temple (paintings by Hilma af Klint) Af Klint concluded Paintings for the Temple with a triptych she called Altarpieces, featuring geometric shapes, bold primary colors, and gold l... Hilma af Klint was a Swedish artist and mystic whose paintings are considered to be among the first major abstract works in Western art history. After studying at the Royal Academy of Art in Stockholm, Hilma af Klint embarked on a major suite of paintings in 1904-06. Hilma af Klint did not ascribe to any of the established avant-garde movements of her time.",
         "pressure": "low",
         "pace": "measured",
         "socialReach": "concentrated"
       },
       "visualGravity": {
-        "anchor": "Arshile Gorky was an Armenian-American painter who had a seminal influence on Abstract Expressionism. The Liver Is the Cock's Comb (painting by Gorky) Arshile Gorky (born April 15, 1904, The suffering and loss he experienced in the Armenian genocide had crucial influence on Gorky's development as an artist. Along with Mark Rothko, Jackson Pollock and Willem de Kooning, Gorky has been hailed as one of the most powerful American painters of the 20th century.",
-        "dominantStructure": "Arshile Gorky was an Armenian-American painter who had a seminal influence on Abstract Expressionism. The Liver Is the Cock's Comb (painting by Gorky) Arshile Gorky (born April 15, 1904, The suffering and loss he experienced in the Armenian genocide had crucial influence on Gorky's development as an artist. Along with Mark Rothko, Jackson Pollock and Willem de Kooning, Gorky has been hailed as one of the most powerful American painters of the 20th century.",
-        "scaleBehavior": "Arshile Gorky was an Armenian-American painter who had a seminal influence on Abstract Expressionism. The Liver Is the Cock's Comb (painting by Gorky) Arshile Gorky (born April 15, 1904, Along with Mark Rothko, Jackson Pollock and Willem de Kooning, Gorky has been hailed as one of the most powerful American painters of the 20th century. Abstract Expressionism summary - Britannica Abstract Expressionism, Movement in US painting that began in the late 1940s. The suffering and loss he experienced in the Armenian genocide had crucial influence on Gorky's development as an artist."
+        "anchor": null,
+        "dominantStructure": "Build the image around one readable structural law.",
+        "scaleBehavior": "Keep the space bounded and compositionally intentional."
       },
       "materialLogic": {
-        "surfaceBehavior": [
-          "Arshile Gorky was an Armenian-American painter who had a seminal influence on Abstract Expressionism. The Liver Is the Cock's Comb (painting by Gorky) Arshile Gorky (born April 15, 1904, Along with Mark Rothko, Jackson Pollock and Willem de Kooning, Gorky has been hailed as one of the most powerful American painters of the 20th century. Abstract Expressionism summary - Britannica Abstract Expressionism, Movement in US painting that began in the late 1940s. The suffering and loss he experienced in the Armenian genocide had crucial influence on Gorky's development as an artist."
-        ],
-        "spatialHabits": [
-          "Arshile Gorky was an Armenian-American painter who had a seminal influence on Abstract Expressionism. The Liver Is the Cock's Comb (painting by Gorky) Arshile Gorky (born April 15, 1904, Along with Mark Rothko, Jackson Pollock and Willem de Kooning, Gorky has been hailed as one of the most powerful American painters of the 20th century. Abstract Expressionism summary - Britannica Abstract Expressionism, Movement in US painting that began in the late 1940s. The suffering and loss he experienced in the Armenian genocide had crucial influence on Gorky's development as an artist."
-        ],
-        "handling": "Arshile Gorky was an Armenian-American painter who had a seminal influence on Abstract Expressionism. The Liver Is the Cock's Comb (painting by Gorky) Arshile Gorky (born April 15, 1904, Along with Mark Rothko, Jackson Pollock and Willem de Kooning, Gorky has been hailed as one of the most powerful American painters of the 20th century. Abstract Expressionism summary - Britannica Abstract Expressionism, Movement in US painting that began in the late 1940s. The suffering and loss he experienced in the Armenian genocide had crucial influence on Gorky's development as an artist."
+        "surfaceBehavior": [],
+        "spatialHabits": [],
+        "handling": "Hilma af Klint's surface should feel made, not generic."
       },
       "colorField": {
-        "paletteSignals": [
-          "Arshile Gorky was an Armenian-American painter who had a seminal influence on Abstract Expressionism. The Liver Is the Cock's Comb (painting by Gorky) Arshile Gorky (born April 15, 1904, Along with Mark Rothko, Jackson Pollock and Willem de Kooning, Gorky has been hailed as one of the most powerful American painters of the 20th century. Abstract Expressionism summary - Britannica Abstract Expressionism, Movement in US painting that began in the late 1940s. The suffering and loss he experienced in the Armenian genocide had crucial influence on Gorky's development as an artist."
-        ],
+        "paletteSignals": [],
         "contrastMode": "measured contrast with restrained vibration"
       },
       "symbolicDensity": {
         "primaryMotif": "flow",
-        "motifVocabulary": [
-          "Arshile Gorky was an Armenian-American painter who had a seminal influence on Abstract Expressionism.",
-          "The Liver Is the Cock's Comb (painting by Gorky) Arshile Gorky (born April 15, 1904,",
-          "Along with Mark Rothko, Jackson Pollock and Willem de Kooning, Gorky has been hailed as one of the most powerful American painters of the 20th century.",
-          "The suffering and loss he experienced in the Armenian genocide had crucial influence on Gorky's development as an artist."
-        ],
+        "motifVocabulary": [],
         "literalness": "non-literal"
       },
       "tensionEngine": {
         "conflictAxis": "Donald Trump",
-        "escalationMode": "The Liver Is the Cock's Comb (painting by Gorky) Arshile Gorky (born April 15, 1904,",
+        "escalationMode": "Let tension accumulate through structure, not narration.",
         "releaseValve": "Allow only a narrow zone of release."
       },
       "audiencePosition": {
-        "stance": "The Liver Is the Cock's Comb (painting by Gorky) Arshile Gorky (born April 15, 1904, Arshile Gorky was an Armenian-American painter who had a seminal influence on Abstract Expressionism. Arshile Gorky was an Armenian-American painter who had a seminal influence on Abstract Expressionism. Arshile Gorky was an Armenian-American painter who had a seminal influence on Abstract Expressionism.",
+        "stance": "Hilma af Klint did not ascribe to any of the established avant-garde movements of her time. Hilma af Klint was a Swedish artist and mystic whose paintings are considered to be among the first major abstract works in Western art history. In Hilma af Klint: Paintings for the Temple (paintings by Hilma af Klint) Af Klint concluded Paintings for the Temple with a triptych she called Altarpieces, featuring geometric shapes, bold primary colors, and gold l... In Hilma af Klint: Paintings for the Temple (paintings by Hilma af Klint) Af Klint concluded Paintings for the Temple with a triptych she called Altarpieces, featuring geometric shapes, bold primary colors, and gold l...",
         "distance": "immersed but not illustrative"
       },
       "controlVsAccident": {
@@ -1152,56 +963,21 @@
         "accidentRole": "use drift or fracture sparingly to keep the field alive"
       },
       "antiDriftRules": [
-        "Avoid scenes that read primarily as technical HUDs, wireframe chambers, data dashboards, or generic sci-fi corridors.",
-        "Avoid deep-space spectacle or camera-tour environments if the artist brief points toward planar, symbolic, or bounded image logic.",
-        "Avoid decorative particles unless they reinforce a motif, hierarchy, or compositional axis from the artist brief.",
         "Do not collapse into biography summary, symbolic cliché, or generic procedural spectacle."
       ],
-      "finalCompression": "Arshile Gorky was an Armenian-American painter who had a seminal influence on Abstract Expressionism. The Liver Is the Cock's Comb (painting by Gorky) Arshile Gorky (born April 15, 1904, The suffering and loss he experienced in the Armenian genocide had crucial influence on Gorky's development as an artist. Along with Mark Rothko, Jackson Pollock and Willem de Kooning, Gorky has been hailed as one of the most powerful American painters of the 20th century. Arshile Gorky was an Armenian-American painter who had a seminal influence on Abstract Expressionism. The Liver Is the Cock's Comb (painting by Gorky) Arshile Gorky (born April 15, 1904, The suffering and loss he experienced in the Armenian genocide had crucial influence on Gorky's development as an artist. Along with Mark Rothko, Jackson Pollock and Willem de Kooning, Gorky has been hailed as one of the most powerful American painters of the 20th century. Arshile Gorky was an Armenian-American painter who had a seminal influence on Abstract Expressionism. The Liver Is the Cock's Comb (painting by Gorky) Arshile Gorky (born April 15, 1904, Along with Mark Rothko, Jackson Pollock and Willem de Kooning, Gorky has been hailed as one of the most powerful American painters of the 20th century. Abstract Expressionism summary - Britannica Abstract Expressionism, Movement in US painting that began in the late 1940s. The suffering and loss he experienced in the Armenian genocide had crucial influence on Gorky's development as an artist.",
+      "finalCompression": "In Hilma af Klint: Paintings for the Temple (paintings by Hilma af Klint) Af Klint concluded Paintings for the Temple with a triptych she called Altarpieces, featuring geometric shapes, bold primary colors, and gold l... Hilma af Klint was a Swedish artist and mystic whose paintings are considered to be among the first major abstract works in Western art history. After studying at the Royal Academy of Art in Stockholm, Hilma af Klint embarked on a major suite of paintings in 1904-06. Hilma af Klint did not ascribe to any of the established avant-garde movements of her time. Build the image around one readable structural law.",
       "artistAnchors": {
-        "formalLogic": [
-          "The Liver Is the Cock's Comb (painting by Gorky) Arshile Gorky (born April 15, 1904,"
-        ],
-        "motifVocabulary": [
-          "Arshile Gorky was an Armenian-American painter who had a seminal influence on Abstract Expressionism.",
-          "The Liver Is the Cock's Comb (painting by Gorky) Arshile Gorky (born April 15, 1904,",
-          "Along with Mark Rothko, Jackson Pollock and Willem de Kooning, Gorky has been hailed as one of the most powerful American painters of the 20th century.",
-          "The suffering and loss he experienced in the Armenian genocide had crucial influence on Gorky's development as an artist."
-        ],
-        "compositionCues": [
-          "Arshile Gorky was an Armenian-American painter who had a seminal influence on Abstract Expressionism. The Liver Is the Cock's Comb (painting by Gorky) Arshile Gorky (born April 15, 1904, The suffering and loss he experienced in the Armenian genocide had crucial influence on Gorky's development as an artist. Along with Mark Rothko, Jackson Pollock and Willem de Kooning, Gorky has been hailed as one of the most powerful American painters of the 20th century."
-        ],
-        "paletteSignals": [
-          "Arshile Gorky was an Armenian-American painter who had a seminal influence on Abstract Expressionism. The Liver Is the Cock's Comb (painting by Gorky) Arshile Gorky (born April 15, 1904, Along with Mark Rothko, Jackson Pollock and Willem de Kooning, Gorky has been hailed as one of the most powerful American painters of the 20th century. Abstract Expressionism summary - Britannica Abstract Expressionism, Movement in US painting that began in the late 1940s. The suffering and loss he experienced in the Armenian genocide had crucial influence on Gorky's development as an artist."
-        ],
-        "surfaceBehavior": [
-          "Arshile Gorky was an Armenian-American painter who had a seminal influence on Abstract Expressionism. The Liver Is the Cock's Comb (painting by Gorky) Arshile Gorky (born April 15, 1904, Along with Mark Rothko, Jackson Pollock and Willem de Kooning, Gorky has been hailed as one of the most powerful American painters of the 20th century. Abstract Expressionism summary - Britannica Abstract Expressionism, Movement in US painting that began in the late 1940s. The suffering and loss he experienced in the Armenian genocide had crucial influence on Gorky's development as an artist."
-        ],
-        "spatialHabits": [
-          "Arshile Gorky was an Armenian-American painter who had a seminal influence on Abstract Expressionism. The Liver Is the Cock's Comb (painting by Gorky) Arshile Gorky (born April 15, 1904, Along with Mark Rothko, Jackson Pollock and Willem de Kooning, Gorky has been hailed as one of the most powerful American painters of the 20th century. Abstract Expressionism summary - Britannica Abstract Expressionism, Movement in US painting that began in the late 1940s. The suffering and loss he experienced in the Armenian genocide had crucial influence on Gorky's development as an artist."
-        ],
-        "translationDirectives": [
-          "Keep The Liver Is the Cock's Comb (painting by Gorky) Arshile Gorky (born April 15, 1904, as the dominant image rule before adding spectacle or atmospheric effects.",
-          "Make Arshile Gorky was an Armenian-American painter who had a seminal influence on Abstract Expressionism. legible as a compositional driver rather than a decorative afterthought.",
-          "Translate Arshile Gorky was an Armenian-American painter who had a seminal influence on Abstract Expressionism. The Liver Is the Cock's Comb (painting by Gorky) Arshile Gorky (born April 15, 1904, Along with Mark Rothko, Jackson Pollock and Willem de Kooning, Gorky has been hailed as one of the most powerful American painters of the 20th century. Abstract Expressionism summary - Britannica Abstract Expressionism, Movement in US painting that began in the late 1940s. The suffering and loss he experienced in the Armenian genocide had crucial influence on Gorky's development as an artist. into readable render behavior so the result still feels made, not merely simulated.",
-          "Preserve Arshile Gorky was an Armenian-American painter who had a seminal influence on Abstract Expressionism. The Liver Is the Cock's Comb (painting by Gorky) Arshile Gorky (born April 15, 1904, Along with Mark Rothko, Jackson Pollock and Willem de Kooning, Gorky has been hailed as one of the most powerful American painters of the 20th century. Abstract Expressionism summary - Britannica Abstract Expressionism, Movement in US painting that began in the late 1940s. The suffering and loss he experienced in the Armenian genocide had crucial influence on Gorky's development as an artist. so the final scene follows the artist's spatial habits instead of drifting into a generic environment."
-        ]
+        "formalLogic": [],
+        "motifVocabulary": [],
+        "compositionCues": [],
+        "paletteSignals": [],
+        "surfaceBehavior": [],
+        "spatialHabits": [],
+        "translationDirectives": []
       },
-      "threeJsFreedomEnvelope": [
-        "Use any Three.js technique family that preserves Arshile Gorky's formal logic before spectacle.",
-        "Prefer readable symbolic structure, motif hierarchy, and painterly field behavior over generic procedural environment tricks.",
-        "Three.js should be a translation layer for the artist brief, not a reason to abandon the brief."
-      ],
-      "avoidSignals": [
-        "Avoid scenes that read primarily as technical HUDs, wireframe chambers, data dashboards, or generic sci-fi corridors.",
-        "Avoid deep-space spectacle or camera-tour environments if the artist brief points toward planar, symbolic, or bounded image logic.",
-        "Avoid decorative particles unless they reinforce a motif, hierarchy, or compositional axis from the artist brief."
-      ],
-      "threeJsTranslationExamples": [
-        "Build the image around Arshile Gorky was an Armenian-American painter who had a seminal influence on Abstract Expressionism., treating Arshile Gorky was an Armenian-American painter who had a seminal influence on Abstract Expressionism. The Liver Is the Cock's Comb (painting by Gorky) Arshile Gorky (born April 15, 1904, The suffering and loss he experienced in the Armenian genocide had crucial influence on Gorky's development as an artist. Along with Mark Rothko, Jackson Pollock and Willem de Kooning, Gorky has been hailed as one of the most powerful American painters of the 20th century. as the primary structure instead of a deep explorable environment.",
-        "Translate Arshile Gorky was an Armenian-American painter who had a seminal influence on Abstract Expressionism. The Liver Is the Cock's Comb (painting by Gorky) Arshile Gorky (born April 15, 1904, Along with Mark Rothko, Jackson Pollock and Willem de Kooning, Gorky has been hailed as one of the most powerful American painters of the 20th century. Abstract Expressionism summary - Britannica Abstract Expressionism, Movement in US painting that began in the late 1940s. The suffering and loss he experienced in the Armenian genocide had crucial influence on Gorky's development as an artist. into a coherent image field so the result feels painterly and symbolic rather than like a technical monitor or demo graph.",
-        "Let any motion or transformation arise from compositional pressure, reveal, drift, or restraint so the real-time system serves Arshile Gorky was an Armenian-American painter who had a seminal influence on Abstract Expressionism. The Liver Is the Cock's Comb (painting by Gorky) Arshile Gorky (born April 15, 1904, The suffering and loss he experienced in the Armenian genocide had crucial influence on Gorky's development as an artist. Along with Mark Rothko, Jackson Pollock and Willem de Kooning, Gorky has been hailed as one of the most powerful American painters of the 20th century.."
-      ]
+      "threeJsFreedomEnvelope": [],
+      "avoidSignals": [],
+      "threeJsTranslationExamples": []
     }
   }
 }
