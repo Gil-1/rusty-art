@@ -1,5 +1,9 @@
 import * as THREE from 'three';
-import { hslStringToColor } from './utils.js';
+import {
+  inferShaderUniformType,
+  normalizeShaderUniformValue,
+  sanitizeShaderSource as sanitizeShaderSourceContract
+} from './shader-contract.js';
 
 function isObject(value) {
   return Boolean(value) && typeof value === 'object' && !Array.isArray(value);
@@ -126,14 +130,7 @@ function mergeHookSnippet(hooks = {}, glsl = {}, stage = 'fragment') {
 function inferUniformDeclaration(name, value) {
   const uniformName = asText(name, 64);
   if (!uniformName) return null;
-  if (typeof value === 'boolean') return `uniform bool ${uniformName};`;
-  if (Array.isArray(value) && value.length === 2 && value.every(Number.isFinite)) return `uniform vec2 ${uniformName};`;
-  if (Array.isArray(value) && value.length === 3 && value.every(Number.isFinite)) return `uniform vec3 ${uniformName};`;
-  if (Array.isArray(value) && value.length === 4 && value.every(Number.isFinite)) return `uniform vec4 ${uniformName};`;
-  if (typeof value === 'string' && (value.startsWith('#') || value.startsWith('hsl(') || value.startsWith('palette.'))) {
-    return `uniform vec3 ${uniformName};`;
-  }
-  return `uniform float ${uniformName};`;
+  return `uniform ${inferShaderUniformType({}, value)} ${uniformName};`;
 }
 
 function ensureUniformDeclarations(source, uniformOverrides = {}) {
@@ -175,92 +172,12 @@ function normalizeFragmentHookCode(source, value = '') {
   return next;
 }
 
-function containsDynamicShaderReference(expression = '') {
-  return /\b(?:v[A-Z]\w*|u[A-Z]\w*|uv|position|normal|gl_[A-Za-z_]\w*)\b/.test(expression);
-}
-
-function hoistRuntimeInitializedGlobals(source = '') {
-  if (typeof source !== 'string' || !source.includes('void main')) return source;
-
-  const mainIndex = source.search(/void\s+main\s*\(\s*\)\s*\{/);
-  if (mainIndex < 0) return source;
-
-  const preamble = source.slice(0, mainIndex);
-  const body = source.slice(mainIndex);
-  const statements = [];
-  let depth = 0;
-  let start = 0;
-
-  for (let i = 0; i < preamble.length; i += 1) {
-    const char = preamble[i];
-    if (char === '{') depth += 1;
-    else if (char === '}') depth = Math.max(0, depth - 1);
-    else if (char === ';' && depth === 0) {
-      statements.push(preamble.slice(start, i + 1));
-      start = i + 1;
-    }
-  }
-
-  const trailing = preamble.slice(start);
-  const hoisted = [];
-  const kept = [];
-
-  for (const statement of statements) {
-    const trimmed = statement.trim();
-    const match = trimmed.match(/^(float|vec2|vec3|vec4|int|bool)\s+[A-Za-z_]\w*\s*=\s*([\s\S]+);$/);
-    if (match && containsDynamicShaderReference(match[2])) {
-      hoisted.push(trimmed);
-      continue;
-    }
-    kept.push(statement);
-  }
-
-  if (!hoisted.length) return source;
-
-  const rewrittenBody = body.replace(/void\s+main\s*\(\s*\)\s*\{/, (signature) => `${signature}\n${hoisted.join('\n')}\n`);
-  return `${kept.join('')}${trailing}${rewrittenBody}`;
-}
-
 export function sanitizeShaderSource(source = '') {
-  return hoistRuntimeInitializedGlobals(source);
+  return sanitizeShaderSourceContract(source);
 }
 
 function normalizeUniformValue(value, sceneCfg) {
-  if (typeof value === 'number' && Number.isFinite(value)) return value;
-  if (typeof value === 'boolean') return value;
-  if (typeof value === 'string') {
-    if (value.startsWith('palette.')) {
-      const key = value.slice('palette.'.length);
-      return hslStringToColor(sceneCfg?.palette?.[key] || '#ffffff', '#ffffff');
-    }
-    if (value.startsWith('#') || value.startsWith('hsl(')) {
-      return hslStringToColor(value, '#ffffff');
-    }
-    return value;
-  }
-
-  if (Array.isArray(value) && value.every(Number.isFinite)) {
-    if (value.length === 2) return new THREE.Vector2(value[0], value[1]);
-    if (value.length === 3) return new THREE.Vector3(value[0], value[1], value[2]);
-    if (value.length === 4) return new THREE.Vector4(value[0], value[1], value[2], value[3]);
-  }
-
-  if (isObject(value)) {
-    if (Number.isFinite(value.x) && Number.isFinite(value.y) && Number.isFinite(value.z) && Number.isFinite(value.w)) {
-      return new THREE.Vector4(value.x, value.y, value.z, value.w);
-    }
-    if (Number.isFinite(value.x) && Number.isFinite(value.y) && Number.isFinite(value.z)) {
-      return new THREE.Vector3(value.x, value.y, value.z);
-    }
-    if (Number.isFinite(value.x) && Number.isFinite(value.y)) {
-      return new THREE.Vector2(value.x, value.y);
-    }
-    if (Number.isFinite(value.r) && Number.isFinite(value.g) && Number.isFinite(value.b)) {
-      return new THREE.Color(value.r, value.g, value.b);
-    }
-  }
-
-  return null;
+  return normalizeShaderUniformValue(value, sceneCfg);
 }
 
 function mergeUniforms(baseUniforms, uniformOverrides = {}, sceneCfg) {

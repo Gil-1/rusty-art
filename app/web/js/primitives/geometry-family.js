@@ -1,6 +1,11 @@
 import * as THREE from 'three';
 import { hashString, mulberry32 } from './utils.js';
 import { createShaderMaterialWithOverride } from './shader-overrides.js';
+import { createGeometryFamilyCatalog } from './geometry-family-catalog.js';
+import {
+  resolveRuntimePosition,
+  resolveRuntimeScale
+} from './element-params.js';
 
 const GEOMETRY_OVERRIDE_VERTEX = `
 varying vec3 vPosition;
@@ -24,29 +29,12 @@ void main() {
 }
 `;
 
-function legacyOffsetArray(value) {
-  return Array.isArray(value) && value.length >= 2 ? value : null;
-}
-
 function resolveLegacyPosition(primitive = {}, params = {}, fallback = [0, 0, 0]) {
-  const legacyOffset = legacyOffsetArray(primitive.offset);
-  return [
-    Number(params.offsetX ?? primitive.offsetX ?? (typeof primitive.offset === 'number' ? primitive.offset : legacyOffset?.[0]) ?? fallback[0]),
-    Number(params.offsetY ?? primitive.offsetY ?? legacyOffset?.[1] ?? fallback[1]),
-    Number(params.offsetZ ?? primitive.offsetZ ?? primitive.z ?? legacyOffset?.[2] ?? fallback[2])
-  ];
+  return resolveRuntimePosition({ primitive, params, fallback });
 }
 
 function resolveLegacyScale(primitive = {}, params = {}, fallback = [1, 1, 1]) {
-  if (typeof primitive.scale === 'number' && Number.isFinite(primitive.scale)) {
-    return [primitive.scale, primitive.scale, primitive.scale];
-  }
-  const legacyScale = Array.isArray(primitive.scale) && primitive.scale.length >= 2 ? primitive.scale : null;
-  return [
-    Number(params.scaleX ?? primitive.scaleX ?? legacyScale?.[0] ?? fallback[0]),
-    Number(params.scaleY ?? primitive.scaleY ?? legacyScale?.[1] ?? fallback[1]),
-    Number(params.scaleZ ?? primitive.scaleZ ?? legacyScale?.[2] ?? fallback[2])
-  ];
+  return resolveRuntimeScale({ primitive, params, fallback, numericScaleMode: 'uniform' });
 }
 
 function createMotifArmature({ primitive, sceneCfg, seed }) {
@@ -658,24 +646,35 @@ function wrapGeometryBuilder(factory) {
   };
 }
 
-export const builders = {
-  'motif-armature': wrapGeometryBuilder(({ primitive, sceneCfg, seed }) => ({ obj: createMotifArmature({ primitive, sceneCfg, seed }), uniforms: null })),
-  'orbit-ribbon': wrapGeometryBuilder(({ primitive, sceneCfg }) => ({ obj: createRibbon({ primitive, sceneCfg, style: 'orbit' }), uniforms: null })),
-  'shear-ribbon': wrapGeometryBuilder(({ primitive, sceneCfg }) => ({ obj: createRibbon({ primitive, sceneCfg, style: 'shear' }), uniforms: null })),
-  'drift-ribbon': wrapGeometryBuilder(({ primitive, sceneCfg }) => ({ obj: createRibbon({ primitive, sceneCfg, style: 'drift' }), uniforms: null })),
-  'fault-line': wrapGeometryBuilder(({ primitive, sceneCfg }) => ({ obj: createFaultLine({ primitive, sceneCfg }), uniforms: null })),
-  'signal-weave': wrapGeometryBuilder(({ primitive, sceneCfg, seed, index }) => ({ obj: createSignalWeave({ primitive, sceneCfg, seed, index }), uniforms: null })),
-  'node-cluster': wrapGeometryBuilder(({ primitive, sceneCfg, seed, index }) => ({ obj: createNodeCluster({ primitive, sceneCfg, seed, index }), uniforms: null })),
-  'kandinsky-burst': wrapGeometryBuilder(({ primitive, sceneCfg }) => ({ obj: createKandinskyBurst({ primitive, sceneCfg }), uniforms: null })),
-  'spiral-sigil': wrapGeometryBuilder(({ primitive, sceneCfg }) => ({ obj: createSpiralSigil({ primitive, sceneCfg }), uniforms: null })),
-  'miro-glyphs': wrapGeometryBuilder(({ primitive, sceneCfg, seed, index }) => ({ obj: createMiroGlyphs({ primitive, sceneCfg, seed, index }), uniforms: null })),
-  'concentric-discs': wrapGeometryBuilder(({ primitive, sceneCfg }) => ({ obj: createConcentricDiscs({ primitive, sceneCfg }), uniforms: null })),
-  'suprematist-planes': wrapGeometryBuilder(({ primitive, sceneCfg, seed, index }) => ({ obj: createSuprematistPlanes({ primitive, sceneCfg, seed, index }), uniforms: null })),
-  'klee-cells': wrapGeometryBuilder(({ primitive, sceneCfg, seed, index }) => ({ obj: createKleeCells({ primitive, sceneCfg, seed, index }), uniforms: null })),
-  'color-field-stack': wrapGeometryBuilder(({ sceneCfg }) => ({ obj: createColorFieldStack({ sceneCfg }), uniforms: null })),
-  'op-stripes': wrapGeometryBuilder(({ primitive, sceneCfg }) => ({ obj: createOpStripes({ primitive, sceneCfg }), uniforms: null })),
-  'instance-grid': wrapGeometryBuilder(({ primitive, sceneCfg }) => ({ obj: createInstanceGrid({ primitive, sceneCfg }), uniforms: null })),
-  'polyhedron-array': wrapGeometryBuilder(({ primitive, sceneCfg, seed, index }) => ({ obj: createPolyhedronArray({ primitive, sceneCfg, seed, index }), uniforms: null })),
-  'agent-geometry': wrapGeometryBuilder(({ primitive, sceneCfg, seed, index }) => ({ obj: createAgentGeometry({ primitive, sceneCfg, seed, index }), uniforms: null })),
-  'agent-composite-rig': wrapGeometryBuilder(({ primitive, sceneCfg, seed, index }) => ({ obj: createAgentCompositeRig({ primitive, sceneCfg, seed, index }), uniforms: null }))
+const geometryFactories = {
+  'motif-armature': ({ primitive, sceneCfg, seed }) => ({ obj: createMotifArmature({ primitive, sceneCfg, seed }), uniforms: null }),
+  'orbit-ribbon': ({ primitive, sceneCfg }) => ({ obj: createRibbon({ primitive, sceneCfg, style: 'orbit' }), uniforms: null }),
+  'shear-ribbon': ({ primitive, sceneCfg }) => ({ obj: createRibbon({ primitive, sceneCfg, style: 'shear' }), uniforms: null }),
+  'drift-ribbon': ({ primitive, sceneCfg }) => ({ obj: createRibbon({ primitive, sceneCfg, style: 'drift' }), uniforms: null }),
+  'fault-line': ({ primitive, sceneCfg }) => ({ obj: createFaultLine({ primitive, sceneCfg }), uniforms: null }),
+  'signal-weave': ({ primitive, sceneCfg, seed, index }) => ({ obj: createSignalWeave({ primitive, sceneCfg, seed, index }), uniforms: null }),
+  'node-cluster': ({ primitive, sceneCfg, seed, index }) => ({ obj: createNodeCluster({ primitive, sceneCfg, seed, index }), uniforms: null }),
+  'kandinsky-burst': ({ primitive, sceneCfg }) => ({ obj: createKandinskyBurst({ primitive, sceneCfg }), uniforms: null }),
+  'spiral-sigil': ({ primitive, sceneCfg }) => ({ obj: createSpiralSigil({ primitive, sceneCfg }), uniforms: null }),
+  'miro-glyphs': ({ primitive, sceneCfg, seed, index }) => ({ obj: createMiroGlyphs({ primitive, sceneCfg, seed, index }), uniforms: null }),
+  'concentric-discs': ({ primitive, sceneCfg }) => ({ obj: createConcentricDiscs({ primitive, sceneCfg }), uniforms: null }),
+  'suprematist-planes': ({ primitive, sceneCfg, seed, index }) => ({ obj: createSuprematistPlanes({ primitive, sceneCfg, seed, index }), uniforms: null }),
+  'klee-cells': ({ primitive, sceneCfg, seed, index }) => ({ obj: createKleeCells({ primitive, sceneCfg, seed, index }), uniforms: null }),
+  'color-field-stack': ({ sceneCfg }) => ({ obj: createColorFieldStack({ sceneCfg }), uniforms: null }),
+  'op-stripes': ({ primitive, sceneCfg }) => ({ obj: createOpStripes({ primitive, sceneCfg }), uniforms: null }),
+  'instance-grid': ({ primitive, sceneCfg }) => ({ obj: createInstanceGrid({ primitive, sceneCfg }), uniforms: null }),
+  'polyhedron-array': ({ primitive, sceneCfg, seed, index }) => ({ obj: createPolyhedronArray({ primitive, sceneCfg, seed, index }), uniforms: null }),
+  'agent-geometry': ({ primitive, sceneCfg, seed, index }) => ({ obj: createAgentGeometry({ primitive, sceneCfg, seed, index }), uniforms: null }),
+  'agent-composite-rig': ({ primitive, sceneCfg, seed, index }) => ({ obj: createAgentCompositeRig({ primitive, sceneCfg, seed, index }), uniforms: null })
 };
+
+export const geometryFamilyCatalog = createGeometryFamilyCatalog({
+  factories: geometryFactories,
+  wrapBuilder: (factory) => wrapGeometryBuilder(factory)
+});
+
+export const { builders } = geometryFamilyCatalog;
+
+export function buildGeometryModule(moduleType, args) {
+  return geometryFamilyCatalog.buildGeometryModule(moduleType, args);
+}

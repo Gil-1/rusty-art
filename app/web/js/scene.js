@@ -1,29 +1,28 @@
 import * as THREE from 'three';
-import { applyPrimitiveAnimations } from './scene-animations.js';
-import { addSceneLighting, applySceneEnvironment, rebuildSceneElements } from './scene-assembly.js';
 import {
   applyViewportOrbitFrame as applyViewportOrbitFrameState,
   bindOrbitInput as bindOrbitInputHandlers,
   computeViewportOrbitFrame as computeViewportOrbitFrameState,
+  createSceneCameraInteraction,
   resetCameraForArtwork as resetCameraForArtworkState,
-  updateCameraFromOrbit as updateCameraFromOrbitState,
-  updateOrbitForFrame
+  updateCameraFromOrbit as updateCameraFromOrbitState
 } from './scene-camera.js';
 import {
-  applyPipelinePatches,
-  buildModuleOverrideResolver,
-  prepareRuntimeSceneConfig,
-  resolveBreathingConfig,
-  resolvePostBase,
-  selectActiveSceneElements
-} from './scene-config.js';
+  applySceneConfigSession
+} from './scene-apply-config-session.js';
 import {
   createArtworkRenderer,
   createPostPass,
   createPostRenderTarget,
   resizeSceneRenderTargets
 } from './scene-rendering.js';
-import { disposeObjectTree, loadElementRuntime } from './scene-runtime.js';
+import {
+  createBrowserResizeAdapter,
+  createBrowserTimingAdapter,
+  createSceneFrameLifecycle
+} from './scene-frame-lifecycle.js';
+import { renderSceneFramePass } from './scene-frame-render-pass.js';
+import { disposeObjectTree } from './scene-runtime.js';
 
 
 export class ArtworkScene {
@@ -60,7 +59,8 @@ export class ArtworkScene {
     this.baseOrbitPose = { radius: 12, theta: 0, phi: Math.PI / 2.2 };
     this.baseOrbitTarget = new THREE.Vector3(0, 0, 0);
     this.viewportOrbitFrame = { radiusMultiplier: 1, phiOffset: 0, targetYOffset: 0 };
-    this.bindOrbitInput();
+    this.cameraInteraction = createSceneCameraInteraction(this);
+    this.cameraInteraction.bindInput();
     this.updateCameraFromOrbit();
 
     const { renderTarget, samples } = createPostRenderTarget(this.renderer);
@@ -87,106 +87,29 @@ export class ArtworkScene {
     this.captureMode = false;
     this.captureTime = 1.234;
     this.applyConfigToken = 0;
-    this.renderFrameCount = 0;
-    this.renderFrameWaiters = [];
 
     this.resize = this.resize.bind(this);
     this.animate = this.animate.bind(this);
-    window.addEventListener('resize', this.resize);
+    this.frameLifecycle = createSceneFrameLifecycle({
+      onResize: () => this.resizeFrameTargets(),
+      onFrame: () => this.renderFrame(),
+      timing: createBrowserTimingAdapter(window),
+      resizeAdapter: createBrowserResizeAdapter({
+        canvas: this.canvas,
+        target: window,
+        resizeObserverCtor: typeof ResizeObserver !== 'undefined' ? ResizeObserver : undefined
+      })
+    });
 
-    this.resizeObserver = null;
-    if (typeof ResizeObserver !== 'undefined') {
-      this.resizeObserver = new ResizeObserver(() => this.resize());
-      this.resizeObserver.observe(this.canvas);
-      if (this.canvas.parentElement) this.resizeObserver.observe(this.canvas.parentElement);
-    }
-
-    this.resize();
-    requestAnimationFrame(this.animate);
+    this.frameLifecycle.start();
   }
 
   async applyConfig(config) {
     const applyToken = ++this.applyConfigToken;
-    const { buildElementObject, loadElementBuilders } = await loadElementRuntime();
-    if (applyToken !== this.applyConfigToken) return false;
-
-    while (this.group.children.length) {
-      const child = this.group.children[0];
-      this.group.remove(child);
-      disposeObjectTree(child);
-    }
-
-    this.animations = [];
-    this.uniformTargets = [];
-
-    const { sceneCfg, elements } = prepareRuntimeSceneConfig(config);
-
-    this.styleFingerprint = {
-      ...this.styleFingerprint,
-      ...(sceneCfg.styleFingerprint || {})
-    };
-
-    const customModules = Array.isArray(sceneCfg.sceneAuthoring?.customModules)
-      ? sceneCfg.sceneAuthoring.customModules
-      : [];
-    const moduleOverrideResolver = buildModuleOverrideResolver(sceneCfg.sceneAuthoring?.moduleOverrides || []);
-    const activeElements = selectActiveSceneElements(sceneCfg, elements);
-
-    const {
-      builders: elementBuilders,
-      customModuleReport,
-      pipelinePatches
-    } = await loadElementBuilders(activeElements, customModules);
-    if (applyToken !== this.applyConfigToken) return false;
-    this.customModuleReport = customModuleReport || null;
-    sceneCfg.customModuleReport = customModuleReport || sceneCfg.customModuleReport || null;
-    applyPipelinePatches(sceneCfg, pipelinePatches);
-
-    let rebuilt;
-    try {
-      rebuilt = rebuildSceneElements({
-        group: this.group,
-        requestedElements: elements,
-        activeElements,
-        sceneCfg,
-        seed: config.seed,
-        elementBuilders,
-        buildElementObject,
-        moduleOverrideResolver
-      });
-    } catch (error) {
-      this.sceneAssemblyReport = error?.sceneAssemblyReport || null;
-      throw error;
-    }
-    this.animations = rebuilt.animations;
-    this.uniformTargets = rebuilt.uniformTargets;
-    this.sceneAssemblyReport = rebuilt.assemblyReport || null;
-
-    applySceneEnvironment(this.scene, sceneCfg);
-    addSceneLighting(this.group, sceneCfg);
-
-    this.motionSpeed = sceneCfg.motionSpeed || 0.001;
-    this.currentTension = sceneCfg.expression?.tension ?? 0.5;
-
-    const camCfg = sceneCfg.camera || {};
-    this.controls.autoRotate = camCfg.autoRotate === true;
-    this.controls.autoRotateSpeed = Number.isFinite(camCfg.autoRotateSpeed) ? camCfg.autoRotateSpeed : 0.35;
-    if (Number.isFinite(camCfg.minDistance)) this.controls.minDistance = camCfg.minDistance;
-    if (Number.isFinite(camCfg.maxDistance)) this.controls.maxDistance = camCfg.maxDistance;
-    this.cameraBeats = Array.isArray(camCfg.beats) && camCfg.beats.length >= 2 ? camCfg.beats : null;
-    this.cameraCycleSeconds = Number.isFinite(camCfg.cycleSeconds) ? camCfg.cycleSeconds : 24;
-    this.cameraMotionEnabled = camCfg.motionEnabled === true;
-    this.resetCameraForArtwork(camCfg);
-
-    this.breathing = resolveBreathingConfig(sceneCfg);
-
-    this.postBase = resolvePostBase(sceneCfg);
-    this.renderer.toneMappingExposure = this.postBase.exposure;
-    this.postUniforms.uContrast.value = this.postBase.contrast;
-    this.postUniforms.uSaturation.value = this.postBase.saturation;
-    this.postUniforms.uVignette.value = this.postBase.vignette;
-    this.postUniforms.uDistortion.value = this.postBase.distortion * this.motionIntensity;
-    return true;
+    return applySceneConfigSession(this, config, {
+      applyToken,
+      getCurrentApplyToken: () => this.applyConfigToken
+    });
   }
 
   getAssemblyReport() {
@@ -211,28 +134,15 @@ export class ArtworkScene {
   }
 
   waitForRenderedFrame(timeoutMs = 2500) {
-    const targetFrame = this.renderFrameCount + 1;
-    return new Promise((resolve, reject) => {
-      const waiter = {
-        targetFrame,
-        resolve: () => {
-          clearTimeout(waiter.timeoutId);
-          resolve(targetFrame);
-        },
-        reject: (error) => {
-          clearTimeout(waiter.timeoutId);
-          reject(error);
-        },
-        timeoutId: null
-      };
+    return this.frameLifecycle.waitForRenderedFrame(timeoutMs);
+  }
 
-      waiter.timeoutId = setTimeout(() => {
-        this.renderFrameWaiters = this.renderFrameWaiters.filter((entry) => entry !== waiter);
-        waiter.reject(new Error('Timed out while waiting for rendered frame.'));
-      }, timeoutMs);
+  get renderFrameCount() {
+    return this.frameLifecycle?.getFrameCount?.() || 0;
+  }
 
-      this.renderFrameWaiters.push(waiter);
-    });
+  get renderFrameWaiters() {
+    return this.frameLifecycle?.getPendingWaiters?.() || [];
   }
 
   resetCameraForArtwork(camCfg = {}) {
@@ -248,7 +158,7 @@ export class ArtworkScene {
   }
 
   bindOrbitInput() {
-    bindOrbitInputHandlers(this);
+    return bindOrbitInputHandlers(this);
   }
 
   updateCameraFromOrbit() {
@@ -256,6 +166,10 @@ export class ArtworkScene {
   }
 
   resize() {
+    return this.frameLifecycle.resize();
+  }
+
+  resizeFrameTargets() {
     resizeSceneRenderTargets({
       canvas: this.canvas,
       renderer: this.renderer,
@@ -266,51 +180,24 @@ export class ArtworkScene {
     this.applyViewportOrbitFrame();
   }
 
-  animate() {
-    const t = this.captureMode ? this.captureTime : this.clock.getElapsedTime();
-    const motion = this.motionIntensity ?? 1;
-    const timeScale = 0.2 + motion * 0.8;
-    const motionT = t * timeScale;
-    const speed = (this.motionSpeed || 0.001) * (0.2 + motion * 0.8);
+  animate(timestamp) {
+    return this.frameLifecycle.animate(timestamp);
+  }
 
-    this.uniformTargets.forEach((uniforms) => {
-      if (uniforms.uTime) uniforms.uTime.value = motionT;
-      if (uniforms.uCameraPos) uniforms.uCameraPos.value.copy(this.camera.position);
-      if (uniforms.uTension) uniforms.uTension.value = this.currentTension;
-    });
-    this.postUniforms.uTime.value = motionT;
+  renderFrame() {
+    renderSceneFramePass(this);
+  }
 
-    const breathA = Math.sin(motionT * 0.11 + this.breathing.phaseA * Math.PI * 2);
-    const breathB = Math.sin(motionT * 0.07 + this.breathing.phaseB * Math.PI * 2);
-    this.postUniforms.uHueShift.value = breathA * this.breathing.hueShift * motion + (this.styleFingerprint.temperatureBias || 0) * 0.006;
-    this.postUniforms.uSaturation.value = this.postBase.saturation * (1 + breathB * this.breathing.saturationAmplitude * motion);
-    this.postUniforms.uContrast.value = this.postBase.contrast * (1 + (this.styleFingerprint.edgeHardness || 0.5) * 0.06 * (0.45 + motion * 0.55));
-    this.postUniforms.uVignette.value = this.postBase.vignette + this.currentTension * 0.04;
-    this.postUniforms.uDistortion.value = this.postBase.distortion * motion;
-    this.postUniforms.uExposureMul.value = 1 + breathA * this.breathing.exposureAmplitude * motion;
+  stop() {
+    this.frameLifecycle?.stop();
+  }
 
-    applyPrimitiveAnimations({
-      animations: this.animations,
-      motionT,
-      speed,
-      motion,
-      styleFingerprint: this.styleFingerprint
-    });
-
-    updateOrbitForFrame(this, { t, motionT, speed, motion });
-
-    this.renderer.setRenderTarget(this.renderTarget);
-    this.renderer.render(this.scene, this.camera);
-    this.renderer.setRenderTarget(null);
-    this.renderer.render(this.postScene, this.postCamera);
-
-    this.renderFrameCount += 1;
-    if (this.renderFrameWaiters.length) {
-      const dueWaiters = this.renderFrameWaiters.filter((waiter) => this.renderFrameCount >= waiter.targetFrame);
-      this.renderFrameWaiters = this.renderFrameWaiters.filter((waiter) => this.renderFrameCount < waiter.targetFrame);
-      dueWaiters.forEach((waiter) => waiter.resolve());
-    }
-
-    requestAnimationFrame(this.animate);
+  dispose() {
+    this.frameLifecycle?.dispose();
+    this.cameraInteraction?.dispose();
+    disposeObjectTree(this.group);
+    disposeObjectTree(this.postScene);
+    this.renderTarget?.dispose?.();
+    this.renderer?.dispose?.();
   }
 }

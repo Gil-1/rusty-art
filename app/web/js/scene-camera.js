@@ -5,7 +5,13 @@ function clamp(value, min, max) {
 }
 
 export function bindOrbitInput(scene) {
-  scene.canvas.addEventListener('pointerdown', (event) => {
+  const bindings = [];
+  const on = (type, handler, options) => {
+    scene.canvas.addEventListener(type, handler, options);
+    bindings.push({ type, handler, options });
+  };
+
+  on('pointerdown', (event) => {
     if (event.isPrimary === false) return;
     scene.orbit.dragging = true;
     scene.orbit.userControlLocked = true;
@@ -15,7 +21,7 @@ export function bindOrbitInput(scene) {
     scene.canvas.setPointerCapture?.(event.pointerId);
   }, { passive: false });
 
-  scene.canvas.addEventListener('pointermove', (event) => {
+  on('pointermove', (event) => {
     if (!scene.orbit.dragging) return;
     const isTouch = event.pointerType === 'touch';
     if (isTouch) event.preventDefault();
@@ -32,11 +38,11 @@ export function bindOrbitInput(scene) {
     scene.orbit.dragging = false;
     if (event?.pointerId != null) scene.canvas.releasePointerCapture?.(event.pointerId);
   };
-  scene.canvas.addEventListener('pointerup', endDrag);
-  scene.canvas.addEventListener('pointercancel', endDrag);
-  scene.canvas.addEventListener('pointerleave', endDrag);
+  on('pointerup', endDrag);
+  on('pointercancel', endDrag);
+  on('pointerleave', endDrag);
 
-  scene.canvas.addEventListener('wheel', (event) => {
+  on('wheel', (event) => {
     event.preventDefault();
     scene.orbit.userControlLocked = true;
     const zoom = Math.exp((event.deltaY > 0 ? 1 : -1) * 0.08);
@@ -45,6 +51,12 @@ export function bindOrbitInput(scene) {
       Math.max(scene.controls.minDistance, scene.orbit.radius * zoom)
     );
   }, { passive: false });
+
+  return () => {
+    for (const binding of bindings) {
+      scene.canvas.removeEventListener?.(binding.type, binding.handler, binding.options);
+    }
+  };
 }
 
 export function updateCameraFromOrbit(scene) {
@@ -199,4 +211,35 @@ export function resetCameraForArtwork(scene, camCfg = {}) {
   scene.orbit.dragging = false;
   scene.orbit.userControlLocked = false;
   applyViewportOrbitFrame(scene, { resetOrbit: true });
+}
+
+export function createSceneCameraInteraction(scene) {
+  let inputTeardown = null;
+
+  return Object.freeze({
+    bindInput() {
+      inputTeardown?.();
+      inputTeardown = bindOrbitInput(scene);
+      return inputTeardown;
+    },
+    dispose() {
+      inputTeardown?.();
+      inputTeardown = null;
+    },
+    updateCamera() {
+      return updateCameraFromOrbit(scene);
+    },
+    resetForArtwork(camCfg = {}) {
+      return resetCameraForArtwork(scene, camCfg);
+    },
+    computeViewportFrame(aspect = scene.camera.aspect || 1) {
+      return computeViewportOrbitFrame(aspect);
+    },
+    applyViewportFrame(options = {}) {
+      return applyViewportOrbitFrame(scene, options);
+    },
+    updateForFrame(frameFacts) {
+      return updateOrbitForFrame(scene, frameFacts);
+    }
+  });
 }

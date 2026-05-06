@@ -1,37 +1,10 @@
-import { compileCustomModuleRegistry } from './scene-runtime/custom-module/compiler.js';
+import { buildSceneElementRuntimePlan } from './scene-element-runtime-plan.js';
+import {
+  BUILT_IN_SCENE_MODULE_CATALOG,
+  BUILT_IN_SCENE_MODULE_TYPES
+} from '../../../pipeline/core/scene/runtime-module-catalog.mjs';
 
-const BASE_MODULE_TYPE_TO_FAMILY = {
-  'particle-cloud': 'particle',
-  'particle-stream': 'particle',
-  'particle-shell': 'particle',
-  'volumetric-haze': 'shader',
-  'anchor-core': 'shader',
-  'shader-field-plane': 'shader',
-  'flow-noise-slab': 'shader',
-  'motif-armature': 'geometry',
-  'orbit-ribbon': 'geometry',
-  'shear-ribbon': 'geometry',
-  'drift-ribbon': 'geometry',
-  'fault-line': 'geometry',
-  'signal-weave': 'geometry',
-  'node-cluster': 'geometry',
-  'kandinsky-burst': 'geometry',
-  'spiral-sigil': 'geometry',
-  'miro-glyphs': 'geometry',
-  'concentric-discs': 'geometry',
-  'suprematist-planes': 'geometry',
-  'klee-cells': 'geometry',
-  'color-field-stack': 'geometry',
-  'op-stripes': 'geometry',
-  'instance-grid': 'geometry',
-  'polyhedron-array': 'geometry',
-  'agent-geometry': 'geometry',
-  'agent-composite-rig': 'geometry',
-  'agent-particle-system': 'particle',
-  'agent-shader-plane': 'shader'
-};
-
-export const SCENE_ELEMENT_MODULE_TYPES = Object.freeze(Object.keys(BASE_MODULE_TYPE_TO_FAMILY));
+export const SCENE_ELEMENT_MODULE_TYPES = BUILT_IN_SCENE_MODULE_TYPES;
 
 const FAMILY_LOADERS = {
   particle: () => import('./primitives/particle-family.js'),
@@ -50,23 +23,6 @@ async function loadFamilyModule(family) {
   return familyModuleCache.get(family);
 }
 
-function getElementModuleType(element) {
-  const moduleType = element?.moduleType;
-  if (typeof moduleType !== 'string') return null;
-  const normalized = moduleType.trim();
-  return normalized || null;
-}
-
-function familiesForElements(elements = [], moduleTypeToFamily = BASE_MODULE_TYPE_TO_FAMILY) {
-  const families = new Set();
-  for (const element of elements) {
-    const moduleType = getElementModuleType(element);
-    const family = moduleType ? moduleTypeToFamily[moduleType] : null;
-    if (family) families.add(family);
-  }
-  return families;
-}
-
 async function ensureFamilyBuilders(families) {
   const missing = [...families].filter((family) => !familyBuilderCache.has(family));
   if (!missing.length) return;
@@ -79,16 +35,13 @@ async function ensureFamilyBuilders(families) {
 }
 
 export async function loadElementBuilders(elements = [], customModules = []) {
-  const customModuleRegistry = compileCustomModuleRegistry({
+  const runtimeResolutionPlan = buildSceneElementRuntimePlan({
+    elements,
     customModules,
-    baseModuleTypes: SCENE_ELEMENT_MODULE_TYPES
+    baseModuleTypes: SCENE_ELEMENT_MODULE_TYPES,
+    baseModuleFamilyByType: BUILT_IN_SCENE_MODULE_CATALOG.moduleFamilyByType
   });
-
-  const moduleTypeToFamily = {
-    ...BASE_MODULE_TYPE_TO_FAMILY,
-    ...(customModuleRegistry.moduleTypeToFamily || {})
-  };
-  const families = familiesForElements(elements, moduleTypeToFamily);
+  const families = runtimeResolutionPlan.familiesToLoad;
   await ensureFamilyBuilders(families);
 
   const builders = new Map();
@@ -99,14 +52,15 @@ export async function loadElementBuilders(elements = [], customModules = []) {
     });
   }
 
-  for (const [moduleType, builder] of customModuleRegistry.builders || []) {
+  for (const [moduleType, builder] of runtimeResolutionPlan.customModuleRegistry?.builders || []) {
     if (typeof builder === 'function') builders.set(moduleType, builder);
   }
 
   return {
     builders,
-    customModuleReport: customModuleRegistry.report || null,
-    pipelinePatches: customModuleRegistry.pipelinePatches || { post: [], camera: [], lighting: [] }
+    customModuleReport: runtimeResolutionPlan.customModuleReport || null,
+    pipelinePatches: runtimeResolutionPlan.pipelinePatches,
+    runtimeResolutionPlan
   };
 }
 

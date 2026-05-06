@@ -1,6 +1,11 @@
 import * as THREE from 'three';
 import { hslStringToColor } from './utils.js';
 import { createShaderMaterialWithOverride } from './shader-overrides.js';
+import {
+  isFiniteVector,
+  resolveRuntimePosition,
+  resolveRuntimeScale
+} from './element-params.js';
 
 const HAZE_VERTEX = `
 varying vec2 vUv;
@@ -147,42 +152,12 @@ void main() {
 }
 `;
 
-function isFiniteVec3Array(value) {
-  return Array.isArray(value) && value.length === 3 && value.every((entry) => Number.isFinite(Number(entry)));
-}
-
 function resolvePlanePosition({ params = {}, primitive = {}, fallback = [0, 0, 0] }) {
-  if (isFiniteVec3Array(params.position)) return params.position.map(Number);
-  if (isFiniteVec3Array(primitive.position)) return primitive.position.map(Number);
-
-  const legacyOffset = Array.isArray(primitive.offset) && primitive.offset.length >= 2
-    ? primitive.offset
-    : null;
-
-  return [
-    Number(params.offsetX ?? primitive.offsetX ?? legacyOffset?.[0] ?? fallback[0]),
-    Number(params.offsetY ?? primitive.offsetY ?? legacyOffset?.[1] ?? fallback[1]),
-    Number(params.offsetZ ?? primitive.offsetZ ?? primitive.z ?? legacyOffset?.[2] ?? fallback[2])
-  ];
+  return resolveRuntimePosition({ primitive, params, fallback });
 }
 
 function resolvePlaneScale({ params = {}, primitive = {}, fallback = [1, 1, 1] }) {
-  if (typeof params.scale === 'number' && Number.isFinite(params.scale)) {
-    return [params.scale, params.scale, fallback[2]];
-  }
-  if (typeof primitive.scale === 'number' && Number.isFinite(primitive.scale)) {
-    return [primitive.scale, primitive.scale, fallback[2]];
-  }
-
-  const legacyScale = Array.isArray(primitive.scale) && primitive.scale.length >= 2
-    ? primitive.scale
-    : null;
-
-  return [
-    Number(params.scaleX ?? primitive.scaleX ?? legacyScale?.[0] ?? fallback[0]),
-    Number(params.scaleY ?? primitive.scaleY ?? legacyScale?.[1] ?? fallback[1]),
-    Number(params.scaleZ ?? primitive.scaleZ ?? legacyScale?.[2] ?? fallback[2])
-  ];
+  return resolveRuntimeScale({ primitive, params, fallback, numericScaleMode: 'preserve-z' });
 }
 
 function createShaderFieldPlane({ primitive, sceneCfg }) {
@@ -235,7 +210,7 @@ function createFlowNoiseSlab({ primitive, sceneCfg }) {
     out.obj.scale.set(1.1, 0.8, 1);
   }
 
-  const hasPositionOverride = (Array.isArray(params.position) && params.position.length === 3)
+  const hasPositionOverride = isFiniteVector(params.position, 3)
     || Number.isFinite(Number(params.offsetZ))
     || Number.isFinite(Number(primitive?.offsetZ));
   if (!hasPositionOverride) {

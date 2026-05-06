@@ -1,3 +1,15 @@
+import {
+  buildArchiveCountPresentationFacts,
+  buildArchiveCardPresentationFacts,
+  buildFallbackPresentationFacts,
+  buildLoadingPresentationFacts,
+  buildQuickPickerOptionsPresentationFacts,
+  buildStatusPresentationFacts,
+  resolvePublicArtworkHeroFacts,
+  resolvePublicArtworkPresentationFacts,
+  sourceLabel as normalizeSourceLabel
+} from './public-artwork-presentation-facts.js';
+
 export function escapeHtml(value) {
   return String(value ?? '')
     .replace(/&/g, '&amp;')
@@ -8,192 +20,189 @@ export function escapeHtml(value) {
 }
 
 export function sourceLabel(source) {
-  const value = String(source || 'unknown').trim();
-  return value ? value.toUpperCase() : 'UNKNOWN';
+  return normalizeSourceLabel(source);
 }
 
-export function showStatus(statusBanner, message = '', level = 'info') {
-  if (!statusBanner) return;
-  if (!message) {
+export function applyStatusFacts(statusBanner, facts = {}) {
+  if (!statusBanner) return facts;
+  if (facts.hidden) {
     statusBanner.hidden = true;
     statusBanner.textContent = '';
-    statusBanner.removeAttribute('data-level');
-    return;
+    if (typeof statusBanner.removeAttribute === 'function') {
+      statusBanner.removeAttribute('data-level');
+    } else if (statusBanner.dataset) {
+      delete statusBanner.dataset.level;
+    }
+    return facts;
   }
 
   statusBanner.hidden = false;
-  statusBanner.dataset.level = level;
-  statusBanner.textContent = message;
+  statusBanner.dataset.level = facts.level || 'info';
+  statusBanner.textContent = facts.message || '';
+  return facts;
 }
 
-export function showFallback({ fallbackPanel, fallbackMessage, retryLoad }, message = '', showRetry = true) {
-  if (!fallbackPanel || !fallbackMessage) return;
-  if (!message) {
+export function showStatus(statusBanner, message = '', level = 'info') {
+  return applyStatusFacts(statusBanner, buildStatusPresentationFacts(message, level));
+}
+
+export function applyFallbackFacts({ fallbackPanel, fallbackMessage, retryLoad }, facts = {}) {
+  if (!fallbackPanel || !fallbackMessage) return facts;
+  if (facts.hidden) {
     fallbackPanel.hidden = true;
+    fallbackMessage.textContent = '';
     if (retryLoad) retryLoad.hidden = true;
-    return;
+    return facts;
   }
 
   fallbackPanel.hidden = false;
-  fallbackMessage.textContent = message;
-  if (retryLoad) retryLoad.hidden = !showRetry;
+  fallbackMessage.textContent = facts.message || '';
+  if (retryLoad) retryLoad.hidden = Boolean(facts.retryHidden);
+  return facts;
 }
 
-function renderScoreChips(breakdown) {
-  const entries = Object.entries(breakdown || {});
-  if (!entries.length) return '<span class="small">No quality breakdown available.</span>';
+export function showFallback({ fallbackPanel, fallbackMessage, retryLoad }, message = '', showRetry = true) {
+  return applyFallbackFacts(
+    { fallbackPanel, fallbackMessage, retryLoad },
+    buildFallbackPresentationFacts(message, { showRetry })
+  );
+}
 
-  return `<div>${entries
-    .map(([label, value]) => `<span class="score-chip">${escapeHtml(label)}: ${Number(value).toFixed(1)}</span>`)
+function renderScoreChips(breakdown = []) {
+  if (!breakdown.length) return '<span class="small">No quality breakdown available.</span>';
+
+  return `<div>${breakdown
+    .map((item) => `<span class="score-chip">${escapeHtml(item.label)}: ${escapeHtml(item.value)}</span>`)
     .join(' ')}</div>`;
 }
 
-export function updateHeroNow({ heroNowTitle, heroNowSub, heroNowHeadline }, art) {
+export function updateHeroNow({ heroNowTitle, heroNowSub, heroNowHeadline }, artOrFacts) {
   if (!heroNowTitle || !heroNowSub) return;
 
-  const title = art?.title || 'Untitled piece';
-  const artist = art?.inspiration?.artist || 'Unknown artist';
-  const source = sourceLabel(art?.news?.source);
+  const hero = resolvePublicArtworkHeroFacts(artOrFacts);
 
-  heroNowTitle.textContent = title;
-  heroNowSub.textContent = `${artist} influence · ${source} headline · ${art?.date || 'Unknown date'}`;
+  heroNowTitle.textContent = hero.title;
+  heroNowSub.textContent = hero.subtitle;
   if (heroNowHeadline) {
-    heroNowHeadline.textContent = art?.news?.title || 'Headline context unavailable.';
+    heroNowHeadline.textContent = hero.headline;
   }
+  return hero;
 }
 
 export function updateArchiveCount(archiveCount, renderedArchiveCount, manifest) {
-  if (!archiveCount || !manifest?.items) return;
-  archiveCount.textContent = `${renderedArchiveCount}/${manifest.items.length} loaded`;
+  const facts = buildArchiveCountPresentationFacts(renderedArchiveCount, manifest);
+  if (!archiveCount || !facts.available) return facts;
+  archiveCount.textContent = facts.label;
+  return facts;
 }
 
-export function setLoadingState({ artFirst, loadState, quickPicker, quickPrev, quickNext }, isLoading, manifest, activeIndex) {
-  const hasLoopableArchive = (manifest?.items?.length || 0) > 1 && activeIndex >= 0;
-  if (artFirst) artFirst.classList.toggle('is-loading', isLoading);
-  if (loadState) loadState.hidden = !isLoading;
-  if (quickPicker) quickPicker.disabled = isLoading;
-  if (quickPrev) quickPrev.disabled = isLoading || !hasLoopableArchive;
-  if (quickNext) quickNext.disabled = isLoading || !hasLoopableArchive;
+export function applyLoadingFacts({ artFirst, loadState, quickPicker, quickPrev, quickNext }, facts = {}) {
+  if (artFirst) artFirst.classList.toggle('is-loading', Boolean(facts.artFirstLoading));
+  if (loadState) loadState.hidden = Boolean(facts.loadStateHidden);
+  if (quickPicker) quickPicker.disabled = Boolean(facts.quickPickerDisabled);
+  if (quickPrev) quickPrev.disabled = Boolean(facts.quickPrevDisabled);
+  if (quickNext) quickNext.disabled = Boolean(facts.quickNextDisabled);
+  return facts;
 }
 
-function formatQuickPickerLabel(item, compact = false) {
-  const date = String(item?.date || 'Unknown date').trim() || 'Unknown date';
-  const artist = String(item?.artist || 'Unknown artist').trim() || 'Unknown artist';
-  const title = String(item?.title || 'Untitled').trim() || 'Untitled';
-  const fullLabel = `${date} · ${artist} · ${title}`;
-
-  if (!compact) {
-    return { label: fullLabel, fullLabel };
-  }
-
-  const compactArtist = artist.length > 22 ? `${artist.slice(0, 21)}…` : artist;
-  return {
-    label: `${date} · ${compactArtist}`,
-    fullLabel
-  };
+export function setLoadingState(elements, isLoading, manifest, activeIndex) {
+  return applyLoadingFacts(elements, buildLoadingPresentationFacts({ isLoading, manifest, activeIndex }));
 }
 
 export function populateQuickPicker(quickPicker, manifest, { compact = false } = {}) {
   if (!quickPicker || !manifest?.items) return;
+  const facts = buildQuickPickerOptionsPresentationFacts(manifest, { compact });
 
-  quickPicker.innerHTML = manifest.items
-    .map((item, index) => {
-      const { label, fullLabel } = formatQuickPickerLabel(item, compact);
-      return `<option value="${index}" title="${escapeHtml(fullLabel)}">${escapeHtml(label)}</option>`;
-    })
+  quickPicker.innerHTML = facts.options
+    .map((option) => `<option value="${escapeHtml(option.value)}" title="${escapeHtml(option.fullLabel)}">${escapeHtml(option.label)}</option>`)
     .join('');
+  return facts;
 }
 
-export function renderMeta(meta, art, sceneInitError) {
-  const rationale = art.rationale || {};
-  const selection = rationale.selection || {};
-  const intent = rationale.intent || art.artFramework?.intent || {};
-  const quality = art.qualityScore || art.artFramework?.quality || {};
-  const heuristic = quality.heuristic || {};
-  const calibration = quality.calibration || {};
-  const breakdown = quality.breakdown || heuristic.breakdown || {};
-  const alignment = quality.alignment || art.artFramework?.quality?.alignment || {};
-  const priorityTerms = Array.isArray(selection.priorityTerms) ? selection.priorityTerms : [];
-  const mappings = Array.isArray(art.newsVisualMappings) ? art.newsVisualMappings : [];
-  const artistLinks = art.inspiration?.links || {};
-  const styleCard = art.inspiration?.styleCard || {};
-
-  const hasRealLink = typeof art.news?.link === 'string' && /^https?:\/\//i.test(art.news.link) && !/example\.com/i.test(art.news.link);
-  const articleLink = hasRealLink
-    ? `<a href="${escapeHtml(art.news.link)}" target="_blank" rel="noreferrer">Open article</a>`
-    : '<span class="small">Article link unavailable (fallback headline).</span>';
-
-  const artistLinkItems = [
-    artistLinks.wikipedia
-      ? `<a href="${escapeHtml(artistLinks.wikipedia)}" target="_blank" rel="noreferrer">Wikipedia</a>`
-      : null,
-    artistLinks.reference
-      ? `<a href="${escapeHtml(artistLinks.reference)}" target="_blank" rel="noreferrer">Reference</a>`
-      : null
-  ].filter(Boolean);
+export function renderMeta(meta, artOrFacts, sceneInitError) {
+  const { meta: facts } = resolvePublicArtworkPresentationFacts(artOrFacts, { sceneInitError });
+  const articleLink = facts.links.article.available
+    ? `<a href="${escapeHtml(facts.links.article.href)}" target="_blank" rel="noreferrer">${escapeHtml(facts.links.article.label)}</a>`
+    : `<span class="small">${escapeHtml(facts.links.article.label)}</span>`;
+  const artistLinkItems = facts.links.artist.items.map((link) => (
+    `<a href="${escapeHtml(link.href)}" target="_blank" rel="noreferrer">${escapeHtml(link.label)}</a>`
+  ));
 
   meta.innerHTML = `
     <div class="meta-header">
-      <h3>${escapeHtml(art.title || 'Untitled')}</h3>
-      <p>${escapeHtml(art.date || 'Unknown date')} · Inspired by ${escapeHtml(art.inspiration?.artist || 'Unknown artist')}</p>
+      <h3>${escapeHtml(facts.title)}</h3>
+      <p>${escapeHtml(facts.date)} · Inspired by ${escapeHtml(facts.artist)}</p>
     </div>
 
     <section class="meta-section">
       <h4>News provenance</h4>
-      <p class="meta-line"><span class="small">Headline:</span> ${escapeHtml(art.news?.title || 'No headline')}</p>
-      <p class="meta-line"><span class="small">Source:</span> ${escapeHtml(sourceLabel(art.news?.source))}</p>
+      <p class="meta-line"><span class="small">Headline:</span> ${escapeHtml(facts.news.headline)}</p>
+      <p class="meta-line"><span class="small">Source:</span> ${escapeHtml(facts.news.source)}</p>
       <p class="meta-line">${articleLink}</p>
       <div class="meta-links">
-        ${artistLinkItems.length ? artistLinkItems.join('') : '<span class="small">Artist links unavailable.</span>'}
+        ${artistLinkItems.length ? artistLinkItems.join('') : `<span class="small">${escapeHtml(facts.links.artist.fallbackLabel)}</span>`}
       </div>
     </section>
 
     <section class="meta-section">
       <h4>Art direction</h4>
-      <p class="meta-line"><span class="small">Signal:</span> ${escapeHtml(intent.signal || 'Translate top headline signal into abstract form.')}</p>
-      <p class="meta-line"><span class="small">Emotion:</span> ${escapeHtml(intent.emotion || 'Measured tension.')}</p>
-      <p class="meta-line"><span class="small">Tension / Balance / Motion:</span> ${escapeHtml(intent.tension || 'n/a')} · ${escapeHtml(intent.balance || 'n/a')} · ${escapeHtml(intent.motion || 'n/a')}</p>
-      <p class="meta-line"><span class="small">Style card:</span> ${escapeHtml(Object.values(styleCard).join(' · ') || 'default')}</p>
-      <p class="meta-line"><span class="small">Selection rationale:</span> ${escapeHtml(selection.whyHeadline || 'Top-ranked daily headline.')}</p>
-      <p class="meta-line"><span class="small">Signal terms:</span> ${escapeHtml(priorityTerms.length ? priorityTerms.join(', ') : 'none')}</p>
-      <p class="meta-line"><span class="small">Visual mapping:</span> ${escapeHtml(mappings.slice(0, 2).map((m) => m.visualDecision).join(' | ') || 'n/a')}</p>
+      <p class="meta-line"><span class="small">Signal:</span> ${escapeHtml(facts.rationale.signal)}</p>
+      <p class="meta-line"><span class="small">Emotion:</span> ${escapeHtml(facts.rationale.emotion)}</p>
+      <p class="meta-line"><span class="small">Tension / Balance / Motion:</span> ${escapeHtml(facts.rationale.tension)} · ${escapeHtml(facts.rationale.balance)} · ${escapeHtml(facts.rationale.motion)}</p>
+      <p class="meta-line"><span class="small">Style card:</span> ${escapeHtml(facts.rationale.styleCard)}</p>
+      <p class="meta-line"><span class="small">Selection rationale:</span> ${escapeHtml(facts.rationale.selectionRationale)}</p>
+      <p class="meta-line"><span class="small">Signal terms:</span> ${escapeHtml(facts.rationale.signalTermsLabel)}</p>
+      <p class="meta-line"><span class="small">Visual mapping:</span> ${escapeHtml(facts.rationale.visualMapping)}</p>
     </section>
 
     <section class="meta-section meta-section--quality">
       <h4>Quality lens</h4>
-      <p class="meta-line"><span class="small">Score:</span> ${quality.score != null ? `${Number(quality.score).toFixed(1)} / 100` : 'n/a'}</p>
-      <p class="meta-line"><span class="small">Heuristic:</span> ${heuristic.score != null ? Number(heuristic.score).toFixed(1) : 'n/a'} ·
-      <span class="small">Feedback-calibrated:</span> ${quality.score != null ? Number(quality.score).toFixed(1) : 'n/a'}</p>
-      ${renderScoreChips(breakdown)}
-      <p class="meta-line"><span class="small">Alignment:</span> total ${alignment.totalAlign ?? 'n/a'} · title ${alignment.components?.title?.score ?? 'n/a'} · style ${alignment.components?.style?.score ?? 'n/a'} · emotional ${alignment.components?.emotional?.score ?? 'n/a'}</p>
-      <p class="meta-line"><span class="small">Calibration sample:</span> ${calibration.sampleCount ?? 0} · trust ${calibration.trustWeight ?? 0}</p>
-      <p class="small">${escapeHtml(quality.summary || rationale.qualitySummary || 'Score blends heuristics with user-feedback calibration and explicit penalties.')}</p>
-      ${sceneInitError ? `<p class="small">Renderer note: ${escapeHtml(sceneInitError.message)}</p>` : ''}
+      <p class="meta-line"><span class="small">Score:</span> ${escapeHtml(facts.quality.score)}</p>
+      <p class="meta-line"><span class="small">Heuristic:</span> ${escapeHtml(facts.quality.heuristicScore)} ·
+      <span class="small">Feedback-calibrated:</span> ${escapeHtml(facts.quality.feedbackCalibratedScore)}</p>
+      ${renderScoreChips(facts.quality.breakdown)}
+      <p class="meta-line"><span class="small">Alignment:</span> total ${escapeHtml(facts.quality.alignment.total)} · title ${escapeHtml(facts.quality.alignment.title)} · style ${escapeHtml(facts.quality.alignment.style)} · emotional ${escapeHtml(facts.quality.alignment.emotional)}</p>
+      <p class="meta-line"><span class="small">Calibration sample:</span> ${escapeHtml(facts.quality.calibration.sampleCount)} · trust ${escapeHtml(facts.quality.calibration.trustWeight)}</p>
+      <p class="small">${escapeHtml(facts.quality.summary)}</p>
+      ${facts.quality.rendererNote ? `<p class="small">${escapeHtml(facts.quality.rendererNote)}</p>` : ''}
     </section>
   `;
+  return facts;
 }
 
-export function createArchiveCardElement(item, activate) {
+function normalizeArchiveCardCommands(commandsOrActivate) {
+  if (typeof commandsOrActivate === 'function') {
+    return { activate: commandsOrActivate };
+  }
+  const commands = commandsOrActivate && typeof commandsOrActivate === 'object' ? commandsOrActivate : {};
+  return {
+    activate: typeof commands.activate === 'function' ? commands.activate : () => {}
+  };
+}
+
+export function createArchiveCardElement(itemOrFacts, commandsOrActivate) {
+  const facts = buildArchiveCardPresentationFacts(itemOrFacts);
+  const commands = normalizeArchiveCardCommands(commandsOrActivate);
   const li = document.createElement('li');
-  li.dataset.file = item.file;
+  li.dataset.file = facts.file;
   li.className = 'archive-card';
   li.setAttribute('role', 'button');
   li.setAttribute('tabindex', '0');
   li.innerHTML = `
     <div class="archive-card-head">
-      <p class="archive-date">${escapeHtml(item.date)}</p>
-      <p class="archive-source">${escapeHtml(sourceLabel(item.source))}</p>
+      <p class="archive-date">${escapeHtml(facts.date)}</p>
+      <p class="archive-source">${escapeHtml(facts.source)}</p>
     </div>
-    <h3 class="archive-title">${escapeHtml(item.title)}</h3>
-    <p class="archive-news">${escapeHtml(item.newsTitle || 'headline unavailable')}</p>
-    <p class="archive-artist">Artist influence: ${escapeHtml(item.artist)}</p>
+    <h3 class="archive-title">${escapeHtml(facts.title)}</h3>
+    <p class="archive-news">${escapeHtml(facts.newsTitle)}</p>
+    <p class="archive-artist">Artist influence: ${escapeHtml(facts.artist)}</p>
   `;
 
-  li.addEventListener('click', activate);
+  li.addEventListener('click', () => commands.activate(facts));
   li.addEventListener('keydown', (event) => {
     if (event.key === 'Enter' || event.key === ' ') {
       event.preventDefault();
-      activate();
+      commands.activate(facts);
     }
   });
 

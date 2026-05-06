@@ -1,4 +1,15 @@
-const FETCH_TIMEOUT_MS = 9000;
+import {
+  createBrowserJsonRequestAdapter,
+  DEFAULT_BROWSER_JSON_REQUEST_TIMEOUT_MS
+} from './browser-json-request-adapter.js';
+
+const FETCH_TIMEOUT_MS = DEFAULT_BROWSER_JSON_REQUEST_TIMEOUT_MS;
+let defaultJsonRequestAdapter = null;
+
+export {
+  createBrowserJsonRequestAdapter,
+  DEFAULT_BROWSER_JSON_REQUEST_TIMEOUT_MS
+};
 
 export {
   createPublicArtworkFetcher,
@@ -14,28 +25,29 @@ import {
   loadPublicArchiveManifest
 } from './public-archive-client.js';
 
-export async function fetchJsonWithTimeout(path, timeoutMs = FETCH_TIMEOUT_MS) {
-  const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(new Error('timeout')), timeoutMs);
-
-  try {
-    const response = await fetch(path, { signal: controller.signal });
-    if (!response.ok) throw new Error(`HTTP ${response.status}`);
-    return await response.json();
-  } catch (error) {
-    if (error?.name === 'AbortError') {
-      throw new Error(`Request timed out for ${path}`);
-    }
-    throw new Error(`Cannot load ${path}: ${error.message}`);
-  } finally {
-    clearTimeout(timer);
+function getDefaultJsonRequestAdapter() {
+  if (!defaultJsonRequestAdapter) {
+    defaultJsonRequestAdapter = createBrowserJsonRequestAdapter({ timeoutMs: FETCH_TIMEOUT_MS });
   }
+  return defaultJsonRequestAdapter;
 }
 
-export async function loadManifestWithFallback() {
-  return loadPublicArchiveManifest({ fetchJson: fetchJsonWithTimeout });
+export async function fetchJsonWithTimeout(path, timeoutMs = FETCH_TIMEOUT_MS) {
+  return createBrowserJsonRequestAdapter({ timeoutMs }).fetchJson(path);
 }
 
-export function createArtworkFetcher() {
-  return createPublicArtworkFetcher({ fetchJson: fetchJsonWithTimeout });
+export async function loadManifestWithFallback({ requestAdapter = null, fetchJson = null, manifestPath, latestPath } = {}) {
+  return loadPublicArchiveManifest({
+    requestAdapter: requestAdapter || (fetchJson ? null : getDefaultJsonRequestAdapter()),
+    fetchJson,
+    manifestPath,
+    latestPath
+  });
+}
+
+export function createArtworkFetcher({ requestAdapter = null, fetchJson = null } = {}) {
+  return createPublicArtworkFetcher({
+    requestAdapter: requestAdapter || (fetchJson ? null : getDefaultJsonRequestAdapter()),
+    fetchJson
+  });
 }

@@ -1,7 +1,30 @@
-export function applyViewMode(nextMode, { modeStory, modeLab, metaModeStory, metaModeLab, body = document.body, storage = localStorage } = {}) {
+import {
+  PRESENTATION_STORAGE_KEYS,
+  setFocusModeState,
+  setMotionModeState,
+  setViewModeState
+} from './main-presentation-state.js';
+
+function defaultBody() {
+  return typeof document !== 'undefined' ? document.body : null;
+}
+
+function defaultStorage() {
+  return typeof localStorage !== 'undefined' ? localStorage : null;
+}
+
+export function applyViewMode(nextMode, {
+  modeStory,
+  modeLab,
+  metaModeStory,
+  metaModeLab,
+  body = defaultBody(),
+  storage = defaultStorage(),
+  storageKeys = PRESENTATION_STORAGE_KEYS
+} = {}) {
   const viewMode = nextMode === 'lab' ? 'lab' : 'story';
-  body.dataset.viewMode = viewMode;
-  storage.setItem('rusty:view-mode', viewMode);
+  if (body?.dataset) body.dataset.viewMode = viewMode;
+  storage?.setItem?.(storageKeys.viewMode, viewMode);
 
   const storyOn = viewMode === 'story';
   if (modeStory) modeStory.setAttribute('aria-pressed', String(storyOn));
@@ -12,18 +35,29 @@ export function applyViewMode(nextMode, { modeStory, modeLab, metaModeStory, met
   return viewMode;
 }
 
-export function setFocusMode(enabled, { modeFocus, body = document.body, storage = localStorage } = {}) {
+export function setFocusMode(enabled, {
+  modeFocus,
+  body = defaultBody(),
+  storage = defaultStorage(),
+  storageKeys = PRESENTATION_STORAGE_KEYS
+} = {}) {
   const focusMode = Boolean(enabled);
-  body.classList.toggle('focus-mode', focusMode);
-  storage.setItem('rusty:focus-mode', focusMode ? '1' : '0');
+  body?.classList?.toggle?.('focus-mode', focusMode);
+  storage?.setItem?.(storageKeys.focusMode, focusMode ? '1' : '0');
   if (modeFocus) modeFocus.setAttribute('aria-pressed', String(focusMode));
   return focusMode;
 }
 
-export function applyMotionMode(nextMode, { modeReducedMotion, onMotionChange = null, body = document.body, storage = localStorage } = {}) {
+export function applyMotionMode(nextMode, {
+  modeReducedMotion,
+  onMotionChange = null,
+  body = defaultBody(),
+  storage = defaultStorage(),
+  storageKeys = PRESENTATION_STORAGE_KEYS
+} = {}) {
   const motionMode = nextMode === 'reduced' ? 'reduced' : 'full';
-  body.dataset.motionMode = motionMode;
-  storage.setItem('rusty:motion-mode', motionMode);
+  if (body?.dataset) body.dataset.motionMode = motionMode;
+  storage?.setItem?.(storageKeys.motionMode, motionMode);
 
   const reduced = motionMode === 'reduced';
   if (modeReducedMotion) {
@@ -36,4 +70,19 @@ export function applyMotionMode(nextMode, { modeReducedMotion, onMotionChange = 
   }
 
   return motionMode;
+}
+
+export function applyViewModeEffects(state, nextMode, options = {}) {
+  const requestedState = setViewModeState(state, nextMode);
+  return setViewModeState(requestedState, applyViewMode(requestedState.viewMode, options));
+}
+
+export function setFocusModeEffects(state, enabled, options = {}) {
+  const requestedState = setFocusModeState(state, enabled);
+  return setFocusModeState(requestedState, setFocusMode(requestedState.focusMode, options));
+}
+
+export function applyMotionModeEffects(state, nextMode, options = {}) {
+  const requestedState = setMotionModeState(state, nextMode);
+  return setMotionModeState(requestedState, applyMotionMode(requestedState.motionMode, options));
 }

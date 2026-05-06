@@ -1,3 +1,130 @@
+export function createDeferredSceneBootScheduler({
+  canvas = null,
+  captureMode = false,
+  bootSceneNow = () => {},
+  hasScene = () => false,
+  hasSceneLoadInFlight = () => false,
+  windowRef = typeof window !== 'undefined' ? window : globalThis,
+  observerFactory = typeof IntersectionObserver !== 'undefined'
+    ? (callback, options) => new IntersectionObserver(callback, options)
+    : null,
+  setTimeoutFn = windowRef.setTimeout?.bind(windowRef) || globalThis.setTimeout,
+  clearTimeoutFn = windowRef.clearTimeout?.bind(windowRef) || globalThis.clearTimeout,
+  rootMargin = '120px',
+  idleTimeoutMs = 1800,
+  timerFallbackMs = 700
+} = {}) {
+  let observer = null;
+  let idleHandle = null;
+  let timer = null;
+  let requested = false;
+  let cancelled = false;
+  let triggered = false;
+  let triggerCount = 0;
+  let lastTriggerSource = null;
+
+  function hasBootStarted() {
+    return Boolean(hasScene() || hasSceneLoadInFlight());
+  }
+
+  function clearScheduledHooks() {
+    if (observer) {
+      observer.disconnect?.();
+      observer = null;
+    }
+
+    if (idleHandle != null && typeof windowRef.cancelIdleCallback === 'function') {
+      windowRef.cancelIdleCallback(idleHandle);
+    }
+    idleHandle = null;
+
+    if (timer != null) {
+      clearTimeoutFn(timer);
+      timer = null;
+    }
+  }
+
+  function trigger(source) {
+    if (cancelled || triggered || hasBootStarted()) return false;
+    triggered = true;
+    clearScheduledHooks();
+    triggerCount += 1;
+    lastTriggerSource = source;
+    void bootSceneNow({ source });
+    return true;
+  }
+
+  function request() {
+    if (captureMode) {
+      trigger('capture');
+      return getFacts();
+    }
+    if (requested || hasBootStarted()) return getFacts();
+
+    requested = true;
+    cancelled = false;
+    triggered = false;
+
+    if (observerFactory && canvas) {
+      observer = observerFactory((entries) => {
+        if (entries.some((entry) => entry.isIntersecting)) {
+          trigger('intersection');
+        }
+      }, { rootMargin });
+      observer?.observe?.(canvas);
+    }
+
+    if (typeof windowRef.requestIdleCallback === 'function') {
+      idleHandle = windowRef.requestIdleCallback(() => trigger('idle'), { timeout: idleTimeoutMs });
+    } else {
+      timer = setTimeoutFn(() => trigger('timer'), timerFallbackMs);
+    }
+
+    return getFacts();
+  }
+
+  function reset() {
+    clearScheduledHooks();
+    requested = false;
+    cancelled = false;
+    triggered = false;
+    return getFacts();
+  }
+
+  function cancel() {
+    clearScheduledHooks();
+    requested = false;
+    cancelled = true;
+    triggered = false;
+    return getFacts();
+  }
+
+  function getFacts() {
+    return {
+      captureMode,
+      requested,
+      cancelled,
+      triggered,
+      hasObserver: Boolean(observer),
+      hasIdleHandle: idleHandle != null,
+      hasTimer: timer != null,
+      triggerCount,
+      lastTriggerSource,
+      rootMargin,
+      idleTimeoutMs,
+      timerFallbackMs
+    };
+  }
+
+  return {
+    request,
+    reset,
+    cancel,
+    clearScheduledHooks,
+    getFacts
+  };
+}
+
 export function createRuntimeController({
   canvas,
   captureMode = false,
@@ -18,10 +145,7 @@ export function createRuntimeController({
   let scene = null;
   let sceneInitError = null;
   let sceneLoadPromise = null;
-  let deferredSceneObserver = null;
-  let deferredSceneIdleHandle = null;
-  let deferredSceneTimer = null;
-  let deferredSceneBootRequested = false;
+  let deferredSceneBootScheduler = null;
 
   function setCanvasVisible(visible) {
     if (canvas?.style) canvas.style.display = visible ? '' : 'none';
@@ -70,25 +194,11 @@ export function createRuntimeController({
   }
 
   function clearDeferredSceneHooks() {
-    if (deferredSceneObserver) {
-      deferredSceneObserver.disconnect();
-      deferredSceneObserver = null;
-    }
-
-    if (deferredSceneIdleHandle != null && typeof windowRef.cancelIdleCallback === 'function') {
-      windowRef.cancelIdleCallback(deferredSceneIdleHandle);
-    }
-    deferredSceneIdleHandle = null;
-
-    if (deferredSceneTimer != null) {
-      clearTimeoutFn(deferredSceneTimer);
-      deferredSceneTimer = null;
-    }
+    deferredSceneBootScheduler?.clearScheduledHooks();
   }
 
   function resetDeferredSceneBoot() {
-    clearDeferredSceneHooks();
-    deferredSceneBootRequested = false;
+    deferredSceneBootScheduler?.reset();
   }
 
   function updateMotionIntensity() {
@@ -166,34 +276,20 @@ export function createRuntimeController({
   }
 
   function requestDeferredSceneBoot() {
-    if (captureMode) {
-      void bootSceneNow();
-      return;
-    }
-    if (deferredSceneBootRequested || scene || sceneLoadPromise) return;
-
-    deferredSceneBootRequested = true;
-
-    const trigger = () => {
-      if (scene || sceneLoadPromise) return;
-      void bootSceneNow();
-    };
-
-    if (observerFactory && canvas) {
-      deferredSceneObserver = observerFactory((entries) => {
-        if (entries.some((entry) => entry.isIntersecting)) {
-          trigger();
-        }
-      }, { rootMargin: '120px' });
-      deferredSceneObserver?.observe?.(canvas);
-    }
-
-    if (typeof windowRef.requestIdleCallback === 'function') {
-      deferredSceneIdleHandle = windowRef.requestIdleCallback(trigger, { timeout: 1800 });
-    } else {
-      deferredSceneTimer = setTimeoutFn(trigger, 700);
-    }
+    return deferredSceneBootScheduler?.request();
   }
+
+  deferredSceneBootScheduler = createDeferredSceneBootScheduler({
+    canvas,
+    captureMode,
+    bootSceneNow,
+    hasScene: () => Boolean(scene),
+    hasSceneLoadInFlight: () => Boolean(sceneLoadPromise),
+    windowRef,
+    observerFactory,
+    setTimeoutFn,
+    clearTimeoutFn
+  });
 
   return {
     getScene,
@@ -204,6 +300,7 @@ export function createRuntimeController({
     requestDeferredSceneBoot,
     clearDeferredSceneHooks,
     resetDeferredSceneBoot,
+    getDeferredSceneBootFacts: () => deferredSceneBootScheduler?.getFacts(),
     applyActiveArtworkToScene,
     applyArtworkToScene,
     updateMotionIntensity

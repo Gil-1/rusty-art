@@ -1,6 +1,12 @@
 import * as THREE from 'three';
 import { hashString, hslStringToColor, mulberry32, resolveBlend } from './utils.js';
 import { createShaderMaterialWithOverride } from './shader-overrides.js';
+import {
+  resolveRuntimeCount,
+  resolveRuntimePosition,
+  resolveRuntimeScale,
+  resolveRuntimeSpreadVector
+} from './element-params.js';
 
 const PARTICLE_VERTEX = `
 attribute float aScale;
@@ -55,29 +61,13 @@ void main() {
 }
 `;
 
-function toFiniteNumber(value, fallback) {
-  const numeric = Number(value);
-  return Number.isFinite(numeric) ? numeric : fallback;
-}
-
 function normalizeSpreadVector(value, fallback = [4.6, 4.6, 1.6]) {
-  if (Array.isArray(value) && value.length >= 3 && value.every((entry) => Number.isFinite(Number(entry)))) {
-    return [Number(value[0]), Number(value[1]), Number(value[2])];
-  }
-  if (value && typeof value === 'object') {
-    const x = toFiniteNumber(value.x, null);
-    const y = toFiniteNumber(value.y, null);
-    const z = toFiniteNumber(value.z, null);
-    if (x != null && y != null && z != null) return [x, y, z];
-  }
-  const numeric = toFiniteNumber(value, null);
-  if (numeric != null) return [numeric, numeric, fallback[2]];
-  return fallback;
+  return resolveRuntimeSpreadVector(value, fallback);
 }
 
 function createShaderParticleCloud({ primitive, palette, seed, index, sceneCfg }) {
   const rand = mulberry32((seed ^ hashString(`${primitive.type}:${primitive.role}:${index}`)) >>> 0);
-  const count = primitive.count || 100;
+  const count = resolveRuntimeCount({ primitive, fallback: 100, min: 1 });
   const positions = new Float32Array(count * 3);
   const scales = new Float32Array(count);
   const phases = new Float32Array(count);
@@ -130,21 +120,10 @@ function createShaderParticleCloud({ primitive, palette, seed, index, sceneCfg }
   const points = new THREE.Points(geometry, material);
   points.frustumCulled = false;
   const params = primitive?.params || {};
-  const pos = Array.isArray(params.position) ? params.position : null;
-  if (pos && pos.length === 3 && pos.every(Number.isFinite)) {
-    points.position.set(pos[0], pos[1], pos[2]);
-  } else {
-    points.position.set(
-      Number(params.offsetX ?? primitive.offsetX ?? 0),
-      Number(params.offsetY ?? primitive.offsetY ?? 0),
-      Number(params.offsetZ ?? primitive.offsetZ ?? 0)
-    );
-  }
-  points.scale.set(
-    Number(params.scaleX ?? primitive.scaleX ?? 1),
-    Number(params.scaleY ?? primitive.scaleY ?? 1),
-    1
-  );
+  const position = resolveRuntimePosition({ primitive, params, fallback: [0, 0, 0] });
+  points.position.set(position[0], position[1], position[2]);
+  const scale = resolveRuntimeScale({ primitive, params, fallback: [1, 1, 1], numericScaleMode: 'preserve-z' });
+  points.scale.set(scale[0], scale[1], 1);
   const rotationZ = Number(params.rotationZ ?? primitive.rotationZ ?? 0);
   if (Number.isFinite(rotationZ)) points.rotation.z = rotationZ;
   return { obj: points, uniforms };
@@ -180,7 +159,7 @@ function createAgentParticleSystem({ primitive, sceneCfg, seed, index }) {
   return createShaderParticleCloud({
     primitive: {
       ...primitive,
-      count: Math.max(24, Math.min(2400, Math.round(Number(params.count ?? primitive.count ?? 320) || 320))),
+      count: resolveRuntimeCount({ primitive, params, fallback: 320, min: 24, max: 2400 }),
       spread: Math.max(0.8, Math.min(18, Number(params.spread ?? primitive.spread ?? 5.4) || 5.4)),
       depth: Math.max(0.2, Math.min(8, Number(params.depth ?? primitive.depth ?? 2.4) || 2.4)),
       jitter: Math.max(0, Math.min(1.4, Number(params.jitter ?? primitive.jitter ?? 0.34) || 0.34)),
