@@ -76,6 +76,68 @@ function renderScoreChips(breakdown = []) {
     .join(' ')}</div>`;
 }
 
+function renderPaletteSwatches(palette = []) {
+  if (!palette.length) return '<span class="small">n/a</span>';
+  return `<span class="palette-swatches">${palette.map((entry) => (
+    `<span class="palette-swatch" title="${escapeHtml(`${entry.label}: ${entry.value}`)}">` +
+      `<span class="palette-swatch-color" style="background:${escapeHtml(entry.value)}"></span>` +
+      `<span>${escapeHtml(entry.label)}</span>` +
+    '</span>'
+  )).join('')}</span>`;
+}
+
+function renderCreativeBriefList(items = []) {
+  if (!items.length) return '<p class="meta-line"><span class="small">Key parts:</span> n/a</p>';
+  return `
+    <div class="meta-line">
+      <span class="small">Key parts:</span>
+      <ul class="meta-list">
+        ${items.map((item) => `
+          <li>
+            <span>${escapeHtml(item.label)}</span>
+            ${item.detail ? `<span class="small">${escapeHtml(item.detail)}</span>` : ''}
+          </li>
+        `).join('')}
+      </ul>
+    </div>
+  `;
+}
+
+function renderArtDirectionSection(facts) {
+  const rationale = facts.rationale;
+  if (rationale.legacyIntent) {
+    return `
+      <section class="meta-section">
+        <h4>Art direction</h4>
+        <p class="meta-line"><span class="small">Signal:</span> ${escapeHtml(rationale.signal)}</p>
+        <p class="meta-line"><span class="small">Emotion:</span> ${escapeHtml(rationale.emotion)}</p>
+        <p class="meta-line"><span class="small">Tension / Balance / Motion:</span> ${escapeHtml(rationale.tension)} · ${escapeHtml(rationale.balance)} · ${escapeHtml(rationale.motion)}</p>
+        <p class="meta-line"><span class="small">Style card:</span> ${escapeHtml(rationale.styleCard)}</p>
+        <p class="meta-line"><span class="small">Selection rationale:</span> ${escapeHtml(rationale.selectionRationale)}</p>
+        <p class="meta-line"><span class="small">Signal terms:</span> ${escapeHtml(rationale.signalTermsLabel)}</p>
+        <p class="meta-line"><span class="small">Visual mapping:</span> ${escapeHtml(rationale.visualMapping)}</p>
+      </section>
+    `;
+  }
+
+  const brief = rationale.creativeBrief || {};
+  return `
+    <section class="meta-section">
+      <h4>Art direction</h4>
+      <p class="meta-line"><span class="small">Image:</span> ${escapeHtml(brief.image)}</p>
+      <p class="meta-line"><span class="small">Arc:</span> ${escapeHtml(brief.arc)}</p>
+      <p class="meta-line"><span class="small">Composition:</span> ${escapeHtml(brief.composition)}</p>
+      <p class="meta-line"><span class="small">Motif:</span> ${escapeHtml(brief.motif)}</p>
+      <p class="meta-line"><span class="small">Palette:</span> ${renderPaletteSwatches(brief.palette)}</p>
+      ${renderCreativeBriefList(brief.keyParts)}
+      <p class="meta-line"><span class="small">Expression:</span> tension ${escapeHtml(brief.expression?.tension)} · structure ${escapeHtml(brief.expression?.structure)} · motion ${escapeHtml(brief.expression?.motion)} · urgency ${escapeHtml(brief.expression?.urgency)} · contrast ${escapeHtml(brief.expression?.contrast)}</p>
+      <p class="meta-line"><span class="small">Modules:</span> ${escapeHtml(brief.modulesLabel)}</p>
+      <p class="meta-line"><span class="small">Translation trace:</span> ${escapeHtml(brief.translationTraceLabel)}</p>
+      <p class="meta-line"><span class="small">Selection rationale:</span> ${escapeHtml(rationale.selectionRationale)}</p>
+    </section>
+  `;
+}
+
 export function updateHeroNow({ heroNowTitle, heroNowSub, heroNowHeadline }, artOrFacts) {
   if (!heroNowTitle || !heroNowSub) return;
 
@@ -144,16 +206,7 @@ export function renderMeta(meta, artOrFacts, sceneInitError) {
       </div>
     </section>
 
-    <section class="meta-section">
-      <h4>Art direction</h4>
-      <p class="meta-line"><span class="small">Signal:</span> ${escapeHtml(facts.rationale.signal)}</p>
-      <p class="meta-line"><span class="small">Emotion:</span> ${escapeHtml(facts.rationale.emotion)}</p>
-      <p class="meta-line"><span class="small">Tension / Balance / Motion:</span> ${escapeHtml(facts.rationale.tension)} · ${escapeHtml(facts.rationale.balance)} · ${escapeHtml(facts.rationale.motion)}</p>
-      <p class="meta-line"><span class="small">Style card:</span> ${escapeHtml(facts.rationale.styleCard)}</p>
-      <p class="meta-line"><span class="small">Selection rationale:</span> ${escapeHtml(facts.rationale.selectionRationale)}</p>
-      <p class="meta-line"><span class="small">Signal terms:</span> ${escapeHtml(facts.rationale.signalTermsLabel)}</p>
-      <p class="meta-line"><span class="small">Visual mapping:</span> ${escapeHtml(facts.rationale.visualMapping)}</p>
-    </section>
+    ${renderArtDirectionSection(facts)}
 
     <section class="meta-section meta-section--quality">
       <h4>Quality lens</h4>

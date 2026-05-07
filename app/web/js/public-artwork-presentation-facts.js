@@ -21,8 +21,19 @@ function normalizedOptionalText(value) {
   return text || null;
 }
 
+function normalizedColor(value) {
+  const text = normalizedOptionalText(value);
+  return text && /^#[0-9a-f]{3,8}$/i.test(text) ? text : null;
+}
+
 function labelValue(value, fallback = 'n/a') {
   return value == null ? fallback : String(value);
+}
+
+function compactMetric(value, fallback = 'n/a') {
+  const number = Number(value);
+  if (!Number.isFinite(number)) return fallback;
+  return number.toFixed(2).replace(/0+$/, '').replace(/\.$/, '');
 }
 
 function numericLabel(value, { suffix = '', fallback = 'n/a' } = {}) {
@@ -36,6 +47,95 @@ function firstPresent(...values) {
     if (value != null) return value;
   }
   return null;
+}
+
+const LEGACY_INTENT_FIELDS = Object.freeze(['signal', 'emotion', 'tension', 'balance', 'motion']);
+
+function hasLegacyIntent(intent = {}) {
+  const source = asObject(intent);
+  return LEGACY_INTENT_FIELDS.some((field) => normalizedOptionalText(source[field]));
+}
+
+function buildPaletteFacts(palette = {}) {
+  return Object.entries(asObject(palette))
+    .map(([label, value]) => ({
+      label: normalizedText(label),
+      value: normalizedColor(value)
+    }))
+    .filter((entry) => entry.label && entry.value)
+    .slice(0, 6);
+}
+
+function buildScenePartFacts(elements = []) {
+  if (!Array.isArray(elements)) return [];
+  return elements
+    .map((element) => {
+      const source = asObject(element);
+      const read = normalizedOptionalText(source.expectedRead);
+      const purpose = normalizedOptionalText(source.scenePurpose);
+      const role = normalizedOptionalText(source.role);
+      const layer = normalizedOptionalText(source.layer);
+      const moduleType = normalizedOptionalText(source.moduleType);
+      const label = read || purpose || moduleType || normalizedOptionalText(source.id);
+      return label ? {
+        label,
+        detail: purpose && purpose !== label ? purpose : null,
+        role,
+        layer,
+        moduleType
+      } : null;
+    })
+    .filter(Boolean)
+    .slice(0, 4);
+}
+
+function buildModuleFacts(report = {}) {
+  const accepted = Array.isArray(report?.accepted) ? report.accepted : [];
+  return accepted
+    .map((module) => normalizedOptionalText(module?.id || module?.moduleId || module?.moduleType || module?.name))
+    .filter(Boolean)
+    .slice(0, 6);
+}
+
+function buildTranslationTraceFacts(mappings = []) {
+  if (!Array.isArray(mappings)) return [];
+  return mappings
+    .map((mapping) => normalizedOptionalText(mapping?.visualDecision))
+    .filter(Boolean)
+    .slice(0, 4);
+}
+
+function buildCreativeBriefFacts({ source, mappings }) {
+  const scene = asObject(source.scene);
+  const sceneAuthoring = asObject(scene.sceneAuthoring);
+  const artisticIntent = asObject(sceneAuthoring.artisticIntent);
+  const expression = asObject(scene.expression);
+  const palette = buildPaletteFacts(scene.palette);
+  const keyParts = buildScenePartFacts(scene.elements);
+  const modules = buildModuleFacts(scene.customModuleReport);
+  const translationTrace = buildTranslationTraceFacts(mappings);
+
+  return {
+    image: normalizedText(artisticIntent.statement, 'Scene authoring brief unavailable.'),
+    arc: normalizedText(artisticIntent.emotionalArc, 'Emotional arc unavailable.'),
+    composition: normalizedText(artisticIntent.compositionLogic, 'Composition logic unavailable.'),
+    motif: normalizedText(artisticIntent.motif, normalizedText(scene.motif, 'n/a')),
+    palette,
+    paletteLabel: palette.length ? palette.map((entry) => `${entry.label} ${entry.value}`).join(' · ') : 'n/a',
+    keyParts,
+    keyPartsLabel: keyParts.length ? keyParts.map((part) => part.label).join(' · ') : 'n/a',
+    expression: {
+      tension: compactMetric(expression.tension),
+      structure: compactMetric(expression.structure),
+      motion: compactMetric(expression.motion),
+      urgency: compactMetric(expression.urgency),
+      contrast: compactMetric(expression.contrast)
+    },
+    modules,
+    modulesLabel: modules.length ? modules.join(', ') : 'n/a',
+    translationTrace,
+    translationTraceLabel: translationTrace.length ? translationTrace.join(' | ') : 'n/a'
+  };
 }
 
 export function sourceLabel(source) {
@@ -98,7 +198,10 @@ export function buildPublicArtworkRationaleFacts(art = {}) {
   const source = asObject(art);
   const rationale = asObject(source.rationale);
   const selection = asObject(rationale.selection);
-  const intent = asObject(firstPresent(rationale.intent, source.artFramework?.intent));
+  const rationaleIntent = asObject(rationale.intent);
+  const frameworkIntent = asObject(source.artFramework?.intent);
+  const legacyIntent = hasLegacyIntent(rationaleIntent) || hasLegacyIntent(frameworkIntent);
+  const intent = hasLegacyIntent(rationaleIntent) ? rationaleIntent : hasLegacyIntent(frameworkIntent) ? frameworkIntent : {};
   const inspiration = asObject(source.inspiration);
   const styleCard = asObject(inspiration.styleCard);
   const priorityTerms = Array.isArray(selection.priorityTerms)
@@ -115,6 +218,7 @@ export function buildPublicArtworkRationaleFacts(art = {}) {
     .join(' · ') || 'default';
 
   return {
+    legacyIntent,
     signal: normalizedText(intent.signal, 'Translate top headline signal into abstract form.'),
     emotion: normalizedText(intent.emotion, 'Measured tension.'),
     tension: normalizedText(intent.tension, 'n/a'),
@@ -124,7 +228,8 @@ export function buildPublicArtworkRationaleFacts(art = {}) {
     selectionRationale: normalizedText(selection.whyHeadline, 'Top-ranked daily headline.'),
     signalTerms: priorityTerms,
     signalTermsLabel: priorityTerms.length ? priorityTerms.join(', ') : 'none',
-    visualMapping
+    visualMapping,
+    creativeBrief: buildCreativeBriefFacts({ source, mappings })
   };
 }
 

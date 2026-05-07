@@ -580,6 +580,41 @@ body[data-view-mode='story'] .meta {
   font-size: 0.75rem;
 }
 
+.palette-swatches {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  vertical-align: middle;
+}
+
+.palette-swatch {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.32rem;
+  color: rgba(247, 253, 255, 0.76);
+}
+
+.palette-swatch-color {
+  width: 0.75rem;
+  height: 0.75rem;
+  flex: 0 0 0.75rem;
+  border: 1px solid rgba(247, 253, 255, 0.52);
+  box-shadow: 0 0 0 1px rgba(5, 10, 18, 0.22);
+}
+
+.meta-list {
+  margin: 0.38rem 0 0;
+  padding-left: 1.12rem;
+}
+
+.meta-list li {
+  margin: 0 0 0.38rem;
+}
+
+.meta-list li span {
+  display: block;
+}
+
 .archive-note {
   margin: var(--space-1) 0 var(--space-2);
   color: var(--muted);
