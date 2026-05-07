@@ -1,10 +1,10 @@
 import * as THREE from 'three';
 import { hslStringToColor } from './utils.js';
 import { createShaderMaterialWithOverride } from './shader-overrides.js';
+import { createShaderFamilyCatalog } from './shader-family-catalog.js';
 import {
   isFiniteVector,
-  resolveRuntimePosition,
-  resolveRuntimeScale
+  resolveRuntimeTransformFacts
 } from './element-params.js';
 
 const HAZE_VERTEX = `
@@ -152,12 +152,14 @@ void main() {
 }
 `;
 
-function resolvePlanePosition({ params = {}, primitive = {}, fallback = [0, 0, 0] }) {
-  return resolveRuntimePosition({ primitive, params, fallback });
-}
-
-function resolvePlaneScale({ params = {}, primitive = {}, fallback = [1, 1, 1] }) {
-  return resolveRuntimeScale({ primitive, params, fallback, numericScaleMode: 'preserve-z' });
+function resolvePlaneTransform({ params = {}, primitive = {}, fallbackPosition = [0, 0, 0], fallbackScale = [1, 1, 1] } = {}) {
+  return resolveRuntimeTransformFacts({
+    primitive,
+    params,
+    fallbackPosition,
+    fallbackScale,
+    numericScaleMode: 'preserve-z'
+  });
 }
 
 function createShaderFieldPlane({ primitive, sceneCfg }) {
@@ -189,11 +191,10 @@ function createShaderFieldPlane({ primitive, sceneCfg }) {
 
   const mesh = new THREE.Mesh(geometry, material);
   mesh.frustumCulled = false;
-  const position = resolvePlanePosition({ params, primitive, fallback: [0, 0, -1.8] });
-  mesh.position.set(position[0], position[1], position[2]);
-  const scale = resolvePlaneScale({ params, primitive, fallback: [1, 1, 1] });
-  mesh.scale.set(scale[0], scale[1], scale[2]);
-  const rotationZ = Number(params.rotationZ ?? primitive.rotationZ ?? 0);
+  const transform = resolvePlaneTransform({ params, primitive, fallbackPosition: [0, 0, -1.8], fallbackScale: [1, 1, 1] });
+  mesh.position.set(transform.position[0], transform.position[1], transform.position[2]);
+  mesh.scale.set(transform.scale[0], transform.scale[1], transform.scale[2]);
+  const rotationZ = transform.rotationZ;
   if (Number.isFinite(rotationZ)) mesh.rotation.z = rotationZ;
   return { obj: mesh, uniforms };
 }
@@ -254,11 +255,10 @@ function createVolumetricHaze({ primitive, sceneCfg }) {
 
   const mesh = new THREE.Mesh(geometry, material);
   mesh.frustumCulled = false;
-  const position = resolvePlanePosition({ params, primitive, fallback: [0, 0, -4.2] });
-  mesh.position.set(position[0], position[1], position[2]);
-  const scale = resolvePlaneScale({ params, primitive, fallback: [1, 1, 1] });
-  mesh.scale.set(scale[0], scale[1], scale[2]);
-  const rotationZ = Number(params.rotationZ ?? primitive.rotationZ ?? 0);
+  const transform = resolvePlaneTransform({ params, primitive, fallbackPosition: [0, 0, -4.2], fallbackScale: [1, 1, 1] });
+  mesh.position.set(transform.position[0], transform.position[1], transform.position[2]);
+  mesh.scale.set(transform.scale[0], transform.scale[1], transform.scale[2]);
+  const rotationZ = transform.rotationZ;
   if (Number.isFinite(rotationZ)) mesh.rotation.z = rotationZ;
   return { obj: mesh, uniforms };
 }
@@ -338,10 +338,10 @@ function createAnchorCore({ primitive, sceneCfg }) {
   ring.scale.setScalar(scale * 1.04);
   group.add(ring);
 
-  const position = resolvePlanePosition({ params, primitive, fallback: [sceneCfg.anchorOffsetX ?? 0, 0, 0] });
-  group.position.set(position[0], position[1], position[2]);
+  const transform = resolvePlaneTransform({ params, primitive, fallbackPosition: [sceneCfg.anchorOffsetX ?? 0, 0, 0], fallbackScale: [1, 1, 1] });
+  group.position.set(transform.position[0], transform.position[1], transform.position[2]);
   group.scale.setScalar(Number(params.scale ?? primitive.scale ?? 1) * scale);
-  const rotationZ = Number(params.rotationZ ?? primitive.rotationZ ?? 0);
+  const rotationZ = transform.rotationZ;
   if (Number.isFinite(rotationZ)) group.rotation.z = rotationZ;
   group.traverse((child) => {
     child.frustumCulled = false;
@@ -364,14 +364,14 @@ function createAgentShaderPlane({ primitive, sceneCfg }) {
     }
   });
 
-  const scale = resolvePlaneScale({ params, primitive, fallback: [1, 1, 1] });
+  const scale = resolvePlaneTransform({ params, primitive, fallbackPosition: [0, 0, 0], fallbackScale: [1, 1, 1] }).scale;
   out.obj.scale.set(
     Math.max(0.2, Math.min(6, scale[0] || 1)),
     Math.max(0.2, Math.min(6, scale[1] || 1)),
     scale[2] || 1
   );
 
-  const position = resolvePlanePosition({ params, primitive, fallback: [0, 0, out.obj.position.z ?? -1.8] });
+  const position = resolvePlaneTransform({ params, primitive, fallbackPosition: [0, 0, out.obj.position.z ?? -1.8], fallbackScale: [1, 1, 1] }).position;
   out.obj.position.set(position[0], position[1], position[2]);
 
   const rotationZ = Number(params.rotationZ ?? 0);
@@ -380,10 +380,24 @@ function createAgentShaderPlane({ primitive, sceneCfg }) {
   return out;
 }
 
-export const builders = {
+const shaderFactories = {
   'shader-field-plane': ({ primitive, sceneCfg }) => createShaderFieldPlane({ primitive, sceneCfg }),
   'flow-noise-slab': ({ primitive, sceneCfg }) => createFlowNoiseSlab({ primitive, sceneCfg }),
   'volumetric-haze': ({ primitive, sceneCfg }) => createVolumetricHaze({ primitive, sceneCfg }),
   'anchor-core': ({ primitive, sceneCfg }) => createAnchorCore({ primitive, sceneCfg }),
   'agent-shader-plane': ({ primitive, sceneCfg }) => createAgentShaderPlane({ primitive, sceneCfg })
 };
+
+export const shaderFamilyCatalog = createShaderFamilyCatalog({
+  factories: shaderFactories
+});
+
+export const { builders } = shaderFamilyCatalog;
+
+export function buildRuntimeModule(moduleType, args) {
+  return shaderFamilyCatalog.buildRuntimeModule(moduleType, args);
+}
+
+export function buildShaderModule(moduleType, args) {
+  return shaderFamilyCatalog.buildShaderModule(moduleType, args);
+}

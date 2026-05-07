@@ -1,4 +1,8 @@
 import { isObject } from './runtime-utils.js';
+import {
+  resolveRuntimePosition,
+  resolveRuntimeScale
+} from '../../primitives/element-params.js';
 
 export function normalizeVector3(value, fallback = [0, 0, 0]) {
   if (Array.isArray(value) && value.length === 3 && value.every(Number.isFinite)) {
@@ -18,11 +22,31 @@ export function resolveLegacyPosition(params = {}, target) {
     ? params.defaultPosition
     : [target.position.x, target.position.y, target.position.z];
 
-  return [
-    Number(params.offsetX ?? legacyOffset?.[0] ?? fallbackPosition[0]),
-    Number(params.offsetY ?? legacyOffset?.[1] ?? fallbackPosition[1]),
-    Number(params.offsetZ ?? params.z ?? legacyOffset?.[2] ?? fallbackPosition[2])
-  ];
+  return resolveRuntimePosition({
+    primitive: {
+      offset: legacyOffset || params.offset,
+      offsetX: params.offsetX,
+      offsetY: params.offsetY,
+      offsetZ: params.offsetZ,
+      z: params.z
+    },
+    params: {},
+    fallback: fallbackPosition
+  });
+}
+
+export function resolveLegacyScale(params = {}, target) {
+  const fallbackScale = [target.scale.x, target.scale.y, target.scale.z];
+  return resolveRuntimeScale({
+    primitive: {
+      scaleX: params.scaleX,
+      scaleY: params.scaleY,
+      scaleZ: params.scaleZ
+    },
+    params: {},
+    fallback: fallbackScale,
+    numericScaleMode: 'uniform'
+  });
 }
 
 export function applyTransform(target, params = {}) {
@@ -31,7 +55,7 @@ export function applyTransform(target, params = {}) {
   const scaleRaw = params.scale;
   const scale = typeof scaleRaw === 'number'
     ? [scaleRaw, scaleRaw, scaleRaw]
-    : normalizeVector3(scaleRaw, [target.scale.x, target.scale.y, target.scale.z]);
+    : normalizeVector3(scaleRaw, resolveLegacyScale(params, target));
 
   target.position.set(position[0], position[1], position[2]);
   target.rotation.set(rotation[0], rotation[1], rotation[2]);
@@ -41,14 +65,24 @@ export function applyTransform(target, params = {}) {
 /** @param {any} options */
 export function buildTransformParams({ params = {}, primitive = {}, dsl = {}, defaultPosition = [0, 0, 0], defaultRotation = [0, 0, 0], defaultScale = 1 }) {
   const explicitPosition = params.position || primitive?.position || dsl.position;
+  const explicitScale = params.scale || primitive?.scale || dsl.scale;
+  const hasAxisScale = params.scaleX !== undefined
+    || params.scaleY !== undefined
+    || params.scaleZ !== undefined
+    || primitive?.scaleX !== undefined
+    || primitive?.scaleY !== undefined
+    || primitive?.scaleZ !== undefined;
   return {
     position: explicitPosition,
     rotation: params.rotation || primitive?.rotation || dsl.rotation || defaultRotation,
-    scale: params.scale || primitive?.scale || dsl.scale || defaultScale,
+    scale: explicitScale || (hasAxisScale ? undefined : defaultScale),
     offset: params.offset || primitive?.offset,
     offsetX: params.offsetX ?? primitive?.offsetX,
     offsetY: params.offsetY ?? primitive?.offsetY,
     offsetZ: params.offsetZ ?? primitive?.offsetZ,
+    scaleX: params.scaleX ?? primitive?.scaleX,
+    scaleY: params.scaleY ?? primitive?.scaleY,
+    scaleZ: params.scaleZ ?? primitive?.scaleZ,
     z: params.z ?? primitive?.z,
     defaultPosition
   };

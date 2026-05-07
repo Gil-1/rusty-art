@@ -1,41 +1,77 @@
-export function createCaptureStateController({ captureMode = false, body = document.body, target = globalThis } = {}) {
+import {
+  CAPTURE_READINESS_GLOBAL,
+  CAPTURE_READINESS_REFRESH_GLOBAL,
+  CAPTURE_CANVAS_ID,
+  CAPTURE_READY_DATASET_KEY,
+  CAPTURE_READY_DATASET_VALUES,
+  applyCaptureReadinessPatch,
+  attachCaptureReadinessSnapshot,
+  collectCaptureCanvasReadinessFacts,
+  createCaptureReadinessState,
+  isCaptureReadinessReady
+} from './contracts/capture-readiness-contract.js';
+
+function resolveDocument({ body = null, target = null, documentRef = null } = {}) {
+  if (documentRef) return documentRef;
+  if (body?.ownerDocument) return body.ownerDocument;
+  if (target?.document) return target.document;
+  return typeof document !== 'undefined' ? document : null;
+}
+
+export function createCaptureStateController({
+  captureMode = false,
+  body = typeof document !== 'undefined' ? document.body : null,
+  target = globalThis,
+  documentRef = null,
+  canvas = null,
+  canvasId = CAPTURE_CANVAS_ID
+} = {}) {
   let state = null;
+  const effectiveDocument = resolveDocument({ body, target, documentRef });
+
+  function collectCanvasFacts() {
+    return collectCaptureCanvasReadinessFacts({
+      documentRef: effectiveDocument,
+      canvas,
+      canvasId
+    });
+  }
+
+  function publish() {
+    if (!state) return null;
+    state = attachCaptureReadinessSnapshot(state, {
+      canvasFacts: collectCanvasFacts()
+    });
+    target[CAPTURE_READINESS_GLOBAL] = state;
+    target[CAPTURE_READINESS_REFRESH_GLOBAL] = refresh;
+    if (captureMode && body?.dataset) {
+      body.dataset[CAPTURE_READY_DATASET_KEY] = isCaptureReadinessReady(state)
+        ? CAPTURE_READY_DATASET_VALUES.ready
+        : CAPTURE_READY_DATASET_VALUES.pending;
+    }
+    return state.readinessDecision;
+  }
+
+  function refresh() {
+    return publish();
+  }
 
   function reset() {
-    if (!captureMode) return;
-    state = {
-      startedAt: new Date().toISOString(),
-      updatedAt: new Date().toISOString(),
-      captureMode: true,
-      manifestLoaded: false,
-      manifestCount: 0,
-      artworkLoaded: false,
-      artworkId: null,
-      sceneInitialized: false,
-      sceneInitError: null,
-      sceneAssemblyReport: null,
-      renderReady: false,
-      error: null
-    };
-    target.__RUSTY_CAPTURE_STATE = state;
-    body.dataset.captureReady = '0';
+    state = createCaptureReadinessState({ captureMode });
+    publish();
   }
 
   function update(patch = {}) {
-    if (!captureMode || !state) return;
-    state = {
-      ...state,
-      ...patch,
-      updatedAt: new Date().toISOString()
-    };
-    target.__RUSTY_CAPTURE_STATE = state;
-    if (state.renderReady) {
-      body.dataset.captureReady = '1';
+    if (!state) {
+      state = createCaptureReadinessState({ captureMode });
     }
+    state = applyCaptureReadinessPatch(state, patch).state;
+    publish();
   }
 
   return {
     reset,
-    update
+    update,
+    refresh
   };
 }

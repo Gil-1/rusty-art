@@ -1,0 +1,1198 @@
+{
+  "id": "2026-05-07-resonance-live-regering-trump-haalt-v3",
+  "date": "2026-05-07",
+  "title": "Resonance: LIVE Regering Trump haalt",
+  "generatedAt": "2026-05-07T06:50:41.328Z",
+  "news": {
+    "source": "nieuwsblad",
+    "title": "LIVE VS. Regering-Trump haalt uit naar Europa in nieuw terrorismebeleid",
+    "link": "https://www.nieuwsblad.be/buitenland/live-vs.-regering-trump-haalt-uit-naar-europa-in-nieuw-terrorismebeleid/27528053.html",
+    "score": 77.173
+  },
+  "inspiration": {
+    "artist": "Arshile Gorky",
+    "tags": [
+      "abstract",
+      "expressionist"
+    ],
+    "links": {
+      "wikipedia": "https://en.wikipedia.org/wiki/Arshile_Gorky",
+      "reference": "https://en.wikipedia.org/wiki/Arshile_Gorky"
+    }
+  },
+  "seed": 1577985569,
+  "scene": {
+    "motif": "flow",
+    "shapeCount": 92,
+    "turbulence": 0.446,
+    "spiralBias": 0.928,
+    "motionSpeed": 0.001782,
+    "bloom": 0.12,
+    "grain": 0.034,
+    "fogDensity": 0.053,
+    "distortion": 0.22,
+    "flowField": 0.42,
+    "anchorStrength": 0.619,
+    "anchorOffsetX": 0.012,
+    "layerBalance": {
+      "structure": 0.69,
+      "chaos": 0.377
+    },
+    "expression": {
+      "tension": 0.31,
+      "structure": 0.704,
+      "motion": 0.753,
+      "noise": 0.304,
+      "urgency": 0.911,
+      "contrast": 0.41
+    },
+    "palette": {
+      "bg": "#d8d7c8",
+      "primary": "#275b86",
+      "secondary": "#6b5aa6",
+      "glow": "#5fc4c8",
+      "anchor": "#d65a3d"
+    },
+    "elements": [
+      {
+        "id": "dry-void-ground",
+        "moduleType": "cm.gorky-wash-field.v1",
+        "capabilities": [],
+        "stackFamilies": [],
+        "styleTags": [],
+        "libraryRef": null,
+        "width": 7.4,
+        "height": 5.4,
+        "grain": 0.12,
+        "washScale": 2.2,
+        "color": "bg",
+        "opacity": 0.88,
+        "intensity": 0.62,
+        "scenePurpose": "Create the quiet public void that makes the lower anchor and narrow release legible.",
+        "expectedRead": "dry stained canvas-paper",
+        "mustNotReadAs": [
+          "empty black stage",
+          "flat UI background"
+        ],
+        "animation": {
+          "pulse": 0.02,
+          "wobbleX": 0.015,
+          "wobbleY": 0.015,
+          "drift": 0.04
+        },
+        "scaleX": 1.54,
+        "scaleY": 1.62,
+        "rotationZ": 0,
+        "offsetX": 0,
+        "offsetY": 0,
+        "techniqueRef": "wash-field",
+        "role": "structural-spine",
+        "layer": "background",
+        "motif": "flow",
+        "intentCadence": "measured"
+      },
+      {
+        "id": "low-left-membrane",
+        "moduleType": "cm.gorky-biomorphic-comb.v1",
+        "capabilities": [],
+        "stackFamilies": [],
+        "styleTags": [],
+        "libraryRef": null,
+        "position": [
+          -0.92,
+          -0.45,
+          0.1
+        ],
+        "scale": [
+          0.82,
+          0.82,
+          1
+        ],
+        "color": "primary",
+        "opacity": 0.72,
+        "intensity": 0.58,
+        "scenePurpose": "Concentrate the emotional weight of the scene as a bounded vulnerable form displaced from center.",
+        "expectedRead": "low blue-violet organism under public pressure",
+        "mustNotReadAs": [
+          "cropped logo",
+          "landmass",
+          "animal"
+        ],
+        "animation": {
+          "pulse": 0.09,
+          "wobbleX": 0.06,
+          "wobbleY": 0.05,
+          "drift": 0.1
+        },
+        "techniqueRef": "biomorphic-anchor",
+        "role": "focal-anchor",
+        "layer": "midground",
+        "motif": "flow",
+        "intentCadence": "measured"
+      },
+      {
+        "id": "right-policy-pressure",
+        "moduleType": "cm.paper-pressure-rake.v1",
+        "capabilities": [],
+        "stackFamilies": [],
+        "styleTags": [],
+        "libraryRef": null,
+        "position": [
+          1.68,
+          -0.22,
+          0.11
+        ],
+        "scale": [
+          0.76,
+          0.76,
+          1
+        ],
+        "count": 7,
+        "color": "anchor",
+        "opacity": 0.44,
+        "intensity": 0.5,
+        "scenePurpose": "Push into the image from the right as a formal pressure, not a rupture or icon.",
+        "expectedRead": "coral policy pressure held at the edge",
+        "mustNotReadAs": [
+          "crack",
+          "slash",
+          "banner"
+        ],
+        "animation": {
+          "pulse": 0.15,
+          "wobbleX": 0.04,
+          "wobbleY": 0.03,
+          "drift": 0.06
+        },
+        "techniqueRef": "biomorphic-anchor",
+        "role": "primary-signal",
+        "layer": "midground",
+        "motif": "flow",
+        "intentCadence": "measured"
+      },
+      {
+        "id": "narrow-release-line",
+        "moduleType": "cm.gorky-tendril-paths.v1",
+        "capabilities": [],
+        "stackFamilies": [],
+        "styleTags": [],
+        "libraryRef": null,
+        "count": 2,
+        "thickness": 0.016,
+        "emphasis": "upper-cyan-release",
+        "color": "glow",
+        "opacity": 0.62,
+        "intensity": 0.48,
+        "scenePurpose": "Provide the constitution's narrow release valve as a thin path above the pressure zone.",
+        "expectedRead": "single cyan diplomatic release line",
+        "mustNotReadAs": [
+          "laser",
+          "orbit trail",
+          "decorative flourish"
+        ],
+        "animation": {
+          "pulse": 0.05,
+          "wobbleX": 0.1,
+          "wobbleY": 0.06,
+          "drift": 0.14
+        },
+        "techniqueRef": "negotiation-lines",
+        "role": "accent-gesture",
+        "layer": "foreground",
+        "motif": "flow",
+        "intentCadence": "measured"
+      },
+      {
+        "id": "loop-background-field",
+        "moduleType": "shader-field-plane",
+        "capabilities": [
+          "fluid-drift",
+          "layered-field"
+        ],
+        "stackFamilies": [
+          "shader-field",
+          "post-heavy",
+          "sdf-raymarch"
+        ],
+        "styleTags": [
+          "shader",
+          "field"
+        ],
+        "libraryRef": "element.shader-field-plane.v1",
+        "color": "secondary",
+        "opacity": 0.24,
+        "intensity": 0.34,
+        "layer": "background",
+        "radialBias": 0.52,
+        "hemisphereContrast": 0.38,
+        "role": "atmosphere-field",
+        "motif": "flow",
+        "intentCadence": "measured"
+      }
+    ],
+    "shaderLayers": 4,
+    "elementDiversity": 5,
+    "paletteVariance": 0,
+    "motionSpeedNormalized": 0.811,
+    "camera": {
+      "autoRotate": false,
+      "autoRotateSpeed": 0.155,
+      "minDistance": 6,
+      "maxDistance": 24,
+      "cycleSeconds": 24,
+      "beats": [
+        {
+          "t": 0,
+          "radius": 12.504,
+          "theta": 0.143,
+          "phi": 1.226,
+          "hold": 1.064
+        },
+        {
+          "t": 0.34,
+          "radius": 10.636,
+          "theta": 1.016,
+          "phi": 1.031,
+          "hold": 0.514
+        },
+        {
+          "t": 0.68,
+          "radius": 11.248,
+          "theta": 1.807,
+          "phi": 1.307,
+          "hold": 0.86
+        },
+        {
+          "t": 1,
+          "radius": 12.28,
+          "theta": 2.373,
+          "phi": 1.121,
+          "hold": 1.136
+        }
+      ],
+      "target": [
+        0,
+        0,
+        0
+      ]
+    },
+    "post": {
+      "vignette": 0.12,
+      "contrast": 1.14,
+      "saturation": 0.96,
+      "exposure": 0.94,
+      "breathing": {
+        "hueShift": 0.027,
+        "saturationAmplitude": 0.067,
+        "exposureAmplitude": 0.054,
+        "phaseA": 0.2,
+        "phaseB": 0.841
+      }
+    },
+    "styleFingerprint": {
+      "pulseFamily": "musical",
+      "stripeWarp": 0.2,
+      "edgeSoftness": 0.22,
+      "cameraSway": 0.18,
+      "edgeHardness": 0.5,
+      "temperatureBias": 0,
+      "verticalBias": 0,
+      "cadenceBias": 0
+    },
+    "sceneAuthoring": {
+      "mode": "agent-dsl",
+      "planner": "openclaw-agent-scene-planner",
+      "representation": {
+        "id": "rep.thin-release-valve",
+        "label": "Thin Release Valve",
+        "description": "A calmer, more diagrammatic Gorky translation: the main membrane is held low and left, while a narrow cyan release path opens above the coral pressure.",
+        "scoreHint": 0.69,
+        "motif": "flow",
+        "cadence": "measured",
+        "scenePrompt": "Measured abstract expressionist paper field, low-left blue-violet biomorphic membrane, coral right-side pressure bars, one narrow cyan release line above, spare contour drawing, restrained public tension.",
+        "colorMood": "muted paper, deep blue and violet, one cyan relief thread, coral pressure",
+        "spatialIntent": "asymmetric frontal canvas with strong negative space above and a small release corridor",
+        "imageAuthorship": {
+          "structuralLaw": "A compact lower membrane carries the weight; pressure approaches from the right, and only one thin upper line offers release.",
+          "dominantForms": [
+            "low-left blue membrane",
+            "coral pressure comb",
+            "single cyan upper path",
+            "spare black contour",
+            "pale washed void"
+          ],
+          "edgeBehavior": "Edges alternate between soft pigment boundaries and incisive drawn lines.",
+          "surfaceBehavior": "The ground is dry, matte, and lightly stained, with color pooling around the lower anchor.",
+          "depthLogic": "The negative space stays behind everything; pressure bars sit in the midground; release and contour lines pass in front.",
+          "motionLogic": "Pressure pulses slowly while the release line drifts in a narrow arc, never widening into escape.",
+          "forbiddenDrift": [
+            "do not make the release a glowing portal",
+            "do not center all forms",
+            "do not fill the void with decorative marks",
+            "do not make pressure marks look like a fault-line rupture"
+          ]
+        },
+        "technicalTranslation": {
+          "realizationStrategy": "Use the same custom wash, membrane, pressure rake, and tendril path modules, but reposition them into a sparse asymmetric layout with lower intensity and fewer visual events.",
+          "reuseBias": "hybrid",
+          "whyThisApproach": "The concept is a compositional variant of the same image constitution, so reuse of the custom vocabulary preserves coherence while changing the emotional read.",
+          "notes": [
+            "Reduce saturation and bloom to keep the piece sober.",
+            "Use only one clearly legible cyan release path.",
+            "Keep the lower-left anchor inside the frame with generous margins."
+          ],
+          "motionCadence": "measured"
+        },
+        "mustShow": [
+          "low-left bounded biomorphic membrane",
+          "right-side coral pressure marks",
+          "one narrow cyan release path",
+          "spare black contour lines",
+          "large matte negative space"
+        ],
+        "mustAvoid": [
+          "centered altar composition",
+          "busy all-over pattern",
+          "literal terrorism imagery",
+          "bright bloom-heavy glow"
+        ],
+        "reviewFocus": [
+          "Is the release valve visible but narrow?",
+          "Does the asymmetry feel intentional?",
+          "Are the pressure and release readable as one composition?"
+        ],
+        "artistTechniqueObservations": {
+          "medium": null,
+          "primaryTechnique": null,
+          "markMakingTraits": [],
+          "surfaceQualities": [],
+          "paletteTendencies": [
+            "dominant hues: blue-cyan, blue, violet"
+          ],
+          "spatialHabits": []
+        },
+        "rationale": {
+          "newsTranslation": "The headline's policy escalation becomes an asymmetrical pressure system with only a narrow diplomatic release.",
+          "artistTranslation": "The sparse void and biomorphic contour maintain a Gorky-derived painterly logic without copying a single work."
+        },
+        "techniques": [
+          {
+            "id": "wash-field",
+            "name": "dry matte wash",
+            "type": "shader",
+            "purpose": "provide a restrained paper void around the lower anchor",
+            "reuseModuleType": null,
+            "params": {
+              "grain": 0.12,
+              "washScale": 2.2
+            }
+          },
+          {
+            "id": "biomorphic-anchor",
+            "name": "low-left membrane",
+            "type": "geometry",
+            "purpose": "hold the visual gravity away from center",
+            "reuseModuleType": null,
+            "params": {
+              "scale": 0.8,
+              "opacity": 0.72
+            }
+          },
+          {
+            "id": "negotiation-lines",
+            "name": "single release contour",
+            "type": "geometry",
+            "purpose": "show the only narrow release from the pressure field",
+            "reuseModuleType": null,
+            "params": {
+              "paths": 2,
+              "thickness": 0.016
+            }
+          }
+        ]
+      },
+      "artisticIntent": {
+        "statement": "A non-literal response to a transatlantic policy strike: Europe is not shown as a map or target, but as a suspended blue-violet organism pressed by a foreign red-orange nerve, held inside Gorky-like biomorphic tension.",
+        "motif": "flowing biomorphic pressure, a cock-comb-like seal, and diplomatic tendrils that alm",
+        "emotionalArc": "measured unease begins as a cool painterly field, tightens into public pressure around a fleshy central sign, then releases only through thin wandering lines at the edge.",
+        "compositionLogic": "A frontal painted surface carries layered blue, cyan, and violet washes. The focal anchor sits slightly high and left of center as bounded organic lobes and ringed membranes. A warm policy-pressure tendril enters from the right but never becomes a literal weap",
+        "imagePrompt": "A full-frame abstract painting surface inspired by Arshile Gorky's biomorphic abstraction: blue-cyan and violet washes, pale painterly ground, suspended organic lobes, a cock-comb-like central membrane, thin black and coral wandering contour lines, restrained red-orange pressure entering from the right, no text, no fla"
+      },
+      "executionPlan": {
+        "palette": {
+          "bg": "#d8d7c8",
+          "primary": "#275b86",
+          "secondary": "#6b5aa6",
+          "glow": "#5fc4c8",
+          "anchor": "#d65a3d"
+        },
+        "camera": {
+          "autoRotate": false,
+          "cycleSeconds": 24,
+          "target": [
+            0,
+            0,
+            0
+          ],
+          "frontal": true,
+          "preservePerspective": true
+        },
+        "post": {
+          "contrast": 1.08,
+          "saturation": 0.96,
+          "vignette": 0.12,
+          "exposure": 0.94
+        },
+        "global": {
+          "shapeCountHint": 92,
+          "flowField": 0.42,
+          "distortion": 0.22,
+          "bloom": 0.12
+        },
+        "techniques": [
+          {
+            "id": "wash-field",
+            "name": "matte blue-violet wash",
+            "type": "shader",
+            "purpose": "hold the entire render as a painted surface rather than a stage or portal",
+            "reuseModuleType": null,
+            "params": {
+              "grain": 0.18,
+              "washScale": 2.6,
+              "edgeDarkening": 0.08
+            }
+          },
+          {
+            "id": "biomorphic-anchor",
+            "name": "bounded cock-comb membrane",
+            "type": "geometry",
+            "purpose": "create the main Gorky-derived focal organism carrying the political pressure without illustration",
+            "reuseModuleType": null,
+            "params": {
+              "width": 2.2,
+              "height": 1.35,
+              "lobes": 7,
+              "lineWeight": 0.035
+            }
+          },
+          {
+            "id": "negotiation-lines",
+            "name": "wandering diplomatic tendrils",
+            "type": "geometry",
+            "purpose": "make public policy tension read as looping contour and recoil instead of literal conflict",
+            "reuseModuleType": null,
+            "params": {
+              "paths": 9,
+              "thickness": 0.018,
+              "drift": 0.16
+            }
+          }
+        ]
+      },
+      "moduleOverrides": [],
+      "customModules": [
+        {
+          "id": "cm.gorky-wash-field.v1",
+          "family": "shader",
+          "kind": "dsl",
+          "allowOverride": false,
+          "seedPolicy": "deterministic",
+          "paramsSchema": {
+            "width": "number",
+            "height": "number",
+            "opacity": "number",
+            "grain": "number",
+            "washScale": "number"
+          },
+          "source": {
+            "dsl": {
+              "width": 7.2,
+              "height": 5.2,
+              "opacity": 0.92,
+              "position": [
+                0,
+                0,
+                -0.16
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "blend": "normal"
+            },
+            "glsl": {
+              "vertex": "varying vec2 vUv;\nvoid main(){\n vUv=uv;\n gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0);\n}",
+              "fragment": "precision mediump float;\nvarying vec2 vUv;\nuniform float uTime;\nfloat hash(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453123);}\nfloat noise(vec2 p){vec2 i=floor(p);vec2 f=fract(p);vec2 u=f*f*(3.0-2.0*f);return mix(mix(hash(i),hash(i+vec2(1.0,0.0)),u.x),mix(hash(i+vec2(0.0,1.0)),hash(i+vec2(1.0,1.0)),u.x),u.y);}\nvoid main(){\n vec2 p=vUv*2.0-1.0;\n float n=noise(vUv*8.0)+0.5*noise(vUv*19.0);\n float wash=sin((p.x*1.4+p.y*0.9+n*0.9)*3.14159)*0.5+0.5;\n vec3 paper=vec3(0.84,0.83,0.76);\n vec3 cyan=vec3(0.22,0.62,0.72);\n vec3 blue=vec3(0.13,0.32,0.50);\n vec3 violet=vec3(0.42,0.34,0.64);\n vec3 col=mix(paper,cyan,0.22+0.18*wash);\n col=mix(col,blue,smoothstep(-0.4,0.9,p.x+p.y*0.25)*0.22);\n col=mix(col,violet,smoothstep(0.1,1.0,-p.x+p.y*0.55)*0.20);\n col+=vec3((n-0.75)*0.055);\n float edge=smoothstep(0.72,1.35,length(p));\n col=mix(col,col*0.88,edge*0.28);\n gl_FragColor=vec4(col,0.92);\n}"
+            },
+            "js": null
+          },
+          "budgets": {
+            "maxInstances": 1,
+            "maxShaderOpsHint": 0.82,
+            "mobileSafe": true
+          }
+        },
+        {
+          "id": "cm.gorky-biomorphic-comb.v1",
+          "family": "geometry",
+          "kind": "dsl",
+          "allowOverride": false,
+          "seedPolicy": "deterministic",
+          "paramsSchema": {
+            "lobes": "number",
+            "width": "number",
+            "height": "number",
+            "opacity": "number"
+          },
+          "source": {
+            "dsl": {
+              "geometry": {
+                "type": "group",
+                "children": [
+                  {
+                    "type": "ellipse",
+                    "position": [
+                      -0.42,
+                      0.08,
+                      0
+                    ],
+                    "width": 1.25,
+                    "height": 0.78,
+                    "rotation": [
+                      0,
+                      0,
+                      -0.18
+                    ],
+                    "color": "#275b86",
+                    "opacity": 0.68
+                  },
+                  {
+                    "type": "ellipse",
+                    "position": [
+                      0.18,
+                      0.2,
+                      0.02
+                    ],
+                    "width": 1.05,
+                    "height": 1.25,
+                    "rotation": [
+                      0,
+                      0,
+                      0.28
+                    ],
+                    "color": "#6b5aa6",
+                    "opacity": 0.58
+                  },
+                  {
+                    "type": "ellipse-ring",
+                    "position": [
+                      0.02,
+                      0.12,
+                      0.04
+                    ],
+                    "width": 1.92,
+                    "height": 1.22,
+                    "rotation": [
+                      0,
+                      0,
+                      0.08
+                    ],
+                    "color": "#d65a3d",
+                    "opacity": 0.78,
+                    "thickness": 0.055
+                  },
+                  {
+                    "type": "ellipse-ring",
+                    "position": [
+                      0.5,
+                      0,
+                      0.06
+                    ],
+                    "width": 0.62,
+                    "height": 0.92,
+                    "rotation": [
+                      0,
+                      0,
+                      -0.34
+                    ],
+                    "color": "#1b2630",
+                    "opacity": 0.52,
+                    "thickness": 0.032
+                  }
+                ]
+              },
+              "position": [
+                -0.28,
+                0.2,
+                0.12
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "opacity": 0.82,
+              "blend": "normal"
+            },
+            "glsl": {},
+            "js": null
+          },
+          "budgets": {
+            "maxInstances": 24,
+            "maxShaderOpsHint": 0.2,
+            "mobileSafe": true
+          }
+        },
+        {
+          "id": "cm.gorky-tendril-paths.v1",
+          "family": "geometry",
+          "kind": "dsl",
+          "allowOverride": true,
+          "seedPolicy": "deterministic",
+          "paramsSchema": {
+            "count": "number",
+            "thickness": "number",
+            "spread": "number",
+            "opacity": "number"
+          },
+          "source": {
+            "dsl": {
+              "geometry": {
+                "type": "group",
+                "children": [
+                  {
+                    "type": "tube-path",
+                    "points": [
+                      [
+                        -2.6,
+                        -0.35,
+                        0
+                      ],
+                      [
+                        -1.55,
+                        0.28,
+                        0
+                      ],
+                      [
+                        -0.48,
+                        0.1,
+                        0
+                      ],
+                      [
+                        0.42,
+                        0.62,
+                        0
+                      ],
+                      [
+                        1.42,
+                        0.18,
+                        0
+                      ]
+                    ],
+                    "width": 0.018,
+                    "color": "#1b2630",
+                    "opacity": 0.74
+                  },
+                  {
+                    "type": "tube-path",
+                    "points": [
+                      [
+                        2.75,
+                        0.45,
+                        0
+                      ],
+                      [
+                        1.72,
+                        0.33,
+                        0
+                      ],
+                      [
+                        0.88,
+                        0.08,
+                        0
+                      ],
+                      [
+                        0.28,
+                        -0.28,
+                        0
+                      ]
+                    ],
+                    "width": 0.028,
+                    "color": "#d65a3d",
+                    "opacity": 0.8
+                  },
+                  {
+                    "type": "tube-path",
+                    "points": [
+                      [
+                        -1.9,
+                        1.25,
+                        0
+                      ],
+                      [
+                        -0.9,
+                        0.94,
+                        0
+                      ],
+                      [
+                        -0.12,
+                        1.02,
+                        0
+                      ],
+                      [
+                        0.85,
+                        0.74,
+                        0
+                      ]
+                    ],
+                    "width": 0.014,
+                    "color": "#5fc4c8",
+                    "opacity": 0.58
+                  },
+                  {
+                    "type": "tube-path",
+                    "points": [
+                      [
+                        -1.4,
+                        -1.05,
+                        0
+                      ],
+                      [
+                        -0.62,
+                        -0.68,
+                        0
+                      ],
+                      [
+                        0.08,
+                        -0.82,
+                        0
+                      ],
+                      [
+                        0.96,
+                        -0.54,
+                        0
+                      ],
+                      [
+                        1.78,
+                        -0.78,
+                        0
+                      ]
+                    ],
+                    "width": 0.016,
+                    "color": "#275b86",
+                    "opacity": 0.62
+                  }
+                ]
+              },
+              "position": [
+                0,
+                0,
+                0.18
+              ],
+              "opacity": 0.86,
+              "blend": "normal"
+            },
+            "glsl": {},
+            "js": null
+          },
+          "budgets": {
+            "maxInstances": 80,
+            "maxShaderOpsHint": 0.18,
+            "mobileSafe": true
+          }
+        },
+        {
+          "id": "cm.paper-pressure-rake.v1",
+          "family": "geometry",
+          "kind": "dsl",
+          "allowOverride": true,
+          "seedPolicy": "deterministic",
+          "paramsSchema": {
+            "count": "number",
+            "width": "number",
+            "height": "number",
+            "opacity": "number"
+          },
+          "source": {
+            "dsl": {
+              "geometry": {
+                "type": "stacked-rects",
+                "count": 9,
+                "width": 0.08,
+                "height": 1.45,
+                "spread": [
+                  0.18,
+                  0.08,
+                  0
+                ],
+                "rotation": [
+                  0,
+                  0,
+                  -0.22
+                ],
+                "color": "#d65a3d",
+                "opacity": 0.42
+              },
+              "position": [
+                1.82,
+                0.08,
+                0.09
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "opacity": 0.48,
+              "blend": "normal"
+            },
+            "glsl": {},
+            "js": null
+          },
+          "budgets": {
+            "maxInstances": 40,
+            "maxShaderOpsHint": 0.12,
+            "mobileSafe": true
+          }
+        }
+      ],
+      "policyPasses": {
+        "advisoryOnly": true,
+        "skipped": [
+          "focal-hierarchy",
+          "envelope-clamp",
+          "composition-plan",
+          "artist-visual-profile",
+          "scene-element-module-enforcement",
+          "stack-pipeline-apply",
+          "gap-focused-pass",
+          "artist-hard-constraints"
+        ]
+      }
+    },
+    "seedVersion": 2,
+    "seeds": {
+      "baseSeed": 2654634520,
+      "runSeed": 1577985569,
+      "geomSeed": 606839715,
+      "animSeed": 245380506,
+      "colorSeed": 3053025618,
+      "cameraSeed": 3287438356
+    },
+    "techStack": {
+      "id": "shader-field-balanced",
+      "name": "Shader Field Layering",
+      "family": "shader-field",
+      "strategyFamilies": [
+        "flow",
+        "hybrid",
+        "orbits"
+      ],
+      "rationale": {
+        "source": "loop-adjustment-alternate-stack",
+        "score": 3.2,
+        "penalties": []
+      },
+      "dominantPrimitive": "cm.gorky-wash-field.v1",
+      "moduleSet": [
+        "cm.gorky-wash-field.v1",
+        "cm.gorky-biomorphic-comb.v1",
+        "cm.paper-pressure-rake.v1",
+        "cm.gorky-tendril-paths.v1",
+        "shader-field-plane"
+      ],
+      "pipelineKind": "shader-field"
+    },
+    "renderPipeline": {
+      "kind": "shader-field",
+      "family": "shader-field",
+      "fallback": false,
+      "advisoryOnly": true,
+      "dominantPrimitive": "cm.gorky-wash-field.v1",
+      "moduleSet": [
+        "cm.gorky-wash-field.v1",
+        "cm.gorky-biomorphic-comb.v1",
+        "cm.paper-pressure-rake.v1",
+        "cm.gorky-tendril-paths.v1",
+        "shader-field-plane"
+      ]
+    },
+    "customModuleReport": {
+      "requested": 4,
+      "accepted": [
+        {
+          "id": "cm.gorky-wash-field.v1",
+          "family": "shader",
+          "kind": "dsl",
+          "fingerprint": "4b0c7c90",
+          "budgets": {
+            "maxInstances": 1,
+            "maxShaderOpsHint": 0.82,
+            "mobileSafe": true
+          }
+        },
+        {
+          "id": "cm.gorky-biomorphic-comb.v1",
+          "family": "geometry",
+          "kind": "dsl",
+          "fingerprint": "4014e2d5",
+          "budgets": {
+            "maxInstances": 24,
+            "maxShaderOpsHint": 0.2,
+            "mobileSafe": true
+          }
+        },
+        {
+          "id": "cm.gorky-tendril-paths.v1",
+          "family": "geometry",
+          "kind": "dsl",
+          "fingerprint": "f25ae971",
+          "budgets": {
+            "maxInstances": 80,
+            "maxShaderOpsHint": 0.18,
+            "mobileSafe": true
+          }
+        },
+        {
+          "id": "cm.paper-pressure-rake.v1",
+          "family": "geometry",
+          "kind": "dsl",
+          "fingerprint": "e85ace29",
+          "budgets": {
+            "maxInstances": 40,
+            "maxShaderOpsHint": 0.12,
+            "mobileSafe": true
+          }
+        }
+      ],
+      "rejected": [],
+      "moduleOverrideCount": 0,
+      "overrideErrors": [],
+      "diagnostics": []
+    }
+  },
+  "sceneStrategy": {
+    "selected": {
+      "id": "atomic-balanced-flow",
+      "name": "Balanced Flow Field",
+      "type": "atomic",
+      "family": "flow"
+    },
+    "applied": false,
+    "fallbackReason": "agent-authored-scene-elements"
+  },
+  "techStack": {
+    "id": "shader-field-balanced",
+    "name": "Shader Field Layering",
+    "family": "shader-field"
+  },
+  "newsVisualMappings": [
+    {
+      "signal": "title evidence [live, regering, trump, haalt] -> motif flow",
+      "from": "live, regering, trump, haalt",
+      "visualDecision": "structural motif armature set to flow"
+    },
+    {
+      "signal": "composition foreground conflict",
+      "from": "live, regering, trump, haalt",
+      "visualDecision": "foreground role tension-knot at pressure 0.18"
+    },
+    {
+      "signal": "composition midground context",
+      "from": "live, regering, trump, haalt",
+      "visualDecision": "midground role context-drift with density 0.338"
+    },
+    {
+      "signal": "composition background mood",
+      "from": "live, regering, trump, haalt",
+      "visualDecision": "background mood watchful depth 0.317"
+    },
+    {
+      "signal": "urgency -> motion",
+      "from": "ageHours=2.48",
+      "visualDecision": "motionSpeedNormalized=0.811"
+    },
+    {
+      "signal": "title semantics -> palette/edge cadence",
+      "from": "temp=0 edge=0.5",
+      "visualDecision": "postContrast=1.14 accentType=cm.gorky-tendril-paths.v1"
+    },
+    {
+      "signal": "article institutional/conflict polarity",
+      "from": "live, regering, trump, haalt",
+      "visualDecision": "accent element cm.gorky-tendril-paths.v1 with opacity 0.62"
+    },
+    {
+      "signal": "artist research context Arshile Gorky",
+      "from": "tags abstract, expressionist",
+      "visualDecision": "artist profile captured as metadata only; no technical routing applied"
+    }
+  ],
+  "qualityScore": {
+    "score": 52.8,
+    "summary": "Alignment 68.0 with strongest channel emotional.",
+    "heuristic": {
+      "score": 68.3,
+      "breakdown": {
+        "legibility": 73.6,
+        "emotionalReadability": 67.8,
+        "coherence": 90.6,
+        "focalAnchor": 69.4,
+        "technicalRichness": 95.9,
+        "restraint": 77.8,
+        "alignment": 68
+      }
+    },
+    "calibration": {
+      "sampleCount": 1,
+      "trustWeight": 0.4
+    },
+    "alignment": {
+      "totalAlign": 68,
+      "components": {
+        "title": {
+          "score": 63.3
+        },
+        "style": {
+          "score": 67.4
+        },
+        "emotional": {
+          "score": 73.6
+        }
+      }
+    }
+  },
+  "rationale": {
+    "intent": {
+      "signal": null,
+      "emotion": null,
+      "tension": null,
+      "balance": null,
+      "motion": null
+    },
+    "selection": {
+      "whyHeadline": "Selected as top-ranked Belgian headline (score 77.173 = frequency 74 + priority 0 + recency 3.173).",
+      "priorityTerms": []
+    },
+    "qualitySummary": "TOTAL_ALIGN 68.0."
+  },
+  "runPolicy": {
+    "artworksPerRun": 1,
+    "multiVariant": false
+  },
+  "artFramework": {
+    "version": 3,
+    "intent": {
+      "statement": "LIVE VS. Regering-Trump haalt uit naar Europa in nieuw terrorismebeleid translated through Arshile Gorky's visual language as a non-literal image.",
+      "coreImpulse": "Arshile Gorky was an Armenian-American painter who had a seminal influence on Abstract Expressionism. The Liver Is the Cock's Comb (painting by Gorky) Arshile Gorky (born April 15, 1904, The suffering and loss he experienced in the Armenian genocide had crucial influence on Gorky's development as an artist. Along with Mark Rothko, Jackson Pollock and Willem de Kooning, Gorky has been hailed as one of the most powerful American painters of the 20th century.",
+      "artistTranslationLogic": [
+        "Keep The Liver Is the Cock's Comb (painting by Gorky) Arshile Gorky (born April 15, 1904, as the dominant image rule before adding spectacle or atmospheric effects.",
+        "Make Arshile Gorky was an Armenian-American painter who had a seminal influence on Abstract Expressionism. legible as a compositional driver rather than a decorative afterthought.",
+        "Translate Arshile Gorky was an Armenian-American painter who had a seminal influence on Abstract Expressionism. The Liver Is the Cock's Comb (painting by Gorky) Arshile Gorky (born April 15, 1904, Along with Mark Rothko, Jackson Pollock and Willem de Kooning, Gorky has been hailed as one of the most powerful American painters of the 20th century. Abstract Expressionism summary - Britannica Abstract Expressionism, Movement in US painting that began in the late 1940s. The suffering and loss he experienced in the Armenian genocide had crucial influence on Gorky's development as an artist. into readable render behavior so the result still feels made, not merely simulated.",
+        "Preserve Arshile Gorky was an Armenian-American painter who had a seminal influence on Abstract Expressionism. The Liver Is the Cock's Comb (painting by Gorky) Arshile Gorky (born April 15, 1904, Along with Mark Rothko, Jackson Pollock and Willem de Kooning, Gorky has been hailed as one of the most powerful American painters of the 20th century. Abstract Expressionism summary - Britannica Abstract Expressionism, Movement in US painting that began in the late 1940s. The suffering and loss he experienced in the Armenian genocide had crucial influence on Gorky's development as an artist. so the final scene follows the artist's spatial habits instead of drifting into a generic environment."
+      ],
+      "emotionalClimate": {
+        "summary": "Arshile Gorky was an Armenian-American painter who had a seminal influence on Abstract Expressionism. The Liver Is the Cock's Comb (painting by Gorky) Arshile Gorky (born April 15, 1904, The suffering and loss he experienced in the Armenian genocide had crucial influence on Gorky's development as an artist. Along with Mark Rothko, Jackson Pollock and Willem de Kooning, Gorky has been hailed as one of the most powerful American painters of the 20th century.",
+        "pressure": "rising",
+        "pace": "measured",
+        "socialReach": "public"
+      },
+      "visualGravity": {
+        "anchor": "high-contrast foreground focal anchor",
+        "dominantStructure": "Arshile Gorky was an Armenian-American painter who had a seminal influence on Abstract Expressionism. The Liver Is the Cock's Comb (painting by Gorky) Arshile Gorky (born April 15, 1904, The suffering and loss he experienced in the Armenian genocide had crucial influence on Gorky's development as an artist. Along with Mark Rothko, Jackson Pollock and Willem de Kooning, Gorky has been hailed as one of the most powerful American painters of the 20th century.",
+        "scaleBehavior": "Arshile Gorky was an Armenian-American painter who had a seminal influence on Abstract Expressionism. The Liver Is the Cock's Comb (painting by Gorky) Arshile Gorky (born April 15, 1904, Along with Mark Rothko, Jackson Pollock and Willem de Kooning, Gorky has been hailed as one of the most powerful American painters of the 20th century. Abstract Expressionism summary - Britannica Abstract Expressionism, Movement in US painting that began in the late 1940s. The suffering and loss he experienced in the Armenian genocide had crucial influence on Gorky's development as an artist."
+      },
+      "materialLogic": {
+        "surfaceBehavior": [
+          "Arshile Gorky was an Armenian-American painter who had a seminal influence on Abstract Expressionism. The Liver Is the Cock's Comb (painting by Gorky) Arshile Gorky (born April 15, 1904, Along with Mark Rothko, Jackson Pollock and Willem de Kooning, Gorky has been hailed as one of the most powerful American painters of the 20th century. Abstract Expressionism summary - Britannica Abstract Expressionism, Movement in US painting that began in the late 1940s. The suffering and loss he experienced in the Armenian genocide had crucial influence on Gorky's development as an artist."
+        ],
+        "spatialHabits": [
+          "Arshile Gorky was an Armenian-American painter who had a seminal influence on Abstract Expressionism. The Liver Is the Cock's Comb (painting by Gorky) Arshile Gorky (born April 15, 1904, Along with Mark Rothko, Jackson Pollock and Willem de Kooning, Gorky has been hailed as one of the most powerful American painters of the 20th century. Abstract Expressionism summary - Britannica Abstract Expressionism, Movement in US painting that began in the late 1940s. The suffering and loss he experienced in the Armenian genocide had crucial influence on Gorky's development as an artist."
+        ],
+        "handling": "Arshile Gorky was an Armenian-American painter who had a seminal influence on Abstract Expressionism. The Liver Is the Cock's Comb (painting by Gorky) Arshile Gorky (born April 15, 1904, Along with Mark Rothko, Jackson Pollock and Willem de Kooning, Gorky has been hailed as one of the most powerful American painters of the 20th century. Abstract Expressionism summary - Britannica Abstract Expressionism, Movement in US painting that began in the late 1940s. The suffering and loss he experienced in the Armenian genocide had crucial influence on Gorky's development as an artist."
+      },
+      "colorField": {
+        "paletteSignals": [
+          "Arshile Gorky was an Armenian-American painter who had a seminal influence on Abstract Expressionism. The Liver Is the Cock's Comb (painting by Gorky) Arshile Gorky (born April 15, 1904, Along with Mark Rothko, Jackson Pollock and Willem de Kooning, Gorky has been hailed as one of the most powerful American painters of the 20th century. Abstract Expressionism summary - Britannica Abstract Expressionism, Movement in US painting that began in the late 1940s. The suffering and loss he experienced in the Armenian genocide had crucial influence on Gorky's development as an artist."
+        ],
+        "contrastMode": "measured contrast with restrained vibration"
+      },
+      "symbolicDensity": {
+        "primaryMotif": "flow",
+        "motifVocabulary": [
+          "Arshile Gorky was an Armenian-American painter who had a seminal influence on Abstract Expressionism.",
+          "The Liver Is the Cock's Comb (painting by Gorky) Arshile Gorky (born April 15, 1904,",
+          "Along with Mark Rothko, Jackson Pollock and Willem de Kooning, Gorky has been hailed as one of the most powerful American painters of the 20th century.",
+          "The suffering and loss he experienced in the Armenian genocide had crucial influence on Gorky's development as an artist."
+        ],
+        "literalness": "non-literal"
+      },
+      "tensionEngine": {
+        "conflictAxis": "Orient Trump",
+        "escalationMode": "The Liver Is the Cock's Comb (painting by Gorky) Arshile Gorky (born April 15, 1904,",
+        "releaseValve": "Allow only a narrow zone of release."
+      },
+      "audiencePosition": {
+        "stance": "The Liver Is the Cock's Comb (painting by Gorky) Arshile Gorky (born April 15, 1904, Arshile Gorky was an Armenian-American painter who had a seminal influence on Abstract Expressionism. Arshile Gorky was an Armenian-American painter who had a seminal influence on Abstract Expressionism. Arshile Gorky was an Armenian-American painter who had a seminal influence on Abstract Expressionism.",
+        "distance": "immersed but not illustrative"
+      },
+      "controlVsAccident": {
+        "balance": "controlled with selective instability",
+        "motionTemperament": "steady",
+        "accidentRole": "use drift or fracture sparingly to keep the field alive"
+      },
+      "antiDriftRules": [
+        "Avoid scenes that read primarily as technical HUDs, wireframe chambers, data dashboards, or generic sci-fi corridors.",
+        "Avoid deep-space spectacle or camera-tour environments if the artist brief points toward planar, symbolic, or bounded image logic.",
+        "Avoid decorative particles unless they reinforce a motif, hierarchy, or compositional axis from the artist brief.",
+        "Do not collapse into biography summary, symbolic cliché, or generic procedural spectacle."
+      ],
+      "finalCompression": "Arshile Gorky was an Armenian-American painter who had a seminal influence on Abstract Expressionism. The Liver Is the Cock's Comb (painting by Gorky) Arshile Gorky (born April 15, 1904, The suffering and loss he experienced in the Armenian genocide had crucial influence on Gorky's development as an artist. Along with Mark Rothko, Jackson Pollock and Willem de Kooning, Gorky has been hailed as one of the most powerful American painters of the 20th century. Arshile Gorky was an Armenian-American painter who had a seminal influence on Abstract Expressionism. The Liver Is the Cock's Comb (painting by Gorky) Arshile Gorky (born April 15, 1904, The suffering and loss he experienced in the Armenian genocide had crucial influence on Gorky's development as an artist. Along with Mark Rothko, Jackson Pollock and Willem de Kooning, Gorky has been hailed as one of the most powerful American painters of the 20th century. Arshile Gorky was an Armenian-American painter who had a seminal influence on Abstract Expressionism. The Liver Is the Cock's Comb (painting by Gorky) Arshile Gorky (born April 15, 1904, Along with Mark Rothko, Jackson Pollock and Willem de Kooning, Gorky has been hailed as one of the most powerful American painters of the 20th century. Abstract Expressionism summary - Britannica Abstract Expressionism, Movement in US painting that began in the late 1940s. The suffering and loss he experienced in the Armenian genocide had crucial influence on Gorky's development as an artist.",
+      "artistAnchors": {
+        "formalLogic": [
+          "The Liver Is the Cock's Comb (painting by Gorky) Arshile Gorky (born April 15, 1904,"
+        ],
+        "motifVocabulary": [
+          "Arshile Gorky was an Armenian-American painter who had a seminal influence on Abstract Expressionism.",
+          "The Liver Is the Cock's Comb (painting by Gorky) Arshile Gorky (born April 15, 1904,",
+          "Along with Mark Rothko, Jackson Pollock and Willem de Kooning, Gorky has been hailed as one of the most powerful American painters of the 20th century.",
+          "The suffering and loss he experienced in the Armenian genocide had crucial influence on Gorky's development as an artist."
+        ],
+        "compositionCues": [
+          "Arshile Gorky was an Armenian-American painter who had a seminal influence on Abstract Expressionism. The Liver Is the Cock's Comb (painting by Gorky) Arshile Gorky (born April 15, 1904, The suffering and loss he experienced in the Armenian genocide had crucial influence on Gorky's development as an artist. Along with Mark Rothko, Jackson Pollock and Willem de Kooning, Gorky has been hailed as one of the most powerful American painters of the 20th century."
+        ],
+        "paletteSignals": [
+          "Arshile Gorky was an Armenian-American painter who had a seminal influence on Abstract Expressionism. The Liver Is the Cock's Comb (painting by Gorky) Arshile Gorky (born April 15, 1904, Along with Mark Rothko, Jackson Pollock and Willem de Kooning, Gorky has been hailed as one of the most powerful American painters of the 20th century. Abstract Expressionism summary - Britannica Abstract Expressionism, Movement in US painting that began in the late 1940s. The suffering and loss he experienced in the Armenian genocide had crucial influence on Gorky's development as an artist."
+        ],
+        "surfaceBehavior": [
+          "Arshile Gorky was an Armenian-American painter who had a seminal influence on Abstract Expressionism. The Liver Is the Cock's Comb (painting by Gorky) Arshile Gorky (born April 15, 1904, Along with Mark Rothko, Jackson Pollock and Willem de Kooning, Gorky has been hailed as one of the most powerful American painters of the 20th century. Abstract Expressionism summary - Britannica Abstract Expressionism, Movement in US painting that began in the late 1940s. The suffering and loss he experienced in the Armenian genocide had crucial influence on Gorky's development as an artist."
+        ],
+        "spatialHabits": [
+          "Arshile Gorky was an Armenian-American painter who had a seminal influence on Abstract Expressionism. The Liver Is the Cock's Comb (painting by Gorky) Arshile Gorky (born April 15, 1904, Along with Mark Rothko, Jackson Pollock and Willem de Kooning, Gorky has been hailed as one of the most powerful American painters of the 20th century. Abstract Expressionism summary - Britannica Abstract Expressionism, Movement in US painting that began in the late 1940s. The suffering and loss he experienced in the Armenian genocide had crucial influence on Gorky's development as an artist."
+        ],
+        "translationDirectives": [
+          "Keep The Liver Is the Cock's Comb (painting by Gorky) Arshile Gorky (born April 15, 1904, as the dominant image rule before adding spectacle or atmospheric effects.",
+          "Make Arshile Gorky was an Armenian-American painter who had a seminal influence on Abstract Expressionism. legible as a compositional driver rather than a decorative afterthought.",
+          "Translate Arshile Gorky was an Armenian-American painter who had a seminal influence on Abstract Expressionism. The Liver Is the Cock's Comb (painting by Gorky) Arshile Gorky (born April 15, 1904, Along with Mark Rothko, Jackson Pollock and Willem de Kooning, Gorky has been hailed as one of the most powerful American painters of the 20th century. Abstract Expressionism summary - Britannica Abstract Expressionism, Movement in US painting that began in the late 1940s. The suffering and loss he experienced in the Armenian genocide had crucial influence on Gorky's development as an artist. into readable render behavior so the result still feels made, not merely simulated.",
+          "Preserve Arshile Gorky was an Armenian-American painter who had a seminal influence on Abstract Expressionism. The Liver Is the Cock's Comb (painting by Gorky) Arshile Gorky (born April 15, 1904, Along with Mark Rothko, Jackson Pollock and Willem de Kooning, Gorky has been hailed as one of the most powerful American painters of the 20th century. Abstract Expressionism summary - Britannica Abstract Expressionism, Movement in US painting that began in the late 1940s. The suffering and loss he experienced in the Armenian genocide had crucial influence on Gorky's development as an artist. so the final scene follows the artist's spatial habits instead of drifting into a generic environment."
+        ]
+      },
+      "threeJsFreedomEnvelope": [
+        "Use any Three.js technique family that preserves Arshile Gorky's formal logic before spectacle.",
+        "Prefer readable symbolic structure, motif hierarchy, and painterly field behavior over generic procedural environment tricks.",
+        "Three.js should be a translation layer for the artist brief, not a reason to abandon the brief."
+      ],
+      "avoidSignals": [
+        "Avoid scenes that read primarily as technical HUDs, wireframe chambers, data dashboards, or generic sci-fi corridors.",
+        "Avoid deep-space spectacle or camera-tour environments if the artist brief points toward planar, symbolic, or bounded image logic.",
+        "Avoid decorative particles unless they reinforce a motif, hierarchy, or compositional axis from the artist brief."
+      ],
+      "threeJsTranslationExamples": [
+        "Build the image around Arshile Gorky was an Armenian-American painter who had a seminal influence on Abstract Expressionism., treating Arshile Gorky was an Armenian-American painter who had a seminal influence on Abstract Expressionism. The Liver Is the Cock's Comb (painting by Gorky) Arshile Gorky (born April 15, 1904, The suffering and loss he experienced in the Armenian genocide had crucial influence on Gorky's development as an artist. Along with Mark Rothko, Jackson Pollock and Willem de Kooning, Gorky has been hailed as one of the most powerful American painters of the 20th century. as the primary structure instead of a deep explorable environment.",
+        "Translate Arshile Gorky was an Armenian-American painter who had a seminal influence on Abstract Expressionism. The Liver Is the Cock's Comb (painting by Gorky) Arshile Gorky (born April 15, 1904, Along with Mark Rothko, Jackson Pollock and Willem de Kooning, Gorky has been hailed as one of the most powerful American painters of the 20th century. Abstract Expressionism summary - Britannica Abstract Expressionism, Movement in US painting that began in the late 1940s. The suffering and loss he experienced in the Armenian genocide had crucial influence on Gorky's development as an artist. into a coherent image field so the result feels painterly and symbolic rather than like a technical monitor or demo graph.",
+        "Let any motion or transformation arise from compositional pressure, reveal, drift, or restraint so the real-time system serves Arshile Gorky was an Armenian-American painter who had a seminal influence on Abstract Expressionism. The Liver Is the Cock's Comb (painting by Gorky) Arshile Gorky (born April 15, 1904, The suffering and loss he experienced in the Armenian genocide had crucial influence on Gorky's development as an artist. Along with Mark Rothko, Jackson Pollock and Willem de Kooning, Gorky has been hailed as one of the most powerful American painters of the 20th century.."
+      ]
+    }
+  }
+}

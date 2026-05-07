@@ -1,82 +1,22 @@
 import { createPublicArchiveRequestSession } from './public-archive-request-session.js';
+import {
+  buildPublicArchiveReadModel,
+  normalizeManifestFromArtwork,
+  normalizeManifestOrdering,
+  PUBLIC_ARCHIVE_PRESENTATION_ORDER,
+  PUBLIC_ARCHIVE_STORAGE_ORDER,
+  resolveLatestPointer
+} from './contracts/public-archive-read-model.js';
 
-export const PUBLIC_ARCHIVE_STORAGE_ORDER = 'newest-first';
-export const PUBLIC_ARCHIVE_PRESENTATION_ORDER = 'oldest-first';
-
-export function normalizeManifestFromArtwork(art, file) {
-  return {
-    version: 1,
-    generatedAt: art?.generatedAt || new Date().toISOString(),
-    latestId: art?.id || 'latest',
-    total: 1,
-    items: [
-      {
-        id: art?.id || 'latest',
-        date: art?.date || 'Unknown date',
-        title: art?.title || 'Untitled piece',
-        artist: art?.inspiration?.artist || 'Unknown artist',
-        newsTitle: art?.news?.title || 'headline unavailable',
-        source: art?.news?.source || 'unknown',
-        file
-      }
-    ]
-  };
-}
-
-export function normalizeManifestOrdering(manifest) {
-  if (!manifest || !Array.isArray(manifest.items)) return manifest;
-  const storageOrder = manifest.storageOrder || PUBLIC_ARCHIVE_STORAGE_ORDER;
-  const presentationItems = storageOrder === PUBLIC_ARCHIVE_PRESENTATION_ORDER
-    ? manifest.items.slice()
-    : manifest.items.slice().reverse();
-  return {
-    ...manifest,
-    storageOrder,
-    presentationOrder: PUBLIC_ARCHIVE_PRESENTATION_ORDER,
-    items: presentationItems
-  };
-}
-
-export function resolveLatestPointer(latest = null, manifest = null) {
-  const latestId = latest?.latestId || latest?.id || manifest?.latestId || null;
-  const latestFile = latest?.latestFile || latest?.file || null;
-  const activeLatestIndex = Array.isArray(manifest?.items)
-    ? manifest.items.findIndex((item) => item?.id === latestId || (latestFile && item?.file === latestFile))
-    : -1;
-
-  return {
-    latestId,
-    latestFile,
-    generatedAt: latest?.generatedAt || null,
-    activeLatestIndex
-  };
-}
-
-export function buildPublicArchiveReadModel({ manifest, latest = null, fallback = false, fallbackReason = null, diagnostics = [] } = {}) {
-  const normalizedManifest = normalizeManifestOrdering(manifest);
-  const latestPointer = resolveLatestPointer(latest, normalizedManifest);
-  const effectiveLatestId = latestPointer.latestId || normalizedManifest?.latestId || null;
-  const activeLatestIndex = latestPointer.activeLatestIndex >= 0
-    ? latestPointer.activeLatestIndex
-    : (Array.isArray(normalizedManifest?.items)
-      ? normalizedManifest.items.findIndex((item) => item?.id === effectiveLatestId)
-      : -1);
-
-  return {
-    manifest: normalizedManifest ? {
-      ...normalizedManifest,
-      latestId: effectiveLatestId || normalizedManifest.latestId,
-      latestPointer,
-      activeLatestIndex,
-      diagnostics
-    } : normalizedManifest,
-    latestPointer,
-    activeLatestIndex,
-    fallback,
-    fallbackReason,
-    diagnostics
-  };
-}
+export {
+  buildLatestArtworkCandidates,
+  buildPublicArchiveReadModel,
+  normalizeManifestFromArtwork,
+  normalizeManifestOrdering,
+  PUBLIC_ARCHIVE_PRESENTATION_ORDER,
+  PUBLIC_ARCHIVE_STORAGE_ORDER,
+  resolveLatestPointer
+} from './contracts/public-archive-read-model.js';
 
 function resolveRequestSession({ requestSession, fetchJson, requestAdapter } = {}) {
   if (requestSession && typeof requestSession.requestJson === 'function') return requestSession;
@@ -208,3 +148,4 @@ export function createPublicArtworkFetcher({ fetchJson, requestAdapter, requestS
 }
 
 export { createPublicArchiveRequestSession };
+export { createArchiveArtworkRequestTransaction } from './public-archive-artwork-request-transaction.js';

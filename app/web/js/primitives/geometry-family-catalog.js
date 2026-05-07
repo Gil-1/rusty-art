@@ -3,7 +3,12 @@ export const BUILT_IN_GEOMETRY_MODULE_METADATA = Object.freeze([
   { moduleType: 'orbit-ribbon', family: 'geometry', role: 'ribbon' },
   { moduleType: 'shear-ribbon', family: 'geometry', role: 'ribbon' },
   { moduleType: 'drift-ribbon', family: 'geometry', role: 'ribbon' },
-  { moduleType: 'fault-line', family: 'geometry', role: 'line' },
+  {
+    moduleType: 'fault-line',
+    family: 'geometry',
+    role: 'line',
+    params: ['length', 'markLength', 'start', 'end', 'segment', 'width', 'markWidth', 'thickness', 'fractureAmount', 'rotationZ', 'boundedMark']
+  },
   { moduleType: 'signal-weave', family: 'geometry', role: 'line' },
   { moduleType: 'node-cluster', family: 'geometry', role: 'cluster' },
   { moduleType: 'kandinsky-burst', family: 'geometry', role: 'artist-motif' },
@@ -46,6 +51,11 @@ export function createGeometryFamilyCatalog({ factories = {}, wrapBuilder = (bui
     moduleTypes: BUILT_IN_GEOMETRY_MODULE_TYPES,
     byModuleType,
     builders,
+    buildRuntimeModule(moduleType, args) {
+      const entry = byModuleType.get(String(moduleType || '').trim());
+      if (!entry) return null;
+      return entry.builder(args);
+    },
     buildGeometryModule(moduleType, args) {
       const entry = byModuleType.get(String(moduleType || '').trim());
       if (!entry) return null;

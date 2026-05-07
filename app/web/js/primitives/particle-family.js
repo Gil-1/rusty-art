@@ -1,11 +1,11 @@
 import * as THREE from 'three';
 import { hashString, hslStringToColor, mulberry32, resolveBlend } from './utils.js';
 import { createShaderMaterialWithOverride } from './shader-overrides.js';
+import { createParticleFamilyCatalog } from './particle-family-catalog.js';
 import {
   resolveRuntimeCount,
-  resolveRuntimePosition,
-  resolveRuntimeScale,
-  resolveRuntimeSpreadVector
+  resolveRuntimeSpreadVector,
+  resolveRuntimeTransformFacts
 } from './element-params.js';
 
 const PARTICLE_VERTEX = `
@@ -120,11 +120,16 @@ function createShaderParticleCloud({ primitive, palette, seed, index, sceneCfg }
   const points = new THREE.Points(geometry, material);
   points.frustumCulled = false;
   const params = primitive?.params || {};
-  const position = resolveRuntimePosition({ primitive, params, fallback: [0, 0, 0] });
-  points.position.set(position[0], position[1], position[2]);
-  const scale = resolveRuntimeScale({ primitive, params, fallback: [1, 1, 1], numericScaleMode: 'preserve-z' });
-  points.scale.set(scale[0], scale[1], 1);
-  const rotationZ = Number(params.rotationZ ?? primitive.rotationZ ?? 0);
+  const transform = resolveRuntimeTransformFacts({
+    primitive,
+    params,
+    fallbackPosition: [0, 0, 0],
+    fallbackScale: [1, 1, 1],
+    numericScaleMode: 'preserve-z'
+  });
+  points.position.set(transform.position[0], transform.position[1], transform.position[2]);
+  points.scale.set(transform.scale[0], transform.scale[1], 1);
+  const rotationZ = transform.rotationZ;
   if (Number.isFinite(rotationZ)) points.rotation.z = rotationZ;
   return { obj: points, uniforms };
 }
@@ -175,7 +180,7 @@ function createAgentParticleSystem({ primitive, sceneCfg, seed, index }) {
   });
 }
 
-export const builders = {
+const particleFactories = {
   'particle-cloud': ({ primitive, sceneCfg, seed, index }) => (
     createShaderParticleCloud({ primitive, palette: sceneCfg.palette, seed, index, sceneCfg })
   ),
@@ -201,3 +206,17 @@ export const builders = {
     createAgentParticleSystem({ primitive, sceneCfg, seed, index })
   )
 };
+
+export const particleFamilyCatalog = createParticleFamilyCatalog({
+  factories: particleFactories
+});
+
+export const { builders } = particleFamilyCatalog;
+
+export function buildRuntimeModule(moduleType, args) {
+  return particleFamilyCatalog.buildRuntimeModule(moduleType, args);
+}
+
+export function buildParticleModule(moduleType, args) {
+  return particleFamilyCatalog.buildParticleModule(moduleType, args);
+}

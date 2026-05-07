@@ -1,6 +1,7 @@
 import * as THREE from 'three';
 import { hslStringToColor } from '../../primitives/utils.js';
 import { clamp } from './runtime-utils.js';
+import { buildStructuredGeometryPrimitiveObject } from './structured-geometry-registry.js';
 import {
   buildStructuredGeometryExecutionFacts,
   NO_DSL_VALUE,
@@ -90,83 +91,72 @@ function createFactMaterial(material = {}, context = {}) {
 }
 
 export function buildStructuredGeometryObjectFromFacts(facts = {}, context = {}) {
-  const geometry = facts.geometry || {};
-
-  if (geometry.kind === 'group') {
-    const group = new THREE.Group();
-    for (const child of Array.isArray(facts.children) ? facts.children : []) {
-      group.add(buildStructuredGeometryObjectFromFacts(child, context));
+  return buildStructuredGeometryPrimitiveObject({
+    facts,
+    context,
+    helpers: {
+      applyTransform: applyStructuredTransformFacts,
+      buildChildObject: buildStructuredGeometryObjectFromFacts,
+      createGroup: () => new THREE.Group(),
+      createEllipseRingObject(ringFact = {}, materialContext = {}) {
+        const ring = new THREE.Mesh(
+          createEllipseRingGeometry(ringFact.width, ringFact.height, ringFact.lineWidth, ringFact.segments),
+          createFactMaterial(ringFact.material, materialContext)
+        );
+        ring.rotation.z = ringFact.rotationZ;
+        ring.position.z = ringFact.positionZ;
+        return ring;
+      },
+      createRectObject(rectFact = {}, materialContext = {}) {
+        const mesh = new THREE.Mesh(
+          new THREE.PlaneGeometry(rectFact.width, rectFact.height, 1, 1),
+          createFactMaterial(rectFact.material, materialContext)
+        );
+        const position = Array.isArray(rectFact.position) ? rectFact.position : [0, 0, 0];
+        mesh.position.set(position[0], position[1], position[2]);
+        return mesh;
+      },
+      createTubePathObject(tubeFacts = {}, materialContext = {}) {
+        const geometry = tubeFacts.geometry || {};
+        const points = (Array.isArray(geometry.path) ? geometry.path : []).map((entry) => new THREE.Vector3(entry[0], entry[1], entry[2]));
+        const curvePoints = points.length >= 2 ? points : [new THREE.Vector3(-0.5, 0, 0), new THREE.Vector3(0.5, 0, 0)];
+        const curve = new THREE.CatmullRomCurve3(curvePoints, geometry.closed === true);
+        const mesh = new THREE.Mesh(
+          new THREE.TubeGeometry(curve, Math.max(32, points.length * 24), geometry.radius, geometry.radialSegments, geometry.closed === true),
+          createFactMaterial(geometry.material, materialContext)
+        );
+        applyStructuredTransformFacts(mesh, tubeFacts.transform);
+        return mesh;
+      },
+      createEllipseRingSingleObject(ellipseRingFacts = {}, materialContext = {}) {
+        const geometry = ellipseRingFacts.geometry || {};
+        const mesh = new THREE.Mesh(
+          createEllipseRingGeometry(geometry.width, geometry.height, geometry.lineWidth, 128),
+          createFactMaterial(geometry.material, materialContext)
+        );
+        applyStructuredTransformFacts(mesh, ellipseRingFacts.transform);
+        return mesh;
+      },
+      createPlaneRectObject(rectFacts = {}, materialContext = {}) {
+        const geometry = rectFacts.geometry || {};
+        const mesh = new THREE.Mesh(
+          new THREE.PlaneGeometry(geometry.width, geometry.height, 1, 1),
+          createFactMaterial(geometry.material, materialContext)
+        );
+        applyStructuredTransformFacts(mesh, rectFacts.transform);
+        return mesh;
+      },
+      createEllipseObject(ellipseFacts = {}, materialContext = {}) {
+        const geometry = ellipseFacts.geometry || {};
+        const mesh = new THREE.Mesh(
+          createEllipseShapeGeometry(geometry.width, geometry.height, 128),
+          createFactMaterial(geometry.material, materialContext)
+        );
+        applyStructuredTransformFacts(mesh, ellipseFacts.transform);
+        return mesh;
+      }
     }
-    applyStructuredTransformFacts(group, facts.transform);
-    return group;
-  }
-
-  if (geometry.kind === 'ellipse-rings') {
-    const group = new THREE.Group();
-    for (const ringFact of Array.isArray(geometry.rings) ? geometry.rings : []) {
-      const ring = new THREE.Mesh(
-        createEllipseRingGeometry(ringFact.width, ringFact.height, ringFact.lineWidth, ringFact.segments),
-        createFactMaterial(ringFact.material, context)
-      );
-      ring.rotation.z = ringFact.rotationZ;
-      ring.position.z = ringFact.positionZ;
-      group.add(ring);
-    }
-    applyStructuredTransformFacts(group, facts.transform);
-    return group;
-  }
-
-  if (geometry.kind === 'stacked-rects') {
-    const group = new THREE.Group();
-    for (const rectFact of Array.isArray(geometry.rects) ? geometry.rects : []) {
-      const mesh = new THREE.Mesh(
-        new THREE.PlaneGeometry(rectFact.width, rectFact.height, 1, 1),
-        createFactMaterial(rectFact.material, context)
-      );
-      const position = Array.isArray(rectFact.position) ? rectFact.position : [0, 0, 0];
-      mesh.position.set(position[0], position[1], position[2]);
-      group.add(mesh);
-    }
-    applyStructuredTransformFacts(group, facts.transform);
-    return group;
-  }
-
-  if (geometry.kind === 'tube-path') {
-    const points = (Array.isArray(geometry.path) ? geometry.path : []).map((entry) => new THREE.Vector3(entry[0], entry[1], entry[2]));
-    const curvePoints = points.length >= 2 ? points : [new THREE.Vector3(-0.5, 0, 0), new THREE.Vector3(0.5, 0, 0)];
-    const curve = new THREE.CatmullRomCurve3(curvePoints, geometry.closed === true);
-    const mesh = new THREE.Mesh(
-      new THREE.TubeGeometry(curve, Math.max(32, points.length * 24), geometry.radius, geometry.radialSegments, geometry.closed === true),
-      createFactMaterial(geometry.material, context)
-    );
-    applyStructuredTransformFacts(mesh, facts.transform);
-    return mesh;
-  }
-
-  if (geometry.kind === 'ellipse-ring') {
-    const mesh = new THREE.Mesh(
-      createEllipseRingGeometry(geometry.width, geometry.height, geometry.lineWidth, 128),
-      createFactMaterial(geometry.material, context)
-    );
-    applyStructuredTransformFacts(mesh, facts.transform);
-    return mesh;
-  }
-
-  if (geometry.kind === 'rect') {
-    const mesh = new THREE.Mesh(
-      new THREE.PlaneGeometry(geometry.width, geometry.height, 1, 1),
-      createFactMaterial(geometry.material, context)
-    );
-    applyStructuredTransformFacts(mesh, facts.transform);
-    return mesh;
-  }
-
-  const mesh = new THREE.Mesh(
-    createEllipseShapeGeometry(geometry.width, geometry.height, 128),
-    createFactMaterial(geometry.material, context)
-  );
-  applyStructuredTransformFacts(mesh, facts.transform);
-  return mesh;
+  });
 }
 
 export function buildStructuredGeometryNode(node = {}, context = {}) {

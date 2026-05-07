@@ -37,6 +37,29 @@ function resolveLegacyScale(primitive = {}, params = {}, fallback = [1, 1, 1]) {
   return resolveRuntimeScale({ primitive, params, fallback, numericScaleMode: 'uniform' });
 }
 
+function finiteNumber(value, fallback = null) {
+  const numeric = Number(value);
+  return Number.isFinite(numeric) ? numeric : fallback;
+}
+
+function clampNumber(value, min, max, fallback) {
+  const numeric = finiteNumber(value, fallback);
+  if (!Number.isFinite(numeric)) return fallback;
+  return Math.max(min, Math.min(max, numeric));
+}
+
+function resolveVector3(value) {
+  if (Array.isArray(value) && value.length >= 3) {
+    const out = value.slice(0, 3).map(Number);
+    return out.every(Number.isFinite) ? out : null;
+  }
+  if (value && typeof value === 'object' && !Array.isArray(value)) {
+    const out = [Number(value.x), Number(value.y), Number(value.z ?? 0)];
+    return out.every(Number.isFinite) ? out : null;
+  }
+  return null;
+}
+
 function createMotifArmature({ primitive, sceneCfg, seed }) {
   const motif = primitive.motif || sceneCfg.motif || 'flow';
   const color = sceneCfg.palette[primitive.color] || sceneCfg.palette.glow;
@@ -146,9 +169,80 @@ function createRibbon({ primitive, sceneCfg, style }) {
     Number(params.scaleY ?? primitive.scaleY ?? 1),
     1
   );
-  const rotationZ = Number(params.rotationZ ?? primitive.rotationZ ?? 0);
+  const rotationArray = Array.isArray(params.rotation)
+    ? params.rotation
+    : (Array.isArray(primitive.rotation) ? primitive.rotation : null);
+  const rotationZ = Number(params.rotationZ ?? primitive.rotationZ ?? rotationArray?.[2] ?? 0);
   if (Number.isFinite(rotationZ)) line.rotation.z = rotationZ;
   return line;
+}
+
+function resolveFaultLineSegment(primitive = {}, params = {}) {
+  const segment = Array.isArray(params.segment) && params.segment.length >= 2
+    ? { start: params.segment[0], end: params.segment[1] }
+    : (params.segment && typeof params.segment === 'object' && !Array.isArray(params.segment) ? params.segment : null);
+  const start = resolveVector3(params.start) || resolveVector3(segment?.start) || resolveVector3(primitive.start);
+  const end = resolveVector3(params.end) || resolveVector3(segment?.end) || resolveVector3(primitive.end);
+  return start && end ? { start, end } : null;
+}
+
+function resolveFaultLineLength(primitive = {}, params = {}) {
+  const size = Array.isArray(params.size) ? params.size : null;
+  return finiteNumber(
+    params.length
+      ?? params.markLength
+      ?? params.segmentLength
+      ?? params.boundedLength
+      ?? primitive.length
+      ?? primitive.markLength
+      ?? primitive.segmentLength
+      ?? primitive.boundedLength
+      ?? size?.[0],
+    null
+  );
+}
+
+function hasBoundedFaultLineIntent(primitive = {}, params = {}) {
+  if (resolveFaultLineSegment(primitive, params)) return true;
+  if (params.boundedMark === true || params.bounded === true || primitive.boundedMark === true || primitive.bounded === true) return true;
+  return resolveFaultLineLength(primitive, params) != null;
+}
+
+function buildBoundedFaultLinePoints({ primitive = {}, params = {}, intensity = 0.6 }) {
+  const length = clampNumber(resolveFaultLineLength(primitive, params), 0.08, 10, 2.4);
+  const markWidth = clampNumber(
+    params.markWidth
+      ?? params.thickness
+      ?? params.height
+      ?? params.width
+      ?? primitive.markWidth
+      ?? primitive.thickness
+      ?? primitive.height
+      ?? primitive.width,
+    0.01,
+    2.4,
+    0.14
+  );
+  const fractureAmount = clampNumber(
+    params.fractureAmount ?? params.fracture ?? params.jitter ?? primitive.fractureAmount ?? primitive.fracture ?? primitive.jitter,
+    0,
+    1,
+    0.16
+  );
+  const depth = clampNumber(params.depth ?? primitive.depth, 0, 1.5, markWidth * 0.42);
+  const points = [];
+
+  for (let i = 0; i < 18; i += 1) {
+    const t = i / 17;
+    const x = (t - 0.5) * length;
+    const alternating = i % 2 === 0 ? -1 : 1;
+    const y = alternating * markWidth * (0.34 + fractureAmount * 0.2 + (i % 3) * 0.035)
+      + Math.sin(t * Math.PI * 3.0) * markWidth * fractureAmount * 0.16;
+    const z = ((i % 4) - 1.5) * depth * (0.24 + intensity * 0.12);
+    points.push(new THREE.Vector3(x, y, z));
+  }
+
+  return points;
 }
 
 function createFaultLine({ primitive, sceneCfg }) {
@@ -158,33 +252,37 @@ function createFaultLine({ primitive, sceneCfg }) {
   const width = Math.max(0.02, Math.min(0.32, Number(params.width ?? primitive.width ?? 0.14) || 0.14));
   const jitter = Math.max(0.02, Math.min(0.6, Number(params.jitter ?? primitive.jitter ?? 0.14) || 0.14));
   const [offsetX, offsetY, offsetZ] = resolveLegacyPosition(primitive, params, [0, 0, 0]);
-  const rotationZ = Number(params.rotationZ ?? primitive.rotationZ ?? 0);
+  const rotationArray = Array.isArray(params.rotation)
+    ? params.rotation
+    : (Array.isArray(primitive.rotation) ? primitive.rotation : null);
+  const rotationZ = Number(params.rotationZ ?? primitive.rotationZ ?? rotationArray?.[2] ?? 0);
   const points = [];
-  const hasSegment = Array.isArray(primitive.start) && primitive.start.length === 3
-    && Array.isArray(primitive.end) && primitive.end.length === 3;
+  const segment = resolveFaultLineSegment(primitive, params);
 
-  for (let i = 0; i < 18; i += 1) {
-    if (hasSegment) {
-      const t = i / 17;
-      const start = primitive.start.map(Number);
-      const end = primitive.end.map(Number);
-      const centerX = THREE.MathUtils.lerp(start[0], end[0], t);
-      const centerY = THREE.MathUtils.lerp(start[1], end[1], t);
-      const centerZ = THREE.MathUtils.lerp(start[2], end[2], t);
-      const bend = Math.sin(t * Math.PI * 3.0) * (jitter * 0.38);
-      const flare = (i % 2 === 0 ? -1 : 1) * (width * 0.7 + intensity * 0.08);
-      points.push(new THREE.Vector3(
-        centerX + bend,
-        centerY + flare,
-        centerZ + ((i % 3) - 1) * (0.02 + jitter * 0.08)
-      ));
-      continue;
+  if (hasBoundedFaultLineIntent(primitive, params) && !segment) {
+    points.push(...buildBoundedFaultLinePoints({ primitive, params, intensity }));
+  } else {
+    for (let i = 0; i < 18; i += 1) {
+      if (segment) {
+        const t = i / 17;
+        const centerX = THREE.MathUtils.lerp(segment.start[0], segment.end[0], t);
+        const centerY = THREE.MathUtils.lerp(segment.start[1], segment.end[1], t);
+        const centerZ = THREE.MathUtils.lerp(segment.start[2], segment.end[2], t);
+        const bend = Math.sin(t * Math.PI * 3.0) * (jitter * 0.38);
+        const flare = (i % 2 === 0 ? -1 : 1) * (width * 0.7 + intensity * 0.08);
+        points.push(new THREE.Vector3(
+          centerX + bend,
+          centerY + flare,
+          centerZ + ((i % 3) - 1) * (0.02 + jitter * 0.08)
+        ));
+        continue;
+      }
+
+      const x = -5 + i * (10 / 17);
+      const y = (i % 2 === 0 ? -1 : 1) * (width + intensity * 0.54 + (i % 3) * jitter * 0.42);
+      const z = ((i % 4) - 1.5) * (0.08 + jitter * 0.7);
+      points.push(new THREE.Vector3(x, y, z));
     }
-
-    const x = -5 + i * (10 / 17);
-    const y = (i % 2 === 0 ? -1 : 1) * (width + intensity * 0.54 + (i % 3) * jitter * 0.42);
-    const z = ((i % 4) - 1.5) * (0.08 + jitter * 0.7);
-    points.push(new THREE.Vector3(x, y, z));
   }
 
   const line = new THREE.Line(
@@ -674,6 +772,10 @@ export const geometryFamilyCatalog = createGeometryFamilyCatalog({
 });
 
 export const { builders } = geometryFamilyCatalog;
+
+export function buildRuntimeModule(moduleType, args) {
+  return geometryFamilyCatalog.buildRuntimeModule(moduleType, args);
+}
 
 export function buildGeometryModule(moduleType, args) {
   return geometryFamilyCatalog.buildGeometryModule(moduleType, args);

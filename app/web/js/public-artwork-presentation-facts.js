@@ -1,3 +1,12 @@
+export {
+  PUBLIC_ARTWORK_HERO_FACT_FIELDS,
+  PUBLIC_ARTWORK_META_FACT_FIELDS,
+  PUBLIC_ARTWORK_PRESENTATION_REQUIRED_PAYLOAD_PATHS,
+  PUBLIC_ARTWORK_PRESENTATION_SECTIONS,
+  validatePublicArtworkPresentationFacts,
+  validatePublicArtworkPresentationPayload
+} from './contracts/public-artwork-presentation-contract.js';
+
 function asObject(value, fallback = {}) {
   return value && typeof value === 'object' ? value : fallback;
 }

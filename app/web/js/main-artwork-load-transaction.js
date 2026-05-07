@@ -3,6 +3,7 @@ import {
   getNeighborFiles
 } from './main-navigation.js';
 import { setActiveArtworkState } from './main-presentation-state.js';
+import { createArchiveArtworkRequestTransaction } from './public-archive-artwork-request-transaction.js';
 
 export function planLoadedArtworkEffects({
   file,
@@ -36,13 +37,23 @@ export function planLoadedArtworkEffects({
   };
 }
 
-export function prefetchArtworkFiles(files = [], fetchArtwork) {
-  const scheduled = [];
+export function prefetchArtworkFiles(files = [], fetchArtwork, requestScope = null) {
+  const scheduled = files.filter(Boolean);
+  if (requestScope && typeof requestScope.prefetchFiles === 'function') {
+    return requestScope.prefetchFiles(scheduled);
+  }
 
-  files.forEach((file) => {
-    if (!file) return;
+  try {
+    if (typeof fetchArtwork?.prefetch === 'function') {
+      Promise.resolve(fetchArtwork.prefetch(scheduled)).catch(() => {});
+      return scheduled;
+    }
+  } catch {
+    return scheduled;
+  }
+
+  scheduled.forEach((file) => {
     try {
-      scheduled.push(file);
       Promise.resolve(fetchArtwork?.(file)).catch(() => {});
     } catch {
       // Neighbor prefetch is best-effort and must not affect the active load.
@@ -61,9 +72,10 @@ export function createArtworkLoadTransaction({
   setPresentationState = () => {},
   getActiveIndex = () => -1,
   estimateArtworkLuma = () => null,
+  requestTransaction = null,
   render = {}
 } = {}) {
-  let loadToken = 0;
+  const artworkRequestTransaction = requestTransaction || createArchiveArtworkRequestTransaction({ fetchArtwork });
 
   function getState() {
     return getPresentationState() || {};
@@ -76,23 +88,29 @@ export function createArtworkLoadTransaction({
   }
 
   function invalidate() {
-    loadToken += 1;
-    return loadToken;
+    return artworkRequestTransaction.invalidate();
   }
 
   function isCurrent(token) {
-    return token === loadToken;
+    return artworkRequestTransaction.isCurrent(token);
   }
 
   async function loadByFile(file, { manifest } = {}) {
     if (!file) return { status: 'missing-file' };
 
-    const token = invalidate();
+    const requestScope = artworkRequestTransaction.beginLoad(file, {
+      label: 'active-artwork-load',
+      cancelStale: true
+    });
     render.setLoading?.(true, manifest, getActiveIndex());
+    let finalStatus = null;
 
     try {
-      const art = await fetchArtwork(file);
-      if (!isCurrent(token)) return { status: 'stale' };
+      const art = await requestScope.fetch();
+      if (requestScope.isStale()) {
+        finalStatus = 'stale';
+        return { status: 'stale', requestFacts: requestScope.getFacts() };
+      }
 
       const effectPlan = planLoadedArtworkEffects({
         file,
@@ -110,13 +128,19 @@ export function createArtworkLoadTransaction({
         const applied = await runtimeController.applyArtworkToScene({
           file,
           art,
-          shouldContinue: () => isCurrent(token),
+          shouldContinue: () => requestScope.isCurrent(),
           waitForRenderedFrame: captureMode
         });
-        if (!applied) return { status: isCurrent(token) ? 'not-applied' : 'stale' };
+        if (!applied) {
+          finalStatus = requestScope.isCurrent() ? 'not-applied' : 'stale';
+          return { status: finalStatus, requestFacts: requestScope.getFacts() };
+        }
       }
 
-      if (!isCurrent(token)) return { status: 'stale' };
+      if (requestScope.isStale()) {
+        finalStatus = 'stale';
+        return { status: 'stale', requestFacts: requestScope.getFacts() };
+      }
 
       render.renderMeta?.(art);
       render.updateHeroNow?.(art);
@@ -130,7 +154,7 @@ export function createArtworkLoadTransaction({
         runtimeController?.requestDeferredSceneBoot?.();
       }
 
-      prefetchArtworkFiles(effectPlan.neighborFiles, fetchArtwork);
+      prefetchArtworkFiles(effectPlan.neighborFiles, fetchArtwork, requestScope);
       if (effectPlan.clearFallback) render.showFallback?.('', true);
       render.refreshActiveArchiveItem?.(effectPlan.refreshActiveArchiveItem);
       if (effectPlan.syncQuickControls) {
@@ -140,28 +164,35 @@ export function createArtworkLoadTransaction({
         render.requestAdaptiveOverlayFrame?.();
       }
 
+      finalStatus = 'loaded';
       return {
         status: 'loaded',
         file,
         art,
         activeIndex: effectPlan.activeIndex,
-        effectPlan
+        effectPlan,
+        requestFacts: requestScope.getFacts()
       };
     } catch (error) {
-      if (!isCurrent(token)) return { status: 'stale-error', error };
+      if (requestScope.isStale()) {
+        finalStatus = 'stale-error';
+        return { status: 'stale-error', error, requestFacts: requestScope.getFacts() };
+      }
       render.showFallback?.(`Could not load this artwork: ${error.message}`, true);
       render.showStatus?.('Artwork load failed. Retry or pick another archive card.', 'error');
       throw error;
     } finally {
-      if (isCurrent(token)) {
+      if (requestScope.isCurrent()) {
         render.setLoading?.(false, manifest, getActiveIndex());
       }
+      requestScope.complete(finalStatus);
     }
   }
 
   return {
     invalidate,
     isCurrent,
-    loadByFile
+    loadByFile,
+    getRequestFacts: () => artworkRequestTransaction.getFacts()
   };
 }

@@ -2,7 +2,7 @@ import { compileCustomModuleRegistry } from './scene-runtime/custom-module/compi
 import {
   BUILT_IN_SCENE_MODULE_CATALOG,
   BUILT_IN_SCENE_MODULE_TYPES
-} from '../../../pipeline/core/scene/runtime-module-catalog.mjs';
+} from './contracts/runtime-module-catalog.js';
 
 const DEFAULT_PIPELINE_PATCHES = Object.freeze({ post: [], camera: [], lighting: [] });
 

@@ -54,7 +54,9 @@ export function resolveRuntimeScale({
 }
 
 export function resolveRuntimeRotationZ({ primitive = {}, params = {}, fallback = 0 } = {}) {
-  return toFiniteNumber(params.rotationZ ?? primitive.rotationZ, fallback);
+  const paramsRotation = Array.isArray(params.rotation) ? params.rotation : null;
+  const primitiveRotation = Array.isArray(primitive.rotation) ? primitive.rotation : null;
+  return toFiniteNumber(params.rotationZ ?? primitive.rotationZ ?? paramsRotation?.[2] ?? primitiveRotation?.[2], fallback);
 }
 
 export function resolveRuntimeOpacity({ primitive = {}, params = {}, fallback = 1 } = {}) {
@@ -77,4 +79,19 @@ export function resolveRuntimeSpreadVector(value, fallback = [4.6, 4.6, 1.6]) {
   const numeric = toFiniteNumber(value, null);
   if (numeric != null) return [numeric, numeric, fallback[2]];
   return fallback;
+}
+
+export function resolveRuntimeTransformFacts({
+  primitive = {},
+  params = {},
+  fallbackPosition = [0, 0, 0],
+  fallbackScale = [1, 1, 1],
+  fallbackRotationZ = 0,
+  numericScaleMode = 'preserve-z'
+} = {}) {
+  return {
+    position: resolveRuntimePosition({ primitive, params, fallback: fallbackPosition }),
+    scale: resolveRuntimeScale({ primitive, params, fallback: fallbackScale, numericScaleMode }),
+    rotationZ: resolveRuntimeRotationZ({ primitive, params, fallback: fallbackRotationZ })
+  };
 }

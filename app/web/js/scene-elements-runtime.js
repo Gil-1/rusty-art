@@ -2,7 +2,7 @@ import { buildSceneElementRuntimePlan } from './scene-element-runtime-plan.js';
 import {
   BUILT_IN_SCENE_MODULE_CATALOG,
   BUILT_IN_SCENE_MODULE_TYPES
-} from '../../../pipeline/core/scene/runtime-module-catalog.mjs';
+} from './contracts/runtime-module-catalog.js';
 
 export const SCENE_ELEMENT_MODULE_TYPES = BUILT_IN_SCENE_MODULE_TYPES;
 

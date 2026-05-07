@@ -62,6 +62,10 @@ export function selectInitialArtworkIndex({ manifest, requestedIndex = null, slu
   if (slugIndex != null) return slugIndex;
   if (requestedIndex != null && !Number.isNaN(requestedIndex)) return Math.max(0, requestedIndex);
 
+  if (Number.isInteger(manifest.activeLatestIndex) && manifest.activeLatestIndex >= 0) {
+    return manifest.activeLatestIndex;
+  }
+
   if (manifest.latestId) {
     const latestIndex = manifest.items.findIndex((item) => item?.id === manifest.latestId);
     if (latestIndex >= 0) return latestIndex;
