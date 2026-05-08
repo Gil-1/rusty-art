@@ -95,9 +95,6 @@ export function normalizeRenderingConfigPatch(executionPlan = {}) {
 
   const cycleSeconds = clampedNumber(cameraPlan.cycleSeconds, RENDERING_CONFIG_CLAMPS.camera.cycleSeconds);
   if (cycleSeconds != null) patch.camera.cycleSeconds = cycleSeconds;
-  if (Array.isArray(cameraPlan.target) && cameraPlan.target.length === 3 && cameraPlan.target.every(Number.isFinite)) {
-    patch.camera.target = [...cameraPlan.target];
-  }
   if (typeof cameraPlan.autoRotate === 'boolean') patch.camera.autoRotate = cameraPlan.autoRotate;
   const autoRotateSpeed = clampedNumber(cameraPlan.autoRotateSpeed, RENDERING_CONFIG_CLAMPS.camera.autoRotateSpeed);
   if (autoRotateSpeed != null) patch.camera.autoRotateSpeed = autoRotateSpeed;

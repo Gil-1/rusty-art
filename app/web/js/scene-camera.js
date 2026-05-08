@@ -1,4 +1,12 @@
 const TOUCH_DRAG_SENSITIVITY = 0.2;
+export const CANONICAL_VIEWER_CAMERA = Object.freeze({
+  target: Object.freeze([0, 0, 0]),
+  pose: Object.freeze({
+    radius: 12,
+    theta: 0,
+    phi: Math.PI / 2.2
+  })
+});
 
 function clamp(value, min, max) {
   return Math.max(min, Math.min(max, value));
@@ -98,7 +106,15 @@ function sampleCameraRail(cameraBeats, phase, cameraCycleSeconds) {
 
 export function updateOrbitForFrame(scene, { t, motionT, speed, motion }) {
   if (scene.captureMode) {
+    resetCameraForArtwork(scene);
     updateCameraFromOrbit(scene);
+    scene.canonicalFirstViewEstablished = true;
+    return;
+  }
+
+  if (scene.canonicalFirstViewEstablished !== true) {
+    updateCameraFromOrbit(scene);
+    scene.canonicalFirstViewEstablished = true;
     return;
   }
 
@@ -156,11 +172,7 @@ export function applyViewportOrbitFrame(scene, { resetOrbit = false } = {}) {
   );
 
   if (resetOrbit) {
-    scene.orbit.radius = clamp(
-      scene.baseOrbitPose.radius * next.radiusMultiplier,
-      scene.controls.minDistance,
-      scene.controls.maxDistance
-    );
+    scene.orbit.radius = scene.baseOrbitPose.radius * next.radiusMultiplier;
     scene.orbit.theta = scene.baseOrbitPose.theta;
     scene.orbit.phi = scene.baseOrbitPose.phi + next.phiOffset;
     updateCameraFromOrbit(scene);
@@ -179,29 +191,16 @@ export function applyViewportOrbitFrame(scene, { resetOrbit = false } = {}) {
 }
 
 export function resetCameraForArtwork(scene, camCfg = {}) {
-  const defaultPose = { radius: 12, theta: 0, phi: Math.PI / 2.2 };
-  const firstBeat = Array.isArray(scene.cameraBeats) && scene.cameraBeats.length ? scene.cameraBeats[0] : null;
+  void camCfg;
+  scene.baseOrbitPose.radius = CANONICAL_VIEWER_CAMERA.pose.radius;
+  scene.baseOrbitPose.theta = CANONICAL_VIEWER_CAMERA.pose.theta;
+  scene.baseOrbitPose.phi = CANONICAL_VIEWER_CAMERA.pose.phi;
 
-  const pick = (key) => {
-    const fromCfg = camCfg?.[key];
-    const fromBeat = firstBeat?.[key];
-    if (Number.isFinite(fromCfg)) return fromCfg;
-    if (Number.isFinite(fromBeat)) return fromBeat;
-    return defaultPose[key];
-  };
-
-  scene.baseOrbitPose.radius = clamp(pick('radius'), scene.controls.minDistance, scene.controls.maxDistance);
-  scene.baseOrbitPose.theta = pick('theta');
-  scene.baseOrbitPose.phi = pick('phi');
-
-  const target = camCfg?.target;
-  if (Array.isArray(target) && target.length === 3 && target.every(Number.isFinite)) {
-    scene.baseOrbitTarget.set(target[0], target[1], target[2]);
-  } else if (target && Number.isFinite(target.x) && Number.isFinite(target.y) && Number.isFinite(target.z)) {
-    scene.baseOrbitTarget.set(target.x, target.y, target.z);
-  } else {
-    scene.baseOrbitTarget.set(0, 0, 0);
-  }
+  scene.baseOrbitTarget.set(
+    CANONICAL_VIEWER_CAMERA.target[0],
+    CANONICAL_VIEWER_CAMERA.target[1],
+    CANONICAL_VIEWER_CAMERA.target[2]
+  );
 
   scene.orbit.radius = scene.baseOrbitPose.radius;
   scene.orbit.theta = scene.baseOrbitPose.theta;
@@ -210,6 +209,7 @@ export function resetCameraForArtwork(scene, camCfg = {}) {
   scene.orbit.phiVel = 0;
   scene.orbit.dragging = false;
   scene.orbit.userControlLocked = false;
+  scene.canonicalFirstViewEstablished = false;
   applyViewportOrbitFrame(scene, { resetOrbit: true });
 }
 

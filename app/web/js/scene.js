@@ -80,6 +80,7 @@ export class ArtworkScene {
     this.cameraBeats = null;
     this.cameraCycleSeconds = 24;
     this.cameraMotionEnabled = false;
+    this.canonicalFirstViewEstablished = false;
     this.breathing = { hueShift: 0.01, saturationAmplitude: 0.06, exposureAmplitude: 0.04, phaseA: 0.17, phaseB: 0.43 };
     this.postBase = { contrast: 1.08, saturation: 1.04, vignette: 0.26, distortion: 0.24, exposure: 1 };
     this.styleFingerprint = { pulseFamily: 'balanced', stripeWarp: 0.14, edgeSoftness: 0.26, cameraSway: 0.16, cadenceBias: 0, temperatureBias: 0 };
@@ -129,6 +130,7 @@ export class ArtworkScene {
       this.controls.autoRotate = false;
       this.orbit.thetaVel = 0;
       this.orbit.phiVel = 0;
+      this.resetCameraForArtwork();
       this.setMotionIntensity(0);
     }
   }

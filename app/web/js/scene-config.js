@@ -120,11 +120,7 @@ export function applyPipelinePatches(sceneCfg, pipelinePatches = { post: [], cam
       if (typeof source.autoRotate === 'boolean') camera.autoRotate = source.autoRotate;
       if (toFiniteNumber(source.autoRotateSpeed) != null) camera.autoRotateSpeed = toFiniteNumber(source.autoRotateSpeed);
       if (toFiniteNumber(source.cycleSeconds) != null) camera.cycleSeconds = toFiniteNumber(source.cycleSeconds);
-      if (toFiniteNumber(source.minDistance) != null) camera.minDistance = toFiniteNumber(source.minDistance);
-      if (toFiniteNumber(source.maxDistance) != null) camera.maxDistance = toFiniteNumber(source.maxDistance);
       if (typeof source.motionEnabled === 'boolean') camera.motionEnabled = source.motionEnabled;
-      const target = normalizeVector3(source.target, null);
-      if (target) camera.target = target;
       if (Array.isArray(source.beats) && source.beats.length >= 2) camera.beats = source.beats;
     }
     sceneCfg.camera = camera;

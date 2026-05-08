@@ -1,0 +1,1071 @@
+{
+  "id": "2026-05-08-pulse-of-hantavirus-cruise-ship-belgian-v3",
+  "date": "2026-05-08",
+  "title": "Pulse of Hantavirus cruise ship Belgian",
+  "generatedAt": "2026-05-08T09:58:49.066Z",
+  "news": {
+    "source": "rtbf",
+    "title": "Hantavirus on a cruise ship: the two Belgian passengers will undergo \"strict medical monitoring\" upon their return",
+    "link": "https://www.rtbf.be/article/hantavirus-sur-un-bateau-de-croisiere-les-deux-passagers-belges-feront-l-objet-d-un-suivi-medical-rigoureux-a-leur-retour-11720894",
+    "score": 107
+  },
+  "inspiration": {
+    "artist": "Hilma af Klint",
+    "tags": [
+      "symbolic",
+      "spiral",
+      "organic"
+    ],
+    "links": {
+      "wikipedia": "https://en.wikipedia.org/wiki/Hilma_af_Klint",
+      "reference": "https://www.modernamuseet.se/stockholm/en/exhibitions/hilma-af-klint/"
+    }
+  },
+  "seed": 818530134,
+  "scene": {
+    "motif": "flow",
+    "shapeCount": 150,
+    "turbulence": 0.403,
+    "spiralBias": 0.781,
+    "motionSpeed": 0.001294,
+    "bloom": 0.18,
+    "grain": 0.038,
+    "fogDensity": 0.056,
+    "distortion": 0.18,
+    "flowField": 0.38,
+    "anchorStrength": 0.639,
+    "anchorOffsetX": -0.006,
+    "layerBalance": {
+      "structure": 0.667,
+      "chaos": 0.316
+    },
+    "expression": {
+      "tension": 0.31,
+      "structure": 0.562,
+      "motion": 0.548,
+      "noise": 0.364,
+      "urgency": 0.501,
+      "contrast": 0.253
+    },
+    "palette": {
+      "bg": "#eadcc8",
+      "primary": "#d989a3",
+      "secondary": "#2f6f86",
+      "glow": "#d9a441",
+      "anchor": "#25211e"
+    },
+    "elements": [
+      {
+        "id": "e.band-map-ground",
+        "moduleType": "cm.paper-band-field.v1",
+        "capabilities": [],
+        "stackFamilies": [],
+        "styleTags": [],
+        "libraryRef": null,
+        "bandCount": 6,
+        "grain": 0.3,
+        "color": "bg",
+        "opacity": 0.95,
+        "intensity": 0.64,
+        "scenePurpose": "Carries the cruise-return environment as abstract horizontal passage.",
+        "currentSceneContribution": "Creates layered paper bands with blue and rose warmth.",
+        "expectedRead": "symbolic water and return bands",
+        "mustNotReadAs": [
+          "photographic sea",
+          "plain gradient"
+        ],
+        "animation": {
+          "pulse": 0.02,
+          "wobbleX": 0.04,
+          "wobbleY": 0.02,
+          "drift": 0.06
+        },
+        "scaleX": 1.54,
+        "scaleY": 1.62,
+        "rotationZ": 0,
+        "offsetX": 0,
+        "offsetY": 0,
+        "techniqueRef": "t.paper-bands",
+        "role": "structural-spine",
+        "layer": "background",
+        "motif": "flow",
+        "intentCadence": "drift"
+      },
+      {
+        "id": "e.monitor-disc-chain",
+        "moduleType": "concentric-discs",
+        "capabilities": [
+          "orbital-forms",
+          "focal-anchor"
+        ],
+        "stackFamilies": [
+          "sdf-raymarch",
+          "geometry-heavy",
+          "shader-field"
+        ],
+        "styleTags": [
+          "discs",
+          "radial"
+        ],
+        "libraryRef": "element.concentric-discs.v1",
+        "color": "glow",
+        "opacity": 0.62,
+        "intensity": 0.52,
+        "layer": "midground",
+        "count": 7,
+        "spacing": 0.28,
+        "radius": 0.09,
+        "position": [
+          0,
+          0.32,
+          0.06
+        ],
+        "scenePurpose": "Makes monitoring a measured vertical sequence rather than a warning graphic.",
+        "currentSceneContribution": "Adds seven small gold observation checkpoints above the lower seals.",
+        "expectedRead": "chain of careful observation marks",
+        "mustNotReadAs": [
+          "traffic lights",
+          "decorative beads"
+        ],
+        "animation": {
+          "rotationZ": 0.01,
+          "pulse": 0.16,
+          "wobbleX": 0.01,
+          "wobbleY": 0.02,
+          "drift": 0.03
+        },
+        "techniqueRef": "t.monitor-disc-chain",
+        "role": "structural-spine",
+        "motif": "flow",
+        "intentCadence": "drift"
+      },
+      {
+        "id": "e.lower-return-seals",
+        "moduleType": "cm.twin-monitoring-medallions.v1",
+        "capabilities": [],
+        "stackFamilies": [],
+        "styleTags": [],
+        "libraryRef": null,
+        "ringCount": 5,
+        "diameter": 0.4,
+        "pairSpacing": 0.76,
+        "positionY": -0.66,
+        "color": "primary",
+        "opacity": 0.84,
+        "intensity": 0.76,
+        "scenePurpose": "Grounds the story in two monitored passengers at the return threshold.",
+        "currentSceneContribution": "Provides a clear paired focal anchor below the observation chain.",
+        "expectedRead": "two protected return seals",
+        "mustNotReadAs": [
+          "wheels",
+          "eyes",
+          "ship portholes"
+        ],
+        "animation": {
+          "pulse": 0.14,
+          "wobbleX": 0.02,
+          "wobbleY": 0.02,
+          "drift": 0.02
+        },
+        "techniqueRef": "t.twin-monitor-seals",
+        "role": "focal-anchor",
+        "layer": "foreground",
+        "motif": "flow",
+        "intentCadence": "drift"
+      },
+      {
+        "id": "e.axis-pressure-seeds",
+        "moduleType": "cm.crimson-pressure-seeds.v1",
+        "capabilities": [],
+        "stackFamilies": [],
+        "styleTags": [],
+        "libraryRef": null,
+        "count": 64,
+        "size": 0.014,
+        "spread": [
+          0.5,
+          1.8,
+          0.05
+        ],
+        "color": "anchor",
+        "opacity": 0.52,
+        "intensity": 0.42,
+        "scenePurpose": "Marks the invisible health pressure along the observation axis.",
+        "currentSceneContribution": "Small red seeds drift near the central chain and lower seals.",
+        "expectedRead": "carefully tracked pressure points",
+        "mustNotReadAs": [
+          "random particles",
+          "blood spray",
+          "stars"
+        ],
+        "animation": {
+          "rotationZ": 0.01,
+          "pulse": 0.1,
+          "wobbleX": 0.05,
+          "wobbleY": 0.08,
+          "drift": 0.14
+        },
+        "techniqueRef": "t.axis-pressure-seeds",
+        "role": "accent-gesture",
+        "layer": "accent",
+        "motif": "flow",
+        "intentCadence": "drift"
+      },
+      {
+        "id": "e.band-map-notations",
+        "moduleType": "cm.faint-notebook-marks.v1",
+        "capabilities": [],
+        "stackFamilies": [],
+        "styleTags": [],
+        "libraryRef": null,
+        "markCount": 4,
+        "marginBias": true,
+        "color": "anchor",
+        "opacity": 0.3,
+        "intensity": 0.28,
+        "scenePurpose": "Adds the private chart-making quality central to the artist reading.",
+        "currentSceneContribution": "Places quiet marginal marks around the mapped bands.",
+        "expectedRead": "faint handmade observation notes",
+        "mustNotReadAs": [
+          "caption text",
+          "interface labels"
+        ],
+        "animation": {
+          "pulse": 0.03,
+          "wobbleX": 0.01,
+          "wobbleY": 0.01,
+          "drift": 0.01
+        },
+        "techniqueRef": "t.monitor-disc-chain",
+        "role": "support-rhythm",
+        "layer": "foreground",
+        "motif": "flow",
+        "intentCadence": "drift"
+      },
+      {
+        "id": "loop-background-field",
+        "moduleType": "shader-field-plane",
+        "capabilities": [
+          "fluid-drift",
+          "layered-field"
+        ],
+        "stackFamilies": [
+          "shader-field",
+          "post-heavy",
+          "sdf-raymarch"
+        ],
+        "styleTags": [
+          "shader",
+          "field"
+        ],
+        "libraryRef": "element.shader-field-plane.v1",
+        "color": "secondary",
+        "opacity": 0.24,
+        "intensity": 0.34,
+        "layer": "background",
+        "radialBias": 0.52,
+        "hemisphereContrast": 0.38,
+        "role": "atmosphere-field",
+        "motif": "flow",
+        "intentCadence": "drift"
+      }
+    ],
+    "shaderLayers": 4,
+    "elementDiversity": 6,
+    "paletteVariance": 0,
+    "motionSpeedNormalized": 0.52,
+    "camera": {
+      "autoRotate": false,
+      "autoRotateSpeed": 0.125,
+      "minDistance": 6,
+      "maxDistance": 24,
+      "cycleSeconds": 24,
+      "beats": [
+        {
+          "t": 0,
+          "radius": 12,
+          "theta": 0,
+          "phi": 1.5707963267948966,
+          "hold": 0
+        },
+        {
+          "t": 0.34,
+          "radius": 12,
+          "theta": 0,
+          "phi": 1.5707963267948966,
+          "hold": 0
+        },
+        {
+          "t": 0.68,
+          "radius": 12,
+          "theta": 0,
+          "phi": 1.5707963267948966,
+          "hold": 0
+        },
+        {
+          "t": 1,
+          "radius": 12,
+          "theta": 0,
+          "phi": 1.5707963267948966,
+          "hold": 0
+        }
+      ],
+      "motionEnabled": false
+    },
+    "post": {
+      "vignette": 0.16,
+      "contrast": 1.12,
+      "saturation": 1.08,
+      "exposure": 0.96,
+      "breathing": {
+        "hueShift": 0.037,
+        "saturationAmplitude": 0.065,
+        "exposureAmplitude": 0.05,
+        "phaseA": 0.8262,
+        "phaseB": 0.6152
+      }
+    },
+    "styleFingerprint": {
+      "pulseFamily": "ascending",
+      "stripeWarp": 0.06,
+      "edgeSoftness": 0.34,
+      "cameraSway": 0.12,
+      "edgeHardness": 0.5,
+      "temperatureBias": 0,
+      "verticalBias": 0,
+      "cadenceBias": 0
+    },
+    "sceneAuthoring": {
+      "mode": "agent-dsl",
+      "planner": "openclaw-agent-scene-planner",
+      "representation": {
+        "id": "rep.band-map-observation",
+        "label": "Band Map Of Observation",
+        "description": "A more landscape-derived reading: broad horizontal sea-return bands are crossed by a vertical chain of monitoring discs, with the two passenger seals held at the lower return threshold.",
+        "scoreHint": 0.68,
+        "motif": "horizontal return bands crossed by vertical observation",
+        "cadence": "drift",
+        "scenePrompt": "Frontal abstract paper landscape-chart with broad blue, pink, and cream bands, a vertical measured chain of small gold discs, two lower rose monitoring seals, faint black notations, sparse red pressure seeds, and handmade softened edges.",
+        "colorMood": "cream paper, muted blue water bands, rose-pink human warmth, gold observation discs, black notation, crimson caution",
+        "spatialIntent": "A shallow painted map where horizon bands form the background, disc chain marks observation in the midground, and paired seals anchor the foreground.",
+        "imageAuthorship": {
+          "structuralLaw": "Soft horizontal journey bands are disciplined by a vertical chain of monitoring discs, with two protected seals at the threshold.",
+          "dominantForms": [
+            "broad horizontal bands",
+            "vertical medallion chain",
+            "paired lower seals",
+            "small crimson seeds",
+            "faint marginal marks"
+          ],
+          "edgeBehavior": "Band edges feather and drag like washed pigment; discs remain measured but not machine-perfect.",
+          "surfaceBehavior": "A matte layered wash, scuffed dry-brush marks, and faint ink traces imply chart-making by hand.",
+          "depthLogic": "Bands establish distant passage, the disc chain floats as a measuring structure, and the paired seals sit closer as focal anchors.",
+          "motionLogic": "Bands barely breathe, discs pulse sequentially, and red seeds drift slowly along the central axis.",
+          "forbiddenDrift": [
+            "literal ocean horizon",
+            "navigation UI",
+            "decorative bead necklace"
+          ]
+        },
+        "technicalTranslation": {
+          "realizationStrategy": "Use the custom paper band shader as the field, existing concentric-disc logic for the measured chain, custom medallions for the passengers, and deterministic particles constrained to the central axis.",
+          "reuseBias": "hybrid",
+          "whyThisApproach": "The horizontal-band evidence from the artist reading is important here, while custom paired seals protect the headline specificity.",
+          "notes": [
+            "Keep the disc chain narrow and vertical.",
+            "Do not let the band field overpower the focal seals.",
+            "Use faint notation only at the margins."
+          ],
+          "motionCadence": "drift"
+        },
+        "mustShow": [
+          "broad horizontal cruise-water bands",
+          "vertical chain of monitoring discs",
+          "two lower passenger seals",
+          "non-literal flow pressure",
+          "Hantavirus Cruise Ship as visual pressure",
+          "visible handmade surface"
+        ],
+        "mustAvoid": [
+          "realistic seascape",
+          "ship silhouette",
+          "data dashboard",
+          "fracture slash"
+        ],
+        "reviewFocus": [
+          "Does the composition still read as symbolic and not landscape illustration?",
+          "Are the two passenger seals prominent enough?",
+          "Do the observation discs create measured pressure rather than decoration?"
+        ],
+        "artistTechniqueObservations": null,
+        "rationale": {
+          "newsMeaning": "The return journey is treated as horizontal passage interrupted by measured health observation.",
+          "artistSignal": "This version draws from the perceptual reading's landscape bands as well as af Klint's repeated medallions and handmade chart logic."
+        },
+        "techniques": [
+          {
+            "id": "t.paper-bands",
+            "name": "Broad Return Bands",
+            "type": "shader",
+            "purpose": "Create a symbolic sea-return field from horizontal painted layers.",
+            "reuseModuleType": null,
+            "params": {
+              "bandCount": 6,
+              "grain": 0.3,
+              "warmth": 0.88
+            }
+          },
+          {
+            "id": "t.monitor-disc-chain",
+            "name": "Vertical Monitoring Disc Chain",
+            "type": "geometry",
+            "purpose": "Turn strict monitoring into repeated measured checkpoints.",
+            "reuseModuleType": null,
+            "params": {
+              "moduleType": "concentric-discs",
+              "count": 7,
+              "spacing": 0.28,
+              "radius": 0.09
+            }
+          },
+          {
+            "id": "t.twin-monitor-seals",
+            "name": "Lower Paired Return Seals",
+            "type": "geometry",
+            "purpose": "Anchor the human specificity at the return threshold.",
+            "reuseModuleType": null,
+            "params": {
+              "ringCount": 5,
+              "diameter": 0.4,
+              "pairSpacing": 0.76
+            }
+          },
+          {
+            "id": "t.axis-pressure-seeds",
+            "name": "Axis Pressure Seeds",
+            "type": "particle",
+            "purpose": "Show health pressure moving through the measured chain.",
+            "reuseModuleType": null,
+            "params": {
+              "count": 64,
+              "size": 0.014,
+              "axisSpread": 0.5
+            }
+          }
+        ]
+      },
+      "artisticIntent": {
+        "statement": "A frontal painted chart imagines the cruise return as a ritual corridor of observation: two vulnerable passengers held inside measured circles while a steady invisible pressure moves through water, body, and civic procedure.",
+        "motif": "monitored flow through paired medallions, triangular passage, and spiral pressure ma",
+        "emotionalArc": "uneasy containment begins in soft sea bands, tightens into strict circular observation, then resolves into a guarded but luminous return path.",
+        "compositionLogic": "The image is built as a full-frame matte surface with horizontal atmospheric bands, a central triangular channel, two bounded passenger seals, and small repeated notations that make medical monitoring feel measured rather than sensational.",
+        "imagePrompt": "A Hilma af Klint-informed abstract painted chart responding to a hantavirus cruise ship return: frontal matte paper, broad softened sea and sky bands, two rose-and-gold medallions held in strict monitoring rings, a pale triangular return corridor, black-white polarity marks, small crimson pressure seeds, pink, blue, go"
+      },
+      "executionPlan": {
+        "palette": {
+          "bg": "#eadcc8",
+          "primary": "#d989a3",
+          "secondary": "#2f6f86",
+          "glow": "#d9a441",
+          "anchor": "#25211e"
+        },
+        "camera": {
+          "autoRotate": false,
+          "cycleSeconds": 24,
+          "target": [
+            0,
+            0,
+            0
+          ],
+          "frontal": true,
+          "preservePerspective": false
+        },
+        "post": {
+          "contrast": 1.06,
+          "saturation": 1.08,
+          "vignette": 0.16,
+          "exposure": 0.96
+        },
+        "global": {
+          "shapeCountHint": 150,
+          "flowField": 0.38,
+          "distortion": 0.18,
+          "bloom": 0.18
+        },
+        "techniques": [
+          {
+            "id": "t.paper-bands",
+            "name": "Scuffed Horizontal Paper Bands",
+            "type": "shader",
+            "purpose": "Create the handmade frontal field and soft cruise-water atmosphere without becoming a literal seascape.",
+            "reuseModuleType": null,
+            "params": {
+              "bandCount": 5,
+              "grain": 0.32,
+              "edgeSoftness": 0.7
+            }
+          },
+          {
+            "id": "t.return-corridor",
+            "name": "Bounded Triangular Return Corridor",
+            "type": "geometry",
+            "purpose": "Hold the composition as a measured passage from ship exposure toward monitored arrival.",
+            "reuseModuleType": null,
+            "params": {
+              "height": 2.9,
+              "baseWidth": 1.7,
+              "opacity": 0.5
+            }
+          },
+          {
+            "id": "t.twin-monitor-seals",
+            "name": "Twin Monitoring Medallions",
+            "type": "geometry",
+            "purpose": "Represent the two Belgian passengers as protected abstract seals rather than bodies.",
+            "reuseModuleType": null,
+            "params": {
+              "ringCount": 5,
+              "pairSpacing": 0.86,
+              "diameter": 0.46
+            }
+          },
+          {
+            "id": "t.steady-pressure-seeds",
+            "name": "Steady Crimson Pressure Seeds",
+            "type": "particle",
+            "purpose": "Make the health-pressure signal visible as sparse controlled motion around the corridor.",
+            "reuseModuleType": null,
+            "params": {
+              "count": 96,
+              "size": 0.018,
+              "drift": 0.2
+            }
+          }
+        ]
+      },
+      "moduleOverrides": [],
+      "customModules": [
+        {
+          "id": "cm.paper-band-field.v1",
+          "family": "shader",
+          "kind": "dsl",
+          "allowOverride": false,
+          "seedPolicy": "deterministic",
+          "paramsSchema": {
+            "bandCount": "number",
+            "grain": "number",
+            "warmth": "number"
+          },
+          "source": {
+            "dsl": {
+              "width": 4.4,
+              "height": 3.2,
+              "opacity": 1,
+              "position": [
+                0,
+                0,
+                -0.18
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "blend": "normal"
+            },
+            "glsl": {
+              "vertex": "varying vec2 vUv;\nvoid main(){\n vUv = uv;\n gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);\n}",
+              "fragment": "precision mediump float;\nvarying vec2 vUv;\nuniform float u_time;\nfloat hash(vec2 p){ return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453); }\nfloat noise(vec2 p){ vec2 i=floor(p); vec2 f=fract(p); vec2 u=f*f*(3.0-2.0*f); return mix(mix(hash(i), hash(i+vec2(1.0,0.0)), u.x), mix(hash(i+vec2(0.0,1.0)), hash(i+vec2(1.0,1.0)), u.x), u.y); }\nvoid main(){\n vec2 uv = vUv;\n float bands = smoothstep(0.02, 0.98, uv.y);\n vec3 paper = vec3(0.918, 0.846, 0.742);\n vec3 rose = vec3(0.782, 0.466, 0.560);\n vec3 blue = vec3(0.160, 0.390, 0.480);\n vec3 pale = mix(paper, rose, 0.18 + 0.14 * sin(uv.y * 18.849));\n vec3 sea = mix(pale, blue, smoothstep(0.08, 0.42, uv.y) * (1.0 - smoothstep(0.64, 0.92, uv.y)) * 0.42);\n float grain = noise(uv * vec2(92.0, 58.0)) * 0.08 + noise(uv * vec2(19.0, 31.0)) * 0.05;\n float brush = sin((uv.x + noise(uv * 6.0) * 0.045) * 34.0) * 0.018;\n vec3 color = sea + grain + brush;\n color *= 0.92 + 0.08 * bands;\n gl_FragColor = vec4(color, 1.0);\n}"
+            },
+            "js": null
+          },
+          "budgets": {
+            "maxInstances": 1,
+            "maxShaderOpsHint": 0.72,
+            "mobileSafe": true
+          }
+        },
+        {
+          "id": "cm.twin-monitoring-medallions.v1",
+          "family": "geometry",
+          "kind": "dsl",
+          "allowOverride": false,
+          "seedPolicy": "deterministic",
+          "paramsSchema": {
+            "ringCount": "number",
+            "pairSpacing": "number",
+            "diameter": "number"
+          },
+          "source": {
+            "dsl": {
+              "geometry": {
+                "type": "group",
+                "children": [
+                  {
+                    "type": "ellipse-rings",
+                    "count": 5,
+                    "width": 0.46,
+                    "height": 0.46,
+                    "position": [
+                      -0.43,
+                      0.12,
+                      0.08
+                    ]
+                  },
+                  {
+                    "type": "ellipse-rings",
+                    "count": 5,
+                    "width": 0.46,
+                    "height": 0.46,
+                    "position": [
+                      0.43,
+                      0.12,
+                      0.08
+                    ]
+                  },
+                  {
+                    "type": "ellipse",
+                    "width": 0.18,
+                    "height": 0.18,
+                    "position": [
+                      -0.43,
+                      0.12,
+                      0.09
+                    ]
+                  },
+                  {
+                    "type": "ellipse",
+                    "width": 0.18,
+                    "height": 0.18,
+                    "position": [
+                      0.43,
+                      0.12,
+                      0.09
+                    ]
+                  }
+                ]
+              },
+              "opacity": 0.82,
+              "position": [
+                0,
+                0,
+                0.08
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "blend": "normal"
+            },
+            "glsl": {},
+            "js": null
+          },
+          "budgets": {
+            "maxInstances": 16,
+            "maxShaderOpsHint": 0.2,
+            "mobileSafe": true
+          }
+        },
+        {
+          "id": "cm.crimson-pressure-seeds.v1",
+          "family": "particle",
+          "kind": "dsl",
+          "allowOverride": false,
+          "seedPolicy": "deterministic",
+          "paramsSchema": {
+            "count": "number",
+            "size": "number",
+            "spread": "number"
+          },
+          "source": {
+            "dsl": {
+              "count": 96,
+              "size": 0.018,
+              "spread": [
+                1.7,
+                2.2,
+                0.08
+              ],
+              "position": [
+                0,
+                -0.05,
+                0.15
+              ],
+              "rotation": [
+                0,
+                0,
+                0
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "opacity": 0.72,
+              "blend": "normal"
+            },
+            "glsl": {},
+            "js": null
+          },
+          "budgets": {
+            "maxInstances": 160,
+            "maxShaderOpsHint": 0.25,
+            "mobileSafe": true
+          }
+        },
+        {
+          "id": "cm.faint-notebook-marks.v1",
+          "family": "geometry",
+          "kind": "dsl",
+          "allowOverride": false,
+          "seedPolicy": "deterministic",
+          "paramsSchema": {
+            "markCount": "number",
+            "opacity": "number"
+          },
+          "source": {
+            "dsl": {
+              "geometry": {
+                "type": "group",
+                "children": [
+                  {
+                    "type": "rect",
+                    "width": 0.34,
+                    "height": 0.012,
+                    "position": [
+                      -1.38,
+                      0.86,
+                      0.1
+                    ],
+                    "rotation": [
+                      0,
+                      0,
+                      0.05
+                    ]
+                  },
+                  {
+                    "type": "rect",
+                    "width": 0.22,
+                    "height": 0.01,
+                    "position": [
+                      -1.22,
+                      0.76,
+                      0.1
+                    ],
+                    "rotation": [
+                      0,
+                      0,
+                      -0.03
+                    ]
+                  },
+                  {
+                    "type": "ellipse-ring",
+                    "width": 0.16,
+                    "height": 0.11,
+                    "position": [
+                      1.24,
+                      -0.82,
+                      0.1
+                    ]
+                  },
+                  {
+                    "type": "rect",
+                    "width": 0.3,
+                    "height": 0.012,
+                    "position": [
+                      1.34,
+                      -0.96,
+                      0.1
+                    ],
+                    "rotation": [
+                      0,
+                      0,
+                      -0.07
+                    ]
+                  }
+                ]
+              },
+              "opacity": 0.34,
+              "position": [
+                0,
+                0,
+                0.1
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "blend": "multiply"
+            },
+            "glsl": {},
+            "js": null
+          },
+          "budgets": {
+            "maxInstances": 24,
+            "maxShaderOpsHint": 0.15,
+            "mobileSafe": true
+          }
+        }
+      ],
+      "policyPasses": {
+        "advisoryOnly": true,
+        "skipped": [
+          "focal-hierarchy",
+          "envelope-clamp",
+          "composition-plan",
+          "artist-visual-profile",
+          "scene-element-module-enforcement",
+          "stack-pipeline-apply",
+          "gap-focused-pass",
+          "artist-hard-constraints"
+        ]
+      }
+    },
+    "seedVersion": 2,
+    "seeds": {
+      "baseSeed": 776237802,
+      "runSeed": 818530134,
+      "geomSeed": 3497187884,
+      "animSeed": 3258468033,
+      "colorSeed": 880213299,
+      "cameraSeed": 2925072219
+    },
+    "techStack": {
+      "id": "instancing-wavegrid",
+      "name": "Instancing Wave Grid",
+      "family": "instancing",
+      "strategyFamilies": [
+        "grid",
+        "flow"
+      ],
+      "rationale": {
+        "source": "loop-adjustment-alternate-stack",
+        "score": 2.32,
+        "penalties": [
+          "context<0.45"
+        ]
+      },
+      "dominantPrimitive": "cm.paper-band-field.v1",
+      "moduleSet": [
+        "cm.paper-band-field.v1",
+        "concentric-discs",
+        "cm.twin-monitoring-medallions.v1",
+        "cm.crimson-pressure-seeds.v1",
+        "cm.faint-notebook-marks.v1",
+        "shader-field-plane"
+      ],
+      "pipelineKind": "instancing"
+    },
+    "renderPipeline": {
+      "kind": "instancing",
+      "family": "instancing",
+      "fallback": false,
+      "advisoryOnly": true,
+      "dominantPrimitive": "cm.paper-band-field.v1",
+      "moduleSet": [
+        "cm.paper-band-field.v1",
+        "concentric-discs",
+        "cm.twin-monitoring-medallions.v1",
+        "cm.crimson-pressure-seeds.v1",
+        "cm.faint-notebook-marks.v1",
+        "shader-field-plane"
+      ]
+    },
+    "customModuleReport": {
+      "requested": 4,
+      "accepted": [
+        {
+          "id": "cm.paper-band-field.v1",
+          "family": "shader",
+          "kind": "dsl",
+          "fingerprint": "0fb2bb9e",
+          "budgets": {
+            "maxInstances": 1,
+            "maxShaderOpsHint": 0.72,
+            "mobileSafe": true
+          }
+        },
+        {
+          "id": "cm.twin-monitoring-medallions.v1",
+          "family": "geometry",
+          "kind": "dsl",
+          "fingerprint": "906bf05d",
+          "budgets": {
+            "maxInstances": 16,
+            "maxShaderOpsHint": 0.2,
+            "mobileSafe": true
+          }
+        },
+        {
+          "id": "cm.crimson-pressure-seeds.v1",
+          "family": "particle",
+          "kind": "dsl",
+          "fingerprint": "0aac9462",
+          "budgets": {
+            "maxInstances": 160,
+            "maxShaderOpsHint": 0.25,
+            "mobileSafe": true
+          }
+        },
+        {
+          "id": "cm.faint-notebook-marks.v1",
+          "family": "geometry",
+          "kind": "dsl",
+          "fingerprint": "56bc3527",
+          "budgets": {
+            "maxInstances": 24,
+            "maxShaderOpsHint": 0.15,
+            "mobileSafe": true
+          }
+        }
+      ],
+      "rejected": [],
+      "moduleOverrideCount": 0,
+      "overrideErrors": []
+    }
+  },
+  "sceneStrategy": {
+    "selected": {
+      "id": "atomic-balanced-flow",
+      "name": "Balanced Flow Field",
+      "type": "atomic",
+      "family": "flow"
+    },
+    "applied": false,
+    "fallbackReason": "agent-authored-scene-elements"
+  },
+  "techStack": {
+    "id": "instancing-wavegrid",
+    "name": "Instancing Wave Grid",
+    "family": "instancing"
+  },
+  "newsVisualMappings": [
+    {
+      "signal": "title evidence [hantavirus, bateau, croisi, deux] -> motif flow",
+      "from": "hantavirus, bateau, croisi, deux",
+      "visualDecision": "structural motif armature set to flow"
+    },
+    {
+      "signal": "composition foreground conflict",
+      "from": "hantavirus, bateau, croisi, deux",
+      "visualDecision": "foreground role tension-knot at pressure 0.18"
+    },
+    {
+      "signal": "composition midground context",
+      "from": "hantavirus, bateau, croisi, deux",
+      "visualDecision": "midground role context-drift with density 0.27"
+    },
+    {
+      "signal": "composition background mood",
+      "from": "hantavirus, bateau, croisi, deux",
+      "visualDecision": "background mood watchful depth 0.281"
+    },
+    {
+      "signal": "urgency -> motion",
+      "from": "ageHours=13.97",
+      "visualDecision": "motionSpeedNormalized=0.52"
+    },
+    {
+      "signal": "title semantics -> palette/edge cadence",
+      "from": "temp=0 edge=0.5",
+      "visualDecision": "postContrast=1.12 accentType=cm.crimson-pressure-seeds.v1"
+    },
+    {
+      "signal": "article institutional/conflict polarity",
+      "from": "hantavirus, bateau, croisi, deux",
+      "visualDecision": "accent element cm.crimson-pressure-seeds.v1 with opacity 0.52"
+    },
+    {
+      "signal": "artist research context Hilma af Klint",
+      "from": "tags symbolic, spiral, organic",
+      "visualDecision": "artist profile captured as metadata only; no technical routing applied"
+    }
+  ],
+  "qualityScore": {
+    "score": 52.4,
+    "summary": "Alignment 67.3 with strongest channel emotional.",
+    "heuristic": {
+      "score": 67.9,
+      "breakdown": {
+        "legibility": 76.3,
+        "emotionalReadability": 68.3,
+        "coherence": 88.6,
+        "focalAnchor": 70.7,
+        "technicalRichness": 98.5,
+        "restraint": 66,
+        "alignment": 67.3
+      }
+    },
+    "calibration": {
+      "sampleCount": 1,
+      "trustWeight": 0.4
+    },
+    "alignment": {
+      "totalAlign": 67.3,
+      "components": {
+        "title": {
+          "score": 64.9
+        },
+        "style": {
+          "score": 63.1
+        },
+        "emotional": {
+          "score": 75.4
+        }
+      }
+    }
+  },
+  "rationale": {
+    "intent": {
+      "signal": null,
+      "emotion": null,
+      "tension": null,
+      "balance": null,
+      "motion": null
+    },
+    "selection": {
+      "whyHeadline": "Selected as top-ranked Belgian headline (score 107 = frequency 107 + priority 0 + recency 0).",
+      "priorityTerms": []
+    },
+    "qualitySummary": "TOTAL_ALIGN 67.3."
+  },
+  "runPolicy": {
+    "artworksPerRun": 1,
+    "multiVariant": false
+  },
+  "artFramework": {
+    "version": 3,
+    "intent": {
+      "translatedHeadline": "Hantavirus on a cruise ship: the two Belgian passengers will undergo \"strict medical monitoring\" upon their return",
+      "newsSummary": "Hantavirus on a cruise ship: the two Belgian passengers will undergo \"strict medical monitoring\" upon their return is treated as a Hantavirus Cruise Ship pressure signal.",
+      "artistName": "Hilma af Klint",
+      "referenceImageSummary": "Reference image evidence is available as internal audit support; keep the artwork brief conservative and avoid invented artist mimicry.",
+      "styleVocabulary": [
+        "pink",
+        "After studying at the Royal Academy of Art in Stockholm",
+        "Hilma af Klint embarked on a major suite of paintings in 1904-06.",
+        "Even though abstract art has often been perceived as a primarily formalistic movement – a play with colours and shapes – the pioneers were remarkably often driven by spiritual conviction.",
+        "A Swedish hitherto unknown woman painter was presented as a key figure in the exhibition The Spiritual in Art – Abstract Painting 1890-1985 in Los Angeles.",
+        "Convinced that her contemporaries would not understand her spiritual works",
+        "she stipulated that they must not be exhibited until 20 years after her death.",
+        "She herself described it as a spiritual “mission”.",
+        "Hilma af Klint was a Swedish artist and mystic whose paintings are considered to be among the first major abstract works in Western art history. After studying at the Royal Academy of Art in Stockholm, Hilma af Klint embarked on a major suite of paintings in 1904-06. Hilma af Klint did not ascribe to any of the established avant-garde movements of her time.",
+        "Her paintings, which sometimes resemble diagrams, were a visual representation of complex spiritual ideas."
+      ],
+      "compositionBrief": "Hilma af Klint was a Swedish artist and mystic whose paintings are considered to be among the first major abstract works in Western art history. After studying at the Royal Academy of Art in Stockholm, Hilma af Klint embarked on a major suite of paintings in 1904-06. Hilma af Klint did not ascribe to any of the established avant-garde movements of her time.",
+      "materialBrief": "Even though abstract art has often been perceived as a primarily formalistic movement – a play with colours and shapes – the pioneers were remarkably often driven by spiritual conviction. Hilma af Klint was a Swedish artist and mystic whose paintings are considered to be among the first major abstract works in Western art history. After studying at the Royal Academy of Art in Stockholm, Hilma af Klint embarked on a major suite of paintings in 1904-06. Hilma af Klint did not ascribe to any of the established avant-garde movements of her time. A considerable body of her work predates the first purely abstract compositions by Kandinsky, Malevich, and Mondrian.",
+      "paletteBrief": "pink, Even though abstract art has often been perceived as a primarily formalistic movement – a play with colours and shapes – the pioneers were remarkably often driven by spiritual conviction. Hilma af Klint was a Swedish artist and mystic whose paintings are considered to be among the first major abstract works in Western art history. After studying at the Royal Academy of Art in Stockholm, Hilma af Klint embarked on a major suite of paintings in 1904-06. Hilma af Klint did not ascribe to any of the established avant-garde movements of her time. A considerable body of her work predates the first purely abstract compositions by Kandinsky, Malevich, and Mondrian.",
+      "motionBrief": "steady",
+      "webglTranslationIntent": "Translate the perceptual reading into a deterministic WebGL artwork by prioritizing Hilma af Klint was a Swedish artist and mystic whose paintings are considered to be among the first major abstract works in Western art history. After studying at the Royal Academy of Art in Stockholm, Hilma af Klint embarked on a major suite of paintings in 1904-06. Hilma af Klint did not ascribe to any of the established avant-garde movements of her time., Even though abstract art has often been perceived as a primarily formalistic movement – a play with colours and shapes – the pioneers were remarkably often driven by spiritual conviction. Hilma af Klint was a Swedish artist and mystic whose paintings are considered to be among the first major abstract works in Western art history. After studying at the Royal Academy of Art in Stockholm, Hilma af Klint embarked on a major suite of paintings in 1904-06. Hilma af Klint did not ascribe to any of the established avant-garde movements of her time. A considerable body of her work predates the first purely abstract compositions by Kandinsky, Malevich, and Mondrian., palette behavior (pink, Even though abstract art has often been perceived as a primarily formalistic movement – a play with colours and shapes – the pioneers were remarkably often driven by spiritual conviction. Hilma af Klint was a Swedish artist and mystic whose paintings are considered to be among the first major abstract works in Western art history. After studying at the Royal Academy of Art in Stockholm, Hilma af Klint embarked on a major suite of paintings in 1904-06. Hilma af Klint did not ascribe to any of the established avant-garde movements of her time. A considerable body of her work predates the first purely abstract compositions by Kandinsky, Malevich, and Mondrian.), and steady; structured fields are support only when they agree with the perceptual reading.",
+      "mustShow": [
+        "Hilma af Klint was a Swedish artist and mystic whose paintings are considered to be among the first major abstract works in Western art history. After studying at the Royal Academy of Art in Stockholm, Hilma af Klint embarked on a major suite of paintings in 1904-06. Hilma af Klint did not ascribe to any of the established avant-garde movements of her time.",
+        "Even though abstract art has often been perceived as a primarily formalistic movement – a play with colours and shapes – the pioneers were remarkably often driven by spiritual conviction. Hilma af Klint was a Swedish artist and mystic whose paintings are considered to be among the first major abstract works in Western art history. After studying at the Royal Academy of Art in Stockholm, Hilma af Klint embarked on a major suite of paintings in 1904-06. Hilma af Klint did not ascribe to any of the established avant-garde movements of her time. A considerable body of her work predates the first purely abstract compositions by Kandinsky, Malevich, and Mondrian.",
+        "non-literal flow pressure",
+        "Hantavirus Cruise Ship as visual pressure"
+      ],
+      "prompt": "Create a non-literal artwork response to \"Hantavirus on a cruise ship: the two Belgian passengers will undergo \"strict medical monitoring\" upon their return\" through Hilma af Klint's sourced visual evidence."
+    }
+  }
+}

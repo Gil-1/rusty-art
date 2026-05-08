@@ -17,15 +17,29 @@ function clearSceneGroup(group, disposeObjectTreeFn) {
   }
 }
 
+export function sanitizeSceneCameraRuntimeConfig(camCfg = {}) {
+  const source = camCfg && typeof camCfg === 'object' && !Array.isArray(camCfg) ? camCfg : {};
+  const sanitized = {};
+
+  if (source.autoRotate === true) sanitized.autoRotate = true;
+  else if (source.autoRotate === false) sanitized.autoRotate = false;
+  if (Number.isFinite(source.autoRotateSpeed)) sanitized.autoRotateSpeed = source.autoRotateSpeed;
+  if (Number.isFinite(source.cycleSeconds)) sanitized.cycleSeconds = source.cycleSeconds;
+  if (source.motionEnabled === true) sanitized.motionEnabled = true;
+  else if (source.motionEnabled === false) sanitized.motionEnabled = false;
+  if (Array.isArray(source.beats) && source.beats.length >= 2) sanitized.beats = source.beats;
+
+  return sanitized;
+}
+
 export function applySceneCameraRuntimeConfig(sceneAdapter, camCfg = {}) {
-  sceneAdapter.controls.autoRotate = camCfg.autoRotate === true;
-  sceneAdapter.controls.autoRotateSpeed = Number.isFinite(camCfg.autoRotateSpeed) ? camCfg.autoRotateSpeed : 0.35;
-  if (Number.isFinite(camCfg.minDistance)) sceneAdapter.controls.minDistance = camCfg.minDistance;
-  if (Number.isFinite(camCfg.maxDistance)) sceneAdapter.controls.maxDistance = camCfg.maxDistance;
-  sceneAdapter.cameraBeats = Array.isArray(camCfg.beats) && camCfg.beats.length >= 2 ? camCfg.beats : null;
-  sceneAdapter.cameraCycleSeconds = Number.isFinite(camCfg.cycleSeconds) ? camCfg.cycleSeconds : 24;
-  sceneAdapter.cameraMotionEnabled = camCfg.motionEnabled === true;
-  sceneAdapter.resetCameraForArtwork(camCfg);
+  const cameraConfig = sanitizeSceneCameraRuntimeConfig(camCfg);
+  sceneAdapter.controls.autoRotate = cameraConfig.autoRotate === true;
+  sceneAdapter.controls.autoRotateSpeed = Number.isFinite(cameraConfig.autoRotateSpeed) ? cameraConfig.autoRotateSpeed : 0.35;
+  sceneAdapter.cameraBeats = Array.isArray(cameraConfig.beats) && cameraConfig.beats.length >= 2 ? cameraConfig.beats : null;
+  sceneAdapter.cameraCycleSeconds = Number.isFinite(cameraConfig.cycleSeconds) ? cameraConfig.cycleSeconds : 24;
+  sceneAdapter.cameraMotionEnabled = cameraConfig.motionEnabled === true;
+  sceneAdapter.resetCameraForArtwork(cameraConfig);
 }
 
 export async function applySceneConfigSession(sceneAdapter, config, {

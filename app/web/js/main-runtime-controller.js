@@ -267,9 +267,9 @@ export function createRuntimeController({
       return null;
     }
 
-    await applyActiveArtworkToScene();
-    updateMotionIntensity();
     if (captureMode) loadedScene.setCaptureMode?.(true, 1.234);
+    await applyActiveArtworkToScene();
+    if (!captureMode) updateMotionIntensity();
     onSceneBooted();
     onSceneStatusChange();
     return loadedScene;
