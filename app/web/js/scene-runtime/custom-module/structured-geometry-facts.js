@@ -1,4 +1,5 @@
 import { normalizeStructuredGeometryType } from '../../contracts/custom-module-compiler-contract.js';
+import { normalizeMaterialSurfaceFacts } from '../../contracts/material-obligations-contract.js';
 import { clamp, isObject, toBoolean } from './runtime-utils.js';
 import { buildStructuredGeometryPrimitiveFacts } from './structured-geometry-registry.js';
 
@@ -111,6 +112,17 @@ export function resolveStructuredPalette(materialSpec = {}, context = {}) {
   ].filter(Boolean);
 }
 
+export function resolveStructuredMaterialFacts(materialSpec = {}, context = {}) {
+  const material = isObject(materialSpec) ? materialSpec : {};
+  const explicitSurface = isObject(material.surface) ? material.surface : {};
+  const normalized = normalizeMaterialSurfaceFacts(material, explicitSurface);
+  return {
+    ...normalized,
+    colorRamp: Array.isArray(material.colorRamp) ? material.colorRamp.slice() : null,
+    type: String(material.type || '').trim() || null
+  };
+}
+
 export function resolveStructuredColorValue(expr, context = {}, fallback = '#ffffff') {
   if (Array.isArray(expr) && expr.length === 3 && expr.every(Number.isFinite)) return expr.slice();
   if (isObject(expr) && Object.prototype.hasOwnProperty.call(expr, 'index')) {
@@ -177,6 +189,7 @@ export function buildStructuredGeometryExecutionFacts(node = {}, context = {}) {
       isObject,
       resolveBoolean: resolveStructuredBoolean,
       resolveColorValue: resolveStructuredColorValue,
+      resolveMaterialFacts: resolveStructuredMaterialFacts,
       resolveNumber: resolveStructuredNumber,
       resolveStructuredPalette,
       resolveVector3: resolveStructuredVector3

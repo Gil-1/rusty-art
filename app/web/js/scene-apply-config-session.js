@@ -28,6 +28,9 @@ export function sanitizeSceneCameraRuntimeConfig(camCfg = {}) {
   if (source.motionEnabled === true) sanitized.motionEnabled = true;
   else if (source.motionEnabled === false) sanitized.motionEnabled = false;
   if (Array.isArray(source.beats) && source.beats.length >= 2) sanitized.beats = source.beats;
+  if (source.materializationFraming && typeof source.materializationFraming === 'object' && !Array.isArray(source.materializationFraming)) {
+    sanitized.materializationFraming = source.materializationFraming;
+  }
 
   return sanitized;
 }
@@ -104,7 +107,10 @@ export async function applySceneConfigSession(sceneAdapter, config, {
 
   sceneAdapter.motionSpeed = sceneCfg.motionSpeed || 0.001;
   sceneAdapter.currentTension = sceneCfg.expression?.tension ?? 0.5;
-  applySceneCameraRuntimeConfig(sceneAdapter, sceneCfg.camera || {});
+  applySceneCameraRuntimeConfig(sceneAdapter, {
+    ...(sceneCfg.camera || {}),
+    materializationFraming: sceneCfg.camera?.materializationFraming || sceneCfg.materialization?.framing || null
+  });
 
   sceneAdapter.breathing = resolveBreathingConfig(sceneCfg);
   sceneAdapter.postBase = resolvePostBase(sceneCfg);

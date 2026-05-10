@@ -50,6 +50,94 @@ export function createStructuredFlatMaterial({ color, opacity = 1, wireframe = f
   });
 }
 
+function hasRichSurface(surface = {}) {
+  return Object.entries(surface || {}).some(([key, value]) => key !== 'flatness' && Number(value) > 0);
+}
+
+export function createStructuredRichSurfaceMaterial({ color, opacity = 1, wireframe = false, surface = {}, materialObligations = null, runtimeMaterial = null } = {}) {
+  if (!hasRichSurface(surface) || wireframe === true) {
+    return createStructuredFlatMaterial({ color, opacity, wireframe });
+  }
+  const normalizedOpacity = clamp(opacity, 0.01, 1, 1);
+  const uniforms = {
+    uColor: { value: color instanceof THREE.Color ? color.clone() : new THREE.Color(color || '#ffffff') },
+    uOpacity: { value: normalizedOpacity },
+    uGrain: { value: clamp(surface.grain, 0, 1, 0) },
+    uWash: { value: clamp(surface.wash, 0, 1, 0) },
+    uInkVariation: { value: clamp(surface.inkVariation, 0, 1, 0) },
+    uOpacityLayering: { value: clamp(surface.opacityLayering, 0, 1, 0) },
+    uErasure: { value: clamp(surface.erasure, 0, 1, 0) },
+    uStain: { value: clamp(surface.stain, 0, 1, 0) },
+    uRoughness: { value: clamp(surface.roughness, 0, 1, 0) },
+    uGlow: { value: clamp(surface.glow, 0, 1, 0) },
+    uMetalness: { value: clamp(surface.metalness, 0, 1, 0) }
+  };
+  const material = new THREE.ShaderMaterial({
+    uniforms,
+    vertexShader: `
+      varying vec2 vUv;
+      void main() {
+        vUv = uv;
+        gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+      }
+    `,
+    fragmentShader: `
+      precision highp float;
+      varying vec2 vUv;
+      uniform vec3 uColor;
+      uniform float uOpacity;
+      uniform float uGrain;
+      uniform float uWash;
+      uniform float uInkVariation;
+      uniform float uOpacityLayering;
+      uniform float uErasure;
+      uniform float uStain;
+      uniform float uRoughness;
+      uniform float uGlow;
+      uniform float uMetalness;
+
+      float hash(vec2 p) {
+        return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453123);
+      }
+
+      void main() {
+        vec2 uv = vUv;
+        float grain = hash(floor(uv * 190.0));
+        float wash = sin((uv.x * 5.0) + (uv.y * 8.0) + hash(floor(uv * 17.0)) * 2.6) * 0.5 + 0.5;
+        float stain = smoothstep(0.58, 0.04, length((uv - vec2(0.52, 0.48)) * vec2(0.82, 1.18)));
+        float erasure = smoothstep(0.72, 0.98, hash(floor((uv + vec2(0.13, 0.31)) * 54.0)));
+        float ink = sin(uv.y * 95.0 + grain * 5.0) * 0.5 + 0.5;
+        float variation =
+          (grain - 0.5) * uGrain * 0.34 +
+          (wash - 0.5) * uWash * 0.28 +
+          (ink - 0.5) * uInkVariation * 0.24 +
+          stain * uStain * 0.2 -
+          erasure * uErasure * 0.26;
+        vec3 color = uColor * (1.0 + variation);
+        color = mix(color, color + vec3(0.08, 0.065, 0.04), uRoughness * grain * 0.45);
+        color = mix(color, vec3(max(max(color.r, color.g), color.b)), uMetalness * 0.22);
+        color += vec3(uGlow * 0.18);
+        float alpha = uOpacity * (1.0 - erasure * uErasure * 0.34);
+        alpha *= mix(1.0, 0.72 + (wash * 0.28), uOpacityLayering);
+        gl_FragColor = vec4(clamp(color, 0.0, 1.5), clamp(alpha, 0.01, 1.0));
+      }
+    `,
+    transparent: true,
+    opacity: normalizedOpacity,
+    side: THREE.DoubleSide,
+    depthWrite: false,
+    blending: THREE.NormalBlending
+  });
+  material.userData = {
+    ...(material.userData || {}),
+    runtimeMaterial,
+    materialObligations,
+    surfaceVariation: { ...surface },
+    materialRichSurface: true
+  };
+  return material;
+}
+
 export function createEllipseShapeGeometry(width = 1, height = 1, segments = 96) {
   const shape = new THREE.Shape();
   shape.absellipse(0, 0, Math.max(0.001, width / 2), Math.max(0.001, height / 2), 0, Math.PI * 2, false, 0);
@@ -83,10 +171,13 @@ function applyStructuredTransformFacts(target, transform = {}) {
 }
 
 function createFactMaterial(material = {}, context = {}) {
-  return createStructuredFlatMaterial({
+  return createStructuredRichSurfaceMaterial({
     color: resolveStructuredDslColor(material.color, context, '#ffffff'),
     opacity: material.opacity,
-    wireframe: material.wireframe
+    wireframe: material.wireframe,
+    surface: material.surface,
+    runtimeMaterial: material.runtimeMaterial,
+    materialObligations: material.materialObligations
   });
 }
 

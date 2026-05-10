@@ -7,6 +7,14 @@ export const CANONICAL_VIEWER_CAMERA = Object.freeze({
     phi: Math.PI / 2.2
   })
 });
+export const FULL_FRAME_SURFACE_CAMERA = Object.freeze({
+  target: Object.freeze([0, 0, 0]),
+  pose: Object.freeze({
+    radius: 7.2,
+    theta: 0,
+    phi: Math.PI / 2
+  })
+});
 
 function clamp(value, min, max) {
   return Math.max(min, Math.min(max, value));
@@ -106,7 +114,7 @@ function sampleCameraRail(cameraBeats, phase, cameraCycleSeconds) {
 
 export function updateOrbitForFrame(scene, { t, motionT, speed, motion }) {
   if (scene.captureMode) {
-    resetCameraForArtwork(scene);
+    resetCameraForArtwork(scene, scene.currentArtworkCameraConfig || {});
     updateCameraFromOrbit(scene);
     scene.canonicalFirstViewEstablished = true;
     return;
@@ -191,15 +199,22 @@ export function applyViewportOrbitFrame(scene, { resetOrbit = false } = {}) {
 }
 
 export function resetCameraForArtwork(scene, camCfg = {}) {
-  void camCfg;
-  scene.baseOrbitPose.radius = CANONICAL_VIEWER_CAMERA.pose.radius;
-  scene.baseOrbitPose.theta = CANONICAL_VIEWER_CAMERA.pose.theta;
-  scene.baseOrbitPose.phi = CANONICAL_VIEWER_CAMERA.pose.phi;
+  const sourceCfg = camCfg && typeof camCfg === 'object' && !Array.isArray(camCfg) ? camCfg : {};
+  scene.currentArtworkCameraConfig = sourceCfg;
+  const framing = sourceCfg.materializationFraming && typeof sourceCfg.materializationFraming === 'object' && !Array.isArray(sourceCfg.materializationFraming)
+    ? sourceCfg.materializationFraming
+    : null;
+  const fullFrameSurface = framing?.fullFrameSurface === true || framing?.mode === 'full-frame-surface';
+  const cameraProfile = fullFrameSurface ? FULL_FRAME_SURFACE_CAMERA : CANONICAL_VIEWER_CAMERA;
+
+  scene.baseOrbitPose.radius = cameraProfile.pose.radius;
+  scene.baseOrbitPose.theta = cameraProfile.pose.theta;
+  scene.baseOrbitPose.phi = cameraProfile.pose.phi;
 
   scene.baseOrbitTarget.set(
-    CANONICAL_VIEWER_CAMERA.target[0],
-    CANONICAL_VIEWER_CAMERA.target[1],
-    CANONICAL_VIEWER_CAMERA.target[2]
+    cameraProfile.target[0],
+    cameraProfile.target[1],
+    cameraProfile.target[2]
   );
 
   scene.orbit.radius = scene.baseOrbitPose.radius;

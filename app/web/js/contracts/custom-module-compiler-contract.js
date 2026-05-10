@@ -3,7 +3,7 @@ export const CUSTOM_KINDS = new Set(['dsl', 'js']);
 export const PIPELINE_FAMILIES = new Set(['post', 'camera', 'lighting']);
 export const EXECUTABLE_DSL_KEYS = Object.freeze({
   shader: new Set(['width', 'height', 'opacity', 'position', 'rotation', 'scale', 'blend']),
-  geometry: new Set(['geometry', 'count', 'spread', 'depth', 'shape', 'wireframe', 'opacity', 'position', 'rotation', 'scale', 'width', 'height', 'gridWidth', 'gridHeight', 'segmentsX', 'segmentsY', 'cellCount', 'blend']),
+  geometry: new Set(['geometry', 'material', 'count', 'spread', 'depth', 'shape', 'wireframe', 'opacity', 'position', 'rotation', 'scale', 'width', 'height', 'gridWidth', 'gridHeight', 'segmentsX', 'segmentsY', 'cellCount', 'blend']),
   particle: new Set(['count', 'spread', 'size', 'opacity', 'position', 'rotation', 'scale', 'blend'])
 });
 export const NON_EXECUTABLE_PATCH_KEYS = new Set(['moduleType', 'generate', 'material', 'animation', 'description', 'notes', 'intent', 'previewIntent']);

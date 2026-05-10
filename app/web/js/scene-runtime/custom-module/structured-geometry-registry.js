@@ -1,8 +1,11 @@
-function materialFacts({ color, opacity, wireframe = false } = {}) {
+function materialFacts({ color, opacity, wireframe = false, material = null } = {}) {
   return {
     color,
     opacity,
-    wireframe: wireframe === true
+    wireframe: wireframe === true,
+    runtimeMaterial: material?.runtimeMaterial || null,
+    surface: material?.surface || {},
+    materialObligations: material?.materialObligations || null
   };
 }
 
@@ -20,6 +23,12 @@ function prepareFactContext(context = {}, helpers = {}) {
     palette,
     childContext: { ...context, materialPalette: palette }
   };
+}
+
+function resolveMaterialFacts(helpers = {}, materialSpec = {}, context = {}) {
+  return typeof helpers.resolveMaterialFacts === 'function'
+    ? helpers.resolveMaterialFacts(materialSpec, context)
+    : { runtimeMaterial: null, surface: {}, materialObligations: null };
 }
 
 const primitiveDefinitions = {
@@ -52,6 +61,7 @@ const primitiveDefinitions = {
       const rotationZ = helpers.resolveNumber(node.rotationExpr ?? node.rotationZ ?? node.rotation, childContext, 0);
       const segments = Math.max(24, Math.round(helpers.resolveNumber(node.segments, childContext, 128)));
       const opacity = helpers.clamp(helpers.resolveNumber(materialSpec.opacity, childContext, 0.92), 0.02, 1, 0.92);
+      const material = resolveMaterialFacts(helpers, materialSpec, childContext);
       const rings = [];
 
       for (let i = 0; i < ringCount; i += 1) {
@@ -65,7 +75,8 @@ const primitiveDefinitions = {
           positionZ: Number(node.z || 0) + (i * 0.01),
           material: materialFacts({
             color: helpers.resolveColorValue(palette[i] ?? palette[palette.length - 1] ?? '#ffffff', childContext, '#ffffff'),
-            opacity
+            opacity,
+            material
           })
         });
       }
@@ -93,6 +104,7 @@ const primitiveDefinitions = {
       const centerBias = helpers.clamp(helpers.resolveNumber(node.centerBiasExpr ?? node.centerBias, childContext, 1), 0.2, 2.2, 1);
       const opacity = helpers.clamp(helpers.resolveNumber(materialSpec.opacity, childContext, 0.78), 0.02, 1, 0.78);
       const color = helpers.resolveColorValue(node.color ?? materialSpec.color ?? palette[0] ?? '#ffffff', childContext, '#ffffff');
+      const material = resolveMaterialFacts(helpers, materialSpec, childContext);
       const rects = [];
 
       for (let i = 0; i < count; i += 1) {
@@ -103,7 +115,7 @@ const primitiveDefinitions = {
           width,
           height,
           position: [0, lerp(yMin, yMax, (weighted + 1) / 2), i * 0.001],
-          material: materialFacts({ color, opacity })
+          material: materialFacts({ color, opacity, material })
         });
       }
 
@@ -124,6 +136,7 @@ const primitiveDefinitions = {
       const path = (Array.isArray(node.path) ? node.path : [])
         .map((entry) => helpers.resolveVector3(entry, childContext, [0, 0, 0]));
       const closed = helpers.resolveBoolean(node.closed, childContext, false);
+      const material = resolveMaterialFacts(helpers, materialSpec, childContext);
       return {
         type,
         geometry: {
@@ -134,7 +147,8 @@ const primitiveDefinitions = {
           radius: helpers.clamp(helpers.resolveNumber(node.radiusExpr ?? node.radius ?? node.thickness, childContext, 0.08), 0.005, 2, 0.08),
           material: materialFacts({
             color: helpers.resolveColorValue(node.color ?? materialSpec.color ?? palette[0] ?? '#ffffff', childContext, '#ffffff'),
-            opacity: helpers.clamp(helpers.resolveNumber(materialSpec.opacity, childContext, 0.84), 0.02, 1, 0.84)
+            opacity: helpers.clamp(helpers.resolveNumber(materialSpec.opacity, childContext, 0.84), 0.02, 1, 0.84),
+            material
           })
         },
         transform,
@@ -148,6 +162,7 @@ const primitiveDefinitions = {
   'ellipse-ring': {
     buildFacts({ type, node, context, transform, helpers }) {
       const { materialSpec, palette, childContext } = prepareFactContext(context, helpers);
+      const material = resolveMaterialFacts(helpers, materialSpec, childContext);
       return {
         type,
         geometry: {
@@ -157,7 +172,8 @@ const primitiveDefinitions = {
           lineWidth: helpers.clamp(helpers.resolveNumber(node.lineWidth ?? node.stroke ?? node.thickness, childContext, 0.08), 0.005, 2, 0.08),
           material: materialFacts({
             color: helpers.resolveColorValue(node.color ?? materialSpec.color ?? palette[0] ?? '#ffffff', childContext, '#ffffff'),
-            opacity: helpers.clamp(helpers.resolveNumber(node.strokeOpacity ?? node.opacity ?? materialSpec.opacity, childContext, 0.9), 0.02, 1, 0.9)
+            opacity: helpers.clamp(helpers.resolveNumber(node.strokeOpacity ?? node.opacity ?? materialSpec.opacity, childContext, 0.9), 0.02, 1, 0.9),
+            material
           })
         },
         transform,
@@ -171,6 +187,7 @@ const primitiveDefinitions = {
   rect: {
     buildFacts({ type, node, context, transform, helpers }) {
       const { materialSpec, palette, childContext } = prepareFactContext(context, helpers);
+      const material = resolveMaterialFacts(helpers, materialSpec, childContext);
       return {
         type,
         geometry: {
@@ -179,7 +196,8 @@ const primitiveDefinitions = {
           height: helpers.clamp(helpers.resolveNumber(node.height, childContext, 0.1), 0.005, 10, 0.1),
           material: materialFacts({
             color: helpers.resolveColorValue(node.color ?? materialSpec.color ?? palette[0] ?? '#ffffff', childContext, '#ffffff'),
-            opacity: helpers.clamp(helpers.resolveNumber(node.opacity ?? materialSpec.opacity, childContext, 0.84), 0.02, 1, 0.84)
+            opacity: helpers.clamp(helpers.resolveNumber(node.opacity ?? materialSpec.opacity, childContext, 0.84), 0.02, 1, 0.84),
+            material
           })
         },
         transform,
@@ -193,6 +211,7 @@ const primitiveDefinitions = {
   ellipse: {
     buildFacts({ type, node, context, transform, helpers }) {
       const { materialSpec, palette, childContext } = prepareFactContext(context, helpers);
+      const material = resolveMaterialFacts(helpers, materialSpec, childContext);
       return {
         type,
         geometry: {
@@ -201,7 +220,8 @@ const primitiveDefinitions = {
           height: helpers.clamp(helpers.resolveNumber(node.height, childContext, 0.4), 0.01, 20, 0.4),
           material: materialFacts({
             color: helpers.resolveColorValue(node.color ?? materialSpec.color ?? palette[0] ?? '#ffffff', childContext, '#ffffff'),
-            opacity: helpers.clamp(helpers.resolveNumber(node.opacity ?? node.fillOpacity ?? materialSpec.opacity, childContext, 0.84), 0.02, 1, 0.84)
+            opacity: helpers.clamp(helpers.resolveNumber(node.opacity ?? node.fillOpacity ?? materialSpec.opacity, childContext, 0.84), 0.02, 1, 0.84),
+            material
           })
         },
         transform,

@@ -307,6 +307,7 @@ function createSignalWeave({ primitive, sceneCfg, seed, index }) {
   const offsetZ = Number(params.offsetZ ?? primitive.offsetZ ?? 0);
   const scaleX = Number(params.scaleX ?? primitive.scaleX ?? 1);
   const scaleY = Number(params.scaleY ?? primitive.scaleY ?? 1);
+  const rotationZ = Number(params.rotationZ ?? params.rotation ?? primitive.rotationZ ?? primitive.rotation ?? 0);
 
   for (let s = 0; s < strands; s += 1) {
     const phase = rand() * Math.PI * 2;
@@ -330,6 +331,7 @@ function createSignalWeave({ primitive, sceneCfg, seed, index }) {
   }
 
   group.position.set(offsetX, offsetY, offsetZ);
+  group.rotation.z = Number.isFinite(rotationZ) ? rotationZ : 0;
   group.scale.set(scaleX, scaleY, 1);
   return group;
 }

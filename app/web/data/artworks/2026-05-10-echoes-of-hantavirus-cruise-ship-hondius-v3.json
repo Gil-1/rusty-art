@@ -1,0 +1,1289 @@
+{
+  "id": "2026-05-10-echoes-of-hantavirus-cruise-ship-hondius-v3",
+  "date": "2026-05-10",
+  "title": "Echoes of Hantavirus cruise ship Hondius",
+  "generatedAt": "2026-05-10T06:18:49.857Z",
+  "news": {
+    "source": "lavenir",
+    "title": "Hantavirus on a cruise ship: the Hondius, with two Belgians on board, has arrived in Tenerife",
+    "link": "https://www.lavenir.net/actu/monde/2026/05/10/hantavirus-sur-un-bateau-de-croisiere-les-passagers-dont-deux-belges-commenceront-a-debarquer-vers-08h00-locales-643JVR3VMRAHJJWDUM4DR3HAZY/",
+    "score": 93.688
+  },
+  "inspiration": {
+    "artist": "Alejandro Otero",
+    "tags": [
+      "abstract",
+      "geometric"
+    ],
+    "links": {
+      "wikipedia": "https://en.wikipedia.org/wiki/Alejandro_Otero",
+      "reference": "https://en.wikipedia.org/wiki/Alejandro_Otero"
+    }
+  },
+  "seed": 2411237228,
+  "scene": {
+    "motif": "flow",
+    "shapeCount": 64,
+    "turbulence": 0.428,
+    "spiralBias": 0.908,
+    "motionSpeed": 0.00168,
+    "bloom": 0.12,
+    "grain": 0.034,
+    "fogDensity": 0.052,
+    "distortion": 0.08,
+    "flowField": 0.34,
+    "anchorStrength": 0.579,
+    "anchorOffsetX": 0.166,
+    "layerBalance": {
+      "structure": 0.74,
+      "chaos": 0.294
+    },
+    "expression": {
+      "tension": 0.31,
+      "structure": 0.728,
+      "motion": 0.76,
+      "noise": 0.294,
+      "urgency": 0.966,
+      "contrast": 0.434
+    },
+    "palette": {
+      "bg": "#f2ead8",
+      "primary": "#090909",
+      "secondary": "#167c78",
+      "glow": "#d84a24",
+      "anchor": "#b82118"
+    },
+    "elements": [
+      {
+        "id": "ground.open-cream-panel",
+        "moduleType": "cm.cream-relief-panel.v1",
+        "capabilities": [],
+        "stackFamilies": [],
+        "styleTags": [],
+        "libraryRef": null,
+        "width": 5.9,
+        "height": 3.7,
+        "color": "bg",
+        "opacity": 0.87,
+        "intensity": 0.71,
+        "scenePurpose": "provide an active pale surface with enough room for intervals to breathe",
+        "currentSceneContribution": "keeps the image frontal, painted, and object-like",
+        "expectedRead": "cream hard-edge panel",
+        "mustNotReadAs": [
+          "blank website background",
+          "void",
+          "floating screen"
+        ],
+        "animation": {},
+        "scaleX": 1.54,
+        "scaleY": 1.62,
+        "rotationZ": 0,
+        "offsetX": 0,
+        "offsetY": 0,
+        "techniqueRef": "tech.open-relief-spacing",
+        "params": {
+          "width": 5.9,
+          "height": 3.7,
+          "color": "bg",
+          "opacity": 0.87,
+          "intensity": 0.71,
+          "scenePurpose": "provide an active pale surface with enough room for intervals to breathe",
+          "currentSceneContribution": "keeps the image frontal, painted, and object-like",
+          "expectedRead": "cream hard-edge panel",
+          "mustNotReadAs": [
+            "blank website background",
+            "void",
+            "floating screen"
+          ],
+          "animation": {},
+          "scaleX": 1.54,
+          "scaleY": 1.62,
+          "rotationZ": 0,
+          "offsetX": 0,
+          "offsetY": 0,
+          "techniqueRef": "tech.open-relief-spacing"
+        },
+        "role": "structural-spine",
+        "layer": "background",
+        "motif": "flow",
+        "intentCadence": "drift"
+      },
+      {
+        "id": "flow.recessed-arcs",
+        "moduleType": "cm.compressed-flow-slits.v2",
+        "capabilities": [],
+        "stackFamilies": [],
+        "styleTags": [],
+        "libraryRef": null,
+        "width": 5,
+        "height": 2.9,
+        "color": "secondary",
+        "opacity": 0.78,
+        "intensity": 0.6,
+        "scenePurpose": "carry the non-literal flow motif as pressure moving behind the constructed surface",
+        "currentSceneContribution": "adds restrained teal, green, orange, and red curved pressure through open intervals",
+        "expectedRead": "recessed color flow caught behind bars",
+        "mustNotReadAs": [
+          "rainbow backdrop",
+          "decorative wave",
+          "literal water"
+        ],
+        "animation": {
+          "pulse": 0.2,
+          "wobbleX": 0.06,
+          "wobbleY": 0.02,
+          "drift": 0.22
+        },
+        "techniqueRef": "tech.recessed-color-arcs",
+        "params": {
+          "width": 5,
+          "height": 2.9,
+          "color": "secondary",
+          "opacity": 0.78,
+          "intensity": 0.6,
+          "scenePurpose": "carry the non-literal flow motif as pressure moving behind the constructed surface",
+          "currentSceneContribution": "adds restrained teal, green, orange, and red curved pressure through open intervals",
+          "expectedRead": "recessed color flow caught behind bars",
+          "mustNotReadAs": [
+            "rainbow backdrop",
+            "decorative wave",
+            "literal water"
+          ],
+          "animation": {
+            "pulse": 0.2,
+            "wobbleX": 0.06,
+            "wobbleY": 0.02,
+            "drift": 0.22
+          },
+          "techniqueRef": "tech.recessed-color-arcs"
+        },
+        "role": "support-rhythm",
+        "layer": "midground",
+        "motif": "flow",
+        "intentCadence": "drift"
+      },
+      {
+        "id": "structure.open-black-shutters",
+        "moduleType": "cm.otero-relief-bars.v2",
+        "capabilities": [],
+        "stackFamilies": [],
+        "styleTags": [],
+        "libraryRef": null,
+        "count": 18,
+        "gridWidth": 5.25,
+        "gridHeight": 3.42,
+        "color": "primary",
+        "opacity": 0.95,
+        "intensity": 0.84,
+        "scenePurpose": "hold Otero's vertical interval structure while allowing more pale space",
+        "currentSceneContribution": "creates a precise black relief rhythm across the panel",
+        "expectedRead": "raised black bars with deliberate cream pauses",
+        "mustNotReadAs": [
+          "fence illustration",
+          "barcode",
+          "UI divider"
+        ],
+        "animation": {
+          "pulse": 0.05
+        },
+        "techniqueRef": "tech.open-relief-spacing",
+        "params": {
+          "count": 18,
+          "gridWidth": 5.25,
+          "gridHeight": 3.42,
+          "color": "primary",
+          "opacity": 0.95,
+          "intensity": 0.84,
+          "scenePurpose": "hold Otero's vertical interval structure while allowing more pale space",
+          "currentSceneContribution": "creates a precise black relief rhythm across the panel",
+          "expectedRead": "raised black bars with deliberate cream pauses",
+          "mustNotReadAs": [
+            "fence illustration",
+            "barcode",
+            "UI divider"
+          ],
+          "animation": {
+            "pulse": 0.05
+          },
+          "techniqueRef": "tech.open-relief-spacing"
+        },
+        "role": "structural-spine",
+        "layer": "foreground",
+        "motif": "flow",
+        "intentCadence": "drift"
+      },
+      {
+        "id": "anchor.soft-offset-seal",
+        "moduleType": "cm.arrival-seal-occluded.v2",
+        "capabilities": [],
+        "stackFamilies": [],
+        "styleTags": [],
+        "libraryRef": null,
+        "width": 0.78,
+        "height": 0.78,
+        "position": [
+          1.05,
+          0.18,
+          0.025
+        ],
+        "color": "glow",
+        "opacity": 0.74,
+        "intensity": 0.52,
+        "scenePurpose": "create a readable but subdued arrival signal inside the vertical law",
+        "currentSceneContribution": "provides a warm circular counterpoint that stays smaller than the shutter structure",
+        "expectedRead": "muted arrival seal behind the relief bars",
+        "mustNotReadAs": [
+          "target",
+          "radar",
+          "central emblem"
+        ],
+        "animation": {
+          "rotationZ": 0.025,
+          "pulse": 0.14
+        },
+        "techniqueRef": "tech.offset-arrival-seal",
+        "params": {
+          "width": 0.78,
+          "height": 0.78,
+          "position": [
+            1.05,
+            0.18,
+            0.025
+          ],
+          "color": "glow",
+          "opacity": 0.74,
+          "intensity": 0.52,
+          "scenePurpose": "create a readable but subdued arrival signal inside the vertical law",
+          "currentSceneContribution": "provides a warm circular counterpoint that stays smaller than the shutter structure",
+          "expectedRead": "muted arrival seal behind the relief bars",
+          "mustNotReadAs": [
+            "target",
+            "radar",
+            "central emblem"
+          ],
+          "animation": {
+            "rotationZ": 0.025,
+            "pulse": 0.14
+          },
+          "techniqueRef": "tech.offset-arrival-seal"
+        },
+        "role": "focal-anchor",
+        "layer": "midground",
+        "motif": "flow",
+        "intentCadence": "drift"
+      },
+      {
+        "id": "loop-focal-anchor",
+        "moduleType": "anchor-core",
+        "capabilities": [
+          "focal-anchor",
+          "layered-field"
+        ],
+        "stackFamilies": [
+          "shader-field",
+          "geometry-heavy",
+          "particle-heavy",
+          "instancing",
+          "sdf-raymarch"
+        ],
+        "styleTags": [
+          "anchor",
+          "center",
+          "stability"
+        ],
+        "libraryRef": "element.anchor-core.v1",
+        "color": "anchor",
+        "opacity": 0.68,
+        "intensity": 0.78,
+        "layer": "foreground",
+        "radius": 1.2,
+        "aura": 0.72,
+        "params": {
+          "radius": 1.2,
+          "aura": 0.72,
+          "color": "anchor",
+          "opacity": 0.68,
+          "intensity": 0.78
+        },
+        "role": "focal-anchor",
+        "motif": "flow",
+        "intentCadence": "drift"
+      },
+      {
+        "id": "loop-central-spine",
+        "moduleType": "motif-armature",
+        "capabilities": [
+          "geometric-structure",
+          "layered-field"
+        ],
+        "stackFamilies": [
+          "geometry-heavy",
+          "instancing",
+          "shader-field"
+        ],
+        "styleTags": [
+          "structure",
+          "spine"
+        ],
+        "libraryRef": "element.motif-armature.v1",
+        "color": "anchor",
+        "opacity": 0.56,
+        "layer": "foreground",
+        "motif": "flow",
+        "scaleY": 1.34,
+        "scaleX": 0.42,
+        "intensity": 0.78,
+        "params": {
+          "motif": "axis",
+          "scaleY": 1.34,
+          "scaleX": 0.42,
+          "color": "anchor",
+          "opacity": 0.56,
+          "intensity": 0.78
+        },
+        "role": "structural-spine",
+        "intentCadence": "drift"
+      },
+      {
+        "id": "loop-background-field",
+        "moduleType": "shader-field-plane",
+        "capabilities": [
+          "fluid-drift",
+          "layered-field"
+        ],
+        "stackFamilies": [
+          "shader-field",
+          "post-heavy",
+          "sdf-raymarch"
+        ],
+        "styleTags": [
+          "shader",
+          "field"
+        ],
+        "libraryRef": "element.shader-field-plane.v1",
+        "color": "secondary",
+        "opacity": 0.24,
+        "intensity": 0.34,
+        "layer": "background",
+        "radialBias": 0.52,
+        "hemisphereContrast": 0.38,
+        "params": {
+          "radialBias": 0.52,
+          "hemisphereContrast": 0.38,
+          "color": "secondary",
+          "opacity": 0.24,
+          "intensity": 0.34
+        },
+        "role": "atmosphere-field",
+        "motif": "flow",
+        "intentCadence": "drift"
+      }
+    ],
+    "shaderLayers": 4,
+    "elementDiversity": 7,
+    "paletteVariance": 0,
+    "motionSpeedNormalized": 0.75,
+    "camera": {
+      "autoRotate": false,
+      "autoRotateSpeed": 0.154,
+      "minDistance": 6,
+      "maxDistance": 24,
+      "cycleSeconds": 24,
+      "beats": [
+        {
+          "t": 0,
+          "radius": 7.2,
+          "theta": 0,
+          "phi": 1.5707963267948966,
+          "hold": 0
+        },
+        {
+          "t": 0.34,
+          "radius": 7.2,
+          "theta": 0,
+          "phi": 1.5707963267948966,
+          "hold": 0
+        },
+        {
+          "t": 0.68,
+          "radius": 7.2,
+          "theta": 0,
+          "phi": 1.5707963267948966,
+          "hold": 0
+        },
+        {
+          "t": 1,
+          "radius": 7.2,
+          "theta": 0,
+          "phi": 1.5707963267948966,
+          "hold": 0
+        }
+      ],
+      "motionEnabled": false,
+      "materializationFraming": {
+        "mode": "full-frame-surface",
+        "fullFrameSurface": true,
+        "panel": false,
+        "cameraPose": {
+          "radius": 7.2,
+          "theta": 0,
+          "phi": 1.5707963267948966,
+          "target": [
+            0,
+            0,
+            0
+          ]
+        },
+        "preserveObjectStage": false
+      }
+    },
+    "post": {
+      "vignette": 0.12,
+      "contrast": 1.14,
+      "saturation": 0.92,
+      "exposure": 0.94,
+      "breathing": {
+        "hueShift": 0.01,
+        "saturationAmplitude": 0.06,
+        "exposureAmplitude": 0.053,
+        "phaseA": 0.1657,
+        "phaseB": 0.1353
+      }
+    },
+    "styleFingerprint": {
+      "pulseFamily": "balanced",
+      "stripeWarp": 0.14,
+      "edgeSoftness": 0.26,
+      "cameraSway": 0.16,
+      "edgeHardness": 0.5,
+      "temperatureBias": 0,
+      "verticalBias": 0,
+      "cadenceBias": 0
+    },
+    "sceneAuthoring": {
+      "mode": "agent-dsl",
+      "planner": "openclaw-agent-scene-planner",
+      "representation": {
+        "id": "rep.open-interval-harbor",
+        "label": "Open Interval Harbor",
+        "description": "A more breathable Otero panel leaves wider cream pauses while color arcs sit behind the shutters and the arrival seal remains offset and subdued.",
+        "scoreHint": 0.79,
+        "motif": "open intervals with trapped harbor signal",
+        "cadence": "drift",
+        "scenePrompt": "Open cream hard-edge relief with varied black vertical shutters, wider pale intervals, restrained teal green orange red arcs behind gaps, one small offset red-orange arrival seal, precise shadows, painted-object ambiguity.",
+        "colorMood": "pale cream openness with black anchors and cool-warm color counterpoints",
+        "spatialIntent": "readable relief depth with more visible cream field and calmer pressure",
+        "imageAuthorship": {
+          "structuralLaw": "The vertical bars pause and breathe, but every color and symbol is still measured by the interval grid.",
+          "dominantForms": [
+            "widely spaced raised shutters",
+            "curved color traces behind slits",
+            "small offset seal",
+            "cream voids as active intervals"
+          ],
+          "edgeBehavior": "clean hard-edge cuts with tiny shadow seams",
+          "surfaceBehavior": "matte painted support, glossy black relief, flat color hidden beneath",
+          "depthLogic": "cream surface reads first, then raised bars, then recessed flow and seal caught behind them",
+          "motionLogic": "slow lateral drift behind static intervals creates controlled kinetic vibration"
+        },
+        "technicalTranslation": {
+          "realizationStrategy": "Use fewer visual events and slightly wider shutter spacing so the Otero panel feels open while preserving the required color-through-slits behavior.",
+          "reuseBias": "hybrid",
+          "whyThisApproach": "Custom relief modules carry the required visual grammar while the simpler geometry keeps the composition airy and readable.",
+          "notes": [
+            "Do not enlarge the seal beyond a minority of the canvas.",
+            "Let cream intervals be visually important.",
+            "Keep all elements bounded inside the panel."
+          ],
+          "motionCadence": "drift"
+        },
+        "mustShow": [
+          "cream painted panel",
+          "varied vertical black bars",
+          "color arcs trapped behind openings",
+          "offset red-orange seal partly barred",
+          "full frontal relief, not a tilted portal"
+        ],
+        "artistTechniqueObservations": {
+          "medium": "painting",
+          "primaryTechnique": "Hard-edge geometric abstraction with flat, opaque vertical color bands on a light ground, likely painted on panel or ..."
+        },
+        "rationale": "The news pressure becomes a contained harbor arrival pulse, held inside Otero's open vertical rhythm.",
+        "techniques": [
+          {
+            "id": "tech.open-relief-spacing",
+            "name": "open relief spacing",
+            "type": "geometry",
+            "purpose": "keep the panel breathable while retaining the governing vertical law",
+            "reuseModuleType": null,
+            "params": {
+              "barCount": 18,
+              "creamIntervalEmphasis": true
+            }
+          },
+          {
+            "id": "tech.recessed-color-arcs",
+            "name": "recessed color arcs",
+            "type": "shader",
+            "purpose": "make the flow motif feel contained and maritime without literal ship imagery",
+            "reuseModuleType": null,
+            "params": {
+              "curveBias": 0.25,
+              "opacity": 0.78
+            }
+          }
+        ]
+      },
+      "artisticIntent": {
+        "statement": "A contained cruise-health pressure signal is translated into an Otero-like constructed relief: pale ground, raised black intervals, and restrained color trapped behind slits.",
+        "motif": "shuttered relief panel with compressed color flow and an offset arrival seal",
+        "emotionalArc": "quiet containment, optical pressure, measured arrival",
+        "compositionLogic": "The scene is rebuilt as a frontal cream panel where dense vertical black shutters govern the whole image; color exists only in gaps, while a smaller red-orange seal sits offset right and is partially interrupted by the same shutter law.",
+        "imagePrompt": "A frontal Alejandro Otero-informed relief painting on pale cream ground, many glossy raised black vertical bars of varied width, narrow slit gaps revealing restrained teal, green, orange, and red bands behind, one small red-orange concentric arrival seal offset right, clean hard edges, cast shadows, no floating debris,"
+      },
+      "executionPlan": {
+        "palette": {
+          "bg": "#f2ead8",
+          "primary": "#090909",
+          "secondary": "#167c78",
+          "glow": "#d84a24",
+          "anchor": "#b82118"
+        },
+        "camera": {
+          "autoRotate": false,
+          "cycleSeconds": 24,
+          "target": [
+            0,
+            0,
+            0
+          ],
+          "frontal": true,
+          "preservePerspective": false
+        },
+        "post": {
+          "contrast": 1.08,
+          "saturation": 0.92,
+          "vignette": 0.12,
+          "exposure": 0.94
+        },
+        "global": {
+          "shapeCountHint": 64,
+          "flowField": 0.34,
+          "distortion": 0.08,
+          "bloom": 0.12
+        },
+        "techniques": [
+          {
+            "id": "tech.relief-shutters",
+            "name": "raised vertical shutter intervals",
+            "type": "geometry",
+            "purpose": "make the black parallel bars the governing Otero structure",
+            "reuseModuleType": null,
+            "params": {
+              "barCount": 22,
+              "variedWidths": true,
+              "castShadow": true
+            }
+          },
+          {
+            "id": "tech.trapped-flow",
+            "name": "compressed color through slit gaps",
+            "type": "shader",
+            "purpose": "translate cruise-hantavirus pressure as contained color visible only where the shutters open",
+            "reuseModuleType": null,
+            "params": {
+              "colors": [
+                "#167c78",
+                "#1f8c4c",
+                "#d56b22",
+                "#b82118"
+              ],
+              "masking": "behind-bars-only"
+            }
+          },
+          {
+            "id": "tech.offset-arrival-seal",
+            "name": "muted offset red-orange seal",
+            "type": "geometry",
+            "purpose": "mark Tenerife arrival and containment without reading as a HUD target",
+            "reuseModuleType": null,
+            "params": {
+              "offsetX": 1.15,
+              "scale": 0.42,
+              "partialOcclusion": "vertical shutters"
+            }
+          }
+        ]
+      },
+      "moduleOverrides": [],
+      "customModules": [
+        {
+          "id": "cm.cream-relief-panel.v1",
+          "family": "geometry",
+          "kind": "dsl",
+          "allowOverride": false,
+          "seedPolicy": "deterministic",
+          "paramsSchema": {
+            "width": "number",
+            "height": "number",
+            "depth": "number"
+          },
+          "source": {
+            "dsl": {
+              "geometry": {
+                "type": "rect"
+              },
+              "width": 5.9,
+              "height": 3.7,
+              "depth": 0.05,
+              "position": [
+                0,
+                0,
+                -0.08
+              ],
+              "material": {
+                "type": "paper",
+                "color": "#f2ead8",
+                "roughness": 0.88
+              },
+              "opacity": 1
+            },
+            "glsl": {},
+            "js": null
+          },
+          "budgets": {
+            "maxInstances": 1,
+            "maxShaderOpsHint": 0.2,
+            "mobileSafe": true
+          }
+        },
+        {
+          "id": "cm.otero-relief-bars.v2",
+          "family": "geometry",
+          "kind": "dsl",
+          "allowOverride": false,
+          "seedPolicy": "deterministic",
+          "paramsSchema": {
+            "count": "number",
+            "width": "number",
+            "height": "number",
+            "depth": "number"
+          },
+          "source": {
+            "dsl": {
+              "geometry": {
+                "type": "stacked-rects",
+                "orientation": "vertical",
+                "widthPattern": [
+                  0.09,
+                  0.13,
+                  0.07,
+                  0.16,
+                  0.1,
+                  0.12,
+                  0.08,
+                  0.15,
+                  0.11,
+                  0.06,
+                  0.14,
+                  0.09,
+                  0.17,
+                  0.08,
+                  0.12,
+                  0.1,
+                  0.15,
+                  0.07,
+                  0.13,
+                  0.1,
+                  0.16,
+                  0.09
+                ],
+                "heightPattern": [
+                  3.25,
+                  3.55,
+                  3.1,
+                  3.45,
+                  3.6,
+                  3.2,
+                  3.5,
+                  3.35,
+                  3.62,
+                  3,
+                  3.48,
+                  3.28,
+                  3.57,
+                  3.15,
+                  3.4,
+                  3.6,
+                  3.22,
+                  3.5,
+                  3.36,
+                  3.58,
+                  3.18,
+                  3.46
+                ]
+              },
+              "count": 22,
+              "gridWidth": 5.35,
+              "gridHeight": 3.55,
+              "depth": 0.16,
+              "position": [
+                0,
+                0,
+                0.08
+              ],
+              "material": {
+                "type": "ink",
+                "color": "#090909",
+                "roughness": 0.32,
+                "metalness": 0.05
+              },
+              "opacity": 0.98
+            },
+            "glsl": {},
+            "js": null
+          },
+          "budgets": {
+            "maxInstances": 48,
+            "maxShaderOpsHint": 0.35,
+            "mobileSafe": true
+          }
+        },
+        {
+          "id": "cm.compressed-flow-slits.v2",
+          "family": "shader",
+          "kind": "dsl",
+          "allowOverride": false,
+          "seedPolicy": "deterministic",
+          "paramsSchema": {
+            "width": "number",
+            "height": "number",
+            "opacity": "number"
+          },
+          "source": {
+            "dsl": {
+              "width": 5.25,
+              "height": 3.15,
+              "position": [
+                0,
+                0.02,
+                0
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "opacity": 0.86,
+              "blend": "normal"
+            },
+            "glsl": {
+              "vertex": "varying vec2 vUv; void main(){ vUv = uv; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }",
+              "fragment": "precision mediump float; varying vec2 vUv; uniform float uTime; float band(float x,float c,float w){ return smoothstep(w,0.0,abs(x-c)); } void main(){ vec2 p=vUv; float wave=0.03*sin(18.0*p.y+uTime*0.45); float m=band(p.x+wave,0.22,0.055)+band(p.x-wave,0.43,0.045)+band(p.x+wave*0.5,0.62,0.05)+band(p.x-wave*0.8,0.78,0.04); vec3 teal=vec3(0.086,0.486,0.470); vec3 green=vec3(0.122,0.548,0.300); vec3 orange=vec3(0.835,0.419,0.133); vec3 red=vec3(0.721,0.129,0.094); vec3 col=mix(teal,green,smoothstep(0.20,0.48,p.x)); col=mix(col,orange,smoothstep(0.42,0.68,p.x)); col=mix(col,red,smoothstep(0.66,0.88,p.x)); float verticalFade=smoothstep(0.06,0.18,p.y)*(1.0-smoothstep(0.84,0.96,p.y)); float alpha=clamp(m,0.0,1.0)*verticalFade*0.78; gl_FragColor=vec4(col,alpha); }"
+            },
+            "js": null
+          },
+          "budgets": {
+            "maxInstances": 1,
+            "maxShaderOpsHint": 0.75,
+            "mobileSafe": true
+          }
+        },
+        {
+          "id": "cm.arrival-seal-occluded.v2",
+          "family": "geometry",
+          "kind": "dsl",
+          "allowOverride": false,
+          "seedPolicy": "deterministic",
+          "paramsSchema": {
+            "ringCount": "number",
+            "radius": "number",
+            "thickness": "number"
+          },
+          "source": {
+            "dsl": {
+              "geometry": {
+                "type": "ellipse-rings",
+                "ringCount": 4
+              },
+              "width": 0.86,
+              "height": 0.86,
+              "depth": 0.035,
+              "position": [
+                1.12,
+                -0.12,
+                0.035
+              ],
+              "material": {
+                "type": "flat-color",
+                "colors": [
+                  "#b82118",
+                  "#d84a24",
+                  "#f0a02a",
+                  "#b82118"
+                ]
+              },
+              "opacity": 0.82
+            },
+            "glsl": {},
+            "js": null
+          },
+          "budgets": {
+            "maxInstances": 8,
+            "maxShaderOpsHint": 0.25,
+            "mobileSafe": true
+          }
+        },
+        {
+          "id": "cm.front-relief-camera.v1",
+          "family": "camera",
+          "kind": "dsl",
+          "allowOverride": false,
+          "seedPolicy": "deterministic",
+          "paramsSchema": {},
+          "source": {
+            "dsl": {
+              "patch": {
+                "camera": {
+                  "frontal": true,
+                  "position": [
+                    0,
+                    0,
+                    5.4
+                  ],
+                  "target": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "fov": 38
+                }
+              }
+            },
+            "glsl": {},
+            "js": null
+          },
+          "budgets": {
+            "maxInstances": 1,
+            "maxShaderOpsHint": 0.1,
+            "mobileSafe": true
+          }
+        }
+      ],
+      "materialization": {
+        "version": 1,
+        "framing": {
+          "mode": "full-frame-surface",
+          "fullFrameSurface": true,
+          "panel": false,
+          "cameraPose": {
+            "radius": 7.2,
+            "theta": 0,
+            "phi": 1.5707963267948966,
+            "target": [
+              0,
+              0,
+              0
+            ]
+          },
+          "preserveObjectStage": false
+        },
+        "environmentLayer": {
+          "enabled": true,
+          "role": "full-frame-artwork-ground",
+          "renderSurface": "scene-background-texture",
+          "colorA": "palette.bg",
+          "colorB": "palette.secondary",
+          "texture": {
+            "kind": "seeded-wash-grain",
+            "grain": 0.34,
+            "wash": 0.62
+          }
+        },
+        "materialObligations": {
+          "version": 1,
+          "status": "supported",
+          "obligations": [
+            {
+              "id": "mat-03-01-flat-color",
+              "material": "flat-color",
+              "sourceTerm": "flat color",
+              "support": "supported",
+              "runtimeMaterial": "flat-basic",
+              "surface": {
+                "flatness": 1
+              }
+            }
+          ],
+          "aggregate": {
+            "materialKinds": [
+              "flat-color"
+            ],
+            "runtimeMaterials": [
+              "flat-basic"
+            ],
+            "surface": {
+              "flatness": 1
+            },
+            "requiresRichSurface": false,
+            "flatColor": true
+          }
+        }
+      },
+      "fieldPopulation": {
+        "version": 1,
+        "densityClass": "sparse-intent",
+        "targetCoverage": 0.42,
+        "supportElementCount": 0,
+        "supportRole": null,
+        "reason": "sparse-intent-preserved"
+      },
+      "policyPasses": {
+        "advisoryOnly": true,
+        "skipped": [
+          "focal-hierarchy",
+          "envelope-clamp",
+          "composition-plan",
+          "artist-visual-profile",
+          "scene-element-module-enforcement",
+          "stack-pipeline-apply",
+          "gap-focused-pass",
+          "artist-hard-constraints"
+        ]
+      }
+    },
+    "materialization": {
+      "version": 1,
+      "framing": {
+        "mode": "full-frame-surface",
+        "fullFrameSurface": true,
+        "panel": false,
+        "cameraPose": {
+          "radius": 7.2,
+          "theta": 0,
+          "phi": 1.5707963267948966,
+          "target": [
+            0,
+            0,
+            0
+          ]
+        },
+        "preserveObjectStage": false
+      },
+      "environmentLayer": {
+        "enabled": true,
+        "role": "full-frame-artwork-ground",
+        "renderSurface": "scene-background-texture",
+        "colorA": "palette.bg",
+        "colorB": "palette.secondary",
+        "texture": {
+          "kind": "seeded-wash-grain",
+          "grain": 0.34,
+          "wash": 0.62
+        }
+      },
+      "materialObligations": {
+        "version": 1,
+        "status": "supported",
+        "obligations": [
+          {
+            "id": "mat-03-01-flat-color",
+            "material": "flat-color",
+            "sourceTerm": "flat color",
+            "support": "supported",
+            "runtimeMaterial": "flat-basic",
+            "surface": {
+              "flatness": 1
+            }
+          }
+        ],
+        "aggregate": {
+          "materialKinds": [
+            "flat-color"
+          ],
+          "runtimeMaterials": [
+            "flat-basic"
+          ],
+          "surface": {
+            "flatness": 1
+          },
+          "requiresRichSurface": false,
+          "flatColor": true
+        }
+      }
+    },
+    "fieldPopulation": {
+      "version": 1,
+      "densityClass": "sparse-intent",
+      "targetCoverage": 0.42,
+      "supportElementCount": 0,
+      "supportRole": null,
+      "reason": "sparse-intent-preserved"
+    },
+    "seedVersion": 2,
+    "seeds": {
+      "baseSeed": 2644308506,
+      "runSeed": 2411237228,
+      "geomSeed": 3786696469,
+      "animSeed": 3406643224,
+      "colorSeed": 295471440,
+      "cameraSeed": 4139584566
+    },
+    "techStack": {
+      "id": "sdf-raymarch-lite",
+      "name": "SDF/Raymarch Lite",
+      "family": "sdf-raymarch",
+      "strategyFamilies": [
+        "orbits",
+        "flow",
+        "hybrid"
+      ],
+      "rationale": {
+        "source": "loop-adjustment-alternate-stack",
+        "score": 2.32,
+        "penalties": [
+          "conflict<0.25"
+        ]
+      },
+      "dominantPrimitive": "cm.cream-relief-panel.v1",
+      "moduleSet": [
+        "cm.cream-relief-panel.v1",
+        "cm.compressed-flow-slits.v2",
+        "cm.otero-relief-bars.v2",
+        "cm.arrival-seal-occluded.v2",
+        "anchor-core",
+        "motif-armature",
+        "shader-field-plane"
+      ],
+      "pipelineKind": "sdf-raymarch"
+    },
+    "renderPipeline": {
+      "kind": "sdf-raymarch",
+      "family": "sdf-raymarch",
+      "fallback": false,
+      "advisoryOnly": true,
+      "dominantPrimitive": "cm.cream-relief-panel.v1",
+      "moduleSet": [
+        "cm.cream-relief-panel.v1",
+        "cm.compressed-flow-slits.v2",
+        "cm.otero-relief-bars.v2",
+        "cm.arrival-seal-occluded.v2",
+        "anchor-core",
+        "motif-armature",
+        "shader-field-plane"
+      ]
+    },
+    "customModuleReport": {
+      "requested": 5,
+      "accepted": [
+        {
+          "id": "cm.cream-relief-panel.v1",
+          "family": "geometry",
+          "kind": "dsl",
+          "fingerprint": "5890320a",
+          "budgets": {
+            "maxInstances": 1,
+            "maxShaderOpsHint": 0.2,
+            "mobileSafe": true
+          }
+        },
+        {
+          "id": "cm.otero-relief-bars.v2",
+          "family": "geometry",
+          "kind": "dsl",
+          "fingerprint": "8ce92971",
+          "budgets": {
+            "maxInstances": 48,
+            "maxShaderOpsHint": 0.35,
+            "mobileSafe": true
+          }
+        },
+        {
+          "id": "cm.compressed-flow-slits.v2",
+          "family": "shader",
+          "kind": "dsl",
+          "fingerprint": "20482510",
+          "budgets": {
+            "maxInstances": 1,
+            "maxShaderOpsHint": 0.75,
+            "mobileSafe": true
+          }
+        },
+        {
+          "id": "cm.arrival-seal-occluded.v2",
+          "family": "geometry",
+          "kind": "dsl",
+          "fingerprint": "08574596",
+          "budgets": {
+            "maxInstances": 8,
+            "maxShaderOpsHint": 0.25,
+            "mobileSafe": true
+          }
+        },
+        {
+          "id": "cm.front-relief-camera.v1",
+          "family": "camera",
+          "kind": "dsl",
+          "fingerprint": "f8cfdf77",
+          "budgets": {
+            "maxInstances": 1,
+            "maxShaderOpsHint": 0.1,
+            "mobileSafe": true
+          }
+        }
+      ],
+      "rejected": [],
+      "moduleOverrideCount": 0,
+      "overrideErrors": []
+    }
+  },
+  "sceneStrategy": {
+    "selected": {
+      "id": "atomic-balanced-flow",
+      "name": "Balanced Flow Field",
+      "type": "atomic",
+      "family": "flow"
+    },
+    "applied": false,
+    "fallbackReason": "agent-authored-scene-elements"
+  },
+  "techStack": {
+    "id": "sdf-raymarch-lite",
+    "name": "SDF/Raymarch Lite",
+    "family": "sdf-raymarch"
+  },
+  "newsVisualMappings": [
+    {
+      "signal": "title evidence [hantavirus, bateau, croisi, navire] -> motif flow",
+      "from": "hantavirus, bateau, croisi, navire",
+      "visualDecision": "structural motif armature set to flow"
+    },
+    {
+      "signal": "composition foreground conflict",
+      "from": "hantavirus, bateau, croisi, navire",
+      "visualDecision": "foreground role tension-knot at pressure 0.18"
+    },
+    {
+      "signal": "composition midground context",
+      "from": "hantavirus, bateau, croisi, navire",
+      "visualDecision": "midground role context-drift with density 0.349"
+    },
+    {
+      "signal": "composition background mood",
+      "from": "hantavirus, bateau, croisi, navire",
+      "visualDecision": "background mood watchful depth 0.316"
+    },
+    {
+      "signal": "urgency -> motion",
+      "from": "ageHours=0.94",
+      "visualDecision": "motionSpeedNormalized=0.75"
+    },
+    {
+      "signal": "title semantics -> palette/edge cadence",
+      "from": "temp=0 edge=0.5",
+      "visualDecision": "postContrast=1.14 accentType=n/a"
+    },
+    {
+      "signal": "article institutional/conflict polarity",
+      "from": "hantavirus, bateau, croisi, navire",
+      "visualDecision": "accent element n/a with opacity n/a"
+    },
+    {
+      "signal": "artist research context Alejandro Otero",
+      "from": "tags abstract, geometric",
+      "visualDecision": "artist profile captured as metadata only; no technical routing applied"
+    }
+  ],
+  "qualityScore": {
+    "score": 52,
+    "summary": "Alignment 66.5 with strongest channel emotional.",
+    "heuristic": {
+      "score": 67.4,
+      "breakdown": {
+        "legibility": 73.1,
+        "emotionalReadability": 66.9,
+        "coherence": 91.5,
+        "focalAnchor": 63.8,
+        "technicalRichness": 100,
+        "restraint": 77.8,
+        "alignment": 66.5
+      }
+    },
+    "calibration": {
+      "sampleCount": 1,
+      "trustWeight": 0.4
+    },
+    "alignment": {
+      "totalAlign": 66.5,
+      "components": {
+        "title": {
+          "score": 62.5
+        },
+        "style": {
+          "score": 65.7
+        },
+        "emotional": {
+          "score": 71.5
+        }
+      }
+    }
+  },
+  "rationale": {
+    "intent": {
+      "signal": null,
+      "emotion": null,
+      "tension": null,
+      "balance": null,
+      "motion": null
+    },
+    "selection": {
+      "whyHeadline": "Selected as top-ranked Belgian headline (score 93.688 = frequency 90 + priority 0 + recency 3.688).",
+      "priorityTerms": []
+    },
+    "qualitySummary": "TOTAL_ALIGN 66.5."
+  },
+  "runPolicy": {
+    "artworksPerRun": 1,
+    "multiVariant": false
+  },
+  "artFramework": {
+    "version": 3,
+    "intent": {
+      "translatedHeadline": "Hantavirus on a cruise ship: the Hondius, with two Belgians on board, has arrived in Tenerife",
+      "newsSummary": "Hantavirus on a cruise ship: the Hondius, with two Belgians on board, has arrived in Tenerife is treated as a Hantavirus Bateau Croisière pressure signal.",
+      "artistName": "Alejandro Otero",
+      "referenceImageSummary": "Reference image evidence supports composition: deep-environment.",
+      "styleVocabulary": [
+        "hard-edge-cut",
+        "contour-line",
+        "radial-symbols",
+        "deep-environment",
+        "deep-atmospheric",
+        "black",
+        "white",
+        "red",
+        "orange",
+        "green",
+        "teal",
+        "The spatial emphasis in the <strong>Collages ortogonales</strong> led Otero to consider the need for a format “different from the two-dimensionality of canvas and paper” and to imagine possibilities made available thr..."
+      ],
+      "compositionBrief": "deep-environment",
+      "materialBrief": "Alejandro Otero’s visual language here is built from bars, intervals, and the instability between surface and space. The works preserve ambiguity between painting and object: shadows, raised edges, glossy highlights, and window-like openings make the line feel physical, while the hard alignments keep it abstract and rhythmic.",
+      "paletteBrief": "black, white, red, orange, green, teal, warm-earth, black-contour-anchors",
+      "spatialBrief": "deep-atmospheric",
+      "markMakingBrief": "Use hard-edge-cut, contour-line, radial-symbols as the visible mark and form vocabulary.",
+      "motionBrief": "steady-grid-pulse",
+      "webglTranslationIntent": "Translate the artist perceptual reading into a deterministic WebGL artwork by prioritizing deep-environment; material behavior: Alejandro Otero’s visual language here is built from bars, intervals, and the instability between surface and space. The works preserve ambiguity between painting and object: shadows, raised edges, glossy highlights, and window-like openings make the line feel physical, while the hard alignments keep it abstract and rhythmic.; palette behavior: black, white, red, orange, green, teal, warm-earth, black-contour-anchors; spatial behavior: deep-atmospheric; mark-making/form behavior: Use hard-edge-cut, contour-line, radial-symbols as the visible mark and form vocabulary.; motion: steady-grid-pulse; structured fields are support only when they agree with the artist perceptual reading.",
+      "mustShow": [
+        "deep-environment",
+        "Alejandro Otero’s visual language here is built from bars, intervals, and the instability between surface and space. The works preserve ambiguity between painting and object: shadows, raised edges, glossy highlights, and window-like openings make the line feel physical, while the hard alignments keep it abstract and rhythmic.",
+        "non-literal flow pressure",
+        "Hantavirus Bateau Croisière as visual pressure"
+      ],
+      "prompt": "Create a non-literal artwork response to \"Hantavirus on a cruise ship: the Hondius, with two Belgians on board, has arrived in Tenerife\" through Alejandro Otero's sourced visual evidence.",
+      "visualGravity": {
+        "anchor": "high-contrast foreground focal anchor"
+      }
+    }
+  }
+}
