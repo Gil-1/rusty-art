@@ -1,5 +1,31 @@
 import * as THREE from 'three';
+import {
+  applyViewportOrbitFrame,
+  bindOrbitInput,
+  updateCameraFromOrbit
+} from './scene-camera.js';
+import {
+  applyImmersiveWorldSkyboxDefaults,
+  createImmersiveWorldSkyboxUtilities,
+  isImmersiveWorldSkyboxMode,
+  resolveImmersiveWorldSkyboxRadius,
+  shouldUseImmersiveWorldSkybox
+} from './immersive-world-skybox.js';
 import { disposeObjectTree } from './scene-runtime.js';
+
+const WORLD_ENVIRONMENT_PART_ID = 'world-environment';
+const LEGACY_ORBIT_CONTROLS = Object.freeze({
+  minDistance: 6,
+  maxDistance: 24,
+  autoRotate: false,
+  autoRotateSpeed: 0.14,
+  dampingFactor: 0.08
+});
+const DEFAULT_ORBIT_POSE = Object.freeze({
+  radius: 12,
+  theta: 0,
+  phi: Math.PI / 2.2
+});
 
 export function isRemoteRuntimeRef(value) {
   return /^(?:[a-z][a-z0-9+.-]*:|\/\/)/i.test(String(value || '').trim());
@@ -35,6 +61,10 @@ function number(value, fallback) {
   return Number.isFinite(numeric) ? numeric : fallback;
 }
 
+function clamp(value, min, max) {
+  return Math.max(min, Math.min(max, value));
+}
+
 function vector3(value, fallback) {
   if (Array.isArray(value) && value.length === 3) {
     const values = value.map(Number);
@@ -45,6 +75,175 @@ function vector3(value, fallback) {
     if (values.every(Number.isFinite)) return values;
   }
   return fallback;
+}
+
+function orbitPoseFromCamera({ position = [0, 0, 12], target = [0, 0, 0], fallbackRadius = 12 } = {}) {
+  const dx = position[0] - target[0];
+  const dy = position[1] - target[1];
+  const dz = position[2] - target[2];
+  const rawRadius = Math.hypot(dx, dy, dz);
+  const radius = Number.isFinite(rawRadius) && rawRadius > 0.0001 ? rawRadius : fallbackRadius;
+  const theta = Math.atan2(dx, dz);
+  const phi = Math.acos(clamp(dy / Math.max(radius, 0.0001), -1, 1));
+  return {
+    radius,
+    theta: Number.isFinite(theta) ? theta : DEFAULT_ORBIT_POSE.theta,
+    phi: Number.isFinite(phi) ? phi : DEFAULT_ORBIT_POSE.phi
+  };
+}
+
+export function isWorldEnvironmentPart(part = {}) {
+  const id = String(part?.partId || part?.id || '').trim().toLowerCase();
+  const role = String(part?.role || '').trim().toLowerCase();
+  return id === WORLD_ENVIRONMENT_PART_ID || role === WORLD_ENVIRONMENT_PART_ID;
+}
+
+export function initializeImmersiveWorldCameraControls(scene, { bindInput = true } = {}) {
+  scene.controls = { ...LEGACY_ORBIT_CONTROLS };
+  scene.orbit = {
+    target: new THREE.Vector3(0, 0, 0),
+    radius: DEFAULT_ORBIT_POSE.radius,
+    theta: DEFAULT_ORBIT_POSE.theta,
+    phi: DEFAULT_ORBIT_POSE.phi,
+    thetaVel: 0,
+    phiVel: 0,
+    dragging: false,
+    lastX: 0,
+    lastY: 0,
+    userControlLocked: false
+  };
+  scene.baseOrbitPose = { ...DEFAULT_ORBIT_POSE };
+  scene.baseOrbitTarget = new THREE.Vector3(0, 0, 0);
+  scene.viewportOrbitFrame = { radiusMultiplier: 1, phiOffset: 0, targetYOffset: 0 };
+  scene.cameraMotionEnabled = false;
+  scene.cameraBeats = null;
+  scene.cameraCycleSeconds = 24;
+  scene.styleFingerprint = scene.styleFingerprint || { cameraSway: 0 };
+
+  if (bindInput && scene.canvas) {
+    scene.cameraInputTeardown?.();
+    scene.cameraInputTeardown = bindOrbitInput(scene);
+  }
+
+  updateCameraFromOrbit(scene);
+  return {
+    controls: scene.controls,
+    orbit: scene.orbit,
+    teardown: scene.cameraInputTeardown || null
+  };
+}
+
+export function applyImmersiveWorldCameraConfig(scene, world = {}) {
+  const camera = asObject(world.camera);
+  const environment = asObject(world.environment);
+  const position = vector3(camera.position, [0, 2.2, number(camera.radius, 14)]);
+  const target = vector3(camera.target, [0, 0, 0]);
+  const pose = orbitPoseFromCamera({
+    position,
+    target,
+    fallbackRadius: number(camera.radius, DEFAULT_ORBIT_POSE.radius)
+  });
+
+  scene.camera.near = number(camera.near, 0.1);
+  const requestedFar = number(camera.far, 220);
+  const explicitSkyboxRadius = Number(environment.skyboxRadius);
+  const skyboxRadius = Number.isFinite(explicitSkyboxRadius) && explicitSkyboxRadius > 0
+    || isImmersiveWorldSkyboxMode(environment.kind)
+    || isImmersiveWorldSkyboxMode(environment.renderMode)
+    || isImmersiveWorldSkyboxMode(environment.mode)
+    ? resolveImmersiveWorldSkyboxRadius(world, { fallback: 0, min: 0 })
+    : 0;
+  scene.camera.far = Math.max(requestedFar, skyboxRadius ? skyboxRadius * 1.05 : requestedFar);
+  scene.camera.fov = number(camera.fov, 65);
+  scene.camera.updateProjectionMatrix();
+
+  scene.baseOrbitTarget.set(target[0], target[1], target[2]);
+  scene.baseOrbitPose.radius = clamp(pose.radius, scene.controls.minDistance, scene.controls.maxDistance);
+  scene.baseOrbitPose.theta = pose.theta;
+  scene.baseOrbitPose.phi = pose.phi;
+
+  scene.orbit.thetaVel = 0;
+  scene.orbit.phiVel = 0;
+  scene.orbit.dragging = false;
+  scene.orbit.userControlLocked = false;
+  applyViewportOrbitFrame(scene, { resetOrbit: true });
+  return {
+    source: 'world.camera',
+    owner: camera.owner || null,
+    requested: {
+      position,
+      target,
+      near: camera.near ?? null,
+      far: camera.far ?? null,
+      fov: camera.fov ?? null
+    },
+    applied: {
+      near: scene.camera.near,
+      far: scene.camera.far,
+      fov: scene.camera.fov,
+      baseOrbitTarget: scene.baseOrbitTarget.toArray(),
+      baseOrbitPose: { ...scene.baseOrbitPose },
+      viewportOrbitFrame: { ...scene.viewportOrbitFrame }
+    },
+    alignment: {
+      status: 'aligned',
+      source: 'world.camera',
+      appliedByFrontend: true,
+      previewAndFrontendRuntime: 'shared-immersive-world-camera-config',
+      viewportFrameApplied: true
+    }
+  };
+}
+
+export function updateImmersiveWorldCameraControlsForFrame(scene, { time = 0, motionIntensity = 1 } = {}) {
+  if (!scene.captureMode) {
+    const canAutoMoveCamera = !scene.orbit.dragging && !scene.orbit.userControlLocked;
+    if (scene.controls.autoRotate && canAutoMoveCamera) {
+      scene.orbit.theta += 0.001 * scene.controls.autoRotateSpeed * 4 * motionIntensity;
+    }
+    scene.orbit.theta += scene.orbit.thetaVel;
+    scene.orbit.phi += scene.orbit.phiVel;
+    scene.orbit.thetaVel *= 1 - scene.controls.dampingFactor;
+    scene.orbit.phiVel *= 1 - scene.controls.dampingFactor;
+  }
+
+  updateCameraFromOrbit(scene);
+  return {
+    time,
+    radius: scene.orbit.radius,
+    theta: scene.orbit.theta,
+    phi: scene.orbit.phi
+  };
+}
+
+function measureObjectRadius(object) {
+  const bounds = new THREE.Box3().setFromObject(object);
+  if (bounds.isEmpty()) return null;
+  const sphere = new THREE.Sphere();
+  bounds.getBoundingSphere(sphere);
+  return Number.isFinite(sphere.radius) && sphere.radius > 0 ? sphere.radius : null;
+}
+
+export function adaptWorldEnvironmentObject({ object, part, world } = {}) {
+  if (!object?.isObject3D || !isWorldEnvironmentPart(part)) {
+    return { adapted: false, reason: 'not-world-environment' };
+  }
+  if (!shouldUseImmersiveWorldSkybox({ object, part, world })) {
+    return { adapted: false, reason: 'environment-artwork' };
+  }
+
+  const targetRadius = resolveImmersiveWorldSkyboxRadius(world);
+  const currentRadius = measureObjectRadius(object) || 1;
+  const scaleMultiplier = targetRadius / currentRadius;
+  object.scale.multiplyScalar(scaleMultiplier);
+  applyImmersiveWorldSkyboxDefaults(THREE, object, { radius: targetRadius });
+
+  return {
+    adapted: true,
+    targetRadius,
+    previousRadius: currentRadius,
+    scaleMultiplier
+  };
 }
 
 function resolveCreatePart(module) {
@@ -81,6 +280,8 @@ export class ArtworkScene {
     this.captureMode = false;
     this.captureTime = 1.234;
     this.sceneAssemblyReport = null;
+    this.cameraInputTeardown = null;
+    initializeImmersiveWorldCameraControls(this);
     this.resize = this.resize.bind(this);
     this.animate = this.animate.bind(this);
     window.addEventListener('resize', this.resize);
@@ -119,30 +320,27 @@ export class ArtworkScene {
     this.scene.background = new THREE.Color(bg);
     this.scene.fog = new THREE.FogExp2(bg, number(environment.fogDensity, 0.018));
 
-    const radius = number(environment.radius, 90);
+    const radius = resolveImmersiveWorldSkyboxRadius(world);
     const geometry = new THREE.SphereGeometry(radius, 48, 24);
     const material = new THREE.MeshBasicMaterial({
       color: color(environment.fieldColor || palette.field || bg, bg),
       side: THREE.BackSide,
       transparent: true,
-      opacity: number(environment.opacity, 0.9)
+      opacity: number(environment.opacity, 0.9),
+      depthWrite: false,
+      depthTest: true,
+      fog: false,
+      toneMapped: false
     });
     const mesh = new THREE.Mesh(geometry, material);
-    mesh.name = 'immersive-world-environment';
+    mesh.name = 'immersive-world-environment-shell';
+    applyImmersiveWorldSkyboxDefaults(THREE, mesh, { radius, renderOrder: -1100 });
     this.group.add(mesh);
     return { kind: environment.kind || 'skybox-field', radius };
   }
 
   applyCamera(world) {
-    const camera = asObject(world.camera);
-    const position = vector3(camera.position, [0, 2.2, number(camera.radius, 14)]);
-    const target = vector3(camera.target, [0, 0, 0]);
-    this.camera.near = number(camera.near, 0.1);
-    this.camera.far = number(camera.far, 200);
-    this.camera.fov = number(camera.fov, 65);
-    this.camera.position.set(position[0], position[1], position[2]);
-    this.camera.lookAt(target[0], target[1], target[2]);
-    this.camera.updateProjectionMatrix();
+    return applyImmersiveWorldCameraConfig(this, world);
   }
 
   applyLighting(world) {
@@ -172,17 +370,23 @@ export class ArtworkScene {
       ...asset,
       url: normalizePublicRuntimeUrl(asset.url, { expectedDir: 'data/immersive-world/generated-assets' })
     }));
+    const skyboxUtilities = createImmersiveWorldSkyboxUtilities(THREE);
     const result = normalizeModuleResult(await createPart({
       THREE,
       part,
       world,
       seed: config.seed,
       assets,
-      utilities: { normalizePublicRuntimeUrl }
+      utilities: {
+        normalizePublicRuntimeUrl,
+        ...skyboxUtilities,
+        skybox: skyboxUtilities
+      }
     }));
     if (!result.object?.isObject3D) {
       throw new Error(`Immersive world module did not return a Three.js Object3D: ${part.id || index}`);
     }
+    const environmentAdaptation = adaptWorldEnvironmentObject({ object: result.object, part, world });
     result.object.name = result.object.name || part.id || `immersive-world-part-${index + 1}`;
     this.group.add(result.object);
     if (result.update) this.updateHooks.push(result.update);
@@ -191,7 +395,8 @@ export class ArtworkScene {
       id: part.id || null,
       role: part.role || null,
       moduleUrl: moduleRef.url,
-      assetCount: assets.length
+      assetCount: assets.length,
+      environmentAdaptation: environmentAdaptation.adapted ? environmentAdaptation : undefined
     };
   }
 
@@ -204,7 +409,7 @@ export class ArtworkScene {
     this.clearWorld();
     const environment = this.applyEnvironment(world);
     this.applyLighting(world);
-    this.applyCamera(world);
+    const camera = this.applyCamera(world);
 
     const builtParts = [];
     try {
@@ -227,6 +432,8 @@ export class ArtworkScene {
       status: 'ok',
       worldId: world.id || config.id || null,
       environment,
+      camera,
+      cameraAlignment: camera.alignment,
       builtParts,
       partCount: builtParts.length
     };
@@ -240,6 +447,7 @@ export class ArtworkScene {
     this.renderer.setSize(width, height, false);
     this.camera.aspect = width / height;
     this.camera.updateProjectionMatrix();
+    if (this.orbit) applyViewportOrbitFrame(this);
   }
 
   waitForRenderedFrame(timeoutMs = 2500) {
@@ -267,6 +475,7 @@ export class ArtworkScene {
 
   animate() {
     const t = this.captureMode ? this.captureTime : this.clock.getElapsedTime();
+    updateImmersiveWorldCameraControlsForFrame(this, { time: t, motionIntensity: this.motionIntensity });
     for (const update of this.updateHooks) update({ time: t, motionIntensity: this.motionIntensity, camera: this.camera });
     this.renderer.render(this.scene, this.camera);
     this.renderFrameCount += 1;
@@ -280,6 +489,8 @@ export class ArtworkScene {
 
   dispose() {
     window.removeEventListener('resize', this.resize);
+    this.cameraInputTeardown?.();
+    this.cameraInputTeardown = null;
     this.clearWorld();
     disposeObjectTree(this.scene);
     this.renderer?.dispose?.();
