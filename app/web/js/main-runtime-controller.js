@@ -133,6 +133,7 @@ export function createRuntimeController({
   getActiveFile,
   getMotionIntensity,
   importSceneModule = () => import('./scene.js'),
+  importImmersiveWorldSceneModule = () => import('./immersive-world-scene.js'),
   onSceneBooted = () => {},
   onSceneStatusChange = () => {},
   windowRef = typeof window !== 'undefined' ? window : globalThis,
@@ -143,8 +144,10 @@ export function createRuntimeController({
   clearTimeoutFn = windowRef.clearTimeout?.bind(windowRef) || globalThis.clearTimeout
 } = {}) {
   let scene = null;
+  let sceneKind = null;
   let sceneInitError = null;
   let sceneLoadPromise = null;
+  let sceneLoadKind = null;
   let deferredSceneBootScheduler = null;
 
   function setCanvasVisible(visible) {
@@ -155,6 +158,10 @@ export function createRuntimeController({
     return scene;
   }
 
+  function getSceneKind() {
+    return sceneKind;
+  }
+
   function getSceneInitError() {
     return sceneInitError;
   }
@@ -163,14 +170,38 @@ export function createRuntimeController({
     return Boolean(sceneLoadPromise);
   }
 
-  async function ensureScene() {
-    if (scene) return scene;
-    if (sceneLoadPromise) return sceneLoadPromise;
+  function resolveSceneKind(art = null) {
+    return String(art?.artCreationMethod || '').trim() === 'immersive-world-v1'
+      ? 'immersive-world-v1'
+      : 'legacy';
+  }
+
+  function disposeScene() {
+    scene?.dispose?.();
+    scene?.stop?.();
+    scene = null;
+    sceneKind = null;
+  }
+
+  async function ensureScene({ art = null } = {}) {
+    const targetSceneKind = resolveSceneKind(art);
+    if (scene && sceneKind === targetSceneKind) return scene;
+    if (sceneLoadPromise && sceneLoadKind === targetSceneKind) return sceneLoadPromise;
+    if (sceneLoadPromise && sceneLoadKind !== targetSceneKind) {
+      await sceneLoadPromise;
+      return ensureScene({ art });
+    }
+    if (scene && sceneKind !== targetSceneKind) disposeScene();
+    sceneLoadKind = targetSceneKind;
 
     sceneLoadPromise = (async () => {
       try {
-        const { ArtworkScene } = await importSceneModule();
+        const module = targetSceneKind === 'immersive-world-v1'
+          ? await importImmersiveWorldSceneModule()
+          : await importSceneModule();
+        const { ArtworkScene } = module;
         scene = new ArtworkScene(canvas);
+        sceneKind = targetSceneKind;
         sceneInitError = null;
         setCanvasVisible(true);
         captureStateController?.update({ sceneInitialized: true, sceneInitError: null, error: null });
@@ -187,6 +218,7 @@ export function createRuntimeController({
         return null;
       } finally {
         sceneLoadPromise = null;
+        sceneLoadKind = null;
       }
     })();
 
@@ -206,25 +238,27 @@ export function createRuntimeController({
   }
 
   async function applyArtworkToScene({ file, art, shouldContinue = () => true, waitForRenderedFrame = captureMode } = {}) {
-    if (!scene || !file || !shouldContinue()) return false;
+    if (!file || !shouldContinue()) return false;
+    const activeScene = await ensureScene({ art });
+    if (!activeScene || !shouldContinue()) return false;
 
     captureStateController?.update({ artworkLoaded: true, artworkId: art?.id || null });
     let applied;
     try {
-      applied = await scene.applyConfig(art);
+      applied = await activeScene.applyConfig(art);
     } catch (err) {
       const error = err instanceof Error ? err : new Error(String(err));
       captureStateController?.update({
         renderReady: false,
         error: error.message,
-        sceneAssemblyReport: error.sceneAssemblyReport || scene.getAssemblyReport?.() || null
+        sceneAssemblyReport: error.sceneAssemblyReport || activeScene.getAssemblyReport?.() || null
       });
       throw err;
     }
     if (!applied || !shouldContinue()) return false;
 
-    if (waitForRenderedFrame && typeof scene.waitForRenderedFrame === 'function') {
-      await scene.waitForRenderedFrame(3000);
+    if (waitForRenderedFrame && typeof activeScene.waitForRenderedFrame === 'function') {
+      await activeScene.waitForRenderedFrame(3000);
       if (!shouldContinue()) return false;
     }
 
@@ -234,7 +268,7 @@ export function createRuntimeController({
       renderReady: true,
       error: null,
       renderedArtworkId: art?.id || null,
-      sceneAssemblyReport: scene.getAssemblyReport?.() || null
+      sceneAssemblyReport: activeScene.getAssemblyReport?.() || null
     });
     return true;
   }
@@ -293,6 +327,7 @@ export function createRuntimeController({
 
   return {
     getScene,
+    getSceneKind,
     getSceneInitError,
     hasSceneLoadInFlight,
     ensureScene,

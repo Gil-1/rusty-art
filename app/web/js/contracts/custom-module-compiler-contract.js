@@ -2,7 +2,7 @@ export const CUSTOM_FAMILIES = new Set(['shader', 'geometry', 'particle', 'post'
 export const CUSTOM_KINDS = new Set(['dsl', 'js']);
 export const PIPELINE_FAMILIES = new Set(['post', 'camera', 'lighting']);
 export const EXECUTABLE_DSL_KEYS = Object.freeze({
-  shader: new Set(['width', 'height', 'opacity', 'position', 'rotation', 'scale', 'blend']),
+  shader: new Set(['width', 'height', 'opacity', 'position', 'rotation', 'scale', 'blend', 'plane', 'primitive', 'depthTest', 'depthWrite', 'transparent', 'doubleSided']),
   geometry: new Set(['geometry', 'material', 'count', 'spread', 'depth', 'shape', 'wireframe', 'opacity', 'position', 'rotation', 'scale', 'width', 'height', 'gridWidth', 'gridHeight', 'segmentsX', 'segmentsY', 'cellCount', 'blend']),
   particle: new Set(['count', 'spread', 'size', 'opacity', 'position', 'rotation', 'scale', 'blend'])
 });

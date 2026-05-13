@@ -5,6 +5,8 @@ export const CAPTURE_TARGET_TYPES = Object.freeze({
   ARCHIVE_SLUG: 'archive-slug',
   CANDIDATE: 'candidate',
   FIXTURE: 'fixture',
+  IMMERSIVE_WORLD_PART_PREVIEW: 'immersive-world-part-preview',
+  IMMERSIVE_WORLD_PREVIEW: 'immersive-world-preview',
   LATEST: 'latest'
 });
 
@@ -73,6 +75,12 @@ export function normalizeCaptureTargetType(target = {}) {
   if (raw === 'archive-slug' || raw === 'slug') return CAPTURE_TARGET_TYPES.ARCHIVE_SLUG;
   if (raw === 'candidate' || raw === 'unpublished-candidate') return CAPTURE_TARGET_TYPES.CANDIDATE;
   if (raw === 'fixture' || raw === 'public-archive-fixture') return CAPTURE_TARGET_TYPES.FIXTURE;
+  if (raw === 'immersive-world-part-preview' || raw === 'world-part-preview' || raw === 'part-preview') {
+    return CAPTURE_TARGET_TYPES.IMMERSIVE_WORLD_PART_PREVIEW;
+  }
+  if (raw === 'immersive-world-preview' || raw === 'world-preview' || raw === 'immersive-preview') {
+    return CAPTURE_TARGET_TYPES.IMMERSIVE_WORLD_PREVIEW;
+  }
   if (raw === 'latest') return CAPTURE_TARGET_TYPES.LATEST;
   return CAPTURE_TARGET_TYPES.ARCHIVE_INDEX;
 }
@@ -117,6 +125,43 @@ export function normalizeCaptureTarget(target = {}) {
       fixtureId: source.fixtureId || source.id || null,
       routeParams: { ...baseParams, index },
       label: source.label || `fixture:${source.fixtureId || source.id || index}`
+    };
+  }
+
+  if (type === CAPTURE_TARGET_TYPES.IMMERSIVE_WORLD_PART_PREVIEW) {
+    const partId = String(source.partId || source.id || source.value || '').trim() || null;
+    const previewId = String(source.previewId || source.fixtureId || source.candidateId || '').trim() || partId;
+    return {
+      type,
+      view,
+      index,
+      partId,
+      previewId,
+      routeParams: {
+        ...baseParams,
+        target: CAPTURE_TARGET_TYPES.IMMERSIVE_WORLD_PART_PREVIEW,
+        index,
+        ...(partId ? { partId } : {}),
+        ...(previewId ? { previewId } : {})
+      },
+      label: source.label || `immersive-world-part-preview:${partId || previewId || index}`
+    };
+  }
+
+  if (type === CAPTURE_TARGET_TYPES.IMMERSIVE_WORLD_PREVIEW) {
+    const previewId = String(source.previewId || source.id || source.value || '').trim() || null;
+    return {
+      type,
+      view,
+      index,
+      previewId,
+      routeParams: {
+        ...baseParams,
+        target: CAPTURE_TARGET_TYPES.IMMERSIVE_WORLD_PREVIEW,
+        index,
+        ...(previewId ? { previewId } : {})
+      },
+      label: source.label || `immersive-world-preview:${previewId || index}`
     };
   }
 
@@ -187,7 +232,9 @@ export function resolveCaptureTargetFromSearchParams(input = '') {
     index: requestedIndex,
     slug,
     candidateId: params.get('candidateId') || params.get('candidate') || null,
-    fixtureId: params.get('fixtureId') || params.get('fixture') || null
+    fixtureId: params.get('fixtureId') || params.get('fixture') || null,
+    partId: params.get('partId') || params.get('part') || null,
+    previewId: params.get('previewId') || params.get('preview') || null
   });
 
   return {
