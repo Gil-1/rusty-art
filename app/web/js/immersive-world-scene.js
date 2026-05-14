@@ -11,9 +11,17 @@ import {
   resolveImmersiveWorldSkyboxRadius,
   shouldUseImmersiveWorldSkybox
 } from './immersive-world-skybox.js';
+import {
+  createPostPass,
+  createPostRenderTarget,
+  resizeSceneRenderTargets
+} from './scene-rendering.js';
 import { disposeObjectTree } from './scene-runtime.js';
 
 const WORLD_ENVIRONMENT_PART_ID = 'world-environment';
+const MAX_FRAME_DELTA_SECONDS = 1 / 15;
+const TAU = Math.PI * 2;
+const GOLDEN_ANGLE = Math.PI * (3 - Math.sqrt(5));
 const LEGACY_ORBIT_CONTROLS = Object.freeze({
   minDistance: 6,
   maxDistance: 24,
@@ -25,6 +33,22 @@ const DEFAULT_ORBIT_POSE = Object.freeze({
   radius: 12,
   theta: 0,
   phi: Math.PI / 2.2
+});
+const DEFAULT_OUTPUT_COLOR_TRANSFORM = Object.freeze({
+  contrast: 1.08,
+  saturation: 1.04,
+  exposure: 1.03,
+  vignette: 0.04,
+  hueShift: 0,
+  distortion: 0
+});
+const OUTPUT_COLOR_TRANSFORM_LIMITS = Object.freeze({
+  contrast: [0.85, 1.35],
+  saturation: [0.75, 1.25],
+  exposure: [0.8, 1.25],
+  vignette: [0, 0.18],
+  hueShift: [-0.03, 0.03],
+  distortion: [0, 0]
 });
 
 export function isRemoteRuntimeRef(value) {
@@ -63,6 +87,587 @@ function number(value, fallback) {
 
 function clamp(value, min, max) {
   return Math.max(min, Math.min(max, value));
+}
+
+function clampedNumber(value, fallback, [min, max]) {
+  return clamp(number(value, fallback), min, max);
+}
+
+export function resolveImmersiveWorldOutputColorTransform(world = {}) {
+  const source = asObject(world.outputColorTransform, null)
+    || asObject(world.colorTransform, null)
+    || asObject(world.colorGrade, null)
+    || {};
+  return {
+    owner: source.owner || null,
+    contrast: clampedNumber(source.contrast, DEFAULT_OUTPUT_COLOR_TRANSFORM.contrast, OUTPUT_COLOR_TRANSFORM_LIMITS.contrast),
+    saturation: clampedNumber(source.saturation, DEFAULT_OUTPUT_COLOR_TRANSFORM.saturation, OUTPUT_COLOR_TRANSFORM_LIMITS.saturation),
+    exposure: clampedNumber(source.exposure, DEFAULT_OUTPUT_COLOR_TRANSFORM.exposure, OUTPUT_COLOR_TRANSFORM_LIMITS.exposure),
+    vignette: clampedNumber(source.vignette, DEFAULT_OUTPUT_COLOR_TRANSFORM.vignette, OUTPUT_COLOR_TRANSFORM_LIMITS.vignette),
+    hueShift: clampedNumber(source.hueShift, DEFAULT_OUTPUT_COLOR_TRANSFORM.hueShift, OUTPUT_COLOR_TRANSFORM_LIMITS.hueShift),
+    distortion: clampedNumber(source.distortion, DEFAULT_OUTPUT_COLOR_TRANSFORM.distortion, OUTPUT_COLOR_TRANSFORM_LIMITS.distortion)
+  };
+}
+
+export function applyImmersiveWorldOutputColorTransform(scene, world = {}) {
+  const transform = resolveImmersiveWorldOutputColorTransform(world);
+  scene.outputColorTransform = transform;
+  scene.postBase = transform;
+  return transform;
+}
+
+export function hashImmersiveWorldSeedText(value) {
+  const text = String(value ?? 'seed');
+  let hash = 2166136261;
+  for (let index = 0; index < text.length; index += 1) {
+    hash ^= text.charCodeAt(index);
+    hash += (hash << 1) + (hash << 4) + (hash << 7) + (hash << 8) + (hash << 24);
+  }
+  return hash >>> 0;
+}
+
+export function createImmersiveWorldSeededRandom(seed = 0, salt = '') {
+  const seedNumber = Number(seed);
+  const baseSeed = Number.isFinite(seedNumber)
+    ? seedNumber >>> 0
+    : hashImmersiveWorldSeedText(seed);
+  let state = (baseSeed ^ hashImmersiveWorldSeedText(salt)) >>> 0;
+  return function seededRandom() {
+    state = (state + 0x6d2b79f5) >>> 0;
+    let value = state;
+    value = Math.imul(value ^ (value >>> 15), value | 1);
+    value ^= value + Math.imul(value ^ (value >>> 7), value | 61);
+    return ((value ^ (value >>> 14)) >>> 0) / 4294967296;
+  };
+}
+
+function finiteNumber(value, fallback) {
+  if (value == null || value === '') return fallback;
+  const numeric = Number(value);
+  return Number.isFinite(numeric) ? numeric : fallback;
+}
+
+function positiveNumber(value, fallback) {
+  const numeric = finiteNumber(value, fallback);
+  return Number.isFinite(numeric) ? Math.max(0, numeric) : fallback;
+}
+
+function sampleRadius({ radius = null, minRadius = null, maxRadius = null, random }) {
+  const fixedRadius = positiveNumber(radius, null);
+  const min = positiveNumber(minRadius, fixedRadius ?? 1);
+  const max = Math.max(min, positiveNumber(maxRadius, fixedRadius ?? min));
+  if (fixedRadius !== null && minRadius == null && maxRadius == null) return fixedRadius;
+  return min + (max - min) * random();
+}
+
+function arcRadians(value, fallback = TAU) {
+  const numeric = finiteNumber(value, fallback);
+  if (numeric > 0 && numeric <= 1) return numeric * TAU;
+  return Math.max(0, Math.min(TAU, numeric));
+}
+
+export function sampleImmersiveWorldSphereSurface({
+  count = 1,
+  radius = 6,
+  minRadius = null,
+  maxRadius = null,
+  seed = 0,
+  salt = 'sphere-surface',
+  yBias = 0,
+  arc = TAU,
+  thetaOffset = 0,
+  jitter = 0
+} = {}) {
+  const total = Math.max(0, Math.floor(finiteNumber(count, 0)));
+  const random = createImmersiveWorldSeededRandom(seed, salt);
+  const positions = [];
+  const thetaSpan = arcRadians(arc);
+  const usePartialArc = thetaSpan < TAU - 0.0001;
+  const jitterAmount = Math.max(0, finiteNumber(jitter, 0));
+  for (let index = 0; index < total; index += 1) {
+    const progress = total <= 1 ? 0.5 : index / (total - 1);
+    const y = clamp(
+      1 - 2 * ((index + 0.5) / Math.max(total, 1)) + finiteNumber(yBias, 0) + (random() - 0.5) * jitterAmount,
+      -0.98,
+      0.98
+    );
+    const ringRadius = Math.sqrt(Math.max(0, 1 - y * y));
+    const theta = finiteNumber(thetaOffset, 0)
+      + (usePartialArc ? (progress - 0.5) * thetaSpan : index * GOLDEN_ANGLE)
+      + (random() - 0.5) * jitterAmount;
+    const distance = sampleRadius({ radius, minRadius, maxRadius, random });
+    positions.push([
+      Number((Math.cos(theta) * ringRadius * distance).toFixed(6)),
+      Number((y * distance).toFixed(6)),
+      Number((Math.sin(theta) * ringRadius * distance).toFixed(6))
+    ]);
+  }
+  return positions;
+}
+
+export function sampleImmersiveWorldSphereVolume({
+  count = 1,
+  minRadius = 2,
+  maxRadius = 8,
+  seed = 0,
+  salt = 'sphere-volume',
+  yBias = 0,
+  arc = TAU,
+  thetaOffset = 0,
+  jitter = 0
+} = {}) {
+  const random = createImmersiveWorldSeededRandom(seed, `${salt}:radius`);
+  return sampleImmersiveWorldSphereSurface({
+    count,
+    minRadius,
+    maxRadius,
+    seed,
+    salt,
+    yBias,
+    arc,
+    thetaOffset,
+    jitter
+  }).map((position) => {
+    const length = Math.hypot(position[0], position[1], position[2]) || 1;
+    const min = positiveNumber(minRadius, 2);
+    const max = Math.max(min, positiveNumber(maxRadius, 8));
+    const distance = Math.cbrt(min ** 3 + (max ** 3 - min ** 3) * random());
+    return [
+      Number(((position[0] / length) * distance).toFixed(6)),
+      Number(((position[1] / length) * distance).toFixed(6)),
+      Number(((position[2] / length) * distance).toFixed(6))
+    ];
+  });
+}
+
+export function sampleImmersiveWorldRing({
+  count = 1,
+  radius = 4,
+  minRadius = null,
+  maxRadius = null,
+  axis = 'y',
+  height = 0,
+  seed = 0,
+  salt = 'ring',
+  arc = TAU,
+  thetaOffset = 0,
+  jitter = 0
+} = {}) {
+  const total = Math.max(0, Math.floor(finiteNumber(count, 0)));
+  const random = createImmersiveWorldSeededRandom(seed, salt);
+  const positions = [];
+  const thetaSpan = arcRadians(arc);
+  const jitterAmount = Math.max(0, finiteNumber(jitter, 0));
+  const ringAxis = String(axis || 'y').toLowerCase();
+  for (let index = 0; index < total; index += 1) {
+    const progress = total <= 1 ? 0.5 : index / total;
+    const theta = finiteNumber(thetaOffset, 0) + progress * thetaSpan + (random() - 0.5) * jitterAmount;
+    const distance = sampleRadius({ radius, minRadius, maxRadius, random });
+    const x = Math.cos(theta) * distance;
+    const y = finiteNumber(height, 0) + (random() - 0.5) * jitterAmount;
+    const z = Math.sin(theta) * distance;
+    if (ringAxis === 'x') positions.push([Number(y.toFixed(6)), Number(x.toFixed(6)), Number(z.toFixed(6))]);
+    else if (ringAxis === 'z') positions.push([Number(x.toFixed(6)), Number(z.toFixed(6)), Number(y.toFixed(6))]);
+    else positions.push([Number(x.toFixed(6)), Number(y.toFixed(6)), Number(z.toFixed(6))]);
+  }
+  return positions;
+}
+
+function centeredPosition(position, center = null) {
+  const offset = Array.isArray(center) && center.length === 3 ? center.map(Number) : [0, 0, 0];
+  if (!offset.every(Number.isFinite)) return position;
+  return [
+    Number((position[0] + offset[0]).toFixed(6)),
+    Number((position[1] + offset[1]).toFixed(6)),
+    Number((position[2] + offset[2]).toFixed(6))
+  ];
+}
+
+function dimensionFromOptions(options, key, fallback) {
+  const size = finiteNumber(options.size, null);
+  return positiveNumber(options[key], size ?? fallback);
+}
+
+function axisOrientedPosition(axis, primary, a, b) {
+  const normalized = String(axis || 'y').toLowerCase();
+  if (normalized === 'x') return [primary, a, b];
+  if (normalized === 'z') return [a, b, primary];
+  return [a, primary, b];
+}
+
+function sampleBoxPosition({ random, width = 4, height = 4, depth = 4, surface = false }) {
+  const x = (random() - 0.5) * width;
+  const y = (random() - 0.5) * height;
+  const z = (random() - 0.5) * depth;
+  if (!surface) return [x, y, z];
+  const face = Math.floor(random() * 6);
+  if (face === 0) return [-width / 2, y, z];
+  if (face === 1) return [width / 2, y, z];
+  if (face === 2) return [x, -height / 2, z];
+  if (face === 3) return [x, height / 2, z];
+  if (face === 4) return [x, y, -depth / 2];
+  return [x, y, depth / 2];
+}
+
+function sampleCylinderPosition({ random, radius = 4, minRadius = 0, height = 4, axis = 'y', surface = false, arc = TAU, thetaOffset = 0 }) {
+  const theta = finiteNumber(thetaOffset, 0) + random() * arcRadians(arc);
+  const min = positiveNumber(minRadius, 0);
+  const max = Math.max(min, positiveNumber(radius, 4));
+  const sideOrCap = surface ? random() : 0;
+  const radial = surface && sideOrCap < 0.72
+    ? max
+    : Math.sqrt(min * min + (max * max - min * min) * random());
+  const primary = surface && sideOrCap >= 0.72
+    ? (sideOrCap < 0.86 ? -height / 2 : height / 2)
+    : (random() - 0.5) * height;
+  return axisOrientedPosition(axis, primary, Math.cos(theta) * radial, Math.sin(theta) * radial);
+}
+
+function sampleConePosition({ random, radius = 4, height = 4, axis = 'y', surface = false, arc = TAU, thetaOffset = 0 }) {
+  const theta = finiteNumber(thetaOffset, 0) + random() * arcRadians(arc);
+  const y = (random() - 0.5) * height;
+  const heightProgress = clamp((y + height / 2) / Math.max(height, 0.0001), 0, 1);
+  const localRadius = Math.max(0, radius * (1 - heightProgress));
+  const radial = surface ? localRadius : Math.sqrt(random()) * localRadius;
+  return axisOrientedPosition(axis, y, Math.cos(theta) * radial, Math.sin(theta) * radial);
+}
+
+function sampleDiscPosition({ random, radius = 4, minRadius = 0, axis = 'y', height = 0, surface = false, arc = TAU, thetaOffset = 0 }) {
+  const theta = finiteNumber(thetaOffset, 0) + random() * arcRadians(arc);
+  const min = positiveNumber(minRadius, 0);
+  const max = Math.max(min, positiveNumber(radius, 4));
+  const radial = surface ? max : Math.sqrt(min * min + (max * max - min * min) * random());
+  return axisOrientedPosition(axis, finiteNumber(height, 0), Math.cos(theta) * radial, Math.sin(theta) * radial);
+}
+
+function sampleTorusPosition({ random, radius = 4, tubeRadius = 0.6, axis = 'y', surface = false, arc = TAU, thetaOffset = 0 }) {
+  const theta = finiteNumber(thetaOffset, 0) + random() * arcRadians(arc);
+  const tubeTheta = random() * TAU;
+  const tube = surface ? tubeRadius : Math.sqrt(random()) * tubeRadius;
+  const radial = radius + Math.cos(tubeTheta) * tube;
+  const primary = Math.sin(tubeTheta) * tube;
+  return axisOrientedPosition(axis, primary, Math.cos(theta) * radial, Math.sin(theta) * radial);
+}
+
+export function sampleImmersiveWorldVolume({
+  shape = 'sphere',
+  mode = null,
+  surface = null,
+  count = 1,
+  seed = 0,
+  salt = 'volume',
+  center = null,
+  ...options
+} = {}) {
+  const normalizedShape = String(shape || 'sphere').toLowerCase().replace(/[_\s]+/g, '-');
+  const shapeSurface = surface === null
+    ? ['surface', 'shell', 'outline'].includes(String(mode || '').toLowerCase())
+      || normalizedShape.endsWith('-surface')
+      || normalizedShape === 'shell'
+    : Boolean(surface);
+  const total = Math.max(0, Math.floor(finiteNumber(count, 0)));
+  if (!total) return [];
+  if (normalizedShape === 'sphere' || normalizedShape === 'shell' || normalizedShape === 'sphere-surface' || normalizedShape === 'sphere-volume') {
+    const sphereOptions = { ...options, count: total, seed, salt, center: null };
+    const positions = shapeSurface || normalizedShape === 'sphere-surface' || normalizedShape === 'shell'
+      ? sampleImmersiveWorldSphereSurface(sphereOptions)
+      : sampleImmersiveWorldSphereVolume(sphereOptions);
+    return positions.map((position) => centeredPosition(position, center));
+  }
+  if (normalizedShape === 'ring' || normalizedShape === 'circle') {
+    return sampleImmersiveWorldRing({ ...options, count: total, seed, salt })
+      .map((position) => centeredPosition(position, center));
+  }
+
+  const random = createImmersiveWorldSeededRandom(seed, `${salt}:${normalizedShape}:${shapeSurface ? 'surface' : 'volume'}`);
+  const width = dimensionFromOptions(options, 'width', 4);
+  const height = dimensionFromOptions(options, 'height', 4);
+  const depth = dimensionFromOptions(options, 'depth', 4);
+  const radius = positiveNumber(options.radius, options.maxRadius ?? Math.max(width, depth) / 2);
+  const positions = [];
+  for (let index = 0; index < total; index += 1) {
+    let position;
+    if (normalizedShape === 'box' || normalizedShape === 'cube' || normalizedShape === 'rect' || normalizedShape === 'rectangular-prism') {
+      position = sampleBoxPosition({ random, width, height, depth, surface: shapeSurface });
+    } else if (normalizedShape === 'cylinder' || normalizedShape === 'tube') {
+      position = sampleCylinderPosition({ random, radius, minRadius: options.minRadius, height, axis: options.axis, surface: shapeSurface, arc: options.arc, thetaOffset: options.thetaOffset });
+    } else if (normalizedShape === 'cone') {
+      position = sampleConePosition({ random, radius, height, axis: options.axis, surface: shapeSurface, arc: options.arc, thetaOffset: options.thetaOffset });
+    } else if (normalizedShape === 'disc' || normalizedShape === 'disk' || normalizedShape === 'plane') {
+      position = sampleDiscPosition({ random, radius, minRadius: options.minRadius, axis: options.axis, height: options.planeOffset ?? options.offset ?? 0, surface: shapeSurface, arc: options.arc, thetaOffset: options.thetaOffset });
+    } else if (normalizedShape === 'torus' || normalizedShape === 'donut') {
+      position = sampleTorusPosition({ random, radius, tubeRadius: positiveNumber(options.tubeRadius, Math.max(0.1, radius * 0.18)), axis: options.axis, surface: shapeSurface, arc: options.arc, thetaOffset: options.thetaOffset });
+    } else {
+      position = shapeSurface
+        ? sampleImmersiveWorldSphereSurface({ ...options, count: 1, seed, salt: `${salt}:${index}` })[0]
+        : sampleImmersiveWorldSphereVolume({ ...options, count: 1, seed, salt: `${salt}:${index}` })[0];
+    }
+    positions.push(centeredPosition(position.map((value) => Number(value.toFixed(6))), center));
+  }
+  return positions;
+}
+
+function applyVector3(target, value, fallback) {
+  const source = Array.isArray(value) && value.length === 3 ? value : fallback;
+  if (!Array.isArray(source)) return false;
+  const values = source.map(Number);
+  if (!values.every(Number.isFinite)) return false;
+  target.set(values[0], values[1], values[2]);
+  return true;
+}
+
+function vector3FromValue(value) {
+  const parsed = vector3(value, null);
+  return parsed ? new THREE.Vector3(parsed[0], parsed[1], parsed[2]) : null;
+}
+
+function firstVector3FromValues(...values) {
+  for (const value of values) {
+    const parsed = vector3FromValue(value);
+    if (parsed) return parsed;
+  }
+  return null;
+}
+
+function normalizeFacingMode(options = {}) {
+  const raw = options.facing ?? options.orientation;
+  if (raw != null) {
+    const mode = String(raw).trim().toLowerCase().replace(/[_\s]+/g, '-');
+    if (['camera', 'face-camera', 'camera-facing', 'billboard', 'screen', 'screen-facing'].includes(mode)) return 'camera';
+    if (['target', 'face-target', 'look-at', 'look-at-target', 'viewer', 'origin', 'center', 'radial-in', 'inward'].includes(mode)) return 'target';
+    if (['radial-out', 'outward', 'away-from-center'].includes(mode)) return 'radial-out';
+    if (['none', 'world', 'fixed', 'rotation'].includes(mode)) return 'none';
+  }
+  if (options.faceCamera === true || options.billboard === true) return 'camera';
+  if (options.faceOutward === true) return 'radial-out';
+  if (options.faceTarget) return 'target';
+  return 'none';
+}
+
+function applyFrontFacingDirection(object, direction) {
+  if (!object?.quaternion || !direction || direction.lengthSq() < 0.000001) return false;
+  object.quaternion.setFromUnitVectors(new THREE.Vector3(0, 0, 1), direction.normalize());
+  return true;
+}
+
+function applyImmersiveWorldFacingOrientation(object, options = {}) {
+  if (!object?.isObject3D) return false;
+  const mode = normalizeFacingMode(options);
+  if (mode === 'none') return false;
+  if (mode === 'camera') {
+    const cameraQuaternion = options.camera?.quaternion;
+    if (cameraQuaternion?.isQuaternion) {
+      object.quaternion.copy(cameraQuaternion);
+      return true;
+    }
+    const cameraPosition = firstVector3FromValues(options.camera?.position, options.cameraPosition);
+    if (!cameraPosition) return false;
+    return applyFrontFacingDirection(object, cameraPosition.sub(object.position));
+  }
+  const center = firstVector3FromValues(options.center, options.origin, [0, 0, 0]);
+  const target = mode === 'radial-out'
+    ? center
+    : firstVector3FromValues(options.target, options.lookAt, options.lookAtTarget, options.faceTarget, center);
+  if (!target) return false;
+  const direction = mode === 'radial-out'
+    ? object.position.clone().sub(target)
+    : target.sub(object.position);
+  return applyFrontFacingDirection(object, direction);
+}
+
+export function applyImmersiveWorldPartPlacement(object, params = {}) {
+  if (!object?.isObject3D) return { applied: false };
+  const placement = params?.placement && typeof params.placement === 'object' ? params.placement : params;
+  const positionApplied = applyVector3(object.position, placement.position, null);
+  const rotationApplied = applyVector3(object.rotation, placement.rotation, null);
+  const scale = placement.scale;
+  let scaleApplied = false;
+  if (Array.isArray(scale)) {
+    scaleApplied = applyVector3(object.scale, scale, null);
+  } else if (Number.isFinite(Number(scale))) {
+    object.scale.setScalar(Number(scale));
+    scaleApplied = true;
+  }
+  const facingApplied = applyImmersiveWorldFacingOrientation(object, placement);
+  return { applied: positionApplied || rotationApplied || scaleApplied || facingApplied, positionApplied, rotationApplied, scaleApplied, facingApplied };
+}
+
+export function createImmersiveWorldInstancedShapeField(THREE, {
+  geometry,
+  material,
+  positions = [],
+  scales = 1,
+  rotations = null,
+  facing = null,
+  orientation = null,
+  faceCamera = false,
+  billboard = false,
+  camera = null,
+  cameraPosition = null,
+  faceTarget = null,
+  faceOutward = false,
+  target = null,
+  lookAt = null,
+  lookAtTarget = null,
+  center = null,
+  origin = null,
+  name = 'immersive-world-instanced-shape-field'
+} = {}) {
+  if (!geometry || !material) throw new Error('Instanced shape field requires geometry and material.');
+  const mesh = new THREE.InstancedMesh(geometry, material, positions.length);
+  const matrixObject = new THREE.Object3D();
+  mesh.name = name;
+  positions.forEach((position, index) => {
+    applyVector3(matrixObject.position, position, [0, 0, 0]);
+    const scale = Array.isArray(scales) ? scales[index] : scales;
+    if (Array.isArray(scale)) applyVector3(matrixObject.scale, scale, [1, 1, 1]);
+    else matrixObject.scale.setScalar(Number.isFinite(Number(scale)) ? Number(scale) : 1);
+    if (Array.isArray(rotations?.[index])) applyVector3(matrixObject.rotation, rotations[index], [0, 0, 0]);
+    else matrixObject.rotation.set(0, 0, 0);
+    if (!Array.isArray(rotations?.[index])) {
+      applyImmersiveWorldFacingOrientation(matrixObject, {
+        facing,
+        orientation,
+        faceCamera,
+        billboard,
+        camera,
+        cameraPosition,
+        faceTarget,
+        faceOutward,
+        target,
+        lookAt,
+        lookAtTarget,
+        center,
+        origin
+      });
+    }
+    matrixObject.updateMatrix();
+    mesh.setMatrixAt(index, matrixObject.matrix);
+  });
+  mesh.instanceMatrix.needsUpdate = true;
+  return mesh;
+}
+
+function normalizedCurveProgress(value) {
+  const numeric = Number(value);
+  if (!Number.isFinite(numeric)) return 0;
+  return ((numeric % 1) + 1) % 1;
+}
+
+function splineProgressFromOptions({
+  progress = 0,
+  elapsedSeconds = null,
+  speed = 0,
+  duration = null,
+  phase = 0,
+  offset = 0
+} = {}) {
+  const elapsed = Number(elapsedSeconds);
+  const durationSeconds = positiveNumber(duration, 0);
+  const base = Number.isFinite(elapsed)
+    ? durationSeconds > 0
+      ? elapsed / durationSeconds
+      : elapsed * finiteNumber(speed, 0)
+    : finiteNumber(progress, 0);
+  return normalizedCurveProgress(base + finiteNumber(phase, 0) + finiteNumber(offset, 0));
+}
+
+function splineControlPoints(points) {
+  const parsed = (Array.isArray(points) ? points : [])
+    .map((point) => vector3FromValue(point))
+    .filter(Boolean);
+  if (parsed.length >= 2) return parsed;
+  return [new THREE.Vector3(-1, 0, 0), new THREE.Vector3(1, 0, 0)];
+}
+
+export function createImmersiveWorldSplinePath(THREE, {
+  points = [],
+  closed = false,
+  curveType = 'centripetal',
+  tension = 0.5,
+  progressOffset = 0
+} = {}) {
+  const normalizedCurveType = String(curveType).trim().toLowerCase();
+  const safeCurveType = ['centripetal', 'chordal', 'catmullrom'].includes(normalizedCurveType)
+    ? normalizedCurveType
+    : 'centripetal';
+  const controlPoints = splineControlPoints(points);
+  const curve = new THREE.CatmullRomCurve3(controlPoints, closed === true, safeCurveType, finiteNumber(tension, 0.5));
+  const tempPoint = new THREE.Vector3();
+  const tempTangent = new THREE.Vector3();
+
+  const normalizePathProgress = (progress) => normalizedCurveProgress(progress + finiteNumber(progressOffset, 0));
+  const sampleVector = (progress = 0, target = new THREE.Vector3()) => curve.getPointAt(normalizePathProgress(progress), target);
+  const tangentVector = (progress = 0, target = new THREE.Vector3()) => curve.getTangentAt(normalizePathProgress(progress), target).normalize();
+  const sample = (progress = 0) => {
+    sampleVector(progress, tempPoint);
+    return [tempPoint.x, tempPoint.y, tempPoint.z].map((value) => Number(value.toFixed(6)));
+  };
+
+  const applyToObject = (object, options = {}) => {
+    if (!object?.isObject3D) return { applied: false };
+    const progress = splineProgressFromOptions(options);
+    sampleVector(progress, object.position);
+    let orientationApplied = false;
+    if (options.orientToPath === true || options.facePath === true || options.facing === 'path') {
+      tangentVector(progress, tempTangent);
+      orientationApplied = applyFrontFacingDirection(object, tempTangent);
+    }
+    return { applied: true, progress, orientationApplied };
+  };
+
+  const writePositions = (target, options = {}) => {
+    const attribute = target?.isBufferAttribute ? target : target?.getAttribute?.('position');
+    const array = attribute?.array || target?.array || target;
+    if (!array || typeof array.length !== 'number') return { updated: false, count: 0 };
+    const stride = Math.max(3, Math.floor(finiteNumber(options.stride, 3)));
+    const available = attribute?.count ?? Math.floor(array.length / stride);
+    const total = Math.max(0, Math.min(Math.floor(finiteNumber(options.count, available)), available));
+    const phaseStep = options.phaseStep == null
+      ? (total > 0 ? 1 / total : 0)
+      : finiteNumber(options.phaseStep, 0);
+    const baseOffset = finiteNumber(options.offset, 0);
+    for (let index = 0; index < total; index += 1) {
+      const offset = Array.isArray(options.offsets) ? finiteNumber(options.offsets[index], index * phaseStep) : index * phaseStep;
+      const progress = splineProgressFromOptions({ ...options, offset: baseOffset + offset });
+      sampleVector(progress, tempPoint);
+      const base = index * stride;
+      array[base] = tempPoint.x;
+      array[base + 1] = tempPoint.y;
+      array[base + 2] = tempPoint.z;
+    }
+    if (attribute) attribute.needsUpdate = true;
+    return { updated: true, count: total };
+  };
+
+  return {
+    curve,
+    controlPoints,
+    closed: closed === true,
+    sample,
+    sampleVector,
+    tangent: (progress = 0) => {
+      tangentVector(progress, tempTangent);
+      return [tempTangent.x, tempTangent.y, tempTangent.z].map((value) => Number(value.toFixed(6)));
+    },
+    tangentVector,
+    applyToObject,
+    writePositions,
+    updateParticles: writePositions
+  };
+}
+
+function createImmersiveWorldPlacementUtilities(THREE) {
+  return {
+    sampleSphereSurface: sampleImmersiveWorldSphereSurface,
+    sampleSphereVolume: sampleImmersiveWorldSphereVolume,
+    sampleRing: sampleImmersiveWorldRing,
+    sampleVolume: sampleImmersiveWorldVolume,
+    sampleShape: sampleImmersiveWorldVolume,
+    applyPartPlacement: applyImmersiveWorldPartPlacement,
+    createInstancedShapeField: (options) => createImmersiveWorldInstancedShapeField(THREE, options),
+    createSplinePath: (options) => createImmersiveWorldSplinePath(THREE, options)
+  };
 }
 
 function vector3(value, fallback) {
@@ -216,6 +821,50 @@ export function updateImmersiveWorldCameraControlsForFrame(scene, { time = 0, mo
   };
 }
 
+export function buildImmersiveWorldFrameFacts(scene) {
+  const elapsedSeconds = scene.captureMode ? scene.captureTime : scene.clock.getElapsedTime();
+  const previousElapsedSeconds = Number.isFinite(scene.previousElapsedSeconds)
+    ? scene.previousElapsedSeconds
+    : null;
+  const rawDeltaSeconds = previousElapsedSeconds == null ? 0 : elapsedSeconds - previousElapsedSeconds;
+  const deltaSeconds = scene.captureMode
+    ? 0
+    : clamp(rawDeltaSeconds, 0, MAX_FRAME_DELTA_SECONDS);
+  scene.previousElapsedSeconds = elapsedSeconds;
+  return {
+    time: elapsedSeconds,
+    elapsedSeconds,
+    deltaSeconds,
+    rawDeltaSeconds,
+    captureMode: scene.captureMode,
+    frameCount: scene.renderFrameCount,
+    motionIntensity: scene.motionIntensity,
+    camera: scene.camera
+  };
+}
+
+export function applyImmersiveWorldPostUniforms(scene, frameFacts = {}) {
+  const transform = scene.outputColorTransform || scene.postBase || resolveImmersiveWorldOutputColorTransform({});
+  const elapsedSeconds = Number(frameFacts.elapsedSeconds ?? frameFacts.time ?? 0);
+  scene.postUniforms.uTime.value = Number.isFinite(elapsedSeconds) ? elapsedSeconds : 0;
+  scene.postUniforms.uHueShift.value = transform.hueShift;
+  scene.postUniforms.uSaturation.value = transform.saturation;
+  scene.postUniforms.uContrast.value = transform.contrast;
+  scene.postUniforms.uVignette.value = transform.vignette;
+  scene.postUniforms.uDistortion.value = transform.distortion;
+  scene.postUniforms.uExposureMul.value = transform.exposure;
+  return transform;
+}
+
+export function renderImmersiveWorldFrame(scene, frameFacts = {}) {
+  applyImmersiveWorldPostUniforms(scene, frameFacts);
+  scene.renderer.setRenderTarget(scene.renderTarget);
+  scene.renderer.render(scene.scene, scene.camera);
+  scene.renderer.setRenderTarget(null);
+  scene.renderer.render(scene.postScene, scene.postCamera);
+  return frameFacts;
+}
+
 function measureObjectRadius(object) {
   const bounds = new THREE.Box3().setFromObject(object);
   if (bounds.isEmpty()) return null;
@@ -274,11 +923,22 @@ export class ArtworkScene {
     this.clock = new THREE.Clock();
     this.updateHooks = [];
     this.disposeHooks = [];
+    const { renderTarget, samples } = createPostRenderTarget(this.renderer);
+    this.renderTarget = renderTarget;
+    this.renderTargetSamples = samples;
+    const postPass = createPostPass(this.renderTarget);
+    this.postScene = postPass.postScene;
+    this.postCamera = postPass.postCamera;
+    this.postUniforms = postPass.postUniforms;
+    this.postQuad = postPass.postQuad;
+    this.outputColorTransform = resolveImmersiveWorldOutputColorTransform({});
+    this.postBase = this.outputColorTransform;
     this.renderFrameCount = 0;
     this.renderFrameWaiters = [];
     this.motionIntensity = 1;
     this.captureMode = false;
     this.captureTime = 1.234;
+    this.previousElapsedSeconds = null;
     this.sceneAssemblyReport = null;
     this.cameraInputTeardown = null;
     initializeImmersiveWorldCameraControls(this);
@@ -300,6 +960,7 @@ export class ArtworkScene {
   setCaptureMode(enabled = false, freezeTime = 1.234) {
     this.captureMode = Boolean(enabled);
     this.captureTime = Number.isFinite(freezeTime) ? freezeTime : 1.234;
+    this.previousElapsedSeconds = null;
     this.setMotionIntensity(this.captureMode ? 0 : this.motionIntensity);
   }
 
@@ -311,6 +972,7 @@ export class ArtworkScene {
       disposeObjectTree(child);
     }
     this.updateHooks = [];
+    this.previousElapsedSeconds = null;
   }
 
   applyEnvironment(world) {
@@ -371,14 +1033,20 @@ export class ArtworkScene {
       url: normalizePublicRuntimeUrl(asset.url, { expectedDir: 'data/immersive-world/generated-assets' })
     }));
     const skyboxUtilities = createImmersiveWorldSkyboxUtilities(THREE);
+    const placementUtilities = createImmersiveWorldPlacementUtilities(THREE);
     const result = normalizeModuleResult(await createPart({
       THREE,
       part,
       world,
       seed: config.seed,
       assets,
+      camera: this.camera,
       utilities: {
         normalizePublicRuntimeUrl,
+        hashSeedText: hashImmersiveWorldSeedText,
+        createSeededRandom: createImmersiveWorldSeededRandom,
+        seededRandom: (salt = '') => createImmersiveWorldSeededRandom(config.seed, salt)(),
+        ...placementUtilities,
         ...skyboxUtilities,
         skybox: skyboxUtilities
       }
@@ -407,6 +1075,7 @@ export class ArtworkScene {
     if (!parts.length) throw new Error('Immersive world artwork is missing world.parts.');
 
     this.clearWorld();
+    applyImmersiveWorldOutputColorTransform(this, world);
     const environment = this.applyEnvironment(world);
     this.applyLighting(world);
     const camera = this.applyCamera(world);
@@ -444,10 +1113,15 @@ export class ArtworkScene {
     const rect = this.canvas.getBoundingClientRect();
     const width = Math.max(1, Math.round(rect.width || this.canvas.clientWidth || 1));
     const height = Math.max(1, Math.round(rect.height || this.canvas.clientHeight || 1));
-    this.renderer.setSize(width, height, false);
-    this.camera.aspect = width / height;
-    this.camera.updateProjectionMatrix();
+    resizeSceneRenderTargets({
+      canvas: this.canvas,
+      renderer: this.renderer,
+      renderTarget: this.renderTarget,
+      postUniforms: this.postUniforms,
+      camera: this.camera
+    });
     if (this.orbit) applyViewportOrbitFrame(this);
+    return { width, height };
   }
 
   waitForRenderedFrame(timeoutMs = 2500) {
@@ -474,10 +1148,10 @@ export class ArtworkScene {
   }
 
   animate() {
-    const t = this.captureMode ? this.captureTime : this.clock.getElapsedTime();
-    updateImmersiveWorldCameraControlsForFrame(this, { time: t, motionIntensity: this.motionIntensity });
-    for (const update of this.updateHooks) update({ time: t, motionIntensity: this.motionIntensity, camera: this.camera });
-    this.renderer.render(this.scene, this.camera);
+    const frameFacts = buildImmersiveWorldFrameFacts(this);
+    updateImmersiveWorldCameraControlsForFrame(this, frameFacts);
+    for (const update of this.updateHooks) update(frameFacts);
+    renderImmersiveWorldFrame(this, frameFacts);
     this.renderFrameCount += 1;
     if (this.renderFrameWaiters.length) {
       const dueWaiters = this.renderFrameWaiters.filter((waiter) => this.renderFrameCount >= waiter.targetFrame);
@@ -492,6 +1166,8 @@ export class ArtworkScene {
     this.cameraInputTeardown?.();
     this.cameraInputTeardown = null;
     this.clearWorld();
+    disposeObjectTree(this.postScene);
+    this.renderTarget?.dispose?.();
     disposeObjectTree(this.scene);
     this.renderer?.dispose?.();
   }
