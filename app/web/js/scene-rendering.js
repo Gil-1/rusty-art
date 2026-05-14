@@ -19,6 +19,24 @@ export function resolveRenderTargetSamples(maxSamples = 0, preferredSamples = PR
   return Math.min(max, preferred);
 }
 
+export function supportsHalfFloatRenderTarget(renderer) {
+  if (!renderer?.extensions || !renderer?.capabilities) return false;
+  if (renderer.capabilities.isWebGL2) {
+    return Boolean(
+      renderer.extensions.get('EXT_color_buffer_float')
+      || renderer.extensions.get('EXT_color_buffer_half_float')
+    );
+  }
+  return Boolean(
+    renderer.extensions.get('OES_texture_half_float')
+    && renderer.extensions.get('EXT_color_buffer_half_float')
+  );
+}
+
+export function resolveRenderTargetType(renderer) {
+  return supportsHalfFloatRenderTarget(renderer) ? THREE.HalfFloatType : THREE.UnsignedByteType;
+}
+
 export function resolveRenderTargetSize(width, height, pixelRatio = 1) {
   const ratio = resolveRendererPixelRatio(pixelRatio);
   return {
@@ -68,12 +86,14 @@ export function createArtworkRenderer(canvas, devicePixelRatio = 1) {
 
 export function createPostRenderTarget(renderer) {
   const samples = resolveRenderTargetSamples(renderer?.capabilities?.maxSamples);
+  const type = resolveRenderTargetType(renderer);
   const renderTarget = new THREE.WebGLRenderTarget(1, 1, {
     depthBuffer: true,
     stencilBuffer: false,
+    type,
     samples
   });
-  return { renderTarget, samples };
+  return { renderTarget, samples, type };
 }
 
 export function createPostPass(renderTarget, {
