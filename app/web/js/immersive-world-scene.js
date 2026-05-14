@@ -133,6 +133,96 @@ export function applyImmersiveWorldOutputColorTransform(scene, world = {}) {
   return transform;
 }
 
+const MATERIAL_TEXTURE_FIELDS = Object.freeze([
+  'map',
+  'alphaMap',
+  'aoMap',
+  'bumpMap',
+  'displacementMap',
+  'emissiveMap',
+  'envMap',
+  'lightMap',
+  'metalnessMap',
+  'normalMap',
+  'roughnessMap',
+  'specularMap',
+  'gradientMap'
+]);
+
+function collectMaterialTextures(material) {
+  const textures = [];
+  for (const field of MATERIAL_TEXTURE_FIELDS) {
+    const texture = material?.[field];
+    if (texture?.isTexture) textures.push(texture);
+  }
+  const uniforms = asObject(material?.uniforms, null);
+  if (uniforms) {
+    for (const uniform of Object.values(uniforms)) {
+      const value = uniform?.value;
+      if (value?.isTexture) textures.push(value);
+    }
+  }
+  return textures;
+}
+
+function maxTextureAnisotropy(renderer) {
+  const value = typeof renderer?.capabilities?.getMaxAnisotropy === 'function'
+    ? renderer.capabilities.getMaxAnisotropy()
+    : 1;
+  return Math.max(1, Math.min(8, Number.isFinite(value) ? value : 1));
+}
+
+export function applyImmersiveWorldTextureQuality(object, {
+  THREE: three = THREE,
+  renderer = null
+} = {}) {
+  const facts = {
+    inspectedMaterials: 0,
+    inspectedTextures: 0,
+    normalizedTextures: 0
+  };
+  const anisotropy = maxTextureAnisotropy(renderer);
+  const seenTextures = new Set();
+
+  object?.traverse?.((child) => {
+    const materials = Array.isArray(child.material)
+      ? child.material
+      : [child.material].filter(Boolean);
+    for (const material of materials) {
+      facts.inspectedMaterials += 1;
+      for (const texture of collectMaterialTextures(material)) {
+        if (seenTextures.has(texture)) continue;
+        seenTextures.add(texture);
+        facts.inspectedTextures += 1;
+        if (!texture.isDataTexture) continue;
+        let changed = false;
+        if (texture.magFilter === three.NearestFilter) {
+          texture.magFilter = three.LinearFilter;
+          changed = true;
+        }
+        if (texture.minFilter !== three.LinearFilter) {
+          texture.minFilter = three.LinearFilter;
+          changed = true;
+        }
+        if (texture.generateMipmaps) {
+          texture.generateMipmaps = false;
+          changed = true;
+        }
+        if (texture.anisotropy !== anisotropy) {
+          texture.anisotropy = anisotropy;
+          changed = true;
+        }
+        if (changed) {
+          texture.needsUpdate = true;
+          facts.normalizedTextures += 1;
+        }
+      }
+    }
+  });
+
+  return facts;
+}
+
 export function hashImmersiveWorldSeedText(value) {
   const text = String(value ?? 'seed');
   let hash = 2166136261;
@@ -1078,6 +1168,10 @@ export class ArtworkScene {
       throw new Error(`Immersive world module did not return a Three.js Object3D: ${part.id || index}`);
     }
     const environmentAdaptation = adaptWorldEnvironmentObject({ object: result.object, part, world });
+    const textureQuality = applyImmersiveWorldTextureQuality(result.object, {
+      THREE,
+      renderer: this.renderer
+    });
     result.object.name = result.object.name || part.id || `immersive-world-part-${index + 1}`;
     this.group.add(result.object);
     if (result.update) this.updateHooks.push(result.update);
@@ -1087,6 +1181,7 @@ export class ArtworkScene {
       role: part.role || null,
       moduleUrl: moduleRef.url,
       assetCount: assets.length,
+      textureQuality,
       environmentAdaptation: environmentAdaptation.adapted ? environmentAdaptation : undefined
     };
   }
