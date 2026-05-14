@@ -16,6 +16,7 @@ import {
   createPostRenderTarget,
   resizeSceneRenderTargets
 } from './scene-rendering.js';
+import { IMMERSIVE_WORLD_POST_FRAGMENT } from './scene-shaders.js';
 import { disposeObjectTree } from './scene-runtime.js';
 
 const WORLD_ENVIRONMENT_PART_ID = 'world-environment';
@@ -36,9 +37,9 @@ const DEFAULT_ORBIT_POSE = Object.freeze({
 });
 const DEFAULT_OUTPUT_COLOR_TRANSFORM = Object.freeze({
   contrast: 1,
-  saturation: 1.04,
-  exposure: 1.03,
-  vignette: 0.04,
+  saturation: 1,
+  exposure: 1,
+  vignette: 0,
   hueShift: 0,
   distortion: 0
 });
@@ -107,6 +108,22 @@ export function resolveImmersiveWorldOutputColorTransform(world = {}) {
     hueShift: clampedNumber(source.hueShift, DEFAULT_OUTPUT_COLOR_TRANSFORM.hueShift, OUTPUT_COLOR_TRANSFORM_LIMITS.hueShift),
     distortion: clampedNumber(source.distortion, DEFAULT_OUTPUT_COLOR_TRANSFORM.distortion, OUTPUT_COLOR_TRANSFORM_LIMITS.distortion)
   };
+}
+
+export function isNeutralImmersiveWorldOutputColorTransform(transform = {}) {
+  return Math.abs(number(transform.contrast, DEFAULT_OUTPUT_COLOR_TRANSFORM.contrast) - 1) < 0.0001
+    && Math.abs(number(transform.saturation, DEFAULT_OUTPUT_COLOR_TRANSFORM.saturation) - 1) < 0.0001
+    && Math.abs(number(transform.exposure, DEFAULT_OUTPUT_COLOR_TRANSFORM.exposure) - 1) < 0.0001
+    && Math.abs(number(transform.vignette, DEFAULT_OUTPUT_COLOR_TRANSFORM.vignette)) < 0.0001
+    && Math.abs(number(transform.hueShift, DEFAULT_OUTPUT_COLOR_TRANSFORM.hueShift)) < 0.0001
+    && Math.abs(number(transform.distortion, DEFAULT_OUTPUT_COLOR_TRANSFORM.distortion)) < 0.0001;
+}
+
+export function createImmersiveWorldPostPass(renderTarget) {
+  return createPostPass(renderTarget, {
+    fragmentShader: IMMERSIVE_WORLD_POST_FRAGMENT,
+    toneMapped: false
+  });
 }
 
 export function applyImmersiveWorldOutputColorTransform(scene, world = {}) {
@@ -857,7 +874,13 @@ export function applyImmersiveWorldPostUniforms(scene, frameFacts = {}) {
 }
 
 export function renderImmersiveWorldFrame(scene, frameFacts = {}) {
-  applyImmersiveWorldPostUniforms(scene, frameFacts);
+  const transform = applyImmersiveWorldPostUniforms(scene, frameFacts);
+  if (isNeutralImmersiveWorldOutputColorTransform(transform)) {
+    scene.renderer.setRenderTarget(null);
+    scene.renderer.render(scene.scene, scene.camera);
+    return frameFacts;
+  }
+
   scene.renderer.setRenderTarget(scene.renderTarget);
   scene.renderer.render(scene.scene, scene.camera);
   scene.renderer.setRenderTarget(null);
@@ -926,7 +949,7 @@ export class ArtworkScene {
     const { renderTarget, samples } = createPostRenderTarget(this.renderer);
     this.renderTarget = renderTarget;
     this.renderTargetSamples = samples;
-    const postPass = createPostPass(this.renderTarget);
+    const postPass = createImmersiveWorldPostPass(this.renderTarget);
     this.postScene = postPass.postScene;
     this.postCamera = postPass.postCamera;
     this.postUniforms = postPass.postUniforms;

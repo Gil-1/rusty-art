@@ -76,7 +76,11 @@ export function createPostRenderTarget(renderer) {
   return { renderTarget, samples };
 }
 
-export function createPostPass(renderTarget) {
+export function createPostPass(renderTarget, {
+  vertexShader = POST_VERTEX,
+  fragmentShader = POST_FRAGMENT,
+  toneMapped = null
+} = {}) {
   const postScene = new THREE.Scene();
   const postCamera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
   const postUniforms = {
@@ -95,12 +99,13 @@ export function createPostPass(renderTarget) {
     new THREE.PlaneGeometry(2, 2),
     new THREE.ShaderMaterial({
       uniforms: postUniforms,
-      vertexShader: POST_VERTEX,
-      fragmentShader: POST_FRAGMENT,
+      vertexShader,
+      fragmentShader,
       depthWrite: false,
       depthTest: false
     })
   );
+  if (toneMapped !== null) postQuad.material.toneMapped = Boolean(toneMapped);
   postScene.add(postQuad);
 
   return { postScene, postCamera, postUniforms, postQuad };
