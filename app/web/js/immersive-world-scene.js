@@ -172,6 +172,51 @@ function maxTextureAnisotropy(renderer) {
   return Math.max(1, Math.min(8, Number.isFinite(value) ? value : 1));
 }
 
+const SOFT_POINT_TEXTURE_SIZE = 32;
+const softPointTextureCache = new WeakMap();
+
+function createSoftPointTexture(three) {
+  const size = SOFT_POINT_TEXTURE_SIZE;
+  const center = (size - 1) / 2;
+  const radius = size * 0.46;
+  const feather = size * 0.2;
+  const data = new Uint8Array(size * size * 4);
+  for (let y = 0; y < size; y += 1) {
+    for (let x = 0; x < size; x += 1) {
+      const distance = Math.hypot(x - center, y - center);
+      const alpha = clamp((radius - distance) / feather, 0, 1);
+      const easedAlpha = alpha * alpha * (3 - 2 * alpha);
+      const offset = (y * size + x) * 4;
+      data[offset] = 255;
+      data[offset + 1] = 255;
+      data[offset + 2] = 255;
+      data[offset + 3] = Math.round(easedAlpha * 255);
+    }
+  }
+  const texture = new three.DataTexture(data, size, size, three.RGBAFormat);
+  texture.name = 'immersive-world-soft-point-sprite';
+  texture.magFilter = three.LinearFilter;
+  texture.minFilter = three.LinearFilter;
+  texture.generateMipmaps = false;
+  texture.wrapS = three.ClampToEdgeWrapping;
+  texture.wrapT = three.ClampToEdgeWrapping;
+  texture.needsUpdate = true;
+  return texture;
+}
+
+function softPointTextureFor(three, anisotropy) {
+  let texture = softPointTextureCache.get(three);
+  if (!texture) {
+    texture = createSoftPointTexture(three);
+    softPointTextureCache.set(three, texture);
+  }
+  if (texture.anisotropy !== anisotropy) {
+    texture.anisotropy = anisotropy;
+    texture.needsUpdate = true;
+  }
+  return texture;
+}
+
 export function applyImmersiveWorldTextureQuality(object, {
   THREE: three = THREE,
   renderer = null
@@ -179,7 +224,9 @@ export function applyImmersiveWorldTextureQuality(object, {
   const facts = {
     inspectedMaterials: 0,
     inspectedTextures: 0,
-    normalizedTextures: 0
+    normalizedTextures: 0,
+    inspectedPointMaterials: 0,
+    normalizedPointMaterials: 0
   };
   const anisotropy = maxTextureAnisotropy(renderer);
   const seenTextures = new Set();
@@ -215,6 +262,16 @@ export function applyImmersiveWorldTextureQuality(object, {
         if (changed) {
           texture.needsUpdate = true;
           facts.normalizedTextures += 1;
+        }
+      }
+      if (child?.isPoints && material?.isPointsMaterial) {
+        facts.inspectedPointMaterials += 1;
+        if (!material.map && !material.alphaMap) {
+          material.map = softPointTextureFor(three, anisotropy);
+          material.transparent = true;
+          material.alphaTest = Math.max(number(material.alphaTest, 0), 0.01);
+          material.needsUpdate = true;
+          facts.normalizedPointMaterials += 1;
         }
       }
     }
