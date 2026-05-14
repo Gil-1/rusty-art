@@ -37,9 +37,9 @@ const DEFAULT_ORBIT_POSE = Object.freeze({
 });
 const DEFAULT_OUTPUT_COLOR_TRANSFORM = Object.freeze({
   contrast: 1,
-  saturation: 1.02,
-  exposure: 1.01,
-  vignette: 0.05,
+  saturation: 1,
+  exposure: 1,
+  vignette: 0,
   hueShift: 0,
   distortion: 0
 });
