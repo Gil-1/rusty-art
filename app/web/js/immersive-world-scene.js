@@ -6,6 +6,7 @@ import {
 } from './scene-camera.js';
 import {
   applyImmersiveWorldSkyboxDefaults,
+  createImmersiveWorldSkyboxGeometry,
   createImmersiveWorldSkyboxUtilities,
   isImmersiveWorldSkyboxMode,
   resolveImmersiveWorldSkyboxRadius,
@@ -1153,7 +1154,7 @@ export class ArtworkScene {
     this.scene.fog = new THREE.FogExp2(bg, number(environment.fogDensity, 0.018));
 
     const radius = resolveImmersiveWorldSkyboxRadius(world);
-    const geometry = new THREE.SphereGeometry(radius, 48, 24);
+    const geometry = createImmersiveWorldSkyboxGeometry(THREE);
     const material = new THREE.MeshBasicMaterial({
       color: color(environment.fieldColor || palette.field || bg, bg),
       side: THREE.BackSide,
@@ -1166,6 +1167,7 @@ export class ArtworkScene {
     });
     const mesh = new THREE.Mesh(geometry, material);
     mesh.name = 'immersive-world-environment-shell';
+    mesh.scale.setScalar(radius);
     applyImmersiveWorldSkyboxDefaults(THREE, mesh, { radius, renderOrder: -1100 });
     this.group.add(mesh);
     return { kind: environment.kind || 'skybox-field', radius };
