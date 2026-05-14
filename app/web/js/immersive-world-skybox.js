@@ -183,15 +183,15 @@ export function createImmersiveWorldPositionSpaceSkyboxMaterial(THREE, {
       uStainStrength: { value: positiveNumber(stainStrength, 1) }
     },
     vertexShader: `
-      varying vec3 vSkyDir;
+      varying vec3 vSkyPosition;
       void main() {
-        vSkyDir = normalize(position);
+        vSkyPosition = position;
         gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
       }
     `,
     fragmentShader: `
       precision highp float;
-      varying vec3 vSkyDir;
+      varying vec3 vSkyPosition;
       uniform float uTime;
       uniform float uOpacity;
       uniform float uVeil;
@@ -253,7 +253,7 @@ export function createImmersiveWorldPositionSpaceSkyboxMaterial(THREE, {
       }
 
       void main() {
-        vec3 dir = normalize(vSkyDir);
+        vec3 dir = normalize(vSkyPosition);
         float x = clamp(dir.x * 1.18, -1.3, 1.3);
         float y = dir.y;
         float front = smoothstep(-0.1, 0.85, -dir.z);
@@ -302,11 +302,26 @@ export function createImmersiveWorldPositionSpaceSkyboxMaterial(THREE, {
   return material;
 }
 
+export function createImmersiveWorldSkyboxGeometry(THREE, {
+  geometryKind = 'box',
+  widthSegments = 96,
+  heightSegments = 48
+} = {}) {
+  if (!THREE) throw new Error('createImmersiveWorldSkyboxGeometry requires THREE.');
+  if (String(geometryKind).toLowerCase() === 'sphere') {
+    return new THREE.SphereGeometry(1, widthSegments, heightSegments);
+  }
+
+  const sideLength = 2 / Math.sqrt(3);
+  return new THREE.BoxGeometry(sideLength, sideLength, sideLength, 1, 1, 1);
+}
+
 export function createImmersiveWorldSkyboxShell(THREE, {
   name = 'immersive-world-skybox-shell',
   radius = IMMERSIVE_WORLD_SKYBOX_DEFAULT_RADIUS,
   geometry = null,
   material = null,
+  geometryKind = 'box',
   widthSegments = 96,
   heightSegments = 48,
   color = '#0b1020',
@@ -321,9 +336,14 @@ export function createImmersiveWorldSkyboxShell(THREE, {
     ...userData,
     immersiveWorldEnvironmentShell: true,
     skybox: true,
+    environmentGeometryKind: geometryKind,
     environmentRadius: radius
   };
-  const shellGeometry = geometry || new THREE.SphereGeometry(1, widthSegments, heightSegments);
+  const shellGeometry = geometry || createImmersiveWorldSkyboxGeometry(THREE, {
+    geometryKind,
+    widthSegments,
+    heightSegments
+  });
   const shellMaterial = material || createImmersiveWorldSkyboxMaterial(THREE, { color, opacity });
   const mesh = new THREE.Mesh(shellGeometry, shellMaterial);
   mesh.name = `${name}-mesh`;
@@ -345,6 +365,7 @@ export function createImmersiveWorldSkyboxUtilities(THREE) {
   return Object.freeze({
     createSkyboxMaterial: (options = {}) => createImmersiveWorldSkyboxMaterial(THREE, options),
     createPositionSpaceSkyboxMaterial: (options = {}) => createImmersiveWorldPositionSpaceSkyboxMaterial(THREE, options),
+    createSkyboxGeometry: (options = {}) => createImmersiveWorldSkyboxGeometry(THREE, options),
     createSkyboxShell: (options = {}) => createImmersiveWorldSkyboxShell(THREE, options),
     applySkyboxDefaults: (object, options = {}) => applyImmersiveWorldSkyboxDefaults(THREE, object, options)
   });
