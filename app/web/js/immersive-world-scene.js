@@ -1122,6 +1122,7 @@ export class ArtworkScene {
     this.captureTime = 1.234;
     this.previousElapsedSeconds = null;
     this.sceneAssemblyReport = null;
+    this.applyConfigGeneration = 0;
     this.cameraInputTeardown = null;
     initializeImmersiveWorldCameraControls(this);
     this.resize = this.resize.bind(this);
@@ -1210,11 +1211,13 @@ export class ArtworkScene {
     this.group.add(rim);
   }
 
-  async buildPart({ part, world, config, index }) {
+  async buildPart({ part, world, config, index, generation }) {
+    if (generation !== this.applyConfigGeneration) return null;
     const moduleRef = asObject(part.moduleRef || part.module, null);
     if (!moduleRef) throw new Error(`Immersive world part ${part.id || index} is missing moduleRef.`);
     const moduleUrl = normalizePublicRuntimeUrl(moduleRef.url, { expectedDir: 'data/immersive-world/generated-modules' });
     const module = await import(moduleUrl);
+    if (generation !== this.applyConfigGeneration) return null;
     const createPart = resolveCreatePart(module);
     if (typeof createPart !== 'function') {
       throw new Error(`Immersive world module did not export createPart: ${moduleRef.url}`);
@@ -1242,6 +1245,11 @@ export class ArtworkScene {
         skybox: skyboxUtilities
       }
     }));
+    if (generation !== this.applyConfigGeneration) {
+      result.dispose?.();
+      if (result.object?.isObject3D) disposeObjectTree(result.object);
+      return null;
+    }
     if (!result.object?.isObject3D) {
       throw new Error(`Immersive world module did not return a Three.js Object3D: ${part.id || index}`);
     }
@@ -1270,6 +1278,10 @@ export class ArtworkScene {
     const parts = Array.isArray(world.parts) ? world.parts : [];
     if (!parts.length) throw new Error('Immersive world artwork is missing world.parts.');
 
+    const generation = this.applyConfigGeneration + 1;
+    this.applyConfigGeneration = generation;
+    const isCurrentApply = () => generation === this.applyConfigGeneration;
+
     this.clearWorld();
     applyImmersiveWorldOutputColorTransform(this, world);
     const environment = this.applyEnvironment(world);
@@ -1279,9 +1291,14 @@ export class ArtworkScene {
     const builtParts = [];
     try {
       for (const [index, part] of parts.entries()) {
-        builtParts.push(await this.buildPart({ part, world, config, index }));
+        if (!isCurrentApply()) return false;
+        const builtPart = await this.buildPart({ part, world, config, index, generation });
+        if (!isCurrentApply()) return false;
+        if (!builtPart) return false;
+        builtParts.push(builtPart);
       }
     } catch (error) {
+      if (!isCurrentApply()) return false;
       this.sceneAssemblyReport = {
         method: 'immersive-world-v1',
         status: 'failed',
@@ -1292,6 +1309,7 @@ export class ArtworkScene {
       throw error;
     }
 
+    if (!isCurrentApply()) return false;
     this.sceneAssemblyReport = {
       method: 'immersive-world-v1',
       status: 'ok',
@@ -1358,6 +1376,7 @@ export class ArtworkScene {
   }
 
   dispose() {
+    this.applyConfigGeneration += 1;
     window.removeEventListener('resize', this.resize);
     this.cameraInputTeardown?.();
     this.cameraInputTeardown = null;
