@@ -142,6 +142,166 @@ export function createImmersiveWorldSkyboxMaterial(THREE, {
   return material;
 }
 
+export function createImmersiveWorldPositionSpaceSkyboxMaterial(THREE, {
+  name = 'immersive-world-position-space-skybox-material',
+  transparent = false,
+  opacity = 1,
+  veil = transparent,
+  upperLeft = '#16112b',
+  upperRight = '#4b5b49',
+  lower = '#9a3b22',
+  lowerAccent = '#c97724',
+  hinge = '#120d0d',
+  band = '#063dc7',
+  accent = '#c51c12',
+  smoke = '#2a2923',
+  domainScale = 1,
+  stainStrength = 1
+} = {}) {
+  if (!THREE) throw new Error('createImmersiveWorldPositionSpaceSkyboxMaterial requires THREE.');
+  const material = new THREE.ShaderMaterial({
+    name,
+    side: THREE.BackSide,
+    transparent,
+    depthWrite: false,
+    depthTest: true,
+    fog: false,
+    toneMapped: false,
+    uniforms: {
+      uTime: { value: 0 },
+      uOpacity: { value: opacity },
+      uVeil: { value: veil ? 1 : 0 },
+      uUpperLeft: { value: new THREE.Color(upperLeft) },
+      uUpperRight: { value: new THREE.Color(upperRight) },
+      uLower: { value: new THREE.Color(lower) },
+      uLowerAccent: { value: new THREE.Color(lowerAccent) },
+      uHinge: { value: new THREE.Color(hinge) },
+      uBand: { value: new THREE.Color(band) },
+      uAccent: { value: new THREE.Color(accent) },
+      uSmoke: { value: new THREE.Color(smoke) },
+      uDomainScale: { value: positiveNumber(domainScale, 1) },
+      uStainStrength: { value: positiveNumber(stainStrength, 1) }
+    },
+    vertexShader: `
+      varying vec3 vSkyDir;
+      void main() {
+        vSkyDir = normalize(position);
+        gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+      }
+    `,
+    fragmentShader: `
+      precision highp float;
+      varying vec3 vSkyDir;
+      uniform float uTime;
+      uniform float uOpacity;
+      uniform float uVeil;
+      uniform float uDomainScale;
+      uniform float uStainStrength;
+      uniform vec3 uUpperLeft;
+      uniform vec3 uUpperRight;
+      uniform vec3 uLower;
+      uniform vec3 uLowerAccent;
+      uniform vec3 uHinge;
+      uniform vec3 uBand;
+      uniform vec3 uAccent;
+      uniform vec3 uSmoke;
+
+      float hash31(vec3 p) {
+        p = fract(p * vec3(127.1, 311.7, 74.7));
+        p += dot(p, p.yzx + 19.19);
+        return fract((p.x + p.y) * p.z);
+      }
+
+      float noise3(vec3 p) {
+        vec3 i = floor(p);
+        vec3 f = fract(p);
+        vec3 u = f * f * (3.0 - 2.0 * f);
+        return mix(
+          mix(
+            mix(hash31(i + vec3(0.0, 0.0, 0.0)), hash31(i + vec3(1.0, 0.0, 0.0)), u.x),
+            mix(hash31(i + vec3(0.0, 1.0, 0.0)), hash31(i + vec3(1.0, 1.0, 0.0)), u.x),
+            u.y
+          ),
+          mix(
+            mix(hash31(i + vec3(0.0, 0.0, 1.0)), hash31(i + vec3(1.0, 0.0, 1.0)), u.x),
+            mix(hash31(i + vec3(0.0, 1.0, 1.0)), hash31(i + vec3(1.0, 1.0, 1.0)), u.x),
+            u.y
+          ),
+          u.z
+        );
+      }
+
+      float fbm3(vec3 p) {
+        float value = 0.0;
+        float amp = 0.5;
+        for (int i = 0; i < 5; i++) {
+          value += amp * noise3(p);
+          p = p * 2.03 + vec3(8.3, 4.7, 6.1);
+          amp *= 0.5;
+        }
+        return value;
+      }
+
+      float softBand(float value, float center, float halfSize, float feather) {
+        return 1.0 - smoothstep(halfSize, halfSize + feather, abs(value - center));
+      }
+
+      float softRect(float x, float y, float halfWidth, float centerY, float halfHeight, float feather) {
+        float sx = 1.0 - smoothstep(halfWidth, halfWidth + feather, abs(x));
+        float sy = 1.0 - smoothstep(halfHeight, halfHeight + feather, abs(y - centerY));
+        return sx * sy;
+      }
+
+      void main() {
+        vec3 dir = normalize(vSkyDir);
+        float x = clamp(dir.x * 1.18, -1.3, 1.3);
+        float y = dir.y;
+        float front = smoothstep(-0.1, 0.85, -dir.z);
+        float slow = uTime * 0.018;
+        vec3 domain = vec3(dir.x * 1.35, dir.y * 1.15, dir.z * 1.35) * uDomainScale;
+        float broad = fbm3(domain * 1.65 + vec3(slow, -slow * 0.4, slow * 0.27));
+        float fiber = fbm3(domain * 14.0 + vec3(0.0, slow * 2.0, -slow));
+        float seamDrift = (broad - 0.5) * 0.12 + sin((dir.x - dir.z) * 2.2 + uTime * 0.04) * 0.012;
+
+        vec3 upper = mix(uUpperLeft, uUpperRight, smoothstep(-0.18 + seamDrift, 0.28 + seamDrift, x));
+        vec3 lowerField = mix(uLower, uLowerAccent, 0.18 + broad * 0.68);
+        vec3 color = mix(lowerField, upper, smoothstep(-0.12 + seamDrift, 0.18 + seamDrift, y));
+
+        float lowWeight = softRect(x * 0.82, y, 0.92, -0.56 + seamDrift * 0.5, 0.32, 0.16);
+        float upperPane = softRect(x * 0.92, y, 0.9, 0.38 + seamDrift * 0.35, 0.34, 0.13);
+        float hingeMask = softBand(y + seamDrift * 0.65, -0.1, 0.072, 0.1) * (0.5 + 0.5 * smoothstep(1.18, 0.2, abs(x)));
+        float coolSeam = softBand(y + seamDrift, -0.19, 0.035, 0.075) * smoothstep(-0.92, 0.64, x);
+        float cobaltPulse = softBand(y + seamDrift, -0.31, 0.032, 0.062) * (0.24 + 0.76 * smoothstep(0.96, 0.04, abs(x + 0.22)));
+        float redFracture = softBand(x + seamDrift * 0.8, 0.0, 0.025, 0.055) * smoothstep(-0.42, 0.2, y) * smoothstep(0.78, 0.18, abs(y));
+        float radialPressure = 1.0 - smoothstep(0.22, 0.68, length(vec2(x * 0.72, y + 0.28)));
+
+        color = mix(color, upper, upperPane * 0.42);
+        color = mix(color, lowerField, lowWeight * 0.48);
+        color = mix(color, uHinge, hingeMask * 0.82);
+        color = mix(color, uUpperRight, coolSeam * 0.44);
+        color = mix(color, uBand, cobaltPulse * (0.76 + radialPressure * 0.12));
+        color = mix(color, uAccent, redFracture * 0.72);
+        color += (broad - 0.5) * 0.18 * uStainStrength + (fiber - 0.5) * 0.045 * uStainStrength;
+        color += vec3(0.02, 0.012, 0.006) * radialPressure * front;
+
+        float sideDark = smoothstep(0.68, 1.22, abs(x)) * (0.22 + broad * 0.28);
+        color = mix(color, uHinge, sideDark);
+        float smokyTop = smoothstep(0.68, 0.98, y) * (0.08 + broad * 0.08);
+        color = mix(color, uSmoke, smokyTop);
+        color *= 1.14 + 0.32 * front;
+        color += vec3(0.036, 0.022, 0.014) * front;
+        color = pow(max(color, vec3(0.0)), vec3(1.02));
+
+        float veilAlpha = mix(1.0, (0.16 + hingeMask * 0.38 + cobaltPulse * 0.22 + redFracture * 0.22) * uOpacity, uVeil);
+        gl_FragColor = vec4(color, veilAlpha);
+      }
+    `
+  });
+  material.opacity = opacity;
+  material.needsUpdate = true;
+  return material;
+}
+
 export function createImmersiveWorldSkyboxShell(THREE, {
   name = 'immersive-world-skybox-shell',
   radius = IMMERSIVE_WORLD_SKYBOX_DEFAULT_RADIUS,
@@ -184,6 +344,7 @@ export function createImmersiveWorldSkyboxShell(THREE, {
 export function createImmersiveWorldSkyboxUtilities(THREE) {
   return Object.freeze({
     createSkyboxMaterial: (options = {}) => createImmersiveWorldSkyboxMaterial(THREE, options),
+    createPositionSpaceSkyboxMaterial: (options = {}) => createImmersiveWorldPositionSpaceSkyboxMaterial(THREE, options),
     createSkyboxShell: (options = {}) => createImmersiveWorldSkyboxShell(THREE, options),
     applySkyboxDefaults: (object, options = {}) => applyImmersiveWorldSkyboxDefaults(THREE, object, options)
   });
