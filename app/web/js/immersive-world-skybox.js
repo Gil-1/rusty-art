@@ -256,12 +256,14 @@ export function createImmersiveWorldPositionSpaceSkyboxMaterial(THREE, {
         vec3 dir = normalize(vSkyPosition);
         float x = clamp(dir.x * 1.18, -1.3, 1.3);
         float y = dir.y;
+        float poleFade = 1.0 - smoothstep(0.78, 0.97, abs(y));
+        float poleBlend = smoothstep(0.84, 0.985, abs(y));
         float front = smoothstep(-0.1, 0.85, -dir.z);
         float slow = uTime * 0.018;
         vec3 domain = vec3(dir.x * 1.35, dir.y * 1.15, dir.z * 1.35) * uDomainScale;
         float broad = fbm3(domain * 1.65 + vec3(slow, -slow * 0.4, slow * 0.27));
         float fiber = fbm3(domain * 14.0 + vec3(0.0, slow * 2.0, -slow));
-        float seamDrift = (broad - 0.5) * 0.12 + sin((dir.x - dir.z) * 2.2 + uTime * 0.04) * 0.012;
+        float seamDrift = ((broad - 0.5) * 0.12 + sin((dir.x - dir.z) * 2.2 + uTime * 0.04) * 0.012) * (0.45 + 0.55 * poleFade);
 
         vec3 upper = mix(uUpperLeft, uUpperRight, smoothstep(-0.18 + seamDrift, 0.28 + seamDrift, x));
         vec3 lowerField = mix(uLower, uLowerAccent, 0.18 + broad * 0.68);
@@ -269,11 +271,11 @@ export function createImmersiveWorldPositionSpaceSkyboxMaterial(THREE, {
 
         float lowWeight = softRect(x * 0.82, y, 0.92, -0.56 + seamDrift * 0.5, 0.32, 0.16);
         float upperPane = softRect(x * 0.92, y, 0.9, 0.38 + seamDrift * 0.35, 0.34, 0.13);
-        float hingeMask = softBand(y + seamDrift * 0.65, -0.1, 0.072, 0.1) * (0.5 + 0.5 * smoothstep(1.18, 0.2, abs(x)));
-        float coolSeam = softBand(y + seamDrift, -0.19, 0.035, 0.075) * smoothstep(-0.92, 0.64, x);
-        float cobaltPulse = softBand(y + seamDrift, -0.31, 0.032, 0.062) * (0.24 + 0.76 * smoothstep(0.96, 0.04, abs(x + 0.22)));
-        float redFracture = softBand(x + seamDrift * 0.8, 0.0, 0.025, 0.055) * smoothstep(-0.42, 0.2, y) * smoothstep(0.78, 0.18, abs(y));
-        float radialPressure = 1.0 - smoothstep(0.22, 0.68, length(vec2(x * 0.72, y + 0.28)));
+        float hingeMask = softBand(y + seamDrift * 0.65, -0.1, 0.072, 0.1) * (0.5 + 0.5 * smoothstep(1.18, 0.2, abs(x))) * poleFade;
+        float coolSeam = softBand(y + seamDrift, -0.19, 0.035, 0.075) * smoothstep(-0.92, 0.64, x) * poleFade;
+        float cobaltPulse = softBand(y + seamDrift, -0.31, 0.032, 0.062) * (0.24 + 0.76 * smoothstep(0.96, 0.04, abs(x + 0.22))) * poleFade;
+        float redFracture = softBand(x + seamDrift * 0.8, 0.0, 0.025, 0.055) * smoothstep(-0.42, 0.2, y) * smoothstep(0.78, 0.18, abs(y)) * poleFade;
+        float radialPressure = (1.0 - smoothstep(0.22, 0.68, length(vec2(x * 0.72, y + 0.28)))) * poleFade;
 
         color = mix(color, upper, upperPane * 0.42);
         color = mix(color, lowerField, lowWeight * 0.48);
@@ -281,15 +283,17 @@ export function createImmersiveWorldPositionSpaceSkyboxMaterial(THREE, {
         color = mix(color, uUpperRight, coolSeam * 0.44);
         color = mix(color, uBand, cobaltPulse * (0.76 + radialPressure * 0.12));
         color = mix(color, uAccent, redFracture * 0.72);
-        color += (broad - 0.5) * 0.18 * uStainStrength + (fiber - 0.5) * 0.045 * uStainStrength;
+        color += (broad - 0.5) * 0.18 * uStainStrength + (fiber - 0.5) * 0.045 * uStainStrength * (0.35 + 0.65 * poleFade);
         color += vec3(0.02, 0.012, 0.006) * radialPressure * front;
 
-        float sideDark = smoothstep(0.68, 1.22, abs(x)) * (0.22 + broad * 0.28);
+        float sideDark = smoothstep(0.68, 1.22, abs(x)) * (0.22 + broad * 0.28) * poleFade;
         color = mix(color, uHinge, sideDark);
         float smokyTop = smoothstep(0.68, 0.98, y) * (0.08 + broad * 0.08);
         color = mix(color, uSmoke, smokyTop);
         color *= 1.14 + 0.32 * front;
         color += vec3(0.036, 0.022, 0.014) * front;
+        vec3 poleWash = mix(mix(uLower, uLowerAccent, 0.42), mix(uUpperLeft, uUpperRight, 0.5), smoothstep(-0.28, 0.58, y));
+        color = mix(color, poleWash + (broad - 0.5) * 0.08 * uStainStrength, poleBlend * 0.66);
         color = pow(max(color, vec3(0.0)), vec3(1.02));
 
         float veilAlpha = mix(1.0, (0.16 + hingeMask * 0.38 + cobaltPulse * 0.22 + redFracture * 0.22) * uOpacity, uVeil);
