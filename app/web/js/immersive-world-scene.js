@@ -867,6 +867,18 @@ export function isWorldEnvironmentPart(part = {}) {
   return id === WORLD_ENVIRONMENT_PART_ID || role === WORLD_ENVIRONMENT_PART_ID;
 }
 
+export function hasAuthoredImmersiveWorldEnvironmentPart(world = {}) {
+  const parts = Array.isArray(world?.parts) ? world.parts : [];
+  return parts.some((part) => isWorldEnvironmentPart(part) && Boolean(asObject(part?.moduleRef || part?.module, null)));
+}
+
+export function shouldCreateImmersiveWorldBaseEnvironmentShell(world = {}) {
+  const environment = asObject(world?.environment);
+  if (environment.baseShell === false || environment.builtInShell === false || environment.createBaseShell === false) return false;
+  if (environment.baseShell === true || environment.builtInShell === true || environment.createBaseShell === true) return true;
+  return !hasAuthoredImmersiveWorldEnvironmentPart(world);
+}
+
 export function initializeImmersiveWorldCameraControls(scene, { bindInput = true } = {}) {
   scene.controls = { ...LEGACY_ORBIT_CONTROLS };
   scene.orbit = {
@@ -1153,6 +1165,15 @@ export class ArtworkScene {
     this.scene.fog = new THREE.FogExp2(bg, number(environment.fogDensity, 0.018));
 
     const radius = resolveImmersiveWorldSkyboxRadius(world);
+    if (!shouldCreateImmersiveWorldBaseEnvironmentShell(world)) {
+      return {
+        kind: environment.kind || 'skybox-field',
+        radius,
+        shellCreated: false,
+        shellReason: 'authored-world-environment-part'
+      };
+    }
+
     const geometry = new THREE.SphereGeometry(radius, 48, 24);
     const material = new THREE.MeshBasicMaterial({
       color: color(environment.fieldColor || palette.field || bg, bg),
@@ -1168,7 +1189,7 @@ export class ArtworkScene {
     mesh.name = 'immersive-world-environment-shell';
     applyImmersiveWorldSkyboxDefaults(THREE, mesh, { radius, renderOrder: -1100 });
     this.group.add(mesh);
-    return { kind: environment.kind || 'skybox-field', radius };
+    return { kind: environment.kind || 'skybox-field', radius, shellCreated: true };
   }
 
   applyCamera(world) {
