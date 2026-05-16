@@ -83,23 +83,39 @@ export function createBrowserResizeAdapter({
   return adapter;
 }
 
+export function createRendererAnimationLoopAdapter(renderer) {
+  return {
+    setAnimationLoop(callback) {
+      if (typeof renderer?.setAnimationLoop !== 'function') return false;
+      renderer.setAnimationLoop(callback);
+      return true;
+    },
+    disconnect() {
+      if (typeof renderer?.setAnimationLoop === 'function') renderer.setAnimationLoop(null);
+    }
+  };
+}
+
 export class SceneFrameLifecycle {
   constructor({
     onResize,
     onFrame,
     timing = createBrowserTimingAdapter(),
-    resizeAdapter = createNoopResizeAdapter()
+    resizeAdapter = createNoopResizeAdapter(),
+    animationLoopAdapter = null
   } = {}) {
     this.onResize = resolveCallback(onResize, 'onResize');
     this.onFrame = resolveCallback(onFrame, 'onFrame');
     this.timing = timing;
     this.resizeAdapter = resizeAdapter || createNoopResizeAdapter();
+    this.animationLoopAdapter = animationLoopAdapter;
 
     this.frameCount = 0;
     this.frameWaiters = [];
     this.running = false;
     this.disposed = false;
     this.animationFrameId = null;
+    this.usingAnimationLoop = false;
     this.resizeCleanup = null;
 
     this.resize = this.resize.bind(this);
@@ -115,17 +131,22 @@ export class SceneFrameLifecycle {
     this.running = true;
     this.resizeCleanup = this.resizeAdapter.connect?.(this.resize) || null;
     this.resize();
-    this.scheduleNextFrame();
+    if (this.animationLoopAdapter?.setAnimationLoop?.(this.animate)) {
+      this.usingAnimationLoop = true;
+    } else {
+      this.scheduleNextFrame();
+    }
   }
 
   scheduleNextFrame() {
+    if (this.usingAnimationLoop) return;
     if (!this.running || this.animationFrameId != null) return;
     this.animationFrameId = this.timing.requestAnimationFrame(this.animate);
   }
 
   animate(timestamp) {
     if (!this.running) return;
-    this.animationFrameId = null;
+    if (!this.usingAnimationLoop) this.animationFrameId = null;
     this.onFrame({ timestamp, frameCount: this.frameCount });
     this.markFrameRendered();
     this.scheduleNextFrame();
@@ -179,7 +200,11 @@ export class SceneFrameLifecycle {
   stop({ rejectWaiters = true } = {}) {
     this.running = false;
 
-    if (this.animationFrameId != null) {
+    if (this.usingAnimationLoop) {
+      const cleared = this.animationLoopAdapter?.setAnimationLoop?.(null);
+      if (!cleared) this.animationLoopAdapter?.disconnect?.();
+      this.usingAnimationLoop = false;
+    } else if (this.animationFrameId != null) {
       this.timing.cancelAnimationFrame(this.animationFrameId);
       this.animationFrameId = null;
     }
@@ -215,6 +240,17 @@ export class SceneFrameLifecycle {
 
   getPendingWaiterCount() {
     return this.frameWaiters.length;
+  }
+
+  getFacts() {
+    return {
+      frameCount: this.frameCount,
+      pendingWaiters: this.frameWaiters.length,
+      running: this.running,
+      disposed: this.disposed,
+      usingAnimationLoop: this.usingAnimationLoop,
+      scheduledAnimationFrame: this.animationFrameId != null
+    };
   }
 }
 

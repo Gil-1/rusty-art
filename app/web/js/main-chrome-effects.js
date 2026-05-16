@@ -146,7 +146,7 @@ export function applyEmptyArchiveEffects(state, {
   } = refs;
 
   showStatus?.('No artwork available yet.', 'warning');
-  if (meta) meta.textContent = 'No artwork generated yet. Run: npm run daily';
+  if (meta) meta.textContent = 'No artwork generated yet. Run: pnpm run daily';
   if (heroNowTitle) heroNowTitle.textContent = 'No pieces yet';
   if (heroNowSub) heroNowSub.textContent = 'Run the daily pipeline to generate the first artwork.';
   if (heroNowHeadline) heroNowHeadline.textContent = 'Headline context unavailable.';

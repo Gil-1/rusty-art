@@ -1,4 +1,8 @@
 import { resolveCaptureTargetFromSearchParams } from './contracts/capture-target-contract.js';
+import {
+  resolvePostProcessingRequestFromSearchParams,
+  resolveRendererRequestFromSearchParams
+} from './renderer-mode-request.js';
 
 export const MOBILE_BREAKPOINT = 700;
 
@@ -13,12 +17,16 @@ export function resolveRuntimeShellOptions({
   breakpoint = MOBILE_BREAKPOINT
 } = {}) {
   const captureRoute = resolveCaptureTargetFromSearchParams(windowRef.location?.search || '');
+  const rendererRequest = resolveRendererRequestFromSearchParams(windowRef.location?.search || '');
+  const postProcessingRequest = resolvePostProcessingRequestFromSearchParams(windowRef.location?.search || '');
   return {
     captureMode: captureRoute.captureMode,
     forcedView: captureRoute.forcedView,
     requestedIndex: captureRoute.requestedIndex,
     requestedArtworkSlug: captureRoute.requestedArtworkSlug,
     captureTarget: captureRoute.target,
+    rendererRequest,
+    postProcessingRequest,
     prefersReducedMotion: windowRef.matchMedia?.('(prefers-reduced-motion: reduce)').matches,
     storedViewMode: storage.getItem(storageKeys.viewMode),
     storedFocusMode: storage.getItem(storageKeys.focusMode),

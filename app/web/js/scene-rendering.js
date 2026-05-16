@@ -1,5 +1,27 @@
 import * as THREE from 'three';
+import {
+  normalizeRendererModeRequest,
+  POST_PROCESSING_MODES,
+  RENDERER_MODES,
+  resolvePostProcessingRequestFromSearchParams,
+  resolveRendererRequestFromSearchParams
+} from './renderer-mode-request.js';
+import {
+  classifySceneShaderCompatibility
+} from './scene-shader-compatibility.js';
 import { POST_FRAGMENT, POST_VERTEX } from './scene-shaders.js';
+
+export {
+  normalizeRendererModeRequest,
+  POST_PROCESSING_MODES,
+  RENDERER_MODES,
+  resolvePostProcessingRequestFromSearchParams,
+  resolveRendererRequestFromSearchParams
+} from './renderer-mode-request.js';
+export {
+  classifySceneShaderCompatibility,
+  SHADER_COMPATIBILITY_STATUSES
+} from './scene-shader-compatibility.js';
 
 function clamp(value, min, max) {
   return Math.max(min, Math.min(max, value));
@@ -45,6 +67,282 @@ export function resolveRenderTargetSize(width, height, pixelRatio = 1) {
   };
 }
 
+export function resolveRendererBackend(renderer = null) {
+  if (!renderer) return null;
+  if (renderer.isWebGPURenderer) {
+    if (renderer.backend?.isWebGLBackend === true) return 'webgl2';
+    if (renderer.backend?.isWebGPUBackend === true) return 'webgpu';
+    return 'webgpu';
+  }
+  if (renderer.capabilities?.isWebGL2 === true) return 'webgl2';
+  if (renderer.getContext || renderer.capabilities) return 'webgl1';
+  return null;
+}
+
+export function resolveRendererMode(renderer = null, rendererBackend = null) {
+  if (renderer?.isWebGPURenderer) {
+    return rendererBackend === 'webgl2'
+      ? RENDERER_MODES.WEBGPU_WEBGL2_BACKEND
+      : RENDERER_MODES.WEBGPU;
+  }
+  return RENDERER_MODES.WEBGL_LEGACY;
+}
+
+export function describeRendererDiagnostics(renderer = null, {
+  rendererMode = null,
+  rendererBackend = null,
+  rendererFallbackReason = null,
+  outputColorTransformMode = null
+} = {}) {
+  const resolvedBackend = rendererBackend || resolveRendererBackend(renderer);
+  const resolvedMode = rendererMode || resolveRendererMode(renderer, resolvedBackend);
+  return {
+    rendererMode: resolvedMode,
+    rendererBackend: resolvedBackend,
+    rendererFallbackReason: rendererFallbackReason || null,
+    outputColorTransformMode: outputColorTransformMode || null
+  };
+}
+
+export function collectRendererSceneFeatures({
+  art = null,
+  sceneKind = null,
+  adapterFeatures = {}
+} = {}) {
+  const shaderCompatibility = classifySceneShaderCompatibility({
+    art,
+    sceneKind,
+    adapterFeatures
+  });
+  const adapterWebGPUCompatible = !shaderCompatibility.surfaces.some((surface) => surface.source === 'adapter');
+
+  return {
+    sceneKind,
+    adapterWebGPUCompatible,
+    hasGLSLShaderMaterial: shaderCompatibility.hasGLSLShaderMaterial,
+    hasRawShaderMaterial: shaderCompatibility.hasRawShaderMaterial,
+    customModuleShaderSurfaceCount: shaderCompatibility.customModuleShaderSurfaceCount,
+    incompatibleCustomModuleShaderSurfaceCount: shaderCompatibility.customModuleShaderSurfaceCount,
+    generatedModuleShaderSurfaceCount: shaderCompatibility.generatedModuleShaderSurfaceCount,
+    shaderCompatibility,
+    unsupportedWebGPUReasons: shaderCompatibility.unsupportedWebGPUReasons
+  };
+}
+
+export function resolveRendererRuntimeSelection({
+  requestedMode = RENDERER_MODES.WEBGL_LEGACY,
+  captureMode = false,
+  sceneFeatures = null,
+  navigatorRef = typeof navigator !== 'undefined' ? navigator : null,
+  webGPUAvailable = null
+} = {}) {
+  const normalizedRequest = normalizeRendererModeRequest(requestedMode);
+  const browserSupportsWebGPU = webGPUAvailable == null
+    ? Boolean(navigatorRef?.gpu)
+    : Boolean(webGPUAvailable);
+  const unsupportedReasons = Array.isArray(sceneFeatures?.unsupportedWebGPUReasons)
+    ? sceneFeatures.unsupportedWebGPUReasons
+    : [];
+  const fallbackReason = unsupportedReasons[0] || null;
+  const base = {
+    requestedMode: normalizedRequest,
+    captureMode: Boolean(captureMode),
+    browserSupportsWebGPU,
+    unsupportedWebGPUReasons: unsupportedReasons,
+    rendererFamily: 'webgl-renderer',
+    rendererMode: RENDERER_MODES.WEBGL_LEGACY,
+    rendererBackend: 'webgl2',
+    rendererFallbackReason: null,
+    useWebGPURenderer: false,
+    forceWebGL: false,
+    capturePolicy: captureMode ? 'capture-requested-renderer' : 'interactive-requested-renderer'
+  };
+
+  if (normalizedRequest === RENDERER_MODES.WEBGL_LEGACY) return base;
+  if (fallbackReason) {
+    return {
+      ...base,
+      rendererFallbackReason: fallbackReason
+    };
+  }
+  if (normalizedRequest === RENDERER_MODES.WEBGPU_WEBGL2_BACKEND) {
+    return {
+      ...base,
+      rendererFamily: 'webgpu-renderer',
+      rendererMode: RENDERER_MODES.WEBGPU_WEBGL2_BACKEND,
+      rendererBackend: 'webgl2',
+      rendererFallbackReason: 'forced-webgl2-backend',
+      useWebGPURenderer: true,
+      forceWebGL: true
+    };
+  }
+  if (!browserSupportsWebGPU) {
+    return {
+      ...base,
+      rendererFamily: 'webgpu-renderer',
+      rendererMode: RENDERER_MODES.WEBGPU_WEBGL2_BACKEND,
+      rendererBackend: 'webgl2',
+      rendererFallbackReason: 'webgpu-unsupported',
+      useWebGPURenderer: true,
+      forceWebGL: true
+    };
+  }
+  return {
+    ...base,
+    rendererFamily: 'webgpu-renderer',
+    rendererMode: RENDERER_MODES.WEBGPU,
+    rendererBackend: 'webgpu',
+    useWebGPURenderer: true
+  };
+}
+
+function defaultRendererDispose(renderer) {
+  renderer?.dispose?.();
+}
+
+function defaultRendererSetSize(renderer, width, height, updateStyle = false) {
+  renderer?.setSize?.(width, height, updateStyle);
+}
+
+function defaultRendererSetPixelRatio(renderer, pixelRatio) {
+  renderer?.setPixelRatio?.(pixelRatio);
+}
+
+function defaultRendererGetPixelRatio(renderer) {
+  return typeof renderer?.getPixelRatio === 'function' ? renderer.getPixelRatio() : 1;
+}
+
+export function createRendererRuntime({
+  renderer,
+  rendererMode = null,
+  rendererBackend = null,
+  rendererFallbackReason = null,
+  initialize = async () => renderer,
+  dispose = defaultRendererDispose,
+  setSize = defaultRendererSetSize,
+  setPixelRatio = defaultRendererSetPixelRatio,
+  getPixelRatio = defaultRendererGetPixelRatio,
+  setAnimationLoop = renderer?.setAnimationLoop ? (callback) => renderer.setAnimationLoop(callback) : null
+} = {}) {
+  if (!renderer) throw new Error('Renderer runtime requires a renderer instance.');
+
+  let initialized = false;
+  let initializationStarted = false;
+  let initializationError = null;
+  let initializationPromise = null;
+  let disposed = false;
+
+  const runtime = {
+    renderer,
+
+    async initialize() {
+      if (disposed) throw new Error('Cannot initialize a disposed renderer runtime.');
+      initializationStarted = true;
+      if (!initializationPromise) {
+        initializationPromise = Promise.resolve()
+          .then(() => initialize(renderer))
+          .then(() => {
+            initialized = true;
+            initializationError = null;
+            return renderer;
+          })
+          .catch((error) => {
+            initializationError = error;
+            throw error;
+          });
+      }
+      return initializationPromise;
+    },
+
+    setPixelRatio(value) {
+      const pixelRatio = resolveRendererPixelRatio(value);
+      setPixelRatio(renderer, pixelRatio);
+      return pixelRatio;
+    },
+
+    getPixelRatio() {
+      return resolveRendererPixelRatio(getPixelRatio(renderer));
+    },
+
+    resize(width, height, updateStyle = false) {
+      const resolvedWidth = Math.max(1, Math.round(Number(width) || 1));
+      const resolvedHeight = Math.max(1, Math.round(Number(height) || 1));
+      setSize(renderer, resolvedWidth, resolvedHeight, updateStyle);
+      const pixelRatio = this.getPixelRatio();
+      return {
+        width: resolvedWidth,
+        height: resolvedHeight,
+        pixelRatio,
+        renderTargetSize: resolveRenderTargetSize(resolvedWidth, resolvedHeight, pixelRatio)
+      };
+    },
+
+    setAnimationLoop(callback) {
+      if (typeof setAnimationLoop !== 'function') return false;
+      setAnimationLoop(callback);
+      return true;
+    },
+
+    clearAnimationLoop() {
+      return this.setAnimationLoop(null);
+    },
+
+    dispose() {
+      if (disposed) return;
+      this.clearAnimationLoop();
+      dispose(renderer);
+      disposed = true;
+    },
+
+    getDiagnostics(options = {}) {
+      const resolvedRendererBackend = typeof rendererBackend === 'function' ? rendererBackend(renderer) : rendererBackend;
+      const resolvedRendererMode = typeof rendererMode === 'function' ? rendererMode(renderer) : rendererMode;
+      return describeRendererDiagnostics(renderer, {
+        rendererMode: resolvedRendererMode,
+        rendererBackend: resolvedRendererBackend,
+        rendererFallbackReason,
+        ...options
+      });
+    },
+
+    getFacts() {
+      const resolvedRendererBackend = typeof rendererBackend === 'function' ? rendererBackend(renderer) : rendererBackend;
+      const resolvedRendererMode = typeof rendererMode === 'function' ? rendererMode(renderer) : rendererMode;
+      return {
+        rendererMode: resolvedRendererMode || resolveRendererMode(renderer, resolvedRendererBackend || resolveRendererBackend(renderer)),
+        rendererBackend: resolvedRendererBackend || resolveRendererBackend(renderer),
+        rendererFallbackReason: rendererFallbackReason || null,
+        initialized,
+        initializationStarted,
+        initializationError: initializationError?.message || null,
+        disposed
+      };
+    }
+  };
+
+  return runtime;
+}
+
+export function createWebGLRendererRuntime({
+  canvas,
+  devicePixelRatio = 1,
+  rendererFactory = (options) => new THREE.WebGLRenderer(options),
+  rendererFallbackReason = null
+} = {}) {
+  const renderer = rendererFactory({ canvas, antialias: true, alpha: false });
+  const runtime = createRendererRuntime({
+    renderer,
+    rendererMode: RENDERER_MODES.WEBGL_LEGACY,
+    rendererFallbackReason,
+    initialize: async () => renderer
+  });
+
+  runtime.setPixelRatio(devicePixelRatio);
+  renderer.toneMapping = THREE.ACESFilmicToneMapping;
+  renderer.toneMappingExposure = 1.0;
+  return runtime;
+}
+
 const ELEMENT_LAYER_RENDER_ORDER = {
   background: 0,
   backdrop: 0,
@@ -77,11 +375,54 @@ export function applyElementRenderOrder(obj, element = {}, index = 0) {
 }
 
 export function createArtworkRenderer(canvas, devicePixelRatio = 1) {
-  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: false });
-  renderer.setPixelRatio(resolveRendererPixelRatio(devicePixelRatio));
-  renderer.toneMapping = THREE.ACESFilmicToneMapping;
-  renderer.toneMappingExposure = 1.0;
-  return renderer;
+  return createWebGLRendererRuntime({ canvas, devicePixelRatio }).renderer;
+}
+
+export async function createSelectedRendererRuntime({
+  canvas,
+  devicePixelRatio = 1,
+  rendererRequest = RENDERER_MODES.WEBGL_LEGACY,
+  captureMode = false,
+  sceneFeatures = null,
+  navigatorRef = typeof navigator !== 'undefined' ? navigator : null,
+  webGPUAvailable = null,
+  webglRendererFactory,
+  webgpuRuntimeFactory = null,
+  webgpuModuleLoader = () => import('./scene-webgpu-renderer-runtime.js')
+} = {}) {
+  const selection = resolveRendererRuntimeSelection({
+    requestedMode: rendererRequest,
+    captureMode,
+    sceneFeatures,
+    navigatorRef,
+    webGPUAvailable
+  });
+
+  if (!selection.useWebGPURenderer) {
+    return {
+      selection,
+      runtime: createWebGLRendererRuntime({
+        canvas,
+        devicePixelRatio,
+        rendererFactory: webglRendererFactory,
+        rendererFallbackReason: selection.rendererFallbackReason
+      })
+    };
+  }
+
+  const factory = webgpuRuntimeFactory || (async (options) => {
+    const module = await webgpuModuleLoader();
+    return module.createWebGPURendererRuntime(options);
+  });
+  const runtime = await factory({
+    canvas,
+    devicePixelRatio,
+    forceWebGL: selection.forceWebGL,
+    rendererMode: selection.rendererMode,
+    rendererBackend: selection.rendererBackend,
+    rendererFallbackReason: selection.rendererFallbackReason
+  });
+  return { selection, runtime };
 }
 
 export function createPostRenderTarget(renderer) {
@@ -131,17 +472,21 @@ export function createPostPass(renderTarget, {
   return { postScene, postCamera, postUniforms, postQuad };
 }
 
-export function resizeSceneRenderTargets({ canvas, renderer, renderTarget, postUniforms, camera }) {
+export function resizeSceneRenderTargets({ canvas, renderer, rendererRuntime = null, renderTarget, postUniforms, camera }) {
   const rect = canvas.getBoundingClientRect();
   const width = Math.max(1, Math.round(rect.width || canvas.clientWidth || 1));
   const height = Math.max(1, Math.round(rect.height || canvas.clientHeight || 1));
-  const renderTargetSize = resolveRenderTargetSize(width, height, renderer.getPixelRatio());
+  const resizeFacts = rendererRuntime?.resize
+    ? rendererRuntime.resize(width, height, false)
+    : null;
+  const pixelRatio = resizeFacts?.pixelRatio || renderer.getPixelRatio();
+  const renderTargetSize = resizeFacts?.renderTargetSize || resolveRenderTargetSize(width, height, pixelRatio);
 
-  renderer.setSize(width, height, false);
+  if (!resizeFacts) renderer.setSize(width, height, false);
   renderTarget.setSize(renderTargetSize.width, renderTargetSize.height);
   postUniforms.uResolution.value.set(renderTargetSize.width, renderTargetSize.height);
   camera.aspect = width / height;
   camera.updateProjectionMatrix();
 
-  return { width, height, renderTargetSize };
+  return { width, height, pixelRatio, renderTargetSize };
 }

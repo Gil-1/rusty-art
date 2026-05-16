@@ -14,8 +14,9 @@ Cloudflare Pages deploys this repo directly from GitHub.
 ## Build
 
 ```bash
-npm install
-npm run web:build
+corepack enable
+pnpm install
+pnpm run web:build
 ```
 
 Build output goes to `app/web-dist`.

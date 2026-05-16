@@ -3,12 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
+  "packageManager": "pnpm@11.1.2",
   "description": "Public Rusty Art website and published artwork archive",
   "scripts": {
     "web:build": "vite build"
   },
   "dependencies": {
-    "three": "^0.169.0"
+    "three": "^0.184.0"
   },
   "devDependencies": {
     "vite": "^7.1.11"

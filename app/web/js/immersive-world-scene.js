@@ -12,10 +12,21 @@ import {
   shouldUseImmersiveWorldSkybox
 } from './immersive-world-skybox.js';
 import {
+  collectRendererSceneFeatures,
   createPostPass,
   createPostRenderTarget,
+  createWebGLRendererRuntime,
+  describeRendererDiagnostics,
+  POST_PROCESSING_MODES,
+  RENDERER_MODES,
+  resolveRendererRuntimeSelection,
   resizeSceneRenderTargets
 } from './scene-rendering.js';
+import {
+  createBrowserResizeAdapter,
+  createBrowserTimingAdapter,
+  createSceneFrameLifecycle
+} from './scene-frame-lifecycle.js';
 import { IMMERSIVE_WORLD_POST_FRAGMENT } from './scene-shaders.js';
 import { disposeObjectTree } from './scene-runtime.js';
 
@@ -1092,12 +1103,36 @@ function normalizeModuleResult(result) {
 }
 
 export class ArtworkScene {
-  constructor(canvas) {
+  constructor(canvas, {
+    rendererRequest = RENDERER_MODES.WEBGL_LEGACY,
+    postProcessingRequest = POST_PROCESSING_MODES.WEBGL_GLSL_POST,
+    captureMode = false,
+    art = null,
+    navigatorRef = typeof window !== 'undefined' ? window.navigator : null
+  } = {}) {
     this.canvas = canvas;
-    this.renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: false });
-    this.renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
-    this.renderer.toneMapping = THREE.ACESFilmicToneMapping;
-    this.renderer.toneMappingExposure = 1;
+    this.postProcessingRequest = postProcessingRequest;
+    this.rendererSceneFeatures = collectRendererSceneFeatures({
+      art,
+      sceneKind: 'immersive-world-v1',
+      adapterFeatures: {
+        glslShaderMaterial: true,
+        webgpuCompatible: false
+      }
+    });
+    this.rendererSelection = resolveRendererRuntimeSelection({
+      requestedMode: rendererRequest,
+      captureMode,
+      sceneFeatures: this.rendererSceneFeatures,
+      navigatorRef
+    });
+    this.rendererRuntime = createWebGLRendererRuntime({
+      canvas,
+      devicePixelRatio: window.devicePixelRatio || 1,
+      rendererFallbackReason: this.rendererSelection.rendererFallbackReason
+    });
+    this.renderer = this.rendererRuntime.renderer;
+    this.rendererReady = this.rendererRuntime.initialize();
     this.scene = new THREE.Scene();
     this.camera = new THREE.PerspectiveCamera(65, 1, 0.1, 200);
     this.group = new THREE.Group();
@@ -1115,8 +1150,6 @@ export class ArtworkScene {
     this.postQuad = postPass.postQuad;
     this.outputColorTransform = resolveImmersiveWorldOutputColorTransform({});
     this.postBase = this.outputColorTransform;
-    this.renderFrameCount = 0;
-    this.renderFrameWaiters = [];
     this.motionIntensity = 1;
     this.captureMode = false;
     this.captureTime = 1.234;
@@ -1127,13 +1160,35 @@ export class ArtworkScene {
     initializeImmersiveWorldCameraControls(this);
     this.resize = this.resize.bind(this);
     this.animate = this.animate.bind(this);
-    window.addEventListener('resize', this.resize);
-    this.resize();
-    requestAnimationFrame(this.animate);
+    this.frameLifecycle = createSceneFrameLifecycle({
+      onResize: () => this.resizeFrameTargets(),
+      onFrame: () => this.renderFrame(),
+      timing: createBrowserTimingAdapter(window),
+      resizeAdapter: createBrowserResizeAdapter({
+        canvas: this.canvas,
+        target: window,
+        resizeObserverCtor: typeof ResizeObserver !== 'undefined' ? ResizeObserver : undefined
+      })
+    });
+    this.frameLifecycle.start();
   }
 
   getAssemblyReport() {
     return this.sceneAssemblyReport;
+  }
+
+  getRendererDiagnostics() {
+    const outputColorTransformMode = this.rendererSelection?.useWebGPURenderer
+      && this.postProcessingRequest === POST_PROCESSING_MODES.WEBGPU_TSL_POST
+      ? POST_PROCESSING_MODES.WEBGPU_TSL_POST
+      : isNeutralImmersiveWorldOutputColorTransform(this.outputColorTransform)
+        ? 'webgl-direct'
+        : POST_PROCESSING_MODES.WEBGL_GLSL_POST;
+    return this.rendererRuntime?.getDiagnostics?.({
+      outputColorTransformMode
+    }) || describeRendererDiagnostics(this.renderer, {
+      outputColorTransformMode
+    });
   }
 
   setMotionIntensity(intensity = 1) {
@@ -1324,12 +1379,17 @@ export class ArtworkScene {
   }
 
   resize() {
+    return this.frameLifecycle.resize();
+  }
+
+  resizeFrameTargets() {
     const rect = this.canvas.getBoundingClientRect();
     const width = Math.max(1, Math.round(rect.width || this.canvas.clientWidth || 1));
     const height = Math.max(1, Math.round(rect.height || this.canvas.clientHeight || 1));
     resizeSceneRenderTargets({
       canvas: this.canvas,
       renderer: this.renderer,
+      rendererRuntime: this.rendererRuntime,
       renderTarget: this.renderTarget,
       postUniforms: this.postUniforms,
       camera: this.camera
@@ -1339,51 +1399,37 @@ export class ArtworkScene {
   }
 
   waitForRenderedFrame(timeoutMs = 2500) {
-    const targetFrame = this.renderFrameCount + 1;
-    return new Promise((resolve, reject) => {
-      const waiter = {
-        targetFrame,
-        resolve: () => {
-          clearTimeout(waiter.timeoutId);
-          resolve(targetFrame);
-        },
-        reject: (error) => {
-          clearTimeout(waiter.timeoutId);
-          reject(error);
-        },
-        timeoutId: null
-      };
-      waiter.timeoutId = setTimeout(() => {
-        this.renderFrameWaiters = this.renderFrameWaiters.filter((entry) => entry !== waiter);
-        waiter.reject(new Error('Timed out while waiting for rendered frame.'));
-      }, timeoutMs);
-      this.renderFrameWaiters.push(waiter);
-    });
+    return this.frameLifecycle.waitForRenderedFrame(timeoutMs);
   }
 
-  animate() {
+  get renderFrameCount() {
+    return this.frameLifecycle?.getFrameCount?.() || 0;
+  }
+
+  get renderFrameWaiters() {
+    return this.frameLifecycle?.getPendingWaiters?.() || [];
+  }
+
+  animate(timestamp) {
+    return this.frameLifecycle.animate(timestamp);
+  }
+
+  renderFrame() {
     const frameFacts = buildImmersiveWorldFrameFacts(this);
     updateImmersiveWorldCameraControlsForFrame(this, frameFacts);
     for (const update of this.updateHooks) update(frameFacts);
     renderImmersiveWorldFrame(this, frameFacts);
-    this.renderFrameCount += 1;
-    if (this.renderFrameWaiters.length) {
-      const dueWaiters = this.renderFrameWaiters.filter((waiter) => this.renderFrameCount >= waiter.targetFrame);
-      this.renderFrameWaiters = this.renderFrameWaiters.filter((waiter) => this.renderFrameCount < waiter.targetFrame);
-      dueWaiters.forEach((waiter) => waiter.resolve());
-    }
-    requestAnimationFrame(this.animate);
   }
 
   dispose() {
     this.applyConfigGeneration += 1;
-    window.removeEventListener('resize', this.resize);
+    this.frameLifecycle?.dispose();
     this.cameraInputTeardown?.();
     this.cameraInputTeardown = null;
     this.clearWorld();
     disposeObjectTree(this.postScene);
     this.renderTarget?.dispose?.();
     disposeObjectTree(this.scene);
-    this.renderer?.dispose?.();
+    this.rendererRuntime?.dispose?.();
   }
 }

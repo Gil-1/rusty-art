@@ -31,6 +31,8 @@ const {
   forcedView,
   requestedIndex,
   requestedArtworkSlug,
+  rendererRequest,
+  postProcessingRequest,
   prefersReducedMotion
 } = shellOptions;
 const {
@@ -87,6 +89,8 @@ const adaptiveOverlaySession = createAdaptiveOverlaySession({
 const runtimeController = createRuntimeController({
   canvas,
   captureMode,
+  rendererRequest,
+  postProcessingRequest,
   captureStateController,
   fetchArtwork,
   getActiveFile: () => presentationState.activeFile,

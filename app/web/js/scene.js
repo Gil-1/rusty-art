@@ -11,9 +11,14 @@ import {
   applySceneConfigSession
 } from './scene-apply-config-session.js';
 import {
-  createArtworkRenderer,
+  collectRendererSceneFeatures,
+  createWebGLRendererRuntime,
+  describeRendererDiagnostics,
   createPostPass,
   createPostRenderTarget,
+  POST_PROCESSING_MODES,
+  RENDERER_MODES,
+  resolveRendererRuntimeSelection,
   resizeSceneRenderTargets
 } from './scene-rendering.js';
 import {
@@ -26,9 +31,36 @@ import { disposeObjectTree } from './scene-runtime.js';
 
 
 export class ArtworkScene {
-  constructor(canvas) {
+  constructor(canvas, {
+    rendererRequest = RENDERER_MODES.WEBGL_LEGACY,
+    postProcessingRequest = POST_PROCESSING_MODES.WEBGL_GLSL_POST,
+    captureMode = false,
+    art = null,
+    navigatorRef = typeof window !== 'undefined' ? window.navigator : null
+  } = {}) {
     this.canvas = canvas;
-    this.renderer = createArtworkRenderer(canvas, window.devicePixelRatio || 1);
+    this.postProcessingRequest = postProcessingRequest;
+    this.rendererSceneFeatures = collectRendererSceneFeatures({
+      art,
+      sceneKind: 'legacy',
+      adapterFeatures: {
+        glslShaderMaterial: true,
+        webgpuCompatible: false
+      }
+    });
+    this.rendererSelection = resolveRendererRuntimeSelection({
+      requestedMode: rendererRequest,
+      captureMode,
+      sceneFeatures: this.rendererSceneFeatures,
+      navigatorRef
+    });
+    this.rendererRuntime = createWebGLRendererRuntime({
+      canvas,
+      devicePixelRatio: window.devicePixelRatio || 1,
+      rendererFallbackReason: this.rendererSelection.rendererFallbackReason
+    });
+    this.renderer = this.rendererRuntime.renderer;
+    this.rendererReady = this.rendererRuntime.initialize();
 
     this.scene = new THREE.Scene();
     this.camera = new THREE.PerspectiveCamera(65, 1, 0.1, 100);
@@ -117,6 +149,16 @@ export class ArtworkScene {
     return this.sceneAssemblyReport;
   }
 
+  getRendererDiagnostics() {
+    const outputColorTransformMode = this.rendererSelection?.useWebGPURenderer
+      && this.postProcessingRequest === POST_PROCESSING_MODES.WEBGPU_TSL_POST
+      ? POST_PROCESSING_MODES.WEBGPU_TSL_POST
+      : POST_PROCESSING_MODES.WEBGL_GLSL_POST;
+    return this.rendererRuntime?.getDiagnostics?.({
+      outputColorTransformMode
+    }) || describeRendererDiagnostics(this.renderer, { outputColorTransformMode });
+  }
+
   setMotionIntensity(intensity = 1) {
     this.motionIntensity = Math.max(0, Math.min(1, Number(intensity) || 0));
     this.postUniforms.uDistortion.value = this.postBase.distortion * this.motionIntensity;
@@ -175,6 +217,7 @@ export class ArtworkScene {
     resizeSceneRenderTargets({
       canvas: this.canvas,
       renderer: this.renderer,
+      rendererRuntime: this.rendererRuntime,
       renderTarget: this.renderTarget,
       postUniforms: this.postUniforms,
       camera: this.camera
@@ -200,6 +243,6 @@ export class ArtworkScene {
     disposeObjectTree(this.group);
     disposeObjectTree(this.postScene);
     this.renderTarget?.dispose?.();
-    this.renderer?.dispose?.();
+    this.rendererRuntime?.dispose?.();
   }
 }

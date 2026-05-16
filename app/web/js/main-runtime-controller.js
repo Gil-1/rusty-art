@@ -128,6 +128,8 @@ export function createDeferredSceneBootScheduler({
 export function createRuntimeController({
   canvas,
   captureMode = false,
+  rendererRequest = 'webgl-legacy',
+  postProcessingRequest = 'webgl-glsl-post',
   captureStateController,
   fetchArtwork,
   getActiveFile,
@@ -137,6 +139,7 @@ export function createRuntimeController({
   onSceneBooted = () => {},
   onSceneStatusChange = () => {},
   windowRef = typeof window !== 'undefined' ? window : globalThis,
+  navigatorRef = windowRef.navigator || (typeof navigator !== 'undefined' ? navigator : null),
   observerFactory = typeof IntersectionObserver !== 'undefined'
     ? (callback, options) => new IntersectionObserver(callback, options)
     : null,
@@ -200,7 +203,14 @@ export function createRuntimeController({
           ? await importImmersiveWorldSceneModule()
           : await importSceneModule();
         const { ArtworkScene } = module;
-        scene = new ArtworkScene(canvas);
+        scene = new ArtworkScene(canvas, {
+          rendererRequest,
+          postProcessingRequest,
+          captureMode,
+          art,
+          sceneKind: targetSceneKind,
+          navigatorRef
+        });
         sceneKind = targetSceneKind;
         sceneInitError = null;
         setCanvasVisible(true);
@@ -262,12 +272,17 @@ export function createRuntimeController({
       if (!shouldContinue()) return false;
     }
 
+    const rendererDiagnostics = activeScene.getRendererDiagnostics?.() || {};
     captureStateController?.update({
       sceneInitialized: true,
       sceneInitError: null,
       renderReady: true,
       error: null,
       renderedArtworkId: art?.id || null,
+      rendererMode: rendererDiagnostics.rendererMode || null,
+      rendererBackend: rendererDiagnostics.rendererBackend || null,
+      rendererFallbackReason: rendererDiagnostics.rendererFallbackReason || null,
+      outputColorTransformMode: rendererDiagnostics.outputColorTransformMode || null,
       sceneAssemblyReport: activeScene.getAssemblyReport?.() || null
     });
     return true;
@@ -291,7 +306,17 @@ export function createRuntimeController({
   async function bootSceneNow() {
     clearDeferredSceneHooks();
 
-    const loadedScene = await ensureScene();
+    const activeFileAtStart = getActiveFile();
+    let activeArtAtStart = null;
+    if (activeFileAtStart) {
+      try {
+        activeArtAtStart = await fetchArtwork(activeFileAtStart);
+      } catch {
+        activeArtAtStart = null;
+      }
+    }
+
+    const loadedScene = await ensureScene({ art: activeArtAtStart });
     if (!loadedScene) {
       captureStateController?.update({
         renderReady: false,
@@ -302,7 +327,17 @@ export function createRuntimeController({
     }
 
     if (captureMode) loadedScene.setCaptureMode?.(true, 1.234);
-    await applyActiveArtworkToScene();
+    if (activeFileAtStart && activeArtAtStart && getActiveFile() === activeFileAtStart) {
+      captureStateController?.update({ activeFile: activeFileAtStart });
+      await applyArtworkToScene({
+        file: activeFileAtStart,
+        art: activeArtAtStart,
+        shouldContinue: () => Boolean(scene) && getActiveFile() === activeFileAtStart,
+        waitForRenderedFrame: true
+      });
+    } else {
+      await applyActiveArtworkToScene();
+    }
     if (!captureMode) updateMotionIntensity();
     onSceneBooted();
     onSceneStatusChange();

@@ -44,6 +44,10 @@ export const CAPTURE_READINESS_PATCH_KEYS = Object.freeze([
   'sceneAssemblyReport',
   'renderReady',
   'renderedArtworkId',
+  'rendererMode',
+  'rendererBackend',
+  'rendererFallbackReason',
+  'outputColorTransformMode',
   'error'
 ]);
 
@@ -59,6 +63,10 @@ export const CAPTURE_READINESS_DEFAULT_STATE = Object.freeze({
   sceneInitError: null,
   sceneAssemblyReport: null,
   renderReady: false,
+  rendererMode: null,
+  rendererBackend: null,
+  rendererFallbackReason: null,
+  outputColorTransformMode: null,
   error: null
 });
 
@@ -297,6 +305,10 @@ export function createCaptureReadinessFacts(state = null, { canvasFacts = null }
     sceneAssemblyReportPresent: source.sceneAssemblyReport != null,
     renderReady: source.renderReady === true,
     renderedArtworkId: normalizeNullableString(source.renderedArtworkId),
+    rendererMode: normalizeNullableString(source.rendererMode),
+    rendererBackend: normalizeNullableString(source.rendererBackend),
+    rendererFallbackReason: normalizeNullableString(source.rendererFallbackReason),
+    outputColorTransformMode: normalizeNullableString(source.outputColorTransformMode),
     error: runtimeError,
     hasError: Boolean(sceneInitError || runtimeError),
     canvas: normalizeCaptureCanvasReadinessFacts(canvasFacts)
@@ -318,6 +330,10 @@ function normalizeCaptureReadinessFacts(value = null) {
     sceneAssemblyReportPresent: value.sceneAssemblyReportPresent === true,
     renderReady: value.renderReady === true,
     renderedArtworkId: normalizeNullableString(value.renderedArtworkId),
+    rendererMode: normalizeNullableString(value.rendererMode),
+    rendererBackend: normalizeNullableString(value.rendererBackend),
+    rendererFallbackReason: normalizeNullableString(value.rendererFallbackReason),
+    outputColorTransformMode: normalizeNullableString(value.outputColorTransformMode),
     error: errorText(value.error),
     hasError: Boolean(errorText(value.sceneInitError) || errorText(value.error)),
     canvas: normalizeCaptureCanvasReadinessFacts(value.canvas)
