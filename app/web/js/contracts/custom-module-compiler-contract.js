@@ -1,6 +1,13 @@
 export const CUSTOM_FAMILIES = new Set(['shader', 'geometry', 'particle', 'post', 'camera', 'lighting']);
 export const CUSTOM_KINDS = new Set(['dsl', 'js']);
 export const PIPELINE_FAMILIES = new Set(['post', 'camera', 'lighting']);
+export const WEBGL_ONLY_CUSTOM_SHADER_SURFACES = Object.freeze([
+  'source.glsl raw GLSL',
+  'THREE.ShaderMaterial',
+  'THREE.RawShaderMaterial',
+  'onBeforeCompile shader overrides',
+  'custom JS shader surfaces'
+]);
 export const EXECUTABLE_DSL_KEYS = Object.freeze({
   shader: new Set(['width', 'height', 'opacity', 'position', 'rotation', 'scale', 'blend', 'plane', 'primitive', 'depthTest', 'depthWrite', 'transparent', 'doubleSided']),
   geometry: new Set(['geometry', 'material', 'count', 'spread', 'depth', 'shape', 'wireframe', 'opacity', 'position', 'rotation', 'scale', 'width', 'height', 'gridWidth', 'gridHeight', 'segmentsX', 'segmentsY', 'cellCount', 'blend']),
@@ -67,6 +74,7 @@ export function getCustomModuleRuntimeCapabilityManifest({ allowJs = false, cust
     pipelineFamilies: sortedSetValues(PIPELINE_FAMILIES),
     executableDslKeys: executableDslKeysManifest(),
     nonExecutablePatchKeys: sortedSetValues(NON_EXECUTABLE_PATCH_KEYS),
+    webglOnlyShaderSurfaces: WEBGL_ONLY_CUSTOM_SHADER_SURFACES.slice(),
     structuredGeometryTypes: sortedSetValues(STRUCTURED_GEOMETRY_TYPES),
     structuredGeometryAliases: { ...STRUCTURED_GEOMETRY_ALIASES },
     js: {

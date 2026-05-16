@@ -136,6 +136,7 @@ export function createRuntimeController({
   getMotionIntensity,
   importSceneModule = () => import('./scene.js'),
   importImmersiveWorldSceneModule = () => import('./immersive-world-scene.js'),
+  importWebGPUProjectSceneModule = () => import('./webgpu-diagnostic-scene.js'),
   onSceneBooted = () => {},
   onSceneStatusChange = () => {},
   windowRef = typeof window !== 'undefined' ? window : globalThis,
@@ -174,6 +175,9 @@ export function createRuntimeController({
   }
 
   function resolveSceneKind(art = null) {
+    if (String(art?.artCreationMethod || '').trim() === 'webgpu-project-diagnostic-v1') {
+      return 'webgpu-project-diagnostic-v1';
+    }
     return String(art?.artCreationMethod || '').trim() === 'immersive-world-v1'
       ? 'immersive-world-v1'
       : 'legacy';
@@ -199,9 +203,11 @@ export function createRuntimeController({
 
     sceneLoadPromise = (async () => {
       try {
-        const module = targetSceneKind === 'immersive-world-v1'
-          ? await importImmersiveWorldSceneModule()
-          : await importSceneModule();
+        const module = targetSceneKind === 'webgpu-project-diagnostic-v1'
+          ? await importWebGPUProjectSceneModule()
+          : targetSceneKind === 'immersive-world-v1'
+            ? await importImmersiveWorldSceneModule()
+            : await importSceneModule();
         const { ArtworkScene } = module;
         scene = new ArtworkScene(canvas, {
           rendererRequest,

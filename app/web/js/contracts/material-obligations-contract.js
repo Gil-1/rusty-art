@@ -1,3 +1,5 @@
+import { listWebGPUMaterialFactoryDescriptors } from './webgpu-material-factory-catalog.js';
+
 function isObject(value) {
   return Boolean(value) && typeof value === 'object' && !Array.isArray(value);
 }
@@ -138,6 +140,15 @@ const DIRECT_MATERIALS = new Map(
   MATERIAL_RULES.map((rule) => [rule.material, rule])
 );
 
+export function buildMaterialObligationWebGPUGuidance() {
+  const factoryIds = listWebGPUMaterialFactoryDescriptors().map((entry) => entry.id);
+  return [
+    'For WebGPU project scenes, satisfy material obligations through project WebGPU material factories or declarative DSL material surfaces.',
+    'Do not satisfy WebGPU material obligations with raw GLSL ShaderMaterial, RawShaderMaterial, shader overrides, legacy GLSL post passes, or custom JS shader surfaces.',
+    `Available project WebGPU material factories: ${factoryIds.join(', ')}.`
+  ];
+}
+
 function collectSourceText(source) {
   if (!isObject(source)) return normalizeArray([source]);
   return normalizeArray([
@@ -255,6 +266,7 @@ export function normalizeMaterialObligations({ sources = [], defaultMaterial = n
   return {
     version: 1,
     status,
+    guidance: buildMaterialObligationWebGPUGuidance(),
     obligations,
     diagnostics,
     aggregate: {
@@ -271,6 +283,7 @@ export function normalizeMaterialSurfaceFacts(source = {}, fallback = {}) {
   const obligations = normalizeMaterialObligations({ sources: [source] });
   return {
     materialObligations: obligations,
+    webgpuGuidance: obligations.guidance,
     runtimeMaterial: obligations.aggregate.runtimeMaterials[0] || (obligations.aggregate.flatColor ? 'flat-basic' : null),
     surface: {
       ...(isObject(fallback) ? fallback : {}),
