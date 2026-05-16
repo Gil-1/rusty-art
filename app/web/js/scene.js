@@ -28,6 +28,7 @@ import {
 } from './scene-frame-lifecycle.js';
 import { renderSceneFramePass } from './scene-frame-render-pass.js';
 import { disposeObjectTree } from './scene-runtime.js';
+import { createSceneElapsedTimer } from './scene-time.js';
 
 
 export class ArtworkScene {
@@ -67,7 +68,7 @@ export class ArtworkScene {
     this.camera.position.set(0, 0.8, 12);
     this.group = new THREE.Group();
     this.scene.add(this.group);
-    this.clock = new THREE.Clock();
+    this.clock = createSceneElapsedTimer(THREE, { documentRef: window.document });
 
     this.controls = {
       minDistance: 6,
@@ -125,7 +126,7 @@ export class ArtworkScene {
     this.animate = this.animate.bind(this);
     this.frameLifecycle = createSceneFrameLifecycle({
       onResize: () => this.resizeFrameTargets(),
-      onFrame: () => this.renderFrame(),
+      onFrame: ({ timestamp }) => this.renderFrame({ timestamp }),
       timing: createBrowserTimingAdapter(window),
       resizeAdapter: createBrowserResizeAdapter({
         canvas: this.canvas,
@@ -229,7 +230,8 @@ export class ArtworkScene {
     return this.frameLifecycle.animate(timestamp);
   }
 
-  renderFrame() {
+  renderFrame({ timestamp } = {}) {
+    this.clock?.update?.(timestamp);
     renderSceneFramePass(this);
   }
 
@@ -244,5 +246,6 @@ export class ArtworkScene {
     disposeObjectTree(this.postScene);
     this.renderTarget?.dispose?.();
     this.rendererRuntime?.dispose?.();
+    this.clock?.dispose?.();
   }
 }

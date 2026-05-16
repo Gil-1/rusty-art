@@ -195,7 +195,7 @@ export function createMaterializationEnvironmentBackground(sceneCfg = {}) {
   const grain = clamp01(textureFacts.grain, 0.24);
   const wash = clamp01(textureFacts.wash, 0.5);
   const seed = hashSeedText(`${sceneCfg?.seeds?.runSeed || sceneCfg?.seed || 0}:${layer.role || 'environment'}`);
-  const data = new Uint8Array(size * size * 3);
+  const data = new Uint8Array(size * size * 4);
 
   for (let y = 0; y < size; y += 1) {
     for (let x = 0; x < size; x += 1) {
@@ -205,14 +205,15 @@ export function createMaterializationEnvironmentBackground(sceneCfg = {}) {
       const paperNoise = seededCellNoise(x, y, seed) - 0.5;
       const t = Math.max(0, Math.min(1, softBand * wash + ny * (1 - wash) + paperNoise * grain * 0.38));
       const shade = paperNoise * grain * 42;
-      const offset = (y * size + x) * 3;
+      const offset = (y * size + x) * 4;
       data[offset] = Math.max(0, Math.min(255, Math.round(a[0] + (b[0] - a[0]) * t + shade)));
       data[offset + 1] = Math.max(0, Math.min(255, Math.round(a[1] + (b[1] - a[1]) * t + shade)));
       data[offset + 2] = Math.max(0, Math.min(255, Math.round(a[2] + (b[2] - a[2]) * t + shade)));
+      data[offset + 3] = 255;
     }
   }
 
-  const texture = new THREE.DataTexture(data, size, size, THREE.RGBFormat);
+  const texture = new THREE.DataTexture(data, size, size, THREE.RGBAFormat, THREE.UnsignedByteType);
   texture.needsUpdate = true;
   if ('colorSpace' in texture && THREE.SRGBColorSpace) texture.colorSpace = THREE.SRGBColorSpace;
   texture.userData = {

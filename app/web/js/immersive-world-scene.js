@@ -29,6 +29,7 @@ import {
 } from './scene-frame-lifecycle.js';
 import { IMMERSIVE_WORLD_POST_FRAGMENT } from './scene-shaders.js';
 import { disposeObjectTree } from './scene-runtime.js';
+import { createSceneElapsedTimer } from './scene-time.js';
 
 const WORLD_ENVIRONMENT_PART_ID = 'world-environment';
 const MAX_FRAME_DELTA_SECONDS = 1 / 15;
@@ -228,6 +229,63 @@ function softPointTextureFor(three, anisotropy) {
   return texture;
 }
 
+function normalizeSrgbDataTextureUpload(texture, three) {
+  if (!texture?.isDataTexture) return false;
+  if (!three?.SRGBColorSpace || texture.colorSpace !== three.SRGBColorSpace) return false;
+
+  const image = texture.image || {};
+  const width = Number(image.width);
+  const height = Number(image.height);
+  const data = image.data;
+  const pixelCount = width * height;
+  if (!Number.isInteger(width) || width <= 0 || !Number.isInteger(height) || height <= 0) return false;
+
+  if (
+    texture.format === three.RGBAFormat
+    && texture.type === three.UnsignedByteType
+    && data instanceof Uint8Array
+  ) {
+    return false;
+  }
+
+  if (
+    texture.format === three.RGBFormat
+    && texture.type === three.UnsignedByteType
+    && data instanceof Uint8Array
+    && data.length === pixelCount * 3
+  ) {
+    const rgba = new Uint8Array(pixelCount * 4);
+    for (let index = 0; index < pixelCount; index += 1) {
+      const rgbOffset = index * 3;
+      const rgbaOffset = index * 4;
+      rgba[rgbaOffset] = data[rgbOffset];
+      rgba[rgbaOffset + 1] = data[rgbOffset + 1];
+      rgba[rgbaOffset + 2] = data[rgbOffset + 2];
+      rgba[rgbaOffset + 3] = 255;
+    }
+    texture.image.data = rgba;
+    texture.format = three.RGBAFormat;
+    texture.type = three.UnsignedByteType;
+    return true;
+  }
+
+  if (
+    texture.format === three.RGBAFormat
+    && data instanceof Uint8Array
+    && data.length === pixelCount * 4
+  ) {
+    texture.type = three.UnsignedByteType;
+    return true;
+  }
+
+  if (three.NoColorSpace && texture.colorSpace !== three.NoColorSpace) {
+    texture.colorSpace = three.NoColorSpace;
+    return true;
+  }
+
+  return false;
+}
+
 export function applyImmersiveWorldTextureQuality(object, {
   THREE: three = THREE,
   renderer = null
@@ -253,7 +311,7 @@ export function applyImmersiveWorldTextureQuality(object, {
         seenTextures.add(texture);
         facts.inspectedTextures += 1;
         if (!texture.isDataTexture) continue;
-        let changed = false;
+        let changed = normalizeSrgbDataTextureUpload(texture, three);
         if (texture.magFilter === three.NearestFilter) {
           texture.magFilter = three.LinearFilter;
           changed = true;
@@ -1137,7 +1195,7 @@ export class ArtworkScene {
     this.camera = new THREE.PerspectiveCamera(65, 1, 0.1, 200);
     this.group = new THREE.Group();
     this.scene.add(this.group);
-    this.clock = new THREE.Clock();
+    this.clock = createSceneElapsedTimer(THREE, { documentRef: window.document });
     this.updateHooks = [];
     this.disposeHooks = [];
     const { renderTarget, samples } = createPostRenderTarget(this.renderer);
@@ -1162,7 +1220,7 @@ export class ArtworkScene {
     this.animate = this.animate.bind(this);
     this.frameLifecycle = createSceneFrameLifecycle({
       onResize: () => this.resizeFrameTargets(),
-      onFrame: () => this.renderFrame(),
+      onFrame: ({ timestamp }) => this.renderFrame({ timestamp }),
       timing: createBrowserTimingAdapter(window),
       resizeAdapter: createBrowserResizeAdapter({
         canvas: this.canvas,
@@ -1414,7 +1472,8 @@ export class ArtworkScene {
     return this.frameLifecycle.animate(timestamp);
   }
 
-  renderFrame() {
+  renderFrame({ timestamp } = {}) {
+    this.clock?.update?.(timestamp);
     const frameFacts = buildImmersiveWorldFrameFacts(this);
     updateImmersiveWorldCameraControlsForFrame(this, frameFacts);
     for (const update of this.updateHooks) update(frameFacts);
@@ -1431,5 +1490,6 @@ export class ArtworkScene {
     this.renderTarget?.dispose?.();
     disposeObjectTree(this.scene);
     this.rendererRuntime?.dispose?.();
+    this.clock?.dispose?.();
   }
 }
