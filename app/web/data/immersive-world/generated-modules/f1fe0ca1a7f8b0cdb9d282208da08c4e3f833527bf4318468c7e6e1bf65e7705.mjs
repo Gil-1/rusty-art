@@ -38,7 +38,7 @@ var U="art-direction-packet-ee8329216073",W="ee8329216073e1ff73a3dda6a05abb66";f
       float fbm2(vec2 p) {
         float value = 0.0;
         float amp = 0.54;
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 3; i++) {
           value += amp * noise2(p);
           p = p * 2.08 + vec2(4.7, 9.2);
           amp *= 0.5;

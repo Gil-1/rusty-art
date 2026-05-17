@@ -29,10 +29,27 @@ function clamp(value, min, max) {
 
 export const MAX_RENDER_PIXEL_RATIO = 2.25;
 export const PREFERRED_RENDER_TARGET_SAMPLES = 4;
+export const IMMERSIVE_WORLD_INTERACTIVE_PIXEL_RATIO_CAP = 1;
+export const IMMERSIVE_WORLD_CAPTURE_PIXEL_RATIO_CAP = 2;
+export const IMMERSIVE_WORLD_INTERACTIVE_RENDER_TARGET_SAMPLES = 0;
+export const IMMERSIVE_WORLD_CAPTURE_RENDER_TARGET_SAMPLES = 2;
 
 export function resolveRendererPixelRatio(devicePixelRatio = 1) {
   const ratio = Number(devicePixelRatio);
   return clamp(Number.isFinite(ratio) && ratio > 0 ? ratio : 1, 1, MAX_RENDER_PIXEL_RATIO);
+}
+
+export function resolveImmersiveWorldRendererPixelRatio(devicePixelRatio = 1, { captureMode = false } = {}) {
+  const maxPixelRatio = captureMode
+    ? IMMERSIVE_WORLD_CAPTURE_PIXEL_RATIO_CAP
+    : IMMERSIVE_WORLD_INTERACTIVE_PIXEL_RATIO_CAP;
+  return Math.min(resolveRendererPixelRatio(devicePixelRatio), maxPixelRatio);
+}
+
+export function resolveImmersiveWorldRenderTargetSamplePreference({ captureMode = false } = {}) {
+  return captureMode
+    ? IMMERSIVE_WORLD_CAPTURE_RENDER_TARGET_SAMPLES
+    : IMMERSIVE_WORLD_INTERACTIVE_RENDER_TARGET_SAMPLES;
 }
 
 export function resolveRenderTargetSamples(maxSamples = 0, preferredSamples = PREFERRED_RENDER_TARGET_SAMPLES) {
@@ -425,8 +442,8 @@ export async function createSelectedRendererRuntime({
   return { selection, runtime };
 }
 
-export function createPostRenderTarget(renderer) {
-  const samples = resolveRenderTargetSamples(renderer?.capabilities?.maxSamples);
+export function createPostRenderTarget(renderer, { preferredSamples = PREFERRED_RENDER_TARGET_SAMPLES } = {}) {
+  const samples = resolveRenderTargetSamples(renderer?.capabilities?.maxSamples, preferredSamples);
   const type = resolveRenderTargetType(renderer);
   const renderTarget = new THREE.WebGLRenderTarget(1, 1, {
     depthBuffer: true,

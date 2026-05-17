@@ -20,6 +20,8 @@ import {
   normalizeRendererModeRequest,
   POST_PROCESSING_MODES,
   RENDERER_MODES,
+  resolveImmersiveWorldRendererPixelRatio,
+  resolveImmersiveWorldRenderTargetSamplePreference,
   resolveRendererRuntimeSelection,
   resizeSceneRenderTargets
 } from './scene-rendering.js';
@@ -1351,10 +1353,12 @@ export class ArtworkScene {
       sceneFeatures: this.rendererSceneFeatures,
       navigatorRef
     });
+    this.renderPixelRatio = resolveImmersiveWorldRendererPixelRatio(window.devicePixelRatio || 1, { captureMode });
+    this.renderTargetSamplePreference = resolveImmersiveWorldRenderTargetSamplePreference({ captureMode });
     this.rendererRuntime = this.rendererSelection.useWebGPURenderer
       ? createWebGPURendererRuntime({
         canvas,
-        devicePixelRatio: window.devicePixelRatio || 1,
+        devicePixelRatio: this.renderPixelRatio,
         forceWebGL: this.rendererSelection.forceWebGL,
         rendererMode: this.rendererSelection.rendererMode,
         rendererBackend: this.rendererSelection.rendererBackend,
@@ -1362,7 +1366,7 @@ export class ArtworkScene {
       })
       : createWebGLRendererRuntime({
         canvas,
-        devicePixelRatio: window.devicePixelRatio || 1,
+        devicePixelRatio: this.renderPixelRatio,
         rendererFallbackReason: this.rendererSelection.rendererFallbackReason
       });
     this.renderer = this.rendererRuntime.renderer;
@@ -1384,7 +1388,9 @@ export class ArtworkScene {
       this.postUniforms = createTslPostProcessingControls();
       this.postQuad = null;
     } else {
-      const { renderTarget, samples } = createPostRenderTarget(this.renderer);
+      const { renderTarget, samples } = createPostRenderTarget(this.renderer, {
+        preferredSamples: this.renderTargetSamplePreference
+      });
       this.renderTarget = renderTarget;
       this.renderTargetSamples = samples;
       const postPass = createImmersiveWorldPostPass(this.renderTarget);
@@ -1395,8 +1401,8 @@ export class ArtworkScene {
     }
     this.outputColorTransform = resolveImmersiveWorldOutputColorTransform({});
     this.postBase = this.outputColorTransform;
-    this.motionIntensity = 1;
-    this.captureMode = false;
+    this.captureMode = Boolean(captureMode);
+    this.motionIntensity = this.captureMode ? 0 : 1;
     this.captureTime = 1.234;
     this.previousElapsedSeconds = null;
     this.sceneAssemblyReport = null;
@@ -1448,11 +1454,17 @@ export class ArtworkScene {
       : isNeutralImmersiveWorldOutputColorTransform(this.outputColorTransform)
           ? 'webgl-direct'
           : POST_PROCESSING_MODES.WEBGL_GLSL_POST;
-    return this.rendererRuntime?.getDiagnostics?.({
+    const diagnostics = this.rendererRuntime?.getDiagnostics?.({
       outputColorTransformMode
     }) || describeRendererDiagnostics(this.renderer, {
       outputColorTransformMode
     });
+    return {
+      ...diagnostics,
+      renderPixelRatio: this.rendererRuntime?.getPixelRatio?.() || this.renderPixelRatio || null,
+      renderTargetSamples: this.renderTargetSamples ?? 0,
+      renderTargetSamplePreference: this.renderTargetSamplePreference ?? null
+    };
   }
 
   setMotionIntensity(intensity = 1) {

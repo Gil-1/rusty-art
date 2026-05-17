@@ -48,7 +48,7 @@ var d="art-direction-packet-ee8329216073",f="ee8329216073e1ff73a3dda6a05abb66";f
       float fbm3(vec3 p) {
         float value = 0.0;
         float amp = 0.52;
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 3; i++) {
           value += amp * noise3(p);
           p = p * 2.07 + vec3(7.31, 3.17, 5.93);
           amp *= 0.5;
