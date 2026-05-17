@@ -433,7 +433,7 @@ export function evaluateWebGPUSceneAuthoringPolicy({
   const fallbackReasons = uniqueReasons(forbiddenSurfaces);
   const evidenceReasons = uniqueReasons(compatibleSurfaces);
 
-  let compatibilityStatus = WEBGPU_AUTHORING_COMPATIBILITY_STATUSES.UNKNOWN;
+  let compatibilityStatus = /** @type {string} */ (WEBGPU_AUTHORING_COMPATIBILITY_STATUSES.UNKNOWN);
   let fallbackReason = null;
   if (mode === WEBGPU_AUTHORING_MODES.LEGACY_WEBGL_SCENE) {
     compatibilityStatus = WEBGPU_AUTHORING_COMPATIBILITY_STATUSES.WEBGL_ONLY;

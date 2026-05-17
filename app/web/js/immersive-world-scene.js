@@ -17,11 +17,18 @@ import {
   createPostRenderTarget,
   createWebGLRendererRuntime,
   describeRendererDiagnostics,
+  normalizeRendererModeRequest,
   POST_PROCESSING_MODES,
   RENDERER_MODES,
   resolveRendererRuntimeSelection,
   resizeSceneRenderTargets
 } from './scene-rendering.js';
+import { createWebGPURendererRuntime } from './scene-webgpu-renderer-runtime.js';
+import {
+  applyOutputColorTransformToTslControls,
+  createTslPostProcessingControls,
+  createTslRenderPipeline
+} from './scene-tsl-post-processing.js';
 import {
   createBrowserResizeAdapter,
   createBrowserTimingAdapter,
@@ -63,6 +70,146 @@ const OUTPUT_COLOR_TRANSFORM_LIMITS = Object.freeze({
   hueShift: [-0.03, 0.03],
   distortion: [0, 0]
 });
+const WEBGPU_PROJECT_SCENE_TARGET = 'webgpu-project-scene';
+const LEGACY_WEBGL_SCENE_TARGET = 'legacy-webgl-scene';
+const WEBGPU_COMPATIBLE_STATUS = 'webgpu-compatible';
+const LEGACY_WEBGL_FALLBACK_REASON = 'legacy-webgl-authoring-mode';
+const WEBGPU_EVIDENCE_MISSING_REASON = 'webgpu-evidence-missing';
+const GENERATED_MODULE_UNKNOWN_REASON = 'generated-module-unknown';
+const WEBGPU_DIRECT_OUTPUT_COLOR_TRANSFORM_MODE = 'webgpu-direct';
+
+function cleanToken(value) {
+  return String(value || '').trim().toLowerCase().replace(/[_\s]+/g, '-');
+}
+
+function booleanFlag(value) {
+  if (value === true) return true;
+  const token = cleanToken(value);
+  return token === '1' || token === 'true' || token === 'yes' || token === WEBGPU_COMPATIBLE_STATUS;
+}
+
+function rendererTargetModeFrom(value = null) {
+  if (!value || typeof value !== 'object' || Array.isArray(value)) return cleanToken(value) || null;
+  return cleanToken(
+    value.targetMode
+      || value.effectiveTarget
+      || value.requestedTarget
+      || value.rendererAuthoringTarget
+      || value.rendererTarget
+      || value.authoringMode
+  ) || null;
+}
+
+function compatibilityFromFact(value = null, source = null) {
+  if (!value || typeof value !== 'object' || Array.isArray(value)) return null;
+  const compatibilityStatus = cleanToken(value.compatibilityStatus) || null;
+  const webgpuCompatible = booleanFlag(value.webgpuCompatible)
+    || booleanFlag(value.webgpu)
+    || compatibilityStatus === WEBGPU_COMPATIBLE_STATUS;
+  return {
+    source,
+    targetMode: rendererTargetModeFrom(value),
+    compatibilityStatus,
+    webgpuCompatible,
+    fallbackReason: cleanToken(value.fallbackReason) || null,
+    fallbackReasons: Array.isArray(value.fallbackReasons) ? value.fallbackReasons.map(cleanToken).filter(Boolean) : []
+  };
+}
+
+function collectImmersiveWorldRuntimeModuleRefs(art = {}) {
+  const world = asObject(art?.world);
+  const refs = [
+    ...(Array.isArray(world.generatedModules) ? world.generatedModules : []),
+    ...(Array.isArray(world.parts) ? world.parts.map((part) => part?.moduleRef || part?.module) : [])
+  ].filter(Boolean);
+  const seen = new Set();
+  return refs.filter((ref) => {
+    const key = ref.hash || ref.moduleId || ref.url || ref.file;
+    if (!key || seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+}
+
+export function resolveImmersiveWorldRendererCompatibilityFacts(art = {}) {
+  const world = asObject(art?.world);
+  const targetMode = rendererTargetModeFrom(art?.rendererAuthoring)
+    || rendererTargetModeFrom(world.rendererAuthoring)
+    || rendererTargetModeFrom(art?.rendererCompatibility)
+    || rendererTargetModeFrom(world.rendererCompatibility)
+    || null;
+  const declaredCompatibility = [
+    compatibilityFromFact(art?.rendererCompatibility, 'payload'),
+    compatibilityFromFact(world.rendererCompatibility, 'world')
+  ].filter(Boolean);
+  const declaredIncompatible = declaredCompatibility.find((entry) => entry.webgpuCompatible === false
+    || (entry.compatibilityStatus && entry.compatibilityStatus !== WEBGPU_COMPATIBLE_STATUS)
+  ) || null;
+  const declared = declaredCompatibility.find((entry) => entry.webgpuCompatible)
+    || declaredCompatibility.find((entry) => entry.compatibilityStatus)
+    || null;
+  const moduleFacts = collectImmersiveWorldRuntimeModuleRefs(art)
+    .map((ref) => compatibilityFromFact(ref.rendererCompatibility || ref, 'generated-module'))
+    .filter(Boolean);
+  const allModulesCompatible = moduleFacts.length > 0 && moduleFacts.every((entry) => entry.webgpuCompatible === true);
+  const moduleFallback = moduleFacts.find((entry) => entry.webgpuCompatible !== true);
+
+  if (!declaredIncompatible && (declared?.webgpuCompatible === true || (targetMode === WEBGPU_PROJECT_SCENE_TARGET && allModulesCompatible))) {
+    return {
+      targetMode: WEBGPU_PROJECT_SCENE_TARGET,
+      compatibilityStatus: WEBGPU_COMPATIBLE_STATUS,
+      webgpuCompatible: true,
+      fallbackReason: null,
+      source: declared?.source || 'generated-module',
+      moduleCount: moduleFacts.length
+    };
+  }
+
+  if (targetMode === WEBGPU_PROJECT_SCENE_TARGET) {
+    return {
+      targetMode,
+      compatibilityStatus: declaredIncompatible?.compatibilityStatus || declared?.compatibilityStatus || moduleFallback?.compatibilityStatus || 'unknown',
+      webgpuCompatible: false,
+      fallbackReason: declaredIncompatible?.fallbackReason
+        || declared?.fallbackReason
+        || moduleFallback?.fallbackReason
+        || (moduleFacts.length ? WEBGPU_EVIDENCE_MISSING_REASON : GENERATED_MODULE_UNKNOWN_REASON),
+      source: declaredIncompatible?.source || declared?.source || moduleFallback?.source || 'payload',
+      moduleCount: moduleFacts.length
+    };
+  }
+
+  if (targetMode === LEGACY_WEBGL_SCENE_TARGET) {
+    return {
+      targetMode,
+      compatibilityStatus: 'webgl-only',
+      webgpuCompatible: false,
+      fallbackReason: LEGACY_WEBGL_FALLBACK_REASON,
+      source: declared?.source || 'payload',
+      moduleCount: moduleFacts.length
+    };
+  }
+
+  return {
+    targetMode: targetMode || 'unspecified',
+    compatibilityStatus: declared?.compatibilityStatus || 'unknown',
+    webgpuCompatible: false,
+    fallbackReason: declared?.fallbackReason || null,
+    source: declared?.source || null,
+    moduleCount: moduleFacts.length
+  };
+}
+
+export function resolveImmersiveWorldRendererRequest({
+  art = null,
+  requestedMode = RENDERER_MODES.WEBGL_LEGACY
+} = {}) {
+  const normalizedRequest = normalizeRendererModeRequest(requestedMode);
+  if (normalizedRequest !== RENDERER_MODES.WEBGL_LEGACY) return normalizedRequest;
+  return resolveImmersiveWorldRendererCompatibilityFacts(art).webgpuCompatible
+    ? RENDERER_MODES.WEBGPU
+    : RENDERER_MODES.WEBGL_LEGACY;
+}
 
 export function isRemoteRuntimeRef(value) {
   return /^(?:[a-z][a-z0-9+.-]*:|\/\/)/i.test(String(value || '').trim());
@@ -1103,6 +1250,18 @@ export function applyImmersiveWorldPostUniforms(scene, frameFacts = {}) {
 
 export function renderImmersiveWorldFrame(scene, frameFacts = {}) {
   const transform = applyImmersiveWorldPostUniforms(scene, frameFacts);
+  if (scene.tslPostPipeline) {
+    applyOutputColorTransformToTslControls(scene.postUniforms, transform, frameFacts);
+    scene.tslPostPipeline.render();
+    return frameFacts;
+  }
+
+  if (scene.rendererSelection?.useWebGPURenderer || !scene.renderTarget || !scene.postScene || !scene.postCamera) {
+    scene.renderer.setRenderTarget?.(null);
+    scene.renderer.render(scene.scene, scene.camera);
+    return frameFacts;
+  }
+
   if (isNeutralImmersiveWorldOutputColorTransform(transform)) {
     scene.renderer.setRenderTarget(null);
     scene.renderer.render(scene.scene, scene.camera);
@@ -1169,28 +1328,46 @@ export class ArtworkScene {
     navigatorRef = typeof window !== 'undefined' ? window.navigator : null
   } = {}) {
     this.canvas = canvas;
-    this.postProcessingRequest = postProcessingRequest;
+    this.rendererCompatibilityFacts = resolveImmersiveWorldRendererCompatibilityFacts(art);
+    this.rendererRequest = resolveImmersiveWorldRendererRequest({
+      art,
+      requestedMode: rendererRequest
+    });
+    this.postProcessingRequest = this.rendererRequest === RENDERER_MODES.WEBGL_LEGACY
+      ? postProcessingRequest
+      : POST_PROCESSING_MODES.WEBGPU_TSL_POST;
     this.rendererSceneFeatures = collectRendererSceneFeatures({
       art,
       sceneKind: 'immersive-world-v1',
       adapterFeatures: {
-        glslShaderMaterial: true,
-        webgpuCompatible: false
+        glslShaderMaterial: this.rendererCompatibilityFacts.webgpuCompatible !== true,
+        rawShaderMaterial: false,
+        webgpuCompatible: this.rendererCompatibilityFacts.webgpuCompatible === true
       }
     });
     this.rendererSelection = resolveRendererRuntimeSelection({
-      requestedMode: rendererRequest,
+      requestedMode: this.rendererRequest,
       captureMode,
       sceneFeatures: this.rendererSceneFeatures,
       navigatorRef
     });
-    this.rendererRuntime = createWebGLRendererRuntime({
-      canvas,
-      devicePixelRatio: window.devicePixelRatio || 1,
-      rendererFallbackReason: this.rendererSelection.rendererFallbackReason
-    });
+    this.rendererRuntime = this.rendererSelection.useWebGPURenderer
+      ? createWebGPURendererRuntime({
+        canvas,
+        devicePixelRatio: window.devicePixelRatio || 1,
+        forceWebGL: this.rendererSelection.forceWebGL,
+        rendererMode: this.rendererSelection.rendererMode,
+        rendererBackend: this.rendererSelection.rendererBackend,
+        rendererFallbackReason: this.rendererSelection.rendererFallbackReason
+      })
+      : createWebGLRendererRuntime({
+        canvas,
+        devicePixelRatio: window.devicePixelRatio || 1,
+        rendererFallbackReason: this.rendererSelection.rendererFallbackReason
+      });
     this.renderer = this.rendererRuntime.renderer;
-    this.rendererReady = this.rendererRuntime.initialize();
+    this.rendererInitialized = false;
+    this.rendererInitError = null;
     this.scene = new THREE.Scene();
     this.camera = new THREE.PerspectiveCamera(65, 1, 0.1, 200);
     this.group = new THREE.Group();
@@ -1198,14 +1375,24 @@ export class ArtworkScene {
     this.clock = createSceneElapsedTimer(THREE, { documentRef: window.document });
     this.updateHooks = [];
     this.disposeHooks = [];
-    const { renderTarget, samples } = createPostRenderTarget(this.renderer);
-    this.renderTarget = renderTarget;
-    this.renderTargetSamples = samples;
-    const postPass = createImmersiveWorldPostPass(this.renderTarget);
-    this.postScene = postPass.postScene;
-    this.postCamera = postPass.postCamera;
-    this.postUniforms = postPass.postUniforms;
-    this.postQuad = postPass.postQuad;
+    this.tslPostPipeline = null;
+    if (this.rendererSelection.useWebGPURenderer) {
+      this.renderTarget = null;
+      this.renderTargetSamples = 0;
+      this.postScene = null;
+      this.postCamera = null;
+      this.postUniforms = createTslPostProcessingControls();
+      this.postQuad = null;
+    } else {
+      const { renderTarget, samples } = createPostRenderTarget(this.renderer);
+      this.renderTarget = renderTarget;
+      this.renderTargetSamples = samples;
+      const postPass = createImmersiveWorldPostPass(this.renderTarget);
+      this.postScene = postPass.postScene;
+      this.postCamera = postPass.postCamera;
+      this.postUniforms = postPass.postUniforms;
+      this.postQuad = postPass.postQuad;
+    }
     this.outputColorTransform = resolveImmersiveWorldOutputColorTransform({});
     this.postBase = this.outputColorTransform;
     this.motionIntensity = 1;
@@ -1228,7 +1415,25 @@ export class ArtworkScene {
         resizeObserverCtor: typeof ResizeObserver !== 'undefined' ? ResizeObserver : undefined
       })
     });
-    this.frameLifecycle.start();
+    this.rendererReady = this.rendererRuntime.initialize()
+      .then(() => {
+        this.rendererInitialized = true;
+        if (this.rendererSelection.useWebGPURenderer && this.postProcessingRequest === POST_PROCESSING_MODES.WEBGPU_TSL_POST) {
+          this.tslPostPipeline = createTslRenderPipeline({
+            renderer: this.renderer,
+            scene: this.scene,
+            camera: this.camera,
+            controls: this.postUniforms,
+            vignetteMode: 'immersive'
+          });
+        }
+        this.frameLifecycle.start();
+        return this.renderer;
+      })
+      .catch((error) => {
+        this.rendererInitError = error;
+        throw error;
+      });
   }
 
   getAssemblyReport() {
@@ -1237,11 +1442,12 @@ export class ArtworkScene {
 
   getRendererDiagnostics() {
     const outputColorTransformMode = this.rendererSelection?.useWebGPURenderer
-      && this.postProcessingRequest === POST_PROCESSING_MODES.WEBGPU_TSL_POST
-      ? POST_PROCESSING_MODES.WEBGPU_TSL_POST
+      ? (this.postProcessingRequest === POST_PROCESSING_MODES.WEBGPU_TSL_POST
+          ? POST_PROCESSING_MODES.WEBGPU_TSL_POST
+          : WEBGPU_DIRECT_OUTPUT_COLOR_TRANSFORM_MODE)
       : isNeutralImmersiveWorldOutputColorTransform(this.outputColorTransform)
-        ? 'webgl-direct'
-        : POST_PROCESSING_MODES.WEBGL_GLSL_POST;
+          ? 'webgl-direct'
+          : POST_PROCESSING_MODES.WEBGL_GLSL_POST;
     return this.rendererRuntime?.getDiagnostics?.({
       outputColorTransformMode
     }) || describeRendererDiagnostics(this.renderer, {
@@ -1430,6 +1636,8 @@ export class ArtworkScene {
       environment,
       camera,
       cameraAlignment: camera.alignment,
+      renderer: this.getRendererDiagnostics(),
+      rendererCompatibility: this.rendererCompatibilityFacts,
       builtParts,
       partCount: builtParts.length
     };
@@ -1444,6 +1652,15 @@ export class ArtworkScene {
     const rect = this.canvas.getBoundingClientRect();
     const width = Math.max(1, Math.round(rect.width || this.canvas.clientWidth || 1));
     const height = Math.max(1, Math.round(rect.height || this.canvas.clientHeight || 1));
+    if (!this.renderTarget) {
+      const resizeFacts = this.rendererRuntime.resize(width, height, false);
+      const renderTargetSize = resizeFacts.renderTargetSize || { width, height };
+      this.postUniforms.uResolution?.value?.set?.(renderTargetSize.width, renderTargetSize.height);
+      this.camera.aspect = width / height;
+      this.camera.updateProjectionMatrix();
+      if (this.orbit) applyViewportOrbitFrame(this);
+      return { width, height, pixelRatio: resizeFacts.pixelRatio, renderTargetSize };
+    }
     resizeSceneRenderTargets({
       canvas: this.canvas,
       renderer: this.renderer,
@@ -1456,7 +1673,8 @@ export class ArtworkScene {
     return { width, height };
   }
 
-  waitForRenderedFrame(timeoutMs = 2500) {
+  async waitForRenderedFrame(timeoutMs = 2500) {
+    await this.rendererReady;
     return this.frameLifecycle.waitForRenderedFrame(timeoutMs);
   }
 
@@ -1473,6 +1691,7 @@ export class ArtworkScene {
   }
 
   renderFrame({ timestamp } = {}) {
+    if (!this.rendererInitialized) return;
     this.clock?.update?.(timestamp);
     const frameFacts = buildImmersiveWorldFrameFacts(this);
     updateImmersiveWorldCameraControlsForFrame(this, frameFacts);
@@ -1486,7 +1705,8 @@ export class ArtworkScene {
     this.cameraInputTeardown?.();
     this.cameraInputTeardown = null;
     this.clearWorld();
-    disposeObjectTree(this.postScene);
+    this.tslPostPipeline?.dispose?.();
+    if (this.postScene) disposeObjectTree(this.postScene);
     this.renderTarget?.dispose?.();
     disposeObjectTree(this.scene);
     this.rendererRuntime?.dispose?.();

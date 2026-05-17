@@ -83,8 +83,11 @@ function uniqueByKey(entries, keyFor) {
 export function isExplicitWebGPUCompatible(value = {}) {
   return booleanFlag(value?.webgpuCompatible)
     || booleanFlag(value?.rendererCompatibility?.webgpu)
+    || booleanFlag(value?.rendererCompatibility?.webgpuCompatible)
     || booleanFlag(value?.compatibility?.webgpu)
-    || booleanFlag(value?.runtimeCompatibility?.webgpu);
+    || booleanFlag(value?.runtimeCompatibility?.webgpu)
+    || normalizeText(value?.compatibilityStatus) === 'webgpu-compatible'
+    || normalizeText(value?.rendererCompatibility?.compatibilityStatus) === 'webgpu-compatible';
 }
 
 export function collectSceneElements(art = null, explicitElements = null) {
@@ -218,6 +221,7 @@ function hasExplicitSurfaceWebGPUClaim(value = {}) {
 function evidenceValuesFrom(value = {}) {
   return [
     value?.rendererCompatibility?.evidence,
+    value?.rendererCompatibility?.evidenceReasons,
     value?.compatibility?.evidence,
     value?.runtimeCompatibility?.evidence,
     value?.evidence

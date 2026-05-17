@@ -1,7 +1,7 @@
 {
   "version": 1,
   "generatedAt": "2026-05-13T06:11:46.412Z",
-  "updatedAt": "2026-05-16T11:07:33.849Z",
+  "updatedAt": "2026-05-17T06:07:48.847Z",
   "entries": [
     {
       "version": 1,
@@ -70,6 +70,121 @@
     },
     {
       "version": 1,
+      "moduleId": "non-literal-fracture-pressure-draft-attempt-1",
+      "partId": "non-literal-fracture-pressure",
+      "hash": "144fdec4de7ed6aa69c049e6516734036381e256bdd3ee57e9ec5798378e3659",
+      "integrity": "sha256-144fdec4de7ed6aa69c049e6516734036381e256bdd3ee57e9ec5798378e3659",
+      "exportName": "createImmersiveWorldPart",
+      "file": "data/immersive-world/generated-modules/144fdec4de7ed6aa69c049e6516734036381e256bdd3ee57e9ec5798378e3659.mjs",
+      "url": "./data/immersive-world/generated-modules/144fdec4de7ed6aa69c049e6516734036381e256bdd3ee57e9ec5798378e3659.mjs",
+      "bytes": 16999,
+      "sourceHash": "aed9b172cb3cd948589e49d6637beea4d9c948a596d1bc0a8ac96ddde9027df3",
+      "packagedAt": "2026-05-17T06:00:09.161Z",
+      "rendererCompatibility": {
+        "version": 1,
+        "targetMode": "unspecified",
+        "compatibilityStatus": "webgl-only",
+        "webgpuCompatible": false,
+        "fallbackReason": "shader-material",
+        "fallbackReasons": [
+          "shader-material",
+          "raw-glsl-shader-surface"
+        ],
+        "evidenceReasons": [
+          "webgpu-safe-material"
+        ],
+        "compatibleSurfaces": [
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "non-literal-fracture-pressure.module.mjs",
+            "pos": 2157,
+            "materialType": "DataTexture"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 1115,
+            "materialType": "DataTexture"
+          }
+        ],
+        "forbiddenSurfaces": [
+          {
+            "reason": "shader-material",
+            "filePath": "non-literal-fracture-pressure.module.mjs",
+            "pos": 2681,
+            "surface": "ShaderMaterial"
+          },
+          {
+            "reason": "raw-glsl-shader-surface",
+            "filePath": "non-literal-fracture-pressure.module.mjs",
+            "pos": 3243,
+            "property": "vertexShader"
+          },
+          {
+            "reason": "raw-glsl-shader-surface",
+            "filePath": "non-literal-fracture-pressure.module.mjs",
+            "pos": 3474,
+            "property": "fragmentShader"
+          },
+          {
+            "reason": "shader-material",
+            "filePath": "non-literal-fracture-pressure.module.mjs",
+            "pos": 13988,
+            "surface": "ShaderMaterial"
+          },
+          {
+            "reason": "raw-glsl-shader-surface",
+            "filePath": "non-literal-fracture-pressure.module.mjs",
+            "pos": 14311,
+            "property": "vertexShader"
+          },
+          {
+            "reason": "raw-glsl-shader-surface",
+            "filePath": "non-literal-fracture-pressure.module.mjs",
+            "pos": 14809,
+            "property": "fragmentShader"
+          },
+          {
+            "reason": "shader-material",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 1458,
+            "surface": "ShaderMaterial"
+          },
+          {
+            "reason": "raw-glsl-shader-surface",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 1785,
+            "property": "vertexShader"
+          },
+          {
+            "reason": "raw-glsl-shader-surface",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 2010,
+            "property": "fragmentShader"
+          },
+          {
+            "reason": "shader-material",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 8020,
+            "surface": "ShaderMaterial"
+          },
+          {
+            "reason": "raw-glsl-shader-surface",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 8238,
+            "property": "vertexShader"
+          },
+          {
+            "reason": "raw-glsl-shader-surface",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 8730,
+            "property": "fragmentShader"
+          }
+        ]
+      }
+    },
+    {
+      "version": 1,
       "moduleId": "pollock-finale-pressure-skybox-environment-v1",
       "partId": "world-environment",
       "hash": "1800dfff1ad012db9f913bcf568c89830410ad252cd015a4f6ea035582d49141",
@@ -80,6 +195,296 @@
       "bytes": 7866,
       "sourceHash": "48a4b57d80e0db637c5548977b91e7f7d4219652256a8ed9b086e1807c863891",
       "packagedAt": "2026-05-13T17:14:31.366Z"
+    },
+    {
+      "version": 1,
+      "moduleId": "non-literal-fracture-pressure-draft-attempt-2",
+      "partId": "non-literal-fracture-pressure",
+      "hash": "1f9d6af507408a1f65223d9d315a36bfa01dd84c422aa0c1fa19910544af1d9f",
+      "integrity": "sha256-1f9d6af507408a1f65223d9d315a36bfa01dd84c422aa0c1fa19910544af1d9f",
+      "exportName": "createImmersiveWorldPart",
+      "file": "data/immersive-world/generated-modules/1f9d6af507408a1f65223d9d315a36bfa01dd84c422aa0c1fa19910544af1d9f.mjs",
+      "url": "./data/immersive-world/generated-modules/1f9d6af507408a1f65223d9d315a36bfa01dd84c422aa0c1fa19910544af1d9f.mjs",
+      "bytes": 17053,
+      "sourceHash": "e85054e84a6c108d913adb1783ef981de845664ed1f8ec622376963bf03b851c",
+      "packagedAt": "2026-05-17T06:00:09.161Z",
+      "rendererCompatibility": {
+        "version": 1,
+        "targetMode": "unspecified",
+        "compatibilityStatus": "webgl-only",
+        "webgpuCompatible": false,
+        "fallbackReason": "shader-material",
+        "fallbackReasons": [
+          "shader-material",
+          "raw-glsl-shader-surface"
+        ],
+        "evidenceReasons": [
+          "webgpu-safe-material"
+        ],
+        "compatibleSurfaces": [
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "non-literal-fracture-pressure.module.mjs",
+            "pos": 2157,
+            "materialType": "DataTexture"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 1115,
+            "materialType": "DataTexture"
+          }
+        ],
+        "forbiddenSurfaces": [
+          {
+            "reason": "shader-material",
+            "filePath": "non-literal-fracture-pressure.module.mjs",
+            "pos": 2681,
+            "surface": "ShaderMaterial"
+          },
+          {
+            "reason": "raw-glsl-shader-surface",
+            "filePath": "non-literal-fracture-pressure.module.mjs",
+            "pos": 3243,
+            "property": "vertexShader"
+          },
+          {
+            "reason": "raw-glsl-shader-surface",
+            "filePath": "non-literal-fracture-pressure.module.mjs",
+            "pos": 3474,
+            "property": "fragmentShader"
+          },
+          {
+            "reason": "shader-material",
+            "filePath": "non-literal-fracture-pressure.module.mjs",
+            "pos": 13987,
+            "surface": "ShaderMaterial"
+          },
+          {
+            "reason": "raw-glsl-shader-surface",
+            "filePath": "non-literal-fracture-pressure.module.mjs",
+            "pos": 14310,
+            "property": "vertexShader"
+          },
+          {
+            "reason": "raw-glsl-shader-surface",
+            "filePath": "non-literal-fracture-pressure.module.mjs",
+            "pos": 14808,
+            "property": "fragmentShader"
+          },
+          {
+            "reason": "shader-material",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 1458,
+            "surface": "ShaderMaterial"
+          },
+          {
+            "reason": "raw-glsl-shader-surface",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 1785,
+            "property": "vertexShader"
+          },
+          {
+            "reason": "raw-glsl-shader-surface",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 2010,
+            "property": "fragmentShader"
+          },
+          {
+            "reason": "shader-material",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 8019,
+            "surface": "ShaderMaterial"
+          },
+          {
+            "reason": "raw-glsl-shader-surface",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 8237,
+            "property": "vertexShader"
+          },
+          {
+            "reason": "raw-glsl-shader-surface",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 8729,
+            "property": "fragmentShader"
+          }
+        ]
+      }
+    },
+    {
+      "version": 1,
+      "moduleId": "artist-mark-field-clyfford-still-vienna-spatial-style-system",
+      "partId": "artist-mark-field",
+      "hash": "280a5a698cde82a2fcf17a89785776f035f9ef2c445e908ab9190e3e473a6831",
+      "integrity": "sha256-280a5a698cde82a2fcf17a89785776f035f9ef2c445e908ab9190e3e473a6831",
+      "exportName": "createImmersiveWorldPart",
+      "file": "data/immersive-world/generated-modules/280a5a698cde82a2fcf17a89785776f035f9ef2c445e908ab9190e3e473a6831.mjs",
+      "url": "./data/immersive-world/generated-modules/280a5a698cde82a2fcf17a89785776f035f9ef2c445e908ab9190e3e473a6831.mjs",
+      "bytes": 16404,
+      "sourceHash": "72faadadaf27f5a05dc3c64d67eebd771ccea3f045ae42cb3f21e56ce877f2d6",
+      "packagedAt": "2026-05-17T06:07:48.847Z",
+      "rendererCompatibility": {
+        "version": 1,
+        "targetMode": "unspecified",
+        "compatibilityStatus": "webgl-only",
+        "webgpuCompatible": false,
+        "fallbackReason": "shader-material",
+        "fallbackReasons": [
+          "shader-material",
+          "raw-glsl-shader-surface"
+        ],
+        "evidenceReasons": [
+          "webgpu-safe-material"
+        ],
+        "compatibleSurfaces": [
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "artist-mark-field.module.mjs",
+            "pos": 1674,
+            "materialType": "DataTexture"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "artist-mark-field.module.mjs",
+            "pos": 13864,
+            "materialType": "LineBasicMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "artist-mark-field.module.mjs",
+            "pos": 23920,
+            "materialType": "MeshBasicMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "artist-mark-field.module.mjs",
+            "pos": 24088,
+            "materialType": "MeshBasicMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "artist-mark-field.module.mjs",
+            "pos": 24256,
+            "materialType": "MeshBasicMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "artist-mark-field.module.mjs",
+            "pos": 24424,
+            "materialType": "MeshBasicMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 838,
+            "materialType": "DataTexture"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 8617,
+            "materialType": "LineBasicMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 14652,
+            "materialType": "MeshBasicMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 14781,
+            "materialType": "MeshBasicMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 14910,
+            "materialType": "MeshBasicMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 15039,
+            "materialType": "MeshBasicMaterial"
+          }
+        ],
+        "forbiddenSurfaces": [
+          {
+            "reason": "shader-material",
+            "filePath": "artist-mark-field.module.mjs",
+            "pos": 2300,
+            "surface": "ShaderMaterial"
+          },
+          {
+            "reason": "raw-glsl-shader-surface",
+            "filePath": "artist-mark-field.module.mjs",
+            "pos": 2963,
+            "property": "vertexShader"
+          },
+          {
+            "reason": "raw-glsl-shader-surface",
+            "filePath": "artist-mark-field.module.mjs",
+            "pos": 3194,
+            "property": "fragmentShader"
+          },
+          {
+            "reason": "shader-material",
+            "filePath": "artist-mark-field.module.mjs",
+            "pos": 10867,
+            "surface": "ShaderMaterial"
+          },
+          {
+            "reason": "raw-glsl-shader-surface",
+            "filePath": "artist-mark-field.module.mjs",
+            "pos": 11206,
+            "property": "vertexShader"
+          },
+          {
+            "reason": "raw-glsl-shader-surface",
+            "filePath": "artist-mark-field.module.mjs",
+            "pos": 11706,
+            "property": "fragmentShader"
+          },
+          {
+            "reason": "shader-material",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 1265,
+            "surface": "ShaderMaterial"
+          },
+          {
+            "reason": "raw-glsl-shader-surface",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 1652,
+            "property": "vertexShader"
+          },
+          {
+            "reason": "raw-glsl-shader-surface",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 1877,
+            "property": "fragmentShader"
+          },
+          {
+            "reason": "shader-material",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 6685,
+            "surface": "ShaderMaterial"
+          },
+          {
+            "reason": "raw-glsl-shader-surface",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 6910,
+            "property": "vertexShader"
+          },
+          {
+            "reason": "raw-glsl-shader-surface",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 7404,
+            "property": "fragmentShader"
+          }
+        ]
+      }
     },
     {
       "version": 1,
@@ -252,6 +657,70 @@
     },
     {
       "version": 1,
+      "moduleId": "world-environment-draft-attempt-2",
+      "partId": "world-environment",
+      "hash": "616257eb652081f0438114f02d993b5676d8899aa2ce5dc038864be93e6dd5d9",
+      "integrity": "sha256-616257eb652081f0438114f02d993b5676d8899aa2ce5dc038864be93e6dd5d9",
+      "exportName": "createImmersiveWorldPart",
+      "file": "data/immersive-world/generated-modules/616257eb652081f0438114f02d993b5676d8899aa2ce5dc038864be93e6dd5d9.mjs",
+      "url": "./data/immersive-world/generated-modules/616257eb652081f0438114f02d993b5676d8899aa2ce5dc038864be93e6dd5d9.mjs",
+      "bytes": 11288,
+      "sourceHash": "c8a04af92bb6b6319bdc10fa67d765df85bd04fa46964b3f6d97b73c878499e7",
+      "packagedAt": "2026-05-17T06:00:09.161Z",
+      "rendererCompatibility": {
+        "version": 1,
+        "targetMode": "unspecified",
+        "compatibilityStatus": "webgl-only",
+        "webgpuCompatible": false,
+        "fallbackReason": "shader-material",
+        "fallbackReasons": [
+          "shader-material",
+          "raw-glsl-shader-surface"
+        ],
+        "evidenceReasons": [],
+        "compatibleSurfaces": [],
+        "forbiddenSurfaces": [
+          {
+            "reason": "shader-material",
+            "filePath": "world-environment.module.mjs",
+            "pos": 1850,
+            "surface": "ShaderMaterial"
+          },
+          {
+            "reason": "raw-glsl-shader-surface",
+            "filePath": "world-environment.module.mjs",
+            "pos": 2710,
+            "property": "vertexShader"
+          },
+          {
+            "reason": "raw-glsl-shader-surface",
+            "filePath": "world-environment.module.mjs",
+            "pos": 2905,
+            "property": "fragmentShader"
+          },
+          {
+            "reason": "shader-material",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 1060,
+            "surface": "ShaderMaterial"
+          },
+          {
+            "reason": "raw-glsl-shader-surface",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 1664,
+            "property": "vertexShader"
+          },
+          {
+            "reason": "raw-glsl-shader-surface",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 1853,
+            "property": "fragmentShader"
+          }
+        ]
+      }
+    },
+    {
+      "version": 1,
       "moduleId": "non-literal-fracture-pressure-draft-attempt-2",
       "partId": "non-literal-fracture-pressure",
       "hash": "62bf24271a59b0cee43aafc4bde099ed335cb59ececdd2cfeb5e3dd81b93a5b9",
@@ -262,6 +731,181 @@
       "bytes": 13178,
       "sourceHash": "4c71be2634302d1a92e6b7de9a1154672e8c187c2bbbc1f1b342f4627edd616d",
       "packagedAt": "2026-05-16T11:00:10.100Z"
+    },
+    {
+      "version": 1,
+      "moduleId": "artist-mark-field-draft-attempt-1",
+      "partId": "artist-mark-field",
+      "hash": "6eab5eb5a6d0e8a0b121e1864dd6fac18812cdf4fa0050c6e860e49d658030a3",
+      "integrity": "sha256-6eab5eb5a6d0e8a0b121e1864dd6fac18812cdf4fa0050c6e860e49d658030a3",
+      "exportName": "createImmersiveWorldPart",
+      "file": "data/immersive-world/generated-modules/6eab5eb5a6d0e8a0b121e1864dd6fac18812cdf4fa0050c6e860e49d658030a3.mjs",
+      "url": "./data/immersive-world/generated-modules/6eab5eb5a6d0e8a0b121e1864dd6fac18812cdf4fa0050c6e860e49d658030a3.mjs",
+      "bytes": 16377,
+      "sourceHash": "293db2bbffac499fe4339072a56955cfe9bf6e52d89e170578e60fe1de05c933",
+      "packagedAt": "2026-05-17T06:00:09.161Z",
+      "rendererCompatibility": {
+        "version": 1,
+        "targetMode": "unspecified",
+        "compatibilityStatus": "webgl-only",
+        "webgpuCompatible": false,
+        "fallbackReason": "shader-material",
+        "fallbackReasons": [
+          "shader-material",
+          "raw-glsl-shader-surface"
+        ],
+        "evidenceReasons": [
+          "webgpu-safe-material"
+        ],
+        "compatibleSurfaces": [
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "artist-mark-field.module.mjs",
+            "pos": 1674,
+            "materialType": "DataTexture"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "artist-mark-field.module.mjs",
+            "pos": 13864,
+            "materialType": "LineBasicMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "artist-mark-field.module.mjs",
+            "pos": 23885,
+            "materialType": "MeshBasicMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "artist-mark-field.module.mjs",
+            "pos": 24053,
+            "materialType": "MeshBasicMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "artist-mark-field.module.mjs",
+            "pos": 24221,
+            "materialType": "MeshBasicMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "artist-mark-field.module.mjs",
+            "pos": 24389,
+            "materialType": "MeshBasicMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 838,
+            "materialType": "DataTexture"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 8617,
+            "materialType": "LineBasicMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 14625,
+            "materialType": "MeshBasicMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 14754,
+            "materialType": "MeshBasicMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 14883,
+            "materialType": "MeshBasicMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 15012,
+            "materialType": "MeshBasicMaterial"
+          }
+        ],
+        "forbiddenSurfaces": [
+          {
+            "reason": "shader-material",
+            "filePath": "artist-mark-field.module.mjs",
+            "pos": 2300,
+            "surface": "ShaderMaterial"
+          },
+          {
+            "reason": "raw-glsl-shader-surface",
+            "filePath": "artist-mark-field.module.mjs",
+            "pos": 2963,
+            "property": "vertexShader"
+          },
+          {
+            "reason": "raw-glsl-shader-surface",
+            "filePath": "artist-mark-field.module.mjs",
+            "pos": 3194,
+            "property": "fragmentShader"
+          },
+          {
+            "reason": "shader-material",
+            "filePath": "artist-mark-field.module.mjs",
+            "pos": 10867,
+            "surface": "ShaderMaterial"
+          },
+          {
+            "reason": "raw-glsl-shader-surface",
+            "filePath": "artist-mark-field.module.mjs",
+            "pos": 11206,
+            "property": "vertexShader"
+          },
+          {
+            "reason": "raw-glsl-shader-surface",
+            "filePath": "artist-mark-field.module.mjs",
+            "pos": 11706,
+            "property": "fragmentShader"
+          },
+          {
+            "reason": "shader-material",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 1265,
+            "surface": "ShaderMaterial"
+          },
+          {
+            "reason": "raw-glsl-shader-surface",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 1652,
+            "property": "vertexShader"
+          },
+          {
+            "reason": "raw-glsl-shader-surface",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 1877,
+            "property": "fragmentShader"
+          },
+          {
+            "reason": "shader-material",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 6685,
+            "surface": "ShaderMaterial"
+          },
+          {
+            "reason": "raw-glsl-shader-surface",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 6910,
+            "property": "vertexShader"
+          },
+          {
+            "reason": "raw-glsl-shader-surface",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 7404,
+            "property": "fragmentShader"
+          }
+        ]
+      }
     },
     {
       "version": 1,
@@ -327,6 +971,70 @@
       "bytes": 11073,
       "sourceHash": "27a9db3e376b9fc88bb3edf097cc254784ff780ea636214502ed7ab14a1db696",
       "packagedAt": "2026-05-13T18:22:42.152Z"
+    },
+    {
+      "version": 1,
+      "moduleId": "world-environment-clyfford-still-vienna-fracture-pressure",
+      "partId": "world-environment",
+      "hash": "90478da486d796b75660da26b7658745efb5a2c42ac648e6949c018ce8787ce6",
+      "integrity": "sha256-90478da486d796b75660da26b7658745efb5a2c42ac648e6949c018ce8787ce6",
+      "exportName": "createImmersiveWorldPart",
+      "file": "data/immersive-world/generated-modules/90478da486d796b75660da26b7658745efb5a2c42ac648e6949c018ce8787ce6.mjs",
+      "url": "./data/immersive-world/generated-modules/90478da486d796b75660da26b7658745efb5a2c42ac648e6949c018ce8787ce6.mjs",
+      "bytes": 11288,
+      "sourceHash": "086d9d542af88e3163aa9fc7bd97d8bff4b5c2d830cb1725069f1f5e5f5697f0",
+      "packagedAt": "2026-05-17T06:07:48.847Z",
+      "rendererCompatibility": {
+        "version": 1,
+        "targetMode": "unspecified",
+        "compatibilityStatus": "webgl-only",
+        "webgpuCompatible": false,
+        "fallbackReason": "shader-material",
+        "fallbackReasons": [
+          "shader-material",
+          "raw-glsl-shader-surface"
+        ],
+        "evidenceReasons": [],
+        "compatibleSurfaces": [],
+        "forbiddenSurfaces": [
+          {
+            "reason": "shader-material",
+            "filePath": "world-environment.module.mjs",
+            "pos": 1850,
+            "surface": "ShaderMaterial"
+          },
+          {
+            "reason": "raw-glsl-shader-surface",
+            "filePath": "world-environment.module.mjs",
+            "pos": 2710,
+            "property": "vertexShader"
+          },
+          {
+            "reason": "raw-glsl-shader-surface",
+            "filePath": "world-environment.module.mjs",
+            "pos": 2905,
+            "property": "fragmentShader"
+          },
+          {
+            "reason": "shader-material",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 1060,
+            "surface": "ShaderMaterial"
+          },
+          {
+            "reason": "raw-glsl-shader-surface",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 1664,
+            "property": "vertexShader"
+          },
+          {
+            "reason": "raw-glsl-shader-surface",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 1853,
+            "property": "fragmentShader"
+          }
+        ]
+      }
     },
     {
       "version": 1,
@@ -470,6 +1178,121 @@
       "bytes": 14456,
       "sourceHash": "befdcb2896e38b5695d99260ec48acdd740e93f0b706965b73110e8ab6c3a5d0",
       "packagedAt": "2026-05-14T21:05:11.138Z"
+    },
+    {
+      "version": 1,
+      "moduleId": "non-literal-fracture-pressure-clyfford-still-vienna",
+      "partId": "non-literal-fracture-pressure",
+      "hash": "f1fe0ca1a7f8b0cdb9d282208da08c4e3f833527bf4318468c7e6e1bf65e7705",
+      "integrity": "sha256-f1fe0ca1a7f8b0cdb9d282208da08c4e3f833527bf4318468c7e6e1bf65e7705",
+      "exportName": "createImmersiveWorldPart",
+      "file": "data/immersive-world/generated-modules/f1fe0ca1a7f8b0cdb9d282208da08c4e3f833527bf4318468c7e6e1bf65e7705.mjs",
+      "url": "./data/immersive-world/generated-modules/f1fe0ca1a7f8b0cdb9d282208da08c4e3f833527bf4318468c7e6e1bf65e7705.mjs",
+      "bytes": 17056,
+      "sourceHash": "a0ffc48ff9eca2c02bca66c47b0c1f1df29d727b3c74c638bfae4271218744c7",
+      "packagedAt": "2026-05-17T06:07:48.847Z",
+      "rendererCompatibility": {
+        "version": 1,
+        "targetMode": "unspecified",
+        "compatibilityStatus": "webgl-only",
+        "webgpuCompatible": false,
+        "fallbackReason": "shader-material",
+        "fallbackReasons": [
+          "shader-material",
+          "raw-glsl-shader-surface"
+        ],
+        "evidenceReasons": [
+          "webgpu-safe-material"
+        ],
+        "compatibleSurfaces": [
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "non-literal-fracture-pressure.module.mjs",
+            "pos": 2157,
+            "materialType": "DataTexture"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 1115,
+            "materialType": "DataTexture"
+          }
+        ],
+        "forbiddenSurfaces": [
+          {
+            "reason": "shader-material",
+            "filePath": "non-literal-fracture-pressure.module.mjs",
+            "pos": 2681,
+            "surface": "ShaderMaterial"
+          },
+          {
+            "reason": "raw-glsl-shader-surface",
+            "filePath": "non-literal-fracture-pressure.module.mjs",
+            "pos": 3243,
+            "property": "vertexShader"
+          },
+          {
+            "reason": "raw-glsl-shader-surface",
+            "filePath": "non-literal-fracture-pressure.module.mjs",
+            "pos": 3474,
+            "property": "fragmentShader"
+          },
+          {
+            "reason": "shader-material",
+            "filePath": "non-literal-fracture-pressure.module.mjs",
+            "pos": 13987,
+            "surface": "ShaderMaterial"
+          },
+          {
+            "reason": "raw-glsl-shader-surface",
+            "filePath": "non-literal-fracture-pressure.module.mjs",
+            "pos": 14310,
+            "property": "vertexShader"
+          },
+          {
+            "reason": "raw-glsl-shader-surface",
+            "filePath": "non-literal-fracture-pressure.module.mjs",
+            "pos": 14808,
+            "property": "fragmentShader"
+          },
+          {
+            "reason": "shader-material",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 1458,
+            "surface": "ShaderMaterial"
+          },
+          {
+            "reason": "raw-glsl-shader-surface",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 1785,
+            "property": "vertexShader"
+          },
+          {
+            "reason": "raw-glsl-shader-surface",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 2010,
+            "property": "fragmentShader"
+          },
+          {
+            "reason": "shader-material",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 8019,
+            "surface": "ShaderMaterial"
+          },
+          {
+            "reason": "raw-glsl-shader-surface",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 8237,
+            "property": "vertexShader"
+          },
+          {
+            "reason": "raw-glsl-shader-surface",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 8729,
+            "property": "fragmentShader"
+          }
+        ]
+      }
     }
   ]
 }
