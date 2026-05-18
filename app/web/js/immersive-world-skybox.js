@@ -73,7 +73,10 @@ function keepSkyboxCenteredOnCamera(child, rootObject) {
     immersiveWorldSkyboxCameraPinned: true
   };
   child.onBeforeRender = function immersiveWorldSkyboxOnBeforeRender(renderer, scene, camera, geometry, material, group) {
-    if (camera?.position) rootObject.position.copy(camera.position);
+    if (camera?.position) {
+      rootObject.position.copy(camera.position);
+      rootObject.updateMatrixWorld?.(true);
+    }
     if (typeof previousOnBeforeRender === 'function') {
       previousOnBeforeRender.call(this, renderer, scene, camera, geometry, material, group);
     }
