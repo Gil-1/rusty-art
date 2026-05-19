@@ -1321,6 +1321,70 @@ function normalizeModuleResult(result) {
   };
 }
 
+function shaderReferencesIdentifier(source, identifier) {
+  return new RegExp(`\\b${identifier}\\b`).test(String(source || ''));
+}
+
+function shaderDeclaresUniform(source, identifier) {
+  return new RegExp(`\\buniform\\s+\\w+\\s+${identifier}\\b`).test(String(source || ''));
+}
+
+function insertShaderUniformDeclaration(source, declaration) {
+  const shader = String(source || '');
+  if (shader.startsWith('#version')) {
+    const lineBreak = shader.indexOf('\n');
+    if (lineBreak >= 0) {
+      return `${shader.slice(0, lineBreak + 1)}${declaration}\n${shader.slice(lineBreak + 1)}`;
+    }
+  }
+  return `${declaration}\n${shader}`;
+}
+
+function normalizeShaderSourceUniform(material, {
+  shaderKey,
+  uniformName,
+  declaration
+}) {
+  const source = material?.[shaderKey];
+  if (typeof source !== 'string') return false;
+  if (!shaderReferencesIdentifier(source, uniformName) || shaderDeclaresUniform(source, uniformName)) return false;
+  material[shaderKey] = insertShaderUniformDeclaration(source, declaration);
+  material.needsUpdate = true;
+  return true;
+}
+
+export function normalizeGeneratedModuleShaderMaterials(object) {
+  if (!object?.isObject3D || typeof object.traverse !== 'function') {
+    return { materialCount: 0, patchedUniforms: 0 };
+  }
+
+  let materialCount = 0;
+  let patchedUniforms = 0;
+  object.traverse((child) => {
+    const materials = Array.isArray(child.material)
+      ? child.material
+      : [child.material].filter(Boolean);
+    materials.forEach((material) => {
+      materialCount += 1;
+      if (!material?.uniforms?.uScale) return;
+      const declaration = 'uniform float uScale;';
+      const patchedVertex = normalizeShaderSourceUniform(material, {
+        shaderKey: 'vertexShader',
+        uniformName: 'uScale',
+        declaration
+      });
+      const patchedFragment = normalizeShaderSourceUniform(material, {
+        shaderKey: 'fragmentShader',
+        uniformName: 'uScale',
+        declaration
+      });
+      if (patchedVertex || patchedFragment) patchedUniforms += 1;
+    });
+  });
+
+  return { materialCount, patchedUniforms };
+}
+
 export class ArtworkScene {
   constructor(canvas, {
     rendererRequest = RENDERER_MODES.WEBGL_LEGACY,
@@ -1410,6 +1474,7 @@ export class ArtworkScene {
     this.sceneAssemblyReport = null;
     this.applyConfigGeneration = 0;
     this.cameraInputTeardown = null;
+    this.disposed = false;
     initializeImmersiveWorldCameraControls(this);
     this.resize = this.resize.bind(this);
     this.animate = this.animate.bind(this);
@@ -1425,6 +1490,7 @@ export class ArtworkScene {
     });
     this.rendererReady = this.rendererRuntime.initialize()
       .then(() => {
+        if (this.disposed) return this.renderer;
         this.rendererInitialized = true;
         if (this.rendererSelection.useWebGPURenderer && this.postProcessingRequest === POST_PROCESSING_MODES.WEBGPU_TSL_POST) {
           this.tslPostPipeline = createTslRenderPipeline({
@@ -1590,6 +1656,7 @@ export class ArtworkScene {
     if (!result.object?.isObject3D) {
       throw new Error(`Immersive world module did not return a Three.js Object3D: ${part.id || index}`);
     }
+    const shaderMaterialNormalization = normalizeGeneratedModuleShaderMaterials(result.object);
     const environmentAdaptation = adaptWorldEnvironmentObject({ object: result.object, part, world });
     const textureQuality = applyImmersiveWorldTextureQuality(result.object, {
       THREE,
@@ -1605,6 +1672,7 @@ export class ArtworkScene {
       moduleUrl: moduleRef.url,
       assetCount: assets.length,
       textureQuality,
+      shaderMaterialNormalization: shaderMaterialNormalization.patchedUniforms > 0 ? shaderMaterialNormalization : undefined,
       environmentAdaptation: environmentAdaptation.adapted ? environmentAdaptation : undefined
     };
   }
@@ -1721,6 +1789,7 @@ export class ArtworkScene {
   }
 
   dispose() {
+    this.disposed = true;
     this.applyConfigGeneration += 1;
     this.frameLifecycle?.dispose();
     this.cameraInputTeardown?.();

@@ -105,6 +105,7 @@ export class ArtworkScene {
     this.captureMode = Boolean(captureMode);
     this.captureTime = 1.234;
     this.sceneAssemblyReport = null;
+    this.disposed = false;
 
     this.resize = this.resize.bind(this);
     this.animate = this.animate.bind(this);
@@ -122,6 +123,7 @@ export class ArtworkScene {
 
     this.rendererReady = this.rendererRuntime.initialize()
       .then(() => {
+        if (this.disposed) return this.renderer;
         this.rendererInitialized = true;
         if (this.rendererSelection.useWebGPURenderer && this.postProcessingRequest === POST_PROCESSING_MODES.WEBGPU_TSL_POST) {
           this.tslPostPipeline = createTslRenderPipeline({
@@ -310,6 +312,7 @@ export class ArtworkScene {
   }
 
   dispose() {
+    this.disposed = true;
     this.frameLifecycle?.dispose();
     this.tslPostPipeline?.dispose?.();
     disposeObjectTree(this.group);

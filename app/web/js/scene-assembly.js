@@ -171,7 +171,10 @@ function clamp01(value, fallback = 0) {
 }
 
 function colorComponents(color) {
-  return [color.r, color.g, color.b].map((entry) => Math.max(0, Math.min(255, Math.round(entry * 255))));
+  const srgb = typeof color.clone?.().convertLinearToSRGB === 'function'
+    ? color.clone().convertLinearToSRGB()
+    : color;
+  return [srgb.r, srgb.g, srgb.b].map((entry) => Math.max(0, Math.min(255, Math.round(entry * 255))));
 }
 
 function seededCellNoise(x, y, seed) {
@@ -187,11 +190,19 @@ export function createMaterializationEnvironmentBackground(sceneCfg = {}) {
   if (!layer?.enabled || layer.renderSurface !== 'scene-background-texture') return null;
 
   const size = 64;
+  const textureFacts = isObject(layer.texture) ? layer.texture : {};
+  const neutralFullFrameGround = layer.role === 'full-frame-artwork-ground'
+    && layer.colorB === 'palette.secondary'
+    && layer.chromaticGround !== true
+    && textureFacts.chromaticWash !== true;
   const colorA = new THREE.Color(resolveSceneColor(sceneCfg, layer.colorA || 'palette.bg', sceneCfg.palette?.bg || '#090b12'));
-  const colorB = new THREE.Color(resolveSceneColor(sceneCfg, layer.colorB || 'palette.secondary', sceneCfg.palette?.secondary || '#8899cc'));
+  const colorB = new THREE.Color(resolveSceneColor(
+    sceneCfg,
+    neutralFullFrameGround ? (layer.colorA || 'palette.bg') : (layer.colorB || 'palette.secondary'),
+    neutralFullFrameGround ? (sceneCfg.palette?.bg || '#090b12') : (sceneCfg.palette?.secondary || '#8899cc')
+  ));
   const a = colorComponents(colorA);
   const b = colorComponents(colorB);
-  const textureFacts = isObject(layer.texture) ? layer.texture : {};
   const grain = clamp01(textureFacts.grain, 0.24);
   const wash = clamp01(textureFacts.wash, 0.5);
   const seed = hashSeedText(`${sceneCfg?.seeds?.runSeed || sceneCfg?.seed || 0}:${layer.role || 'environment'}`);
@@ -214,6 +225,9 @@ export function createMaterializationEnvironmentBackground(sceneCfg = {}) {
   }
 
   const texture = new THREE.DataTexture(data, size, size, THREE.RGBAFormat, THREE.UnsignedByteType);
+  texture.magFilter = THREE.LinearFilter;
+  texture.minFilter = THREE.LinearFilter;
+  texture.generateMipmaps = false;
   texture.needsUpdate = true;
   if ('colorSpace' in texture && THREE.SRGBColorSpace) texture.colorSpace = THREE.SRGBColorSpace;
   texture.userData = {
