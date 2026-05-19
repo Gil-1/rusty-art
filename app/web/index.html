@@ -40,9 +40,8 @@
               <button id="mode-story" class="mode-button" type="button" aria-pressed="true">Story</button>
               <button id="mode-lab" class="mode-button" type="button" aria-pressed="false">Lab</button>
               <button id="mode-focus" class="mode-button" type="button" aria-pressed="false">Focus</button>
-              <button id="mode-reduced-motion" class="mode-button" type="button" aria-pressed="false">Calm motion</button>
             </div>
-            <p class="key-hints">Keys: ← older · → newer · Shift jump · loops · I info · F focus · M motion</p>
+            <p class="key-hints">Keys: ← older · → newer · Shift jump · loops · I info · F focus</p>
           </div>
         </header>
 
@@ -50,6 +49,12 @@
 
         <div class="canvas-shell">
           <canvas id="art-canvas" aria-label="Generated abstract artwork"></canvas>
+          <div id="scene-progress" class="scene-progress" role="status" aria-live="polite" hidden>
+            <div class="scene-progress-track" aria-hidden="true">
+              <span id="scene-progress-bar" class="scene-progress-bar"></span>
+            </div>
+            <p id="scene-progress-label">Preparing scene</p>
+          </div>
         </div>
 
         <div class="now-chip" aria-live="polite">

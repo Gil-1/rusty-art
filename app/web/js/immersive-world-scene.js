@@ -1327,9 +1327,11 @@ export class ArtworkScene {
     postProcessingRequest = POST_PROCESSING_MODES.WEBGL_GLSL_POST,
     captureMode = false,
     art = null,
-    navigatorRef = typeof window !== 'undefined' ? window.navigator : null
+    navigatorRef = typeof window !== 'undefined' ? window.navigator : null,
+    onLoadProgress = null
   } = {}) {
     this.canvas = canvas;
+    this.onLoadProgress = typeof onLoadProgress === 'function' ? onLoadProgress : null;
     this.rendererCompatibilityFacts = resolveImmersiveWorldRendererCompatibilityFacts(art);
     this.rendererRequest = resolveImmersiveWorldRendererRequest({
       art,
@@ -1469,6 +1471,10 @@ export class ArtworkScene {
 
   setMotionIntensity(intensity = 1) {
     this.motionIntensity = Math.max(0, Math.min(1, Number(intensity) || 0));
+  }
+
+  emitLoadProgress(progress, label) {
+    this.onLoadProgress?.({ progress, label });
   }
 
   setCaptureMode(enabled = false, freezeTime = 1.234) {
@@ -1616,6 +1622,7 @@ export class ArtworkScene {
     this.clearWorld();
     applyImmersiveWorldOutputColorTransform(this, world);
     const environment = this.applyEnvironment(world);
+    this.emitLoadProgress(0.48, 'Building environment');
     this.applyLighting(world);
     const camera = this.applyCamera(world);
 
@@ -1623,6 +1630,8 @@ export class ArtworkScene {
     try {
       for (const [index, part] of parts.entries()) {
         if (!isCurrentApply()) return false;
+        const progress = 0.54 + (index / Math.max(1, parts.length)) * 0.34;
+        this.emitLoadProgress(progress, `Building part ${index + 1}/${parts.length}`);
         const builtPart = await this.buildPart({ part, world, config, index, generation });
         if (!isCurrentApply()) return false;
         if (!builtPart) return false;

@@ -175,7 +175,7 @@ export function createArchiveInteractionController({
     if (captureMode) {
       await runtimeController?.bootSceneNow?.();
     } else {
-      runtimeController?.requestDeferredSceneBoot?.();
+      await runtimeController?.bootSceneNow?.();
       render.startAdaptiveOverlayLoop?.();
       appendArchiveItems();
     }
@@ -214,12 +214,6 @@ export function createArchiveInteractionController({
     if (lowerKey === 'i') {
       event.preventDefault?.();
       render.applyViewMode?.(state.viewMode === 'story' ? 'lab' : 'story');
-      return true;
-    }
-
-    if (lowerKey === 'm') {
-      event.preventDefault?.();
-      render.applyMotionMode?.(state.motionMode === 'reduced' ? 'full' : 'reduced');
       return true;
     }
 

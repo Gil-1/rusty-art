@@ -49,7 +49,6 @@ export function setFocusMode(enabled, {
 }
 
 export function applyMotionMode(nextMode, {
-  modeReducedMotion,
   onMotionChange = null,
   body = defaultBody(),
   storage = defaultStorage(),
@@ -58,12 +57,6 @@ export function applyMotionMode(nextMode, {
   const motionMode = nextMode === 'reduced' ? 'reduced' : 'full';
   if (body?.dataset) body.dataset.motionMode = motionMode;
   storage?.setItem?.(storageKeys.motionMode, motionMode);
-
-  const reduced = motionMode === 'reduced';
-  if (modeReducedMotion) {
-    modeReducedMotion.setAttribute('aria-pressed', String(reduced));
-    modeReducedMotion.textContent = reduced ? 'Motion: calm' : 'Calm motion';
-  }
 
   if (typeof onMotionChange === 'function') {
     onMotionChange(motionMode);

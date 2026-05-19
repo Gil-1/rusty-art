@@ -52,10 +52,12 @@ export function queryRuntimeDomRefs(documentRef = document) {
     quickPicker: documentRef.getElementById('quick-picker'),
     quickPosition: documentRef.getElementById('quick-position'),
     loadState: documentRef.getElementById('load-state'),
+    sceneProgress: documentRef.getElementById('scene-progress'),
+    sceneProgressBar: documentRef.getElementById('scene-progress-bar'),
+    sceneProgressLabel: documentRef.getElementById('scene-progress-label'),
     modeStory: documentRef.getElementById('mode-story'),
     modeLab: documentRef.getElementById('mode-lab'),
     modeFocus: documentRef.getElementById('mode-focus'),
-    modeReducedMotion: documentRef.getElementById('mode-reduced-motion'),
     metaModeStory: documentRef.getElementById('meta-mode-story'),
     metaModeLab: documentRef.getElementById('meta-mode-lab'),
     statusBanner: documentRef.getElementById('status-banner'),
@@ -91,7 +93,6 @@ export function installRuntimeShellEventBindings({
     modeStory,
     modeLab,
     modeFocus,
-    modeReducedMotion,
     metaModeStory,
     metaModeLab,
     mobileChromeToggle,
@@ -108,7 +109,6 @@ export function installRuntimeShellEventBindings({
   addRuntimeShellBinding(bindings, facts, metaModeStory, 'click', () => actions.onViewMode?.('story'));
   addRuntimeShellBinding(bindings, facts, metaModeLab, 'click', () => actions.onViewMode?.('lab'));
   addRuntimeShellBinding(bindings, facts, modeFocus, 'click', () => actions.onToggleFocus?.());
-  addRuntimeShellBinding(bindings, facts, modeReducedMotion, 'click', () => actions.onToggleReducedMotion?.());
   addRuntimeShellBinding(bindings, facts, mobileChromeToggle, 'click', () => actions.onToggleMobileChrome?.());
   addRuntimeShellBinding(bindings, facts, heroHeadlineToggle, 'click', () => actions.onToggleHeadline?.());
 

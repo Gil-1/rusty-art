@@ -69,7 +69,7 @@ export function showFallback({ fallbackPanel, fallbackMessage, retryLoad }, mess
 }
 
 function renderScoreChips(breakdown = []) {
-  if (!breakdown.length) return '<span class="small">No quality breakdown available.</span>';
+  if (!breakdown.length) return '';
 
   return `<div>${breakdown
     .map((item) => `<span class="score-chip">${escapeHtml(item.label)}: ${escapeHtml(item.value)}</span>`)
@@ -77,7 +77,7 @@ function renderScoreChips(breakdown = []) {
 }
 
 function renderPaletteSwatches(palette = []) {
-  if (!palette.length) return '<span class="small">n/a</span>';
+  if (!palette.length) return '';
   return `<span class="palette-swatches">${palette.map((entry) => (
     `<span class="palette-swatch" title="${escapeHtml(`${entry.label}: ${entry.value}`)}">` +
       `<span class="palette-swatch-color" style="background:${escapeHtml(entry.value)}"></span>` +
@@ -86,11 +86,17 @@ function renderPaletteSwatches(palette = []) {
   )).join('')}</span>`;
 }
 
-function renderCreativeBriefList(items = []) {
-  if (!items.length) return '<p class="meta-line"><span class="small">Key parts:</span> n/a</p>';
+function renderMetaLine(label, value, { html = false } = {}) {
+  const available = html ? String(value || '').trim() : String(value ?? '').trim();
+  if (!available) return '';
+  return `<p class="meta-line"><span class="small">${escapeHtml(label)}:</span> ${html ? value : escapeHtml(value)}</p>`;
+}
+
+function renderCreativeBriefList(items = [], label = 'Key parts') {
+  if (!items.length) return '';
   return `
     <div class="meta-line">
-      <span class="small">Key parts:</span>
+      <span class="small">${escapeHtml(label)}:</span>
       <ul class="meta-list">
         ${items.map((item) => `
           <li>
@@ -106,34 +112,91 @@ function renderCreativeBriefList(items = []) {
 function renderArtDirectionSection(facts) {
   const rationale = facts.rationale;
   if (rationale.legacyIntent) {
+    const rows = [
+      renderMetaLine('Signal', rationale.signal),
+      renderMetaLine('Emotion', rationale.emotion),
+      renderMetaLine(
+        'Tension / Balance / Motion',
+        [rationale.tension, rationale.balance, rationale.motion].filter(Boolean).join(' · ')
+      ),
+      renderMetaLine('Style card', rationale.styleCard),
+      renderMetaLine('Selection rationale', rationale.selectionRationale),
+      renderMetaLine('Signal terms', rationale.signalTermsLabel),
+      renderMetaLine('Visual mapping', rationale.visualMapping)
+    ].filter(Boolean);
+    if (!rows.length) return '';
     return `
       <section class="meta-section">
         <h4>Art direction</h4>
-        <p class="meta-line"><span class="small">Signal:</span> ${escapeHtml(rationale.signal)}</p>
-        <p class="meta-line"><span class="small">Emotion:</span> ${escapeHtml(rationale.emotion)}</p>
-        <p class="meta-line"><span class="small">Tension / Balance / Motion:</span> ${escapeHtml(rationale.tension)} · ${escapeHtml(rationale.balance)} · ${escapeHtml(rationale.motion)}</p>
-        <p class="meta-line"><span class="small">Style card:</span> ${escapeHtml(rationale.styleCard)}</p>
-        <p class="meta-line"><span class="small">Selection rationale:</span> ${escapeHtml(rationale.selectionRationale)}</p>
-        <p class="meta-line"><span class="small">Signal terms:</span> ${escapeHtml(rationale.signalTermsLabel)}</p>
-        <p class="meta-line"><span class="small">Visual mapping:</span> ${escapeHtml(rationale.visualMapping)}</p>
+        ${rows.join('')}
       </section>
     `;
   }
 
   const brief = rationale.creativeBrief || {};
+  const palette = renderPaletteSwatches(brief.palette);
+  const expression = ['tension', 'structure', 'motion', 'urgency', 'contrast']
+    .map((key) => brief.expression?.[key] ? `${key} ${brief.expression[key]}` : null)
+    .filter(Boolean)
+    .join(' · ');
+  const rows = [
+    renderMetaLine('Image', brief.image),
+    renderMetaLine('Arc', brief.arc),
+    renderMetaLine('Composition', brief.composition),
+    renderMetaLine('Motif', brief.motif),
+    palette ? renderMetaLine('Palette', palette, { html: true }) : '',
+    renderMetaLine('Expression', expression),
+    renderMetaLine('Environment', brief.environment),
+    renderMetaLine('Renderer', brief.rendererStatus),
+    renderMetaLine('Modules', brief.modulesLabel),
+    renderMetaLine('Translation trace', brief.translationTraceLabel),
+    renderMetaLine('Selection rationale', rationale.selectionRationale)
+  ].filter(Boolean);
+  const partList = renderCreativeBriefList(
+    brief.keyParts,
+    brief.kind === 'immersive-world' ? 'World parts' : 'Key parts'
+  );
+  if (!rows.length && !partList) return '';
   return `
     <section class="meta-section">
       <h4>Art direction</h4>
-      <p class="meta-line"><span class="small">Image:</span> ${escapeHtml(brief.image)}</p>
-      <p class="meta-line"><span class="small">Arc:</span> ${escapeHtml(brief.arc)}</p>
-      <p class="meta-line"><span class="small">Composition:</span> ${escapeHtml(brief.composition)}</p>
-      <p class="meta-line"><span class="small">Motif:</span> ${escapeHtml(brief.motif)}</p>
-      <p class="meta-line"><span class="small">Palette:</span> ${renderPaletteSwatches(brief.palette)}</p>
-      ${renderCreativeBriefList(brief.keyParts)}
-      <p class="meta-line"><span class="small">Expression:</span> tension ${escapeHtml(brief.expression?.tension)} · structure ${escapeHtml(brief.expression?.structure)} · motion ${escapeHtml(brief.expression?.motion)} · urgency ${escapeHtml(brief.expression?.urgency)} · contrast ${escapeHtml(brief.expression?.contrast)}</p>
-      <p class="meta-line"><span class="small">Modules:</span> ${escapeHtml(brief.modulesLabel)}</p>
-      <p class="meta-line"><span class="small">Translation trace:</span> ${escapeHtml(brief.translationTraceLabel)}</p>
-      <p class="meta-line"><span class="small">Selection rationale:</span> ${escapeHtml(rationale.selectionRationale)}</p>
+      ${rows.join('')}
+      ${partList}
+    </section>
+  `;
+}
+
+function renderQualitySection(quality = {}) {
+  if (!quality.available) return '';
+  const scoreRows = [
+    renderMetaLine('Score', quality.score),
+    quality.heuristicScore || quality.feedbackCalibratedScore
+      ? renderMetaLine(
+          'Heuristic / Feedback-calibrated',
+          [quality.heuristicScore, quality.feedbackCalibratedScore].filter(Boolean).join(' · ')
+        )
+      : ''
+  ].filter(Boolean);
+  const breakdown = quality.breakdown?.length ? renderScoreChips(quality.breakdown) : '';
+  const alignment = [
+    quality.alignment?.total ? `total ${quality.alignment.total}` : null,
+    quality.alignment?.title ? `title ${quality.alignment.title}` : null,
+    quality.alignment?.style ? `style ${quality.alignment.style}` : null,
+    quality.alignment?.emotional ? `emotional ${quality.alignment.emotional}` : null
+  ].filter(Boolean).join(' · ');
+  const calibration = [
+    quality.calibration?.sampleCount ? `sample ${quality.calibration.sampleCount}` : null,
+    quality.calibration?.trustWeight ? `trust ${quality.calibration.trustWeight}` : null
+  ].filter(Boolean).join(' · ');
+  return `
+    <section class="meta-section meta-section--quality">
+      <h4>Quality lens</h4>
+      ${scoreRows.join('')}
+      ${breakdown}
+      ${renderMetaLine('Alignment', alignment)}
+      ${renderMetaLine('Calibration', calibration)}
+      ${quality.summary ? `<p class="small">${escapeHtml(quality.summary)}</p>` : ''}
+      ${quality.rendererNote ? `<p class="small">${escapeHtml(quality.rendererNote)}</p>` : ''}
     </section>
   `;
 }
@@ -167,6 +230,17 @@ export function applyLoadingFacts({ artFirst, loadState, quickPicker, quickPrev,
   return facts;
 }
 
+export function applySceneProgressFacts({ sceneProgress, sceneProgressBar, sceneProgressLabel }, facts = {}) {
+  if (!sceneProgress) return facts;
+  const active = facts.active !== false && !facts.hidden;
+  sceneProgress.hidden = !active;
+  sceneProgress.setAttribute('aria-busy', String(active));
+  const progress = Math.max(0, Math.min(1, Number(facts.progress) || 0));
+  if (sceneProgressBar) sceneProgressBar.style.width = `${Math.round(progress * 100)}%`;
+  if (sceneProgressLabel) sceneProgressLabel.textContent = facts.label || 'Preparing scene';
+  return facts;
+}
+
 export function setLoadingState(elements, isLoading, manifest, activeIndex) {
   return applyLoadingFacts(elements, buildLoadingPresentationFacts({ isLoading, manifest, activeIndex }));
 }
@@ -185,10 +259,12 @@ export function renderMeta(meta, artOrFacts, sceneInitError) {
   const { meta: facts } = resolvePublicArtworkPresentationFacts(artOrFacts, { sceneInitError });
   const articleLink = facts.links.article.available
     ? `<a href="${escapeHtml(facts.links.article.href)}" target="_blank" rel="noreferrer">${escapeHtml(facts.links.article.label)}</a>`
-    : `<span class="small">${escapeHtml(facts.links.article.label)}</span>`;
+    : '';
   const artistLinkItems = facts.links.artist.items.map((link) => (
     `<a href="${escapeHtml(link.href)}" target="_blank" rel="noreferrer">${escapeHtml(link.label)}</a>`
   ));
+  const artistLinks = artistLinkItems.length ? `<div class="meta-links">${artistLinkItems.join('')}</div>` : '';
+  const qualitySection = renderQualitySection(facts.quality);
 
   meta.innerHTML = `
     <div class="meta-header">
@@ -200,25 +276,12 @@ export function renderMeta(meta, artOrFacts, sceneInitError) {
       <h4>News provenance</h4>
       <p class="meta-line"><span class="small">Headline:</span> ${escapeHtml(facts.news.headline)}</p>
       <p class="meta-line"><span class="small">Source:</span> ${escapeHtml(facts.news.source)}</p>
-      <p class="meta-line">${articleLink}</p>
-      <div class="meta-links">
-        ${artistLinkItems.length ? artistLinkItems.join('') : `<span class="small">${escapeHtml(facts.links.artist.fallbackLabel)}</span>`}
-      </div>
+      ${articleLink ? `<p class="meta-line">${articleLink}</p>` : ''}
+      ${artistLinks}
     </section>
 
     ${renderArtDirectionSection(facts)}
-
-    <section class="meta-section meta-section--quality">
-      <h4>Quality lens</h4>
-      <p class="meta-line"><span class="small">Score:</span> ${escapeHtml(facts.quality.score)}</p>
-      <p class="meta-line"><span class="small">Heuristic:</span> ${escapeHtml(facts.quality.heuristicScore)} ·
-      <span class="small">Feedback-calibrated:</span> ${escapeHtml(facts.quality.feedbackCalibratedScore)}</p>
-      ${renderScoreChips(facts.quality.breakdown)}
-      <p class="meta-line"><span class="small">Alignment:</span> total ${escapeHtml(facts.quality.alignment.total)} · title ${escapeHtml(facts.quality.alignment.title)} · style ${escapeHtml(facts.quality.alignment.style)} · emotional ${escapeHtml(facts.quality.alignment.emotional)}</p>
-      <p class="meta-line"><span class="small">Calibration sample:</span> ${escapeHtml(facts.quality.calibration.sampleCount)} · trust ${escapeHtml(facts.quality.calibration.trustWeight)}</p>
-      <p class="small">${escapeHtml(facts.quality.summary)}</p>
-      ${facts.quality.rendererNote ? `<p class="small">${escapeHtml(facts.quality.rendererNote)}</p>` : ''}
-    </section>
+    ${qualitySection}
   `;
   return facts;
 }

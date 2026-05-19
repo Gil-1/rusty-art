@@ -26,19 +26,19 @@ function normalizedColor(value) {
   return text && /^#[0-9a-f]{3,8}$/i.test(text) ? text : null;
 }
 
-function labelValue(value, fallback = 'n/a') {
-  return value == null ? fallback : String(value);
+function optionalLabelValue(value) {
+  return value == null ? null : String(value);
 }
 
-function compactMetric(value, fallback = 'n/a') {
+function compactMetricOptional(value) {
   const number = Number(value);
-  if (!Number.isFinite(number)) return fallback;
+  if (!Number.isFinite(number)) return null;
   return number.toFixed(2).replace(/0+$/, '').replace(/\.$/, '');
 }
 
-function numericLabel(value, { suffix = '', fallback = 'n/a' } = {}) {
+function optionalNumericLabel(value, { suffix = '' } = {}) {
   const number = Number(value);
-  if (!Number.isFinite(number)) return fallback;
+  if (!Number.isFinite(number)) return null;
   return `${number.toFixed(1)}${suffix}`;
 }
 
@@ -97,15 +97,81 @@ function buildModuleFacts(report = {}) {
     .slice(0, 6);
 }
 
+function buildWorldModuleFacts(world = {}) {
+  return (Array.isArray(world?.generatedModules) ? world.generatedModules : [])
+    .map((module) => normalizedOptionalText(module?.moduleId || module?.id || module?.file || module?.url))
+    .filter(Boolean)
+    .slice(0, 6);
+}
+
 function buildTranslationTraceFacts(mappings = []) {
   if (!Array.isArray(mappings)) return [];
   return mappings
     .map((mapping) => normalizedOptionalText(mapping?.visualDecision))
+    .filter((text) => text && !/\bn\/a\b/i.test(text))
     .filter(Boolean)
     .slice(0, 4);
 }
 
+function buildImmersiveWorldPartFacts(parts = []) {
+  if (!Array.isArray(parts)) return [];
+  return parts
+    .map((part) => {
+      const source = asObject(part);
+      const label = normalizedOptionalText(source.role)
+        || normalizedOptionalText(source.partId)
+        || normalizedOptionalText(source.id);
+      const detail = normalizedOptionalText(source.params?.supportRole)
+        || normalizedOptionalText(source.params?.visibilityPriority);
+      return label ? {
+        label,
+        detail: detail && detail !== label ? detail : null,
+        role: normalizedOptionalText(source.role),
+        layer: normalizedOptionalText(source.params?.band),
+        moduleType: normalizedOptionalText(source.moduleRef?.moduleId)
+      } : null;
+    })
+    .filter(Boolean)
+    .slice(0, 5);
+}
+
+function buildImmersiveWorldBriefFacts({ source, mappings }) {
+  const world = asObject(source.world);
+  const environment = asObject(world.environment);
+  const renderFacts = asObject(world.renderFacts);
+  const rendererCompatibility = asObject(world.rendererCompatibility);
+  const keyParts = buildImmersiveWorldPartFacts(world.parts);
+  const modules = buildWorldModuleFacts(world);
+  const translationTrace = buildTranslationTraceFacts(mappings);
+  const environmentKind = normalizedOptionalText(environment.kind);
+  const rendererStatus = normalizedOptionalText(renderFacts.rendererCompatibilityStatus || rendererCompatibility.compatibilityStatus);
+
+  return {
+    kind: 'immersive-world',
+    image: null,
+    arc: null,
+    composition: null,
+    motif: null,
+    palette: [],
+    paletteLabel: null,
+    keyParts,
+    keyPartsLabel: keyParts.length ? keyParts.map((part) => part.label).join(' · ') : null,
+    expression: {},
+    modules,
+    modulesLabel: modules.length ? modules.join(', ') : null,
+    translationTrace,
+    translationTraceLabel: translationTrace.length ? translationTrace.join(' | ') : null,
+    environment: environmentKind,
+    rendererStatus,
+    available: Boolean(environmentKind || rendererStatus || keyParts.length || modules.length || translationTrace.length)
+  };
+}
+
 function buildCreativeBriefFacts({ source, mappings }) {
+  if (source?.artCreationMethod === 'immersive-world-v1' || source?.world) {
+    return buildImmersiveWorldBriefFacts({ source, mappings });
+  }
+
   const scene = asObject(source.scene);
   const sceneAuthoring = asObject(scene.sceneAuthoring);
   const artisticIntent = asObject(sceneAuthoring.artisticIntent);
@@ -116,25 +182,38 @@ function buildCreativeBriefFacts({ source, mappings }) {
   const translationTrace = buildTranslationTraceFacts(mappings);
 
   return {
-    image: normalizedText(artisticIntent.statement, 'Scene authoring brief unavailable.'),
-    arc: normalizedText(artisticIntent.emotionalArc, 'Emotional arc unavailable.'),
-    composition: normalizedText(artisticIntent.compositionLogic, 'Composition logic unavailable.'),
-    motif: normalizedText(artisticIntent.motif, normalizedText(scene.motif, 'n/a')),
+    kind: 'legacy-scene',
+    image: normalizedOptionalText(artisticIntent.statement),
+    arc: normalizedOptionalText(artisticIntent.emotionalArc),
+    composition: normalizedOptionalText(artisticIntent.compositionLogic),
+    motif: normalizedOptionalText(artisticIntent.motif) || normalizedOptionalText(scene.motif),
     palette,
-    paletteLabel: palette.length ? palette.map((entry) => `${entry.label} ${entry.value}`).join(' · ') : 'n/a',
+    paletteLabel: palette.length ? palette.map((entry) => `${entry.label} ${entry.value}`).join(' · ') : null,
     keyParts,
-    keyPartsLabel: keyParts.length ? keyParts.map((part) => part.label).join(' · ') : 'n/a',
+    keyPartsLabel: keyParts.length ? keyParts.map((part) => part.label).join(' · ') : null,
     expression: {
-      tension: compactMetric(expression.tension),
-      structure: compactMetric(expression.structure),
-      motion: compactMetric(expression.motion),
-      urgency: compactMetric(expression.urgency),
-      contrast: compactMetric(expression.contrast)
+      tension: compactMetricOptional(expression.tension),
+      structure: compactMetricOptional(expression.structure),
+      motion: compactMetricOptional(expression.motion),
+      urgency: compactMetricOptional(expression.urgency),
+      contrast: compactMetricOptional(expression.contrast)
     },
     modules,
-    modulesLabel: modules.length ? modules.join(', ') : 'n/a',
+    modulesLabel: modules.length ? modules.join(', ') : null,
     translationTrace,
-    translationTraceLabel: translationTrace.length ? translationTrace.join(' | ') : 'n/a'
+    translationTraceLabel: translationTrace.length ? translationTrace.join(' | ') : null,
+    available: Boolean(
+      artisticIntent.statement
+      || artisticIntent.emotionalArc
+      || artisticIntent.compositionLogic
+      || artisticIntent.motif
+      || scene.motif
+      || palette.length
+      || keyParts.length
+      || modules.length
+      || translationTrace.length
+      || Object.values(expression).some((value) => Number.isFinite(Number(value)))
+    )
   };
 }
 
@@ -185,11 +264,11 @@ export function buildPublicArtworkLinkFacts(art = {}) {
     article: {
       available: articleAvailable,
       href: articleAvailable ? articleHref : null,
-      label: articleAvailable ? 'Open article' : 'Article link unavailable (fallback headline).'
+      label: articleAvailable ? 'Open article' : null
     },
     artist: {
       items: artistLinkFacts,
-      fallbackLabel: 'Artist links unavailable.'
+      fallbackLabel: null
     }
   };
 }
@@ -210,8 +289,9 @@ export function buildPublicArtworkRationaleFacts(art = {}) {
   const mappings = Array.isArray(source.newsVisualMappings) ? source.newsVisualMappings : [];
   const visualMapping = mappings
     .slice(0, 2)
-    .map((mapping) => mapping?.visualDecision)
-    .join(' | ') || 'n/a';
+    .map((mapping) => normalizedOptionalText(mapping?.visualDecision))
+    .filter(Boolean)
+    .join(' | ') || null;
   const styleCardLabel = Object.values(styleCard)
     .map((value) => normalizedText(value))
     .filter(Boolean)
@@ -219,15 +299,15 @@ export function buildPublicArtworkRationaleFacts(art = {}) {
 
   return {
     legacyIntent,
-    signal: normalizedText(intent.signal, 'Translate top headline signal into abstract form.'),
-    emotion: normalizedText(intent.emotion, 'Measured tension.'),
-    tension: normalizedText(intent.tension, 'n/a'),
-    balance: normalizedText(intent.balance, 'n/a'),
-    motion: normalizedText(intent.motion, 'n/a'),
-    styleCard: styleCardLabel,
-    selectionRationale: normalizedText(selection.whyHeadline, 'Top-ranked daily headline.'),
+    signal: normalizedOptionalText(intent.signal),
+    emotion: normalizedOptionalText(intent.emotion),
+    tension: normalizedOptionalText(intent.tension),
+    balance: normalizedOptionalText(intent.balance),
+    motion: normalizedOptionalText(intent.motion),
+    styleCard: styleCardLabel === 'default' ? null : styleCardLabel,
+    selectionRationale: normalizedOptionalText(selection.whyHeadline),
     signalTerms: priorityTerms,
-    signalTermsLabel: priorityTerms.length ? priorityTerms.join(', ') : 'none',
+    signalTermsLabel: priorityTerms.length ? priorityTerms.join(', ') : null,
     visualMapping,
     creativeBrief: buildCreativeBriefFacts({ source, mappings })
   };
@@ -244,29 +324,34 @@ export function buildPublicArtworkQualityFacts(art = {}, { sceneInitError = null
   const alignment = asObject(firstPresent(quality.alignment, frameworkQuality.alignment));
   const alignmentComponents = asObject(alignment.components);
 
+  const breakdownFacts = Object.entries(breakdown).map(([label, value]) => ({
+    label,
+    value: optionalNumericLabel(value)
+  })).filter((entry) => entry.value);
+  const score = optionalNumericLabel(quality.score, { suffix: ' / 100' });
+  const heuristicScore = optionalNumericLabel(heuristic.score);
+  const feedbackCalibratedScore = optionalNumericLabel(quality.score);
+  const summary = normalizedOptionalText(firstPresent(quality.summary, rationale.qualitySummary));
+  const rendererNote = sceneInitError?.message ? `Renderer note: ${sceneInitError.message}` : null;
+
   return {
-    score: numericLabel(quality.score, { suffix: ' / 100' }),
-    heuristicScore: numericLabel(heuristic.score),
-    feedbackCalibratedScore: numericLabel(quality.score),
-    breakdown: Object.entries(breakdown).map(([label, value]) => ({
-      label,
-      value: numericLabel(value)
-    })),
+    available: Boolean(score || heuristicScore || feedbackCalibratedScore || breakdownFacts.length || summary || rendererNote),
+    score,
+    heuristicScore,
+    feedbackCalibratedScore,
+    breakdown: breakdownFacts,
     alignment: {
-      total: labelValue(alignment.totalAlign),
-      title: labelValue(alignmentComponents.title?.score),
-      style: labelValue(alignmentComponents.style?.score),
-      emotional: labelValue(alignmentComponents.emotional?.score)
+      total: optionalLabelValue(alignment.totalAlign),
+      title: optionalLabelValue(alignmentComponents.title?.score),
+      style: optionalLabelValue(alignmentComponents.style?.score),
+      emotional: optionalLabelValue(alignmentComponents.emotional?.score)
     },
     calibration: {
-      sampleCount: labelValue(calibration.sampleCount, '0'),
-      trustWeight: labelValue(calibration.trustWeight, '0')
+      sampleCount: optionalLabelValue(calibration.sampleCount),
+      trustWeight: optionalLabelValue(calibration.trustWeight)
     },
-    summary: normalizedText(
-      firstPresent(quality.summary, rationale.qualitySummary),
-      'Score blends heuristics with user-feedback calibration and explicit penalties.'
-    ),
-    rendererNote: sceneInitError?.message ? `Renderer note: ${sceneInitError.message}` : null
+    summary,
+    rendererNote
   };
 }
 

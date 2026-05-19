@@ -139,6 +139,7 @@ export function createRuntimeController({
   importWebGPUProjectSceneModule = () => import('./webgpu-diagnostic-scene.js'),
   onSceneBooted = () => {},
   onSceneStatusChange = () => {},
+  onSceneLoadProgress = () => {},
   windowRef = typeof window !== 'undefined' ? window : globalThis,
   navigatorRef = windowRef.navigator || (typeof navigator !== 'undefined' ? navigator : null),
   observerFactory = typeof IntersectionObserver !== 'undefined'
@@ -153,6 +154,10 @@ export function createRuntimeController({
   let sceneLoadPromise = null;
   let sceneLoadKind = null;
   let deferredSceneBootScheduler = null;
+
+  function emitSceneProgress(progress, label, active = true) {
+    onSceneLoadProgress({ active, hidden: !active, progress, label });
+  }
 
   function setCanvasVisible(visible) {
     if (canvas?.style) canvas.style.display = visible ? '' : 'none';
@@ -203,11 +208,13 @@ export function createRuntimeController({
 
     sceneLoadPromise = (async () => {
       try {
+        emitSceneProgress(0.08, 'Preparing renderer');
         const module = targetSceneKind === 'webgpu-project-diagnostic-v1'
           ? await importWebGPUProjectSceneModule()
           : targetSceneKind === 'immersive-world-v1'
             ? await importImmersiveWorldSceneModule()
             : await importSceneModule();
+        emitSceneProgress(0.24, 'Loading scene modules');
         const { ArtworkScene } = module;
         scene = new ArtworkScene(canvas, {
           rendererRequest,
@@ -215,7 +222,11 @@ export function createRuntimeController({
           captureMode,
           art,
           sceneKind: targetSceneKind,
-          navigatorRef
+          navigatorRef,
+          onLoadProgress: (event = {}) => {
+            const progress = Number.isFinite(event.progress) ? event.progress : 0.5;
+            emitSceneProgress(progress, event.label || 'Assembling scene');
+          }
         });
         sceneKind = targetSceneKind;
         sceneInitError = null;
@@ -258,6 +269,7 @@ export function createRuntimeController({
     const activeScene = await ensureScene({ art });
     if (!activeScene || !shouldContinue()) return false;
 
+    emitSceneProgress(0.38, 'Assembling artwork');
     captureStateController?.update({ artworkLoaded: true, artworkId: art?.id || null });
     let applied;
     try {
@@ -269,10 +281,12 @@ export function createRuntimeController({
         error: error.message,
         sceneAssemblyReport: error.sceneAssemblyReport || activeScene.getAssemblyReport?.() || null
       });
+      emitSceneProgress(1, 'Scene failed', false);
       throw err;
     }
     if (!applied || !shouldContinue()) return false;
 
+    emitSceneProgress(0.92, 'Rendering first frame');
     if (waitForRenderedFrame && typeof activeScene.waitForRenderedFrame === 'function') {
       await activeScene.waitForRenderedFrame(3000);
       if (!shouldContinue()) return false;
@@ -291,6 +305,7 @@ export function createRuntimeController({
       outputColorTransformMode: rendererDiagnostics.outputColorTransformMode || null,
       sceneAssemblyReport: activeScene.getAssemblyReport?.() || null
     });
+    emitSceneProgress(1, 'Scene ready', false);
     return true;
   }
 
@@ -329,6 +344,7 @@ export function createRuntimeController({
         error: sceneInitError?.message || 'Scene initialization failed.'
       });
       onSceneStatusChange();
+      emitSceneProgress(1, 'Renderer unavailable', false);
       return null;
     }
 

@@ -16,6 +16,7 @@ import {
 } from './main-chrome-effects.js';
 import {
   populateQuickPicker as populateQuickPickerUi,
+  applySceneProgressFacts,
   renderMeta as renderMetaUi,
   setLoadingState,
   showFallback as showFallbackUi,
@@ -119,7 +120,6 @@ export function createRuntimeRenderEffects({
 
   function applyMotionMode(nextMode) {
     return updateState((state) => applyMotionModeEffects(state, nextMode, {
-      modeReducedMotion: refs.modeReducedMotion,
       body,
       onMotionChange: () => runtimeController?.updateMotionIntensity?.()
     }));
@@ -171,6 +171,14 @@ export function createRuntimeRenderEffects({
       quickPrev: refs.quickPrev,
       quickNext: refs.quickNext
     }, isLoading, manifest, activeIndex);
+  }
+
+  function setSceneProgress(progress = {}) {
+    return applySceneProgressFacts({
+      sceneProgress: refs.sceneProgress,
+      sceneProgressBar: refs.sceneProgressBar,
+      sceneProgressLabel: refs.sceneProgressLabel
+    }, progress);
   }
 
   function populateQuickPicker(manifest = resolveController(getArchiveController)?.getManifest?.()) {
@@ -332,6 +340,7 @@ export function createRuntimeRenderEffects({
       facts.currentArtworkLumaEstimate = lumaEstimate;
     },
     renderMeta,
+    setSceneProgress,
     updateHeroNow,
     refreshActiveArchiveItem,
     syncQuickControls,

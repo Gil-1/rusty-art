@@ -1,5 +1,5 @@
 import { existsSync } from 'node:fs';
-import { cp, rm } from 'node:fs/promises';
+import { cp, readFile, readdir, rm, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 
 export const RUNTIME_DATA_COPY_DEFAULTS = Object.freeze({
@@ -52,6 +52,33 @@ async function adapterPathExists(adapter, filePath) {
   return existsSync(filePath);
 }
 
+async function listJsonFiles(dirPath, adapter) {
+  const entries = await adapter.readdir(dirPath, { withFileTypes: true });
+  const files = [];
+  for (const entry of entries) {
+    const nextPath = path.join(dirPath, entry.name);
+    if (entry.isDirectory()) {
+      files.push(...await listJsonFiles(nextPath, adapter));
+    } else if (entry.isFile() && entry.name.endsWith('.json')) {
+      files.push(nextPath);
+    }
+  }
+  return files;
+}
+
+async function minifyJsonTree(root, adapter) {
+  const exists = await adapterPathExists(adapter, root);
+  if (!exists) return { minified: 0 };
+  const files = await listJsonFiles(root, adapter);
+  let minified = 0;
+  for (const filePath of files) {
+    const raw = await adapter.readFile(filePath, 'utf8');
+    await adapter.writeFile(filePath, JSON.stringify(JSON.parse(raw)), 'utf8');
+    minified += 1;
+  }
+  return { minified };
+}
+
 export async function executeRuntimeDataCopyPlan(plan, fsAdapter = {}) {
   if (!plan || !Array.isArray(plan.actions)) throw new Error('Runtime data copy plan actions are required.');
 
@@ -59,9 +86,13 @@ export async function executeRuntimeDataCopyPlan(plan, fsAdapter = {}) {
     existsSync,
     rm,
     cp,
+    readdir,
+    readFile,
+    writeFile,
     ...fsAdapter
   };
   const results = [];
+  let minifyResult = { minified: 0 };
 
   for (const action of plan.actions) {
     if (action.type === 'remove') {
@@ -79,6 +110,7 @@ export async function executeRuntimeDataCopyPlan(plan, fsAdapter = {}) {
 
       await adapter.cp(action.source, action.target, action.options || {});
       results.push({ id: action.id, type: action.type, source: action.source, target: action.target, status: 'ok' });
+      minifyResult = await minifyJsonTree(action.target, adapter);
       continue;
     }
 
@@ -89,6 +121,7 @@ export async function executeRuntimeDataCopyPlan(plan, fsAdapter = {}) {
     source: plan.source,
     target: plan.target,
     results,
-    copied: results.some((result) => result.id === 'copy-runtime-data' && result.status === 'ok')
+    copied: results.some((result) => result.id === 'copy-runtime-data' && result.status === 'ok'),
+    minifiedJsonFiles: minifyResult.minified
   };
 }

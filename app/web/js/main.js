@@ -50,10 +50,12 @@ const {
   quickPicker,
   quickPosition,
   loadState,
+  sceneProgress,
+  sceneProgressBar,
+  sceneProgressLabel,
   modeStory,
   modeLab,
   modeFocus,
-  modeReducedMotion,
   metaModeStory,
   metaModeLab,
   statusBanner,
@@ -99,7 +101,8 @@ const runtimeController = createRuntimeController({
     renderEffects?.applyAdaptiveOverlay?.();
     renderEffects?.startAdaptiveOverlayLoop?.();
   },
-  onSceneStatusChange: () => renderEffects?.render?.syncRenderStatus?.()
+  onSceneStatusChange: () => renderEffects?.render?.syncRenderStatus?.(),
+  onSceneLoadProgress: (progress) => renderEffects?.render?.setSceneProgress?.(progress)
 });
 
 renderEffects = createRuntimeRenderEffects({
@@ -118,10 +121,12 @@ renderEffects = createRuntimeRenderEffects({
     quickPicker,
     quickPosition,
     loadState,
+    sceneProgress,
+    sceneProgressBar,
+    sceneProgressLabel,
     modeStory,
     modeLab,
     modeFocus,
-    modeReducedMotion,
     metaModeStory,
     metaModeLab,
     statusBanner,
@@ -188,7 +193,6 @@ bindRuntimeShellEvents({
     modeStory,
     modeLab,
     modeFocus,
-    modeReducedMotion,
     metaModeStory,
     metaModeLab,
     mobileChromeToggle,
@@ -209,7 +213,6 @@ bindRuntimeShellEvents({
     onQuickPickerChange: (event) => archiveController.handleQuickPickerChange(event).catch(() => {}),
     onViewMode: renderEffects.applyViewMode,
     onToggleFocus: () => renderEffects.setFocusMode(!presentationState.focusMode),
-    onToggleReducedMotion: () => renderEffects.applyMotionMode(presentationState.motionMode === 'reduced' ? 'full' : 'reduced'),
     onToggleMobileChrome: renderEffects.toggleMobileChrome,
     onToggleHeadline: renderEffects.toggleHeadline,
     onPointerDown: renderEffects.markMobileChromeInteraction,

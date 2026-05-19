@@ -289,6 +289,44 @@ body::before {
   background: #060c18;
 }
 
+.scene-progress {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  gap: 0.65rem;
+  align-content: center;
+  padding: 1.5rem;
+  background: rgba(5, 9, 19, 0.92);
+  color: var(--text);
+}
+
+.scene-progress-track {
+  width: min(72vw, 420px);
+  height: 0.42rem;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(183, 196, 232, 0.22);
+}
+
+.scene-progress-bar {
+  display: block;
+  width: 0%;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--accent), var(--accent-warm));
+  transition: width 180ms ease;
+}
+
+.scene-progress p {
+  margin: 0;
+  color: #d8e2ff;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
 #art-canvas {
   width: 100vw;
   height: 100vh;
