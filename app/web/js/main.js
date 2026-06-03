@@ -1,3 +1,4 @@
+import { startAnalytics } from './analytics.js';
 import { createArtworkFetcher, loadManifestWithFallback } from './main-data.js';
 import { createPublicArchiveRuntimeSession } from './public-archive-runtime-session.js';
 import { createCaptureStateController } from './main-capture-state.js';
@@ -20,6 +21,8 @@ import { createRuntimeRenderEffects } from './main-render-effects.js';
 import { createArchiveCardElement } from './main-render.js';
 
 const PAGE_SIZE = 12;
+
+startAnalytics();
 
 const shellOptions = resolveRuntimeShellOptions({
   windowRef: window,

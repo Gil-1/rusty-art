@@ -21,6 +21,7 @@ function copyRuntimeDataPlugin() {
 export default defineConfig({
   root: WEB_ROOT,
   base: './',
+  envPrefix: ['VITE_', 'PUBLIC_'],
   server: {
     host: '127.0.0.1',
     port: 5173
