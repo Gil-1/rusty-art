@@ -10,6 +10,15 @@ function cleanAnalyticsId(value, pattern) {
   return pattern.test(id) ? id : '';
 }
 
+function resolveAnalyticsIds(env = import.meta.env) {
+  const publicGtmId = String(env.PUBLIC_GTM_ID || '').trim();
+  return {
+    gaMeasurementId: cleanAnalyticsId(env.PUBLIC_GA_MEASUREMENT_ID, GA4_PATTERN)
+      || cleanAnalyticsId(publicGtmId, GA4_PATTERN),
+    gtmId: cleanAnalyticsId(publicGtmId, GTM_PATTERN)
+  };
+}
+
 function compactAnalyticsParams(params) {
   return Object.fromEntries(
     Object.entries(params).filter(([, value]) => value !== undefined && value !== '')
@@ -17,10 +26,7 @@ function compactAnalyticsParams(params) {
 }
 
 function readAnalyticsConfig(env = import.meta.env) {
-  return {
-    gaMeasurementId: cleanAnalyticsId(env.PUBLIC_GA_MEASUREMENT_ID, GA4_PATTERN),
-    gtmId: cleanAnalyticsId(env.PUBLIC_GTM_ID, GTM_PATTERN)
-  };
+  return resolveAnalyticsIds(env);
 }
 
 function readPageContext({ windowRef = window, documentRef = document, gaMeasurementId = '' } = {}) {

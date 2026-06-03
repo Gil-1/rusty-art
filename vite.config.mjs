@@ -19,6 +19,15 @@ function cleanAnalyticsId(value, pattern) {
   return pattern.test(id) ? id : '';
 }
 
+function resolveAnalyticsIds(env = process.env) {
+  const publicGtmId = String(env.PUBLIC_GTM_ID || '').trim();
+  return {
+    gaMeasurementId: cleanAnalyticsId(env.PUBLIC_GA_MEASUREMENT_ID, GA4_PATTERN)
+      || cleanAnalyticsId(publicGtmId, GA4_PATTERN),
+    gtmId: cleanAnalyticsId(publicGtmId, GTM_PATTERN)
+  };
+}
+
 function buildAnalyticsPageContextScript({ gaMeasurementId = '' } = {}) {
   return `
     window.dataLayer = window.dataLayer || [];
@@ -38,8 +47,7 @@ function analyticsHtmlPlugin() {
   return {
     name: 'rusty-analytics-html',
     transformIndexHtml() {
-      const gaMeasurementId = cleanAnalyticsId(process.env.PUBLIC_GA_MEASUREMENT_ID, GA4_PATTERN);
-      const gtmId = cleanAnalyticsId(process.env.PUBLIC_GTM_ID, GTM_PATTERN);
+      const { gaMeasurementId, gtmId } = resolveAnalyticsIds();
       const tags = [];
 
       if (gtmId) {
