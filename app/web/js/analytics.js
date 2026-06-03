@@ -23,9 +23,10 @@ function readAnalyticsConfig(env = import.meta.env) {
   };
 }
 
-function readPageContext({ windowRef = window, documentRef = document } = {}) {
+function readPageContext({ windowRef = window, documentRef = document, gaMeasurementId = '' } = {}) {
   const locationRef = windowRef.location;
   return compactAnalyticsParams({
+    ga_measurement_id: gaMeasurementId,
     page_location: locationRef.href,
     page_path: `${locationRef.pathname}${locationRef.search}`,
     page_title: documentRef.title?.trim(),
@@ -48,9 +49,10 @@ function appendScript({ documentRef = document, id, src }) {
   documentRef.head.appendChild(script);
 }
 
-function installGoogleTagManager(gtmId, { windowRef = window, documentRef = document } = {}) {
+function installGoogleTagManager(gtmId, { windowRef = window, documentRef = document, gaMeasurementId = '' } = {}) {
   if (!gtmId) return;
-  ensureDataLayer(windowRef).push(readPageContext({ windowRef, documentRef }));
+  if (windowRef.__rustyAnalytics?.gtmId === gtmId) return;
+  ensureDataLayer(windowRef).push(readPageContext({ windowRef, documentRef, gaMeasurementId }));
   ensureDataLayer(windowRef).push({
     'gtm.start': new Date().getTime(),
     event: 'gtm.js'
@@ -64,6 +66,7 @@ function installGoogleTagManager(gtmId, { windowRef = window, documentRef = docu
 
 function installGoogleAnalytics(gaMeasurementId, { windowRef = window, documentRef = document } = {}) {
   if (!gaMeasurementId) return;
+  if (windowRef.__rustyAnalytics?.gaMeasurementId === gaMeasurementId) return;
   ensureDataLayer(windowRef);
   windowRef.gtag = windowRef.gtag || function gtag() {
     windowRef.dataLayer.push(arguments);
@@ -89,6 +92,9 @@ function installGoogleAnalytics(gaMeasurementId, { windowRef = window, documentR
 
 export function startAnalytics(options = {}) {
   const config = readAnalyticsConfig(options.env);
-  installGoogleTagManager(config.gtmId, options);
+  if (config.gtmId) {
+    installGoogleTagManager(config.gtmId, { ...options, gaMeasurementId: config.gaMeasurementId });
+    return;
+  }
   installGoogleAnalytics(config.gaMeasurementId, options);
 }
