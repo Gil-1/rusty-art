@@ -22,46 +22,100 @@ function clamp(value, min, max) {
 
 export function bindOrbitInput(scene) {
   const bindings = [];
-  const activeTouches = new Map();
-  let lastPinchDistance = null;
-  const on = (type, handler, options) => {
-    scene.canvas.addEventListener(type, handler, options);
-    bindings.push({ type, handler, options });
+  const activePointers = new Map();
+  const touchTarget = scene.canvas.ownerDocument?.defaultView || scene.canvas;
+  let lastPointerPinchDistance = null;
+  let touchPinchActive = false;
+  let lastTouchPinchDistance = null;
+  let lastGestureScale = null;
+  const on = (target, type, handler, options) => {
+    target.addEventListener(type, handler, options);
+    bindings.push({ target, type, handler, options });
   };
 
-  const rememberTouch = (event) => {
-    activeTouches.set(event.pointerId, { x: event.clientX, y: event.clientY });
+  const rememberPointer = (event) => {
+    activePointers.set(event.pointerId, { x: event.clientX, y: event.clientY });
   };
 
-  const getPinchDistance = () => {
-    const touches = Array.from(activeTouches.values());
-    if (touches.length < 2) return null;
-    return Math.hypot(touches[0].x - touches[1].x, touches[0].y - touches[1].y);
+  const getDistance = (points) => {
+    if (points.length < 2) return null;
+    return Math.hypot(points[0].x - points[1].x, points[0].y - points[1].y);
   };
 
-  const applyPinchZoom = () => {
-    const pinchDistance = getPinchDistance();
-    if (pinchDistance == null) return false;
-    if (lastPinchDistance > 0 && pinchDistance > 0) {
-      scene.orbit.radius = clamp(
-        scene.orbit.radius * (lastPinchDistance / pinchDistance),
-        scene.controls.minDistance,
-        scene.controls.maxDistance
-      );
-    }
-    lastPinchDistance = pinchDistance;
+  const getPointerPinchDistance = () => getDistance(Array.from(activePointers.values()));
+
+  const getTouchPinchDistance = (touches) => getDistance(Array.from(touches, (touch) => ({
+    x: touch.clientX,
+    y: touch.clientY
+  })));
+
+  const applyDistanceZoom = (previousDistance, nextDistance) => {
+    if (!(previousDistance > 0) || !(nextDistance > 0)) return;
+    scene.orbit.radius = clamp(
+      scene.orbit.radius * (previousDistance / nextDistance),
+      scene.controls.minDistance,
+      scene.controls.maxDistance
+    );
+    scene.orbit.userControlLocked = true;
     scene.orbit.dragging = false;
+  };
+
+  const applyPointerPinchZoom = () => {
+    const pinchDistance = getPointerPinchDistance();
+    if (pinchDistance == null) return false;
+    applyDistanceZoom(lastPointerPinchDistance, pinchDistance);
+    lastPointerPinchDistance = pinchDistance;
     return true;
   };
 
-  on('pointerdown', (event) => {
+  const beginTouchPinch = (event) => {
+    if (event.touches.length < 2) return;
+    event.preventDefault();
+    touchPinchActive = true;
+    activePointers.clear();
+    lastPointerPinchDistance = null;
+    lastTouchPinchDistance = getTouchPinchDistance(event.touches);
+    scene.orbit.userControlLocked = true;
+    scene.orbit.dragging = false;
+  };
+
+  const updateTouchPinch = (event) => {
+    if (event.touches.length < 2) return;
+    event.preventDefault();
+    const pinchDistance = getTouchPinchDistance(event.touches);
+    applyDistanceZoom(lastTouchPinchDistance, pinchDistance);
+    lastTouchPinchDistance = pinchDistance;
+    touchPinchActive = true;
+  };
+
+  const endTouchPinch = (event) => {
+    if (event.touches.length > 1) {
+      lastTouchPinchDistance = getTouchPinchDistance(event.touches);
+      return;
+    }
+    touchPinchActive = false;
+    lastTouchPinchDistance = null;
+    lastGestureScale = null;
+    activePointers.clear();
+    lastPointerPinchDistance = null;
+    scene.orbit.dragging = false;
+  };
+
+  const preventGestureZoom = (event) => {
+    event.preventDefault();
+    scene.orbit.userControlLocked = true;
+    scene.orbit.dragging = false;
+  };
+
+  on(scene.canvas, 'pointerdown', (event) => {
     if (event.pointerType === 'touch') {
       event.preventDefault();
-      rememberTouch(event);
+      if (touchPinchActive) return;
+      rememberPointer(event);
       scene.orbit.userControlLocked = true;
       scene.canvas.setPointerCapture?.(event.pointerId);
-      if (activeTouches.size > 1) {
-        applyPinchZoom();
+      if (activePointers.size > 1) {
+        applyPointerPinchZoom();
         return;
       }
     } else if (event.isPrimary === false) {
@@ -74,14 +128,15 @@ export function bindOrbitInput(scene) {
     scene.canvas.setPointerCapture?.(event.pointerId);
   }, { passive: false });
 
-  on('pointermove', (event) => {
+  on(scene.canvas, 'pointermove', (event) => {
     const isTouch = event.pointerType === 'touch';
     if (isTouch) {
       event.preventDefault();
-      if (!activeTouches.has(event.pointerId)) return;
-      rememberTouch(event);
-      if (activeTouches.size > 1) {
-        applyPinchZoom();
+      if (touchPinchActive) return;
+      if (!activePointers.has(event.pointerId)) return;
+      rememberPointer(event);
+      if (activePointers.size > 1) {
+        applyPointerPinchZoom();
         return;
       }
     }
@@ -97,10 +152,10 @@ export function bindOrbitInput(scene) {
 
   const endDrag = (event) => {
     if (event?.pointerType === 'touch') {
-      activeTouches.delete(event.pointerId);
-      lastPinchDistance = activeTouches.size > 1 ? getPinchDistance() : null;
-      if (activeTouches.size === 1) {
-        const remainingTouch = activeTouches.values().next().value;
+      activePointers.delete(event.pointerId);
+      lastPointerPinchDistance = activePointers.size > 1 ? getPointerPinchDistance() : null;
+      if (activePointers.size === 1 && !touchPinchActive) {
+        const remainingTouch = activePointers.values().next().value;
         scene.orbit.dragging = true;
         scene.orbit.lastX = remainingTouch.x;
         scene.orbit.lastY = remainingTouch.y;
@@ -112,11 +167,11 @@ export function bindOrbitInput(scene) {
     }
     if (event?.pointerId != null) scene.canvas.releasePointerCapture?.(event.pointerId);
   };
-  on('pointerup', endDrag);
-  on('pointercancel', endDrag);
-  on('pointerleave', endDrag);
+  on(scene.canvas, 'pointerup', endDrag);
+  on(scene.canvas, 'pointercancel', endDrag);
+  on(scene.canvas, 'pointerleave', endDrag);
 
-  on('wheel', (event) => {
+  on(scene.canvas, 'wheel', (event) => {
     event.preventDefault();
     scene.orbit.userControlLocked = true;
     const zoom = Math.exp((event.deltaY > 0 ? 1 : -1) * 0.08);
@@ -126,9 +181,35 @@ export function bindOrbitInput(scene) {
     );
   }, { passive: false });
 
+  on(touchTarget, 'touchstart', beginTouchPinch, { passive: false, capture: true });
+  on(touchTarget, 'touchmove', updateTouchPinch, { passive: false, capture: true });
+  on(touchTarget, 'touchend', endTouchPinch, { passive: false, capture: true });
+  on(touchTarget, 'touchcancel', endTouchPinch, { passive: false, capture: true });
+  on(touchTarget, 'gesturestart', (event) => {
+    preventGestureZoom(event);
+    lastGestureScale = event.scale || 1;
+  }, { passive: false, capture: true });
+  on(touchTarget, 'gesturechange', (event) => {
+    preventGestureZoom(event);
+    if (touchPinchActive) return;
+    const nextScale = event.scale || 1;
+    if (lastGestureScale > 0 && nextScale > 0) {
+      scene.orbit.radius = clamp(
+        scene.orbit.radius * (lastGestureScale / nextScale),
+        scene.controls.minDistance,
+        scene.controls.maxDistance
+      );
+    }
+    lastGestureScale = nextScale;
+  }, { passive: false, capture: true });
+  on(touchTarget, 'gestureend', (event) => {
+    preventGestureZoom(event);
+    lastGestureScale = null;
+  }, { passive: false, capture: true });
+
   return () => {
     for (const binding of bindings) {
-      scene.canvas.removeEventListener?.(binding.type, binding.handler, binding.options);
+      binding.target.removeEventListener?.(binding.type, binding.handler, binding.options);
     }
   };
 }
