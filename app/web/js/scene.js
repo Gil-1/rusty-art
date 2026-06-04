@@ -71,8 +71,8 @@ export class ArtworkScene {
     this.clock = createSceneElapsedTimer(THREE, { documentRef: window.document });
 
     this.controls = {
-      minDistance: 6,
-      maxDistance: 24,
+      minDistance: 7.8,
+      maxDistance: 32,
       autoRotate: false,
       autoRotateSpeed: 0.14,
       dampingFactor: 0.08
