@@ -1,10 +1,22 @@
 {
-  "version": 1,
+  "version": 2,
   "kind": "rusty-art-public-media-assets",
   "artworkId": "2026-04-22-echoes-of-will-feel-government-energy",
   "source": {
     "sha256": "81baaa18d75925740376c9cf0af65e907c6714c34de90195aed28d6a98dd643e",
     "role": "public-archive-fallback-render"
+  },
+  "sources": {
+    "primary": {
+      "kind": "fallback-render",
+      "role": "public-archive-fallback-render",
+      "sha256": "81baaa18d75925740376c9cf0af65e907c6714c34de90195aed28d6a98dd643e"
+    },
+    "instagram": {
+      "kind": "fallback-render",
+      "role": "public-archive-instagram-render",
+      "sha256": "753591c22828439ed8a62479aed54231e4c78e8ab551575a5625a413875417ef"
+    }
   },
   "targets": {
     "artwork-720.jpg": {
@@ -17,7 +29,11 @@
         "format": "jpeg",
         "quality": 86
       },
-      "publicPath": "./data/media/2026-04-22-echoes-of-will-feel-government-energy/artwork-720.jpg"
+      "publicPath": "./data/media/2026-04-22-echoes-of-will-feel-government-energy/artwork-720.jpg",
+      "source": {
+        "sha256": "81baaa18d75925740376c9cf0af65e907c6714c34de90195aed28d6a98dd643e",
+        "role": "public-archive-fallback-render"
+      }
     },
     "thumb-320.jpg": {
       "spec": {
@@ -29,19 +45,27 @@
         "format": "jpeg",
         "quality": 82
       },
-      "publicPath": "./data/media/2026-04-22-echoes-of-will-feel-government-energy/thumb-320.jpg"
+      "publicPath": "./data/media/2026-04-22-echoes-of-will-feel-government-energy/thumb-320.jpg",
+      "source": {
+        "sha256": "81baaa18d75925740376c9cf0af65e907c6714c34de90195aed28d6a98dd643e",
+        "role": "public-archive-fallback-render"
+      }
     },
-    "instagram-1080x1350.jpg": {
+    "instagram-1080x1440.jpg": {
       "spec": {
-        "fileName": "instagram-1080x1350.jpg",
+        "fileName": "instagram-1080x1440.jpg",
         "width": 1080,
-        "height": 1350,
-        "fit": "inside",
-        "withoutEnlargement": true,
+        "height": 1440,
+        "fit": "cover",
+        "withoutEnlargement": false,
         "format": "jpeg",
         "quality": 86
       },
-      "publicPath": "./data/media/2026-04-22-echoes-of-will-feel-government-energy/instagram-1080x1350.jpg"
+      "publicPath": "./data/media/2026-04-22-echoes-of-will-feel-government-energy/instagram-1080x1440.jpg",
+      "source": {
+        "sha256": "753591c22828439ed8a62479aed54231e4c78e8ab551575a5625a413875417ef",
+        "role": "public-archive-instagram-render"
+      }
     }
   }
 }

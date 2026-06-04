@@ -1,10 +1,22 @@
 {
-  "version": 1,
+  "version": 2,
   "kind": "rusty-art-public-media-assets",
   "artworkId": "2026-05-02-resonance-donald-trump-annonce-vouloir",
   "source": {
     "sha256": "cc28edb41b28018b2cb54df777fc7255a0974b8dc1764c783436c28dd819b424",
     "role": "public-archive-fallback-render"
+  },
+  "sources": {
+    "primary": {
+      "kind": "fallback-render",
+      "role": "public-archive-fallback-render",
+      "sha256": "cc28edb41b28018b2cb54df777fc7255a0974b8dc1764c783436c28dd819b424"
+    },
+    "instagram": {
+      "kind": "fallback-render",
+      "role": "public-archive-instagram-render",
+      "sha256": "53b8c19c03a83e8026b0b92237efba539334d4ea17c4decb62550396cc4f7ede"
+    }
   },
   "targets": {
     "artwork-720.jpg": {
@@ -17,7 +29,11 @@
         "format": "jpeg",
         "quality": 86
       },
-      "publicPath": "./data/media/2026-05-02-resonance-donald-trump-annonce-vouloir/artwork-720.jpg"
+      "publicPath": "./data/media/2026-05-02-resonance-donald-trump-annonce-vouloir/artwork-720.jpg",
+      "source": {
+        "sha256": "cc28edb41b28018b2cb54df777fc7255a0974b8dc1764c783436c28dd819b424",
+        "role": "public-archive-fallback-render"
+      }
     },
     "thumb-320.jpg": {
       "spec": {
@@ -29,19 +45,27 @@
         "format": "jpeg",
         "quality": 82
       },
-      "publicPath": "./data/media/2026-05-02-resonance-donald-trump-annonce-vouloir/thumb-320.jpg"
+      "publicPath": "./data/media/2026-05-02-resonance-donald-trump-annonce-vouloir/thumb-320.jpg",
+      "source": {
+        "sha256": "cc28edb41b28018b2cb54df777fc7255a0974b8dc1764c783436c28dd819b424",
+        "role": "public-archive-fallback-render"
+      }
     },
-    "instagram-1080x1350.jpg": {
+    "instagram-1080x1440.jpg": {
       "spec": {
-        "fileName": "instagram-1080x1350.jpg",
+        "fileName": "instagram-1080x1440.jpg",
         "width": 1080,
-        "height": 1350,
-        "fit": "inside",
-        "withoutEnlargement": true,
+        "height": 1440,
+        "fit": "cover",
+        "withoutEnlargement": false,
         "format": "jpeg",
         "quality": 86
       },
-      "publicPath": "./data/media/2026-05-02-resonance-donald-trump-annonce-vouloir/instagram-1080x1350.jpg"
+      "publicPath": "./data/media/2026-05-02-resonance-donald-trump-annonce-vouloir/instagram-1080x1440.jpg",
+      "source": {
+        "sha256": "53b8c19c03a83e8026b0b92237efba539334d4ea17c4decb62550396cc4f7ede",
+        "role": "public-archive-instagram-render"
+      }
     }
   }
 }

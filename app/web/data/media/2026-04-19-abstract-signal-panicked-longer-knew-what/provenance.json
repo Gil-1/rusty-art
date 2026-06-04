@@ -1,10 +1,22 @@
 {
-  "version": 1,
+  "version": 2,
   "kind": "rusty-art-public-media-assets",
   "artworkId": "2026-04-19-abstract-signal-panicked-longer-knew-what",
   "source": {
     "sha256": "9354532de5fac2c104734fabb3aca076db883503d95a0a1c829861979a076ba5",
     "role": "public-archive-fallback-render"
+  },
+  "sources": {
+    "primary": {
+      "kind": "fallback-render",
+      "role": "public-archive-fallback-render",
+      "sha256": "9354532de5fac2c104734fabb3aca076db883503d95a0a1c829861979a076ba5"
+    },
+    "instagram": {
+      "kind": "fallback-render",
+      "role": "public-archive-instagram-render",
+      "sha256": "f3bcd4d2c91b008df7e74e78ff121ab1544ba27426aa41f287ef275e9218d060"
+    }
   },
   "targets": {
     "artwork-720.jpg": {
@@ -17,7 +29,11 @@
         "format": "jpeg",
         "quality": 86
       },
-      "publicPath": "./data/media/2026-04-19-abstract-signal-panicked-longer-knew-what/artwork-720.jpg"
+      "publicPath": "./data/media/2026-04-19-abstract-signal-panicked-longer-knew-what/artwork-720.jpg",
+      "source": {
+        "sha256": "9354532de5fac2c104734fabb3aca076db883503d95a0a1c829861979a076ba5",
+        "role": "public-archive-fallback-render"
+      }
     },
     "thumb-320.jpg": {
       "spec": {
@@ -29,19 +45,27 @@
         "format": "jpeg",
         "quality": 82
       },
-      "publicPath": "./data/media/2026-04-19-abstract-signal-panicked-longer-knew-what/thumb-320.jpg"
+      "publicPath": "./data/media/2026-04-19-abstract-signal-panicked-longer-knew-what/thumb-320.jpg",
+      "source": {
+        "sha256": "9354532de5fac2c104734fabb3aca076db883503d95a0a1c829861979a076ba5",
+        "role": "public-archive-fallback-render"
+      }
     },
-    "instagram-1080x1350.jpg": {
+    "instagram-1080x1440.jpg": {
       "spec": {
-        "fileName": "instagram-1080x1350.jpg",
+        "fileName": "instagram-1080x1440.jpg",
         "width": 1080,
-        "height": 1350,
-        "fit": "inside",
-        "withoutEnlargement": true,
+        "height": 1440,
+        "fit": "cover",
+        "withoutEnlargement": false,
         "format": "jpeg",
         "quality": 86
       },
-      "publicPath": "./data/media/2026-04-19-abstract-signal-panicked-longer-knew-what/instagram-1080x1350.jpg"
+      "publicPath": "./data/media/2026-04-19-abstract-signal-panicked-longer-knew-what/instagram-1080x1440.jpg",
+      "source": {
+        "sha256": "f3bcd4d2c91b008df7e74e78ff121ab1544ba27426aa41f287ef275e9218d060",
+        "role": "public-archive-instagram-render"
+      }
     }
   }
 }

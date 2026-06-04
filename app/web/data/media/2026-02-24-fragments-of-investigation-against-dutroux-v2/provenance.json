@@ -1,10 +1,22 @@
 {
-  "version": 1,
+  "version": 2,
   "kind": "rusty-art-public-media-assets",
   "artworkId": "2026-02-24-fragments-of-investigation-against-dutroux-v2",
   "source": {
     "sha256": "9e7176ac7259da6474e46e52042fe95da88de6f438217f79d6005044277da1df",
     "role": "public-archive-fallback-render"
+  },
+  "sources": {
+    "primary": {
+      "kind": "fallback-render",
+      "role": "public-archive-fallback-render",
+      "sha256": "9e7176ac7259da6474e46e52042fe95da88de6f438217f79d6005044277da1df"
+    },
+    "instagram": {
+      "kind": "fallback-render",
+      "role": "public-archive-instagram-render",
+      "sha256": "18d62768b72f40c2afeacaf1ab4545539f3402bed1d2d188249079457e817e15"
+    }
   },
   "targets": {
     "artwork-720.jpg": {
@@ -17,7 +29,11 @@
         "format": "jpeg",
         "quality": 86
       },
-      "publicPath": "./data/media/2026-02-24-fragments-of-investigation-against-dutroux-v2/artwork-720.jpg"
+      "publicPath": "./data/media/2026-02-24-fragments-of-investigation-against-dutroux-v2/artwork-720.jpg",
+      "source": {
+        "sha256": "9e7176ac7259da6474e46e52042fe95da88de6f438217f79d6005044277da1df",
+        "role": "public-archive-fallback-render"
+      }
     },
     "thumb-320.jpg": {
       "spec": {
@@ -29,19 +45,27 @@
         "format": "jpeg",
         "quality": 82
       },
-      "publicPath": "./data/media/2026-02-24-fragments-of-investigation-against-dutroux-v2/thumb-320.jpg"
+      "publicPath": "./data/media/2026-02-24-fragments-of-investigation-against-dutroux-v2/thumb-320.jpg",
+      "source": {
+        "sha256": "9e7176ac7259da6474e46e52042fe95da88de6f438217f79d6005044277da1df",
+        "role": "public-archive-fallback-render"
+      }
     },
-    "instagram-1080x1350.jpg": {
+    "instagram-1080x1440.jpg": {
       "spec": {
-        "fileName": "instagram-1080x1350.jpg",
+        "fileName": "instagram-1080x1440.jpg",
         "width": 1080,
-        "height": 1350,
-        "fit": "inside",
-        "withoutEnlargement": true,
+        "height": 1440,
+        "fit": "cover",
+        "withoutEnlargement": false,
         "format": "jpeg",
         "quality": 86
       },
-      "publicPath": "./data/media/2026-02-24-fragments-of-investigation-against-dutroux-v2/instagram-1080x1350.jpg"
+      "publicPath": "./data/media/2026-02-24-fragments-of-investigation-against-dutroux-v2/instagram-1080x1440.jpg",
+      "source": {
+        "sha256": "18d62768b72f40c2afeacaf1ab4545539f3402bed1d2d188249079457e817e15",
+        "role": "public-archive-instagram-render"
+      }
     }
   }
 }

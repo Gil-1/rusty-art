@@ -1,10 +1,22 @@
 {
-  "version": 1,
+  "version": 2,
   "kind": "rusty-art-public-media-assets",
   "artworkId": "2026-04-05-echoes-of-tour-flanders-remco-evenepoel-v3",
   "source": {
     "sha256": "1e8054496aa2a7b91231450f33744833cf1d2f418965da40b84a4390b3e0a2bc",
     "role": "public-archive-fallback-render"
+  },
+  "sources": {
+    "primary": {
+      "kind": "fallback-render",
+      "role": "public-archive-fallback-render",
+      "sha256": "1e8054496aa2a7b91231450f33744833cf1d2f418965da40b84a4390b3e0a2bc"
+    },
+    "instagram": {
+      "kind": "fallback-render",
+      "role": "public-archive-instagram-render",
+      "sha256": "4fcba872af703f1422f4a5ab0d6fa6ff7863c133d57b1d77cfaca747faeafe26"
+    }
   },
   "targets": {
     "artwork-720.jpg": {
@@ -17,7 +29,11 @@
         "format": "jpeg",
         "quality": 86
       },
-      "publicPath": "./data/media/2026-04-05-echoes-of-tour-flanders-remco-evenepoel-v3/artwork-720.jpg"
+      "publicPath": "./data/media/2026-04-05-echoes-of-tour-flanders-remco-evenepoel-v3/artwork-720.jpg",
+      "source": {
+        "sha256": "1e8054496aa2a7b91231450f33744833cf1d2f418965da40b84a4390b3e0a2bc",
+        "role": "public-archive-fallback-render"
+      }
     },
     "thumb-320.jpg": {
       "spec": {
@@ -29,19 +45,27 @@
         "format": "jpeg",
         "quality": 82
       },
-      "publicPath": "./data/media/2026-04-05-echoes-of-tour-flanders-remco-evenepoel-v3/thumb-320.jpg"
+      "publicPath": "./data/media/2026-04-05-echoes-of-tour-flanders-remco-evenepoel-v3/thumb-320.jpg",
+      "source": {
+        "sha256": "1e8054496aa2a7b91231450f33744833cf1d2f418965da40b84a4390b3e0a2bc",
+        "role": "public-archive-fallback-render"
+      }
     },
-    "instagram-1080x1350.jpg": {
+    "instagram-1080x1440.jpg": {
       "spec": {
-        "fileName": "instagram-1080x1350.jpg",
+        "fileName": "instagram-1080x1440.jpg",
         "width": 1080,
-        "height": 1350,
-        "fit": "inside",
-        "withoutEnlargement": true,
+        "height": 1440,
+        "fit": "cover",
+        "withoutEnlargement": false,
         "format": "jpeg",
         "quality": 86
       },
-      "publicPath": "./data/media/2026-04-05-echoes-of-tour-flanders-remco-evenepoel-v3/instagram-1080x1350.jpg"
+      "publicPath": "./data/media/2026-04-05-echoes-of-tour-flanders-remco-evenepoel-v3/instagram-1080x1440.jpg",
+      "source": {
+        "sha256": "4fcba872af703f1422f4a5ab0d6fa6ff7863c133d57b1d77cfaca747faeafe26",
+        "role": "public-archive-instagram-render"
+      }
     }
   }
 }

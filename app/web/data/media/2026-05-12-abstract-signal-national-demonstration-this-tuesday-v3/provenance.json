@@ -1,10 +1,22 @@
 {
-  "version": 1,
+  "version": 2,
   "kind": "rusty-art-public-media-assets",
   "artworkId": "2026-05-12-abstract-signal-national-demonstration-this-tuesday-v3",
   "source": {
     "sha256": "216d212dcbdfdca68a2474b73040e9c2c19d2d285ba8a644d880287324288046",
     "role": "public-archive-fallback-render"
+  },
+  "sources": {
+    "primary": {
+      "kind": "fallback-render",
+      "role": "public-archive-fallback-render",
+      "sha256": "216d212dcbdfdca68a2474b73040e9c2c19d2d285ba8a644d880287324288046"
+    },
+    "instagram": {
+      "kind": "fallback-render",
+      "role": "public-archive-instagram-render",
+      "sha256": "049d16c842046d823b4df7a793444ccdab9ee0360677525504b62c93e6a9f5fa"
+    }
   },
   "targets": {
     "artwork-720.jpg": {
@@ -17,7 +29,11 @@
         "format": "jpeg",
         "quality": 86
       },
-      "publicPath": "./data/media/2026-05-12-abstract-signal-national-demonstration-this-tuesday-v3/artwork-720.jpg"
+      "publicPath": "./data/media/2026-05-12-abstract-signal-national-demonstration-this-tuesday-v3/artwork-720.jpg",
+      "source": {
+        "sha256": "216d212dcbdfdca68a2474b73040e9c2c19d2d285ba8a644d880287324288046",
+        "role": "public-archive-fallback-render"
+      }
     },
     "thumb-320.jpg": {
       "spec": {
@@ -29,19 +45,27 @@
         "format": "jpeg",
         "quality": 82
       },
-      "publicPath": "./data/media/2026-05-12-abstract-signal-national-demonstration-this-tuesday-v3/thumb-320.jpg"
+      "publicPath": "./data/media/2026-05-12-abstract-signal-national-demonstration-this-tuesday-v3/thumb-320.jpg",
+      "source": {
+        "sha256": "216d212dcbdfdca68a2474b73040e9c2c19d2d285ba8a644d880287324288046",
+        "role": "public-archive-fallback-render"
+      }
     },
-    "instagram-1080x1350.jpg": {
+    "instagram-1080x1440.jpg": {
       "spec": {
-        "fileName": "instagram-1080x1350.jpg",
+        "fileName": "instagram-1080x1440.jpg",
         "width": 1080,
-        "height": 1350,
-        "fit": "inside",
-        "withoutEnlargement": true,
+        "height": 1440,
+        "fit": "cover",
+        "withoutEnlargement": false,
         "format": "jpeg",
         "quality": 86
       },
-      "publicPath": "./data/media/2026-05-12-abstract-signal-national-demonstration-this-tuesday-v3/instagram-1080x1350.jpg"
+      "publicPath": "./data/media/2026-05-12-abstract-signal-national-demonstration-this-tuesday-v3/instagram-1080x1440.jpg",
+      "source": {
+        "sha256": "049d16c842046d823b4df7a793444ccdab9ee0360677525504b62c93e6a9f5fa",
+        "role": "public-archive-instagram-render"
+      }
     }
   }
 }

@@ -1,10 +1,22 @@
 {
-  "version": 1,
+  "version": 2,
   "kind": "rusty-art-public-media-assets",
   "artworkId": "2026-04-12-pulse-of-middle-east-donald-trump-v3",
   "source": {
     "sha256": "b31321cdf4201caeaf6e750d33d43eac66df9d98e4527922e1e6c5a92c8d99fb",
     "role": "public-archive-fallback-render"
+  },
+  "sources": {
+    "primary": {
+      "kind": "fallback-render",
+      "role": "public-archive-fallback-render",
+      "sha256": "b31321cdf4201caeaf6e750d33d43eac66df9d98e4527922e1e6c5a92c8d99fb"
+    },
+    "instagram": {
+      "kind": "fallback-render",
+      "role": "public-archive-instagram-render",
+      "sha256": "4076ae4050d937a1ee995a191cb0dedd72f7d6ce3bdfd7bd3178b53cea43fd96"
+    }
   },
   "targets": {
     "artwork-720.jpg": {
@@ -17,7 +29,11 @@
         "format": "jpeg",
         "quality": 86
       },
-      "publicPath": "./data/media/2026-04-12-pulse-of-middle-east-donald-trump-v3/artwork-720.jpg"
+      "publicPath": "./data/media/2026-04-12-pulse-of-middle-east-donald-trump-v3/artwork-720.jpg",
+      "source": {
+        "sha256": "b31321cdf4201caeaf6e750d33d43eac66df9d98e4527922e1e6c5a92c8d99fb",
+        "role": "public-archive-fallback-render"
+      }
     },
     "thumb-320.jpg": {
       "spec": {
@@ -29,19 +45,27 @@
         "format": "jpeg",
         "quality": 82
       },
-      "publicPath": "./data/media/2026-04-12-pulse-of-middle-east-donald-trump-v3/thumb-320.jpg"
+      "publicPath": "./data/media/2026-04-12-pulse-of-middle-east-donald-trump-v3/thumb-320.jpg",
+      "source": {
+        "sha256": "b31321cdf4201caeaf6e750d33d43eac66df9d98e4527922e1e6c5a92c8d99fb",
+        "role": "public-archive-fallback-render"
+      }
     },
-    "instagram-1080x1350.jpg": {
+    "instagram-1080x1440.jpg": {
       "spec": {
-        "fileName": "instagram-1080x1350.jpg",
+        "fileName": "instagram-1080x1440.jpg",
         "width": 1080,
-        "height": 1350,
-        "fit": "inside",
-        "withoutEnlargement": true,
+        "height": 1440,
+        "fit": "cover",
+        "withoutEnlargement": false,
         "format": "jpeg",
         "quality": 86
       },
-      "publicPath": "./data/media/2026-04-12-pulse-of-middle-east-donald-trump-v3/instagram-1080x1350.jpg"
+      "publicPath": "./data/media/2026-04-12-pulse-of-middle-east-donald-trump-v3/instagram-1080x1440.jpg",
+      "source": {
+        "sha256": "4076ae4050d937a1ee995a191cb0dedd72f7d6ce3bdfd7bd3178b53cea43fd96",
+        "role": "public-archive-instagram-render"
+      }
     }
   }
 }

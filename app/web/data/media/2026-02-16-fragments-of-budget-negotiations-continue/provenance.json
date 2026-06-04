@@ -1,10 +1,22 @@
 {
-  "version": 1,
+  "version": 2,
   "kind": "rusty-art-public-media-assets",
   "artworkId": "2026-02-16-fragments-of-budget-negotiations-continue",
   "source": {
     "sha256": "a5b15a0af024794939f7d5a391ad2140059d2d02662c4a4b4527228a9e49f642",
     "role": "public-archive-fallback-render"
+  },
+  "sources": {
+    "primary": {
+      "kind": "fallback-render",
+      "role": "public-archive-fallback-render",
+      "sha256": "a5b15a0af024794939f7d5a391ad2140059d2d02662c4a4b4527228a9e49f642"
+    },
+    "instagram": {
+      "kind": "fallback-render",
+      "role": "public-archive-instagram-render",
+      "sha256": "360329d2eeb889e727b42442e3bb234538175f7f954acf52b1b9f6afa334c4a0"
+    }
   },
   "targets": {
     "artwork-720.jpg": {
@@ -17,7 +29,11 @@
         "format": "jpeg",
         "quality": 86
       },
-      "publicPath": "./data/media/2026-02-16-fragments-of-budget-negotiations-continue/artwork-720.jpg"
+      "publicPath": "./data/media/2026-02-16-fragments-of-budget-negotiations-continue/artwork-720.jpg",
+      "source": {
+        "sha256": "a5b15a0af024794939f7d5a391ad2140059d2d02662c4a4b4527228a9e49f642",
+        "role": "public-archive-fallback-render"
+      }
     },
     "thumb-320.jpg": {
       "spec": {
@@ -29,19 +45,27 @@
         "format": "jpeg",
         "quality": 82
       },
-      "publicPath": "./data/media/2026-02-16-fragments-of-budget-negotiations-continue/thumb-320.jpg"
+      "publicPath": "./data/media/2026-02-16-fragments-of-budget-negotiations-continue/thumb-320.jpg",
+      "source": {
+        "sha256": "a5b15a0af024794939f7d5a391ad2140059d2d02662c4a4b4527228a9e49f642",
+        "role": "public-archive-fallback-render"
+      }
     },
-    "instagram-1080x1350.jpg": {
+    "instagram-1080x1440.jpg": {
       "spec": {
-        "fileName": "instagram-1080x1350.jpg",
+        "fileName": "instagram-1080x1440.jpg",
         "width": 1080,
-        "height": 1350,
-        "fit": "inside",
-        "withoutEnlargement": true,
+        "height": 1440,
+        "fit": "cover",
+        "withoutEnlargement": false,
         "format": "jpeg",
         "quality": 86
       },
-      "publicPath": "./data/media/2026-02-16-fragments-of-budget-negotiations-continue/instagram-1080x1350.jpg"
+      "publicPath": "./data/media/2026-02-16-fragments-of-budget-negotiations-continue/instagram-1080x1440.jpg",
+      "source": {
+        "sha256": "360329d2eeb889e727b42442e3bb234538175f7f954acf52b1b9f6afa334c4a0",
+        "role": "public-archive-instagram-render"
+      }
     }
   }
 }

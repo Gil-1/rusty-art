@@ -1,10 +1,22 @@
 {
-  "version": 1,
+  "version": 2,
   "kind": "rusty-art-public-media-assets",
   "artworkId": "2026-05-04-pulse-of-proc-falzone-palmar-guide-v3",
   "source": {
     "sha256": "4969759678ea183dbced1e91faf5f43d6d37ce8a2240678a8b9f5421ddfbac03",
     "role": "public-archive-fallback-render"
+  },
+  "sources": {
+    "primary": {
+      "kind": "fallback-render",
+      "role": "public-archive-fallback-render",
+      "sha256": "4969759678ea183dbced1e91faf5f43d6d37ce8a2240678a8b9f5421ddfbac03"
+    },
+    "instagram": {
+      "kind": "fallback-render",
+      "role": "public-archive-instagram-render",
+      "sha256": "9f90ed8901a01bb85aaa81bbdc896fea1719e9c8909fca69ad83dbb79a495ab8"
+    }
   },
   "targets": {
     "artwork-720.jpg": {
@@ -17,7 +29,11 @@
         "format": "jpeg",
         "quality": 86
       },
-      "publicPath": "./data/media/2026-05-04-pulse-of-proc-falzone-palmar-guide-v3/artwork-720.jpg"
+      "publicPath": "./data/media/2026-05-04-pulse-of-proc-falzone-palmar-guide-v3/artwork-720.jpg",
+      "source": {
+        "sha256": "4969759678ea183dbced1e91faf5f43d6d37ce8a2240678a8b9f5421ddfbac03",
+        "role": "public-archive-fallback-render"
+      }
     },
     "thumb-320.jpg": {
       "spec": {
@@ -29,19 +45,27 @@
         "format": "jpeg",
         "quality": 82
       },
-      "publicPath": "./data/media/2026-05-04-pulse-of-proc-falzone-palmar-guide-v3/thumb-320.jpg"
+      "publicPath": "./data/media/2026-05-04-pulse-of-proc-falzone-palmar-guide-v3/thumb-320.jpg",
+      "source": {
+        "sha256": "4969759678ea183dbced1e91faf5f43d6d37ce8a2240678a8b9f5421ddfbac03",
+        "role": "public-archive-fallback-render"
+      }
     },
-    "instagram-1080x1350.jpg": {
+    "instagram-1080x1440.jpg": {
       "spec": {
-        "fileName": "instagram-1080x1350.jpg",
+        "fileName": "instagram-1080x1440.jpg",
         "width": 1080,
-        "height": 1350,
-        "fit": "inside",
-        "withoutEnlargement": true,
+        "height": 1440,
+        "fit": "cover",
+        "withoutEnlargement": false,
         "format": "jpeg",
         "quality": 86
       },
-      "publicPath": "./data/media/2026-05-04-pulse-of-proc-falzone-palmar-guide-v3/instagram-1080x1350.jpg"
+      "publicPath": "./data/media/2026-05-04-pulse-of-proc-falzone-palmar-guide-v3/instagram-1080x1440.jpg",
+      "source": {
+        "sha256": "9f90ed8901a01bb85aaa81bbdc896fea1719e9c8909fca69ad83dbb79a495ab8",
+        "role": "public-archive-instagram-render"
+      }
     }
   }
 }

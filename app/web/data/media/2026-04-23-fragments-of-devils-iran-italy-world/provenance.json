@@ -1,10 +1,22 @@
 {
-  "version": 1,
+  "version": 2,
   "kind": "rusty-art-public-media-assets",
   "artworkId": "2026-04-23-fragments-of-devils-iran-italy-world",
   "source": {
     "sha256": "1857b4910e7ffcb16ac3abf8c64f7799b5467fd442b7ff109af7a2072ee1fadf",
     "role": "public-archive-fallback-render"
+  },
+  "sources": {
+    "primary": {
+      "kind": "fallback-render",
+      "role": "public-archive-fallback-render",
+      "sha256": "1857b4910e7ffcb16ac3abf8c64f7799b5467fd442b7ff109af7a2072ee1fadf"
+    },
+    "instagram": {
+      "kind": "fallback-render",
+      "role": "public-archive-instagram-render",
+      "sha256": "42f4409446631f1228570feef89ec4377a904d0991e4ac2dba04e99a014d3484"
+    }
   },
   "targets": {
     "artwork-720.jpg": {
@@ -17,7 +29,11 @@
         "format": "jpeg",
         "quality": 86
       },
-      "publicPath": "./data/media/2026-04-23-fragments-of-devils-iran-italy-world/artwork-720.jpg"
+      "publicPath": "./data/media/2026-04-23-fragments-of-devils-iran-italy-world/artwork-720.jpg",
+      "source": {
+        "sha256": "1857b4910e7ffcb16ac3abf8c64f7799b5467fd442b7ff109af7a2072ee1fadf",
+        "role": "public-archive-fallback-render"
+      }
     },
     "thumb-320.jpg": {
       "spec": {
@@ -29,19 +45,27 @@
         "format": "jpeg",
         "quality": 82
       },
-      "publicPath": "./data/media/2026-04-23-fragments-of-devils-iran-italy-world/thumb-320.jpg"
+      "publicPath": "./data/media/2026-04-23-fragments-of-devils-iran-italy-world/thumb-320.jpg",
+      "source": {
+        "sha256": "1857b4910e7ffcb16ac3abf8c64f7799b5467fd442b7ff109af7a2072ee1fadf",
+        "role": "public-archive-fallback-render"
+      }
     },
-    "instagram-1080x1350.jpg": {
+    "instagram-1080x1440.jpg": {
       "spec": {
-        "fileName": "instagram-1080x1350.jpg",
+        "fileName": "instagram-1080x1440.jpg",
         "width": 1080,
-        "height": 1350,
-        "fit": "inside",
-        "withoutEnlargement": true,
+        "height": 1440,
+        "fit": "cover",
+        "withoutEnlargement": false,
         "format": "jpeg",
         "quality": 86
       },
-      "publicPath": "./data/media/2026-04-23-fragments-of-devils-iran-italy-world/instagram-1080x1350.jpg"
+      "publicPath": "./data/media/2026-04-23-fragments-of-devils-iran-italy-world/instagram-1080x1440.jpg",
+      "source": {
+        "sha256": "42f4409446631f1228570feef89ec4377a904d0991e4ac2dba04e99a014d3484",
+        "role": "public-archive-instagram-render"
+      }
     }
   }
 }

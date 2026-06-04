@@ -1,10 +1,22 @@
 {
-  "version": 1,
+  "version": 2,
   "kind": "rusty-art-public-media-assets",
   "artworkId": "2026-05-11-fragments-of-hantavirus-cruise-ship-belgian-v3",
   "source": {
     "sha256": "75aa3d9fd0cdf6690a3e7a23711ab6b8edfce5f068d97cf0e9f9d34a2df79418",
     "role": "public-archive-fallback-render"
+  },
+  "sources": {
+    "primary": {
+      "kind": "fallback-render",
+      "role": "public-archive-fallback-render",
+      "sha256": "75aa3d9fd0cdf6690a3e7a23711ab6b8edfce5f068d97cf0e9f9d34a2df79418"
+    },
+    "instagram": {
+      "kind": "fallback-render",
+      "role": "public-archive-instagram-render",
+      "sha256": "af0e9b81c0be668dea83f9474e322011b42d8a27416bc99a2ed2eb588cd63b06"
+    }
   },
   "targets": {
     "artwork-720.jpg": {
@@ -17,7 +29,11 @@
         "format": "jpeg",
         "quality": 86
       },
-      "publicPath": "./data/media/2026-05-11-fragments-of-hantavirus-cruise-ship-belgian-v3/artwork-720.jpg"
+      "publicPath": "./data/media/2026-05-11-fragments-of-hantavirus-cruise-ship-belgian-v3/artwork-720.jpg",
+      "source": {
+        "sha256": "75aa3d9fd0cdf6690a3e7a23711ab6b8edfce5f068d97cf0e9f9d34a2df79418",
+        "role": "public-archive-fallback-render"
+      }
     },
     "thumb-320.jpg": {
       "spec": {
@@ -29,19 +45,27 @@
         "format": "jpeg",
         "quality": 82
       },
-      "publicPath": "./data/media/2026-05-11-fragments-of-hantavirus-cruise-ship-belgian-v3/thumb-320.jpg"
+      "publicPath": "./data/media/2026-05-11-fragments-of-hantavirus-cruise-ship-belgian-v3/thumb-320.jpg",
+      "source": {
+        "sha256": "75aa3d9fd0cdf6690a3e7a23711ab6b8edfce5f068d97cf0e9f9d34a2df79418",
+        "role": "public-archive-fallback-render"
+      }
     },
-    "instagram-1080x1350.jpg": {
+    "instagram-1080x1440.jpg": {
       "spec": {
-        "fileName": "instagram-1080x1350.jpg",
+        "fileName": "instagram-1080x1440.jpg",
         "width": 1080,
-        "height": 1350,
-        "fit": "inside",
-        "withoutEnlargement": true,
+        "height": 1440,
+        "fit": "cover",
+        "withoutEnlargement": false,
         "format": "jpeg",
         "quality": 86
       },
-      "publicPath": "./data/media/2026-05-11-fragments-of-hantavirus-cruise-ship-belgian-v3/instagram-1080x1350.jpg"
+      "publicPath": "./data/media/2026-05-11-fragments-of-hantavirus-cruise-ship-belgian-v3/instagram-1080x1440.jpg",
+      "source": {
+        "sha256": "af0e9b81c0be668dea83f9474e322011b42d8a27416bc99a2ed2eb588cd63b06",
+        "role": "public-archive-instagram-render"
+      }
     }
   }
 }

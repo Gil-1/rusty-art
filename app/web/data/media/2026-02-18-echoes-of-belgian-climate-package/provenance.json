@@ -1,10 +1,22 @@
 {
-  "version": 1,
+  "version": 2,
   "kind": "rusty-art-public-media-assets",
   "artworkId": "2026-02-18-echoes-of-belgian-climate-package",
   "source": {
     "sha256": "4112ebaddb0ef7956b2c0c56e30a18f2e253144234a3c3e5d5ea8c30a2b75a4f",
     "role": "public-archive-fallback-render"
+  },
+  "sources": {
+    "primary": {
+      "kind": "fallback-render",
+      "role": "public-archive-fallback-render",
+      "sha256": "4112ebaddb0ef7956b2c0c56e30a18f2e253144234a3c3e5d5ea8c30a2b75a4f"
+    },
+    "instagram": {
+      "kind": "fallback-render",
+      "role": "public-archive-instagram-render",
+      "sha256": "76666092e6f8a533d0ba881b7e593b35b0bf445eb4211927241ad54ce200d2bd"
+    }
   },
   "targets": {
     "artwork-720.jpg": {
@@ -17,7 +29,11 @@
         "format": "jpeg",
         "quality": 86
       },
-      "publicPath": "./data/media/2026-02-18-echoes-of-belgian-climate-package/artwork-720.jpg"
+      "publicPath": "./data/media/2026-02-18-echoes-of-belgian-climate-package/artwork-720.jpg",
+      "source": {
+        "sha256": "4112ebaddb0ef7956b2c0c56e30a18f2e253144234a3c3e5d5ea8c30a2b75a4f",
+        "role": "public-archive-fallback-render"
+      }
     },
     "thumb-320.jpg": {
       "spec": {
@@ -29,19 +45,27 @@
         "format": "jpeg",
         "quality": 82
       },
-      "publicPath": "./data/media/2026-02-18-echoes-of-belgian-climate-package/thumb-320.jpg"
+      "publicPath": "./data/media/2026-02-18-echoes-of-belgian-climate-package/thumb-320.jpg",
+      "source": {
+        "sha256": "4112ebaddb0ef7956b2c0c56e30a18f2e253144234a3c3e5d5ea8c30a2b75a4f",
+        "role": "public-archive-fallback-render"
+      }
     },
-    "instagram-1080x1350.jpg": {
+    "instagram-1080x1440.jpg": {
       "spec": {
-        "fileName": "instagram-1080x1350.jpg",
+        "fileName": "instagram-1080x1440.jpg",
         "width": 1080,
-        "height": 1350,
-        "fit": "inside",
-        "withoutEnlargement": true,
+        "height": 1440,
+        "fit": "cover",
+        "withoutEnlargement": false,
         "format": "jpeg",
         "quality": 86
       },
-      "publicPath": "./data/media/2026-02-18-echoes-of-belgian-climate-package/instagram-1080x1350.jpg"
+      "publicPath": "./data/media/2026-02-18-echoes-of-belgian-climate-package/instagram-1080x1440.jpg",
+      "source": {
+        "sha256": "76666092e6f8a533d0ba881b7e593b35b0bf445eb4211927241ad54ce200d2bd",
+        "role": "public-archive-instagram-render"
+      }
     }
   }
 }

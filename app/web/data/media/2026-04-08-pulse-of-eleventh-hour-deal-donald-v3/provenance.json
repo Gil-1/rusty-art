@@ -1,10 +1,22 @@
 {
-  "version": 1,
+  "version": 2,
   "kind": "rusty-art-public-media-assets",
   "artworkId": "2026-04-08-pulse-of-eleventh-hour-deal-donald-v3",
   "source": {
     "sha256": "f60354952dbb0a560f8758321080600f8b939cc027fff760edf1c5614c1bbc6d",
     "role": "public-archive-fallback-render"
+  },
+  "sources": {
+    "primary": {
+      "kind": "fallback-render",
+      "role": "public-archive-fallback-render",
+      "sha256": "f60354952dbb0a560f8758321080600f8b939cc027fff760edf1c5614c1bbc6d"
+    },
+    "instagram": {
+      "kind": "fallback-render",
+      "role": "public-archive-instagram-render",
+      "sha256": "c760e68b9b366e8b639876bfb0829ea7cc5fbe32f16cccd1b81f336357cb6fba"
+    }
   },
   "targets": {
     "artwork-720.jpg": {
@@ -17,7 +29,11 @@
         "format": "jpeg",
         "quality": 86
       },
-      "publicPath": "./data/media/2026-04-08-pulse-of-eleventh-hour-deal-donald-v3/artwork-720.jpg"
+      "publicPath": "./data/media/2026-04-08-pulse-of-eleventh-hour-deal-donald-v3/artwork-720.jpg",
+      "source": {
+        "sha256": "f60354952dbb0a560f8758321080600f8b939cc027fff760edf1c5614c1bbc6d",
+        "role": "public-archive-fallback-render"
+      }
     },
     "thumb-320.jpg": {
       "spec": {
@@ -29,19 +45,27 @@
         "format": "jpeg",
         "quality": 82
       },
-      "publicPath": "./data/media/2026-04-08-pulse-of-eleventh-hour-deal-donald-v3/thumb-320.jpg"
+      "publicPath": "./data/media/2026-04-08-pulse-of-eleventh-hour-deal-donald-v3/thumb-320.jpg",
+      "source": {
+        "sha256": "f60354952dbb0a560f8758321080600f8b939cc027fff760edf1c5614c1bbc6d",
+        "role": "public-archive-fallback-render"
+      }
     },
-    "instagram-1080x1350.jpg": {
+    "instagram-1080x1440.jpg": {
       "spec": {
-        "fileName": "instagram-1080x1350.jpg",
+        "fileName": "instagram-1080x1440.jpg",
         "width": 1080,
-        "height": 1350,
-        "fit": "inside",
-        "withoutEnlargement": true,
+        "height": 1440,
+        "fit": "cover",
+        "withoutEnlargement": false,
         "format": "jpeg",
         "quality": 86
       },
-      "publicPath": "./data/media/2026-04-08-pulse-of-eleventh-hour-deal-donald-v3/instagram-1080x1350.jpg"
+      "publicPath": "./data/media/2026-04-08-pulse-of-eleventh-hour-deal-donald-v3/instagram-1080x1440.jpg",
+      "source": {
+        "sha256": "c760e68b9b366e8b639876bfb0829ea7cc5fbe32f16cccd1b81f336357cb6fba",
+        "role": "public-archive-instagram-render"
+      }
     }
   }
 }

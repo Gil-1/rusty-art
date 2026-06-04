@@ -1,10 +1,22 @@
 {
-  "version": 1,
+  "version": 2,
   "kind": "rusty-art-public-media-assets",
   "artworkId": "2026-02-24-echoes-of-belgian-federal-talks-v2",
   "source": {
     "sha256": "45a1976a8f2e4095a5f6aa6208d3395c6fbbefea0af22ca82f509d38a38a2fde",
     "role": "public-archive-fallback-render"
+  },
+  "sources": {
+    "primary": {
+      "kind": "fallback-render",
+      "role": "public-archive-fallback-render",
+      "sha256": "45a1976a8f2e4095a5f6aa6208d3395c6fbbefea0af22ca82f509d38a38a2fde"
+    },
+    "instagram": {
+      "kind": "fallback-render",
+      "role": "public-archive-instagram-render",
+      "sha256": "f32f40c0137356a63bae72092cb4cbd684ea5062c4c0c38b4d24b924c5090dc7"
+    }
   },
   "targets": {
     "artwork-720.jpg": {
@@ -17,7 +29,11 @@
         "format": "jpeg",
         "quality": 86
       },
-      "publicPath": "./data/media/2026-02-24-echoes-of-belgian-federal-talks-v2/artwork-720.jpg"
+      "publicPath": "./data/media/2026-02-24-echoes-of-belgian-federal-talks-v2/artwork-720.jpg",
+      "source": {
+        "sha256": "45a1976a8f2e4095a5f6aa6208d3395c6fbbefea0af22ca82f509d38a38a2fde",
+        "role": "public-archive-fallback-render"
+      }
     },
     "thumb-320.jpg": {
       "spec": {
@@ -29,19 +45,27 @@
         "format": "jpeg",
         "quality": 82
       },
-      "publicPath": "./data/media/2026-02-24-echoes-of-belgian-federal-talks-v2/thumb-320.jpg"
+      "publicPath": "./data/media/2026-02-24-echoes-of-belgian-federal-talks-v2/thumb-320.jpg",
+      "source": {
+        "sha256": "45a1976a8f2e4095a5f6aa6208d3395c6fbbefea0af22ca82f509d38a38a2fde",
+        "role": "public-archive-fallback-render"
+      }
     },
-    "instagram-1080x1350.jpg": {
+    "instagram-1080x1440.jpg": {
       "spec": {
-        "fileName": "instagram-1080x1350.jpg",
+        "fileName": "instagram-1080x1440.jpg",
         "width": 1080,
-        "height": 1350,
-        "fit": "inside",
-        "withoutEnlargement": true,
+        "height": 1440,
+        "fit": "cover",
+        "withoutEnlargement": false,
         "format": "jpeg",
         "quality": 86
       },
-      "publicPath": "./data/media/2026-02-24-echoes-of-belgian-federal-talks-v2/instagram-1080x1350.jpg"
+      "publicPath": "./data/media/2026-02-24-echoes-of-belgian-federal-talks-v2/instagram-1080x1440.jpg",
+      "source": {
+        "sha256": "f32f40c0137356a63bae72092cb4cbd684ea5062c4c0c38b4d24b924c5090dc7",
+        "role": "public-archive-instagram-render"
+      }
     }
   }
 }

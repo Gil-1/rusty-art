@@ -1,10 +1,22 @@
 {
-  "version": 1,
+  "version": 2,
   "kind": "rusty-art-public-media-assets",
   "artworkId": "2026-04-20-resonance-staff-bpost-office-kampenhout-v2",
   "source": {
     "sha256": "cc6355242da119a6e68bc39f0e736c9ba1808956a76add5d6441eeff8e8c498d",
     "role": "public-archive-fallback-render"
+  },
+  "sources": {
+    "primary": {
+      "kind": "fallback-render",
+      "role": "public-archive-fallback-render",
+      "sha256": "cc6355242da119a6e68bc39f0e736c9ba1808956a76add5d6441eeff8e8c498d"
+    },
+    "instagram": {
+      "kind": "fallback-render",
+      "role": "public-archive-instagram-render",
+      "sha256": "bc1658164782b5e83fa6df7134b2638323a49f5155bfc6b5ee584ca1ea675b86"
+    }
   },
   "targets": {
     "artwork-720.jpg": {
@@ -17,7 +29,11 @@
         "format": "jpeg",
         "quality": 86
       },
-      "publicPath": "./data/media/2026-04-20-resonance-staff-bpost-office-kampenhout-v2/artwork-720.jpg"
+      "publicPath": "./data/media/2026-04-20-resonance-staff-bpost-office-kampenhout-v2/artwork-720.jpg",
+      "source": {
+        "sha256": "cc6355242da119a6e68bc39f0e736c9ba1808956a76add5d6441eeff8e8c498d",
+        "role": "public-archive-fallback-render"
+      }
     },
     "thumb-320.jpg": {
       "spec": {
@@ -29,19 +45,27 @@
         "format": "jpeg",
         "quality": 82
       },
-      "publicPath": "./data/media/2026-04-20-resonance-staff-bpost-office-kampenhout-v2/thumb-320.jpg"
+      "publicPath": "./data/media/2026-04-20-resonance-staff-bpost-office-kampenhout-v2/thumb-320.jpg",
+      "source": {
+        "sha256": "cc6355242da119a6e68bc39f0e736c9ba1808956a76add5d6441eeff8e8c498d",
+        "role": "public-archive-fallback-render"
+      }
     },
-    "instagram-1080x1350.jpg": {
+    "instagram-1080x1440.jpg": {
       "spec": {
-        "fileName": "instagram-1080x1350.jpg",
+        "fileName": "instagram-1080x1440.jpg",
         "width": 1080,
-        "height": 1350,
-        "fit": "inside",
-        "withoutEnlargement": true,
+        "height": 1440,
+        "fit": "cover",
+        "withoutEnlargement": false,
         "format": "jpeg",
         "quality": 86
       },
-      "publicPath": "./data/media/2026-04-20-resonance-staff-bpost-office-kampenhout-v2/instagram-1080x1350.jpg"
+      "publicPath": "./data/media/2026-04-20-resonance-staff-bpost-office-kampenhout-v2/instagram-1080x1440.jpg",
+      "source": {
+        "sha256": "bc1658164782b5e83fa6df7134b2638323a49f5155bfc6b5ee584ca1ea675b86",
+        "role": "public-archive-instagram-render"
+      }
     }
   }
 }

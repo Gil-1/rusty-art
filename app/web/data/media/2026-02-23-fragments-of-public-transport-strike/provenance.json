@@ -1,10 +1,22 @@
 {
-  "version": 1,
+  "version": 2,
   "kind": "rusty-art-public-media-assets",
   "artworkId": "2026-02-23-fragments-of-public-transport-strike",
   "source": {
     "sha256": "5bece21b2c00b50eb39e52a69e5dce1d67e0c3c639c9ca49cfd1ec2ade8833fc",
     "role": "public-archive-fallback-render"
+  },
+  "sources": {
+    "primary": {
+      "kind": "fallback-render",
+      "role": "public-archive-fallback-render",
+      "sha256": "5bece21b2c00b50eb39e52a69e5dce1d67e0c3c639c9ca49cfd1ec2ade8833fc"
+    },
+    "instagram": {
+      "kind": "fallback-render",
+      "role": "public-archive-instagram-render",
+      "sha256": "3380fb8fe71a70188ff74f1254039ebdca317cb631c7ef7b59d4e6a367087eac"
+    }
   },
   "targets": {
     "artwork-720.jpg": {
@@ -17,7 +29,11 @@
         "format": "jpeg",
         "quality": 86
       },
-      "publicPath": "./data/media/2026-02-23-fragments-of-public-transport-strike/artwork-720.jpg"
+      "publicPath": "./data/media/2026-02-23-fragments-of-public-transport-strike/artwork-720.jpg",
+      "source": {
+        "sha256": "5bece21b2c00b50eb39e52a69e5dce1d67e0c3c639c9ca49cfd1ec2ade8833fc",
+        "role": "public-archive-fallback-render"
+      }
     },
     "thumb-320.jpg": {
       "spec": {
@@ -29,19 +45,27 @@
         "format": "jpeg",
         "quality": 82
       },
-      "publicPath": "./data/media/2026-02-23-fragments-of-public-transport-strike/thumb-320.jpg"
+      "publicPath": "./data/media/2026-02-23-fragments-of-public-transport-strike/thumb-320.jpg",
+      "source": {
+        "sha256": "5bece21b2c00b50eb39e52a69e5dce1d67e0c3c639c9ca49cfd1ec2ade8833fc",
+        "role": "public-archive-fallback-render"
+      }
     },
-    "instagram-1080x1350.jpg": {
+    "instagram-1080x1440.jpg": {
       "spec": {
-        "fileName": "instagram-1080x1350.jpg",
+        "fileName": "instagram-1080x1440.jpg",
         "width": 1080,
-        "height": 1350,
-        "fit": "inside",
-        "withoutEnlargement": true,
+        "height": 1440,
+        "fit": "cover",
+        "withoutEnlargement": false,
         "format": "jpeg",
         "quality": 86
       },
-      "publicPath": "./data/media/2026-02-23-fragments-of-public-transport-strike/instagram-1080x1350.jpg"
+      "publicPath": "./data/media/2026-02-23-fragments-of-public-transport-strike/instagram-1080x1440.jpg",
+      "source": {
+        "sha256": "3380fb8fe71a70188ff74f1254039ebdca317cb631c7ef7b59d4e6a367087eac",
+        "role": "public-archive-instagram-render"
+      }
     }
   }
 }

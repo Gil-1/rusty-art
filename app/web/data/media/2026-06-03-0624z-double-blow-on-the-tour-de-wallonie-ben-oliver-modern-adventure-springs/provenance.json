@@ -1,10 +1,22 @@
 {
-  "version": 1,
+  "version": 2,
   "kind": "rusty-art-public-media-assets",
   "artworkId": "2026-06-03-0624z-double-blow-on-the-tour-de-wallonie-ben-oliver-modern-adventure-springs",
   "source": {
     "sha256": "e9f1afc8245df271a1d952f97fd01a3a6a489e76cd6b80ae81ac8bd2418151df",
     "role": "daily-preview-story-desktop"
+  },
+  "sources": {
+    "primary": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-desktop",
+      "sha256": "e9f1afc8245df271a1d952f97fd01a3a6a489e76cd6b80ae81ac8bd2418151df"
+    },
+    "instagram": {
+      "kind": "fallback-render",
+      "role": "public-archive-instagram-render",
+      "sha256": "2b1ebf06d71b5a9f3e4995cb0e9b74a2a0328479128387ce6cc157d0fa94c3fc"
+    }
   },
   "targets": {
     "artwork-720.jpg": {
@@ -17,7 +29,11 @@
         "format": "jpeg",
         "quality": 86
       },
-      "publicPath": "./data/media/2026-06-03-0624z-double-blow-on-the-tour-de-wallonie-ben-oliver-modern-adventure-springs/artwork-720.jpg"
+      "publicPath": "./data/media/2026-06-03-0624z-double-blow-on-the-tour-de-wallonie-ben-oliver-modern-adventure-springs/artwork-720.jpg",
+      "source": {
+        "sha256": "e9f1afc8245df271a1d952f97fd01a3a6a489e76cd6b80ae81ac8bd2418151df",
+        "role": "daily-preview-story-desktop"
+      }
     },
     "thumb-320.jpg": {
       "spec": {
@@ -29,19 +45,27 @@
         "format": "jpeg",
         "quality": 82
       },
-      "publicPath": "./data/media/2026-06-03-0624z-double-blow-on-the-tour-de-wallonie-ben-oliver-modern-adventure-springs/thumb-320.jpg"
+      "publicPath": "./data/media/2026-06-03-0624z-double-blow-on-the-tour-de-wallonie-ben-oliver-modern-adventure-springs/thumb-320.jpg",
+      "source": {
+        "sha256": "e9f1afc8245df271a1d952f97fd01a3a6a489e76cd6b80ae81ac8bd2418151df",
+        "role": "daily-preview-story-desktop"
+      }
     },
-    "instagram-1080x1350.jpg": {
+    "instagram-1080x1440.jpg": {
       "spec": {
-        "fileName": "instagram-1080x1350.jpg",
+        "fileName": "instagram-1080x1440.jpg",
         "width": 1080,
-        "height": 1350,
-        "fit": "inside",
-        "withoutEnlargement": true,
+        "height": 1440,
+        "fit": "cover",
+        "withoutEnlargement": false,
         "format": "jpeg",
         "quality": 86
       },
-      "publicPath": "./data/media/2026-06-03-0624z-double-blow-on-the-tour-de-wallonie-ben-oliver-modern-adventure-springs/instagram-1080x1350.jpg"
+      "publicPath": "./data/media/2026-06-03-0624z-double-blow-on-the-tour-de-wallonie-ben-oliver-modern-adventure-springs/instagram-1080x1440.jpg",
+      "source": {
+        "sha256": "2b1ebf06d71b5a9f3e4995cb0e9b74a2a0328479128387ce6cc157d0fa94c3fc",
+        "role": "public-archive-instagram-render"
+      }
     }
   }
 }

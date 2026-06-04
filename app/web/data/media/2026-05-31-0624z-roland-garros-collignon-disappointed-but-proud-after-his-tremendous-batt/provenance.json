@@ -1,10 +1,22 @@
 {
-  "version": 1,
+  "version": 2,
   "kind": "rusty-art-public-media-assets",
   "artworkId": "2026-05-31-0624z-roland-garros-collignon-disappointed-but-proud-after-his-tremendous-batt",
   "source": {
     "sha256": "14bac05b3d08e7afa56550a0bbe1f09167a6c1058a49d93d5ade1da255cb4dfc",
     "role": "daily-preview-story-desktop"
+  },
+  "sources": {
+    "primary": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-desktop",
+      "sha256": "14bac05b3d08e7afa56550a0bbe1f09167a6c1058a49d93d5ade1da255cb4dfc"
+    },
+    "instagram": {
+      "kind": "fallback-render",
+      "role": "public-archive-instagram-render",
+      "sha256": "78c521c678782cc6f264a7a2914edb5007e9d173a1407a91350d97606131c3fc"
+    }
   },
   "targets": {
     "artwork-720.jpg": {
@@ -17,7 +29,11 @@
         "format": "jpeg",
         "quality": 86
       },
-      "publicPath": "./data/media/2026-05-31-0624z-roland-garros-collignon-disappointed-but-proud-after-his-tremendous-batt/artwork-720.jpg"
+      "publicPath": "./data/media/2026-05-31-0624z-roland-garros-collignon-disappointed-but-proud-after-his-tremendous-batt/artwork-720.jpg",
+      "source": {
+        "sha256": "14bac05b3d08e7afa56550a0bbe1f09167a6c1058a49d93d5ade1da255cb4dfc",
+        "role": "daily-preview-story-desktop"
+      }
     },
     "thumb-320.jpg": {
       "spec": {
@@ -29,19 +45,27 @@
         "format": "jpeg",
         "quality": 82
       },
-      "publicPath": "./data/media/2026-05-31-0624z-roland-garros-collignon-disappointed-but-proud-after-his-tremendous-batt/thumb-320.jpg"
+      "publicPath": "./data/media/2026-05-31-0624z-roland-garros-collignon-disappointed-but-proud-after-his-tremendous-batt/thumb-320.jpg",
+      "source": {
+        "sha256": "14bac05b3d08e7afa56550a0bbe1f09167a6c1058a49d93d5ade1da255cb4dfc",
+        "role": "daily-preview-story-desktop"
+      }
     },
-    "instagram-1080x1350.jpg": {
+    "instagram-1080x1440.jpg": {
       "spec": {
-        "fileName": "instagram-1080x1350.jpg",
+        "fileName": "instagram-1080x1440.jpg",
         "width": 1080,
-        "height": 1350,
-        "fit": "inside",
-        "withoutEnlargement": true,
+        "height": 1440,
+        "fit": "cover",
+        "withoutEnlargement": false,
         "format": "jpeg",
         "quality": 86
       },
-      "publicPath": "./data/media/2026-05-31-0624z-roland-garros-collignon-disappointed-but-proud-after-his-tremendous-batt/instagram-1080x1350.jpg"
+      "publicPath": "./data/media/2026-05-31-0624z-roland-garros-collignon-disappointed-but-proud-after-his-tremendous-batt/instagram-1080x1440.jpg",
+      "source": {
+        "sha256": "78c521c678782cc6f264a7a2914edb5007e9d173a1407a91350d97606131c3fc",
+        "role": "public-archive-instagram-render"
+      }
     }
   }
 }

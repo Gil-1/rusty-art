@@ -1,10 +1,22 @@
 {
-  "version": 1,
+  "version": 2,
   "kind": "rusty-art-public-media-assets",
   "artworkId": "2026-05-05-fragments-of-affaire-reynders-vite-proc-v3",
   "source": {
     "sha256": "3c2a946f6a946359335f2a79a2d5311175509fdb6ec02cca620d342ccc804bbd",
     "role": "public-archive-fallback-render"
+  },
+  "sources": {
+    "primary": {
+      "kind": "fallback-render",
+      "role": "public-archive-fallback-render",
+      "sha256": "3c2a946f6a946359335f2a79a2d5311175509fdb6ec02cca620d342ccc804bbd"
+    },
+    "instagram": {
+      "kind": "fallback-render",
+      "role": "public-archive-instagram-render",
+      "sha256": "5ca9bbdee7b15720ade455b07edfe447cb97718d834129306ee99394321f45a8"
+    }
   },
   "targets": {
     "artwork-720.jpg": {
@@ -17,7 +29,11 @@
         "format": "jpeg",
         "quality": 86
       },
-      "publicPath": "./data/media/2026-05-05-fragments-of-affaire-reynders-vite-proc-v3/artwork-720.jpg"
+      "publicPath": "./data/media/2026-05-05-fragments-of-affaire-reynders-vite-proc-v3/artwork-720.jpg",
+      "source": {
+        "sha256": "3c2a946f6a946359335f2a79a2d5311175509fdb6ec02cca620d342ccc804bbd",
+        "role": "public-archive-fallback-render"
+      }
     },
     "thumb-320.jpg": {
       "spec": {
@@ -29,19 +45,27 @@
         "format": "jpeg",
         "quality": 82
       },
-      "publicPath": "./data/media/2026-05-05-fragments-of-affaire-reynders-vite-proc-v3/thumb-320.jpg"
+      "publicPath": "./data/media/2026-05-05-fragments-of-affaire-reynders-vite-proc-v3/thumb-320.jpg",
+      "source": {
+        "sha256": "3c2a946f6a946359335f2a79a2d5311175509fdb6ec02cca620d342ccc804bbd",
+        "role": "public-archive-fallback-render"
+      }
     },
-    "instagram-1080x1350.jpg": {
+    "instagram-1080x1440.jpg": {
       "spec": {
-        "fileName": "instagram-1080x1350.jpg",
+        "fileName": "instagram-1080x1440.jpg",
         "width": 1080,
-        "height": 1350,
-        "fit": "inside",
-        "withoutEnlargement": true,
+        "height": 1440,
+        "fit": "cover",
+        "withoutEnlargement": false,
         "format": "jpeg",
         "quality": 86
       },
-      "publicPath": "./data/media/2026-05-05-fragments-of-affaire-reynders-vite-proc-v3/instagram-1080x1350.jpg"
+      "publicPath": "./data/media/2026-05-05-fragments-of-affaire-reynders-vite-proc-v3/instagram-1080x1440.jpg",
+      "source": {
+        "sha256": "5ca9bbdee7b15720ade455b07edfe447cb97718d834129306ee99394321f45a8",
+        "role": "public-archive-instagram-render"
+      }
     }
   }
 }

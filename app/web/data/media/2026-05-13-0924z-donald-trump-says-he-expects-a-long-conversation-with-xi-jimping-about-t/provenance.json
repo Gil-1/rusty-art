@@ -1,10 +1,22 @@
 {
-  "version": 1,
+  "version": 2,
   "kind": "rusty-art-public-media-assets",
   "artworkId": "2026-05-13-0924z-donald-trump-says-he-expects-a-long-conversation-with-xi-jimping-about-t",
   "source": {
     "sha256": "0fc1179a50761cb7389227b00769c8e040bdc293eecf6e2f820077ef8ecde8a8",
     "role": "public-archive-fallback-render"
+  },
+  "sources": {
+    "primary": {
+      "kind": "fallback-render",
+      "role": "public-archive-fallback-render",
+      "sha256": "0fc1179a50761cb7389227b00769c8e040bdc293eecf6e2f820077ef8ecde8a8"
+    },
+    "instagram": {
+      "kind": "fallback-render",
+      "role": "public-archive-instagram-render",
+      "sha256": "1e0ee7a656dcc6db3fc4f7e2880b9d9fbe0bc747721875af207a21abc9daa9ef"
+    }
   },
   "targets": {
     "artwork-720.jpg": {
@@ -17,7 +29,11 @@
         "format": "jpeg",
         "quality": 86
       },
-      "publicPath": "./data/media/2026-05-13-0924z-donald-trump-says-he-expects-a-long-conversation-with-xi-jimping-about-t/artwork-720.jpg"
+      "publicPath": "./data/media/2026-05-13-0924z-donald-trump-says-he-expects-a-long-conversation-with-xi-jimping-about-t/artwork-720.jpg",
+      "source": {
+        "sha256": "0fc1179a50761cb7389227b00769c8e040bdc293eecf6e2f820077ef8ecde8a8",
+        "role": "public-archive-fallback-render"
+      }
     },
     "thumb-320.jpg": {
       "spec": {
@@ -29,19 +45,27 @@
         "format": "jpeg",
         "quality": 82
       },
-      "publicPath": "./data/media/2026-05-13-0924z-donald-trump-says-he-expects-a-long-conversation-with-xi-jimping-about-t/thumb-320.jpg"
+      "publicPath": "./data/media/2026-05-13-0924z-donald-trump-says-he-expects-a-long-conversation-with-xi-jimping-about-t/thumb-320.jpg",
+      "source": {
+        "sha256": "0fc1179a50761cb7389227b00769c8e040bdc293eecf6e2f820077ef8ecde8a8",
+        "role": "public-archive-fallback-render"
+      }
     },
-    "instagram-1080x1350.jpg": {
+    "instagram-1080x1440.jpg": {
       "spec": {
-        "fileName": "instagram-1080x1350.jpg",
+        "fileName": "instagram-1080x1440.jpg",
         "width": 1080,
-        "height": 1350,
-        "fit": "inside",
-        "withoutEnlargement": true,
+        "height": 1440,
+        "fit": "cover",
+        "withoutEnlargement": false,
         "format": "jpeg",
         "quality": 86
       },
-      "publicPath": "./data/media/2026-05-13-0924z-donald-trump-says-he-expects-a-long-conversation-with-xi-jimping-about-t/instagram-1080x1350.jpg"
+      "publicPath": "./data/media/2026-05-13-0924z-donald-trump-says-he-expects-a-long-conversation-with-xi-jimping-about-t/instagram-1080x1440.jpg",
+      "source": {
+        "sha256": "1e0ee7a656dcc6db3fc4f7e2880b9d9fbe0bc747721875af207a21abc9daa9ef",
+        "role": "public-archive-instagram-render"
+      }
     }
   }
 }

@@ -1,10 +1,22 @@
 {
-  "version": 1,
+  "version": 2,
   "kind": "rusty-art-public-media-assets",
   "artworkId": "2026-02-18-abstract-signal-belgian-federal-talks",
   "source": {
     "sha256": "9fcd9fbf6ad017494c27ffd7602373b98ecf05ca3e77292bbd13aa6c00744916",
     "role": "public-archive-fallback-render"
+  },
+  "sources": {
+    "primary": {
+      "kind": "fallback-render",
+      "role": "public-archive-fallback-render",
+      "sha256": "9fcd9fbf6ad017494c27ffd7602373b98ecf05ca3e77292bbd13aa6c00744916"
+    },
+    "instagram": {
+      "kind": "fallback-render",
+      "role": "public-archive-instagram-render",
+      "sha256": "a0bb6f479abc57f37f69f92bd5f87bc86b19699ff1f76152a0ca3903cf687de2"
+    }
   },
   "targets": {
     "artwork-720.jpg": {
@@ -17,7 +29,11 @@
         "format": "jpeg",
         "quality": 86
       },
-      "publicPath": "./data/media/2026-02-18-abstract-signal-belgian-federal-talks/artwork-720.jpg"
+      "publicPath": "./data/media/2026-02-18-abstract-signal-belgian-federal-talks/artwork-720.jpg",
+      "source": {
+        "sha256": "9fcd9fbf6ad017494c27ffd7602373b98ecf05ca3e77292bbd13aa6c00744916",
+        "role": "public-archive-fallback-render"
+      }
     },
     "thumb-320.jpg": {
       "spec": {
@@ -29,19 +45,27 @@
         "format": "jpeg",
         "quality": 82
       },
-      "publicPath": "./data/media/2026-02-18-abstract-signal-belgian-federal-talks/thumb-320.jpg"
+      "publicPath": "./data/media/2026-02-18-abstract-signal-belgian-federal-talks/thumb-320.jpg",
+      "source": {
+        "sha256": "9fcd9fbf6ad017494c27ffd7602373b98ecf05ca3e77292bbd13aa6c00744916",
+        "role": "public-archive-fallback-render"
+      }
     },
-    "instagram-1080x1350.jpg": {
+    "instagram-1080x1440.jpg": {
       "spec": {
-        "fileName": "instagram-1080x1350.jpg",
+        "fileName": "instagram-1080x1440.jpg",
         "width": 1080,
-        "height": 1350,
-        "fit": "inside",
-        "withoutEnlargement": true,
+        "height": 1440,
+        "fit": "cover",
+        "withoutEnlargement": false,
         "format": "jpeg",
         "quality": 86
       },
-      "publicPath": "./data/media/2026-02-18-abstract-signal-belgian-federal-talks/instagram-1080x1350.jpg"
+      "publicPath": "./data/media/2026-02-18-abstract-signal-belgian-federal-talks/instagram-1080x1440.jpg",
+      "source": {
+        "sha256": "a0bb6f479abc57f37f69f92bd5f87bc86b19699ff1f76152a0ca3903cf687de2",
+        "role": "public-archive-instagram-render"
+      }
     }
   }
 }

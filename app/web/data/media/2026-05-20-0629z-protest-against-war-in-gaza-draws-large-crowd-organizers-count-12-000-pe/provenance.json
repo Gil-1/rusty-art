@@ -1,10 +1,22 @@
 {
-  "version": 1,
+  "version": 2,
   "kind": "rusty-art-public-media-assets",
   "artworkId": "2026-05-20-0629z-protest-against-war-in-gaza-draws-large-crowd-organizers-count-12-000-pe",
   "source": {
     "sha256": "c258db348bfac848594600455b388f51d7a99b00ef467011cc62f8ca49e3b785",
     "role": "public-archive-fallback-render"
+  },
+  "sources": {
+    "primary": {
+      "kind": "fallback-render",
+      "role": "public-archive-fallback-render",
+      "sha256": "c258db348bfac848594600455b388f51d7a99b00ef467011cc62f8ca49e3b785"
+    },
+    "instagram": {
+      "kind": "fallback-render",
+      "role": "public-archive-instagram-render",
+      "sha256": "0c44f226336b6e4313809a5ce401955dfe4f469cba8877f13afbf82974480a41"
+    }
   },
   "targets": {
     "artwork-720.jpg": {
@@ -17,7 +29,11 @@
         "format": "jpeg",
         "quality": 86
       },
-      "publicPath": "./data/media/2026-05-20-0629z-protest-against-war-in-gaza-draws-large-crowd-organizers-count-12-000-pe/artwork-720.jpg"
+      "publicPath": "./data/media/2026-05-20-0629z-protest-against-war-in-gaza-draws-large-crowd-organizers-count-12-000-pe/artwork-720.jpg",
+      "source": {
+        "sha256": "c258db348bfac848594600455b388f51d7a99b00ef467011cc62f8ca49e3b785",
+        "role": "public-archive-fallback-render"
+      }
     },
     "thumb-320.jpg": {
       "spec": {
@@ -29,19 +45,27 @@
         "format": "jpeg",
         "quality": 82
       },
-      "publicPath": "./data/media/2026-05-20-0629z-protest-against-war-in-gaza-draws-large-crowd-organizers-count-12-000-pe/thumb-320.jpg"
+      "publicPath": "./data/media/2026-05-20-0629z-protest-against-war-in-gaza-draws-large-crowd-organizers-count-12-000-pe/thumb-320.jpg",
+      "source": {
+        "sha256": "c258db348bfac848594600455b388f51d7a99b00ef467011cc62f8ca49e3b785",
+        "role": "public-archive-fallback-render"
+      }
     },
-    "instagram-1080x1350.jpg": {
+    "instagram-1080x1440.jpg": {
       "spec": {
-        "fileName": "instagram-1080x1350.jpg",
+        "fileName": "instagram-1080x1440.jpg",
         "width": 1080,
-        "height": 1350,
-        "fit": "inside",
-        "withoutEnlargement": true,
+        "height": 1440,
+        "fit": "cover",
+        "withoutEnlargement": false,
         "format": "jpeg",
         "quality": 86
       },
-      "publicPath": "./data/media/2026-05-20-0629z-protest-against-war-in-gaza-draws-large-crowd-organizers-count-12-000-pe/instagram-1080x1350.jpg"
+      "publicPath": "./data/media/2026-05-20-0629z-protest-against-war-in-gaza-draws-large-crowd-organizers-count-12-000-pe/instagram-1080x1440.jpg",
+      "source": {
+        "sha256": "0c44f226336b6e4313809a5ce401955dfe4f469cba8877f13afbf82974480a41",
+        "role": "public-archive-instagram-render"
+      }
     }
   }
 }

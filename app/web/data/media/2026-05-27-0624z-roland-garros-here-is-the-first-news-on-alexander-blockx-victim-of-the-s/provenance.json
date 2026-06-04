@@ -1,10 +1,22 @@
 {
-  "version": 1,
+  "version": 2,
   "kind": "rusty-art-public-media-assets",
   "artworkId": "2026-05-27-0624z-roland-garros-here-is-the-first-news-on-alexander-blockx-victim-of-the-s",
   "source": {
     "sha256": "70bc84dee867f9648ceac72c0544880ea592a303efa2437a1b6b00e0886681e5",
     "role": "daily-preview-story-desktop"
+  },
+  "sources": {
+    "primary": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-desktop",
+      "sha256": "70bc84dee867f9648ceac72c0544880ea592a303efa2437a1b6b00e0886681e5"
+    },
+    "instagram": {
+      "kind": "fallback-render",
+      "role": "public-archive-instagram-render",
+      "sha256": "f0eab8100ed03cb2355c97324d0f485e0183197e6fcdcaf9f4f03c63abc8bac2"
+    }
   },
   "targets": {
     "artwork-720.jpg": {
@@ -17,7 +29,11 @@
         "format": "jpeg",
         "quality": 86
       },
-      "publicPath": "./data/media/2026-05-27-0624z-roland-garros-here-is-the-first-news-on-alexander-blockx-victim-of-the-s/artwork-720.jpg"
+      "publicPath": "./data/media/2026-05-27-0624z-roland-garros-here-is-the-first-news-on-alexander-blockx-victim-of-the-s/artwork-720.jpg",
+      "source": {
+        "sha256": "70bc84dee867f9648ceac72c0544880ea592a303efa2437a1b6b00e0886681e5",
+        "role": "daily-preview-story-desktop"
+      }
     },
     "thumb-320.jpg": {
       "spec": {
@@ -29,19 +45,27 @@
         "format": "jpeg",
         "quality": 82
       },
-      "publicPath": "./data/media/2026-05-27-0624z-roland-garros-here-is-the-first-news-on-alexander-blockx-victim-of-the-s/thumb-320.jpg"
+      "publicPath": "./data/media/2026-05-27-0624z-roland-garros-here-is-the-first-news-on-alexander-blockx-victim-of-the-s/thumb-320.jpg",
+      "source": {
+        "sha256": "70bc84dee867f9648ceac72c0544880ea592a303efa2437a1b6b00e0886681e5",
+        "role": "daily-preview-story-desktop"
+      }
     },
-    "instagram-1080x1350.jpg": {
+    "instagram-1080x1440.jpg": {
       "spec": {
-        "fileName": "instagram-1080x1350.jpg",
+        "fileName": "instagram-1080x1440.jpg",
         "width": 1080,
-        "height": 1350,
-        "fit": "inside",
-        "withoutEnlargement": true,
+        "height": 1440,
+        "fit": "cover",
+        "withoutEnlargement": false,
         "format": "jpeg",
         "quality": 86
       },
-      "publicPath": "./data/media/2026-05-27-0624z-roland-garros-here-is-the-first-news-on-alexander-blockx-victim-of-the-s/instagram-1080x1350.jpg"
+      "publicPath": "./data/media/2026-05-27-0624z-roland-garros-here-is-the-first-news-on-alexander-blockx-victim-of-the-s/instagram-1080x1440.jpg",
+      "source": {
+        "sha256": "f0eab8100ed03cb2355c97324d0f485e0183197e6fcdcaf9f4f03c63abc8bac2",
+        "role": "public-archive-instagram-render"
+      }
     }
   }
 }

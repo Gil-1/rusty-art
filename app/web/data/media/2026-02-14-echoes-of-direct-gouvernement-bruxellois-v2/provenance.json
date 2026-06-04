@@ -1,10 +1,22 @@
 {
-  "version": 1,
+  "version": 2,
   "kind": "rusty-art-public-media-assets",
   "artworkId": "2026-02-14-echoes-of-direct-gouvernement-bruxellois-v2",
   "source": {
     "sha256": "94d1b565750eb8d79d18cff5ae06ddbf158d4e8d0d82609b4dd8d9bf4d0fdbaf",
     "role": "public-archive-fallback-render"
+  },
+  "sources": {
+    "primary": {
+      "kind": "fallback-render",
+      "role": "public-archive-fallback-render",
+      "sha256": "94d1b565750eb8d79d18cff5ae06ddbf158d4e8d0d82609b4dd8d9bf4d0fdbaf"
+    },
+    "instagram": {
+      "kind": "fallback-render",
+      "role": "public-archive-instagram-render",
+      "sha256": "b55e89196c944ffd4e1a975d48a7b80a46f5acb4888e40f225065f49865b87ff"
+    }
   },
   "targets": {
     "artwork-720.jpg": {
@@ -17,7 +29,11 @@
         "format": "jpeg",
         "quality": 86
       },
-      "publicPath": "./data/media/2026-02-14-echoes-of-direct-gouvernement-bruxellois-v2/artwork-720.jpg"
+      "publicPath": "./data/media/2026-02-14-echoes-of-direct-gouvernement-bruxellois-v2/artwork-720.jpg",
+      "source": {
+        "sha256": "94d1b565750eb8d79d18cff5ae06ddbf158d4e8d0d82609b4dd8d9bf4d0fdbaf",
+        "role": "public-archive-fallback-render"
+      }
     },
     "thumb-320.jpg": {
       "spec": {
@@ -29,19 +45,27 @@
         "format": "jpeg",
         "quality": 82
       },
-      "publicPath": "./data/media/2026-02-14-echoes-of-direct-gouvernement-bruxellois-v2/thumb-320.jpg"
+      "publicPath": "./data/media/2026-02-14-echoes-of-direct-gouvernement-bruxellois-v2/thumb-320.jpg",
+      "source": {
+        "sha256": "94d1b565750eb8d79d18cff5ae06ddbf158d4e8d0d82609b4dd8d9bf4d0fdbaf",
+        "role": "public-archive-fallback-render"
+      }
     },
-    "instagram-1080x1350.jpg": {
+    "instagram-1080x1440.jpg": {
       "spec": {
-        "fileName": "instagram-1080x1350.jpg",
+        "fileName": "instagram-1080x1440.jpg",
         "width": 1080,
-        "height": 1350,
-        "fit": "inside",
-        "withoutEnlargement": true,
+        "height": 1440,
+        "fit": "cover",
+        "withoutEnlargement": false,
         "format": "jpeg",
         "quality": 86
       },
-      "publicPath": "./data/media/2026-02-14-echoes-of-direct-gouvernement-bruxellois-v2/instagram-1080x1350.jpg"
+      "publicPath": "./data/media/2026-02-14-echoes-of-direct-gouvernement-bruxellois-v2/instagram-1080x1440.jpg",
+      "source": {
+        "sha256": "b55e89196c944ffd4e1a975d48a7b80a46f5acb4888e40f225065f49865b87ff",
+        "role": "public-archive-instagram-render"
+      }
     }
   }
 }

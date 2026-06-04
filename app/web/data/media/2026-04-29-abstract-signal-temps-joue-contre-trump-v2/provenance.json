@@ -1,10 +1,22 @@
 {
-  "version": 1,
+  "version": 2,
   "kind": "rusty-art-public-media-assets",
   "artworkId": "2026-04-29-abstract-signal-temps-joue-contre-trump-v2",
   "source": {
     "sha256": "2c7d22d6181c8bffb6b7b7ac9dd3e7f5052ae212fab5788456a8a81927db5557",
     "role": "public-archive-fallback-render"
+  },
+  "sources": {
+    "primary": {
+      "kind": "fallback-render",
+      "role": "public-archive-fallback-render",
+      "sha256": "2c7d22d6181c8bffb6b7b7ac9dd3e7f5052ae212fab5788456a8a81927db5557"
+    },
+    "instagram": {
+      "kind": "fallback-render",
+      "role": "public-archive-instagram-render",
+      "sha256": "6040a60ceeee65397f1d864833bf50f4fc2bc97c4edb29da74fb7f7df84e1c73"
+    }
   },
   "targets": {
     "artwork-720.jpg": {
@@ -17,7 +29,11 @@
         "format": "jpeg",
         "quality": 86
       },
-      "publicPath": "./data/media/2026-04-29-abstract-signal-temps-joue-contre-trump-v2/artwork-720.jpg"
+      "publicPath": "./data/media/2026-04-29-abstract-signal-temps-joue-contre-trump-v2/artwork-720.jpg",
+      "source": {
+        "sha256": "2c7d22d6181c8bffb6b7b7ac9dd3e7f5052ae212fab5788456a8a81927db5557",
+        "role": "public-archive-fallback-render"
+      }
     },
     "thumb-320.jpg": {
       "spec": {
@@ -29,19 +45,27 @@
         "format": "jpeg",
         "quality": 82
       },
-      "publicPath": "./data/media/2026-04-29-abstract-signal-temps-joue-contre-trump-v2/thumb-320.jpg"
+      "publicPath": "./data/media/2026-04-29-abstract-signal-temps-joue-contre-trump-v2/thumb-320.jpg",
+      "source": {
+        "sha256": "2c7d22d6181c8bffb6b7b7ac9dd3e7f5052ae212fab5788456a8a81927db5557",
+        "role": "public-archive-fallback-render"
+      }
     },
-    "instagram-1080x1350.jpg": {
+    "instagram-1080x1440.jpg": {
       "spec": {
-        "fileName": "instagram-1080x1350.jpg",
+        "fileName": "instagram-1080x1440.jpg",
         "width": 1080,
-        "height": 1350,
-        "fit": "inside",
-        "withoutEnlargement": true,
+        "height": 1440,
+        "fit": "cover",
+        "withoutEnlargement": false,
         "format": "jpeg",
         "quality": 86
       },
-      "publicPath": "./data/media/2026-04-29-abstract-signal-temps-joue-contre-trump-v2/instagram-1080x1350.jpg"
+      "publicPath": "./data/media/2026-04-29-abstract-signal-temps-joue-contre-trump-v2/instagram-1080x1440.jpg",
+      "source": {
+        "sha256": "6040a60ceeee65397f1d864833bf50f4fc2bc97c4edb29da74fb7f7df84e1c73",
+        "role": "public-archive-instagram-render"
+      }
     }
   }
 }

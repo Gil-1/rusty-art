@@ -1,10 +1,22 @@
 {
-  "version": 1,
+  "version": 2,
   "kind": "rusty-art-public-media-assets",
   "artworkId": "2026-04-11-echoes-of-trump-sends-vance-negotiations",
   "source": {
     "sha256": "9cb49e34bda25aaade0831733270974c2490095f65e7a0265704531b1af16a12",
     "role": "public-archive-fallback-render"
+  },
+  "sources": {
+    "primary": {
+      "kind": "fallback-render",
+      "role": "public-archive-fallback-render",
+      "sha256": "9cb49e34bda25aaade0831733270974c2490095f65e7a0265704531b1af16a12"
+    },
+    "instagram": {
+      "kind": "fallback-render",
+      "role": "public-archive-instagram-render",
+      "sha256": "e45991d92c67234dee8b5b93947598e41018f9e63c8b1b2cb8d869f2cbf01cf5"
+    }
   },
   "targets": {
     "artwork-720.jpg": {
@@ -17,7 +29,11 @@
         "format": "jpeg",
         "quality": 86
       },
-      "publicPath": "./data/media/2026-04-11-echoes-of-trump-sends-vance-negotiations/artwork-720.jpg"
+      "publicPath": "./data/media/2026-04-11-echoes-of-trump-sends-vance-negotiations/artwork-720.jpg",
+      "source": {
+        "sha256": "9cb49e34bda25aaade0831733270974c2490095f65e7a0265704531b1af16a12",
+        "role": "public-archive-fallback-render"
+      }
     },
     "thumb-320.jpg": {
       "spec": {
@@ -29,19 +45,27 @@
         "format": "jpeg",
         "quality": 82
       },
-      "publicPath": "./data/media/2026-04-11-echoes-of-trump-sends-vance-negotiations/thumb-320.jpg"
+      "publicPath": "./data/media/2026-04-11-echoes-of-trump-sends-vance-negotiations/thumb-320.jpg",
+      "source": {
+        "sha256": "9cb49e34bda25aaade0831733270974c2490095f65e7a0265704531b1af16a12",
+        "role": "public-archive-fallback-render"
+      }
     },
-    "instagram-1080x1350.jpg": {
+    "instagram-1080x1440.jpg": {
       "spec": {
-        "fileName": "instagram-1080x1350.jpg",
+        "fileName": "instagram-1080x1440.jpg",
         "width": 1080,
-        "height": 1350,
-        "fit": "inside",
-        "withoutEnlargement": true,
+        "height": 1440,
+        "fit": "cover",
+        "withoutEnlargement": false,
         "format": "jpeg",
         "quality": 86
       },
-      "publicPath": "./data/media/2026-04-11-echoes-of-trump-sends-vance-negotiations/instagram-1080x1350.jpg"
+      "publicPath": "./data/media/2026-04-11-echoes-of-trump-sends-vance-negotiations/instagram-1080x1440.jpg",
+      "source": {
+        "sha256": "e45991d92c67234dee8b5b93947598e41018f9e63c8b1b2cb8d869f2cbf01cf5",
+        "role": "public-archive-instagram-render"
+      }
     }
   }
 }
