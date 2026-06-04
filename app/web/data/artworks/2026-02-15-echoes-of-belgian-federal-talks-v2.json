@@ -1,1 +1,426 @@
-{"id":"2026-02-15-echoes-of-belgian-federal-talks-v2","date":"2026-02-15","title":"Echoes of Belgian federal talks","generatedAt":"2026-02-15T21:13:17.623Z","news":{"source":"rtbf","title":"Belgian federal talks intensify around budget and climate priorities","link":"https://example.com/rtbf-federal-talks","score":18},"inspiration":{"artist":"John D. Graham","tags":["figurative"],"links":{"wikipedia":"https://en.wikipedia.org/wiki/John_D._Graham","reference":"https://en.wikipedia.org/wiki/John_D._Graham"}},"seed":3156354101,"scene":{"motif":"clusters","shapeCount":40,"turbulence":0.546,"spiralBias":0.594,"motionSpeed":0.001263,"bloom":0.333,"grain":0.045,"fogDensity":0.059,"distortion":0.692,"flowField":0.471,"anchorStrength":0.698,"anchorOffsetX":0.098,"layerBalance":{"structure":0.637,"chaos":0.367},"expression":{"tension":0.552,"structure":0.473,"motion":0.385,"noise":0.505,"urgency":0.18,"contrast":0.136},"palette":{"bg":"hsl(251, 48%, 6%)","primary":"hsl(102, 76%, 62%)","secondary":"hsl(125, 68%, 64%)","glow":"hsl(21, 77%, 66%)","anchor":"hsl(66, 77%, 66%)"},"shaderLayers":6,"paletteVariance":0.72,"motionSpeedNormalized":0.502,"camera":{"autoRotate":false,"autoRotateSpeed":0.096,"minDistance":6,"maxDistance":24,"cycleSeconds":24,"beats":[{"t":0,"radius":12.6,"theta":0.208,"phi":1.22,"hold":1},{"t":0.34,"radius":10.7,"theta":1.038,"phi":1.052,"hold":0.5},{"t":0.68,"radius":11.2,"theta":1.807,"phi":1.32,"hold":0.8},{"t":1,"radius":12.2,"theta":2.306,"phi":1.144,"hold":1.1}]},"post":{"vignette":0.381,"contrast":1.109,"saturation":1.032,"exposure":0.956,"breathing":{"hueShift":0.01,"saturationAmplitude":0.06,"exposureAmplitude":0.04,"phaseA":0.17,"phaseB":0.4274}},"styleFingerprint":{"pulseFamily":"balanced","stripeWarp":0.14,"edgeSoftness":0.26,"cameraSway":0.16,"edgeHardness":0.36,"temperatureBias":0,"verticalBias":0,"cadenceBias":-0.1},"seedVersion":2,"seeds":{"baseSeed":3102596457,"runSeed":3156354101,"geomSeed":2899603288,"animSeed":2894350237,"colorSeed":591400415,"cameraSeed":3334576743},"techStack":{"id":"sdf-raymarch-lite","name":"SDF/Raymarch Lite","family":"sdf-raymarch","strategyFamilies":["orbits","flow","hybrid"],"rationale":{"source":"loop-adjustment-alternate-stack","score":2.265,"penalties":["conflict<0.25","motion<0.3"]},"dominantPrimitive":"shader-field-plane","moduleSet":["volumetric-haze","anchor-core","shader-field-plane","flow-noise-slab"],"pipelineKind":"shader-field"},"visualProfileHints":{"cadence":"steady","motionEnergy":0.42,"preferredModules":[{"name":"motif-armature","weight":0.5,"reason":"fallback baseline"}],"preferredStackFamilies":[{"family":"shader-field","weight":0.5,"reason":"neutral fallback"}],"sourceAnalysis":{"mode":"computer-vision","status":"unavailable","analyzedReferences":0,"failedReferences":0,"texture":null,"failures":[],"note":"No image URLs available in reference set for computer-vision analysis."}},"strategy":{"id":"atomic-balanced-flow","name":"Balanced Flow Field","type":"atomic","family":"flow","cooldown":{"window":3,"recentFamilies":[],"family":"flow","applied":false},"compositeDemanded":false,"signals":{"conflict":0.332,"context":0.628,"moodDepth":0.35}},"layers":[{"role":"background","modules":["volumetric-haze"]},{"role":"midground","modules":["motif-armature","signal-weave"]},{"role":"foreground","modules":["anchor-core"]},{"role":"accent","modules":["orbit-ribbon"]},{"role":"post","modules":["post-breathing"]}],"renderPipeline":{"kind":"shader-field","family":"sdf-raymarch","fallback":false,"dominantPrimitive":"shader-field-plane","moduleSet":["volumetric-haze","anchor-core","shader-field-plane","flow-noise-slab"]},"elements":[{"role":"atmosphere-field","colorA":"bg","colorB":"secondary","opacity":0.328,"intensity":0.552,"animation":{"drift":0.262},"layer":"background","moduleType":"volumetric-haze"},{"role":"primary-signal","motif":"clusters","color":"anchor","auraColor":"glow","opacity":0.635,"size":0.956,"intensity":0.772,"animation":{"rotationZ":0.137,"wobbleY":0.131,"pulse":0.285},"layer":"foreground","moduleType":"anchor-core"},{"role":"support-rhythm","color":"glow","opacity":0.34,"intensity":0.52,"animation":{"rotationZ":0.14,"pulse":0.2},"moduleType":"shader-field-plane"},{"role":"structural-spine","layer":"midground","color":"secondary","opacity":0.36,"intensity":0.56,"animation":{"rotationZ":0.12,"pulse":0.2},"moduleType":"flow-noise-slab"}],"elementDiversity":4},"sceneStrategy":{"selected":{"id":"atomic-balanced-flow","name":"Balanced Flow Field","type":"atomic","family":"flow"},"applied":true,"fallbackReason":null},"techStack":{"id":"sdf-raymarch-lite","name":"SDF/Raymarch Lite","family":"sdf-raymarch"},"newsVisualMappings":[{"signal":"title evidence [federal, budget, climate] -> motif clusters","from":"federal, budget, climate","visualDecision":"structural motif armature set to clusters"},{"signal":"composition foreground conflict","from":"intensify, budget, budget, budget","visualDecision":"foreground role tension-knot at pressure 0.527"},{"signal":"composition midground context","from":"federal, budget, climate, federal, budget, climate","visualDecision":"midground role context-drift with density 0.557"},{"signal":"composition background mood","from":"climate, climate, climate","visualDecision":"background mood watchful depth 0.385"},{"signal":"urgency -> motion","from":"ageHours=61.72","visualDecision":"motionSpeedNormalized=0.502"},{"signal":"title semantics -> palette/edge cadence","from":"temp=0 edge=0.36","visualDecision":"postContrast=1.109 accentType=n/a"},{"signal":"article institutional/conflict polarity","from":"climate, intent-motif-hint","visualDecision":"accent primitive n/a with opacity n/a"},{"signal":"artist grammar John D. Graham","from":"style card radial-burst · musical-pulse · high-contrast-prism · core-centered","visualDecision":"camera beat choreography + palette topology constrained to artist envelope"}],"qualityScore":{"score":55.5,"summary":"Alignment 76.8 with strongest channel style.","heuristic":{"score":71,"breakdown":{"legibility":77,"emotionalReadability":77.3,"coherence":85.3,"focalAnchor":71.9,"technicalRichness":100,"restraint":66.2,"alignment":76.8}},"calibration":{"sampleCount":1,"trustWeight":0.4},"alignment":{"totalAlign":76.8,"components":{"title":{"score":64.5},"style":{"score":85.7},"emotional":{"score":77.4}}}},"rationale":{"intent":{"signal":null,"emotion":null,"tension":null,"balance":null,"motion":null},"selection":{"whyHeadline":"Selected as top-ranked Belgian headline (score 18 = frequency 9 + priority 9 + recency 0).","priorityTerms":["federal","budget","climate"]},"qualitySummary":"TOTAL_ALIGN 76.8."},"runPolicy":{"artworksPerRun":1,"multiVariant":false},"artFramework":{"version":3,"intent":{"statement":"John D. In response to \"Belgian federal talks intensify around budget and climate priorities\", the artwork should translate civic signal into an abstract composition with a clear emotional center. Art is a diverse range of cultural activity centered around works utilizing creative or imaginative talents, which are expected to evoke a worthwhile experience, generally through an expression of emotional power, conceptual ideas, technical proficiency, or beauty.","narrativeBridge":"Watercolor or watercolour, also aquarelle, is a painting method in which the paints are made of pigments suspended in a water-based solution. Art is a diverse range of cultural activity centered around works utilizing creative or imaginative talents, which are expected to evoke a worthwhile experience, generally through an expression of emotional power, conceptual ideas, technical proficiency, or beauty.","motifHint":"clusters","emotionalCenter":"measured structural drift"}}}
+{
+  "id": "2026-02-15-echoes-of-belgian-federal-talks-v2",
+  "date": "2026-02-15",
+  "title": "Echoes of Belgian federal talks",
+  "generatedAt": "2026-02-15T21:13:17.623Z",
+  "news": {
+    "source": "rtbf",
+    "title": "Belgian federal talks intensify around budget and climate priorities",
+    "link": "https://example.com/rtbf-federal-talks",
+    "score": 18
+  },
+  "inspiration": {
+    "artist": "John D. Graham",
+    "tags": [
+      "figurative"
+    ],
+    "links": {
+      "wikipedia": "https://en.wikipedia.org/wiki/John_D._Graham",
+      "reference": "https://en.wikipedia.org/wiki/John_D._Graham"
+    }
+  },
+  "seed": 3156354101,
+  "scene": {
+    "motif": "clusters",
+    "shapeCount": 40,
+    "turbulence": 0.546,
+    "spiralBias": 0.594,
+    "motionSpeed": 0.001263,
+    "bloom": 0.333,
+    "grain": 0.045,
+    "fogDensity": 0.059,
+    "distortion": 0.692,
+    "flowField": 0.471,
+    "anchorStrength": 0.698,
+    "anchorOffsetX": 0.098,
+    "layerBalance": {
+      "structure": 0.637,
+      "chaos": 0.367
+    },
+    "expression": {
+      "tension": 0.552,
+      "structure": 0.473,
+      "motion": 0.385,
+      "noise": 0.505,
+      "urgency": 0.18,
+      "contrast": 0.136
+    },
+    "palette": {
+      "bg": "hsl(251, 48%, 6%)",
+      "primary": "hsl(102, 76%, 62%)",
+      "secondary": "hsl(125, 68%, 64%)",
+      "glow": "hsl(21, 77%, 66%)",
+      "anchor": "hsl(66, 77%, 66%)"
+    },
+    "shaderLayers": 6,
+    "paletteVariance": 0.72,
+    "motionSpeedNormalized": 0.502,
+    "camera": {
+      "autoRotate": false,
+      "autoRotateSpeed": 0.096,
+      "minDistance": 6,
+      "maxDistance": 24,
+      "cycleSeconds": 24,
+      "beats": [
+        {
+          "t": 0,
+          "radius": 12.6,
+          "theta": 0.208,
+          "phi": 1.22,
+          "hold": 1
+        },
+        {
+          "t": 0.34,
+          "radius": 10.7,
+          "theta": 1.038,
+          "phi": 1.052,
+          "hold": 0.5
+        },
+        {
+          "t": 0.68,
+          "radius": 11.2,
+          "theta": 1.807,
+          "phi": 1.32,
+          "hold": 0.8
+        },
+        {
+          "t": 1,
+          "radius": 12.2,
+          "theta": 2.306,
+          "phi": 1.144,
+          "hold": 1.1
+        }
+      ]
+    },
+    "post": {
+      "vignette": 0.381,
+      "contrast": 1.109,
+      "saturation": 1.032,
+      "exposure": 0.956,
+      "breathing": {
+        "hueShift": 0.01,
+        "saturationAmplitude": 0.06,
+        "exposureAmplitude": 0.04,
+        "phaseA": 0.17,
+        "phaseB": 0.4274
+      }
+    },
+    "styleFingerprint": {
+      "pulseFamily": "balanced",
+      "stripeWarp": 0.14,
+      "edgeSoftness": 0.26,
+      "cameraSway": 0.16,
+      "edgeHardness": 0.36,
+      "temperatureBias": 0,
+      "verticalBias": 0,
+      "cadenceBias": -0.1
+    },
+    "seedVersion": 2,
+    "seeds": {
+      "baseSeed": 3102596457,
+      "runSeed": 3156354101,
+      "geomSeed": 2899603288,
+      "animSeed": 2894350237,
+      "colorSeed": 591400415,
+      "cameraSeed": 3334576743
+    },
+    "techStack": {
+      "id": "sdf-raymarch-lite",
+      "name": "SDF/Raymarch Lite",
+      "family": "sdf-raymarch",
+      "strategyFamilies": [
+        "orbits",
+        "flow",
+        "hybrid"
+      ],
+      "rationale": {
+        "source": "loop-adjustment-alternate-stack",
+        "score": 2.265,
+        "penalties": [
+          "conflict<0.25",
+          "motion<0.3"
+        ]
+      },
+      "dominantPrimitive": "shader-field-plane",
+      "moduleSet": [
+        "volumetric-haze",
+        "anchor-core",
+        "shader-field-plane",
+        "flow-noise-slab"
+      ],
+      "pipelineKind": "shader-field"
+    },
+    "visualProfileHints": {
+      "cadence": "steady",
+      "motionEnergy": 0.42,
+      "preferredModules": [
+        {
+          "name": "motif-armature",
+          "weight": 0.5,
+          "reason": "fallback baseline"
+        }
+      ],
+      "preferredStackFamilies": [
+        {
+          "family": "shader-field",
+          "weight": 0.5,
+          "reason": "neutral fallback"
+        }
+      ],
+      "sourceAnalysis": {
+        "mode": "computer-vision",
+        "status": "unavailable",
+        "analyzedReferences": 0,
+        "failedReferences": 0,
+        "texture": null,
+        "failures": [],
+        "note": "No image URLs available in reference set for computer-vision analysis."
+      }
+    },
+    "strategy": {
+      "id": "atomic-balanced-flow",
+      "name": "Balanced Flow Field",
+      "type": "atomic",
+      "family": "flow",
+      "cooldown": {
+        "window": 3,
+        "recentFamilies": [],
+        "family": "flow",
+        "applied": false
+      },
+      "compositeDemanded": false,
+      "signals": {
+        "conflict": 0.332,
+        "context": 0.628,
+        "moodDepth": 0.35
+      }
+    },
+    "layers": [
+      {
+        "role": "background",
+        "modules": [
+          "volumetric-haze"
+        ]
+      },
+      {
+        "role": "midground",
+        "modules": [
+          "motif-armature",
+          "signal-weave"
+        ]
+      },
+      {
+        "role": "foreground",
+        "modules": [
+          "anchor-core"
+        ]
+      },
+      {
+        "role": "accent",
+        "modules": [
+          "orbit-ribbon"
+        ]
+      },
+      {
+        "role": "post",
+        "modules": [
+          "post-breathing"
+        ]
+      }
+    ],
+    "renderPipeline": {
+      "kind": "shader-field",
+      "family": "sdf-raymarch",
+      "fallback": false,
+      "dominantPrimitive": "shader-field-plane",
+      "moduleSet": [
+        "volumetric-haze",
+        "anchor-core",
+        "shader-field-plane",
+        "flow-noise-slab"
+      ]
+    },
+    "elements": [
+      {
+        "role": "atmosphere-field",
+        "colorA": "bg",
+        "colorB": "secondary",
+        "opacity": 0.328,
+        "intensity": 0.552,
+        "animation": {
+          "drift": 0.262
+        },
+        "layer": "background",
+        "moduleType": "volumetric-haze"
+      },
+      {
+        "role": "primary-signal",
+        "motif": "clusters",
+        "color": "anchor",
+        "auraColor": "glow",
+        "opacity": 0.635,
+        "size": 0.956,
+        "intensity": 0.772,
+        "animation": {
+          "rotationZ": 0.137,
+          "wobbleY": 0.131,
+          "pulse": 0.285
+        },
+        "layer": "foreground",
+        "moduleType": "anchor-core"
+      },
+      {
+        "role": "support-rhythm",
+        "color": "glow",
+        "opacity": 0.34,
+        "intensity": 0.52,
+        "animation": {
+          "rotationZ": 0.14,
+          "pulse": 0.2
+        },
+        "moduleType": "shader-field-plane"
+      },
+      {
+        "role": "structural-spine",
+        "layer": "midground",
+        "color": "secondary",
+        "opacity": 0.36,
+        "intensity": 0.56,
+        "animation": {
+          "rotationZ": 0.12,
+          "pulse": 0.2
+        },
+        "moduleType": "flow-noise-slab"
+      }
+    ],
+    "elementDiversity": 4
+  },
+  "sceneStrategy": {
+    "selected": {
+      "id": "atomic-balanced-flow",
+      "name": "Balanced Flow Field",
+      "type": "atomic",
+      "family": "flow"
+    },
+    "applied": true,
+    "fallbackReason": null
+  },
+  "techStack": {
+    "id": "sdf-raymarch-lite",
+    "name": "SDF/Raymarch Lite",
+    "family": "sdf-raymarch"
+  },
+  "newsVisualMappings": [
+    {
+      "signal": "title evidence [federal, budget, climate] -> motif clusters",
+      "from": "federal, budget, climate",
+      "visualDecision": "structural motif armature set to clusters"
+    },
+    {
+      "signal": "composition foreground conflict",
+      "from": "intensify, budget, budget, budget",
+      "visualDecision": "foreground role tension-knot at pressure 0.527"
+    },
+    {
+      "signal": "composition midground context",
+      "from": "federal, budget, climate, federal, budget, climate",
+      "visualDecision": "midground role context-drift with density 0.557"
+    },
+    {
+      "signal": "composition background mood",
+      "from": "climate, climate, climate",
+      "visualDecision": "background mood watchful depth 0.385"
+    },
+    {
+      "signal": "urgency -> motion",
+      "from": "ageHours=61.72",
+      "visualDecision": "motionSpeedNormalized=0.502"
+    },
+    {
+      "signal": "title semantics -> palette/edge cadence",
+      "from": "temp=0 edge=0.36",
+      "visualDecision": "postContrast=1.109 accentType=n/a"
+    },
+    {
+      "signal": "article institutional/conflict polarity",
+      "from": "climate, intent-motif-hint",
+      "visualDecision": "accent primitive n/a with opacity n/a"
+    },
+    {
+      "signal": "artist grammar John D. Graham",
+      "from": "style card radial-burst · musical-pulse · high-contrast-prism · core-centered",
+      "visualDecision": "camera beat choreography + palette topology constrained to artist envelope"
+    }
+  ],
+  "qualityScore": {
+    "score": 55.5,
+    "summary": "Alignment 76.8 with strongest channel style.",
+    "heuristic": {
+      "score": 71,
+      "breakdown": {
+        "legibility": 77,
+        "emotionalReadability": 77.3,
+        "coherence": 85.3,
+        "focalAnchor": 71.9,
+        "technicalRichness": 100,
+        "restraint": 66.2,
+        "alignment": 76.8
+      }
+    },
+    "calibration": {
+      "sampleCount": 1,
+      "trustWeight": 0.4
+    },
+    "alignment": {
+      "totalAlign": 76.8,
+      "components": {
+        "title": {
+          "score": 64.5
+        },
+        "style": {
+          "score": 85.7
+        },
+        "emotional": {
+          "score": 77.4
+        }
+      }
+    }
+  },
+  "rationale": {
+    "intent": {
+      "signal": null,
+      "emotion": null,
+      "tension": null,
+      "balance": null,
+      "motion": null
+    },
+    "selection": {
+      "whyHeadline": "Selected as top-ranked Belgian headline (score 18 = frequency 9 + priority 9 + recency 0).",
+      "priorityTerms": [
+        "federal",
+        "budget",
+        "climate"
+      ]
+    },
+    "qualitySummary": "TOTAL_ALIGN 76.8."
+  },
+  "runPolicy": {
+    "artworksPerRun": 1,
+    "multiVariant": false
+  },
+  "artFramework": {
+    "version": 3,
+    "intent": {
+      "statement": "John D. In response to \"Belgian federal talks intensify around budget and climate priorities\", the artwork should translate civic signal into an abstract composition with a clear emotional center. Art is a diverse range of cultural activity centered around works utilizing creative or imaginative talents, which are expected to evoke a worthwhile experience, generally through an expression of emotional power, conceptual ideas, technical proficiency, or beauty.",
+      "narrativeBridge": "Watercolor or watercolour, also aquarelle, is a painting method in which the paints are made of pigments suspended in a water-based solution. Art is a diverse range of cultural activity centered around works utilizing creative or imaginative talents, which are expected to evoke a worthwhile experience, generally through an expression of emotional power, conceptual ideas, technical proficiency, or beauty.",
+      "motifHint": "clusters",
+      "emotionalCenter": "measured structural drift"
+    }
+  },
+  "image": {
+    "publicJpeg": "./data/media/2026-02-15-echoes-of-belgian-federal-talks-v2/artwork-720.jpg",
+    "thumbnailJpeg": "./data/media/2026-02-15-echoes-of-belgian-federal-talks-v2/thumb-320.jpg",
+    "instagramJpeg": "./data/media/2026-02-15-echoes-of-belgian-federal-talks-v2/instagram-1080x1350.jpg",
+    "altText": "Echoes of Belgian federal talks by John D. Graham."
+  }
+}

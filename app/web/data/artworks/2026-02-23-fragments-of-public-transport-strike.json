@@ -1,1 +1,526 @@
-{"id":"2026-02-23-fragments-of-public-transport-strike","date":"2026-02-23","title":"Fragments of Public transport strike","generatedAt":"2026-02-23T13:09:28.455Z","news":{"source":"rtl","title":"Public transport strike pressures Brussels mobility and economy","link":"https://example.com/rtl-strike-brussels","score":15},"inspiration":{"artist":"Frank Stella","tags":["hard-edge abstraction","protractor arcs","structured repetition"],"links":{"wikipedia":"https://en.wikipedia.org/wiki/Frank_Stella","reference":"https://whitney.org/artists/1296"}},"seed":1520748159,"scene":{"motif":"fracture","shapeCount":84,"turbulence":0.44,"spiralBias":0.708,"motionSpeed":0.0015,"bloom":0.498,"grain":0.049,"fogDensity":0.064,"distortion":0.701,"flowField":0.889,"anchorStrength":0.803,"anchorOffsetX":-0.08,"layerBalance":{"structure":0.556,"chaos":0.394},"expression":{"tension":0.621,"structure":0.418,"motion":0.482,"noise":0.571,"urgency":0.18,"contrast":0.214},"palette":{"bg":"hsl(42, 49%, 6%)","primary":"hsl(106, 80%, 63%)","secondary":"hsl(272, 71%, 64%)","glow":"hsl(201, 92%, 74%)","anchor":"hsl(217, 85%, 70%)"},"elements":[{"id":"el-01-volumetric-haze","moduleType":"volumetric-haze","capabilities":["atmosphere-plume","fluid-drift","layered-field"],"stackFamilies":["shader-field","post-heavy","particle-heavy","sdf-raymarch"],"styleTags":["atmosphere","depth","diffusion"],"libraryRef":"element.volumetric-haze.v1","colorA":"bg","colorB":"secondary","opacity":0.349,"intensity":0.601,"layer":"background","role":"atmosphere-field","animation":{"drift":0.302},"motif":"fracture","intentCadence":"steady"},{"id":"el-02-anchor-core","moduleType":"anchor-core","capabilities":["focal-anchor","layered-field"],"stackFamilies":["shader-field","geometry-heavy","particle-heavy","instancing","sdf-raymarch"],"styleTags":["anchor","center","stability"],"libraryRef":"element.anchor-core.v1","color":"anchor","opacity":0.654,"intensity":0.801,"layer":"foreground","role":"primary-signal","motif":"fracture","auraColor":"glow","size":0.929,"animation":{"rotationZ":0.156,"wobbleY":0.143,"pulse":0.285},"intentCadence":"steady"},{"id":"el-13-shader-field-plane","moduleType":"shader-field-plane","capabilities":["fluid-drift","layered-field"],"stackFamilies":["shader-field","post-heavy","sdf-raymarch"],"styleTags":["shader","field"],"libraryRef":"element.shader-field-plane.v1","color":"glow","opacity":0.34,"intensity":0.52,"layer":"midground","animation":{"rotationZ":0.14,"pulse":0.2},"role":"support-rhythm","motif":"fracture"},{"moduleType":"flow-noise-slab","role":"structural-spine","layer":"midground","color":"secondary","opacity":0.36,"intensity":0.56,"animation":{"rotationZ":0.12,"pulse":0.2}}],"shaderLayers":6,"elementDiversity":4,"paletteVariance":0.736,"motionSpeedNormalized":0.643,"camera":{"autoRotate":false,"autoRotateSpeed":0.108,"minDistance":6,"maxDistance":24,"cycleSeconds":24,"beats":[{"t":0,"radius":12.6,"theta":0.056,"phi":1.225,"hold":1},{"t":0.34,"radius":10.7,"theta":0.835,"phi":1.056,"hold":0.5},{"t":0.68,"radius":11.2,"theta":1.588,"phi":1.325,"hold":0.8},{"t":1,"radius":12.2,"theta":2.244,"phi":1.147,"hold":1.1}]},"post":{"vignette":0.4,"contrast":1.153,"saturation":1.049,"exposure":0.956,"breathing":{"hueShift":0.01,"saturationAmplitude":0.06,"exposureAmplitude":0.04,"phaseA":0.5173,"phaseB":0.6748}},"styleFingerprint":{"pulseFamily":"rotational","stripeWarp":0.22,"edgeSoftness":0.2,"cameraSway":0.18,"edgeHardness":0.5,"temperatureBias":0.24,"verticalBias":0,"cadenceBias":0},"seedVersion":2,"seeds":{"baseSeed":678216258,"runSeed":1520748159,"geomSeed":3910735259,"animSeed":1012155778,"colorSeed":3496929354,"cameraSeed":2865360924},"techStack":{"id":"shader-field-balanced","name":"Shader Field Layering","family":"shader-field","strategyFamilies":["flow","hybrid","orbits"],"rationale":{"signals":{"conflict":0.21239999999999998,"context":0.62785,"motion":0.2208,"turbulence":0.28,"structureBias":-0.0096,"densityBias":0.0072,"edgeBias":0,"motionBias":0.12,"visualProfile":{"structureBias":-0.0096,"densityBias":0.0072,"motionBias":0,"turbulenceBias":0,"motionEnergy":0.42,"centerDispersion":0.12,"profileCadence":"steady","preferredFamilies":["shader-field"]}},"familyHits":0,"idHits":0,"penalties":["conflict<0.24","motion<0.28"],"visualAffinity":0.55,"elementCoverage":{"score":1.746031746031746,"coverage":0.571,"moduleCoverage":0.444,"missingCapabilities":["fracture-destruction","debris-particles","terrain-backdrop"]},"preferredFamilies":["shader-field"],"preferredFamilyLocked":true,"notPreferredPenalty":0},"dominantPrimitive":"shader-field-plane","moduleSet":["volumetric-haze","anchor-core","shader-field-plane","flow-noise-slab"],"pipelineKind":"shader-field"},"visualProfileHints":{"cadence":"steady","motionEnergy":0.42,"preferredModules":[{"name":"motif-armature","weight":0.5,"reason":"fallback baseline"}],"preferredStackFamilies":[{"family":"shader-field","weight":0.5,"reason":"neutral fallback"}],"sourceAnalysis":{"mode":"computer-vision","status":"ok","analyzedReferences":2,"failedReferences":0,"texture":{"edgeEnergy":0.042},"failures":[],"note":null}},"strategy":{"id":"atomic-balanced-flow","name":"Balanced Flow Field","type":"atomic","family":"flow","cooldown":{"window":3,"recentFamilies":[],"family":"flow","applied":false},"compositeDemanded":false,"signals":{"conflict":0.332,"context":0.628,"moodDepth":0.35}},"layers":[{"role":"background","modules":["volumetric-haze"]},{"role":"midground","modules":["motif-armature","signal-weave"]},{"role":"foreground","modules":["anchor-core","drift-ribbon"]},{"role":"accent","modules":["orbit-ribbon","node-cluster"]},{"role":"post","modules":["post-breathing"]}],"renderPipeline":{"kind":"shader-field","family":"shader-field","fallback":false,"dominantPrimitive":"shader-field-plane","moduleSet":["volumetric-haze","anchor-core","shader-field-plane","flow-noise-slab"]}},"sceneStrategy":{"selected":{"id":"atomic-balanced-flow","name":"Balanced Flow Field","type":"atomic","family":"flow"},"applied":true,"fallbackReason":null},"techStack":{"id":"shader-field-balanced","name":"Shader Field Layering","family":"shader-field"},"newsVisualMappings":[{"signal":"title evidence [transport, strike, economy] -> motif fracture","from":"transport, strike, economy","visualDecision":"structural motif armature set to fracture"},{"signal":"composition foreground conflict","from":"strike, pressures, strike","visualDecision":"foreground role tension-knot at pressure 0.563"},{"signal":"composition midground context","from":"transport, strike, economy","visualDecision":"midground role context-drift with density 0.201"},{"signal":"composition background mood","from":"economy, economy","visualDecision":"background mood watchful depth 0.435"},{"signal":"urgency -> motion","from":"ageHours=244.99","visualDecision":"motionSpeedNormalized=0.643"},{"signal":"title semantics -> palette/edge cadence","from":"temp=0.24 edge=0.5","visualDecision":"postContrast=1.153 accentType=n/a"},{"signal":"article institutional/conflict polarity","from":"economy, intent-motif-hint","visualDecision":"accent element n/a with opacity n/a"},{"signal":"artist grammar Frank Stella","from":"tags hard-edge abstraction, protractor arcs, structured repetition","visualDecision":"camera beat choreography + palette topology constrained to artist envelope"}],"qualityScore":{"score":55.2,"summary":"Alignment 69.5 with strongest channel emotional.","heuristic":{"score":70.6,"breakdown":{"legibility":75.7,"emotionalReadability":81.2,"coherence":85.2,"focalAnchor":78.2,"technicalRichness":100,"restraint":57.7,"alignment":69.5}},"calibration":{"sampleCount":1,"trustWeight":0.4},"alignment":{"totalAlign":69.5,"components":{"title":{"score":61.1},"style":{"score":69.6},"emotional":{"score":77.9}}}},"rationale":{"intent":{"signal":null,"emotion":null,"tension":null,"balance":null,"motion":null},"selection":{"whyHeadline":"Selected as top-ranked Belgian headline (score 15 = frequency 6 + priority 9 + recency 0).","priorityTerms":["transport","strike","economy"]},"qualitySummary":"TOTAL_ALIGN 69.5."},"runPolicy":{"artworksPerRun":1,"multiVariant":false},"artFramework":{"version":3,"intent":{"statement":"Frank Stella is profiled in this dossier as an influential modern artist whose work is grounded in abstraction, color, and viewer experience. In response to \"Public transport strike pressures Brussels mobility and economy\", the artwork should translate civic signal into an abstract composition with a clear emotional center. He moved to New York City in the late 1950s, where he created works which emphasized the picture-as-object.","narrativeBridge":"Frank Philip Stella was an American painter, sculptor, and printmaker, noted for his work in the areas of minimalism and post-painterly abstraction. He developed a reductionist approach to his art, saying he wanted to demonstrate that for him, every painting is \"a flat surface with paint on it—nothing more\", and disavowed conceptions of art as a means of expressing emotion.","motifHint":"fracture","emotionalCenter":"measured structural drift"}}}
+{
+  "id": "2026-02-23-fragments-of-public-transport-strike",
+  "date": "2026-02-23",
+  "title": "Fragments of Public transport strike",
+  "generatedAt": "2026-02-23T13:09:28.455Z",
+  "news": {
+    "source": "rtl",
+    "title": "Public transport strike pressures Brussels mobility and economy",
+    "link": "https://example.com/rtl-strike-brussels",
+    "score": 15
+  },
+  "inspiration": {
+    "artist": "Frank Stella",
+    "tags": [
+      "hard-edge abstraction",
+      "protractor arcs",
+      "structured repetition"
+    ],
+    "links": {
+      "wikipedia": "https://en.wikipedia.org/wiki/Frank_Stella",
+      "reference": "https://whitney.org/artists/1296"
+    }
+  },
+  "seed": 1520748159,
+  "scene": {
+    "motif": "fracture",
+    "shapeCount": 84,
+    "turbulence": 0.44,
+    "spiralBias": 0.708,
+    "motionSpeed": 0.0015,
+    "bloom": 0.498,
+    "grain": 0.049,
+    "fogDensity": 0.064,
+    "distortion": 0.701,
+    "flowField": 0.889,
+    "anchorStrength": 0.803,
+    "anchorOffsetX": -0.08,
+    "layerBalance": {
+      "structure": 0.556,
+      "chaos": 0.394
+    },
+    "expression": {
+      "tension": 0.621,
+      "structure": 0.418,
+      "motion": 0.482,
+      "noise": 0.571,
+      "urgency": 0.18,
+      "contrast": 0.214
+    },
+    "palette": {
+      "bg": "hsl(42, 49%, 6%)",
+      "primary": "hsl(106, 80%, 63%)",
+      "secondary": "hsl(272, 71%, 64%)",
+      "glow": "hsl(201, 92%, 74%)",
+      "anchor": "hsl(217, 85%, 70%)"
+    },
+    "elements": [
+      {
+        "id": "el-01-volumetric-haze",
+        "moduleType": "volumetric-haze",
+        "capabilities": [
+          "atmosphere-plume",
+          "fluid-drift",
+          "layered-field"
+        ],
+        "stackFamilies": [
+          "shader-field",
+          "post-heavy",
+          "particle-heavy",
+          "sdf-raymarch"
+        ],
+        "styleTags": [
+          "atmosphere",
+          "depth",
+          "diffusion"
+        ],
+        "libraryRef": "element.volumetric-haze.v1",
+        "colorA": "bg",
+        "colorB": "secondary",
+        "opacity": 0.349,
+        "intensity": 0.601,
+        "layer": "background",
+        "role": "atmosphere-field",
+        "animation": {
+          "drift": 0.302
+        },
+        "motif": "fracture",
+        "intentCadence": "steady"
+      },
+      {
+        "id": "el-02-anchor-core",
+        "moduleType": "anchor-core",
+        "capabilities": [
+          "focal-anchor",
+          "layered-field"
+        ],
+        "stackFamilies": [
+          "shader-field",
+          "geometry-heavy",
+          "particle-heavy",
+          "instancing",
+          "sdf-raymarch"
+        ],
+        "styleTags": [
+          "anchor",
+          "center",
+          "stability"
+        ],
+        "libraryRef": "element.anchor-core.v1",
+        "color": "anchor",
+        "opacity": 0.654,
+        "intensity": 0.801,
+        "layer": "foreground",
+        "role": "primary-signal",
+        "motif": "fracture",
+        "auraColor": "glow",
+        "size": 0.929,
+        "animation": {
+          "rotationZ": 0.156,
+          "wobbleY": 0.143,
+          "pulse": 0.285
+        },
+        "intentCadence": "steady"
+      },
+      {
+        "id": "el-13-shader-field-plane",
+        "moduleType": "shader-field-plane",
+        "capabilities": [
+          "fluid-drift",
+          "layered-field"
+        ],
+        "stackFamilies": [
+          "shader-field",
+          "post-heavy",
+          "sdf-raymarch"
+        ],
+        "styleTags": [
+          "shader",
+          "field"
+        ],
+        "libraryRef": "element.shader-field-plane.v1",
+        "color": "glow",
+        "opacity": 0.34,
+        "intensity": 0.52,
+        "layer": "midground",
+        "animation": {
+          "rotationZ": 0.14,
+          "pulse": 0.2
+        },
+        "role": "support-rhythm",
+        "motif": "fracture"
+      },
+      {
+        "moduleType": "flow-noise-slab",
+        "role": "structural-spine",
+        "layer": "midground",
+        "color": "secondary",
+        "opacity": 0.36,
+        "intensity": 0.56,
+        "animation": {
+          "rotationZ": 0.12,
+          "pulse": 0.2
+        }
+      }
+    ],
+    "shaderLayers": 6,
+    "elementDiversity": 4,
+    "paletteVariance": 0.736,
+    "motionSpeedNormalized": 0.643,
+    "camera": {
+      "autoRotate": false,
+      "autoRotateSpeed": 0.108,
+      "minDistance": 6,
+      "maxDistance": 24,
+      "cycleSeconds": 24,
+      "beats": [
+        {
+          "t": 0,
+          "radius": 12.6,
+          "theta": 0.056,
+          "phi": 1.225,
+          "hold": 1
+        },
+        {
+          "t": 0.34,
+          "radius": 10.7,
+          "theta": 0.835,
+          "phi": 1.056,
+          "hold": 0.5
+        },
+        {
+          "t": 0.68,
+          "radius": 11.2,
+          "theta": 1.588,
+          "phi": 1.325,
+          "hold": 0.8
+        },
+        {
+          "t": 1,
+          "radius": 12.2,
+          "theta": 2.244,
+          "phi": 1.147,
+          "hold": 1.1
+        }
+      ]
+    },
+    "post": {
+      "vignette": 0.4,
+      "contrast": 1.153,
+      "saturation": 1.049,
+      "exposure": 0.956,
+      "breathing": {
+        "hueShift": 0.01,
+        "saturationAmplitude": 0.06,
+        "exposureAmplitude": 0.04,
+        "phaseA": 0.5173,
+        "phaseB": 0.6748
+      }
+    },
+    "styleFingerprint": {
+      "pulseFamily": "rotational",
+      "stripeWarp": 0.22,
+      "edgeSoftness": 0.2,
+      "cameraSway": 0.18,
+      "edgeHardness": 0.5,
+      "temperatureBias": 0.24,
+      "verticalBias": 0,
+      "cadenceBias": 0
+    },
+    "seedVersion": 2,
+    "seeds": {
+      "baseSeed": 678216258,
+      "runSeed": 1520748159,
+      "geomSeed": 3910735259,
+      "animSeed": 1012155778,
+      "colorSeed": 3496929354,
+      "cameraSeed": 2865360924
+    },
+    "techStack": {
+      "id": "shader-field-balanced",
+      "name": "Shader Field Layering",
+      "family": "shader-field",
+      "strategyFamilies": [
+        "flow",
+        "hybrid",
+        "orbits"
+      ],
+      "rationale": {
+        "signals": {
+          "conflict": 0.21239999999999998,
+          "context": 0.62785,
+          "motion": 0.2208,
+          "turbulence": 0.28,
+          "structureBias": -0.0096,
+          "densityBias": 0.0072,
+          "edgeBias": 0,
+          "motionBias": 0.12,
+          "visualProfile": {
+            "structureBias": -0.0096,
+            "densityBias": 0.0072,
+            "motionBias": 0,
+            "turbulenceBias": 0,
+            "motionEnergy": 0.42,
+            "centerDispersion": 0.12,
+            "profileCadence": "steady",
+            "preferredFamilies": [
+              "shader-field"
+            ]
+          }
+        },
+        "familyHits": 0,
+        "idHits": 0,
+        "penalties": [
+          "conflict<0.24",
+          "motion<0.28"
+        ],
+        "visualAffinity": 0.55,
+        "elementCoverage": {
+          "score": 1.746031746031746,
+          "coverage": 0.571,
+          "moduleCoverage": 0.444,
+          "missingCapabilities": [
+            "fracture-destruction",
+            "debris-particles",
+            "terrain-backdrop"
+          ]
+        },
+        "preferredFamilies": [
+          "shader-field"
+        ],
+        "preferredFamilyLocked": true,
+        "notPreferredPenalty": 0
+      },
+      "dominantPrimitive": "shader-field-plane",
+      "moduleSet": [
+        "volumetric-haze",
+        "anchor-core",
+        "shader-field-plane",
+        "flow-noise-slab"
+      ],
+      "pipelineKind": "shader-field"
+    },
+    "visualProfileHints": {
+      "cadence": "steady",
+      "motionEnergy": 0.42,
+      "preferredModules": [
+        {
+          "name": "motif-armature",
+          "weight": 0.5,
+          "reason": "fallback baseline"
+        }
+      ],
+      "preferredStackFamilies": [
+        {
+          "family": "shader-field",
+          "weight": 0.5,
+          "reason": "neutral fallback"
+        }
+      ],
+      "sourceAnalysis": {
+        "mode": "computer-vision",
+        "status": "ok",
+        "analyzedReferences": 2,
+        "failedReferences": 0,
+        "texture": {
+          "edgeEnergy": 0.042
+        },
+        "failures": [],
+        "note": null
+      }
+    },
+    "strategy": {
+      "id": "atomic-balanced-flow",
+      "name": "Balanced Flow Field",
+      "type": "atomic",
+      "family": "flow",
+      "cooldown": {
+        "window": 3,
+        "recentFamilies": [],
+        "family": "flow",
+        "applied": false
+      },
+      "compositeDemanded": false,
+      "signals": {
+        "conflict": 0.332,
+        "context": 0.628,
+        "moodDepth": 0.35
+      }
+    },
+    "layers": [
+      {
+        "role": "background",
+        "modules": [
+          "volumetric-haze"
+        ]
+      },
+      {
+        "role": "midground",
+        "modules": [
+          "motif-armature",
+          "signal-weave"
+        ]
+      },
+      {
+        "role": "foreground",
+        "modules": [
+          "anchor-core",
+          "drift-ribbon"
+        ]
+      },
+      {
+        "role": "accent",
+        "modules": [
+          "orbit-ribbon",
+          "node-cluster"
+        ]
+      },
+      {
+        "role": "post",
+        "modules": [
+          "post-breathing"
+        ]
+      }
+    ],
+    "renderPipeline": {
+      "kind": "shader-field",
+      "family": "shader-field",
+      "fallback": false,
+      "dominantPrimitive": "shader-field-plane",
+      "moduleSet": [
+        "volumetric-haze",
+        "anchor-core",
+        "shader-field-plane",
+        "flow-noise-slab"
+      ]
+    }
+  },
+  "sceneStrategy": {
+    "selected": {
+      "id": "atomic-balanced-flow",
+      "name": "Balanced Flow Field",
+      "type": "atomic",
+      "family": "flow"
+    },
+    "applied": true,
+    "fallbackReason": null
+  },
+  "techStack": {
+    "id": "shader-field-balanced",
+    "name": "Shader Field Layering",
+    "family": "shader-field"
+  },
+  "newsVisualMappings": [
+    {
+      "signal": "title evidence [transport, strike, economy] -> motif fracture",
+      "from": "transport, strike, economy",
+      "visualDecision": "structural motif armature set to fracture"
+    },
+    {
+      "signal": "composition foreground conflict",
+      "from": "strike, pressures, strike",
+      "visualDecision": "foreground role tension-knot at pressure 0.563"
+    },
+    {
+      "signal": "composition midground context",
+      "from": "transport, strike, economy",
+      "visualDecision": "midground role context-drift with density 0.201"
+    },
+    {
+      "signal": "composition background mood",
+      "from": "economy, economy",
+      "visualDecision": "background mood watchful depth 0.435"
+    },
+    {
+      "signal": "urgency -> motion",
+      "from": "ageHours=244.99",
+      "visualDecision": "motionSpeedNormalized=0.643"
+    },
+    {
+      "signal": "title semantics -> palette/edge cadence",
+      "from": "temp=0.24 edge=0.5",
+      "visualDecision": "postContrast=1.153 accentType=n/a"
+    },
+    {
+      "signal": "article institutional/conflict polarity",
+      "from": "economy, intent-motif-hint",
+      "visualDecision": "accent element n/a with opacity n/a"
+    },
+    {
+      "signal": "artist grammar Frank Stella",
+      "from": "tags hard-edge abstraction, protractor arcs, structured repetition",
+      "visualDecision": "camera beat choreography + palette topology constrained to artist envelope"
+    }
+  ],
+  "qualityScore": {
+    "score": 55.2,
+    "summary": "Alignment 69.5 with strongest channel emotional.",
+    "heuristic": {
+      "score": 70.6,
+      "breakdown": {
+        "legibility": 75.7,
+        "emotionalReadability": 81.2,
+        "coherence": 85.2,
+        "focalAnchor": 78.2,
+        "technicalRichness": 100,
+        "restraint": 57.7,
+        "alignment": 69.5
+      }
+    },
+    "calibration": {
+      "sampleCount": 1,
+      "trustWeight": 0.4
+    },
+    "alignment": {
+      "totalAlign": 69.5,
+      "components": {
+        "title": {
+          "score": 61.1
+        },
+        "style": {
+          "score": 69.6
+        },
+        "emotional": {
+          "score": 77.9
+        }
+      }
+    }
+  },
+  "rationale": {
+    "intent": {
+      "signal": null,
+      "emotion": null,
+      "tension": null,
+      "balance": null,
+      "motion": null
+    },
+    "selection": {
+      "whyHeadline": "Selected as top-ranked Belgian headline (score 15 = frequency 6 + priority 9 + recency 0).",
+      "priorityTerms": [
+        "transport",
+        "strike",
+        "economy"
+      ]
+    },
+    "qualitySummary": "TOTAL_ALIGN 69.5."
+  },
+  "runPolicy": {
+    "artworksPerRun": 1,
+    "multiVariant": false
+  },
+  "artFramework": {
+    "version": 3,
+    "intent": {
+      "statement": "Frank Stella is profiled in this dossier as an influential modern artist whose work is grounded in abstraction, color, and viewer experience. In response to \"Public transport strike pressures Brussels mobility and economy\", the artwork should translate civic signal into an abstract composition with a clear emotional center. He moved to New York City in the late 1950s, where he created works which emphasized the picture-as-object.",
+      "narrativeBridge": "Frank Philip Stella was an American painter, sculptor, and printmaker, noted for his work in the areas of minimalism and post-painterly abstraction. He developed a reductionist approach to his art, saying he wanted to demonstrate that for him, every painting is \"a flat surface with paint on it—nothing more\", and disavowed conceptions of art as a means of expressing emotion.",
+      "motifHint": "fracture",
+      "emotionalCenter": "measured structural drift"
+    }
+  },
+  "image": {
+    "publicJpeg": "./data/media/2026-02-23-fragments-of-public-transport-strike/artwork-720.jpg",
+    "thumbnailJpeg": "./data/media/2026-02-23-fragments-of-public-transport-strike/thumb-320.jpg",
+    "instagramJpeg": "./data/media/2026-02-23-fragments-of-public-transport-strike/instagram-1080x1350.jpg",
+    "altText": "Fragments of Public transport strike by Frank Stella."
+  }
+}

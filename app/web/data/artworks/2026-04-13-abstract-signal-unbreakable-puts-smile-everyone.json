@@ -1,1 +1,842 @@
-{"id":"2026-04-13-abstract-signal-unbreakable-puts-smile-everyone","date":"2026-04-13","title":"Abstract Signal: Unbreakable puts smile everyone","generatedAt":"2026-04-13T13:28:33.389Z","news":{"source":"lalibre","title":"“Unbreakable!”, “puts a smile on everyone’s face”: the Belgian and international press comment on Wout van Aert’s triumph at Paris-Roubaix","link":"https://www.lalibre.be/sports/cyclisme/2026/04/13/increvable-donne-le-sourire-a-tout-le-monde-la-presse-belge-et-internationale-commente-le-triomphe-de-wout-van-aert-sur-paris-roubaix-SK77AZ37G5GJHBVHHPF6QMMMFM/","score":92.894},"inspiration":{"artist":"Clyfford Still","tags":["abstract","surreal","expressionist","figurative","surrealist"],"links":{"wikipedia":"https://en.wikipedia.org/wiki/Clyfford_Still","reference":"http://www.clyffordstill.net/"}},"seed":1221653291,"scene":{"motif":"flow","shapeCount":120,"turbulence":0.609,"spiralBias":0.834,"motionSpeed":0.001645,"bloom":0.18,"grain":0.036,"fogDensity":0.054,"distortion":0.21,"flowField":0.32,"anchorStrength":0.639,"anchorOffsetX":0.195,"layerBalance":{"structure":0.645,"chaos":0.425},"expression":{"tension":0.31,"structure":0.647,"motion":0.703,"noise":0.328,"urgency":0.774,"contrast":0.353},"palette":{"bg":"#2b1d1a","primary":"#b44a1f","secondary":"#6e8f96","glow":"#f0b24a","anchor":"#f6d36b"},"elements":[{"id":"el-01-agent-shader-plane","moduleType":"agent-shader-plane","capabilities":[],"stackFamilies":[],"styleTags":[],"libraryRef":null,"scale":[5.4,3.6],"z":-0.6,"color":"bg","opacity":0.95,"intensity":0.88,"animation":{"pulse":0.04,"wobbleX":0.01,"wobbleY":0.01,"drift":0.02},"techniqueRef":"tech.fractured-field","role":"atmosphere-field","layer":"background","motif":"flow","intentCadence":"measured"},{"id":"el-02-agent-shader-plane","moduleType":"agent-shader-plane","capabilities":[],"stackFamilies":[],"styleTags":[],"libraryRef":null,"scale":[4.8,3.1],"z":-0.18,"offset":[0.32,0.06],"color":"secondary","opacity":0.42,"intensity":0.46,"animation":{"rotationZ":0.01,"pulse":0.02,"wobbleX":0.02,"wobbleY":0.01,"drift":0.03},"techniqueRef":"tech.fractured-field","role":"support-rhythm","layer":"midground","motif":"flow","intentCadence":"measured"},{"id":"el-03-fault-line","moduleType":"fault-line","capabilities":["fracture-destruction","focal-anchor"],"stackFamilies":["post-heavy","particle-heavy","geometry-heavy"],"styleTags":["fault","break"],"libraryRef":"element.fault-line.v1","color":"anchor","opacity":0.95,"intensity":0.92,"layer":"foreground","start":[-0.08,-1.1,0.12],"end":[0.18,1.18,0.16],"animation":{"rotationZ":0.01,"pulse":0.08,"wobbleX":0.03,"wobbleY":0.02,"drift":0.02},"techniqueRef":"tech.rift-spine","role":"focal-anchor","motif":"flow","intentCadence":"measured"},{"id":"el-04-particle-cloud","moduleType":"particle-cloud","capabilities":["clustered-actors","debris-particles","kinetic-motion"],"stackFamilies":["particle-heavy","instancing","shader-field"],"styleTags":["particles","field","noise"],"libraryRef":"element.particle-cloud.v1","color":"glow","opacity":0.2,"intensity":0.3,"layer":"accent","center":[-0.2,-0.18,0.24],"spread":[1.2,0.7,0.3],"animation":{"rotationZ":0.03,"pulse":0.04,"wobbleX":0.04,"wobbleY":0.04,"drift":0.12},"techniqueRef":"tech.ember-orbit","role":"accent-gesture","motif":"flow","intentCadence":"measured"}],"shaderLayers":4,"elementDiversity":3,"paletteVariance":0,"motionSpeedNormalized":0.729,"camera":{"autoRotate":false,"autoRotateSpeed":0.152,"minDistance":6,"maxDistance":24,"cycleSeconds":24,"beats":[{"t":0,"radius":12.504,"theta":0.348,"phi":1.229,"hold":1.064},{"t":0.34,"radius":10.636,"theta":1.268,"phi":1.031,"hold":0.514},{"t":0.68,"radius":11.248,"theta":2.085,"phi":1.307,"hold":0.866},{"t":1,"radius":12.28,"theta":2.438,"phi":1.12,"hold":1.144}],"target":[0,0,0]},"post":{"vignette":0.24,"contrast":1.18,"saturation":0.92,"exposure":0.98,"breathing":{"hueShift":0.053,"saturationAmplitude":0.067,"exposureAmplitude":0.058,"phaseA":0.4699,"phaseB":0.6049}},"styleFingerprint":{"pulseFamily":"musical","stripeWarp":0.22,"edgeSoftness":0.22,"cameraSway":0.22,"edgeHardness":0.5,"temperatureBias":0,"verticalBias":0,"cadenceBias":0},"sceneAuthoring":{"mode":"agent-dsl","planner":"openclaw-agent-scene-planner","representation":{"id":"rep.victory-cleft","label":"Victory Cleft","description":"A grave, earth-heavy field split by one ascending amber seam. The triumph is not shown as speed but as a refusal to break.","scoreHint":0.89,"motif":"Unbreakable seam","cadence":"measured","scenePrompt":"A bounded abstract painting-space dominated by dark umber and iron-red planes, torn open by a single vertical-leaning amber cleft that grows clearer as it rises. Blue-cyan remains peripheral, like cold air pressing from one side. A few ember traces circulate l","colorMood":"Mineral warmth against cooled pressure, with a narrow golden release.","spatialIntent":"Background holds compressed dark mass, midground carries opposing red and blue-cyan fields, foreground gives the cleft and a few ember traces decisive legibility.","imageAuthorship":{"structuralLaw":"Everything submits to one upward rupture through resistant strata.","dominantForms":["monumental asymmetrical fields","knife-torn vertical seam","small dispersed ember arcs"],"edgeBehavior":"Edges alternate between scraped dryness and abrupt jagged tears, never soft cloudiness throughout.","surfaceBehavior":"Matte, mineral, abraded paint skin with subtle tonal bruising inside each field.","depthLogic":"Depth comes from stacked planes and value pressure, with the seam stepping forward by contrast rather than by literal extrusion.","motionLogic":"Mostly still image pressure with only faint ember drift describing remembered momentum.","forbiddenDrift":["hero spotlight theatrics","clean vector geometry","HUD-like circles","generic cosmic atmosphere"]},"technicalTranslation":{"realizationStrategy":"Use one dominant shader plane for the painted field, one fault-line element as the anchor seam, sparse particles for orbital residue, and haze only to separate layers.","reuseBias":"hybrid","whyThisApproach":"Existing runtime planes and fault lines can carry the field and rupture if their defaults are overridden aggressively toward Still-like surfaces.","notes":["Keep camera nearly frontal.","Let the seam own the brightest value.","Particle motion should stay slow and peripheral."],"motionCadence":"measured"},"mustShow":["one dominant ascending warm fracture","large torn painted fields with ragged boundaries","subordinate blue-cyan pressure zone","clear separation between background mass and foreground seam"],"mustAvoid":["central glowing portal","literal wheel or road motifs","too many particles","smooth gradient-only backdrop","symmetrical composition"],"reviewFocus":["Does the seam feel earned rather than decorative?","Do the edges feel painted and torn?","Is the blue-cyan pressure subordinate but necessary?"],"artistTechniqueObservations":{"medium":"painting","primaryTechnique":"radial/orbital construction","markMakingTraits":[],"surfaceQualities":["painted surface behavior matters more than object literalism"],"paletteTendencies":["dominant hues: orange, red, blue-cyan"],"spatialHabits":["layered field organization","orbital/circular organization"]},"rationale":{"newsToImage":"The public triumph becomes a narrow but undeniable rise through resistance, matching Roubaix's brutality without depicting the race.","artistToImage":"Still's field logic dominates, with the event translated into pressure, fracture, and release."},"techniques":[{"id":"tech.fractured-field","name":"Fractured Color Field","type":"shader","purpose":"Main image massing.","reuseModuleType":null,"params":{"layers":4,"noiseScale":2.4}},{"id":"tech.rift-spine","name":"Rift Spine","type":"geometry","purpose":"Primary release anchor.","reuseModuleType":null,"params":{"segments":18,"jitter":0.22}},{"id":"tech.ember-orbit","name":"Subordinate Ember Orbit","type":"particle","purpose":"Restrained momentum residue.","reuseModuleType":null,"params":{"count":120,"radius":1}}]},"artisticIntent":{"statement":"Treat van Aert's Roubaix win as a hard-earned vertical release inside a field of pressure, using Clyfford Still's torn color masses and made surface rather than any literal cycling image.","motif":"A single ascending fracture of warm light forcing its way through compressed earth-r","emotionalArc":"Oppression gathers in heavy strata, tension sharpens into a near-violent split, then resolves into a narrow but undeniable uplift that feels earned, public, and smiling without bec","compositionLogic":"One governing rupture organizes the image. Large asymmetrical fields hold the space, ragged edges create the active boundaries, and small orbital or ember-like traces remain subordinate to the whole. Depth comes from stacked painted planes, not from scenic per","imagePrompt":"An abstract expressionist painting in the visual language of Clyfford Still, built from monumental torn color fields and jagged vertical-diagonal ruptures, non-literal response to a triumphant Paris-Roubaix victory. Dense umber, iron red, burnt orange, and restrained blue-cyan are arranged as layered painted masses wit"},"executionPlan":{"palette":{"bg":"#2b1d1a","primary":"#b44a1f","secondary":"#6e8f96","glow":"#f0b24a","anchor":"#f6d36b"},"camera":{"autoRotate":false,"cycleSeconds":24,"target":[0,0,0]},"post":{"contrast":1.12,"saturation":0.92,"vignette":0.24,"exposure":0.98},"global":{"shapeCountHint":120,"flowField":0.32,"distortion":0.21,"bloom":0.18},"techniques":[{"id":"tech.fractured-field","name":"Fractured Color Field","type":"shader","purpose":"Build the main painted masses with torn boundaries and dry surface variation.","reuseModuleType":"agent-shader-plane","params":{"layers":4,"noiseScale":2.4,"edgeSharpness":0.58,"verticalBias":0.71}},{"id":"tech.rift-spine","name":"Rift Spine","type":"geometry","purpose":"Create the readable primary split that carries the emotional release.","reuseModuleType":"fault-line","params":{"segments":18,"jitter":0.22,"width":0.18,"height":2.1}},{"id":"tech.ember-orbit","name":"Subordinate Ember Orbit","type":"particle","purpose":"Add restrained motion memory without turning the image into spectacle.","reuseModuleType":"particle-cloud","params":{"count":180,"radius":1.1,"drift":0.08,"size":0.018}},{"id":"tech.atmospheric-lift","name":"Atmospheric Lift","type":"post","purpose":"Separate depth planes with faint suspended haze and localized glow.","reuseModuleType":"volumetric-haze","params":{"density":0.16,"heightFalloff":0.63,"warmBias":0.7}}]},"moduleOverrides":[{"id":"ov.field.still-fracture","target":{"moduleType":"agent-shader-plane","elementId":null},"mode":"replace","params":{"doubleSided":true},"uniforms":{"uBg":"#2b1d1a","uPrimary":"#b44a1f","uSecondary":"#6e8f96","uGlow":"#f0b24a","uAnchor":"#f6d36b","uTime":0,"uSeed":1},"glsl":{"vertex":"varying vec2 vUv;\nvarying vec3 vPos;\nvoid main(){\n vUv = uv;\n vPos = position;\n gl_Position = projectionMatrix * modelViewMatrix * vec4(position,1.0);\n}","fragment":"precision highp float;\nvarying vec2 vUv;\nuniform vec3 uBg;\nuniform vec3 uPrimary;\nuniform vec3 uSecondary;\nuniform vec3 uGlow;\nuniform vec3 uAnchor;\nuniform float uTime;\nuniform float uSeed;\nfloat hash(vec2 p){ return fract(sin(dot(p, vec2(127.1,311.7)) + uSeed*13.7) * 43758.5453123); }\nfloat noise(vec2 p){\n vec2 i = floor(p); vec2 f = fract(p);\n float a = hash(i), b = hash(i+vec2(1.0,0.0)), c = hash(i+vec2(0.0,1.0)), d = hash(i+vec2(1.0,1.0));\n vec2 u = f*f*(3.0-2.0*f);\n return mix(a,b,u.x) + (c-a)*u.y*(1.0-u.x) + (d-b)*u.x*u.y;\n}\nfloat fbm(vec2 p){\n float v = 0.0;\n float a = 0.5;\n for(int i=0;i<5;i++){\n v += a * noise(p);\n p = p * 2.03 + vec2(17.0,11.0);\n a *= 0.5;\n }\n return v;\n}\nvoid main(){\n vec2 uv = vUv * 2.0 - 1.0;\n float vertical = smoothstep(-0.95, 0.9, uv.y);\n float fieldA = fbm(vec2(uv.x*1.1, uv.y*0.8) * 2.2);\n float fieldB = fbm(vec2(uv.x*0.7 + 4.0, uv.y*1.5 - 2.0) * 2.8);\n float fieldC = fbm(vec2(uv.x*2.0 - 3.0, uv.y*0.5 + 7.0) * 3.1);\n float cleft = abs(uv.x + 0.18*sin(uv.y*2.7) - 0.12*fieldB + 0.16*(vertical-0.5));\n float seam = 1.0 - smoothstep(0.02, 0.16, cleft);\n float warmMass = smoothstep(0.28, 0.8, fieldA + vertical*0.35 - uv.x*0.15);\n float coolMass = smoothstep(0.42, 0.86, fieldC + (1.0-vertical)*0.2 + uv.x*0.22);\n float scrape = pow(fbm(uv*8.0 + vec2(0.0, uTime*0.02)), 2.2);\n vec3 col = uBg;\n col = mix(col, uPrimary, warmMass*0.82);\n col = mix(col, uSecondary, coolMass*0.48);\n col += uGlow * seam * (0.45 + 0.35*vertical);\n col += uAnchor * pow(seam, 3.0) * (0.35 + 0.65*vertical);\n col *= 0.92 + 0.18*scrape;\n float edgeStress = smoothstep(0.48, 0.56, abs(fieldA-fieldB));\n col = mix(col, col*0.82, edgeStress*0.25);\n gl_FragColor = vec4(col, 1.0);\n}"}},{"id":"ov.rift.knife-edge","target":{"moduleType":"fault-line","elementId":null},"mode":"uniforms","params":{"blend":"screen","thickness":0.11,"depthOffset":0.08},"uniforms":{"color":"#f6d36b","secondaryColor":"#b44a1f","glow":0.22,"jaggedness":0.31,"feather":0.14}},{"id":"ov.cloud.embers","target":{"moduleType":"particle-cloud","elementId":null},"mode":"uniforms","params":{"distribution":"arc","arcSpan":1.7,"drift":0.08,"noise":0.14},"uniforms":{"colorA":"#f0b24a","colorB":"#6e8f96","size":0.018,"alpha":0.2}},{"id":"ov.haze.lift","target":{"moduleType":"volumetric-haze","elementId":null},"mode":"uniforms","params":{"verticalBias":0.58},"uniforms":{"color":"#b44a1f","density":0.16,"falloff":0.63,"alpha":0.14}}],"customModules":[],"policyPasses":{"advisoryOnly":true,"skipped":["focal-hierarchy","envelope-clamp","composition-plan","artist-visual-profile","scene-element-module-enforcement","stack-pipeline-apply","gap-focused-pass","artist-hard-constraints"]}},"seedVersion":2,"seeds":{"baseSeed":3783890355,"runSeed":1221653291,"geomSeed":552758825,"animSeed":1975763308,"colorSeed":318078004,"cameraSeed":2585366074},"customModuleReport":{"declaredCustomModules":0,"accepted":[],"rejected":[],"moduleOverrideCount":4,"fingerprint":"234d0109"},"techStack":{"id":"sdf-raymarch-lite","name":"SDF/Raymarch Lite","family":"sdf-raymarch","strategyFamilies":["orbits","flow","hybrid"],"rationale":{"signals":{"conflict":0.412,"context":0.412,"motion":0.186,"turbulence":0.426,"structureBias":0,"densityBias":0,"edgeBias":0,"motionBias":0,"visualProfile":{"profileCadence":"steady","preferredFamilies":[]}},"familyHits":0,"idHits":0,"penalties":["motion<0.3"],"visualAffinity":0,"elementCoverage":{"score":0,"coverage":0,"moduleCoverage":0,"missingCapabilities":["shader-fields","fault geometry","sparse particles","haze"]},"preferredFamilies":[],"preferredFamilyLocked":false,"notPreferredPenalty":0},"dominantPrimitive":"agent-shader-plane","moduleSet":["agent-shader-plane","fault-line","particle-cloud"],"pipelineKind":"sdf-raymarch"},"renderPipeline":{"kind":"sdf-raymarch","family":"sdf-raymarch","fallback":false,"advisoryOnly":true,"dominantPrimitive":"agent-shader-plane","moduleSet":["agent-shader-plane","fault-line","particle-cloud"]}},"sceneStrategy":{"selected":{"id":"atomic-balanced-flow","name":"Balanced Flow Field","type":"atomic","family":"flow"},"applied":false,"fallbackReason":"agent-authored-scene-elements"},"techStack":{"id":"sdf-raymarch-lite","name":"SDF/Raymarch Lite","family":"sdf-raymarch"},"newsVisualMappings":[{"signal":"title evidence [donne, tout, monde, presse] -> motif flow","from":"donne, tout, monde, presse","visualDecision":"structural motif armature set to flow"},{"signal":"composition foreground conflict","from":"donne, tout, monde, presse","visualDecision":"foreground role tension-knot at pressure 0.18"},{"signal":"composition midground context","from":"donne, tout, monde, presse","visualDecision":"midground role context-drift with density 0.311"},{"signal":"composition background mood","from":"donne, tout, monde, presse","visualDecision":"background mood watchful depth 0.312"},{"signal":"urgency -> motion","from":"ageHours=6.32","visualDecision":"motionSpeedNormalized=0.729"},{"signal":"title semantics -> palette/edge cadence","from":"temp=0 edge=0.5","visualDecision":"postContrast=1.18 accentType=particle-cloud"},{"signal":"article institutional/conflict polarity","from":"donne, tout, monde, presse","visualDecision":"accent element particle-cloud with opacity 0.2"},{"signal":"artist research context Clyfford Still","from":"tags abstract, surreal, expressionist, figurative, surrealist","visualDecision":"artist profile captured as metadata only; no technical routing applied"}],"qualityScore":{"score":51.3,"summary":"Alignment 66.8 with strongest channel emotional.","heuristic":{"score":66.7,"breakdown":{"legibility":74.4,"emotionalReadability":68.1,"coherence":91.5,"focalAnchor":66.5,"technicalRichness":86.1,"restraint":74.7,"alignment":66.8}},"calibration":{"sampleCount":1,"trustWeight":0.4},"alignment":{"totalAlign":66.8,"components":{"title":{"score":61.9},"style":{"score":66.8},"emotional":{"score":71.8}}}},"rationale":{"intent":{"signal":null,"emotion":null,"tension":null,"balance":null,"motion":null},"selection":{"whyHeadline":"Selected as top-ranked Belgian headline (score 92.894 = frequency 91 + priority 0 + recency 1.894).","priorityTerms":[]},"qualitySummary":"TOTAL_ALIGN 66.8."},"runPolicy":{"artworksPerRun":1,"multiVariant":false},"artFramework":{"version":3,"intent":{"statement":"“Unbreakable!”, “puts a smile on everyone’s face”: the Belgian and international press comment on Wout van Aert’s triumph at Paris-Roubaix translated through Clyfford Still's visual language as a non-literal image.","coreImpulse":"Clyfford Still, born on November 30, 1904, in Grandin, North Dakota, emerged as one of the most influential American artists of the 20th century, playing a pivotal role in shaping the trajectory of abstract expression... Clyfford Still was an American painter, and one of the leading figures in the first generation of Abstract Expressionists, who developed a new, powerful approach to painting in the years immediately following World Wa... Clyfford Still Art Artist Paintings Biography Abstract Expressionism CLYFFORD STILL Master of Abstract Expressionism Clyfford Still (November 30, 1904 - June 23, 1980) was an American artist, a painter, and one of the... Read more detail in the biography or check out some Clyfford Still quotes about his process.","artistTranslationLogic":["Clyfford Still's formal logic should dominate before any spectacle or scenic excess."],"emotionalClimate":{"summary":"Clyfford Still, born on November 30, 1904, in Grandin, North Dakota, emerged as one of the most influential American artists of the 20th century, playing a pivotal role in shaping the trajectory of abstract expression... Clyfford Still was an American painter, and one of the leading figures in the first generation of Abstract Expressionists, who developed a new, powerful approach to painting in the years immediately following World Wa... Clyfford Still Art Artist Paintings Biography Abstract Expressionism CLYFFORD STILL Master of Abstract Expressionism Clyfford Still (November 30, 1904 - June 23, 1980) was an American artist, a painter, and one of the... Read more detail in the biography or check out some Clyfford Still quotes about his process.","pressure":"low","pace":"slow","socialReach":"public"},"visualGravity":{"anchor":null,"dominantStructure":"Build the image around one readable structural law.","scaleBehavior":"Keep the space bounded and compositionally intentional."},"materialLogic":{"surfaceBehavior":[],"spatialHabits":[],"handling":"Clyfford Still's surface should feel made, not generic."},"colorField":{"paletteSignals":[],"contrastMode":"measured contrast with restrained vibration"},"symbolicDensity":{"primaryMotif":"fracture","motifVocabulary":[],"literalness":"non-literal"},"tensionEngine":{"conflictAxis":"Donald Trump","escalationMode":"Let tension accumulate through structure, not narration.","releaseValve":"Allow only a narrow zone of release."},"audiencePosition":{"stance":"Clyfford Still, born on November 30, 1904, in Grandin, North Dakota, emerged as one of the most influential American artists of the 20th century, playing a pivotal role in shaping the trajectory of abstract expression... Clyfford Still, born on November 30, 1904, in Grandin, North Dakota, emerged as one of the most influential American artists of the 20th century, playing a pivotal role in shaping the trajectory of abstract expression... Clyfford Still Art Artist Paintings Biography Abstract Expressionism CLYFFORD STILL Master of Abstract Expressionism Clyfford Still (November 30, 1904 - June 23, 1980) was an American artist, a painter, and one of the... Clyfford Still, born on November 30, 1904, in Grandin, North Dakota, emerged as one of the most influential American artists of the 20th century, playing a pivotal role in shaping the trajectory of abstract expression...","distance":"immersed but not illustrative"},"controlVsAccident":{"balance":"controlled with selective instability","motionTemperament":"steady","accidentRole":"use drift or fracture sparingly to keep the field alive"},"antiDriftRules":["Do not collapse into biography summary, symbolic cliché, or generic procedural spectacle."],"finalCompression":"Clyfford Still, born on November 30, 1904, in Grandin, North Dakota, emerged as one of the most influential American artists of the 20th century, playing a pivotal role in shaping the trajectory of abstract expression... Clyfford Still was an American painter, and one of the leading figures in the first generation of Abstract Expressionists, who developed a new, powerful approach to painting in the years immediately following World Wa... Clyfford Still Art Artist Paintings Biography Abstract Expressionism CLYFFORD STILL Master of Abstract Expressionism Clyfford Still (November 30, 1904 - June 23, 1980) was an American artist, a painter, and one of the... Read more detail in the biography or check out some Clyfford Still quotes about his process. Build the image around one readable structural law.","artistAnchors":{"formalLogic":[],"motifVocabulary":[],"compositionCues":[],"paletteSignals":[],"surfaceBehavior":[],"spatialHabits":[],"translationDirectives":[]},"threeJsFreedomEnvelope":[],"avoidSignals":[],"threeJsTranslationExamples":[]}}}
+{
+  "id": "2026-04-13-abstract-signal-unbreakable-puts-smile-everyone",
+  "date": "2026-04-13",
+  "title": "Abstract Signal: Unbreakable puts smile everyone",
+  "generatedAt": "2026-04-13T13:28:33.389Z",
+  "news": {
+    "source": "lalibre",
+    "title": "“Unbreakable!”, “puts a smile on everyone’s face”: the Belgian and international press comment on Wout van Aert’s triumph at Paris-Roubaix",
+    "link": "https://www.lalibre.be/sports/cyclisme/2026/04/13/increvable-donne-le-sourire-a-tout-le-monde-la-presse-belge-et-internationale-commente-le-triomphe-de-wout-van-aert-sur-paris-roubaix-SK77AZ37G5GJHBVHHPF6QMMMFM/",
+    "score": 92.894
+  },
+  "inspiration": {
+    "artist": "Clyfford Still",
+    "tags": [
+      "abstract",
+      "surreal",
+      "expressionist",
+      "figurative",
+      "surrealist"
+    ],
+    "links": {
+      "wikipedia": "https://en.wikipedia.org/wiki/Clyfford_Still",
+      "reference": "http://www.clyffordstill.net/"
+    }
+  },
+  "seed": 1221653291,
+  "scene": {
+    "motif": "flow",
+    "shapeCount": 120,
+    "turbulence": 0.609,
+    "spiralBias": 0.834,
+    "motionSpeed": 0.001645,
+    "bloom": 0.18,
+    "grain": 0.036,
+    "fogDensity": 0.054,
+    "distortion": 0.21,
+    "flowField": 0.32,
+    "anchorStrength": 0.639,
+    "anchorOffsetX": 0.195,
+    "layerBalance": {
+      "structure": 0.645,
+      "chaos": 0.425
+    },
+    "expression": {
+      "tension": 0.31,
+      "structure": 0.647,
+      "motion": 0.703,
+      "noise": 0.328,
+      "urgency": 0.774,
+      "contrast": 0.353
+    },
+    "palette": {
+      "bg": "#2b1d1a",
+      "primary": "#b44a1f",
+      "secondary": "#6e8f96",
+      "glow": "#f0b24a",
+      "anchor": "#f6d36b"
+    },
+    "elements": [
+      {
+        "id": "el-01-agent-shader-plane",
+        "moduleType": "agent-shader-plane",
+        "capabilities": [],
+        "stackFamilies": [],
+        "styleTags": [],
+        "libraryRef": null,
+        "scale": [
+          5.4,
+          3.6
+        ],
+        "z": -0.6,
+        "color": "bg",
+        "opacity": 0.95,
+        "intensity": 0.88,
+        "animation": {
+          "pulse": 0.04,
+          "wobbleX": 0.01,
+          "wobbleY": 0.01,
+          "drift": 0.02
+        },
+        "techniqueRef": "tech.fractured-field",
+        "role": "atmosphere-field",
+        "layer": "background",
+        "motif": "flow",
+        "intentCadence": "measured"
+      },
+      {
+        "id": "el-02-agent-shader-plane",
+        "moduleType": "agent-shader-plane",
+        "capabilities": [],
+        "stackFamilies": [],
+        "styleTags": [],
+        "libraryRef": null,
+        "scale": [
+          4.8,
+          3.1
+        ],
+        "z": -0.18,
+        "offset": [
+          0.32,
+          0.06
+        ],
+        "color": "secondary",
+        "opacity": 0.42,
+        "intensity": 0.46,
+        "animation": {
+          "rotationZ": 0.01,
+          "pulse": 0.02,
+          "wobbleX": 0.02,
+          "wobbleY": 0.01,
+          "drift": 0.03
+        },
+        "techniqueRef": "tech.fractured-field",
+        "role": "support-rhythm",
+        "layer": "midground",
+        "motif": "flow",
+        "intentCadence": "measured"
+      },
+      {
+        "id": "el-03-fault-line",
+        "moduleType": "fault-line",
+        "capabilities": [
+          "fracture-destruction",
+          "focal-anchor"
+        ],
+        "stackFamilies": [
+          "post-heavy",
+          "particle-heavy",
+          "geometry-heavy"
+        ],
+        "styleTags": [
+          "fault",
+          "break"
+        ],
+        "libraryRef": "element.fault-line.v1",
+        "color": "anchor",
+        "opacity": 0.95,
+        "intensity": 0.92,
+        "layer": "foreground",
+        "start": [
+          -0.08,
+          -1.1,
+          0.12
+        ],
+        "end": [
+          0.18,
+          1.18,
+          0.16
+        ],
+        "animation": {
+          "rotationZ": 0.01,
+          "pulse": 0.08,
+          "wobbleX": 0.03,
+          "wobbleY": 0.02,
+          "drift": 0.02
+        },
+        "techniqueRef": "tech.rift-spine",
+        "role": "focal-anchor",
+        "motif": "flow",
+        "intentCadence": "measured"
+      },
+      {
+        "id": "el-04-particle-cloud",
+        "moduleType": "particle-cloud",
+        "capabilities": [
+          "clustered-actors",
+          "debris-particles",
+          "kinetic-motion"
+        ],
+        "stackFamilies": [
+          "particle-heavy",
+          "instancing",
+          "shader-field"
+        ],
+        "styleTags": [
+          "particles",
+          "field",
+          "noise"
+        ],
+        "libraryRef": "element.particle-cloud.v1",
+        "color": "glow",
+        "opacity": 0.2,
+        "intensity": 0.3,
+        "layer": "accent",
+        "center": [
+          -0.2,
+          -0.18,
+          0.24
+        ],
+        "spread": [
+          1.2,
+          0.7,
+          0.3
+        ],
+        "animation": {
+          "rotationZ": 0.03,
+          "pulse": 0.04,
+          "wobbleX": 0.04,
+          "wobbleY": 0.04,
+          "drift": 0.12
+        },
+        "techniqueRef": "tech.ember-orbit",
+        "role": "accent-gesture",
+        "motif": "flow",
+        "intentCadence": "measured"
+      }
+    ],
+    "shaderLayers": 4,
+    "elementDiversity": 3,
+    "paletteVariance": 0,
+    "motionSpeedNormalized": 0.729,
+    "camera": {
+      "autoRotate": false,
+      "autoRotateSpeed": 0.152,
+      "minDistance": 6,
+      "maxDistance": 24,
+      "cycleSeconds": 24,
+      "beats": [
+        {
+          "t": 0,
+          "radius": 12.504,
+          "theta": 0.348,
+          "phi": 1.229,
+          "hold": 1.064
+        },
+        {
+          "t": 0.34,
+          "radius": 10.636,
+          "theta": 1.268,
+          "phi": 1.031,
+          "hold": 0.514
+        },
+        {
+          "t": 0.68,
+          "radius": 11.248,
+          "theta": 2.085,
+          "phi": 1.307,
+          "hold": 0.866
+        },
+        {
+          "t": 1,
+          "radius": 12.28,
+          "theta": 2.438,
+          "phi": 1.12,
+          "hold": 1.144
+        }
+      ],
+      "target": [
+        0,
+        0,
+        0
+      ]
+    },
+    "post": {
+      "vignette": 0.24,
+      "contrast": 1.18,
+      "saturation": 0.92,
+      "exposure": 0.98,
+      "breathing": {
+        "hueShift": 0.053,
+        "saturationAmplitude": 0.067,
+        "exposureAmplitude": 0.058,
+        "phaseA": 0.4699,
+        "phaseB": 0.6049
+      }
+    },
+    "styleFingerprint": {
+      "pulseFamily": "musical",
+      "stripeWarp": 0.22,
+      "edgeSoftness": 0.22,
+      "cameraSway": 0.22,
+      "edgeHardness": 0.5,
+      "temperatureBias": 0,
+      "verticalBias": 0,
+      "cadenceBias": 0
+    },
+    "sceneAuthoring": {
+      "mode": "agent-dsl",
+      "planner": "openclaw-agent-scene-planner",
+      "representation": {
+        "id": "rep.victory-cleft",
+        "label": "Victory Cleft",
+        "description": "A grave, earth-heavy field split by one ascending amber seam. The triumph is not shown as speed but as a refusal to break.",
+        "scoreHint": 0.89,
+        "motif": "Unbreakable seam",
+        "cadence": "measured",
+        "scenePrompt": "A bounded abstract painting-space dominated by dark umber and iron-red planes, torn open by a single vertical-leaning amber cleft that grows clearer as it rises. Blue-cyan remains peripheral, like cold air pressing from one side. A few ember traces circulate l",
+        "colorMood": "Mineral warmth against cooled pressure, with a narrow golden release.",
+        "spatialIntent": "Background holds compressed dark mass, midground carries opposing red and blue-cyan fields, foreground gives the cleft and a few ember traces decisive legibility.",
+        "imageAuthorship": {
+          "structuralLaw": "Everything submits to one upward rupture through resistant strata.",
+          "dominantForms": [
+            "monumental asymmetrical fields",
+            "knife-torn vertical seam",
+            "small dispersed ember arcs"
+          ],
+          "edgeBehavior": "Edges alternate between scraped dryness and abrupt jagged tears, never soft cloudiness throughout.",
+          "surfaceBehavior": "Matte, mineral, abraded paint skin with subtle tonal bruising inside each field.",
+          "depthLogic": "Depth comes from stacked planes and value pressure, with the seam stepping forward by contrast rather than by literal extrusion.",
+          "motionLogic": "Mostly still image pressure with only faint ember drift describing remembered momentum.",
+          "forbiddenDrift": [
+            "hero spotlight theatrics",
+            "clean vector geometry",
+            "HUD-like circles",
+            "generic cosmic atmosphere"
+          ]
+        },
+        "technicalTranslation": {
+          "realizationStrategy": "Use one dominant shader plane for the painted field, one fault-line element as the anchor seam, sparse particles for orbital residue, and haze only to separate layers.",
+          "reuseBias": "hybrid",
+          "whyThisApproach": "Existing runtime planes and fault lines can carry the field and rupture if their defaults are overridden aggressively toward Still-like surfaces.",
+          "notes": [
+            "Keep camera nearly frontal.",
+            "Let the seam own the brightest value.",
+            "Particle motion should stay slow and peripheral."
+          ],
+          "motionCadence": "measured"
+        },
+        "mustShow": [
+          "one dominant ascending warm fracture",
+          "large torn painted fields with ragged boundaries",
+          "subordinate blue-cyan pressure zone",
+          "clear separation between background mass and foreground seam"
+        ],
+        "mustAvoid": [
+          "central glowing portal",
+          "literal wheel or road motifs",
+          "too many particles",
+          "smooth gradient-only backdrop",
+          "symmetrical composition"
+        ],
+        "reviewFocus": [
+          "Does the seam feel earned rather than decorative?",
+          "Do the edges feel painted and torn?",
+          "Is the blue-cyan pressure subordinate but necessary?"
+        ],
+        "artistTechniqueObservations": {
+          "medium": "painting",
+          "primaryTechnique": "radial/orbital construction",
+          "markMakingTraits": [],
+          "surfaceQualities": [
+            "painted surface behavior matters more than object literalism"
+          ],
+          "paletteTendencies": [
+            "dominant hues: orange, red, blue-cyan"
+          ],
+          "spatialHabits": [
+            "layered field organization",
+            "orbital/circular organization"
+          ]
+        },
+        "rationale": {
+          "newsToImage": "The public triumph becomes a narrow but undeniable rise through resistance, matching Roubaix's brutality without depicting the race.",
+          "artistToImage": "Still's field logic dominates, with the event translated into pressure, fracture, and release."
+        },
+        "techniques": [
+          {
+            "id": "tech.fractured-field",
+            "name": "Fractured Color Field",
+            "type": "shader",
+            "purpose": "Main image massing.",
+            "reuseModuleType": null,
+            "params": {
+              "layers": 4,
+              "noiseScale": 2.4
+            }
+          },
+          {
+            "id": "tech.rift-spine",
+            "name": "Rift Spine",
+            "type": "geometry",
+            "purpose": "Primary release anchor.",
+            "reuseModuleType": null,
+            "params": {
+              "segments": 18,
+              "jitter": 0.22
+            }
+          },
+          {
+            "id": "tech.ember-orbit",
+            "name": "Subordinate Ember Orbit",
+            "type": "particle",
+            "purpose": "Restrained momentum residue.",
+            "reuseModuleType": null,
+            "params": {
+              "count": 120,
+              "radius": 1
+            }
+          }
+        ]
+      },
+      "artisticIntent": {
+        "statement": "Treat van Aert's Roubaix win as a hard-earned vertical release inside a field of pressure, using Clyfford Still's torn color masses and made surface rather than any literal cycling image.",
+        "motif": "A single ascending fracture of warm light forcing its way through compressed earth-r",
+        "emotionalArc": "Oppression gathers in heavy strata, tension sharpens into a near-violent split, then resolves into a narrow but undeniable uplift that feels earned, public, and smiling without bec",
+        "compositionLogic": "One governing rupture organizes the image. Large asymmetrical fields hold the space, ragged edges create the active boundaries, and small orbital or ember-like traces remain subordinate to the whole. Depth comes from stacked painted planes, not from scenic per",
+        "imagePrompt": "An abstract expressionist painting in the visual language of Clyfford Still, built from monumental torn color fields and jagged vertical-diagonal ruptures, non-literal response to a triumphant Paris-Roubaix victory. Dense umber, iron red, burnt orange, and restrained blue-cyan are arranged as layered painted masses wit"
+      },
+      "executionPlan": {
+        "palette": {
+          "bg": "#2b1d1a",
+          "primary": "#b44a1f",
+          "secondary": "#6e8f96",
+          "glow": "#f0b24a",
+          "anchor": "#f6d36b"
+        },
+        "camera": {
+          "autoRotate": false,
+          "cycleSeconds": 24,
+          "target": [
+            0,
+            0,
+            0
+          ]
+        },
+        "post": {
+          "contrast": 1.12,
+          "saturation": 0.92,
+          "vignette": 0.24,
+          "exposure": 0.98
+        },
+        "global": {
+          "shapeCountHint": 120,
+          "flowField": 0.32,
+          "distortion": 0.21,
+          "bloom": 0.18
+        },
+        "techniques": [
+          {
+            "id": "tech.fractured-field",
+            "name": "Fractured Color Field",
+            "type": "shader",
+            "purpose": "Build the main painted masses with torn boundaries and dry surface variation.",
+            "reuseModuleType": "agent-shader-plane",
+            "params": {
+              "layers": 4,
+              "noiseScale": 2.4,
+              "edgeSharpness": 0.58,
+              "verticalBias": 0.71
+            }
+          },
+          {
+            "id": "tech.rift-spine",
+            "name": "Rift Spine",
+            "type": "geometry",
+            "purpose": "Create the readable primary split that carries the emotional release.",
+            "reuseModuleType": "fault-line",
+            "params": {
+              "segments": 18,
+              "jitter": 0.22,
+              "width": 0.18,
+              "height": 2.1
+            }
+          },
+          {
+            "id": "tech.ember-orbit",
+            "name": "Subordinate Ember Orbit",
+            "type": "particle",
+            "purpose": "Add restrained motion memory without turning the image into spectacle.",
+            "reuseModuleType": "particle-cloud",
+            "params": {
+              "count": 180,
+              "radius": 1.1,
+              "drift": 0.08,
+              "size": 0.018
+            }
+          },
+          {
+            "id": "tech.atmospheric-lift",
+            "name": "Atmospheric Lift",
+            "type": "post",
+            "purpose": "Separate depth planes with faint suspended haze and localized glow.",
+            "reuseModuleType": "volumetric-haze",
+            "params": {
+              "density": 0.16,
+              "heightFalloff": 0.63,
+              "warmBias": 0.7
+            }
+          }
+        ]
+      },
+      "moduleOverrides": [
+        {
+          "id": "ov.field.still-fracture",
+          "target": {
+            "moduleType": "agent-shader-plane",
+            "elementId": null
+          },
+          "mode": "replace",
+          "params": {
+            "doubleSided": true
+          },
+          "uniforms": {
+            "uBg": "#2b1d1a",
+            "uPrimary": "#b44a1f",
+            "uSecondary": "#6e8f96",
+            "uGlow": "#f0b24a",
+            "uAnchor": "#f6d36b",
+            "uTime": 0,
+            "uSeed": 1
+          },
+          "glsl": {
+            "vertex": "varying vec2 vUv;\nvarying vec3 vPos;\nvoid main(){\n vUv = uv;\n vPos = position;\n gl_Position = projectionMatrix * modelViewMatrix * vec4(position,1.0);\n}",
+            "fragment": "precision highp float;\nvarying vec2 vUv;\nuniform vec3 uBg;\nuniform vec3 uPrimary;\nuniform vec3 uSecondary;\nuniform vec3 uGlow;\nuniform vec3 uAnchor;\nuniform float uTime;\nuniform float uSeed;\nfloat hash(vec2 p){ return fract(sin(dot(p, vec2(127.1,311.7)) + uSeed*13.7) * 43758.5453123); }\nfloat noise(vec2 p){\n vec2 i = floor(p); vec2 f = fract(p);\n float a = hash(i), b = hash(i+vec2(1.0,0.0)), c = hash(i+vec2(0.0,1.0)), d = hash(i+vec2(1.0,1.0));\n vec2 u = f*f*(3.0-2.0*f);\n return mix(a,b,u.x) + (c-a)*u.y*(1.0-u.x) + (d-b)*u.x*u.y;\n}\nfloat fbm(vec2 p){\n float v = 0.0;\n float a = 0.5;\n for(int i=0;i<5;i++){\n v += a * noise(p);\n p = p * 2.03 + vec2(17.0,11.0);\n a *= 0.5;\n }\n return v;\n}\nvoid main(){\n vec2 uv = vUv * 2.0 - 1.0;\n float vertical = smoothstep(-0.95, 0.9, uv.y);\n float fieldA = fbm(vec2(uv.x*1.1, uv.y*0.8) * 2.2);\n float fieldB = fbm(vec2(uv.x*0.7 + 4.0, uv.y*1.5 - 2.0) * 2.8);\n float fieldC = fbm(vec2(uv.x*2.0 - 3.0, uv.y*0.5 + 7.0) * 3.1);\n float cleft = abs(uv.x + 0.18*sin(uv.y*2.7) - 0.12*fieldB + 0.16*(vertical-0.5));\n float seam = 1.0 - smoothstep(0.02, 0.16, cleft);\n float warmMass = smoothstep(0.28, 0.8, fieldA + vertical*0.35 - uv.x*0.15);\n float coolMass = smoothstep(0.42, 0.86, fieldC + (1.0-vertical)*0.2 + uv.x*0.22);\n float scrape = pow(fbm(uv*8.0 + vec2(0.0, uTime*0.02)), 2.2);\n vec3 col = uBg;\n col = mix(col, uPrimary, warmMass*0.82);\n col = mix(col, uSecondary, coolMass*0.48);\n col += uGlow * seam * (0.45 + 0.35*vertical);\n col += uAnchor * pow(seam, 3.0) * (0.35 + 0.65*vertical);\n col *= 0.92 + 0.18*scrape;\n float edgeStress = smoothstep(0.48, 0.56, abs(fieldA-fieldB));\n col = mix(col, col*0.82, edgeStress*0.25);\n gl_FragColor = vec4(col, 1.0);\n}"
+          }
+        },
+        {
+          "id": "ov.rift.knife-edge",
+          "target": {
+            "moduleType": "fault-line",
+            "elementId": null
+          },
+          "mode": "uniforms",
+          "params": {
+            "blend": "screen",
+            "thickness": 0.11,
+            "depthOffset": 0.08
+          },
+          "uniforms": {
+            "color": "#f6d36b",
+            "secondaryColor": "#b44a1f",
+            "glow": 0.22,
+            "jaggedness": 0.31,
+            "feather": 0.14
+          }
+        },
+        {
+          "id": "ov.cloud.embers",
+          "target": {
+            "moduleType": "particle-cloud",
+            "elementId": null
+          },
+          "mode": "uniforms",
+          "params": {
+            "distribution": "arc",
+            "arcSpan": 1.7,
+            "drift": 0.08,
+            "noise": 0.14
+          },
+          "uniforms": {
+            "colorA": "#f0b24a",
+            "colorB": "#6e8f96",
+            "size": 0.018,
+            "alpha": 0.2
+          }
+        },
+        {
+          "id": "ov.haze.lift",
+          "target": {
+            "moduleType": "volumetric-haze",
+            "elementId": null
+          },
+          "mode": "uniforms",
+          "params": {
+            "verticalBias": 0.58
+          },
+          "uniforms": {
+            "color": "#b44a1f",
+            "density": 0.16,
+            "falloff": 0.63,
+            "alpha": 0.14
+          }
+        }
+      ],
+      "customModules": [],
+      "policyPasses": {
+        "advisoryOnly": true,
+        "skipped": [
+          "focal-hierarchy",
+          "envelope-clamp",
+          "composition-plan",
+          "artist-visual-profile",
+          "scene-element-module-enforcement",
+          "stack-pipeline-apply",
+          "gap-focused-pass",
+          "artist-hard-constraints"
+        ]
+      }
+    },
+    "seedVersion": 2,
+    "seeds": {
+      "baseSeed": 3783890355,
+      "runSeed": 1221653291,
+      "geomSeed": 552758825,
+      "animSeed": 1975763308,
+      "colorSeed": 318078004,
+      "cameraSeed": 2585366074
+    },
+    "customModuleReport": {
+      "declaredCustomModules": 0,
+      "accepted": [],
+      "rejected": [],
+      "moduleOverrideCount": 4,
+      "fingerprint": "234d0109"
+    },
+    "techStack": {
+      "id": "sdf-raymarch-lite",
+      "name": "SDF/Raymarch Lite",
+      "family": "sdf-raymarch",
+      "strategyFamilies": [
+        "orbits",
+        "flow",
+        "hybrid"
+      ],
+      "rationale": {
+        "signals": {
+          "conflict": 0.412,
+          "context": 0.412,
+          "motion": 0.186,
+          "turbulence": 0.426,
+          "structureBias": 0,
+          "densityBias": 0,
+          "edgeBias": 0,
+          "motionBias": 0,
+          "visualProfile": {
+            "profileCadence": "steady",
+            "preferredFamilies": []
+          }
+        },
+        "familyHits": 0,
+        "idHits": 0,
+        "penalties": [
+          "motion<0.3"
+        ],
+        "visualAffinity": 0,
+        "elementCoverage": {
+          "score": 0,
+          "coverage": 0,
+          "moduleCoverage": 0,
+          "missingCapabilities": [
+            "shader-fields",
+            "fault geometry",
+            "sparse particles",
+            "haze"
+          ]
+        },
+        "preferredFamilies": [],
+        "preferredFamilyLocked": false,
+        "notPreferredPenalty": 0
+      },
+      "dominantPrimitive": "agent-shader-plane",
+      "moduleSet": [
+        "agent-shader-plane",
+        "fault-line",
+        "particle-cloud"
+      ],
+      "pipelineKind": "sdf-raymarch"
+    },
+    "renderPipeline": {
+      "kind": "sdf-raymarch",
+      "family": "sdf-raymarch",
+      "fallback": false,
+      "advisoryOnly": true,
+      "dominantPrimitive": "agent-shader-plane",
+      "moduleSet": [
+        "agent-shader-plane",
+        "fault-line",
+        "particle-cloud"
+      ]
+    }
+  },
+  "sceneStrategy": {
+    "selected": {
+      "id": "atomic-balanced-flow",
+      "name": "Balanced Flow Field",
+      "type": "atomic",
+      "family": "flow"
+    },
+    "applied": false,
+    "fallbackReason": "agent-authored-scene-elements"
+  },
+  "techStack": {
+    "id": "sdf-raymarch-lite",
+    "name": "SDF/Raymarch Lite",
+    "family": "sdf-raymarch"
+  },
+  "newsVisualMappings": [
+    {
+      "signal": "title evidence [donne, tout, monde, presse] -> motif flow",
+      "from": "donne, tout, monde, presse",
+      "visualDecision": "structural motif armature set to flow"
+    },
+    {
+      "signal": "composition foreground conflict",
+      "from": "donne, tout, monde, presse",
+      "visualDecision": "foreground role tension-knot at pressure 0.18"
+    },
+    {
+      "signal": "composition midground context",
+      "from": "donne, tout, monde, presse",
+      "visualDecision": "midground role context-drift with density 0.311"
+    },
+    {
+      "signal": "composition background mood",
+      "from": "donne, tout, monde, presse",
+      "visualDecision": "background mood watchful depth 0.312"
+    },
+    {
+      "signal": "urgency -> motion",
+      "from": "ageHours=6.32",
+      "visualDecision": "motionSpeedNormalized=0.729"
+    },
+    {
+      "signal": "title semantics -> palette/edge cadence",
+      "from": "temp=0 edge=0.5",
+      "visualDecision": "postContrast=1.18 accentType=particle-cloud"
+    },
+    {
+      "signal": "article institutional/conflict polarity",
+      "from": "donne, tout, monde, presse",
+      "visualDecision": "accent element particle-cloud with opacity 0.2"
+    },
+    {
+      "signal": "artist research context Clyfford Still",
+      "from": "tags abstract, surreal, expressionist, figurative, surrealist",
+      "visualDecision": "artist profile captured as metadata only; no technical routing applied"
+    }
+  ],
+  "qualityScore": {
+    "score": 51.3,
+    "summary": "Alignment 66.8 with strongest channel emotional.",
+    "heuristic": {
+      "score": 66.7,
+      "breakdown": {
+        "legibility": 74.4,
+        "emotionalReadability": 68.1,
+        "coherence": 91.5,
+        "focalAnchor": 66.5,
+        "technicalRichness": 86.1,
+        "restraint": 74.7,
+        "alignment": 66.8
+      }
+    },
+    "calibration": {
+      "sampleCount": 1,
+      "trustWeight": 0.4
+    },
+    "alignment": {
+      "totalAlign": 66.8,
+      "components": {
+        "title": {
+          "score": 61.9
+        },
+        "style": {
+          "score": 66.8
+        },
+        "emotional": {
+          "score": 71.8
+        }
+      }
+    }
+  },
+  "rationale": {
+    "intent": {
+      "signal": null,
+      "emotion": null,
+      "tension": null,
+      "balance": null,
+      "motion": null
+    },
+    "selection": {
+      "whyHeadline": "Selected as top-ranked Belgian headline (score 92.894 = frequency 91 + priority 0 + recency 1.894).",
+      "priorityTerms": []
+    },
+    "qualitySummary": "TOTAL_ALIGN 66.8."
+  },
+  "runPolicy": {
+    "artworksPerRun": 1,
+    "multiVariant": false
+  },
+  "artFramework": {
+    "version": 3,
+    "intent": {
+      "statement": "“Unbreakable!”, “puts a smile on everyone’s face”: the Belgian and international press comment on Wout van Aert’s triumph at Paris-Roubaix translated through Clyfford Still's visual language as a non-literal image.",
+      "coreImpulse": "Clyfford Still, born on November 30, 1904, in Grandin, North Dakota, emerged as one of the most influential American artists of the 20th century, playing a pivotal role in shaping the trajectory of abstract expression... Clyfford Still was an American painter, and one of the leading figures in the first generation of Abstract Expressionists, who developed a new, powerful approach to painting in the years immediately following World Wa... Clyfford Still Art Artist Paintings Biography Abstract Expressionism CLYFFORD STILL Master of Abstract Expressionism Clyfford Still (November 30, 1904 - June 23, 1980) was an American artist, a painter, and one of the... Read more detail in the biography or check out some Clyfford Still quotes about his process.",
+      "artistTranslationLogic": [
+        "Clyfford Still's formal logic should dominate before any spectacle or scenic excess."
+      ],
+      "emotionalClimate": {
+        "summary": "Clyfford Still, born on November 30, 1904, in Grandin, North Dakota, emerged as one of the most influential American artists of the 20th century, playing a pivotal role in shaping the trajectory of abstract expression... Clyfford Still was an American painter, and one of the leading figures in the first generation of Abstract Expressionists, who developed a new, powerful approach to painting in the years immediately following World Wa... Clyfford Still Art Artist Paintings Biography Abstract Expressionism CLYFFORD STILL Master of Abstract Expressionism Clyfford Still (November 30, 1904 - June 23, 1980) was an American artist, a painter, and one of the... Read more detail in the biography or check out some Clyfford Still quotes about his process.",
+        "pressure": "low",
+        "pace": "slow",
+        "socialReach": "public"
+      },
+      "visualGravity": {
+        "anchor": null,
+        "dominantStructure": "Build the image around one readable structural law.",
+        "scaleBehavior": "Keep the space bounded and compositionally intentional."
+      },
+      "materialLogic": {
+        "surfaceBehavior": [],
+        "spatialHabits": [],
+        "handling": "Clyfford Still's surface should feel made, not generic."
+      },
+      "colorField": {
+        "paletteSignals": [],
+        "contrastMode": "measured contrast with restrained vibration"
+      },
+      "symbolicDensity": {
+        "primaryMotif": "fracture",
+        "motifVocabulary": [],
+        "literalness": "non-literal"
+      },
+      "tensionEngine": {
+        "conflictAxis": "Donald Trump",
+        "escalationMode": "Let tension accumulate through structure, not narration.",
+        "releaseValve": "Allow only a narrow zone of release."
+      },
+      "audiencePosition": {
+        "stance": "Clyfford Still, born on November 30, 1904, in Grandin, North Dakota, emerged as one of the most influential American artists of the 20th century, playing a pivotal role in shaping the trajectory of abstract expression... Clyfford Still, born on November 30, 1904, in Grandin, North Dakota, emerged as one of the most influential American artists of the 20th century, playing a pivotal role in shaping the trajectory of abstract expression... Clyfford Still Art Artist Paintings Biography Abstract Expressionism CLYFFORD STILL Master of Abstract Expressionism Clyfford Still (November 30, 1904 - June 23, 1980) was an American artist, a painter, and one of the... Clyfford Still, born on November 30, 1904, in Grandin, North Dakota, emerged as one of the most influential American artists of the 20th century, playing a pivotal role in shaping the trajectory of abstract expression...",
+        "distance": "immersed but not illustrative"
+      },
+      "controlVsAccident": {
+        "balance": "controlled with selective instability",
+        "motionTemperament": "steady",
+        "accidentRole": "use drift or fracture sparingly to keep the field alive"
+      },
+      "antiDriftRules": [
+        "Do not collapse into biography summary, symbolic cliché, or generic procedural spectacle."
+      ],
+      "finalCompression": "Clyfford Still, born on November 30, 1904, in Grandin, North Dakota, emerged as one of the most influential American artists of the 20th century, playing a pivotal role in shaping the trajectory of abstract expression... Clyfford Still was an American painter, and one of the leading figures in the first generation of Abstract Expressionists, who developed a new, powerful approach to painting in the years immediately following World Wa... Clyfford Still Art Artist Paintings Biography Abstract Expressionism CLYFFORD STILL Master of Abstract Expressionism Clyfford Still (November 30, 1904 - June 23, 1980) was an American artist, a painter, and one of the... Read more detail in the biography or check out some Clyfford Still quotes about his process. Build the image around one readable structural law.",
+      "artistAnchors": {
+        "formalLogic": [],
+        "motifVocabulary": [],
+        "compositionCues": [],
+        "paletteSignals": [],
+        "surfaceBehavior": [],
+        "spatialHabits": [],
+        "translationDirectives": []
+      },
+      "threeJsFreedomEnvelope": [],
+      "avoidSignals": [],
+      "threeJsTranslationExamples": []
+    }
+  },
+  "image": {
+    "publicJpeg": "./data/media/2026-04-13-abstract-signal-unbreakable-puts-smile-everyone/artwork-720.jpg",
+    "thumbnailJpeg": "./data/media/2026-04-13-abstract-signal-unbreakable-puts-smile-everyone/thumb-320.jpg",
+    "instagramJpeg": "./data/media/2026-04-13-abstract-signal-unbreakable-puts-smile-everyone/instagram-1080x1350.jpg",
+    "altText": "Abstract Signal: Unbreakable puts smile everyone by Clyfford Still."
+  }
+}

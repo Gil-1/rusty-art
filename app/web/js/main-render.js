@@ -305,6 +305,11 @@ export function createArchiveCardElement(itemOrFacts, commandsOrActivate) {
   li.setAttribute('role', 'button');
   li.setAttribute('tabindex', '0');
   li.innerHTML = `
+    ${facts.thumbnail ? `
+      <div class="archive-thumb">
+        <img src="${escapeHtml(facts.thumbnail.src)}" alt="${escapeHtml(facts.thumbnail.altText)}" loading="lazy" decoding="async">
+      </div>
+    ` : ''}
     <div class="archive-card-head">
       <p class="archive-date">${escapeHtml(facts.date)}</p>
       <p class="archive-source">${escapeHtml(facts.source)}</p>

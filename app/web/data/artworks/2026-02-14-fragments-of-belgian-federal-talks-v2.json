@@ -1,1 +1,435 @@
-{"id":"2026-02-14-fragments-of-belgian-federal-talks-v2","date":"2026-02-14","title":"Fragments of Belgian federal talks","generatedAt":"2026-02-14T14:44:15.721Z","news":{"source":"rtbf","title":"Belgian federal talks intensify around budget and climate priorities","link":"https://example.com/rtbf-federal-talks","score":18},"inspiration":{"artist":"Danielle Mckinney","tags":["modern","visual"],"links":{"wikipedia":"https://en.wikipedia.org/wiki/Danielle_Mckinney","reference":"https://en.wikipedia.org/wiki/Danielle_Mckinney"}},"seed":3567920313,"scene":{"motif":"orbits","shapeCount":179,"turbulence":0.607,"spiralBias":0.632,"motionSpeed":0.001391,"bloom":0.384,"grain":0.052,"fogDensity":0.101,"distortion":0.44,"flowField":0.48,"anchorStrength":0.752,"anchorOffsetX":-0.189,"layerBalance":{"structure":0.636,"chaos":0.481},"expression":{"tension":0.702,"structure":0.47,"motion":0.4,"noise":0.63,"urgency":0.18,"contrast":0.267},"palette":{"bg":"hsl(180, 48%, 6%)","primary":"hsl(301, 76%, 64%)","secondary":"hsl(52, 68%, 64%)","glow":"hsl(321, 88%, 74%)","anchor":"hsl(2, 80%, 70%)"},"shaderLayers":4,"paletteVariance":0.72,"motionSpeedNormalized":0.578,"camera":{"autoRotate":false,"autoRotateSpeed":0.098,"minDistance":6,"maxDistance":24,"cycleSeconds":24,"beats":[{"t":0,"radius":12.6,"theta":-0.05,"phi":1.231,"hold":1},{"t":0.34,"radius":10.7,"theta":0.693,"phi":1.06,"hold":0.5},{"t":0.68,"radius":11.2,"theta":1.434,"phi":1.331,"hold":0.8},{"t":1,"radius":12.2,"theta":2.359,"phi":1.15,"hold":1.1}]},"post":{"vignette":0.416,"contrast":1.154,"saturation":1.068,"exposure":0.956,"breathing":{"hueShift":0.01,"saturationAmplitude":0.06,"exposureAmplitude":0.04,"phaseA":0.1091,"phaseB":0.5058}},"styleFingerprint":{"pulseFamily":"balanced","stripeWarp":0.14,"edgeSoftness":0.26,"cameraSway":0.16,"edgeHardness":0.36,"temperatureBias":0,"verticalBias":0,"cadenceBias":-0.1},"seedVersion":2,"seeds":{"baseSeed":20688019,"runSeed":3567920313,"geomSeed":512165142,"animSeed":179940151,"colorSeed":4053928401,"cameraSeed":675383517},"techStack":{"id":"geometry-construct","name":"Geometry-Heavy Construct","family":"geometry-heavy","strategyFamilies":["grid","fracture","hybrid"],"rationale":{"source":"alternate-candidate","score":2.272,"familyHits":0,"idHits":0,"penalties":["conflict<0.35"]}},"strategy":{"id":"atomic-grid-lattice","name":"Institutional Lattice","type":"atomic","family":"grid","cooldown":{"window":3,"recentFamilies":[],"family":"grid","applied":false},"compositeDemanded":false,"signals":{"conflict":0,"context":0.683,"moodDepth":0.35}},"layers":[{"role":"background","modules":["volumetric-haze","klee-cells"]},{"role":"midground","modules":["motif-armature","suprematist-planes"]},{"role":"foreground","modules":["anchor-core","signal-weave"]},{"role":"accent","modules":["concentric-discs"]},{"role":"post","modules":["post-contrast"]}],"elements":[{"role":"atmosphere-field","colorA":"bg","colorB":"secondary","opacity":0.366,"intensity":0.518,"animation":{"drift":0.268},"layer":"background","moduleType":"volumetric-haze"},{"role":"atmosphere-field","layer":"background","color":"secondary","opacity":0.342,"intensity":0.528,"animation":{"rotationZ":0.129,"pulse":0.332},"moduleType":"klee-cells"},{"role":"structural-spine","motif":"orbits","emphasis":0.564,"color":"glow","opacity":0.435,"animation":{"rotationZ":0.256,"wobbleY":0.193},"layer":"midground","intensity":0.54,"moduleType":"motif-armature"},{"role":"structural-spine","layer":"midground","color":"anchor","opacity":0.424,"intensity":0.58,"animation":{"rotationZ":0.11,"pulse":0.1},"moduleType":"polyhedron-array"},{"role":"structural-spine","layer":"midground","color":"secondary","opacity":0.431,"intensity":0.567,"animation":{"rotationZ":0.241,"pulse":0.304},"moduleType":"suprematist-planes"},{"role":"primary-signal","motif":"orbits","color":"anchor","auraColor":"glow","opacity":0.677,"size":0.955,"intensity":0.823,"animation":{"rotationZ":0.14,"wobbleY":0.153,"pulse":0.285},"layer":"foreground","moduleType":"anchor-core"},{"role":"primary-signal","color":"secondary","opacity":0.646,"intensity":0.844,"animation":{"rotationZ":0.164,"pulse":0.241},"layer":"foreground","moduleType":"signal-weave"},{"role":"accent-gesture","layer":"accent","color":"glow","opacity":0.541,"intensity":0.643,"animation":{"rotationZ":0.101,"pulse":0.238},"moduleType":"concentric-discs"}],"elementDiversity":5},"sceneStrategy":{"selected":{"id":"atomic-grid-lattice","name":"Institutional Lattice","type":"atomic","family":"grid"},"applied":true,"fallbackReason":null},"techStack":{"id":"geometry-construct","name":"Geometry-Heavy Construct","family":"geometry-heavy"},"newsVisualMappings":[{"signal":"title evidence [federal, budget, climate] -> motif orbits","from":"federal, budget, climate","visualDecision":"structural motif armature set to orbits"},{"signal":"composition foreground conflict","from":"intensify, budget, budget, budget","visualDecision":"foreground role tension-knot at pressure 0.605"},{"signal":"composition midground context","from":"federal, budget, climate, federal, budget, climate","visualDecision":"midground role context-drift with density 0.556"},{"signal":"composition background mood","from":"climate, climate, climate","visualDecision":"background mood watchful depth 0.432"},{"signal":"urgency -> motion","from":"ageHours=31.24","visualDecision":"motionSpeedNormalized=0.578"},{"signal":"title semantics -> palette/edge cadence","from":"temp=0 edge=0.36","visualDecision":"postContrast=1.154 accentType=concentric-discs"},{"signal":"article institutional/conflict polarity","from":"climate","visualDecision":"accent primitive concentric-discs with opacity 0.541"},{"signal":"artist grammar Danielle Mckinney","from":"style card radial-burst · musical-pulse · high-contrast-prism · core-centered","visualDecision":"camera beat choreography + palette topology constrained to artist envelope"}],"qualityScore":{"score":54.3,"summary":"Alignment 84.6 with strongest channel style.","heuristic":{"score":69.7,"breakdown":{"legibility":75.4,"emotionalReadability":79.2,"coherence":84.1,"focalAnchor":73,"technicalRichness":100,"restraint":34.1,"alignment":84.6}},"calibration":{"sampleCount":1,"trustWeight":0.4},"alignment":{"totalAlign":84.6,"components":{"title":{"score":87},"style":{"score":87.9},"emotional":{"score":77.9}}}},"rationale":{"intent":{"signal":"Interdependent systems are pulling against each other in unstable cycles.","emotion":"Focused unease with recurring pressure loops.","tension":"Orbit stability vs drift.","balance":"Central coherence with stretched periphery.","motion":"Circular momentum with precession."},"selection":{"whyHeadline":"Selected as top-ranked Belgian headline (score 18 = frequency 9 + priority 9 + recency 0).","priorityTerms":["federal","budget","climate"]},"qualitySummary":"TOTAL_ALIGN 84.6."},"runPolicy":{"artworksPerRun":1,"multiVariant":false},"artFramework":{"version":3,"intent":{"signal":"Interdependent systems are pulling against each other in unstable cycles.","emotion":"Focused unease with recurring pressure loops.","tension":"Orbit stability vs drift.","balance":"Central coherence with stretched periphery.","motion":"Circular momentum with precession."}}}
+{
+  "id": "2026-02-14-fragments-of-belgian-federal-talks-v2",
+  "date": "2026-02-14",
+  "title": "Fragments of Belgian federal talks",
+  "generatedAt": "2026-02-14T14:44:15.721Z",
+  "news": {
+    "source": "rtbf",
+    "title": "Belgian federal talks intensify around budget and climate priorities",
+    "link": "https://example.com/rtbf-federal-talks",
+    "score": 18
+  },
+  "inspiration": {
+    "artist": "Danielle Mckinney",
+    "tags": [
+      "modern",
+      "visual"
+    ],
+    "links": {
+      "wikipedia": "https://en.wikipedia.org/wiki/Danielle_Mckinney",
+      "reference": "https://en.wikipedia.org/wiki/Danielle_Mckinney"
+    }
+  },
+  "seed": 3567920313,
+  "scene": {
+    "motif": "orbits",
+    "shapeCount": 179,
+    "turbulence": 0.607,
+    "spiralBias": 0.632,
+    "motionSpeed": 0.001391,
+    "bloom": 0.384,
+    "grain": 0.052,
+    "fogDensity": 0.101,
+    "distortion": 0.44,
+    "flowField": 0.48,
+    "anchorStrength": 0.752,
+    "anchorOffsetX": -0.189,
+    "layerBalance": {
+      "structure": 0.636,
+      "chaos": 0.481
+    },
+    "expression": {
+      "tension": 0.702,
+      "structure": 0.47,
+      "motion": 0.4,
+      "noise": 0.63,
+      "urgency": 0.18,
+      "contrast": 0.267
+    },
+    "palette": {
+      "bg": "hsl(180, 48%, 6%)",
+      "primary": "hsl(301, 76%, 64%)",
+      "secondary": "hsl(52, 68%, 64%)",
+      "glow": "hsl(321, 88%, 74%)",
+      "anchor": "hsl(2, 80%, 70%)"
+    },
+    "shaderLayers": 4,
+    "paletteVariance": 0.72,
+    "motionSpeedNormalized": 0.578,
+    "camera": {
+      "autoRotate": false,
+      "autoRotateSpeed": 0.098,
+      "minDistance": 6,
+      "maxDistance": 24,
+      "cycleSeconds": 24,
+      "beats": [
+        {
+          "t": 0,
+          "radius": 12.6,
+          "theta": -0.05,
+          "phi": 1.231,
+          "hold": 1
+        },
+        {
+          "t": 0.34,
+          "radius": 10.7,
+          "theta": 0.693,
+          "phi": 1.06,
+          "hold": 0.5
+        },
+        {
+          "t": 0.68,
+          "radius": 11.2,
+          "theta": 1.434,
+          "phi": 1.331,
+          "hold": 0.8
+        },
+        {
+          "t": 1,
+          "radius": 12.2,
+          "theta": 2.359,
+          "phi": 1.15,
+          "hold": 1.1
+        }
+      ]
+    },
+    "post": {
+      "vignette": 0.416,
+      "contrast": 1.154,
+      "saturation": 1.068,
+      "exposure": 0.956,
+      "breathing": {
+        "hueShift": 0.01,
+        "saturationAmplitude": 0.06,
+        "exposureAmplitude": 0.04,
+        "phaseA": 0.1091,
+        "phaseB": 0.5058
+      }
+    },
+    "styleFingerprint": {
+      "pulseFamily": "balanced",
+      "stripeWarp": 0.14,
+      "edgeSoftness": 0.26,
+      "cameraSway": 0.16,
+      "edgeHardness": 0.36,
+      "temperatureBias": 0,
+      "verticalBias": 0,
+      "cadenceBias": -0.1
+    },
+    "seedVersion": 2,
+    "seeds": {
+      "baseSeed": 20688019,
+      "runSeed": 3567920313,
+      "geomSeed": 512165142,
+      "animSeed": 179940151,
+      "colorSeed": 4053928401,
+      "cameraSeed": 675383517
+    },
+    "techStack": {
+      "id": "geometry-construct",
+      "name": "Geometry-Heavy Construct",
+      "family": "geometry-heavy",
+      "strategyFamilies": [
+        "grid",
+        "fracture",
+        "hybrid"
+      ],
+      "rationale": {
+        "source": "alternate-candidate",
+        "score": 2.272,
+        "familyHits": 0,
+        "idHits": 0,
+        "penalties": [
+          "conflict<0.35"
+        ]
+      }
+    },
+    "strategy": {
+      "id": "atomic-grid-lattice",
+      "name": "Institutional Lattice",
+      "type": "atomic",
+      "family": "grid",
+      "cooldown": {
+        "window": 3,
+        "recentFamilies": [],
+        "family": "grid",
+        "applied": false
+      },
+      "compositeDemanded": false,
+      "signals": {
+        "conflict": 0,
+        "context": 0.683,
+        "moodDepth": 0.35
+      }
+    },
+    "layers": [
+      {
+        "role": "background",
+        "modules": [
+          "volumetric-haze",
+          "klee-cells"
+        ]
+      },
+      {
+        "role": "midground",
+        "modules": [
+          "motif-armature",
+          "suprematist-planes"
+        ]
+      },
+      {
+        "role": "foreground",
+        "modules": [
+          "anchor-core",
+          "signal-weave"
+        ]
+      },
+      {
+        "role": "accent",
+        "modules": [
+          "concentric-discs"
+        ]
+      },
+      {
+        "role": "post",
+        "modules": [
+          "post-contrast"
+        ]
+      }
+    ],
+    "elements": [
+      {
+        "role": "atmosphere-field",
+        "colorA": "bg",
+        "colorB": "secondary",
+        "opacity": 0.366,
+        "intensity": 0.518,
+        "animation": {
+          "drift": 0.268
+        },
+        "layer": "background",
+        "moduleType": "volumetric-haze"
+      },
+      {
+        "role": "atmosphere-field",
+        "layer": "background",
+        "color": "secondary",
+        "opacity": 0.342,
+        "intensity": 0.528,
+        "animation": {
+          "rotationZ": 0.129,
+          "pulse": 0.332
+        },
+        "moduleType": "klee-cells"
+      },
+      {
+        "role": "structural-spine",
+        "motif": "orbits",
+        "emphasis": 0.564,
+        "color": "glow",
+        "opacity": 0.435,
+        "animation": {
+          "rotationZ": 0.256,
+          "wobbleY": 0.193
+        },
+        "layer": "midground",
+        "intensity": 0.54,
+        "moduleType": "motif-armature"
+      },
+      {
+        "role": "structural-spine",
+        "layer": "midground",
+        "color": "anchor",
+        "opacity": 0.424,
+        "intensity": 0.58,
+        "animation": {
+          "rotationZ": 0.11,
+          "pulse": 0.1
+        },
+        "moduleType": "polyhedron-array"
+      },
+      {
+        "role": "structural-spine",
+        "layer": "midground",
+        "color": "secondary",
+        "opacity": 0.431,
+        "intensity": 0.567,
+        "animation": {
+          "rotationZ": 0.241,
+          "pulse": 0.304
+        },
+        "moduleType": "suprematist-planes"
+      },
+      {
+        "role": "primary-signal",
+        "motif": "orbits",
+        "color": "anchor",
+        "auraColor": "glow",
+        "opacity": 0.677,
+        "size": 0.955,
+        "intensity": 0.823,
+        "animation": {
+          "rotationZ": 0.14,
+          "wobbleY": 0.153,
+          "pulse": 0.285
+        },
+        "layer": "foreground",
+        "moduleType": "anchor-core"
+      },
+      {
+        "role": "primary-signal",
+        "color": "secondary",
+        "opacity": 0.646,
+        "intensity": 0.844,
+        "animation": {
+          "rotationZ": 0.164,
+          "pulse": 0.241
+        },
+        "layer": "foreground",
+        "moduleType": "signal-weave"
+      },
+      {
+        "role": "accent-gesture",
+        "layer": "accent",
+        "color": "glow",
+        "opacity": 0.541,
+        "intensity": 0.643,
+        "animation": {
+          "rotationZ": 0.101,
+          "pulse": 0.238
+        },
+        "moduleType": "concentric-discs"
+      }
+    ],
+    "elementDiversity": 5
+  },
+  "sceneStrategy": {
+    "selected": {
+      "id": "atomic-grid-lattice",
+      "name": "Institutional Lattice",
+      "type": "atomic",
+      "family": "grid"
+    },
+    "applied": true,
+    "fallbackReason": null
+  },
+  "techStack": {
+    "id": "geometry-construct",
+    "name": "Geometry-Heavy Construct",
+    "family": "geometry-heavy"
+  },
+  "newsVisualMappings": [
+    {
+      "signal": "title evidence [federal, budget, climate] -> motif orbits",
+      "from": "federal, budget, climate",
+      "visualDecision": "structural motif armature set to orbits"
+    },
+    {
+      "signal": "composition foreground conflict",
+      "from": "intensify, budget, budget, budget",
+      "visualDecision": "foreground role tension-knot at pressure 0.605"
+    },
+    {
+      "signal": "composition midground context",
+      "from": "federal, budget, climate, federal, budget, climate",
+      "visualDecision": "midground role context-drift with density 0.556"
+    },
+    {
+      "signal": "composition background mood",
+      "from": "climate, climate, climate",
+      "visualDecision": "background mood watchful depth 0.432"
+    },
+    {
+      "signal": "urgency -> motion",
+      "from": "ageHours=31.24",
+      "visualDecision": "motionSpeedNormalized=0.578"
+    },
+    {
+      "signal": "title semantics -> palette/edge cadence",
+      "from": "temp=0 edge=0.36",
+      "visualDecision": "postContrast=1.154 accentType=concentric-discs"
+    },
+    {
+      "signal": "article institutional/conflict polarity",
+      "from": "climate",
+      "visualDecision": "accent primitive concentric-discs with opacity 0.541"
+    },
+    {
+      "signal": "artist grammar Danielle Mckinney",
+      "from": "style card radial-burst · musical-pulse · high-contrast-prism · core-centered",
+      "visualDecision": "camera beat choreography + palette topology constrained to artist envelope"
+    }
+  ],
+  "qualityScore": {
+    "score": 54.3,
+    "summary": "Alignment 84.6 with strongest channel style.",
+    "heuristic": {
+      "score": 69.7,
+      "breakdown": {
+        "legibility": 75.4,
+        "emotionalReadability": 79.2,
+        "coherence": 84.1,
+        "focalAnchor": 73,
+        "technicalRichness": 100,
+        "restraint": 34.1,
+        "alignment": 84.6
+      }
+    },
+    "calibration": {
+      "sampleCount": 1,
+      "trustWeight": 0.4
+    },
+    "alignment": {
+      "totalAlign": 84.6,
+      "components": {
+        "title": {
+          "score": 87
+        },
+        "style": {
+          "score": 87.9
+        },
+        "emotional": {
+          "score": 77.9
+        }
+      }
+    }
+  },
+  "rationale": {
+    "intent": {
+      "signal": "Interdependent systems are pulling against each other in unstable cycles.",
+      "emotion": "Focused unease with recurring pressure loops.",
+      "tension": "Orbit stability vs drift.",
+      "balance": "Central coherence with stretched periphery.",
+      "motion": "Circular momentum with precession."
+    },
+    "selection": {
+      "whyHeadline": "Selected as top-ranked Belgian headline (score 18 = frequency 9 + priority 9 + recency 0).",
+      "priorityTerms": [
+        "federal",
+        "budget",
+        "climate"
+      ]
+    },
+    "qualitySummary": "TOTAL_ALIGN 84.6."
+  },
+  "runPolicy": {
+    "artworksPerRun": 1,
+    "multiVariant": false
+  },
+  "artFramework": {
+    "version": 3,
+    "intent": {
+      "signal": "Interdependent systems are pulling against each other in unstable cycles.",
+      "emotion": "Focused unease with recurring pressure loops.",
+      "tension": "Orbit stability vs drift.",
+      "balance": "Central coherence with stretched periphery.",
+      "motion": "Circular momentum with precession."
+    }
+  },
+  "image": {
+    "publicJpeg": "./data/media/2026-02-14-fragments-of-belgian-federal-talks-v2/artwork-720.jpg",
+    "thumbnailJpeg": "./data/media/2026-02-14-fragments-of-belgian-federal-talks-v2/thumb-320.jpg",
+    "instagramJpeg": "./data/media/2026-02-14-fragments-of-belgian-federal-talks-v2/instagram-1080x1350.jpg",
+    "altText": "Fragments of Belgian federal talks by Danielle Mckinney."
+  }
+}

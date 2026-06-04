@@ -1,1 +1,225 @@
-{"id":"2026-02-13-abstract-signal-belgian-federal-talks","date":"2026-02-13","title":"Abstract Signal: Belgian federal talks","generatedAt":"2026-02-13T13:59:48.987Z","news":{"source":"rtbf","title":"Belgian federal talks intensify around budget and climate priorities","link":"https://example.com/rtbf-federal-talks","score":19.834},"inspiration":{"artist":"Kazimir Malevich","tags":["suprematism","flat planes","tension"],"links":{"wikipedia":"https://en.wikipedia.org/wiki/Kazimir_Malevich","reference":"https://www.tate.org.uk/art/artists/kazimir-malevich-1548"}},"seed":507138652,"scene":{"motif":"orbits","shapeCount":135,"turbulence":0.536,"spiralBias":1.038,"motionSpeed":0.001399,"bloom":0.475,"grain":0.06,"fogDensity":0.078,"distortion":0.46,"flowField":0.644,"anchorStrength":0.95,"anchorOffsetX":0.095,"layerBalance":{"structure":0.661,"chaos":0.398},"palette":{"bg":"hsl(170, 42%, 6%)","primary":"hsl(305, 62%, 62%)","secondary":"hsl(38, 58%, 64%)","glow":"hsl(327, 74%, 74%)","anchor":"hsl(3, 88%, 70%)"},"shaderLayers":4,"paletteVariance":0.78,"motionSpeedNormalized":0.583,"camera":{"autoRotate":true,"autoRotateSpeed":0.178,"minDistance":6,"maxDistance":24},"post":{"vignette":0.41,"contrast":1.111,"saturation":1.103,"exposure":1.089},"elements":[{"role":"atmosphere-field","colorA":"bg","colorB":"secondary","opacity":0.462,"intensity":0.688,"animation":{"drift":0.408},"moduleType":"volumetric-haze"},{"role":"focal-anchor","motif":"orbits","color":"anchor","auraColor":"glow","opacity":0.733,"size":1.054,"intensity":0.815,"animation":{"rotationZ":0.215,"wobbleY":0.179,"pulse":0.527},"moduleType":"anchor-core"},{"role":"primary-signal","count":105,"spread":5.507,"jitter":0.597,"depth":2.141,"swirl":0.541,"color":"primary","size":0.314,"opacity":0.88,"blend":"additive","animation":{"rotationZ":1.542,"wobbleX":0.243},"moduleType":"particle-cloud"},{"role":"echo-field","count":70,"spread":4.538,"jitter":0.458,"depth":1.55,"swirl":0.328,"color":"secondary","size":0.13,"opacity":0.57,"blend":"normal","animation":{"rotationZ":-0.998,"wobbleY":0.274},"moduleType":"particle-cloud"},{"role":"structural-spine","motif":"orbits","emphasis":0.627,"color":"glow","opacity":0.425,"animation":{"rotationZ":0.44,"wobbleY":0.243},"moduleType":"motif-armature"},{"role":"accent-gesture","color":"secondary","opacity":0.528,"intensity":0.792,"animation":{"rotationZ":0.265,"pulse":0.563},"moduleType":"suprematist-planes"}],"elementDiversity":5},"sceneStrategy":null,"techStack":null,"newsVisualMappings":[],"qualityScore":{"score":28.8,"summary":"Strongest: technicalRichness (100). Watch: restraint (57.4). Penalties: low-complexity 0, unclear-expression 10.","heuristic":{"score":64.6,"breakdown":{"legibility":80.7,"emotionalReadability":77.1,"coherence":88.4,"focalAnchor":86.1,"technicalRichness":100,"restraint":57.4}},"calibration":{"sampleCount":1,"trustWeight":0.4},"alignment":{"totalAlign":null,"components":{"title":{"score":null},"style":{"score":null},"emotional":{"score":null}}}},"rationale":{"intent":{"signal":"Systems are interdependent and keep pulling on each other.","emotion":"Focused unease with a sense of cyclical return.","tension":"Orbit stability vs drift.","balance":"Strong central coherence with elastic edges.","motion":"Circular momentum with slight precession."},"selection":{"whyHeadline":"Selected as top-ranked Belgian headline (score 19.834 = frequency 9 + priority 9 + recency 1.834).","priorityTerms":["federal","budget","climate"]},"qualitySummary":"Strongest: technicalRichness (100). Watch: restraint (57.4). Penalties: low-complexity 0, unclear-expression 10."},"runPolicy":{"artworksPerRun":1,"multiVariant":false},"artFramework":{"version":2,"intent":{"signal":"Systems are interdependent and keep pulling on each other.","emotion":"Focused unease with a sense of cyclical return.","tension":"Orbit stability vs drift.","balance":"Strong central coherence with elastic edges.","motion":"Circular momentum with slight precession."}}}
+{
+  "id": "2026-02-13-abstract-signal-belgian-federal-talks",
+  "date": "2026-02-13",
+  "title": "Abstract Signal: Belgian federal talks",
+  "generatedAt": "2026-02-13T13:59:48.987Z",
+  "news": {
+    "source": "rtbf",
+    "title": "Belgian federal talks intensify around budget and climate priorities",
+    "link": "https://example.com/rtbf-federal-talks",
+    "score": 19.834
+  },
+  "inspiration": {
+    "artist": "Kazimir Malevich",
+    "tags": [
+      "suprematism",
+      "flat planes",
+      "tension"
+    ],
+    "links": {
+      "wikipedia": "https://en.wikipedia.org/wiki/Kazimir_Malevich",
+      "reference": "https://www.tate.org.uk/art/artists/kazimir-malevich-1548"
+    }
+  },
+  "seed": 507138652,
+  "scene": {
+    "motif": "orbits",
+    "shapeCount": 135,
+    "turbulence": 0.536,
+    "spiralBias": 1.038,
+    "motionSpeed": 0.001399,
+    "bloom": 0.475,
+    "grain": 0.06,
+    "fogDensity": 0.078,
+    "distortion": 0.46,
+    "flowField": 0.644,
+    "anchorStrength": 0.95,
+    "anchorOffsetX": 0.095,
+    "layerBalance": {
+      "structure": 0.661,
+      "chaos": 0.398
+    },
+    "palette": {
+      "bg": "hsl(170, 42%, 6%)",
+      "primary": "hsl(305, 62%, 62%)",
+      "secondary": "hsl(38, 58%, 64%)",
+      "glow": "hsl(327, 74%, 74%)",
+      "anchor": "hsl(3, 88%, 70%)"
+    },
+    "shaderLayers": 4,
+    "paletteVariance": 0.78,
+    "motionSpeedNormalized": 0.583,
+    "camera": {
+      "autoRotate": true,
+      "autoRotateSpeed": 0.178,
+      "minDistance": 6,
+      "maxDistance": 24
+    },
+    "post": {
+      "vignette": 0.41,
+      "contrast": 1.111,
+      "saturation": 1.103,
+      "exposure": 1.089
+    },
+    "elements": [
+      {
+        "role": "atmosphere-field",
+        "colorA": "bg",
+        "colorB": "secondary",
+        "opacity": 0.462,
+        "intensity": 0.688,
+        "animation": {
+          "drift": 0.408
+        },
+        "moduleType": "volumetric-haze"
+      },
+      {
+        "role": "focal-anchor",
+        "motif": "orbits",
+        "color": "anchor",
+        "auraColor": "glow",
+        "opacity": 0.733,
+        "size": 1.054,
+        "intensity": 0.815,
+        "animation": {
+          "rotationZ": 0.215,
+          "wobbleY": 0.179,
+          "pulse": 0.527
+        },
+        "moduleType": "anchor-core"
+      },
+      {
+        "role": "primary-signal",
+        "count": 105,
+        "spread": 5.507,
+        "jitter": 0.597,
+        "depth": 2.141,
+        "swirl": 0.541,
+        "color": "primary",
+        "size": 0.314,
+        "opacity": 0.88,
+        "blend": "additive",
+        "animation": {
+          "rotationZ": 1.542,
+          "wobbleX": 0.243
+        },
+        "moduleType": "particle-cloud"
+      },
+      {
+        "role": "echo-field",
+        "count": 70,
+        "spread": 4.538,
+        "jitter": 0.458,
+        "depth": 1.55,
+        "swirl": 0.328,
+        "color": "secondary",
+        "size": 0.13,
+        "opacity": 0.57,
+        "blend": "normal",
+        "animation": {
+          "rotationZ": -0.998,
+          "wobbleY": 0.274
+        },
+        "moduleType": "particle-cloud"
+      },
+      {
+        "role": "structural-spine",
+        "motif": "orbits",
+        "emphasis": 0.627,
+        "color": "glow",
+        "opacity": 0.425,
+        "animation": {
+          "rotationZ": 0.44,
+          "wobbleY": 0.243
+        },
+        "moduleType": "motif-armature"
+      },
+      {
+        "role": "accent-gesture",
+        "color": "secondary",
+        "opacity": 0.528,
+        "intensity": 0.792,
+        "animation": {
+          "rotationZ": 0.265,
+          "pulse": 0.563
+        },
+        "moduleType": "suprematist-planes"
+      }
+    ],
+    "elementDiversity": 5
+  },
+  "sceneStrategy": null,
+  "techStack": null,
+  "newsVisualMappings": [],
+  "qualityScore": {
+    "score": 28.8,
+    "summary": "Strongest: technicalRichness (100). Watch: restraint (57.4). Penalties: low-complexity 0, unclear-expression 10.",
+    "heuristic": {
+      "score": 64.6,
+      "breakdown": {
+        "legibility": 80.7,
+        "emotionalReadability": 77.1,
+        "coherence": 88.4,
+        "focalAnchor": 86.1,
+        "technicalRichness": 100,
+        "restraint": 57.4
+      }
+    },
+    "calibration": {
+      "sampleCount": 1,
+      "trustWeight": 0.4
+    },
+    "alignment": {
+      "totalAlign": null,
+      "components": {
+        "title": {
+          "score": null
+        },
+        "style": {
+          "score": null
+        },
+        "emotional": {
+          "score": null
+        }
+      }
+    }
+  },
+  "rationale": {
+    "intent": {
+      "signal": "Systems are interdependent and keep pulling on each other.",
+      "emotion": "Focused unease with a sense of cyclical return.",
+      "tension": "Orbit stability vs drift.",
+      "balance": "Strong central coherence with elastic edges.",
+      "motion": "Circular momentum with slight precession."
+    },
+    "selection": {
+      "whyHeadline": "Selected as top-ranked Belgian headline (score 19.834 = frequency 9 + priority 9 + recency 1.834).",
+      "priorityTerms": [
+        "federal",
+        "budget",
+        "climate"
+      ]
+    },
+    "qualitySummary": "Strongest: technicalRichness (100). Watch: restraint (57.4). Penalties: low-complexity 0, unclear-expression 10."
+  },
+  "runPolicy": {
+    "artworksPerRun": 1,
+    "multiVariant": false
+  },
+  "artFramework": {
+    "version": 2,
+    "intent": {
+      "signal": "Systems are interdependent and keep pulling on each other.",
+      "emotion": "Focused unease with a sense of cyclical return.",
+      "tension": "Orbit stability vs drift.",
+      "balance": "Strong central coherence with elastic edges.",
+      "motion": "Circular momentum with slight precession."
+    }
+  },
+  "image": {
+    "publicJpeg": "./data/media/2026-02-13-abstract-signal-belgian-federal-talks/artwork-720.jpg",
+    "thumbnailJpeg": "./data/media/2026-02-13-abstract-signal-belgian-federal-talks/thumb-320.jpg",
+    "instagramJpeg": "./data/media/2026-02-13-abstract-signal-belgian-federal-talks/instagram-1080x1350.jpg",
+    "altText": "Abstract Signal: Belgian federal talks by Kazimir Malevich."
+  }
+}

@@ -679,6 +679,21 @@ body[data-view-mode='story'] .meta {
   min-width: 0;
 }
 
+.archive-thumb {
+  margin: -0.1rem -0.1rem 0.7rem;
+  overflow: hidden;
+  border-radius: calc(var(--radius-lg) - 0.25rem);
+  border: 1px solid rgba(247, 253, 255, 0.1);
+  background: rgba(5, 10, 18, 0.42);
+}
+
+.archive-thumb img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
 .archive-card:hover {
   transform: translateY(-1px);
   border-color: var(--line-strong);
