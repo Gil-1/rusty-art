@@ -6,7 +6,15 @@ import { bindOrbitInput } from '../app/web/js/scene-camera.js';
 
 function createSceneStub() {
   const listeners = new Map();
+  const windowListeners = new Map();
+  const windowTarget = {
+    addEventListener(type, handler, options) {
+      windowListeners.set(type, { handler, options });
+    },
+    removeEventListener() {}
+  };
   const canvas = {
+    ownerDocument: { defaultView: windowTarget },
     addEventListener(type, handler, options) {
       listeners.set(type, { handler, options });
     },
@@ -17,6 +25,7 @@ function createSceneStub() {
 
   return {
     listeners,
+    windowListeners,
     scene: {
       canvas,
       orbit: {
@@ -44,6 +53,22 @@ function touchEvent(pointerId, clientX, clientY, overrides = {}) {
     pointerId,
     clientX,
     clientY,
+    preventDefault() {},
+    ...overrides
+  };
+}
+
+function touchListEvent(points, overrides = {}) {
+  return {
+    touches: points.map(([clientX, clientY]) => ({ clientX, clientY })),
+    preventDefault() {},
+    ...overrides
+  };
+}
+
+function gestureEvent(scale, overrides = {}) {
+  return {
+    scale,
     preventDefault() {},
     ...overrides
   };
@@ -90,6 +115,66 @@ test('two-finger pinch changes artwork camera distance', () => {
 
   assert.equal(scene.orbit.radius, zoomedInRadius * (120 / 60));
   assert.equal(prevented, 4);
+});
+
+test('two-finger touch pinch prevents viewport zoom and changes camera distance', () => {
+  const { scene, windowListeners } = createSceneStub();
+  bindOrbitInput(scene);
+
+  const touchstart = windowListeners.get('touchstart');
+  const touchmove = windowListeners.get('touchmove');
+
+  assert.ok(touchstart, 'touchstart listener should be registered');
+  assert.ok(touchmove, 'touchmove listener should be registered');
+  assert.equal(touchstart.options?.passive, false);
+  assert.equal(touchmove.options?.passive, false);
+  assert.equal(touchstart.options?.capture, true);
+  assert.equal(touchmove.options?.capture, true);
+
+  let prevented = 0;
+  const countPrevented = () => {
+    prevented += 1;
+  };
+
+  touchstart.handler(touchListEvent([[100, 100], [200, 100]], { preventDefault: countPrevented }));
+
+  const initialRadius = scene.orbit.radius;
+  touchmove.handler(touchListEvent([[100, 100], [220, 100]], { preventDefault: countPrevented }));
+
+  assert.equal(scene.orbit.radius, initialRadius * (100 / 120));
+  assert.equal(scene.orbit.userControlLocked, true);
+  assert.equal(scene.orbit.dragging, false);
+  assert.equal(prevented, 2);
+});
+
+test('safari gesture pinch is cancelled and drives camera zoom as a fallback', () => {
+  const { scene, windowListeners } = createSceneStub();
+  bindOrbitInput(scene);
+
+  const gesturestart = windowListeners.get('gesturestart');
+  const gesturechange = windowListeners.get('gesturechange');
+
+  assert.ok(gesturestart, 'gesturestart listener should be registered');
+  assert.ok(gesturechange, 'gesturechange listener should be registered');
+  assert.equal(gesturestart.options?.passive, false);
+  assert.equal(gesturechange.options?.passive, false);
+  assert.equal(gesturestart.options?.capture, true);
+  assert.equal(gesturechange.options?.capture, true);
+
+  let prevented = 0;
+  const countPrevented = () => {
+    prevented += 1;
+  };
+
+  gesturestart.handler(gestureEvent(1, { preventDefault: countPrevented }));
+
+  const initialRadius = scene.orbit.radius;
+  gesturechange.handler(gestureEvent(1.25, { preventDefault: countPrevented }));
+
+  assert.ok(Math.abs(scene.orbit.radius - (initialRadius / 1.25)) < 0.000001);
+  assert.equal(scene.orbit.userControlLocked, true);
+  assert.equal(scene.orbit.dragging, false);
+  assert.equal(prevented, 2);
 });
 
 test('mobile viewport does not opt out of user scaling', async () => {
