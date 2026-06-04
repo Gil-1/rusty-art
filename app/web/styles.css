@@ -335,7 +335,7 @@ body::before {
   min-height: 100dvh;
   display: block;
   background: #050913;
-  touch-action: none;
+  touch-action: pinch-zoom;
 }
 
 .now-chip {
