@@ -22,8 +22,8 @@ export const DEFAULT_RENDERING_CONFIG = Object.freeze({
   camera: Object.freeze({
     autoRotate: false,
     autoRotateSpeed: 0.35,
-    minDistance: 6,
-    maxDistance: 24,
+    minDistance: 7.8,
+    maxDistance: 32,
     cycleSeconds: 24,
     motionEnabled: false
   }),

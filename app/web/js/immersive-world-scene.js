@@ -45,8 +45,8 @@ const MAX_FRAME_DELTA_SECONDS = 1 / 15;
 const TAU = Math.PI * 2;
 const GOLDEN_ANGLE = Math.PI * (3 - Math.sqrt(5));
 const LEGACY_ORBIT_CONTROLS = Object.freeze({
-  minDistance: 6,
-  maxDistance: 24,
+  minDistance: 7.8,
+  maxDistance: 32,
   autoRotate: false,
   autoRotateSpeed: 0.14,
   dampingFactor: 0.08

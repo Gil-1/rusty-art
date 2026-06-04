@@ -38,8 +38,8 @@ function createSceneStub() {
         radius: 12
       },
       controls: {
-        minDistance: 6,
-        maxDistance: 24,
+        minDistance: 7.8,
+        maxDistance: 32,
         dampingFactor: 0.08
       }
     }
@@ -175,6 +175,28 @@ test('safari gesture pinch is cancelled and drives camera zoom as a fallback', (
   assert.equal(scene.orbit.userControlLocked, true);
   assert.equal(scene.orbit.dragging, false);
   assert.equal(prevented, 2);
+});
+
+test('camera zoom clamps allow more dezoom and less max zoom', () => {
+  const { scene, listeners } = createSceneStub();
+  bindOrbitInput(scene);
+
+  const wheel = listeners.get('wheel');
+  assert.ok(wheel, 'wheel listener should be registered');
+
+  scene.orbit.radius = 31.5;
+  wheel.handler({
+    deltaY: 1,
+    preventDefault() {}
+  });
+  assert.equal(scene.orbit.radius, 32);
+
+  scene.orbit.radius = 8;
+  wheel.handler({
+    deltaY: -1,
+    preventDefault() {}
+  });
+  assert.equal(scene.orbit.radius, 7.8);
 });
 
 test('mobile viewport does not opt out of user scaling', async () => {
