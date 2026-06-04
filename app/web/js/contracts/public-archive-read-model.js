@@ -29,6 +29,7 @@ function normalizeCandidateKey(candidate) {
 }
 
 export function normalizeManifestFromArtwork(art, file) {
+  const image = art?.image && typeof art.image === 'object' ? art.image : {};
   return {
     version: 1,
     generatedAt: art?.generatedAt || new Date().toISOString(),
@@ -42,7 +43,12 @@ export function normalizeManifestFromArtwork(art, file) {
         artist: art?.inspiration?.artist || 'Unknown artist',
         newsTitle: art?.news?.title || 'headline unavailable',
         source: art?.news?.source || 'unknown',
-        file
+        file,
+        thumbnailJpeg: image.thumbnailJpeg || null,
+        image: image.thumbnailJpeg ? {
+          thumbnailJpeg: image.thumbnailJpeg,
+          altText: image.altText || null
+        } : undefined
       }
     ]
   };

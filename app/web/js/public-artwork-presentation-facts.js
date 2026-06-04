@@ -21,6 +21,12 @@ function normalizedOptionalText(value) {
   return text || null;
 }
 
+function normalizedTrustedRelativeJpeg(value) {
+  const text = normalizedOptionalText(value);
+  if (!text || text.includes('..')) return null;
+  return /^\.\/data\/[A-Za-z0-9._/-]+\.jpg$/i.test(text) ? text : null;
+}
+
 function normalizedColor(value) {
   const text = normalizedOptionalText(value);
   return text && /^#[0-9a-f]{3,8}$/i.test(text) ? text : null;
@@ -400,13 +406,22 @@ export function resolvePublicArtworkHeroFacts(value = {}, options = {}) {
 }
 
 export function buildArchiveCardPresentationFacts(item = {}) {
+  const source = asObject(item);
+  const image = asObject(source.image);
+  const thumbnailSrc = normalizedTrustedRelativeJpeg(source.thumbnailJpeg || image.thumbnailJpeg);
+  const title = normalizedText(source.title, 'Untitled piece');
+  const artist = normalizedText(source.artist, 'Unknown artist');
   return {
-    file: normalizedText(item.file),
-    date: normalizedText(item.date, 'Unknown date'),
-    source: sourceLabel(item.source),
-    title: normalizedText(item.title, 'Untitled piece'),
-    newsTitle: normalizedText(item.newsTitle, 'headline unavailable'),
-    artist: normalizedText(item.artist, 'Unknown artist')
+    file: normalizedText(source.file),
+    date: normalizedText(source.date, 'Unknown date'),
+    source: sourceLabel(source.source),
+    title,
+    newsTitle: normalizedText(source.newsTitle, 'headline unavailable'),
+    artist,
+    thumbnail: thumbnailSrc ? {
+      src: thumbnailSrc,
+      altText: normalizedText(image.altText, `${title} by ${artist}.`)
+    } : null
   };
 }
 
