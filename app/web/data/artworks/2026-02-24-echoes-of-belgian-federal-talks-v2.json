@@ -1,1 +1,468 @@
-{"id":"2026-02-24-echoes-of-belgian-federal-talks-v2","date":"2026-02-24","title":"Echoes of Belgian federal talks","generatedAt":"2026-02-24T09:04:44.399Z","news":{"source":"rtbf","title":"Belgian federal talks intensify around budget and climate priorities","link":"https://example.com/rtbf-federal-talks","score":18},"inspiration":{"artist":"Frank Stella","tags":["hard-edge abstraction","protractor arcs","structured repetition"],"links":{"wikipedia":"https://en.wikipedia.org/wiki/Frank_Stella","reference":"https://whitney.org/artists/1296"}},"seed":433440060,"scene":{"motif":"clusters","shapeCount":62,"turbulence":0.588,"spiralBias":0.623,"motionSpeed":0.00164,"bloom":0.352,"grain":0.047,"fogDensity":0.098,"distortion":0.87,"flowField":0.492,"anchorStrength":0.719,"anchorOffsetX":-0.194,"layerBalance":{"structure":0.729,"chaos":0.46},"expression":{"tension":0.61,"structure":0.649,"motion":0.42,"noise":0.531,"urgency":0.18,"contrast":0.153},"palette":{"bg":"hsl(257, 48%, 6%)","primary":"hsl(10, 76%, 63%)","secondary":"hsl(122, 68%, 64%)","glow":"hsl(30, 88%, 74%)","anchor":"hsl(86, 80%, 70%)"},"elements":[{"id":"el-01-volumetric-haze","moduleType":"volumetric-haze","capabilities":["atmosphere-plume","fluid-drift","layered-field"],"stackFamilies":["shader-field","post-heavy","particle-heavy","sdf-raymarch"],"styleTags":["atmosphere","depth","diffusion"],"libraryRef":"element.volumetric-haze.v1","colorA":"bg","colorB":"secondary","opacity":0.337,"intensity":0.57,"layer":"background","role":"atmosphere-field","animation":{"drift":0.276},"motif":"clusters","intentCadence":"steady"},{"id":"el-02-anchor-core","moduleType":"anchor-core","capabilities":["focal-anchor","layered-field"],"stackFamilies":["shader-field","geometry-heavy","particle-heavy","instancing","sdf-raymarch"],"styleTags":["anchor","center","stability"],"libraryRef":"element.anchor-core.v1","color":"anchor","opacity":0.651,"intensity":0.796,"layer":"foreground","role":"primary-signal","motif":"clusters","auraColor":"glow","size":1.044,"animation":{"rotationZ":0.144,"wobbleY":0.136,"pulse":0.285},"intentCadence":"steady"},{"moduleType":"shader-field-plane","role":"accent-gesture","layer":"accent","color":"glow","opacity":0.6,"intensity":0.84,"animation":{"rotationZ":0.12,"pulse":0.28}},{"moduleType":"flow-noise-slab","role":"structural-spine","layer":"midground","color":"secondary","opacity":0.36,"intensity":0.56,"animation":{"rotationZ":0.12,"pulse":0.2}}],"shaderLayers":6,"elementDiversity":4,"paletteVariance":0.72,"motionSpeedNormalized":0.726,"camera":{"autoRotate":false,"autoRotateSpeed":0.1,"minDistance":6,"maxDistance":24,"cycleSeconds":24,"beats":[{"t":0,"radius":12.6,"theta":-0.055,"phi":1.224,"hold":1},{"t":0.34,"radius":10.7,"theta":0.687,"phi":1.055,"hold":0.5},{"t":0.68,"radius":11.2,"theta":1.428,"phi":1.324,"hold":0.8},{"t":1,"radius":12.2,"theta":2.268,"phi":1.146,"hold":1.1}]},"post":{"vignette":0.389,"contrast":1.115,"saturation":1.046,"exposure":0.956,"breathing":{"hueShift":0.01,"saturationAmplitude":0.06,"exposureAmplitude":0.04,"phaseA":0.1587,"phaseB":0.191}},"styleFingerprint":{"pulseFamily":"balanced","stripeWarp":0.14,"edgeSoftness":0.26,"cameraSway":0.16,"edgeHardness":0.36,"temperatureBias":0,"verticalBias":0,"cadenceBias":-0.1},"seedVersion":2,"seeds":{"baseSeed":3550838618,"runSeed":433440060,"geomSeed":1585884671,"animSeed":1272813926,"colorSeed":695857902,"cameraSeed":2924678064},"techStack":{"id":"sdf-raymarch-lite","name":"SDF/Raymarch Lite","family":"sdf-raymarch","strategyFamilies":["orbits","flow","hybrid"],"rationale":{"source":"loop-adjustment-alternate-stack","score":4.5444,"penalties":[]},"dominantPrimitive":"shader-field-plane","moduleSet":["volumetric-haze","anchor-core","shader-field-plane","flow-noise-slab"],"pipelineKind":"shader-field"},"visualProfileHints":{"cadence":"steady","motionEnergy":null,"preferredModules":[{"name":"motif-armature","weight":0.5,"reason":"fallback baseline"}],"preferredStackFamilies":[{"family":"shader-field","weight":0.5,"reason":"neutral fallback"}],"sourceAnalysis":{"mode":"computer-vision","status":"ok","analyzedReferences":2,"failedReferences":0,"texture":{"edgeEnergy":0.042},"failures":[],"note":null}},"strategy":{"id":"atomic-balanced-flow","name":"Balanced Flow Field","type":"atomic","family":"flow","cooldown":{"window":3,"recentFamilies":[],"family":"flow","applied":false},"compositeDemanded":true,"signals":{"conflict":0.368,"context":0.683,"moodDepth":0.35}},"layers":[{"role":"background","modules":["volumetric-haze","particle-cloud"]},{"role":"midground","modules":["motif-armature"]},{"role":"foreground","modules":["anchor-core","drift-ribbon"]},{"role":"accent","modules":["orbit-ribbon"]},{"role":"post","modules":["post-breathing"]}],"renderPipeline":{"kind":"shader-field","family":"sdf-raymarch","fallback":false,"dominantPrimitive":"shader-field-plane","moduleSet":["volumetric-haze","anchor-core","shader-field-plane","flow-noise-slab"]}},"sceneStrategy":{"selected":{"id":"atomic-balanced-flow","name":"Balanced Flow Field","type":"atomic","family":"flow"},"applied":true,"fallbackReason":null},"techStack":{"id":"sdf-raymarch-lite","name":"SDF/Raymarch Lite","family":"sdf-raymarch"},"newsVisualMappings":[{"signal":"title evidence [federal, budget, climate] -> motif clusters","from":"federal, budget, climate","visualDecision":"structural motif armature set to clusters"},{"signal":"composition foreground conflict","from":"intensify, budget, budget, budget","visualDecision":"foreground role tension-knot at pressure 0.557"},{"signal":"composition midground context","from":"federal, budget, climate, federal, budget, climate","visualDecision":"midground role institutional-lattice with density 0.642"},{"signal":"composition background mood","from":"climate, climate, climate","visualDecision":"background mood watchful depth 0.403"},{"signal":"urgency -> motion","from":"ageHours=265.58","visualDecision":"motionSpeedNormalized=0.726"},{"signal":"title semantics -> palette/edge cadence","from":"temp=0 edge=0.36","visualDecision":"postContrast=1.115 accentType=shader-field-plane"},{"signal":"article institutional/conflict polarity","from":"climate, intent-motif-hint","visualDecision":"accent element shader-field-plane with opacity 0.6"},{"signal":"artist research context Frank Stella","from":"tags hard-edge abstraction, protractor arcs, structured repetition","visualDecision":"artist profile captured as metadata only; no technical routing applied"}],"qualityScore":{"score":54.6,"summary":"Alignment 77.2 with strongest channel style.","heuristic":{"score":70,"breakdown":{"legibility":72.3,"emotionalReadability":78.2,"coherence":84.3,"focalAnchor":71,"technicalRichness":100,"restraint":65,"alignment":77.2}},"calibration":{"sampleCount":1,"trustWeight":0.4},"alignment":{"totalAlign":77.2,"components":{"title":{"score":61.9},"style":{"score":88},"emotional":{"score":78}}}},"rationale":{"intent":{"signal":null,"emotion":null,"tension":null,"balance":null,"motion":null},"selection":{"whyHeadline":"Selected as top-ranked Belgian headline (score 18 = frequency 9 + priority 9 + recency 0).","priorityTerms":["federal","budget","climate"]},"qualitySummary":"TOTAL_ALIGN 77.2."},"runPolicy":{"artworksPerRun":1,"multiVariant":false},"artFramework":{"version":3,"intent":{"statement":"Frank Stella is profiled in this dossier as an influential modern artist whose work is grounded in abstraction, color, and viewer experience. In response to \"Belgian federal talks intensify around budget and climate priorities\", the artwork should translate civic signal into an abstract composition with a clear emotional center. He moved to New York City in the late 1950s, where he created works which emphasized the picture-as-object.","narrativeBridge":"Frank Philip Stella was an American painter, sculptor, and printmaker, noted for his work in the areas of minimalism and post-painterly abstraction. He developed a reductionist approach to his art, saying he wanted to demonstrate that for him, every painting is \"a flat surface with paint on it—nothing more\", and disavowed conceptions of art as a means of expressing emotion.","motifHint":"clusters","emotionalCenter":"measured structural drift"}}}
+{
+  "id": "2026-02-24-echoes-of-belgian-federal-talks-v2",
+  "date": "2026-02-24",
+  "title": "Echoes of Belgian federal talks",
+  "generatedAt": "2026-02-24T09:04:44.399Z",
+  "news": {
+    "source": "rtbf",
+    "title": "Belgian federal talks intensify around budget and climate priorities",
+    "link": "https://example.com/rtbf-federal-talks",
+    "score": 18
+  },
+  "inspiration": {
+    "artist": "Frank Stella",
+    "tags": [
+      "hard-edge abstraction",
+      "protractor arcs",
+      "structured repetition"
+    ],
+    "links": {
+      "wikipedia": "https://en.wikipedia.org/wiki/Frank_Stella",
+      "reference": "https://whitney.org/artists/1296"
+    }
+  },
+  "seed": 433440060,
+  "scene": {
+    "motif": "clusters",
+    "shapeCount": 62,
+    "turbulence": 0.588,
+    "spiralBias": 0.623,
+    "motionSpeed": 0.00164,
+    "bloom": 0.352,
+    "grain": 0.047,
+    "fogDensity": 0.098,
+    "distortion": 0.87,
+    "flowField": 0.492,
+    "anchorStrength": 0.719,
+    "anchorOffsetX": -0.194,
+    "layerBalance": {
+      "structure": 0.729,
+      "chaos": 0.46
+    },
+    "expression": {
+      "tension": 0.61,
+      "structure": 0.649,
+      "motion": 0.42,
+      "noise": 0.531,
+      "urgency": 0.18,
+      "contrast": 0.153
+    },
+    "palette": {
+      "bg": "hsl(257, 48%, 6%)",
+      "primary": "hsl(10, 76%, 63%)",
+      "secondary": "hsl(122, 68%, 64%)",
+      "glow": "hsl(30, 88%, 74%)",
+      "anchor": "hsl(86, 80%, 70%)"
+    },
+    "elements": [
+      {
+        "id": "el-01-volumetric-haze",
+        "moduleType": "volumetric-haze",
+        "capabilities": [
+          "atmosphere-plume",
+          "fluid-drift",
+          "layered-field"
+        ],
+        "stackFamilies": [
+          "shader-field",
+          "post-heavy",
+          "particle-heavy",
+          "sdf-raymarch"
+        ],
+        "styleTags": [
+          "atmosphere",
+          "depth",
+          "diffusion"
+        ],
+        "libraryRef": "element.volumetric-haze.v1",
+        "colorA": "bg",
+        "colorB": "secondary",
+        "opacity": 0.337,
+        "intensity": 0.57,
+        "layer": "background",
+        "role": "atmosphere-field",
+        "animation": {
+          "drift": 0.276
+        },
+        "motif": "clusters",
+        "intentCadence": "steady"
+      },
+      {
+        "id": "el-02-anchor-core",
+        "moduleType": "anchor-core",
+        "capabilities": [
+          "focal-anchor",
+          "layered-field"
+        ],
+        "stackFamilies": [
+          "shader-field",
+          "geometry-heavy",
+          "particle-heavy",
+          "instancing",
+          "sdf-raymarch"
+        ],
+        "styleTags": [
+          "anchor",
+          "center",
+          "stability"
+        ],
+        "libraryRef": "element.anchor-core.v1",
+        "color": "anchor",
+        "opacity": 0.651,
+        "intensity": 0.796,
+        "layer": "foreground",
+        "role": "primary-signal",
+        "motif": "clusters",
+        "auraColor": "glow",
+        "size": 1.044,
+        "animation": {
+          "rotationZ": 0.144,
+          "wobbleY": 0.136,
+          "pulse": 0.285
+        },
+        "intentCadence": "steady"
+      },
+      {
+        "moduleType": "shader-field-plane",
+        "role": "accent-gesture",
+        "layer": "accent",
+        "color": "glow",
+        "opacity": 0.6,
+        "intensity": 0.84,
+        "animation": {
+          "rotationZ": 0.12,
+          "pulse": 0.28
+        }
+      },
+      {
+        "moduleType": "flow-noise-slab",
+        "role": "structural-spine",
+        "layer": "midground",
+        "color": "secondary",
+        "opacity": 0.36,
+        "intensity": 0.56,
+        "animation": {
+          "rotationZ": 0.12,
+          "pulse": 0.2
+        }
+      }
+    ],
+    "shaderLayers": 6,
+    "elementDiversity": 4,
+    "paletteVariance": 0.72,
+    "motionSpeedNormalized": 0.726,
+    "camera": {
+      "autoRotate": false,
+      "autoRotateSpeed": 0.1,
+      "minDistance": 6,
+      "maxDistance": 24,
+      "cycleSeconds": 24,
+      "beats": [
+        {
+          "t": 0,
+          "radius": 12.6,
+          "theta": -0.055,
+          "phi": 1.224,
+          "hold": 1
+        },
+        {
+          "t": 0.34,
+          "radius": 10.7,
+          "theta": 0.687,
+          "phi": 1.055,
+          "hold": 0.5
+        },
+        {
+          "t": 0.68,
+          "radius": 11.2,
+          "theta": 1.428,
+          "phi": 1.324,
+          "hold": 0.8
+        },
+        {
+          "t": 1,
+          "radius": 12.2,
+          "theta": 2.268,
+          "phi": 1.146,
+          "hold": 1.1
+        }
+      ]
+    },
+    "post": {
+      "vignette": 0.389,
+      "contrast": 1.115,
+      "saturation": 1.046,
+      "exposure": 0.956,
+      "breathing": {
+        "hueShift": 0.01,
+        "saturationAmplitude": 0.06,
+        "exposureAmplitude": 0.04,
+        "phaseA": 0.1587,
+        "phaseB": 0.191
+      }
+    },
+    "styleFingerprint": {
+      "pulseFamily": "balanced",
+      "stripeWarp": 0.14,
+      "edgeSoftness": 0.26,
+      "cameraSway": 0.16,
+      "edgeHardness": 0.36,
+      "temperatureBias": 0,
+      "verticalBias": 0,
+      "cadenceBias": -0.1
+    },
+    "seedVersion": 2,
+    "seeds": {
+      "baseSeed": 3550838618,
+      "runSeed": 433440060,
+      "geomSeed": 1585884671,
+      "animSeed": 1272813926,
+      "colorSeed": 695857902,
+      "cameraSeed": 2924678064
+    },
+    "techStack": {
+      "id": "sdf-raymarch-lite",
+      "name": "SDF/Raymarch Lite",
+      "family": "sdf-raymarch",
+      "strategyFamilies": [
+        "orbits",
+        "flow",
+        "hybrid"
+      ],
+      "rationale": {
+        "source": "loop-adjustment-alternate-stack",
+        "score": 4.5444,
+        "penalties": []
+      },
+      "dominantPrimitive": "shader-field-plane",
+      "moduleSet": [
+        "volumetric-haze",
+        "anchor-core",
+        "shader-field-plane",
+        "flow-noise-slab"
+      ],
+      "pipelineKind": "shader-field"
+    },
+    "visualProfileHints": {
+      "cadence": "steady",
+      "motionEnergy": null,
+      "preferredModules": [
+        {
+          "name": "motif-armature",
+          "weight": 0.5,
+          "reason": "fallback baseline"
+        }
+      ],
+      "preferredStackFamilies": [
+        {
+          "family": "shader-field",
+          "weight": 0.5,
+          "reason": "neutral fallback"
+        }
+      ],
+      "sourceAnalysis": {
+        "mode": "computer-vision",
+        "status": "ok",
+        "analyzedReferences": 2,
+        "failedReferences": 0,
+        "texture": {
+          "edgeEnergy": 0.042
+        },
+        "failures": [],
+        "note": null
+      }
+    },
+    "strategy": {
+      "id": "atomic-balanced-flow",
+      "name": "Balanced Flow Field",
+      "type": "atomic",
+      "family": "flow",
+      "cooldown": {
+        "window": 3,
+        "recentFamilies": [],
+        "family": "flow",
+        "applied": false
+      },
+      "compositeDemanded": true,
+      "signals": {
+        "conflict": 0.368,
+        "context": 0.683,
+        "moodDepth": 0.35
+      }
+    },
+    "layers": [
+      {
+        "role": "background",
+        "modules": [
+          "volumetric-haze",
+          "particle-cloud"
+        ]
+      },
+      {
+        "role": "midground",
+        "modules": [
+          "motif-armature"
+        ]
+      },
+      {
+        "role": "foreground",
+        "modules": [
+          "anchor-core",
+          "drift-ribbon"
+        ]
+      },
+      {
+        "role": "accent",
+        "modules": [
+          "orbit-ribbon"
+        ]
+      },
+      {
+        "role": "post",
+        "modules": [
+          "post-breathing"
+        ]
+      }
+    ],
+    "renderPipeline": {
+      "kind": "shader-field",
+      "family": "sdf-raymarch",
+      "fallback": false,
+      "dominantPrimitive": "shader-field-plane",
+      "moduleSet": [
+        "volumetric-haze",
+        "anchor-core",
+        "shader-field-plane",
+        "flow-noise-slab"
+      ]
+    }
+  },
+  "sceneStrategy": {
+    "selected": {
+      "id": "atomic-balanced-flow",
+      "name": "Balanced Flow Field",
+      "type": "atomic",
+      "family": "flow"
+    },
+    "applied": true,
+    "fallbackReason": null
+  },
+  "techStack": {
+    "id": "sdf-raymarch-lite",
+    "name": "SDF/Raymarch Lite",
+    "family": "sdf-raymarch"
+  },
+  "newsVisualMappings": [
+    {
+      "signal": "title evidence [federal, budget, climate] -> motif clusters",
+      "from": "federal, budget, climate",
+      "visualDecision": "structural motif armature set to clusters"
+    },
+    {
+      "signal": "composition foreground conflict",
+      "from": "intensify, budget, budget, budget",
+      "visualDecision": "foreground role tension-knot at pressure 0.557"
+    },
+    {
+      "signal": "composition midground context",
+      "from": "federal, budget, climate, federal, budget, climate",
+      "visualDecision": "midground role institutional-lattice with density 0.642"
+    },
+    {
+      "signal": "composition background mood",
+      "from": "climate, climate, climate",
+      "visualDecision": "background mood watchful depth 0.403"
+    },
+    {
+      "signal": "urgency -> motion",
+      "from": "ageHours=265.58",
+      "visualDecision": "motionSpeedNormalized=0.726"
+    },
+    {
+      "signal": "title semantics -> palette/edge cadence",
+      "from": "temp=0 edge=0.36",
+      "visualDecision": "postContrast=1.115 accentType=shader-field-plane"
+    },
+    {
+      "signal": "article institutional/conflict polarity",
+      "from": "climate, intent-motif-hint",
+      "visualDecision": "accent element shader-field-plane with opacity 0.6"
+    },
+    {
+      "signal": "artist research context Frank Stella",
+      "from": "tags hard-edge abstraction, protractor arcs, structured repetition",
+      "visualDecision": "artist profile captured as metadata only; no technical routing applied"
+    }
+  ],
+  "qualityScore": {
+    "score": 54.6,
+    "summary": "Alignment 77.2 with strongest channel style.",
+    "heuristic": {
+      "score": 70,
+      "breakdown": {
+        "legibility": 72.3,
+        "emotionalReadability": 78.2,
+        "coherence": 84.3,
+        "focalAnchor": 71,
+        "technicalRichness": 100,
+        "restraint": 65,
+        "alignment": 77.2
+      }
+    },
+    "calibration": {
+      "sampleCount": 1,
+      "trustWeight": 0.4
+    },
+    "alignment": {
+      "totalAlign": 77.2,
+      "components": {
+        "title": {
+          "score": 61.9
+        },
+        "style": {
+          "score": 88
+        },
+        "emotional": {
+          "score": 78
+        }
+      }
+    }
+  },
+  "rationale": {
+    "intent": {
+      "signal": null,
+      "emotion": null,
+      "tension": null,
+      "balance": null,
+      "motion": null
+    },
+    "selection": {
+      "whyHeadline": "Selected as top-ranked Belgian headline (score 18 = frequency 9 + priority 9 + recency 0).",
+      "priorityTerms": [
+        "federal",
+        "budget",
+        "climate"
+      ]
+    },
+    "qualitySummary": "TOTAL_ALIGN 77.2."
+  },
+  "runPolicy": {
+    "artworksPerRun": 1,
+    "multiVariant": false
+  },
+  "artFramework": {
+    "version": 3,
+    "intent": {
+      "statement": "Frank Stella is profiled in this dossier as an influential modern artist whose work is grounded in abstraction, color, and viewer experience. In response to \"Belgian federal talks intensify around budget and climate priorities\", the artwork should translate civic signal into an abstract composition with a clear emotional center. He moved to New York City in the late 1950s, where he created works which emphasized the picture-as-object.",
+      "narrativeBridge": "Frank Philip Stella was an American painter, sculptor, and printmaker, noted for his work in the areas of minimalism and post-painterly abstraction. He developed a reductionist approach to his art, saying he wanted to demonstrate that for him, every painting is \"a flat surface with paint on it—nothing more\", and disavowed conceptions of art as a means of expressing emotion.",
+      "motifHint": "clusters",
+      "emotionalCenter": "measured structural drift"
+    }
+  },
+  "image": {
+    "publicJpeg": "./data/media/2026-02-24-echoes-of-belgian-federal-talks-v2/artwork-720.jpg",
+    "thumbnailJpeg": "./data/media/2026-02-24-echoes-of-belgian-federal-talks-v2/thumb-320.jpg",
+    "instagramJpeg": "./data/media/2026-02-24-echoes-of-belgian-federal-talks-v2/instagram-1080x1350.jpg",
+    "altText": "Echoes of Belgian federal talks by Frank Stella."
+  }
+}

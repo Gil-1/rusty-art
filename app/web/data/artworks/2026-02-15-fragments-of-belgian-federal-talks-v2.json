@@ -1,1 +1,484 @@
-{"id":"2026-02-15-fragments-of-belgian-federal-talks-v2","date":"2026-02-15","title":"Fragments of Belgian federal talks","generatedAt":"2026-02-15T20:54:11.709Z","news":{"source":"rtbf","title":"Belgian federal talks intensify around budget and climate priorities","link":"https://example.com/rtbf-federal-talks","score":18},"inspiration":{"artist":"Ray Parker","tags":["abstract","expressionist","color"],"links":{"wikipedia":"https://en.wikipedia.org/wiki/Ray_Parker_(painter)","reference":"https://en.wikipedia.org/wiki/Ray_Parker_(painter)"}},"seed":848182996,"scene":{"motif":"clusters","shapeCount":81,"turbulence":0.563,"spiralBias":0.623,"motionSpeed":0.000504,"bloom":0.138,"grain":0.046,"fogDensity":0.059,"distortion":0.052,"flowField":0.471,"anchorStrength":0.709,"anchorOffsetX":-0.162,"layerBalance":{"structure":0.637,"chaos":0.371},"expression":{"tension":0.567,"structure":0.473,"motion":0.385,"noise":0.515,"urgency":0.18,"contrast":0.15},"palette":{"bg":"hsl(259, 48%, 6%)","primary":"hsl(35, 76%, 63%)","secondary":"hsl(121, 68%, 64%)","glow":"hsl(47, 88%, 74%)","anchor":"hsl(86, 80%, 70%)"},"shaderLayers":3,"paletteVariance":0.72,"motionSpeedNormalized":0.05,"camera":{"autoRotate":false,"autoRotateSpeed":0.096,"minDistance":6,"maxDistance":24,"cycleSeconds":24,"beats":[{"t":0,"radius":12.6,"theta":-0.026,"phi":1.221,"hold":1},{"t":0.34,"radius":10.7,"theta":0.726,"phi":1.053,"hold":0.5},{"t":0.68,"radius":11.2,"theta":1.469,"phi":1.321,"hold":0.8},{"t":1,"radius":12.2,"theta":2.364,"phi":1.144,"hold":1.1}]},"post":{"vignette":0.384,"contrast":1.114,"saturation":1.036,"exposure":0.956,"breathing":{"hueShift":0.01,"saturationAmplitude":0.06,"exposureAmplitude":0.04,"phaseA":0.6085,"phaseB":0.5186}},"styleFingerprint":{"pulseFamily":"balanced","stripeWarp":0.14,"edgeSoftness":0.26,"cameraSway":0.16,"edgeHardness":0.36,"temperatureBias":0,"verticalBias":0,"cadenceBias":-0.1},"seedVersion":2,"seeds":{"baseSeed":468837919,"runSeed":848182996,"geomSeed":1084877534,"animSeed":973680783,"colorSeed":2568768089,"cameraSeed":4262287381},"techStack":{"id":"geometry-construct","name":"Geometry-Heavy Construct","family":"geometry-heavy","strategyFamilies":["grid","fracture","hybrid"],"rationale":{"source":"loop-adjustment-alternate-stack","score":1.5992,"penalties":["conflict<0.35"]},"dominantPrimitive":"polyhedron-array","moduleSet":["motif-armature","signal-weave","suprematist-planes","anchor-core","fault-line","instance-grid","polyhedron-array"],"pipelineKind":"geometry-heavy"},"visualProfileHints":{"cadence":"steady","motionEnergy":0.42,"preferredModules":[{"name":"orbit-ribbon","weight":0.74,"reason":"circular cues"}],"preferredStackFamilies":[{"family":"sdf-raymarch","weight":0.76,"reason":"radial/orbit cues"}],"sourceAnalysis":{"mode":"computer-vision","status":"ok","analyzedReferences":7,"failedReferences":1,"texture":{"edgeEnergy":0.068},"failures":[{"referenceId":"ray-parker-02","imageUrl":"https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/The_First_Thanksgiving_Jean_Louis_Gerome_Ferris.png/900px-The_First_Thanksgiving_Jean_Louis_Gerome_Ferris.png","reason":"Request failed 429 for https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/The_First_Thanksgiving_Jean_Louis_Gerome_Ferris.png/900px-The_First_Thanksgiving_Jean_Louis_Gerome_Ferris.png"}],"note":null}},"strategy":{"id":"composite-pressure-atlas","name":"Pressure Atlas","type":"composite","family":"hybrid","cooldown":{"window":3,"recentFamilies":[],"family":"hybrid","applied":false},"compositeDemanded":true,"signals":{"conflict":0.378,"context":0.628,"moodDepth":0.434}},"layers":[{"role":"background","modules":["volumetric-haze"]},{"role":"midground","modules":["motif-armature","signal-weave","suprematist-planes"]},{"role":"foreground","modules":["anchor-core","fault-line","shear-ribbon"]},{"role":"accent","modules":["kandinsky-burst","concentric-discs"]},{"role":"post","modules":["post-breathing"]}],"renderPipeline":{"kind":"geometry-heavy","family":"geometry-heavy","fallback":false,"dominantPrimitive":"polyhedron-array","moduleSet":["motif-armature","signal-weave","suprematist-planes","anchor-core","fault-line","instance-grid","polyhedron-array"]},"elements":[{"role":"structural-spine","motif":"clusters","emphasis":0.566,"color":"glow","opacity":0.395,"animation":{"rotationZ":0.249,"wobbleY":0.173},"layer":"midground","intensity":0.54,"moduleType":"motif-armature"},{"role":"structural-spine","color":"secondary","opacity":0.605,"intensity":0.825,"animation":{"rotationZ":0.16,"pulse":0.241},"layer":"midground","moduleType":"signal-weave"},{"role":"structural-spine","layer":"midground","color":"secondary","opacity":0.376,"intensity":0.477,"animation":{"rotationZ":0.214,"pulse":0.177},"moduleType":"suprematist-planes"},{"role":"primary-signal","motif":"clusters","color":"anchor","auraColor":"glow","opacity":0.639,"size":0.956,"intensity":0.772,"animation":{"rotationZ":0.137,"wobbleY":0.133,"pulse":0.285},"layer":"foreground","moduleType":"anchor-core"},{"role":"primary-signal","layer":"foreground","color":"secondary","opacity":0.526,"intensity":0.724,"animation":{"rotationZ":0.181,"pulse":0.22},"moduleType":"fault-line"},{"role":"structural-spine","layer":"midground","color":"secondary","opacity":0.36,"intensity":0.56,"animation":{"rotationZ":0.12,"pulse":0.2},"moduleType":"instance-grid"},{"role":"accent-gesture","layer":"accent","color":"glow","opacity":0.6,"intensity":0.84,"animation":{"rotationZ":0.12,"pulse":0.28},"moduleType":"polyhedron-array"}],"elementDiversity":7},"sceneStrategy":{"selected":{"id":"composite-pressure-atlas","name":"Pressure Atlas","type":"composite","family":"hybrid"},"applied":true,"fallbackReason":null},"techStack":{"id":"geometry-construct","name":"Geometry-Heavy Construct","family":"geometry-heavy"},"newsVisualMappings":[{"signal":"title evidence [federal, budget, climate] -> motif clusters","from":"federal, budget, climate","visualDecision":"structural motif armature set to clusters"},{"signal":"composition foreground conflict","from":"intensify, budget, budget, budget","visualDecision":"foreground role tension-knot at pressure 0.535"},{"signal":"composition midground context","from":"federal, budget, climate, federal, budget, climate","visualDecision":"midground role context-drift with density 0.557"},{"signal":"composition background mood","from":"climate, climate, climate","visualDecision":"background mood watchful depth 0.388"},{"signal":"urgency -> motion","from":"ageHours=61.4","visualDecision":"motionSpeedNormalized=0.05"},{"signal":"title semantics -> palette/edge cadence","from":"temp=0 edge=0.36","visualDecision":"postContrast=1.114 accentType=polyhedron-array"},{"signal":"article institutional/conflict polarity","from":"climate, intent-motif-hint","visualDecision":"accent primitive polyhedron-array with opacity 0.6"},{"signal":"artist grammar Ray Parker","from":"style card color-fields · slow-breath · luminous-near-monochrome · dissolved-anchor","visualDecision":"camera beat choreography + palette topology constrained to artist envelope"}],"qualityScore":{"score":53.1,"summary":"Alignment 77.9 with strongest channel style.","heuristic":{"score":68.6,"breakdown":{"legibility":77.2,"emotionalReadability":66.9,"coherence":81.4,"focalAnchor":71.1,"technicalRichness":92.9,"restraint":75.4,"alignment":77.9}},"calibration":{"sampleCount":1,"trustWeight":0.4},"alignment":{"totalAlign":77.9,"components":{"title":{"score":67.4},"style":{"score":85.6},"emotional":{"score":78}}}},"rationale":{"intent":{"signal":null,"emotion":null,"tension":null,"balance":null,"motion":null},"selection":{"whyHeadline":"Selected as top-ranked Belgian headline (score 18 = frequency 9 + priority 9 + recency 0).","priorityTerms":["federal","budget","climate"]},"qualitySummary":"TOTAL_ALIGN 77.9."},"runPolicy":{"artworksPerRun":1,"multiVariant":false},"artFramework":{"version":3,"intent":{"statement":"Raymond or Ray Parker may refer to:Raymond Parker (canoeist) (1919–2009), British sprint canoer Buddy Parker, American football player and coach Ray Parker Jr., American guitarist, songwriter, producer and recording artist Ray Parker (painter) (1922–1990), American painter Ray Parker (footballer) (1925–2006), English footballer Raymond or Ray Parker may refer to:Raymond Parker (canoeist) (1919–2009), British sprint canoer Buddy Parker, American football player and coach Ray Parker Jr., American guitarist, songwriter, producer and recording artist Ray Parker (painter) (1922–1990), American painter Ray Parker (footballer) (1925–2006), English footballer In response to \"Belgian federal talks intensify around budget and climate priorities\", the artwork should translate civic signal into an abstract composition with a clear emotional center. Raymond or Ray Parker may refer to:Raymond Parker (canoeist) (1919–2009), British sprint canoer Buddy Parker, American football player and coach Ray Parker Jr., American guitarist, songwriter, producer and recording artist Ray Parker (painter) (1922–1990), American painter Ray Parker (footballer) (1925–2006), English footballer Sharon, Lois & Bram (Canadian musical group) In 1982 they introduced the Mammoth Band, led until 1988 by Ray Parker and thereafter by Grant Slater, both keyboard players.","narrativeBridge":"Raymond or Ray Parker may refer to:Raymond Parker (canoeist) (1919–2009), British sprint canoer Buddy Parker, American football player and coach Ray Parker Jr., American guitarist, songwriter, producer and recording artist Ray Parker (painter) (1922–1990), American painter Ray Parker (footballer) (1925–2006), English footballer Sharon, Lois & Bram (Canadian musical group) In 1982 they introduced the Mammoth Band, led until 1988 by Ray Parker and thereafter by Grant Slater, both keyboard players. Raymond or Ray Parker may refer to:Raymond Parker (canoeist) (1919–2009), British sprint canoer Buddy Parker, American football player and coach Ray Parker Jr., American guitarist, songwriter, producer and recording artist Ray Parker (painter) (1922–1990), American painter Ray Parker (footballer) (1925–2006), English footballer Sharon, Lois & Bram (Canadian musical group) In 1982 they introduced the Mammoth Band, led until 1988 by Ray Parker and thereafter by Grant Slater, both keyboard players.","motifHint":"clusters","emotionalCenter":"measured structural drift"}}}
+{
+  "id": "2026-02-15-fragments-of-belgian-federal-talks-v2",
+  "date": "2026-02-15",
+  "title": "Fragments of Belgian federal talks",
+  "generatedAt": "2026-02-15T20:54:11.709Z",
+  "news": {
+    "source": "rtbf",
+    "title": "Belgian federal talks intensify around budget and climate priorities",
+    "link": "https://example.com/rtbf-federal-talks",
+    "score": 18
+  },
+  "inspiration": {
+    "artist": "Ray Parker",
+    "tags": [
+      "abstract",
+      "expressionist",
+      "color"
+    ],
+    "links": {
+      "wikipedia": "https://en.wikipedia.org/wiki/Ray_Parker_(painter)",
+      "reference": "https://en.wikipedia.org/wiki/Ray_Parker_(painter)"
+    }
+  },
+  "seed": 848182996,
+  "scene": {
+    "motif": "clusters",
+    "shapeCount": 81,
+    "turbulence": 0.563,
+    "spiralBias": 0.623,
+    "motionSpeed": 0.000504,
+    "bloom": 0.138,
+    "grain": 0.046,
+    "fogDensity": 0.059,
+    "distortion": 0.052,
+    "flowField": 0.471,
+    "anchorStrength": 0.709,
+    "anchorOffsetX": -0.162,
+    "layerBalance": {
+      "structure": 0.637,
+      "chaos": 0.371
+    },
+    "expression": {
+      "tension": 0.567,
+      "structure": 0.473,
+      "motion": 0.385,
+      "noise": 0.515,
+      "urgency": 0.18,
+      "contrast": 0.15
+    },
+    "palette": {
+      "bg": "hsl(259, 48%, 6%)",
+      "primary": "hsl(35, 76%, 63%)",
+      "secondary": "hsl(121, 68%, 64%)",
+      "glow": "hsl(47, 88%, 74%)",
+      "anchor": "hsl(86, 80%, 70%)"
+    },
+    "shaderLayers": 3,
+    "paletteVariance": 0.72,
+    "motionSpeedNormalized": 0.05,
+    "camera": {
+      "autoRotate": false,
+      "autoRotateSpeed": 0.096,
+      "minDistance": 6,
+      "maxDistance": 24,
+      "cycleSeconds": 24,
+      "beats": [
+        {
+          "t": 0,
+          "radius": 12.6,
+          "theta": -0.026,
+          "phi": 1.221,
+          "hold": 1
+        },
+        {
+          "t": 0.34,
+          "radius": 10.7,
+          "theta": 0.726,
+          "phi": 1.053,
+          "hold": 0.5
+        },
+        {
+          "t": 0.68,
+          "radius": 11.2,
+          "theta": 1.469,
+          "phi": 1.321,
+          "hold": 0.8
+        },
+        {
+          "t": 1,
+          "radius": 12.2,
+          "theta": 2.364,
+          "phi": 1.144,
+          "hold": 1.1
+        }
+      ]
+    },
+    "post": {
+      "vignette": 0.384,
+      "contrast": 1.114,
+      "saturation": 1.036,
+      "exposure": 0.956,
+      "breathing": {
+        "hueShift": 0.01,
+        "saturationAmplitude": 0.06,
+        "exposureAmplitude": 0.04,
+        "phaseA": 0.6085,
+        "phaseB": 0.5186
+      }
+    },
+    "styleFingerprint": {
+      "pulseFamily": "balanced",
+      "stripeWarp": 0.14,
+      "edgeSoftness": 0.26,
+      "cameraSway": 0.16,
+      "edgeHardness": 0.36,
+      "temperatureBias": 0,
+      "verticalBias": 0,
+      "cadenceBias": -0.1
+    },
+    "seedVersion": 2,
+    "seeds": {
+      "baseSeed": 468837919,
+      "runSeed": 848182996,
+      "geomSeed": 1084877534,
+      "animSeed": 973680783,
+      "colorSeed": 2568768089,
+      "cameraSeed": 4262287381
+    },
+    "techStack": {
+      "id": "geometry-construct",
+      "name": "Geometry-Heavy Construct",
+      "family": "geometry-heavy",
+      "strategyFamilies": [
+        "grid",
+        "fracture",
+        "hybrid"
+      ],
+      "rationale": {
+        "source": "loop-adjustment-alternate-stack",
+        "score": 1.5992,
+        "penalties": [
+          "conflict<0.35"
+        ]
+      },
+      "dominantPrimitive": "polyhedron-array",
+      "moduleSet": [
+        "motif-armature",
+        "signal-weave",
+        "suprematist-planes",
+        "anchor-core",
+        "fault-line",
+        "instance-grid",
+        "polyhedron-array"
+      ],
+      "pipelineKind": "geometry-heavy"
+    },
+    "visualProfileHints": {
+      "cadence": "steady",
+      "motionEnergy": 0.42,
+      "preferredModules": [
+        {
+          "name": "orbit-ribbon",
+          "weight": 0.74,
+          "reason": "circular cues"
+        }
+      ],
+      "preferredStackFamilies": [
+        {
+          "family": "sdf-raymarch",
+          "weight": 0.76,
+          "reason": "radial/orbit cues"
+        }
+      ],
+      "sourceAnalysis": {
+        "mode": "computer-vision",
+        "status": "ok",
+        "analyzedReferences": 7,
+        "failedReferences": 1,
+        "texture": {
+          "edgeEnergy": 0.068
+        },
+        "failures": [
+          {
+            "referenceId": "ray-parker-02",
+            "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/The_First_Thanksgiving_Jean_Louis_Gerome_Ferris.png/900px-The_First_Thanksgiving_Jean_Louis_Gerome_Ferris.png",
+            "reason": "Request failed 429 for https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/The_First_Thanksgiving_Jean_Louis_Gerome_Ferris.png/900px-The_First_Thanksgiving_Jean_Louis_Gerome_Ferris.png"
+          }
+        ],
+        "note": null
+      }
+    },
+    "strategy": {
+      "id": "composite-pressure-atlas",
+      "name": "Pressure Atlas",
+      "type": "composite",
+      "family": "hybrid",
+      "cooldown": {
+        "window": 3,
+        "recentFamilies": [],
+        "family": "hybrid",
+        "applied": false
+      },
+      "compositeDemanded": true,
+      "signals": {
+        "conflict": 0.378,
+        "context": 0.628,
+        "moodDepth": 0.434
+      }
+    },
+    "layers": [
+      {
+        "role": "background",
+        "modules": [
+          "volumetric-haze"
+        ]
+      },
+      {
+        "role": "midground",
+        "modules": [
+          "motif-armature",
+          "signal-weave",
+          "suprematist-planes"
+        ]
+      },
+      {
+        "role": "foreground",
+        "modules": [
+          "anchor-core",
+          "fault-line",
+          "shear-ribbon"
+        ]
+      },
+      {
+        "role": "accent",
+        "modules": [
+          "kandinsky-burst",
+          "concentric-discs"
+        ]
+      },
+      {
+        "role": "post",
+        "modules": [
+          "post-breathing"
+        ]
+      }
+    ],
+    "renderPipeline": {
+      "kind": "geometry-heavy",
+      "family": "geometry-heavy",
+      "fallback": false,
+      "dominantPrimitive": "polyhedron-array",
+      "moduleSet": [
+        "motif-armature",
+        "signal-weave",
+        "suprematist-planes",
+        "anchor-core",
+        "fault-line",
+        "instance-grid",
+        "polyhedron-array"
+      ]
+    },
+    "elements": [
+      {
+        "role": "structural-spine",
+        "motif": "clusters",
+        "emphasis": 0.566,
+        "color": "glow",
+        "opacity": 0.395,
+        "animation": {
+          "rotationZ": 0.249,
+          "wobbleY": 0.173
+        },
+        "layer": "midground",
+        "intensity": 0.54,
+        "moduleType": "motif-armature"
+      },
+      {
+        "role": "structural-spine",
+        "color": "secondary",
+        "opacity": 0.605,
+        "intensity": 0.825,
+        "animation": {
+          "rotationZ": 0.16,
+          "pulse": 0.241
+        },
+        "layer": "midground",
+        "moduleType": "signal-weave"
+      },
+      {
+        "role": "structural-spine",
+        "layer": "midground",
+        "color": "secondary",
+        "opacity": 0.376,
+        "intensity": 0.477,
+        "animation": {
+          "rotationZ": 0.214,
+          "pulse": 0.177
+        },
+        "moduleType": "suprematist-planes"
+      },
+      {
+        "role": "primary-signal",
+        "motif": "clusters",
+        "color": "anchor",
+        "auraColor": "glow",
+        "opacity": 0.639,
+        "size": 0.956,
+        "intensity": 0.772,
+        "animation": {
+          "rotationZ": 0.137,
+          "wobbleY": 0.133,
+          "pulse": 0.285
+        },
+        "layer": "foreground",
+        "moduleType": "anchor-core"
+      },
+      {
+        "role": "primary-signal",
+        "layer": "foreground",
+        "color": "secondary",
+        "opacity": 0.526,
+        "intensity": 0.724,
+        "animation": {
+          "rotationZ": 0.181,
+          "pulse": 0.22
+        },
+        "moduleType": "fault-line"
+      },
+      {
+        "role": "structural-spine",
+        "layer": "midground",
+        "color": "secondary",
+        "opacity": 0.36,
+        "intensity": 0.56,
+        "animation": {
+          "rotationZ": 0.12,
+          "pulse": 0.2
+        },
+        "moduleType": "instance-grid"
+      },
+      {
+        "role": "accent-gesture",
+        "layer": "accent",
+        "color": "glow",
+        "opacity": 0.6,
+        "intensity": 0.84,
+        "animation": {
+          "rotationZ": 0.12,
+          "pulse": 0.28
+        },
+        "moduleType": "polyhedron-array"
+      }
+    ],
+    "elementDiversity": 7
+  },
+  "sceneStrategy": {
+    "selected": {
+      "id": "composite-pressure-atlas",
+      "name": "Pressure Atlas",
+      "type": "composite",
+      "family": "hybrid"
+    },
+    "applied": true,
+    "fallbackReason": null
+  },
+  "techStack": {
+    "id": "geometry-construct",
+    "name": "Geometry-Heavy Construct",
+    "family": "geometry-heavy"
+  },
+  "newsVisualMappings": [
+    {
+      "signal": "title evidence [federal, budget, climate] -> motif clusters",
+      "from": "federal, budget, climate",
+      "visualDecision": "structural motif armature set to clusters"
+    },
+    {
+      "signal": "composition foreground conflict",
+      "from": "intensify, budget, budget, budget",
+      "visualDecision": "foreground role tension-knot at pressure 0.535"
+    },
+    {
+      "signal": "composition midground context",
+      "from": "federal, budget, climate, federal, budget, climate",
+      "visualDecision": "midground role context-drift with density 0.557"
+    },
+    {
+      "signal": "composition background mood",
+      "from": "climate, climate, climate",
+      "visualDecision": "background mood watchful depth 0.388"
+    },
+    {
+      "signal": "urgency -> motion",
+      "from": "ageHours=61.4",
+      "visualDecision": "motionSpeedNormalized=0.05"
+    },
+    {
+      "signal": "title semantics -> palette/edge cadence",
+      "from": "temp=0 edge=0.36",
+      "visualDecision": "postContrast=1.114 accentType=polyhedron-array"
+    },
+    {
+      "signal": "article institutional/conflict polarity",
+      "from": "climate, intent-motif-hint",
+      "visualDecision": "accent primitive polyhedron-array with opacity 0.6"
+    },
+    {
+      "signal": "artist grammar Ray Parker",
+      "from": "style card color-fields · slow-breath · luminous-near-monochrome · dissolved-anchor",
+      "visualDecision": "camera beat choreography + palette topology constrained to artist envelope"
+    }
+  ],
+  "qualityScore": {
+    "score": 53.1,
+    "summary": "Alignment 77.9 with strongest channel style.",
+    "heuristic": {
+      "score": 68.6,
+      "breakdown": {
+        "legibility": 77.2,
+        "emotionalReadability": 66.9,
+        "coherence": 81.4,
+        "focalAnchor": 71.1,
+        "technicalRichness": 92.9,
+        "restraint": 75.4,
+        "alignment": 77.9
+      }
+    },
+    "calibration": {
+      "sampleCount": 1,
+      "trustWeight": 0.4
+    },
+    "alignment": {
+      "totalAlign": 77.9,
+      "components": {
+        "title": {
+          "score": 67.4
+        },
+        "style": {
+          "score": 85.6
+        },
+        "emotional": {
+          "score": 78
+        }
+      }
+    }
+  },
+  "rationale": {
+    "intent": {
+      "signal": null,
+      "emotion": null,
+      "tension": null,
+      "balance": null,
+      "motion": null
+    },
+    "selection": {
+      "whyHeadline": "Selected as top-ranked Belgian headline (score 18 = frequency 9 + priority 9 + recency 0).",
+      "priorityTerms": [
+        "federal",
+        "budget",
+        "climate"
+      ]
+    },
+    "qualitySummary": "TOTAL_ALIGN 77.9."
+  },
+  "runPolicy": {
+    "artworksPerRun": 1,
+    "multiVariant": false
+  },
+  "artFramework": {
+    "version": 3,
+    "intent": {
+      "statement": "Raymond or Ray Parker may refer to:Raymond Parker (canoeist) (1919–2009), British sprint canoer Buddy Parker, American football player and coach Ray Parker Jr., American guitarist, songwriter, producer and recording artist Ray Parker (painter) (1922–1990), American painter Ray Parker (footballer) (1925–2006), English footballer Raymond or Ray Parker may refer to:Raymond Parker (canoeist) (1919–2009), British sprint canoer Buddy Parker, American football player and coach Ray Parker Jr., American guitarist, songwriter, producer and recording artist Ray Parker (painter) (1922–1990), American painter Ray Parker (footballer) (1925–2006), English footballer In response to \"Belgian federal talks intensify around budget and climate priorities\", the artwork should translate civic signal into an abstract composition with a clear emotional center. Raymond or Ray Parker may refer to:Raymond Parker (canoeist) (1919–2009), British sprint canoer Buddy Parker, American football player and coach Ray Parker Jr., American guitarist, songwriter, producer and recording artist Ray Parker (painter) (1922–1990), American painter Ray Parker (footballer) (1925–2006), English footballer Sharon, Lois & Bram (Canadian musical group) In 1982 they introduced the Mammoth Band, led until 1988 by Ray Parker and thereafter by Grant Slater, both keyboard players.",
+      "narrativeBridge": "Raymond or Ray Parker may refer to:Raymond Parker (canoeist) (1919–2009), British sprint canoer Buddy Parker, American football player and coach Ray Parker Jr., American guitarist, songwriter, producer and recording artist Ray Parker (painter) (1922–1990), American painter Ray Parker (footballer) (1925–2006), English footballer Sharon, Lois & Bram (Canadian musical group) In 1982 they introduced the Mammoth Band, led until 1988 by Ray Parker and thereafter by Grant Slater, both keyboard players. Raymond or Ray Parker may refer to:Raymond Parker (canoeist) (1919–2009), British sprint canoer Buddy Parker, American football player and coach Ray Parker Jr., American guitarist, songwriter, producer and recording artist Ray Parker (painter) (1922–1990), American painter Ray Parker (footballer) (1925–2006), English footballer Sharon, Lois & Bram (Canadian musical group) In 1982 they introduced the Mammoth Band, led until 1988 by Ray Parker and thereafter by Grant Slater, both keyboard players.",
+      "motifHint": "clusters",
+      "emotionalCenter": "measured structural drift"
+    }
+  },
+  "image": {
+    "publicJpeg": "./data/media/2026-02-15-fragments-of-belgian-federal-talks-v2/artwork-720.jpg",
+    "thumbnailJpeg": "./data/media/2026-02-15-fragments-of-belgian-federal-talks-v2/thumb-320.jpg",
+    "instagramJpeg": "./data/media/2026-02-15-fragments-of-belgian-federal-talks-v2/instagram-1080x1350.jpg",
+    "altText": "Fragments of Belgian federal talks by Ray Parker."
+  }
+}

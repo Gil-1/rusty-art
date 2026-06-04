@@ -1,1 +1,420 @@
-{"id":"2026-02-14-fragments-of-belgian-federal-talks","date":"2026-02-14","title":"Fragments of Belgian federal talks","generatedAt":"2026-02-14T14:07:13.310Z","news":{"source":"rtbf","title":"Belgian federal talks intensify around budget and climate priorities","link":"https://example.com/rtbf-federal-talks","score":18},"inspiration":{"artist":"Dieter Meier","tags":["conceptual"],"links":{"wikipedia":"https://en.wikipedia.org/wiki/Dieter_Meier","reference":"https://en.wikipedia.org/wiki/Dieter_Meier"}},"seed":1038296977,"scene":{"motif":"orbits","shapeCount":73,"turbulence":0.616,"spiralBias":0.606,"motionSpeed":0.000753,"bloom":0.384,"grain":0.052,"fogDensity":0.101,"distortion":0.44,"flowField":0.48,"anchorStrength":0.752,"anchorOffsetX":-0.043,"layerBalance":{"structure":0.636,"chaos":0.481},"expression":{"tension":0.702,"structure":0.47,"motion":0.4,"noise":0.63,"urgency":0.18,"contrast":0.267},"palette":{"bg":"hsl(183, 48%, 6%)","primary":"hsl(296, 76%, 64%)","secondary":"hsl(40, 68%, 64%)","glow":"hsl(316, 88%, 74%)","anchor":"hsl(7, 80%, 70%)"},"shaderLayers":4,"paletteVariance":0.72,"motionSpeedNormalized":0.198,"camera":{"autoRotate":false,"autoRotateSpeed":0.098,"minDistance":6,"maxDistance":24,"cycleSeconds":24,"beats":[{"t":0,"radius":12.6,"theta":0.081,"phi":1.231,"hold":1},{"t":0.34,"radius":10.7,"theta":0.868,"phi":1.06,"hold":0.5},{"t":0.68,"radius":11.2,"theta":1.624,"phi":1.331,"hold":0.8},{"t":1,"radius":12.2,"theta":2.318,"phi":1.15,"hold":1.1}]},"post":{"vignette":0.416,"contrast":1.154,"saturation":1.068,"exposure":0.956,"breathing":{"hueShift":0.01,"saturationAmplitude":0.06,"exposureAmplitude":0.04,"phaseA":0.096,"phaseB":0.7475}},"styleFingerprint":{"pulseFamily":"balanced","stripeWarp":0.14,"edgeSoftness":0.26,"cameraSway":0.16,"edgeHardness":0.36,"temperatureBias":0,"verticalBias":0,"cadenceBias":-0.1},"seedVersion":2,"seeds":{"baseSeed":3102998872,"runSeed":1038296977,"geomSeed":1036506477,"animSeed":1514209152,"colorSeed":3283547912,"cameraSeed":2588309150},"strategy":{"id":"atomic-grid-lattice","name":"Institutional Lattice","type":"atomic","family":"grid","cooldown":{"window":3,"recentFamilies":[],"family":"grid","applied":false},"compositeDemanded":false,"signals":{"conflict":0,"context":0.683,"moodDepth":0.35}},"layers":[{"role":"background","modules":["klee-cells"]},{"role":"midground","modules":["motif-armature"]},{"role":"foreground","modules":["anchor-core"]},{"role":"accent","modules":["concentric-discs"]},{"role":"post","modules":["post-contrast"]}],"elements":[{"role":"atmosphere-field","colorA":"bg","colorB":"secondary","opacity":0.436,"intensity":0.5,"animation":{"drift":0.268},"layer":"background","moduleType":"volumetric-haze"},{"role":"echo-field","count":50,"spread":3.84,"jitter":0.405,"depth":1.283,"swirl":0.204,"color":"secondary","size":0.11,"opacity":0.542,"blend":"normal","animation":{"rotationZ":-0.58,"wobbleY":0.105},"layer":"background","moduleType":"particle-cloud"},{"role":"atmosphere-field","layer":"background","color":"secondary","opacity":0.342,"intensity":0.528,"animation":{"rotationZ":0.303,"pulse":0.135},"moduleType":"klee-cells"},{"role":"primary-signal","count":101,"spread":4.82,"jitter":0.495,"depth":1.848,"swirl":0.348,"color":"primary","size":0.26,"opacity":0.864,"blend":"additive","animation":{"rotationZ":0.96,"wobbleX":0.193},"layer":"midground","moduleType":"particle-cloud"},{"role":"structural-spine","motif":"orbits","emphasis":0.564,"color":"glow","opacity":0.435,"animation":{"rotationZ":0.256,"wobbleY":0.193},"layer":"midground","intensity":0.54,"moduleType":"motif-armature"},{"role":"primary-signal","motif":"orbits","color":"anchor","auraColor":"glow","opacity":0.677,"size":0.955,"intensity":0.823,"animation":{"rotationZ":0.14,"wobbleY":0.153,"pulse":0.285},"layer":"foreground","moduleType":"anchor-core"},{"role":"accent-gesture","color":"glow","opacity":0.726,"intensity":0.92,"animation":{"rotationZ":0.164,"pulse":0.321},"layer":"foreground","moduleType":"signal-weave"},{"role":"accent-gesture","layer":"accent","color":"glow","opacity":0.461,"intensity":0.523,"animation":{"rotationZ":0.229,"pulse":0.153},"moduleType":"concentric-discs"}],"elementDiversity":5},"sceneStrategy":{"selected":{"id":"atomic-grid-lattice","name":"Institutional Lattice","type":"atomic","family":"grid"},"applied":true,"fallbackReason":null},"techStack":null,"newsVisualMappings":[{"signal":"title evidence [federal, budget, climate] -> motif orbits","from":"federal, budget, climate","visualDecision":"structural motif armature set to orbits"},{"signal":"composition foreground conflict","from":"intensify, budget, budget, budget","visualDecision":"foreground role tension-knot at pressure 0.605"},{"signal":"composition midground context","from":"federal, budget, climate, federal, budget, climate","visualDecision":"midground role context-drift with density 0.556"},{"signal":"composition background mood","from":"climate, climate, climate","visualDecision":"background mood watchful depth 0.432"},{"signal":"urgency -> motion","from":"ageHours=30.62","visualDecision":"motionSpeedNormalized=0.198"},{"signal":"title semantics -> palette/edge cadence","from":"temp=0 edge=0.36","visualDecision":"postContrast=1.154 accentType=signal-weave"},{"signal":"article institutional/conflict polarity","from":"climate","visualDecision":"accent primitive signal-weave with opacity 0.726"},{"signal":"artist grammar Dieter Meier","from":"style card poetic-grid · gentle-tick · warm-muted-notes · vertical-axis","visualDecision":"camera beat choreography + palette topology constrained to artist envelope"}],"qualityScore":{"score":57.6,"summary":"Alignment 87.4 with strongest channel title.","heuristic":{"score":73.1,"breakdown":{"legibility":75.4,"emotionalReadability":80.1,"coherence":83.7,"focalAnchor":76.2,"technicalRichness":100,"restraint":62.8,"alignment":87.4}},"calibration":{"sampleCount":1,"trustWeight":0.4},"alignment":{"totalAlign":87.4,"components":{"title":{"score":92.8},"style":{"score":87.9},"emotional":{"score":81.3}}}},"rationale":{"intent":{"signal":"Interdependent systems are pulling against each other in unstable cycles.","emotion":"Focused unease with recurring pressure loops.","tension":"Orbit stability vs drift.","balance":"Central coherence with stretched periphery.","motion":"Circular momentum with precession."},"selection":{"whyHeadline":"Selected as top-ranked Belgian headline (score 18 = frequency 9 + priority 9 + recency 0).","priorityTerms":["federal","budget","climate"]},"qualitySummary":"TOTAL_ALIGN 87.4."},"runPolicy":{"artworksPerRun":1,"multiVariant":false},"artFramework":{"version":3,"intent":{"signal":"Interdependent systems are pulling against each other in unstable cycles.","emotion":"Focused unease with recurring pressure loops.","tension":"Orbit stability vs drift.","balance":"Central coherence with stretched periphery.","motion":"Circular momentum with precession."}}}
+{
+  "id": "2026-02-14-fragments-of-belgian-federal-talks",
+  "date": "2026-02-14",
+  "title": "Fragments of Belgian federal talks",
+  "generatedAt": "2026-02-14T14:07:13.310Z",
+  "news": {
+    "source": "rtbf",
+    "title": "Belgian federal talks intensify around budget and climate priorities",
+    "link": "https://example.com/rtbf-federal-talks",
+    "score": 18
+  },
+  "inspiration": {
+    "artist": "Dieter Meier",
+    "tags": [
+      "conceptual"
+    ],
+    "links": {
+      "wikipedia": "https://en.wikipedia.org/wiki/Dieter_Meier",
+      "reference": "https://en.wikipedia.org/wiki/Dieter_Meier"
+    }
+  },
+  "seed": 1038296977,
+  "scene": {
+    "motif": "orbits",
+    "shapeCount": 73,
+    "turbulence": 0.616,
+    "spiralBias": 0.606,
+    "motionSpeed": 0.000753,
+    "bloom": 0.384,
+    "grain": 0.052,
+    "fogDensity": 0.101,
+    "distortion": 0.44,
+    "flowField": 0.48,
+    "anchorStrength": 0.752,
+    "anchorOffsetX": -0.043,
+    "layerBalance": {
+      "structure": 0.636,
+      "chaos": 0.481
+    },
+    "expression": {
+      "tension": 0.702,
+      "structure": 0.47,
+      "motion": 0.4,
+      "noise": 0.63,
+      "urgency": 0.18,
+      "contrast": 0.267
+    },
+    "palette": {
+      "bg": "hsl(183, 48%, 6%)",
+      "primary": "hsl(296, 76%, 64%)",
+      "secondary": "hsl(40, 68%, 64%)",
+      "glow": "hsl(316, 88%, 74%)",
+      "anchor": "hsl(7, 80%, 70%)"
+    },
+    "shaderLayers": 4,
+    "paletteVariance": 0.72,
+    "motionSpeedNormalized": 0.198,
+    "camera": {
+      "autoRotate": false,
+      "autoRotateSpeed": 0.098,
+      "minDistance": 6,
+      "maxDistance": 24,
+      "cycleSeconds": 24,
+      "beats": [
+        {
+          "t": 0,
+          "radius": 12.6,
+          "theta": 0.081,
+          "phi": 1.231,
+          "hold": 1
+        },
+        {
+          "t": 0.34,
+          "radius": 10.7,
+          "theta": 0.868,
+          "phi": 1.06,
+          "hold": 0.5
+        },
+        {
+          "t": 0.68,
+          "radius": 11.2,
+          "theta": 1.624,
+          "phi": 1.331,
+          "hold": 0.8
+        },
+        {
+          "t": 1,
+          "radius": 12.2,
+          "theta": 2.318,
+          "phi": 1.15,
+          "hold": 1.1
+        }
+      ]
+    },
+    "post": {
+      "vignette": 0.416,
+      "contrast": 1.154,
+      "saturation": 1.068,
+      "exposure": 0.956,
+      "breathing": {
+        "hueShift": 0.01,
+        "saturationAmplitude": 0.06,
+        "exposureAmplitude": 0.04,
+        "phaseA": 0.096,
+        "phaseB": 0.7475
+      }
+    },
+    "styleFingerprint": {
+      "pulseFamily": "balanced",
+      "stripeWarp": 0.14,
+      "edgeSoftness": 0.26,
+      "cameraSway": 0.16,
+      "edgeHardness": 0.36,
+      "temperatureBias": 0,
+      "verticalBias": 0,
+      "cadenceBias": -0.1
+    },
+    "seedVersion": 2,
+    "seeds": {
+      "baseSeed": 3102998872,
+      "runSeed": 1038296977,
+      "geomSeed": 1036506477,
+      "animSeed": 1514209152,
+      "colorSeed": 3283547912,
+      "cameraSeed": 2588309150
+    },
+    "strategy": {
+      "id": "atomic-grid-lattice",
+      "name": "Institutional Lattice",
+      "type": "atomic",
+      "family": "grid",
+      "cooldown": {
+        "window": 3,
+        "recentFamilies": [],
+        "family": "grid",
+        "applied": false
+      },
+      "compositeDemanded": false,
+      "signals": {
+        "conflict": 0,
+        "context": 0.683,
+        "moodDepth": 0.35
+      }
+    },
+    "layers": [
+      {
+        "role": "background",
+        "modules": [
+          "klee-cells"
+        ]
+      },
+      {
+        "role": "midground",
+        "modules": [
+          "motif-armature"
+        ]
+      },
+      {
+        "role": "foreground",
+        "modules": [
+          "anchor-core"
+        ]
+      },
+      {
+        "role": "accent",
+        "modules": [
+          "concentric-discs"
+        ]
+      },
+      {
+        "role": "post",
+        "modules": [
+          "post-contrast"
+        ]
+      }
+    ],
+    "elements": [
+      {
+        "role": "atmosphere-field",
+        "colorA": "bg",
+        "colorB": "secondary",
+        "opacity": 0.436,
+        "intensity": 0.5,
+        "animation": {
+          "drift": 0.268
+        },
+        "layer": "background",
+        "moduleType": "volumetric-haze"
+      },
+      {
+        "role": "echo-field",
+        "count": 50,
+        "spread": 3.84,
+        "jitter": 0.405,
+        "depth": 1.283,
+        "swirl": 0.204,
+        "color": "secondary",
+        "size": 0.11,
+        "opacity": 0.542,
+        "blend": "normal",
+        "animation": {
+          "rotationZ": -0.58,
+          "wobbleY": 0.105
+        },
+        "layer": "background",
+        "moduleType": "particle-cloud"
+      },
+      {
+        "role": "atmosphere-field",
+        "layer": "background",
+        "color": "secondary",
+        "opacity": 0.342,
+        "intensity": 0.528,
+        "animation": {
+          "rotationZ": 0.303,
+          "pulse": 0.135
+        },
+        "moduleType": "klee-cells"
+      },
+      {
+        "role": "primary-signal",
+        "count": 101,
+        "spread": 4.82,
+        "jitter": 0.495,
+        "depth": 1.848,
+        "swirl": 0.348,
+        "color": "primary",
+        "size": 0.26,
+        "opacity": 0.864,
+        "blend": "additive",
+        "animation": {
+          "rotationZ": 0.96,
+          "wobbleX": 0.193
+        },
+        "layer": "midground",
+        "moduleType": "particle-cloud"
+      },
+      {
+        "role": "structural-spine",
+        "motif": "orbits",
+        "emphasis": 0.564,
+        "color": "glow",
+        "opacity": 0.435,
+        "animation": {
+          "rotationZ": 0.256,
+          "wobbleY": 0.193
+        },
+        "layer": "midground",
+        "intensity": 0.54,
+        "moduleType": "motif-armature"
+      },
+      {
+        "role": "primary-signal",
+        "motif": "orbits",
+        "color": "anchor",
+        "auraColor": "glow",
+        "opacity": 0.677,
+        "size": 0.955,
+        "intensity": 0.823,
+        "animation": {
+          "rotationZ": 0.14,
+          "wobbleY": 0.153,
+          "pulse": 0.285
+        },
+        "layer": "foreground",
+        "moduleType": "anchor-core"
+      },
+      {
+        "role": "accent-gesture",
+        "color": "glow",
+        "opacity": 0.726,
+        "intensity": 0.92,
+        "animation": {
+          "rotationZ": 0.164,
+          "pulse": 0.321
+        },
+        "layer": "foreground",
+        "moduleType": "signal-weave"
+      },
+      {
+        "role": "accent-gesture",
+        "layer": "accent",
+        "color": "glow",
+        "opacity": 0.461,
+        "intensity": 0.523,
+        "animation": {
+          "rotationZ": 0.229,
+          "pulse": 0.153
+        },
+        "moduleType": "concentric-discs"
+      }
+    ],
+    "elementDiversity": 5
+  },
+  "sceneStrategy": {
+    "selected": {
+      "id": "atomic-grid-lattice",
+      "name": "Institutional Lattice",
+      "type": "atomic",
+      "family": "grid"
+    },
+    "applied": true,
+    "fallbackReason": null
+  },
+  "techStack": null,
+  "newsVisualMappings": [
+    {
+      "signal": "title evidence [federal, budget, climate] -> motif orbits",
+      "from": "federal, budget, climate",
+      "visualDecision": "structural motif armature set to orbits"
+    },
+    {
+      "signal": "composition foreground conflict",
+      "from": "intensify, budget, budget, budget",
+      "visualDecision": "foreground role tension-knot at pressure 0.605"
+    },
+    {
+      "signal": "composition midground context",
+      "from": "federal, budget, climate, federal, budget, climate",
+      "visualDecision": "midground role context-drift with density 0.556"
+    },
+    {
+      "signal": "composition background mood",
+      "from": "climate, climate, climate",
+      "visualDecision": "background mood watchful depth 0.432"
+    },
+    {
+      "signal": "urgency -> motion",
+      "from": "ageHours=30.62",
+      "visualDecision": "motionSpeedNormalized=0.198"
+    },
+    {
+      "signal": "title semantics -> palette/edge cadence",
+      "from": "temp=0 edge=0.36",
+      "visualDecision": "postContrast=1.154 accentType=signal-weave"
+    },
+    {
+      "signal": "article institutional/conflict polarity",
+      "from": "climate",
+      "visualDecision": "accent primitive signal-weave with opacity 0.726"
+    },
+    {
+      "signal": "artist grammar Dieter Meier",
+      "from": "style card poetic-grid · gentle-tick · warm-muted-notes · vertical-axis",
+      "visualDecision": "camera beat choreography + palette topology constrained to artist envelope"
+    }
+  ],
+  "qualityScore": {
+    "score": 57.6,
+    "summary": "Alignment 87.4 with strongest channel title.",
+    "heuristic": {
+      "score": 73.1,
+      "breakdown": {
+        "legibility": 75.4,
+        "emotionalReadability": 80.1,
+        "coherence": 83.7,
+        "focalAnchor": 76.2,
+        "technicalRichness": 100,
+        "restraint": 62.8,
+        "alignment": 87.4
+      }
+    },
+    "calibration": {
+      "sampleCount": 1,
+      "trustWeight": 0.4
+    },
+    "alignment": {
+      "totalAlign": 87.4,
+      "components": {
+        "title": {
+          "score": 92.8
+        },
+        "style": {
+          "score": 87.9
+        },
+        "emotional": {
+          "score": 81.3
+        }
+      }
+    }
+  },
+  "rationale": {
+    "intent": {
+      "signal": "Interdependent systems are pulling against each other in unstable cycles.",
+      "emotion": "Focused unease with recurring pressure loops.",
+      "tension": "Orbit stability vs drift.",
+      "balance": "Central coherence with stretched periphery.",
+      "motion": "Circular momentum with precession."
+    },
+    "selection": {
+      "whyHeadline": "Selected as top-ranked Belgian headline (score 18 = frequency 9 + priority 9 + recency 0).",
+      "priorityTerms": [
+        "federal",
+        "budget",
+        "climate"
+      ]
+    },
+    "qualitySummary": "TOTAL_ALIGN 87.4."
+  },
+  "runPolicy": {
+    "artworksPerRun": 1,
+    "multiVariant": false
+  },
+  "artFramework": {
+    "version": 3,
+    "intent": {
+      "signal": "Interdependent systems are pulling against each other in unstable cycles.",
+      "emotion": "Focused unease with recurring pressure loops.",
+      "tension": "Orbit stability vs drift.",
+      "balance": "Central coherence with stretched periphery.",
+      "motion": "Circular momentum with precession."
+    }
+  },
+  "image": {
+    "publicJpeg": "./data/media/2026-02-14-fragments-of-belgian-federal-talks/artwork-720.jpg",
+    "thumbnailJpeg": "./data/media/2026-02-14-fragments-of-belgian-federal-talks/thumb-320.jpg",
+    "instagramJpeg": "./data/media/2026-02-14-fragments-of-belgian-federal-talks/instagram-1080x1350.jpg",
+    "altText": "Fragments of Belgian federal talks by Dieter Meier."
+  }
+}

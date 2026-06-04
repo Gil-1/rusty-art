@@ -1,1 +1,1099 @@
-{"id":"2026-04-13-pulse-of-middle-east-military-threatens-v3","date":"2026-04-13","title":"Pulse of Middle East military threatens","generatedAt":"2026-04-13T10:21:30.990Z","news":{"source":"lavenir","title":"War in the Middle East: the US military threatens to blockade Iranian ports this Monday, Iran says it was \"on the verge\" of an agreement","link":"https://www.lavenir.net/actu/monde/2026/04/13/guerre-au-moyen-orient-larmee-americaine-impose-un-blocus-des-ports-iraniens-liran-affirme-avoir-ete-a-deux-doigts-dun-accord-G5DMAAKJZJCARG43U22PXSAFRE/","score":113.684},"inspiration":{"artist":"Clyfford Still","tags":["abstract","surreal","expressionist","figurative","surrealist"],"links":{"wikipedia":"https://en.wikipedia.org/wiki/Clyfford_Still","reference":"http://www.clyffordstill.net/"}},"seed":229917672,"scene":{"motif":"flow","shapeCount":120,"turbulence":0.565,"spiralBias":0.944,"motionSpeed":0.001688,"bloom":0.16,"grain":0.035,"fogDensity":0.053,"distortion":0.19,"flowField":0.22,"anchorStrength":0.639,"anchorOffsetX":-0.039,"layerBalance":{"structure":0.66,"chaos":0.42},"expression":{"tension":0.31,"structure":0.682,"motion":0.739,"noise":0.313,"urgency":0.859,"contrast":0.388},"palette":{"bg":"#385277","primary":"#e28f62","secondary":"#9ed5e2","glow":"#f4cb8d","anchor":"#fdf9eb"},"elements":[{"id":"el-01-volumetric-haze","moduleType":"volumetric-haze","capabilities":["atmosphere-plume","fluid-drift","layered-field"],"stackFamilies":["shader-field","post-heavy","particle-heavy","sdf-raymarch"],"styleTags":["atmosphere","depth","diffusion"],"libraryRef":"element.volumetric-haze.v1","colorA":"bg","colorB":"secondary","opacity":0.2,"intensity":0.42,"layer":"background","density":0.18,"softness":0.8,"color":"secondary","animation":{"pulse":0.02,"wobbleX":0.01,"wobbleY":0.01,"drift":0.09},"techniqueRef":"t5","role":"atmosphere-field","motif":"flow","intentCadence":"drift"},{"id":"el-02-cm.still-fracture-field.v1","moduleType":"cm.still-fracture-field.v1","capabilities":[],"stackFamilies":[],"styleTags":[],"libraryRef":null,"columns":4,"jaggedness":0.66,"verticalBias":0.58,"split":0.1,"color":"secondary","opacity":0.79,"intensity":0.78,"animation":{"pulse":0.01,"wobbleX":0.01,"drift":0.02},"techniqueRef":"t1","role":"structural-spine","layer":"midground","motif":"flow","intentCadence":"drift"},{"id":"el-03-color-field-stack","moduleType":"color-field-stack","capabilities":["layered-field","atmosphere-plume"],"stackFamilies":["shader-field","post-heavy"],"styleTags":["field","blocks","atmospheric"],"libraryRef":"element.color-field-stack.v1","color":"primary","opacity":0.9,"intensity":0.83,"layer":"midground","bias":"top","height":0.44,"width":0.56,"jaggedness":0.63,"animation":{"rotationZ":0.01,"pulse":0.01,"wobbleX":0.01,"wobbleY":0.01,"drift":0.02},"techniqueRef":"t1","role":"support-rhythm","motif":"flow","intentCadence":"drift"},{"id":"el-04-fault-line","moduleType":"fault-line","capabilities":["fracture-destruction","focal-anchor"],"stackFamilies":["post-heavy","particle-heavy","geometry-heavy"],"styleTags":["fault","break"],"libraryRef":"element.fault-line.v1","color":"anchor","opacity":0.9,"intensity":0.84,"layer":"foreground","x":0,"y":-0.06,"segments":6,"width":0.08,"waviness":0.07,"animation":{"pulse":0.08,"wobbleX":0.02,"wobbleY":0.01,"drift":0.03},"aura":0.66,"techniqueRef":"t3","role":"focal-anchor","motif":"flow","intentCadence":"drift"},{"id":"el-05-cm.paint-erosion-skin.v1","moduleType":"cm.paint-erosion-skin.v1","capabilities":[],"stackFamilies":[],"styleTags":[],"libraryRef":null,"grain":0.58,"edgeDryness":0.63,"striations":0.45,"color":"glow","opacity":0.18,"intensity":0.24,"animation":{"pulse":0.01,"drift":0.01},"techniqueRef":"t6","role":"accent-gesture","layer":"accent","motif":"flow","intentCadence":"drift"},{"id":"el-06-motif-armature","moduleType":"motif-armature","capabilities":["geometric-structure","layered-field"],"stackFamilies":["geometry-heavy","instancing","shader-field"],"styleTags":["structure","spine"],"libraryRef":"element.motif-armature.v1","color":"anchor","opacity":0.56,"layer":"foreground","motif":"flow","scaleY":1.34,"scaleX":0.42,"intensity":0.78,"role":"structural-spine","intentCadence":"drift"},{"id":"el-07-signal-weave","moduleType":"signal-weave","capabilities":["kinetic-motion","layered-field"],"stackFamilies":["geometry-heavy","post-heavy","shader-field"],"styleTags":["rhythm","support"],"libraryRef":"element.signal-weave.v1","color":"secondary","opacity":0.34,"intensity":0.58,"layer":"foreground","offsetX":-1.22,"height":1.18,"spread":0.42,"role":"support-rhythm","motif":"flow","intentCadence":"drift"},{"id":"el-08-signal-weave","moduleType":"signal-weave","capabilities":["kinetic-motion","layered-field"],"stackFamilies":["geometry-heavy","post-heavy","shader-field"],"styleTags":["rhythm","support"],"libraryRef":"element.signal-weave.v1","color":"secondary","opacity":0.34,"intensity":0.58,"layer":"foreground","offsetX":1.22,"height":1.18,"spread":0.42,"role":"support-rhythm","motif":"flow","intentCadence":"drift"},{"id":"el-09-fault-line","moduleType":"fault-line","capabilities":["fracture-destruction","focal-anchor"],"stackFamilies":["post-heavy","particle-heavy","geometry-heavy"],"styleTags":["fault","break"],"libraryRef":"element.fault-line.v1","color":"anchor","opacity":0.52,"intensity":0.68,"layer":"foreground","width":0.08,"jitter":0.16,"role":"accent-gesture","motif":"flow","intentCadence":"drift"},{"id":"el-10-shader-field-plane","moduleType":"shader-field-plane","capabilities":["fluid-drift","layered-field"],"stackFamilies":["shader-field","post-heavy","sdf-raymarch"],"styleTags":["shader","field"],"libraryRef":"element.shader-field-plane.v1","color":"secondary","opacity":0.24,"intensity":0.34,"layer":"background","radialBias":0.52,"hemisphereContrast":0.38,"role":"atmosphere-field","motif":"flow","intentCadence":"drift"}],"shaderLayers":4,"elementDiversity":8,"paletteVariance":0,"motionSpeedNormalized":0.755,"camera":{"autoRotate":false,"autoRotateSpeed":0.156,"minDistance":6,"maxDistance":24,"cycleSeconds":24,"beats":[{"t":0,"radius":12.504,"theta":0.07,"phi":1.229,"hold":1.064},{"t":0.34,"radius":10.636,"theta":0.937,"phi":1.031,"hold":0.514},{"t":0.68,"radius":11.248,"theta":1.724,"phi":1.307,"hold":0.866},{"t":1,"radius":12.28,"theta":2.317,"phi":1.12,"hold":1.144}],"target":[0,0,0]},"post":{"vignette":0.18,"contrast":1.16,"saturation":0.92,"exposure":0.98,"breathing":{"hueShift":0.053,"saturationAmplitude":0.067,"exposureAmplitude":0.058,"phaseA":0.6954,"phaseB":0.2079}},"styleFingerprint":{"pulseFamily":"musical","stripeWarp":0.22,"edgeSoftness":0.22,"cameraSway":0.22,"edgeHardness":0.5,"temperatureBias":0.24,"verticalBias":0.18,"cadenceBias":0},"sceneAuthoring":{"mode":"agent-dsl","planner":"openclaw-agent-scene-planner","representation":{"id":"rep.narrow-release","label":"Narrow Release Shelf","description":"A broad dark-blue barrier rises from below, an orange crest hangs above it, and between them a thin horizontal-leaning shelf of light opens briefly before closing again. This version translates blockade not as a literal line but as stacked ","scoreHint":0.71,"motif":"precarious ledge of accord","cadence":"drift","scenePrompt":"Bounded abstract painting, stacked tectonic fields, deep blue lower barrier, orange upper mass, thin pale release shelf, torn edges, dry paint skin, subtle cyan breath in depth, Clyfford Still logic, non-literal and severe.","colorMood":"somber blue foundation with heated orange above and a fragile pale shelf between","spatialIntent":"Cool haze and cyan breath sit back, the lower barrier and upper mass press in the midground, and the thin release shelf cuts forward with strong contrast.","mustShow":["a clear lower dark-blue barrier shape","an upper orange mass pressing down or across","a thin pale shelf-like release zone between them","painted torn edge character","subtle cyan depth breathing behind the stacks"],"mustAvoid":["landscape horizon literalism","sunset color clichés","too many ribbons or particles","black void backgrounds","decorative symmetry"],"reviewFocus":["the shelf reads as a narrow release, not a horizon","stacked pressure feels compositional not narrative","surface remains rough and painted","foreground signal keeps contrast"],"artistTechniqueObservations":{"medium":"painting","primaryTechnique":"radial/orbital construction","markMakingTraits":[],"surfaceQualities":["painted surface behavior matters more than object literalism"],"paletteTendencies":["dominant hues: orange, blue-cyan, blue"],"spatialHabits":["layered field organization","orbital/circular organization"]},"rationale":{"headlineTranslation":"The threatened closure becomes stacked compression, while the near-agreement appears as a temporary shelf of light almost squeezed shut.","artistLogic":"Still's asymmetrical stacking and torn interfaces drive the image more than the news event itself."},"techniques":[{"id":"t1","name":"Jagged color-field monolith","type":"geometry","purpose":"Stacked masses","reuseModuleType":null,"params":{"layers":3,"edgeJitter":0.66}},{"id":"t6","name":"Paint-skin striation","type":"shader","purpose":"Material striation","reuseModuleType":null,"params":{"striations":0.45}},{"id":"t3","name":"Fracture seam anchor","type":"geometry","purpose":"Shelf-like light break","reuseModuleType":null,"params":{"width":0.08,"glow":0.34}},{"id":"t5","name":"Atmospheric depth haze","type":"particle","purpose":"Cool rear breathing room","reuseModuleType":null,"params":{"density":0.18}}]},"artisticIntent":{"statement":"A painted field held at the brink of rupture: a vertical landmass of torn color seems ready to split under pressure, while a thin surviving seam suggests the almost-made agreement that never fully arrives. The image should feel like Clyfford Still translated into a bounded digital canvas, with jagged precipice edges, heavy color masses, and a narrow, hard-won aperture of release.","motif":"tectonic fracture with a defended luminous seam","emotionalArc":"compressed stillness, mounting pressure, then a very narrow and unstable release","compositionLogic":"Build the image around one dominant structural law: a large asymmetrical vertical fracture dividing dense painted fields, with secondary edge tears and low-frequency orbital pressure embedded behind it. Depth should read as stacked painted atmosphere in back, ","imagePrompt":"Non-literal abstract expressionist painting in the language of Clyfford Still, monumental jagged color fields, torn vertical fracture, asymmetrical masses, painted dry-brush edges, restrained but vivid orange against blue-cyan and deep blue, bounded composition, no illustration, no symbols, narrow luminous seam of poss"},"executionPlan":{"palette":{"bg":"#385277","primary":"#e28f62","secondary":"#9ed5e2","glow":"#f4cb8d","anchor":"#fdf9eb"},"camera":{"autoRotate":false,"cycleSeconds":24,"target":[0,0,0]},"post":{"contrast":1.1,"saturation":0.92,"vignette":0.18,"exposure":0.98},"global":{"shapeCountHint":120,"flowField":0.22,"distortion":0.19,"bloom":0.16},"techniques":[{"id":"t1","name":"Jagged color-field monolith","type":"geometry","purpose":"Create Still-like tectonic painted masses with irregular torn silhouettes rather than clean planes.","reuseModuleType":"color-field-stack","params":{"layers":3,"edgeJitter":0.78,"verticalBias":0.84,"overlap":0.26}},{"id":"t2","name":"Dry-edge pigment erosion","type":"shader","purpose":"Break digital smoothness and simulate scraped, feathered paint edges with uneven opacity and pigment density.","reuseModuleType":"shader-field-plane","params":{"grain":0.68,"edgeDryness":0.72,"speckle":0.24}},{"id":"t3","name":"Fracture seam anchor","type":"geometry","purpose":"Cut a single readable luminous fissure through the dominant masses as the focal signal.","reuseModuleType":"fault-line","params":{"segments":9,"width":0.09,"glow":0.42,"waviness":0.14}},{"id":"t4","name":"Subsurface orbital pressure","type":"shader","purpose":"Embed faint circular pressure fields behind the fracture so the scene carries buried negotiation/tension without becoming illustrative.","reuseModuleType":null,"params":{"rings":2,"amplitude":0.11,"visibility":0.18}},{"id":"t5","name":"Atmospheric depth haze","type":"particle","purpose":"Separate background and midground with a low-count dusty veil that feels painterly, not cosmic.","reuseModuleType":"volumetric-haze","params":{"density":0.22,"parallax":0.18,"softness":0.74}},{"id":"t6","name":"Paint-skin striation","type":"shader","purpose":"Give large fields subtle vertical and diagonal striations so surfaces feel made by hand.","reuseModuleType":null,"params":{"striations":0.41,"directionalWarp":0.22,"thicknessVariation":0.37}}]},"moduleOverrides":[{"id":"mo.colorfield.paintskin","target":{"moduleType":"color-field-stack","elementId":null},"mode":"uniforms","params":{"blendMode":"normal"},"uniforms":{"uEdgeDryness":0.72,"uPigmentGrain":0.68,"uStriation":0.41,"uContrastLift":0.08}},{"id":"mo.faultline.warmcore","target":{"moduleType":"fault-line","elementId":null},"mode":"uniforms","params":{"softEdge":0.36},"uniforms":{"uGlowStrength":0.42,"uCoreColor":"#F6E3A1","uOuterColor":"#F2C27A","uWidthNoise":0.13}},{"id":"mo.shaderplane.orbitalpressure","target":{"moduleType":"shader-field-plane","elementId":null},"mode":"hooks","params":{"behindMasses":true},"hooks":{"fragmentColor":"mix(fragmentColor, vec3(0.494,0.780,0.851), ringMask * 0.12);","alpha":"alpha *= 0.82 + ringMask * 0.12;"},"glsl":{"fragment":"float ringMask = smoothstep(0.42, 0.39, abs(length((vUv - 0.5) * vec2(1.0, 1.35)) - 0.31)) + smoothstep(0.60, 0.57, abs(length((vUv - 0.5) * vec2(1.0, 1.35)) - 0.48));"}}],"customModules":[{"id":"cm.still-fracture-field.v1","family":"geometry","kind":"dsl","allowOverride":false,"seedPolicy":"deterministic","paramsSchema":{"columns":{"type":"number","default":4},"jaggedness":{"type":"number","default":0.78},"verticalBias":{"type":"number","default":0.84},"split":{"type":"number","default":0.18}},"source":{"dsl":{"geometry":{"primitive":"stackedJaggedFields","layout":"asymVerticalMasses","silhouette":"torn"},"material":{"type":"layeredPaintLambert","roughness":0.96,"metalness":0},"animation":{"drift":0.02}},"glsl":{},"js":null},"budgets":{"maxInstances":24,"maxShaderOpsHint":0.58,"mobileSafe":true}},{"id":"cm.orbital-underpressure.v1","family":"shader","kind":"dsl","allowOverride":false,"seedPolicy":"deterministic","paramsSchema":{"rings":{"type":"number","default":2},"visibility":{"type":"number","default":0.18},"ellipticity":{"type":"number","default":1.35}},"source":{"dsl":{"patch":{"moduleType":"shader-field-plane","stage":"fragment","effect":"ellipticalPressureRings"}},"glsl":{"fragment":"float p = length((vUv - 0.5) * vec2(1.0, params.ellipticity)); float ringA = smoothstep(0.03, 0.0, abs(p - 0.31)); float ringB = smoothstep(0.03, 0.0, abs(p - 0.48)); vec3 pressureColor = mix(vec3(0.169,0.247,0.357), vec3(0.494,0.780,0.851), 0.45); outColor.rgb = mix(outColor.rgb, pressureColor, (ringA + ringB) * params.visibility);"},"js":null},"budgets":{"maxInstances":2,"maxShaderOpsHint":0.44,"mobileSafe":true}},{"id":"cm.paint-erosion-skin.v1","family":"shader","kind":"dsl","allowOverride":false,"seedPolicy":"deterministic","paramsSchema":{"grain":{"type":"number","default":0.68},"edgeDryness":{"type":"number","default":0.72},"striations":{"type":"number","default":0.41}},"source":{"dsl":{"patch":{"moduleType":"color-field-stack","stage":"fragment","effect":"paintErosionAndStriation"}},"glsl":{"fragment":"float n = fract(sin(dot(floor(vUv * 180.0), vec2(12.9898,78.233))) * 43758.5453); float dry = smoothstep(0.15, 0.85, n) * params.edgeDryness; float stripe = sin(vUv.y * 110.0 + n * 4.0) * 0.5 + 0.5; outAlpha *= mix(1.0, 0.82 + stripe * 0.18, dry); outColor.rgb *= 0.94 + stripe * params.striations * 0.12;"},"js":null},"budgets":{"maxInstances":8,"maxShaderOpsHint":0.52,"mobileSafe":true}}],"policyPasses":{"advisoryOnly":true,"skipped":["focal-hierarchy","envelope-clamp","composition-plan","artist-visual-profile","scene-element-module-enforcement","stack-pipeline-apply","gap-focused-pass","artist-hard-constraints"]}},"seedVersion":2,"seeds":{"baseSeed":327216906,"runSeed":229917672,"geomSeed":4157799880,"animSeed":835704333,"colorSeed":2307630543,"cameraSeed":3175571511},"customModuleReport":{"declaredCustomModules":3,"accepted":[{"id":"cm.still-fracture-field.v1","family":"geometry","kind":"dsl","fingerprint":"fb78dc27"},{"id":"cm.orbital-underpressure.v1","family":"shader","kind":"dsl","fingerprint":"86914ebe"},{"id":"cm.paint-erosion-skin.v1","family":"shader","kind":"dsl","fingerprint":"13267cbc"}],"rejected":[],"moduleOverrideCount":3,"fingerprint":"19468d58"},"techStack":{"id":"post-kinetic","name":"Post-Heavy Kinetic","family":"post-heavy","strategyFamilies":["hybrid","fracture","flow"],"rationale":{"source":"loop-adjustment-alternate-stack","score":1.4521,"penalties":["conflict<0.42","context<0.2"]},"dominantPrimitive":"volumetric-haze","moduleSet":["volumetric-haze","cm.still-fracture-field.v1","color-field-stack","fault-line","cm.paint-erosion-skin.v1","motif-armature","signal-weave","shader-field-plane"],"pipelineKind":"post-heavy"},"renderPipeline":{"kind":"post-heavy","family":"post-heavy","fallback":false,"advisoryOnly":true,"dominantPrimitive":"volumetric-haze","moduleSet":["volumetric-haze","cm.still-fracture-field.v1","color-field-stack","fault-line","cm.paint-erosion-skin.v1","motif-armature","signal-weave","shader-field-plane"]}},"sceneStrategy":{"selected":{"id":"atomic-balanced-flow","name":"Balanced Flow Field","type":"atomic","family":"flow"},"applied":false,"fallbackReason":"agent-authored-scene-elements"},"techStack":{"id":"post-kinetic","name":"Post-Heavy Kinetic","family":"post-heavy"},"newsVisualMappings":[{"signal":"title evidence [guerre, moyen, orient, ricaine] -> motif flow","from":"guerre, moyen, orient, ricaine","visualDecision":"structural motif armature set to flow"},{"signal":"composition foreground conflict","from":"war","visualDecision":"foreground role tension-knot at pressure 0.281"},{"signal":"composition midground context","from":"guerre, moyen, orient, ricaine","visualDecision":"midground role context-drift with density 0.327"},{"signal":"composition background mood","from":"guerre, moyen, orient, ricaine","visualDecision":"background mood watchful depth 0.316"},{"signal":"urgency -> motion","from":"ageHours=3.95","visualDecision":"motionSpeedNormalized=0.755"},{"signal":"title semantics -> palette/edge cadence","from":"temp=0.24 edge=0.5","visualDecision":"postContrast=1.16 accentType=cm.paint-erosion-skin.v1"},{"signal":"article institutional/conflict polarity","from":"guerre, moyen, orient, ricaine","visualDecision":"accent element cm.paint-erosion-skin.v1 with opacity 0.18"},{"signal":"artist research context Clyfford Still","from":"tags abstract, surreal, expressionist, figurative, surrealist","visualDecision":"artist profile captured as metadata only; no technical routing applied"}],"qualityScore":{"score":54.2,"summary":"Alignment 74.2 with strongest channel style.","heuristic":{"score":69.7,"breakdown":{"legibility":74,"emotionalReadability":67.4,"coherence":91.1,"focalAnchor":69.9,"technicalRichness":100,"restraint":75.8,"alignment":74.2}},"calibration":{"sampleCount":1,"trustWeight":0.4},"alignment":{"totalAlign":74.2,"components":{"title":{"score":63.6},"style":{"score":82.8},"emotional":{"score":73.4}}}},"rationale":{"intent":{"signal":null,"emotion":null,"tension":null,"balance":null,"motion":null},"selection":{"whyHeadline":"Selected as top-ranked Belgian headline (score 113.684 = frequency 111 + priority 0 + recency 2.684).","priorityTerms":[]},"qualitySummary":"TOTAL_ALIGN 74.2."},"runPolicy":{"artworksPerRun":1,"multiVariant":false},"artFramework":{"version":3,"intent":{"statement":"War in the Middle East: the US military threatens to blockade Iranian ports this Monday, Iran says it was \"on the verge\" of an agreement translated through Clyfford Still's visual language as a non-literal image.","coreImpulse":"Clyfford Still, born on November 30, 1904, in Grandin, North Dakota, emerged as one of the most influential American artists of the 20th century, playing a pivotal role in shaping the trajectory of abstract expression... Clyfford Still was an American painter, and one of the leading figures in the first generation of Abstract Expressionists, who developed a new, powerful approach to painting in the years immediately following World Wa... Clyfford Still Art Artist Paintings Biography Abstract Expressionism CLYFFORD STILL Master of Abstract Expressionism Clyfford Still (November 30, 1904 - June 23, 1980) was an American artist, a painter, and one of the... Read more detail in the biography or check out some Clyfford Still quotes about his process.","artistTranslationLogic":["Clyfford Still's formal logic should dominate before any spectacle or scenic excess."],"emotionalClimate":{"summary":"Clyfford Still, born on November 30, 1904, in Grandin, North Dakota, emerged as one of the most influential American artists of the 20th century, playing a pivotal role in shaping the trajectory of abstract expression... Clyfford Still was an American painter, and one of the leading figures in the first generation of Abstract Expressionists, who developed a new, powerful approach to painting in the years immediately following World Wa... Clyfford Still Art Artist Paintings Biography Abstract Expressionism CLYFFORD STILL Master of Abstract Expressionism Clyfford Still (November 30, 1904 - June 23, 1980) was an American artist, a painter, and one of the... Read more detail in the biography or check out some Clyfford Still quotes about his process.","pressure":"low","pace":"measured","socialReach":"concentrated"},"visualGravity":{"anchor":"high-contrast foreground focal anchor","dominantStructure":"Build the image around one readable structural law.","scaleBehavior":"Keep the space bounded and compositionally intentional."},"materialLogic":{"surfaceBehavior":[],"spatialHabits":[],"handling":"Clyfford Still's surface should feel made, not generic."},"colorField":{"paletteSignals":[],"contrastMode":"measured contrast with restrained vibration"},"symbolicDensity":{"primaryMotif":"fracture","motifVocabulary":[],"literalness":"non-literal"},"tensionEngine":{"conflictAxis":"Guerre","escalationMode":"Let tension accumulate through structure, not narration.","releaseValve":"Allow only a narrow zone of release."},"audiencePosition":{"stance":"Clyfford Still, born on November 30, 1904, in Grandin, North Dakota, emerged as one of the most influential American artists of the 20th century, playing a pivotal role in shaping the trajectory of abstract expression... Clyfford Still, born on November 30, 1904, in Grandin, North Dakota, emerged as one of the most influential American artists of the 20th century, playing a pivotal role in shaping the trajectory of abstract expression... Clyfford Still Art Artist Paintings Biography Abstract Expressionism CLYFFORD STILL Master of Abstract Expressionism Clyfford Still (November 30, 1904 - June 23, 1980) was an American artist, a painter, and one of the... Clyfford Still, born on November 30, 1904, in Grandin, North Dakota, emerged as one of the most influential American artists of the 20th century, playing a pivotal role in shaping the trajectory of abstract expression...","distance":"immersed but not illustrative"},"controlVsAccident":{"balance":"controlled with selective instability","motionTemperament":"steady","accidentRole":"use drift or fracture sparingly to keep the field alive"},"antiDriftRules":["Do not collapse into biography summary, symbolic cliché, or generic procedural spectacle."],"finalCompression":"Clyfford Still, born on November 30, 1904, in Grandin, North Dakota, emerged as one of the most influential American artists of the 20th century, playing a pivotal role in shaping the trajectory of abstract expression... Clyfford Still was an American painter, and one of the leading figures in the first generation of Abstract Expressionists, who developed a new, powerful approach to painting in the years immediately following World Wa... Clyfford Still Art Artist Paintings Biography Abstract Expressionism CLYFFORD STILL Master of Abstract Expressionism Clyfford Still (November 30, 1904 - June 23, 1980) was an American artist, a painter, and one of the... Read more detail in the biography or check out some Clyfford Still quotes about his process. Build the image around one readable structural law.","artistAnchors":{"formalLogic":[],"motifVocabulary":[],"compositionCues":[],"paletteSignals":[],"surfaceBehavior":[],"spatialHabits":[],"translationDirectives":[]},"threeJsFreedomEnvelope":[],"avoidSignals":[],"threeJsTranslationExamples":[]}}}
+{
+  "id": "2026-04-13-pulse-of-middle-east-military-threatens-v3",
+  "date": "2026-04-13",
+  "title": "Pulse of Middle East military threatens",
+  "generatedAt": "2026-04-13T10:21:30.990Z",
+  "news": {
+    "source": "lavenir",
+    "title": "War in the Middle East: the US military threatens to blockade Iranian ports this Monday, Iran says it was \"on the verge\" of an agreement",
+    "link": "https://www.lavenir.net/actu/monde/2026/04/13/guerre-au-moyen-orient-larmee-americaine-impose-un-blocus-des-ports-iraniens-liran-affirme-avoir-ete-a-deux-doigts-dun-accord-G5DMAAKJZJCARG43U22PXSAFRE/",
+    "score": 113.684
+  },
+  "inspiration": {
+    "artist": "Clyfford Still",
+    "tags": [
+      "abstract",
+      "surreal",
+      "expressionist",
+      "figurative",
+      "surrealist"
+    ],
+    "links": {
+      "wikipedia": "https://en.wikipedia.org/wiki/Clyfford_Still",
+      "reference": "http://www.clyffordstill.net/"
+    }
+  },
+  "seed": 229917672,
+  "scene": {
+    "motif": "flow",
+    "shapeCount": 120,
+    "turbulence": 0.565,
+    "spiralBias": 0.944,
+    "motionSpeed": 0.001688,
+    "bloom": 0.16,
+    "grain": 0.035,
+    "fogDensity": 0.053,
+    "distortion": 0.19,
+    "flowField": 0.22,
+    "anchorStrength": 0.639,
+    "anchorOffsetX": -0.039,
+    "layerBalance": {
+      "structure": 0.66,
+      "chaos": 0.42
+    },
+    "expression": {
+      "tension": 0.31,
+      "structure": 0.682,
+      "motion": 0.739,
+      "noise": 0.313,
+      "urgency": 0.859,
+      "contrast": 0.388
+    },
+    "palette": {
+      "bg": "#385277",
+      "primary": "#e28f62",
+      "secondary": "#9ed5e2",
+      "glow": "#f4cb8d",
+      "anchor": "#fdf9eb"
+    },
+    "elements": [
+      {
+        "id": "el-01-volumetric-haze",
+        "moduleType": "volumetric-haze",
+        "capabilities": [
+          "atmosphere-plume",
+          "fluid-drift",
+          "layered-field"
+        ],
+        "stackFamilies": [
+          "shader-field",
+          "post-heavy",
+          "particle-heavy",
+          "sdf-raymarch"
+        ],
+        "styleTags": [
+          "atmosphere",
+          "depth",
+          "diffusion"
+        ],
+        "libraryRef": "element.volumetric-haze.v1",
+        "colorA": "bg",
+        "colorB": "secondary",
+        "opacity": 0.2,
+        "intensity": 0.42,
+        "layer": "background",
+        "density": 0.18,
+        "softness": 0.8,
+        "color": "secondary",
+        "animation": {
+          "pulse": 0.02,
+          "wobbleX": 0.01,
+          "wobbleY": 0.01,
+          "drift": 0.09
+        },
+        "techniqueRef": "t5",
+        "role": "atmosphere-field",
+        "motif": "flow",
+        "intentCadence": "drift"
+      },
+      {
+        "id": "el-02-cm.still-fracture-field.v1",
+        "moduleType": "cm.still-fracture-field.v1",
+        "capabilities": [],
+        "stackFamilies": [],
+        "styleTags": [],
+        "libraryRef": null,
+        "columns": 4,
+        "jaggedness": 0.66,
+        "verticalBias": 0.58,
+        "split": 0.1,
+        "color": "secondary",
+        "opacity": 0.79,
+        "intensity": 0.78,
+        "animation": {
+          "pulse": 0.01,
+          "wobbleX": 0.01,
+          "drift": 0.02
+        },
+        "techniqueRef": "t1",
+        "role": "structural-spine",
+        "layer": "midground",
+        "motif": "flow",
+        "intentCadence": "drift"
+      },
+      {
+        "id": "el-03-color-field-stack",
+        "moduleType": "color-field-stack",
+        "capabilities": [
+          "layered-field",
+          "atmosphere-plume"
+        ],
+        "stackFamilies": [
+          "shader-field",
+          "post-heavy"
+        ],
+        "styleTags": [
+          "field",
+          "blocks",
+          "atmospheric"
+        ],
+        "libraryRef": "element.color-field-stack.v1",
+        "color": "primary",
+        "opacity": 0.9,
+        "intensity": 0.83,
+        "layer": "midground",
+        "bias": "top",
+        "height": 0.44,
+        "width": 0.56,
+        "jaggedness": 0.63,
+        "animation": {
+          "rotationZ": 0.01,
+          "pulse": 0.01,
+          "wobbleX": 0.01,
+          "wobbleY": 0.01,
+          "drift": 0.02
+        },
+        "techniqueRef": "t1",
+        "role": "support-rhythm",
+        "motif": "flow",
+        "intentCadence": "drift"
+      },
+      {
+        "id": "el-04-fault-line",
+        "moduleType": "fault-line",
+        "capabilities": [
+          "fracture-destruction",
+          "focal-anchor"
+        ],
+        "stackFamilies": [
+          "post-heavy",
+          "particle-heavy",
+          "geometry-heavy"
+        ],
+        "styleTags": [
+          "fault",
+          "break"
+        ],
+        "libraryRef": "element.fault-line.v1",
+        "color": "anchor",
+        "opacity": 0.9,
+        "intensity": 0.84,
+        "layer": "foreground",
+        "x": 0,
+        "y": -0.06,
+        "segments": 6,
+        "width": 0.08,
+        "waviness": 0.07,
+        "animation": {
+          "pulse": 0.08,
+          "wobbleX": 0.02,
+          "wobbleY": 0.01,
+          "drift": 0.03
+        },
+        "aura": 0.66,
+        "techniqueRef": "t3",
+        "role": "focal-anchor",
+        "motif": "flow",
+        "intentCadence": "drift"
+      },
+      {
+        "id": "el-05-cm.paint-erosion-skin.v1",
+        "moduleType": "cm.paint-erosion-skin.v1",
+        "capabilities": [],
+        "stackFamilies": [],
+        "styleTags": [],
+        "libraryRef": null,
+        "grain": 0.58,
+        "edgeDryness": 0.63,
+        "striations": 0.45,
+        "color": "glow",
+        "opacity": 0.18,
+        "intensity": 0.24,
+        "animation": {
+          "pulse": 0.01,
+          "drift": 0.01
+        },
+        "techniqueRef": "t6",
+        "role": "accent-gesture",
+        "layer": "accent",
+        "motif": "flow",
+        "intentCadence": "drift"
+      },
+      {
+        "id": "el-06-motif-armature",
+        "moduleType": "motif-armature",
+        "capabilities": [
+          "geometric-structure",
+          "layered-field"
+        ],
+        "stackFamilies": [
+          "geometry-heavy",
+          "instancing",
+          "shader-field"
+        ],
+        "styleTags": [
+          "structure",
+          "spine"
+        ],
+        "libraryRef": "element.motif-armature.v1",
+        "color": "anchor",
+        "opacity": 0.56,
+        "layer": "foreground",
+        "motif": "flow",
+        "scaleY": 1.34,
+        "scaleX": 0.42,
+        "intensity": 0.78,
+        "role": "structural-spine",
+        "intentCadence": "drift"
+      },
+      {
+        "id": "el-07-signal-weave",
+        "moduleType": "signal-weave",
+        "capabilities": [
+          "kinetic-motion",
+          "layered-field"
+        ],
+        "stackFamilies": [
+          "geometry-heavy",
+          "post-heavy",
+          "shader-field"
+        ],
+        "styleTags": [
+          "rhythm",
+          "support"
+        ],
+        "libraryRef": "element.signal-weave.v1",
+        "color": "secondary",
+        "opacity": 0.34,
+        "intensity": 0.58,
+        "layer": "foreground",
+        "offsetX": -1.22,
+        "height": 1.18,
+        "spread": 0.42,
+        "role": "support-rhythm",
+        "motif": "flow",
+        "intentCadence": "drift"
+      },
+      {
+        "id": "el-08-signal-weave",
+        "moduleType": "signal-weave",
+        "capabilities": [
+          "kinetic-motion",
+          "layered-field"
+        ],
+        "stackFamilies": [
+          "geometry-heavy",
+          "post-heavy",
+          "shader-field"
+        ],
+        "styleTags": [
+          "rhythm",
+          "support"
+        ],
+        "libraryRef": "element.signal-weave.v1",
+        "color": "secondary",
+        "opacity": 0.34,
+        "intensity": 0.58,
+        "layer": "foreground",
+        "offsetX": 1.22,
+        "height": 1.18,
+        "spread": 0.42,
+        "role": "support-rhythm",
+        "motif": "flow",
+        "intentCadence": "drift"
+      },
+      {
+        "id": "el-09-fault-line",
+        "moduleType": "fault-line",
+        "capabilities": [
+          "fracture-destruction",
+          "focal-anchor"
+        ],
+        "stackFamilies": [
+          "post-heavy",
+          "particle-heavy",
+          "geometry-heavy"
+        ],
+        "styleTags": [
+          "fault",
+          "break"
+        ],
+        "libraryRef": "element.fault-line.v1",
+        "color": "anchor",
+        "opacity": 0.52,
+        "intensity": 0.68,
+        "layer": "foreground",
+        "width": 0.08,
+        "jitter": 0.16,
+        "role": "accent-gesture",
+        "motif": "flow",
+        "intentCadence": "drift"
+      },
+      {
+        "id": "el-10-shader-field-plane",
+        "moduleType": "shader-field-plane",
+        "capabilities": [
+          "fluid-drift",
+          "layered-field"
+        ],
+        "stackFamilies": [
+          "shader-field",
+          "post-heavy",
+          "sdf-raymarch"
+        ],
+        "styleTags": [
+          "shader",
+          "field"
+        ],
+        "libraryRef": "element.shader-field-plane.v1",
+        "color": "secondary",
+        "opacity": 0.24,
+        "intensity": 0.34,
+        "layer": "background",
+        "radialBias": 0.52,
+        "hemisphereContrast": 0.38,
+        "role": "atmosphere-field",
+        "motif": "flow",
+        "intentCadence": "drift"
+      }
+    ],
+    "shaderLayers": 4,
+    "elementDiversity": 8,
+    "paletteVariance": 0,
+    "motionSpeedNormalized": 0.755,
+    "camera": {
+      "autoRotate": false,
+      "autoRotateSpeed": 0.156,
+      "minDistance": 6,
+      "maxDistance": 24,
+      "cycleSeconds": 24,
+      "beats": [
+        {
+          "t": 0,
+          "radius": 12.504,
+          "theta": 0.07,
+          "phi": 1.229,
+          "hold": 1.064
+        },
+        {
+          "t": 0.34,
+          "radius": 10.636,
+          "theta": 0.937,
+          "phi": 1.031,
+          "hold": 0.514
+        },
+        {
+          "t": 0.68,
+          "radius": 11.248,
+          "theta": 1.724,
+          "phi": 1.307,
+          "hold": 0.866
+        },
+        {
+          "t": 1,
+          "radius": 12.28,
+          "theta": 2.317,
+          "phi": 1.12,
+          "hold": 1.144
+        }
+      ],
+      "target": [
+        0,
+        0,
+        0
+      ]
+    },
+    "post": {
+      "vignette": 0.18,
+      "contrast": 1.16,
+      "saturation": 0.92,
+      "exposure": 0.98,
+      "breathing": {
+        "hueShift": 0.053,
+        "saturationAmplitude": 0.067,
+        "exposureAmplitude": 0.058,
+        "phaseA": 0.6954,
+        "phaseB": 0.2079
+      }
+    },
+    "styleFingerprint": {
+      "pulseFamily": "musical",
+      "stripeWarp": 0.22,
+      "edgeSoftness": 0.22,
+      "cameraSway": 0.22,
+      "edgeHardness": 0.5,
+      "temperatureBias": 0.24,
+      "verticalBias": 0.18,
+      "cadenceBias": 0
+    },
+    "sceneAuthoring": {
+      "mode": "agent-dsl",
+      "planner": "openclaw-agent-scene-planner",
+      "representation": {
+        "id": "rep.narrow-release",
+        "label": "Narrow Release Shelf",
+        "description": "A broad dark-blue barrier rises from below, an orange crest hangs above it, and between them a thin horizontal-leaning shelf of light opens briefly before closing again. This version translates blockade not as a literal line but as stacked ",
+        "scoreHint": 0.71,
+        "motif": "precarious ledge of accord",
+        "cadence": "drift",
+        "scenePrompt": "Bounded abstract painting, stacked tectonic fields, deep blue lower barrier, orange upper mass, thin pale release shelf, torn edges, dry paint skin, subtle cyan breath in depth, Clyfford Still logic, non-literal and severe.",
+        "colorMood": "somber blue foundation with heated orange above and a fragile pale shelf between",
+        "spatialIntent": "Cool haze and cyan breath sit back, the lower barrier and upper mass press in the midground, and the thin release shelf cuts forward with strong contrast.",
+        "mustShow": [
+          "a clear lower dark-blue barrier shape",
+          "an upper orange mass pressing down or across",
+          "a thin pale shelf-like release zone between them",
+          "painted torn edge character",
+          "subtle cyan depth breathing behind the stacks"
+        ],
+        "mustAvoid": [
+          "landscape horizon literalism",
+          "sunset color clichés",
+          "too many ribbons or particles",
+          "black void backgrounds",
+          "decorative symmetry"
+        ],
+        "reviewFocus": [
+          "the shelf reads as a narrow release, not a horizon",
+          "stacked pressure feels compositional not narrative",
+          "surface remains rough and painted",
+          "foreground signal keeps contrast"
+        ],
+        "artistTechniqueObservations": {
+          "medium": "painting",
+          "primaryTechnique": "radial/orbital construction",
+          "markMakingTraits": [],
+          "surfaceQualities": [
+            "painted surface behavior matters more than object literalism"
+          ],
+          "paletteTendencies": [
+            "dominant hues: orange, blue-cyan, blue"
+          ],
+          "spatialHabits": [
+            "layered field organization",
+            "orbital/circular organization"
+          ]
+        },
+        "rationale": {
+          "headlineTranslation": "The threatened closure becomes stacked compression, while the near-agreement appears as a temporary shelf of light almost squeezed shut.",
+          "artistLogic": "Still's asymmetrical stacking and torn interfaces drive the image more than the news event itself."
+        },
+        "techniques": [
+          {
+            "id": "t1",
+            "name": "Jagged color-field monolith",
+            "type": "geometry",
+            "purpose": "Stacked masses",
+            "reuseModuleType": null,
+            "params": {
+              "layers": 3,
+              "edgeJitter": 0.66
+            }
+          },
+          {
+            "id": "t6",
+            "name": "Paint-skin striation",
+            "type": "shader",
+            "purpose": "Material striation",
+            "reuseModuleType": null,
+            "params": {
+              "striations": 0.45
+            }
+          },
+          {
+            "id": "t3",
+            "name": "Fracture seam anchor",
+            "type": "geometry",
+            "purpose": "Shelf-like light break",
+            "reuseModuleType": null,
+            "params": {
+              "width": 0.08,
+              "glow": 0.34
+            }
+          },
+          {
+            "id": "t5",
+            "name": "Atmospheric depth haze",
+            "type": "particle",
+            "purpose": "Cool rear breathing room",
+            "reuseModuleType": null,
+            "params": {
+              "density": 0.18
+            }
+          }
+        ]
+      },
+      "artisticIntent": {
+        "statement": "A painted field held at the brink of rupture: a vertical landmass of torn color seems ready to split under pressure, while a thin surviving seam suggests the almost-made agreement that never fully arrives. The image should feel like Clyfford Still translated into a bounded digital canvas, with jagged precipice edges, heavy color masses, and a narrow, hard-won aperture of release.",
+        "motif": "tectonic fracture with a defended luminous seam",
+        "emotionalArc": "compressed stillness, mounting pressure, then a very narrow and unstable release",
+        "compositionLogic": "Build the image around one dominant structural law: a large asymmetrical vertical fracture dividing dense painted fields, with secondary edge tears and low-frequency orbital pressure embedded behind it. Depth should read as stacked painted atmosphere in back, ",
+        "imagePrompt": "Non-literal abstract expressionist painting in the language of Clyfford Still, monumental jagged color fields, torn vertical fracture, asymmetrical masses, painted dry-brush edges, restrained but vivid orange against blue-cyan and deep blue, bounded composition, no illustration, no symbols, narrow luminous seam of poss"
+      },
+      "executionPlan": {
+        "palette": {
+          "bg": "#385277",
+          "primary": "#e28f62",
+          "secondary": "#9ed5e2",
+          "glow": "#f4cb8d",
+          "anchor": "#fdf9eb"
+        },
+        "camera": {
+          "autoRotate": false,
+          "cycleSeconds": 24,
+          "target": [
+            0,
+            0,
+            0
+          ]
+        },
+        "post": {
+          "contrast": 1.1,
+          "saturation": 0.92,
+          "vignette": 0.18,
+          "exposure": 0.98
+        },
+        "global": {
+          "shapeCountHint": 120,
+          "flowField": 0.22,
+          "distortion": 0.19,
+          "bloom": 0.16
+        },
+        "techniques": [
+          {
+            "id": "t1",
+            "name": "Jagged color-field monolith",
+            "type": "geometry",
+            "purpose": "Create Still-like tectonic painted masses with irregular torn silhouettes rather than clean planes.",
+            "reuseModuleType": "color-field-stack",
+            "params": {
+              "layers": 3,
+              "edgeJitter": 0.78,
+              "verticalBias": 0.84,
+              "overlap": 0.26
+            }
+          },
+          {
+            "id": "t2",
+            "name": "Dry-edge pigment erosion",
+            "type": "shader",
+            "purpose": "Break digital smoothness and simulate scraped, feathered paint edges with uneven opacity and pigment density.",
+            "reuseModuleType": "shader-field-plane",
+            "params": {
+              "grain": 0.68,
+              "edgeDryness": 0.72,
+              "speckle": 0.24
+            }
+          },
+          {
+            "id": "t3",
+            "name": "Fracture seam anchor",
+            "type": "geometry",
+            "purpose": "Cut a single readable luminous fissure through the dominant masses as the focal signal.",
+            "reuseModuleType": "fault-line",
+            "params": {
+              "segments": 9,
+              "width": 0.09,
+              "glow": 0.42,
+              "waviness": 0.14
+            }
+          },
+          {
+            "id": "t4",
+            "name": "Subsurface orbital pressure",
+            "type": "shader",
+            "purpose": "Embed faint circular pressure fields behind the fracture so the scene carries buried negotiation/tension without becoming illustrative.",
+            "reuseModuleType": null,
+            "params": {
+              "rings": 2,
+              "amplitude": 0.11,
+              "visibility": 0.18
+            }
+          },
+          {
+            "id": "t5",
+            "name": "Atmospheric depth haze",
+            "type": "particle",
+            "purpose": "Separate background and midground with a low-count dusty veil that feels painterly, not cosmic.",
+            "reuseModuleType": "volumetric-haze",
+            "params": {
+              "density": 0.22,
+              "parallax": 0.18,
+              "softness": 0.74
+            }
+          },
+          {
+            "id": "t6",
+            "name": "Paint-skin striation",
+            "type": "shader",
+            "purpose": "Give large fields subtle vertical and diagonal striations so surfaces feel made by hand.",
+            "reuseModuleType": null,
+            "params": {
+              "striations": 0.41,
+              "directionalWarp": 0.22,
+              "thicknessVariation": 0.37
+            }
+          }
+        ]
+      },
+      "moduleOverrides": [
+        {
+          "id": "mo.colorfield.paintskin",
+          "target": {
+            "moduleType": "color-field-stack",
+            "elementId": null
+          },
+          "mode": "uniforms",
+          "params": {
+            "blendMode": "normal"
+          },
+          "uniforms": {
+            "uEdgeDryness": 0.72,
+            "uPigmentGrain": 0.68,
+            "uStriation": 0.41,
+            "uContrastLift": 0.08
+          }
+        },
+        {
+          "id": "mo.faultline.warmcore",
+          "target": {
+            "moduleType": "fault-line",
+            "elementId": null
+          },
+          "mode": "uniforms",
+          "params": {
+            "softEdge": 0.36
+          },
+          "uniforms": {
+            "uGlowStrength": 0.42,
+            "uCoreColor": "#F6E3A1",
+            "uOuterColor": "#F2C27A",
+            "uWidthNoise": 0.13
+          }
+        },
+        {
+          "id": "mo.shaderplane.orbitalpressure",
+          "target": {
+            "moduleType": "shader-field-plane",
+            "elementId": null
+          },
+          "mode": "hooks",
+          "params": {
+            "behindMasses": true
+          },
+          "hooks": {
+            "fragmentColor": "mix(fragmentColor, vec3(0.494,0.780,0.851), ringMask * 0.12);",
+            "alpha": "alpha *= 0.82 + ringMask * 0.12;"
+          },
+          "glsl": {
+            "fragment": "float ringMask = smoothstep(0.42, 0.39, abs(length((vUv - 0.5) * vec2(1.0, 1.35)) - 0.31)) + smoothstep(0.60, 0.57, abs(length((vUv - 0.5) * vec2(1.0, 1.35)) - 0.48));"
+          }
+        }
+      ],
+      "customModules": [
+        {
+          "id": "cm.still-fracture-field.v1",
+          "family": "geometry",
+          "kind": "dsl",
+          "allowOverride": false,
+          "seedPolicy": "deterministic",
+          "paramsSchema": {
+            "columns": {
+              "type": "number",
+              "default": 4
+            },
+            "jaggedness": {
+              "type": "number",
+              "default": 0.78
+            },
+            "verticalBias": {
+              "type": "number",
+              "default": 0.84
+            },
+            "split": {
+              "type": "number",
+              "default": 0.18
+            }
+          },
+          "source": {
+            "dsl": {
+              "geometry": {
+                "primitive": "stackedJaggedFields",
+                "layout": "asymVerticalMasses",
+                "silhouette": "torn"
+              },
+              "material": {
+                "type": "layeredPaintLambert",
+                "roughness": 0.96,
+                "metalness": 0
+              },
+              "animation": {
+                "drift": 0.02
+              }
+            },
+            "glsl": {},
+            "js": null
+          },
+          "budgets": {
+            "maxInstances": 24,
+            "maxShaderOpsHint": 0.58,
+            "mobileSafe": true
+          }
+        },
+        {
+          "id": "cm.orbital-underpressure.v1",
+          "family": "shader",
+          "kind": "dsl",
+          "allowOverride": false,
+          "seedPolicy": "deterministic",
+          "paramsSchema": {
+            "rings": {
+              "type": "number",
+              "default": 2
+            },
+            "visibility": {
+              "type": "number",
+              "default": 0.18
+            },
+            "ellipticity": {
+              "type": "number",
+              "default": 1.35
+            }
+          },
+          "source": {
+            "dsl": {
+              "patch": {
+                "moduleType": "shader-field-plane",
+                "stage": "fragment",
+                "effect": "ellipticalPressureRings"
+              }
+            },
+            "glsl": {
+              "fragment": "float p = length((vUv - 0.5) * vec2(1.0, params.ellipticity)); float ringA = smoothstep(0.03, 0.0, abs(p - 0.31)); float ringB = smoothstep(0.03, 0.0, abs(p - 0.48)); vec3 pressureColor = mix(vec3(0.169,0.247,0.357), vec3(0.494,0.780,0.851), 0.45); outColor.rgb = mix(outColor.rgb, pressureColor, (ringA + ringB) * params.visibility);"
+            },
+            "js": null
+          },
+          "budgets": {
+            "maxInstances": 2,
+            "maxShaderOpsHint": 0.44,
+            "mobileSafe": true
+          }
+        },
+        {
+          "id": "cm.paint-erosion-skin.v1",
+          "family": "shader",
+          "kind": "dsl",
+          "allowOverride": false,
+          "seedPolicy": "deterministic",
+          "paramsSchema": {
+            "grain": {
+              "type": "number",
+              "default": 0.68
+            },
+            "edgeDryness": {
+              "type": "number",
+              "default": 0.72
+            },
+            "striations": {
+              "type": "number",
+              "default": 0.41
+            }
+          },
+          "source": {
+            "dsl": {
+              "patch": {
+                "moduleType": "color-field-stack",
+                "stage": "fragment",
+                "effect": "paintErosionAndStriation"
+              }
+            },
+            "glsl": {
+              "fragment": "float n = fract(sin(dot(floor(vUv * 180.0), vec2(12.9898,78.233))) * 43758.5453); float dry = smoothstep(0.15, 0.85, n) * params.edgeDryness; float stripe = sin(vUv.y * 110.0 + n * 4.0) * 0.5 + 0.5; outAlpha *= mix(1.0, 0.82 + stripe * 0.18, dry); outColor.rgb *= 0.94 + stripe * params.striations * 0.12;"
+            },
+            "js": null
+          },
+          "budgets": {
+            "maxInstances": 8,
+            "maxShaderOpsHint": 0.52,
+            "mobileSafe": true
+          }
+        }
+      ],
+      "policyPasses": {
+        "advisoryOnly": true,
+        "skipped": [
+          "focal-hierarchy",
+          "envelope-clamp",
+          "composition-plan",
+          "artist-visual-profile",
+          "scene-element-module-enforcement",
+          "stack-pipeline-apply",
+          "gap-focused-pass",
+          "artist-hard-constraints"
+        ]
+      }
+    },
+    "seedVersion": 2,
+    "seeds": {
+      "baseSeed": 327216906,
+      "runSeed": 229917672,
+      "geomSeed": 4157799880,
+      "animSeed": 835704333,
+      "colorSeed": 2307630543,
+      "cameraSeed": 3175571511
+    },
+    "customModuleReport": {
+      "declaredCustomModules": 3,
+      "accepted": [
+        {
+          "id": "cm.still-fracture-field.v1",
+          "family": "geometry",
+          "kind": "dsl",
+          "fingerprint": "fb78dc27"
+        },
+        {
+          "id": "cm.orbital-underpressure.v1",
+          "family": "shader",
+          "kind": "dsl",
+          "fingerprint": "86914ebe"
+        },
+        {
+          "id": "cm.paint-erosion-skin.v1",
+          "family": "shader",
+          "kind": "dsl",
+          "fingerprint": "13267cbc"
+        }
+      ],
+      "rejected": [],
+      "moduleOverrideCount": 3,
+      "fingerprint": "19468d58"
+    },
+    "techStack": {
+      "id": "post-kinetic",
+      "name": "Post-Heavy Kinetic",
+      "family": "post-heavy",
+      "strategyFamilies": [
+        "hybrid",
+        "fracture",
+        "flow"
+      ],
+      "rationale": {
+        "source": "loop-adjustment-alternate-stack",
+        "score": 1.4521,
+        "penalties": [
+          "conflict<0.42",
+          "context<0.2"
+        ]
+      },
+      "dominantPrimitive": "volumetric-haze",
+      "moduleSet": [
+        "volumetric-haze",
+        "cm.still-fracture-field.v1",
+        "color-field-stack",
+        "fault-line",
+        "cm.paint-erosion-skin.v1",
+        "motif-armature",
+        "signal-weave",
+        "shader-field-plane"
+      ],
+      "pipelineKind": "post-heavy"
+    },
+    "renderPipeline": {
+      "kind": "post-heavy",
+      "family": "post-heavy",
+      "fallback": false,
+      "advisoryOnly": true,
+      "dominantPrimitive": "volumetric-haze",
+      "moduleSet": [
+        "volumetric-haze",
+        "cm.still-fracture-field.v1",
+        "color-field-stack",
+        "fault-line",
+        "cm.paint-erosion-skin.v1",
+        "motif-armature",
+        "signal-weave",
+        "shader-field-plane"
+      ]
+    }
+  },
+  "sceneStrategy": {
+    "selected": {
+      "id": "atomic-balanced-flow",
+      "name": "Balanced Flow Field",
+      "type": "atomic",
+      "family": "flow"
+    },
+    "applied": false,
+    "fallbackReason": "agent-authored-scene-elements"
+  },
+  "techStack": {
+    "id": "post-kinetic",
+    "name": "Post-Heavy Kinetic",
+    "family": "post-heavy"
+  },
+  "newsVisualMappings": [
+    {
+      "signal": "title evidence [guerre, moyen, orient, ricaine] -> motif flow",
+      "from": "guerre, moyen, orient, ricaine",
+      "visualDecision": "structural motif armature set to flow"
+    },
+    {
+      "signal": "composition foreground conflict",
+      "from": "war",
+      "visualDecision": "foreground role tension-knot at pressure 0.281"
+    },
+    {
+      "signal": "composition midground context",
+      "from": "guerre, moyen, orient, ricaine",
+      "visualDecision": "midground role context-drift with density 0.327"
+    },
+    {
+      "signal": "composition background mood",
+      "from": "guerre, moyen, orient, ricaine",
+      "visualDecision": "background mood watchful depth 0.316"
+    },
+    {
+      "signal": "urgency -> motion",
+      "from": "ageHours=3.95",
+      "visualDecision": "motionSpeedNormalized=0.755"
+    },
+    {
+      "signal": "title semantics -> palette/edge cadence",
+      "from": "temp=0.24 edge=0.5",
+      "visualDecision": "postContrast=1.16 accentType=cm.paint-erosion-skin.v1"
+    },
+    {
+      "signal": "article institutional/conflict polarity",
+      "from": "guerre, moyen, orient, ricaine",
+      "visualDecision": "accent element cm.paint-erosion-skin.v1 with opacity 0.18"
+    },
+    {
+      "signal": "artist research context Clyfford Still",
+      "from": "tags abstract, surreal, expressionist, figurative, surrealist",
+      "visualDecision": "artist profile captured as metadata only; no technical routing applied"
+    }
+  ],
+  "qualityScore": {
+    "score": 54.2,
+    "summary": "Alignment 74.2 with strongest channel style.",
+    "heuristic": {
+      "score": 69.7,
+      "breakdown": {
+        "legibility": 74,
+        "emotionalReadability": 67.4,
+        "coherence": 91.1,
+        "focalAnchor": 69.9,
+        "technicalRichness": 100,
+        "restraint": 75.8,
+        "alignment": 74.2
+      }
+    },
+    "calibration": {
+      "sampleCount": 1,
+      "trustWeight": 0.4
+    },
+    "alignment": {
+      "totalAlign": 74.2,
+      "components": {
+        "title": {
+          "score": 63.6
+        },
+        "style": {
+          "score": 82.8
+        },
+        "emotional": {
+          "score": 73.4
+        }
+      }
+    }
+  },
+  "rationale": {
+    "intent": {
+      "signal": null,
+      "emotion": null,
+      "tension": null,
+      "balance": null,
+      "motion": null
+    },
+    "selection": {
+      "whyHeadline": "Selected as top-ranked Belgian headline (score 113.684 = frequency 111 + priority 0 + recency 2.684).",
+      "priorityTerms": []
+    },
+    "qualitySummary": "TOTAL_ALIGN 74.2."
+  },
+  "runPolicy": {
+    "artworksPerRun": 1,
+    "multiVariant": false
+  },
+  "artFramework": {
+    "version": 3,
+    "intent": {
+      "statement": "War in the Middle East: the US military threatens to blockade Iranian ports this Monday, Iran says it was \"on the verge\" of an agreement translated through Clyfford Still's visual language as a non-literal image.",
+      "coreImpulse": "Clyfford Still, born on November 30, 1904, in Grandin, North Dakota, emerged as one of the most influential American artists of the 20th century, playing a pivotal role in shaping the trajectory of abstract expression... Clyfford Still was an American painter, and one of the leading figures in the first generation of Abstract Expressionists, who developed a new, powerful approach to painting in the years immediately following World Wa... Clyfford Still Art Artist Paintings Biography Abstract Expressionism CLYFFORD STILL Master of Abstract Expressionism Clyfford Still (November 30, 1904 - June 23, 1980) was an American artist, a painter, and one of the... Read more detail in the biography or check out some Clyfford Still quotes about his process.",
+      "artistTranslationLogic": [
+        "Clyfford Still's formal logic should dominate before any spectacle or scenic excess."
+      ],
+      "emotionalClimate": {
+        "summary": "Clyfford Still, born on November 30, 1904, in Grandin, North Dakota, emerged as one of the most influential American artists of the 20th century, playing a pivotal role in shaping the trajectory of abstract expression... Clyfford Still was an American painter, and one of the leading figures in the first generation of Abstract Expressionists, who developed a new, powerful approach to painting in the years immediately following World Wa... Clyfford Still Art Artist Paintings Biography Abstract Expressionism CLYFFORD STILL Master of Abstract Expressionism Clyfford Still (November 30, 1904 - June 23, 1980) was an American artist, a painter, and one of the... Read more detail in the biography or check out some Clyfford Still quotes about his process.",
+        "pressure": "low",
+        "pace": "measured",
+        "socialReach": "concentrated"
+      },
+      "visualGravity": {
+        "anchor": "high-contrast foreground focal anchor",
+        "dominantStructure": "Build the image around one readable structural law.",
+        "scaleBehavior": "Keep the space bounded and compositionally intentional."
+      },
+      "materialLogic": {
+        "surfaceBehavior": [],
+        "spatialHabits": [],
+        "handling": "Clyfford Still's surface should feel made, not generic."
+      },
+      "colorField": {
+        "paletteSignals": [],
+        "contrastMode": "measured contrast with restrained vibration"
+      },
+      "symbolicDensity": {
+        "primaryMotif": "fracture",
+        "motifVocabulary": [],
+        "literalness": "non-literal"
+      },
+      "tensionEngine": {
+        "conflictAxis": "Guerre",
+        "escalationMode": "Let tension accumulate through structure, not narration.",
+        "releaseValve": "Allow only a narrow zone of release."
+      },
+      "audiencePosition": {
+        "stance": "Clyfford Still, born on November 30, 1904, in Grandin, North Dakota, emerged as one of the most influential American artists of the 20th century, playing a pivotal role in shaping the trajectory of abstract expression... Clyfford Still, born on November 30, 1904, in Grandin, North Dakota, emerged as one of the most influential American artists of the 20th century, playing a pivotal role in shaping the trajectory of abstract expression... Clyfford Still Art Artist Paintings Biography Abstract Expressionism CLYFFORD STILL Master of Abstract Expressionism Clyfford Still (November 30, 1904 - June 23, 1980) was an American artist, a painter, and one of the... Clyfford Still, born on November 30, 1904, in Grandin, North Dakota, emerged as one of the most influential American artists of the 20th century, playing a pivotal role in shaping the trajectory of abstract expression...",
+        "distance": "immersed but not illustrative"
+      },
+      "controlVsAccident": {
+        "balance": "controlled with selective instability",
+        "motionTemperament": "steady",
+        "accidentRole": "use drift or fracture sparingly to keep the field alive"
+      },
+      "antiDriftRules": [
+        "Do not collapse into biography summary, symbolic cliché, or generic procedural spectacle."
+      ],
+      "finalCompression": "Clyfford Still, born on November 30, 1904, in Grandin, North Dakota, emerged as one of the most influential American artists of the 20th century, playing a pivotal role in shaping the trajectory of abstract expression... Clyfford Still was an American painter, and one of the leading figures in the first generation of Abstract Expressionists, who developed a new, powerful approach to painting in the years immediately following World Wa... Clyfford Still Art Artist Paintings Biography Abstract Expressionism CLYFFORD STILL Master of Abstract Expressionism Clyfford Still (November 30, 1904 - June 23, 1980) was an American artist, a painter, and one of the... Read more detail in the biography or check out some Clyfford Still quotes about his process. Build the image around one readable structural law.",
+      "artistAnchors": {
+        "formalLogic": [],
+        "motifVocabulary": [],
+        "compositionCues": [],
+        "paletteSignals": [],
+        "surfaceBehavior": [],
+        "spatialHabits": [],
+        "translationDirectives": []
+      },
+      "threeJsFreedomEnvelope": [],
+      "avoidSignals": [],
+      "threeJsTranslationExamples": []
+    }
+  },
+  "image": {
+    "publicJpeg": "./data/media/2026-04-13-pulse-of-middle-east-military-threatens-v3/artwork-720.jpg",
+    "thumbnailJpeg": "./data/media/2026-04-13-pulse-of-middle-east-military-threatens-v3/thumb-320.jpg",
+    "instagramJpeg": "./data/media/2026-04-13-pulse-of-middle-east-military-threatens-v3/instagram-1080x1350.jpg",
+    "altText": "Pulse of Middle East military threatens by Clyfford Still."
+  }
+}

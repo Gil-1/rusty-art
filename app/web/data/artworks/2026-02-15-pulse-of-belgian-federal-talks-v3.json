@@ -1,1 +1,455 @@
-{"id":"2026-02-15-pulse-of-belgian-federal-talks-v3","date":"2026-02-15","title":"Pulse of Belgian federal talks","generatedAt":"2026-02-15T20:09:15.625Z","news":{"source":"rtbf","title":"Belgian federal talks intensify around budget and climate priorities","link":"https://example.com/rtbf-federal-talks","score":18},"inspiration":{"artist":"Carlos Cruz-Diez","tags":["color","optical"],"links":{"wikipedia":"https://en.wikipedia.org/wiki/Carlos_Cruz-Diez","reference":"https://en.wikipedia.org/wiki/Carlos_Cruz-Diez"}},"seed":2211104566,"scene":{"motif":"clusters","shapeCount":224,"turbulence":0.568,"spiralBias":0.616,"motionSpeed":0.001835,"bloom":0.493,"grain":0.046,"fogDensity":0.059,"distortion":0.492,"flowField":0.471,"anchorStrength":0.698,"anchorOffsetX":0.175,"layerBalance":{"structure":0.637,"chaos":0.368},"expression":{"tension":0.552,"structure":0.473,"motion":0.385,"noise":0.51,"urgency":0.18,"contrast":0.136},"palette":{"bg":"hsl(248, 48%, 6%)","primary":"hsl(13, 76%, 62%)","secondary":"hsl(122, 68%, 64%)","glow":"hsl(31, 88%, 74%)","anchor":"hsl(61, 80%, 70%)"},"shaderLayers":4,"paletteVariance":0.72,"motionSpeedNormalized":0.842,"camera":{"autoRotate":false,"autoRotateSpeed":0.096,"minDistance":6,"maxDistance":24,"cycleSeconds":24,"beats":[{"t":0,"radius":12.6,"theta":0.277,"phi":1.22,"hold":1},{"t":0.34,"radius":10.7,"theta":1.13,"phi":1.052,"hold":0.5},{"t":0.68,"radius":11.2,"theta":1.907,"phi":1.32,"hold":0.8},{"t":1,"radius":12.2,"theta":2.302,"phi":1.144,"hold":1.1}]},"post":{"vignette":0.383,"contrast":1.109,"saturation":1.032,"exposure":0.956,"breathing":{"hueShift":0.01,"saturationAmplitude":0.06,"exposureAmplitude":0.04,"phaseA":0.586,"phaseB":0.1185}},"styleFingerprint":{"pulseFamily":"balanced","stripeWarp":0.14,"edgeSoftness":0.26,"cameraSway":0.16,"edgeHardness":0.36,"temperatureBias":0,"verticalBias":0,"cadenceBias":-0.1},"seedVersion":2,"seeds":{"baseSeed":3919147989,"runSeed":2211104566,"geomSeed":2110823369,"animSeed":3492251148,"colorSeed":3930239060,"cameraSeed":1755564762},"techStack":{"id":"particle-surge","name":"Particle-Heavy Surge","family":"particle-heavy","strategyFamilies":["fracture","hybrid","orbits"],"rationale":{"source":"loop-adjustment-alternate-stack","score":-1.694,"penalties":["conflict<0.5","motion<0.55","turbulence<0.38"]},"dominantPrimitive":"particle-stream","moduleSet":["volumetric-haze","particle-cloud","anchor-core","particle-stream","drift-ribbon"],"pipelineKind":"particle-heavy"},"visualProfileHints":{"cadence":"steady","motionEnergy":0.42,"preferredModules":[{"name":"orbit-ribbon","weight":0.74,"reason":"circular cues"}],"preferredStackFamilies":[{"family":"shader-field","weight":0.5,"reason":"neutral fallback"}],"sourceAnalysis":{"mode":"computer-vision","status":"ok","analyzedReferences":7,"failedReferences":1,"texture":{"edgeEnergy":0.036},"failures":[{"referenceId":"carlos-cruz-diez-07","imageUrl":"https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Cruz_Diez_wall.jpg/800px-Cruz_Diez_wall.jpg","reason":"Request failed 429 for https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Cruz_Diez_wall.jpg/800px-Cruz_Diez_wall.jpg"}],"note":null}},"strategy":{"id":"atomic-balanced-flow","name":"Balanced Flow Field","type":"atomic","family":"flow","cooldown":{"window":3,"recentFamilies":[],"family":"flow","applied":false},"compositeDemanded":false,"signals":{"conflict":0.332,"context":0.628,"moodDepth":0.35}},"layers":[{"role":"background","modules":["volumetric-haze"]},{"role":"midground","modules":["motif-armature","signal-weave"]},{"role":"foreground","modules":["anchor-core"]},{"role":"accent","modules":["orbit-ribbon"]},{"role":"post","modules":["post-breathing"]}],"renderPipeline":{"kind":"particle-heavy","family":"particle-heavy","fallback":false,"dominantPrimitive":"particle-stream","moduleSet":["volumetric-haze","particle-cloud","anchor-core","particle-stream","drift-ribbon"]},"elements":[{"role":"atmosphere-field","colorA":"bg","colorB":"secondary","opacity":0.329,"intensity":0.552,"animation":{"drift":0.262},"layer":"background","moduleType":"volumetric-haze"},{"role":"echo-field","count":55,"spread":3.824,"jitter":0.354,"depth":1.28,"swirl":0.199,"color":"secondary","size":0.101,"opacity":0.539,"blend":"normal","animation":{"rotationZ":-0.569,"wobbleY":0.105},"layer":"background","moduleType":"particle-cloud"},{"role":"primary-signal","motif":"clusters","color":"anchor","auraColor":"glow","opacity":0.635,"size":0.956,"intensity":0.772,"animation":{"rotationZ":0.137,"wobbleY":0.132,"pulse":0.285},"layer":"foreground","moduleType":"anchor-core"},{"role":"support-rhythm","color":"glow","opacity":0.34,"intensity":0.52,"animation":{"rotationZ":0.14,"pulse":0.2},"moduleType":"particle-stream"},{"role":"support-rhythm","color":"glow","opacity":0.34,"intensity":0.52,"animation":{"rotationZ":0.14,"pulse":0.2},"moduleType":"drift-ribbon"}],"elementDiversity":5},"sceneStrategy":{"selected":{"id":"atomic-balanced-flow","name":"Balanced Flow Field","type":"atomic","family":"flow"},"applied":true,"fallbackReason":null},"techStack":{"id":"particle-surge","name":"Particle-Heavy Surge","family":"particle-heavy"},"newsVisualMappings":[{"signal":"title evidence [federal, budget, climate] -> motif clusters","from":"federal, budget, climate","visualDecision":"structural motif armature set to clusters"},{"signal":"composition foreground conflict","from":"intensify, budget, budget, budget","visualDecision":"foreground role tension-knot at pressure 0.527"},{"signal":"composition midground context","from":"federal, budget, climate, federal, budget, climate","visualDecision":"midground role context-drift with density 0.557"},{"signal":"composition background mood","from":"climate, climate, climate","visualDecision":"background mood watchful depth 0.386"},{"signal":"urgency -> motion","from":"ageHours=60.65","visualDecision":"motionSpeedNormalized=0.842"},{"signal":"title semantics -> palette/edge cadence","from":"temp=0 edge=0.36","visualDecision":"postContrast=1.109 accentType=n/a"},{"signal":"article institutional/conflict polarity","from":"climate, intent-motif-hint","visualDecision":"accent primitive n/a with opacity n/a"},{"signal":"artist grammar Carlos Cruz-Diez","from":"style card op-stripes · retinal-vibration · high-frequency-bands · distributed-field","visualDecision":"camera beat choreography + palette topology constrained to artist envelope"}],"qualityScore":{"score":48.6,"summary":"Alignment 74.6 with strongest channel style.","heuristic":{"score":64.1,"breakdown":{"legibility":77,"emotionalReadability":77.3,"coherence":79.2,"focalAnchor":70.2,"technicalRichness":100,"restraint":0,"alignment":74.6}},"calibration":{"sampleCount":1,"trustWeight":0.4},"alignment":{"totalAlign":74.6,"components":{"title":{"score":59.2},"style":{"score":86.4},"emotional":{"score":74.4}}}},"rationale":{"intent":{"signal":null,"emotion":null,"tension":null,"balance":null,"motion":null},"selection":{"whyHeadline":"Selected as top-ranked Belgian headline (score 18 = frequency 9 + priority 9 + recency 0).","priorityTerms":["federal","budget","climate"]},"qualitySummary":"TOTAL_ALIGN 74.6."},"runPolicy":{"artworksPerRun":1,"multiVariant":false},"artFramework":{"version":3,"intent":{"statement":"Carlos Cruz-Diez was a Venezuelan artist who played a central role in the development of Kinetic and Op art. In response to \"Belgian federal talks intensify around budget and climate priorities\", the artwork should translate civic signal into an abstract composition with a clear emotional center. Carlos Cruz-Diez was a Venezuelan artist who played a central role in the development of Kinetic and Op art.","narrativeBridge":"Carlos Cruz-Diez was a Venezuelan artist who played a central role in the development of Kinetic and Op art. Carlos Cruz-Diez was a Venezuelan artist who played a central role in the development of Kinetic and Op art.","motifHint":"clusters","emotionalCenter":"measured structural drift"}}}
+{
+  "id": "2026-02-15-pulse-of-belgian-federal-talks-v3",
+  "date": "2026-02-15",
+  "title": "Pulse of Belgian federal talks",
+  "generatedAt": "2026-02-15T20:09:15.625Z",
+  "news": {
+    "source": "rtbf",
+    "title": "Belgian federal talks intensify around budget and climate priorities",
+    "link": "https://example.com/rtbf-federal-talks",
+    "score": 18
+  },
+  "inspiration": {
+    "artist": "Carlos Cruz-Diez",
+    "tags": [
+      "color",
+      "optical"
+    ],
+    "links": {
+      "wikipedia": "https://en.wikipedia.org/wiki/Carlos_Cruz-Diez",
+      "reference": "https://en.wikipedia.org/wiki/Carlos_Cruz-Diez"
+    }
+  },
+  "seed": 2211104566,
+  "scene": {
+    "motif": "clusters",
+    "shapeCount": 224,
+    "turbulence": 0.568,
+    "spiralBias": 0.616,
+    "motionSpeed": 0.001835,
+    "bloom": 0.493,
+    "grain": 0.046,
+    "fogDensity": 0.059,
+    "distortion": 0.492,
+    "flowField": 0.471,
+    "anchorStrength": 0.698,
+    "anchorOffsetX": 0.175,
+    "layerBalance": {
+      "structure": 0.637,
+      "chaos": 0.368
+    },
+    "expression": {
+      "tension": 0.552,
+      "structure": 0.473,
+      "motion": 0.385,
+      "noise": 0.51,
+      "urgency": 0.18,
+      "contrast": 0.136
+    },
+    "palette": {
+      "bg": "hsl(248, 48%, 6%)",
+      "primary": "hsl(13, 76%, 62%)",
+      "secondary": "hsl(122, 68%, 64%)",
+      "glow": "hsl(31, 88%, 74%)",
+      "anchor": "hsl(61, 80%, 70%)"
+    },
+    "shaderLayers": 4,
+    "paletteVariance": 0.72,
+    "motionSpeedNormalized": 0.842,
+    "camera": {
+      "autoRotate": false,
+      "autoRotateSpeed": 0.096,
+      "minDistance": 6,
+      "maxDistance": 24,
+      "cycleSeconds": 24,
+      "beats": [
+        {
+          "t": 0,
+          "radius": 12.6,
+          "theta": 0.277,
+          "phi": 1.22,
+          "hold": 1
+        },
+        {
+          "t": 0.34,
+          "radius": 10.7,
+          "theta": 1.13,
+          "phi": 1.052,
+          "hold": 0.5
+        },
+        {
+          "t": 0.68,
+          "radius": 11.2,
+          "theta": 1.907,
+          "phi": 1.32,
+          "hold": 0.8
+        },
+        {
+          "t": 1,
+          "radius": 12.2,
+          "theta": 2.302,
+          "phi": 1.144,
+          "hold": 1.1
+        }
+      ]
+    },
+    "post": {
+      "vignette": 0.383,
+      "contrast": 1.109,
+      "saturation": 1.032,
+      "exposure": 0.956,
+      "breathing": {
+        "hueShift": 0.01,
+        "saturationAmplitude": 0.06,
+        "exposureAmplitude": 0.04,
+        "phaseA": 0.586,
+        "phaseB": 0.1185
+      }
+    },
+    "styleFingerprint": {
+      "pulseFamily": "balanced",
+      "stripeWarp": 0.14,
+      "edgeSoftness": 0.26,
+      "cameraSway": 0.16,
+      "edgeHardness": 0.36,
+      "temperatureBias": 0,
+      "verticalBias": 0,
+      "cadenceBias": -0.1
+    },
+    "seedVersion": 2,
+    "seeds": {
+      "baseSeed": 3919147989,
+      "runSeed": 2211104566,
+      "geomSeed": 2110823369,
+      "animSeed": 3492251148,
+      "colorSeed": 3930239060,
+      "cameraSeed": 1755564762
+    },
+    "techStack": {
+      "id": "particle-surge",
+      "name": "Particle-Heavy Surge",
+      "family": "particle-heavy",
+      "strategyFamilies": [
+        "fracture",
+        "hybrid",
+        "orbits"
+      ],
+      "rationale": {
+        "source": "loop-adjustment-alternate-stack",
+        "score": -1.694,
+        "penalties": [
+          "conflict<0.5",
+          "motion<0.55",
+          "turbulence<0.38"
+        ]
+      },
+      "dominantPrimitive": "particle-stream",
+      "moduleSet": [
+        "volumetric-haze",
+        "particle-cloud",
+        "anchor-core",
+        "particle-stream",
+        "drift-ribbon"
+      ],
+      "pipelineKind": "particle-heavy"
+    },
+    "visualProfileHints": {
+      "cadence": "steady",
+      "motionEnergy": 0.42,
+      "preferredModules": [
+        {
+          "name": "orbit-ribbon",
+          "weight": 0.74,
+          "reason": "circular cues"
+        }
+      ],
+      "preferredStackFamilies": [
+        {
+          "family": "shader-field",
+          "weight": 0.5,
+          "reason": "neutral fallback"
+        }
+      ],
+      "sourceAnalysis": {
+        "mode": "computer-vision",
+        "status": "ok",
+        "analyzedReferences": 7,
+        "failedReferences": 1,
+        "texture": {
+          "edgeEnergy": 0.036
+        },
+        "failures": [
+          {
+            "referenceId": "carlos-cruz-diez-07",
+            "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Cruz_Diez_wall.jpg/800px-Cruz_Diez_wall.jpg",
+            "reason": "Request failed 429 for https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Cruz_Diez_wall.jpg/800px-Cruz_Diez_wall.jpg"
+          }
+        ],
+        "note": null
+      }
+    },
+    "strategy": {
+      "id": "atomic-balanced-flow",
+      "name": "Balanced Flow Field",
+      "type": "atomic",
+      "family": "flow",
+      "cooldown": {
+        "window": 3,
+        "recentFamilies": [],
+        "family": "flow",
+        "applied": false
+      },
+      "compositeDemanded": false,
+      "signals": {
+        "conflict": 0.332,
+        "context": 0.628,
+        "moodDepth": 0.35
+      }
+    },
+    "layers": [
+      {
+        "role": "background",
+        "modules": [
+          "volumetric-haze"
+        ]
+      },
+      {
+        "role": "midground",
+        "modules": [
+          "motif-armature",
+          "signal-weave"
+        ]
+      },
+      {
+        "role": "foreground",
+        "modules": [
+          "anchor-core"
+        ]
+      },
+      {
+        "role": "accent",
+        "modules": [
+          "orbit-ribbon"
+        ]
+      },
+      {
+        "role": "post",
+        "modules": [
+          "post-breathing"
+        ]
+      }
+    ],
+    "renderPipeline": {
+      "kind": "particle-heavy",
+      "family": "particle-heavy",
+      "fallback": false,
+      "dominantPrimitive": "particle-stream",
+      "moduleSet": [
+        "volumetric-haze",
+        "particle-cloud",
+        "anchor-core",
+        "particle-stream",
+        "drift-ribbon"
+      ]
+    },
+    "elements": [
+      {
+        "role": "atmosphere-field",
+        "colorA": "bg",
+        "colorB": "secondary",
+        "opacity": 0.329,
+        "intensity": 0.552,
+        "animation": {
+          "drift": 0.262
+        },
+        "layer": "background",
+        "moduleType": "volumetric-haze"
+      },
+      {
+        "role": "echo-field",
+        "count": 55,
+        "spread": 3.824,
+        "jitter": 0.354,
+        "depth": 1.28,
+        "swirl": 0.199,
+        "color": "secondary",
+        "size": 0.101,
+        "opacity": 0.539,
+        "blend": "normal",
+        "animation": {
+          "rotationZ": -0.569,
+          "wobbleY": 0.105
+        },
+        "layer": "background",
+        "moduleType": "particle-cloud"
+      },
+      {
+        "role": "primary-signal",
+        "motif": "clusters",
+        "color": "anchor",
+        "auraColor": "glow",
+        "opacity": 0.635,
+        "size": 0.956,
+        "intensity": 0.772,
+        "animation": {
+          "rotationZ": 0.137,
+          "wobbleY": 0.132,
+          "pulse": 0.285
+        },
+        "layer": "foreground",
+        "moduleType": "anchor-core"
+      },
+      {
+        "role": "support-rhythm",
+        "color": "glow",
+        "opacity": 0.34,
+        "intensity": 0.52,
+        "animation": {
+          "rotationZ": 0.14,
+          "pulse": 0.2
+        },
+        "moduleType": "particle-stream"
+      },
+      {
+        "role": "support-rhythm",
+        "color": "glow",
+        "opacity": 0.34,
+        "intensity": 0.52,
+        "animation": {
+          "rotationZ": 0.14,
+          "pulse": 0.2
+        },
+        "moduleType": "drift-ribbon"
+      }
+    ],
+    "elementDiversity": 5
+  },
+  "sceneStrategy": {
+    "selected": {
+      "id": "atomic-balanced-flow",
+      "name": "Balanced Flow Field",
+      "type": "atomic",
+      "family": "flow"
+    },
+    "applied": true,
+    "fallbackReason": null
+  },
+  "techStack": {
+    "id": "particle-surge",
+    "name": "Particle-Heavy Surge",
+    "family": "particle-heavy"
+  },
+  "newsVisualMappings": [
+    {
+      "signal": "title evidence [federal, budget, climate] -> motif clusters",
+      "from": "federal, budget, climate",
+      "visualDecision": "structural motif armature set to clusters"
+    },
+    {
+      "signal": "composition foreground conflict",
+      "from": "intensify, budget, budget, budget",
+      "visualDecision": "foreground role tension-knot at pressure 0.527"
+    },
+    {
+      "signal": "composition midground context",
+      "from": "federal, budget, climate, federal, budget, climate",
+      "visualDecision": "midground role context-drift with density 0.557"
+    },
+    {
+      "signal": "composition background mood",
+      "from": "climate, climate, climate",
+      "visualDecision": "background mood watchful depth 0.386"
+    },
+    {
+      "signal": "urgency -> motion",
+      "from": "ageHours=60.65",
+      "visualDecision": "motionSpeedNormalized=0.842"
+    },
+    {
+      "signal": "title semantics -> palette/edge cadence",
+      "from": "temp=0 edge=0.36",
+      "visualDecision": "postContrast=1.109 accentType=n/a"
+    },
+    {
+      "signal": "article institutional/conflict polarity",
+      "from": "climate, intent-motif-hint",
+      "visualDecision": "accent primitive n/a with opacity n/a"
+    },
+    {
+      "signal": "artist grammar Carlos Cruz-Diez",
+      "from": "style card op-stripes · retinal-vibration · high-frequency-bands · distributed-field",
+      "visualDecision": "camera beat choreography + palette topology constrained to artist envelope"
+    }
+  ],
+  "qualityScore": {
+    "score": 48.6,
+    "summary": "Alignment 74.6 with strongest channel style.",
+    "heuristic": {
+      "score": 64.1,
+      "breakdown": {
+        "legibility": 77,
+        "emotionalReadability": 77.3,
+        "coherence": 79.2,
+        "focalAnchor": 70.2,
+        "technicalRichness": 100,
+        "restraint": 0,
+        "alignment": 74.6
+      }
+    },
+    "calibration": {
+      "sampleCount": 1,
+      "trustWeight": 0.4
+    },
+    "alignment": {
+      "totalAlign": 74.6,
+      "components": {
+        "title": {
+          "score": 59.2
+        },
+        "style": {
+          "score": 86.4
+        },
+        "emotional": {
+          "score": 74.4
+        }
+      }
+    }
+  },
+  "rationale": {
+    "intent": {
+      "signal": null,
+      "emotion": null,
+      "tension": null,
+      "balance": null,
+      "motion": null
+    },
+    "selection": {
+      "whyHeadline": "Selected as top-ranked Belgian headline (score 18 = frequency 9 + priority 9 + recency 0).",
+      "priorityTerms": [
+        "federal",
+        "budget",
+        "climate"
+      ]
+    },
+    "qualitySummary": "TOTAL_ALIGN 74.6."
+  },
+  "runPolicy": {
+    "artworksPerRun": 1,
+    "multiVariant": false
+  },
+  "artFramework": {
+    "version": 3,
+    "intent": {
+      "statement": "Carlos Cruz-Diez was a Venezuelan artist who played a central role in the development of Kinetic and Op art. In response to \"Belgian federal talks intensify around budget and climate priorities\", the artwork should translate civic signal into an abstract composition with a clear emotional center. Carlos Cruz-Diez was a Venezuelan artist who played a central role in the development of Kinetic and Op art.",
+      "narrativeBridge": "Carlos Cruz-Diez was a Venezuelan artist who played a central role in the development of Kinetic and Op art. Carlos Cruz-Diez was a Venezuelan artist who played a central role in the development of Kinetic and Op art.",
+      "motifHint": "clusters",
+      "emotionalCenter": "measured structural drift"
+    }
+  },
+  "image": {
+    "publicJpeg": "./data/media/2026-02-15-pulse-of-belgian-federal-talks-v3/artwork-720.jpg",
+    "thumbnailJpeg": "./data/media/2026-02-15-pulse-of-belgian-federal-talks-v3/thumb-320.jpg",
+    "instagramJpeg": "./data/media/2026-02-15-pulse-of-belgian-federal-talks-v3/instagram-1080x1350.jpg",
+    "altText": "Pulse of Belgian federal talks by Carlos Cruz-Diez."
+  }
+}
