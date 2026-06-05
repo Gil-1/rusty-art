@@ -31,6 +31,7 @@ const shellOptions = resolveRuntimeShellOptions({
 });
 const {
   captureMode,
+  captureProfile,
   forcedView,
   requestedIndex,
   requestedArtworkSlug,
@@ -98,6 +99,7 @@ const adaptiveOverlaySession = createAdaptiveOverlaySession({
 const runtimeController = createRuntimeController({
   canvas,
   captureMode,
+  captureProfile,
   rendererRequest,
   postProcessingRequest,
   captureStateController,

@@ -21,6 +21,7 @@ export function resolveRuntimeShellOptions({
   const postProcessingRequest = resolvePostProcessingRequestFromSearchParams(windowRef.location?.search || '');
   return {
     captureMode: captureRoute.captureMode,
+    captureProfile: captureRoute.captureProfile,
     forcedView: captureRoute.forcedView,
     requestedIndex: captureRoute.requestedIndex,
     requestedArtworkSlug: captureRoute.requestedArtworkSlug,
