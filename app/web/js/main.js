@@ -75,9 +75,10 @@ const {
   postProcessingRequest,
   prefersReducedMotion
 } = shellOptions;
+const runtimeRefs = queryRuntimeDomRefs(document);
+let { canvas } = runtimeRefs;
 const {
   artFirst,
-  canvas,
   meta,
   archiveList,
   loadMoreButton,
@@ -105,7 +106,7 @@ const {
   storyToggle,
   heroHeadlineToggle,
   mobileChromeToggle
-} = queryRuntimeDomRefs(document);
+} = runtimeRefs;
 let presentationState = createInitialPresentationState({
   storedMotionMode: shellOptions.storedMotionMode,
   prefersReducedMotion,
@@ -147,7 +148,12 @@ const runtimeController = createRuntimeController({
     renderEffects?.startAdaptiveOverlayLoop?.();
   },
   onSceneStatusChange: () => renderEffects?.render?.syncRenderStatus?.(),
-  onSceneLoadProgress: (progress) => renderEffects?.render?.setSceneProgress?.(progress)
+  onSceneLoadProgress: (progress) => renderEffects?.render?.setSceneProgress?.(progress),
+  onCanvasReplaced: (nextCanvas) => {
+    canvas = nextCanvas;
+    runtimeRefs.canvas = nextCanvas;
+    adaptiveOverlaySession?.setCanvas?.(nextCanvas);
+  }
 });
 
 renderEffects = createRuntimeRenderEffects({
