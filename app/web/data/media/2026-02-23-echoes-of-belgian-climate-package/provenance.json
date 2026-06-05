@@ -12,6 +12,11 @@
       "role": "public-archive-fallback-render",
       "sha256": "b309efe87b43ba5726f92553b557a3e9a286684f3475380d91c42173931c5629"
     },
+    "openGraph": {
+      "kind": "fallback-render",
+      "role": "public-archive-open-graph-render",
+      "sha256": "7123380dc188739ea36f1396e4299f602581c4589b8d7fc1e60edcaf4b37d583"
+    },
     "instagram": {
       "kind": "fallback-render",
       "role": "public-archive-instagram-render",
@@ -19,22 +24,6 @@
     }
   },
   "targets": {
-    "artwork-720.jpg": {
-      "spec": {
-        "fileName": "artwork-720.jpg",
-        "width": 1280,
-        "height": 720,
-        "fit": "inside",
-        "withoutEnlargement": true,
-        "format": "jpeg",
-        "quality": 86
-      },
-      "publicPath": "./data/media/2026-02-23-echoes-of-belgian-climate-package/artwork-720.jpg",
-      "source": {
-        "sha256": "b309efe87b43ba5726f92553b557a3e9a286684f3475380d91c42173931c5629",
-        "role": "public-archive-fallback-render"
-      }
-    },
     "thumb-320.jpg": {
       "spec": {
         "fileName": "thumb-320.jpg",
@@ -49,6 +38,22 @@
       "source": {
         "sha256": "b309efe87b43ba5726f92553b557a3e9a286684f3475380d91c42173931c5629",
         "role": "public-archive-fallback-render"
+      }
+    },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-02-23-echoes-of-belgian-climate-package/og-1200x630.jpg",
+      "source": {
+        "sha256": "7123380dc188739ea36f1396e4299f602581c4589b8d7fc1e60edcaf4b37d583",
+        "role": "public-archive-open-graph-render"
       }
     },
     "instagram-1080x1440.jpg": {

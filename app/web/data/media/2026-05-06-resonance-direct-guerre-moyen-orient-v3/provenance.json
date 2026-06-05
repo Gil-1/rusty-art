@@ -12,6 +12,11 @@
       "role": "public-archive-fallback-render",
       "sha256": "af163fc885f0a858fa8196ead6fb4876d94b1bfb8b26ef871878d75c404fe87c"
     },
+    "openGraph": {
+      "kind": "fallback-render",
+      "role": "public-archive-open-graph-render",
+      "sha256": "a0957774b4262b75babed4df87ca44fa46b11d8cd72a40e3fccc910685374cbd"
+    },
     "instagram": {
       "kind": "fallback-render",
       "role": "public-archive-instagram-render",
@@ -19,22 +24,6 @@
     }
   },
   "targets": {
-    "artwork-720.jpg": {
-      "spec": {
-        "fileName": "artwork-720.jpg",
-        "width": 1280,
-        "height": 720,
-        "fit": "inside",
-        "withoutEnlargement": true,
-        "format": "jpeg",
-        "quality": 86
-      },
-      "publicPath": "./data/media/2026-05-06-resonance-direct-guerre-moyen-orient-v3/artwork-720.jpg",
-      "source": {
-        "sha256": "af163fc885f0a858fa8196ead6fb4876d94b1bfb8b26ef871878d75c404fe87c",
-        "role": "public-archive-fallback-render"
-      }
-    },
     "thumb-320.jpg": {
       "spec": {
         "fileName": "thumb-320.jpg",
@@ -49,6 +38,22 @@
       "source": {
         "sha256": "af163fc885f0a858fa8196ead6fb4876d94b1bfb8b26ef871878d75c404fe87c",
         "role": "public-archive-fallback-render"
+      }
+    },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-05-06-resonance-direct-guerre-moyen-orient-v3/og-1200x630.jpg",
+      "source": {
+        "sha256": "a0957774b4262b75babed4df87ca44fa46b11d8cd72a40e3fccc910685374cbd",
+        "role": "public-archive-open-graph-render"
       }
     },
     "instagram-1080x1440.jpg": {

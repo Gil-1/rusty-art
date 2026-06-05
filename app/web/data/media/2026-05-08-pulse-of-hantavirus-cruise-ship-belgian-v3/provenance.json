@@ -12,6 +12,11 @@
       "role": "public-archive-fallback-render",
       "sha256": "50b28a394ac16885ff6c4daf005786ef958dcc93c69b0128321e5d0b16832703"
     },
+    "openGraph": {
+      "kind": "fallback-render",
+      "role": "public-archive-open-graph-render",
+      "sha256": "c376185058d02a6500d883e5445198057dd06bbe9b210b2e70889e4d9362829d"
+    },
     "instagram": {
       "kind": "fallback-render",
       "role": "public-archive-instagram-render",
@@ -19,22 +24,6 @@
     }
   },
   "targets": {
-    "artwork-720.jpg": {
-      "spec": {
-        "fileName": "artwork-720.jpg",
-        "width": 1280,
-        "height": 720,
-        "fit": "inside",
-        "withoutEnlargement": true,
-        "format": "jpeg",
-        "quality": 86
-      },
-      "publicPath": "./data/media/2026-05-08-pulse-of-hantavirus-cruise-ship-belgian-v3/artwork-720.jpg",
-      "source": {
-        "sha256": "50b28a394ac16885ff6c4daf005786ef958dcc93c69b0128321e5d0b16832703",
-        "role": "public-archive-fallback-render"
-      }
-    },
     "thumb-320.jpg": {
       "spec": {
         "fileName": "thumb-320.jpg",
@@ -49,6 +38,22 @@
       "source": {
         "sha256": "50b28a394ac16885ff6c4daf005786ef958dcc93c69b0128321e5d0b16832703",
         "role": "public-archive-fallback-render"
+      }
+    },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-05-08-pulse-of-hantavirus-cruise-ship-belgian-v3/og-1200x630.jpg",
+      "source": {
+        "sha256": "c376185058d02a6500d883e5445198057dd06bbe9b210b2e70889e4d9362829d",
+        "role": "public-archive-open-graph-render"
       }
     },
     "instagram-1080x1440.jpg": {

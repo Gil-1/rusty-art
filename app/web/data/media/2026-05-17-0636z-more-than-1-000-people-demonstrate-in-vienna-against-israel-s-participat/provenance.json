@@ -12,29 +12,18 @@
       "role": "public-archive-fallback-render",
       "sha256": "08177703d135ed1bb03f8fc1cbcdc3bf7f61a362b5438df9dd40f49d48bf503d"
     },
+    "openGraph": {
+      "kind": "fallback-render",
+      "role": "public-archive-open-graph-render",
+      "sha256": "f814cfa0f195702accc1a42a6653afd0d6cc89eb2b32404ab1c040324d0e3445"
+    },
     "instagram": {
       "kind": "fallback-render",
       "role": "public-archive-instagram-render",
-      "sha256": "df3de41eadbf617fb08e84435c013adc060e4ecf736344090f4a961b6e92acb3"
+      "sha256": "212cec9396f245645cd0862f9c3155b84c6e8ba1c5f7d21a9b4b1be1b160dbd3"
     }
   },
   "targets": {
-    "artwork-720.jpg": {
-      "spec": {
-        "fileName": "artwork-720.jpg",
-        "width": 1280,
-        "height": 720,
-        "fit": "inside",
-        "withoutEnlargement": true,
-        "format": "jpeg",
-        "quality": 86
-      },
-      "publicPath": "./data/media/2026-05-17-0636z-more-than-1-000-people-demonstrate-in-vienna-against-israel-s-participat/artwork-720.jpg",
-      "source": {
-        "sha256": "08177703d135ed1bb03f8fc1cbcdc3bf7f61a362b5438df9dd40f49d48bf503d",
-        "role": "public-archive-fallback-render"
-      }
-    },
     "thumb-320.jpg": {
       "spec": {
         "fileName": "thumb-320.jpg",
@@ -51,6 +40,22 @@
         "role": "public-archive-fallback-render"
       }
     },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-05-17-0636z-more-than-1-000-people-demonstrate-in-vienna-against-israel-s-participat/og-1200x630.jpg",
+      "source": {
+        "sha256": "f814cfa0f195702accc1a42a6653afd0d6cc89eb2b32404ab1c040324d0e3445",
+        "role": "public-archive-open-graph-render"
+      }
+    },
     "instagram-1080x1440.jpg": {
       "spec": {
         "fileName": "instagram-1080x1440.jpg",
@@ -63,7 +68,7 @@
       },
       "publicPath": "./data/media/2026-05-17-0636z-more-than-1-000-people-demonstrate-in-vienna-against-israel-s-participat/instagram-1080x1440.jpg",
       "source": {
-        "sha256": "df3de41eadbf617fb08e84435c013adc060e4ecf736344090f4a961b6e92acb3",
+        "sha256": "212cec9396f245645cd0862f9c3155b84c6e8ba1c5f7d21a9b4b1be1b160dbd3",
         "role": "public-archive-instagram-render"
       }
     }

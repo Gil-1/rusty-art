@@ -12,6 +12,11 @@
       "role": "public-archive-fallback-render",
       "sha256": "7d11f381a5070058ad690c89df6041add230f0c40730ea1ea97d5b52fc78e786"
     },
+    "openGraph": {
+      "kind": "fallback-render",
+      "role": "public-archive-open-graph-render",
+      "sha256": "22d9ea0ee91ada2814dd226e15b533a92b1e06b0d7f06ddbc1755f596bb17dc2"
+    },
     "instagram": {
       "kind": "fallback-render",
       "role": "public-archive-instagram-render",
@@ -19,22 +24,6 @@
     }
   },
   "targets": {
-    "artwork-720.jpg": {
-      "spec": {
-        "fileName": "artwork-720.jpg",
-        "width": 1280,
-        "height": 720,
-        "fit": "inside",
-        "withoutEnlargement": true,
-        "format": "jpeg",
-        "quality": 86
-      },
-      "publicPath": "./data/media/2026-02-19-pulse-of-belgian-federal-talks/artwork-720.jpg",
-      "source": {
-        "sha256": "7d11f381a5070058ad690c89df6041add230f0c40730ea1ea97d5b52fc78e786",
-        "role": "public-archive-fallback-render"
-      }
-    },
     "thumb-320.jpg": {
       "spec": {
         "fileName": "thumb-320.jpg",
@@ -49,6 +38,22 @@
       "source": {
         "sha256": "7d11f381a5070058ad690c89df6041add230f0c40730ea1ea97d5b52fc78e786",
         "role": "public-archive-fallback-render"
+      }
+    },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-02-19-pulse-of-belgian-federal-talks/og-1200x630.jpg",
+      "source": {
+        "sha256": "22d9ea0ee91ada2814dd226e15b533a92b1e06b0d7f06ddbc1755f596bb17dc2",
+        "role": "public-archive-open-graph-render"
       }
     },
     "instagram-1080x1440.jpg": {

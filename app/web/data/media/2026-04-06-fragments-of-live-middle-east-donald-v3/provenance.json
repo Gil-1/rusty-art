@@ -12,6 +12,11 @@
       "role": "public-archive-fallback-render",
       "sha256": "a93bfaae98eeeb0d3753bba0960c3cd5a9c55a3ae6d4d298fc120b5325dfdf9c"
     },
+    "openGraph": {
+      "kind": "fallback-render",
+      "role": "public-archive-open-graph-render",
+      "sha256": "e2b45d77857bffa2c2db6e470594c1b116a06cd9e75f4ca14f8a711669087127"
+    },
     "instagram": {
       "kind": "fallback-render",
       "role": "public-archive-instagram-render",
@@ -19,22 +24,6 @@
     }
   },
   "targets": {
-    "artwork-720.jpg": {
-      "spec": {
-        "fileName": "artwork-720.jpg",
-        "width": 1280,
-        "height": 720,
-        "fit": "inside",
-        "withoutEnlargement": true,
-        "format": "jpeg",
-        "quality": 86
-      },
-      "publicPath": "./data/media/2026-04-06-fragments-of-live-middle-east-donald-v3/artwork-720.jpg",
-      "source": {
-        "sha256": "a93bfaae98eeeb0d3753bba0960c3cd5a9c55a3ae6d4d298fc120b5325dfdf9c",
-        "role": "public-archive-fallback-render"
-      }
-    },
     "thumb-320.jpg": {
       "spec": {
         "fileName": "thumb-320.jpg",
@@ -49,6 +38,22 @@
       "source": {
         "sha256": "a93bfaae98eeeb0d3753bba0960c3cd5a9c55a3ae6d4d298fc120b5325dfdf9c",
         "role": "public-archive-fallback-render"
+      }
+    },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-04-06-fragments-of-live-middle-east-donald-v3/og-1200x630.jpg",
+      "source": {
+        "sha256": "e2b45d77857bffa2c2db6e470594c1b116a06cd9e75f4ca14f8a711669087127",
+        "role": "public-archive-open-graph-render"
       }
     },
     "instagram-1080x1440.jpg": {

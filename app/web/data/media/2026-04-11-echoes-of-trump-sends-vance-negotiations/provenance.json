@@ -12,6 +12,11 @@
       "role": "public-archive-fallback-render",
       "sha256": "9cb49e34bda25aaade0831733270974c2490095f65e7a0265704531b1af16a12"
     },
+    "openGraph": {
+      "kind": "fallback-render",
+      "role": "public-archive-open-graph-render",
+      "sha256": "9bacf49db7e1d00234116a3ded70a70ca026c6bf00eb9eecd3fe6e299d1d596e"
+    },
     "instagram": {
       "kind": "fallback-render",
       "role": "public-archive-instagram-render",
@@ -19,22 +24,6 @@
     }
   },
   "targets": {
-    "artwork-720.jpg": {
-      "spec": {
-        "fileName": "artwork-720.jpg",
-        "width": 1280,
-        "height": 720,
-        "fit": "inside",
-        "withoutEnlargement": true,
-        "format": "jpeg",
-        "quality": 86
-      },
-      "publicPath": "./data/media/2026-04-11-echoes-of-trump-sends-vance-negotiations/artwork-720.jpg",
-      "source": {
-        "sha256": "9cb49e34bda25aaade0831733270974c2490095f65e7a0265704531b1af16a12",
-        "role": "public-archive-fallback-render"
-      }
-    },
     "thumb-320.jpg": {
       "spec": {
         "fileName": "thumb-320.jpg",
@@ -49,6 +38,22 @@
       "source": {
         "sha256": "9cb49e34bda25aaade0831733270974c2490095f65e7a0265704531b1af16a12",
         "role": "public-archive-fallback-render"
+      }
+    },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-04-11-echoes-of-trump-sends-vance-negotiations/og-1200x630.jpg",
+      "source": {
+        "sha256": "9bacf49db7e1d00234116a3ded70a70ca026c6bf00eb9eecd3fe6e299d1d596e",
+        "role": "public-archive-open-graph-render"
       }
     },
     "instagram-1080x1440.jpg": {

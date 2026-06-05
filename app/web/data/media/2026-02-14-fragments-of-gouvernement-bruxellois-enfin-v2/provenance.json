@@ -12,6 +12,11 @@
       "role": "public-archive-fallback-render",
       "sha256": "844057d54cab817246d80cdc61d8e1a797186fb651ad6b76179df58a1c3a6be7"
     },
+    "openGraph": {
+      "kind": "fallback-render",
+      "role": "public-archive-open-graph-render",
+      "sha256": "4218f0d7334bc1a35513e3767e81627c343c3d760de4c9fc319d92ac56326a5f"
+    },
     "instagram": {
       "kind": "fallback-render",
       "role": "public-archive-instagram-render",
@@ -19,22 +24,6 @@
     }
   },
   "targets": {
-    "artwork-720.jpg": {
-      "spec": {
-        "fileName": "artwork-720.jpg",
-        "width": 1280,
-        "height": 720,
-        "fit": "inside",
-        "withoutEnlargement": true,
-        "format": "jpeg",
-        "quality": 86
-      },
-      "publicPath": "./data/media/2026-02-14-fragments-of-gouvernement-bruxellois-enfin-v2/artwork-720.jpg",
-      "source": {
-        "sha256": "844057d54cab817246d80cdc61d8e1a797186fb651ad6b76179df58a1c3a6be7",
-        "role": "public-archive-fallback-render"
-      }
-    },
     "thumb-320.jpg": {
       "spec": {
         "fileName": "thumb-320.jpg",
@@ -49,6 +38,22 @@
       "source": {
         "sha256": "844057d54cab817246d80cdc61d8e1a797186fb651ad6b76179df58a1c3a6be7",
         "role": "public-archive-fallback-render"
+      }
+    },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-02-14-fragments-of-gouvernement-bruxellois-enfin-v2/og-1200x630.jpg",
+      "source": {
+        "sha256": "4218f0d7334bc1a35513e3767e81627c343c3d760de4c9fc319d92ac56326a5f",
+        "role": "public-archive-open-graph-render"
       }
     },
     "instagram-1080x1440.jpg": {

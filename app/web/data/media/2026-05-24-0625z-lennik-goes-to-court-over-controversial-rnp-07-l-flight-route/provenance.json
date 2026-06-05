@@ -12,29 +12,18 @@
       "role": "daily-preview-story-desktop",
       "sha256": "626372086bb3255b631b855c6dfd0d1e1abc392a350cef768c4d8f34993bea9d"
     },
+    "openGraph": {
+      "kind": "fallback-render",
+      "role": "public-archive-open-graph-render",
+      "sha256": "506a23bfe61a4483e42810051f5064f6fa72878c8f186cd3a972887a9a831bbe"
+    },
     "instagram": {
       "kind": "fallback-render",
       "role": "public-archive-instagram-render",
-      "sha256": "d633a9e72149e260774a351003ce8950a2e3a28dbdcc965a0276f9473ddb79b1"
+      "sha256": "3509b628152fba9c53073fff38aad72f6c7f8e6c76ca1c4a97c42960e1039859"
     }
   },
   "targets": {
-    "artwork-720.jpg": {
-      "spec": {
-        "fileName": "artwork-720.jpg",
-        "width": 1280,
-        "height": 720,
-        "fit": "inside",
-        "withoutEnlargement": true,
-        "format": "jpeg",
-        "quality": 86
-      },
-      "publicPath": "./data/media/2026-05-24-0625z-lennik-goes-to-court-over-controversial-rnp-07-l-flight-route/artwork-720.jpg",
-      "source": {
-        "sha256": "626372086bb3255b631b855c6dfd0d1e1abc392a350cef768c4d8f34993bea9d",
-        "role": "daily-preview-story-desktop"
-      }
-    },
     "thumb-320.jpg": {
       "spec": {
         "fileName": "thumb-320.jpg",
@@ -51,6 +40,22 @@
         "role": "daily-preview-story-desktop"
       }
     },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-05-24-0625z-lennik-goes-to-court-over-controversial-rnp-07-l-flight-route/og-1200x630.jpg",
+      "source": {
+        "sha256": "506a23bfe61a4483e42810051f5064f6fa72878c8f186cd3a972887a9a831bbe",
+        "role": "public-archive-open-graph-render"
+      }
+    },
     "instagram-1080x1440.jpg": {
       "spec": {
         "fileName": "instagram-1080x1440.jpg",
@@ -63,7 +68,7 @@
       },
       "publicPath": "./data/media/2026-05-24-0625z-lennik-goes-to-court-over-controversial-rnp-07-l-flight-route/instagram-1080x1440.jpg",
       "source": {
-        "sha256": "d633a9e72149e260774a351003ce8950a2e3a28dbdcc965a0276f9473ddb79b1",
+        "sha256": "3509b628152fba9c53073fff38aad72f6c7f8e6c76ca1c4a97c42960e1039859",
         "role": "public-archive-instagram-render"
       }
     }

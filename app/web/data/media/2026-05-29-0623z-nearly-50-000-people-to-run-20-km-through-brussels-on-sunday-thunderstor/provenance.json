@@ -12,29 +12,18 @@
       "role": "daily-preview-story-desktop",
       "sha256": "8464ed4a84c6b7dd6b6cb7247e8cfa0cbf3ce1ee03500146c792f12b2b374211"
     },
+    "openGraph": {
+      "kind": "fallback-render",
+      "role": "public-archive-open-graph-render",
+      "sha256": "9ec950677c5b89c379362fd819696a06029aa4340a2d4b7e58b828859c51f259"
+    },
     "instagram": {
       "kind": "fallback-render",
       "role": "public-archive-instagram-render",
-      "sha256": "e79b9fe6035c9a4fa491cd0e35c3f741354fe36ede07953125390db9449ea0d8"
+      "sha256": "9629ee8056e5489cef199cca75d261b405db0f850c8d65c61fea01fed13cdde5"
     }
   },
   "targets": {
-    "artwork-720.jpg": {
-      "spec": {
-        "fileName": "artwork-720.jpg",
-        "width": 1280,
-        "height": 720,
-        "fit": "inside",
-        "withoutEnlargement": true,
-        "format": "jpeg",
-        "quality": 86
-      },
-      "publicPath": "./data/media/2026-05-29-0623z-nearly-50-000-people-to-run-20-km-through-brussels-on-sunday-thunderstor/artwork-720.jpg",
-      "source": {
-        "sha256": "8464ed4a84c6b7dd6b6cb7247e8cfa0cbf3ce1ee03500146c792f12b2b374211",
-        "role": "daily-preview-story-desktop"
-      }
-    },
     "thumb-320.jpg": {
       "spec": {
         "fileName": "thumb-320.jpg",
@@ -51,6 +40,22 @@
         "role": "daily-preview-story-desktop"
       }
     },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-05-29-0623z-nearly-50-000-people-to-run-20-km-through-brussels-on-sunday-thunderstor/og-1200x630.jpg",
+      "source": {
+        "sha256": "9ec950677c5b89c379362fd819696a06029aa4340a2d4b7e58b828859c51f259",
+        "role": "public-archive-open-graph-render"
+      }
+    },
     "instagram-1080x1440.jpg": {
       "spec": {
         "fileName": "instagram-1080x1440.jpg",
@@ -63,7 +68,7 @@
       },
       "publicPath": "./data/media/2026-05-29-0623z-nearly-50-000-people-to-run-20-km-through-brussels-on-sunday-thunderstor/instagram-1080x1440.jpg",
       "source": {
-        "sha256": "e79b9fe6035c9a4fa491cd0e35c3f741354fe36ede07953125390db9449ea0d8",
+        "sha256": "9629ee8056e5489cef199cca75d261b405db0f850c8d65c61fea01fed13cdde5",
         "role": "public-archive-instagram-render"
       }
     }

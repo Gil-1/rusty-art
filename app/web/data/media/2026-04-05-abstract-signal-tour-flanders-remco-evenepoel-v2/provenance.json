@@ -12,6 +12,11 @@
       "role": "public-archive-fallback-render",
       "sha256": "814880f0ae0af32b1d5b74bf0ad805614a0fa2be7fdfbf8ea462db64f12930d9"
     },
+    "openGraph": {
+      "kind": "fallback-render",
+      "role": "public-archive-open-graph-render",
+      "sha256": "8cc350cfe2ad65636c6da20bd50f6804537a71b72b929ca0a053a8aa38ada38c"
+    },
     "instagram": {
       "kind": "fallback-render",
       "role": "public-archive-instagram-render",
@@ -19,22 +24,6 @@
     }
   },
   "targets": {
-    "artwork-720.jpg": {
-      "spec": {
-        "fileName": "artwork-720.jpg",
-        "width": 1280,
-        "height": 720,
-        "fit": "inside",
-        "withoutEnlargement": true,
-        "format": "jpeg",
-        "quality": 86
-      },
-      "publicPath": "./data/media/2026-04-05-abstract-signal-tour-flanders-remco-evenepoel-v2/artwork-720.jpg",
-      "source": {
-        "sha256": "814880f0ae0af32b1d5b74bf0ad805614a0fa2be7fdfbf8ea462db64f12930d9",
-        "role": "public-archive-fallback-render"
-      }
-    },
     "thumb-320.jpg": {
       "spec": {
         "fileName": "thumb-320.jpg",
@@ -49,6 +38,22 @@
       "source": {
         "sha256": "814880f0ae0af32b1d5b74bf0ad805614a0fa2be7fdfbf8ea462db64f12930d9",
         "role": "public-archive-fallback-render"
+      }
+    },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-04-05-abstract-signal-tour-flanders-remco-evenepoel-v2/og-1200x630.jpg",
+      "source": {
+        "sha256": "8cc350cfe2ad65636c6da20bd50f6804537a71b72b929ca0a053a8aa38ada38c",
+        "role": "public-archive-open-graph-render"
       }
     },
     "instagram-1080x1440.jpg": {

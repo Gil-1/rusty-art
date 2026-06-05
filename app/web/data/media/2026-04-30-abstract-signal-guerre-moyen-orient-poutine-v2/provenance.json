@@ -12,6 +12,11 @@
       "role": "public-archive-fallback-render",
       "sha256": "708a0e988802e965da962137f4c726f0854d0669e428a6a79e4153dd8663d6a5"
     },
+    "openGraph": {
+      "kind": "fallback-render",
+      "role": "public-archive-open-graph-render",
+      "sha256": "b5df0e3a61014f11336ce75bb4dd812433f736549d818a636933e90da7e2d2fc"
+    },
     "instagram": {
       "kind": "fallback-render",
       "role": "public-archive-instagram-render",
@@ -19,22 +24,6 @@
     }
   },
   "targets": {
-    "artwork-720.jpg": {
-      "spec": {
-        "fileName": "artwork-720.jpg",
-        "width": 1280,
-        "height": 720,
-        "fit": "inside",
-        "withoutEnlargement": true,
-        "format": "jpeg",
-        "quality": 86
-      },
-      "publicPath": "./data/media/2026-04-30-abstract-signal-guerre-moyen-orient-poutine-v2/artwork-720.jpg",
-      "source": {
-        "sha256": "708a0e988802e965da962137f4c726f0854d0669e428a6a79e4153dd8663d6a5",
-        "role": "public-archive-fallback-render"
-      }
-    },
     "thumb-320.jpg": {
       "spec": {
         "fileName": "thumb-320.jpg",
@@ -49,6 +38,22 @@
       "source": {
         "sha256": "708a0e988802e965da962137f4c726f0854d0669e428a6a79e4153dd8663d6a5",
         "role": "public-archive-fallback-render"
+      }
+    },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-04-30-abstract-signal-guerre-moyen-orient-poutine-v2/og-1200x630.jpg",
+      "source": {
+        "sha256": "b5df0e3a61014f11336ce75bb4dd812433f736549d818a636933e90da7e2d2fc",
+        "role": "public-archive-open-graph-render"
       }
     },
     "instagram-1080x1440.jpg": {

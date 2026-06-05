@@ -12,6 +12,11 @@
       "role": "public-archive-fallback-render",
       "sha256": "a5b15a0af024794939f7d5a391ad2140059d2d02662c4a4b4527228a9e49f642"
     },
+    "openGraph": {
+      "kind": "fallback-render",
+      "role": "public-archive-open-graph-render",
+      "sha256": "96ce76d2b4252f5604567b4ff317be6bc402b8491ba6af31234121e993782ca6"
+    },
     "instagram": {
       "kind": "fallback-render",
       "role": "public-archive-instagram-render",
@@ -19,22 +24,6 @@
     }
   },
   "targets": {
-    "artwork-720.jpg": {
-      "spec": {
-        "fileName": "artwork-720.jpg",
-        "width": 1280,
-        "height": 720,
-        "fit": "inside",
-        "withoutEnlargement": true,
-        "format": "jpeg",
-        "quality": 86
-      },
-      "publicPath": "./data/media/2026-02-16-fragments-of-budget-negotiations-continue/artwork-720.jpg",
-      "source": {
-        "sha256": "a5b15a0af024794939f7d5a391ad2140059d2d02662c4a4b4527228a9e49f642",
-        "role": "public-archive-fallback-render"
-      }
-    },
     "thumb-320.jpg": {
       "spec": {
         "fileName": "thumb-320.jpg",
@@ -49,6 +38,22 @@
       "source": {
         "sha256": "a5b15a0af024794939f7d5a391ad2140059d2d02662c4a4b4527228a9e49f642",
         "role": "public-archive-fallback-render"
+      }
+    },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-02-16-fragments-of-budget-negotiations-continue/og-1200x630.jpg",
+      "source": {
+        "sha256": "96ce76d2b4252f5604567b4ff317be6bc402b8491ba6af31234121e993782ca6",
+        "role": "public-archive-open-graph-render"
       }
     },
     "instagram-1080x1440.jpg": {

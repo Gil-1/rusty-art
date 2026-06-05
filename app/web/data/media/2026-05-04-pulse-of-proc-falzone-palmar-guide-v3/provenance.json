@@ -12,6 +12,11 @@
       "role": "public-archive-fallback-render",
       "sha256": "4969759678ea183dbced1e91faf5f43d6d37ce8a2240678a8b9f5421ddfbac03"
     },
+    "openGraph": {
+      "kind": "fallback-render",
+      "role": "public-archive-open-graph-render",
+      "sha256": "3d6232c6f867f0eee7bb3848f6fdfa66b8f349c6cceebf55e4fa693e9cc48f7b"
+    },
     "instagram": {
       "kind": "fallback-render",
       "role": "public-archive-instagram-render",
@@ -19,22 +24,6 @@
     }
   },
   "targets": {
-    "artwork-720.jpg": {
-      "spec": {
-        "fileName": "artwork-720.jpg",
-        "width": 1280,
-        "height": 720,
-        "fit": "inside",
-        "withoutEnlargement": true,
-        "format": "jpeg",
-        "quality": 86
-      },
-      "publicPath": "./data/media/2026-05-04-pulse-of-proc-falzone-palmar-guide-v3/artwork-720.jpg",
-      "source": {
-        "sha256": "4969759678ea183dbced1e91faf5f43d6d37ce8a2240678a8b9f5421ddfbac03",
-        "role": "public-archive-fallback-render"
-      }
-    },
     "thumb-320.jpg": {
       "spec": {
         "fileName": "thumb-320.jpg",
@@ -49,6 +38,22 @@
       "source": {
         "sha256": "4969759678ea183dbced1e91faf5f43d6d37ce8a2240678a8b9f5421ddfbac03",
         "role": "public-archive-fallback-render"
+      }
+    },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-05-04-pulse-of-proc-falzone-palmar-guide-v3/og-1200x630.jpg",
+      "source": {
+        "sha256": "3d6232c6f867f0eee7bb3848f6fdfa66b8f349c6cceebf55e4fa693e9cc48f7b",
+        "role": "public-archive-open-graph-render"
       }
     },
     "instagram-1080x1440.jpg": {

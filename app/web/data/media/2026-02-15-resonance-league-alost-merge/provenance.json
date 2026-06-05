@@ -12,6 +12,11 @@
       "role": "public-archive-fallback-render",
       "sha256": "3f414524c1e562a4fe538d4f17f1e016f883ab9e1eff426365364735dd16e58b"
     },
+    "openGraph": {
+      "kind": "fallback-render",
+      "role": "public-archive-open-graph-render",
+      "sha256": "8d414a24c13358636fa9673e2e8da4a41a1f11bcf7834455fe51d2c0c3bf48d7"
+    },
     "instagram": {
       "kind": "fallback-render",
       "role": "public-archive-instagram-render",
@@ -19,22 +24,6 @@
     }
   },
   "targets": {
-    "artwork-720.jpg": {
-      "spec": {
-        "fileName": "artwork-720.jpg",
-        "width": 1280,
-        "height": 720,
-        "fit": "inside",
-        "withoutEnlargement": true,
-        "format": "jpeg",
-        "quality": 86
-      },
-      "publicPath": "./data/media/2026-02-15-resonance-league-alost-merge/artwork-720.jpg",
-      "source": {
-        "sha256": "3f414524c1e562a4fe538d4f17f1e016f883ab9e1eff426365364735dd16e58b",
-        "role": "public-archive-fallback-render"
-      }
-    },
     "thumb-320.jpg": {
       "spec": {
         "fileName": "thumb-320.jpg",
@@ -49,6 +38,22 @@
       "source": {
         "sha256": "3f414524c1e562a4fe538d4f17f1e016f883ab9e1eff426365364735dd16e58b",
         "role": "public-archive-fallback-render"
+      }
+    },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-02-15-resonance-league-alost-merge/og-1200x630.jpg",
+      "source": {
+        "sha256": "8d414a24c13358636fa9673e2e8da4a41a1f11bcf7834455fe51d2c0c3bf48d7",
+        "role": "public-archive-open-graph-render"
       }
     },
     "instagram-1080x1440.jpg": {

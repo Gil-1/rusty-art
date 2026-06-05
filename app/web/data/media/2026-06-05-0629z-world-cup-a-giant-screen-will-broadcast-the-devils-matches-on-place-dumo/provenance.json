@@ -12,6 +12,11 @@
       "role": "daily-preview-story-desktop",
       "sha256": "29d3afd0c250ac36e0e5c08a6b524d1ba861a2e68f2cc6afd638221c3cf53045"
     },
+    "openGraph": {
+      "kind": "fallback-render",
+      "role": "public-archive-open-graph-render",
+      "sha256": "4a7de981951215eb7509927297a0bb2a5cefd5c6d382f4be17ecd5d892c29d46"
+    },
     "instagram": {
       "kind": "run-capture",
       "role": "daily-preview-story-instagram",
@@ -19,22 +24,6 @@
     }
   },
   "targets": {
-    "artwork-720.jpg": {
-      "spec": {
-        "fileName": "artwork-720.jpg",
-        "width": 1280,
-        "height": 720,
-        "fit": "inside",
-        "withoutEnlargement": true,
-        "format": "jpeg",
-        "quality": 86
-      },
-      "publicPath": "./data/media/2026-06-05-0629z-world-cup-a-giant-screen-will-broadcast-the-devils-matches-on-place-dumo/artwork-720.jpg",
-      "source": {
-        "sha256": "29d3afd0c250ac36e0e5c08a6b524d1ba861a2e68f2cc6afd638221c3cf53045",
-        "role": "daily-preview-story-desktop"
-      }
-    },
     "thumb-320.jpg": {
       "spec": {
         "fileName": "thumb-320.jpg",
@@ -49,6 +38,22 @@
       "source": {
         "sha256": "29d3afd0c250ac36e0e5c08a6b524d1ba861a2e68f2cc6afd638221c3cf53045",
         "role": "daily-preview-story-desktop"
+      }
+    },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-06-05-0629z-world-cup-a-giant-screen-will-broadcast-the-devils-matches-on-place-dumo/og-1200x630.jpg",
+      "source": {
+        "sha256": "4a7de981951215eb7509927297a0bb2a5cefd5c6d382f4be17ecd5d892c29d46",
+        "role": "public-archive-open-graph-render"
       }
     },
     "instagram-1080x1440.jpg": {

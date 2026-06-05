@@ -12,6 +12,11 @@
       "role": "public-archive-fallback-render",
       "sha256": "cc28edb41b28018b2cb54df777fc7255a0974b8dc1764c783436c28dd819b424"
     },
+    "openGraph": {
+      "kind": "fallback-render",
+      "role": "public-archive-open-graph-render",
+      "sha256": "90262aa4ea494ec1da871c19fd0094399f46d4b31d5d24fb90a3ee81ae48046c"
+    },
     "instagram": {
       "kind": "fallback-render",
       "role": "public-archive-instagram-render",
@@ -19,22 +24,6 @@
     }
   },
   "targets": {
-    "artwork-720.jpg": {
-      "spec": {
-        "fileName": "artwork-720.jpg",
-        "width": 1280,
-        "height": 720,
-        "fit": "inside",
-        "withoutEnlargement": true,
-        "format": "jpeg",
-        "quality": 86
-      },
-      "publicPath": "./data/media/2026-05-02-resonance-donald-trump-annonce-vouloir/artwork-720.jpg",
-      "source": {
-        "sha256": "cc28edb41b28018b2cb54df777fc7255a0974b8dc1764c783436c28dd819b424",
-        "role": "public-archive-fallback-render"
-      }
-    },
     "thumb-320.jpg": {
       "spec": {
         "fileName": "thumb-320.jpg",
@@ -49,6 +38,22 @@
       "source": {
         "sha256": "cc28edb41b28018b2cb54df777fc7255a0974b8dc1764c783436c28dd819b424",
         "role": "public-archive-fallback-render"
+      }
+    },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-05-02-resonance-donald-trump-annonce-vouloir/og-1200x630.jpg",
+      "source": {
+        "sha256": "90262aa4ea494ec1da871c19fd0094399f46d4b31d5d24fb90a3ee81ae48046c",
+        "role": "public-archive-open-graph-render"
       }
     },
     "instagram-1080x1440.jpg": {

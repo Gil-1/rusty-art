@@ -6,7 +6,7 @@ import {
 export const RUSTY_SITE_NAME = 'Rusty Art';
 export const DEFAULT_SHARE_TITLE = 'Rusty Art - Daily Belgian News Abstractions';
 export const DEFAULT_SHARE_DESCRIPTION = 'Daily Belgian headlines translated into calm, meaningful abstract artwork.';
-export const DEFAULT_OG_IMAGE_SIZE = Object.freeze({ width: 1080, height: 720 });
+export const DEFAULT_OG_IMAGE_SIZE = Object.freeze({ width: 1200, height: 630 });
 
 const MANAGED_META_SELECTOR = 'meta[data-rusty-share-meta], link[data-rusty-share-meta]';
 
@@ -37,7 +37,10 @@ function pickArtworkImage(art = {}, item = {}) {
   const artImage = asObject(art.image);
   const itemImage = asObject(item.image);
   return normalizedText(
-    artImage.publicJpeg
+    artImage.openGraphJpeg
+      || itemImage.openGraphJpeg
+      || item.openGraphJpeg
+      || artImage.publicJpeg
       || itemImage.publicJpeg
       || artImage.thumbnailJpeg
       || item.thumbnailJpeg

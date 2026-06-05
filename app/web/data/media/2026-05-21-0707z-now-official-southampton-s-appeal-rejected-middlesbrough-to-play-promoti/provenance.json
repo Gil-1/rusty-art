@@ -4,37 +4,26 @@
   "artworkId": "2026-05-21-0707z-now-official-southampton-s-appeal-rejected-middlesbrough-to-play-promoti",
   "source": {
     "sha256": "2e9b42ebbb16ebae925f4ad2e1ced7163465b54f16c2f5d1e1b6b29008bf364c",
-    "role": "daily-preview-story-desktop"
+    "role": "public-archive-fallback-render"
   },
   "sources": {
     "primary": {
-      "kind": "run-capture",
-      "role": "daily-preview-story-desktop",
+      "kind": "fallback-render",
+      "role": "public-archive-fallback-render",
       "sha256": "2e9b42ebbb16ebae925f4ad2e1ced7163465b54f16c2f5d1e1b6b29008bf364c"
+    },
+    "openGraph": {
+      "kind": "fallback-render",
+      "role": "public-archive-open-graph-render",
+      "sha256": "d4ab3f3758e922aae8783c5e7f83b8b5ef3be94c4ee1c027cdcb9028dced609b"
     },
     "instagram": {
       "kind": "fallback-render",
       "role": "public-archive-instagram-render",
-      "sha256": "2e651242e29e8c5877c5d4e0cc35d7a375a2927416f48ab40ee094e98528c4b9"
+      "sha256": "c237326ad53af184427a6b86fff5a8dc292f3377f990d8a52fb05d14c4946e74"
     }
   },
   "targets": {
-    "artwork-720.jpg": {
-      "spec": {
-        "fileName": "artwork-720.jpg",
-        "width": 1280,
-        "height": 720,
-        "fit": "inside",
-        "withoutEnlargement": true,
-        "format": "jpeg",
-        "quality": 86
-      },
-      "publicPath": "./data/media/2026-05-21-0707z-now-official-southampton-s-appeal-rejected-middlesbrough-to-play-promoti/artwork-720.jpg",
-      "source": {
-        "sha256": "2e9b42ebbb16ebae925f4ad2e1ced7163465b54f16c2f5d1e1b6b29008bf364c",
-        "role": "daily-preview-story-desktop"
-      }
-    },
     "thumb-320.jpg": {
       "spec": {
         "fileName": "thumb-320.jpg",
@@ -48,7 +37,23 @@
       "publicPath": "./data/media/2026-05-21-0707z-now-official-southampton-s-appeal-rejected-middlesbrough-to-play-promoti/thumb-320.jpg",
       "source": {
         "sha256": "2e9b42ebbb16ebae925f4ad2e1ced7163465b54f16c2f5d1e1b6b29008bf364c",
-        "role": "daily-preview-story-desktop"
+        "role": "public-archive-fallback-render"
+      }
+    },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-05-21-0707z-now-official-southampton-s-appeal-rejected-middlesbrough-to-play-promoti/og-1200x630.jpg",
+      "source": {
+        "sha256": "d4ab3f3758e922aae8783c5e7f83b8b5ef3be94c4ee1c027cdcb9028dced609b",
+        "role": "public-archive-open-graph-render"
       }
     },
     "instagram-1080x1440.jpg": {
@@ -63,7 +68,7 @@
       },
       "publicPath": "./data/media/2026-05-21-0707z-now-official-southampton-s-appeal-rejected-middlesbrough-to-play-promoti/instagram-1080x1440.jpg",
       "source": {
-        "sha256": "2e651242e29e8c5877c5d4e0cc35d7a375a2927416f48ab40ee094e98528c4b9",
+        "sha256": "c237326ad53af184427a6b86fff5a8dc292f3377f990d8a52fb05d14c4946e74",
         "role": "public-archive-instagram-render"
       }
     }

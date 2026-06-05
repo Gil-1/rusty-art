@@ -12,6 +12,11 @@
       "role": "public-archive-fallback-render",
       "sha256": "1e8054496aa2a7b91231450f33744833cf1d2f418965da40b84a4390b3e0a2bc"
     },
+    "openGraph": {
+      "kind": "fallback-render",
+      "role": "public-archive-open-graph-render",
+      "sha256": "275a7eab7c9b6d1cdbc74173a2adb8e442175d7dfe4ecd899d6d1519d66ab9b1"
+    },
     "instagram": {
       "kind": "fallback-render",
       "role": "public-archive-instagram-render",
@@ -19,22 +24,6 @@
     }
   },
   "targets": {
-    "artwork-720.jpg": {
-      "spec": {
-        "fileName": "artwork-720.jpg",
-        "width": 1280,
-        "height": 720,
-        "fit": "inside",
-        "withoutEnlargement": true,
-        "format": "jpeg",
-        "quality": 86
-      },
-      "publicPath": "./data/media/2026-04-05-echoes-of-tour-flanders-remco-evenepoel-v3/artwork-720.jpg",
-      "source": {
-        "sha256": "1e8054496aa2a7b91231450f33744833cf1d2f418965da40b84a4390b3e0a2bc",
-        "role": "public-archive-fallback-render"
-      }
-    },
     "thumb-320.jpg": {
       "spec": {
         "fileName": "thumb-320.jpg",
@@ -49,6 +38,22 @@
       "source": {
         "sha256": "1e8054496aa2a7b91231450f33744833cf1d2f418965da40b84a4390b3e0a2bc",
         "role": "public-archive-fallback-render"
+      }
+    },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-04-05-echoes-of-tour-flanders-remco-evenepoel-v3/og-1200x630.jpg",
+      "source": {
+        "sha256": "275a7eab7c9b6d1cdbc74173a2adb8e442175d7dfe4ecd899d6d1519d66ab9b1",
+        "role": "public-archive-open-graph-render"
       }
     },
     "instagram-1080x1440.jpg": {

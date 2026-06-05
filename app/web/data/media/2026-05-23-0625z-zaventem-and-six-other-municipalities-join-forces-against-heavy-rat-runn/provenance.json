@@ -12,29 +12,18 @@
       "role": "daily-preview-story-desktop",
       "sha256": "f2b44ed861660c39088f0aabfd53764a45831dad69563001afaf4d9fca9b0595"
     },
+    "openGraph": {
+      "kind": "fallback-render",
+      "role": "public-archive-open-graph-render",
+      "sha256": "a999f31ad06a4c81a4ce04957d80187c888bd3bd9a13ef1ed2e2ad0136cbc4e0"
+    },
     "instagram": {
       "kind": "fallback-render",
       "role": "public-archive-instagram-render",
-      "sha256": "a8fce39a1a611a026c929be01437b4e473b371100ea002012194e090f22368fd"
+      "sha256": "41c3a97b6f6ce73546648cab471fc937703143d48236dc0cae033e06531e358e"
     }
   },
   "targets": {
-    "artwork-720.jpg": {
-      "spec": {
-        "fileName": "artwork-720.jpg",
-        "width": 1280,
-        "height": 720,
-        "fit": "inside",
-        "withoutEnlargement": true,
-        "format": "jpeg",
-        "quality": 86
-      },
-      "publicPath": "./data/media/2026-05-23-0625z-zaventem-and-six-other-municipalities-join-forces-against-heavy-rat-runn/artwork-720.jpg",
-      "source": {
-        "sha256": "f2b44ed861660c39088f0aabfd53764a45831dad69563001afaf4d9fca9b0595",
-        "role": "daily-preview-story-desktop"
-      }
-    },
     "thumb-320.jpg": {
       "spec": {
         "fileName": "thumb-320.jpg",
@@ -51,6 +40,22 @@
         "role": "daily-preview-story-desktop"
       }
     },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-05-23-0625z-zaventem-and-six-other-municipalities-join-forces-against-heavy-rat-runn/og-1200x630.jpg",
+      "source": {
+        "sha256": "a999f31ad06a4c81a4ce04957d80187c888bd3bd9a13ef1ed2e2ad0136cbc4e0",
+        "role": "public-archive-open-graph-render"
+      }
+    },
     "instagram-1080x1440.jpg": {
       "spec": {
         "fileName": "instagram-1080x1440.jpg",
@@ -63,7 +68,7 @@
       },
       "publicPath": "./data/media/2026-05-23-0625z-zaventem-and-six-other-municipalities-join-forces-against-heavy-rat-runn/instagram-1080x1440.jpg",
       "source": {
-        "sha256": "a8fce39a1a611a026c929be01437b4e473b371100ea002012194e090f22368fd",
+        "sha256": "41c3a97b6f6ce73546648cab471fc937703143d48236dc0cae033e06531e358e",
         "role": "public-archive-instagram-render"
       }
     }

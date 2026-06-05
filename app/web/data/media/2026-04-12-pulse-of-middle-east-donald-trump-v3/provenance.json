@@ -12,6 +12,11 @@
       "role": "public-archive-fallback-render",
       "sha256": "b31321cdf4201caeaf6e750d33d43eac66df9d98e4527922e1e6c5a92c8d99fb"
     },
+    "openGraph": {
+      "kind": "fallback-render",
+      "role": "public-archive-open-graph-render",
+      "sha256": "57383be2a78dda61298ab590595887df884f2acbbaf272cccd787ca7d41b7851"
+    },
     "instagram": {
       "kind": "fallback-render",
       "role": "public-archive-instagram-render",
@@ -19,22 +24,6 @@
     }
   },
   "targets": {
-    "artwork-720.jpg": {
-      "spec": {
-        "fileName": "artwork-720.jpg",
-        "width": 1280,
-        "height": 720,
-        "fit": "inside",
-        "withoutEnlargement": true,
-        "format": "jpeg",
-        "quality": 86
-      },
-      "publicPath": "./data/media/2026-04-12-pulse-of-middle-east-donald-trump-v3/artwork-720.jpg",
-      "source": {
-        "sha256": "b31321cdf4201caeaf6e750d33d43eac66df9d98e4527922e1e6c5a92c8d99fb",
-        "role": "public-archive-fallback-render"
-      }
-    },
     "thumb-320.jpg": {
       "spec": {
         "fileName": "thumb-320.jpg",
@@ -49,6 +38,22 @@
       "source": {
         "sha256": "b31321cdf4201caeaf6e750d33d43eac66df9d98e4527922e1e6c5a92c8d99fb",
         "role": "public-archive-fallback-render"
+      }
+    },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-04-12-pulse-of-middle-east-donald-trump-v3/og-1200x630.jpg",
+      "source": {
+        "sha256": "57383be2a78dda61298ab590595887df884f2acbbaf272cccd787ca7d41b7851",
+        "role": "public-archive-open-graph-render"
       }
     },
     "instagram-1080x1440.jpg": {

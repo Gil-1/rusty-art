@@ -12,6 +12,11 @@
       "role": "public-archive-fallback-render",
       "sha256": "7ed413daf9a19907792afec41506277504f9734aee9d664edb32564ed64fc7c1"
     },
+    "openGraph": {
+      "kind": "fallback-render",
+      "role": "public-archive-open-graph-render",
+      "sha256": "cb93f82b795245e374ff2daf41f57c45e3f4cee24db83763cb6c6e7bc06ddca9"
+    },
     "instagram": {
       "kind": "fallback-render",
       "role": "public-archive-instagram-render",
@@ -19,22 +24,6 @@
     }
   },
   "targets": {
-    "artwork-720.jpg": {
-      "spec": {
-        "fileName": "artwork-720.jpg",
-        "width": 1280,
-        "height": 720,
-        "fit": "inside",
-        "withoutEnlargement": true,
-        "format": "jpeg",
-        "quality": 86
-      },
-      "publicPath": "./data/media/2026-03-08-abstract-signal-iran-lasted-barely-week-v2/artwork-720.jpg",
-      "source": {
-        "sha256": "7ed413daf9a19907792afec41506277504f9734aee9d664edb32564ed64fc7c1",
-        "role": "public-archive-fallback-render"
-      }
-    },
     "thumb-320.jpg": {
       "spec": {
         "fileName": "thumb-320.jpg",
@@ -49,6 +38,22 @@
       "source": {
         "sha256": "7ed413daf9a19907792afec41506277504f9734aee9d664edb32564ed64fc7c1",
         "role": "public-archive-fallback-render"
+      }
+    },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-03-08-abstract-signal-iran-lasted-barely-week-v2/og-1200x630.jpg",
+      "source": {
+        "sha256": "cb93f82b795245e374ff2daf41f57c45e3f4cee24db83763cb6c6e7bc06ddca9",
+        "role": "public-archive-open-graph-render"
       }
     },
     "instagram-1080x1440.jpg": {

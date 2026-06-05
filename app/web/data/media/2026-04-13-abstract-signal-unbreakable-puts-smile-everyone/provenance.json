@@ -12,6 +12,11 @@
       "role": "public-archive-fallback-render",
       "sha256": "8191ef0f1dc8f31f95d2e0a161906c3bf4abedef4154fb1e013e4510d0d4922c"
     },
+    "openGraph": {
+      "kind": "fallback-render",
+      "role": "public-archive-open-graph-render",
+      "sha256": "471f7639b35411f5570372596683932fc4fb9cb13518bbb39e0e04d192579b39"
+    },
     "instagram": {
       "kind": "fallback-render",
       "role": "public-archive-instagram-render",
@@ -19,22 +24,6 @@
     }
   },
   "targets": {
-    "artwork-720.jpg": {
-      "spec": {
-        "fileName": "artwork-720.jpg",
-        "width": 1280,
-        "height": 720,
-        "fit": "inside",
-        "withoutEnlargement": true,
-        "format": "jpeg",
-        "quality": 86
-      },
-      "publicPath": "./data/media/2026-04-13-abstract-signal-unbreakable-puts-smile-everyone/artwork-720.jpg",
-      "source": {
-        "sha256": "8191ef0f1dc8f31f95d2e0a161906c3bf4abedef4154fb1e013e4510d0d4922c",
-        "role": "public-archive-fallback-render"
-      }
-    },
     "thumb-320.jpg": {
       "spec": {
         "fileName": "thumb-320.jpg",
@@ -49,6 +38,22 @@
       "source": {
         "sha256": "8191ef0f1dc8f31f95d2e0a161906c3bf4abedef4154fb1e013e4510d0d4922c",
         "role": "public-archive-fallback-render"
+      }
+    },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-04-13-abstract-signal-unbreakable-puts-smile-everyone/og-1200x630.jpg",
+      "source": {
+        "sha256": "471f7639b35411f5570372596683932fc4fb9cb13518bbb39e0e04d192579b39",
+        "role": "public-archive-open-graph-render"
       }
     },
     "instagram-1080x1440.jpg": {

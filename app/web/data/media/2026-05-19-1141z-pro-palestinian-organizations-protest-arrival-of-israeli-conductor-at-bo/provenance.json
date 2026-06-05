@@ -12,29 +12,18 @@
       "role": "public-archive-fallback-render",
       "sha256": "0ff7d68ec233660259b38f87dcfab6eb9fe65bcc6f8cbead42e8774bb248268f"
     },
+    "openGraph": {
+      "kind": "fallback-render",
+      "role": "public-archive-open-graph-render",
+      "sha256": "91597f50048e433cfc987af6c9893683df8df19a48ab9272b07bca249a2fa5ee"
+    },
     "instagram": {
       "kind": "fallback-render",
       "role": "public-archive-instagram-render",
-      "sha256": "4ece40f1f3aefb9fa55f0dacd83ff9231d09b86ef65d9558a235ed78431d0add"
+      "sha256": "dadca92dc059e9603bf03d92ea049ac7795ad469b5c50fa9fceb65a4e41d5859"
     }
   },
   "targets": {
-    "artwork-720.jpg": {
-      "spec": {
-        "fileName": "artwork-720.jpg",
-        "width": 1280,
-        "height": 720,
-        "fit": "inside",
-        "withoutEnlargement": true,
-        "format": "jpeg",
-        "quality": 86
-      },
-      "publicPath": "./data/media/2026-05-19-1141z-pro-palestinian-organizations-protest-arrival-of-israeli-conductor-at-bo/artwork-720.jpg",
-      "source": {
-        "sha256": "0ff7d68ec233660259b38f87dcfab6eb9fe65bcc6f8cbead42e8774bb248268f",
-        "role": "public-archive-fallback-render"
-      }
-    },
     "thumb-320.jpg": {
       "spec": {
         "fileName": "thumb-320.jpg",
@@ -51,6 +40,22 @@
         "role": "public-archive-fallback-render"
       }
     },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-05-19-1141z-pro-palestinian-organizations-protest-arrival-of-israeli-conductor-at-bo/og-1200x630.jpg",
+      "source": {
+        "sha256": "91597f50048e433cfc987af6c9893683df8df19a48ab9272b07bca249a2fa5ee",
+        "role": "public-archive-open-graph-render"
+      }
+    },
     "instagram-1080x1440.jpg": {
       "spec": {
         "fileName": "instagram-1080x1440.jpg",
@@ -63,7 +68,7 @@
       },
       "publicPath": "./data/media/2026-05-19-1141z-pro-palestinian-organizations-protest-arrival-of-israeli-conductor-at-bo/instagram-1080x1440.jpg",
       "source": {
-        "sha256": "4ece40f1f3aefb9fa55f0dacd83ff9231d09b86ef65d9558a235ed78431d0add",
+        "sha256": "dadca92dc059e9603bf03d92ea049ac7795ad469b5c50fa9fceb65a4e41d5859",
         "role": "public-archive-instagram-render"
       }
     }

@@ -12,6 +12,11 @@
       "role": "public-archive-fallback-render",
       "sha256": "2c7d22d6181c8bffb6b7b7ac9dd3e7f5052ae212fab5788456a8a81927db5557"
     },
+    "openGraph": {
+      "kind": "fallback-render",
+      "role": "public-archive-open-graph-render",
+      "sha256": "e615c5556599da47081523e0c02adecc856084ff050ab92f8804a2eb5c7f4133"
+    },
     "instagram": {
       "kind": "fallback-render",
       "role": "public-archive-instagram-render",
@@ -19,22 +24,6 @@
     }
   },
   "targets": {
-    "artwork-720.jpg": {
-      "spec": {
-        "fileName": "artwork-720.jpg",
-        "width": 1280,
-        "height": 720,
-        "fit": "inside",
-        "withoutEnlargement": true,
-        "format": "jpeg",
-        "quality": 86
-      },
-      "publicPath": "./data/media/2026-04-29-abstract-signal-temps-joue-contre-trump-v2/artwork-720.jpg",
-      "source": {
-        "sha256": "2c7d22d6181c8bffb6b7b7ac9dd3e7f5052ae212fab5788456a8a81927db5557",
-        "role": "public-archive-fallback-render"
-      }
-    },
     "thumb-320.jpg": {
       "spec": {
         "fileName": "thumb-320.jpg",
@@ -49,6 +38,22 @@
       "source": {
         "sha256": "2c7d22d6181c8bffb6b7b7ac9dd3e7f5052ae212fab5788456a8a81927db5557",
         "role": "public-archive-fallback-render"
+      }
+    },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-04-29-abstract-signal-temps-joue-contre-trump-v2/og-1200x630.jpg",
+      "source": {
+        "sha256": "e615c5556599da47081523e0c02adecc856084ff050ab92f8804a2eb5c7f4133",
+        "role": "public-archive-open-graph-render"
       }
     },
     "instagram-1080x1440.jpg": {

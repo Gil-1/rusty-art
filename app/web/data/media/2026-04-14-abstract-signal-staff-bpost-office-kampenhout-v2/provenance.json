@@ -12,6 +12,11 @@
       "role": "public-archive-fallback-render",
       "sha256": "07ecc9617a057d4a3eba3e0c97c2cab5e2970281e0a3820246664b0eb5c2baa4"
     },
+    "openGraph": {
+      "kind": "fallback-render",
+      "role": "public-archive-open-graph-render",
+      "sha256": "456e614d3e134c5bd236ca477a38d213af2e1ef0b02d43984fc2aefd175b88e7"
+    },
     "instagram": {
       "kind": "fallback-render",
       "role": "public-archive-instagram-render",
@@ -19,22 +24,6 @@
     }
   },
   "targets": {
-    "artwork-720.jpg": {
-      "spec": {
-        "fileName": "artwork-720.jpg",
-        "width": 1280,
-        "height": 720,
-        "fit": "inside",
-        "withoutEnlargement": true,
-        "format": "jpeg",
-        "quality": 86
-      },
-      "publicPath": "./data/media/2026-04-14-abstract-signal-staff-bpost-office-kampenhout-v2/artwork-720.jpg",
-      "source": {
-        "sha256": "07ecc9617a057d4a3eba3e0c97c2cab5e2970281e0a3820246664b0eb5c2baa4",
-        "role": "public-archive-fallback-render"
-      }
-    },
     "thumb-320.jpg": {
       "spec": {
         "fileName": "thumb-320.jpg",
@@ -49,6 +38,22 @@
       "source": {
         "sha256": "07ecc9617a057d4a3eba3e0c97c2cab5e2970281e0a3820246664b0eb5c2baa4",
         "role": "public-archive-fallback-render"
+      }
+    },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-04-14-abstract-signal-staff-bpost-office-kampenhout-v2/og-1200x630.jpg",
+      "source": {
+        "sha256": "456e614d3e134c5bd236ca477a38d213af2e1ef0b02d43984fc2aefd175b88e7",
+        "role": "public-archive-open-graph-render"
       }
     },
     "instagram-1080x1440.jpg": {

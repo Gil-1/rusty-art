@@ -12,6 +12,11 @@
       "role": "public-archive-fallback-render",
       "sha256": "751a2ba0336016300a134542be5fddb023cac205ff3efe43a2c309360f85f212"
     },
+    "openGraph": {
+      "kind": "fallback-render",
+      "role": "public-archive-open-graph-render",
+      "sha256": "894c403174f624fe0e2406f2cf915dc76aaf997f80899c8418a88e86498b660f"
+    },
     "instagram": {
       "kind": "fallback-render",
       "role": "public-archive-instagram-render",
@@ -19,22 +24,6 @@
     }
   },
   "targets": {
-    "artwork-720.jpg": {
-      "spec": {
-        "fileName": "artwork-720.jpg",
-        "width": 1280,
-        "height": 720,
-        "fit": "inside",
-        "withoutEnlargement": true,
-        "format": "jpeg",
-        "quality": 86
-      },
-      "publicPath": "./data/media/2026-04-13-pulse-of-middle-east-military-threatens-v3/artwork-720.jpg",
-      "source": {
-        "sha256": "751a2ba0336016300a134542be5fddb023cac205ff3efe43a2c309360f85f212",
-        "role": "public-archive-fallback-render"
-      }
-    },
     "thumb-320.jpg": {
       "spec": {
         "fileName": "thumb-320.jpg",
@@ -49,6 +38,22 @@
       "source": {
         "sha256": "751a2ba0336016300a134542be5fddb023cac205ff3efe43a2c309360f85f212",
         "role": "public-archive-fallback-render"
+      }
+    },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-04-13-pulse-of-middle-east-military-threatens-v3/og-1200x630.jpg",
+      "source": {
+        "sha256": "894c403174f624fe0e2406f2cf915dc76aaf997f80899c8418a88e86498b660f",
+        "role": "public-archive-open-graph-render"
       }
     },
     "instagram-1080x1440.jpg": {
