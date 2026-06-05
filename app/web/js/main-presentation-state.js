@@ -1,24 +1,17 @@
 export const PRESENTATION_STORAGE_KEYS = {
-  viewMode: 'rusty:view-mode',
-  focusMode: 'rusty:focus-mode',
   motionMode: 'rusty:motion-mode'
 };
 
 export function createInitialPresentationState({
-  storedViewMode = null,
-  storedFocusMode = null,
   storedMotionMode = null,
   prefersReducedMotion = false,
   captureMode = false,
-  forcedView = null,
   isMobileViewport = false,
   scrollY = 0
 } = {}) {
   return {
     activeFile: null,
     activeIndex: -1,
-    viewMode: forcedView === 'lab' ? 'lab' : storedViewMode === 'lab' ? 'lab' : 'story',
-    focusMode: captureMode ? false : storedFocusMode === '1',
     motionMode: captureMode ? 'reduced' : storedMotionMode === 'reduced' ? 'reduced' : prefersReducedMotion ? 'reduced' : 'full',
     headlineExpanded: false,
     mobileChromePinned: Boolean(isMobileViewport && scrollY > 28),
@@ -39,14 +32,6 @@ export function resetPresentationBootState(state, { isMobileViewport = false, sc
     mobileChromePinned: Boolean(isMobileViewport && scrollY > 28),
     mobileChromeExpanded: false
   };
-}
-
-export function setViewModeState(state, nextMode) {
-  return { ...state, viewMode: nextMode === 'lab' ? 'lab' : 'story' };
-}
-
-export function setFocusModeState(state, enabled) {
-  return { ...state, focusMode: Boolean(enabled) };
 }
 
 export function setMotionModeState(state, nextMode) {

@@ -222,10 +222,11 @@ test('archive card renderer marks the active gallery card as current', () => {
   installDocumentStub();
   const card = createArchiveCardElement(manifest.items[0], () => {}, { active: true });
 
-  assert.equal(card.className, 'archive-card active');
+  assert.match(card.className, /\barchive-card\b/);
+  assert.match(card.className, /\bactive\b/);
   assert.equal(card.attributes['aria-current'], 'true');
   assert.doesNotMatch(card.innerHTML, /Current artwork/);
-  assert.match(card.innerHTML, /<img src="\.\/data\/media\/a\/thumb-320\.jpg"/);
+  assert.match(card.innerHTML, /src="\.\/data\/media\/a\/thumb-320\.jpg"/);
 });
 
 test('gallery list renders cards and activates by pointer or keyboard', () => {

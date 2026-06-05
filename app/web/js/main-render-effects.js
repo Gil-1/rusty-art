@@ -1,8 +1,6 @@
 import { syncQuickControls as syncQuickControlsUi } from './main-navigation.js';
 import {
-  applyMotionModeEffects,
-  applyViewModeEffects,
-  setFocusModeEffects
+  applyMotionModeEffects
 } from './main-modes.js';
 import {
   applyEmptyArchiveEffects,
@@ -158,23 +156,6 @@ export function createRuntimeRenderEffects({
     }));
   }
 
-  function applyViewMode(nextMode) {
-    return updateState((state) => applyViewModeEffects(state, nextMode, {
-      modeStory: refs.modeStory,
-      modeLab: refs.modeLab,
-      metaModeStory: refs.metaModeStory,
-      metaModeLab: refs.metaModeLab,
-      body
-    }));
-  }
-
-  function setFocusMode(enabled) {
-    return updateState((state) => setFocusModeEffects(state, enabled, {
-      modeFocus: refs.modeFocus,
-      body
-    }));
-  }
-
   function applyMotionMode(nextMode) {
     return updateState((state) => applyMotionModeEffects(state, nextMode, {
       body,
@@ -251,6 +232,7 @@ export function createRuntimeRenderEffects({
       compact: facts.quickPickerCompact,
       activeIndex: selectedIndex
     });
+    refs.quickPosition = trigger.querySelector?.('#quick-position') || refs.quickPosition;
     renderGallery(manifest);
     return pickerFacts;
   }
@@ -376,8 +358,6 @@ export function createRuntimeRenderEffects({
       body?.classList?.add?.('capture-mode');
     }
     const state = getState();
-    applyViewMode(state.viewMode);
-    setFocusMode(state.focusMode);
     applyMotionMode(state.motionMode);
     updateMobileChromeState();
     resetUiForBoot();
@@ -415,8 +395,6 @@ export function createRuntimeRenderEffects({
     appendArchiveItem,
     setLoadMoreVisible,
     showEmptyArchive,
-    applyViewMode,
-    setFocusMode,
     applyMotionMode
   };
 
@@ -429,8 +407,6 @@ export function createRuntimeRenderEffects({
     refreshViewportUi,
     applyAdaptiveOverlay,
     startAdaptiveOverlayLoop,
-    applyViewMode,
-    setFocusMode,
     applyMotionMode,
     toggleMobileChrome,
     toggleHeadline,

@@ -1,5 +1,6 @@
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import tailwindcss from '@tailwindcss/vite';
 import { defineConfig } from 'vite';
 
 import { createRuntimeDataCopyPlan, executeRuntimeDataCopyPlan } from './pipeline/core/web-runtime/runtime-data-copy-plan.mjs';
@@ -148,5 +149,5 @@ export default defineConfig({
     outDir: WEB_DIST,
     emptyOutDir: true
   },
-  plugins: [analyticsHtmlPlugin(), copyRuntimeDataPlugin()]
+  plugins: [tailwindcss(), analyticsHtmlPlugin(), copyRuntimeDataPlugin()]
 });

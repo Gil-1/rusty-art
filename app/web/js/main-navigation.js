@@ -49,6 +49,6 @@ export function syncQuickControls({ manifest, activeIndex, quickPrev, quickNext,
     if (quickPicker.tagName === 'SELECT') quickPicker.value = String(activeIndex);
   }
   if (quickPosition && activeIndex >= 0) {
-    quickPosition.textContent = `${activeIndex + 1} / ${manifest.items.length} loop`;
+    quickPosition.textContent = `${activeIndex + 1} of ${manifest.items.length}`;
   }
 }

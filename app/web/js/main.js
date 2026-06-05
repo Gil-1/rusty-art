@@ -32,7 +32,6 @@ const shellOptions = resolveRuntimeShellOptions({
 const {
   captureMode,
   captureProfile,
-  forcedView,
   requestedIndex,
   requestedArtworkSlug,
   rendererRequest,
@@ -61,11 +60,6 @@ const {
   sceneProgress,
   sceneProgressBar,
   sceneProgressLabel,
-  modeStory,
-  modeLab,
-  modeFocus,
-  metaModeStory,
-  metaModeLab,
   statusBanner,
   fallbackPanel,
   fallbackMessage,
@@ -74,12 +68,9 @@ const {
   mobileChromeToggle
 } = queryRuntimeDomRefs(document);
 let presentationState = createInitialPresentationState({
-  storedViewMode: shellOptions.storedViewMode,
-  storedFocusMode: shellOptions.storedFocusMode,
   storedMotionMode: shellOptions.storedMotionMode,
   prefersReducedMotion,
   captureMode,
-  forcedView,
   isMobileViewport: isMobileViewport(),
   scrollY: window.scrollY
 });
@@ -137,11 +128,6 @@ renderEffects = createRuntimeRenderEffects({
     sceneProgress,
     sceneProgressBar,
     sceneProgressLabel,
-    modeStory,
-    modeLab,
-    modeFocus,
-    metaModeStory,
-    metaModeLab,
     statusBanner,
     fallbackPanel,
     fallbackMessage,
@@ -206,11 +192,6 @@ bindRuntimeShellEvents({
     galleryTrigger,
     galleryDialog,
     galleryClose,
-    modeStory,
-    modeLab,
-    modeFocus,
-    metaModeStory,
-    metaModeLab,
     mobileChromeToggle,
     heroHeadlineToggle
   },
@@ -229,11 +210,12 @@ bindRuntimeShellEvents({
     onQuickPickerChange: (event) => archiveController.handleQuickPickerChange(event).catch(() => {}),
     onOpenGallery: renderEffects.openGallery,
     onCloseGallery: renderEffects.closeGallery,
-    onViewMode: renderEffects.applyViewMode,
-    onToggleFocus: () => renderEffects.setFocusMode(!presentationState.focusMode),
     onToggleMobileChrome: renderEffects.toggleMobileChrome,
     onToggleHeadline: renderEffects.toggleHeadline,
-    onPointerDown: renderEffects.markMobileChromeInteraction,
+    onPointerDown: (event) => {
+      if (event?.target?.closest?.('.topline, .now-chip, .gallery-dialog, button, a, summary')) return;
+      renderEffects.markMobileChromeInteraction();
+    },
     onScroll: () => {
       if (!isMobileViewport()) return;
       renderEffects.updateMobileChromeState();

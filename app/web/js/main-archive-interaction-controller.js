@@ -201,33 +201,17 @@ export function createArchiveInteractionController({
     if (isTypingTarget(event.target) || captureMode) return false;
 
     const key = String(event.key || '');
-    const lowerKey = key.toLowerCase();
-    const state = getState();
-
-    if (lowerKey === 'f') {
-      event.preventDefault?.();
-      render.setFocusMode?.(!state.focusMode);
-      return true;
-    }
-
-    if (lowerKey === 'i') {
-      event.preventDefault?.();
-      render.applyViewMode?.(state.viewMode === 'story' ? 'lab' : 'story');
-      return true;
-    }
 
     if (!manifest?.items?.length) return false;
 
-    const step = event.shiftKey ? 5 : 1;
-
     if (key === 'ArrowLeft') {
       event.preventDefault?.();
-      return loadArtworkByStep(-step).catch(() => {});
+      return loadArtworkByStep(-1).catch(() => {});
     }
 
     if (key === 'ArrowRight') {
       event.preventDefault?.();
-      return loadArtworkByStep(step).catch(() => {});
+      return loadArtworkByStep(1).catch(() => {});
     }
 
     if (key === 'Home') {

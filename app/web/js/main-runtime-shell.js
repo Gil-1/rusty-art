@@ -10,8 +10,6 @@ export function resolveRuntimeShellOptions({
   windowRef = window,
   storage = localStorage,
   storageKeys = {
-    viewMode: 'rusty:view-mode',
-    focusMode: 'rusty:focus-mode',
     motionMode: 'rusty:motion-mode'
   },
   breakpoint = MOBILE_BREAKPOINT
@@ -22,15 +20,12 @@ export function resolveRuntimeShellOptions({
   return {
     captureMode: captureRoute.captureMode,
     captureProfile: captureRoute.captureProfile,
-    forcedView: captureRoute.forcedView,
     requestedIndex: captureRoute.requestedIndex,
     requestedArtworkSlug: captureRoute.requestedArtworkSlug,
     captureTarget: captureRoute.target,
     rendererRequest,
     postProcessingRequest,
     prefersReducedMotion: windowRef.matchMedia?.('(prefers-reduced-motion: reduce)').matches,
-    storedViewMode: storage.getItem(storageKeys.viewMode),
-    storedFocusMode: storage.getItem(storageKeys.focusMode),
     storedMotionMode: storage.getItem(storageKeys.motionMode),
     isMobileViewport: () => windowRef.innerWidth <= breakpoint,
     getScrollY: () => windowRef.scrollY || 0
@@ -61,11 +56,6 @@ export function queryRuntimeDomRefs(documentRef = document) {
     sceneProgress: documentRef.getElementById('scene-progress'),
     sceneProgressBar: documentRef.getElementById('scene-progress-bar'),
     sceneProgressLabel: documentRef.getElementById('scene-progress-label'),
-    modeStory: documentRef.getElementById('mode-story'),
-    modeLab: documentRef.getElementById('mode-lab'),
-    modeFocus: documentRef.getElementById('mode-focus'),
-    metaModeStory: documentRef.getElementById('meta-mode-story'),
-    metaModeLab: documentRef.getElementById('meta-mode-lab'),
     statusBanner: documentRef.getElementById('status-banner'),
     fallbackPanel: documentRef.getElementById('fallback-panel'),
     fallbackMessage: documentRef.getElementById('fallback-message'),
@@ -99,11 +89,6 @@ export function installRuntimeShellEventBindings({
     galleryTrigger = quickPicker,
     galleryDialog,
     galleryClose,
-    modeStory,
-    modeLab,
-    modeFocus,
-    metaModeStory,
-    metaModeLab,
     mobileChromeToggle,
     heroHeadlineToggle
   } = refs;
@@ -120,15 +105,10 @@ export function installRuntimeShellEventBindings({
   addRuntimeShellBinding(bindings, facts, galleryDialog, 'click', (event) => {
     if (event.target === galleryDialog) actions.onCloseGallery?.();
   });
-  addRuntimeShellBinding(bindings, facts, modeStory, 'click', () => actions.onViewMode?.('story'));
-  addRuntimeShellBinding(bindings, facts, modeLab, 'click', () => actions.onViewMode?.('lab'));
-  addRuntimeShellBinding(bindings, facts, metaModeStory, 'click', () => actions.onViewMode?.('story'));
-  addRuntimeShellBinding(bindings, facts, metaModeLab, 'click', () => actions.onViewMode?.('lab'));
-  addRuntimeShellBinding(bindings, facts, modeFocus, 'click', () => actions.onToggleFocus?.());
   addRuntimeShellBinding(bindings, facts, mobileChromeToggle, 'click', () => actions.onToggleMobileChrome?.());
   addRuntimeShellBinding(bindings, facts, heroHeadlineToggle, 'click', () => actions.onToggleHeadline?.());
 
-  addRuntimeShellBinding(bindings, facts, documentRef, 'pointerdown', () => actions.onPointerDown?.(), { passive: true });
+  addRuntimeShellBinding(bindings, facts, documentRef, 'pointerdown', (event) => actions.onPointerDown?.(event), { passive: true });
   addRuntimeShellBinding(bindings, facts, documentRef, 'keydown', (event) => actions.onKeydown?.(event));
   addRuntimeShellBinding(bindings, facts, windowRef, 'scroll', () => actions.onScroll?.(), { passive: true });
   addRuntimeShellBinding(bindings, facts, windowRef, 'resize', () => actions.onViewportChange?.());
