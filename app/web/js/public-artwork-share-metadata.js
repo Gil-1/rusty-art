@@ -40,8 +40,6 @@ function pickArtworkImage(art = {}, item = {}) {
     artImage.openGraphJpeg
       || itemImage.openGraphJpeg
       || item.openGraphJpeg
-      || artImage.publicJpeg
-      || itemImage.publicJpeg
       || artImage.thumbnailJpeg
       || item.thumbnailJpeg
       || itemImage.thumbnailJpeg

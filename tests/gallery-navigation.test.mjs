@@ -488,7 +488,6 @@ test('artwork share metadata resolves canonical URL and public image', () => {
     news: { title: item.newsTitle, source: item.source },
     inspiration: { artist: item.artist },
     image: {
-      publicJpeg: './data/media/example/og-1200x630.jpg',
       openGraphJpeg: './data/media/example/og-1200x630.jpg',
       altText: 'Signal garden by Larry Zox.'
     }
