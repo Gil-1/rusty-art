@@ -16,8 +16,11 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const WEB_ROOT = path.join(__dirname, 'app/web');
 const WEB_DIST = path.join(__dirname, 'app/web-dist');
 const DEFAULT_PUBLIC_SITE_URL = 'https://rusty-art.edge-solutions.be/';
+const EDGE_SOLUTIONS_URL = 'https://edge-solutions.be/';
+const EDGE_SOLUTIONS_LLMS_URL = 'https://edge-solutions.be/llms.txt';
 const PUBLIC_SITE_URL = String(process.env.PUBLIC_SITE_URL || DEFAULT_PUBLIC_SITE_URL).trim();
 const GOOGLE_TAG_PATTERN = /^G-[A-Z0-9]+$/;
+const LLMS_RECENT_ARTWORK_LIMIT = 20;
 
 function cleanAnalyticsId(value, pattern) {
   const id = String(value || '').trim();
@@ -88,6 +91,7 @@ function copyRuntimeDataPlugin() {
       const plan = createRuntimeDataCopyPlan({ webRoot: WEB_ROOT, distDir: WEB_DIST });
       await executeRuntimeDataCopyPlan(plan);
       await generateArtworkSharePages({ webRoot: WEB_ROOT, distDir: WEB_DIST, siteUrl: PUBLIC_SITE_URL });
+      await generatePublicDiscoveryFiles({ webRoot: WEB_ROOT, distDir: WEB_DIST, siteUrl: PUBLIC_SITE_URL });
     }
   };
 }
@@ -200,11 +204,226 @@ async function readArtworkForManifestItem(webRoot, item = {}) {
   }
 }
 
+function buildRootHref(locationRef) {
+  return new URL(locationRef.pathname || '/', locationRef.origin || locationRef.href).href;
+}
+
+function buildSiteHref(pathname, locationRef) {
+  const baseUrl = new URL(locationRef.pathname || '/', locationRef.origin || locationRef.href);
+  return new URL(String(pathname || '').replace(/^\/+/, ''), baseUrl).href;
+}
+
+function buildPublicFileHref(file, locationRef) {
+  return buildSiteHref(String(file || '').replace(/^\.\//, ''), locationRef);
+}
+
+function xmlText(value) {
+  return String(value ?? '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&apos;');
+}
+
+function markdownInline(value) {
+  return String(value ?? '')
+    .replace(/\s+/g, ' ')
+    .replace(/\\/g, '\\\\')
+    .replace(/\[/g, '\\[')
+    .replace(/\]/g, '\\]')
+    .trim();
+}
+
+function truncateMarkdownInline(value, maxLength) {
+  const text = markdownInline(value);
+  if (text.length <= maxLength) return text;
+  return `${text.slice(0, Math.max(0, maxLength - 3)).trim()}...`;
+}
+
+function sitemapLastmod(value) {
+  const text = String(value || '').trim();
+  if (!text) return '';
+  if (/^\d{4}-\d{2}-\d{2}$/.test(text)) return text;
+
+  const date = new Date(text);
+  if (Number.isNaN(date.getTime())) return '';
+  return date.toISOString();
+}
+
+function renderSitemapXml(entries) {
+  const seen = new Set();
+  const urls = [];
+
+  for (const entry of entries) {
+    const loc = String(entry?.loc || '').trim();
+    if (!loc || seen.has(loc)) continue;
+    seen.add(loc);
+    urls.push({
+      loc,
+      lastmod: sitemapLastmod(entry.lastmod)
+    });
+  }
+
+  return [
+    '<?xml version="1.0" encoding="UTF-8"?>',
+    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+    ...urls.flatMap((entry) => [
+      '  <url>',
+      `    <loc>${xmlText(entry.loc)}</loc>`,
+      entry.lastmod ? `    <lastmod>${xmlText(entry.lastmod)}</lastmod>` : '',
+      '  </url>'
+    ].filter(Boolean)),
+    '</urlset>',
+    ''
+  ].join('\n');
+}
+
+function renderRobotsTxt({ sitemapUrl }) {
+  return [
+    'User-agent: *',
+    'Allow: /',
+    '',
+    `Sitemap: ${sitemapUrl}`,
+    ''
+  ].join('\n');
+}
+
+function renderLlmsTxt({
+  rootUrl,
+  sitemapUrl,
+  manifestUrl,
+  latestUrl,
+  latestArtworkUrl,
+  latestArtworkDataUrl,
+  recentArtworks = []
+}) {
+  const lines = [
+    `# ${RUSTY_SITE_NAME}`,
+    '',
+    `> ${DEFAULT_SHARE_DESCRIPTION}`,
+    '',
+    'Rusty Art is a public Edge Solutions project and static artwork archive. Each published piece turns one Belgian headline into an abstract visual scene with public metadata, share imagery, and a canonical artwork URL.',
+    '',
+    'Edge Solutions is Gil Guminski\'s Belgium and Wallonia-facing freelance website for practical AI automation and real-time 3D / XR applications. Rusty Art is a visible public project from Edge Solutions.',
+    '',
+    'Use visible public page content, public archive data, and linked public sources only. Do not infer fake clients, testimonials, awards, metrics, logos, pricing, or private implementation details from this website.',
+    '',
+    'The public JSON files are archive data. Private Edge Solutions generation automation, prompts, credentials, and diagnostics are not part of this website.',
+    '',
+    '## Project Context',
+    `- [Edge Solutions](${EDGE_SOLUTIONS_URL}): Parent website for the freelance AI automation and real-time 3D / XR practice behind Rusty Art.`,
+    `- [Edge Solutions llms.txt](${EDGE_SOLUTIONS_LLMS_URL}): Canonical AI-facing summary, localized pages, public links, and interpretation notes for the parent site.`,
+    '',
+    '## Primary Pages',
+    `- [Rusty Art](${rootUrl}): Latest artwork, live scene, and gallery entry point.`
+  ];
+
+  if (latestArtworkUrl) {
+    lines.push(`- [Latest artwork](${latestArtworkUrl}): Canonical share page for the current latest archive item.`);
+  }
+
+  lines.push(
+    '',
+    '## Public Archive Data',
+    `- [Archive manifest](${manifestUrl}): Complete public archive index with artwork IDs, titles, dates, sources, image paths, and JSON file paths.`,
+    `- [Latest pointer](${latestUrl}): Public pointer to the latest artwork JSON file.`
+  );
+  if (latestArtworkDataUrl) {
+    lines.push(`- [Latest artwork JSON](${latestArtworkDataUrl}): Full public metadata and scene configuration for the current latest artwork.`);
+  }
+  lines.push(`- [Sitemap](${sitemapUrl}): Exhaustive canonical URL list for indexable public pages, including all artwork pages.`);
+
+  if (recentArtworks.length) {
+    lines.push('', '## Recent Artworks');
+    for (const entry of recentArtworks.slice(0, LLMS_RECENT_ARTWORK_LIMIT)) {
+      const title = truncateMarkdownInline(entry.metadata.newsTitle || entry.metadata.artworkTitle, 140);
+      const facts = [
+        entry.metadata.artist ? `artist influence: ${markdownInline(entry.metadata.artist)}` : '',
+        entry.item?.date ? `date: ${markdownInline(entry.item.date)}` : '',
+        entry.metadata.source ? `source: ${markdownInline(entry.metadata.source)}` : ''
+      ].filter(Boolean).join('; ');
+      lines.push(`- [${title}](${entry.metadata.canonicalUrl}): ${facts || 'Public artwork archive page.'}`);
+    }
+  }
+
+  return `${lines.join('\n')}\n`;
+}
+
+async function collectArtworkDiscoveryEntries({ webRoot, items, locationRef, siteUrl = '' }) {
+  const entries = await Promise.all(items.map(async (item) => {
+    const art = await readArtworkForManifestItem(webRoot, item);
+    const metadata = resolvePublicArtworkShareMetadata({
+      art,
+      item,
+      locationRef,
+      siteUrl,
+      forceArtworkRoute: true
+    });
+    if (!metadata.slug || !metadata.canonicalUrl) return null;
+
+    return {
+      art,
+      item,
+      metadata,
+      lastmod: sitemapLastmod(art.generatedAt || item.generatedAt || item.date)
+    };
+  }));
+
+  return entries.filter(Boolean);
+}
+
+async function generatePublicDiscoveryFiles({ webRoot, distDir, siteUrl = '' }) {
+  const manifest = await readJson(path.join(webRoot, 'data/manifest.json'));
+  const items = Array.isArray(manifest.items) ? manifest.items : [];
+  const locationRef = createBuildLocation(siteUrl);
+  const rootUrl = buildRootHref(locationRef);
+  const sitemapUrl = buildSiteHref('sitemap.xml', locationRef);
+  const manifestUrl = buildSiteHref('data/manifest.json', locationRef);
+  const latestUrl = buildSiteHref('data/latest.json', locationRef);
+  const artworkEntries = await collectArtworkDiscoveryEntries({ webRoot, items, locationRef, siteUrl });
+  const latestArtwork = artworkEntries.find((entry) => entry.item?.id === manifest.latestId) || artworkEntries[0] || null;
+
+  await Promise.all([
+    fs.writeFile(
+      path.join(distDir, 'sitemap.xml'),
+      renderSitemapXml([
+        {
+          loc: rootUrl,
+          lastmod: manifest.generatedAt || latestArtwork?.lastmod
+        },
+        ...artworkEntries.map((entry) => ({
+          loc: entry.metadata.canonicalUrl,
+          lastmod: entry.lastmod
+        }))
+      ]),
+      'utf8'
+    ),
+    fs.writeFile(
+      path.join(distDir, 'robots.txt'),
+      renderRobotsTxt({ sitemapUrl }),
+      'utf8'
+    ),
+    fs.writeFile(
+      path.join(distDir, 'llms.txt'),
+      renderLlmsTxt({
+        rootUrl,
+        sitemapUrl,
+        manifestUrl,
+        latestUrl,
+        latestArtworkUrl: latestArtwork?.metadata?.canonicalUrl || '',
+        latestArtworkDataUrl: latestArtwork?.item?.file ? buildPublicFileHref(latestArtwork.item.file, locationRef) : '',
+        recentArtworks: artworkEntries
+      }),
+      'utf8'
+    )
+  ]);
+}
+
 function withRootCanonical(metadata, locationRef) {
-  const rootUrl = new URL(locationRef.pathname || '/', locationRef.origin || locationRef.href);
   return {
     ...metadata,
-    canonicalUrl: rootUrl.href,
+    canonicalUrl: buildRootHref(locationRef),
     type: 'website'
   };
 }
