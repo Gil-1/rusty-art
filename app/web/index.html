@@ -30,9 +30,9 @@
           </div>
           <div class="topline-tools">
             <div class="quick-switch" aria-label="Quick switch artwork">
-              <button id="quick-prev" type="button" aria-label="Previous artwork">←</button>
-              <select id="quick-picker" aria-label="Pick artwork"></select>
-              <button id="quick-next" type="button" aria-label="Next artwork">→</button>
+              <button id="quick-prev" type="button" aria-label="Previous artwork (loops)">←</button>
+              <button id="gallery-trigger" class="gallery-trigger" type="button" aria-haspopup="dialog" aria-controls="gallery-dialog" aria-expanded="false" aria-label="Open artwork gallery">Open gallery</button>
+              <button id="quick-next" type="button" aria-label="Next artwork (loops)">→</button>
               <span id="quick-position" class="quick-position" aria-live="polite"></span>
             </div>
             <button id="mobile-chrome-toggle" class="mode-button mobile-chrome-toggle" type="button" hidden aria-expanded="false">More controls</button>
@@ -41,7 +41,7 @@
               <button id="mode-lab" class="mode-button" type="button" aria-pressed="false">Lab</button>
               <button id="mode-focus" class="mode-button" type="button" aria-pressed="false">Focus</button>
             </div>
-            <p class="key-hints">Keys: ← older · → newer · Shift jump · loops · I info · F focus</p>
+            <p class="key-hints">Keys: ← previous · → next · Shift jump · loops · I info · F focus</p>
           </div>
         </header>
 
@@ -71,7 +71,7 @@
         </div>
       </section>
 
-      <section class="below-fold" aria-label="Story and archive controls">
+      <section class="below-fold" aria-label="Story and provenance controls">
         <details class="story-panel" open>
           <summary>Story, links & provenance</summary>
           <div class="meta-mode-toggle" aria-label="Metadata mode">
@@ -80,22 +80,22 @@
           </div>
           <section id="meta" class="meta">Loading latest artwork…</section>
         </details>
-
-        <details class="archive-lab">
-          <summary>
-            <span>Archive</span>
-            <span id="archive-count" class="archive-count"></span>
-          </summary>
-
-          <p class="archive-note">Pick a date to restage that composition.</p>
-          <ul id="archive-list" class="archive-strip" aria-live="polite"></ul>
-
-          <div class="archive-actions">
-            <button id="load-more" type="button">Load more</button>
-          </div>
-        </details>
       </section>
     </main>
+
+    <div id="gallery-dialog" class="gallery-dialog" role="dialog" aria-modal="true" aria-labelledby="gallery-title" hidden>
+      <section class="gallery-panel" role="document">
+        <header class="gallery-header">
+          <div>
+            <p class="gallery-kicker">Public archive</p>
+            <h2 id="gallery-title">Choose an artwork</h2>
+            <p class="gallery-note">Browse every published scene in manifest order without leaving the artwork stage.</p>
+          </div>
+          <button id="gallery-close" class="gallery-close" type="button" aria-label="Close gallery">Close</button>
+        </header>
+        <ul id="gallery-list" class="gallery-list archive-strip" aria-label="Artwork gallery"></ul>
+      </section>
+    </div>
 
     <script type="module" src="./js/main.js"></script>
   </body>
