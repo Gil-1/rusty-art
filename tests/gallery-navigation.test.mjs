@@ -22,6 +22,11 @@ import {
   resolveArtworkRouteSlug
 } from '../app/web/js/public-artwork-routes.js';
 import { resolvePublicArtworkShareMetadata } from '../app/web/js/public-artwork-share-metadata.js';
+import { createBrowserJsonRequestAdapter } from '../app/web/js/browser-json-request-adapter.js';
+import {
+  normalizePublicRuntimeUrl,
+  resolvePublicRuntimeBaseHref
+} from '../app/web/js/immersive-world-scene.js';
 
 const manifest = {
   items: [
@@ -156,9 +161,10 @@ function createElementStub(tagName = 'div', id = '') {
   return element;
 }
 
-function installDocumentStub() {
+function installDocumentStub({ baseURI = undefined } = {}) {
   activeElement = null;
   globalThis.document = {
+    baseURI,
     createElement: (tagName) => createElementStub(tagName)
   };
 }
@@ -236,6 +242,26 @@ test('archive card renderer marks the active gallery card as current', () => {
   assert.equal(card.attributes['aria-current'], 'true');
   assert.doesNotMatch(card.innerHTML, /Current artwork/);
   assert.match(card.innerHTML, /src="\.\/data\/media\/a\/thumb-320\.jpg"/);
+});
+
+test('archive card thumbnails stay rooted when the browser URL is an artwork route', () => {
+  installDocumentStub({ baseURI: 'https://rusty.test/gallery/art/current-piece/' });
+  const card = createArchiveCardElement(manifest.items[0], () => {}, {
+    baseHref: 'https://rusty.test/gallery/'
+  });
+
+  assert.match(card.innerHTML, /src="https:\/\/rusty\.test\/gallery\/data\/media\/a\/thumb-320\.jpg"/);
+  assert.doesNotMatch(card.innerHTML, /gallery\/art\/current-piece\/data\/media/);
+});
+
+test('gallery list thumbnails stay rooted when the browser URL is an artwork route', () => {
+  installDocumentStub({ baseURI: 'https://rusty.test/gallery/art/current-piece/' });
+  const galleryList = createElementStub('ul', 'gallery-list');
+
+  renderGalleryList(galleryList, manifest, { baseHref: 'https://rusty.test/gallery/' });
+
+  assert.match(galleryList.children[0].innerHTML, /src="https:\/\/rusty\.test\/gallery\/data\/media\/b\/thumb-320\.jpg"/);
+  assert.doesNotMatch(galleryList.children[0].innerHTML, /gallery\/art\/current-piece\/data\/media/);
 });
 
 test('gallery list renders cards and activates by pointer or keyboard', () => {
@@ -416,6 +442,36 @@ test('artwork route helpers build static query slug routes', () => {
     slug: 'abc',
     index: 3
   });
+});
+
+test('browser JSON adapter resolves relative archive requests against the stable app base URI', async () => {
+  let requestedUrl = null;
+  const adapter = createBrowserJsonRequestAdapter({
+    baseHref: 'https://rusty.test/gallery/',
+    documentRef: { baseURI: 'https://rusty.test/gallery/art/current-piece/' },
+    fetchImpl: async (url) => {
+      requestedUrl = String(url);
+      return {
+        ok: true,
+        json: async () => ({ ok: true })
+      };
+    }
+  });
+
+  await adapter.fetchJson('./data/artworks/a.json');
+
+  assert.equal(requestedUrl, 'https://rusty.test/gallery/data/artworks/a.json');
+});
+
+test('immersive world generated module URLs stay rooted when browser URL is an artwork route', () => {
+  const baseHref = resolvePublicRuntimeBaseHref('https://rusty.test/gallery/assets/immersive-world-scene-abcd.js');
+  const moduleUrl = normalizePublicRuntimeUrl('./data/immersive-world/generated-modules/example.mjs', {
+    expectedDir: 'data/immersive-world/generated-modules',
+    baseHref
+  });
+
+  assert.equal(baseHref, 'https://rusty.test/gallery/');
+  assert.equal(moduleUrl, 'https://rusty.test/gallery/data/immersive-world/generated-modules/example.mjs');
 });
 
 test('artwork share metadata resolves canonical URL and public image', () => {

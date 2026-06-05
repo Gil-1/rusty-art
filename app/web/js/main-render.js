@@ -222,16 +222,22 @@ export function populateQuickPicker(quickPicker, manifest, { compact = false, ac
   return facts;
 }
 
-export function renderGalleryList(galleryList, manifest, { activeFile = null, onSelect = () => {} } = {}) {
+export function renderGalleryList(galleryList, manifest, {
+  activeFile = null,
+  onSelect = () => {},
+  baseHref = null,
+  documentRef = globalThis?.document
+} = {}) {
   if (!galleryList || !manifest?.items) return null;
   galleryList.innerHTML = '';
+  const presentationOptions = { baseHref, documentRef };
 
   const cards = getGalleryPresentationItems(manifest).map((item) => {
-    const facts = buildArchiveCardPresentationFacts(item);
+    const facts = buildArchiveCardPresentationFacts(item, presentationOptions);
     const active = Boolean(facts.file && facts.file === activeFile);
     const card = createArchiveCardElement(item, {
       activate: () => onSelect(facts)
-    }, { active });
+    }, { active, ...presentationOptions });
     galleryList.appendChild?.(card);
     return { ...facts, active, ariaCurrent: active ? 'true' : 'false' };
   });
@@ -397,7 +403,7 @@ function normalizeArchiveCardCommands(commandsOrActivate) {
 }
 
 export function createArchiveCardElement(itemOrFacts, commandsOrActivate, options = {}) {
-  const facts = buildArchiveCardPresentationFacts(itemOrFacts);
+  const facts = buildArchiveCardPresentationFacts(itemOrFacts, options);
   const commands = normalizeArchiveCardCommands(commandsOrActivate);
   const active = Boolean(options.active || (options.activeFile && facts.file === options.activeFile));
   const li = document.createElement('li');

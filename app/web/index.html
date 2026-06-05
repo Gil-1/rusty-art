@@ -18,30 +18,31 @@
   </head>
   <body class="m-0 min-h-screen min-h-dvh overflow-hidden overscroll-none bg-neutral-950 font-sans leading-snug text-slate-50 antialiased [&.gallery-open]:overflow-hidden [&_button:not(:disabled)]:cursor-pointer [&_button:disabled]:cursor-not-allowed">
     <div aria-hidden="true" class="pointer-events-none fixed inset-0 z-[1] bg-[linear-gradient(180deg,rgba(6,8,14,0.16)_0%,rgba(6,8,14,0.56)_72%,rgba(6,8,14,0.84)_100%)] transition"></div>
-    <main class="studio-shell relative z-[2] mx-auto grid w-full min-w-0 max-w-[1200px] grid-cols-[minmax(0,1fr)] gap-4 p-4 max-[700px]:gap-2 max-[700px]:p-2 lg:p-6">
-      <section class="art-first relative z-[2] grid min-h-screen min-h-dvh min-w-0 grid-cols-[minmax(0,1fr)] grid-rows-[auto_auto_1fr] gap-3 p-3 [body.capture-mode_&]:p-0 max-[700px]:gap-2 max-[700px]:p-2" aria-label="Artwork stage">
-        <header class="topline relative z-[3] grid min-w-0 grid-cols-[minmax(320px,1fr)_minmax(340px,0.85fr)] items-center gap-3 rounded-lg border border-cyan-200/25 bg-neutral-950/70 p-2.5 shadow-[0_14px_36px_rgba(0,0,0,0.28)] backdrop-blur-md transition duration-200 [.art-first.is-loading_&]:translate-y-1 [.art-first.is-loading_&]:opacity-90 [body.capture-mode_&]:hidden max-[900px]:grid-cols-1 max-[700px]:gap-1.5 max-[700px]:p-2" aria-label="Studio header">
-          <div class="topline-left flex min-w-0 items-center gap-3 max-[700px]:gap-2">
-            <div class="topline-brand inline-flex shrink-0 items-center gap-2 max-[700px]:[body.mobile-chrome-compact_&]:hidden">
+    <main class="studio-shell relative z-[2] mx-auto grid h-screen h-dvh min-h-0 w-full min-w-0 max-w-[1200px] grid-cols-[minmax(0,1fr)] gap-4 overflow-hidden p-4 max-[700px]:h-[100svh] max-[700px]:gap-0 max-[700px]:p-0 lg:p-6">
+      <section class="art-first relative z-[2] grid h-full min-h-0 min-w-0 grid-cols-[minmax(0,1fr)] grid-rows-[auto_auto_1fr] gap-3 overflow-hidden p-3 [body.capture-mode_&]:p-0 max-[700px]:gap-0 max-[700px]:p-0" aria-label="Artwork stage">
+        <header class="topline relative z-[3] grid min-w-0 grid-cols-[minmax(320px,1fr)_minmax(340px,0.85fr)] items-center gap-3 rounded-lg rounded-br-none border border-cyan-200/25 bg-neutral-950/70 p-2.5 shadow-[0_14px_36px_rgba(0,0,0,0.28)] backdrop-blur-md transition duration-200 [.art-first.is-loading_&]:translate-y-1 [.art-first.is-loading_&]:opacity-90 [body.capture-mode_&]:hidden max-[900px]:grid-cols-1 max-[700px]:rounded-none max-[700px]:border-x-0 max-[700px]:border-t-0 max-[700px]:gap-1 max-[700px]:p-1.5" aria-label="Studio header">
+          <div class="topline-left flex min-w-0 items-center gap-3 max-[700px]:grid max-[700px]:grid-cols-1 max-[700px]:items-start max-[700px]:gap-1">
+            <div class="topline-brand inline-flex shrink-0 items-center gap-2">
               <span class="rusty-glyph inline-grid size-5 place-items-center rounded-full border border-cyan-200/50 bg-neutral-950/80 text-xs leading-none text-cyan-200" aria-hidden="true">✶</span>
               <p class="topline-mark m-0 font-serif text-xs font-semibold uppercase text-cyan-200">Rusty Art · Signal Garden</p>
             </div>
             <div class="topline-copy min-w-0 border-l border-slate-500/35 pl-3 max-[700px]:border-l-0 max-[700px]:pl-0">
-              <p class="topline-note m-0 truncate text-xs text-slate-100 max-[360px]:hidden">A daily visual translation of one Belgian headline.</p>
-              <p class="topline-intent m-0 mt-0.5 truncate text-[0.68rem] leading-snug text-slate-300 max-[1100px]:hidden">Made by Rusty, an AI artist-agent exploring how news can become calm, meaningful abstract art.</p>
+              <p class="topline-note m-0 text-xs leading-snug text-slate-100">A daily visual translation of one Belgian headline.</p>
+              <p class="topline-intent m-0 mt-0.5 max-w-[64ch] text-[0.68rem] leading-snug text-slate-300">Made by Rusty, an AI artist-agent exploring how news can become calm, meaningful abstract art.</p>
             </div>
           </div>
-          <div class="topline-tools grid w-full min-w-0 justify-items-end gap-2 max-[900px]:justify-items-start max-[700px]:gap-1.5">
-            <div class="quick-switch inline-grid w-full min-w-0 max-w-[26rem] grid-cols-[2.25rem_minmax(0,1fr)_2.25rem] items-center gap-1.5 rounded-lg border border-slate-400/25 bg-neutral-950/60 p-1.5 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] backdrop-blur-sm max-[700px]:max-w-full" aria-label="Quick switch artwork">
-              <button id="quick-prev" class="size-9 rounded-lg border border-slate-500/45 bg-white/5 text-base text-slate-100 transition hover:border-cyan-200/50 hover:bg-white/10 disabled:opacity-45 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-200" type="button" aria-label="Previous artwork (loops)">←</button>
-              <button id="gallery-trigger" class="gallery-trigger relative min-h-9 min-w-0 overflow-hidden rounded-lg border border-transparent bg-white/5 px-2.5 py-1 text-left text-sm font-semibold text-slate-50 transition hover:border-cyan-200/40 hover:bg-white/10 disabled:opacity-45 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-200 max-[700px]:px-2" type="button" aria-haspopup="dialog" aria-controls="gallery-dialog" aria-expanded="false" aria-label="Open artwork gallery">
-                <span id="quick-position" class="quick-position pointer-events-none absolute right-1.5 top-1 text-[0.58rem] font-medium leading-none text-slate-400 empty:hidden max-[700px]:right-1 max-[700px]:top-1.5 max-[700px]:text-[0.52rem]" aria-live="polite"></span>
-                <span class="gallery-trigger-placeholder">Open gallery</span>
-              </button>
-              <button id="quick-next" class="size-9 rounded-lg border border-slate-500/45 bg-white/5 text-base text-slate-100 transition hover:border-cyan-200/50 hover:bg-white/10 disabled:opacity-45 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-200" type="button" aria-label="Next artwork (loops)">→</button>
+          <div class="topline-tools relative grid w-full min-w-0 justify-items-end gap-2 max-[900px]:justify-items-start max-[700px]:gap-1.5">
+            <div class="topline-control-stack relative w-full min-w-0 max-w-[28rem] max-[700px]:max-w-full">
+              <div class="quick-switch inline-grid w-full min-w-0 grid-cols-[2.25rem_minmax(0,1fr)_2.25rem] items-center gap-1.5 rounded-lg border border-slate-400/25 bg-neutral-950/60 p-1.5 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] backdrop-blur-sm max-[700px]:grid-cols-[2rem_minmax(0,1fr)_2rem] max-[700px]:gap-1 max-[700px]:rounded-md max-[700px]:p-1" aria-label="Quick switch artwork">
+                <button id="quick-prev" class="size-9 rounded-lg border border-slate-500/45 bg-white/5 text-base text-slate-100 transition hover:border-cyan-200/50 hover:bg-white/10 disabled:opacity-45 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-200 max-[700px]:size-8 max-[700px]:rounded-md max-[700px]:text-sm" type="button" aria-label="Previous artwork (loops)">←</button>
+                <button id="gallery-trigger" class="gallery-trigger relative min-h-9 min-w-0 overflow-hidden rounded-lg border border-transparent bg-white/5 px-2.5 py-1 text-left text-sm font-semibold text-slate-50 transition hover:border-cyan-200/40 hover:bg-white/10 disabled:opacity-45 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-200 max-[700px]:min-h-8 max-[700px]:rounded-md max-[700px]:px-2 max-[700px]:py-0.5" type="button" aria-haspopup="dialog" aria-controls="gallery-dialog" aria-expanded="false" aria-label="Open artwork gallery">
+                  <span id="quick-position" class="quick-position pointer-events-none absolute right-1.5 top-1 text-[0.58rem] font-medium leading-none text-slate-400 empty:hidden max-[700px]:right-1 max-[700px]:top-1.5 max-[700px]:text-[0.52rem]" aria-live="polite"></span>
+                  <span class="gallery-trigger-placeholder">Open gallery</span>
+                </button>
+                <button id="quick-next" class="size-9 rounded-lg border border-slate-500/45 bg-white/5 text-base text-slate-100 transition hover:border-cyan-200/50 hover:bg-white/10 disabled:opacity-45 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-200 max-[700px]:size-8 max-[700px]:rounded-md max-[700px]:text-sm" type="button" aria-label="Next artwork (loops)">→</button>
+              </div>
+        <p class="key-hints pointer-events-none m-0 max-w-full whitespace-nowrap rounded-b-lg border border-t-0 border-cyan-200/25 bg-neutral-900/70 px-4 py-1.5 text-right text-[0.68rem] font-medium leading-none text-slate-300/90 shadow-[0_14px_36px_rgba(0,0,0,0.28)] backdrop-blur-md max-[900px]:hidden min-[901px]:absolute min-[901px]:right-[-11px] min-[901px]:top-[calc(100%_+_0.625rem)]">Keys: ← previous · → next · Home/End edges · loops</p>
             </div>
-            <button id="mobile-chrome-toggle" class="mode-button mobile-chrome-toggle inline-flex min-h-11 w-full items-center justify-center rounded-full border border-slate-500/60 bg-neutral-950/80 px-3 text-xs font-semibold text-slate-200 transition hover:border-cyan-200/60 hover:bg-slate-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-200" type="button" hidden aria-expanded="false">More controls</button>
-            <p class="key-hints m-0 justify-self-end text-[0.68rem] font-medium text-slate-400 max-[900px]:justify-self-start max-[700px]:hidden">Keys: ← previous · → next · Home/End edges · loops</p>
           </div>
         </header>
 
@@ -57,22 +58,22 @@
           </div>
         </div>
 
-        <div class="story-stack absolute bottom-[calc(1rem+env(safe-area-inset-bottom,0px))] left-4 z-[3] grid min-w-0 w-[min(92vw,820px)] max-w-[calc(100%-2rem)] gap-3 transition [.art-first.is-loading_&]:translate-y-1 [.art-first.is-loading_&]:opacity-85 [body.capture-mode_&]:hidden max-[700px]:bottom-[calc(0.5rem+env(safe-area-inset-bottom,0px))] max-[700px]:left-2 max-[700px]:right-2 max-[700px]:w-auto max-[700px]:max-w-none max-[700px]:gap-2">
-          <section id="story-context-panel" class="story-context-panel min-w-0 overflow-hidden rounded-lg border border-cyan-200/30 bg-neutral-950/86 p-3.5 shadow-xl backdrop-blur-md max-[700px]:p-2.5" aria-label="Details, source & provenance" hidden>
+        <div class="story-stack fixed bottom-[calc(1rem_+_env(safe-area-inset-bottom,0px))] left-4 z-[3] grid min-w-0 w-[min(92vw,820px)] max-w-[calc(100%_-_2rem)] gap-3 transition [.art-first.is-loading_&]:translate-y-1 [.art-first.is-loading_&]:opacity-85 [body.capture-mode_&]:hidden max-[700px]:bottom-[env(safe-area-inset-bottom,0px)] max-[700px]:left-0 max-[700px]:right-0 max-[700px]:max-h-[calc(100svh_-_env(safe-area-inset-bottom,0px))] max-[700px]:w-auto max-[700px]:max-w-none max-[700px]:gap-0 max-[700px]:overflow-y-auto max-[700px]:overscroll-contain">
+          <section id="story-context-panel" class="story-context-panel min-w-0 overflow-hidden rounded-lg border border-cyan-200/35 bg-neutral-950/80 p-3.5 shadow-xl backdrop-blur-sm max-[700px]:rounded-none max-[700px]:border-x-0 max-[700px]:p-2.5" aria-label="Details" hidden>
             <div class="story-context-heading flex items-start justify-between gap-4 border-b border-slate-500/30 pb-2.5">
               <div>
-                <p class="m-0 text-xs font-semibold uppercase text-cyan-200">Details, source & provenance</p>
+                <p class="m-0 text-xs font-semibold uppercase text-cyan-200">Details</p>
               </div>
             </div>
             <section id="meta" class="meta mt-3 text-sm leading-relaxed text-slate-200">Loading latest artwork…</section>
           </section>
 
-          <div class="now-chip min-w-0 rounded-lg border border-cyan-200/35 bg-neutral-950/80 px-4 py-3 shadow-xl backdrop-blur-sm max-[700px]:px-3 max-[700px]:py-2" aria-live="polite">
-            <div class="now-chip-top flex flex-wrap items-center justify-between gap-3">
+          <div class="now-chip min-w-0 rounded-lg border border-cyan-200/35 bg-neutral-950/80 px-4 py-3 shadow-xl backdrop-blur-sm max-[700px]:rounded-b-none max-[700px]:rounded-t-lg max-[700px]:border-x-0 max-[700px]:border-b-0 max-[700px]:px-3 max-[700px]:py-1.5" aria-live="polite">
+            <div class="now-chip-top flex flex-wrap items-center justify-between gap-3 max-[700px]:gap-1.5">
               <p class="now-chip-label m-0 flex items-center gap-2 text-xs font-semibold uppercase text-cyan-200">Now showing <span id="load-state" class="load-state text-[0.68rem] text-slate-200" hidden>loading…</span></p>
-              <button id="story-toggle" class="story-toggle inline-flex min-h-10 shrink-0 items-center gap-2 rounded-full border border-cyan-200/45 bg-neutral-950/85 px-3 text-xs font-semibold text-cyan-50 transition hover:border-cyan-100 hover:bg-slate-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-200 max-[700px]:min-h-9 max-[700px]:px-2.5" type="button" aria-controls="story-context-panel" aria-expanded="false">
-                <span class="inline-grid size-5 place-items-center rounded-full border border-cyan-200/50 text-cyan-100" aria-hidden="true">
-                  <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+              <button id="story-toggle" class="story-toggle inline-flex min-h-10 shrink-0 items-center gap-2 rounded-full border border-cyan-200/45 bg-neutral-950/85 px-3 text-xs font-semibold text-cyan-50 transition hover:border-cyan-100 hover:bg-slate-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-200 max-[700px]:min-h-8 max-[700px]:gap-1.5 max-[700px]:px-2" type="button" aria-controls="story-context-panel" aria-expanded="false">
+                <span class="inline-grid size-5 place-items-center rounded-full border border-cyan-200/50 text-cyan-100 max-[700px]:size-4" aria-hidden="true">
+                  <svg class="size-3.5 max-[700px]:size-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
                     <circle cx="12" cy="12" r="9"></circle>
                     <path d="M12 11v5"></path>
                     <path d="M12 8h.01"></path>
@@ -81,7 +82,7 @@
                 <span class="story-toggle-label">Details & source</span>
               </button>
             </div>
-            <p id="hero-now-title" class="hero-now-title m-0 mt-2 font-serif text-xl font-semibold leading-tight text-slate-50 max-[700px]:mt-1.5 max-[700px]:line-clamp-2 max-[700px]:text-base">Loading today’s piece…</p>
+            <p id="hero-now-title" class="hero-now-title m-0 mt-2 font-serif text-xl font-semibold leading-tight text-slate-50 max-[700px]:mt-1 max-[700px]:line-clamp-2 max-[700px]:text-base">Loading today’s piece…</p>
             <p id="hero-now-sub" class="hero-now-sub m-0 mt-1 text-sm text-slate-200 max-[700px]:text-xs max-[360px]:line-clamp-1">Waiting for archive data.</p>
             <p id="hero-now-headline" class="hero-now-headline m-0 mt-2 line-clamp-2 text-sm leading-relaxed text-slate-300 [&.is-expanded]:line-clamp-none max-[700px]:mt-1.5 max-[700px]:line-clamp-2 max-[700px]:text-xs max-[360px]:line-clamp-1">Headline context will appear here.</p>
             <button id="hero-headline-toggle" class="headline-toggle mt-2 min-h-11 rounded-full border border-cyan-200/45 bg-neutral-950/85 px-3 text-xs font-semibold uppercase text-cyan-50 transition hover:border-cyan-100 hover:bg-slate-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-200" type="button" hidden aria-expanded="false">More</button>

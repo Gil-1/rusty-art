@@ -227,13 +227,24 @@ export function isRemoteRuntimeRef(value) {
   return /^(?:[a-z][a-z0-9+.-]*:|\/\/)/i.test(String(value || '').trim());
 }
 
+export function resolvePublicRuntimeBaseHref(moduleUrl = import.meta.url) {
+  try {
+    const url = new URL(moduleUrl);
+    const rootMatch = url.pathname.match(/^(.*\/)(?:assets|js)\/[^/]*$/);
+    url.pathname = rootMatch ? rootMatch[1] : url.pathname.replace(/[^/]*$/, '');
+    url.search = '';
+    url.hash = '';
+    return url.href;
+  } catch {
+    return './';
+  }
+}
+
+const PUBLIC_RUNTIME_BASE_HREF = resolvePublicRuntimeBaseHref();
+
 export function normalizePublicRuntimeUrl(value, {
   expectedDir = 'data',
-  baseHref = typeof document !== 'undefined'
-    ? document.baseURI
-    : typeof window !== 'undefined'
-      ? window.location.href
-      : 'http://localhost/'
+  baseHref = PUBLIC_RUNTIME_BASE_HREF
 } = {}) {
   const raw = String(value || '').trim();
   if (!raw) throw new Error('Runtime ref URL is required.');

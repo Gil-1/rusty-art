@@ -53,7 +53,8 @@ export function createRuntimeRenderEffects({
   getArchiveController = () => null,
   runtimeController = null,
   captureStateController = null,
-  adaptiveOverlaySession = null
+  adaptiveOverlaySession = null,
+  publicArchiveBaseHref = null
 } = {}) {
   const facts = {
     currentArtworkLumaEstimate: null,
@@ -114,6 +115,7 @@ export function createRuntimeRenderEffects({
     if (captureMode || !refs.galleryList || !manifest?.items) return null;
     return renderGalleryListUi(refs.galleryList, manifest, {
       activeFile: getState().activeFile,
+      baseHref: publicArchiveBaseHref,
       onSelect: (cardFacts) => selectGalleryArtwork(cardFacts).catch?.(() => {})
     });
   }

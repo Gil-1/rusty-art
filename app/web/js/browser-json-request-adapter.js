@@ -33,11 +33,25 @@ function normalizeTimeoutMs(timeoutMs) {
   return normalized;
 }
 
+export function resolveBrowserRequestPath(path, { baseHref = null, documentRef = globalThis?.document } = {}) {
+  const text = String(path ?? '');
+  const base = String(baseHref || documentRef?.baseURI || '').trim();
+  if (!base) return text;
+
+  try {
+    return new URL(text, base).href;
+  } catch {
+    return text;
+  }
+}
+
 export function createBrowserJsonRequestAdapter({
   fetchImpl = resolveGlobalFunction('fetch'),
   AbortControllerImpl = globalThis?.AbortController,
   setTimeoutFn = resolveGlobalFunction('setTimeout'),
   clearTimeoutFn = resolveGlobalFunction('clearTimeout'),
+  documentRef = globalThis?.document,
+  baseHref = null,
   timeoutMs = DEFAULT_BROWSER_JSON_REQUEST_TIMEOUT_MS
 } = {}) {
   if (typeof fetchImpl !== 'function') throw new Error('Browser JSON request adapter requires fetch.');
@@ -47,8 +61,16 @@ export function createBrowserJsonRequestAdapter({
 
   const defaultTimeoutMs = normalizeTimeoutMs(timeoutMs);
 
-  async function fetchJson(path, { timeoutMs: requestTimeoutMs = defaultTimeoutMs, signal = null } = {}) {
+  async function fetchJson(path, {
+    timeoutMs: requestTimeoutMs = defaultTimeoutMs,
+    signal = null,
+    baseHref: requestBaseHref = null
+  } = {}) {
     const timeoutLimitMs = normalizeTimeoutMs(requestTimeoutMs);
+    const requestPath = resolveBrowserRequestPath(path, {
+      baseHref: requestBaseHref || baseHref,
+      documentRef
+    });
     const controller = new AbortControllerImpl();
     let timeoutFired = false;
     let externalAbortFired = false;
@@ -72,7 +94,7 @@ export function createBrowserJsonRequestAdapter({
     }
 
     try {
-      const response = await fetchImpl(path, { signal: controller.signal });
+      const response = await fetchImpl(requestPath, { signal: controller.signal });
       if (!response?.ok) throw new Error(`HTTP ${response?.status ?? 'unknown'}`);
 
       try {

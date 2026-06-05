@@ -1,5 +1,9 @@
 import { startAnalytics, trackAnalyticsPageView } from './analytics.js';
-import { createArtworkFetcher, loadManifestWithFallback } from './main-data.js';
+import {
+  createArtworkFetcher,
+  createBrowserJsonRequestAdapter,
+  loadManifestWithFallback
+} from './main-data.js';
 import { createPublicArchiveRuntimeSession } from './public-archive-runtime-session.js';
 import { createCaptureStateController } from './main-capture-state.js';
 import {
@@ -23,6 +27,24 @@ import { createRuntimeRenderEffects } from './main-render-effects.js';
 import { createArchiveCardElement } from './main-render.js';
 
 const PAGE_SIZE = 12;
+
+function resolvePublicArchiveBaseHref(moduleUrl = import.meta.url) {
+  try {
+    const url = new URL(moduleUrl);
+    const rootMatch = url.pathname.match(/^(.*\/)(?:assets|js)\/[^/]*$/);
+    url.pathname = rootMatch ? rootMatch[1] : url.pathname.replace(/[^/]*$/, '');
+    url.search = '';
+    url.hash = '';
+    return url.href;
+  } catch {
+    return './';
+  }
+}
+
+const publicArchiveBaseHref = resolvePublicArchiveBaseHref();
+const publicArchiveRequestAdapter = createBrowserJsonRequestAdapter({
+  baseHref: publicArchiveBaseHref
+});
 
 startAnalytics();
 
@@ -92,7 +114,7 @@ let presentationState = createInitialPresentationState({
   scrollY: window.scrollY
 });
 
-const fetchArtwork = createArtworkFetcher();
+const fetchArtwork = createArtworkFetcher({ requestAdapter: publicArchiveRequestAdapter });
 const captureStateController = createCaptureStateController({ captureMode });
 const artworkRouteHistory = createArtworkRouteHistoryController({ windowRef: window, captureMode });
 const shareMetadataController = createPublicArtworkShareMetadataController({
@@ -172,7 +194,8 @@ renderEffects = createRuntimeRenderEffects({
   getArchiveController: () => archiveController,
   runtimeController,
   captureStateController,
-  adaptiveOverlaySession
+  adaptiveOverlaySession,
+  publicArchiveBaseHref
 });
 
 archiveController = createPublicArchiveRuntimeSession({
@@ -180,7 +203,7 @@ archiveController = createPublicArchiveRuntimeSession({
   captureMode,
   requestedIndex,
   requestedArtworkSlug,
-  loadManifest: loadManifestWithFallback,
+  loadManifest: () => loadManifestWithFallback({ requestAdapter: publicArchiveRequestAdapter }),
   fetchArtwork,
   runtimeController,
   captureStateController,
@@ -191,7 +214,10 @@ archiveController = createPublicArchiveRuntimeSession({
   isMobileViewport,
   getScrollY: () => window.scrollY,
   estimateArtworkLuma,
-  createArchiveCardElement,
+  createArchiveCardElement: (item, commandsOrActivate, options = {}) => createArchiveCardElement(item, commandsOrActivate, {
+    ...options,
+    baseHref: publicArchiveBaseHref
+  }),
   onArtworkRouteChange: (routeChange) => artworkRouteHistory.syncLoadedArtworkRoute(routeChange),
   render: {
     ...renderEffects.render,

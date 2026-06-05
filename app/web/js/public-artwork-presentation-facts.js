@@ -21,10 +21,27 @@ function normalizedOptionalText(value) {
   return text || null;
 }
 
-function normalizedTrustedRelativeJpeg(value) {
+function resolveDocumentBaseHref({ baseHref = null, documentRef = globalThis?.document } = {}) {
+  return normalizedOptionalText(baseHref) || normalizedOptionalText(documentRef?.baseURI);
+}
+
+function resolveTrustedRelativeHref(path, options = {}) {
+  const base = resolveDocumentBaseHref(options);
+  if (!base) return path;
+
+  try {
+    return new URL(path, base).href;
+  } catch {
+    return path;
+  }
+}
+
+function normalizedTrustedRelativeJpeg(value, options = {}) {
   const text = normalizedOptionalText(value);
   if (!text || text.includes('..')) return null;
-  return /^\.\/data\/[A-Za-z0-9._/-]+\.jpg$/i.test(text) ? text : null;
+  return /^\.\/data\/[A-Za-z0-9._/-]+\.jpg$/i.test(text)
+    ? resolveTrustedRelativeHref(text, options)
+    : null;
 }
 
 function normalizedColor(value) {
@@ -428,10 +445,10 @@ export function resolvePublicArtworkHeroFacts(value = {}, options = {}) {
   return resolvePublicArtworkPresentationFacts(value, options).hero;
 }
 
-export function buildArchiveCardPresentationFacts(item = {}) {
+export function buildArchiveCardPresentationFacts(item = {}, options = {}) {
   const source = asObject(item);
   const image = asObject(source.image);
-  const thumbnailSrc = normalizedTrustedRelativeJpeg(source.thumbnailJpeg || image.thumbnailJpeg);
+  const thumbnailSrc = normalizedTrustedRelativeJpeg(source.thumbnailJpeg || image.thumbnailJpeg, options);
   const title = normalizedText(source.title, 'Untitled piece');
   const artist = normalizedText(source.artist, 'Unknown artist');
   return {
@@ -448,8 +465,8 @@ export function buildArchiveCardPresentationFacts(item = {}) {
   };
 }
 
-export function buildGalleryCardPresentationFacts(item = {}, { activeFile = null } = {}) {
-  const facts = buildArchiveCardPresentationFacts(item);
+export function buildGalleryCardPresentationFacts(item = {}, { activeFile = null, ...options } = {}) {
+  const facts = buildArchiveCardPresentationFacts(item, options);
   const active = Boolean(facts.file && facts.file === activeFile);
   return {
     ...facts,
@@ -463,10 +480,10 @@ export function getGalleryPresentationItems(manifest = {}) {
   return items.slice().reverse();
 }
 
-export function buildGalleryPresentationFacts(manifest = {}, { activeFile = null } = {}) {
+export function buildGalleryPresentationFacts(manifest = {}, { activeFile = null, ...options } = {}) {
   return {
     cards: getGalleryPresentationItems(manifest)
-      .map((item) => buildGalleryCardPresentationFacts(item, { activeFile }))
+      .map((item) => buildGalleryCardPresentationFacts(item, { activeFile, ...options }))
   };
 }
 
