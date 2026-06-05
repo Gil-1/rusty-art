@@ -22,6 +22,8 @@ export const WEBGPU_AUTHORING_FALLBACK_REASONS = Object.freeze({
   LEGACY_GLSL_POST_PASS: 'legacy-glsl-post-pass',
   CUSTOM_JS_SHADER_SURFACE: 'custom-js-shader-surface',
   GENERATED_MODULE_UNKNOWN: 'generated-module-unknown',
+  TEXTURED_GEOMETRY_MISSING_UV: 'textured-geometry-missing-uv',
+  POINTS_GEOMETRY_MISSING_UV: 'points-geometry-missing-uv',
   WEBGPU_EVIDENCE_MISSING: 'webgpu-evidence-missing'
 });
 
@@ -50,7 +52,9 @@ export const WEBGPU_FORBIDDEN_SHADER_SURFACES = Object.freeze([
   'legacy-glsl-post-pass',
   'custom-js-shader-surface',
   'raw-glsl-source',
-  'unknown-generated-module'
+  'unknown-generated-module',
+  'textured-geometry-missing-uv',
+  'points-geometry-missing-uv'
 ]);
 
 const WEBGPU_MODE_ALIASES = new Set([
@@ -209,6 +213,9 @@ function collectForbiddenFromSurface(surface = {}, index = 0) {
   if (surface.unknownGeneratedModule === true || surfaceType === 'unknown-generated-module') {
     reasons.push(WEBGPU_AUTHORING_FALLBACK_REASONS.GENERATED_MODULE_UNKNOWN);
   }
+  if (surface.texturedGeometryMissingUv === true || surfaceType === 'textured-geometry-missing-uv') {
+    reasons.push(WEBGPU_AUTHORING_FALLBACK_REASONS.TEXTURED_GEOMETRY_MISSING_UV);
+  }
   return reasons.map((reason, reasonIndex) => ({
     id: `surface.${index + 1}.${reasonIndex + 1}.${reason}`,
     source: 'surface',
@@ -258,6 +265,9 @@ function collectForbiddenFromCustomModule(module = {}, index = 0) {
   }
   if (materialType === 'RawShaderMaterial') {
     reasons.push(WEBGPU_AUTHORING_FALLBACK_REASONS.RAW_SHADER_MATERIAL);
+  }
+  if (module.texturedGeometryMissingUv === true || kind === 'textured-geometry-missing-uv') {
+    reasons.push(WEBGPU_AUTHORING_FALLBACK_REASONS.TEXTURED_GEOMETRY_MISSING_UV);
   }
   if (kind === 'js' || module?.source?.js) reasons.push(WEBGPU_AUTHORING_FALLBACK_REASONS.CUSTOM_JS_SHADER_SURFACE);
   if (family === 'post' && (module?.source?.glsl || module?.glsl)) {
