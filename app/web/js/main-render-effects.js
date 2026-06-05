@@ -17,6 +17,7 @@ import {
 import {
   populateQuickPicker as populateQuickPickerUi,
   applySceneProgressFacts,
+  renderGalleryList as renderGalleryListUi,
   renderMeta as renderMetaUi,
   setLoadingState,
   showFallback as showFallbackUi,
@@ -81,6 +82,61 @@ export function createRuntimeRenderEffects({
     }, message, showRetry);
   }
 
+  function galleryTrigger() {
+    return refs.galleryTrigger || refs.quickPicker;
+  }
+
+  function isGalleryOpen() {
+    return Boolean(refs.galleryDialog && !refs.galleryDialog.hidden);
+  }
+
+  function closeGallery({ restoreFocus = true } = {}) {
+    if (!refs.galleryDialog) return false;
+    refs.galleryDialog.hidden = true;
+    refs.galleryDialog.setAttribute?.('aria-hidden', 'true');
+    body?.classList?.remove?.('gallery-open');
+    galleryTrigger()?.setAttribute?.('aria-expanded', 'false');
+    if (restoreFocus) galleryTrigger()?.focus?.({ preventScroll: true });
+    return true;
+  }
+
+  function selectGalleryArtwork(facts = {}) {
+    const file = facts.file || null;
+    closeGallery();
+    if (!file) return Promise.resolve({ status: 'missing-file' });
+    if (file === getState().activeFile) return Promise.resolve({ status: 'current', file });
+    return resolveController(getArchiveController)?.loadArtworkByFile?.(file) || Promise.resolve({ status: 'missing-controller', file });
+  }
+
+  function renderGallery(manifest = resolveController(getArchiveController)?.getManifest?.()) {
+    if (captureMode || !refs.galleryList || !manifest?.items) return null;
+    return renderGalleryListUi(refs.galleryList, manifest, {
+      activeFile: getState().activeFile,
+      onSelect: (cardFacts) => selectGalleryArtwork(cardFacts).catch?.(() => {})
+    });
+  }
+
+  function openGallery() {
+    const trigger = galleryTrigger();
+    if (captureMode || !refs.galleryDialog || trigger?.disabled) return false;
+    renderGallery();
+    refs.galleryDialog.hidden = false;
+    refs.galleryDialog.setAttribute?.('aria-hidden', 'false');
+    body?.classList?.add?.('gallery-open');
+    trigger?.setAttribute?.('aria-expanded', 'true');
+    refs.galleryClose?.focus?.({ preventScroll: true });
+    return true;
+  }
+
+  function handleGalleryKeydown(event) {
+    if (!isGalleryOpen()) return false;
+    if (event?.key === 'Escape') {
+      event.preventDefault?.();
+      closeGallery();
+    }
+    return true;
+  }
+
   function updateMobileChromeState() {
     return updateState((state) => applyMobileChromeEffects(state, {
       body,
@@ -130,7 +186,7 @@ export function createRuntimeRenderEffects({
     adaptiveOverlaySession?.reset?.();
     return updateState((state) => resetChromeUiForBootEffects(state, {
       archiveList: refs.archiveList,
-      quickPicker: refs.quickPicker,
+      quickPicker: galleryTrigger(),
       quickPosition: refs.quickPosition,
       heroNowHeadline: refs.heroNowHeadline,
       heroHeadlineToggle: refs.heroHeadlineToggle,
@@ -168,6 +224,7 @@ export function createRuntimeRenderEffects({
       artFirst: refs.artFirst,
       loadState: refs.loadState,
       quickPicker: refs.quickPicker,
+      galleryTrigger: refs.galleryTrigger,
       quickPrev: refs.quickPrev,
       quickNext: refs.quickNext
     }, isLoading, manifest, activeIndex);
@@ -181,16 +238,17 @@ export function createRuntimeRenderEffects({
     }, progress);
   }
 
-  function populateQuickPicker(manifest = resolveController(getArchiveController)?.getManifest?.()) {
-    if (!refs.quickPicker || !manifest?.items) return null;
+  function populateQuickPicker(manifest = resolveController(getArchiveController)?.getManifest?.(), activeIndex = getState().activeIndex) {
+    const trigger = galleryTrigger();
+    if (!trigger || !manifest?.items) return null;
     const state = getState();
-    const selectedValue = state.activeIndex >= 0 ? String(state.activeIndex) : refs.quickPicker.value;
+    const selectedIndex = activeIndex >= 0 ? activeIndex : state.activeIndex;
     facts.quickPickerCompact = isMobileViewport();
-    const pickerFacts = populateQuickPickerUi(refs.quickPicker, manifest, { compact: facts.quickPickerCompact });
-
-    if (selectedValue && refs.quickPicker.querySelector?.(`option[value="${selectedValue}"]`)) {
-      refs.quickPicker.value = selectedValue;
-    }
+    const pickerFacts = populateQuickPickerUi(trigger, manifest, {
+      compact: facts.quickPickerCompact,
+      activeIndex: selectedIndex
+    });
+    renderGallery(manifest);
     return pickerFacts;
   }
 
@@ -199,22 +257,26 @@ export function createRuntimeRenderEffects({
   }
 
   function refreshActiveArchiveItem(activeFile = getState().activeFile) {
-    refs.archiveList?.querySelectorAll?.('li[data-file]')?.forEach((li) => {
-      const isActive = li.dataset.file === activeFile;
-      li.classList.toggle('active', isActive);
-      li.setAttribute('aria-current', isActive ? 'true' : 'false');
+    [refs.archiveList, refs.galleryList].forEach((list) => {
+      list?.querySelectorAll?.('li[data-file]')?.forEach((li) => {
+        const isActive = li.dataset.file === activeFile;
+        li.classList?.toggle?.('active', isActive);
+        li.setAttribute?.('aria-current', isActive ? 'true' : 'false');
+      });
     });
   }
 
   function syncQuickControls(manifest, activeIndex) {
-    return syncQuickControlsUi({
+    const result = syncQuickControlsUi({
       manifest,
       activeIndex,
       quickPrev: refs.quickPrev,
       quickNext: refs.quickNext,
-      quickPicker: refs.quickPicker,
+      quickPicker: galleryTrigger(),
       quickPosition: refs.quickPosition
     });
+    populateQuickPicker(manifest, activeIndex);
+    return result;
   }
 
   function syncRenderStatus() {
@@ -340,6 +402,7 @@ export function createRuntimeRenderEffects({
       facts.currentArtworkLumaEstimate = lumaEstimate;
     },
     renderMeta,
+    renderGallery,
     setSceneProgress,
     updateHeroNow,
     refreshActiveArchiveItem,
@@ -368,6 +431,9 @@ export function createRuntimeRenderEffects({
     applyMotionMode,
     toggleMobileChrome,
     toggleHeadline,
+    openGallery,
+    closeGallery,
+    handleGalleryKeydown,
     applyInitError,
     getCurrentArtworkLumaEstimate: () => facts.currentArtworkLumaEstimate,
     getFacts: () => cloneFacts(facts)

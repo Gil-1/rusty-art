@@ -2,8 +2,8 @@ import {
   buildArchiveCountPresentationFacts,
   buildArchiveCardPresentationFacts,
   buildFallbackPresentationFacts,
+  buildGalleryTriggerPresentationFacts,
   buildLoadingPresentationFacts,
-  buildQuickPickerOptionsPresentationFacts,
   buildStatusPresentationFacts,
   resolvePublicArtworkHeroFacts,
   resolvePublicArtworkPresentationFacts,
@@ -221,10 +221,11 @@ export function updateArchiveCount(archiveCount, renderedArchiveCount, manifest)
   return facts;
 }
 
-export function applyLoadingFacts({ artFirst, loadState, quickPicker, quickPrev, quickNext }, facts = {}) {
+export function applyLoadingFacts({ artFirst, loadState, quickPicker, galleryTrigger, quickPrev, quickNext }, facts = {}) {
   if (artFirst) artFirst.classList.toggle('is-loading', Boolean(facts.artFirstLoading));
   if (loadState) loadState.hidden = Boolean(facts.loadStateHidden);
-  if (quickPicker) quickPicker.disabled = Boolean(facts.quickPickerDisabled);
+  const galleryControl = galleryTrigger || quickPicker;
+  if (galleryControl) galleryControl.disabled = Boolean(facts.galleryTriggerDisabled ?? facts.quickPickerDisabled);
   if (quickPrev) quickPrev.disabled = Boolean(facts.quickPrevDisabled);
   if (quickNext) quickNext.disabled = Boolean(facts.quickNextDisabled);
   return facts;
@@ -245,14 +246,36 @@ export function setLoadingState(elements, isLoading, manifest, activeIndex) {
   return applyLoadingFacts(elements, buildLoadingPresentationFacts({ isLoading, manifest, activeIndex }));
 }
 
-export function populateQuickPicker(quickPicker, manifest, { compact = false } = {}) {
+export function populateQuickPicker(quickPicker, manifest, { compact = false, activeIndex = -1 } = {}) {
   if (!quickPicker || !manifest?.items) return;
-  const facts = buildQuickPickerOptionsPresentationFacts(manifest, { compact });
+  const item = manifest.items[activeIndex] || null;
+  const facts = buildGalleryTriggerPresentationFacts(item, { compact });
 
   quickPicker.innerHTML = facts.options
-    .map((option) => `<option value="${escapeHtml(option.value)}" title="${escapeHtml(option.fullLabel)}">${escapeHtml(option.label)}</option>`)
-    .join('');
+    ? facts.options
+      .map((option) => `<option value="${escapeHtml(option.value)}" title="${escapeHtml(option.fullLabel)}">${escapeHtml(option.label)}</option>`)
+      .join('')
+    : `<span class="gallery-trigger-kicker" aria-hidden="true">Gallery</span><span class="gallery-trigger-label">${escapeHtml(facts.label)}</span>`;
+  quickPicker.title = facts.fullLabel || '';
+  quickPicker.setAttribute?.('aria-label', facts.actionLabel || 'Open artwork gallery');
   return facts;
+}
+
+export function renderGalleryList(galleryList, manifest, { activeFile = null, onSelect = () => {} } = {}) {
+  if (!galleryList || !manifest?.items) return null;
+  galleryList.innerHTML = '';
+
+  const cards = manifest.items.map((item) => {
+    const facts = buildArchiveCardPresentationFacts(item);
+    const active = Boolean(facts.file && facts.file === activeFile);
+    const card = createArchiveCardElement(item, {
+      activate: () => onSelect(facts)
+    }, { active });
+    galleryList.appendChild?.(card);
+    return { ...facts, active, ariaCurrent: active ? 'true' : 'false' };
+  });
+
+  return { cards };
 }
 
 export function renderMeta(meta, artOrFacts, sceneInitError) {
@@ -296,15 +319,18 @@ function normalizeArchiveCardCommands(commandsOrActivate) {
   };
 }
 
-export function createArchiveCardElement(itemOrFacts, commandsOrActivate) {
+export function createArchiveCardElement(itemOrFacts, commandsOrActivate, options = {}) {
   const facts = buildArchiveCardPresentationFacts(itemOrFacts);
   const commands = normalizeArchiveCardCommands(commandsOrActivate);
+  const active = Boolean(options.active || (options.activeFile && facts.file === options.activeFile));
   const li = document.createElement('li');
   li.dataset.file = facts.file;
-  li.className = 'archive-card';
+  li.className = active ? 'archive-card active' : 'archive-card';
   li.setAttribute('role', 'button');
   li.setAttribute('tabindex', '0');
+  li.setAttribute('aria-current', active ? 'true' : 'false');
   li.innerHTML = `
+    ${active ? '<p class="archive-current">Current artwork</p>' : ''}
     ${facts.thumbnail ? `
       <div class="archive-thumb">
         <img src="${escapeHtml(facts.thumbnail.src)}" alt="${escapeHtml(facts.thumbnail.altText)}" loading="lazy" decoding="async">

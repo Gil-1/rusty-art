@@ -425,6 +425,24 @@ export function buildArchiveCardPresentationFacts(item = {}) {
   };
 }
 
+export function buildGalleryCardPresentationFacts(item = {}, { activeFile = null } = {}) {
+  const facts = buildArchiveCardPresentationFacts(item);
+  const active = Boolean(facts.file && facts.file === activeFile);
+  return {
+    ...facts,
+    active,
+    ariaCurrent: active ? 'true' : 'false',
+    currentLabel: active ? 'Current artwork' : null
+  };
+}
+
+export function buildGalleryPresentationFacts(manifest = {}, { activeFile = null } = {}) {
+  const items = Array.isArray(manifest?.items) ? manifest.items : [];
+  return {
+    cards: items.map((item) => buildGalleryCardPresentationFacts(item, { activeFile }))
+  };
+}
+
 export function buildArchiveCountPresentationFacts(renderedArchiveCount = 0, manifest = {}) {
   const items = Array.isArray(manifest?.items) ? manifest.items : null;
   if (!items) {
@@ -455,14 +473,32 @@ export function buildQuickPickerPresentationFacts(item = {}, { compact = false }
   const fullLabel = `${date} · ${artist} · ${title}`;
 
   if (!compact) {
-    return { label: fullLabel, fullLabel };
+    return {
+      label: fullLabel,
+      fullLabel,
+      actionLabel: `Open artwork gallery, current artwork: ${fullLabel}`
+    };
   }
 
   const compactArtist = artist.length > 22 ? `${artist.slice(0, 21)}…` : artist;
+  const label = `${date} · ${compactArtist}`;
   return {
-    label: `${date} · ${compactArtist}`,
-    fullLabel
+    label,
+    fullLabel,
+    actionLabel: `Open artwork gallery, current artwork: ${fullLabel}`
   };
+}
+
+export function buildGalleryTriggerPresentationFacts(item = {}, { compact = false } = {}) {
+  if (!item || !Object.keys(asObject(item)).length) {
+    return {
+      label: 'Open gallery',
+      fullLabel: 'Open artwork gallery',
+      actionLabel: 'Open artwork gallery'
+    };
+  }
+
+  return buildQuickPickerPresentationFacts(item, { compact });
 }
 
 export function buildQuickPickerOptionsPresentationFacts(manifest = {}, { compact = false } = {}) {
@@ -490,6 +526,7 @@ export function buildLoadingPresentationFacts({ isLoading = false, manifest = {}
     hasLoopableArchive,
     artFirstLoading: loading,
     loadStateHidden: !loading,
+    galleryTriggerDisabled: loading,
     quickPickerDisabled: loading,
     quickPrevDisabled: loading || !hasLoopableArchive,
     quickNextDisabled: loading || !hasLoopableArchive
@@ -532,12 +569,15 @@ export function buildPublicArtworkViewPresentationFacts({
   compactQuickPicker = false
 } = {}) {
   const artworkFacts = resolvePublicArtworkPresentationFacts(art, { sceneInitError });
+  const manifestItems = Array.isArray(manifest?.items) ? manifest.items : [];
+  const activeFile = manifestItems[activeIndex]?.file || null;
 
   return {
     ...artworkFacts,
+    gallery: buildGalleryPresentationFacts(manifest, { activeFile }),
     archive: {
       count: buildArchiveCountPresentationFacts(renderedArchiveCount, manifest),
-      cards: (Array.isArray(manifest?.items) ? manifest.items : []).map((item) => buildArchiveCardPresentationFacts(item)),
+      cards: manifestItems.map((item) => buildArchiveCardPresentationFacts(item)),
       quickPicker: buildQuickPickerOptionsPresentationFacts(manifest, { compact: compactQuickPicker })
     },
     loading: buildLoadingPresentationFacts({ isLoading, manifest, activeIndex }),

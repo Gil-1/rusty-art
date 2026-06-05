@@ -37,6 +37,7 @@ export function resolveRuntimeShellOptions({
 }
 
 export function queryRuntimeDomRefs(documentRef = document) {
+  const galleryTrigger = documentRef.getElementById('gallery-trigger');
   return {
     artFirst: documentRef.querySelector('.art-first'),
     canvas: documentRef.getElementById('art-canvas'),
@@ -49,7 +50,11 @@ export function queryRuntimeDomRefs(documentRef = document) {
     archiveCount: documentRef.getElementById('archive-count'),
     quickPrev: documentRef.getElementById('quick-prev'),
     quickNext: documentRef.getElementById('quick-next'),
-    quickPicker: documentRef.getElementById('quick-picker'),
+    quickPicker: galleryTrigger,
+    galleryTrigger,
+    galleryDialog: documentRef.getElementById('gallery-dialog'),
+    galleryClose: documentRef.getElementById('gallery-close'),
+    galleryList: documentRef.getElementById('gallery-list'),
     quickPosition: documentRef.getElementById('quick-position'),
     loadState: documentRef.getElementById('load-state'),
     sceneProgress: documentRef.getElementById('scene-progress'),
@@ -90,6 +95,9 @@ export function installRuntimeShellEventBindings({
     quickPrev,
     quickNext,
     quickPicker,
+    galleryTrigger = quickPicker,
+    galleryDialog,
+    galleryClose,
     modeStory,
     modeLab,
     modeFocus,
@@ -103,7 +111,14 @@ export function installRuntimeShellEventBindings({
   addRuntimeShellBinding(bindings, facts, retryLoad, 'click', () => actions.onRetryLoad?.());
   addRuntimeShellBinding(bindings, facts, quickPrev, 'click', () => actions.onQuickPrevious?.());
   addRuntimeShellBinding(bindings, facts, quickNext, 'click', () => actions.onQuickNext?.());
-  addRuntimeShellBinding(bindings, facts, quickPicker, 'change', (event) => actions.onQuickPickerChange?.(event));
+  if (quickPicker && quickPicker !== galleryTrigger) {
+    addRuntimeShellBinding(bindings, facts, quickPicker, 'change', (event) => actions.onQuickPickerChange?.(event));
+  }
+  addRuntimeShellBinding(bindings, facts, galleryTrigger, 'click', () => actions.onOpenGallery?.());
+  addRuntimeShellBinding(bindings, facts, galleryClose, 'click', () => actions.onCloseGallery?.());
+  addRuntimeShellBinding(bindings, facts, galleryDialog, 'click', (event) => {
+    if (event.target === galleryDialog) actions.onCloseGallery?.();
+  });
   addRuntimeShellBinding(bindings, facts, modeStory, 'click', () => actions.onViewMode?.('story'));
   addRuntimeShellBinding(bindings, facts, modeLab, 'click', () => actions.onViewMode?.('lab'));
   addRuntimeShellBinding(bindings, facts, metaModeStory, 'click', () => actions.onViewMode?.('story'));

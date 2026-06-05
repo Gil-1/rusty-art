@@ -51,6 +51,10 @@ const {
   quickPrev,
   quickNext,
   quickPicker,
+  galleryTrigger,
+  galleryDialog,
+  galleryClose,
+  galleryList,
   quickPosition,
   loadState,
   sceneProgress,
@@ -122,6 +126,10 @@ renderEffects = createRuntimeRenderEffects({
     quickPrev,
     quickNext,
     quickPicker,
+    galleryTrigger,
+    galleryDialog,
+    galleryClose,
+    galleryList,
     quickPosition,
     loadState,
     sceneProgress,
@@ -193,6 +201,9 @@ bindRuntimeShellEvents({
     quickPrev,
     quickNext,
     quickPicker,
+    galleryTrigger,
+    galleryDialog,
+    galleryClose,
     modeStory,
     modeLab,
     modeFocus,
@@ -214,6 +225,8 @@ bindRuntimeShellEvents({
     onQuickPrevious: () => archiveController.handleQuickPrevious().catch(() => {}),
     onQuickNext: () => archiveController.handleQuickNext().catch(() => {}),
     onQuickPickerChange: (event) => archiveController.handleQuickPickerChange(event).catch(() => {}),
+    onOpenGallery: renderEffects.openGallery,
+    onCloseGallery: renderEffects.closeGallery,
     onViewMode: renderEffects.applyViewMode,
     onToggleFocus: () => renderEffects.setFocusMode(!presentationState.focusMode),
     onToggleMobileChrome: renderEffects.toggleMobileChrome,
@@ -224,7 +237,10 @@ bindRuntimeShellEvents({
       renderEffects.updateMobileChromeState();
     },
     onViewportChange: renderEffects.refreshViewportUi,
-    onKeydown: (event) => archiveController.handleKeyboardCommand(event)
+    onKeydown: (event) => {
+      if (renderEffects.handleGalleryKeydown(event)) return true;
+      return archiveController.handleKeyboardCommand(event);
+    }
   }
 });
 

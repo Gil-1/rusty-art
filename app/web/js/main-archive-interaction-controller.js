@@ -177,7 +177,6 @@ export function createArchiveInteractionController({
     } else {
       await runtimeController?.bootSceneNow?.();
       render.startAdaptiveOverlayLoop?.();
-      appendArchiveItems();
     }
 
     return { status: 'ready', manifest };

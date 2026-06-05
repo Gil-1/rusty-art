@@ -44,7 +44,10 @@ export function syncQuickControls({ manifest, activeIndex, quickPrev, quickNext,
 
   if (quickPrev) quickPrev.disabled = !hasLoopableArchive;
   if (quickNext) quickNext.disabled = !hasLoopableArchive;
-  if (quickPicker && activeIndex >= 0) quickPicker.value = String(activeIndex);
+  if (quickPicker && activeIndex >= 0) {
+    quickPicker.dataset.activeIndex = String(activeIndex);
+    if (quickPicker.tagName === 'SELECT') quickPicker.value = String(activeIndex);
+  }
   if (quickPosition && activeIndex >= 0) {
     quickPosition.textContent = `${activeIndex + 1} / ${manifest.items.length} loop`;
   }
