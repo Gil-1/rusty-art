@@ -17,12 +17,7 @@ const WEB_ROOT = path.join(__dirname, 'app/web');
 const WEB_DIST = path.join(__dirname, 'app/web-dist');
 const DEFAULT_PUBLIC_SITE_URL = 'https://rusty-art.edge-solutions.be/';
 const PUBLIC_SITE_URL = String(process.env.PUBLIC_SITE_URL || DEFAULT_PUBLIC_SITE_URL).trim();
-const GA4_PATTERN = /^G-[A-Z0-9]{4,}$/;
 const GTM_PATTERN = /^GTM-[A-Z0-9]+$/;
-const CROSS_DOMAIN_LINKER_DOMAINS = Object.freeze([
-  'edge-solutions.be',
-  'rusty-art.edge-solutions.be'
-]);
 
 function cleanAnalyticsId(value, pattern) {
   const id = String(value || '').trim();
@@ -32,18 +27,15 @@ function cleanAnalyticsId(value, pattern) {
 function resolveAnalyticsIds(env = process.env) {
   const publicGtmId = String(env.PUBLIC_GTM_ID || '').trim();
   return {
-    gaMeasurementId: cleanAnalyticsId(env.PUBLIC_GA_MEASUREMENT_ID, GA4_PATTERN)
-      || cleanAnalyticsId(publicGtmId, GA4_PATTERN),
     gtmId: cleanAnalyticsId(publicGtmId, GTM_PATTERN)
   };
 }
 
-function buildAnalyticsPageContextScript({ gaMeasurementId = '' } = {}) {
+function buildAnalyticsPageContextScript() {
   return `
     window.dataLayer = window.dataLayer || [];
     window.__rustyAnalytics = window.__rustyAnalytics || {};
     window.__rustyAnalytics.pageContext = {
-      ga_measurement_id: ${JSON.stringify(gaMeasurementId)},
       page_location: window.location.href,
       page_path: window.location.pathname + window.location.search,
       page_title: document.title,
@@ -57,14 +49,14 @@ function analyticsHtmlPlugin() {
   return {
     name: 'rusty-analytics-html',
     transformIndexHtml() {
-      const { gaMeasurementId, gtmId } = resolveAnalyticsIds();
+      const { gtmId } = resolveAnalyticsIds();
       const tags = [];
 
       if (gtmId) {
         tags.push({
           tag: 'script',
           attrs: { id: 'rusty-analytics-context' },
-          children: buildAnalyticsPageContextScript({ gaMeasurementId }),
+          children: buildAnalyticsPageContextScript(),
           injectTo: 'head'
         });
         tags.push({
@@ -88,42 +80,6 @@ function analyticsHtmlPlugin() {
           tag: 'noscript',
           children: `<iframe src="https://www.googletagmanager.com/ns.html?id=${gtmId}" height="0" width="0" style="display:none;visibility:hidden"></iframe>`,
           injectTo: 'body-prepend'
-        });
-      }
-
-      if (gaMeasurementId && !gtmId) {
-        if (!gtmId) {
-          tags.push({
-            tag: 'script',
-            attrs: { id: 'rusty-analytics-context' },
-            children: buildAnalyticsPageContextScript({ gaMeasurementId }),
-            injectTo: 'head'
-          });
-        }
-        tags.push({
-          tag: 'script',
-          attrs: {
-            id: 'rusty-ga4-script',
-            async: true,
-            src: `https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`
-          },
-          injectTo: 'head'
-        });
-        tags.push({
-          tag: 'script',
-          attrs: { id: 'rusty-ga4-init' },
-          children: `
-            function gtag(){window.dataLayer.push(arguments);}
-            window.gtag = window.gtag || gtag;
-            window.__rustyAnalytics.gaMeasurementId = '${gaMeasurementId}';
-            gtag('js', new Date());
-            gtag('set', window.__rustyAnalytics.pageContext);
-            gtag('config', '${gaMeasurementId}', Object.assign({}, window.__rustyAnalytics.pageContext, {
-              cookie_domain: 'auto',
-              linker: { domains: ${JSON.stringify(CROSS_DOMAIN_LINKER_DOMAINS)} }
-            }));
-          `,
-          injectTo: 'head'
         });
       }
 
