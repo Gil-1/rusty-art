@@ -202,8 +202,21 @@ export function createRuntimeController({
 
   async function ensureScene({ art = null } = {}) {
     const targetSceneKind = resolveSceneKind(art);
-    if (scene && sceneKind === targetSceneKind) return scene;
-    if (sceneLoadPromise && sceneLoadKind === targetSceneKind) return sceneLoadPromise;
+    if (scene && sceneKind === targetSceneKind) {
+      const canReuseScene = typeof scene.canRenderArtwork !== 'function'
+        || scene.canRenderArtwork(art, {
+          rendererRequest,
+          postProcessingRequest,
+          captureMode,
+          navigatorRef
+        });
+      if (canReuseScene) return scene;
+      disposeScene();
+    }
+    if (sceneLoadPromise && sceneLoadKind === targetSceneKind) {
+      await sceneLoadPromise;
+      return ensureScene({ art });
+    }
     if (sceneLoadPromise && sceneLoadKind !== targetSceneKind) {
       await sceneLoadPromise;
       return ensureScene({ art });

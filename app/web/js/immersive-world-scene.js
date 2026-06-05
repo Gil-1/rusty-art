@@ -223,6 +223,53 @@ export function resolveImmersiveWorldRendererRequest({
     : RENDERER_MODES.WEBGL_LEGACY;
 }
 
+function resolveImmersiveWorldRendererProfile({
+  art = null,
+  requestedMode = RENDERER_MODES.WEBGL_LEGACY,
+  postProcessingRequest = POST_PROCESSING_MODES.WEBGL_GLSL_POST,
+  captureMode = false,
+  navigatorRef = typeof navigator !== 'undefined' ? navigator : null
+} = {}) {
+  const rendererCompatibilityFacts = resolveImmersiveWorldRendererCompatibilityFacts(art);
+  const rendererRequest = resolveImmersiveWorldRendererRequest({ art, requestedMode });
+  const resolvedPostProcessingRequest = rendererRequest === RENDERER_MODES.WEBGL_LEGACY
+    ? postProcessingRequest
+    : POST_PROCESSING_MODES.WEBGPU_TSL_POST;
+  const rendererSceneFeatures = collectRendererSceneFeatures({
+    art,
+    sceneKind: 'immersive-world-v1',
+    adapterFeatures: {
+      glslShaderMaterial: rendererCompatibilityFacts.webgpuCompatible !== true,
+      rawShaderMaterial: false,
+      webgpuCompatible: rendererCompatibilityFacts.webgpuCompatible === true
+    }
+  });
+  const rendererSelection = resolveRendererRuntimeSelection({
+    requestedMode: rendererRequest,
+    captureMode,
+    sceneFeatures: rendererSceneFeatures,
+    navigatorRef
+  });
+  return {
+    rendererCompatibilityFacts,
+    rendererRequest,
+    postProcessingRequest: resolvedPostProcessingRequest,
+    rendererSceneFeatures,
+    rendererSelection
+  };
+}
+
+function rendererProfilesMatch(current = {}, next = {}) {
+  const currentSelection = current.rendererSelection || {};
+  const nextSelection = next.rendererSelection || {};
+  return current.rendererRequest === next.rendererRequest
+    && current.postProcessingRequest === next.postProcessingRequest
+    && currentSelection.useWebGPURenderer === nextSelection.useWebGPURenderer
+    && currentSelection.forceWebGL === nextSelection.forceWebGL
+    && currentSelection.rendererMode === nextSelection.rendererMode
+    && currentSelection.rendererBackend === nextSelection.rendererBackend;
+}
+
 export function isRemoteRuntimeRef(value) {
   return /^(?:[a-z][a-z0-9+.-]*:|\/\/)/i.test(String(value || '').trim());
 }
@@ -1432,29 +1479,21 @@ export class ArtworkScene {
   } = {}) {
     this.canvas = canvas;
     this.onLoadProgress = typeof onLoadProgress === 'function' ? onLoadProgress : null;
-    this.rendererCompatibilityFacts = resolveImmersiveWorldRendererCompatibilityFacts(art);
-    this.rendererRequest = resolveImmersiveWorldRendererRequest({
+    this.rendererProfile = resolveImmersiveWorldRendererProfile({
       art,
-      requestedMode: rendererRequest
-    });
-    this.postProcessingRequest = this.rendererRequest === RENDERER_MODES.WEBGL_LEGACY
-      ? postProcessingRequest
-      : POST_PROCESSING_MODES.WEBGPU_TSL_POST;
-    this.rendererSceneFeatures = collectRendererSceneFeatures({
-      art,
-      sceneKind: 'immersive-world-v1',
-      adapterFeatures: {
-        glslShaderMaterial: this.rendererCompatibilityFacts.webgpuCompatible !== true,
-        rawShaderMaterial: false,
-        webgpuCompatible: this.rendererCompatibilityFacts.webgpuCompatible === true
-      }
-    });
-    this.rendererSelection = resolveRendererRuntimeSelection({
-      requestedMode: this.rendererRequest,
+      requestedMode: rendererRequest,
+      postProcessingRequest,
       captureMode,
-      sceneFeatures: this.rendererSceneFeatures,
       navigatorRef
     });
+    this.requestedRendererMode = rendererRequest;
+    this.requestedPostProcessingMode = postProcessingRequest;
+    this.navigatorRef = navigatorRef;
+    this.rendererCompatibilityFacts = this.rendererProfile.rendererCompatibilityFacts;
+    this.rendererRequest = this.rendererProfile.rendererRequest;
+    this.postProcessingRequest = this.rendererProfile.postProcessingRequest;
+    this.rendererSceneFeatures = this.rendererProfile.rendererSceneFeatures;
+    this.rendererSelection = this.rendererProfile.rendererSelection;
     this.renderPixelRatio = resolveImmersiveWorldRendererPixelRatio(window.devicePixelRatio || 1, { captureMode });
     this.renderTargetSamplePreference = resolveImmersiveWorldRenderTargetSamplePreference({ captureMode });
     this.rendererRuntime = this.rendererSelection.useWebGPURenderer
@@ -1546,6 +1585,22 @@ export class ArtworkScene {
         this.rendererInitError = error;
         throw error;
       });
+  }
+
+  canRenderArtwork(art = null, {
+    rendererRequest = this.requestedRendererMode,
+    postProcessingRequest = this.requestedPostProcessingMode,
+    captureMode = this.captureMode,
+    navigatorRef = this.navigatorRef
+  } = {}) {
+    const nextProfile = resolveImmersiveWorldRendererProfile({
+      art,
+      requestedMode: rendererRequest,
+      postProcessingRequest,
+      captureMode,
+      navigatorRef
+    });
+    return rendererProfilesMatch(this.rendererProfile, nextProfile);
   }
 
   getAssemblyReport() {
