@@ -19,8 +19,35 @@ function createDeferred() {
   return { promise, resolve };
 }
 
+function createFakeCanvas() {
+  const canvas = {
+    id: 'art-canvas',
+    className: 'art-canvas',
+    style: {},
+    width: 300,
+    height: 150,
+    ownerDocument: null,
+    cloneNode() {
+      const next = createFakeCanvas();
+      next.id = this.id;
+      next.className = this.className;
+      next.width = this.width;
+      next.height = this.height;
+      return next;
+    },
+    replaceWith(next) {
+      this.replacedWith = next;
+      next.replacedFrom = this;
+    }
+  };
+  canvas.ownerDocument = { createElement: () => createFakeCanvas() };
+  return canvas;
+}
+
 function createControllerWithFakeScene({ onImport = null } = {}) {
   const scenes = [];
+  const replacedCanvases = [];
+  const canvas = createFakeCanvas();
   let importCallCount = 0;
   class FakeArtworkScene {
     constructor(canvas, options = {}) {
@@ -62,7 +89,7 @@ function createControllerWithFakeScene({ onImport = null } = {}) {
   }
 
   const controller = createRuntimeController({
-    canvas: { style: {} },
+    canvas,
     captureStateController: { update() {} },
     fetchArtwork: async () => null,
     getActiveFile: () => null,
@@ -73,6 +100,9 @@ function createControllerWithFakeScene({ onImport = null } = {}) {
       return { ArtworkScene: FakeArtworkScene };
     },
     observerFactory: null,
+    onCanvasReplaced: (nextCanvas, previousCanvas) => {
+      replacedCanvases.push({ nextCanvas, previousCanvas });
+    },
     windowRef: {
       navigator: {},
       setTimeout: (fn) => setTimeout(fn, 0),
@@ -80,11 +110,11 @@ function createControllerWithFakeScene({ onImport = null } = {}) {
     }
   });
 
-  return { controller, scenes, getImportCallCount: () => importCallCount };
+  return { controller, scenes, canvas, replacedCanvases, getImportCallCount: () => importCallCount };
 }
 
 test('runtime controller recreates immersive scene when renderer profile changes', async () => {
-  const { controller, scenes } = createControllerWithFakeScene();
+  const { controller, scenes, replacedCanvases } = createControllerWithFakeScene();
 
   await controller.applyArtworkToScene({ file: './data/artworks/latest.json', art: createArtwork('latest', 'webgpu') });
   await controller.applyArtworkToScene({ file: './data/artworks/legacy.json', art: createArtwork('legacy', 'webgl') });
@@ -92,24 +122,42 @@ test('runtime controller recreates immersive scene when renderer profile changes
   assert.equal(scenes.length, 2);
   assert.equal(scenes[0].disposed, true);
   assert.equal(scenes[0].stopped, true);
+  assert.equal(replacedCanvases.length, 1);
+  assert.notEqual(scenes[0].canvas, scenes[1].canvas);
   assert.deepEqual(scenes[0].applied, ['latest']);
   assert.deepEqual(scenes[1].applied, ['legacy']);
 });
 
+test('runtime controller recreates immersive scene when renderer profile changes back to webgpu', async () => {
+  const { controller, scenes, replacedCanvases } = createControllerWithFakeScene();
+
+  await controller.applyArtworkToScene({ file: './data/artworks/legacy.json', art: createArtwork('legacy', 'webgl') });
+  await controller.applyArtworkToScene({ file: './data/artworks/latest.json', art: createArtwork('latest', 'webgpu') });
+
+  assert.equal(scenes.length, 2);
+  assert.equal(scenes[0].disposed, true);
+  assert.equal(scenes[0].stopped, true);
+  assert.equal(replacedCanvases.length, 1);
+  assert.notEqual(scenes[0].canvas, scenes[1].canvas);
+  assert.deepEqual(scenes[0].applied, ['legacy']);
+  assert.deepEqual(scenes[1].applied, ['latest']);
+});
+
 test('runtime controller reuses immersive scene when renderer profile stays compatible', async () => {
-  const { controller, scenes } = createControllerWithFakeScene();
+  const { controller, scenes, replacedCanvases } = createControllerWithFakeScene();
 
   await controller.applyArtworkToScene({ file: './data/artworks/a.json', art: createArtwork('a', 'webgl') });
   await controller.applyArtworkToScene({ file: './data/artworks/b.json', art: createArtwork('b', 'webgl') });
 
   assert.equal(scenes.length, 1);
   assert.equal(scenes[0].disposed, false);
+  assert.equal(replacedCanvases.length, 0);
   assert.deepEqual(scenes[0].applied, ['a', 'b']);
 });
 
 test('runtime controller rechecks renderer profile after in-flight immersive scene load', async () => {
   const firstImport = createDeferred();
-  const { controller, scenes, getImportCallCount } = createControllerWithFakeScene({
+  const { controller, scenes, replacedCanvases, getImportCallCount } = createControllerWithFakeScene({
     onImport: (callCount) => (callCount === 1 ? firstImport.promise : null)
   });
 
@@ -126,6 +174,8 @@ test('runtime controller rechecks renderer profile after in-flight immersive sce
   assert.equal(scenes.length, 2);
   assert.equal(scenes[0].disposed, true);
   assert.equal(scenes[0].stopped, true);
+  assert.equal(replacedCanvases.length, 1);
+  assert.notEqual(firstScene.canvas, secondScene.canvas);
   assert.equal(scenes[1].createdFor.id, 'legacy');
   assert.equal(getImportCallCount(), 2);
 });

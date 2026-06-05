@@ -121,6 +121,7 @@ export function createCanvasLumaSampler({
 } = {}) {
   let probeCanvas = null;
   let probeCtx = null;
+  let activeCanvas = canvas;
 
   function ensureProbe() {
     if (probeCtx) return probeCtx;
@@ -133,14 +134,14 @@ export function createCanvasLumaSampler({
   }
 
   function sample() {
-    if (!canvas || canvas.width <= 0 || canvas.height <= 0 || canvas.style?.display === 'none') return null;
+    if (!activeCanvas || activeCanvas.width <= 0 || activeCanvas.height <= 0 || activeCanvas.style?.display === 'none') return null;
     const ctx = ensureProbe();
     if (!ctx || !probeCanvas) return null;
 
     let data;
     try {
       ctx.clearRect(0, 0, probeCanvas.width, probeCanvas.height);
-      ctx.drawImage(canvas, 0, 0, probeCanvas.width, probeCanvas.height);
+      ctx.drawImage(activeCanvas, 0, 0, probeCanvas.width, probeCanvas.height);
       ({ data } = ctx.getImageData(0, 0, probeCanvas.width, probeCanvas.height));
     } catch {
       return null;
@@ -177,15 +178,25 @@ export function createCanvasLumaSampler({
     probeCtx = null;
   }
 
-  return {
-    sample,
-    dispose,
-    getFacts: () => ({
+  function setCanvas(nextCanvas = null) {
+    activeCanvas = nextCanvas;
+    return getFacts();
+  }
+
+  function getFacts() {
+    return {
       width,
       height,
       hasProbeCanvas: Boolean(probeCanvas),
       hasContext: Boolean(probeCtx)
-    })
+    };
+  }
+
+  return {
+    sample,
+    setCanvas,
+    dispose,
+    getFacts
   };
 }
 
@@ -257,6 +268,10 @@ export function createAdaptiveOverlaySession({
     return getFacts();
   }
 
+  function setCanvas(nextCanvas = null) {
+    return sampler?.setCanvas?.(nextCanvas) || getFacts();
+  }
+
   function getFacts() {
     return {
       captureMode,
@@ -273,6 +288,7 @@ export function createAdaptiveOverlaySession({
     start,
     stop,
     reset,
+    setCanvas,
     dispose,
     getFacts
   };

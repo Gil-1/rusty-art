@@ -141,6 +141,7 @@ export function createRuntimeController({
   onSceneBooted = () => {},
   onSceneStatusChange = () => {},
   onSceneLoadProgress = () => {},
+  onCanvasReplaced = () => {},
   windowRef = typeof window !== 'undefined' ? window : globalThis,
   navigatorRef = windowRef.navigator || (typeof navigator !== 'undefined' ? navigator : null),
   observerFactory = typeof IntersectionObserver !== 'undefined'
@@ -155,13 +156,14 @@ export function createRuntimeController({
   let sceneLoadPromise = null;
   let sceneLoadKind = null;
   let deferredSceneBootScheduler = null;
+  let activeCanvas = canvas;
 
   function emitSceneProgress(progress, label, active = true) {
     onSceneLoadProgress({ active, hidden: !active, progress, label });
   }
 
   function setCanvasVisible(visible) {
-    if (canvas?.style) canvas.style.display = visible ? '' : 'none';
+    if (activeCanvas?.style) activeCanvas.style.display = visible ? '' : 'none';
   }
 
   function getScene() {
@@ -193,11 +195,39 @@ export function createRuntimeController({
       : 'legacy';
   }
 
-  function disposeScene() {
+  function replaceRendererCanvas() {
+    const previousCanvas = activeCanvas;
+    const documentRef = previousCanvas?.ownerDocument || windowRef.document || null;
+    if (!previousCanvas || !documentRef?.createElement) return activeCanvas;
+
+    const nextCanvas = typeof previousCanvas.cloneNode === 'function'
+      ? previousCanvas.cloneNode(false)
+      : documentRef.createElement('canvas');
+    nextCanvas.width = previousCanvas.width || nextCanvas.width;
+    nextCanvas.height = previousCanvas.height || nextCanvas.height;
+    if (!nextCanvas.id && previousCanvas.id) nextCanvas.id = previousCanvas.id;
+    if (!nextCanvas.className && previousCanvas.className) nextCanvas.className = previousCanvas.className;
+    if (nextCanvas.style && previousCanvas.style?.display) nextCanvas.style.display = previousCanvas.style.display;
+
+    if (typeof previousCanvas.replaceWith === 'function') {
+      previousCanvas.replaceWith(nextCanvas);
+    } else if (previousCanvas.parentNode?.replaceChild) {
+      previousCanvas.parentNode.replaceChild(nextCanvas, previousCanvas);
+    } else {
+      return activeCanvas;
+    }
+
+    activeCanvas = nextCanvas;
+    onCanvasReplaced(nextCanvas, previousCanvas);
+    return activeCanvas;
+  }
+
+  function disposeScene({ replaceCanvas = false } = {}) {
     scene?.dispose?.();
     scene?.stop?.();
     scene = null;
     sceneKind = null;
+    if (replaceCanvas) replaceRendererCanvas();
   }
 
   async function ensureScene({ art = null } = {}) {
@@ -209,9 +239,9 @@ export function createRuntimeController({
           postProcessingRequest,
           captureMode,
           navigatorRef
-        });
+      });
       if (canReuseScene) return scene;
-      disposeScene();
+      disposeScene({ replaceCanvas: true });
     }
     if (sceneLoadPromise && sceneLoadKind === targetSceneKind) {
       await sceneLoadPromise;
@@ -221,7 +251,7 @@ export function createRuntimeController({
       await sceneLoadPromise;
       return ensureScene({ art });
     }
-    if (scene && sceneKind !== targetSceneKind) disposeScene();
+    if (scene && sceneKind !== targetSceneKind) disposeScene({ replaceCanvas: true });
     sceneLoadKind = targetSceneKind;
 
     sceneLoadPromise = (async () => {
@@ -234,7 +264,7 @@ export function createRuntimeController({
             : await importSceneModule();
         emitSceneProgress(0.24, 'Loading scene modules');
         const { ArtworkScene } = module;
-        scene = new ArtworkScene(canvas, {
+        scene = new ArtworkScene(activeCanvas, {
           rendererRequest,
           postProcessingRequest,
           captureMode,
