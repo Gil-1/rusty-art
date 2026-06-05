@@ -1,0 +1,76 @@
+{
+  "version": 2,
+  "kind": "rusty-art-public-media-assets",
+  "artworkId": "2026-06-05-1658z-football-agent-john-bico-files-complaint-against-former-owner-of-white-s",
+  "source": {
+    "sha256": "e993c369308e377029a7db879d5a2c4f4126b404c555f54cb316f6330d000b7f",
+    "role": "daily-preview-story-desktop"
+  },
+  "sources": {
+    "primary": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-desktop",
+      "sha256": "e993c369308e377029a7db879d5a2c4f4126b404c555f54cb316f6330d000b7f"
+    },
+    "openGraph": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-open-graph",
+      "sha256": "1d77ea719e09d7ed45775be348e05a9f6d85f81e6a6ef360201f51cf5abbe867"
+    },
+    "instagram": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-instagram",
+      "sha256": "819d33065f7e9becfe08eb8ee27c5d9386309f0a2d87a4476e5b1181f0dcce98"
+    }
+  },
+  "targets": {
+    "thumb-320.jpg": {
+      "spec": {
+        "fileName": "thumb-320.jpg",
+        "width": 320,
+        "height": null,
+        "fit": "inside",
+        "withoutEnlargement": true,
+        "format": "jpeg",
+        "quality": 82
+      },
+      "publicPath": "./data/media/2026-06-05-1658z-football-agent-john-bico-files-complaint-against-former-owner-of-white-s/thumb-320.jpg",
+      "source": {
+        "sha256": "e993c369308e377029a7db879d5a2c4f4126b404c555f54cb316f6330d000b7f",
+        "role": "daily-preview-story-desktop"
+      }
+    },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-06-05-1658z-football-agent-john-bico-files-complaint-against-former-owner-of-white-s/og-1200x630.jpg",
+      "source": {
+        "sha256": "1d77ea719e09d7ed45775be348e05a9f6d85f81e6a6ef360201f51cf5abbe867",
+        "role": "daily-preview-story-open-graph"
+      }
+    },
+    "instagram-1080x1440.jpg": {
+      "spec": {
+        "fileName": "instagram-1080x1440.jpg",
+        "width": 1080,
+        "height": 1440,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-06-05-1658z-football-agent-john-bico-files-complaint-against-former-owner-of-white-s/instagram-1080x1440.jpg",
+      "source": {
+        "sha256": "819d33065f7e9becfe08eb8ee27c5d9386309f0a2d87a4476e5b1181f0dcce98",
+        "role": "daily-preview-story-instagram"
+      }
+    }
+  }
+}
