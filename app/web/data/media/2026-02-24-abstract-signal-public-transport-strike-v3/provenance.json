@@ -12,6 +12,11 @@
       "role": "public-archive-fallback-render",
       "sha256": "bb7ec1ff76652a7b64fe72cd3de3b54614d22de3ebda908a875da8096b9433b2"
     },
+    "openGraph": {
+      "kind": "fallback-render",
+      "role": "public-archive-open-graph-render",
+      "sha256": "b92be85d7750211e5f34bd72daf19dcfd0870486961fca5e132721e37d670340"
+    },
     "instagram": {
       "kind": "fallback-render",
       "role": "public-archive-instagram-render",
@@ -19,22 +24,6 @@
     }
   },
   "targets": {
-    "artwork-720.jpg": {
-      "spec": {
-        "fileName": "artwork-720.jpg",
-        "width": 1280,
-        "height": 720,
-        "fit": "inside",
-        "withoutEnlargement": true,
-        "format": "jpeg",
-        "quality": 86
-      },
-      "publicPath": "./data/media/2026-02-24-abstract-signal-public-transport-strike-v3/artwork-720.jpg",
-      "source": {
-        "sha256": "bb7ec1ff76652a7b64fe72cd3de3b54614d22de3ebda908a875da8096b9433b2",
-        "role": "public-archive-fallback-render"
-      }
-    },
     "thumb-320.jpg": {
       "spec": {
         "fileName": "thumb-320.jpg",
@@ -49,6 +38,22 @@
       "source": {
         "sha256": "bb7ec1ff76652a7b64fe72cd3de3b54614d22de3ebda908a875da8096b9433b2",
         "role": "public-archive-fallback-render"
+      }
+    },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-02-24-abstract-signal-public-transport-strike-v3/og-1200x630.jpg",
+      "source": {
+        "sha256": "b92be85d7750211e5f34bd72daf19dcfd0870486961fca5e132721e37d670340",
+        "role": "public-archive-open-graph-render"
       }
     },
     "instagram-1080x1440.jpg": {

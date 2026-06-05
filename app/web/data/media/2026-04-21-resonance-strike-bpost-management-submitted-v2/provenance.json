@@ -12,6 +12,11 @@
       "role": "public-archive-fallback-render",
       "sha256": "ea35e69e77cce6e6b3b3a8203360dd69dcaf095266d7329794b3fb21aef532d5"
     },
+    "openGraph": {
+      "kind": "fallback-render",
+      "role": "public-archive-open-graph-render",
+      "sha256": "d15b651fbafe83071f3e53f8113802473cfca96c41dd5847956c2ec044edb2f5"
+    },
     "instagram": {
       "kind": "fallback-render",
       "role": "public-archive-instagram-render",
@@ -19,22 +24,6 @@
     }
   },
   "targets": {
-    "artwork-720.jpg": {
-      "spec": {
-        "fileName": "artwork-720.jpg",
-        "width": 1280,
-        "height": 720,
-        "fit": "inside",
-        "withoutEnlargement": true,
-        "format": "jpeg",
-        "quality": 86
-      },
-      "publicPath": "./data/media/2026-04-21-resonance-strike-bpost-management-submitted-v2/artwork-720.jpg",
-      "source": {
-        "sha256": "ea35e69e77cce6e6b3b3a8203360dd69dcaf095266d7329794b3fb21aef532d5",
-        "role": "public-archive-fallback-render"
-      }
-    },
     "thumb-320.jpg": {
       "spec": {
         "fileName": "thumb-320.jpg",
@@ -49,6 +38,22 @@
       "source": {
         "sha256": "ea35e69e77cce6e6b3b3a8203360dd69dcaf095266d7329794b3fb21aef532d5",
         "role": "public-archive-fallback-render"
+      }
+    },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-04-21-resonance-strike-bpost-management-submitted-v2/og-1200x630.jpg",
+      "source": {
+        "sha256": "d15b651fbafe83071f3e53f8113802473cfca96c41dd5847956c2ec044edb2f5",
+        "role": "public-archive-open-graph-render"
       }
     },
     "instagram-1080x1440.jpg": {

@@ -12,6 +12,11 @@
       "role": "public-archive-fallback-render",
       "sha256": "bfe3dd942c31268f39c25e99df60e433a583ca23e289245580731a58fa767296"
     },
+    "openGraph": {
+      "kind": "fallback-render",
+      "role": "public-archive-open-graph-render",
+      "sha256": "86a71eae1850a77d3ed4e9b7790d930b317624c1832ee29a74d9d0cf5d8e0881"
+    },
     "instagram": {
       "kind": "fallback-render",
       "role": "public-archive-instagram-render",
@@ -19,22 +24,6 @@
     }
   },
   "targets": {
-    "artwork-720.jpg": {
-      "spec": {
-        "fileName": "artwork-720.jpg",
-        "width": 1280,
-        "height": 720,
-        "fit": "inside",
-        "withoutEnlargement": true,
-        "format": "jpeg",
-        "quality": 86
-      },
-      "publicPath": "./data/media/2026-02-15-pulse-of-toujours-rendez-amoureux-v3/artwork-720.jpg",
-      "source": {
-        "sha256": "bfe3dd942c31268f39c25e99df60e433a583ca23e289245580731a58fa767296",
-        "role": "public-archive-fallback-render"
-      }
-    },
     "thumb-320.jpg": {
       "spec": {
         "fileName": "thumb-320.jpg",
@@ -49,6 +38,22 @@
       "source": {
         "sha256": "bfe3dd942c31268f39c25e99df60e433a583ca23e289245580731a58fa767296",
         "role": "public-archive-fallback-render"
+      }
+    },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-02-15-pulse-of-toujours-rendez-amoureux-v3/og-1200x630.jpg",
+      "source": {
+        "sha256": "86a71eae1850a77d3ed4e9b7790d930b317624c1832ee29a74d9d0cf5d8e0881",
+        "role": "public-archive-open-graph-render"
       }
     },
     "instagram-1080x1440.jpg": {

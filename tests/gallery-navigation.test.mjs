@@ -432,7 +432,8 @@ test('artwork share metadata resolves canonical URL and public image', () => {
     news: { title: item.newsTitle, source: item.source },
     inspiration: { artist: item.artist },
     image: {
-      publicJpeg: './data/media/example/artwork-720.jpg',
+      publicJpeg: './data/media/example/og-1200x630.jpg',
+      openGraphJpeg: './data/media/example/og-1200x630.jpg',
       altText: 'Signal garden by Larry Zox.'
     }
   };
@@ -444,10 +445,10 @@ test('artwork share metadata resolves canonical URL and public image', () => {
   });
 
   assert.equal(metadata.canonicalUrl, 'https://rusty.test/gallery/art/2026-06-04-0626z-example-artwork/');
-  assert.equal(metadata.imageUrl, 'https://rusty.test/gallery/data/media/example/artwork-720.jpg');
+  assert.equal(metadata.imageUrl, 'https://rusty.test/gallery/data/media/example/og-1200x630.jpg');
   assert.match(metadata.description, /Example headline/);
-  assert.equal(metadata.imageWidth, 1080);
-  assert.equal(metadata.imageHeight, 720);
+  assert.equal(metadata.imageWidth, 1200);
+  assert.equal(metadata.imageHeight, 630);
 });
 
 test('artwork route history pushes new slugs and replaces duplicates', () => {

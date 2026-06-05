@@ -12,6 +12,11 @@
       "role": "public-archive-fallback-render",
       "sha256": "2fa672fec9c31b7e234426e889f9641408ea5ac2aaae003dee7eab749aacd7a9"
     },
+    "openGraph": {
+      "kind": "fallback-render",
+      "role": "public-archive-open-graph-render",
+      "sha256": "73662c5752c6b50077dc4496c72f5d6c20ea2f75d945c7647a21adb45e671adc"
+    },
     "instagram": {
       "kind": "fallback-render",
       "role": "public-archive-instagram-render",
@@ -19,22 +24,6 @@
     }
   },
   "targets": {
-    "artwork-720.jpg": {
-      "spec": {
-        "fileName": "artwork-720.jpg",
-        "width": 1280,
-        "height": 720,
-        "fit": "inside",
-        "withoutEnlargement": true,
-        "format": "jpeg",
-        "quality": 86
-      },
-      "publicPath": "./data/media/2026-04-13-abstract-signal-failure-negotiations-likely-donald-v2/artwork-720.jpg",
-      "source": {
-        "sha256": "2fa672fec9c31b7e234426e889f9641408ea5ac2aaae003dee7eab749aacd7a9",
-        "role": "public-archive-fallback-render"
-      }
-    },
     "thumb-320.jpg": {
       "spec": {
         "fileName": "thumb-320.jpg",
@@ -49,6 +38,22 @@
       "source": {
         "sha256": "2fa672fec9c31b7e234426e889f9641408ea5ac2aaae003dee7eab749aacd7a9",
         "role": "public-archive-fallback-render"
+      }
+    },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-04-13-abstract-signal-failure-negotiations-likely-donald-v2/og-1200x630.jpg",
+      "source": {
+        "sha256": "73662c5752c6b50077dc4496c72f5d6c20ea2f75d945c7647a21adb45e671adc",
+        "role": "public-archive-open-graph-render"
       }
     },
     "instagram-1080x1440.jpg": {

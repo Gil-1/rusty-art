@@ -12,6 +12,11 @@
       "role": "public-archive-fallback-render",
       "sha256": "9e7176ac7259da6474e46e52042fe95da88de6f438217f79d6005044277da1df"
     },
+    "openGraph": {
+      "kind": "fallback-render",
+      "role": "public-archive-open-graph-render",
+      "sha256": "039b57c9e045db2728a86b5e7653802666d77d360fa00f619fe8d7c9791d6c7d"
+    },
     "instagram": {
       "kind": "fallback-render",
       "role": "public-archive-instagram-render",
@@ -19,22 +24,6 @@
     }
   },
   "targets": {
-    "artwork-720.jpg": {
-      "spec": {
-        "fileName": "artwork-720.jpg",
-        "width": 1280,
-        "height": 720,
-        "fit": "inside",
-        "withoutEnlargement": true,
-        "format": "jpeg",
-        "quality": 86
-      },
-      "publicPath": "./data/media/2026-02-24-fragments-of-investigation-against-dutroux-v2/artwork-720.jpg",
-      "source": {
-        "sha256": "9e7176ac7259da6474e46e52042fe95da88de6f438217f79d6005044277da1df",
-        "role": "public-archive-fallback-render"
-      }
-    },
     "thumb-320.jpg": {
       "spec": {
         "fileName": "thumb-320.jpg",
@@ -49,6 +38,22 @@
       "source": {
         "sha256": "9e7176ac7259da6474e46e52042fe95da88de6f438217f79d6005044277da1df",
         "role": "public-archive-fallback-render"
+      }
+    },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-02-24-fragments-of-investigation-against-dutroux-v2/og-1200x630.jpg",
+      "source": {
+        "sha256": "039b57c9e045db2728a86b5e7653802666d77d360fa00f619fe8d7c9791d6c7d",
+        "role": "public-archive-open-graph-render"
       }
     },
     "instagram-1080x1440.jpg": {

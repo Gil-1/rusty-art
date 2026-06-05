@@ -12,6 +12,11 @@
       "role": "daily-preview-story-desktop",
       "sha256": "c62ea44d5c0ec2f65a42714a70f49c34b6247c3057b77d4b97b43592773819dd"
     },
+    "openGraph": {
+      "kind": "fallback-render",
+      "role": "public-archive-open-graph-render",
+      "sha256": "c0bf92037bdcb267a4e3db0af7528f39207c736414f75ebc53dda5524ba6d75a"
+    },
     "instagram": {
       "kind": "fallback-render",
       "role": "public-archive-instagram-render",
@@ -19,22 +24,6 @@
     }
   },
   "targets": {
-    "artwork-720.jpg": {
-      "spec": {
-        "fileName": "artwork-720.jpg",
-        "width": 1280,
-        "height": 720,
-        "fit": "inside",
-        "withoutEnlargement": true,
-        "format": "jpeg",
-        "quality": 86
-      },
-      "publicPath": "./data/media/2026-05-30-0622z-roland-garros-novak-djokovic-eliminated-in-five-sets-by-joao-fonseca-zve/artwork-720.jpg",
-      "source": {
-        "sha256": "c62ea44d5c0ec2f65a42714a70f49c34b6247c3057b77d4b97b43592773819dd",
-        "role": "daily-preview-story-desktop"
-      }
-    },
     "thumb-320.jpg": {
       "spec": {
         "fileName": "thumb-320.jpg",
@@ -49,6 +38,22 @@
       "source": {
         "sha256": "c62ea44d5c0ec2f65a42714a70f49c34b6247c3057b77d4b97b43592773819dd",
         "role": "daily-preview-story-desktop"
+      }
+    },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-05-30-0622z-roland-garros-novak-djokovic-eliminated-in-five-sets-by-joao-fonseca-zve/og-1200x630.jpg",
+      "source": {
+        "sha256": "c0bf92037bdcb267a4e3db0af7528f39207c736414f75ebc53dda5524ba6d75a",
+        "role": "public-archive-open-graph-render"
       }
     },
     "instagram-1080x1440.jpg": {

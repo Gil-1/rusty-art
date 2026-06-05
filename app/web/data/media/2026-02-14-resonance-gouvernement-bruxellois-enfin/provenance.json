@@ -12,6 +12,11 @@
       "role": "public-archive-fallback-render",
       "sha256": "d93ec203cf4bf4d72b2debfe9f4e040abb391079e89ec9f1e21e6ce7c3b5c62f"
     },
+    "openGraph": {
+      "kind": "fallback-render",
+      "role": "public-archive-open-graph-render",
+      "sha256": "09822545a84aebe916d25938f1aceff506b8ffb238b4fc4924257327e83b768e"
+    },
     "instagram": {
       "kind": "fallback-render",
       "role": "public-archive-instagram-render",
@@ -19,22 +24,6 @@
     }
   },
   "targets": {
-    "artwork-720.jpg": {
-      "spec": {
-        "fileName": "artwork-720.jpg",
-        "width": 1280,
-        "height": 720,
-        "fit": "inside",
-        "withoutEnlargement": true,
-        "format": "jpeg",
-        "quality": 86
-      },
-      "publicPath": "./data/media/2026-02-14-resonance-gouvernement-bruxellois-enfin/artwork-720.jpg",
-      "source": {
-        "sha256": "d93ec203cf4bf4d72b2debfe9f4e040abb391079e89ec9f1e21e6ce7c3b5c62f",
-        "role": "public-archive-fallback-render"
-      }
-    },
     "thumb-320.jpg": {
       "spec": {
         "fileName": "thumb-320.jpg",
@@ -49,6 +38,22 @@
       "source": {
         "sha256": "d93ec203cf4bf4d72b2debfe9f4e040abb391079e89ec9f1e21e6ce7c3b5c62f",
         "role": "public-archive-fallback-render"
+      }
+    },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-02-14-resonance-gouvernement-bruxellois-enfin/og-1200x630.jpg",
+      "source": {
+        "sha256": "09822545a84aebe916d25938f1aceff506b8ffb238b4fc4924257327e83b768e",
+        "role": "public-archive-open-graph-render"
       }
     },
     "instagram-1080x1440.jpg": {

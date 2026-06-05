@@ -12,6 +12,11 @@
       "role": "public-archive-fallback-render",
       "sha256": "1857b4910e7ffcb16ac3abf8c64f7799b5467fd442b7ff109af7a2072ee1fadf"
     },
+    "openGraph": {
+      "kind": "fallback-render",
+      "role": "public-archive-open-graph-render",
+      "sha256": "bc630409f4f707acb71ec57e9749adadfb811e646dbbf24f1f23b07d0ea79248"
+    },
     "instagram": {
       "kind": "fallback-render",
       "role": "public-archive-instagram-render",
@@ -19,22 +24,6 @@
     }
   },
   "targets": {
-    "artwork-720.jpg": {
-      "spec": {
-        "fileName": "artwork-720.jpg",
-        "width": 1280,
-        "height": 720,
-        "fit": "inside",
-        "withoutEnlargement": true,
-        "format": "jpeg",
-        "quality": 86
-      },
-      "publicPath": "./data/media/2026-04-23-fragments-of-devils-iran-italy-world/artwork-720.jpg",
-      "source": {
-        "sha256": "1857b4910e7ffcb16ac3abf8c64f7799b5467fd442b7ff109af7a2072ee1fadf",
-        "role": "public-archive-fallback-render"
-      }
-    },
     "thumb-320.jpg": {
       "spec": {
         "fileName": "thumb-320.jpg",
@@ -49,6 +38,22 @@
       "source": {
         "sha256": "1857b4910e7ffcb16ac3abf8c64f7799b5467fd442b7ff109af7a2072ee1fadf",
         "role": "public-archive-fallback-render"
+      }
+    },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-04-23-fragments-of-devils-iran-italy-world/og-1200x630.jpg",
+      "source": {
+        "sha256": "bc630409f4f707acb71ec57e9749adadfb811e646dbbf24f1f23b07d0ea79248",
+        "role": "public-archive-open-graph-render"
       }
     },
     "instagram-1080x1440.jpg": {

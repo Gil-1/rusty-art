@@ -12,6 +12,11 @@
       "role": "public-archive-fallback-render",
       "sha256": "44030473faccd4683adc0a5a9fdc93845ea12820330220cbe68459fd522ee2e2"
     },
+    "openGraph": {
+      "kind": "fallback-render",
+      "role": "public-archive-open-graph-render",
+      "sha256": "1682c79ba52995e04df57b0d3538ba3da39311972610902447d1ae119280e4ea"
+    },
     "instagram": {
       "kind": "fallback-render",
       "role": "public-archive-instagram-render",
@@ -19,22 +24,6 @@
     }
   },
   "targets": {
-    "artwork-720.jpg": {
-      "spec": {
-        "fileName": "artwork-720.jpg",
-        "width": 1280,
-        "height": 720,
-        "fit": "inside",
-        "withoutEnlargement": true,
-        "format": "jpeg",
-        "quality": 86
-      },
-      "publicPath": "./data/media/2026-05-08-abstract-signal-hantavirus-belgian-passengers-will-v3/artwork-720.jpg",
-      "source": {
-        "sha256": "44030473faccd4683adc0a5a9fdc93845ea12820330220cbe68459fd522ee2e2",
-        "role": "public-archive-fallback-render"
-      }
-    },
     "thumb-320.jpg": {
       "spec": {
         "fileName": "thumb-320.jpg",
@@ -49,6 +38,22 @@
       "source": {
         "sha256": "44030473faccd4683adc0a5a9fdc93845ea12820330220cbe68459fd522ee2e2",
         "role": "public-archive-fallback-render"
+      }
+    },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-05-08-abstract-signal-hantavirus-belgian-passengers-will-v3/og-1200x630.jpg",
+      "source": {
+        "sha256": "1682c79ba52995e04df57b0d3538ba3da39311972610902447d1ae119280e4ea",
+        "role": "public-archive-open-graph-render"
       }
     },
     "instagram-1080x1440.jpg": {

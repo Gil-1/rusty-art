@@ -12,6 +12,11 @@
       "role": "public-archive-fallback-render",
       "sha256": "1713c783baa57edfe56092e658fef68dee1b98f69d93905a3d087d69a833daec"
     },
+    "openGraph": {
+      "kind": "fallback-render",
+      "role": "public-archive-open-graph-render",
+      "sha256": "109ac015043d558e3cb5c86278d3197daf9864c3520324435e5fe681936faa52"
+    },
     "instagram": {
       "kind": "fallback-render",
       "role": "public-archive-instagram-render",
@@ -19,22 +24,6 @@
     }
   },
   "targets": {
-    "artwork-720.jpg": {
-      "spec": {
-        "fileName": "artwork-720.jpg",
-        "width": 1280,
-        "height": 720,
-        "fit": "inside",
-        "withoutEnlargement": true,
-        "format": "jpeg",
-        "quality": 86
-      },
-      "publicPath": "./data/media/2026-04-09-abstract-signal-last-minute-deal-donald-v3/artwork-720.jpg",
-      "source": {
-        "sha256": "1713c783baa57edfe56092e658fef68dee1b98f69d93905a3d087d69a833daec",
-        "role": "public-archive-fallback-render"
-      }
-    },
     "thumb-320.jpg": {
       "spec": {
         "fileName": "thumb-320.jpg",
@@ -49,6 +38,22 @@
       "source": {
         "sha256": "1713c783baa57edfe56092e658fef68dee1b98f69d93905a3d087d69a833daec",
         "role": "public-archive-fallback-render"
+      }
+    },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-04-09-abstract-signal-last-minute-deal-donald-v3/og-1200x630.jpg",
+      "source": {
+        "sha256": "109ac015043d558e3cb5c86278d3197daf9864c3520324435e5fe681936faa52",
+        "role": "public-archive-open-graph-render"
       }
     },
     "instagram-1080x1440.jpg": {

@@ -12,6 +12,11 @@
       "role": "public-archive-fallback-render",
       "sha256": "bd4d7f0a435becb954cf1288ccdce1a99d6c41218ff6bfeba6eb1b2ebc643750"
     },
+    "openGraph": {
+      "kind": "fallback-render",
+      "role": "public-archive-open-graph-render",
+      "sha256": "54de99389f5a1af456b1f1ad99bf9fcb880146f40ab536ee38cdf231d9281eef"
+    },
     "instagram": {
       "kind": "fallback-render",
       "role": "public-archive-instagram-render",
@@ -19,22 +24,6 @@
     }
   },
   "targets": {
-    "artwork-720.jpg": {
-      "spec": {
-        "fileName": "artwork-720.jpg",
-        "width": 1280,
-        "height": 720,
-        "fit": "inside",
-        "withoutEnlargement": true,
-        "format": "jpeg",
-        "quality": 86
-      },
-      "publicPath": "./data/media/2026-05-01-echoes-of-maga-expert-laura-field-v2/artwork-720.jpg",
-      "source": {
-        "sha256": "bd4d7f0a435becb954cf1288ccdce1a99d6c41218ff6bfeba6eb1b2ebc643750",
-        "role": "public-archive-fallback-render"
-      }
-    },
     "thumb-320.jpg": {
       "spec": {
         "fileName": "thumb-320.jpg",
@@ -49,6 +38,22 @@
       "source": {
         "sha256": "bd4d7f0a435becb954cf1288ccdce1a99d6c41218ff6bfeba6eb1b2ebc643750",
         "role": "public-archive-fallback-render"
+      }
+    },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-05-01-echoes-of-maga-expert-laura-field-v2/og-1200x630.jpg",
+      "source": {
+        "sha256": "54de99389f5a1af456b1f1ad99bf9fcb880146f40ab536ee38cdf231d9281eef",
+        "role": "public-archive-open-graph-render"
       }
     },
     "instagram-1080x1440.jpg": {

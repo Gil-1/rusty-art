@@ -12,29 +12,18 @@
       "role": "public-archive-fallback-render",
       "sha256": "c258db348bfac848594600455b388f51d7a99b00ef467011cc62f8ca49e3b785"
     },
+    "openGraph": {
+      "kind": "fallback-render",
+      "role": "public-archive-open-graph-render",
+      "sha256": "9291119fe26133c57a2fb4f572216a8fd34e895f0589f4693b11298270b5da8a"
+    },
     "instagram": {
       "kind": "fallback-render",
       "role": "public-archive-instagram-render",
-      "sha256": "0c44f226336b6e4313809a5ce401955dfe4f469cba8877f13afbf82974480a41"
+      "sha256": "7c156c21a7fdd66696fae11053e1527a158ab1c19180ba56ec400938b511a95c"
     }
   },
   "targets": {
-    "artwork-720.jpg": {
-      "spec": {
-        "fileName": "artwork-720.jpg",
-        "width": 1280,
-        "height": 720,
-        "fit": "inside",
-        "withoutEnlargement": true,
-        "format": "jpeg",
-        "quality": 86
-      },
-      "publicPath": "./data/media/2026-05-20-0629z-protest-against-war-in-gaza-draws-large-crowd-organizers-count-12-000-pe/artwork-720.jpg",
-      "source": {
-        "sha256": "c258db348bfac848594600455b388f51d7a99b00ef467011cc62f8ca49e3b785",
-        "role": "public-archive-fallback-render"
-      }
-    },
     "thumb-320.jpg": {
       "spec": {
         "fileName": "thumb-320.jpg",
@@ -51,6 +40,22 @@
         "role": "public-archive-fallback-render"
       }
     },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-05-20-0629z-protest-against-war-in-gaza-draws-large-crowd-organizers-count-12-000-pe/og-1200x630.jpg",
+      "source": {
+        "sha256": "9291119fe26133c57a2fb4f572216a8fd34e895f0589f4693b11298270b5da8a",
+        "role": "public-archive-open-graph-render"
+      }
+    },
     "instagram-1080x1440.jpg": {
       "spec": {
         "fileName": "instagram-1080x1440.jpg",
@@ -63,7 +68,7 @@
       },
       "publicPath": "./data/media/2026-05-20-0629z-protest-against-war-in-gaza-draws-large-crowd-organizers-count-12-000-pe/instagram-1080x1440.jpg",
       "source": {
-        "sha256": "0c44f226336b6e4313809a5ce401955dfe4f469cba8877f13afbf82974480a41",
+        "sha256": "7c156c21a7fdd66696fae11053e1527a158ab1c19180ba56ec400938b511a95c",
         "role": "public-archive-instagram-render"
       }
     }

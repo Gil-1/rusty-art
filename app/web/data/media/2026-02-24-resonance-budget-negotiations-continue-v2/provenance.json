@@ -12,6 +12,11 @@
       "role": "public-archive-fallback-render",
       "sha256": "706e0e7013af94ec11b3725c94636a69b823b237d2e76fb41c31eaf59deac5bc"
     },
+    "openGraph": {
+      "kind": "fallback-render",
+      "role": "public-archive-open-graph-render",
+      "sha256": "7f15b4da56f326a21d3959d60111f02d88655948ad7ba571abfc2c3281bc4534"
+    },
     "instagram": {
       "kind": "fallback-render",
       "role": "public-archive-instagram-render",
@@ -19,22 +24,6 @@
     }
   },
   "targets": {
-    "artwork-720.jpg": {
-      "spec": {
-        "fileName": "artwork-720.jpg",
-        "width": 1280,
-        "height": 720,
-        "fit": "inside",
-        "withoutEnlargement": true,
-        "format": "jpeg",
-        "quality": 86
-      },
-      "publicPath": "./data/media/2026-02-24-resonance-budget-negotiations-continue-v2/artwork-720.jpg",
-      "source": {
-        "sha256": "706e0e7013af94ec11b3725c94636a69b823b237d2e76fb41c31eaf59deac5bc",
-        "role": "public-archive-fallback-render"
-      }
-    },
     "thumb-320.jpg": {
       "spec": {
         "fileName": "thumb-320.jpg",
@@ -49,6 +38,22 @@
       "source": {
         "sha256": "706e0e7013af94ec11b3725c94636a69b823b237d2e76fb41c31eaf59deac5bc",
         "role": "public-archive-fallback-render"
+      }
+    },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-02-24-resonance-budget-negotiations-continue-v2/og-1200x630.jpg",
+      "source": {
+        "sha256": "7f15b4da56f326a21d3959d60111f02d88655948ad7ba571abfc2c3281bc4534",
+        "role": "public-archive-open-graph-render"
       }
     },
     "instagram-1080x1440.jpg": {

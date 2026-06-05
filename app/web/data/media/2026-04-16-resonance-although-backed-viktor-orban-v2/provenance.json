@@ -12,6 +12,11 @@
       "role": "public-archive-fallback-render",
       "sha256": "84e9eaf588fbdb12a675f18ee1782c6159f2e92e936aa6baedfef2c5758b627c"
     },
+    "openGraph": {
+      "kind": "fallback-render",
+      "role": "public-archive-open-graph-render",
+      "sha256": "bca6ded452d77eb73c67ae43045c93dd9038b283c7652ff75941abb9052eccbf"
+    },
     "instagram": {
       "kind": "fallback-render",
       "role": "public-archive-instagram-render",
@@ -19,22 +24,6 @@
     }
   },
   "targets": {
-    "artwork-720.jpg": {
-      "spec": {
-        "fileName": "artwork-720.jpg",
-        "width": 1280,
-        "height": 720,
-        "fit": "inside",
-        "withoutEnlargement": true,
-        "format": "jpeg",
-        "quality": 86
-      },
-      "publicPath": "./data/media/2026-04-16-resonance-although-backed-viktor-orban-v2/artwork-720.jpg",
-      "source": {
-        "sha256": "84e9eaf588fbdb12a675f18ee1782c6159f2e92e936aa6baedfef2c5758b627c",
-        "role": "public-archive-fallback-render"
-      }
-    },
     "thumb-320.jpg": {
       "spec": {
         "fileName": "thumb-320.jpg",
@@ -49,6 +38,22 @@
       "source": {
         "sha256": "84e9eaf588fbdb12a675f18ee1782c6159f2e92e936aa6baedfef2c5758b627c",
         "role": "public-archive-fallback-render"
+      }
+    },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-04-16-resonance-although-backed-viktor-orban-v2/og-1200x630.jpg",
+      "source": {
+        "sha256": "bca6ded452d77eb73c67ae43045c93dd9038b283c7652ff75941abb9052eccbf",
+        "role": "public-archive-open-graph-render"
       }
     },
     "instagram-1080x1440.jpg": {

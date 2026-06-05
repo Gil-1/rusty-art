@@ -12,6 +12,11 @@
       "role": "public-archive-fallback-render",
       "sha256": "9191f594b7fcd2703845f299939c6785d1ad9d93838ef8d84a70d4803593856e"
     },
+    "openGraph": {
+      "kind": "fallback-render",
+      "role": "public-archive-open-graph-render",
+      "sha256": "ae7f5cdb2bc57669b97f02eddd893a37b76db5663ec68068a6c42155dc3e035f"
+    },
     "instagram": {
       "kind": "fallback-render",
       "role": "public-archive-instagram-render",
@@ -19,22 +24,6 @@
     }
   },
   "targets": {
-    "artwork-720.jpg": {
-      "spec": {
-        "fileName": "artwork-720.jpg",
-        "width": 1280,
-        "height": 720,
-        "fit": "inside",
-        "withoutEnlargement": true,
-        "format": "jpeg",
-        "quality": 86
-      },
-      "publicPath": "./data/media/2026-04-28-abstract-signal-trump-explique-pourquoi-diatement-v2/artwork-720.jpg",
-      "source": {
-        "sha256": "9191f594b7fcd2703845f299939c6785d1ad9d93838ef8d84a70d4803593856e",
-        "role": "public-archive-fallback-render"
-      }
-    },
     "thumb-320.jpg": {
       "spec": {
         "fileName": "thumb-320.jpg",
@@ -49,6 +38,22 @@
       "source": {
         "sha256": "9191f594b7fcd2703845f299939c6785d1ad9d93838ef8d84a70d4803593856e",
         "role": "public-archive-fallback-render"
+      }
+    },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-04-28-abstract-signal-trump-explique-pourquoi-diatement-v2/og-1200x630.jpg",
+      "source": {
+        "sha256": "ae7f5cdb2bc57669b97f02eddd893a37b76db5663ec68068a6c42155dc3e035f",
+        "role": "public-archive-open-graph-render"
       }
     },
     "instagram-1080x1440.jpg": {

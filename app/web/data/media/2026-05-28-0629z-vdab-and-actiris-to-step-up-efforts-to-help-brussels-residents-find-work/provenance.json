@@ -12,29 +12,18 @@
       "role": "daily-preview-story-desktop",
       "sha256": "5c392bb8b2d23ac87973f5c199fed40967a24082c1b26a85946c823e5af1bc29"
     },
+    "openGraph": {
+      "kind": "fallback-render",
+      "role": "public-archive-open-graph-render",
+      "sha256": "a6901859e004f0e5289bcdc397c901a3f72fe3bd1406f2f45b5f244d3ebf2ab0"
+    },
     "instagram": {
       "kind": "fallback-render",
       "role": "public-archive-instagram-render",
-      "sha256": "1018186d5ae11eb02e762e85b5ed5fe258cf55137b83296619197465b655f7b5"
+      "sha256": "5e3063cb01f8f15c7bdf42eb888ac8974e8cea65dda707d090dad3eaa4373d8e"
     }
   },
   "targets": {
-    "artwork-720.jpg": {
-      "spec": {
-        "fileName": "artwork-720.jpg",
-        "width": 1280,
-        "height": 720,
-        "fit": "inside",
-        "withoutEnlargement": true,
-        "format": "jpeg",
-        "quality": 86
-      },
-      "publicPath": "./data/media/2026-05-28-0629z-vdab-and-actiris-to-step-up-efforts-to-help-brussels-residents-find-work/artwork-720.jpg",
-      "source": {
-        "sha256": "5c392bb8b2d23ac87973f5c199fed40967a24082c1b26a85946c823e5af1bc29",
-        "role": "daily-preview-story-desktop"
-      }
-    },
     "thumb-320.jpg": {
       "spec": {
         "fileName": "thumb-320.jpg",
@@ -51,6 +40,22 @@
         "role": "daily-preview-story-desktop"
       }
     },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-05-28-0629z-vdab-and-actiris-to-step-up-efforts-to-help-brussels-residents-find-work/og-1200x630.jpg",
+      "source": {
+        "sha256": "a6901859e004f0e5289bcdc397c901a3f72fe3bd1406f2f45b5f244d3ebf2ab0",
+        "role": "public-archive-open-graph-render"
+      }
+    },
     "instagram-1080x1440.jpg": {
       "spec": {
         "fileName": "instagram-1080x1440.jpg",
@@ -63,7 +68,7 @@
       },
       "publicPath": "./data/media/2026-05-28-0629z-vdab-and-actiris-to-step-up-efforts-to-help-brussels-residents-find-work/instagram-1080x1440.jpg",
       "source": {
-        "sha256": "1018186d5ae11eb02e762e85b5ed5fe258cf55137b83296619197465b655f7b5",
+        "sha256": "5e3063cb01f8f15c7bdf42eb888ac8974e8cea65dda707d090dad3eaa4373d8e",
         "role": "public-archive-instagram-render"
       }
     }

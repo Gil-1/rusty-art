@@ -12,6 +12,11 @@
       "role": "public-archive-fallback-render",
       "sha256": "7d7ed46d661a07724116079e7359c255a71020df6d7ad56089f2aeb1ae86262e"
     },
+    "openGraph": {
+      "kind": "fallback-render",
+      "role": "public-archive-open-graph-render",
+      "sha256": "ae863208094da94f3168307deeec318f3b7e05f437a343f055da138a7d86a89f"
+    },
     "instagram": {
       "kind": "fallback-render",
       "role": "public-archive-instagram-render",
@@ -19,22 +24,6 @@
     }
   },
   "targets": {
-    "artwork-720.jpg": {
-      "spec": {
-        "fileName": "artwork-720.jpg",
-        "width": 1280,
-        "height": 720,
-        "fit": "inside",
-        "withoutEnlargement": true,
-        "format": "jpeg",
-        "quality": 86
-      },
-      "publicPath": "./data/media/2026-02-24-fragments-of-puzzle-pieces-falling-v2/artwork-720.jpg",
-      "source": {
-        "sha256": "7d7ed46d661a07724116079e7359c255a71020df6d7ad56089f2aeb1ae86262e",
-        "role": "public-archive-fallback-render"
-      }
-    },
     "thumb-320.jpg": {
       "spec": {
         "fileName": "thumb-320.jpg",
@@ -49,6 +38,22 @@
       "source": {
         "sha256": "7d7ed46d661a07724116079e7359c255a71020df6d7ad56089f2aeb1ae86262e",
         "role": "public-archive-fallback-render"
+      }
+    },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-02-24-fragments-of-puzzle-pieces-falling-v2/og-1200x630.jpg",
+      "source": {
+        "sha256": "ae863208094da94f3168307deeec318f3b7e05f437a343f055da138a7d86a89f",
+        "role": "public-archive-open-graph-render"
       }
     },
     "instagram-1080x1440.jpg": {

@@ -12,29 +12,18 @@
       "role": "daily-preview-story-desktop",
       "sha256": "ff65b84b64e4d0c145bea35a65f473c7e7e863417d1d04cb67880a57f26ba955"
     },
+    "openGraph": {
+      "kind": "fallback-render",
+      "role": "public-archive-open-graph-render",
+      "sha256": "0e8297a5b6e8acaa2e512b79f89075ac5ebd7e82adbf1d9904dfd6580c2776fa"
+    },
     "instagram": {
       "kind": "fallback-render",
       "role": "public-archive-instagram-render",
-      "sha256": "6e2b525cd9257f0404217880cefa9be8a3522805c8cd2c682f2f2a9abfde65af"
+      "sha256": "7d78650c5a6136f4ca64cd14b28b2bcc5d76d7591060cc51885824bf08f79d6b"
     }
   },
   "targets": {
-    "artwork-720.jpg": {
-      "spec": {
-        "fileName": "artwork-720.jpg",
-        "width": 1280,
-        "height": 720,
-        "fit": "inside",
-        "withoutEnlargement": true,
-        "format": "jpeg",
-        "quality": 86
-      },
-      "publicPath": "./data/media/2026-06-02-0630z-roland-garros-serena-s-return-the-injuries-to-alcaraz-and-djokovic-john/artwork-720.jpg",
-      "source": {
-        "sha256": "ff65b84b64e4d0c145bea35a65f473c7e7e863417d1d04cb67880a57f26ba955",
-        "role": "daily-preview-story-desktop"
-      }
-    },
     "thumb-320.jpg": {
       "spec": {
         "fileName": "thumb-320.jpg",
@@ -51,6 +40,22 @@
         "role": "daily-preview-story-desktop"
       }
     },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-06-02-0630z-roland-garros-serena-s-return-the-injuries-to-alcaraz-and-djokovic-john/og-1200x630.jpg",
+      "source": {
+        "sha256": "0e8297a5b6e8acaa2e512b79f89075ac5ebd7e82adbf1d9904dfd6580c2776fa",
+        "role": "public-archive-open-graph-render"
+      }
+    },
     "instagram-1080x1440.jpg": {
       "spec": {
         "fileName": "instagram-1080x1440.jpg",
@@ -63,7 +68,7 @@
       },
       "publicPath": "./data/media/2026-06-02-0630z-roland-garros-serena-s-return-the-injuries-to-alcaraz-and-djokovic-john/instagram-1080x1440.jpg",
       "source": {
-        "sha256": "6e2b525cd9257f0404217880cefa9be8a3522805c8cd2c682f2f2a9abfde65af",
+        "sha256": "7d78650c5a6136f4ca64cd14b28b2bcc5d76d7591060cc51885824bf08f79d6b",
         "role": "public-archive-instagram-render"
       }
     }

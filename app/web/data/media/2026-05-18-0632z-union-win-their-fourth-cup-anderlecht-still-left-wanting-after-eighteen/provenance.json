@@ -12,29 +12,18 @@
       "role": "public-archive-fallback-render",
       "sha256": "58d33f882dda793231ae6a8af6b02093e4837870b8a2935580d97151a54ec899"
     },
+    "openGraph": {
+      "kind": "fallback-render",
+      "role": "public-archive-open-graph-render",
+      "sha256": "d766e5f73e503240feaa5028b53ca86fc96c2260cde0154d03ff46bb3b1723c4"
+    },
     "instagram": {
       "kind": "fallback-render",
       "role": "public-archive-instagram-render",
-      "sha256": "3f757b8cbcc9e7de0f34be3e3587edcc3b4766ff084458c5e1fa6204b9e0ada9"
+      "sha256": "accd941fa5fbac84e6e9a1db34bd3ab154cab91fb74e9c1caa6bd72c58c7a0d2"
     }
   },
   "targets": {
-    "artwork-720.jpg": {
-      "spec": {
-        "fileName": "artwork-720.jpg",
-        "width": 1280,
-        "height": 720,
-        "fit": "inside",
-        "withoutEnlargement": true,
-        "format": "jpeg",
-        "quality": 86
-      },
-      "publicPath": "./data/media/2026-05-18-0632z-union-win-their-fourth-cup-anderlecht-still-left-wanting-after-eighteen/artwork-720.jpg",
-      "source": {
-        "sha256": "58d33f882dda793231ae6a8af6b02093e4837870b8a2935580d97151a54ec899",
-        "role": "public-archive-fallback-render"
-      }
-    },
     "thumb-320.jpg": {
       "spec": {
         "fileName": "thumb-320.jpg",
@@ -51,6 +40,22 @@
         "role": "public-archive-fallback-render"
       }
     },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-05-18-0632z-union-win-their-fourth-cup-anderlecht-still-left-wanting-after-eighteen/og-1200x630.jpg",
+      "source": {
+        "sha256": "d766e5f73e503240feaa5028b53ca86fc96c2260cde0154d03ff46bb3b1723c4",
+        "role": "public-archive-open-graph-render"
+      }
+    },
     "instagram-1080x1440.jpg": {
       "spec": {
         "fileName": "instagram-1080x1440.jpg",
@@ -63,7 +68,7 @@
       },
       "publicPath": "./data/media/2026-05-18-0632z-union-win-their-fourth-cup-anderlecht-still-left-wanting-after-eighteen/instagram-1080x1440.jpg",
       "source": {
-        "sha256": "3f757b8cbcc9e7de0f34be3e3587edcc3b4766ff084458c5e1fa6204b9e0ada9",
+        "sha256": "accd941fa5fbac84e6e9a1db34bd3ab154cab91fb74e9c1caa6bd72c58c7a0d2",
         "role": "public-archive-instagram-render"
       }
     }

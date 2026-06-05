@@ -12,29 +12,18 @@
       "role": "daily-preview-story-desktop",
       "sha256": "b1afdf74f6dac031e307aa47d2ae422e2c06ffd77855a916005b273ad3ba8536"
     },
+    "openGraph": {
+      "kind": "fallback-render",
+      "role": "public-archive-open-graph-render",
+      "sha256": "2243c803791c81373e5faa7412b37dfd40741a32918244c4b7543b367d9e1d56"
+    },
     "instagram": {
       "kind": "fallback-render",
       "role": "public-archive-instagram-render",
-      "sha256": "7f7b15655664f5e66273623a2120b2c4f99c571117a8e33b20ddd28a7223c1d7"
+      "sha256": "1da659ca24c26f78c9ebc0f837b1bbaec6d3efa693ca6b62bb0f9292bad44c63"
     }
   },
   "targets": {
-    "artwork-720.jpg": {
-      "spec": {
-        "fileName": "artwork-720.jpg",
-        "width": 1280,
-        "height": 720,
-        "fit": "inside",
-        "withoutEnlargement": true,
-        "format": "jpeg",
-        "quality": 86
-      },
-      "publicPath": "./data/media/2026-06-04-0626z-as-iran-again-targets-kuwait-and-bahrain-following-us-attacks-trump-accu/artwork-720.jpg",
-      "source": {
-        "sha256": "b1afdf74f6dac031e307aa47d2ae422e2c06ffd77855a916005b273ad3ba8536",
-        "role": "daily-preview-story-desktop"
-      }
-    },
     "thumb-320.jpg": {
       "spec": {
         "fileName": "thumb-320.jpg",
@@ -51,6 +40,22 @@
         "role": "daily-preview-story-desktop"
       }
     },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-06-04-0626z-as-iran-again-targets-kuwait-and-bahrain-following-us-attacks-trump-accu/og-1200x630.jpg",
+      "source": {
+        "sha256": "2243c803791c81373e5faa7412b37dfd40741a32918244c4b7543b367d9e1d56",
+        "role": "public-archive-open-graph-render"
+      }
+    },
     "instagram-1080x1440.jpg": {
       "spec": {
         "fileName": "instagram-1080x1440.jpg",
@@ -63,7 +68,7 @@
       },
       "publicPath": "./data/media/2026-06-04-0626z-as-iran-again-targets-kuwait-and-bahrain-following-us-attacks-trump-accu/instagram-1080x1440.jpg",
       "source": {
-        "sha256": "7f7b15655664f5e66273623a2120b2c4f99c571117a8e33b20ddd28a7223c1d7",
+        "sha256": "1da659ca24c26f78c9ebc0f837b1bbaec6d3efa693ca6b62bb0f9292bad44c63",
         "role": "public-archive-instagram-render"
       }
     }

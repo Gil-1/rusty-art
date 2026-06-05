@@ -12,6 +12,11 @@
       "role": "public-archive-fallback-render",
       "sha256": "27adf988c39c654211a45ccb1cd1c38f3711b02f2131026ee0669916e0bf7a3d"
     },
+    "openGraph": {
+      "kind": "fallback-render",
+      "role": "public-archive-open-graph-render",
+      "sha256": "3c3aab166acc7cc8f55338579417c5a0e9b35bec4c134ecc44bda95adbfd0031"
+    },
     "instagram": {
       "kind": "fallback-render",
       "role": "public-archive-instagram-render",
@@ -19,22 +24,6 @@
     }
   },
   "targets": {
-    "artwork-720.jpg": {
-      "spec": {
-        "fileName": "artwork-720.jpg",
-        "width": 1280,
-        "height": 720,
-        "fit": "inside",
-        "withoutEnlargement": true,
-        "format": "jpeg",
-        "quality": 86
-      },
-      "publicPath": "./data/media/2026-04-10-fragments-of-live-middle-east-trump/artwork-720.jpg",
-      "source": {
-        "sha256": "27adf988c39c654211a45ccb1cd1c38f3711b02f2131026ee0669916e0bf7a3d",
-        "role": "public-archive-fallback-render"
-      }
-    },
     "thumb-320.jpg": {
       "spec": {
         "fileName": "thumb-320.jpg",
@@ -49,6 +38,22 @@
       "source": {
         "sha256": "27adf988c39c654211a45ccb1cd1c38f3711b02f2131026ee0669916e0bf7a3d",
         "role": "public-archive-fallback-render"
+      }
+    },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-04-10-fragments-of-live-middle-east-trump/og-1200x630.jpg",
+      "source": {
+        "sha256": "3c3aab166acc7cc8f55338579417c5a0e9b35bec4c134ecc44bda95adbfd0031",
+        "role": "public-archive-open-graph-render"
       }
     },
     "instagram-1080x1440.jpg": {

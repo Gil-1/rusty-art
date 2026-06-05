@@ -12,6 +12,11 @@
       "role": "public-archive-fallback-render",
       "sha256": "7cfeabeeb3cfd73886ed203fb6abef36ac36b434aa2a3290fe38b3d4c27c89d0"
     },
+    "openGraph": {
+      "kind": "fallback-render",
+      "role": "public-archive-open-graph-render",
+      "sha256": "badc41fafee76aa76aac80e85a80839f04f340d180f9209174c0d35b8f6935cf"
+    },
     "instagram": {
       "kind": "fallback-render",
       "role": "public-archive-instagram-render",
@@ -19,22 +24,6 @@
     }
   },
   "targets": {
-    "artwork-720.jpg": {
-      "spec": {
-        "fileName": "artwork-720.jpg",
-        "width": 1280,
-        "height": 720,
-        "fit": "inside",
-        "withoutEnlargement": true,
-        "format": "jpeg",
-        "quality": 86
-      },
-      "publicPath": "./data/media/2026-02-16-echoes-of-boris-dilli-nouveau-v3/artwork-720.jpg",
-      "source": {
-        "sha256": "7cfeabeeb3cfd73886ed203fb6abef36ac36b434aa2a3290fe38b3d4c27c89d0",
-        "role": "public-archive-fallback-render"
-      }
-    },
     "thumb-320.jpg": {
       "spec": {
         "fileName": "thumb-320.jpg",
@@ -49,6 +38,22 @@
       "source": {
         "sha256": "7cfeabeeb3cfd73886ed203fb6abef36ac36b434aa2a3290fe38b3d4c27c89d0",
         "role": "public-archive-fallback-render"
+      }
+    },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-02-16-echoes-of-boris-dilli-nouveau-v3/og-1200x630.jpg",
+      "source": {
+        "sha256": "badc41fafee76aa76aac80e85a80839f04f340d180f9209174c0d35b8f6935cf",
+        "role": "public-archive-open-graph-render"
       }
     },
     "instagram-1080x1440.jpg": {

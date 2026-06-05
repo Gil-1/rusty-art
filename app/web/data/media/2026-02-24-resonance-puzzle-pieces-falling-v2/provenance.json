@@ -12,6 +12,11 @@
       "role": "public-archive-fallback-render",
       "sha256": "b69149c1a03e11733311b35be4251a0799a54ab241f9fafb398d1a6adef08ab2"
     },
+    "openGraph": {
+      "kind": "fallback-render",
+      "role": "public-archive-open-graph-render",
+      "sha256": "91b7b62504441919335ac2e9f20b8496eca1bbaf45283f25f4e43b2144b4db3a"
+    },
     "instagram": {
       "kind": "fallback-render",
       "role": "public-archive-instagram-render",
@@ -19,22 +24,6 @@
     }
   },
   "targets": {
-    "artwork-720.jpg": {
-      "spec": {
-        "fileName": "artwork-720.jpg",
-        "width": 1280,
-        "height": 720,
-        "fit": "inside",
-        "withoutEnlargement": true,
-        "format": "jpeg",
-        "quality": 86
-      },
-      "publicPath": "./data/media/2026-02-24-resonance-puzzle-pieces-falling-v2/artwork-720.jpg",
-      "source": {
-        "sha256": "b69149c1a03e11733311b35be4251a0799a54ab241f9fafb398d1a6adef08ab2",
-        "role": "public-archive-fallback-render"
-      }
-    },
     "thumb-320.jpg": {
       "spec": {
         "fileName": "thumb-320.jpg",
@@ -49,6 +38,22 @@
       "source": {
         "sha256": "b69149c1a03e11733311b35be4251a0799a54ab241f9fafb398d1a6adef08ab2",
         "role": "public-archive-fallback-render"
+      }
+    },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-02-24-resonance-puzzle-pieces-falling-v2/og-1200x630.jpg",
+      "source": {
+        "sha256": "91b7b62504441919335ac2e9f20b8496eca1bbaf45283f25f4e43b2144b4db3a",
+        "role": "public-archive-open-graph-render"
       }
     },
     "instagram-1080x1440.jpg": {

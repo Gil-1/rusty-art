@@ -12,6 +12,11 @@
       "role": "public-archive-fallback-render",
       "sha256": "abe288989e8354ecf9142bdc1a3ee8ff0f1be377956bc83e9a51414f85d701e6"
     },
+    "openGraph": {
+      "kind": "fallback-render",
+      "role": "public-archive-open-graph-render",
+      "sha256": "5be31644b5dd4f4caf49a8c04019cdeb2260c8d5c5c47fc3c92594b96f52239a"
+    },
     "instagram": {
       "kind": "fallback-render",
       "role": "public-archive-instagram-render",
@@ -19,22 +24,6 @@
     }
   },
   "targets": {
-    "artwork-720.jpg": {
-      "spec": {
-        "fileName": "artwork-720.jpg",
-        "width": 1280,
-        "height": 720,
-        "fit": "inside",
-        "withoutEnlargement": true,
-        "format": "jpeg",
-        "quality": 86
-      },
-      "publicPath": "./data/media/2026-05-08-fragments-of-rupel-boom-cannot-underestimated-v3/artwork-720.jpg",
-      "source": {
-        "sha256": "abe288989e8354ecf9142bdc1a3ee8ff0f1be377956bc83e9a51414f85d701e6",
-        "role": "public-archive-fallback-render"
-      }
-    },
     "thumb-320.jpg": {
       "spec": {
         "fileName": "thumb-320.jpg",
@@ -49,6 +38,22 @@
       "source": {
         "sha256": "abe288989e8354ecf9142bdc1a3ee8ff0f1be377956bc83e9a51414f85d701e6",
         "role": "public-archive-fallback-render"
+      }
+    },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-05-08-fragments-of-rupel-boom-cannot-underestimated-v3/og-1200x630.jpg",
+      "source": {
+        "sha256": "5be31644b5dd4f4caf49a8c04019cdeb2260c8d5c5c47fc3c92594b96f52239a",
+        "role": "public-archive-open-graph-render"
       }
     },
     "instagram-1080x1440.jpg": {

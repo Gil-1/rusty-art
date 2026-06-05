@@ -12,6 +12,11 @@
       "role": "public-archive-fallback-render",
       "sha256": "6d99dcc18c0a31460e7cde18723fcbe2c9bee02240f7fc20b231c3cc4cee781a"
     },
+    "openGraph": {
+      "kind": "fallback-render",
+      "role": "public-archive-open-graph-render",
+      "sha256": "08594104bef6351e01d55ab7b2be2ceea71fa58c4f416f37e86f987f301cb0f3"
+    },
     "instagram": {
       "kind": "fallback-render",
       "role": "public-archive-instagram-render",
@@ -19,22 +24,6 @@
     }
   },
   "targets": {
-    "artwork-720.jpg": {
-      "spec": {
-        "fileName": "artwork-720.jpg",
-        "width": 1280,
-        "height": 720,
-        "fit": "inside",
-        "withoutEnlargement": true,
-        "format": "jpeg",
-        "quality": 86
-      },
-      "publicPath": "./data/media/2026-02-24-abstract-signal-prosecutor-office-confirms-v2/artwork-720.jpg",
-      "source": {
-        "sha256": "6d99dcc18c0a31460e7cde18723fcbe2c9bee02240f7fc20b231c3cc4cee781a",
-        "role": "public-archive-fallback-render"
-      }
-    },
     "thumb-320.jpg": {
       "spec": {
         "fileName": "thumb-320.jpg",
@@ -49,6 +38,22 @@
       "source": {
         "sha256": "6d99dcc18c0a31460e7cde18723fcbe2c9bee02240f7fc20b231c3cc4cee781a",
         "role": "public-archive-fallback-render"
+      }
+    },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-02-24-abstract-signal-prosecutor-office-confirms-v2/og-1200x630.jpg",
+      "source": {
+        "sha256": "08594104bef6351e01d55ab7b2be2ceea71fa58c4f416f37e86f987f301cb0f3",
+        "role": "public-archive-open-graph-render"
       }
     },
     "instagram-1080x1440.jpg": {

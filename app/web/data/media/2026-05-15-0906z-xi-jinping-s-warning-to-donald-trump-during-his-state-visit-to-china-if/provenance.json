@@ -12,29 +12,18 @@
       "role": "public-archive-fallback-render",
       "sha256": "ffa906f19bc5357e066b46d587f47ad607c82cb989c5d8f31069687cd0deed64"
     },
+    "openGraph": {
+      "kind": "fallback-render",
+      "role": "public-archive-open-graph-render",
+      "sha256": "7483b6599dd808eb4cf73a3b642ed70f6739d1d7b9ae91781a989487cc658ffe"
+    },
     "instagram": {
       "kind": "fallback-render",
       "role": "public-archive-instagram-render",
-      "sha256": "1423f86ebe09607d780e92f7e9bb3703ebc3d4a130ccfd974c4178c2f34078e7"
+      "sha256": "0baa43aece230b0e76b245e2776ec2cb044573590d0a1bcf80e931c5cb13129e"
     }
   },
   "targets": {
-    "artwork-720.jpg": {
-      "spec": {
-        "fileName": "artwork-720.jpg",
-        "width": 1280,
-        "height": 720,
-        "fit": "inside",
-        "withoutEnlargement": true,
-        "format": "jpeg",
-        "quality": 86
-      },
-      "publicPath": "./data/media/2026-05-15-0906z-xi-jinping-s-warning-to-donald-trump-during-his-state-visit-to-china-if/artwork-720.jpg",
-      "source": {
-        "sha256": "ffa906f19bc5357e066b46d587f47ad607c82cb989c5d8f31069687cd0deed64",
-        "role": "public-archive-fallback-render"
-      }
-    },
     "thumb-320.jpg": {
       "spec": {
         "fileName": "thumb-320.jpg",
@@ -51,6 +40,22 @@
         "role": "public-archive-fallback-render"
       }
     },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-05-15-0906z-xi-jinping-s-warning-to-donald-trump-during-his-state-visit-to-china-if/og-1200x630.jpg",
+      "source": {
+        "sha256": "7483b6599dd808eb4cf73a3b642ed70f6739d1d7b9ae91781a989487cc658ffe",
+        "role": "public-archive-open-graph-render"
+      }
+    },
     "instagram-1080x1440.jpg": {
       "spec": {
         "fileName": "instagram-1080x1440.jpg",
@@ -63,7 +68,7 @@
       },
       "publicPath": "./data/media/2026-05-15-0906z-xi-jinping-s-warning-to-donald-trump-during-his-state-visit-to-china-if/instagram-1080x1440.jpg",
       "source": {
-        "sha256": "1423f86ebe09607d780e92f7e9bb3703ebc3d4a130ccfd974c4178c2f34078e7",
+        "sha256": "0baa43aece230b0e76b245e2776ec2cb044573590d0a1bcf80e931c5cb13129e",
         "role": "public-archive-instagram-render"
       }
     }
