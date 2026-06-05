@@ -1,0 +1,71 @@
+{
+  "version": 2,
+  "kind": "rusty-art-public-media-assets",
+  "artworkId": "2026-06-05-0629z-world-cup-a-giant-screen-will-broadcast-the-devils-matches-on-place-dumo",
+  "source": {
+    "sha256": "29d3afd0c250ac36e0e5c08a6b524d1ba861a2e68f2cc6afd638221c3cf53045",
+    "role": "daily-preview-story-desktop"
+  },
+  "sources": {
+    "primary": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-desktop",
+      "sha256": "29d3afd0c250ac36e0e5c08a6b524d1ba861a2e68f2cc6afd638221c3cf53045"
+    },
+    "instagram": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-instagram",
+      "sha256": "152a3afabb78528e40ad551cb2288c2da422ba932945b9f5c4261532cb65f29e"
+    }
+  },
+  "targets": {
+    "artwork-720.jpg": {
+      "spec": {
+        "fileName": "artwork-720.jpg",
+        "width": 1280,
+        "height": 720,
+        "fit": "inside",
+        "withoutEnlargement": true,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-06-05-0629z-world-cup-a-giant-screen-will-broadcast-the-devils-matches-on-place-dumo/artwork-720.jpg",
+      "source": {
+        "sha256": "29d3afd0c250ac36e0e5c08a6b524d1ba861a2e68f2cc6afd638221c3cf53045",
+        "role": "daily-preview-story-desktop"
+      }
+    },
+    "thumb-320.jpg": {
+      "spec": {
+        "fileName": "thumb-320.jpg",
+        "width": 320,
+        "height": null,
+        "fit": "inside",
+        "withoutEnlargement": true,
+        "format": "jpeg",
+        "quality": 82
+      },
+      "publicPath": "./data/media/2026-06-05-0629z-world-cup-a-giant-screen-will-broadcast-the-devils-matches-on-place-dumo/thumb-320.jpg",
+      "source": {
+        "sha256": "29d3afd0c250ac36e0e5c08a6b524d1ba861a2e68f2cc6afd638221c3cf53045",
+        "role": "daily-preview-story-desktop"
+      }
+    },
+    "instagram-1080x1440.jpg": {
+      "spec": {
+        "fileName": "instagram-1080x1440.jpg",
+        "width": 1080,
+        "height": 1440,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-06-05-0629z-world-cup-a-giant-screen-will-broadcast-the-devils-matches-on-place-dumo/instagram-1080x1440.jpg",
+      "source": {
+        "sha256": "152a3afabb78528e40ad551cb2288c2da422ba932945b9f5c4261532cb65f29e",
+        "role": "daily-preview-story-instagram"
+      }
+    }
+  }
+}

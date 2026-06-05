@@ -1,8 +1,95 @@
 {
   "version": 1,
   "generatedAt": "2026-05-13T06:11:46.412Z",
-  "updatedAt": "2026-06-04T06:07:46.568Z",
+  "updatedAt": "2026-06-05T06:07:41.033Z",
   "entries": [
+    {
+      "version": 1,
+      "moduleId": "artist-mark-field-draft-attempt-1",
+      "partId": "artist-mark-field",
+      "hash": "0016942116165150b2d3d60c171b096c6b2778dd07519910227853ebad3f5728",
+      "integrity": "sha256-0016942116165150b2d3d60c171b096c6b2778dd07519910227853ebad3f5728",
+      "exportName": "createImmersiveWorldPart",
+      "file": "data/immersive-world/generated-modules/0016942116165150b2d3d60c171b096c6b2778dd07519910227853ebad3f5728.mjs",
+      "url": "./data/immersive-world/generated-modules/0016942116165150b2d3d60c171b096c6b2778dd07519910227853ebad3f5728.mjs",
+      "bytes": 13572,
+      "sourceHash": "d34125e5f9d5448d08ecd16281c42949105ff31e54aa949ea7e4d80851f58da1",
+      "packagedAt": "2026-06-05T06:00:09.571Z",
+      "rendererCompatibility": {
+        "version": 1,
+        "targetMode": "unspecified",
+        "compatibilityStatus": "webgpu-compatible",
+        "webgpuCompatible": true,
+        "fallbackReason": null,
+        "fallbackReasons": [],
+        "evidenceReasons": [
+          "webgpu-safe-material"
+        ],
+        "compatibleSurfaces": [
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "artist-mark-field.module.mjs",
+            "pos": 1502,
+            "materialType": "MeshBasicMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "artist-mark-field.module.mjs",
+            "pos": 1782,
+            "materialType": "LineBasicMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "artist-mark-field.module.mjs",
+            "pos": 3555,
+            "materialType": "DataTexture"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "artist-mark-field.module.mjs",
+            "pos": 4626,
+            "materialType": "DataTexture"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "artist-mark-field.module.mjs",
+            "pos": 19634,
+            "materialType": "PointsMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 831,
+            "materialType": "MeshBasicMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 991,
+            "materialType": "LineBasicMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 1794,
+            "materialType": "DataTexture"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 2341,
+            "materialType": "DataTexture"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 10776,
+            "materialType": "PointsMaterial"
+          }
+        ],
+        "forbiddenSurfaces": []
+      }
+    },
     {
       "version": 1,
       "moduleId": "world-environment-draft-attempt-1",
@@ -713,6 +800,105 @@
             "property": "fragmentShader"
           }
         ]
+      }
+    },
+    {
+      "version": 1,
+      "moduleId": "non-literal-flow-pressure-frank-stella-dumon-primary-signal",
+      "partId": "non-literal-flow-pressure",
+      "hash": "150263fe0467e9a6f58a3897dac6007cca8f85ec8f5840244577ce73940e1456",
+      "integrity": "sha256-150263fe0467e9a6f58a3897dac6007cca8f85ec8f5840244577ce73940e1456",
+      "exportName": "createImmersiveWorldPart",
+      "file": "data/immersive-world/generated-modules/150263fe0467e9a6f58a3897dac6007cca8f85ec8f5840244577ce73940e1456.mjs",
+      "url": "./data/immersive-world/generated-modules/150263fe0467e9a6f58a3897dac6007cca8f85ec8f5840244577ce73940e1456.mjs",
+      "bytes": 12931,
+      "sourceHash": "3b2adcaeba0ddd9ec8e21ce270a406407f5ddc27e71d013c0f3e0cc53944d0b1",
+      "packagedAt": "2026-06-05T06:07:41.033Z",
+      "rendererCompatibility": {
+        "version": 1,
+        "targetMode": "unspecified",
+        "compatibilityStatus": "webgpu-compatible",
+        "webgpuCompatible": true,
+        "fallbackReason": null,
+        "fallbackReasons": [],
+        "evidenceReasons": [
+          "webgpu-safe-material"
+        ],
+        "compatibleSurfaces": [
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "non-literal-flow-pressure.module.mjs",
+            "pos": 1461,
+            "materialType": "MeshBasicMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "non-literal-flow-pressure.module.mjs",
+            "pos": 3103,
+            "materialType": "DataTexture"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "non-literal-flow-pressure.module.mjs",
+            "pos": 4175,
+            "materialType": "DataTexture"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "non-literal-flow-pressure.module.mjs",
+            "pos": 5820,
+            "materialType": "MeshBasicMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "non-literal-flow-pressure.module.mjs",
+            "pos": 16885,
+            "materialType": "LineBasicMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "non-literal-flow-pressure.module.mjs",
+            "pos": 19046,
+            "materialType": "PointsMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 793,
+            "materialType": "MeshBasicMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 1588,
+            "materialType": "DataTexture"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 2139,
+            "materialType": "DataTexture"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 3117,
+            "materialType": "MeshBasicMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 9497,
+            "materialType": "LineBasicMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 10624,
+            "materialType": "PointsMaterial"
+          }
+        ],
+        "forbiddenSurfaces": []
       }
     },
     {
@@ -1619,6 +1805,109 @@
           }
         ],
         "forbiddenSurfaces": []
+      }
+    },
+    {
+      "version": 1,
+      "moduleId": "world-environment-frank-stella-dumon-screen-pressure",
+      "partId": "world-environment",
+      "hash": "2592d1873ff3311629cc42d4c3a4c32a9094abdf6b565dcdeea56183fe4a0883",
+      "integrity": "sha256-2592d1873ff3311629cc42d4c3a4c32a9094abdf6b565dcdeea56183fe4a0883",
+      "exportName": "createImmersiveWorldPart",
+      "file": "data/immersive-world/generated-modules/2592d1873ff3311629cc42d4c3a4c32a9094abdf6b565dcdeea56183fe4a0883.mjs",
+      "url": "./data/immersive-world/generated-modules/2592d1873ff3311629cc42d4c3a4c32a9094abdf6b565dcdeea56183fe4a0883.mjs",
+      "bytes": 15281,
+      "sourceHash": "59a53b59684f0a34500fcd17fc146ef970473bf6b1c2cc890d44c6cfd822ff83",
+      "packagedAt": "2026-06-05T06:07:41.033Z",
+      "rendererCompatibility": {
+        "version": 1,
+        "targetMode": "unspecified",
+        "compatibilityStatus": "webgl-only",
+        "webgpuCompatible": false,
+        "fallbackReason": "shader-material",
+        "fallbackReasons": [
+          "shader-material",
+          "raw-glsl-shader-surface"
+        ],
+        "evidenceReasons": [
+          "webgpu-safe-material"
+        ],
+        "compatibleSurfaces": [
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "world-environment.module.mjs",
+            "pos": 9952,
+            "materialType": "MeshBasicMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "world-environment.module.mjs",
+            "pos": 16769,
+            "materialType": "LineBasicMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "world-environment.module.mjs",
+            "pos": 18443,
+            "materialType": "PointsMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 8357,
+            "materialType": "MeshBasicMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 12121,
+            "materialType": "LineBasicMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 13005,
+            "materialType": "PointsMaterial"
+          }
+        ],
+        "forbiddenSurfaces": [
+          {
+            "reason": "shader-material",
+            "filePath": "world-environment.module.mjs",
+            "pos": 838,
+            "surface": "ShaderMaterial"
+          },
+          {
+            "reason": "raw-glsl-shader-surface",
+            "filePath": "world-environment.module.mjs",
+            "pos": 1007,
+            "property": "vertexShader"
+          },
+          {
+            "reason": "raw-glsl-shader-surface",
+            "filePath": "world-environment.module.mjs",
+            "pos": 1212,
+            "property": "fragmentShader"
+          },
+          {
+            "reason": "shader-material",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 466,
+            "surface": "ShaderMaterial"
+          },
+          {
+            "reason": "raw-glsl-shader-surface",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 592,
+            "property": "vertexShader"
+          },
+          {
+            "reason": "raw-glsl-shader-surface",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 791,
+            "property": "fragmentShader"
+          }
+        ]
       }
     },
     {
@@ -3587,6 +3876,105 @@
       "bytes": 7616,
       "sourceHash": "ef9c40fca235b6efb9488008bfed83aae17d234059284853982117441c8b5005",
       "packagedAt": "2026-05-14T21:28:34.666Z"
+    },
+    {
+      "version": 1,
+      "moduleId": "non-literal-flow-pressure-draft-attempt-1",
+      "partId": "non-literal-flow-pressure",
+      "hash": "430eb9f3dc58d55a0c3d5bcced300e0fb573f80ffebed9f1ab77823c6a7f1044",
+      "integrity": "sha256-430eb9f3dc58d55a0c3d5bcced300e0fb573f80ffebed9f1ab77823c6a7f1044",
+      "exportName": "createImmersiveWorldPart",
+      "file": "data/immersive-world/generated-modules/430eb9f3dc58d55a0c3d5bcced300e0fb573f80ffebed9f1ab77823c6a7f1044.mjs",
+      "url": "./data/immersive-world/generated-modules/430eb9f3dc58d55a0c3d5bcced300e0fb573f80ffebed9f1ab77823c6a7f1044.mjs",
+      "bytes": 12794,
+      "sourceHash": "c0bfee0cbff5c7266500e7dd299dfe6e1a000cb2cc17f21917c7a87927f95df5",
+      "packagedAt": "2026-06-05T06:00:09.571Z",
+      "rendererCompatibility": {
+        "version": 1,
+        "targetMode": "unspecified",
+        "compatibilityStatus": "webgpu-compatible",
+        "webgpuCompatible": true,
+        "fallbackReason": null,
+        "fallbackReasons": [],
+        "evidenceReasons": [
+          "webgpu-safe-material"
+        ],
+        "compatibleSurfaces": [
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "non-literal-flow-pressure.module.mjs",
+            "pos": 1461,
+            "materialType": "MeshBasicMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "non-literal-flow-pressure.module.mjs",
+            "pos": 3103,
+            "materialType": "DataTexture"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "non-literal-flow-pressure.module.mjs",
+            "pos": 4175,
+            "materialType": "DataTexture"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "non-literal-flow-pressure.module.mjs",
+            "pos": 5820,
+            "materialType": "MeshBasicMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "non-literal-flow-pressure.module.mjs",
+            "pos": 16588,
+            "materialType": "LineBasicMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "non-literal-flow-pressure.module.mjs",
+            "pos": 18749,
+            "materialType": "PointsMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 793,
+            "materialType": "MeshBasicMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 1588,
+            "materialType": "DataTexture"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 2139,
+            "materialType": "DataTexture"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 3117,
+            "materialType": "MeshBasicMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 9360,
+            "materialType": "LineBasicMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 10487,
+            "materialType": "PointsMaterial"
+          }
+        ],
+        "forbiddenSurfaces": []
+      }
     },
     {
       "version": 1,
@@ -8414,6 +8802,105 @@
     },
     {
       "version": 1,
+      "moduleId": "non-literal-flow-pressure-draft-attempt-2",
+      "partId": "non-literal-flow-pressure",
+      "hash": "b37886dff949e92d7423fc3dcb385943e9009c38de17a09834cce7061f505ffd",
+      "integrity": "sha256-b37886dff949e92d7423fc3dcb385943e9009c38de17a09834cce7061f505ffd",
+      "exportName": "createImmersiveWorldPart",
+      "file": "data/immersive-world/generated-modules/b37886dff949e92d7423fc3dcb385943e9009c38de17a09834cce7061f505ffd.mjs",
+      "url": "./data/immersive-world/generated-modules/b37886dff949e92d7423fc3dcb385943e9009c38de17a09834cce7061f505ffd.mjs",
+      "bytes": 12787,
+      "sourceHash": "3b688d5677a59e718e5aef19052ee050465810d1b3de76e64afb75793eabde03",
+      "packagedAt": "2026-06-05T06:00:09.571Z",
+      "rendererCompatibility": {
+        "version": 1,
+        "targetMode": "unspecified",
+        "compatibilityStatus": "webgpu-compatible",
+        "webgpuCompatible": true,
+        "fallbackReason": null,
+        "fallbackReasons": [],
+        "evidenceReasons": [
+          "webgpu-safe-material"
+        ],
+        "compatibleSurfaces": [
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "non-literal-flow-pressure.module.mjs",
+            "pos": 1461,
+            "materialType": "MeshBasicMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "non-literal-flow-pressure.module.mjs",
+            "pos": 3103,
+            "materialType": "DataTexture"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "non-literal-flow-pressure.module.mjs",
+            "pos": 4175,
+            "materialType": "DataTexture"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "non-literal-flow-pressure.module.mjs",
+            "pos": 5820,
+            "materialType": "MeshBasicMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "non-literal-flow-pressure.module.mjs",
+            "pos": 16581,
+            "materialType": "LineBasicMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "non-literal-flow-pressure.module.mjs",
+            "pos": 18742,
+            "materialType": "PointsMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 793,
+            "materialType": "MeshBasicMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 1588,
+            "materialType": "DataTexture"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 2139,
+            "materialType": "DataTexture"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 3117,
+            "materialType": "MeshBasicMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 9353,
+            "materialType": "LineBasicMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 10480,
+            "materialType": "PointsMaterial"
+          }
+        ],
+        "forbiddenSurfaces": []
+      }
+    },
+    {
+      "version": 1,
       "moduleId": "artist-mark-field-rothko-two-fan-zone-style-system-no-shell",
       "partId": "artist-mark-field",
       "hash": "bacadd8cfe134a1db2abf1454f47174ed086e2c2f7308699ba7cc34e74d3dc3e",
@@ -10521,6 +11008,93 @@
             "property": "fragmentShader"
           }
         ]
+      }
+    },
+    {
+      "version": 1,
+      "moduleId": "artist-mark-field-frank-stella-dumon-style-system",
+      "partId": "artist-mark-field",
+      "hash": "dbec7fa78572f3db7de4a74a4e990470c096606311d0db65f4ebf12a9d24af98",
+      "integrity": "sha256-dbec7fa78572f3db7de4a74a4e990470c096606311d0db65f4ebf12a9d24af98",
+      "exportName": "createImmersiveWorldPart",
+      "file": "data/immersive-world/generated-modules/dbec7fa78572f3db7de4a74a4e990470c096606311d0db65f4ebf12a9d24af98.mjs",
+      "url": "./data/immersive-world/generated-modules/dbec7fa78572f3db7de4a74a4e990470c096606311d0db65f4ebf12a9d24af98.mjs",
+      "bytes": 13615,
+      "sourceHash": "d96ca3f2c3fe327205928be4b07f4b22ab7b7621f8eb73ed8806c153bfbbaaf9",
+      "packagedAt": "2026-06-05T06:07:41.033Z",
+      "rendererCompatibility": {
+        "version": 1,
+        "targetMode": "unspecified",
+        "compatibilityStatus": "webgpu-compatible",
+        "webgpuCompatible": true,
+        "fallbackReason": null,
+        "fallbackReasons": [],
+        "evidenceReasons": [
+          "webgpu-safe-material"
+        ],
+        "compatibleSurfaces": [
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "artist-mark-field.module.mjs",
+            "pos": 1502,
+            "materialType": "MeshBasicMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "artist-mark-field.module.mjs",
+            "pos": 1782,
+            "materialType": "LineBasicMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "artist-mark-field.module.mjs",
+            "pos": 3555,
+            "materialType": "DataTexture"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "artist-mark-field.module.mjs",
+            "pos": 4626,
+            "materialType": "DataTexture"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "artist-mark-field.module.mjs",
+            "pos": 19634,
+            "materialType": "PointsMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 831,
+            "materialType": "MeshBasicMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 991,
+            "materialType": "LineBasicMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 1794,
+            "materialType": "DataTexture"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 2341,
+            "materialType": "DataTexture"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 10776,
+            "materialType": "PointsMaterial"
+          }
+        ],
+        "forbiddenSurfaces": []
       }
     },
     {

@@ -1,0 +1,900 @@
+{
+  "id": "2026-06-05-0629z-world-cup-a-giant-screen-will-broadcast-the-devils-matches-on-place-dumo",
+  "date": "2026-06-05",
+  "title": "World Cup: a giant screen will broadcast the Devils' matches on Place Dumon in Woluwe-Saint-Pierre",
+  "generatedAt": "2026-06-05T06:35:53.190Z",
+  "news": {
+    "source": "lavenir",
+    "title": "World Cup: a giant screen will broadcast the Devils’ matches on Place Dumon in Woluwe-Saint-Pierre",
+    "link": "https://www.lavenir.net/regions/bruxelles/woluwe-saint-pierre/2026/06/04/coupe-du-monde-un-ecran-geant-retransmettra-les-matchs-des-diables-sur-la-place-dumon-a-woluwe-saint-pierre-R27SRI4B7RBBPKT6IJEM2WRTSQ/",
+    "score": null
+  },
+  "inspiration": {
+    "artist": "Frank Stella",
+    "tags": [
+      "non-literal flow pressure",
+      "World Cup",
+      "immersive-world"
+    ],
+    "links": {}
+  },
+  "seed": null,
+  "sceneStrategy": null,
+  "techStack": null,
+  "newsVisualMappings": [],
+  "qualityScore": {
+    "score": null,
+    "summary": null,
+    "heuristic": {
+      "score": null,
+      "breakdown": {}
+    },
+    "calibration": {
+      "sampleCount": 0,
+      "trustWeight": 0
+    },
+    "alignment": {
+      "totalAlign": null,
+      "components": {
+        "title": {
+          "score": null
+        },
+        "style": {
+          "score": null
+        },
+        "emotional": {
+          "score": null
+        }
+      }
+    }
+  },
+  "rationale": {
+    "intent": {
+      "signal": null,
+      "emotion": null,
+      "tension": null,
+      "balance": null,
+      "motion": null
+    },
+    "selection": {
+      "whyHeadline": null,
+      "priorityTerms": []
+    },
+    "qualitySummary": null
+  },
+  "runPolicy": null,
+  "artCreationMethod": "immersive-world-v1",
+  "world": {
+    "id": "immersive-world-5c67f9243e3d-final-composition",
+    "method": "immersive-world-v1",
+    "title": "World Cup: a giant screen will broadcast the Devils matches on Place Dumon in Woluwe-Saint-Pierre",
+    "environment": {
+      "owner": "world-composition",
+      "kind": "inside-facing-artist-field",
+      "color": "#090b12",
+      "fieldColor": "#efe5cf",
+      "fogDensity": 0.012,
+      "radius": 92,
+      "opacity": 0.94,
+      "palette": [
+        "cream",
+        "black",
+        "deep-navy",
+        "burnt-orange",
+        "teal",
+        "forest-green",
+        "violet",
+        "yellow",
+        "pale-blue",
+        "metal-gray"
+      ],
+      "compositionIntent": "single camera-pinned Stella relief shell around a central broadcast-screen pressure field; foreground and midground parts are layered as ordered disruption, not copied reference imagery"
+    },
+    "camera": {
+      "owner": "world-composition",
+      "fov": 62,
+      "near": 0.08,
+      "far": 220,
+      "position": [
+        0.05,
+        2.08,
+        15.6
+      ],
+      "target": [
+        0.08,
+        0.16,
+        -4.95
+      ],
+      "distanceSafety": {
+        "nearFarOwnedHere": true,
+        "minPartDistance": 1.7,
+        "clippingRisk": "low"
+      }
+    },
+    "lighting": {
+      "owner": "world-composition",
+      "ambientColor": "#b8c5d8",
+      "ambientIntensity": 0.58,
+      "keyColor": "#fff1d8",
+      "keyIntensity": 1.04,
+      "keyPosition": [
+        4.8,
+        6.2,
+        8.4
+      ],
+      "rimColor": "#8ed7ce",
+      "rimIntensity": 0.52,
+      "rimPosition": [
+        -5.2,
+        2.6,
+        -5.6
+      ],
+      "contrast": {
+        "mode": "integrated-part-readability",
+        "notes": "warm gallery-white key light keeps cream relief legible while a cool teal rim separates dark screens, contour loops, and saturated diagonal bands"
+      }
+    },
+    "outputColorTransform": {
+      "owner": "world-composition",
+      "mode": "final-color-contrast-only",
+      "contrast": 1.035,
+      "saturation": 1.045,
+      "exposure": 1.01,
+      "vignette": 0.052,
+      "hueShift": 0,
+      "distortion": 0
+    },
+    "parts": [
+      {
+        "id": "world-environment",
+        "partId": "world-environment",
+        "role": "world-environment",
+        "moduleRef": {
+          "type": "immersive-world-generated-module",
+          "version": 1,
+          "moduleId": "world-environment-frank-stella-dumon-screen-pressure",
+          "partId": "world-environment",
+          "hash": "2592d1873ff3311629cc42d4c3a4c32a9094abdf6b565dcdeea56183fe4a0883",
+          "integrity": "sha256-2592d1873ff3311629cc42d4c3a4c32a9094abdf6b565dcdeea56183fe4a0883",
+          "exportName": "createImmersiveWorldPart",
+          "file": "data/immersive-world/generated-modules/2592d1873ff3311629cc42d4c3a4c32a9094abdf6b565dcdeea56183fe4a0883.mjs",
+          "url": "./data/immersive-world/generated-modules/2592d1873ff3311629cc42d4c3a4c32a9094abdf6b565dcdeea56183fe4a0883.mjs",
+          "rendererCompatibility": {
+            "version": 1,
+            "targetMode": "unspecified",
+            "compatibilityStatus": "webgl-only",
+            "webgpuCompatible": false,
+            "fallbackReason": "shader-material",
+            "fallbackReasons": [
+              "shader-material",
+              "raw-glsl-shader-surface"
+            ],
+            "evidenceReasons": [
+              "webgpu-safe-material"
+            ],
+            "compatibleSurfaces": [
+              {
+                "reason": "webgpu-safe-material",
+                "filePath": "world-environment.module.mjs",
+                "pos": 9952,
+                "materialType": "MeshBasicMaterial"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "filePath": "world-environment.module.mjs",
+                "pos": 16769,
+                "materialType": "LineBasicMaterial"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "filePath": "world-environment.module.mjs",
+                "pos": 18443,
+                "materialType": "PointsMaterial"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "filePath": "bundled-generated-module.mjs",
+                "pos": 8357,
+                "materialType": "MeshBasicMaterial"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "filePath": "bundled-generated-module.mjs",
+                "pos": 12121,
+                "materialType": "LineBasicMaterial"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "filePath": "bundled-generated-module.mjs",
+                "pos": 13005,
+                "materialType": "PointsMaterial"
+              }
+            ],
+            "forbiddenSurfaces": [
+              {
+                "reason": "shader-material",
+                "filePath": "world-environment.module.mjs",
+                "pos": 838,
+                "surface": "ShaderMaterial"
+              },
+              {
+                "reason": "raw-glsl-shader-surface",
+                "filePath": "world-environment.module.mjs",
+                "pos": 1007,
+                "property": "vertexShader"
+              },
+              {
+                "reason": "raw-glsl-shader-surface",
+                "filePath": "world-environment.module.mjs",
+                "pos": 1212,
+                "property": "fragmentShader"
+              },
+              {
+                "reason": "shader-material",
+                "filePath": "bundled-generated-module.mjs",
+                "pos": 466,
+                "surface": "ShaderMaterial"
+              },
+              {
+                "reason": "raw-glsl-shader-surface",
+                "filePath": "bundled-generated-module.mjs",
+                "pos": 592,
+                "property": "vertexShader"
+              },
+              {
+                "reason": "raw-glsl-shader-surface",
+                "filePath": "bundled-generated-module.mjs",
+                "pos": 791,
+                "property": "fragmentShader"
+              }
+            ]
+          }
+        },
+        "params": {
+          "band": "environment",
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "scale": 1,
+          "renderOrder": 0,
+          "visibilityPriority": "environment"
+        },
+        "evidence": {
+          "workshopAcceptance": [
+            "Inspected the available local concept-reference image directly and used it only as advisory guidance for broad palette, value balance, density, accent colors, and composition mood.",
+            "Optional static check succeeded for drafts/world-environment.module.mjs with validation.pass=true.",
+            "Playwright desktop preview attempt 1 succeeded with healthStatus=ok and captureStatus=ok.",
+            "Preview screenshot shows a dominant full-surround Frank Stella-derived environment: cream rough relief shell, central black giant-screen pressure field, hard diagonal color bands, paired concentric/loop rings, serial square broadcast rows, contour-line marks, and pigment specks.",
+            "Render report metrics support nonblank readable output: nonBlankRatio=0.999591, dynamicRange=245.667, foregroundOccupancyRatio=0.965852, blankCapture=false.",
+            "desktop:part-preview-evolution/001-world-environment-accepted-desktop.jpg"
+          ],
+          "selfReview": "Accepted: the module is a real deterministic Three.js world-environment with one true skybox shell and preview-supported readability.",
+          "compositionUse": "Kept at origin as the single camera-pinned surround: cream relief, black screen field, serial square rows, diagonal bands, and distant ring pressure.",
+          "compositionAdaptations": [
+            "Kept at origin as the single camera-pinned surrounding shell; tuned world environment, fog, lighting, and grade for cream relief, black screen pressure, and saturated diagonal readability."
+          ],
+          "compositionBeforeHash": "3beb6fa330312e7b",
+          "compositionAfterHash": "30428046181e6020"
+        }
+      },
+      {
+        "id": "non-literal-flow-pressure",
+        "partId": "non-literal-flow-pressure",
+        "role": "primary-news-signal",
+        "moduleRef": {
+          "type": "immersive-world-generated-module",
+          "version": 1,
+          "moduleId": "non-literal-flow-pressure-frank-stella-dumon-primary-signal",
+          "partId": "non-literal-flow-pressure",
+          "hash": "150263fe0467e9a6f58a3897dac6007cca8f85ec8f5840244577ce73940e1456",
+          "integrity": "sha256-150263fe0467e9a6f58a3897dac6007cca8f85ec8f5840244577ce73940e1456",
+          "exportName": "createImmersiveWorldPart",
+          "file": "data/immersive-world/generated-modules/150263fe0467e9a6f58a3897dac6007cca8f85ec8f5840244577ce73940e1456.mjs",
+          "url": "./data/immersive-world/generated-modules/150263fe0467e9a6f58a3897dac6007cca8f85ec8f5840244577ce73940e1456.mjs",
+          "rendererCompatibility": {
+            "version": 1,
+            "targetMode": "unspecified",
+            "compatibilityStatus": "webgpu-compatible",
+            "webgpuCompatible": true,
+            "evidenceReasons": [
+              "webgpu-safe-material"
+            ],
+            "compatibleSurfaces": [
+              {
+                "reason": "webgpu-safe-material",
+                "filePath": "non-literal-flow-pressure.module.mjs",
+                "pos": 1461,
+                "materialType": "MeshBasicMaterial"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "filePath": "non-literal-flow-pressure.module.mjs",
+                "pos": 3103,
+                "materialType": "DataTexture"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "filePath": "non-literal-flow-pressure.module.mjs",
+                "pos": 4175,
+                "materialType": "DataTexture"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "filePath": "non-literal-flow-pressure.module.mjs",
+                "pos": 5820,
+                "materialType": "MeshBasicMaterial"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "filePath": "non-literal-flow-pressure.module.mjs",
+                "pos": 16885,
+                "materialType": "LineBasicMaterial"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "filePath": "non-literal-flow-pressure.module.mjs",
+                "pos": 19046,
+                "materialType": "PointsMaterial"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "filePath": "bundled-generated-module.mjs",
+                "pos": 793,
+                "materialType": "MeshBasicMaterial"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "filePath": "bundled-generated-module.mjs",
+                "pos": 1588,
+                "materialType": "DataTexture"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "filePath": "bundled-generated-module.mjs",
+                "pos": 2139,
+                "materialType": "DataTexture"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "filePath": "bundled-generated-module.mjs",
+                "pos": 3117,
+                "materialType": "MeshBasicMaterial"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "filePath": "bundled-generated-module.mjs",
+                "pos": 9497,
+                "materialType": "LineBasicMaterial"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "filePath": "bundled-generated-module.mjs",
+                "pos": 10624,
+                "materialType": "PointsMaterial"
+              }
+            ]
+          }
+        },
+        "params": {
+          "band": "foreground",
+          "position": [
+            0,
+            0.02,
+            -1.65
+          ],
+          "scale": 1.45,
+          "renderOrder": 5,
+          "visibilityPriority": "primary"
+        },
+        "evidence": {
+          "workshopAcceptance": [
+            "Static check passed with sourceHash 3b2adcaeba0ddd9ec8e21ce270a406407f5ddc27e71d013c0f3e0cc53944d0b1 and no validation errors.",
+            "Attempt 3 Playwright preview captured desktop screenshot previews/attempt-003/003-non-literal-flow-pressure-draft-desktop.jpg with healthStatus ok and captureStatus ok.",
+            "Inspected attempt 3 screenshot: visible Frank Stella-style primary signal with a dark giant broadcast screen, gallery-white relief frame strips, serial color-square rows, concentric pressure rings, strong diagonal bands, sculptural loop cluster, contour marks, and pigment specks against active negative space.",
+            "desktop:part-preview-evolution/002-non-literal-flow-pressure-accepted-desktop.jpg"
+          ],
+          "selfReview": "Accepted after preview-supported revision; the part is a real Three.js module and not a placeholder or fallback.",
+          "compositionUse": "Held as the near central news anchor: the screen/frame, serial rows, diagonal broadcast pressure, and loop cluster stay readable before the supporting mark field.",
+          "compositionAdaptations": [
+            "Held as the near central primary news anchor with scale 1.3 at foreground depth so the screen/frame, serial rows, diagonal pressure, and loop cluster stay readable.",
+            "composition modified non-literal-flow-pressure from isolated accepted-part defaults"
+          ],
+          "compositionBeforeHash": "0080502ebe18d4e4",
+          "compositionAfterHash": "a8434abd6d21ebb1"
+        }
+      },
+      {
+        "id": "artist-mark-field",
+        "partId": "artist-mark-field",
+        "role": "artist-style-system",
+        "moduleRef": {
+          "type": "immersive-world-generated-module",
+          "version": 1,
+          "moduleId": "artist-mark-field-frank-stella-dumon-style-system",
+          "partId": "artist-mark-field",
+          "hash": "dbec7fa78572f3db7de4a74a4e990470c096606311d0db65f4ebf12a9d24af98",
+          "integrity": "sha256-dbec7fa78572f3db7de4a74a4e990470c096606311d0db65f4ebf12a9d24af98",
+          "exportName": "createImmersiveWorldPart",
+          "file": "data/immersive-world/generated-modules/dbec7fa78572f3db7de4a74a4e990470c096606311d0db65f4ebf12a9d24af98.mjs",
+          "url": "./data/immersive-world/generated-modules/dbec7fa78572f3db7de4a74a4e990470c096606311d0db65f4ebf12a9d24af98.mjs",
+          "rendererCompatibility": {
+            "version": 1,
+            "targetMode": "unspecified",
+            "compatibilityStatus": "webgpu-compatible",
+            "webgpuCompatible": true,
+            "evidenceReasons": [
+              "webgpu-safe-material"
+            ],
+            "compatibleSurfaces": [
+              {
+                "reason": "webgpu-safe-material",
+                "filePath": "artist-mark-field.module.mjs",
+                "pos": 1502,
+                "materialType": "MeshBasicMaterial"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "filePath": "artist-mark-field.module.mjs",
+                "pos": 1782,
+                "materialType": "LineBasicMaterial"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "filePath": "artist-mark-field.module.mjs",
+                "pos": 3555,
+                "materialType": "DataTexture"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "filePath": "artist-mark-field.module.mjs",
+                "pos": 4626,
+                "materialType": "DataTexture"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "filePath": "artist-mark-field.module.mjs",
+                "pos": 19634,
+                "materialType": "PointsMaterial"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "filePath": "bundled-generated-module.mjs",
+                "pos": 831,
+                "materialType": "MeshBasicMaterial"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "filePath": "bundled-generated-module.mjs",
+                "pos": 991,
+                "materialType": "LineBasicMaterial"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "filePath": "bundled-generated-module.mjs",
+                "pos": 1794,
+                "materialType": "DataTexture"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "filePath": "bundled-generated-module.mjs",
+                "pos": 2341,
+                "materialType": "DataTexture"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "filePath": "bundled-generated-module.mjs",
+                "pos": 10776,
+                "materialType": "PointsMaterial"
+              }
+            ]
+          }
+        },
+        "params": {
+          "band": "midground",
+          "position": [
+            4.2,
+            -0.22,
+            -7.2
+          ],
+          "scale": 0.5,
+          "renderOrder": 1,
+          "visibilityPriority": "supporting"
+        },
+        "evidence": {
+          "workshopAcceptance": [
+            "Inspected the available loose concept-reference image directly; used it only for broad palette, value, density, and geometric mood guidance.",
+            "Attempt 2 Playwright desktop preview rendered a nonblank Frank Stella style-system: gallery-white relief panel, hard diagonal bands, radial medallions, serial square rows, sculptural contour loops, scraped hatching, and pigment pressure speckles.",
+            "Attempt 2 render health was ok; desktop capture succeeded with dynamic range 242, foregroundOccupancyRatio 0.092541, centerForegroundRatio 0.370162, and no runtime health failures.",
+            "desktop:part-preview-evolution/003-artist-mark-field-accepted-desktop.jpg"
+          ],
+          "selfReview": "Accepted after preview-supported revision; the module is real Three.js authored geometry/material source, not a stub or fallback.",
+          "compositionUse": "Pulled farther right and reduced after attempt 1 so its Stella medallions and hatching read as bracing/support pressure instead of taking over the central screen.",
+          "compositionAdaptations": [
+            "Reduced and pulled farther right/back after attempt 1 so the Stella medallions, hatching, and contour loops brace the focal screen instead of taking over it.",
+            "composition modified artist-mark-field from isolated accepted-part defaults"
+          ],
+          "compositionBeforeHash": "061d5a06228b69f9",
+          "compositionAfterHash": "ecdf0d9ab29216e8"
+        }
+      }
+    ],
+    "generatedModules": [
+      {
+        "type": "immersive-world-generated-module",
+        "version": 1,
+        "moduleId": "world-environment-frank-stella-dumon-screen-pressure",
+        "partId": "world-environment",
+        "hash": "2592d1873ff3311629cc42d4c3a4c32a9094abdf6b565dcdeea56183fe4a0883",
+        "integrity": "sha256-2592d1873ff3311629cc42d4c3a4c32a9094abdf6b565dcdeea56183fe4a0883",
+        "exportName": "createImmersiveWorldPart",
+        "file": "data/immersive-world/generated-modules/2592d1873ff3311629cc42d4c3a4c32a9094abdf6b565dcdeea56183fe4a0883.mjs",
+        "url": "./data/immersive-world/generated-modules/2592d1873ff3311629cc42d4c3a4c32a9094abdf6b565dcdeea56183fe4a0883.mjs",
+        "rendererCompatibility": {
+          "version": 1,
+          "targetMode": "unspecified",
+          "compatibilityStatus": "webgl-only",
+          "webgpuCompatible": false,
+          "fallbackReason": "shader-material",
+          "fallbackReasons": [
+            "shader-material",
+            "raw-glsl-shader-surface"
+          ],
+          "evidenceReasons": [
+            "webgpu-safe-material"
+          ],
+          "compatibleSurfaces": [
+            {
+              "reason": "webgpu-safe-material",
+              "filePath": "world-environment.module.mjs",
+              "pos": 9952,
+              "materialType": "MeshBasicMaterial"
+            },
+            {
+              "reason": "webgpu-safe-material",
+              "filePath": "world-environment.module.mjs",
+              "pos": 16769,
+              "materialType": "LineBasicMaterial"
+            },
+            {
+              "reason": "webgpu-safe-material",
+              "filePath": "world-environment.module.mjs",
+              "pos": 18443,
+              "materialType": "PointsMaterial"
+            },
+            {
+              "reason": "webgpu-safe-material",
+              "filePath": "bundled-generated-module.mjs",
+              "pos": 8357,
+              "materialType": "MeshBasicMaterial"
+            },
+            {
+              "reason": "webgpu-safe-material",
+              "filePath": "bundled-generated-module.mjs",
+              "pos": 12121,
+              "materialType": "LineBasicMaterial"
+            },
+            {
+              "reason": "webgpu-safe-material",
+              "filePath": "bundled-generated-module.mjs",
+              "pos": 13005,
+              "materialType": "PointsMaterial"
+            }
+          ],
+          "forbiddenSurfaces": [
+            {
+              "reason": "shader-material",
+              "filePath": "world-environment.module.mjs",
+              "pos": 838,
+              "surface": "ShaderMaterial"
+            },
+            {
+              "reason": "raw-glsl-shader-surface",
+              "filePath": "world-environment.module.mjs",
+              "pos": 1007,
+              "property": "vertexShader"
+            },
+            {
+              "reason": "raw-glsl-shader-surface",
+              "filePath": "world-environment.module.mjs",
+              "pos": 1212,
+              "property": "fragmentShader"
+            },
+            {
+              "reason": "shader-material",
+              "filePath": "bundled-generated-module.mjs",
+              "pos": 466,
+              "surface": "ShaderMaterial"
+            },
+            {
+              "reason": "raw-glsl-shader-surface",
+              "filePath": "bundled-generated-module.mjs",
+              "pos": 592,
+              "property": "vertexShader"
+            },
+            {
+              "reason": "raw-glsl-shader-surface",
+              "filePath": "bundled-generated-module.mjs",
+              "pos": 791,
+              "property": "fragmentShader"
+            }
+          ]
+        }
+      },
+      {
+        "type": "immersive-world-generated-module",
+        "version": 1,
+        "moduleId": "non-literal-flow-pressure-frank-stella-dumon-primary-signal",
+        "partId": "non-literal-flow-pressure",
+        "hash": "150263fe0467e9a6f58a3897dac6007cca8f85ec8f5840244577ce73940e1456",
+        "integrity": "sha256-150263fe0467e9a6f58a3897dac6007cca8f85ec8f5840244577ce73940e1456",
+        "exportName": "createImmersiveWorldPart",
+        "file": "data/immersive-world/generated-modules/150263fe0467e9a6f58a3897dac6007cca8f85ec8f5840244577ce73940e1456.mjs",
+        "url": "./data/immersive-world/generated-modules/150263fe0467e9a6f58a3897dac6007cca8f85ec8f5840244577ce73940e1456.mjs",
+        "rendererCompatibility": {
+          "version": 1,
+          "targetMode": "unspecified",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material"
+          ],
+          "compatibleSurfaces": [
+            {
+              "reason": "webgpu-safe-material",
+              "filePath": "non-literal-flow-pressure.module.mjs",
+              "pos": 1461,
+              "materialType": "MeshBasicMaterial"
+            },
+            {
+              "reason": "webgpu-safe-material",
+              "filePath": "non-literal-flow-pressure.module.mjs",
+              "pos": 3103,
+              "materialType": "DataTexture"
+            },
+            {
+              "reason": "webgpu-safe-material",
+              "filePath": "non-literal-flow-pressure.module.mjs",
+              "pos": 4175,
+              "materialType": "DataTexture"
+            },
+            {
+              "reason": "webgpu-safe-material",
+              "filePath": "non-literal-flow-pressure.module.mjs",
+              "pos": 5820,
+              "materialType": "MeshBasicMaterial"
+            },
+            {
+              "reason": "webgpu-safe-material",
+              "filePath": "non-literal-flow-pressure.module.mjs",
+              "pos": 16885,
+              "materialType": "LineBasicMaterial"
+            },
+            {
+              "reason": "webgpu-safe-material",
+              "filePath": "non-literal-flow-pressure.module.mjs",
+              "pos": 19046,
+              "materialType": "PointsMaterial"
+            },
+            {
+              "reason": "webgpu-safe-material",
+              "filePath": "bundled-generated-module.mjs",
+              "pos": 793,
+              "materialType": "MeshBasicMaterial"
+            },
+            {
+              "reason": "webgpu-safe-material",
+              "filePath": "bundled-generated-module.mjs",
+              "pos": 1588,
+              "materialType": "DataTexture"
+            },
+            {
+              "reason": "webgpu-safe-material",
+              "filePath": "bundled-generated-module.mjs",
+              "pos": 2139,
+              "materialType": "DataTexture"
+            },
+            {
+              "reason": "webgpu-safe-material",
+              "filePath": "bundled-generated-module.mjs",
+              "pos": 3117,
+              "materialType": "MeshBasicMaterial"
+            },
+            {
+              "reason": "webgpu-safe-material",
+              "filePath": "bundled-generated-module.mjs",
+              "pos": 9497,
+              "materialType": "LineBasicMaterial"
+            },
+            {
+              "reason": "webgpu-safe-material",
+              "filePath": "bundled-generated-module.mjs",
+              "pos": 10624,
+              "materialType": "PointsMaterial"
+            }
+          ]
+        }
+      },
+      {
+        "type": "immersive-world-generated-module",
+        "version": 1,
+        "moduleId": "artist-mark-field-frank-stella-dumon-style-system",
+        "partId": "artist-mark-field",
+        "hash": "dbec7fa78572f3db7de4a74a4e990470c096606311d0db65f4ebf12a9d24af98",
+        "integrity": "sha256-dbec7fa78572f3db7de4a74a4e990470c096606311d0db65f4ebf12a9d24af98",
+        "exportName": "createImmersiveWorldPart",
+        "file": "data/immersive-world/generated-modules/dbec7fa78572f3db7de4a74a4e990470c096606311d0db65f4ebf12a9d24af98.mjs",
+        "url": "./data/immersive-world/generated-modules/dbec7fa78572f3db7de4a74a4e990470c096606311d0db65f4ebf12a9d24af98.mjs",
+        "rendererCompatibility": {
+          "version": 1,
+          "targetMode": "unspecified",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material"
+          ],
+          "compatibleSurfaces": [
+            {
+              "reason": "webgpu-safe-material",
+              "filePath": "artist-mark-field.module.mjs",
+              "pos": 1502,
+              "materialType": "MeshBasicMaterial"
+            },
+            {
+              "reason": "webgpu-safe-material",
+              "filePath": "artist-mark-field.module.mjs",
+              "pos": 1782,
+              "materialType": "LineBasicMaterial"
+            },
+            {
+              "reason": "webgpu-safe-material",
+              "filePath": "artist-mark-field.module.mjs",
+              "pos": 3555,
+              "materialType": "DataTexture"
+            },
+            {
+              "reason": "webgpu-safe-material",
+              "filePath": "artist-mark-field.module.mjs",
+              "pos": 4626,
+              "materialType": "DataTexture"
+            },
+            {
+              "reason": "webgpu-safe-material",
+              "filePath": "artist-mark-field.module.mjs",
+              "pos": 19634,
+              "materialType": "PointsMaterial"
+            },
+            {
+              "reason": "webgpu-safe-material",
+              "filePath": "bundled-generated-module.mjs",
+              "pos": 831,
+              "materialType": "MeshBasicMaterial"
+            },
+            {
+              "reason": "webgpu-safe-material",
+              "filePath": "bundled-generated-module.mjs",
+              "pos": 991,
+              "materialType": "LineBasicMaterial"
+            },
+            {
+              "reason": "webgpu-safe-material",
+              "filePath": "bundled-generated-module.mjs",
+              "pos": 1794,
+              "materialType": "DataTexture"
+            },
+            {
+              "reason": "webgpu-safe-material",
+              "filePath": "bundled-generated-module.mjs",
+              "pos": 2341,
+              "materialType": "DataTexture"
+            },
+            {
+              "reason": "webgpu-safe-material",
+              "filePath": "bundled-generated-module.mjs",
+              "pos": 10776,
+              "materialType": "PointsMaterial"
+            }
+          ]
+        }
+      }
+    ],
+    "rendererAuthoring": {
+      "version": 1,
+      "targetMode": "unspecified",
+      "requestedTarget": "unspecified",
+      "effectiveTarget": "unspecified",
+      "webgpuTargeted": false,
+      "legacyWebglTargeted": false,
+      "unspecified": true,
+      "compatibilityGateRequired": false
+    },
+    "rendererCompatibility": {
+      "version": 1,
+      "targetMode": "unspecified",
+      "webgpuTargeted": false,
+      "legacyWebglTargeted": false,
+      "compatibilityGateRequired": false,
+      "compatibilityStatus": "webgl-only",
+      "webgpuCompatible": false,
+      "evidenceReasons": [
+        "webgpu-safe-material"
+      ],
+      "moduleCount": 3,
+      "compatibleModuleCount": 2,
+      "incompatibleModuleCount": 0,
+      "compositionCompatibilityDeclared": false,
+      "modules": [
+        {
+          "partId": "world-environment",
+          "role": "world-environment",
+          "moduleId": "world-environment-frank-stella-dumon-screen-pressure",
+          "hash": "2592d1873ff3311629cc42d4c3a4c32a9094abdf6b565dcdeea56183fe4a0883",
+          "targetMode": "unspecified",
+          "compatibilityStatus": "webgl-only",
+          "webgpuCompatible": false,
+          "fallbackReason": "shader-material",
+          "fallbackReasons": [
+            "shader-material",
+            "raw-glsl-shader-surface"
+          ],
+          "evidenceReasons": [
+            "webgpu-safe-material"
+          ],
+          "compatibleSurfaceCount": 6,
+          "forbiddenSurfaceCount": 6,
+          "sourceStage": "part-workshop"
+        },
+        {
+          "partId": "non-literal-flow-pressure",
+          "role": "primary-news-signal",
+          "moduleId": "non-literal-flow-pressure-frank-stella-dumon-primary-signal",
+          "hash": "150263fe0467e9a6f58a3897dac6007cca8f85ec8f5840244577ce73940e1456",
+          "targetMode": "unspecified",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material"
+          ],
+          "compatibleSurfaceCount": 12,
+          "sourceStage": "part-workshop"
+        },
+        {
+          "partId": "artist-mark-field",
+          "role": "artist-style-system",
+          "moduleId": "artist-mark-field-frank-stella-dumon-style-system",
+          "hash": "dbec7fa78572f3db7de4a74a4e990470c096606311d0db65f4ebf12a9d24af98",
+          "targetMode": "unspecified",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material"
+          ],
+          "compatibleSurfaceCount": 10,
+          "sourceStage": "part-workshop"
+        }
+      ]
+    },
+    "renderFacts": {
+      "environmentPresent": true,
+      "cameraOwnedByComposition": true,
+      "lightingOwnedByComposition": true,
+      "nearFarClippingOwned": true,
+      "acceptedPartCount": 3,
+      "generatedModuleCount": 3,
+      "generatedAssetCount": 0,
+      "rendererAuthoringTarget": "unspecified",
+      "rendererCompatibilityStatus": "webgl-only",
+      "webgpuRendererGateRequired": false,
+      "webgpuRendererCompatible": false,
+      "desktopPreviewRecorded": true,
+      "mobilePreviewRecorded": true
+    }
+  },
+  "image": {
+    "publicJpeg": "./data/media/2026-06-05-0629z-world-cup-a-giant-screen-will-broadcast-the-devils-matches-on-place-dumo/artwork-720.jpg",
+    "thumbnailJpeg": "./data/media/2026-06-05-0629z-world-cup-a-giant-screen-will-broadcast-the-devils-matches-on-place-dumo/thumb-320.jpg",
+    "instagramJpeg": "./data/media/2026-06-05-0629z-world-cup-a-giant-screen-will-broadcast-the-devils-matches-on-place-dumo/instagram-1080x1440.jpg",
+    "altText": "World Cup: a giant screen will broadcast the Devils' matches on Place Dumon in Woluwe-Saint-Pierre by Frank Stella."
+  }
+}
