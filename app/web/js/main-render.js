@@ -2,6 +2,7 @@ import {
   buildArchiveCountPresentationFacts,
   buildArchiveCardPresentationFacts,
   buildFallbackPresentationFacts,
+  getGalleryPresentationItems,
   buildGalleryTriggerPresentationFacts,
   buildLoadingPresentationFacts,
   buildStatusPresentationFacts,
@@ -267,7 +268,7 @@ export function renderGalleryList(galleryList, manifest, { activeFile = null, on
   if (!galleryList || !manifest?.items) return null;
   galleryList.innerHTML = '';
 
-  const cards = manifest.items.map((item) => {
+  const cards = getGalleryPresentationItems(manifest).map((item) => {
     const facts = buildArchiveCardPresentationFacts(item);
     const active = Boolean(facts.file && facts.file === activeFile);
     const card = createArchiveCardElement(item, {
@@ -332,7 +333,6 @@ export function createArchiveCardElement(itemOrFacts, commandsOrActivate, option
   li.setAttribute('tabindex', '0');
   li.setAttribute('aria-current', active ? 'true' : 'false');
   li.innerHTML = `
-    ${active ? '<p class="archive-current">Current artwork</p>' : ''}
     ${facts.thumbnail ? `
       <div class="archive-thumb">
         <img src="${escapeHtml(facts.thumbnail.src)}" alt="${escapeHtml(facts.thumbnail.altText)}" loading="lazy" decoding="async">

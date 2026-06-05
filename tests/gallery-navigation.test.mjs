@@ -182,7 +182,7 @@ function createWindowStub() {
   };
 }
 
-test('gallery presentation facts preserve manifest order, trusted thumbnails, and current state', () => {
+test('gallery presentation facts show newest cards first, trusted thumbnails, and current state', () => {
   const triggerFacts = buildGalleryTriggerPresentationFacts(manifest.items[1]);
   const galleryFacts = buildGalleryPresentationFacts(manifest, { activeFile: manifest.items[1].file });
 
@@ -190,13 +190,13 @@ test('gallery presentation facts preserve manifest order, trusted thumbnails, an
   assert.equal(triggerFacts.metadataLabel, '2026-06-04 · Helen Frankenthaler');
   assert.equal(triggerFacts.titleLabel, 'Quiet field');
   assert.equal(triggerFacts.fullLabel, '2026-06-04 · Helen Frankenthaler · Quiet field');
-  assert.equal(galleryFacts.cards.map((card) => card.file).join(','), './data/artworks/a.json,./data/artworks/b.json');
-  assert.deepEqual(galleryFacts.cards[0].thumbnail, {
+  assert.equal(galleryFacts.cards.map((card) => card.file).join(','), './data/artworks/b.json,./data/artworks/a.json');
+  assert.deepEqual(galleryFacts.cards[1].thumbnail, {
     src: './data/media/a/thumb-320.jpg',
     altText: 'A bright abstract garden.'
   });
-  assert.equal(galleryFacts.cards[1].active, true);
-  assert.equal(galleryFacts.cards[1].ariaCurrent, 'true');
+  assert.equal(galleryFacts.cards[0].active, true);
+  assert.equal(galleryFacts.cards[0].ariaCurrent, 'true');
 });
 
 test('runtime gallery trigger uses both visible lines for artwork context', () => {
@@ -224,7 +224,7 @@ test('archive card renderer marks the active gallery card as current', () => {
 
   assert.equal(card.className, 'archive-card active');
   assert.equal(card.attributes['aria-current'], 'true');
-  assert.match(card.innerHTML, /Current artwork/);
+  assert.doesNotMatch(card.innerHTML, /Current artwork/);
   assert.match(card.innerHTML, /<img src="\.\/data\/media\/a\/thumb-320\.jpg"/);
 });
 
@@ -239,9 +239,9 @@ test('gallery list renders cards and activates by pointer or keyboard', () => {
   });
 
   assert.equal(galleryList.children.length, 2);
-  assert.equal(facts.cards[0].ariaCurrent, 'true');
-  galleryList.children[1].listeners.click({});
-  galleryList.children[0].listeners.keydown({ key: 'Enter', preventDefault() {} });
+  assert.equal(facts.cards[1].ariaCurrent, 'true');
+  galleryList.children[0].listeners.click({});
+  galleryList.children[1].listeners.keydown({ key: 'Enter', preventDefault() {} });
   assert.deepEqual(selections, [manifest.items[1].file, manifest.items[0].file]);
 });
 
@@ -298,13 +298,13 @@ test('gallery current selection closes without redundant load and other selectio
 
   effects.render.populateQuickPicker(manifest, 0);
   effects.openGallery();
-  refs.galleryList.children[0].listeners.click({});
+  refs.galleryList.children[1].listeners.click({});
   assert.deepEqual(loadedFiles, []);
   assert.equal(refs.galleryDialog.hidden, true);
   assert.equal(activeElement, refs.galleryTrigger);
 
   effects.openGallery();
-  refs.galleryList.children[1].listeners.click({});
+  refs.galleryList.children[0].listeners.click({});
   assert.deepEqual(loadedFiles, [manifest.items[1].file]);
   assert.equal(refs.galleryDialog.hidden, true);
   assert.equal(activeElement, refs.galleryTrigger);

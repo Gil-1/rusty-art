@@ -431,15 +431,19 @@ export function buildGalleryCardPresentationFacts(item = {}, { activeFile = null
   return {
     ...facts,
     active,
-    ariaCurrent: active ? 'true' : 'false',
-    currentLabel: active ? 'Current artwork' : null
+    ariaCurrent: active ? 'true' : 'false'
   };
 }
 
-export function buildGalleryPresentationFacts(manifest = {}, { activeFile = null } = {}) {
+export function getGalleryPresentationItems(manifest = {}) {
   const items = Array.isArray(manifest?.items) ? manifest.items : [];
+  return items.slice().reverse();
+}
+
+export function buildGalleryPresentationFacts(manifest = {}, { activeFile = null } = {}) {
   return {
-    cards: items.map((item) => buildGalleryCardPresentationFacts(item, { activeFile }))
+    cards: getGalleryPresentationItems(manifest)
+      .map((item) => buildGalleryCardPresentationFacts(item, { activeFile }))
   };
 }
 
