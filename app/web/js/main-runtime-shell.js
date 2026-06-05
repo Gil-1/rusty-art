@@ -111,6 +111,7 @@ export function installRuntimeShellEventBindings({
   addRuntimeShellBinding(bindings, facts, documentRef, 'pointerdown', (event) => actions.onPointerDown?.(event), { passive: true });
   addRuntimeShellBinding(bindings, facts, documentRef, 'keydown', (event) => actions.onKeydown?.(event));
   addRuntimeShellBinding(bindings, facts, windowRef, 'scroll', () => actions.onScroll?.(), { passive: true });
+  addRuntimeShellBinding(bindings, facts, windowRef, 'popstate', (event) => actions.onPopState?.(event));
   addRuntimeShellBinding(bindings, facts, windowRef, 'resize', () => actions.onViewportChange?.());
   addRuntimeShellBinding(bindings, facts, windowRef, 'orientationchange', () => actions.onViewportChange?.());
 

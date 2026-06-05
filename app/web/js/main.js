@@ -7,6 +7,7 @@ import {
   PRESENTATION_STORAGE_KEYS
 } from './main-presentation-state.js';
 import { createRuntimeController } from './main-runtime-controller.js';
+import { createArtworkRouteHistoryController } from './main-artwork-route-history.js';
 import {
   bindRuntimeShellEvents,
   queryRuntimeDomRefs,
@@ -77,6 +78,7 @@ let presentationState = createInitialPresentationState({
 
 const fetchArtwork = createArtworkFetcher();
 const captureStateController = createCaptureStateController({ captureMode });
+const artworkRouteHistory = createArtworkRouteHistoryController({ windowRef: window, captureMode });
 let archiveController = null;
 let renderEffects = null;
 const adaptiveOverlaySession = createAdaptiveOverlaySession({
@@ -167,6 +169,7 @@ archiveController = createPublicArchiveRuntimeSession({
   getScrollY: () => window.scrollY,
   estimateArtworkLuma,
   createArchiveCardElement,
+  onArtworkRouteChange: (routeChange) => artworkRouteHistory.syncLoadedArtworkRoute(routeChange),
   render: renderEffects.render
 });
 
@@ -219,6 +222,12 @@ bindRuntimeShellEvents({
     onScroll: () => {
       if (!isMobileViewport()) return;
       renderEffects.updateMobileChromeState();
+    },
+    onPopState: () => {
+      if (captureMode) return false;
+      return archiveController.loadArtworkFromRoute(artworkRouteHistory.readCurrentRoute()).catch((error) => {
+        renderEffects.showStatus(`Could not restore artwork from browser history: ${error.message}`, 'error');
+      });
     },
     onViewportChange: renderEffects.refreshViewportUi,
     onKeydown: (event) => {

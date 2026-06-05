@@ -31,6 +31,7 @@ export function createArchiveInteractionController({
   getScrollY = () => 0,
   estimateArtworkLuma = () => null,
   createArchiveCardElement = null,
+  onArtworkRouteChange = () => {},
   render = {}
 } = {}) {
   let manifest = null;
@@ -95,24 +96,56 @@ export function createArchiveInteractionController({
     render.showStatus?.('Loading archive…');
   }
 
-  async function loadArtworkByFile(file) {
-    return artworkLoadTransaction.loadByFile(file, { manifest });
+  function syncArtworkRoute(result = {}, { routeAction = 'push' } = {}) {
+    if (captureMode || routeAction === 'none' || result.status !== 'loaded') return result;
+    const activeIndex = result.activeIndex ?? currentActiveIndex();
+    const item = manifest?.items?.[activeIndex] || null;
+    if (!item) return result;
+    try {
+      onArtworkRouteChange({
+        action: routeAction,
+        activeIndex,
+        art: result.art,
+        file: result.file,
+        item,
+        manifest
+      });
+    } catch {
+      // Browser history is non-essential; the loaded artwork remains authoritative.
+    }
+    return result;
   }
 
-  function loadArtworkByIndex(index) {
+  async function loadArtworkByFile(file, options = {}) {
+    const result = await artworkLoadTransaction.loadByFile(file, { manifest });
+    return syncArtworkRoute(result, options);
+  }
+
+  function loadArtworkByIndex(index, options = {}) {
     const clamped = clampManifestIndex(manifest, index);
     if (clamped == null || !manifest?.items?.[clamped]) return Promise.resolve({ status: 'missing-index' });
     const file = manifest.items[clamped].file;
     if (file === currentActiveFile()) return Promise.resolve({ status: 'current', file });
-    return loadArtworkByFile(file);
+    return loadArtworkByFile(file, options);
   }
 
-  function loadArtworkByStep(step) {
+  function loadArtworkByStep(step, options = {}) {
     const current = wrapManifestIndex(manifest, currentActiveIndex());
     if (current == null) return Promise.resolve({ status: 'missing-index' });
     const next = wrapManifestIndex(manifest, current + step);
     if (next == null) return Promise.resolve({ status: 'missing-index' });
-    return loadArtworkByIndex(next);
+    return loadArtworkByIndex(next, options);
+  }
+
+  function resolveRouteIndex({ slug = null, index = null } = {}) {
+    const slugIndex = findManifestIndexByArtworkSlug(manifest, slug);
+    return selectInitialArtworkIndex({ manifest, requestedIndex: index, slugIndex });
+  }
+
+  function loadArtworkFromRoute(route = {}) {
+    const targetIndex = resolveRouteIndex(route);
+    if (targetIndex == null) return Promise.resolve({ status: 'missing-route' });
+    return loadArtworkByIndex(targetIndex, { routeAction: 'none' });
   }
 
   function appendArchiveItems() {
@@ -170,7 +203,9 @@ export function createArchiveInteractionController({
 
     const slugIndex = findManifestIndexByArtworkSlug(manifest, requestedArtworkSlug);
     const targetIndex = selectInitialArtworkIndex({ manifest, requestedIndex, slugIndex });
-    await loadArtworkByIndex(targetIndex);
+    await loadArtworkByIndex(targetIndex, {
+      routeAction: requestedArtworkSlug || requestedIndex != null ? 'replace' : 'none'
+    });
 
     if (captureMode) {
       await runtimeController?.bootSceneNow?.();
@@ -232,6 +267,7 @@ export function createArchiveInteractionController({
     loadArtworkByFile,
     loadArtworkByIndex,
     loadArtworkByStep,
+    loadArtworkFromRoute,
     appendArchiveItems,
     handleQuickPrevious,
     handleQuickNext,

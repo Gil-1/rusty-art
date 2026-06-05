@@ -83,6 +83,7 @@ export function createPublicArchiveRuntimeSession({
     loadArtworkByFile: (file) => trackLoad(() => controller.loadArtworkByFile(file)),
     loadArtworkByIndex: (index) => trackLoad(() => controller.loadArtworkByIndex(index)),
     loadArtworkByStep: (step) => trackLoad(() => controller.loadArtworkByStep(step)),
+    loadArtworkFromRoute: (route) => trackLoad(() => controller.loadArtworkFromRoute(route)),
     appendArchiveItems: (...args) => controller.appendArchiveItems(...args),
     handleQuickPrevious: () => trackLoad(() => controller.handleQuickPrevious()),
     handleQuickNext: () => trackLoad(() => controller.handleQuickNext()),

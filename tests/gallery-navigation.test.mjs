@@ -12,7 +12,14 @@ import {
   renderGalleryList
 } from '../app/web/js/main-render.js';
 import { createRuntimeRenderEffects } from '../app/web/js/main-render-effects.js';
+import { createArchiveInteractionController } from '../app/web/js/main-archive-interaction-controller.js';
+import { createArtworkRouteHistoryController } from '../app/web/js/main-artwork-route-history.js';
 import { installRuntimeShellEventBindings } from '../app/web/js/main-runtime-shell.js';
+import {
+  buildArtworkQueryRouteHref,
+  readArtworkRouteFromLocation,
+  resolveArtworkRouteSlug
+} from '../app/web/js/public-artwork-routes.js';
 
 const manifest = {
   items: [
@@ -376,4 +383,96 @@ test('runtime shell binds gallery trigger, close, backdrop, and keydown events',
   assert.equal(opened, 1);
   assert.equal(closed, 2);
   assert.equal(key, 'Escape');
+});
+
+test('artwork route helpers build static query slug routes', () => {
+  const item = {
+    id: '2026-06-04-0626z-example-artwork',
+    artist: 'Larry Zox',
+    newsTitle: 'Example headline'
+  };
+  const locationRef = {
+    pathname: '/',
+    search: '?index=12&target=latest&renderer=webgpu&utm_source=share',
+    hash: '#story'
+  };
+
+  assert.equal(resolveArtworkRouteSlug(item), item.id);
+  assert.equal(
+    buildArtworkQueryRouteHref(item, { locationRef }),
+    '/?renderer=webgpu&utm_source=share&slug=2026-06-04-0626z-example-artwork#story'
+  );
+  assert.deepEqual(readArtworkRouteFromLocation({ search: '?slug=abc&index=3' }), {
+    slug: 'abc',
+    index: 3
+  });
+});
+
+test('artwork route history pushes new slugs and replaces duplicates', () => {
+  const calls = [];
+  const locationRef = new URL('https://rusty.test/?slug=old&renderer=webgpu');
+  const history = {
+    state: { preserved: true },
+    pushState(state, title, href) {
+      calls.push({ method: 'pushState', state, title, href });
+      this.state = state;
+      locationRef.href = new URL(href, locationRef.href).href;
+    },
+    replaceState(state, title, href) {
+      calls.push({ method: 'replaceState', state, title, href });
+      this.state = state;
+      locationRef.href = new URL(href, locationRef.href).href;
+    }
+  };
+  const windowRef = { history, location: locationRef };
+  const controller = createArtworkRouteHistoryController({ windowRef });
+  const item = {
+    id: '2026-06-05-0629z-next-artwork',
+    file: './data/artworks/next.json'
+  };
+
+  assert.deepEqual(controller.readCurrentRoute(), { slug: 'old', index: null });
+  assert.equal(controller.syncLoadedArtworkRoute({ item, activeIndex: 0 }).status, 'pushed');
+  assert.equal(calls[0].method, 'pushState');
+  assert.equal(calls[0].href, '/?renderer=webgpu&slug=2026-06-05-0629z-next-artwork');
+  assert.equal(calls[0].state.rustyArtworkRoute.file, item.file);
+
+  assert.equal(controller.syncLoadedArtworkRoute({ item, activeIndex: 0 }).status, 'replaced');
+  assert.equal(calls[1].method, 'replaceState');
+});
+
+test('archive controller syncs routes for user loads but not route restores', async () => {
+  const routeManifest = {
+    latestId: 'latest-piece',
+    items: [
+      { id: 'latest-piece', file: './data/artworks/latest.json' },
+      { id: 'older-piece', file: './data/artworks/older.json' }
+    ]
+  };
+  const routeChanges = [];
+  let state = { activeFile: null, activeIndex: -1 };
+  const controller = createArchiveInteractionController({
+    loadManifest: async () => ({ manifest: routeManifest }),
+    fetchArtwork: async (file) => ({ id: file, title: file }),
+    runtimeController: {
+      bootSceneNow: async () => {},
+      requestDeferredSceneBoot() {}
+    },
+    getPresentationState: () => state,
+    setPresentationState: (nextState) => { state = nextState; },
+    onArtworkRouteChange: (change) => routeChanges.push(change),
+    render: {}
+  });
+
+  await controller.init();
+  assert.deepEqual(routeChanges, []);
+
+  await controller.loadArtworkByFile(routeManifest.items[1].file);
+  assert.equal(routeChanges.length, 1);
+  assert.equal(routeChanges[0].action, 'push');
+  assert.equal(routeChanges[0].item.id, 'older-piece');
+
+  await controller.loadArtworkFromRoute({ slug: 'latest-piece' });
+  assert.equal(routeChanges.length, 1);
+  assert.equal(state.activeFile, routeManifest.items[0].file);
 });
