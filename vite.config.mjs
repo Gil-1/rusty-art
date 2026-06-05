@@ -204,9 +204,17 @@ function removeManagedShareBlocks(html) {
 }
 
 function injectShareHtml(html, metadata, { baseHref = '' } = {}) {
-  const clean = removeManagedShareBlocks(html)
+  let clean = removeManagedShareBlocks(html)
     .replace(/<html\b([^>]*)>/i, '<html$1 prefix="og: https://ogp.me/ns# article: https://ogp.me/ns/article#">')
     .replace(/<title>[\s\S]*?<\/title>/i, `<title>${htmlText(metadata.title || DEFAULT_SHARE_TITLE)}</title>`);
+
+  if (metadata.artworkRoute && metadata.plainTitle) {
+    clean = clean.replace(
+      /(<h1\b[^>]*\bid="hero-now-title"[^>]*>)[\s\S]*?(<\/h1>)/i,
+      `$1${htmlText(metadata.plainTitle)}$2`
+    );
+  }
+
   const baseBlock = baseHref
     ? `    <!-- rusty-share-base:start -->\n    <base href="${htmlAttribute(baseHref)}" />\n    <!-- rusty-share-base:end -->`
     : '';
@@ -288,7 +296,8 @@ async function generateArtworkSharePages({ webRoot, distDir, siteUrl = '' }) {
       art,
       item,
       locationRef,
-      siteUrl
+      siteUrl,
+      forceArtworkRoute: true
     });
     if (!metadata.slug) return;
     const shareDir = path.join(distDir, 'art', metadata.slug);

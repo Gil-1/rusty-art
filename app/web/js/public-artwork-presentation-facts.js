@@ -277,18 +277,19 @@ export function buildPublicArtworkHeroFacts(art = {}) {
   const source = asObject(art);
   const inspiration = asObject(source.inspiration);
   const news = asObject(source.news);
-  const title = normalizedText(source.title, 'Untitled piece');
+  const artworkTitle = normalizedText(source.title, 'Untitled piece');
   const artist = normalizedText(inspiration.artist, 'Unknown artist');
   const date = normalizedText(source.date, 'Unknown date');
-  const headline = normalizedText(news.title, 'Headline context unavailable.');
+  const headline = normalizedText(news.title, artworkTitle);
 
   return {
-    title,
+    title: headline,
+    artworkTitle,
     artist,
     date,
     headline,
     source: sourceLabel(news.source),
-    subtitle: `${artist} influence · ${sourceLabel(news.source)} headline · ${date}`
+    subtitle: `${artworkTitle} · ${artist} influence · ${sourceLabel(news.source)} headline · ${date}`
   };
 }
 

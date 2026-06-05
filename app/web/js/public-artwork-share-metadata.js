@@ -1,10 +1,11 @@
 import {
   buildArtworkShareRouteHref,
+  readArtworkRouteFromLocation,
   resolveArtworkRouteSlug
 } from './contracts/public-artwork-routes.js';
 
 export const RUSTY_SITE_NAME = 'Rusty Art';
-export const DEFAULT_SHARE_TITLE = 'Rusty Art - Daily Belgian News Abstractions';
+export const DEFAULT_SHARE_TITLE = 'Rusty Art \u2014 Daily Belgian News Abstractions';
 export const DEFAULT_SHARE_DESCRIPTION = 'Daily Belgian headlines translated into calm, meaningful abstract artwork.';
 export const DEFAULT_OG_IMAGE_SIZE = Object.freeze({ width: 1200, height: 630 });
 
@@ -33,6 +34,10 @@ function sourceLabel(value) {
   return normalizedText(value, 'unknown').toUpperCase();
 }
 
+function hasArtworkRoute(locationRef) {
+  return Boolean(readArtworkRouteFromLocation(locationRef).slug);
+}
+
 function pickArtworkImage(art = {}, item = {}) {
   const artImage = asObject(art.image);
   const itemImage = asObject(item.image);
@@ -40,8 +45,6 @@ function pickArtworkImage(art = {}, item = {}) {
     artImage.openGraphJpeg
       || itemImage.openGraphJpeg
       || item.openGraphJpeg
-      || artImage.publicJpeg
-      || itemImage.publicJpeg
       || artImage.thumbnailJpeg
       || item.thumbnailJpeg
       || itemImage.thumbnailJpeg
@@ -91,6 +94,12 @@ function buildCanonicalHref(item, options = {}) {
   return withoutSearchOrHash(absoluteUrl(href, options));
 }
 
+function buildRootCanonicalHref(options = {}) {
+  const pathname = normalizedText(options.locationRef?.pathname, '/');
+  const rootPath = pathname.endsWith('/') ? pathname : pathname.replace(/[^/]*$/, '');
+  return withoutSearchOrHash(absoluteUrl(rootPath || '/', options));
+}
+
 function buildDescription({ title, artist, date, newsTitle, source }) {
   const parts = [
     `A Rusty Art abstract news translation of "${newsTitle || title}".`,
@@ -105,7 +114,8 @@ export function resolvePublicArtworkShareMetadata({
   item = {},
   locationRef = globalThis.location,
   documentRef = globalThis.document,
-  siteUrl = ''
+  siteUrl = '',
+  forceArtworkRoute = false
 } = {}) {
   const artNews = asObject(art.news);
   const artInspiration = asObject(art.inspiration);
@@ -125,25 +135,30 @@ export function resolvePublicArtworkShareMetadata({
     thumbnailJpeg: item.thumbnailJpeg
   };
 
-  const title = normalizedText(mergedItem.title, 'Untitled piece');
+  const artworkTitle = normalizedText(mergedItem.title, 'Untitled piece');
   const artist = normalizedText(mergedItem.artist, 'Unknown artist');
-  const newsTitle = normalizedText(mergedItem.newsTitle, title);
+  const newsTitle = normalizedText(mergedItem.newsTitle, artworkTitle);
   const date = normalizedText(mergedItem.date);
   const source = normalizedText(mergedItem.source);
   const slug = resolveArtworkRouteSlug(mergedItem);
+  const artworkRoute = Boolean(forceArtworkRoute || hasArtworkRoute(locationRef));
   const imagePath = pickArtworkImage(art, mergedItem);
-  const pageTitle = `${title} | ${RUSTY_SITE_NAME}`;
-  const canonicalUrl = slug
+  const pageTitle = artworkRoute ? `${newsTitle} | ${RUSTY_SITE_NAME}` : DEFAULT_SHARE_TITLE;
+  const canonicalUrl = artworkRoute && slug
     ? buildCanonicalHref(mergedItem, { locationRef, documentRef, siteUrl })
-    : withoutSearchOrHash(absoluteUrl('/', { locationRef, documentRef, siteUrl }));
+    : buildRootCanonicalHref({ locationRef, documentRef, siteUrl });
   const imageUrl = absoluteUrl(imagePath, { locationRef, documentRef, siteUrl });
-  const description = buildDescription({ title, artist, date, newsTitle, source });
-  const imageAlt = pickArtworkImageAlt(art, mergedItem, title);
+  const description = artworkRoute
+    ? buildDescription({ title: artworkTitle, artist, date, newsTitle, source })
+    : DEFAULT_SHARE_DESCRIPTION;
+  const imageAlt = pickArtworkImageAlt(art, mergedItem, artworkTitle);
 
   return {
     slug,
+    artworkRoute,
     title: pageTitle,
-    plainTitle: title,
+    plainTitle: artworkRoute ? newsTitle : DEFAULT_SHARE_TITLE,
+    artworkTitle,
     description,
     canonicalUrl,
     imageUrl,
@@ -151,17 +166,17 @@ export function resolvePublicArtworkShareMetadata({
     imageWidth: DEFAULT_OG_IMAGE_SIZE.width,
     imageHeight: DEFAULT_OG_IMAGE_SIZE.height,
     siteName: RUSTY_SITE_NAME,
-    type: slug ? 'article' : 'website',
+    type: artworkRoute && slug ? 'article' : 'website',
     locale: 'en_US',
-    date,
+    date: artworkRoute ? date : '',
     artist,
     newsTitle,
     source: sourceLabel(source),
-    routeHref: slug ? buildArtworkShareRouteHref(mergedItem, { locationRef }) : null,
+    routeHref: artworkRoute && slug ? buildArtworkShareRouteHref(mergedItem, { locationRef }) : null,
     analytics: {
       artwork_id: normalizedText(art.id || item.id),
       artwork_slug: slug,
-      artwork_title: title,
+      artwork_title: artworkTitle,
       artwork_artist: artist,
       artwork_source: sourceLabel(source),
       artwork_date: date

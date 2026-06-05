@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 
 import {
+  buildPublicArtworkHeroFacts,
   buildGalleryPresentationFacts,
   buildGalleryTriggerPresentationFacts,
   buildLoadingPresentationFacts
@@ -212,6 +213,24 @@ test('gallery presentation facts show newest cards first, trusted thumbnails, an
   });
   assert.equal(galleryFacts.cards[0].active, true);
   assert.equal(galleryFacts.cards[0].ariaCurrent, 'true');
+});
+
+test('now showing hero promotes the news headline as the visible title', () => {
+  const facts = buildPublicArtworkHeroFacts({
+    title: 'Signal garden',
+    date: '2026-06-05',
+    news: {
+      title: 'A headline in bloom',
+      source: 'vrt'
+    },
+    inspiration: {
+      artist: 'Larry Zox'
+    }
+  });
+
+  assert.equal(facts.title, 'A headline in bloom');
+  assert.equal(facts.artworkTitle, 'Signal garden');
+  assert.match(facts.subtitle, /Signal garden/);
 });
 
 test('runtime gallery trigger uses both visible lines for artwork context', () => {
@@ -488,7 +507,6 @@ test('artwork share metadata resolves canonical URL and public image', () => {
     news: { title: item.newsTitle, source: item.source },
     inspiration: { artist: item.artist },
     image: {
-      publicJpeg: './data/media/example/og-1200x630.jpg',
       openGraphJpeg: './data/media/example/og-1200x630.jpg',
       altText: 'Signal garden by Larry Zox.'
     }
@@ -497,14 +515,43 @@ test('artwork share metadata resolves canonical URL and public image', () => {
     art,
     item,
     locationRef: new URL('https://rusty.test/gallery/'),
-    siteUrl: 'https://rusty.test/gallery/'
+    siteUrl: 'https://rusty.test/gallery/',
+    forceArtworkRoute: true
   });
 
+  assert.equal(metadata.title, 'Example headline | Rusty Art');
+  assert.equal(metadata.plainTitle, 'Example headline');
   assert.equal(metadata.canonicalUrl, 'https://rusty.test/gallery/art/2026-06-04-0626z-example-artwork/');
   assert.equal(metadata.imageUrl, 'https://rusty.test/gallery/data/media/example/og-1200x630.jpg');
   assert.match(metadata.description, /Example headline/);
   assert.equal(metadata.imageWidth, 1200);
   assert.equal(metadata.imageHeight, 630);
+});
+
+test('root share metadata keeps the site title while reusing the latest open graph image', () => {
+  const item = {
+    id: '2026-06-04-0626z-example-artwork',
+    artist: 'Larry Zox',
+    title: 'Signal garden',
+    newsTitle: 'Example headline',
+    date: '2026-06-04',
+    source: 'vrt',
+    image: {
+      openGraphJpeg: './data/media/example/og-1200x630.jpg'
+    }
+  };
+  const metadata = resolvePublicArtworkShareMetadata({
+    item,
+    locationRef: new URL('https://rusty.test/gallery/'),
+    siteUrl: 'https://rusty.test/gallery/'
+  });
+
+  assert.equal(metadata.artworkRoute, false);
+  assert.equal(metadata.title, 'Rusty Art — Daily Belgian News Abstractions');
+  assert.equal(metadata.type, 'website');
+  assert.equal(metadata.canonicalUrl, 'https://rusty.test/gallery/');
+  assert.equal(metadata.imageUrl, 'https://rusty.test/gallery/data/media/example/og-1200x630.jpg');
+  assert.equal(metadata.date, '');
 });
 
 test('artwork route history pushes new slugs and replaces duplicates', () => {
