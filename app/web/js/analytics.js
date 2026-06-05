@@ -1,4 +1,4 @@
-const GTM_PATTERN = /^GTM-[A-Z0-9]+$/;
+const GOOGLE_TAG_PATTERN = /^G-[A-Z0-9]+$/;
 const EMPTY_ANALYTICS_ENV = Object.freeze({});
 
 function readDefaultAnalyticsEnv() {
@@ -14,7 +14,7 @@ function resolveAnalyticsIds(env = readDefaultAnalyticsEnv()) {
   const source = env || EMPTY_ANALYTICS_ENV;
   const publicGtmId = String(source.PUBLIC_GTM_ID || '').trim();
   return {
-    gtmId: cleanAnalyticsId(publicGtmId, GTM_PATTERN)
+    googleTagId: cleanAnalyticsId(publicGtmId, GOOGLE_TAG_PATTERN)
   };
 }
 
@@ -54,36 +54,42 @@ function ensureDataLayer(windowRef = window) {
   return windowRef.dataLayer;
 }
 
+function ensureGoogleTagFunction(windowRef = window) {
+  if (typeof windowRef.gtag === 'function') return windowRef.gtag;
+  windowRef.gtag = function gtag() {
+    ensureDataLayer(windowRef).push(arguments);
+  };
+  return windowRef.gtag;
+}
+
 function appendScript({ documentRef = document, id, src }) {
-  if (documentRef.getElementById(id)) return;
+  if (documentRef.getElementById?.(id)) return;
   const script = documentRef.createElement('script');
   script.id = id;
   script.async = true;
   script.src = src;
-  documentRef.head.appendChild(script);
+  documentRef.head?.appendChild?.(script);
 }
 
-function installGoogleTagManager(gtmId, { windowRef = window, documentRef = document } = {}) {
-  if (!gtmId) return;
-  if (windowRef.__rustyAnalytics?.gtmId === gtmId) return;
+function installGoogleTag(googleTagId, { windowRef = window, documentRef = document } = {}) {
+  if (!googleTagId) return;
+  if (windowRef.__rustyAnalytics?.googleTagId === googleTagId && typeof windowRef.gtag === 'function') return;
   windowRef.__rustyAnalytics = windowRef.__rustyAnalytics || {};
-  windowRef.__rustyAnalytics.gtmId = gtmId;
-  ensureDataLayer(windowRef).push(mergeAnalyticsContext({ windowRef, documentRef }));
-  ensureDataLayer(windowRef).push({
-    'gtm.start': new Date().getTime(),
-    event: 'gtm.js'
-  });
+  windowRef.__rustyAnalytics.googleTagId = googleTagId;
+  const gtag = ensureGoogleTagFunction(windowRef);
   appendScript({
     documentRef,
-    id: 'rusty-gtm-script',
-    src: `https://www.googletagmanager.com/gtm.js?id=${encodeURIComponent(gtmId)}`
+    id: 'rusty-google-tag-script',
+    src: `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(googleTagId)}`
   });
+  gtag('js', new Date());
+  gtag('config', googleTagId, mergeAnalyticsContext({ windowRef, documentRef }));
 }
 
 export function startAnalytics(options = {}) {
   const config = readAnalyticsConfig(options.env);
-  if (config.gtmId) {
-    installGoogleTagManager(config.gtmId, options);
+  if (config.googleTagId) {
+    installGoogleTag(config.googleTagId, options);
   }
 }
 
@@ -93,6 +99,12 @@ export function trackAnalyticsPageView({
   context = {}
 } = {}) {
   const pageContext = mergeAnalyticsContext({ windowRef, documentRef, context });
+  const googleTagId = windowRef.__rustyAnalytics?.googleTagId;
+
+  if (googleTagId && typeof windowRef.gtag === 'function') {
+    windowRef.gtag('config', googleTagId, pageContext);
+    return { status: 'gtag', pageContext };
+  }
 
   if (Array.isArray(windowRef.dataLayer)) {
     windowRef.dataLayer.push({

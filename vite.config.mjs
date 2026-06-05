@@ -17,7 +17,7 @@ const WEB_ROOT = path.join(__dirname, 'app/web');
 const WEB_DIST = path.join(__dirname, 'app/web-dist');
 const DEFAULT_PUBLIC_SITE_URL = 'https://rusty-art.edge-solutions.be/';
 const PUBLIC_SITE_URL = String(process.env.PUBLIC_SITE_URL || DEFAULT_PUBLIC_SITE_URL).trim();
-const GTM_PATTERN = /^GTM-[A-Z0-9]+$/;
+const GOOGLE_TAG_PATTERN = /^G-[A-Z0-9]+$/;
 
 function cleanAnalyticsId(value, pattern) {
   const id = String(value || '').trim();
@@ -27,14 +27,16 @@ function cleanAnalyticsId(value, pattern) {
 function resolveAnalyticsIds(env = process.env) {
   const publicGtmId = String(env.PUBLIC_GTM_ID || '').trim();
   return {
-    gtmId: cleanAnalyticsId(publicGtmId, GTM_PATTERN)
+    googleTagId: cleanAnalyticsId(publicGtmId, GOOGLE_TAG_PATTERN)
   };
 }
 
-function buildAnalyticsPageContextScript() {
+function buildGoogleTagInitScript(googleTagId) {
+  const googleTagIdLiteral = JSON.stringify(googleTagId);
   return `
     window.dataLayer = window.dataLayer || [];
     window.__rustyAnalytics = window.__rustyAnalytics || {};
+    window.__rustyAnalytics.googleTagId = ${googleTagIdLiteral};
     window.__rustyAnalytics.pageContext = {
       page_location: window.location.href,
       page_path: window.location.pathname + window.location.search,
@@ -42,6 +44,10 @@ function buildAnalyticsPageContextScript() {
       page_referrer: document.referrer || undefined,
       page_hostname: window.location.hostname
     };
+    function gtag(){dataLayer.push(arguments);}
+    window.gtag = window.gtag || gtag;
+    window.gtag('js', new Date());
+    window.gtag('config', ${googleTagIdLiteral}, window.__rustyAnalytics.pageContext);
   `;
 }
 
@@ -49,37 +55,24 @@ function analyticsHtmlPlugin() {
   return {
     name: 'rusty-analytics-html',
     transformIndexHtml() {
-      const { gtmId } = resolveAnalyticsIds();
+      const { googleTagId } = resolveAnalyticsIds();
       const tags = [];
 
-      if (gtmId) {
+      if (googleTagId) {
         tags.push({
           tag: 'script',
-          attrs: { id: 'rusty-analytics-context' },
-          children: buildAnalyticsPageContextScript(),
+          attrs: {
+            id: 'rusty-google-tag-script',
+            async: true,
+            src: `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(googleTagId)}`
+          },
           injectTo: 'head'
         });
         tags.push({
           tag: 'script',
-          attrs: { id: 'rusty-gtm-init' },
-          children: `
-            window.__rustyAnalytics.gtmId = '${gtmId}';
-            window.dataLayer.push(window.__rustyAnalytics.pageContext);
-            window.dataLayer.push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
-            (function(w,d,s,l,i){
-              var f=d.getElementsByTagName(s)[0], j=d.createElement(s), dl=l!='dataLayer'?'&l='+l:'';
-              j.id='rusty-gtm-script';
-              j.async=true;
-              j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
-              f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer','${gtmId}');
-          `,
+          attrs: { id: 'rusty-google-tag-init' },
+          children: buildGoogleTagInitScript(googleTagId),
           injectTo: 'head'
-        });
-        tags.push({
-          tag: 'noscript',
-          children: `<iframe src="https://www.googletagmanager.com/ns.html?id=${gtmId}" height="0" width="0" style="display:none;visibility:hidden"></iframe>`,
-          injectTo: 'body-prepend'
         });
       }
 
