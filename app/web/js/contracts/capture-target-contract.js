@@ -10,6 +10,10 @@ export const CAPTURE_TARGET_TYPES = Object.freeze({
   LATEST: 'latest'
 });
 
+export const CAPTURE_PROFILES = Object.freeze({
+  INSTAGRAM: 'instagram'
+});
+
 function normalizeStoryView(value = 'story') {
   const normalized = String(value || '').trim();
   return normalized || 'story';
@@ -31,6 +35,12 @@ function normalizeOptionalArchiveIndex(value) {
 function parseOptionalIndex(value) {
   if (value == null) return null;
   return Number.parseInt(String(value), 10);
+}
+
+export function normalizeCaptureProfile(value = null) {
+  const normalized = String(value || '').trim().toLowerCase();
+  if (normalized === CAPTURE_PROFILES.INSTAGRAM) return CAPTURE_PROFILES.INSTAGRAM;
+  return null;
 }
 
 function normalizeArchiveFacts(facts = {}) {
@@ -222,6 +232,7 @@ export function resolveCaptureTargetFromSearchParams(input = '') {
   const params = input instanceof URLSearchParams
     ? input
     : new URLSearchParams(typeof input === 'string' ? input : input?.search || '');
+  const captureMode = params.get('capture') === '1';
   const slug = params.get('slug');
   const indexParam = params.get('index');
   const mode = params.get('target') || params.get('type') || (slug ? 'archive-slug' : indexParam == null ? 'latest' : 'archive-index');
@@ -238,7 +249,8 @@ export function resolveCaptureTargetFromSearchParams(input = '') {
   });
 
   return {
-    captureMode: params.get('capture') === '1',
+    captureMode,
+    captureProfile: captureMode ? normalizeCaptureProfile(params.get('captureProfile')) : null,
     forcedView: params.get('view'),
     requestedIndex: target.type === CAPTURE_TARGET_TYPES.LATEST ? null : requestedIndex,
     requestedArtworkSlug: slug,

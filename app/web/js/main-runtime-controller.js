@@ -128,6 +128,7 @@ export function createDeferredSceneBootScheduler({
 export function createRuntimeController({
   canvas,
   captureMode = false,
+  captureProfile = null,
   rendererRequest = 'webgl-legacy',
   postProcessingRequest = 'webgl-glsl-post',
   captureStateController,
@@ -220,6 +221,7 @@ export function createRuntimeController({
           rendererRequest,
           postProcessingRequest,
           captureMode,
+          captureProfile,
           art,
           sceneKind: targetSceneKind,
           navigatorRef,
@@ -348,7 +350,7 @@ export function createRuntimeController({
       return null;
     }
 
-    if (captureMode) loadedScene.setCaptureMode?.(true, 1.234);
+    if (captureMode) loadedScene.setCaptureMode?.(true, 1.234, { captureProfile });
     if (activeFileAtStart && activeArtAtStart && getActiveFile() === activeFileAtStart) {
       captureStateController?.update({ activeFile: activeFileAtStart });
       await applyArtworkToScene({

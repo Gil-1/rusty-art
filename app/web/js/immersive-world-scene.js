@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import { CAPTURE_PROFILES, normalizeCaptureProfile } from './contracts/capture-target-contract.js';
 import {
   applyViewportOrbitFrame,
   bindOrbitInput,
@@ -63,6 +64,15 @@ const DEFAULT_OUTPUT_COLOR_TRANSFORM = Object.freeze({
   vignette: 0,
   hueShift: 0,
   distortion: 0
+});
+export const INSTAGRAM_CAPTURE_CAMERA = Object.freeze({
+  owner: 'instagram-capture',
+  fov: 70,
+  near: 0.08,
+  far: 220,
+  position: Object.freeze([0.25, 2.05, 14.2]),
+  target: Object.freeze([0, 0.12, -3.45]),
+  distanceSafety: Object.freeze({ nearFarOwnedHere: true, minPartDistance: 1.9, clippingRisk: 'low' })
 });
 const OUTPUT_COLOR_TRANSFORM_LIMITS = Object.freeze({
   contrast: [0.85, 1.35],
@@ -235,6 +245,14 @@ export function normalizePublicRuntimeUrl(value, {
 
 function asObject(value, fallback = {}) {
   return value && typeof value === 'object' && !Array.isArray(value) ? value : fallback;
+}
+
+function resolveImmersiveWorldCameraForRender(scene, world = {}) {
+  if (scene.captureMode && normalizeCaptureProfile(scene.captureProfile) === CAPTURE_PROFILES.INSTAGRAM) {
+    const instagramCamera = asObject(scene.instagramCaptureCamera, null);
+    if (instagramCamera) return { source: 'captureProfile.instagram', camera: instagramCamera };
+  }
+  return { source: 'world.camera', camera: asObject(world.camera) };
 }
 
 function color(value, fallback) {
@@ -1133,7 +1151,8 @@ export function initializeImmersiveWorldCameraControls(scene, { bindInput = true
 }
 
 export function applyImmersiveWorldCameraConfig(scene, world = {}) {
-  const camera = asObject(world.camera);
+  const resolvedCamera = resolveImmersiveWorldCameraForRender(scene, world);
+  const camera = resolvedCamera.camera;
   const environment = asObject(world.environment);
   const position = vector3(camera.position, [0, 2.2, number(camera.radius, 14)]);
   const target = vector3(camera.target, [0, 0, 0]);
@@ -1167,7 +1186,7 @@ export function applyImmersiveWorldCameraConfig(scene, world = {}) {
   scene.orbit.userControlLocked = false;
   applyViewportOrbitFrame(scene, { resetOrbit: true });
   return {
-    source: 'world.camera',
+    source: resolvedCamera.source,
     owner: camera.owner || null,
     requested: {
       position,
@@ -1186,7 +1205,7 @@ export function applyImmersiveWorldCameraConfig(scene, world = {}) {
     },
     alignment: {
       status: 'aligned',
-      source: 'world.camera',
+      source: resolvedCamera.source,
       appliedByFrontend: true,
       previewAndFrontendRuntime: 'shared-immersive-world-camera-config',
       viewportFrameApplied: true
@@ -1390,7 +1409,9 @@ export class ArtworkScene {
     rendererRequest = RENDERER_MODES.WEBGL_LEGACY,
     postProcessingRequest = POST_PROCESSING_MODES.WEBGL_GLSL_POST,
     captureMode = false,
+    captureProfile = null,
     art = null,
+    instagramCaptureCamera = INSTAGRAM_CAPTURE_CAMERA,
     navigatorRef = typeof window !== 'undefined' ? window.navigator : null,
     onLoadProgress = null
   } = {}) {
@@ -1468,6 +1489,8 @@ export class ArtworkScene {
     this.outputColorTransform = resolveImmersiveWorldOutputColorTransform({});
     this.postBase = this.outputColorTransform;
     this.captureMode = Boolean(captureMode);
+    this.captureProfile = this.captureMode ? normalizeCaptureProfile(captureProfile) : null;
+    this.instagramCaptureCamera = instagramCaptureCamera;
     this.motionIntensity = this.captureMode ? 0 : 1;
     this.captureTime = 1.234;
     this.previousElapsedSeconds = null;
@@ -1543,8 +1566,9 @@ export class ArtworkScene {
     this.onLoadProgress?.({ progress, label });
   }
 
-  setCaptureMode(enabled = false, freezeTime = 1.234) {
+  setCaptureMode(enabled = false, freezeTime = 1.234, { captureProfile = this.captureProfile } = {}) {
     this.captureMode = Boolean(enabled);
+    this.captureProfile = this.captureMode ? normalizeCaptureProfile(captureProfile) : null;
     this.captureTime = Number.isFinite(freezeTime) ? freezeTime : 1.234;
     this.previousElapsedSeconds = null;
     this.setMotionIntensity(this.captureMode ? 0 : this.motionIntensity);
