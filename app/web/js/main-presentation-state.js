@@ -14,6 +14,7 @@ export function createInitialPresentationState({
     activeIndex: -1,
     motionMode: captureMode ? 'reduced' : storedMotionMode === 'reduced' ? 'reduced' : prefersReducedMotion ? 'reduced' : 'full',
     headlineExpanded: false,
+    storyContextOpen: false,
     mobileChromePinned: Boolean(isMobileViewport && scrollY > 28),
     mobileChromeExpanded: false
   };
@@ -29,6 +30,7 @@ export function resetPresentationBootState(state, { isMobileViewport = false, sc
     activeFile: null,
     activeIndex: -1,
     headlineExpanded: false,
+    storyContextOpen: false,
     mobileChromePinned: Boolean(isMobileViewport && scrollY > 28),
     mobileChromeExpanded: false
   };
@@ -40,6 +42,14 @@ export function setMotionModeState(state, nextMode) {
 
 export function setHeadlineExpandedState(state, expanded) {
   return { ...state, headlineExpanded: Boolean(expanded) };
+}
+
+export function setStoryContextOpenState(state, open) {
+  return { ...state, storyContextOpen: Boolean(open) };
+}
+
+export function toggleStoryContextOpenState(state) {
+  return setStoryContextOpenState(state, !state.storyContextOpen);
 }
 
 export function selectInitialArtworkIndex({ manifest, requestedIndex = null, slugIndex = null } = {}) {

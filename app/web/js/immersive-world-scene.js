@@ -229,7 +229,11 @@ export function isRemoteRuntimeRef(value) {
 
 export function normalizePublicRuntimeUrl(value, {
   expectedDir = 'data',
-  baseHref = typeof window !== 'undefined' ? window.location.href : 'http://localhost/'
+  baseHref = typeof document !== 'undefined'
+    ? document.baseURI
+    : typeof window !== 'undefined'
+      ? window.location.href
+      : 'http://localhost/'
 } = {}) {
   const raw = String(value || '').trim();
   if (!raw) throw new Error('Runtime ref URL is required.');

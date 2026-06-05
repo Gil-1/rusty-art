@@ -1,3 +1,10 @@
 @import "tailwindcss" source(none);
 @source "./index.html";
 @source "./js";
+
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+  overscroll-behavior: none;
+}

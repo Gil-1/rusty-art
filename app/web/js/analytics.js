@@ -47,6 +47,16 @@ function readPageContext({ windowRef = window, documentRef = document, gaMeasure
   });
 }
 
+function mergeAnalyticsContext({ windowRef = window, documentRef = document, gaMeasurementId = '', context = {} } = {}) {
+  const pageContext = {
+    ...readPageContext({ windowRef, documentRef, gaMeasurementId }),
+    ...compactAnalyticsParams(context)
+  };
+  windowRef.__rustyAnalytics = windowRef.__rustyAnalytics || {};
+  windowRef.__rustyAnalytics.pageContext = pageContext;
+  return pageContext;
+}
+
 function ensureDataLayer(windowRef = window) {
   windowRef.dataLayer = windowRef.dataLayer || [];
   return windowRef.dataLayer;
@@ -64,7 +74,10 @@ function appendScript({ documentRef = document, id, src }) {
 function installGoogleTagManager(gtmId, { windowRef = window, documentRef = document, gaMeasurementId = '' } = {}) {
   if (!gtmId) return;
   if (windowRef.__rustyAnalytics?.gtmId === gtmId) return;
-  ensureDataLayer(windowRef).push(readPageContext({ windowRef, documentRef, gaMeasurementId }));
+  windowRef.__rustyAnalytics = windowRef.__rustyAnalytics || {};
+  windowRef.__rustyAnalytics.gtmId = gtmId;
+  if (gaMeasurementId) windowRef.__rustyAnalytics.gaMeasurementId = gaMeasurementId;
+  ensureDataLayer(windowRef).push(mergeAnalyticsContext({ windowRef, documentRef, gaMeasurementId }));
   ensureDataLayer(windowRef).push({
     'gtm.start': new Date().getTime(),
     event: 'gtm.js'
@@ -79,6 +92,8 @@ function installGoogleTagManager(gtmId, { windowRef = window, documentRef = docu
 function installGoogleAnalytics(gaMeasurementId, { windowRef = window, documentRef = document } = {}) {
   if (!gaMeasurementId) return;
   if (windowRef.__rustyAnalytics?.gaMeasurementId === gaMeasurementId) return;
+  windowRef.__rustyAnalytics = windowRef.__rustyAnalytics || {};
+  windowRef.__rustyAnalytics.gaMeasurementId = gaMeasurementId;
   ensureDataLayer(windowRef);
   windowRef.gtag = windowRef.gtag || function gtag() {
     windowRef.dataLayer.push(arguments);
@@ -89,14 +104,14 @@ function installGoogleAnalytics(gaMeasurementId, { windowRef = window, documentR
     src: `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(gaMeasurementId)}`
   });
   windowRef.gtag('js', new Date());
-  windowRef.gtag('set', readPageContext({ windowRef, documentRef }));
+  windowRef.gtag('set', mergeAnalyticsContext({ windowRef, documentRef, gaMeasurementId }));
   windowRef.gtag('config', gaMeasurementId, {
     send_page_view: false,
     cookie_domain: 'auto',
     linker: { domains: CROSS_DOMAIN_LINKER_DOMAINS }
   });
   windowRef.gtag('config', gaMeasurementId, {
-    ...readPageContext({ windowRef, documentRef }),
+    ...mergeAnalyticsContext({ windowRef, documentRef, gaMeasurementId }),
     cookie_domain: 'auto',
     linker: { domains: CROSS_DOMAIN_LINKER_DOMAINS }
   });
@@ -109,4 +124,31 @@ export function startAnalytics(options = {}) {
     return;
   }
   installGoogleAnalytics(config.gaMeasurementId, options);
+}
+
+export function trackAnalyticsPageView({
+  windowRef = window,
+  documentRef = document,
+  context = {}
+} = {}) {
+  const gaMeasurementId = windowRef.__rustyAnalytics?.gaMeasurementId || '';
+  const pageContext = mergeAnalyticsContext({ windowRef, documentRef, gaMeasurementId, context });
+
+  if (typeof windowRef.gtag === 'function' && gaMeasurementId) {
+    windowRef.gtag('event', 'page_view', {
+      ...pageContext,
+      send_to: gaMeasurementId
+    });
+    return { status: 'gtag', pageContext };
+  }
+
+  if (Array.isArray(windowRef.dataLayer)) {
+    windowRef.dataLayer.push({
+      ...pageContext,
+      event: 'page_view'
+    });
+    return { status: 'dataLayer', pageContext };
+  }
+
+  return { status: 'skipped', pageContext };
 }

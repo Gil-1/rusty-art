@@ -35,19 +35,28 @@ const GALLERY_TRIGGER_KICKER_CLASSES = 'gallery-trigger-kicker block w-full min-
 const GALLERY_TRIGGER_LABEL_CLASSES = 'gallery-trigger-label block w-full min-w-0 overflow-hidden text-ellipsis whitespace-nowrap text-[0.82rem] font-semibold leading-snug text-slate-50';
 const GALLERY_TRIGGER_POSITION_CLASSES = 'quick-position pointer-events-none absolute right-1.5 top-1 text-[0.58rem] font-medium leading-none text-slate-400 empty:hidden max-[700px]:right-1 max-[700px]:top-1.5 max-[700px]:text-[0.52rem]';
 
-const META_HEADER_CLASSES = 'meta-header';
-const META_SECTION_CLASSES = 'meta-section border-t border-slate-500/35 pt-4';
-const META_HEADING_CLASSES = 'm-0 mb-3 text-sm font-semibold uppercase text-cyan-200';
-const META_TITLE_CLASSES = 'm-0 font-serif text-xl font-semibold leading-tight text-white';
-const META_SUBTITLE_CLASSES = 'm-0 mt-1 text-sm text-slate-400';
-const META_LINE_CLASSES = 'meta-line m-0 my-1';
-const META_SMALL_CLASSES = 'small text-slate-400';
-const META_LIST_CLASSES = 'meta-list mt-2 list-disc space-y-1 pl-5';
-const META_LINK_CLASSES = 'text-cyan-100 underline underline-offset-2 transition hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-200';
-const META_LINKS_CLASSES = 'meta-links flex flex-wrap gap-2';
+const META_CONTEXT_GRID_CLASSES = 'meta-context-grid grid gap-0 divide-y divide-slate-500/30 md:grid-cols-[1.1fr_0.72fr_0.9fr] md:divide-x md:divide-y-0';
+const META_CONTEXT_BLOCK_CLASSES = 'meta-context-block min-w-0 py-3 first:pt-0 last:pb-0 max-[700px]:py-2 md:px-4 md:py-0 md:first:pl-0 md:last:pr-0';
+const META_CONTEXT_KICKER_CLASSES = 'm-0 inline-flex items-center gap-2 text-[0.68rem] font-semibold uppercase tracking-normal text-cyan-200';
+const META_CONTEXT_BODY_CLASSES = 'm-0 mt-2 text-sm leading-relaxed text-slate-300 max-[700px]:hidden';
+const META_CONTEXT_ROW_CLASSES = 'm-0 mt-2 grid grid-cols-[5.5rem_minmax(0,1fr)] gap-2 text-sm text-slate-200 max-[700px]:grid-cols-[4.8rem_minmax(0,1fr)] max-[700px]:text-xs';
+const META_CONTEXT_LABEL_CLASSES = 'text-xs font-semibold uppercase text-slate-400';
+const META_ACTION_CLASSES = 'inline-flex min-h-10 items-center justify-center gap-2 rounded-full border border-cyan-200/50 bg-cyan-200/10 px-3 text-xs font-semibold text-cyan-50 no-underline transition hover:border-cyan-100 hover:bg-cyan-100/15 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-200 max-[700px]:min-h-9';
+const META_SECONDARY_LINK_CLASSES = 'inline-flex min-h-9 items-center justify-center gap-2 rounded-full border border-slate-500/50 bg-white/5 px-3 text-xs font-semibold text-slate-100 no-underline transition hover:border-cyan-200/60 hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-200';
+const META_TAG_LIST_CLASSES = 'inline-flex min-w-0 flex-wrap gap-1.5 align-middle';
+const META_TAG_CLASSES = 'inline-flex max-w-full items-center rounded-full border border-slate-500/35 bg-white/5 px-2 py-0.5 text-[0.68rem] font-medium text-slate-200';
 const PALETTE_SWATCHES_CLASSES = 'palette-swatches inline-flex flex-wrap gap-2 align-middle';
 const PALETTE_SWATCH_CLASSES = 'palette-swatch inline-flex items-center gap-1.5 text-slate-300';
 const PALETTE_SWATCH_COLOR_CLASSES = 'palette-swatch-color size-3 shrink-0 border border-white/50 shadow-[0_0_0_1px_rgba(5,10,18,0.22)]';
+
+const ICON_CLASSES = 'size-4 shrink-0';
+const ICON_PATHS = Object.freeze({
+  external: '<path d="M14 3h7v7"></path><path d="M10 14 21 3"></path><path d="M21 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5"></path>',
+  fingerprint: '<path d="M2 12c0-5.52 4.48-10 10-10a10 10 0 0 1 10 10"></path><path d="M6 12a6 6 0 0 1 12 0c0 5-3 7-3 10"></path><path d="M10 12a2 2 0 0 1 4 0c0 3-1 4-2 6"></path><path d="M6.5 16c.5 2 1.7 3.7 3.5 5"></path>',
+  link: '<path d="M10 13a5 5 0 0 0 7.07 0l2-2a5 5 0 0 0-7.07-7.07l-1.15 1.15"></path><path d="M14 11a5 5 0 0 0-7.07 0l-2 2A5 5 0 0 0 12 20.07l1.15-1.15"></path>',
+  cpu: '<rect width="16" height="16" x="4" y="4" rx="2"></rect><rect width="6" height="6" x="9" y="9" rx="1"></rect><path d="M9 1v3"></path><path d="M15 1v3"></path><path d="M9 20v3"></path><path d="M15 20v3"></path><path d="M20 9h3"></path><path d="M20 14h3"></path><path d="M1 9h3"></path><path d="M1 14h3"></path>',
+  sliders: '<path d="M4 21v-7"></path><path d="M4 10V3"></path><path d="M12 21v-9"></path><path d="M12 8V3"></path><path d="M20 21v-5"></path><path d="M20 12V3"></path><path d="M2 14h4"></path><path d="M10 8h4"></path><path d="M18 16h4"></path>'
+});
 
 const ARCHIVE_CARD_CLASSES = [
   'archive-card',
@@ -121,84 +130,31 @@ function renderPaletteSwatches(palette = []) {
   )).join('')}</span>`;
 }
 
-function renderMetaLine(label, value, { html = false } = {}) {
-  const available = html ? String(value || '').trim() : String(value ?? '').trim();
-  if (!available) return '';
-  return `<p class="${META_LINE_CLASSES}"><span class="${META_SMALL_CLASSES}">${escapeHtml(label)}:</span> ${html ? value : escapeHtml(value)}</p>`;
+function renderIcon(name, className = ICON_CLASSES) {
+  const paths = ICON_PATHS[name];
+  if (!paths) return '';
+  return `<svg class="${className}" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${paths}</svg>`;
 }
 
-function renderCreativeBriefList(items = [], label = 'Key parts') {
-  if (!items.length) return '';
-  return `
-    <div class="${META_LINE_CLASSES}">
-      <span class="${META_SMALL_CLASSES}">${escapeHtml(label)}:</span>
-      <ul class="${META_LIST_CLASSES}">
-        ${items.map((item) => `
-          <li>
-            <span>${escapeHtml(item.label)}</span>
-            ${item.detail ? `<span class="${META_SMALL_CLASSES} block">${escapeHtml(item.detail)}</span>` : ''}
-          </li>
-        `).join('')}
-      </ul>
-    </div>
-  `;
+function renderSectionKicker(label, icon) {
+  return `<p class="${META_CONTEXT_KICKER_CLASSES}">${renderIcon(icon)}<span>${escapeHtml(label)}</span></p>`;
 }
 
-function renderArtDirectionSection(facts) {
-  const rationale = facts.rationale;
-  if (rationale.legacyIntent) {
-    const rows = [
-      renderMetaLine('Signal', rationale.signal),
-      renderMetaLine('Emotion', rationale.emotion),
-      renderMetaLine(
-        'Tension / Balance / Motion',
-        [rationale.tension, rationale.balance, rationale.motion].filter(Boolean).join(' · ')
-      ),
-      renderMetaLine('Style card', rationale.styleCard),
-      renderMetaLine('Selection rationale', rationale.selectionRationale),
-      renderMetaLine('Signal terms', rationale.signalTermsLabel),
-      renderMetaLine('Visual mapping', rationale.visualMapping)
-    ].filter(Boolean);
-    if (!rows.length) return '';
-    return `
-      <section class="${META_SECTION_CLASSES}">
-        <h4 class="${META_HEADING_CLASSES}">Art direction</h4>
-        ${rows.join('')}
-      </section>
-    `;
-  }
-
-  const brief = rationale.creativeBrief || {};
-  const palette = renderPaletteSwatches(brief.palette);
-  const expression = ['tension', 'structure', 'motion', 'urgency', 'contrast']
-    .map((key) => brief.expression?.[key] ? `${key} ${brief.expression[key]}` : null)
+function renderTagList(items = []) {
+  const tags = items
+    .map((item) => humanizeMetaValue(item?.label || item))
     .filter(Boolean)
-    .join(' · ');
-  const rows = [
-    renderMetaLine('Image', brief.image),
-    renderMetaLine('Arc', brief.arc),
-    renderMetaLine('Composition', brief.composition),
-    renderMetaLine('Motif', brief.motif),
-    palette ? renderMetaLine('Palette', palette, { html: true }) : '',
-    renderMetaLine('Expression', expression),
-    renderMetaLine('Environment', brief.environment),
-    renderMetaLine('Renderer', brief.rendererStatus),
-    renderMetaLine('Modules', brief.modulesLabel),
-    renderMetaLine('Translation trace', brief.translationTraceLabel),
-    renderMetaLine('Selection rationale', rationale.selectionRationale)
-  ].filter(Boolean);
-  const partList = renderCreativeBriefList(
-    brief.keyParts,
-    brief.kind === 'immersive-world' ? 'World parts' : 'Key parts'
-  );
-  if (!rows.length && !partList) return '';
-  return `
-    <section class="${META_SECTION_CLASSES}">
-      <h4 class="${META_HEADING_CLASSES}">Art direction</h4>
-      ${rows.join('')}
-      ${partList}
-    </section>
-  `;
+    .slice(0, 5);
+  if (!tags.length) return '';
+  return `<span class="${META_TAG_LIST_CLASSES}">${tags.map((tag) => `<span class="${META_TAG_CLASSES}">${escapeHtml(tag)}</span>`).join('')}</span>`;
+}
+
+function normalizeComparableText(value) {
+  return String(value ?? '')
+    .toLowerCase()
+    .replace(/[’']/g, '')
+    .replace(/[^a-z0-9]+/g, ' ')
+    .trim();
 }
 
 export function updateHeroNow({ heroNowTitle, heroNowSub, heroNowHeadline }, artOrFacts) {
@@ -209,7 +165,9 @@ export function updateHeroNow({ heroNowTitle, heroNowSub, heroNowHeadline }, art
   heroNowTitle.textContent = hero.title;
   heroNowSub.textContent = hero.subtitle;
   if (heroNowHeadline) {
-    heroNowHeadline.textContent = hero.headline;
+    const duplicateHeadline = normalizeComparableText(hero.headline) === normalizeComparableText(hero.title);
+    heroNowHeadline.hidden = duplicateHeadline;
+    heroNowHeadline.textContent = duplicateHeadline ? '' : hero.headline;
   }
   return hero;
 }
@@ -281,30 +239,149 @@ export function renderGalleryList(galleryList, manifest, { activeFile = null, on
   return { cards };
 }
 
-export function renderMeta(meta, artOrFacts, sceneInitError) {
+function renderContextRow(label, value, { html = false } = {}) {
+  const available = html ? String(value || '').trim() : String(value ?? '').trim();
+  if (!available) return '';
+  return `
+    <p class="${META_CONTEXT_ROW_CLASSES}">
+      <span class="${META_CONTEXT_LABEL_CLASSES}">${escapeHtml(label)}</span>
+      <span>${html ? value : escapeHtml(value)}</span>
+    </p>
+  `;
+}
+
+function renderContextLink(link, className = META_SECONDARY_LINK_CLASSES, icon = 'external') {
+  if (!link?.href || !link?.label) return '';
+  return `<a class="${className}" href="${escapeHtml(link.href)}" target="_blank" rel="noreferrer">${renderIcon(icon)}<span>${escapeHtml(link.label)}</span></a>`;
+}
+
+function humanizeMetaValue(value, fallback = '') {
+  const text = String(value ?? '').trim();
+  if (!text) return fallback;
+  const normalized = text.toLowerCase();
+  if (normalized === 'webgl-only') return 'WebGL';
+  if (normalized === 'webgpu-only') return 'WebGPU';
+  const words = text
+    .replace(/[-_]+/g, ' ')
+    .replace(/\bwebgl\b/ig, 'WebGL')
+    .replace(/\bwebgpu\b/ig, 'WebGPU')
+    .trim();
+  return words ? `${words.charAt(0).toUpperCase()}${words.slice(1)}` : fallback;
+}
+
+function moduleCountLabel(count, fallback = '') {
+  const value = Number(count);
+  if (Number.isFinite(value) && value > 0) {
+    return `${value} generated module${value === 1 ? '' : 's'}`;
+  }
+  return fallback;
+}
+
+function rendererModeLabel(mode = '') {
+  const normalized = String(mode || '').trim().toLowerCase();
+  if (normalized === 'webgpu') return 'WebGPURenderer';
+  if (normalized === 'webgpu-webgl2-backend') return 'WebGPURenderer';
+  if (normalized === 'webgl-legacy') return 'WebGLRenderer';
+  return humanizeMetaValue(mode);
+}
+
+function rendererBackendLabel(backend = '') {
+  const normalized = String(backend || '').trim().toLowerCase();
+  if (normalized === 'webgpu') return 'WebGPU';
+  if (normalized === 'webgl2') return 'WebGL2';
+  if (normalized === 'webgl1') return 'WebGL1';
+  return humanizeMetaValue(backend);
+}
+
+function renderRuntimeRendererLabel(rendererDiagnostics = null) {
+  if (!rendererDiagnostics?.rendererMode && !rendererDiagnostics?.rendererBackend) return '';
+  const backend = rendererBackendLabel(rendererDiagnostics.rendererBackend);
+  if (backend) {
+    return rendererDiagnostics.rendererMode === 'webgpu-webgl2-backend'
+      ? `Three.js ${backend} backend`
+      : `Three.js ${backend}`;
+  }
+  return rendererModeLabel(rendererDiagnostics.rendererMode);
+}
+
+function renderSceneSummary(facts) {
+  const rationale = facts.rationale || {};
+  const brief = rationale.creativeBrief || {};
+  const palette = renderPaletteSwatches(brief.palette);
+  const moduleLabel = moduleCountLabel(brief.moduleCount, brief.modulesLabel);
+  const expression = ['tension', 'structure', 'motion', 'urgency', 'contrast']
+    .map((key) => brief.expression?.[key] ? `${key} ${brief.expression[key]}` : null)
+    .filter(Boolean)
+    .join(' · ');
+  const rows = [
+    renderContextRow('Scene', humanizeMetaValue(brief.environment)),
+    renderContextRow('Signal', rationale.signal),
+    renderContextRow('Emotion', rationale.emotion),
+    renderContextRow('Rationale', rationale.selectionRationale),
+    renderContextRow('Visual map', rationale.visualMapping),
+    renderContextRow('Image', brief.image),
+    renderContextRow('Arc', brief.arc),
+    renderContextRow('Composition', brief.composition),
+    renderContextRow('Motif', brief.motif),
+    palette ? renderContextRow('Palette', palette, { html: true }) : '',
+    renderContextRow('Expression', expression),
+    brief.keyParts?.length ? renderContextRow(brief.kind === 'immersive-world' ? 'World parts' : 'Key parts', renderTagList(brief.keyParts), { html: true }) : '',
+    renderContextRow('Modules', moduleLabel),
+    renderContextRow('Trace', brief.translationTraceLabel),
+    renderContextRow('Quality', facts.quality?.summary),
+    renderContextRow('Note', facts.quality?.rendererNote)
+  ].filter(Boolean);
+
+  return rows.length
+    ? rows.join('')
+    : '<p class="m-0 mt-2 text-sm text-slate-400">No additional scene brief is available.</p>';
+}
+
+function renderTechnicalRows(brief = {}, rendererDiagnostics = null) {
+  const runtimeLabel = renderRuntimeRendererLabel(rendererDiagnostics);
+  const rows = [
+    runtimeLabel ? renderContextRow('Runtime', runtimeLabel) : '',
+    renderContextRow('Contract', humanizeMetaValue(brief.rendererStatus)),
+    renderContextRow('Fallback', humanizeMetaValue(rendererDiagnostics?.rendererFallbackReason || brief.rendererFallbackReason))
+  ].filter(Boolean);
+
+  return rows.length
+    ? rows.join('')
+    : '<p class="m-0 mt-2 text-sm text-slate-400">Renderer details unavailable.</p>';
+}
+
+export function renderMeta(meta, artOrFacts, sceneInitError, rendererDiagnostics = null) {
   const { meta: facts } = resolvePublicArtworkPresentationFacts(artOrFacts, { sceneInitError });
-  const articleLink = facts.links.article.available
-    ? `<a class="${META_LINK_CLASSES}" href="${escapeHtml(facts.links.article.href)}" target="_blank" rel="noreferrer">${escapeHtml(facts.links.article.label)}</a>`
-    : '';
-  const artistLinkItems = facts.links.artist.items.map((link) => (
-    `<a class="${META_LINK_CLASSES}" href="${escapeHtml(link.href)}" target="_blank" rel="noreferrer">${escapeHtml(link.label)}</a>`
-  ));
-  const artistLinks = artistLinkItems.length ? `<div class="${META_LINKS_CLASSES}">${artistLinkItems.join('')}</div>` : '';
+  if (!meta) return facts;
+
+  const articleLink = facts.links.article.available ? renderContextLink(facts.links.article, META_ACTION_CLASSES) : '';
+  const artistLinks = facts.links.artist.items.map((link) => renderContextLink(link)).join('');
+  const brief = facts.rationale.creativeBrief || {};
+  const sourceLabel = `${facts.news.source}${facts.links.article.available ? ' original article' : ' article'}`;
+  const technicalRows = renderTechnicalRows(brief, rendererDiagnostics);
+
   meta.innerHTML = `
-    <div class="${META_HEADER_CLASSES}">
-      <h3 class="${META_TITLE_CLASSES}">${escapeHtml(facts.title)}</h3>
-      <p class="${META_SUBTITLE_CLASSES}">${escapeHtml(facts.date)} · Inspired by ${escapeHtml(facts.artist)}</p>
+    <div class="${META_CONTEXT_GRID_CLASSES}">
+      <section class="${META_CONTEXT_BLOCK_CLASSES}">
+        ${renderSectionKicker('Scene details', 'sliders')}
+        ${renderSceneSummary(facts)}
+      </section>
+
+      <section class="${META_CONTEXT_BLOCK_CLASSES}">
+        ${renderSectionKicker('Sources', 'link')}
+        ${renderContextRow('Influence', facts.artist)}
+        <p class="${META_CONTEXT_BODY_CLASSES}">${escapeHtml(sourceLabel)}</p>
+        <div class="mt-3 flex flex-wrap gap-2">
+          ${articleLink || '<span class="text-xs text-slate-400">Article link unavailable</span>'}
+          ${artistLinks}
+        </div>
+      </section>
+
+      <section class="${META_CONTEXT_BLOCK_CLASSES}">
+        ${renderSectionKicker('Technical details', 'cpu')}
+        ${technicalRows}
+      </section>
     </div>
-
-    <section class="${META_SECTION_CLASSES}">
-      <h4 class="${META_HEADING_CLASSES}">News provenance</h4>
-      <p class="${META_LINE_CLASSES}"><span class="${META_SMALL_CLASSES}">Headline:</span> ${escapeHtml(facts.news.headline)}</p>
-      <p class="${META_LINE_CLASSES}"><span class="${META_SMALL_CLASSES}">Source:</span> ${escapeHtml(facts.news.source)}</p>
-      ${articleLink ? `<p class="${META_LINE_CLASSES}">${articleLink}</p>` : ''}
-      ${artistLinks}
-    </section>
-
-    ${renderArtDirectionSection(facts)}
   `;
   return facts;
 }

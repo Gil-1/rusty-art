@@ -6,10 +6,13 @@ import {
   applyEmptyArchiveEffects,
   applyInitErrorEffects,
   applyMobileChromeEffects,
+  applyStoryContextEffects,
+  closeStoryContextEffects,
   markMobileChromeInteractionEffects,
   resetChromeUiForBootEffects,
   resetHeadlineExpandedEffects,
   toggleHeadlineExpandedEffects,
+  toggleStoryContextEffects,
   toggleMobileChromeEffects
 } from './main-chrome-effects.js';
 import {
@@ -54,6 +57,7 @@ export function createRuntimeRenderEffects({
 } = {}) {
   const facts = {
     currentArtworkLumaEstimate: null,
+    currentMetaArtwork: null,
     quickPickerCompact: false,
     viewportRefreshTimer: null
   };
@@ -136,6 +140,18 @@ export function createRuntimeRenderEffects({
     return true;
   }
 
+  function handleStoryContextKeydown(event) {
+    if (!getState().storyContextOpen || event?.key !== 'Escape') return false;
+    event.preventDefault?.();
+    updateState((state) => closeStoryContextEffects(state, {
+      body,
+      storyContextPanel: refs.storyContextPanel,
+      storyToggle: refs.storyToggle
+    }));
+    refs.storyToggle?.focus?.({ preventScroll: true });
+    return true;
+  }
+
   function updateMobileChromeState() {
     return updateState((state) => applyMobileChromeEffects(state, {
       body,
@@ -174,6 +190,8 @@ export function createRuntimeRenderEffects({
       quickPosition: refs.quickPosition,
       heroNowHeadline: refs.heroNowHeadline,
       heroHeadlineToggle: refs.heroHeadlineToggle,
+      storyContextPanel: refs.storyContextPanel,
+      storyToggle: refs.storyToggle,
       loadMoreButton: refs.loadMoreButton,
       showFallback
     }));
@@ -238,7 +256,13 @@ export function createRuntimeRenderEffects({
   }
 
   function renderMeta(art) {
-    return renderMetaUi(refs.meta, art, runtimeController?.getSceneInitError?.());
+    facts.currentMetaArtwork = art || null;
+    return renderMetaUi(
+      refs.meta,
+      art,
+      runtimeController?.getSceneInitError?.(),
+      runtimeController?.getRendererDiagnostics?.()
+    );
   }
 
   function refreshActiveArchiveItem(activeFile = getState().activeFile) {
@@ -270,6 +294,15 @@ export function createRuntimeRenderEffects({
     const sceneWarning = sceneInitError
       ? `Renderer unavailable (${sceneInitError.message}). Metadata view still works.`
       : '';
+
+    if (facts.currentMetaArtwork) {
+      renderMetaUi(
+        refs.meta,
+        facts.currentMetaArtwork,
+        sceneInitError,
+        runtimeController?.getRendererDiagnostics?.()
+      );
+    }
 
     if (manifestFallbackReason && sceneWarning) {
       showStatus(`${manifestFallbackReason} ${sceneWarning}`, 'warning');
@@ -353,6 +386,14 @@ export function createRuntimeRenderEffects({
     }));
   }
 
+  function toggleStoryContext() {
+    return updateState((state) => toggleStoryContextEffects(state, {
+      body,
+      storyContextPanel: refs.storyContextPanel,
+      storyToggle: refs.storyToggle
+    }));
+  }
+
   function onBeforeManifestLoad() {
     if (captureMode) {
       body?.classList?.add?.('capture-mode');
@@ -360,6 +401,11 @@ export function createRuntimeRenderEffects({
     const state = getState();
     applyMotionMode(state.motionMode);
     updateMobileChromeState();
+    updateState((currentState) => applyStoryContextEffects(currentState, {
+      body,
+      storyContextPanel: refs.storyContextPanel,
+      storyToggle: refs.storyToggle
+    }));
     resetUiForBoot();
   }
 
@@ -410,9 +456,11 @@ export function createRuntimeRenderEffects({
     applyMotionMode,
     toggleMobileChrome,
     toggleHeadline,
+    toggleStoryContext,
     openGallery,
     closeGallery,
     handleGalleryKeydown,
+    handleStoryContextKeydown,
     applyInitError,
     getCurrentArtworkLumaEstimate: () => facts.currentArtworkLumaEstimate,
     getFacts: () => cloneFacts(facts)

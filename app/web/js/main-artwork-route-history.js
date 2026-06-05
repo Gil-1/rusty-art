@@ -1,5 +1,5 @@
 import {
-  buildArtworkQueryRouteHref,
+  buildArtworkShareRouteHref,
   readArtworkRouteFromLocation,
   resolveArtworkRouteSlug
 } from './contracts/public-artwork-routes.js';
@@ -46,7 +46,7 @@ export function createArtworkRouteHistoryController({
       return { status: 'skipped' };
     }
 
-    const href = buildArtworkQueryRouteHref(item, { locationRef: windowRef.location });
+    const href = buildArtworkShareRouteHref(item, { locationRef: windowRef.location });
     if (!href) return { status: 'missing-route' };
 
     const state = createHistoryState(windowRef, item, activeIndex);

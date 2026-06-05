@@ -1,4 +1,5 @@
 import { resolveCaptureTargetFromSearchParams } from './contracts/capture-target-contract.js';
+import { readArtworkRouteFromLocation } from './contracts/public-artwork-routes.js';
 import {
   resolvePostProcessingRequestFromSearchParams,
   resolveRendererRequestFromSearchParams
@@ -15,13 +16,14 @@ export function resolveRuntimeShellOptions({
   breakpoint = MOBILE_BREAKPOINT
 } = {}) {
   const captureRoute = resolveCaptureTargetFromSearchParams(windowRef.location?.search || '');
+  const artworkRoute = readArtworkRouteFromLocation(windowRef.location);
   const rendererRequest = resolveRendererRequestFromSearchParams(windowRef.location?.search || '');
   const postProcessingRequest = resolvePostProcessingRequestFromSearchParams(windowRef.location?.search || '');
   return {
     captureMode: captureRoute.captureMode,
     captureProfile: captureRoute.captureProfile,
-    requestedIndex: captureRoute.requestedIndex,
-    requestedArtworkSlug: captureRoute.requestedArtworkSlug,
+    requestedIndex: captureRoute.requestedIndex ?? artworkRoute.index,
+    requestedArtworkSlug: captureRoute.requestedArtworkSlug || artworkRoute.slug,
     captureTarget: captureRoute.target,
     rendererRequest,
     postProcessingRequest,
@@ -60,6 +62,8 @@ export function queryRuntimeDomRefs(documentRef = document) {
     fallbackPanel: documentRef.getElementById('fallback-panel'),
     fallbackMessage: documentRef.getElementById('fallback-message'),
     retryLoad: documentRef.getElementById('retry-load'),
+    storyContextPanel: documentRef.getElementById('story-context-panel'),
+    storyToggle: documentRef.getElementById('story-toggle'),
     heroHeadlineToggle: documentRef.getElementById('hero-headline-toggle'),
     mobileChromeToggle: documentRef.getElementById('mobile-chrome-toggle')
   };
@@ -90,6 +94,7 @@ export function installRuntimeShellEventBindings({
     galleryDialog,
     galleryClose,
     mobileChromeToggle,
+    storyToggle,
     heroHeadlineToggle
   } = refs;
 
@@ -106,11 +111,12 @@ export function installRuntimeShellEventBindings({
     if (event.target === galleryDialog) actions.onCloseGallery?.();
   });
   addRuntimeShellBinding(bindings, facts, mobileChromeToggle, 'click', () => actions.onToggleMobileChrome?.());
+  addRuntimeShellBinding(bindings, facts, storyToggle, 'click', () => actions.onToggleStoryContext?.());
   addRuntimeShellBinding(bindings, facts, heroHeadlineToggle, 'click', () => actions.onToggleHeadline?.());
 
   addRuntimeShellBinding(bindings, facts, documentRef, 'pointerdown', (event) => actions.onPointerDown?.(event), { passive: true });
+  addRuntimeShellBinding(bindings, facts, documentRef, 'wheel', (event) => actions.onWheel?.(event), { passive: false, capture: true });
   addRuntimeShellBinding(bindings, facts, documentRef, 'keydown', (event) => actions.onKeydown?.(event));
-  addRuntimeShellBinding(bindings, facts, windowRef, 'scroll', () => actions.onScroll?.(), { passive: true });
   addRuntimeShellBinding(bindings, facts, windowRef, 'popstate', (event) => actions.onPopState?.(event));
   addRuntimeShellBinding(bindings, facts, windowRef, 'resize', () => actions.onViewportChange?.());
   addRuntimeShellBinding(bindings, facts, windowRef, 'orientationchange', () => actions.onViewportChange?.());

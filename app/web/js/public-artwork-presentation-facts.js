@@ -110,6 +110,23 @@ function buildWorldModuleFacts(world = {}) {
     .slice(0, 6);
 }
 
+function buildRendererFallbackReasonFacts(rendererCompatibility = {}) {
+  const source = asObject(rendererCompatibility);
+  const ownReason = normalizedOptionalText(source.fallbackReason);
+  if (ownReason) return ownReason;
+
+  const ownReasons = Array.isArray(source.fallbackReasons) ? source.fallbackReasons : [];
+  const moduleReasons = Array.isArray(source.modules)
+    ? source.modules.flatMap((module) => [
+      module?.fallbackReason,
+      ...(Array.isArray(module?.fallbackReasons) ? module.fallbackReasons : [])
+    ])
+    : [];
+  return [...ownReasons, ...moduleReasons]
+    .map((reason) => normalizedOptionalText(reason))
+    .find(Boolean) || null;
+}
+
 function buildTranslationTraceFacts(mappings = []) {
   if (!Array.isArray(mappings)) return [];
   return mappings
@@ -151,6 +168,9 @@ function buildImmersiveWorldBriefFacts({ source, mappings }) {
   const translationTrace = buildTranslationTraceFacts(mappings);
   const environmentKind = normalizedOptionalText(environment.kind);
   const rendererStatus = normalizedOptionalText(renderFacts.rendererCompatibilityStatus || rendererCompatibility.compatibilityStatus);
+  const rendererFallbackReason = buildRendererFallbackReasonFacts(rendererCompatibility);
+  const generatedModuleCount = Number(firstPresent(renderFacts.generatedModuleCount, rendererCompatibility.moduleCount));
+  const acceptedPartCount = Number(firstPresent(renderFacts.acceptedPartCount, Array.isArray(world.parts) ? world.parts.length : null));
 
   return {
     kind: 'immersive-world',
@@ -165,11 +185,14 @@ function buildImmersiveWorldBriefFacts({ source, mappings }) {
     expression: {},
     modules,
     modulesLabel: modules.length ? modules.join(', ') : null,
+    moduleCount: Number.isFinite(generatedModuleCount) ? generatedModuleCount : null,
+    partCount: Number.isFinite(acceptedPartCount) ? acceptedPartCount : null,
     translationTrace,
     translationTraceLabel: translationTrace.length ? translationTrace.join(' | ') : null,
     environment: environmentKind,
     rendererStatus,
-    available: Boolean(environmentKind || rendererStatus || keyParts.length || modules.length || translationTrace.length)
+    rendererFallbackReason,
+    available: Boolean(environmentKind || rendererStatus || rendererFallbackReason || keyParts.length || modules.length || translationTrace.length)
   };
 }
 

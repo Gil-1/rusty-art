@@ -17,9 +17,11 @@ import { createArtworkRouteHistoryController } from '../app/web/js/main-artwork-
 import { installRuntimeShellEventBindings } from '../app/web/js/main-runtime-shell.js';
 import {
   buildArtworkQueryRouteHref,
+  buildArtworkShareRouteHref,
   readArtworkRouteFromLocation,
   resolveArtworkRouteSlug
 } from '../app/web/js/public-artwork-routes.js';
+import { resolvePublicArtworkShareMetadata } from '../app/web/js/public-artwork-share-metadata.js';
 
 const manifest = {
   items: [
@@ -402,10 +404,50 @@ test('artwork route helpers build static query slug routes', () => {
     buildArtworkQueryRouteHref(item, { locationRef }),
     '/?renderer=webgpu&utm_source=share&slug=2026-06-04-0626z-example-artwork#story'
   );
+  assert.equal(
+    buildArtworkShareRouteHref(item, { locationRef }),
+    '/art/2026-06-04-0626z-example-artwork/?renderer=webgpu&utm_source=share#story'
+  );
+  assert.deepEqual(readArtworkRouteFromLocation({ pathname: '/art/abc/', search: '' }), {
+    slug: 'abc',
+    index: null
+  });
   assert.deepEqual(readArtworkRouteFromLocation({ search: '?slug=abc&index=3' }), {
     slug: 'abc',
     index: 3
   });
+});
+
+test('artwork share metadata resolves canonical URL and public image', () => {
+  const item = {
+    id: '2026-06-04-0626z-example-artwork',
+    artist: 'Larry Zox',
+    title: 'Signal garden',
+    newsTitle: 'Example headline',
+    date: '2026-06-04',
+    source: 'vrt'
+  };
+  const art = {
+    ...item,
+    news: { title: item.newsTitle, source: item.source },
+    inspiration: { artist: item.artist },
+    image: {
+      publicJpeg: './data/media/example/artwork-720.jpg',
+      altText: 'Signal garden by Larry Zox.'
+    }
+  };
+  const metadata = resolvePublicArtworkShareMetadata({
+    art,
+    item,
+    locationRef: new URL('https://rusty.test/gallery/'),
+    siteUrl: 'https://rusty.test/gallery/'
+  });
+
+  assert.equal(metadata.canonicalUrl, 'https://rusty.test/gallery/art/2026-06-04-0626z-example-artwork/');
+  assert.equal(metadata.imageUrl, 'https://rusty.test/gallery/data/media/example/artwork-720.jpg');
+  assert.match(metadata.description, /Example headline/);
+  assert.equal(metadata.imageWidth, 1080);
+  assert.equal(metadata.imageHeight, 720);
 });
 
 test('artwork route history pushes new slugs and replaces duplicates', () => {
@@ -434,7 +476,7 @@ test('artwork route history pushes new slugs and replaces duplicates', () => {
   assert.deepEqual(controller.readCurrentRoute(), { slug: 'old', index: null });
   assert.equal(controller.syncLoadedArtworkRoute({ item, activeIndex: 0 }).status, 'pushed');
   assert.equal(calls[0].method, 'pushState');
-  assert.equal(calls[0].href, '/?renderer=webgpu&slug=2026-06-05-0629z-next-artwork');
+  assert.equal(calls[0].href, '/art/2026-06-05-0629z-next-artwork/?renderer=webgpu');
   assert.equal(calls[0].state.rustyArtworkRoute.file, item.file);
 
   assert.equal(controller.syncLoadedArtworkRoute({ item, activeIndex: 0 }).status, 'replaced');

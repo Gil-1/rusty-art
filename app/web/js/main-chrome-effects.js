@@ -2,6 +2,8 @@ import {
   deriveMobileChromeState,
   markMobileChromeInteractionState,
   setHeadlineExpandedState,
+  setStoryContextOpenState,
+  toggleStoryContextOpenState,
   toggleMobileChromeExpandedState
 } from './main-presentation-state.js';
 
@@ -109,19 +111,50 @@ export function resetHeadlineExpandedEffects(state, options = {}) {
   return applyHeadlineToggleEffects(setHeadlineExpandedState(state, false), options);
 }
 
+export function applyStoryContextEffects(state, {
+  body = defaultBody(),
+  storyContextPanel = null,
+  storyToggle = null
+} = {}) {
+  const open = Boolean(state.storyContextOpen);
+  body?.classList?.toggle?.('story-context-open', open);
+  if (storyContextPanel) {
+    storyContextPanel.hidden = !open;
+    storyContextPanel.setAttribute?.('aria-hidden', open ? 'false' : 'true');
+  }
+  if (storyToggle) {
+    storyToggle.setAttribute?.('aria-expanded', open ? 'true' : 'false');
+    const label = storyToggle.querySelector?.('.story-toggle-label');
+    if (label) label.textContent = open ? 'Hide details' : 'Details & source';
+    else storyToggle.textContent = open ? 'Hide details' : 'Details & source';
+  }
+  return state;
+}
+
+export function toggleStoryContextEffects(state, options = {}) {
+  return applyStoryContextEffects(toggleStoryContextOpenState(state), options);
+}
+
+export function closeStoryContextEffects(state, options = {}) {
+  return applyStoryContextEffects(setStoryContextOpenState(state, false), options);
+}
+
 export function resetChromeUiForBootEffects(state, {
   archiveList = null,
   quickPicker = null,
   quickPosition = null,
   heroNowHeadline = null,
   heroHeadlineToggle = null,
+  storyContextPanel = null,
+  storyToggle = null,
   loadMoreButton = null,
   showFallback = null
 } = {}) {
   if (archiveList) archiveList.innerHTML = '';
   if (quickPicker) quickPicker.innerHTML = '';
   if (quickPosition) quickPosition.textContent = '';
-  const nextState = applyHeadlineToggleEffects(state, { heroNowHeadline, heroHeadlineToggle });
+  const headlineState = applyHeadlineToggleEffects(state, { heroNowHeadline, heroHeadlineToggle });
+  const nextState = closeStoryContextEffects(headlineState, { storyContextPanel, storyToggle });
   setDisplay(loadMoreButton, 'inline-flex');
   showFallback?.('', true);
   return nextState;
@@ -137,6 +170,8 @@ export function applyEmptyArchiveEffects(state, {
     heroNowSub,
     heroNowHeadline,
     heroHeadlineToggle,
+    storyContextPanel,
+    storyToggle,
     archiveCount,
     quickPicker,
     quickPosition,
@@ -150,7 +185,8 @@ export function applyEmptyArchiveEffects(state, {
   if (heroNowTitle) heroNowTitle.textContent = 'No pieces yet';
   if (heroNowSub) heroNowSub.textContent = 'Run the daily pipeline to generate the first artwork.';
   if (heroNowHeadline) heroNowHeadline.textContent = 'Headline context unavailable.';
-  const nextState = applyHeadlineToggleEffects(state, { heroNowHeadline, heroHeadlineToggle });
+  const headlineState = applyHeadlineToggleEffects(state, { heroNowHeadline, heroHeadlineToggle });
+  const nextState = closeStoryContextEffects(headlineState, { storyContextPanel, storyToggle });
   if (archiveCount) archiveCount.textContent = '0/0 loaded';
   setDisabled(quickPicker, true);
   if (quickPosition) quickPosition.textContent = '0 / 0';
@@ -174,6 +210,8 @@ export function applyInitErrorEffects(state, {
     heroNowSub,
     heroNowHeadline,
     heroHeadlineToggle,
+    storyContextPanel,
+    storyToggle,
     quickPicker,
     quickPosition,
     quickPrev,
@@ -186,7 +224,8 @@ export function applyInitErrorEffects(state, {
   if (heroNowTitle) heroNowTitle.textContent = 'Error while loading';
   if (heroNowSub) heroNowSub.textContent = message;
   if (heroNowHeadline) heroNowHeadline.textContent = 'Try retrying or regenerating data files.';
-  const nextState = applyHeadlineToggleEffects(state, { heroNowHeadline, heroHeadlineToggle });
+  const headlineState = applyHeadlineToggleEffects(state, { heroNowHeadline, heroHeadlineToggle });
+  const nextState = closeStoryContextEffects(headlineState, { storyContextPanel, storyToggle });
   setDisabled(quickPicker, true);
   if (quickPosition) quickPosition.textContent = '0 / 0';
   setDisabled(quickPrev, true);

@@ -176,6 +176,10 @@ export function createRuntimeController({
     return sceneInitError;
   }
 
+  function getRendererDiagnostics() {
+    return scene?.getRendererDiagnostics?.() || null;
+  }
+
   function hasSceneLoadInFlight() {
     return Boolean(sceneLoadPromise);
   }
@@ -388,6 +392,7 @@ export function createRuntimeController({
     getScene,
     getSceneKind,
     getSceneInitError,
+    getRendererDiagnostics,
     hasSceneLoadInFlight,
     ensureScene,
     bootSceneNow,

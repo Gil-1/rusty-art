@@ -1,4 +1,4 @@
-import { startAnalytics } from './analytics.js';
+import { startAnalytics, trackAnalyticsPageView } from './analytics.js';
 import { createArtworkFetcher, loadManifestWithFallback } from './main-data.js';
 import { createPublicArchiveRuntimeSession } from './public-archive-runtime-session.js';
 import { createCaptureStateController } from './main-capture-state.js';
@@ -8,6 +8,7 @@ import {
 } from './main-presentation-state.js';
 import { createRuntimeController } from './main-runtime-controller.js';
 import { createArtworkRouteHistoryController } from './main-artwork-route-history.js';
+import { createPublicArtworkShareMetadataController } from './public-artwork-share-metadata.js';
 import {
   bindRuntimeShellEvents,
   queryRuntimeDomRefs,
@@ -24,6 +25,19 @@ import { createArchiveCardElement } from './main-render.js';
 const PAGE_SIZE = 12;
 
 startAnalytics();
+
+function resetDocumentScroll(windowRef = window, documentRef = document) {
+  try {
+    if ('scrollRestoration' in windowRef.history) {
+      windowRef.history.scrollRestoration = 'manual';
+    }
+  } catch {}
+  if (documentRef?.documentElement) documentRef.documentElement.scrollTop = 0;
+  if (documentRef?.body) documentRef.body.scrollTop = 0;
+  windowRef.scrollTo?.(0, 0);
+}
+
+resetDocumentScroll();
 
 const shellOptions = resolveRuntimeShellOptions({
   windowRef: window,
@@ -65,6 +79,8 @@ const {
   fallbackPanel,
   fallbackMessage,
   retryLoad,
+  storyContextPanel,
+  storyToggle,
   heroHeadlineToggle,
   mobileChromeToggle
 } = queryRuntimeDomRefs(document);
@@ -79,6 +95,11 @@ let presentationState = createInitialPresentationState({
 const fetchArtwork = createArtworkFetcher();
 const captureStateController = createCaptureStateController({ captureMode });
 const artworkRouteHistory = createArtworkRouteHistoryController({ windowRef: window, captureMode });
+const shareMetadataController = createPublicArtworkShareMetadataController({
+  windowRef: window,
+  documentRef: document,
+  siteUrl: import.meta.env.PUBLIC_SITE_URL
+});
 let archiveController = null;
 let renderEffects = null;
 const adaptiveOverlaySession = createAdaptiveOverlaySession({
@@ -134,6 +155,8 @@ renderEffects = createRuntimeRenderEffects({
     fallbackPanel,
     fallbackMessage,
     retryLoad,
+    storyContextPanel,
+    storyToggle,
     heroHeadlineToggle,
     mobileChromeToggle
   },
@@ -170,7 +193,20 @@ archiveController = createPublicArchiveRuntimeSession({
   estimateArtworkLuma,
   createArchiveCardElement,
   onArtworkRouteChange: (routeChange) => artworkRouteHistory.syncLoadedArtworkRoute(routeChange),
-  render: renderEffects.render
+  render: {
+    ...renderEffects.render,
+    updateShareMetadata: (change) => {
+      const result = shareMetadataController.update(change);
+      if (change?.routeAction && change.routeAction !== 'none') {
+        trackAnalyticsPageView({
+          windowRef: window,
+          documentRef: document,
+          context: result.metadata?.analytics || {}
+        });
+      }
+      return result;
+    }
+  },
 });
 
 function isMobileViewport() {
@@ -185,6 +221,49 @@ function init() {
   return archiveController.init();
 }
 
+function isElementWithin(element, target) {
+  return Boolean(element && target && (element === target || element.contains?.(target)));
+}
+
+function forwardWheelToCanvas(event) {
+  if (!canvas || event?.target === canvas) return false;
+  if (typeof WheelEvent !== 'function' || typeof canvas.dispatchEvent !== 'function') return false;
+
+  canvas.dispatchEvent(new WheelEvent('wheel', {
+    bubbles: true,
+    cancelable: true,
+    composed: true,
+    deltaX: event.deltaX,
+    deltaY: event.deltaY,
+    deltaZ: event.deltaZ,
+    deltaMode: event.deltaMode,
+    clientX: event.clientX,
+    clientY: event.clientY,
+    screenX: event.screenX,
+    screenY: event.screenY,
+    ctrlKey: event.ctrlKey,
+    shiftKey: event.shiftKey,
+    altKey: event.altKey,
+    metaKey: event.metaKey
+  }));
+  return true;
+}
+
+function handleWheelRouting(event) {
+  if (event?.target === canvas) return false;
+  if (galleryDialog && !galleryDialog.hidden) {
+    if (isElementWithin(galleryList, event?.target)) return false;
+    event?.preventDefault?.();
+    resetDocumentScroll();
+    return true;
+  }
+
+  event?.preventDefault?.();
+  resetDocumentScroll();
+  forwardWheelToCanvas(event);
+  return true;
+}
+
 bindRuntimeShellEvents({
   refs: {
     loadMoreButton,
@@ -196,6 +275,7 @@ bindRuntimeShellEvents({
     galleryDialog,
     galleryClose,
     mobileChromeToggle,
+    storyToggle,
     heroHeadlineToggle
   },
   documentRef: document,
@@ -214,24 +294,23 @@ bindRuntimeShellEvents({
     onOpenGallery: renderEffects.openGallery,
     onCloseGallery: renderEffects.closeGallery,
     onToggleMobileChrome: renderEffects.toggleMobileChrome,
+    onToggleStoryContext: renderEffects.toggleStoryContext,
     onToggleHeadline: renderEffects.toggleHeadline,
     onPointerDown: (event) => {
-      if (event?.target?.closest?.('.topline, .now-chip, .gallery-dialog, button, a, summary')) return;
+      if (event?.target?.closest?.('.topline, .now-chip, .story-context-panel, .gallery-dialog, button, a, summary')) return;
       renderEffects.markMobileChromeInteraction();
     },
-    onScroll: () => {
-      if (!isMobileViewport()) return;
-      renderEffects.updateMobileChromeState();
-    },
+    onWheel: handleWheelRouting,
     onPopState: () => {
       if (captureMode) return false;
-      return archiveController.loadArtworkFromRoute(artworkRouteHistory.readCurrentRoute()).catch((error) => {
+      return archiveController.loadArtworkFromRoute(artworkRouteHistory.readCurrentRoute(), { routeAction: 'popstate' }).catch((error) => {
         renderEffects.showStatus(`Could not restore artwork from browser history: ${error.message}`, 'error');
       });
     },
     onViewportChange: renderEffects.refreshViewportUi,
     onKeydown: (event) => {
       if (renderEffects.handleGalleryKeydown(event)) return true;
+      if (renderEffects.handleStoryContextKeydown(event)) return true;
       return archiveController.handleKeyboardCommand(event);
     }
   }
