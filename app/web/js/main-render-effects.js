@@ -118,8 +118,9 @@ export function createRuntimeRenderEffects({
 
   function openGallery() {
     const trigger = galleryTrigger();
-    if (captureMode || !refs.galleryDialog || trigger?.disabled) return false;
-    renderGallery();
+    const manifest = resolveController(getArchiveController)?.getManifest?.();
+    if (captureMode || !refs.galleryDialog || trigger?.disabled || !manifest?.items?.length) return false;
+    renderGallery(manifest);
     refs.galleryDialog.hidden = false;
     refs.galleryDialog.setAttribute?.('aria-hidden', 'false');
     body?.classList?.add?.('gallery-open');
@@ -184,6 +185,8 @@ export function createRuntimeRenderEffects({
   function resetUiForBoot() {
     facts.currentArtworkLumaEstimate = null;
     adaptiveOverlaySession?.reset?.();
+    closeGallery({ restoreFocus: false });
+    if (galleryTrigger()) galleryTrigger().disabled = true;
     return updateState((state) => resetChromeUiForBootEffects(state, {
       archiveList: refs.archiveList,
       quickPicker: galleryTrigger(),
