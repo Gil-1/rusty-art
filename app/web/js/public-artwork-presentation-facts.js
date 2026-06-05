@@ -471,28 +471,34 @@ export function buildQuickPickerPresentationFacts(item = {}, { compact = false }
   const artist = normalizedText(item.artist, 'Unknown artist');
   const title = normalizedText(item.title, 'Untitled');
   const fullLabel = `${date} · ${artist} · ${title}`;
+  const compactArtist = artist.length > 22 ? `${artist.slice(0, 21)}…` : artist;
+  const metadataLabel = `${date} · ${compact ? compactArtist : artist}`;
 
   if (!compact) {
     return {
       label: fullLabel,
+      metadataLabel,
+      titleLabel: title,
       fullLabel,
       actionLabel: `Open artwork gallery, current artwork: ${fullLabel}`
     };
   }
 
-  const compactArtist = artist.length > 22 ? `${artist.slice(0, 21)}…` : artist;
-  const label = `${date} · ${compactArtist}`;
   return {
-    label,
+    label: metadataLabel,
+    metadataLabel,
+    titleLabel: title,
     fullLabel,
     actionLabel: `Open artwork gallery, current artwork: ${fullLabel}`
   };
 }
 
-export function buildGalleryTriggerPresentationFacts(item = {}, { compact = false } = {}) {
+export function buildGalleryTriggerPresentationFacts(item = {}, { compact = true } = {}) {
   if (!item || !Object.keys(asObject(item)).length) {
     return {
       label: 'Open gallery',
+      metadataLabel: 'Artwork archive',
+      titleLabel: 'Open gallery',
       fullLabel: 'Open artwork gallery',
       actionLabel: 'Open artwork gallery'
     };

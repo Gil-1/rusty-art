@@ -186,8 +186,10 @@ test('gallery presentation facts preserve manifest order, trusted thumbnails, an
   const triggerFacts = buildGalleryTriggerPresentationFacts(manifest.items[1]);
   const galleryFacts = buildGalleryPresentationFacts(manifest, { activeFile: manifest.items[1].file });
 
-  assert.match(triggerFacts.label, /2026-06-04/);
-  assert.match(triggerFacts.fullLabel, /Quiet field/);
+  assert.equal(triggerFacts.label, '2026-06-04 · Helen Frankenthaler');
+  assert.equal(triggerFacts.metadataLabel, '2026-06-04 · Helen Frankenthaler');
+  assert.equal(triggerFacts.titleLabel, 'Quiet field');
+  assert.equal(triggerFacts.fullLabel, '2026-06-04 · Helen Frankenthaler · Quiet field');
   assert.equal(galleryFacts.cards.map((card) => card.file).join(','), './data/artworks/a.json,./data/artworks/b.json');
   assert.deepEqual(galleryFacts.cards[0].thumbnail, {
     src: './data/media/a/thumb-320.jpg',
@@ -195,6 +197,25 @@ test('gallery presentation facts preserve manifest order, trusted thumbnails, an
   });
   assert.equal(galleryFacts.cards[1].active, true);
   assert.equal(galleryFacts.cards[1].ariaCurrent, 'true');
+});
+
+test('runtime gallery trigger uses both visible lines for artwork context', () => {
+  installDocumentStub();
+  const refs = createRefs();
+  const effects = createRuntimeRenderEffects({
+    refs,
+    getPresentationState: () => ({ activeFile: manifest.items[1].file, activeIndex: 1 }),
+    getArchiveController: () => ({ getManifest: () => manifest }),
+    isMobileViewport: () => false
+  });
+
+  effects.render.populateQuickPicker(manifest, 1);
+
+  assert.match(refs.galleryTrigger.innerHTML, /2026-06-04 · Helen Frankenthaler/);
+  assert.match(refs.galleryTrigger.innerHTML, /Quiet field/);
+  assert.doesNotMatch(refs.galleryTrigger.innerHTML, />Gallery</);
+  assert.equal(refs.galleryTrigger.title, '2026-06-04 · Helen Frankenthaler · Quiet field');
+  assert.equal(refs.galleryTrigger.attributes['aria-label'], 'Open artwork gallery, current artwork: 2026-06-04 · Helen Frankenthaler · Quiet field');
 });
 
 test('archive card renderer marks the active gallery card as current', () => {

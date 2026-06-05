@@ -251,11 +251,13 @@ export function populateQuickPicker(quickPicker, manifest, { compact = false, ac
   const item = manifest.items[activeIndex] || null;
   const facts = buildGalleryTriggerPresentationFacts(item, { compact });
 
+  const metadataLabel = facts.metadataLabel || facts.label || 'Artwork archive';
+  const titleLabel = facts.titleLabel || facts.label || 'Open gallery';
   quickPicker.innerHTML = facts.options
     ? facts.options
       .map((option) => `<option value="${escapeHtml(option.value)}" title="${escapeHtml(option.fullLabel)}">${escapeHtml(option.label)}</option>`)
       .join('')
-    : `<span class="gallery-trigger-kicker" aria-hidden="true">Gallery</span><span class="gallery-trigger-label">${escapeHtml(facts.label)}</span>`;
+    : `<span class="gallery-trigger-kicker">${escapeHtml(metadataLabel)}</span><span class="gallery-trigger-label">${escapeHtml(titleLabel)}</span>`;
   quickPicker.title = facts.fullLabel || '';
   quickPicker.setAttribute?.('aria-label', facts.actionLabel || 'Open artwork gallery');
   return facts;

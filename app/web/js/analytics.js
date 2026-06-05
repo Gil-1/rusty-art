@@ -4,16 +4,22 @@ const CROSS_DOMAIN_LINKER_DOMAINS = Object.freeze([
   'edge-solutions.be',
   'rusty-art.edge-solutions.be'
 ]);
+const EMPTY_ANALYTICS_ENV = Object.freeze({});
+
+function readDefaultAnalyticsEnv() {
+  return import.meta.env || EMPTY_ANALYTICS_ENV;
+}
 
 function cleanAnalyticsId(value, pattern) {
   const id = String(value || '').trim();
   return pattern.test(id) ? id : '';
 }
 
-function resolveAnalyticsIds(env = import.meta.env) {
-  const publicGtmId = String(env.PUBLIC_GTM_ID || '').trim();
+function resolveAnalyticsIds(env = readDefaultAnalyticsEnv()) {
+  const source = env || EMPTY_ANALYTICS_ENV;
+  const publicGtmId = String(source.PUBLIC_GTM_ID || '').trim();
   return {
-    gaMeasurementId: cleanAnalyticsId(env.PUBLIC_GA_MEASUREMENT_ID, GA4_PATTERN)
+    gaMeasurementId: cleanAnalyticsId(source.PUBLIC_GA_MEASUREMENT_ID, GA4_PATTERN)
       || cleanAnalyticsId(publicGtmId, GA4_PATTERN),
     gtmId: cleanAnalyticsId(publicGtmId, GTM_PATTERN)
   };
@@ -25,7 +31,7 @@ function compactAnalyticsParams(params) {
   );
 }
 
-function readAnalyticsConfig(env = import.meta.env) {
+function readAnalyticsConfig(env = readDefaultAnalyticsEnv()) {
   return resolveAnalyticsIds(env);
 }
 

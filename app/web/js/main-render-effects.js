@@ -246,7 +246,7 @@ export function createRuntimeRenderEffects({
     if (!trigger || !manifest?.items) return null;
     const state = getState();
     const selectedIndex = activeIndex >= 0 ? activeIndex : state.activeIndex;
-    facts.quickPickerCompact = isMobileViewport();
+    facts.quickPickerCompact = true;
     const pickerFacts = populateQuickPickerUi(trigger, manifest, {
       compact: facts.quickPickerCompact,
       activeIndex: selectedIndex
@@ -344,7 +344,7 @@ export function createRuntimeRenderEffects({
       const controller = resolveController(getArchiveController);
       const manifest = controller?.getManifest?.();
       if (manifest?.items?.length) {
-        const shouldCompactPicker = isMobileViewport();
+        const shouldCompactPicker = true;
         if (shouldCompactPicker !== facts.quickPickerCompact) {
           populateQuickPicker(manifest);
           syncQuickControls(manifest, getState().activeIndex);
