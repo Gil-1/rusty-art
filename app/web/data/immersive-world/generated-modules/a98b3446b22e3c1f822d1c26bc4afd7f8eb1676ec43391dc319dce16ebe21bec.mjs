@@ -1,43 +1,48 @@
-import { createImmersiveWorldPart as createBasePart } from './393007f3dbe7d009567e9b2931906e74a26bc5a1b1632e36171f3b0fabf9d9f9.mjs';
+import { createImmersiveWorldPart as createBasePart } from './29c80c148bd794c9a4b736e2e5f9859880c0dc59386f45000651dacd6e4daa29.mjs';
 
 const OVERLAY = {
-  "salt": "artist-gpu-detail-restore-v5-mobile-light",
-  "renderOrderBase": 156,
-  "planeCount": 34,
-  "ribbonCount": 52,
-  "scratchCount": 90,
-  "burstCount": 4,
-  "grainCount": 65,
-  "fiberCount": 800,
-  "fiberOpacity": 0.21,
-  "opacity": 1.08,
-  "z": -2.8,
-  "xMin": -6.3,
-  "xMax": 6.2,
-  "yMin": -2.9,
-  "yMax": 2.9,
+  "salt": "world-gpu-detail-restore-v4",
+  "renderOrderBase": 74,
+  "planeCount": 42,
+  "ribbonCount": 34,
+  "scratchCount": 95,
+  "burstCount": 2,
+  "grainCount": 75,
+  "fiberCount": 850,
+  "fiberOpacity": 0.11,
+  "washOpacityScale": 0.15,
+  "ribbonOpacityScale": 0.55,
+  "scratchOpacityScale": 0.55,
+  "grainOpacityScale": 0.35,
+  "burstOpacityScale": 0.55,
+  "opacity": 1,
+  "z": -5.2,
+  "xMin": -7.2,
+  "xMax": 7.1,
+  "yMin": -3.1,
+  "yMax": 3,
   "colors": [
-    "#d7c940",
-    "#d71920",
-    "#e65d1f",
-    "#238e3d",
+    "#e6ddbf",
+    "#efb399",
+    "#d79922",
+    "#8bcbd0",
+    "#1d6f73",
     "#164f9d",
-    "#8ea7c3",
-    "#e6ddbf"
+    "#d71920"
   ],
   "washes": [
     "#e6ddbf",
-    "#f4c8c1",
+    "#c9ddd6",
+    "#efb399",
     "#8bcbd0",
-    "#d79922",
-    "#efb399"
+    "#d79922"
   ],
   "lineColors": [
-    "#161817",
-    "#60402c",
-    "#d71920",
-    "#164f9d",
-    "#238e3d"
+    "#2a4749",
+    "#6b6f7d",
+    "#b8573b",
+    "#d79922",
+    "#1d6f73"
   ]
 };
 
@@ -219,7 +224,7 @@ function addPaperWashes(THREE, group, owned, random) {
     addPlane(THREE, group, owned, {
       name: 'gpu-restored-translucent-bowling-wash-' + index,
       color,
-      opacity: (0.038 + random() * 0.08) * OVERLAY.opacity,
+      opacity: (0.038 + random() * 0.08) * OVERLAY.opacity * (OVERLAY.washOpacityScale ?? 1),
       x: lerp(OVERLAY.xMin, OVERLAY.xMax, random() * 0.92 + 0.04),
       y: lerp(OVERLAY.yMin, OVERLAY.yMax, random() * 0.88 + 0.06),
       z: OVERLAY.z - 0.34 - random() * 2.8 - centerBias * 0.7,
@@ -248,7 +253,7 @@ function addFlowRibbons(THREE, group, owned, random) {
       points,
       width: 0.045 + random() * 0.24,
       color,
-      opacity: (0.045 + random() * 0.12) * OVERLAY.opacity,
+      opacity: (0.045 + random() * 0.12) * OVERLAY.opacity * (OVERLAY.ribbonOpacityScale ?? 1),
       renderOrder: OVERLAY.renderOrderBase + 16 + index % 17,
       phase: random() * Math.PI * 2
     });
@@ -275,7 +280,7 @@ function addScratchesAndDrips(THREE, group, owned, random) {
       name: 'gpu-restored-dry-scratch-drip-' + index,
       points,
       color: choose(random, OVERLAY.lineColors),
-      opacity: (0.055 + random() * 0.18) * OVERLAY.opacity,
+      opacity: (0.055 + random() * 0.18) * OVERLAY.opacity * (OVERLAY.scratchOpacityScale ?? 1),
       renderOrder: OVERLAY.renderOrderBase + 44 + index % 19,
       phase: random() * Math.PI * 2
     });
@@ -289,7 +294,7 @@ function addPigmentGrainPlanes(THREE, group, owned, random) {
     addPlane(THREE, group, owned, {
       name: 'gpu-restored-small-pigment-chip-' + index,
       color,
-      opacity: (0.04 + random() * 0.12) * OVERLAY.opacity,
+      opacity: (0.04 + random() * 0.12) * OVERLAY.opacity * (OVERLAY.grainOpacityScale ?? 1),
       x: lerp(OVERLAY.xMin, OVERLAY.xMax, random()),
       y: lerp(OVERLAY.yMin, OVERLAY.yMax, random()),
       z: OVERLAY.z + 0.95 - random() * 2.2,
@@ -368,7 +373,7 @@ function addBurst(THREE, group, owned, random, center, radius, index) {
       points: [p0, p1],
       width,
       color: choose(random, OVERLAY.colors),
-      opacity: (0.12 + random() * 0.18) * OVERLAY.opacity,
+      opacity: (0.12 + random() * 0.18) * OVERLAY.opacity * (OVERLAY.burstOpacityScale ?? 1),
       renderOrder: OVERLAY.renderOrderBase + 92 + ray % 9,
       phase: random() * Math.PI * 2
     });
@@ -390,12 +395,12 @@ function addRadialBursts(THREE, group, owned, random) {
 function createGpuDetailOverlay(context) {
   const THREE = context?.THREE;
   if (!THREE) return null;
-  const random = seededRandom(context, 'artist-mark-field-gpu-detail-overlay');
+  const random = seededRandom(context, 'world-environment-gpu-detail-overlay');
   const group = new THREE.Group();
   const owned = { geometries: [], materials: [] };
-  group.name = 'artist-mark-field-gpu-restored-no-texture-detail-overlay';
+  group.name = 'world-environment-gpu-restored-no-texture-detail-overlay';
   group.userData = {
-    partId: 'artist-mark-field',
+    partId: 'world-environment',
     role: 'gpu-restored-detail-overlay',
     texturePolicy: 'no startup texture baking',
     detailMethod: 'WebGPU-safe translucent geometry rendered on GPU'

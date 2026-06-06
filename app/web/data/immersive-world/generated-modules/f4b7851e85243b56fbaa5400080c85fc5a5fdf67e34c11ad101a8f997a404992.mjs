@@ -1,7 +1,7 @@
 import { createImmersiveWorldPart as createBasePart } from './ea2c26c74913750181fc81ed45cfbb71a11bc5029a91830f3149405a906f4fbf.mjs';
 
 const OVERLAY = {
-  "salt": "flow-gpu-detail-restore-v5-mobile-light",
+  "salt": "flow-gpu-detail-restore-v4",
   "renderOrderBase": 118,
   "planeCount": 24,
   "ribbonCount": 74,
@@ -9,7 +9,12 @@ const OVERLAY = {
   "burstCount": 0,
   "grainCount": 55,
   "fiberCount": 725,
-  "fiberOpacity": 0.21,
+  "fiberOpacity": 0.105,
+  "washOpacityScale": 0.15,
+  "ribbonOpacityScale": 0.55,
+  "scratchOpacityScale": 0.55,
+  "grainOpacityScale": 0.35,
+  "burstOpacityScale": 0.55,
   "opacity": 1.14,
   "z": -3.4,
   "xMin": -6.6,
@@ -219,7 +224,7 @@ function addPaperWashes(THREE, group, owned, random) {
     addPlane(THREE, group, owned, {
       name: 'gpu-restored-translucent-bowling-wash-' + index,
       color,
-      opacity: (0.038 + random() * 0.08) * OVERLAY.opacity,
+      opacity: (0.038 + random() * 0.08) * OVERLAY.opacity * (OVERLAY.washOpacityScale ?? 1),
       x: lerp(OVERLAY.xMin, OVERLAY.xMax, random() * 0.92 + 0.04),
       y: lerp(OVERLAY.yMin, OVERLAY.yMax, random() * 0.88 + 0.06),
       z: OVERLAY.z - 0.34 - random() * 2.8 - centerBias * 0.7,
@@ -248,7 +253,7 @@ function addFlowRibbons(THREE, group, owned, random) {
       points,
       width: 0.045 + random() * 0.24,
       color,
-      opacity: (0.045 + random() * 0.12) * OVERLAY.opacity,
+      opacity: (0.045 + random() * 0.12) * OVERLAY.opacity * (OVERLAY.ribbonOpacityScale ?? 1),
       renderOrder: OVERLAY.renderOrderBase + 16 + index % 17,
       phase: random() * Math.PI * 2
     });
@@ -275,7 +280,7 @@ function addScratchesAndDrips(THREE, group, owned, random) {
       name: 'gpu-restored-dry-scratch-drip-' + index,
       points,
       color: choose(random, OVERLAY.lineColors),
-      opacity: (0.055 + random() * 0.18) * OVERLAY.opacity,
+      opacity: (0.055 + random() * 0.18) * OVERLAY.opacity * (OVERLAY.scratchOpacityScale ?? 1),
       renderOrder: OVERLAY.renderOrderBase + 44 + index % 19,
       phase: random() * Math.PI * 2
     });
@@ -289,7 +294,7 @@ function addPigmentGrainPlanes(THREE, group, owned, random) {
     addPlane(THREE, group, owned, {
       name: 'gpu-restored-small-pigment-chip-' + index,
       color,
-      opacity: (0.04 + random() * 0.12) * OVERLAY.opacity,
+      opacity: (0.04 + random() * 0.12) * OVERLAY.opacity * (OVERLAY.grainOpacityScale ?? 1),
       x: lerp(OVERLAY.xMin, OVERLAY.xMax, random()),
       y: lerp(OVERLAY.yMin, OVERLAY.yMax, random()),
       z: OVERLAY.z + 0.95 - random() * 2.2,
@@ -368,7 +373,7 @@ function addBurst(THREE, group, owned, random, center, radius, index) {
       points: [p0, p1],
       width,
       color: choose(random, OVERLAY.colors),
-      opacity: (0.12 + random() * 0.18) * OVERLAY.opacity,
+      opacity: (0.12 + random() * 0.18) * OVERLAY.opacity * (OVERLAY.burstOpacityScale ?? 1),
       renderOrder: OVERLAY.renderOrderBase + 92 + ray % 9,
       phase: random() * Math.PI * 2
     });
