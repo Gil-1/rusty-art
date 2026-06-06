@@ -149,13 +149,13 @@
         "moduleRef": {
           "type": "immersive-world-generated-module",
           "version": 1,
-          "moduleId": "world-environment-frank-bowling-bico-against-flow-pressure",
+          "moduleId": "world-environment-frank-bowling-bico-gpu-detail-restore",
           "partId": "world-environment",
-          "hash": "29c80c148bd794c9a4b736e2e5f9859880c0dc59386f45000651dacd6e4daa29",
-          "integrity": "sha256-29c80c148bd794c9a4b736e2e5f9859880c0dc59386f45000651dacd6e4daa29",
+          "hash": "55a67f80597266733a772596bafb59ffe5ad19ab55e19a364023341044eb7456",
+          "integrity": "sha256-55a67f80597266733a772596bafb59ffe5ad19ab55e19a364023341044eb7456",
           "exportName": "createImmersiveWorldPart",
-          "file": "data/immersive-world/generated-modules/29c80c148bd794c9a4b736e2e5f9859880c0dc59386f45000651dacd6e4daa29.mjs",
-          "url": "./data/immersive-world/generated-modules/29c80c148bd794c9a4b736e2e5f9859880c0dc59386f45000651dacd6e4daa29.mjs",
+          "file": "data/immersive-world/generated-modules/55a67f80597266733a772596bafb59ffe5ad19ab55e19a364023341044eb7456.mjs",
+          "url": "./data/immersive-world/generated-modules/55a67f80597266733a772596bafb59ffe5ad19ab55e19a364023341044eb7456.mjs",
           "rendererCompatibility": {
             "version": 1,
             "targetMode": "webgpu-project-scene",
@@ -169,33 +169,39 @@
             "compatibleSurfaces": [
               {
                 "reason": "webgpu-safe-material",
-                "filePath": "bundled-generated-module.mjs",
-                "pos": 5517,
+                "filePath": "world-environment.module.mjs",
+                "pos": 2264,
                 "materialType": "MeshBasicMaterial"
               },
               {
                 "reason": "webgpu-safe-material",
-                "filePath": "bundled-generated-module.mjs",
-                "pos": 6971,
-                "materialType": "MeshBasicMaterial"
+                "filePath": "world-environment.module.mjs",
+                "pos": 2613,
+                "materialType": "LineBasicMaterial"
               },
               {
                 "reason": "webgpu-safe-material",
-                "filePath": "bundled-generated-module.mjs",
-                "pos": 10475,
-                "materialType": "MeshBasicMaterial"
-              },
-              {
-                "reason": "webgpu-safe-material",
-                "filePath": "bundled-generated-module.mjs",
-                "pos": 11633,
+                "filePath": "world-environment.module.mjs",
+                "pos": 11786,
                 "materialType": "LineBasicMaterial"
               },
               {
                 "reason": "webgpu-safe-material",
                 "filePath": "bundled-generated-module.mjs",
-                "pos": 12822,
-                "materialType": "PointsMaterial"
+                "pos": 2264,
+                "materialType": "MeshBasicMaterial"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "filePath": "bundled-generated-module.mjs",
+                "pos": 2613,
+                "materialType": "LineBasicMaterial"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "filePath": "bundled-generated-module.mjs",
+                "pos": 11786,
+                "materialType": "LineBasicMaterial"
               }
             ],
             "forbiddenSurfaces": []
@@ -238,13 +244,13 @@
         "moduleRef": {
           "type": "immersive-world-generated-module",
           "version": 1,
-          "moduleId": "non-literal-flow-pressure-frank-bowling-bico-complaint-against",
+          "moduleId": "non-literal-flow-pressure-frank-bowling-bico-gpu-detail-restore",
           "partId": "non-literal-flow-pressure",
-          "hash": "ea2c26c74913750181fc81ed45cfbb71a11bc5029a91830f3149405a906f4fbf",
-          "integrity": "sha256-ea2c26c74913750181fc81ed45cfbb71a11bc5029a91830f3149405a906f4fbf",
+          "hash": "05d4c5b3c399a9dc5b2f5c24e3270387959677a89fae5e8f2487943ec98f2e33",
+          "integrity": "sha256-05d4c5b3c399a9dc5b2f5c24e3270387959677a89fae5e8f2487943ec98f2e33",
           "exportName": "createImmersiveWorldPart",
-          "file": "data/immersive-world/generated-modules/ea2c26c74913750181fc81ed45cfbb71a11bc5029a91830f3149405a906f4fbf.mjs",
-          "url": "./data/immersive-world/generated-modules/ea2c26c74913750181fc81ed45cfbb71a11bc5029a91830f3149405a906f4fbf.mjs",
+          "file": "data/immersive-world/generated-modules/05d4c5b3c399a9dc5b2f5c24e3270387959677a89fae5e8f2487943ec98f2e33.mjs",
+          "url": "./data/immersive-world/generated-modules/05d4c5b3c399a9dc5b2f5c24e3270387959677a89fae5e8f2487943ec98f2e33.mjs",
           "rendererCompatibility": {
             "version": 1,
             "targetMode": "webgpu-project-scene",
@@ -258,21 +264,39 @@
             "compatibleSurfaces": [
               {
                 "reason": "webgpu-safe-material",
-                "filePath": "bundled-generated-module.mjs",
-                "pos": 3820,
+                "filePath": "non-literal-flow-pressure.module.mjs",
+                "pos": 2269,
                 "materialType": "MeshBasicMaterial"
               },
               {
                 "reason": "webgpu-safe-material",
-                "filePath": "bundled-generated-module.mjs",
-                "pos": 4477,
+                "filePath": "non-literal-flow-pressure.module.mjs",
+                "pos": 2618,
+                "materialType": "LineBasicMaterial"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "filePath": "non-literal-flow-pressure.module.mjs",
+                "pos": 11791,
                 "materialType": "LineBasicMaterial"
               },
               {
                 "reason": "webgpu-safe-material",
                 "filePath": "bundled-generated-module.mjs",
-                "pos": 6089,
-                "materialType": "PointsMaterial"
+                "pos": 2269,
+                "materialType": "MeshBasicMaterial"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "filePath": "bundled-generated-module.mjs",
+                "pos": 2618,
+                "materialType": "LineBasicMaterial"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "filePath": "bundled-generated-module.mjs",
+                "pos": 11791,
+                "materialType": "LineBasicMaterial"
               }
             ],
             "forbiddenSurfaces": []
@@ -315,13 +339,13 @@
         "moduleRef": {
           "type": "immersive-world-generated-module",
           "version": 1,
-          "moduleId": "artist-mark-field-frank-bowling-bico-mark-pressure",
+          "moduleId": "artist-mark-field-frank-bowling-bico-gpu-detail-restore",
           "partId": "artist-mark-field",
-          "hash": "393007f3dbe7d009567e9b2931906e74a26bc5a1b1632e36171f3b0fabf9d9f9",
-          "integrity": "sha256-393007f3dbe7d009567e9b2931906e74a26bc5a1b1632e36171f3b0fabf9d9f9",
+          "hash": "a3e465f9a765817e54b765405d873b28ab4cc510fb79e41b413d367b2928a460",
+          "integrity": "sha256-a3e465f9a765817e54b765405d873b28ab4cc510fb79e41b413d367b2928a460",
           "exportName": "createImmersiveWorldPart",
-          "file": "data/immersive-world/generated-modules/393007f3dbe7d009567e9b2931906e74a26bc5a1b1632e36171f3b0fabf9d9f9.mjs",
-          "url": "./data/immersive-world/generated-modules/393007f3dbe7d009567e9b2931906e74a26bc5a1b1632e36171f3b0fabf9d9f9.mjs",
+          "file": "data/immersive-world/generated-modules/a3e465f9a765817e54b765405d873b28ab4cc510fb79e41b413d367b2928a460.mjs",
+          "url": "./data/immersive-world/generated-modules/a3e465f9a765817e54b765405d873b28ab4cc510fb79e41b413d367b2928a460.mjs",
           "rendererCompatibility": {
             "version": 1,
             "targetMode": "webgpu-project-scene",
@@ -335,27 +359,39 @@
             "compatibleSurfaces": [
               {
                 "reason": "webgpu-safe-material",
-                "filePath": "bundled-generated-module.mjs",
-                "pos": 3799,
+                "filePath": "artist-mark-field.module.mjs",
+                "pos": 2271,
                 "materialType": "MeshBasicMaterial"
               },
               {
                 "reason": "webgpu-safe-material",
-                "filePath": "bundled-generated-module.mjs",
-                "pos": 4149,
-                "materialType": "MeshBasicMaterial"
+                "filePath": "artist-mark-field.module.mjs",
+                "pos": 2620,
+                "materialType": "LineBasicMaterial"
               },
               {
                 "reason": "webgpu-safe-material",
-                "filePath": "bundled-generated-module.mjs",
-                "pos": 4736,
+                "filePath": "artist-mark-field.module.mjs",
+                "pos": 11793,
                 "materialType": "LineBasicMaterial"
               },
               {
                 "reason": "webgpu-safe-material",
                 "filePath": "bundled-generated-module.mjs",
-                "pos": 6893,
-                "materialType": "PointsMaterial"
+                "pos": 2271,
+                "materialType": "MeshBasicMaterial"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "filePath": "bundled-generated-module.mjs",
+                "pos": 2620,
+                "materialType": "LineBasicMaterial"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "filePath": "bundled-generated-module.mjs",
+                "pos": 11793,
+                "materialType": "LineBasicMaterial"
               }
             ],
             "forbiddenSurfaces": []
