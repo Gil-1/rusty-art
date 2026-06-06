@@ -1,0 +1,1204 @@
+{
+  "id": "2026-06-06-0630z-after-students-teachers-also-protest-on-thursday-against-cuts-to-french",
+  "date": "2026-06-06",
+  "title": "After students, teachers also protest on Thursday against cuts to French-speaking education",
+  "generatedAt": "2026-06-06T06:38:52.905Z",
+  "news": {
+    "source": "bruzz",
+    "title": "After students, teachers also protest on Thursday against cuts to French-speaking education",
+    "link": "https://www.bruzz.be/actua/samenleving/na-leerlingen-betogen-donderdag-ook-leraren-tegen-besparingen-franstalig-onderwijs-2026-06-04",
+    "score": null
+  },
+  "inspiration": {
+    "artist": "Bridget Riley",
+    "tags": [
+      "non-literal grid pressure",
+      "Against Cuts",
+      "immersive-world"
+    ],
+    "links": {}
+  },
+  "seed": null,
+  "sceneStrategy": null,
+  "techStack": null,
+  "newsVisualMappings": [],
+  "qualityScore": {
+    "score": null,
+    "summary": null,
+    "heuristic": {
+      "score": null,
+      "breakdown": {}
+    },
+    "calibration": {
+      "sampleCount": 0,
+      "trustWeight": 0
+    },
+    "alignment": {
+      "totalAlign": null,
+      "components": {
+        "title": {
+          "score": null
+        },
+        "style": {
+          "score": null
+        },
+        "emotional": {
+          "score": null
+        }
+      }
+    }
+  },
+  "rationale": {
+    "intent": {
+      "signal": null,
+      "emotion": null,
+      "tension": null,
+      "balance": null,
+      "motion": null
+    },
+    "selection": {
+      "whyHeadline": null,
+      "priorityTerms": []
+    },
+    "qualitySummary": null
+  },
+  "runPolicy": null,
+  "artCreationMethod": "immersive-world-v1",
+  "world": {
+    "id": "immersive-world-590da81e869c-final-composition",
+    "method": "immersive-world-v1",
+    "title": "After students, teachers also protest on Thursday against cuts to French-speaking education",
+    "environment": {
+      "kind": "inside-facing-artist-field",
+      "color": "#E3E2E0",
+      "fieldColor": "#E1D0B2",
+      "fogDensity": 0.006,
+      "radius": 92,
+      "opacity": 0.94,
+      "palette": [
+        "pale-paper-white",
+        "light-orange",
+        "pale-muted-pink",
+        "teal-counterpoint",
+        "dark-black-line",
+        "dark-muted-red"
+      ],
+      "compositionIntent": "full-surround vertical stripe pressure with a central white civic aperture, cropped diagonals, and layered Riley-style grid interruptions for Against Cuts"
+    },
+    "camera": {
+      "owner": "world-composition",
+      "fov": 66,
+      "near": 0.08,
+      "far": 220,
+      "position": [
+        0.22,
+        2.12,
+        14.2
+      ],
+      "target": [
+        0.55,
+        0.18,
+        -5.6
+      ],
+      "distanceSafety": {
+        "nearFarOwnedHere": true,
+        "minPartDistance": 1.7,
+        "clippingRisk": "low"
+      }
+    },
+    "lighting": {
+      "owner": "world-composition",
+      "ambientColor": "#f0e4d0",
+      "ambientIntensity": 0.72,
+      "keyColor": "#fffaf0",
+      "keyIntensity": 0.96,
+      "keyPosition": [
+        4.2,
+        6,
+        8
+      ],
+      "rimColor": "#0a6c68",
+      "rimIntensity": 0.34,
+      "rimPosition": [
+        -5.2,
+        2.3,
+        -5.4
+      ],
+      "contrast": {
+        "mode": "integrated-part-readability",
+        "notes": "warm paper light keeps matte hard-edge planes flat while a restrained teal rim separates central rings and diagonal support marks"
+      }
+    },
+    "outputColorTransform": {
+      "owner": "world-composition",
+      "mode": "final-color-contrast-only",
+      "contrast": 1.04,
+      "saturation": 1.03,
+      "exposure": 1,
+      "vignette": 0.05,
+      "hueShift": 0,
+      "distortion": 0
+    },
+    "parts": [
+      {
+        "id": "world-environment",
+        "partId": "world-environment",
+        "role": "world-environment",
+        "moduleRef": {
+          "type": "immersive-world-generated-module",
+          "version": 1,
+          "moduleId": "world-environment-bridget-riley-grid-pressure-v1",
+          "partId": "world-environment",
+          "hash": "65b5d2d3c057a54321fb5fc40f70bb23fe72de994dc25bf2e7056c5ad9b17bef",
+          "integrity": "sha256-65b5d2d3c057a54321fb5fc40f70bb23fe72de994dc25bf2e7056c5ad9b17bef",
+          "exportName": "createImmersiveWorldPart",
+          "file": "data/immersive-world/generated-modules/65b5d2d3c057a54321fb5fc40f70bb23fe72de994dc25bf2e7056c5ad9b17bef.mjs",
+          "url": "./data/immersive-world/generated-modules/65b5d2d3c057a54321fb5fc40f70bb23fe72de994dc25bf2e7056c5ad9b17bef.mjs",
+          "rendererCompatibility": {
+            "version": 1,
+            "targetMode": "webgpu-project-scene",
+            "compatibilityStatus": "webgpu-compatible",
+            "webgpuCompatible": true,
+            "evidenceReasons": [
+              "webgpu-safe-material",
+              "project-webgpu-material-factory"
+            ],
+            "compatibleSurfaces": [
+              {
+                "reason": "webgpu-safe-material",
+                "filePath": "world-environment.module.mjs",
+                "pos": 1583,
+                "materialType": "MeshBasicMaterial"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "filePath": "world-environment.module.mjs",
+                "pos": 2015,
+                "materialType": "LineBasicMaterial"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "filePath": "bundled-generated-module.mjs",
+                "pos": 862,
+                "materialType": "MeshBasicMaterial"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "filePath": "bundled-generated-module.mjs",
+                "pos": 1127,
+                "materialType": "LineBasicMaterial"
+              },
+              {
+                "reason": "project-webgpu-material-factory",
+                "factoryId": "matte-painted-surface",
+                "id": "matte-painted-surface",
+                "category": "matte-painted-surface",
+                "runtimeSurface": "three-standard-material",
+                "materialType": "MeshStandardMaterial",
+                "guidance": [
+                  "Use for painted, paper, canvas, ink wash, graphite, stain, and transfer surfaces.",
+                  "Represent texture through declarative surface controls and WebGPU-safe texture descriptors."
+                ]
+              },
+              {
+                "reason": "project-webgpu-material-factory",
+                "factoryId": "color-field",
+                "id": "color-field",
+                "category": "color-field",
+                "runtimeSurface": "three-basic-or-standard-material",
+                "materialType": "MeshBasicMaterial",
+                "guidance": [
+                  "Use for all-over color fields, hard-edged planes, atmospheric bands, and flat graphic fields.",
+                  "Prefer geometry layers or declarative texture descriptors over GLSL gradients."
+                ]
+              },
+              {
+                "reason": "project-webgpu-material-factory",
+                "factoryId": "soft-particles",
+                "id": "soft-particles",
+                "category": "soft-particles",
+                "runtimeSurface": "three-points-material",
+                "materialType": "PointsMaterial",
+                "guidance": [
+                  "Use for soft atmosphere, dust, floating pigment, and particulate halos.",
+                  "Keep the particle logic deterministic and inspectable in data."
+                ]
+              },
+              {
+                "reason": "project-webgpu-material-factory",
+                "factoryId": "post-color-transform",
+                "id": "post-color-transform",
+                "category": "post-color-transform",
+                "runtimeSurface": "declarative-post-color-transform",
+                "materialType": "TSLNodeMaterial",
+                "guidance": [
+                  "Use for WebGPU-safe color grading and output transforms.",
+                  "Do not use legacy GLSL post passes for WebGPU project scenes."
+                ]
+              }
+            ]
+          }
+        },
+        "params": {
+          "band": "environment",
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "scale": 1,
+          "renderOrder": 0,
+          "visibilityPriority": "environment",
+          "compositionUse": "dominant full-surround stripe shell, cropped diagonals, ring aperture, and far-line pressure field"
+        },
+        "evidence": {
+          "workshopAcceptance": [
+            "Wrote the final ES module to drafts/world-environment.module.mjs.",
+            "Static check succeeded with validation.pass true and no errors; package compatibility reported webgpuCompatible true with MeshBasicMaterial and LineBasicMaterial evidence and no forbidden surfaces.",
+            "Playwright preview attempt 1 succeeded for desktop. Screenshot shows a dominant full-surround Bridget Riley-derived stripe environment with central white aperture, radial rings, cropped diagonals, teal/warm-earth counterpoints, and dense black/red grid pressure.",
+            "Render report healthStatus ok, captureStatus ok, nonBlankRatio 0.893482, centerNonBlankRatio 0.929572, dynamicRange 255, deadSpaceRatio 0.034622.",
+            "desktop:part-preview-evolution/001-world-environment-accepted-desktop.jpg"
+          ],
+          "selfReview": {
+            "accepted": true,
+            "summary": "Accepted: real dominant environment module with preview-backed evidence.",
+            "strengths": [
+              "Strong first-frame coverage and contrast.",
+              "Artist/news signal is visible through vertical stripe systems, radial aperture, hard-edge diagonals, matte paper palette, teal counterpoints, and black/red pressure lines.",
+              "Uses WebGPU-safe standard Three.js material surfaces; no ShaderMaterial, RawShaderMaterial, large DataTexture baking, imports, fetch, timers, or ambient randomness."
+            ],
+            "concerns": [
+              "Preview runtime reported webgl-legacy renderer, but generated-module compatibility evidence reports webgpuCompatible true from safe material surfaces."
+            ],
+            "evidence": [
+              "drafts/world-environment.module.mjs",
+              "checks/check-result.json",
+              "previews/attempt-001/001-world-environment-draft-desktop.jpg",
+              "previews/attempt-001/desktop-render-report.json",
+              "agent-session:isolated-immersive-world-part-workshop-1780726065373-ea737028-d14d-440f"
+            ]
+          },
+          "rendererCompatibility": {
+            "version": 1,
+            "targetMode": "webgpu-project-scene",
+            "compatibilityStatus": "webgpu-compatible",
+            "webgpuCompatible": true,
+            "evidenceReasons": [
+              "webgpu-safe-material",
+              "project-webgpu-material-factory"
+            ],
+            "compatibleSurfaces": [
+              {
+                "reason": "webgpu-safe-material",
+                "pos": 1583,
+                "materialType": "MeshBasicMaterial"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "pos": 2015,
+                "materialType": "LineBasicMaterial"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "pos": 862,
+                "materialType": "MeshBasicMaterial"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "pos": 1127,
+                "materialType": "LineBasicMaterial"
+              },
+              {
+                "reason": "project-webgpu-material-factory",
+                "factoryId": "matte-painted-surface",
+                "id": "matte-painted-surface",
+                "category": "matte-painted-surface",
+                "runtimeSurface": "three-standard-material",
+                "materialType": "MeshStandardMaterial",
+                "guidance": [
+                  "Use for painted, paper, canvas, ink wash, graphite, stain, and transfer surfaces.",
+                  "Represent texture through declarative surface controls and WebGPU-safe texture descriptors."
+                ]
+              },
+              {
+                "reason": "project-webgpu-material-factory",
+                "factoryId": "color-field",
+                "id": "color-field",
+                "category": "color-field",
+                "runtimeSurface": "three-basic-or-standard-material",
+                "materialType": "MeshBasicMaterial",
+                "guidance": [
+                  "Use for all-over color fields, hard-edged planes, atmospheric bands, and flat graphic fields.",
+                  "Prefer geometry layers or declarative texture descriptors over GLSL gradients."
+                ]
+              },
+              {
+                "reason": "project-webgpu-material-factory",
+                "factoryId": "soft-particles",
+                "id": "soft-particles",
+                "category": "soft-particles",
+                "runtimeSurface": "three-points-material",
+                "materialType": "PointsMaterial",
+                "guidance": [
+                  "Use for soft atmosphere, dust, floating pigment, and particulate halos.",
+                  "Keep the particle logic deterministic and inspectable in data."
+                ]
+              },
+              {
+                "reason": "project-webgpu-material-factory",
+                "factoryId": "post-color-transform",
+                "id": "post-color-transform",
+                "category": "post-color-transform",
+                "runtimeSurface": "declarative-post-color-transform",
+                "materialType": "TSLNodeMaterial",
+                "guidance": [
+                  "Use for WebGPU-safe color grading and output transforms.",
+                  "Do not use legacy GLSL post passes for WebGPU project scenes."
+                ]
+              }
+            ]
+          },
+          "compositionAdaptations": [
+            "Kept as the dominant full-surround stripe shell with warm paper environment settings and canonical camera framing.",
+            "composition modified world-environment from isolated accepted-part defaults"
+          ],
+          "compositionBeforeHash": "c71408d3445cc8ee",
+          "compositionAfterHash": "59cd0cb9dc36e054"
+        }
+      },
+      {
+        "id": "non-literal-grid-pressure",
+        "partId": "non-literal-grid-pressure",
+        "role": "primary-news-signal",
+        "moduleRef": {
+          "type": "immersive-world-generated-module",
+          "version": 1,
+          "moduleId": "non-literal-grid-pressure-bridget-riley-grid-pressure-v1",
+          "partId": "non-literal-grid-pressure",
+          "hash": "e4ebf90b0d19125847d24ec9ff09b8d8301af434de216392a2f908f7f332be92",
+          "integrity": "sha256-e4ebf90b0d19125847d24ec9ff09b8d8301af434de216392a2f908f7f332be92",
+          "exportName": "createImmersiveWorldPart",
+          "file": "data/immersive-world/generated-modules/e4ebf90b0d19125847d24ec9ff09b8d8301af434de216392a2f908f7f332be92.mjs",
+          "url": "./data/immersive-world/generated-modules/e4ebf90b0d19125847d24ec9ff09b8d8301af434de216392a2f908f7f332be92.mjs",
+          "rendererCompatibility": {
+            "version": 1,
+            "targetMode": "webgpu-project-scene",
+            "compatibilityStatus": "webgpu-compatible",
+            "webgpuCompatible": true,
+            "evidenceReasons": [
+              "webgpu-safe-material",
+              "project-webgpu-material-factory"
+            ],
+            "compatibleSurfaces": [
+              {
+                "reason": "webgpu-safe-material",
+                "filePath": "non-literal-grid-pressure.module.mjs",
+                "pos": 1355,
+                "materialType": "MeshBasicMaterial"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "filePath": "non-literal-grid-pressure.module.mjs",
+                "pos": 1787,
+                "materialType": "LineBasicMaterial"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "filePath": "bundled-generated-module.mjs",
+                "pos": 720,
+                "materialType": "MeshBasicMaterial"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "filePath": "bundled-generated-module.mjs",
+                "pos": 988,
+                "materialType": "LineBasicMaterial"
+              },
+              {
+                "reason": "project-webgpu-material-factory",
+                "factoryId": "matte-painted-surface",
+                "id": "matte-painted-surface",
+                "category": "matte-painted-surface",
+                "runtimeSurface": "three-standard-material",
+                "materialType": "MeshStandardMaterial",
+                "guidance": [
+                  "Use for painted, paper, canvas, ink wash, graphite, stain, and transfer surfaces.",
+                  "Represent texture through declarative surface controls and WebGPU-safe texture descriptors."
+                ]
+              },
+              {
+                "reason": "project-webgpu-material-factory",
+                "factoryId": "color-field",
+                "id": "color-field",
+                "category": "color-field",
+                "runtimeSurface": "three-basic-or-standard-material",
+                "materialType": "MeshBasicMaterial",
+                "guidance": [
+                  "Use for all-over color fields, hard-edged planes, atmospheric bands, and flat graphic fields.",
+                  "Prefer geometry layers or declarative texture descriptors over GLSL gradients."
+                ]
+              },
+              {
+                "reason": "project-webgpu-material-factory",
+                "factoryId": "soft-particles",
+                "id": "soft-particles",
+                "category": "soft-particles",
+                "runtimeSurface": "three-points-material",
+                "materialType": "PointsMaterial",
+                "guidance": [
+                  "Use for soft atmosphere, dust, floating pigment, and particulate halos.",
+                  "Keep the particle logic deterministic and inspectable in data."
+                ]
+              },
+              {
+                "reason": "project-webgpu-material-factory",
+                "factoryId": "post-color-transform",
+                "id": "post-color-transform",
+                "category": "post-color-transform",
+                "runtimeSurface": "declarative-post-color-transform",
+                "materialType": "TSLNodeMaterial",
+                "guidance": [
+                  "Use for WebGPU-safe color grading and output transforms.",
+                  "Do not use legacy GLSL post passes for WebGPU project scenes."
+                ]
+              }
+            ]
+          }
+        },
+        "params": {
+          "band": "foreground",
+          "position": [
+            -0.05,
+            0.03,
+            -1.45
+          ],
+          "scale": 1.45,
+          "renderOrder": 4,
+          "visibilityPriority": "primary",
+          "compositionUse": "dominant near-central target, diagonal pressure planes, cut-lattice protest signal, and final white aperture interruption"
+        },
+        "evidence": {
+          "workshopAcceptance": [
+            "Inspected local concept reference image directly: broad cue used as advisory only for warm paper, vertical stripe fields, cropped diagonals, concentric target, dark line pressure, and teal counterpoint.",
+            "Static validation succeeded for drafts/non-literal-grid-pressure.module.mjs with validation.pass true and no errors.",
+            "Attempt 3 Playwright desktop preview captured successfully at previews/attempt-003/003-non-literal-grid-pressure-draft-desktop.jpg.",
+            "Attempt 3 render report status ok: readiness ready, health ok, capture ok, nonBlankRatio 0.986298, dynamicRange 255, centerCoverageRatio 0.724931.",
+            "Attempt 3 package report marked the module webgpu-compatible through MeshBasicMaterial and LineBasicMaterial surfaces with forbiddenSurfaces [].",
+            "desktop:part-preview-evolution/002-non-literal-grid-pressure-accepted-desktop.jpg"
+          ],
+          "selfReview": {
+            "accepted": true,
+            "summary": "Accepted: the module is a real WebGPU-safe Three.js part, readable in isolation, with Bridget Riley-inspired stripe/ring/diagonal systems carrying the selected education-cuts protest pressure.",
+            "strengths": [
+              "Strong central subject with white aperture and radial-symbol target.",
+              "Clear vertical grid pressure, cropped diagonals, matte warm-earth palette, dark hatching, and teal counterpoints.",
+              "No shader surfaces, imports, network, ambient randomness, or CPU-baked textures."
+            ],
+            "concerns": [
+              "Part preview runtime reported webgl-legacy backend for capture, but package compatibility evidence marks the module webgpu-compatible with only standard safe material surfaces."
+            ],
+            "evidence": [
+              "previews/attempt-003/003-non-literal-grid-pressure-draft-desktop.jpg",
+              "previews/attempt-003/desktop-render-report.json",
+              "checks/non-literal-grid-pressure-draft-attempt-3.e4ebf90b0d19125847d24ec9ff09b8d8301af434de216392a2f908f7f332be92.module-package.json",
+              "agent-session:isolated-immersive-world-part-workshop-1780726403687-c68c223a-140f-46be"
+            ]
+          },
+          "rendererCompatibility": {
+            "version": 1,
+            "targetMode": "webgpu-project-scene",
+            "compatibilityStatus": "webgpu-compatible",
+            "webgpuCompatible": true,
+            "evidenceReasons": [
+              "webgpu-safe-material",
+              "project-webgpu-material-factory"
+            ],
+            "compatibleSurfaces": [
+              {
+                "reason": "webgpu-safe-material",
+                "pos": 1355,
+                "materialType": "MeshBasicMaterial"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "pos": 1787,
+                "materialType": "LineBasicMaterial"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "pos": 720,
+                "materialType": "MeshBasicMaterial"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "pos": 988,
+                "materialType": "LineBasicMaterial"
+              },
+              {
+                "reason": "project-webgpu-material-factory",
+                "factoryId": "matte-painted-surface",
+                "id": "matte-painted-surface",
+                "category": "matte-painted-surface",
+                "runtimeSurface": "three-standard-material",
+                "materialType": "MeshStandardMaterial",
+                "guidance": [
+                  "Use for painted, paper, canvas, ink wash, graphite, stain, and transfer surfaces.",
+                  "Represent texture through declarative surface controls and WebGPU-safe texture descriptors."
+                ]
+              },
+              {
+                "reason": "project-webgpu-material-factory",
+                "factoryId": "color-field",
+                "id": "color-field",
+                "category": "color-field",
+                "runtimeSurface": "three-basic-or-standard-material",
+                "materialType": "MeshBasicMaterial",
+                "guidance": [
+                  "Use for all-over color fields, hard-edged planes, atmospheric bands, and flat graphic fields.",
+                  "Prefer geometry layers or declarative texture descriptors over GLSL gradients."
+                ]
+              },
+              {
+                "reason": "project-webgpu-material-factory",
+                "factoryId": "soft-particles",
+                "id": "soft-particles",
+                "category": "soft-particles",
+                "runtimeSurface": "three-points-material",
+                "materialType": "PointsMaterial",
+                "guidance": [
+                  "Use for soft atmosphere, dust, floating pigment, and particulate halos.",
+                  "Keep the particle logic deterministic and inspectable in data."
+                ]
+              },
+              {
+                "reason": "project-webgpu-material-factory",
+                "factoryId": "post-color-transform",
+                "id": "post-color-transform",
+                "category": "post-color-transform",
+                "runtimeSurface": "declarative-post-color-transform",
+                "materialType": "TSLNodeMaterial",
+                "guidance": [
+                  "Use for WebGPU-safe color grading and output transforms.",
+                  "Do not use legacy GLSL post passes for WebGPU project scenes."
+                ]
+              }
+            ]
+          },
+          "compositionAdaptations": [
+            "Assigned primary foreground params and higher scale metadata to preserve the intended central pressure/aperture signal.",
+            "composition modified non-literal-grid-pressure from isolated accepted-part defaults"
+          ],
+          "compositionBeforeHash": "efa80912eb3e80d9",
+          "compositionAfterHash": "ab964d872303426e"
+        }
+      },
+      {
+        "id": "artist-mark-field",
+        "partId": "artist-mark-field",
+        "role": "artist-style-system",
+        "moduleRef": {
+          "type": "immersive-world-generated-module",
+          "version": 1,
+          "moduleId": "artist-mark-field-bridget-riley-grid-pressure-v1",
+          "partId": "artist-mark-field",
+          "hash": "092178b36033a1c4d87c0bbb713e9a357a92c39e76bc20f3e52c9000a67e9ac6",
+          "integrity": "sha256-092178b36033a1c4d87c0bbb713e9a357a92c39e76bc20f3e52c9000a67e9ac6",
+          "exportName": "createImmersiveWorldPart",
+          "file": "data/immersive-world/generated-modules/092178b36033a1c4d87c0bbb713e9a357a92c39e76bc20f3e52c9000a67e9ac6.mjs",
+          "url": "./data/immersive-world/generated-modules/092178b36033a1c4d87c0bbb713e9a357a92c39e76bc20f3e52c9000a67e9ac6.mjs",
+          "rendererCompatibility": {
+            "version": 1,
+            "targetMode": "webgpu-project-scene",
+            "compatibilityStatus": "webgpu-compatible",
+            "webgpuCompatible": true,
+            "evidenceReasons": [
+              "webgpu-safe-material",
+              "project-webgpu-material-factory"
+            ],
+            "compatibleSurfaces": [
+              {
+                "reason": "webgpu-safe-material",
+                "filePath": "artist-mark-field.module.mjs",
+                "pos": 1343,
+                "materialType": "MeshBasicMaterial"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "filePath": "artist-mark-field.module.mjs",
+                "pos": 1774,
+                "materialType": "LineBasicMaterial"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "filePath": "bundled-generated-module.mjs",
+                "pos": 704,
+                "materialType": "MeshBasicMaterial"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "filePath": "bundled-generated-module.mjs",
+                "pos": 971,
+                "materialType": "LineBasicMaterial"
+              },
+              {
+                "reason": "project-webgpu-material-factory",
+                "factoryId": "matte-painted-surface",
+                "id": "matte-painted-surface",
+                "category": "matte-painted-surface",
+                "runtimeSurface": "three-standard-material",
+                "materialType": "MeshStandardMaterial",
+                "guidance": [
+                  "Use for painted, paper, canvas, ink wash, graphite, stain, and transfer surfaces.",
+                  "Represent texture through declarative surface controls and WebGPU-safe texture descriptors."
+                ]
+              },
+              {
+                "reason": "project-webgpu-material-factory",
+                "factoryId": "color-field",
+                "id": "color-field",
+                "category": "color-field",
+                "runtimeSurface": "three-basic-or-standard-material",
+                "materialType": "MeshBasicMaterial",
+                "guidance": [
+                  "Use for all-over color fields, hard-edged planes, atmospheric bands, and flat graphic fields.",
+                  "Prefer geometry layers or declarative texture descriptors over GLSL gradients."
+                ]
+              },
+              {
+                "reason": "project-webgpu-material-factory",
+                "factoryId": "soft-particles",
+                "id": "soft-particles",
+                "category": "soft-particles",
+                "runtimeSurface": "three-points-material",
+                "materialType": "PointsMaterial",
+                "guidance": [
+                  "Use for soft atmosphere, dust, floating pigment, and particulate halos.",
+                  "Keep the particle logic deterministic and inspectable in data."
+                ]
+              },
+              {
+                "reason": "project-webgpu-material-factory",
+                "factoryId": "post-color-transform",
+                "id": "post-color-transform",
+                "category": "post-color-transform",
+                "runtimeSurface": "declarative-post-color-transform",
+                "materialType": "TSLNodeMaterial",
+                "guidance": [
+                  "Use for WebGPU-safe color grading and output transforms.",
+                  "Do not use legacy GLSL post passes for WebGPU project scenes."
+                ]
+              }
+            ]
+          }
+        },
+        "params": {
+          "band": "midground",
+          "position": [
+            3.05,
+            0.18,
+            -4.4
+          ],
+          "scale": 0.42,
+          "renderOrder": 1,
+          "visibilityPriority": "supporting-edge",
+          "compositionUse": "right-side supporting stripe rectangle and mark-density brace, kept small enough to leave the primary central aperture and pressure rings readable"
+        },
+        "evidence": {
+          "workshopAcceptance": [
+            "Inspected the local loose concept reference image directly for broad palette, value balance, density, and central target/stripe mood only.",
+            "Static draft validation succeeded with no bundling errors or forbidden-surface validation errors.",
+            "Final Playwright preview attempt 3 rendered a nonblank, camera-safe Bridget Riley mark field: enlarged matte paper backing, vertical moire stripe pressure, hard-edge cut lattice, radial barcode ticks, warm-earth/pale pink/teal palette, and a central white aperture interruption.",
+            "Final render report healthStatus was ok with captureStatus ok, nonBlankRatio 0.999824, centerCoverageRatio 0.891221, dynamicRange 254.667, and no browser failure reported.",
+            "desktop:part-preview-evolution/003-artist-mark-field-accepted-desktop.jpg"
+          ],
+          "selfReview": {
+            "accepted": true,
+            "summary": "Accepted: the final draft is a real WebGPU-safe Three.js artist mark field, not a placeholder or fallback, and preview evidence supports handoff.",
+            "strengths": [
+              "Uses only standard Three.js geometry and materials: MeshBasicMaterial, LineBasicMaterial, RingGeometry, CircleGeometry, PlaneGeometry, BufferGeometry, and InstancedMesh.",
+              "Preserves Bridget Riley style facts through crisp vertical stripe systems, radial-symbol pressure, hard-edge cuts, optical hatching, matte screenprint-like surfaces, and controlled palette contrast.",
+              "Carries the news cue non-literally as measured organized pressure around a central civic aperture."
+            ],
+            "concerns": [
+              "Preview renderer reported webgl-legacy backend for the local capture route, but module validation/package evidence stayed on WebGPU-safe surfaces and no forbidden shader or CPU-baked texture paths were used."
+            ],
+            "evidence": [
+              "previews/attempt-003/003-artist-mark-field-draft-desktop.jpg",
+              "previews/attempt-003/desktop-render-report.json",
+              "checks/check-result.json",
+              "agent-session:isolated-immersive-world-part-workshop-1780726957242-e0089bda-c5fe-45af"
+            ]
+          },
+          "rendererCompatibility": {
+            "version": 1,
+            "targetMode": "webgpu-project-scene",
+            "compatibilityStatus": "webgpu-compatible",
+            "webgpuCompatible": true,
+            "evidenceReasons": [
+              "webgpu-safe-material",
+              "project-webgpu-material-factory"
+            ],
+            "compatibleSurfaces": [
+              {
+                "reason": "webgpu-safe-material",
+                "pos": 1343,
+                "materialType": "MeshBasicMaterial"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "pos": 1774,
+                "materialType": "LineBasicMaterial"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "pos": 704,
+                "materialType": "MeshBasicMaterial"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "pos": 971,
+                "materialType": "LineBasicMaterial"
+              },
+              {
+                "reason": "project-webgpu-material-factory",
+                "factoryId": "matte-painted-surface",
+                "id": "matte-painted-surface",
+                "category": "matte-painted-surface",
+                "runtimeSurface": "three-standard-material",
+                "materialType": "MeshStandardMaterial",
+                "guidance": [
+                  "Use for painted, paper, canvas, ink wash, graphite, stain, and transfer surfaces.",
+                  "Represent texture through declarative surface controls and WebGPU-safe texture descriptors."
+                ]
+              },
+              {
+                "reason": "project-webgpu-material-factory",
+                "factoryId": "color-field",
+                "id": "color-field",
+                "category": "color-field",
+                "runtimeSurface": "three-basic-or-standard-material",
+                "materialType": "MeshBasicMaterial",
+                "guidance": [
+                  "Use for all-over color fields, hard-edged planes, atmospheric bands, and flat graphic fields.",
+                  "Prefer geometry layers or declarative texture descriptors over GLSL gradients."
+                ]
+              },
+              {
+                "reason": "project-webgpu-material-factory",
+                "factoryId": "soft-particles",
+                "id": "soft-particles",
+                "category": "soft-particles",
+                "runtimeSurface": "three-points-material",
+                "materialType": "PointsMaterial",
+                "guidance": [
+                  "Use for soft atmosphere, dust, floating pigment, and particulate halos.",
+                  "Keep the particle logic deterministic and inspectable in data."
+                ]
+              },
+              {
+                "reason": "project-webgpu-material-factory",
+                "factoryId": "post-color-transform",
+                "id": "post-color-transform",
+                "category": "post-color-transform",
+                "runtimeSurface": "declarative-post-color-transform",
+                "materialType": "TSLNodeMaterial",
+                "guidance": [
+                  "Use for WebGPU-safe color grading and output transforms.",
+                  "Do not use legacy GLSL post passes for WebGPU project scenes."
+                ]
+              }
+            ]
+          },
+          "compositionAdaptations": [
+            "Assigned supporting-edge params so its centered rectangle/stripe density reads as a brace around the aperture rather than the sole subject.",
+            "composition modified artist-mark-field from isolated accepted-part defaults"
+          ],
+          "compositionBeforeHash": "6d61b8c316a8905d",
+          "compositionAfterHash": "e7b1361c9dd5f7c3"
+        }
+      }
+    ],
+    "generatedModules": [
+      {
+        "type": "immersive-world-generated-module",
+        "version": 1,
+        "moduleId": "world-environment-bridget-riley-grid-pressure-v1",
+        "partId": "world-environment",
+        "hash": "65b5d2d3c057a54321fb5fc40f70bb23fe72de994dc25bf2e7056c5ad9b17bef",
+        "integrity": "sha256-65b5d2d3c057a54321fb5fc40f70bb23fe72de994dc25bf2e7056c5ad9b17bef",
+        "exportName": "createImmersiveWorldPart",
+        "file": "data/immersive-world/generated-modules/65b5d2d3c057a54321fb5fc40f70bb23fe72de994dc25bf2e7056c5ad9b17bef.mjs",
+        "url": "./data/immersive-world/generated-modules/65b5d2d3c057a54321fb5fc40f70bb23fe72de994dc25bf2e7056c5ad9b17bef.mjs",
+        "rendererCompatibility": {
+          "version": 1,
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material",
+            "project-webgpu-material-factory"
+          ],
+          "compatibleSurfaces": [
+            {
+              "reason": "webgpu-safe-material",
+              "filePath": "world-environment.module.mjs",
+              "pos": 1583,
+              "materialType": "MeshBasicMaterial"
+            },
+            {
+              "reason": "webgpu-safe-material",
+              "filePath": "world-environment.module.mjs",
+              "pos": 2015,
+              "materialType": "LineBasicMaterial"
+            },
+            {
+              "reason": "webgpu-safe-material",
+              "filePath": "bundled-generated-module.mjs",
+              "pos": 862,
+              "materialType": "MeshBasicMaterial"
+            },
+            {
+              "reason": "webgpu-safe-material",
+              "filePath": "bundled-generated-module.mjs",
+              "pos": 1127,
+              "materialType": "LineBasicMaterial"
+            },
+            {
+              "reason": "project-webgpu-material-factory",
+              "factoryId": "matte-painted-surface",
+              "id": "matte-painted-surface",
+              "category": "matte-painted-surface",
+              "runtimeSurface": "three-standard-material",
+              "materialType": "MeshStandardMaterial",
+              "guidance": [
+                "Use for painted, paper, canvas, ink wash, graphite, stain, and transfer surfaces.",
+                "Represent texture through declarative surface controls and WebGPU-safe texture descriptors."
+              ]
+            },
+            {
+              "reason": "project-webgpu-material-factory",
+              "factoryId": "color-field",
+              "id": "color-field",
+              "category": "color-field",
+              "runtimeSurface": "three-basic-or-standard-material",
+              "materialType": "MeshBasicMaterial",
+              "guidance": [
+                "Use for all-over color fields, hard-edged planes, atmospheric bands, and flat graphic fields.",
+                "Prefer geometry layers or declarative texture descriptors over GLSL gradients."
+              ]
+            },
+            {
+              "reason": "project-webgpu-material-factory",
+              "factoryId": "soft-particles",
+              "id": "soft-particles",
+              "category": "soft-particles",
+              "runtimeSurface": "three-points-material",
+              "materialType": "PointsMaterial",
+              "guidance": [
+                "Use for soft atmosphere, dust, floating pigment, and particulate halos.",
+                "Keep the particle logic deterministic and inspectable in data."
+              ]
+            },
+            {
+              "reason": "project-webgpu-material-factory",
+              "factoryId": "post-color-transform",
+              "id": "post-color-transform",
+              "category": "post-color-transform",
+              "runtimeSurface": "declarative-post-color-transform",
+              "materialType": "TSLNodeMaterial",
+              "guidance": [
+                "Use for WebGPU-safe color grading and output transforms.",
+                "Do not use legacy GLSL post passes for WebGPU project scenes."
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "type": "immersive-world-generated-module",
+        "version": 1,
+        "moduleId": "non-literal-grid-pressure-bridget-riley-grid-pressure-v1",
+        "partId": "non-literal-grid-pressure",
+        "hash": "e4ebf90b0d19125847d24ec9ff09b8d8301af434de216392a2f908f7f332be92",
+        "integrity": "sha256-e4ebf90b0d19125847d24ec9ff09b8d8301af434de216392a2f908f7f332be92",
+        "exportName": "createImmersiveWorldPart",
+        "file": "data/immersive-world/generated-modules/e4ebf90b0d19125847d24ec9ff09b8d8301af434de216392a2f908f7f332be92.mjs",
+        "url": "./data/immersive-world/generated-modules/e4ebf90b0d19125847d24ec9ff09b8d8301af434de216392a2f908f7f332be92.mjs",
+        "rendererCompatibility": {
+          "version": 1,
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material",
+            "project-webgpu-material-factory"
+          ],
+          "compatibleSurfaces": [
+            {
+              "reason": "webgpu-safe-material",
+              "filePath": "non-literal-grid-pressure.module.mjs",
+              "pos": 1355,
+              "materialType": "MeshBasicMaterial"
+            },
+            {
+              "reason": "webgpu-safe-material",
+              "filePath": "non-literal-grid-pressure.module.mjs",
+              "pos": 1787,
+              "materialType": "LineBasicMaterial"
+            },
+            {
+              "reason": "webgpu-safe-material",
+              "filePath": "bundled-generated-module.mjs",
+              "pos": 720,
+              "materialType": "MeshBasicMaterial"
+            },
+            {
+              "reason": "webgpu-safe-material",
+              "filePath": "bundled-generated-module.mjs",
+              "pos": 988,
+              "materialType": "LineBasicMaterial"
+            },
+            {
+              "reason": "project-webgpu-material-factory",
+              "factoryId": "matte-painted-surface",
+              "id": "matte-painted-surface",
+              "category": "matte-painted-surface",
+              "runtimeSurface": "three-standard-material",
+              "materialType": "MeshStandardMaterial",
+              "guidance": [
+                "Use for painted, paper, canvas, ink wash, graphite, stain, and transfer surfaces.",
+                "Represent texture through declarative surface controls and WebGPU-safe texture descriptors."
+              ]
+            },
+            {
+              "reason": "project-webgpu-material-factory",
+              "factoryId": "color-field",
+              "id": "color-field",
+              "category": "color-field",
+              "runtimeSurface": "three-basic-or-standard-material",
+              "materialType": "MeshBasicMaterial",
+              "guidance": [
+                "Use for all-over color fields, hard-edged planes, atmospheric bands, and flat graphic fields.",
+                "Prefer geometry layers or declarative texture descriptors over GLSL gradients."
+              ]
+            },
+            {
+              "reason": "project-webgpu-material-factory",
+              "factoryId": "soft-particles",
+              "id": "soft-particles",
+              "category": "soft-particles",
+              "runtimeSurface": "three-points-material",
+              "materialType": "PointsMaterial",
+              "guidance": [
+                "Use for soft atmosphere, dust, floating pigment, and particulate halos.",
+                "Keep the particle logic deterministic and inspectable in data."
+              ]
+            },
+            {
+              "reason": "project-webgpu-material-factory",
+              "factoryId": "post-color-transform",
+              "id": "post-color-transform",
+              "category": "post-color-transform",
+              "runtimeSurface": "declarative-post-color-transform",
+              "materialType": "TSLNodeMaterial",
+              "guidance": [
+                "Use for WebGPU-safe color grading and output transforms.",
+                "Do not use legacy GLSL post passes for WebGPU project scenes."
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "type": "immersive-world-generated-module",
+        "version": 1,
+        "moduleId": "artist-mark-field-bridget-riley-grid-pressure-v1",
+        "partId": "artist-mark-field",
+        "hash": "092178b36033a1c4d87c0bbb713e9a357a92c39e76bc20f3e52c9000a67e9ac6",
+        "integrity": "sha256-092178b36033a1c4d87c0bbb713e9a357a92c39e76bc20f3e52c9000a67e9ac6",
+        "exportName": "createImmersiveWorldPart",
+        "file": "data/immersive-world/generated-modules/092178b36033a1c4d87c0bbb713e9a357a92c39e76bc20f3e52c9000a67e9ac6.mjs",
+        "url": "./data/immersive-world/generated-modules/092178b36033a1c4d87c0bbb713e9a357a92c39e76bc20f3e52c9000a67e9ac6.mjs",
+        "rendererCompatibility": {
+          "version": 1,
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material",
+            "project-webgpu-material-factory"
+          ],
+          "compatibleSurfaces": [
+            {
+              "reason": "webgpu-safe-material",
+              "filePath": "artist-mark-field.module.mjs",
+              "pos": 1343,
+              "materialType": "MeshBasicMaterial"
+            },
+            {
+              "reason": "webgpu-safe-material",
+              "filePath": "artist-mark-field.module.mjs",
+              "pos": 1774,
+              "materialType": "LineBasicMaterial"
+            },
+            {
+              "reason": "webgpu-safe-material",
+              "filePath": "bundled-generated-module.mjs",
+              "pos": 704,
+              "materialType": "MeshBasicMaterial"
+            },
+            {
+              "reason": "webgpu-safe-material",
+              "filePath": "bundled-generated-module.mjs",
+              "pos": 971,
+              "materialType": "LineBasicMaterial"
+            },
+            {
+              "reason": "project-webgpu-material-factory",
+              "factoryId": "matte-painted-surface",
+              "id": "matte-painted-surface",
+              "category": "matte-painted-surface",
+              "runtimeSurface": "three-standard-material",
+              "materialType": "MeshStandardMaterial",
+              "guidance": [
+                "Use for painted, paper, canvas, ink wash, graphite, stain, and transfer surfaces.",
+                "Represent texture through declarative surface controls and WebGPU-safe texture descriptors."
+              ]
+            },
+            {
+              "reason": "project-webgpu-material-factory",
+              "factoryId": "color-field",
+              "id": "color-field",
+              "category": "color-field",
+              "runtimeSurface": "three-basic-or-standard-material",
+              "materialType": "MeshBasicMaterial",
+              "guidance": [
+                "Use for all-over color fields, hard-edged planes, atmospheric bands, and flat graphic fields.",
+                "Prefer geometry layers or declarative texture descriptors over GLSL gradients."
+              ]
+            },
+            {
+              "reason": "project-webgpu-material-factory",
+              "factoryId": "soft-particles",
+              "id": "soft-particles",
+              "category": "soft-particles",
+              "runtimeSurface": "three-points-material",
+              "materialType": "PointsMaterial",
+              "guidance": [
+                "Use for soft atmosphere, dust, floating pigment, and particulate halos.",
+                "Keep the particle logic deterministic and inspectable in data."
+              ]
+            },
+            {
+              "reason": "project-webgpu-material-factory",
+              "factoryId": "post-color-transform",
+              "id": "post-color-transform",
+              "category": "post-color-transform",
+              "runtimeSurface": "declarative-post-color-transform",
+              "materialType": "TSLNodeMaterial",
+              "guidance": [
+                "Use for WebGPU-safe color grading and output transforms.",
+                "Do not use legacy GLSL post passes for WebGPU project scenes."
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "rendererAuthoring": {
+      "version": 1,
+      "targetMode": "webgpu-project-scene",
+      "requestedTarget": "webgpu-project-scene",
+      "effectiveTarget": "webgpu-project-scene",
+      "webgpuTargeted": true,
+      "legacyWebglTargeted": false,
+      "unspecified": false,
+      "compatibilityGateRequired": true
+    },
+    "rendererCompatibility": {
+      "version": 1,
+      "targetMode": "webgpu-project-scene",
+      "webgpuTargeted": true,
+      "legacyWebglTargeted": false,
+      "compatibilityGateRequired": true,
+      "compatibilityStatus": "webgpu-compatible",
+      "webgpuCompatible": true,
+      "evidenceReasons": [
+        "webgpu-safe-material",
+        "project-webgpu-material-factory"
+      ],
+      "moduleCount": 3,
+      "compatibleModuleCount": 3,
+      "incompatibleModuleCount": 0,
+      "compositionCompatibilityDeclared": false,
+      "modules": [
+        {
+          "partId": "world-environment",
+          "role": "world-environment",
+          "moduleId": "world-environment-bridget-riley-grid-pressure-v1",
+          "hash": "65b5d2d3c057a54321fb5fc40f70bb23fe72de994dc25bf2e7056c5ad9b17bef",
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material",
+            "project-webgpu-material-factory"
+          ],
+          "compatibleSurfaceCount": 8,
+          "sourceStage": "part-workshop"
+        },
+        {
+          "partId": "non-literal-grid-pressure",
+          "role": "primary-news-signal",
+          "moduleId": "non-literal-grid-pressure-bridget-riley-grid-pressure-v1",
+          "hash": "e4ebf90b0d19125847d24ec9ff09b8d8301af434de216392a2f908f7f332be92",
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material",
+            "project-webgpu-material-factory"
+          ],
+          "compatibleSurfaceCount": 8,
+          "sourceStage": "part-workshop"
+        },
+        {
+          "partId": "artist-mark-field",
+          "role": "artist-style-system",
+          "moduleId": "artist-mark-field-bridget-riley-grid-pressure-v1",
+          "hash": "092178b36033a1c4d87c0bbb713e9a357a92c39e76bc20f3e52c9000a67e9ac6",
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material",
+            "project-webgpu-material-factory"
+          ],
+          "compatibleSurfaceCount": 8,
+          "sourceStage": "part-workshop"
+        }
+      ]
+    },
+    "renderFacts": {
+      "environmentPresent": true,
+      "cameraOwnedByComposition": true,
+      "lightingOwnedByComposition": true,
+      "nearFarClippingOwned": true,
+      "acceptedPartCount": 3,
+      "generatedModuleCount": 3,
+      "generatedAssetCount": 0,
+      "rendererAuthoringTarget": "webgpu-project-scene",
+      "rendererCompatibilityStatus": "webgpu-compatible",
+      "webgpuRendererGateRequired": true,
+      "webgpuRendererCompatible": true,
+      "desktopPreviewRecorded": true,
+      "mobilePreviewRecorded": true
+    }
+  },
+  "image": {
+    "thumbnailJpeg": "./data/media/2026-06-06-0630z-after-students-teachers-also-protest-on-thursday-against-cuts-to-french/thumb-320.jpg",
+    "openGraphJpeg": "./data/media/2026-06-06-0630z-after-students-teachers-also-protest-on-thursday-against-cuts-to-french/og-1200x630.jpg",
+    "instagramJpeg": "./data/media/2026-06-06-0630z-after-students-teachers-also-protest-on-thursday-against-cuts-to-french/instagram-1080x1440.jpg",
+    "altText": "After students, teachers also protest on Thursday against cuts to French-speaking education by Bridget Riley."
+  }
+}
