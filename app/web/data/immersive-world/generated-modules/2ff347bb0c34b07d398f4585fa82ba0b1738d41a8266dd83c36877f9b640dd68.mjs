@@ -1,14 +1,14 @@
 import { createImmersiveWorldPart as createBasePart } from './29c80c148bd794c9a4b736e2e5f9859880c0dc59386f45000651dacd6e4daa29.mjs';
 
 const OVERLAY = {
-  "salt": "world-gpu-detail-restore-v4",
+  "salt": "world-gpu-detail-restore-v5-mobile-light",
   "renderOrderBase": 74,
   "planeCount": 42,
   "ribbonCount": 34,
-  "scratchCount": 190,
+  "scratchCount": 95,
   "burstCount": 2,
-  "grainCount": 150,
-  "fiberCount": 1700,
+  "grainCount": 75,
+  "fiberCount": 850,
   "fiberOpacity": 0.22,
   "opacity": 1,
   "z": -5.2,
