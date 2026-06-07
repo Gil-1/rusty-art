@@ -21,6 +21,24 @@ function normalizedOptionalText(value) {
   return text || null;
 }
 
+const UNAVAILABLE_META_TOKEN_PATTERN = /^(?:n\/a|na|none|null|unavailable)$/i;
+
+function normalizedPublicDecisionText(value) {
+  const text = normalizedOptionalText(value);
+  if (!text || UNAVAILABLE_META_TOKEN_PATTERN.test(text)) return null;
+  const cleaned = text
+    .split(/\s+/)
+    .filter((part) => {
+      const token = part.replace(/^[,;|]+|[,;|]+$/g, '');
+      return token
+        && !UNAVAILABLE_META_TOKEN_PATTERN.test(token)
+        && !/^[a-z0-9_.-]+=(?:n\/a|na|none|null|unavailable)$/i.test(token);
+    })
+    .join(' ')
+    .trim();
+  return cleaned || null;
+}
+
 function resolveDocumentBaseHref({ baseHref = null, documentRef = globalThis?.document } = {}) {
   return normalizedOptionalText(baseHref) || normalizedOptionalText(documentRef?.baseURI);
 }
@@ -147,8 +165,7 @@ function buildRendererFallbackReasonFacts(rendererCompatibility = {}) {
 function buildTranslationTraceFacts(mappings = []) {
   if (!Array.isArray(mappings)) return [];
   return mappings
-    .map((mapping) => normalizedOptionalText(mapping?.visualDecision))
-    .filter((text) => text && !/\bn\/a\b/i.test(text))
+    .map((mapping) => normalizedPublicDecisionText(mapping?.visualDecision))
     .filter(Boolean)
     .slice(0, 4);
 }
@@ -336,7 +353,7 @@ export function buildPublicArtworkRationaleFacts(art = {}) {
   const mappings = Array.isArray(source.newsVisualMappings) ? source.newsVisualMappings : [];
   const visualMapping = mappings
     .slice(0, 2)
-    .map((mapping) => normalizedOptionalText(mapping?.visualDecision))
+    .map((mapping) => normalizedPublicDecisionText(mapping?.visualDecision))
     .filter(Boolean)
     .join(' | ') || null;
   const styleCardLabel = Object.values(styleCard)

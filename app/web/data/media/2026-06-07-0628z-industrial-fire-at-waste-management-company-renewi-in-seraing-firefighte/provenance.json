@@ -1,0 +1,76 @@
+{
+  "version": 2,
+  "kind": "rusty-art-public-media-assets",
+  "artworkId": "2026-06-07-0628z-industrial-fire-at-waste-management-company-renewi-in-seraing-firefighte",
+  "source": {
+    "sha256": "ab1ae3399b0952bcdfd0fe08e25b96d930ccec874d68805b7be5e045f8e9c162",
+    "role": "daily-preview-story-desktop"
+  },
+  "sources": {
+    "primary": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-desktop",
+      "sha256": "ab1ae3399b0952bcdfd0fe08e25b96d930ccec874d68805b7be5e045f8e9c162"
+    },
+    "openGraph": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-open-graph",
+      "sha256": "7f9b62f79bdd61c61428184107783e5d736d67273ee0fd7ed56cb1537ae4c185"
+    },
+    "instagram": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-instagram",
+      "sha256": "a8b1bf99a5c00eae11c41e8ef5c2c6de6e1036229a8b4082f393843d08e2ce1c"
+    }
+  },
+  "targets": {
+    "thumb-320.jpg": {
+      "spec": {
+        "fileName": "thumb-320.jpg",
+        "width": 320,
+        "height": null,
+        "fit": "inside",
+        "withoutEnlargement": true,
+        "format": "jpeg",
+        "quality": 82
+      },
+      "publicPath": "./data/media/2026-06-07-0628z-industrial-fire-at-waste-management-company-renewi-in-seraing-firefighte/thumb-320.jpg",
+      "source": {
+        "sha256": "ab1ae3399b0952bcdfd0fe08e25b96d930ccec874d68805b7be5e045f8e9c162",
+        "role": "daily-preview-story-desktop"
+      }
+    },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-06-07-0628z-industrial-fire-at-waste-management-company-renewi-in-seraing-firefighte/og-1200x630.jpg",
+      "source": {
+        "sha256": "7f9b62f79bdd61c61428184107783e5d736d67273ee0fd7ed56cb1537ae4c185",
+        "role": "daily-preview-story-open-graph"
+      }
+    },
+    "instagram-1080x1440.jpg": {
+      "spec": {
+        "fileName": "instagram-1080x1440.jpg",
+        "width": 1080,
+        "height": 1440,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-06-07-0628z-industrial-fire-at-waste-management-company-renewi-in-seraing-firefighte/instagram-1080x1440.jpg",
+      "source": {
+        "sha256": "a8b1bf99a5c00eae11c41e8ef5c2c6de6e1036229a8b4082f393843d08e2ce1c",
+        "role": "daily-preview-story-instagram"
+      }
+    }
+  }
+}
