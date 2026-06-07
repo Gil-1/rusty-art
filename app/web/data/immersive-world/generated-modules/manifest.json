@@ -1,7 +1,7 @@
 {
   "version": 1,
   "generatedAt": "2026-05-13T06:11:46.412Z",
-  "updatedAt": "2026-06-07T08:23:06.454Z",
+  "updatedAt": "2026-06-07T09:14:49.748Z",
   "entries": [
     {
       "version": 1,
@@ -4116,6 +4116,106 @@
     },
     {
       "version": 1,
+      "moduleId": "non-literal-flow-pressure-lygia-clark-2986978e2085",
+      "partId": "non-literal-flow-pressure",
+      "hash": "352e14b187741973f94baf4e2c03e3e967abbd1e7d076320b8c44eaaf0ff9611",
+      "integrity": "sha256-352e14b187741973f94baf4e2c03e3e967abbd1e7d076320b8c44eaaf0ff9611",
+      "exportName": "createImmersiveWorldPart",
+      "file": "data/immersive-world/generated-modules/352e14b187741973f94baf4e2c03e3e967abbd1e7d076320b8c44eaaf0ff9611.mjs",
+      "url": "./data/immersive-world/generated-modules/352e14b187741973f94baf4e2c03e3e967abbd1e7d076320b8c44eaaf0ff9611.mjs",
+      "bytes": 9361,
+      "sourceHash": "ac9ea5e7f2679c87e70f6b21cf66cdf592fd444476f59c98fa5c27cf91cd9b9a",
+      "packagedAt": "2026-06-07T09:14:49.748Z",
+      "rendererCompatibility": {
+        "version": 1,
+        "targetMode": "webgpu-project-scene",
+        "compatibilityStatus": "webgpu-compatible",
+        "webgpuCompatible": true,
+        "fallbackReason": null,
+        "fallbackReasons": [],
+        "evidenceReasons": [
+          "webgpu-safe-material",
+          "project-webgpu-material-factory"
+        ],
+        "compatibleSurfaces": [
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "non-literal-flow-pressure.module.mjs",
+            "pos": 2022,
+            "materialType": "MeshBasicMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "non-literal-flow-pressure.module.mjs",
+            "pos": 11404,
+            "materialType": "LineBasicMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 1183,
+            "materialType": "MeshBasicMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 6097,
+            "materialType": "LineBasicMaterial"
+          },
+          {
+            "reason": "project-webgpu-material-factory",
+            "factoryId": "matte-painted-surface",
+            "id": "matte-painted-surface",
+            "category": "matte-painted-surface",
+            "runtimeSurface": "three-standard-material",
+            "materialType": "MeshStandardMaterial",
+            "guidance": [
+              "Use for painted, paper, canvas, ink wash, graphite, stain, and transfer surfaces.",
+              "Represent texture through declarative surface controls and WebGPU-safe texture descriptors."
+            ]
+          },
+          {
+            "reason": "project-webgpu-material-factory",
+            "factoryId": "color-field",
+            "id": "color-field",
+            "category": "color-field",
+            "runtimeSurface": "three-basic-or-standard-material",
+            "materialType": "MeshBasicMaterial",
+            "guidance": [
+              "Use for all-over color fields, hard-edged planes, atmospheric bands, and flat graphic fields.",
+              "Prefer geometry layers or declarative texture descriptors over GLSL gradients."
+            ]
+          },
+          {
+            "reason": "project-webgpu-material-factory",
+            "factoryId": "soft-particles",
+            "id": "soft-particles",
+            "category": "soft-particles",
+            "runtimeSurface": "three-points-material",
+            "materialType": "PointsMaterial",
+            "guidance": [
+              "Use for soft atmosphere, dust, floating pigment, and particulate halos.",
+              "Keep the particle logic deterministic and inspectable in data."
+            ]
+          },
+          {
+            "reason": "project-webgpu-material-factory",
+            "factoryId": "post-color-transform",
+            "id": "post-color-transform",
+            "category": "post-color-transform",
+            "runtimeSurface": "declarative-post-color-transform",
+            "materialType": "TSLNodeMaterial",
+            "guidance": [
+              "Use for WebGPU-safe color grading and output transforms.",
+              "Do not use legacy GLSL post passes for WebGPU project scenes."
+            ]
+          }
+        ],
+        "forbiddenSurfaces": []
+      }
+    },
+    {
+      "version": 1,
       "moduleId": "world-environment-zox-fracture-pressure-skybox",
       "partId": "world-environment",
       "hash": "3696d873eb835738e375abe6d2ab588e799e9b4b9319643e4bb0b2f00eef0426",
@@ -4705,6 +4805,92 @@
       "bytes": 13645,
       "sourceHash": "b67235023b4ddc1e67751a2f8ada24b96f30c600bc0c37cd1b5e2356f76727e8",
       "packagedAt": "2026-05-14T16:45:24.894Z"
+    },
+    {
+      "version": 1,
+      "moduleId": "artist-mark-field-draft-attempt-1",
+      "partId": "artist-mark-field",
+      "hash": "3bfdebe9189b81694ecead20782843fcf6889a2c827299181d5304cc517f8f29",
+      "integrity": "sha256-3bfdebe9189b81694ecead20782843fcf6889a2c827299181d5304cc517f8f29",
+      "exportName": "createImmersiveWorldPart",
+      "file": "data/immersive-world/generated-modules/3bfdebe9189b81694ecead20782843fcf6889a2c827299181d5304cc517f8f29.mjs",
+      "url": "./data/immersive-world/generated-modules/3bfdebe9189b81694ecead20782843fcf6889a2c827299181d5304cc517f8f29.mjs",
+      "bytes": 14381,
+      "sourceHash": "3d977dd818f3a7ec056a30c1b0fd26f2983bbda0b1a21401e470d005b39359d2",
+      "packagedAt": "2026-06-07T09:06:35.632Z",
+      "rendererCompatibility": {
+        "version": 1,
+        "targetMode": "unspecified",
+        "compatibilityStatus": "webgl-only",
+        "webgpuCompatible": false,
+        "fallbackReason": "points-geometry-missing-uv",
+        "fallbackReasons": [
+          "points-geometry-missing-uv"
+        ],
+        "evidenceReasons": [
+          "webgpu-safe-material"
+        ],
+        "compatibleSurfaces": [
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "artist-mark-field.module.mjs",
+            "pos": 1919,
+            "materialType": "MeshBasicMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "artist-mark-field.module.mjs",
+            "pos": 2381,
+            "materialType": "LineBasicMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "artist-mark-field.module.mjs",
+            "pos": 20449,
+            "materialType": "PointsMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 1150,
+            "materialType": "MeshBasicMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 1402,
+            "materialType": "LineBasicMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 11517,
+            "materialType": "PointsMaterial"
+          }
+        ],
+        "forbiddenSurfaces": [
+          {
+            "reason": "points-geometry-missing-uv",
+            "filePath": "artist-mark-field.module.mjs",
+            "pos": 20763,
+            "objectType": "Points",
+            "geometryType": "BufferGeometry",
+            "geometryVariable": "geometry",
+            "materialType": "PointsMaterial",
+            "materialVariable": "material"
+          },
+          {
+            "reason": "points-geometry-missing-uv",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 11715,
+            "objectType": "Points",
+            "geometryType": "BufferGeometry",
+            "geometryVariable": "l",
+            "materialType": "PointsMaterial",
+            "materialVariable": "g"
+          }
+        ]
+      }
     },
     {
       "version": 1,
@@ -12961,6 +13147,118 @@
     },
     {
       "version": 1,
+      "moduleId": "world-environment-lygia-clark-2986978e2085",
+      "partId": "world-environment",
+      "hash": "be6df4b9011248c683cf166fc0f1438a19861b71bc349a8d3a62fbbb37b3b68d",
+      "integrity": "sha256-be6df4b9011248c683cf166fc0f1438a19861b71bc349a8d3a62fbbb37b3b68d",
+      "exportName": "createImmersiveWorldPart",
+      "file": "data/immersive-world/generated-modules/be6df4b9011248c683cf166fc0f1438a19861b71bc349a8d3a62fbbb37b3b68d.mjs",
+      "url": "./data/immersive-world/generated-modules/be6df4b9011248c683cf166fc0f1438a19861b71bc349a8d3a62fbbb37b3b68d.mjs",
+      "bytes": 12205,
+      "sourceHash": "783da96bde0f9d23ac9cf3b66775085ed29dd68d113dccc9b42b8e9c43f890b5",
+      "packagedAt": "2026-06-07T09:14:49.748Z",
+      "rendererCompatibility": {
+        "version": 1,
+        "targetMode": "webgpu-project-scene",
+        "compatibilityStatus": "webgpu-compatible",
+        "webgpuCompatible": true,
+        "fallbackReason": null,
+        "fallbackReasons": [],
+        "evidenceReasons": [
+          "webgpu-safe-material",
+          "project-webgpu-material-factory"
+        ],
+        "compatibleSurfaces": [
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "world-environment.module.mjs",
+            "pos": 6853,
+            "materialType": "MeshBasicMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "world-environment.module.mjs",
+            "pos": 10605,
+            "materialType": "MeshBasicMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "world-environment.module.mjs",
+            "pos": 17373,
+            "materialType": "LineBasicMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 3439,
+            "materialType": "MeshBasicMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 5575,
+            "materialType": "MeshBasicMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 9028,
+            "materialType": "LineBasicMaterial"
+          },
+          {
+            "reason": "project-webgpu-material-factory",
+            "factoryId": "matte-painted-surface",
+            "id": "matte-painted-surface",
+            "category": "matte-painted-surface",
+            "runtimeSurface": "three-standard-material",
+            "materialType": "MeshStandardMaterial",
+            "guidance": [
+              "Use for painted, paper, canvas, ink wash, graphite, stain, and transfer surfaces.",
+              "Represent texture through declarative surface controls and WebGPU-safe texture descriptors."
+            ]
+          },
+          {
+            "reason": "project-webgpu-material-factory",
+            "factoryId": "color-field",
+            "id": "color-field",
+            "category": "color-field",
+            "runtimeSurface": "three-basic-or-standard-material",
+            "materialType": "MeshBasicMaterial",
+            "guidance": [
+              "Use for all-over color fields, hard-edged planes, atmospheric bands, and flat graphic fields.",
+              "Prefer geometry layers or declarative texture descriptors over GLSL gradients."
+            ]
+          },
+          {
+            "reason": "project-webgpu-material-factory",
+            "factoryId": "soft-particles",
+            "id": "soft-particles",
+            "category": "soft-particles",
+            "runtimeSurface": "three-points-material",
+            "materialType": "PointsMaterial",
+            "guidance": [
+              "Use for soft atmosphere, dust, floating pigment, and particulate halos.",
+              "Keep the particle logic deterministic and inspectable in data."
+            ]
+          },
+          {
+            "reason": "project-webgpu-material-factory",
+            "factoryId": "post-color-transform",
+            "id": "post-color-transform",
+            "category": "post-color-transform",
+            "runtimeSurface": "declarative-post-color-transform",
+            "materialType": "TSLNodeMaterial",
+            "guidance": [
+              "Use for WebGPU-safe color grading and output transforms.",
+              "Do not use legacy GLSL post passes for WebGPU project scenes."
+            ]
+          }
+        ],
+        "forbiddenSurfaces": []
+      }
+    },
+    {
+      "version": 1,
       "moduleId": "artist-mark-field-draft-attempt-1",
       "partId": "artist-mark-field",
       "hash": "bea0e2be72f5ba3bfea8ef09d63235f2877d584c063a6a4f7d96df258fa1e748",
@@ -13834,6 +14132,118 @@
             "filePath": "bundled-generated-module.mjs",
             "pos": 16062,
             "materialType": "MeshBasicMaterial"
+          }
+        ],
+        "forbiddenSurfaces": []
+      }
+    },
+    {
+      "version": 1,
+      "moduleId": "artist-mark-field-lygia-clark-2986978e2085",
+      "partId": "artist-mark-field",
+      "hash": "caf83b1447a7ac7d1e056fa311c79e533a8faa5c6dc4d227ea6a72b738fc131b",
+      "integrity": "sha256-caf83b1447a7ac7d1e056fa311c79e533a8faa5c6dc4d227ea6a72b738fc131b",
+      "exportName": "createImmersiveWorldPart",
+      "file": "data/immersive-world/generated-modules/caf83b1447a7ac7d1e056fa311c79e533a8faa5c6dc4d227ea6a72b738fc131b.mjs",
+      "url": "./data/immersive-world/generated-modules/caf83b1447a7ac7d1e056fa311c79e533a8faa5c6dc4d227ea6a72b738fc131b.mjs",
+      "bytes": 14475,
+      "sourceHash": "1c9c4739f4364022c5c0665890d34434934ffc135c9a41e576bd253f140d1f67",
+      "packagedAt": "2026-06-07T09:14:49.748Z",
+      "rendererCompatibility": {
+        "version": 1,
+        "targetMode": "webgpu-project-scene",
+        "compatibilityStatus": "webgpu-compatible",
+        "webgpuCompatible": true,
+        "fallbackReason": null,
+        "fallbackReasons": [],
+        "evidenceReasons": [
+          "webgpu-safe-material",
+          "project-webgpu-material-factory"
+        ],
+        "compatibleSurfaces": [
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "artist-mark-field.module.mjs",
+            "pos": 1919,
+            "materialType": "MeshBasicMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "artist-mark-field.module.mjs",
+            "pos": 2381,
+            "materialType": "LineBasicMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "artist-mark-field.module.mjs",
+            "pos": 20606,
+            "materialType": "PointsMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 1150,
+            "materialType": "MeshBasicMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 1402,
+            "materialType": "LineBasicMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "filePath": "bundled-generated-module.mjs",
+            "pos": 11611,
+            "materialType": "PointsMaterial"
+          },
+          {
+            "reason": "project-webgpu-material-factory",
+            "factoryId": "matte-painted-surface",
+            "id": "matte-painted-surface",
+            "category": "matte-painted-surface",
+            "runtimeSurface": "three-standard-material",
+            "materialType": "MeshStandardMaterial",
+            "guidance": [
+              "Use for painted, paper, canvas, ink wash, graphite, stain, and transfer surfaces.",
+              "Represent texture through declarative surface controls and WebGPU-safe texture descriptors."
+            ]
+          },
+          {
+            "reason": "project-webgpu-material-factory",
+            "factoryId": "color-field",
+            "id": "color-field",
+            "category": "color-field",
+            "runtimeSurface": "three-basic-or-standard-material",
+            "materialType": "MeshBasicMaterial",
+            "guidance": [
+              "Use for all-over color fields, hard-edged planes, atmospheric bands, and flat graphic fields.",
+              "Prefer geometry layers or declarative texture descriptors over GLSL gradients."
+            ]
+          },
+          {
+            "reason": "project-webgpu-material-factory",
+            "factoryId": "soft-particles",
+            "id": "soft-particles",
+            "category": "soft-particles",
+            "runtimeSurface": "three-points-material",
+            "materialType": "PointsMaterial",
+            "guidance": [
+              "Use for soft atmosphere, dust, floating pigment, and particulate halos.",
+              "Keep the particle logic deterministic and inspectable in data."
+            ]
+          },
+          {
+            "reason": "project-webgpu-material-factory",
+            "factoryId": "post-color-transform",
+            "id": "post-color-transform",
+            "category": "post-color-transform",
+            "runtimeSurface": "declarative-post-color-transform",
+            "materialType": "TSLNodeMaterial",
+            "guidance": [
+              "Use for WebGPU-safe color grading and output transforms.",
+              "Do not use legacy GLSL post passes for WebGPU project scenes."
+            ]
           }
         ],
         "forbiddenSurfaces": []
