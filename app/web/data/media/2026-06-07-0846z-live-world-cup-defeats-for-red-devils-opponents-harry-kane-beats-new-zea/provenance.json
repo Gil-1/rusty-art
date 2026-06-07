@@ -1,0 +1,76 @@
+{
+  "version": 2,
+  "kind": "rusty-art-public-media-assets",
+  "artworkId": "2026-06-07-0846z-live-world-cup-defeats-for-red-devils-opponents-harry-kane-beats-new-zea",
+  "source": {
+    "sha256": "a79329768f69fb6d26d1e66f65e55cbeb7ae1c02a89e33284bb3e3349198a910",
+    "role": "daily-preview-story-desktop"
+  },
+  "sources": {
+    "primary": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-desktop",
+      "sha256": "a79329768f69fb6d26d1e66f65e55cbeb7ae1c02a89e33284bb3e3349198a910"
+    },
+    "openGraph": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-open-graph",
+      "sha256": "9f4ac595a7a6895b63c6f645947acab80b2d76e6454180c091a27011e453a54f"
+    },
+    "instagram": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-instagram",
+      "sha256": "f8d19a387eceb1e89a1fb68587ae0ff444ce21f7d80eebe3b4834fcb110d8599"
+    }
+  },
+  "targets": {
+    "thumb-320.jpg": {
+      "spec": {
+        "fileName": "thumb-320.jpg",
+        "width": 320,
+        "height": null,
+        "fit": "inside",
+        "withoutEnlargement": true,
+        "format": "jpeg",
+        "quality": 82
+      },
+      "publicPath": "./data/media/2026-06-07-0846z-live-world-cup-defeats-for-red-devils-opponents-harry-kane-beats-new-zea/thumb-320.jpg",
+      "source": {
+        "sha256": "a79329768f69fb6d26d1e66f65e55cbeb7ae1c02a89e33284bb3e3349198a910",
+        "role": "daily-preview-story-desktop"
+      }
+    },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-06-07-0846z-live-world-cup-defeats-for-red-devils-opponents-harry-kane-beats-new-zea/og-1200x630.jpg",
+      "source": {
+        "sha256": "9f4ac595a7a6895b63c6f645947acab80b2d76e6454180c091a27011e453a54f",
+        "role": "daily-preview-story-open-graph"
+      }
+    },
+    "instagram-1080x1440.jpg": {
+      "spec": {
+        "fileName": "instagram-1080x1440.jpg",
+        "width": 1080,
+        "height": 1440,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-06-07-0846z-live-world-cup-defeats-for-red-devils-opponents-harry-kane-beats-new-zea/instagram-1080x1440.jpg",
+      "source": {
+        "sha256": "f8d19a387eceb1e89a1fb68587ae0ff444ce21f7d80eebe3b4834fcb110d8599",
+        "role": "daily-preview-story-instagram"
+      }
+    }
+  }
+}
