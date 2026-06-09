@@ -1,8 +1,10 @@
 import * as THREE from 'three';
+import { applyImmersiveWorldTextureQuality } from './immersive-world-scene.js';
 import {
   collectRendererSceneFeatures,
   createWebGLRendererRuntime,
   describeRendererDiagnostics,
+  PREFERRED_RENDER_TARGET_SAMPLES,
   POST_PROCESSING_MODES,
   RENDERER_MODES,
   resolveRendererRuntimeSelection
@@ -15,6 +17,7 @@ import {
 import {
   createBrowserResizeAdapter,
   createBrowserTimingAdapter,
+  createRendererAnimationLoopAdapter,
   createSceneFrameLifecycle
 } from './scene-frame-lifecycle.js';
 import { disposeObjectTree } from './scene-runtime.js';
@@ -75,7 +78,8 @@ export class ArtworkScene {
         forceWebGL: this.rendererSelection.forceWebGL,
         rendererMode: this.rendererSelection.rendererMode,
         rendererBackend: this.rendererSelection.rendererBackend,
-        rendererFallbackReason: this.rendererSelection.rendererFallbackReason
+        rendererFallbackReason: this.rendererSelection.rendererFallbackReason,
+        samples: PREFERRED_RENDER_TARGET_SAMPLES
       })
       : createWebGLRendererRuntime({
         canvas,
@@ -105,6 +109,7 @@ export class ArtworkScene {
     this.captureMode = Boolean(captureMode);
     this.captureTime = 1.234;
     this.sceneAssemblyReport = null;
+    this.textureQuality = null;
     this.disposed = false;
 
     this.resize = this.resize.bind(this);
@@ -118,7 +123,10 @@ export class ArtworkScene {
         canvas: this.canvas,
         target: window,
         resizeObserverCtor: typeof ResizeObserver !== 'undefined' ? ResizeObserver : undefined
-      })
+      }),
+      animationLoopAdapter: this.rendererSelection.useWebGPURenderer
+        ? createRendererAnimationLoopAdapter(this.rendererRuntime)
+        : null
     });
 
     this.rendererReady = this.rendererRuntime.initialize()
@@ -207,6 +215,42 @@ export class ArtworkScene {
       marks.add(mark);
     }
     this.group.add(marks);
+    const rgbData = new Uint8Array([
+      255, 0, 0,
+      0, 255, 0,
+      0, 0, 255,
+      255, 255, 255
+    ]);
+    const rgbaData = new Uint8Array([
+      255, 255, 255, 255,
+      255, 180, 80, 255,
+      80, 180, 255, 255,
+      12, 18, 30, 255
+    ]);
+    const rgbTexture = new THREE.DataTexture(rgbData, 2, 2, THREE.RGBFormat, THREE.UnsignedByteType);
+    rgbTexture.name = 'webgpu-diagnostic-rgb-unsigned-byte-map';
+    const rgbaTexture = new THREE.DataTexture(rgbaData, 2, 2, THREE.RGBAFormat, THREE.UnsignedByteType);
+    rgbaTexture.name = 'webgpu-diagnostic-rgba-unsigned-byte-emissive-map';
+    const textureProbe = new THREE.Mesh(
+      new THREE.PlaneGeometry(0.9, 0.5, 1, 1),
+      new THREE.MeshPhysicalMaterial({
+        color: '#ffffff',
+        roughness: 0.62,
+        metalness: 0,
+        map: rgbTexture,
+        emissive: new THREE.Color('#202030'),
+        emissiveMap: rgbaTexture,
+        clearcoat: 0.2,
+        clearcoatMap: rgbaTexture
+      })
+    );
+    textureProbe.name = 'webgpu-diagnostic-texture-format-probe';
+    textureProbe.position.set(-2.7, -1.55, 0.3);
+    this.group.add(textureProbe);
+    this.textureQuality = applyImmersiveWorldTextureQuality(this.group, {
+      THREE,
+      renderer: this.renderer
+    });
     this.diagnosticObjects = { ring, core, marks };
     this.sceneAssemblyReport = {
       summary: {
@@ -217,8 +261,10 @@ export class ArtworkScene {
       built: [
         { id: 'diagnostic-field', moduleType: 'webgpu-diagnostic-field' },
         { id: 'diagnostic-ring', moduleType: 'webgpu-diagnostic-standard-material' },
-        { id: 'diagnostic-marks', moduleType: 'webgpu-diagnostic-standard-material' }
-      ]
+        { id: 'diagnostic-marks', moduleType: 'webgpu-diagnostic-standard-material' },
+        { id: 'diagnostic-texture-format-probe', moduleType: 'webgpu-diagnostic-texture-format-probe' }
+      ],
+      textureQuality: this.textureQuality
     };
     await this.rendererReady;
     return true;
@@ -234,7 +280,8 @@ export class ArtworkScene {
       ? POST_PROCESSING_MODES.WEBGPU_TSL_POST
       : 'webgpu-diagnostic-direct';
     return this.rendererRuntime?.getDiagnostics?.({
-      outputColorTransformMode
+      outputColorTransformMode,
+      textureFormatFacts: this.textureQuality?.textureFormatFacts || []
     }) || describeRendererDiagnostics(this.renderer, { outputColorTransformMode });
   }
 

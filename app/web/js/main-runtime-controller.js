@@ -350,8 +350,21 @@ export function createRuntimeController({
       renderedArtworkId: art?.id || null,
       rendererMode: rendererDiagnostics.rendererMode || null,
       rendererBackend: rendererDiagnostics.rendererBackend || null,
+      selectedRendererMode: rendererDiagnostics.selectedRendererMode || null,
+      selectedRendererBackend: rendererDiagnostics.selectedRendererBackend || null,
+      actualRendererMode: rendererDiagnostics.actualRendererMode || null,
+      actualRendererBackend: rendererDiagnostics.actualRendererBackend || null,
+      rendererProof: rendererDiagnostics.rendererProof || null,
       rendererFallbackReason: rendererDiagnostics.rendererFallbackReason || null,
       outputColorTransformMode: rendererDiagnostics.outputColorTransformMode || null,
+      compatibilityMode: rendererDiagnostics.compatibilityMode ?? null,
+      requestedAntialias: rendererDiagnostics.requestedAntialias ?? null,
+      requestedSamples: rendererDiagnostics.requestedSamples ?? null,
+      currentSamples: rendererDiagnostics.currentSamples ?? null,
+      effectiveSamples: rendererDiagnostics.effectiveSamples ?? null,
+      samplesDegraded: rendererDiagnostics.samplesDegraded === true,
+      outputBufferType: rendererDiagnostics.outputBufferType || null,
+      textureFormatFacts: Array.isArray(rendererDiagnostics.textureFormatFacts) ? rendererDiagnostics.textureFormatFacts : [],
       sceneAssemblyReport: activeScene.getAssemblyReport?.() || null
     });
     emitSceneProgress(1, 'Scene ready', false);

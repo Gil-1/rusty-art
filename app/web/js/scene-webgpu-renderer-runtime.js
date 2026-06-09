@@ -10,27 +10,39 @@ export function createWebGPURendererRuntime({
   canvas,
   devicePixelRatio = 1,
   forceWebGL = false,
+  antialias = true,
+  samples = null,
+  outputBufferType = null,
   rendererMode = null,
   rendererBackend = null,
   rendererFallbackReason = null,
   rendererFactory = (options) => new WebGPURenderer(options)
 } = {}) {
-  const renderer = rendererFactory({
+  const rendererOptions = {
     canvas,
-    antialias: true,
+    antialias,
     alpha: false,
     forceWebGL
-  });
+  };
+  if (Number.isFinite(Number(samples))) rendererOptions.samples = Math.max(0, Math.floor(Number(samples)));
+  if (outputBufferType != null) rendererOptions.outputBufferType = outputBufferType;
+  const renderer = rendererFactory(rendererOptions);
+  const selectedRendererMode = rendererMode || null;
+  const selectedRendererBackend = rendererBackend || null;
   const runtime = createRendererRuntime({
     renderer,
-    rendererMode: rendererMode || ((activeRenderer) => {
+    rendererMode: (activeRenderer) => {
       const backend = resolveRendererBackend(activeRenderer);
       return forceWebGL
         ? RENDERER_MODES.WEBGPU_WEBGL2_BACKEND
         : resolveRendererMode(activeRenderer, backend);
-    }),
-    rendererBackend: rendererBackend || ((activeRenderer) => resolveRendererBackend(activeRenderer)),
+    },
+    rendererBackend: (activeRenderer) => resolveRendererBackend(activeRenderer),
+    selectedRendererMode,
+    selectedRendererBackend,
     rendererFallbackReason,
+    requestedAntialias: Boolean(antialias),
+    requestedSamples: rendererOptions.samples ?? null,
     initialize: async (activeRenderer) => {
       if (typeof activeRenderer.init === 'function') await activeRenderer.init();
       return activeRenderer;

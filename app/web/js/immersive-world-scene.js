@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import { CAPTURE_PROFILES, normalizeCaptureProfile } from './contracts/capture-target-contract.js';
+import { WEBGPU_ACCEPTED_MATERIAL_MAP_PROPERTIES } from './contracts/webgpu-material-map-contract.js';
 import {
   applyViewportOrbitFrame,
   bindOrbitInput,
@@ -35,6 +36,7 @@ import {
 import {
   createBrowserResizeAdapter,
   createBrowserTimingAdapter,
+  createRendererAnimationLoopAdapter,
   createSceneFrameLifecycle
 } from './scene-frame-lifecycle.js';
 import { IMMERSIVE_WORLD_POST_FRAGMENT } from './scene-shaders.js';
@@ -374,33 +376,19 @@ export function applyImmersiveWorldOutputColorTransform(scene, world = {}) {
   return transform;
 }
 
-const MATERIAL_TEXTURE_FIELDS = Object.freeze([
-  'map',
-  'alphaMap',
-  'aoMap',
-  'bumpMap',
-  'displacementMap',
-  'emissiveMap',
-  'envMap',
-  'lightMap',
-  'metalnessMap',
-  'normalMap',
-  'roughnessMap',
-  'specularMap',
-  'gradientMap'
-]);
+const MATERIAL_TEXTURE_FIELDS = WEBGPU_ACCEPTED_MATERIAL_MAP_PROPERTIES;
 
 function collectMaterialTextures(material) {
   const textures = [];
   for (const field of MATERIAL_TEXTURE_FIELDS) {
     const texture = material?.[field];
-    if (texture?.isTexture) textures.push(texture);
+    if (texture?.isTexture) textures.push({ field, texture });
   }
   const uniforms = asObject(material?.uniforms, null);
   if (uniforms) {
-    for (const uniform of Object.values(uniforms)) {
+    for (const [name, uniform] of Object.entries(uniforms)) {
       const value = uniform?.value;
-      if (value?.isTexture) textures.push(value);
+      if (value?.isTexture) textures.push({ field: `uniform:${name}`, texture: value });
     }
   }
   return textures;
@@ -458,27 +446,56 @@ function softPointTextureFor(three, anisotropy) {
   return texture;
 }
 
-function normalizeSrgbDataTextureUpload(texture, three) {
-  if (!texture?.isDataTexture) return false;
-  if (!three?.SRGBColorSpace || texture.colorSpace !== three.SRGBColorSpace) return false;
+function textureConstantName(three, value) {
+  for (const name of ['RGBAFormat', 'RGBFormat', 'UnsignedByteType', 'UnsignedShort565Type', 'UnsignedInt5999Type', 'NoColorSpace', 'SRGBColorSpace', 'LinearSRGBColorSpace']) {
+    if (three?.[name] === value) return name;
+  }
+  return value == null ? null : String(value);
+}
+
+function compactTextureUploadFact(texture, three, { field, status, reason, changed = false } = {}) {
+  const image = texture?.image || {};
+  return {
+    field: field || null,
+    textureType: texture?.isDataTexture ? 'DataTexture' : texture?.isCanvasTexture ? 'CanvasTexture' : texture?.isTexture ? 'Texture' : null,
+    format: textureConstantName(three, texture?.format),
+    type: textureConstantName(three, texture?.type),
+    colorSpace: textureConstantName(three, texture?.colorSpace),
+    width: Number.isFinite(Number(image.width)) ? Number(image.width) : null,
+    height: Number.isFinite(Number(image.height)) ? Number(image.height) : null,
+    status,
+    reason,
+    changed: Boolean(changed)
+  };
+}
+
+function normalizeWebGPUTextureUpload(texture, three, { field = null } = {}) {
+  if (!texture?.isTexture) {
+    return compactTextureUploadFact(texture, three, { field, status: 'skipped', reason: 'not-texture' });
+  }
 
   const image = texture.image || {};
   const width = Number(image.width);
   const height = Number(image.height);
   const data = image.data;
   const pixelCount = width * height;
-  if (!Number.isInteger(width) || width <= 0 || !Number.isInteger(height) || height <= 0) return false;
-
-  if (
-    texture.format === three.RGBAFormat
-    && texture.type === three.UnsignedByteType
-    && data instanceof Uint8Array
-  ) {
-    return false;
+  const hasDimensions = Number.isInteger(width) && width > 0 && Number.isInteger(height) && height > 0;
+  if (texture.isDataTexture && !hasDimensions) {
+    return compactTextureUploadFact(texture, three, { field, status: 'unsupported', reason: 'missing-dimensions' });
   }
 
   if (
-    texture.format === three.RGBFormat
+    texture.isDataTexture
+    && texture.format === three.RGBAFormat
+    && texture.type === three.UnsignedByteType
+    && data instanceof Uint8Array
+  ) {
+    return compactTextureUploadFact(texture, three, { field, status: 'safe', reason: 'rgba-unsigned-byte' });
+  }
+
+  if (
+    texture.isDataTexture
+    && texture.format === three.RGBFormat
     && texture.type === three.UnsignedByteType
     && data instanceof Uint8Array
     && data.length === pixelCount * 3
@@ -495,24 +512,38 @@ function normalizeSrgbDataTextureUpload(texture, three) {
     texture.image.data = rgba;
     texture.format = three.RGBAFormat;
     texture.type = three.UnsignedByteType;
-    return true;
+    return compactTextureUploadFact(texture, three, { field, status: 'normalized', reason: 'rgb-unsigned-byte-to-rgba', changed: true });
   }
 
   if (
-    texture.format === three.RGBAFormat
+    texture.isDataTexture
+    && texture.format === three.RGBAFormat
     && data instanceof Uint8Array
     && data.length === pixelCount * 4
   ) {
     texture.type = three.UnsignedByteType;
-    return true;
+    return compactTextureUploadFact(texture, three, { field, status: 'normalized', reason: 'rgba-uint8-type-normalized', changed: true });
   }
 
-  if (three.NoColorSpace && texture.colorSpace !== three.NoColorSpace) {
-    texture.colorSpace = three.NoColorSpace;
-    return true;
+  if (
+    texture.isDataTexture
+    && texture.format === three.RGBFormat
+  ) {
+    return compactTextureUploadFact(texture, three, { field, status: 'unsupported', reason: 'rgb-format-requires-rgba-conversion-or-dedicated-packed-fixture' });
   }
 
-  return false;
+  if (texture.format === three.RGBFormat) {
+    const reason = texture.type === three.UnsignedByteType
+      ? 'rgb-unsigned-byte-canvas-style-rejected'
+      : 'rgb-format-requires-dedicated-packed-fixture';
+    return compactTextureUploadFact(texture, three, { field, status: 'unsupported', reason });
+  }
+
+  if (texture.format === three.RGBAFormat && texture.type === three.UnsignedByteType) {
+    return compactTextureUploadFact(texture, three, { field, status: 'safe', reason: 'rgba-unsigned-byte' });
+  }
+
+  return compactTextureUploadFact(texture, three, { field, status: 'safe', reason: 'format-not-rewritten' });
 }
 
 export function applyImmersiveWorldTextureQuality(object, {
@@ -523,6 +554,8 @@ export function applyImmersiveWorldTextureQuality(object, {
     inspectedMaterials: 0,
     inspectedTextures: 0,
     normalizedTextures: 0,
+    unsupportedTextures: 0,
+    textureFormatFacts: [],
     inspectedPointMaterials: 0,
     normalizedPointMaterials: 0
   };
@@ -535,12 +568,20 @@ export function applyImmersiveWorldTextureQuality(object, {
       : [child.material].filter(Boolean);
     for (const material of materials) {
       facts.inspectedMaterials += 1;
-      for (const texture of collectMaterialTextures(material)) {
+      for (const { field, texture } of collectMaterialTextures(material)) {
         if (seenTextures.has(texture)) continue;
         seenTextures.add(texture);
         facts.inspectedTextures += 1;
-        if (!texture.isDataTexture) continue;
-        let changed = normalizeSrgbDataTextureUpload(texture, three);
+        const uploadFact = normalizeWebGPUTextureUpload(texture, three, { field });
+        if (uploadFact.status !== 'skipped') facts.textureFormatFacts.push(uploadFact);
+        if (uploadFact.status === 'unsupported') {
+          facts.unsupportedTextures += 1;
+          const error = new Error(`Unsupported WebGPU texture upload for ${field || 'material texture'}: ${uploadFact.reason}`);
+          error.code = 'webgpu-texture-upload-unsupported';
+          error.details = uploadFact;
+          throw error;
+        }
+        let changed = uploadFact.changed;
         if (texture.magFilter === three.NearestFilter) {
           texture.magFilter = three.LinearFilter;
           changed = true;
@@ -1563,7 +1604,10 @@ export class ArtworkScene {
         canvas: this.canvas,
         target: window,
         resizeObserverCtor: typeof ResizeObserver !== 'undefined' ? ResizeObserver : undefined
-      })
+      }),
+      animationLoopAdapter: this.rendererSelection.useWebGPURenderer
+        ? createRendererAnimationLoopAdapter(this.rendererRuntime)
+        : null
     });
     this.rendererReady = this.rendererRuntime.initialize()
       .then(() => {

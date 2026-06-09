@@ -1,5 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import fs from 'node:fs';
 
 import {
   buildPublicArtworkHeroFacts,
@@ -10,6 +11,7 @@ import {
 import {
   applyLoadingFacts,
   createArchiveCardElement,
+  populateQuickPicker,
   renderGalleryList
 } from '../app/web/js/main-render.js';
 import { createRuntimeRenderEffects } from '../app/web/js/main-render-effects.js';
@@ -250,6 +252,21 @@ test('runtime gallery trigger uses both visible lines for artwork context', () =
   assert.doesNotMatch(refs.galleryTrigger.innerHTML, />Gallery</);
   assert.equal(refs.galleryTrigger.title, '2026-06-04 · Helen Frankenthaler · Quiet field');
   assert.equal(refs.galleryTrigger.attributes['aria-label'], 'Open artwork gallery, current artwork: 2026-06-04 · Helen Frankenthaler · Quiet field');
+});
+
+test('mobile title surfaces wrap instead of truncating', () => {
+  const html = fs.readFileSync(new URL('../app/web/index.html', import.meta.url), 'utf8');
+  const heroTitleClasses = html.match(/<h1 id="hero-now-title" class="([^"]+)"/)?.[1] || '';
+  const galleryTriggerClasses = html.match(/<button id="gallery-trigger" class="([^"]+)"/)?.[1] || '';
+
+  assert.doesNotMatch(heroTitleClasses, /line-clamp|truncate|text-ellipsis|whitespace-nowrap|overflow-hidden/);
+  assert.doesNotMatch(galleryTriggerClasses, /overflow-hidden/);
+
+  installDocumentStub();
+  const quickPicker = createElementStub('button', 'gallery-trigger');
+  populateQuickPicker(quickPicker, manifest, { activeIndex: 0 });
+
+  assert.doesNotMatch(quickPicker.innerHTML, /text-ellipsis|whitespace-nowrap|overflow-hidden/);
 });
 
 test('archive card renderer marks the active gallery card as current', () => {

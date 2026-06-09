@@ -31,8 +31,8 @@ const STATUS_LEVEL_CLASSES = Object.freeze({
   error: 'border-rose-200/55 bg-rose-950/75 text-rose-50'
 });
 
-const GALLERY_TRIGGER_KICKER_CLASSES = 'gallery-trigger-kicker block w-full min-w-0 overflow-hidden text-ellipsis whitespace-nowrap pr-10 text-[0.66rem] font-semibold text-cyan-200/90 max-[700px]:pr-9';
-const GALLERY_TRIGGER_LABEL_CLASSES = 'gallery-trigger-label block w-full min-w-0 overflow-hidden text-ellipsis whitespace-nowrap text-[0.82rem] font-semibold leading-snug text-slate-50';
+const GALLERY_TRIGGER_KICKER_CLASSES = 'gallery-trigger-kicker block w-full min-w-0 break-words pr-10 text-[0.66rem] font-semibold text-cyan-200/90 max-[700px]:pr-9';
+const GALLERY_TRIGGER_LABEL_CLASSES = 'gallery-trigger-label block w-full min-w-0 break-words text-[0.82rem] font-semibold leading-snug text-slate-50';
 const GALLERY_TRIGGER_POSITION_CLASSES = 'quick-position pointer-events-none absolute right-1.5 top-1 text-[0.58rem] font-medium leading-none text-slate-400 empty:hidden max-[700px]:right-1 max-[700px]:top-1.5 max-[700px]:text-[0.52rem]';
 
 const META_CONTEXT_GRID_CLASSES = 'meta-context-grid grid gap-0 divide-y divide-slate-500/30 md:grid-cols-[1.1fr_0.72fr_0.9fr] md:divide-x md:divide-y-0';

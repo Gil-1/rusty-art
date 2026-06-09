@@ -105,19 +105,80 @@ export function resolveRendererMode(renderer = null, rendererBackend = null) {
   return RENDERER_MODES.WEBGL_LEGACY;
 }
 
+function nullableBoolean(value) {
+  return typeof value === 'boolean' ? value : null;
+}
+
+function nullableNonNegativeInteger(value) {
+  if (value == null || value === '') return null;
+  const number = Math.floor(Number(value));
+  return Number.isFinite(number) && number >= 0 ? number : null;
+}
+
+function rendererOutputBufferTypeName(value) {
+  if (value == null || value === '') return null;
+  if (typeof value === 'string') return value;
+  if (value === THREE.UnsignedByteType) return 'UnsignedByteType';
+  if (value === THREE.HalfFloatType) return 'HalfFloatType';
+  if (value === THREE.FloatType) return 'FloatType';
+  return String(value);
+}
+
+function resolveRendererOutputBufferType(renderer = null) {
+  if (typeof renderer?.getOutputBufferType !== 'function') return null;
+  try {
+    return rendererOutputBufferTypeName(renderer.getOutputBufferType());
+  } catch {
+    return null;
+  }
+}
+
+function resolveCompatibilityMode(renderer = null) {
+  const value = renderer?.backend?.compatibilityMode ?? renderer?.compatibilityMode;
+  return typeof value === 'boolean' ? value : null;
+}
+
 export function describeRendererDiagnostics(renderer = null, {
   rendererMode = null,
   rendererBackend = null,
+  selectedRendererMode = null,
+  selectedRendererBackend = null,
   rendererFallbackReason = null,
-  outputColorTransformMode = null
+  outputColorTransformMode = null,
+  requestedAntialias = null,
+  requestedSamples = null,
+  textureFormatFacts = null
 } = {}) {
-  const resolvedBackend = rendererBackend || resolveRendererBackend(renderer);
-  const resolvedMode = rendererMode || resolveRendererMode(renderer, resolvedBackend);
+  const actualRendererBackend = resolveRendererBackend(renderer);
+  const actualRendererMode = resolveRendererMode(renderer, actualRendererBackend);
+  const resolvedBackend = rendererBackend || actualRendererBackend;
+  const resolvedMode = rendererMode || actualRendererMode;
+  const requestedSamplesCount = nullableNonNegativeInteger(requestedSamples);
+  const currentSamples = nullableNonNegativeInteger(renderer?.currentSamples);
+  const effectiveSamples = currentSamples ?? nullableNonNegativeInteger(renderer?.samples);
   return {
     rendererMode: resolvedMode,
     rendererBackend: resolvedBackend,
+    selectedRendererMode: selectedRendererMode || null,
+    selectedRendererBackend: selectedRendererBackend || null,
+    actualRendererMode,
+    actualRendererBackend,
     rendererFallbackReason: rendererFallbackReason || null,
-    outputColorTransformMode: outputColorTransformMode || null
+    outputColorTransformMode: outputColorTransformMode || null,
+    compatibilityMode: resolveCompatibilityMode(renderer),
+    requestedAntialias: nullableBoolean(requestedAntialias),
+    requestedSamples: requestedSamplesCount,
+    currentSamples,
+    effectiveSamples,
+    samplesDegraded: requestedSamplesCount != null && effectiveSamples != null ? effectiveSamples < requestedSamplesCount : false,
+    outputBufferType: resolveRendererOutputBufferType(renderer),
+    textureFormatFacts: Array.isArray(textureFormatFacts) ? textureFormatFacts : [],
+    rendererProof: renderer ? {
+      isWebGPURenderer: renderer.isWebGPURenderer === true,
+      backendIsWebGPUBackend: renderer.backend?.isWebGPUBackend === true,
+      backendIsWebGLBackend: renderer.backend?.isWebGLBackend === true,
+      backendType: renderer.backend?.constructor?.name || null
+    } : null
   };
 }
 
@@ -233,7 +294,11 @@ export function createRendererRuntime({
   renderer,
   rendererMode = null,
   rendererBackend = null,
+  selectedRendererMode = null,
+  selectedRendererBackend = null,
   rendererFallbackReason = null,
+  requestedAntialias = null,
+  requestedSamples = null,
   initialize = async () => renderer,
   dispose = defaultRendererDispose,
   setSize = defaultRendererSetSize,
@@ -314,10 +379,16 @@ export function createRendererRuntime({
     getDiagnostics(options = {}) {
       const resolvedRendererBackend = typeof rendererBackend === 'function' ? rendererBackend(renderer) : rendererBackend;
       const resolvedRendererMode = typeof rendererMode === 'function' ? rendererMode(renderer) : rendererMode;
+      const resolvedSelectedRendererBackend = typeof selectedRendererBackend === 'function' ? selectedRendererBackend(renderer) : selectedRendererBackend;
+      const resolvedSelectedRendererMode = typeof selectedRendererMode === 'function' ? selectedRendererMode(renderer) : selectedRendererMode;
       return describeRendererDiagnostics(renderer, {
         rendererMode: resolvedRendererMode,
         rendererBackend: resolvedRendererBackend,
+        selectedRendererMode: resolvedSelectedRendererMode,
+        selectedRendererBackend: resolvedSelectedRendererBackend,
         rendererFallbackReason,
+        requestedAntialias,
+        requestedSamples,
         ...options
       });
     },
@@ -325,10 +396,19 @@ export function createRendererRuntime({
     getFacts() {
       const resolvedRendererBackend = typeof rendererBackend === 'function' ? rendererBackend(renderer) : rendererBackend;
       const resolvedRendererMode = typeof rendererMode === 'function' ? rendererMode(renderer) : rendererMode;
+      const resolvedSelectedRendererBackend = typeof selectedRendererBackend === 'function' ? selectedRendererBackend(renderer) : selectedRendererBackend;
+      const resolvedSelectedRendererMode = typeof selectedRendererMode === 'function' ? selectedRendererMode(renderer) : selectedRendererMode;
+      const diagnostics = describeRendererDiagnostics(renderer, {
+        rendererMode: resolvedRendererMode,
+        rendererBackend: resolvedRendererBackend,
+        selectedRendererMode: resolvedSelectedRendererMode,
+        selectedRendererBackend: resolvedSelectedRendererBackend,
+        rendererFallbackReason,
+        requestedAntialias,
+        requestedSamples
+      });
       return {
-        rendererMode: resolvedRendererMode || resolveRendererMode(renderer, resolvedRendererBackend || resolveRendererBackend(renderer)),
-        rendererBackend: resolvedRendererBackend || resolveRendererBackend(renderer),
-        rendererFallbackReason: rendererFallbackReason || null,
+        ...diagnostics,
         initialized,
         initializationStarted,
         initializationError: initializationError?.message || null,
@@ -351,6 +431,7 @@ export function createWebGLRendererRuntime({
     renderer,
     rendererMode: RENDERER_MODES.WEBGL_LEGACY,
     rendererFallbackReason,
+    requestedAntialias: true,
     initialize: async () => renderer
   });
 

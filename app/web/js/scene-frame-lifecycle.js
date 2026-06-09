@@ -87,8 +87,7 @@ export function createRendererAnimationLoopAdapter(renderer) {
   return {
     setAnimationLoop(callback) {
       if (typeof renderer?.setAnimationLoop !== 'function') return false;
-      renderer.setAnimationLoop(callback);
-      return true;
+      return renderer.setAnimationLoop(callback) !== false;
     },
     disconnect() {
       if (typeof renderer?.setAnimationLoop === 'function') renderer.setAnimationLoop(null);

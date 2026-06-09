@@ -46,8 +46,21 @@ export const CAPTURE_READINESS_PATCH_KEYS = Object.freeze([
   'renderedArtworkId',
   'rendererMode',
   'rendererBackend',
+  'selectedRendererMode',
+  'selectedRendererBackend',
+  'actualRendererMode',
+  'actualRendererBackend',
+  'rendererProof',
   'rendererFallbackReason',
   'outputColorTransformMode',
+  'compatibilityMode',
+  'requestedAntialias',
+  'requestedSamples',
+  'currentSamples',
+  'effectiveSamples',
+  'samplesDegraded',
+  'outputBufferType',
+  'textureFormatFacts',
   'error'
 ]);
 
@@ -65,8 +78,21 @@ export const CAPTURE_READINESS_DEFAULT_STATE = Object.freeze({
   renderReady: false,
   rendererMode: null,
   rendererBackend: null,
+  selectedRendererMode: null,
+  selectedRendererBackend: null,
+  actualRendererMode: null,
+  actualRendererBackend: null,
+  rendererProof: null,
   rendererFallbackReason: null,
   outputColorTransformMode: null,
+  compatibilityMode: null,
+  requestedAntialias: null,
+  requestedSamples: null,
+  currentSamples: null,
+  effectiveSamples: null,
+  samplesDegraded: false,
+  outputBufferType: null,
+  textureFormatFacts: [],
   error: null
 });
 
@@ -92,6 +118,43 @@ function normalizeNumber(value, fallback = 0) {
 function normalizeNullableString(value) {
   const text = String(value || '').trim();
   return text || null;
+}
+
+function normalizeNullableBoolean(value) {
+  return typeof value === 'boolean' ? value : null;
+}
+
+function normalizeNullableNumber(value) {
+  if (value == null || value === '') return null;
+  const number = Number(value);
+  return Number.isFinite(number) ? number : null;
+}
+
+function normalizeTextureFormatFacts(value = []) {
+  return (Array.isArray(value) ? value : [])
+    .map((entry) => isObject(entry) ? {
+      field: normalizeNullableString(entry.field),
+      textureType: normalizeNullableString(entry.textureType),
+      format: normalizeNullableString(entry.format),
+      type: normalizeNullableString(entry.type),
+      colorSpace: normalizeNullableString(entry.colorSpace),
+      width: normalizeNullableNumber(entry.width),
+      height: normalizeNullableNumber(entry.height),
+      status: normalizeNullableString(entry.status),
+      reason: normalizeNullableString(entry.reason),
+      changed: entry.changed === true
+    } : null)
+    .filter(Boolean);
+}
+
+function normalizeRendererProof(value = null) {
+  if (!isObject(value)) return null;
+  return {
+    isWebGPURenderer: value.isWebGPURenderer === true,
+    backendIsWebGPUBackend: value.backendIsWebGPUBackend === true,
+    backendIsWebGLBackend: value.backendIsWebGLBackend === true,
+    backendType: normalizeNullableString(value.backendType)
+  };
 }
 
 function normalizePixelThresholds(thresholds = CAPTURE_PIXEL_THRESHOLDS) {
@@ -307,8 +370,21 @@ export function createCaptureReadinessFacts(state = null, { canvasFacts = null }
     renderedArtworkId: normalizeNullableString(source.renderedArtworkId),
     rendererMode: normalizeNullableString(source.rendererMode),
     rendererBackend: normalizeNullableString(source.rendererBackend),
+    selectedRendererMode: normalizeNullableString(source.selectedRendererMode),
+    selectedRendererBackend: normalizeNullableString(source.selectedRendererBackend),
+    actualRendererMode: normalizeNullableString(source.actualRendererMode),
+    actualRendererBackend: normalizeNullableString(source.actualRendererBackend),
+    rendererProof: normalizeRendererProof(source.rendererProof),
     rendererFallbackReason: normalizeNullableString(source.rendererFallbackReason),
     outputColorTransformMode: normalizeNullableString(source.outputColorTransformMode),
+    compatibilityMode: normalizeNullableBoolean(source.compatibilityMode),
+    requestedAntialias: normalizeNullableBoolean(source.requestedAntialias),
+    requestedSamples: normalizeNullableNumber(source.requestedSamples),
+    currentSamples: normalizeNullableNumber(source.currentSamples),
+    effectiveSamples: normalizeNullableNumber(source.effectiveSamples),
+    samplesDegraded: source.samplesDegraded === true,
+    outputBufferType: normalizeNullableString(source.outputBufferType),
+    textureFormatFacts: normalizeTextureFormatFacts(source.textureFormatFacts),
     error: runtimeError,
     hasError: Boolean(sceneInitError || runtimeError),
     canvas: normalizeCaptureCanvasReadinessFacts(canvasFacts)
@@ -332,8 +408,21 @@ function normalizeCaptureReadinessFacts(value = null) {
     renderedArtworkId: normalizeNullableString(value.renderedArtworkId),
     rendererMode: normalizeNullableString(value.rendererMode),
     rendererBackend: normalizeNullableString(value.rendererBackend),
+    selectedRendererMode: normalizeNullableString(value.selectedRendererMode),
+    selectedRendererBackend: normalizeNullableString(value.selectedRendererBackend),
+    actualRendererMode: normalizeNullableString(value.actualRendererMode),
+    actualRendererBackend: normalizeNullableString(value.actualRendererBackend),
+    rendererProof: normalizeRendererProof(value.rendererProof),
     rendererFallbackReason: normalizeNullableString(value.rendererFallbackReason),
     outputColorTransformMode: normalizeNullableString(value.outputColorTransformMode),
+    compatibilityMode: normalizeNullableBoolean(value.compatibilityMode),
+    requestedAntialias: normalizeNullableBoolean(value.requestedAntialias),
+    requestedSamples: normalizeNullableNumber(value.requestedSamples),
+    currentSamples: normalizeNullableNumber(value.currentSamples),
+    effectiveSamples: normalizeNullableNumber(value.effectiveSamples),
+    samplesDegraded: value.samplesDegraded === true,
+    outputBufferType: normalizeNullableString(value.outputBufferType),
+    textureFormatFacts: normalizeTextureFormatFacts(value.textureFormatFacts),
     error: errorText(value.error),
     hasError: Boolean(errorText(value.sceneInitError) || errorText(value.error)),
     canvas: normalizeCaptureCanvasReadinessFacts(value.canvas)

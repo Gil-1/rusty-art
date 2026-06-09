@@ -10,9 +10,74 @@ function positiveNumber(value, fallback) {
   return Number.isFinite(numeric) && numeric > 0 ? numeric : fallback;
 }
 
+function positiveInteger(value, fallback, { min = 1, max = 256 } = {}) {
+  const numeric = Math.floor(Number(value));
+  if (!Number.isFinite(numeric)) return fallback;
+  return Math.max(min, Math.min(max, numeric));
+}
+
+function clamp01(value) {
+  return Math.max(0, Math.min(1, value));
+}
+
+function smoothstep(edge0, edge1, value) {
+  const denominator = edge1 - edge0;
+  const t = denominator === 0 ? 0 : clamp01((value - edge0) / denominator);
+  return t * t * (3 - 2 * t);
+}
+
 function materialList(material) {
   if (!material) return [];
   return Array.isArray(material) ? material.filter(Boolean) : [material];
+}
+
+function assignColor(THREE, target, value, fallback = '#0b1020') {
+  if (!target) return target;
+  if (Array.isArray(value)) {
+    target.setRGB(Number(value[0]) || 0, Number(value[1]) || 0, Number(value[2]) || 0);
+    return target;
+  }
+  if (value && typeof value === 'object' && 'r' in value && 'g' in value && 'b' in value) {
+    target.setRGB(Number(value.r) || 0, Number(value.g) || 0, Number(value.b) || 0);
+    return target;
+  }
+  target.set(value ?? fallback);
+  return target;
+}
+
+function resolveColorPalette(THREE, palette = {}) {
+  const source = asObject(palette);
+  const resolved = {
+    lower: new THREE.Color('#16232d'),
+    horizon: new THREE.Color('#4e4133'),
+    upper: new THREE.Color('#10101f'),
+    side: new THREE.Color('#08070b')
+  };
+  for (const [key, value] of Object.entries(source)) {
+    try {
+      resolved[key] = assignColor(THREE, new THREE.Color(), value);
+    } catch {
+      resolved[key] = value;
+    }
+  }
+  return resolved;
+}
+
+function defaultDirectionColorSampler({ THREE, dir, color, palette }) {
+  const lower = palette.lower;
+  const horizon = palette.horizon;
+  const upper = palette.upper;
+  const side = palette.side;
+  const heightMix = smoothstep(-0.72, 0.92, dir.y);
+  if (heightMix < 0.5) {
+    color.copy(lower).lerp(horizon, heightMix * 2);
+  } else {
+    color.copy(horizon).lerp(upper, (heightMix - 0.5) * 2);
+  }
+  const sidePressure = smoothstep(0.58, 1.0, Math.abs(dir.x)) * 0.42;
+  const rearPressure = smoothstep(0.12, 0.92, dir.z) * 0.28;
+  color.lerp(side, clamp01(sidePressure + rearPressure));
+  return color;
 }
 
 export function isImmersiveWorldSkyboxMode(value) {
@@ -354,6 +419,7 @@ export function createImmersiveWorldSkyboxShell(THREE, {
   const shellMaterial = material || createImmersiveWorldSkyboxMaterial(THREE, { color, opacity });
   const mesh = new THREE.Mesh(shellGeometry, shellMaterial);
   mesh.name = `${name}-mesh`;
+  mesh.scale.setScalar(radius);
   group.add(mesh);
   applyImmersiveWorldSkyboxDefaults(THREE, group, { radius, cameraPinned });
   group.object = group;
@@ -368,12 +434,113 @@ export function createImmersiveWorldSkyboxShell(THREE, {
   return group;
 }
 
+export function createImmersiveWorldVertexColorSkyboxShell(THREE, {
+  name = 'immersive-world-vertex-color-skybox-shell',
+  radius = IMMERSIVE_WORLD_SKYBOX_DEFAULT_RADIUS,
+  geometryKind = 'box',
+  widthSegments = 72,
+  heightSegments = 40,
+  depthSegments = widthSegments,
+  transparent = false,
+  opacity = 1,
+  cameraPinned = true,
+  colorSampler = null,
+  palette = {},
+  userData = {},
+  materialUserData = {},
+  context = {}
+} = {}) {
+  if (!THREE) throw new Error('createImmersiveWorldVertexColorSkyboxShell requires THREE.');
+  const safeWidthSegments = positiveInteger(widthSegments, 72, { max: 192 });
+  const safeHeightSegments = positiveInteger(heightSegments, 40, { max: 128 });
+  const safeDepthSegments = positiveInteger(depthSegments, safeWidthSegments, { max: 192 });
+  const normalizedGeometryKind = String(geometryKind || 'box').toLowerCase();
+  const geometry = normalizedGeometryKind === 'sphere'
+    ? new THREE.SphereGeometry(1, safeWidthSegments, safeHeightSegments)
+    : new THREE.BoxGeometry(2 / Math.sqrt(3), 2 / Math.sqrt(3), 2 / Math.sqrt(3), safeWidthSegments, safeHeightSegments, safeDepthSegments);
+  const positions = geometry.getAttribute('position');
+  const colors = new Float32Array(positions.count * 3);
+  const resolvedPalette = resolveColorPalette(THREE, palette);
+  const sampler = typeof colorSampler === 'function' ? colorSampler : defaultDirectionColorSampler;
+  const position = new THREE.Vector3();
+  const dir = new THREE.Vector3();
+  const color = new THREE.Color();
+
+  function writeColors(sampleContext = {}) {
+    for (let index = 0; index < positions.count; index += 1) {
+      position.fromBufferAttribute(positions, index);
+      dir.copy(position).normalize();
+      const sampled = sampler({
+        THREE,
+        position,
+        dir,
+        color,
+        index,
+        normalizedIndex: positions.count > 1 ? index / (positions.count - 1) : 0,
+        palette: resolvedPalette,
+        rawPalette: palette,
+        context: sampleContext
+      });
+      assignColor(THREE, color, sampled, color);
+      colors[index * 3] = color.r;
+      colors[index * 3 + 1] = color.g;
+      colors[index * 3 + 2] = color.b;
+    }
+    const colorAttribute = geometry.getAttribute('color');
+    if (colorAttribute) colorAttribute.needsUpdate = true;
+  }
+
+  geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+  writeColors(context);
+
+  const material = new THREE.MeshBasicMaterial({
+    name: `${name}-vertex-color-material`,
+    vertexColors: true,
+    side: THREE.BackSide,
+    transparent,
+    opacity,
+    depthWrite: false,
+    depthTest: true,
+    fog: false,
+    toneMapped: false
+  });
+  material.userData = {
+    materialFactoryId: 'sky-background-field',
+    webgpuSafeSurface: 'MeshBasicMaterial vertex-color skybox',
+    ...materialUserData
+  };
+
+  const shell = createImmersiveWorldSkyboxShell(THREE, {
+    name,
+    radius,
+    geometry,
+    material,
+    geometryKind: normalizedGeometryKind,
+    cameraPinned,
+    userData: {
+      ...userData,
+      materialFactoryId: 'sky-background-field',
+      webgpuSafeSurface: 'MeshBasicMaterial vertex-color skybox',
+      shellCountIntent: 1
+    }
+  });
+  shell.updateVertexColors = function updateVertexColors(nextContext = {}) {
+    writeColors(nextContext);
+    return shell;
+  };
+  return shell;
+}
+
+export const createImmersiveWorldDirectionSpaceSkyboxShell = createImmersiveWorldVertexColorSkyboxShell;
+
 export function createImmersiveWorldSkyboxUtilities(THREE) {
   return Object.freeze({
     createSkyboxMaterial: (options = {}) => createImmersiveWorldSkyboxMaterial(THREE, options),
     createPositionSpaceSkyboxMaterial: (options = {}) => createImmersiveWorldPositionSpaceSkyboxMaterial(THREE, options),
     createSkyboxGeometry: (options = {}) => createImmersiveWorldSkyboxGeometry(THREE, options),
     createSkyboxShell: (options = {}) => createImmersiveWorldSkyboxShell(THREE, options),
+    createVertexColorSkyboxShell: (options = {}) => createImmersiveWorldVertexColorSkyboxShell(THREE, options),
+    createDirectionSpaceSkyboxShell: (options = {}) => createImmersiveWorldDirectionSpaceSkyboxShell(THREE, options),
     applySkyboxDefaults: (object, options = {}) => applyImmersiveWorldSkyboxDefaults(THREE, object, options)
   });
 }
