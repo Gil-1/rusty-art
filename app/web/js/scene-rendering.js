@@ -124,6 +124,36 @@ function rendererOutputBufferTypeName(value) {
   return String(value);
 }
 
+function normalizeStringList(value = []) {
+  const source = Array.isArray(value) ? value : [value];
+  return [...new Set(source.map((entry) => String(entry || '').trim()).filter(Boolean))];
+}
+
+function normalizeWebGPUFeatureFacts(value = []) {
+  const seen = new Set();
+  const out = [];
+  for (const entry of Array.isArray(value) ? value : []) {
+    if (!entry || typeof entry !== 'object' || Array.isArray(entry)) continue;
+    const fact = Object.fromEntries(Object.entries({
+      kind: entry.kind || (entry.helperId || entry.api ? 'webgpu-native-helper' : entry.factoryId || entry.materialFactoryId ? 'material-factory' : null),
+      id: entry.id || entry.helperId || entry.factoryId || entry.materialFactoryId || null,
+      family: entry.family || entry.featureFamily || entry.factoryCategory || null,
+      api: entry.api || null,
+      factory: entry.factory || entry.factoryId || entry.materialFactoryId || null,
+      material: entry.material || entry.materialType || null,
+      surface: entry.surface || entry.runtimeSurface || entry.webgpuSafeSurface || null,
+      reason: entry.reason || null
+    }).map(([key, field]) => [key, String(field || '').trim()]).filter(([, field]) => field));
+    if (!Object.keys(fact).length) continue;
+    const key = JSON.stringify(fact);
+    if (seen.has(key)) continue;
+    seen.add(key);
+    out.push(fact);
+    if (out.length >= 24) break;
+  }
+  return out;
+}
+
 function resolveRendererOutputBufferType(renderer = null) {
   if (typeof renderer?.getOutputBufferType !== 'function') return null;
   try {
@@ -147,7 +177,9 @@ export function describeRendererDiagnostics(renderer = null, {
   outputColorTransformMode = null,
   requestedAntialias = null,
   requestedSamples = null,
-  textureFormatFacts = null
+  textureFormatFacts = null,
+  webgpuFeatureFacts = null,
+  webgpuFeatureFallbackReasons = null
 } = {}) {
   const actualRendererBackend = resolveRendererBackend(renderer);
   const actualRendererMode = resolveRendererMode(renderer, actualRendererBackend);
@@ -173,6 +205,8 @@ export function describeRendererDiagnostics(renderer = null, {
     samplesDegraded: requestedSamplesCount != null && effectiveSamples != null ? effectiveSamples < requestedSamplesCount : false,
     outputBufferType: resolveRendererOutputBufferType(renderer),
     textureFormatFacts: Array.isArray(textureFormatFacts) ? textureFormatFacts : [],
+    webgpuFeatureFacts: normalizeWebGPUFeatureFacts(webgpuFeatureFacts),
+    webgpuFeatureFallbackReasons: normalizeStringList(webgpuFeatureFallbackReasons),
     rendererProof: renderer ? {
       isWebGPURenderer: renderer.isWebGPURenderer === true,
       backendIsWebGPUBackend: renderer.backend?.isWebGPUBackend === true,

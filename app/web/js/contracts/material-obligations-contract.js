@@ -1,4 +1,8 @@
-import { listWebGPUMaterialFactoryDescriptors } from './webgpu-material-factory-catalog.js';
+import {
+  WEBGPU_MATERIAL_FACTORY_CATEGORIES,
+  listWebGPUNativeHelperDescriptors,
+  listWebGPUMaterialFactoryDescriptors
+} from './webgpu-material-factory-catalog.js';
 
 function isObject(value) {
   return Boolean(value) && typeof value === 'object' && !Array.isArray(value);
@@ -141,11 +145,17 @@ const DIRECT_MATERIALS = new Map(
 );
 
 export function buildMaterialObligationWebGPUGuidance() {
-  const factoryIds = listWebGPUMaterialFactoryDescriptors().map((entry) => entry.id);
+  const factoryIds = listWebGPUMaterialFactoryDescriptors()
+    .filter((entry) => entry.category !== WEBGPU_MATERIAL_FACTORY_CATEGORIES.POST_COLOR_TRANSFORM)
+    .map((entry) => entry.id);
+  const helperApis = listWebGPUNativeHelperDescriptors()
+    .map((entry) => entry.api);
   return [
-    'For WebGPU project scenes, satisfy material obligations through project WebGPU material factories or declarative DSL material surfaces.',
+    'For WebGPU project scenes, satisfy material obligations through source-declared project WebGPU material factories, approved WebGPU-native helpers, standard material/vertex-color geometry, or declarative DSL material surfaces.',
+    'Allowed material factory and helper catalogs are options, not evidence; prove generated-module factory/helper use with actual helper calls, source userData.materialFactoryId, usedMaterialFactories, usedMaterialSurfaces, or compact returned userData.webgpuNativeFeature facts.',
     'Do not satisfy WebGPU material obligations with raw GLSL ShaderMaterial, RawShaderMaterial, shader overrides, legacy GLSL post passes, or custom JS shader surfaces.',
-    `Available project WebGPU material factories: ${factoryIds.join(', ')}.`
+    `Available project WebGPU material factories: ${factoryIds.join(', ')}.`,
+    `Available project WebGPU native helper APIs: ${helperApis.join(', ')}.`
   ];
 }
 

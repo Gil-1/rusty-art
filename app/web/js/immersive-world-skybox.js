@@ -1,3 +1,8 @@
+import {
+  WEBGPU_NATIVE_HELPER_IDS,
+  buildWebGPUNativeHelperFeatureFacts
+} from './contracts/webgpu-material-factory-catalog.js';
+
 export const IMMERSIVE_WORLD_SKYBOX_RENDER_ORDER = -1000;
 export const IMMERSIVE_WORLD_SKYBOX_DEFAULT_RADIUS = 100000;
 
@@ -29,6 +34,20 @@ function smoothstep(edge0, edge1, value) {
 function materialList(material) {
   if (!material) return [];
   return Array.isArray(material) ? material.filter(Boolean) : [material];
+}
+
+function featureUserData(helperId, { budget = {}, userData = {}, webgpuSafeSurface = null } = {}) {
+  const facts = buildWebGPUNativeHelperFeatureFacts(helperId, { budget }) || {};
+  return {
+    ...asObject(userData),
+    materialFactoryId: facts.materialFactoryId,
+    webgpuHelperId: facts.helperId,
+    webgpuFeatureFamily: facts.featureFamily,
+    rendererCompatibility: facts.rendererCompatibility,
+    webgpuBudget: facts.budget,
+    webgpuNativeFeature: facts,
+    ...(webgpuSafeSurface ? { webgpuSafeSurface } : {})
+  };
 }
 
 function assignColor(THREE, target, value, fallback = '#0b1020') {
@@ -448,7 +467,8 @@ export function createImmersiveWorldVertexColorSkyboxShell(THREE, {
   palette = {},
   userData = {},
   materialUserData = {},
-  context = {}
+  context = {},
+  helperId = WEBGPU_NATIVE_HELPER_IDS.VERTEX_COLOR_SKYBOX_SHELL
 } = {}) {
   if (!THREE) throw new Error('createImmersiveWorldVertexColorSkyboxShell requires THREE.');
   const safeWidthSegments = positiveInteger(widthSegments, 72, { max: 192 });
@@ -504,10 +524,19 @@ export function createImmersiveWorldVertexColorSkyboxShell(THREE, {
     fog: false,
     toneMapped: false
   });
+  const featureBudget = {
+    widthSegments: safeWidthSegments,
+    heightSegments: safeHeightSegments,
+    depthSegments: safeDepthSegments,
+    vertexCount: positions.count,
+    shellCount: 1
+  };
   material.userData = {
-    materialFactoryId: 'sky-background-field',
-    webgpuSafeSurface: 'MeshBasicMaterial vertex-color skybox',
-    ...materialUserData
+    ...featureUserData(helperId, {
+      budget: featureBudget,
+      userData: materialUserData,
+      webgpuSafeSurface: 'MeshBasicMaterial vertex-color skybox'
+    })
   };
 
   const shell = createImmersiveWorldSkyboxShell(THREE, {
@@ -518,9 +547,11 @@ export function createImmersiveWorldVertexColorSkyboxShell(THREE, {
     geometryKind: normalizedGeometryKind,
     cameraPinned,
     userData: {
-      ...userData,
-      materialFactoryId: 'sky-background-field',
-      webgpuSafeSurface: 'MeshBasicMaterial vertex-color skybox',
+      ...featureUserData(helperId, {
+        budget: featureBudget,
+        userData,
+        webgpuSafeSurface: 'MeshBasicMaterial vertex-color skybox'
+      }),
       shellCountIntent: 1
     }
   });
@@ -531,7 +562,12 @@ export function createImmersiveWorldVertexColorSkyboxShell(THREE, {
   return shell;
 }
 
-export const createImmersiveWorldDirectionSpaceSkyboxShell = createImmersiveWorldVertexColorSkyboxShell;
+export function createImmersiveWorldDirectionSpaceSkyboxShell(THREE, options = {}) {
+  return createImmersiveWorldVertexColorSkyboxShell(THREE, {
+    ...options,
+    helperId: WEBGPU_NATIVE_HELPER_IDS.DIRECTION_SPACE_SKYBOX_SHELL
+  });
+}
 
 export function createImmersiveWorldSkyboxUtilities(THREE) {
   return Object.freeze({

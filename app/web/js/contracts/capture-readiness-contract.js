@@ -61,6 +61,8 @@ export const CAPTURE_READINESS_PATCH_KEYS = Object.freeze([
   'samplesDegraded',
   'outputBufferType',
   'textureFormatFacts',
+  'webgpuFeatureFacts',
+  'webgpuFeatureFallbackReasons',
   'error'
 ]);
 
@@ -93,6 +95,8 @@ export const CAPTURE_READINESS_DEFAULT_STATE = Object.freeze({
   samplesDegraded: false,
   outputBufferType: null,
   textureFormatFacts: [],
+  webgpuFeatureFacts: [],
+  webgpuFeatureFallbackReasons: [],
   error: null
 });
 
@@ -155,6 +159,47 @@ function normalizeRendererProof(value = null) {
     backendIsWebGLBackend: value.backendIsWebGLBackend === true,
     backendType: normalizeNullableString(value.backendType)
   };
+}
+
+function normalizeStringList(value = []) {
+  const source = Array.isArray(value) ? value : [value];
+  return [...new Set(source.map(normalizeNullableString).filter(Boolean))];
+}
+
+function compactObject(value) {
+  return Object.fromEntries(
+    Object.entries(value).filter(([, entry]) => entry !== null && entry !== undefined && entry !== '')
+  );
+}
+
+function normalizeWebGPUFeatureFact(entry = null) {
+  if (!isObject(entry)) return null;
+  const fact = compactObject({
+    kind: normalizeNullableString(entry.kind || (entry.helperId || entry.api ? 'webgpu-native-helper' : entry.factoryId || entry.materialFactoryId ? 'material-factory' : null)),
+    id: normalizeNullableString(entry.id || entry.helperId || entry.factoryId || entry.materialFactoryId),
+    family: normalizeNullableString(entry.family || entry.featureFamily || entry.factoryCategory),
+    api: normalizeNullableString(entry.api),
+    factory: normalizeNullableString(entry.factory || entry.factoryId || entry.materialFactoryId),
+    material: normalizeNullableString(entry.material || entry.materialType),
+    surface: normalizeNullableString(entry.surface || entry.runtimeSurface || entry.webgpuSafeSurface),
+    reason: normalizeNullableString(entry.reason)
+  });
+  return Object.keys(fact).length ? fact : null;
+}
+
+function normalizeWebGPUFeatureFacts(value = []) {
+  const seen = new Set();
+  const out = [];
+  for (const entry of Array.isArray(value) ? value : []) {
+    const fact = normalizeWebGPUFeatureFact(entry);
+    if (!fact) continue;
+    const key = JSON.stringify(fact);
+    if (seen.has(key)) continue;
+    seen.add(key);
+    out.push(fact);
+    if (out.length >= 24) break;
+  }
+  return out;
 }
 
 function normalizePixelThresholds(thresholds = CAPTURE_PIXEL_THRESHOLDS) {
@@ -385,6 +430,8 @@ export function createCaptureReadinessFacts(state = null, { canvasFacts = null }
     samplesDegraded: source.samplesDegraded === true,
     outputBufferType: normalizeNullableString(source.outputBufferType),
     textureFormatFacts: normalizeTextureFormatFacts(source.textureFormatFacts),
+    webgpuFeatureFacts: normalizeWebGPUFeatureFacts(source.webgpuFeatureFacts),
+    webgpuFeatureFallbackReasons: normalizeStringList(source.webgpuFeatureFallbackReasons),
     error: runtimeError,
     hasError: Boolean(sceneInitError || runtimeError),
     canvas: normalizeCaptureCanvasReadinessFacts(canvasFacts)
@@ -423,6 +470,8 @@ function normalizeCaptureReadinessFacts(value = null) {
     samplesDegraded: value.samplesDegraded === true,
     outputBufferType: normalizeNullableString(value.outputBufferType),
     textureFormatFacts: normalizeTextureFormatFacts(value.textureFormatFacts),
+    webgpuFeatureFacts: normalizeWebGPUFeatureFacts(value.webgpuFeatureFacts),
+    webgpuFeatureFallbackReasons: normalizeStringList(value.webgpuFeatureFallbackReasons),
     error: errorText(value.error),
     hasError: Boolean(errorText(value.sceneInitError) || errorText(value.error)),
     canvas: normalizeCaptureCanvasReadinessFacts(value.canvas)

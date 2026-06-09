@@ -22,6 +22,36 @@ import {
 } from './scene-frame-lifecycle.js';
 import { disposeObjectTree } from './scene-runtime.js';
 import { createSceneElapsedTimer } from './scene-time.js';
+import { createImmersiveWorldWebGPUNativeUtilities } from './immersive-world-webgpu-helpers.js';
+
+function compactDiagnosticFeatureFact(entry = null) {
+  if (!entry || typeof entry !== 'object' || Array.isArray(entry)) return null;
+  const fact = Object.fromEntries(Object.entries({
+    kind: entry.kind || (entry.helperId || entry.api ? 'webgpu-native-helper' : entry.factoryId || entry.materialFactoryId ? 'material-factory' : null),
+    id: entry.id || entry.helperId || entry.factoryId || entry.materialFactoryId || null,
+    family: entry.family || entry.featureFamily || entry.factoryCategory || null,
+    api: entry.api || null,
+    factory: entry.factory || entry.factoryId || entry.materialFactoryId || null,
+    material: entry.material || entry.materialType || null,
+    surface: entry.surface || entry.runtimeSurface || entry.webgpuSafeSurface || null,
+    reason: entry.reason || 'webgpu-diagnostic-helper-probe'
+  }).map(([key, value]) => [key, String(value || '').trim()]).filter(([, value]) => value));
+  return Object.keys(fact).length ? fact : null;
+}
+
+function compactDiagnosticFeatureFacts(entries = []) {
+  const seen = new Set();
+  const out = [];
+  for (const entry of Array.isArray(entries) ? entries : []) {
+    const fact = compactDiagnosticFeatureFact(entry);
+    if (!fact) continue;
+    const key = JSON.stringify(fact);
+    if (seen.has(key)) continue;
+    seen.add(key);
+    out.push(fact);
+  }
+  return out;
+}
 
 function createPostUniformState() {
   return {
@@ -110,6 +140,7 @@ export class ArtworkScene {
     this.captureTime = 1.234;
     this.sceneAssemblyReport = null;
     this.textureQuality = null;
+    this.webgpuFeatureFacts = [];
     this.disposed = false;
 
     this.resize = this.resize.bind(this);
@@ -215,6 +246,18 @@ export class ArtworkScene {
       marks.add(mark);
     }
     this.group.add(marks);
+    const webgpuUtilities = createImmersiveWorldWebGPUNativeUtilities(THREE);
+    const helperProbe = webgpuUtilities.createPointParticleField({
+      name: 'webgpu-diagnostic-point-helper-probe',
+      seed: 'webgpu-diagnostic-helper-probe',
+      count: 96,
+      spread: [4.2, 2.1, 0.45],
+      palette: [primary, secondary, anchor],
+      size: 0.045,
+      opacity: 0.64
+    });
+    helperProbe.position.set(0, 0, 0.42);
+    this.group.add(helperProbe);
     const rgbData = new Uint8Array([
       255, 0, 0,
       0, 255, 0,
@@ -251,20 +294,27 @@ export class ArtworkScene {
       THREE,
       renderer: this.renderer
     });
-    this.diagnosticObjects = { ring, core, marks };
+    this.webgpuFeatureFacts = compactDiagnosticFeatureFacts([
+      helperProbe.userData?.webgpuNativeFeature,
+      helperProbe.material?.userData?.webgpuNativeFeature
+    ]);
+    this.diagnosticObjects = { ring, core, marks, helperProbe };
     this.sceneAssemblyReport = {
       summary: {
-        built: 3,
+        built: 5,
         sceneKind: 'webgpu-project-diagnostic-v1',
-        rendererCompatibility: this.rendererSceneFeatures.shaderCompatibility
+        rendererCompatibility: this.rendererSceneFeatures.shaderCompatibility,
+        webgpuFeatureFacts: this.webgpuFeatureFacts
       },
       built: [
         { id: 'diagnostic-field', moduleType: 'webgpu-diagnostic-field' },
         { id: 'diagnostic-ring', moduleType: 'webgpu-diagnostic-standard-material' },
         { id: 'diagnostic-marks', moduleType: 'webgpu-diagnostic-standard-material' },
+        { id: 'diagnostic-helper-probe', moduleType: 'webgpu-native-helper-probe', featureFamily: this.webgpuFeatureFacts[0]?.family || null },
         { id: 'diagnostic-texture-format-probe', moduleType: 'webgpu-diagnostic-texture-format-probe' }
       ],
-      textureQuality: this.textureQuality
+      textureQuality: this.textureQuality,
+      webgpuFeatureFacts: this.webgpuFeatureFacts
     };
     await this.rendererReady;
     return true;
@@ -281,8 +331,9 @@ export class ArtworkScene {
       : 'webgpu-diagnostic-direct';
     return this.rendererRuntime?.getDiagnostics?.({
       outputColorTransformMode,
-      textureFormatFacts: this.textureQuality?.textureFormatFacts || []
-    }) || describeRendererDiagnostics(this.renderer, { outputColorTransformMode });
+      textureFormatFacts: this.textureQuality?.textureFormatFacts || [],
+      webgpuFeatureFacts: this.webgpuFeatureFacts
+    }) || describeRendererDiagnostics(this.renderer, { outputColorTransformMode, webgpuFeatureFacts: this.webgpuFeatureFacts });
   }
 
   setMotionIntensity(intensity = 1) {

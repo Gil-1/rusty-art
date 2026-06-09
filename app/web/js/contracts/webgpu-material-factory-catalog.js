@@ -219,6 +219,310 @@ const WEBGPU_MATERIAL_FACTORY_BY_ID = new Map(
   WEBGPU_MATERIAL_FACTORY_DESCRIPTORS.map((entry) => [entry.id, entry])
 );
 
+export const WEBGPU_NATIVE_HELPER_CATALOG_VERSION = 1;
+
+export const WEBGPU_NATIVE_HELPER_FEATURE_FAMILIES = Object.freeze({
+  COLOR_FIELD: 'color-field',
+  PROCEDURAL_MARKS: 'procedural-marks',
+  SKY_BACKGROUND_FIELD: 'sky-background-field',
+  POINT_PARTICLE_FIELD: 'point-particle-field',
+  INSTANCED_MARKS: 'instanced-marks'
+});
+
+export const WEBGPU_NATIVE_HELPER_IDS = Object.freeze({
+  COLOR_FIELD_MATERIAL: 'color-field-material',
+  PROCEDURAL_MARK_MATERIAL: 'procedural-mark-material',
+  POINT_PARTICLE_FIELD: 'point-particle-field',
+  INSTANCED_MARK_FIELD: 'instanced-mark-field',
+  VERTEX_COLOR_SKYBOX_SHELL: 'vertex-color-skybox-shell',
+  DIRECTION_SPACE_SKYBOX_SHELL: 'direction-space-skybox-shell'
+});
+
+const WEBGPU_NATIVE_HELPER_COMPATIBILITY = Object.freeze({
+  webgpu: true,
+  webgl: true,
+  status: 'webgpu-compatible',
+  rendererFamilies: Object.freeze(['webgpu-renderer', 'webgl-renderer']),
+  evidence: Object.freeze([
+    'rusty-art-webgpu-native-helper',
+    'project-webgpu-material-factory',
+    'no-raw-glsl'
+  ]),
+  gpuDeviceRequiredForInspection: false,
+  webglOnly: false
+});
+
+function helperDescriptor({
+  id,
+  functionName,
+  materialFactoryId,
+  featureFamily,
+  outputKind,
+  runtimeSurface,
+  materialType,
+  budget = {},
+  guidance = []
+}) {
+  const factory = WEBGPU_MATERIAL_FACTORY_BY_ID.get(materialFactoryId);
+  return deepFreeze({
+    id,
+    version: WEBGPU_NATIVE_HELPER_CATALOG_VERSION,
+    helperKind: 'runtime-helper',
+    authoringSurface: 'generated-module-utilities',
+    functionName,
+    api: `utilities.${functionName}`,
+    factoryId: materialFactoryId,
+    materialFactoryId,
+    factoryCategory: factory?.category || null,
+    featureFamily,
+    outputKind,
+    runtimeSurface: runtimeSurface || factory?.output?.runtimeSurface || null,
+    materialType,
+    rendererCompatibility: WEBGPU_NATIVE_HELPER_COMPATIBILITY,
+    budget,
+    forbiddenSurfaces: WEBGL_ONLY_FORBIDDEN_SURFACES,
+    guidance
+  });
+}
+
+const WEBGPU_NATIVE_HELPER_DESCRIPTORS = deepFreeze([
+  helperDescriptor({
+    id: WEBGPU_NATIVE_HELPER_IDS.COLOR_FIELD_MATERIAL,
+    functionName: 'createColorFieldMaterial',
+    materialFactoryId: 'color-field',
+    featureFamily: WEBGPU_NATIVE_HELPER_FEATURE_FAMILIES.COLOR_FIELD,
+    outputKind: 'material',
+    runtimeSurface: 'three-basic-material',
+    materialType: 'MeshBasicMaterial',
+    budget: { maxColorStops: 8, mobileSafe: true },
+    guidance: [
+      'Use for flat fields, bands, ramps, and atmosphere planes without shader strings.'
+    ]
+  }),
+  helperDescriptor({
+    id: WEBGPU_NATIVE_HELPER_IDS.PROCEDURAL_MARK_MATERIAL,
+    functionName: 'createProceduralMarkMaterial',
+    materialFactoryId: 'procedural-marks',
+    featureFamily: WEBGPU_NATIVE_HELPER_FEATURE_FAMILIES.PROCEDURAL_MARKS,
+    outputKind: 'material',
+    runtimeSurface: 'three-basic-material',
+    materialType: 'MeshBasicMaterial',
+    budget: { maxOpacityLayers: 1, mobileSafe: true },
+    guidance: [
+      'Pair with deterministic geometry, lines, sprites, or instancing for scratches, dashes, stipple, and transfer marks.'
+    ]
+  }),
+  helperDescriptor({
+    id: WEBGPU_NATIVE_HELPER_IDS.POINT_PARTICLE_FIELD,
+    functionName: 'createPointParticleField',
+    materialFactoryId: 'soft-particles',
+    featureFamily: WEBGPU_NATIVE_HELPER_FEATURE_FAMILIES.POINT_PARTICLE_FIELD,
+    outputKind: 'object-bundle',
+    runtimeSurface: 'three-points-buffer-geometry',
+    materialType: 'PointsMaterial',
+    budget: { maxCount: 1500, maxSize: 0.12, mobileSafe: true },
+    guidance: [
+      'Use for tiny dust, pigment, stipple, mist, and atmospheric specks; keep points small.'
+    ]
+  }),
+  helperDescriptor({
+    id: WEBGPU_NATIVE_HELPER_IDS.INSTANCED_MARK_FIELD,
+    functionName: 'createInstancedMarkField',
+    materialFactoryId: 'procedural-marks',
+    featureFamily: WEBGPU_NATIVE_HELPER_FEATURE_FAMILIES.INSTANCED_MARKS,
+    outputKind: 'object-bundle',
+    runtimeSurface: 'three-instanced-mesh-basic-material',
+    materialType: 'MeshBasicMaterial',
+    budget: { maxCount: 600, mobileSafe: true },
+    guidance: [
+      'Use for bounded repeated slashes, paper flecks, mesh billboards, and particle-style marks.'
+    ]
+  }),
+  helperDescriptor({
+    id: WEBGPU_NATIVE_HELPER_IDS.VERTEX_COLOR_SKYBOX_SHELL,
+    functionName: 'createVertexColorSkyboxShell',
+    materialFactoryId: 'sky-background-field',
+    featureFamily: WEBGPU_NATIVE_HELPER_FEATURE_FAMILIES.SKY_BACKGROUND_FIELD,
+    outputKind: 'object-bundle',
+    runtimeSurface: 'vertex-color-skybox-shell',
+    materialType: 'MeshBasicMaterial',
+    budget: { maxWidthSegments: 192, maxHeightSegments: 128, mobileSafe: true },
+    guidance: [
+      'Use for WebGPU-safe background shells with pre-sampled vertex colors.'
+    ]
+  }),
+  helperDescriptor({
+    id: WEBGPU_NATIVE_HELPER_IDS.DIRECTION_SPACE_SKYBOX_SHELL,
+    functionName: 'createDirectionSpaceSkyboxShell',
+    materialFactoryId: 'sky-background-field',
+    featureFamily: WEBGPU_NATIVE_HELPER_FEATURE_FAMILIES.SKY_BACKGROUND_FIELD,
+    outputKind: 'object-bundle',
+    runtimeSurface: 'direction-space-vertex-color-skybox-shell',
+    materialType: 'MeshBasicMaterial',
+    budget: { maxWidthSegments: 192, maxHeightSegments: 128, mobileSafe: true },
+    guidance: [
+      'Use for normalized direction-space sky and background fields translated away from raw shaders.'
+    ]
+  })
+]);
+
+const WEBGPU_NATIVE_HELPER_BY_ID = new Map(
+  WEBGPU_NATIVE_HELPER_DESCRIPTORS.map((entry) => [entry.id, entry])
+);
+
+const WEBGPU_NATIVE_HELPER_BY_FUNCTION_NAME = new Map(
+  WEBGPU_NATIVE_HELPER_DESCRIPTORS.map((entry) => [entry.functionName, entry])
+);
+
+export const WEBGPU_ADVANCED_FEATURE_CATALOG_VERSION = 1;
+
+export const WEBGPU_ADVANCED_FEATURE_STATUSES = Object.freeze({
+  AVAILABLE: 'available',
+  UNSUPPORTED: 'unsupported',
+  EXPERIMENTAL: 'experimental'
+});
+
+export const WEBGPU_ADVANCED_FEATURE_DEFAULT_ADVERTISING_POLICIES = Object.freeze({
+  NOT_ADVERTISED: 'not-advertised',
+  RENDERER_LEVEL_ONLY: 'renderer-level-only'
+});
+
+export const WEBGPU_ADVANCED_FEATURE_IDS = Object.freeze({
+  COMPUTE_STORAGE_BUFFERS: 'compute-storage-buffers',
+  STORAGE_TEXTURES: 'storage-textures',
+  MULTIPLE_RENDER_TARGETS: 'mrt',
+  INDIRECT_DRAW: 'indirect-draw',
+  GPU_READBACK: 'gpu-readback',
+  CLUSTERED_LIGHTING: 'clustered-lighting',
+  TEMPORAL_PIPELINES: 'temporal-pipelines',
+  RENDERER_POST_COLOR_TRANSFORM: 'renderer-post-color-transform'
+});
+
+function advancedFeatureGate({
+  id,
+  aliases = [],
+  family,
+  label,
+  status,
+  requiredProof = [],
+  fallbackReason = null,
+  defaultAdvertisingPolicy = WEBGPU_ADVANCED_FEATURE_DEFAULT_ADVERTISING_POLICIES.NOT_ADVERTISED,
+  generatedModuleEvidenceEligible = false,
+  rendererLevel = false
+}) {
+  return deepFreeze({
+    id,
+    version: WEBGPU_ADVANCED_FEATURE_CATALOG_VERSION,
+    aliases,
+    family,
+    label,
+    status,
+    requiredProof,
+    fallbackReason,
+    defaultAdvertisingPolicy,
+    generatedModuleEvidenceEligible,
+    rendererLevel
+  });
+}
+
+const WEBGPU_ADVANCED_FEATURE_GATES = deepFreeze([
+  advancedFeatureGate({
+    id: WEBGPU_ADVANCED_FEATURE_IDS.COMPUTE_STORAGE_BUFFERS,
+    aliases: ['compute', 'compute-shader', 'compute-storage', 'compute-storage-buffer', 'storage-buffer', 'storage-buffers'],
+    family: 'compute-storage',
+    label: 'Compute And Storage Buffers',
+    status: WEBGPU_ADVANCED_FEATURE_STATUSES.UNSUPPORTED,
+    requiredProof: ['runtime-compute-fixture', 'adapter-feature-or-limit-check', 'preview-diagnostic', 'render-evidence'],
+    fallbackReason: 'compute-storage-buffers-unsupported'
+  }),
+  advancedFeatureGate({
+    id: WEBGPU_ADVANCED_FEATURE_IDS.STORAGE_TEXTURES,
+    aliases: ['storage-texture', 'storage-textures'],
+    family: 'storage-texture',
+    label: 'Storage Textures',
+    status: WEBGPU_ADVANCED_FEATURE_STATUSES.UNSUPPORTED,
+    requiredProof: ['runtime-storage-texture-fixture', 'device-feature-check', 'preview-diagnostic', 'render-evidence'],
+    fallbackReason: 'storage-textures-unsupported'
+  }),
+  advancedFeatureGate({
+    id: WEBGPU_ADVANCED_FEATURE_IDS.MULTIPLE_RENDER_TARGETS,
+    aliases: ['multiple-render-target', 'multiple-render-targets', 'mrt', 'render-target-array'],
+    family: 'multiple-render-targets',
+    label: 'Multiple Render Targets',
+    status: WEBGPU_ADVANCED_FEATURE_STATUSES.UNSUPPORTED,
+    requiredProof: ['runtime-mrt-fixture', 'max-color-attachments-limit-check', 'preview-diagnostic', 'render-evidence'],
+    fallbackReason: 'mrt-unsupported'
+  }),
+  advancedFeatureGate({
+    id: WEBGPU_ADVANCED_FEATURE_IDS.INDIRECT_DRAW,
+    aliases: ['indirect', 'indirect-draw', 'draw-indirect', 'drawindirect'],
+    family: 'indirect-draw',
+    label: 'Indirect Draw',
+    status: WEBGPU_ADVANCED_FEATURE_STATUSES.UNSUPPORTED,
+    requiredProof: ['runtime-indirect-draw-fixture', 'command-buffer-diagnostic', 'preview-diagnostic', 'render-evidence'],
+    fallbackReason: 'indirect-draw-unsupported'
+  }),
+  advancedFeatureGate({
+    id: WEBGPU_ADVANCED_FEATURE_IDS.GPU_READBACK,
+    aliases: ['readback', 'gpu-readback', 'gpu-to-cpu-readback', 'buffer-readback'],
+    family: 'gpu-readback',
+    label: 'GPU Readback',
+    status: WEBGPU_ADVANCED_FEATURE_STATUSES.UNSUPPORTED,
+    requiredProof: ['runtime-readback-fixture', 'buffer-map-diagnostic', 'bounded-debug-or-export-use', 'render-evidence'],
+    fallbackReason: 'gpu-readback-unsupported'
+  }),
+  advancedFeatureGate({
+    id: WEBGPU_ADVANCED_FEATURE_IDS.CLUSTERED_LIGHTING,
+    aliases: ['clustered-lighting', 'clustered-lights', 'cluster-lighting'],
+    family: 'clustered-lighting',
+    label: 'Clustered Lighting',
+    status: WEBGPU_ADVANCED_FEATURE_STATUSES.UNSUPPORTED,
+    requiredProof: ['runtime-clustered-lighting-fixture', 'compute-or-buffer-limit-check', 'preview-diagnostic', 'render-evidence'],
+    fallbackReason: 'clustered-lighting-unsupported'
+  }),
+  advancedFeatureGate({
+    id: WEBGPU_ADVANCED_FEATURE_IDS.TEMPORAL_PIPELINES,
+    aliases: ['temporal', 'temporal-pipeline', 'temporal-pipelines', 'taa', 'temporal-accumulation'],
+    family: 'temporal-pipeline',
+    label: 'Temporal Pipelines',
+    status: WEBGPU_ADVANCED_FEATURE_STATUSES.UNSUPPORTED,
+    requiredProof: ['runtime-temporal-fixture', 'history-buffer-lifecycle-check', 'preview-diagnostic', 'render-evidence'],
+    fallbackReason: 'temporal-pipelines-unsupported'
+  }),
+  advancedFeatureGate({
+    id: WEBGPU_ADVANCED_FEATURE_IDS.RENDERER_POST_COLOR_TRANSFORM,
+    aliases: ['renderer-post', 'renderer-post-color-transform', 'post-color-transform', 'output-color-transform', 'color-transform'],
+    family: 'renderer-post',
+    label: 'Renderer Post Color Transform',
+    status: WEBGPU_ADVANCED_FEATURE_STATUSES.AVAILABLE,
+    requiredProof: ['world-output-color-transform-or-renderer-post-descriptor', 'renderer-owned-renderpipeline-runtime', 'render-evidence'],
+    fallbackReason: 'renderer-post-descriptor-not-part-evidence',
+    defaultAdvertisingPolicy: WEBGPU_ADVANCED_FEATURE_DEFAULT_ADVERTISING_POLICIES.RENDERER_LEVEL_ONLY,
+    rendererLevel: true
+  })
+]);
+
+function normalizeAdvancedFeatureToken(value) {
+  return String(value || '')
+    .trim()
+    .toLowerCase()
+    .replace(/&/g, 'and')
+    .replace(/[\s_/]+/g, '-')
+    .replace(/[^a-z0-9-]/g, '')
+    .replace(/-+/g, '-')
+    .replace(/^-|-$/g, '');
+}
+
+const WEBGPU_ADVANCED_FEATURE_BY_ID = new Map(
+  WEBGPU_ADVANCED_FEATURE_GATES.map((entry) => [entry.id, entry])
+);
+
+const WEBGPU_ADVANCED_FEATURE_ALIAS_TO_ID = new Map(
+  WEBGPU_ADVANCED_FEATURE_GATES.flatMap((entry) => (
+    [entry.id, ...(entry.aliases || [])].map((alias) => [normalizeAdvancedFeatureToken(alias), entry.id])
+  ))
+);
+
 function normalizeFactoryId(factoryId) {
   return String(factoryId || '').trim();
 }
@@ -238,6 +542,76 @@ export function getWebGPUMaterialFactoryDescriptor(factoryId) {
 
 export function isWebGPUMaterialFactoryId(factoryId) {
   return WEBGPU_MATERIAL_FACTORY_BY_ID.has(normalizeFactoryId(factoryId));
+}
+
+export function listWebGPUNativeHelperDescriptors({ featureFamily = null } = {}) {
+  const normalizedFamily = featureFamily ? String(featureFamily).trim() : null;
+  const descriptors = normalizedFamily
+    ? WEBGPU_NATIVE_HELPER_DESCRIPTORS.filter((entry) => entry.featureFamily === normalizedFamily)
+    : WEBGPU_NATIVE_HELPER_DESCRIPTORS;
+  return descriptors.map(cloneData);
+}
+
+export function getWebGPUNativeHelperDescriptor(helperId) {
+  const descriptorEntry = WEBGPU_NATIVE_HELPER_BY_ID.get(normalizeFactoryId(helperId));
+  return descriptorEntry ? cloneData(descriptorEntry) : null;
+}
+
+export function getWebGPUNativeHelperDescriptorByFunctionName(functionName) {
+  const descriptorEntry = WEBGPU_NATIVE_HELPER_BY_FUNCTION_NAME.get(normalizeFactoryId(functionName));
+  return descriptorEntry ? cloneData(descriptorEntry) : null;
+}
+
+export function isWebGPUNativeHelperId(helperId) {
+  return WEBGPU_NATIVE_HELPER_BY_ID.has(normalizeFactoryId(helperId));
+}
+
+export function listWebGPUAdvancedFeatureGates({ defaultAdvertisingPolicy = null, rendererLevel = null } = {}) {
+  const policy = defaultAdvertisingPolicy ? String(defaultAdvertisingPolicy).trim() : null;
+  const descriptors = WEBGPU_ADVANCED_FEATURE_GATES.filter((entry) => (
+    (!policy || entry.defaultAdvertisingPolicy === policy)
+    && (rendererLevel === null || entry.rendererLevel === rendererLevel)
+  ));
+  return descriptors.map(cloneData);
+}
+
+export function getWebGPUAdvancedFeatureGate(featureId) {
+  const token = normalizeAdvancedFeatureToken(featureId);
+  const resolvedId = WEBGPU_ADVANCED_FEATURE_ALIAS_TO_ID.get(token) || token;
+  const descriptorEntry = WEBGPU_ADVANCED_FEATURE_BY_ID.get(resolvedId);
+  return descriptorEntry ? cloneData(descriptorEntry) : null;
+}
+
+export function isWebGPUAdvancedFeatureId(featureId) {
+  return Boolean(getWebGPUAdvancedFeatureGate(featureId));
+}
+
+export function buildWebGPUNativeHelperFeatureFacts(helperId, { budget = {}, rendererCompatibility = null } = {}) {
+  const descriptorEntry = WEBGPU_NATIVE_HELPER_BY_ID.get(normalizeFactoryId(helperId));
+  if (!descriptorEntry) return null;
+  const budgetFacts = budget && typeof budget === 'object' && !Array.isArray(budget) ? cloneData(budget) : {};
+  return {
+    helperId: descriptorEntry.id,
+    api: descriptorEntry.api,
+    factoryId: descriptorEntry.factoryId,
+    materialFactoryId: descriptorEntry.materialFactoryId,
+    featureFamily: descriptorEntry.featureFamily,
+    outputKind: descriptorEntry.outputKind,
+    runtimeSurface: descriptorEntry.runtimeSurface,
+    materialType: descriptorEntry.materialType,
+    rendererCompatibility: rendererCompatibility && typeof rendererCompatibility === 'object' && !Array.isArray(rendererCompatibility)
+      ? cloneData(rendererCompatibility)
+      : {
+          webgpu: true,
+          webgl: true,
+          status: 'webgpu-compatible',
+          evidence: descriptorEntry.rendererCompatibility.evidence.slice()
+        },
+    budget: {
+      ...cloneData(descriptorEntry.budget || {}),
+      ...budgetFacts
+    }
+  };
 }
 
 export function buildWebGPUMaterialFactorySurfaceDescriptor(factoryId, params = {}) {
@@ -266,6 +640,12 @@ export function getWebGPUMaterialFactoryCatalog() {
     version: WEBGPU_MATERIAL_FACTORY_CATALOG_VERSION,
     categories: { ...WEBGPU_MATERIAL_FACTORY_CATEGORIES },
     factoryIds: WEBGPU_MATERIAL_FACTORY_DESCRIPTORS.map((entry) => entry.id),
-    descriptors: listWebGPUMaterialFactoryDescriptors()
+    descriptors: listWebGPUMaterialFactoryDescriptors(),
+    nativeHelperVersion: WEBGPU_NATIVE_HELPER_CATALOG_VERSION,
+    nativeHelperIds: WEBGPU_NATIVE_HELPER_DESCRIPTORS.map((entry) => entry.id),
+    nativeHelpers: listWebGPUNativeHelperDescriptors(),
+    advancedFeatureVersion: WEBGPU_ADVANCED_FEATURE_CATALOG_VERSION,
+    advancedFeatureIds: WEBGPU_ADVANCED_FEATURE_GATES.map((entry) => entry.id),
+    advancedFeatureGates: listWebGPUAdvancedFeatureGates()
   };
 }

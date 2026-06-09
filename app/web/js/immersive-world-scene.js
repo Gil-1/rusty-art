@@ -13,6 +13,7 @@ import {
   resolveImmersiveWorldSkyboxRadius,
   shouldUseImmersiveWorldSkybox
 } from './immersive-world-skybox.js';
+import { createImmersiveWorldWebGPUNativeUtilities } from './immersive-world-webgpu-helpers.js';
 import {
   collectRendererSceneFeatures,
   createPostPass,
@@ -96,6 +97,59 @@ function cleanToken(value) {
   return String(value || '').trim().toLowerCase().replace(/[_\s]+/g, '-');
 }
 
+function cleanText(value) {
+  const text = String(value || '').trim();
+  return text || null;
+}
+
+function compactWebGPUFeatureFact(entry = null) {
+  if (!entry || typeof entry !== 'object' || Array.isArray(entry)) return null;
+  const fact = Object.fromEntries(Object.entries({
+    kind: cleanText(entry.kind || (entry.helperId || entry.api ? 'webgpu-native-helper' : entry.factoryId || entry.materialFactoryId ? 'material-factory' : null)),
+    id: cleanText(entry.id || entry.helperId || entry.factoryId || entry.materialFactoryId),
+    family: cleanText(entry.family || entry.featureFamily || entry.factoryCategory),
+    api: cleanText(entry.api),
+    factory: cleanText(entry.factory || entry.factoryId || entry.materialFactoryId),
+    material: cleanText(entry.material || entry.materialType),
+    surface: cleanText(entry.surface || entry.runtimeSurface || entry.webgpuSafeSurface),
+    reason: cleanText(entry.reason)
+  }).filter(([, field]) => field));
+  return Object.keys(fact).length ? fact : null;
+}
+
+function compactWebGPUFeatureFacts(entries = []) {
+  const seen = new Set();
+  const out = [];
+  for (const entry of Array.isArray(entries) ? entries : []) {
+    const fact = compactWebGPUFeatureFact(entry);
+    if (!fact) continue;
+    const key = JSON.stringify(fact);
+    if (seen.has(key)) continue;
+    seen.add(key);
+    out.push(fact);
+    if (out.length >= 24) break;
+  }
+  return out;
+}
+
+function compactStringList(value = []) {
+  const source = Array.isArray(value) ? value : [value];
+  return [...new Set(source.map(cleanToken).filter(Boolean))];
+}
+
+function webgpuFeatureFactsFromCompatibility(value = null) {
+  if (!value || typeof value !== 'object' || Array.isArray(value)) return [];
+  return compactWebGPUFeatureFacts(value.featureFacts);
+}
+
+function webgpuFeatureFallbackReasonsFromCompatibility(value = null) {
+  if (!value || typeof value !== 'object' || Array.isArray(value)) return [];
+  return compactStringList([
+    ...(Array.isArray(value.fallbackReasons) ? value.fallbackReasons : []),
+    value.fallbackReason
+  ]);
+}
+
 function booleanFlag(value) {
   if (value === true) return true;
   const token = cleanToken(value);
@@ -126,7 +180,8 @@ function compatibilityFromFact(value = null, source = null) {
     compatibilityStatus,
     webgpuCompatible,
     fallbackReason: cleanToken(value.fallbackReason) || null,
-    fallbackReasons: Array.isArray(value.fallbackReasons) ? value.fallbackReasons.map(cleanToken).filter(Boolean) : []
+    fallbackReasons: webgpuFeatureFallbackReasonsFromCompatibility(value),
+    featureFacts: webgpuFeatureFactsFromCompatibility(value)
   };
 }
 
@@ -167,6 +222,14 @@ export function resolveImmersiveWorldRendererCompatibilityFacts(art = {}) {
     .filter(Boolean);
   const allModulesCompatible = moduleFacts.length > 0 && moduleFacts.every((entry) => entry.webgpuCompatible === true);
   const moduleFallback = moduleFacts.find((entry) => entry.webgpuCompatible !== true);
+  const featureFacts = compactWebGPUFeatureFacts([
+    ...declaredCompatibility.flatMap((entry) => entry.featureFacts || []),
+    ...moduleFacts.flatMap((entry) => entry.featureFacts || [])
+  ]);
+  const fallbackReasons = compactStringList([
+    ...declaredCompatibility.flatMap((entry) => entry.fallbackReasons || []),
+    ...moduleFacts.flatMap((entry) => entry.fallbackReasons || [])
+  ]);
 
   if (!declaredIncompatible && (declared?.webgpuCompatible === true || (targetMode === WEBGPU_PROJECT_SCENE_TARGET && allModulesCompatible))) {
     return {
@@ -174,6 +237,8 @@ export function resolveImmersiveWorldRendererCompatibilityFacts(art = {}) {
       compatibilityStatus: WEBGPU_COMPATIBLE_STATUS,
       webgpuCompatible: true,
       fallbackReason: null,
+      fallbackReasons,
+      featureFacts,
       source: declared?.source || 'generated-module',
       moduleCount: moduleFacts.length
     };
@@ -188,6 +253,8 @@ export function resolveImmersiveWorldRendererCompatibilityFacts(art = {}) {
         || declared?.fallbackReason
         || moduleFallback?.fallbackReason
         || (moduleFacts.length ? WEBGPU_EVIDENCE_MISSING_REASON : GENERATED_MODULE_UNKNOWN_REASON),
+      fallbackReasons,
+      featureFacts,
       source: declaredIncompatible?.source || declared?.source || moduleFallback?.source || 'payload',
       moduleCount: moduleFacts.length
     };
@@ -199,6 +266,8 @@ export function resolveImmersiveWorldRendererCompatibilityFacts(art = {}) {
       compatibilityStatus: 'webgl-only',
       webgpuCompatible: false,
       fallbackReason: LEGACY_WEBGL_FALLBACK_REASON,
+      fallbackReasons: compactStringList([LEGACY_WEBGL_FALLBACK_REASON, ...fallbackReasons]),
+      featureFacts,
       source: declared?.source || 'payload',
       moduleCount: moduleFacts.length
     };
@@ -209,6 +278,8 @@ export function resolveImmersiveWorldRendererCompatibilityFacts(art = {}) {
     compatibilityStatus: declared?.compatibilityStatus || 'unknown',
     webgpuCompatible: false,
     fallbackReason: declared?.fallbackReason || null,
+    fallbackReasons,
+    featureFacts,
     source: declared?.source || null,
     moduleCount: moduleFacts.length
   };
@@ -309,6 +380,30 @@ export function normalizePublicRuntimeUrl(value, {
 
 function asObject(value, fallback = {}) {
   return value && typeof value === 'object' && !Array.isArray(value) ? value : fallback;
+}
+
+function webgpuFeatureFactFromUserData(userData = null) {
+  const source = asObject(userData, null);
+  if (!source) return null;
+  return compactWebGPUFeatureFact(source.webgpuNativeFeature || {
+    kind: source.webgpuHelperId ? 'webgpu-native-helper' : source.materialFactoryId ? 'material-factory' : null,
+    id: source.webgpuHelperId || source.materialFactoryId,
+    family: source.webgpuFeatureFamily,
+    factory: source.materialFactoryId,
+    material: source.rendererSurface,
+    surface: source.webgpuSafeSurface,
+    reason: source.webgpuHelperId ? 'runtime-helper-userdata' : source.materialFactoryId ? 'runtime-material-factory-userdata' : null
+  });
+}
+
+function collectRuntimeWebGPUFeatureFacts(object = null) {
+  const facts = [];
+  object?.traverse?.((child) => {
+    facts.push(webgpuFeatureFactFromUserData(child.userData));
+    const materials = Array.isArray(child.material) ? child.material : [child.material].filter(Boolean);
+    for (const material of materials) facts.push(webgpuFeatureFactFromUserData(material.userData));
+  });
+  return compactWebGPUFeatureFacts(facts);
 }
 
 function resolveImmersiveWorldCameraForRender(scene, world = {}) {
@@ -1590,6 +1685,11 @@ export class ArtworkScene {
     this.captureTime = 1.234;
     this.previousElapsedSeconds = null;
     this.sceneAssemblyReport = null;
+    this.webgpuFeatureFacts = compactWebGPUFeatureFacts(this.rendererCompatibilityFacts?.featureFacts || []);
+    this.webgpuFeatureFallbackReasons = compactStringList([
+      ...(Array.isArray(this.rendererCompatibilityFacts?.fallbackReasons) ? this.rendererCompatibilityFacts.fallbackReasons : []),
+      this.rendererCompatibilityFacts?.fallbackReason
+    ]);
     this.applyConfigGeneration = 0;
     this.cameraInputTeardown = null;
     this.disposed = false;
@@ -1660,9 +1760,13 @@ export class ArtworkScene {
           ? 'webgl-direct'
           : POST_PROCESSING_MODES.WEBGL_GLSL_POST;
     const diagnostics = this.rendererRuntime?.getDiagnostics?.({
-      outputColorTransformMode
+      outputColorTransformMode,
+      webgpuFeatureFacts: this.webgpuFeatureFacts,
+      webgpuFeatureFallbackReasons: this.webgpuFeatureFallbackReasons
     }) || describeRendererDiagnostics(this.renderer, {
-      outputColorTransformMode
+      outputColorTransformMode,
+      webgpuFeatureFacts: this.webgpuFeatureFacts,
+      webgpuFeatureFallbackReasons: this.webgpuFeatureFallbackReasons
     });
     return {
       ...diagnostics,
@@ -1768,6 +1872,7 @@ export class ArtworkScene {
       url: normalizePublicRuntimeUrl(asset.url, { expectedDir: 'data/immersive-world/generated-assets' })
     }));
     const skyboxUtilities = createImmersiveWorldSkyboxUtilities(THREE);
+    const webgpuNativeUtilities = createImmersiveWorldWebGPUNativeUtilities(THREE);
     const placementUtilities = createImmersiveWorldPlacementUtilities(THREE);
     const result = normalizeModuleResult(await createPart({
       THREE,
@@ -1782,7 +1887,9 @@ export class ArtworkScene {
         createSeededRandom: createImmersiveWorldSeededRandom,
         seededRandom: (salt = '') => createImmersiveWorldSeededRandom(config.seed, salt)(),
         ...placementUtilities,
+        ...webgpuNativeUtilities,
         ...skyboxUtilities,
+        webgpuNative: webgpuNativeUtilities,
         skybox: skyboxUtilities
       }
     }));
@@ -1800,6 +1907,15 @@ export class ArtworkScene {
       THREE,
       renderer: this.renderer
     });
+    const webgpuFeatureFacts = compactWebGPUFeatureFacts([
+      ...webgpuFeatureFactsFromCompatibility(moduleRef.rendererCompatibility || moduleRef),
+      ...webgpuFeatureFactsFromCompatibility(part.rendererCompatibility),
+      ...collectRuntimeWebGPUFeatureFacts(result.object)
+    ]);
+    const webgpuFeatureFallbackReasons = compactStringList([
+      ...webgpuFeatureFallbackReasonsFromCompatibility(moduleRef.rendererCompatibility || moduleRef),
+      ...webgpuFeatureFallbackReasonsFromCompatibility(part.rendererCompatibility)
+    ]);
     result.object.name = result.object.name || part.id || `immersive-world-part-${index + 1}`;
     this.group.add(result.object);
     if (result.update) this.updateHooks.push(result.update);
@@ -1809,6 +1925,8 @@ export class ArtworkScene {
       role: part.role || null,
       moduleUrl: moduleRef.url,
       assetCount: assets.length,
+      webgpuFeatureFacts,
+      webgpuFeatureFallbackReasons,
       textureQuality,
       shaderMaterialNormalization: shaderMaterialNormalization.patchedUniforms > 0 ? shaderMaterialNormalization : undefined,
       environmentAdaptation: environmentAdaptation.adapted ? environmentAdaptation : undefined
@@ -1856,6 +1974,15 @@ export class ArtworkScene {
     }
 
     if (!isCurrentApply()) return false;
+    this.webgpuFeatureFacts = compactWebGPUFeatureFacts([
+      ...(Array.isArray(this.rendererCompatibilityFacts?.featureFacts) ? this.rendererCompatibilityFacts.featureFacts : []),
+      ...builtParts.flatMap((entry) => Array.isArray(entry.webgpuFeatureFacts) ? entry.webgpuFeatureFacts : [])
+    ]);
+    this.webgpuFeatureFallbackReasons = compactStringList([
+      ...(Array.isArray(this.rendererCompatibilityFacts?.fallbackReasons) ? this.rendererCompatibilityFacts.fallbackReasons : []),
+      this.rendererCompatibilityFacts?.fallbackReason,
+      ...builtParts.flatMap((entry) => Array.isArray(entry.webgpuFeatureFallbackReasons) ? entry.webgpuFeatureFallbackReasons : [])
+    ]);
     this.sceneAssemblyReport = {
       method: 'immersive-world-v1',
       status: 'ok',
@@ -1865,6 +1992,8 @@ export class ArtworkScene {
       cameraAlignment: camera.alignment,
       renderer: this.getRendererDiagnostics(),
       rendererCompatibility: this.rendererCompatibilityFacts,
+      webgpuFeatureFacts: this.webgpuFeatureFacts,
+      webgpuFeatureFallbackReasons: this.webgpuFeatureFallbackReasons,
       builtParts,
       partCount: builtParts.length
     };

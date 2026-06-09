@@ -365,6 +365,8 @@ export function createRuntimeController({
       samplesDegraded: rendererDiagnostics.samplesDegraded === true,
       outputBufferType: rendererDiagnostics.outputBufferType || null,
       textureFormatFacts: Array.isArray(rendererDiagnostics.textureFormatFacts) ? rendererDiagnostics.textureFormatFacts : [],
+      webgpuFeatureFacts: Array.isArray(rendererDiagnostics.webgpuFeatureFacts) ? rendererDiagnostics.webgpuFeatureFacts : [],
+      webgpuFeatureFallbackReasons: Array.isArray(rendererDiagnostics.webgpuFeatureFallbackReasons) ? rendererDiagnostics.webgpuFeatureFallbackReasons : [],
       sceneAssemblyReport: activeScene.getAssemblyReport?.() || null
     });
     emitSceneProgress(1, 'Scene ready', false);
