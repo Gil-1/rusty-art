@@ -1,0 +1,76 @@
+{
+  "version": 2,
+  "kind": "rusty-art-public-media-assets",
+  "artworkId": "2026-06-09-0649z-donald-trump-booed-during-his-appearance-at-the-nba-finals-in-new-york-e",
+  "source": {
+    "sha256": "a4c68d58e6793a7f42cb4533a7f00939807fd3b54505f4a33ae547c35fa939fc",
+    "role": "daily-preview-story-desktop"
+  },
+  "sources": {
+    "primary": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-desktop",
+      "sha256": "a4c68d58e6793a7f42cb4533a7f00939807fd3b54505f4a33ae547c35fa939fc"
+    },
+    "openGraph": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-open-graph",
+      "sha256": "07f109d1c62b9290aa6eb4d8cff10c3245d0b8c389b40612409c5ad80637d27f"
+    },
+    "instagram": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-instagram",
+      "sha256": "4b0b8bbf81e7427e03e4e43df0f2240529cc6a3e18a5d31a529a0438680248a7"
+    }
+  },
+  "targets": {
+    "thumb-320.jpg": {
+      "spec": {
+        "fileName": "thumb-320.jpg",
+        "width": 320,
+        "height": null,
+        "fit": "inside",
+        "withoutEnlargement": true,
+        "format": "jpeg",
+        "quality": 82
+      },
+      "publicPath": "./data/media/2026-06-09-0649z-donald-trump-booed-during-his-appearance-at-the-nba-finals-in-new-york-e/thumb-320.jpg",
+      "source": {
+        "sha256": "a4c68d58e6793a7f42cb4533a7f00939807fd3b54505f4a33ae547c35fa939fc",
+        "role": "daily-preview-story-desktop"
+      }
+    },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-06-09-0649z-donald-trump-booed-during-his-appearance-at-the-nba-finals-in-new-york-e/og-1200x630.jpg",
+      "source": {
+        "sha256": "07f109d1c62b9290aa6eb4d8cff10c3245d0b8c389b40612409c5ad80637d27f",
+        "role": "daily-preview-story-open-graph"
+      }
+    },
+    "instagram-1080x1440.jpg": {
+      "spec": {
+        "fileName": "instagram-1080x1440.jpg",
+        "width": 1080,
+        "height": 1440,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-06-09-0649z-donald-trump-booed-during-his-appearance-at-the-nba-finals-in-new-york-e/instagram-1080x1440.jpg",
+      "source": {
+        "sha256": "4b0b8bbf81e7427e03e4e43df0f2240529cc6a3e18a5d31a529a0438680248a7",
+        "role": "daily-preview-story-instagram"
+      }
+    }
+  }
+}
