@@ -1,0 +1,1336 @@
+{
+  "id": "2026-06-10-1306z-large-world-cup-tent-on-market-square-for-sixth-time-winning-match-again",
+  "date": "2026-06-10",
+  "title": "Large World Cup tent on market square for sixth time: “Winning match against Brazil in 2018 was our best night ever”",
+  "generatedAt": "2026-06-10T13:14:21.745Z",
+  "news": {
+    "source": "nieuwsblad",
+    "title": "Large World Cup tent on market square for sixth time: “Winning match against Brazil in 2018 was our best night ever”",
+    "link": "https://www.nieuwsblad.be/regio/antwerpen/regio-antwerpen/kalmthout/al-zesde-keer-grote-wk-tent-op-marktplein-gewonnen-match-tegen-brazilie-in-2018-was-onze-beste-avond-ooit/153175785.html",
+    "score": null
+  },
+  "inspiration": {
+    "artist": "Hans Hartung",
+    "tags": [
+      "non-literal grid pressure",
+      "Against",
+      "immersive-world"
+    ],
+    "links": {}
+  },
+  "seed": null,
+  "sceneStrategy": null,
+  "techStack": null,
+  "newsVisualMappings": [],
+  "qualityScore": {
+    "score": null,
+    "summary": null,
+    "heuristic": {
+      "score": null,
+      "breakdown": {}
+    },
+    "calibration": {
+      "sampleCount": 0,
+      "trustWeight": 0
+    },
+    "alignment": {
+      "totalAlign": null,
+      "components": {
+        "title": {
+          "score": null
+        },
+        "style": {
+          "score": null
+        },
+        "emotional": {
+          "score": null
+        }
+      }
+    }
+  },
+  "rationale": {
+    "intent": {
+      "signal": null,
+      "emotion": null,
+      "tension": null,
+      "balance": null,
+      "motion": null
+    },
+    "selection": {
+      "whyHeadline": null,
+      "priorityTerms": []
+    },
+    "qualitySummary": null
+  },
+  "runPolicy": null,
+  "artCreationMethod": "immersive-world-v1",
+  "world": {
+    "id": "immersive-world-hartung-market-square-grid-pressure-final",
+    "method": "immersive-world-v1",
+    "title": "Large World Cup tent on market square for sixth time: “Winning match against Brazil in 2018 was our best night ever”",
+    "rendererAuthoringTarget": "webgpu-project-scene",
+    "environment": {
+      "owner": "world-composition",
+      "kind": "inside-facing-artist-field",
+      "color": "#E4E2DE",
+      "fieldColor": "#DAD1C6",
+      "fogDensity": 0.0064,
+      "radius": 92,
+      "opacity": 0.94,
+      "palette": [
+        "#F2DDC1",
+        "#E4E2DE",
+        "#D2CFBD",
+        "#DAD1C6",
+        "#7C9172",
+        "#7E8D70",
+        "#707F63",
+        "#33312D",
+        "#241D1F",
+        "#B99062"
+      ],
+      "compositionIntent": "Hans Hartung-style all-over pressure field: pale paper/ochre ground, off-left knot, lateral black band, right vertical grid barricade, muted green dot catches, and active negative space translating Against/market-square World Cup crowd pressure.",
+      "rendererAuthoringTarget": "webgpu-project-scene"
+    },
+    "camera": {
+      "owner": "world-composition",
+      "fov": 66,
+      "near": 0.08,
+      "far": 220,
+      "position": [
+        0.72,
+        2.12,
+        18.1
+      ],
+      "target": [
+        4.05,
+        0.18,
+        -6.8
+      ],
+      "distanceSafety": {
+        "nearFarOwnedHere": true,
+        "minPartDistance": 1.7,
+        "clippingRisk": "low",
+        "reason": "Attempt 2 desktop was readable, but mobile still held the right vertical barricade mostly at the edge; final camera is slightly farther back/right so portrait framing includes clearer barricade pressure while retaining the off-left knot and lateral band."
+      }
+    },
+    "lighting": {
+      "owner": "world-composition",
+      "ambientColor": "#eadfcf",
+      "ambientIntensity": 0.78,
+      "keyColor": "#fff0dc",
+      "keyIntensity": 0.94,
+      "keyPosition": [
+        4,
+        6,
+        8
+      ],
+      "rimColor": "#9bb39a",
+      "rimIntensity": 0.34,
+      "rimPosition": [
+        -5,
+        2,
+        -4
+      ],
+      "contrast": {
+        "mode": "integrated-part-readability",
+        "notes": "Warm matte light keeps paper/ochre negative space open while a muted green rim separates the vertical barricade and side-return marks."
+      }
+    },
+    "outputColorTransform": {
+      "owner": "world-composition",
+      "mode": "final-color-contrast-only",
+      "contrast": 1.05,
+      "saturation": 1.03,
+      "exposure": 1.012,
+      "vignette": 0.055,
+      "hueShift": 0,
+      "distortion": 0
+    },
+    "parts": [
+      {
+        "id": "world-environment",
+        "partId": "world-environment",
+        "role": "world-environment",
+        "moduleRef": {
+          "type": "immersive-world-generated-module",
+          "version": 1,
+          "moduleId": "world-environment-hartung-market-square-grid-pressure",
+          "partId": "world-environment",
+          "hash": "333bd71e69809ab2475b6793b637474b7170b3eacba519c0b9899a1465946c34",
+          "integrity": "sha256-333bd71e69809ab2475b6793b637474b7170b3eacba519c0b9899a1465946c34",
+          "exportName": "createImmersiveWorldPart",
+          "file": "data/immersive-world/generated-modules/333bd71e69809ab2475b6793b637474b7170b3eacba519c0b9899a1465946c34.mjs",
+          "url": "./data/immersive-world/generated-modules/333bd71e69809ab2475b6793b637474b7170b3eacba519c0b9899a1465946c34.mjs",
+          "rendererCompatibility": {
+            "version": 1,
+            "targetMode": "webgpu-project-scene",
+            "compatibilityStatus": "webgpu-compatible",
+            "webgpuCompatible": true,
+            "evidenceReasons": [
+              "webgpu-safe-material",
+              "source-used-project-webgpu-material-factory",
+              "webgpu-native-helper-utility"
+            ],
+            "featureFacts": [
+              {
+                "kind": "standard-material",
+                "material": "MeshBasicMaterial",
+                "family": "standard-material-surface",
+                "reason": "webgpu-safe-material"
+              },
+              {
+                "kind": "material-factory",
+                "id": "procedural-marks",
+                "family": "procedural-marks",
+                "material": "MeshBasicMaterial",
+                "surface": "instanced-geometry-material",
+                "reason": "source-used-project-webgpu-material-factory"
+              },
+              {
+                "kind": "material-factory",
+                "id": "sky-background-field",
+                "family": "sky-background-field",
+                "material": "MeshBasicMaterial",
+                "surface": "scene-background-or-large-plane",
+                "reason": "source-used-project-webgpu-material-factory"
+              },
+              {
+                "kind": "webgpu-native-helper",
+                "id": "direction-space-skybox-shell",
+                "family": "sky-background-field",
+                "factory": "sky-background-field",
+                "material": "MeshBasicMaterial",
+                "surface": "direction-space-vertex-color-skybox-shell",
+                "reason": "webgpu-native-helper-utility"
+              },
+              {
+                "kind": "material-factory",
+                "id": "color-field",
+                "family": "color-field",
+                "material": "MeshBasicMaterial",
+                "surface": "three-basic-or-standard-material",
+                "reason": "source-used-project-webgpu-material-factory"
+              }
+            ],
+            "compatibleSurfaces": [
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "MeshBasicMaterial"
+              },
+              {
+                "reason": "source-used-project-webgpu-material-factory",
+                "materialType": "MeshBasicMaterial",
+                "runtimeSurface": "instanced-geometry-material",
+                "factoryId": "procedural-marks",
+                "materialFactoryId": "procedural-marks",
+                "factoryCategory": "procedural-marks",
+                "property": "materialFactoryId"
+              },
+              {
+                "reason": "source-used-project-webgpu-material-factory",
+                "materialType": "MeshBasicMaterial",
+                "runtimeSurface": "scene-background-or-large-plane",
+                "factoryId": "sky-background-field",
+                "materialFactoryId": "sky-background-field",
+                "factoryCategory": "sky-background-field",
+                "property": "materialFactoryId"
+              },
+              {
+                "reason": "webgpu-native-helper-utility",
+                "api": "utilities.createDirectionSpaceSkyboxShell",
+                "helperId": "direction-space-skybox-shell",
+                "featureFamily": "sky-background-field",
+                "outputKind": "object-bundle",
+                "materialType": "MeshBasicMaterial",
+                "runtimeSurface": "direction-space-vertex-color-skybox-shell",
+                "factoryId": "sky-background-field",
+                "materialFactoryId": "sky-background-field",
+                "factoryCategory": "sky-background-field"
+              },
+              {
+                "reason": "source-used-project-webgpu-material-factory",
+                "materialType": "MeshBasicMaterial",
+                "runtimeSurface": "three-basic-or-standard-material",
+                "factoryId": "color-field",
+                "materialFactoryId": "color-field",
+                "factoryCategory": "color-field",
+                "property": "materialFactoryId"
+              }
+            ]
+          }
+        },
+        "params": {
+          "band": "environment",
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "scale": 1,
+          "renderOrder": 0,
+          "visibilityPriority": "environment",
+          "motionIntensity": 0.58,
+          "compositionUse": "Full surrounding paper/ochre and muted green field; rooted at origin to preserve accepted environment shell behavior."
+        },
+        "evidence": {
+          "selfReview": {
+            "accepted": true,
+            "summary": "Accepted: real WebGPU-safe Three.js world-environment module with a single surrounding direction-space shell plus bounded standard-material geometry for Hartung/news-specific pressure systems.",
+            "strengths": [
+              "Uses the correct packet identity, Hans Hartung source facts, and selected World Cup tent news meaning.",
+              "Avoids ShaderMaterial, RawShaderMaterial, raw GLSL, onBeforeCompile, network, remote assets, and CPU-baked textures.",
+              "Provides a dominant enclosing painted surround, not a neutral backdrop.",
+              "Preview evidence proves actual WebGPU backend and successful health/capture gate."
+            ],
+            "concerns": [
+              "First two attempts failed the environment coverage heuristic; final attempt corrected this with stronger all-over wash coverage."
+            ],
+            "evidence": [
+              "previews/attempt-003/003-world-environment-draft-desktop.jpg",
+              "previews/attempt-003/desktop-render-report.json",
+              "checks/check-result.json",
+              "agent-session:isolated-immersive-world-part-workshop-1781095551702-e11fbbf3-882a-4bc2"
+            ]
+          },
+          "rendererCompatibilityPreserved": {
+            "evidenceReasons": [
+              "webgpu-safe-material",
+              "source-used-project-webgpu-material-factory",
+              "webgpu-native-helper-utility"
+            ],
+            "compatibleSurfaces": [
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "MeshBasicMaterial"
+              },
+              {
+                "reason": "source-used-project-webgpu-material-factory",
+                "materialType": "MeshBasicMaterial",
+                "runtimeSurface": "instanced-geometry-material",
+                "factoryId": "procedural-marks",
+                "materialFactoryId": "procedural-marks",
+                "factoryCategory": "procedural-marks",
+                "property": "materialFactoryId"
+              },
+              {
+                "reason": "source-used-project-webgpu-material-factory",
+                "materialType": "MeshBasicMaterial",
+                "runtimeSurface": "scene-background-or-large-plane",
+                "factoryId": "sky-background-field",
+                "materialFactoryId": "sky-background-field",
+                "factoryCategory": "sky-background-field",
+                "property": "materialFactoryId"
+              },
+              {
+                "reason": "webgpu-native-helper-utility",
+                "api": "utilities.createDirectionSpaceSkyboxShell",
+                "helperId": "direction-space-skybox-shell",
+                "featureFamily": "sky-background-field",
+                "outputKind": "object-bundle",
+                "materialType": "MeshBasicMaterial",
+                "runtimeSurface": "direction-space-vertex-color-skybox-shell",
+                "factoryId": "sky-background-field",
+                "materialFactoryId": "sky-background-field",
+                "factoryCategory": "sky-background-field"
+              },
+              {
+                "reason": "source-used-project-webgpu-material-factory",
+                "materialType": "MeshBasicMaterial",
+                "runtimeSurface": "three-basic-or-standard-material",
+                "factoryId": "color-field",
+                "materialFactoryId": "color-field",
+                "factoryCategory": "color-field",
+                "property": "materialFactoryId"
+              }
+            ],
+            "webgpuFeatureFacts": {
+              "directFeatureFacts": [
+                {
+                  "kind": "standard-material",
+                  "material": "MeshBasicMaterial",
+                  "family": "standard-material-surface",
+                  "reason": "webgpu-safe-material"
+                },
+                {
+                  "kind": "material-factory",
+                  "id": "procedural-marks",
+                  "family": "procedural-marks",
+                  "material": "MeshBasicMaterial",
+                  "surface": "instanced-geometry-material",
+                  "reason": "source-used-project-webgpu-material-factory"
+                },
+                {
+                  "kind": "material-factory",
+                  "id": "sky-background-field",
+                  "family": "sky-background-field",
+                  "material": "MeshBasicMaterial",
+                  "surface": "scene-background-or-large-plane",
+                  "reason": "source-used-project-webgpu-material-factory"
+                },
+                {
+                  "kind": "webgpu-native-helper",
+                  "id": "direction-space-skybox-shell",
+                  "family": "sky-background-field",
+                  "factory": "sky-background-field",
+                  "material": "MeshBasicMaterial",
+                  "surface": "direction-space-vertex-color-skybox-shell",
+                  "reason": "webgpu-native-helper-utility"
+                },
+                {
+                  "kind": "material-factory",
+                  "id": "color-field",
+                  "family": "color-field",
+                  "material": "MeshBasicMaterial",
+                  "surface": "three-basic-or-standard-material",
+                  "reason": "source-used-project-webgpu-material-factory"
+                }
+              ],
+              "evidenceReasons": [
+                "webgpu-safe-material",
+                "source-used-project-webgpu-material-factory",
+                "webgpu-native-helper-utility"
+              ],
+              "compatibleSurfaces": [
+                {
+                  "reason": "webgpu-safe-material",
+                  "materialType": "MeshBasicMaterial"
+                },
+                {
+                  "reason": "source-used-project-webgpu-material-factory",
+                  "materialType": "MeshBasicMaterial",
+                  "runtimeSurface": "instanced-geometry-material",
+                  "factoryId": "procedural-marks",
+                  "materialFactoryId": "procedural-marks",
+                  "factoryCategory": "procedural-marks",
+                  "property": "materialFactoryId"
+                },
+                {
+                  "reason": "source-used-project-webgpu-material-factory",
+                  "materialType": "MeshBasicMaterial",
+                  "runtimeSurface": "scene-background-or-large-plane",
+                  "factoryId": "sky-background-field",
+                  "materialFactoryId": "sky-background-field",
+                  "factoryCategory": "sky-background-field",
+                  "property": "materialFactoryId"
+                },
+                {
+                  "reason": "webgpu-native-helper-utility",
+                  "api": "utilities.createDirectionSpaceSkyboxShell",
+                  "helperId": "direction-space-skybox-shell",
+                  "featureFamily": "sky-background-field",
+                  "outputKind": "object-bundle",
+                  "materialType": "MeshBasicMaterial",
+                  "runtimeSurface": "direction-space-vertex-color-skybox-shell",
+                  "factoryId": "sky-background-field",
+                  "materialFactoryId": "sky-background-field",
+                  "factoryCategory": "sky-background-field"
+                },
+                {
+                  "reason": "source-used-project-webgpu-material-factory",
+                  "materialType": "MeshBasicMaterial",
+                  "runtimeSurface": "three-basic-or-standard-material",
+                  "factoryId": "color-field",
+                  "materialFactoryId": "color-field",
+                  "factoryCategory": "color-field",
+                  "property": "materialFactoryId"
+                }
+              ]
+            }
+          },
+          "compositionUse": "Used as the matte all-over field and far pressure scaffold.",
+          "compositionAdaptations": [
+            "Kept rooted at origin as the full matte paper, ochre, muted green environment shell.",
+            "composition modified world-environment from isolated accepted-part defaults"
+          ],
+          "compositionBeforeHash": "34c3a2000452bc10",
+          "compositionAfterHash": "13e26d184a1a3886"
+        }
+      },
+      {
+        "id": "non-literal-grid-pressure",
+        "partId": "non-literal-grid-pressure",
+        "role": "primary-news-signal",
+        "moduleRef": {
+          "type": "immersive-world-generated-module",
+          "version": 1,
+          "moduleId": "non-literal-grid-pressure-hartung-grid-pressure",
+          "partId": "non-literal-grid-pressure",
+          "hash": "d529b2fd0cb8fdea017f0d010ffb3c4b8cc4437817eba8d2e8dcdd55c3c87a20",
+          "integrity": "sha256-d529b2fd0cb8fdea017f0d010ffb3c4b8cc4437817eba8d2e8dcdd55c3c87a20",
+          "exportName": "createImmersiveWorldPart",
+          "file": "data/immersive-world/generated-modules/d529b2fd0cb8fdea017f0d010ffb3c4b8cc4437817eba8d2e8dcdd55c3c87a20.mjs",
+          "url": "./data/immersive-world/generated-modules/d529b2fd0cb8fdea017f0d010ffb3c4b8cc4437817eba8d2e8dcdd55c3c87a20.mjs",
+          "rendererCompatibility": {
+            "version": 1,
+            "targetMode": "webgpu-project-scene",
+            "compatibilityStatus": "webgpu-compatible",
+            "webgpuCompatible": true,
+            "evidenceReasons": [
+              "webgpu-safe-material",
+              "source-used-project-webgpu-material-factory"
+            ],
+            "featureFacts": [
+              {
+                "kind": "standard-material",
+                "material": "MeshBasicMaterial",
+                "family": "standard-material-surface",
+                "reason": "webgpu-safe-material"
+              },
+              {
+                "kind": "material-factory",
+                "id": "procedural-marks",
+                "family": "procedural-marks",
+                "material": "MeshBasicMaterial",
+                "surface": "instanced-geometry-material",
+                "reason": "source-used-project-webgpu-material-factory"
+              },
+              {
+                "kind": "material-factory",
+                "id": "color-field",
+                "family": "color-field",
+                "material": "MeshBasicMaterial",
+                "surface": "three-basic-or-standard-material",
+                "reason": "source-used-project-webgpu-material-factory"
+              }
+            ],
+            "compatibleSurfaces": [
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "MeshBasicMaterial"
+              },
+              {
+                "reason": "source-used-project-webgpu-material-factory",
+                "materialType": "MeshBasicMaterial",
+                "runtimeSurface": "instanced-geometry-material",
+                "factoryId": "procedural-marks",
+                "materialFactoryId": "procedural-marks",
+                "factoryCategory": "procedural-marks",
+                "property": "materialFactoryId"
+              },
+              {
+                "reason": "source-used-project-webgpu-material-factory",
+                "materialType": "MeshBasicMaterial",
+                "runtimeSurface": "three-basic-or-standard-material",
+                "factoryId": "color-field",
+                "materialFactoryId": "color-field",
+                "factoryCategory": "color-field",
+                "property": "materialFactoryId"
+              }
+            ]
+          }
+        },
+        "params": {
+          "band": "foreground",
+          "position": [
+            -0.22,
+            0.02,
+            -2.1
+          ],
+          "scale": 1.45,
+          "renderOrder": 3,
+          "visibilityPriority": "primary",
+          "motionIntensity": 0.68,
+          "compositionUse": "Primary Against/news signal, final-scaled so mobile and desktop both carry a readable knot, sweeping lateral band, and right vertical barricade."
+        },
+        "evidence": {
+          "selfReview": {
+            "accepted": true,
+            "summary": "Accepted after one preview-supported pass.",
+            "strengths": [
+              "Readable in isolation at desktop preview scale.",
+              "Preserves abstract-no-subject composition through all-over marks instead of a centered object.",
+              "Uses WebGPU-safe standard materials and explicit materialFactoryId evidence.",
+              "Carries the required off-center knot, lateral band, dense vertical barricade, active pale negative space, grids, dots, and high-contrast edges."
+            ],
+            "concerns": [
+              "The isolated preview includes some dark default environment visible behind the ordinary geometry, but the authored pale fields dominate the primary read and the render health gate passed."
+            ],
+            "evidence": [
+              "checks/check-result.json",
+              "previews/attempt-001/001-non-literal-grid-pressure-draft-desktop.jpg",
+              "previews/attempt-001/desktop-render-report.json",
+              "previews/attempt-001/preview-result.json",
+              "agent-session:isolated-immersive-world-part-workshop-1781096092857-4448509c-b1b2-4854"
+            ]
+          },
+          "rendererCompatibilityPreserved": {
+            "evidenceReasons": [
+              "webgpu-safe-material",
+              "source-used-project-webgpu-material-factory"
+            ],
+            "compatibleSurfaces": [
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "MeshBasicMaterial"
+              },
+              {
+                "reason": "source-used-project-webgpu-material-factory",
+                "materialType": "MeshBasicMaterial",
+                "runtimeSurface": "instanced-geometry-material",
+                "factoryId": "procedural-marks",
+                "materialFactoryId": "procedural-marks",
+                "factoryCategory": "procedural-marks",
+                "property": "materialFactoryId"
+              },
+              {
+                "reason": "source-used-project-webgpu-material-factory",
+                "materialType": "MeshBasicMaterial",
+                "runtimeSurface": "three-basic-or-standard-material",
+                "factoryId": "color-field",
+                "materialFactoryId": "color-field",
+                "factoryCategory": "color-field",
+                "property": "materialFactoryId"
+              }
+            ],
+            "webgpuFeatureFacts": {
+              "directFeatureFacts": [
+                {
+                  "kind": "standard-material",
+                  "material": "MeshBasicMaterial",
+                  "family": "standard-material-surface",
+                  "reason": "webgpu-safe-material"
+                },
+                {
+                  "kind": "material-factory",
+                  "id": "procedural-marks",
+                  "family": "procedural-marks",
+                  "material": "MeshBasicMaterial",
+                  "surface": "instanced-geometry-material",
+                  "reason": "source-used-project-webgpu-material-factory"
+                },
+                {
+                  "kind": "material-factory",
+                  "id": "color-field",
+                  "family": "color-field",
+                  "material": "MeshBasicMaterial",
+                  "surface": "three-basic-or-standard-material",
+                  "reason": "source-used-project-webgpu-material-factory"
+                }
+              ],
+              "evidenceReasons": [
+                "webgpu-safe-material",
+                "source-used-project-webgpu-material-factory"
+              ],
+              "compatibleSurfaces": [
+                {
+                  "reason": "webgpu-safe-material",
+                  "materialType": "MeshBasicMaterial"
+                },
+                {
+                  "reason": "source-used-project-webgpu-material-factory",
+                  "materialType": "MeshBasicMaterial",
+                  "runtimeSurface": "instanced-geometry-material",
+                  "factoryId": "procedural-marks",
+                  "materialFactoryId": "procedural-marks",
+                  "factoryCategory": "procedural-marks",
+                  "property": "materialFactoryId"
+                },
+                {
+                  "reason": "source-used-project-webgpu-material-factory",
+                  "materialType": "MeshBasicMaterial",
+                  "runtimeSurface": "three-basic-or-standard-material",
+                  "factoryId": "color-field",
+                  "materialFactoryId": "color-field",
+                  "factoryCategory": "color-field",
+                  "property": "materialFactoryId"
+                }
+              ]
+            }
+          },
+          "compositionUse": "Attempt 3 keeps the accepted primary signal foregrounded while reducing crowding and improving portrait visibility of the required grid-pressure barricade.",
+          "compositionAdaptations": [
+            "Scaled to 0.68 and kept foreground so knot, lateral band, and vertical barricade remain readable across desktop and mobile.",
+            "composition modified non-literal-grid-pressure from isolated accepted-part defaults"
+          ],
+          "compositionBeforeHash": "314100bafec3d988",
+          "compositionAfterHash": "ae2f2f5c057a2640"
+        }
+      },
+      {
+        "id": "artist-mark-field",
+        "partId": "artist-mark-field",
+        "role": "artist-style-system",
+        "moduleRef": {
+          "type": "immersive-world-generated-module",
+          "version": 1,
+          "moduleId": "artist-mark-field-hartung-line-network-grid-pressure",
+          "partId": "artist-mark-field",
+          "hash": "870bfdb4200e59ab06ba103222230643139cf701cf2461c379712391c24a21a9",
+          "integrity": "sha256-870bfdb4200e59ab06ba103222230643139cf701cf2461c379712391c24a21a9",
+          "exportName": "createImmersiveWorldPart",
+          "file": "data/immersive-world/generated-modules/870bfdb4200e59ab06ba103222230643139cf701cf2461c379712391c24a21a9.mjs",
+          "url": "./data/immersive-world/generated-modules/870bfdb4200e59ab06ba103222230643139cf701cf2461c379712391c24a21a9.mjs",
+          "rendererCompatibility": {
+            "version": 1,
+            "targetMode": "webgpu-project-scene",
+            "compatibilityStatus": "webgpu-compatible",
+            "webgpuCompatible": true,
+            "evidenceReasons": [
+              "webgpu-safe-material",
+              "source-used-project-webgpu-material-factory"
+            ],
+            "featureFacts": [
+              {
+                "kind": "standard-material",
+                "material": "MeshBasicMaterial",
+                "family": "standard-material-surface",
+                "reason": "webgpu-safe-material"
+              },
+              {
+                "kind": "material-factory",
+                "id": "procedural-marks",
+                "family": "procedural-marks",
+                "material": "MeshBasicMaterial",
+                "surface": "instanced-geometry-material",
+                "reason": "source-used-project-webgpu-material-factory"
+              },
+              {
+                "kind": "material-factory",
+                "id": "color-field",
+                "family": "color-field",
+                "material": "MeshBasicMaterial",
+                "surface": "three-basic-or-standard-material",
+                "reason": "source-used-project-webgpu-material-factory"
+              }
+            ],
+            "compatibleSurfaces": [
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "MeshBasicMaterial"
+              },
+              {
+                "reason": "source-used-project-webgpu-material-factory",
+                "materialType": "MeshBasicMaterial",
+                "runtimeSurface": "instanced-geometry-material",
+                "factoryId": "procedural-marks",
+                "materialFactoryId": "procedural-marks",
+                "factoryCategory": "procedural-marks",
+                "property": "materialFactoryId"
+              },
+              {
+                "reason": "source-used-project-webgpu-material-factory",
+                "materialType": "MeshBasicMaterial",
+                "runtimeSurface": "three-basic-or-standard-material",
+                "factoryId": "color-field",
+                "materialFactoryId": "color-field",
+                "factoryCategory": "color-field",
+                "property": "materialFactoryId"
+              }
+            ]
+          }
+        },
+        "params": {
+          "band": "midground",
+          "position": [
+            3.25,
+            0.1,
+            -6.8
+          ],
+          "scale": 0.44,
+          "renderOrder": 2,
+          "visibilityPriority": "supporting",
+          "motionIntensity": 0.46,
+          "compositionUse": "Secondary Hartung line network, right/back-scaled to brace the barricade and add drips/dot catches without competing as a central subject."
+        },
+        "evidence": {
+          "selfReview": {
+            "accepted": true,
+            "summary": "Accepted: the draft is a real deterministic Three.js module with preview-backed WebGPU evidence and visible Hartung-style mark logic for artist-mark-field.",
+            "strengths": [
+              "Strong off-center knot and sweeping black trajectories.",
+              "Readable non-literal grid pressure with vertical barricade and ordered dot catches.",
+              "WebGPU-safe standard materials and explicit materialFactoryId evidence only."
+            ],
+            "concerns": [
+              "Large translucent wash planes read intentionally flat and graphic; acceptable for this artist-style-system part but should be balanced by the accepted environment and primary-news-signal parts in full composition."
+            ],
+            "evidence": [
+              "drafts/artist-mark-field.module.mjs",
+              "previews/attempt-001/001-artist-mark-field-draft-desktop.jpg",
+              "previews/attempt-001/desktop-render-report.json",
+              "checks/check-result.json",
+              "agent-session:isolated-immersive-world-part-workshop-1781096406810-dc8825e1-d38d-4bfc"
+            ]
+          },
+          "rendererCompatibilityPreserved": {
+            "evidenceReasons": [
+              "webgpu-safe-material",
+              "source-used-project-webgpu-material-factory"
+            ],
+            "compatibleSurfaces": [
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "MeshBasicMaterial"
+              },
+              {
+                "reason": "source-used-project-webgpu-material-factory",
+                "materialType": "MeshBasicMaterial",
+                "runtimeSurface": "instanced-geometry-material",
+                "factoryId": "procedural-marks",
+                "materialFactoryId": "procedural-marks",
+                "factoryCategory": "procedural-marks",
+                "property": "materialFactoryId"
+              },
+              {
+                "reason": "source-used-project-webgpu-material-factory",
+                "materialType": "MeshBasicMaterial",
+                "runtimeSurface": "three-basic-or-standard-material",
+                "factoryId": "color-field",
+                "materialFactoryId": "color-field",
+                "factoryCategory": "color-field",
+                "property": "materialFactoryId"
+              }
+            ],
+            "webgpuFeatureFacts": {
+              "directFeatureFacts": [
+                {
+                  "kind": "standard-material",
+                  "material": "MeshBasicMaterial",
+                  "family": "standard-material-surface",
+                  "reason": "webgpu-safe-material"
+                },
+                {
+                  "kind": "material-factory",
+                  "id": "procedural-marks",
+                  "family": "procedural-marks",
+                  "material": "MeshBasicMaterial",
+                  "surface": "instanced-geometry-material",
+                  "reason": "source-used-project-webgpu-material-factory"
+                },
+                {
+                  "kind": "material-factory",
+                  "id": "color-field",
+                  "family": "color-field",
+                  "material": "MeshBasicMaterial",
+                  "surface": "three-basic-or-standard-material",
+                  "reason": "source-used-project-webgpu-material-factory"
+                }
+              ],
+              "evidenceReasons": [
+                "webgpu-safe-material",
+                "source-used-project-webgpu-material-factory"
+              ],
+              "compatibleSurfaces": [
+                {
+                  "reason": "webgpu-safe-material",
+                  "materialType": "MeshBasicMaterial"
+                },
+                {
+                  "reason": "source-used-project-webgpu-material-factory",
+                  "materialType": "MeshBasicMaterial",
+                  "runtimeSurface": "instanced-geometry-material",
+                  "factoryId": "procedural-marks",
+                  "materialFactoryId": "procedural-marks",
+                  "factoryCategory": "procedural-marks",
+                  "property": "materialFactoryId"
+                },
+                {
+                  "reason": "source-used-project-webgpu-material-factory",
+                  "materialType": "MeshBasicMaterial",
+                  "runtimeSurface": "three-basic-or-standard-material",
+                  "factoryId": "color-field",
+                  "materialFactoryId": "color-field",
+                  "factoryCategory": "color-field",
+                  "property": "materialFactoryId"
+                }
+              ]
+            }
+          },
+          "compositionUse": "Attempt 3 uses this layer as right-side support and atmospheric line pressure.",
+          "compositionAdaptations": [
+            "Moved right/back and scaled to 0.44 to brace the barricade without over-darkening the primary knot.",
+            "composition modified artist-mark-field from isolated accepted-part defaults"
+          ],
+          "compositionBeforeHash": "82f0d23dc4bf8b48",
+          "compositionAfterHash": "95bae1ed6f5258c9"
+        }
+      }
+    ],
+    "compositionEvidence": {
+      "summary": "Final revision: preview-driven camera and scale adjustment preserves all accepted WebGPU-compatible parts while making the abstract pressure system readable in desktop and portrait.",
+      "decisions": [
+        "Attempt 1 succeeded technically but mobile cropped most of the required right vertical barricade, so the canonical camera was adjusted for an evidence-backed artwork failure rather than portrait styling alone.",
+        "Attempt 2 restored some barricade visibility; attempt 3 moved the camera slightly farther back/right and reduced primary scale to make the knot, lateral band, and vertical barricade all readable in mobile.",
+        "The foreground grid-pressure part remains the primary news signal; the artist-mark-field is smaller and farther back/right so it braces the vertical pressure instead of over-blackening the off-left knot.",
+        "All moduleRef, assetRefs, rendererCompatibility evidenceReasons, compatibleSurfaces, and webgpuFeatureFacts are preserved from the accepted packaged parts.",
+        "Final output grading stays renderer-owned and subtle: contrast/saturation/exposure only, with no WebGL-only post effects or shader assumptions."
+      ]
+    },
+    "generatedModules": [
+      {
+        "type": "immersive-world-generated-module",
+        "version": 1,
+        "moduleId": "world-environment-hartung-market-square-grid-pressure",
+        "partId": "world-environment",
+        "hash": "333bd71e69809ab2475b6793b637474b7170b3eacba519c0b9899a1465946c34",
+        "integrity": "sha256-333bd71e69809ab2475b6793b637474b7170b3eacba519c0b9899a1465946c34",
+        "exportName": "createImmersiveWorldPart",
+        "file": "data/immersive-world/generated-modules/333bd71e69809ab2475b6793b637474b7170b3eacba519c0b9899a1465946c34.mjs",
+        "url": "./data/immersive-world/generated-modules/333bd71e69809ab2475b6793b637474b7170b3eacba519c0b9899a1465946c34.mjs",
+        "rendererCompatibility": {
+          "version": 1,
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material",
+            "source-used-project-webgpu-material-factory",
+            "webgpu-native-helper-utility"
+          ],
+          "featureFacts": [
+            {
+              "kind": "standard-material",
+              "material": "MeshBasicMaterial",
+              "family": "standard-material-surface",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "material-factory",
+              "id": "procedural-marks",
+              "family": "procedural-marks",
+              "material": "MeshBasicMaterial",
+              "surface": "instanced-geometry-material",
+              "reason": "source-used-project-webgpu-material-factory"
+            },
+            {
+              "kind": "material-factory",
+              "id": "sky-background-field",
+              "family": "sky-background-field",
+              "material": "MeshBasicMaterial",
+              "surface": "scene-background-or-large-plane",
+              "reason": "source-used-project-webgpu-material-factory"
+            },
+            {
+              "kind": "webgpu-native-helper",
+              "id": "direction-space-skybox-shell",
+              "family": "sky-background-field",
+              "factory": "sky-background-field",
+              "material": "MeshBasicMaterial",
+              "surface": "direction-space-vertex-color-skybox-shell",
+              "reason": "webgpu-native-helper-utility"
+            },
+            {
+              "kind": "material-factory",
+              "id": "color-field",
+              "family": "color-field",
+              "material": "MeshBasicMaterial",
+              "surface": "three-basic-or-standard-material",
+              "reason": "source-used-project-webgpu-material-factory"
+            }
+          ],
+          "compatibleSurfaces": [
+            {
+              "reason": "webgpu-safe-material",
+              "materialType": "MeshBasicMaterial"
+            },
+            {
+              "reason": "source-used-project-webgpu-material-factory",
+              "materialType": "MeshBasicMaterial",
+              "runtimeSurface": "instanced-geometry-material",
+              "factoryId": "procedural-marks",
+              "materialFactoryId": "procedural-marks",
+              "factoryCategory": "procedural-marks",
+              "property": "materialFactoryId"
+            },
+            {
+              "reason": "source-used-project-webgpu-material-factory",
+              "materialType": "MeshBasicMaterial",
+              "runtimeSurface": "scene-background-or-large-plane",
+              "factoryId": "sky-background-field",
+              "materialFactoryId": "sky-background-field",
+              "factoryCategory": "sky-background-field",
+              "property": "materialFactoryId"
+            },
+            {
+              "reason": "webgpu-native-helper-utility",
+              "api": "utilities.createDirectionSpaceSkyboxShell",
+              "helperId": "direction-space-skybox-shell",
+              "featureFamily": "sky-background-field",
+              "outputKind": "object-bundle",
+              "materialType": "MeshBasicMaterial",
+              "runtimeSurface": "direction-space-vertex-color-skybox-shell",
+              "factoryId": "sky-background-field",
+              "materialFactoryId": "sky-background-field",
+              "factoryCategory": "sky-background-field"
+            },
+            {
+              "reason": "source-used-project-webgpu-material-factory",
+              "materialType": "MeshBasicMaterial",
+              "runtimeSurface": "three-basic-or-standard-material",
+              "factoryId": "color-field",
+              "materialFactoryId": "color-field",
+              "factoryCategory": "color-field",
+              "property": "materialFactoryId"
+            }
+          ]
+        }
+      },
+      {
+        "type": "immersive-world-generated-module",
+        "version": 1,
+        "moduleId": "non-literal-grid-pressure-hartung-grid-pressure",
+        "partId": "non-literal-grid-pressure",
+        "hash": "d529b2fd0cb8fdea017f0d010ffb3c4b8cc4437817eba8d2e8dcdd55c3c87a20",
+        "integrity": "sha256-d529b2fd0cb8fdea017f0d010ffb3c4b8cc4437817eba8d2e8dcdd55c3c87a20",
+        "exportName": "createImmersiveWorldPart",
+        "file": "data/immersive-world/generated-modules/d529b2fd0cb8fdea017f0d010ffb3c4b8cc4437817eba8d2e8dcdd55c3c87a20.mjs",
+        "url": "./data/immersive-world/generated-modules/d529b2fd0cb8fdea017f0d010ffb3c4b8cc4437817eba8d2e8dcdd55c3c87a20.mjs",
+        "rendererCompatibility": {
+          "version": 1,
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material",
+            "source-used-project-webgpu-material-factory"
+          ],
+          "featureFacts": [
+            {
+              "kind": "standard-material",
+              "material": "MeshBasicMaterial",
+              "family": "standard-material-surface",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "material-factory",
+              "id": "procedural-marks",
+              "family": "procedural-marks",
+              "material": "MeshBasicMaterial",
+              "surface": "instanced-geometry-material",
+              "reason": "source-used-project-webgpu-material-factory"
+            },
+            {
+              "kind": "material-factory",
+              "id": "color-field",
+              "family": "color-field",
+              "material": "MeshBasicMaterial",
+              "surface": "three-basic-or-standard-material",
+              "reason": "source-used-project-webgpu-material-factory"
+            }
+          ],
+          "compatibleSurfaces": [
+            {
+              "reason": "webgpu-safe-material",
+              "materialType": "MeshBasicMaterial"
+            },
+            {
+              "reason": "source-used-project-webgpu-material-factory",
+              "materialType": "MeshBasicMaterial",
+              "runtimeSurface": "instanced-geometry-material",
+              "factoryId": "procedural-marks",
+              "materialFactoryId": "procedural-marks",
+              "factoryCategory": "procedural-marks",
+              "property": "materialFactoryId"
+            },
+            {
+              "reason": "source-used-project-webgpu-material-factory",
+              "materialType": "MeshBasicMaterial",
+              "runtimeSurface": "three-basic-or-standard-material",
+              "factoryId": "color-field",
+              "materialFactoryId": "color-field",
+              "factoryCategory": "color-field",
+              "property": "materialFactoryId"
+            }
+          ]
+        }
+      },
+      {
+        "type": "immersive-world-generated-module",
+        "version": 1,
+        "moduleId": "artist-mark-field-hartung-line-network-grid-pressure",
+        "partId": "artist-mark-field",
+        "hash": "870bfdb4200e59ab06ba103222230643139cf701cf2461c379712391c24a21a9",
+        "integrity": "sha256-870bfdb4200e59ab06ba103222230643139cf701cf2461c379712391c24a21a9",
+        "exportName": "createImmersiveWorldPart",
+        "file": "data/immersive-world/generated-modules/870bfdb4200e59ab06ba103222230643139cf701cf2461c379712391c24a21a9.mjs",
+        "url": "./data/immersive-world/generated-modules/870bfdb4200e59ab06ba103222230643139cf701cf2461c379712391c24a21a9.mjs",
+        "rendererCompatibility": {
+          "version": 1,
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material",
+            "source-used-project-webgpu-material-factory"
+          ],
+          "featureFacts": [
+            {
+              "kind": "standard-material",
+              "material": "MeshBasicMaterial",
+              "family": "standard-material-surface",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "material-factory",
+              "id": "procedural-marks",
+              "family": "procedural-marks",
+              "material": "MeshBasicMaterial",
+              "surface": "instanced-geometry-material",
+              "reason": "source-used-project-webgpu-material-factory"
+            },
+            {
+              "kind": "material-factory",
+              "id": "color-field",
+              "family": "color-field",
+              "material": "MeshBasicMaterial",
+              "surface": "three-basic-or-standard-material",
+              "reason": "source-used-project-webgpu-material-factory"
+            }
+          ],
+          "compatibleSurfaces": [
+            {
+              "reason": "webgpu-safe-material",
+              "materialType": "MeshBasicMaterial"
+            },
+            {
+              "reason": "source-used-project-webgpu-material-factory",
+              "materialType": "MeshBasicMaterial",
+              "runtimeSurface": "instanced-geometry-material",
+              "factoryId": "procedural-marks",
+              "materialFactoryId": "procedural-marks",
+              "factoryCategory": "procedural-marks",
+              "property": "materialFactoryId"
+            },
+            {
+              "reason": "source-used-project-webgpu-material-factory",
+              "materialType": "MeshBasicMaterial",
+              "runtimeSurface": "three-basic-or-standard-material",
+              "factoryId": "color-field",
+              "materialFactoryId": "color-field",
+              "factoryCategory": "color-field",
+              "property": "materialFactoryId"
+            }
+          ]
+        }
+      }
+    ],
+    "rendererAuthoring": {
+      "version": 1,
+      "targetMode": "webgpu-project-scene",
+      "requestedTarget": "webgpu-project-scene",
+      "effectiveTarget": "webgpu-project-scene",
+      "webgpuTargeted": true,
+      "legacyWebglTargeted": false,
+      "unspecified": false,
+      "compatibilityGateRequired": true
+    },
+    "rendererCompatibility": {
+      "version": 1,
+      "targetMode": "webgpu-project-scene",
+      "webgpuTargeted": true,
+      "legacyWebglTargeted": false,
+      "compatibilityGateRequired": true,
+      "compatibilityStatus": "webgpu-compatible",
+      "webgpuCompatible": true,
+      "evidenceReasons": [
+        "webgpu-safe-material",
+        "source-used-project-webgpu-material-factory",
+        "webgpu-native-helper-utility"
+      ],
+      "featureFacts": [
+        {
+          "kind": "standard-material",
+          "family": "standard-material-surface",
+          "material": "MeshBasicMaterial",
+          "reason": "webgpu-safe-material"
+        },
+        {
+          "kind": "material-factory",
+          "id": "procedural-marks",
+          "family": "procedural-marks",
+          "material": "MeshBasicMaterial",
+          "surface": "instanced-geometry-material",
+          "reason": "source-used-project-webgpu-material-factory"
+        },
+        {
+          "kind": "material-factory",
+          "id": "sky-background-field",
+          "family": "sky-background-field",
+          "material": "MeshBasicMaterial",
+          "surface": "scene-background-or-large-plane",
+          "reason": "source-used-project-webgpu-material-factory"
+        },
+        {
+          "kind": "webgpu-native-helper",
+          "id": "direction-space-skybox-shell",
+          "family": "sky-background-field",
+          "factory": "sky-background-field",
+          "material": "MeshBasicMaterial",
+          "surface": "direction-space-vertex-color-skybox-shell",
+          "reason": "webgpu-native-helper-utility"
+        },
+        {
+          "kind": "material-factory",
+          "id": "color-field",
+          "family": "color-field",
+          "material": "MeshBasicMaterial",
+          "surface": "three-basic-or-standard-material",
+          "reason": "source-used-project-webgpu-material-factory"
+        }
+      ],
+      "moduleCount": 3,
+      "compatibleModuleCount": 3,
+      "incompatibleModuleCount": 0,
+      "compositionCompatibilityDeclared": false,
+      "modules": [
+        {
+          "partId": "world-environment",
+          "role": "world-environment",
+          "moduleId": "world-environment-hartung-market-square-grid-pressure",
+          "hash": "333bd71e69809ab2475b6793b637474b7170b3eacba519c0b9899a1465946c34",
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material",
+            "source-used-project-webgpu-material-factory",
+            "webgpu-native-helper-utility"
+          ],
+          "featureFacts": [
+            {
+              "kind": "standard-material",
+              "family": "standard-material-surface",
+              "material": "MeshBasicMaterial",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "material-factory",
+              "id": "procedural-marks",
+              "family": "procedural-marks",
+              "material": "MeshBasicMaterial",
+              "surface": "instanced-geometry-material",
+              "reason": "source-used-project-webgpu-material-factory"
+            },
+            {
+              "kind": "material-factory",
+              "id": "sky-background-field",
+              "family": "sky-background-field",
+              "material": "MeshBasicMaterial",
+              "surface": "scene-background-or-large-plane",
+              "reason": "source-used-project-webgpu-material-factory"
+            },
+            {
+              "kind": "webgpu-native-helper",
+              "id": "direction-space-skybox-shell",
+              "family": "sky-background-field",
+              "factory": "sky-background-field",
+              "material": "MeshBasicMaterial",
+              "surface": "direction-space-vertex-color-skybox-shell",
+              "reason": "webgpu-native-helper-utility"
+            },
+            {
+              "kind": "material-factory",
+              "id": "color-field",
+              "family": "color-field",
+              "material": "MeshBasicMaterial",
+              "surface": "three-basic-or-standard-material",
+              "reason": "source-used-project-webgpu-material-factory"
+            }
+          ],
+          "compatibleSurfaceCount": 5,
+          "sourceStage": "part-workshop"
+        },
+        {
+          "partId": "non-literal-grid-pressure",
+          "role": "primary-news-signal",
+          "moduleId": "non-literal-grid-pressure-hartung-grid-pressure",
+          "hash": "d529b2fd0cb8fdea017f0d010ffb3c4b8cc4437817eba8d2e8dcdd55c3c87a20",
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material",
+            "source-used-project-webgpu-material-factory"
+          ],
+          "featureFacts": [
+            {
+              "kind": "standard-material",
+              "family": "standard-material-surface",
+              "material": "MeshBasicMaterial",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "material-factory",
+              "id": "procedural-marks",
+              "family": "procedural-marks",
+              "material": "MeshBasicMaterial",
+              "surface": "instanced-geometry-material",
+              "reason": "source-used-project-webgpu-material-factory"
+            },
+            {
+              "kind": "material-factory",
+              "id": "color-field",
+              "family": "color-field",
+              "material": "MeshBasicMaterial",
+              "surface": "three-basic-or-standard-material",
+              "reason": "source-used-project-webgpu-material-factory"
+            }
+          ],
+          "compatibleSurfaceCount": 3,
+          "sourceStage": "part-workshop"
+        },
+        {
+          "partId": "artist-mark-field",
+          "role": "artist-style-system",
+          "moduleId": "artist-mark-field-hartung-line-network-grid-pressure",
+          "hash": "870bfdb4200e59ab06ba103222230643139cf701cf2461c379712391c24a21a9",
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material",
+            "source-used-project-webgpu-material-factory"
+          ],
+          "featureFacts": [
+            {
+              "kind": "standard-material",
+              "family": "standard-material-surface",
+              "material": "MeshBasicMaterial",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "material-factory",
+              "id": "procedural-marks",
+              "family": "procedural-marks",
+              "material": "MeshBasicMaterial",
+              "surface": "instanced-geometry-material",
+              "reason": "source-used-project-webgpu-material-factory"
+            },
+            {
+              "kind": "material-factory",
+              "id": "color-field",
+              "family": "color-field",
+              "material": "MeshBasicMaterial",
+              "surface": "three-basic-or-standard-material",
+              "reason": "source-used-project-webgpu-material-factory"
+            }
+          ],
+          "compatibleSurfaceCount": 3,
+          "sourceStage": "part-workshop"
+        }
+      ]
+    },
+    "renderFacts": {
+      "environmentPresent": true,
+      "cameraOwnedByComposition": true,
+      "lightingOwnedByComposition": true,
+      "nearFarClippingOwned": true,
+      "acceptedPartCount": 3,
+      "generatedModuleCount": 3,
+      "generatedAssetCount": 0,
+      "rendererAuthoringTarget": "webgpu-project-scene",
+      "rendererCompatibilityStatus": "webgpu-compatible",
+      "webgpuRendererGateRequired": true,
+      "webgpuRendererCompatible": true,
+      "desktopPreviewRecorded": true,
+      "mobilePreviewRecorded": true
+    }
+  },
+  "image": {
+    "thumbnailJpeg": "./data/media/2026-06-10-1306z-large-world-cup-tent-on-market-square-for-sixth-time-winning-match-again/thumb-320.jpg",
+    "openGraphJpeg": "./data/media/2026-06-10-1306z-large-world-cup-tent-on-market-square-for-sixth-time-winning-match-again/og-1200x630.jpg",
+    "instagramJpeg": "./data/media/2026-06-10-1306z-large-world-cup-tent-on-market-square-for-sixth-time-winning-match-again/instagram-1080x1440.jpg",
+    "altText": "Large World Cup tent on market square for sixth time: “Winning match against Brazil in 2018 was our best night ever” by Hans Hartung."
+  }
+}

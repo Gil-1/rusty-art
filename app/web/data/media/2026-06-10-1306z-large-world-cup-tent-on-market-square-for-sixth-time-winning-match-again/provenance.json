@@ -1,0 +1,76 @@
+{
+  "version": 2,
+  "kind": "rusty-art-public-media-assets",
+  "artworkId": "2026-06-10-1306z-large-world-cup-tent-on-market-square-for-sixth-time-winning-match-again",
+  "source": {
+    "sha256": "40badb314a2520ed482b3b84e568640f01369f702f860bf52eb51681fd3b7da2",
+    "role": "daily-preview-story-desktop"
+  },
+  "sources": {
+    "primary": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-desktop",
+      "sha256": "40badb314a2520ed482b3b84e568640f01369f702f860bf52eb51681fd3b7da2"
+    },
+    "openGraph": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-open-graph",
+      "sha256": "25ab0fd204ed00e6ed7a3512cb166799d7e43563595f00e87058328950990910"
+    },
+    "instagram": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-instagram",
+      "sha256": "143e35a42d71da69cf0a72bef2bc91c4fc80d6068eb5884c292fd7bba7ec7add"
+    }
+  },
+  "targets": {
+    "thumb-320.jpg": {
+      "spec": {
+        "fileName": "thumb-320.jpg",
+        "width": 320,
+        "height": null,
+        "fit": "inside",
+        "withoutEnlargement": true,
+        "format": "jpeg",
+        "quality": 82
+      },
+      "publicPath": "./data/media/2026-06-10-1306z-large-world-cup-tent-on-market-square-for-sixth-time-winning-match-again/thumb-320.jpg",
+      "source": {
+        "sha256": "40badb314a2520ed482b3b84e568640f01369f702f860bf52eb51681fd3b7da2",
+        "role": "daily-preview-story-desktop"
+      }
+    },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-06-10-1306z-large-world-cup-tent-on-market-square-for-sixth-time-winning-match-again/og-1200x630.jpg",
+      "source": {
+        "sha256": "25ab0fd204ed00e6ed7a3512cb166799d7e43563595f00e87058328950990910",
+        "role": "daily-preview-story-open-graph"
+      }
+    },
+    "instagram-1080x1440.jpg": {
+      "spec": {
+        "fileName": "instagram-1080x1440.jpg",
+        "width": 1080,
+        "height": 1440,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-06-10-1306z-large-world-cup-tent-on-market-square-for-sixth-time-winning-match-again/instagram-1080x1440.jpg",
+      "source": {
+        "sha256": "143e35a42d71da69cf0a72bef2bc91c4fc80d6068eb5884c292fd7bba7ec7add",
+        "role": "daily-preview-story-instagram"
+      }
+    }
+  }
+}
