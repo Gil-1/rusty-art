@@ -74,6 +74,7 @@ test('WebGPU renderer diagnostics expose compatibility and sample quality facts'
 
   assert.equal(rendererOptions.antialias, true);
   assert.equal(rendererOptions.samples, 4);
+  assert.equal(rendererOptions.outputType, undefined);
   assert.equal(diagnostics.compatibilityMode, true);
   assert.equal(diagnostics.requestedAntialias, true);
   assert.equal(diagnostics.requestedSamples, 4);
@@ -81,4 +82,23 @@ test('WebGPU renderer diagnostics expose compatibility and sample quality facts'
   assert.equal(diagnostics.effectiveSamples, 1);
   assert.equal(diagnostics.samplesDegraded, true);
   assert.equal(diagnostics.outputBufferType, 'UnsignedByteType');
+});
+
+test('WebGPU renderer runtime maps output buffer type to canvas output type', async () => {
+  let rendererOptions;
+  const runtime = createWebGPURendererRuntime({
+    canvas: {},
+    rendererMode: 'webgpu',
+    rendererBackend: 'webgpu',
+    outputBufferType: 1009,
+    rendererFactory: (options) => {
+      rendererOptions = options;
+      return createFakeWebGPURendererWithQualityFacts(options);
+    }
+  });
+
+  await runtime.initialize();
+
+  assert.equal(rendererOptions.outputBufferType, 1009);
+  assert.equal(rendererOptions.outputType, 1009);
 });

@@ -265,7 +265,7 @@ export function resolveImmersiveWorldRendererRequest({
     : RENDERER_MODES.WEBGL_LEGACY;
 }
 
-function resolveImmersiveWorldRendererProfile({
+export function resolveImmersiveWorldRendererProfile({
   art = null,
   requestedMode = RENDERER_MODES.WEBGL_LEGACY,
   postProcessingRequest = POST_PROCESSING_MODES.WEBGL_GLSL_POST,
@@ -276,7 +276,7 @@ function resolveImmersiveWorldRendererProfile({
   const rendererRequest = resolveImmersiveWorldRendererRequest({ art, requestedMode });
   const resolvedPostProcessingRequest = rendererRequest === RENDERER_MODES.WEBGL_LEGACY
     ? postProcessingRequest
-    : POST_PROCESSING_MODES.WEBGPU_TSL_POST;
+    : (captureMode ? POST_PROCESSING_MODES.WEBGL_GLSL_POST : POST_PROCESSING_MODES.WEBGPU_TSL_POST);
   const rendererSceneFeatures = collectRendererSceneFeatures({
     art,
     sceneKind: 'immersive-world-v1',
@@ -424,6 +424,10 @@ export function isNeutralImmersiveWorldOutputColorTransform(transform = {}) {
     && Math.abs(number(transform.vignette, DEFAULT_OUTPUT_COLOR_TRANSFORM.vignette)) < 0.0001
     && Math.abs(number(transform.hueShift, DEFAULT_OUTPUT_COLOR_TRANSFORM.hueShift)) < 0.0001
     && Math.abs(number(transform.distortion, DEFAULT_OUTPUT_COLOR_TRANSFORM.distortion)) < 0.0001;
+}
+
+export function resolveImmersiveWorldWebGPURuntimeOptions({ captureMode = false } = {}) {
+  return captureMode ? { outputBufferType: THREE.UnsignedByteType } : {};
 }
 
 export function createImmersiveWorldPostPass(renderTarget) {
@@ -1605,7 +1609,8 @@ export class ArtworkScene {
       canvas,
       devicePixelRatio: this.renderPixelRatio,
       selection: this.rendererSelection,
-      webgpuRuntimeFactory: createWebGPURendererRuntime
+      webgpuRuntimeFactory: createWebGPURendererRuntime,
+      webgpuRuntimeOptions: resolveImmersiveWorldWebGPURuntimeOptions({ captureMode })
     });
     this.renderer = this.rendererRuntime.renderer;
     this.rendererInitialized = false;
