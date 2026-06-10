@@ -9,6 +9,7 @@ import {
 import {
   classifySceneShaderCompatibility
 } from './scene-shader-compatibility.js';
+import { normalizeWebGPUFeatureFacts } from './contracts/webgpu-feature-facts-contract.js';
 import { POST_FRAGMENT, POST_VERTEX } from './scene-shaders.js';
 
 export {
@@ -127,31 +128,6 @@ function rendererOutputBufferTypeName(value) {
 function normalizeStringList(value = []) {
   const source = Array.isArray(value) ? value : [value];
   return [...new Set(source.map((entry) => String(entry || '').trim()).filter(Boolean))];
-}
-
-function normalizeWebGPUFeatureFacts(value = []) {
-  const seen = new Set();
-  const out = [];
-  for (const entry of Array.isArray(value) ? value : []) {
-    if (!entry || typeof entry !== 'object' || Array.isArray(entry)) continue;
-    const fact = Object.fromEntries(Object.entries({
-      kind: entry.kind || (entry.helperId || entry.api ? 'webgpu-native-helper' : entry.factoryId || entry.materialFactoryId ? 'material-factory' : null),
-      id: entry.id || entry.helperId || entry.factoryId || entry.materialFactoryId || null,
-      family: entry.family || entry.featureFamily || entry.factoryCategory || null,
-      api: entry.api || null,
-      factory: entry.factory || entry.factoryId || entry.materialFactoryId || null,
-      material: entry.material || entry.materialType || null,
-      surface: entry.surface || entry.runtimeSurface || entry.webgpuSafeSurface || null,
-      reason: entry.reason || null
-    }).map(([key, field]) => [key, String(field || '').trim()]).filter(([, field]) => field));
-    if (!Object.keys(fact).length) continue;
-    const key = JSON.stringify(fact);
-    if (seen.has(key)) continue;
-    seen.add(key);
-    out.push(fact);
-    if (out.length >= 24) break;
-  }
-  return out;
 }
 
 function resolveRendererOutputBufferType(renderer = null) {
@@ -510,6 +486,39 @@ export function createArtworkRenderer(canvas, devicePixelRatio = 1) {
   return createWebGLRendererRuntime({ canvas, devicePixelRatio }).renderer;
 }
 
+export function createRendererRuntimeFromSelection({
+  canvas,
+  devicePixelRatio = 1,
+  selection = null,
+  webglRendererFactory,
+  webgpuRuntimeFactory = null,
+  webgpuRuntimeOptions = {}
+} = {}) {
+  const rendererSelection = selection || resolveRendererRuntimeSelection();
+  if (!rendererSelection.useWebGPURenderer) {
+    return createWebGLRendererRuntime({
+      canvas,
+      devicePixelRatio,
+      rendererFactory: webglRendererFactory,
+      rendererFallbackReason: rendererSelection.rendererFallbackReason
+    });
+  }
+
+  if (typeof webgpuRuntimeFactory !== 'function') {
+    throw new Error('WebGPU renderer runtime factory is required for WebGPU renderer selection.');
+  }
+
+  return webgpuRuntimeFactory({
+    canvas,
+    devicePixelRatio,
+    forceWebGL: rendererSelection.forceWebGL,
+    rendererMode: rendererSelection.rendererMode,
+    rendererBackend: rendererSelection.rendererBackend,
+    rendererFallbackReason: rendererSelection.rendererFallbackReason,
+    ...webgpuRuntimeOptions
+  });
+}
+
 export async function createSelectedRendererRuntime({
   canvas,
   devicePixelRatio = 1,
@@ -530,29 +539,16 @@ export async function createSelectedRendererRuntime({
     webGPUAvailable
   });
 
-  if (!selection.useWebGPURenderer) {
-    return {
-      selection,
-      runtime: createWebGLRendererRuntime({
-        canvas,
-        devicePixelRatio,
-        rendererFactory: webglRendererFactory,
-        rendererFallbackReason: selection.rendererFallbackReason
-      })
-    };
-  }
-
   const factory = webgpuRuntimeFactory || (async (options) => {
     const module = await webgpuModuleLoader();
     return module.createWebGPURendererRuntime(options);
   });
-  const runtime = await factory({
+  const runtime = await createRendererRuntimeFromSelection({
     canvas,
     devicePixelRatio,
-    forceWebGL: selection.forceWebGL,
-    rendererMode: selection.rendererMode,
-    rendererBackend: selection.rendererBackend,
-    rendererFallbackReason: selection.rendererFallbackReason
+    selection,
+    webglRendererFactory,
+    webgpuRuntimeFactory: factory
   });
   return { selection, runtime };
 }

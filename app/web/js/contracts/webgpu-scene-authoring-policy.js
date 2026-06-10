@@ -21,9 +21,11 @@ export const WEBGPU_AUTHORING_FALLBACK_REASONS = Object.freeze({
   ON_BEFORE_COMPILE: 'on-before-compile',
   LEGACY_GLSL_POST_PASS: 'legacy-glsl-post-pass',
   CUSTOM_JS_SHADER_SURFACE: 'custom-js-shader-surface',
+  LEGACY_SHADER_SKYBOX_UTILITY: 'legacy-shader-skybox-utility',
   GENERATED_MODULE_UNKNOWN: 'generated-module-unknown',
   TEXTURED_GEOMETRY_MISSING_UV: 'textured-geometry-missing-uv',
   POINTS_GEOMETRY_MISSING_UV: 'points-geometry-missing-uv',
+  CPU_BAKED_TEXTURE_GENERATION: 'cpu-baked-texture-generation',
   WEBGPU_EVIDENCE_MISSING: 'webgpu-evidence-missing'
 });
 
@@ -41,7 +43,6 @@ export const WEBGPU_SAFE_MATERIAL_SURFACES = Object.freeze([
   'CanvasTexture',
   'DataTexture',
   'VideoTexture',
-  'TSLNodeMaterial',
   'project-webgpu-material-factory'
 ]);
 
@@ -51,10 +52,12 @@ export const WEBGPU_FORBIDDEN_SHADER_SURFACES = Object.freeze([
   'onBeforeCompile',
   'legacy-glsl-post-pass',
   'custom-js-shader-surface',
+  'legacy-shader-skybox-utility',
   'raw-glsl-source',
   'unknown-generated-module',
   'textured-geometry-missing-uv',
-  'points-geometry-missing-uv'
+  'points-geometry-missing-uv',
+  'cpu-baked-texture-generation'
 ]);
 
 const WEBGPU_MODE_ALIASES = new Set([
@@ -417,10 +420,12 @@ function uniqueReasons(surfaces = []) {
 export function buildWebGPUProjectSceneAuthoringNotes() {
   return [
     'A WebGPU project scene is authored for WebGPURenderer with a WebGPU backend when the browser supports it.',
-    'Use standard Three.js materials, TSL/node-material composition, WebGPU-safe textures, and project WebGPU material factories.',
+    'Use standard Three.js materials, WebGPU-safe textures, particles, instancing, utilities, and project WebGPU material-factory evidence.',
+    'Do not move procedural WebGPU work into startup CPU pixel loops: large local Uint8Array/DataTexture baking is a fallback, not WebGPU authoring.',
     'Do not emit ShaderMaterial, RawShaderMaterial, onBeforeCompile shader patches, legacy GLSL post passes, or prose-only shader descriptions for a WebGPU project scene.',
     'Raw GLSL custom modules remain supported only as intentional legacy WebGL scene surfaces.',
-    'Compatibility is evidence-backed: a scene is WebGPU-compatible only when its surfaces are known WebGPU-safe or built through project factories marked compatible.'
+    'Compatibility is evidence-backed: allowed material factory catalogs are options, not evidence by themselves.',
+    'Generated modules prove project-factory use through source userData.materialFactoryId, usedMaterialFactories, or usedMaterialSurfaces.'
   ];
 }
 

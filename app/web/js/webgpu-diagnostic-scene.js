@@ -1,8 +1,9 @@
 import * as THREE from 'three';
 import { applyImmersiveWorldTextureQuality } from './immersive-world-scene.js';
+import { normalizeWebGPUFeatureFacts } from './contracts/webgpu-feature-facts-contract.js';
 import {
   collectRendererSceneFeatures,
-  createWebGLRendererRuntime,
+  createRendererRuntimeFromSelection,
   describeRendererDiagnostics,
   PREFERRED_RENDER_TARGET_SAMPLES,
   POST_PROCESSING_MODES,
@@ -23,35 +24,6 @@ import {
 import { disposeObjectTree } from './scene-runtime.js';
 import { createSceneElapsedTimer } from './scene-time.js';
 import { createImmersiveWorldWebGPUNativeUtilities } from './immersive-world-webgpu-helpers.js';
-
-function compactDiagnosticFeatureFact(entry = null) {
-  if (!entry || typeof entry !== 'object' || Array.isArray(entry)) return null;
-  const fact = Object.fromEntries(Object.entries({
-    kind: entry.kind || (entry.helperId || entry.api ? 'webgpu-native-helper' : entry.factoryId || entry.materialFactoryId ? 'material-factory' : null),
-    id: entry.id || entry.helperId || entry.factoryId || entry.materialFactoryId || null,
-    family: entry.family || entry.featureFamily || entry.factoryCategory || null,
-    api: entry.api || null,
-    factory: entry.factory || entry.factoryId || entry.materialFactoryId || null,
-    material: entry.material || entry.materialType || null,
-    surface: entry.surface || entry.runtimeSurface || entry.webgpuSafeSurface || null,
-    reason: entry.reason || 'webgpu-diagnostic-helper-probe'
-  }).map(([key, value]) => [key, String(value || '').trim()]).filter(([, value]) => value));
-  return Object.keys(fact).length ? fact : null;
-}
-
-function compactDiagnosticFeatureFacts(entries = []) {
-  const seen = new Set();
-  const out = [];
-  for (const entry of Array.isArray(entries) ? entries : []) {
-    const fact = compactDiagnosticFeatureFact(entry);
-    if (!fact) continue;
-    const key = JSON.stringify(fact);
-    if (seen.has(key)) continue;
-    seen.add(key);
-    out.push(fact);
-  }
-  return out;
-}
 
 function createPostUniformState() {
   return {
@@ -101,21 +73,13 @@ export class ArtworkScene {
       sceneFeatures: this.rendererSceneFeatures,
       navigatorRef
     });
-    this.rendererRuntime = this.rendererSelection.useWebGPURenderer
-      ? createWebGPURendererRuntime({
-        canvas,
-        devicePixelRatio: window.devicePixelRatio || 1,
-        forceWebGL: this.rendererSelection.forceWebGL,
-        rendererMode: this.rendererSelection.rendererMode,
-        rendererBackend: this.rendererSelection.rendererBackend,
-        rendererFallbackReason: this.rendererSelection.rendererFallbackReason,
-        samples: PREFERRED_RENDER_TARGET_SAMPLES
-      })
-      : createWebGLRendererRuntime({
-        canvas,
-        devicePixelRatio: window.devicePixelRatio || 1,
-        rendererFallbackReason: this.rendererSelection.rendererFallbackReason
-      });
+    this.rendererRuntime = createRendererRuntimeFromSelection({
+      canvas,
+      devicePixelRatio: window.devicePixelRatio || 1,
+      selection: this.rendererSelection,
+      webgpuRuntimeFactory: createWebGPURendererRuntime,
+      webgpuRuntimeOptions: { samples: PREFERRED_RENDER_TARGET_SAMPLES }
+    });
     this.renderer = this.rendererRuntime.renderer;
     this.rendererInitialized = false;
     this.rendererInitError = null;
@@ -294,10 +258,10 @@ export class ArtworkScene {
       THREE,
       renderer: this.renderer
     });
-    this.webgpuFeatureFacts = compactDiagnosticFeatureFacts([
+    this.webgpuFeatureFacts = normalizeWebGPUFeatureFacts([
       helperProbe.userData?.webgpuNativeFeature,
       helperProbe.material?.userData?.webgpuNativeFeature
-    ]);
+    ], { defaultReason: 'webgpu-diagnostic-helper-probe', limit: 0 });
     this.diagnosticObjects = { ring, core, marks, helperProbe };
     this.sceneAssemblyReport = {
       summary: {

@@ -12,7 +12,7 @@ import {
 } from './scene-apply-config-session.js';
 import {
   collectRendererSceneFeatures,
-  createWebGLRendererRuntime,
+  createRendererRuntimeFromSelection,
   describeRendererDiagnostics,
   createPostPass,
   createPostRenderTarget,
@@ -55,10 +55,10 @@ export class ArtworkScene {
       sceneFeatures: this.rendererSceneFeatures,
       navigatorRef
     });
-    this.rendererRuntime = createWebGLRendererRuntime({
+    this.rendererRuntime = createRendererRuntimeFromSelection({
       canvas,
       devicePixelRatio: window.devicePixelRatio || 1,
-      rendererFallbackReason: this.rendererSelection.rendererFallbackReason
+      selection: this.rendererSelection
     });
     this.renderer = this.rendererRuntime.renderer;
     this.rendererReady = this.rendererRuntime.initialize();

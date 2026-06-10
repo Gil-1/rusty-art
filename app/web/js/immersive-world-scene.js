@@ -1,5 +1,9 @@
 import * as THREE from 'three';
 import { CAPTURE_PROFILES, normalizeCaptureProfile } from './contracts/capture-target-contract.js';
+import {
+  normalizeWebGPUFeatureFact,
+  normalizeWebGPUFeatureFacts
+} from './contracts/webgpu-feature-facts-contract.js';
 import { WEBGPU_ACCEPTED_MATERIAL_MAP_PROPERTIES } from './contracts/webgpu-material-map-contract.js';
 import {
   applyViewportOrbitFrame,
@@ -18,7 +22,7 @@ import {
   collectRendererSceneFeatures,
   createPostPass,
   createPostRenderTarget,
-  createWebGLRendererRuntime,
+  createRendererRuntimeFromSelection,
   describeRendererDiagnostics,
   normalizeRendererModeRequest,
   POST_PROCESSING_MODES,
@@ -97,41 +101,6 @@ function cleanToken(value) {
   return String(value || '').trim().toLowerCase().replace(/[_\s]+/g, '-');
 }
 
-function cleanText(value) {
-  const text = String(value || '').trim();
-  return text || null;
-}
-
-function compactWebGPUFeatureFact(entry = null) {
-  if (!entry || typeof entry !== 'object' || Array.isArray(entry)) return null;
-  const fact = Object.fromEntries(Object.entries({
-    kind: cleanText(entry.kind || (entry.helperId || entry.api ? 'webgpu-native-helper' : entry.factoryId || entry.materialFactoryId ? 'material-factory' : null)),
-    id: cleanText(entry.id || entry.helperId || entry.factoryId || entry.materialFactoryId),
-    family: cleanText(entry.family || entry.featureFamily || entry.factoryCategory),
-    api: cleanText(entry.api),
-    factory: cleanText(entry.factory || entry.factoryId || entry.materialFactoryId),
-    material: cleanText(entry.material || entry.materialType),
-    surface: cleanText(entry.surface || entry.runtimeSurface || entry.webgpuSafeSurface),
-    reason: cleanText(entry.reason)
-  }).filter(([, field]) => field));
-  return Object.keys(fact).length ? fact : null;
-}
-
-function compactWebGPUFeatureFacts(entries = []) {
-  const seen = new Set();
-  const out = [];
-  for (const entry of Array.isArray(entries) ? entries : []) {
-    const fact = compactWebGPUFeatureFact(entry);
-    if (!fact) continue;
-    const key = JSON.stringify(fact);
-    if (seen.has(key)) continue;
-    seen.add(key);
-    out.push(fact);
-    if (out.length >= 24) break;
-  }
-  return out;
-}
-
 function compactStringList(value = []) {
   const source = Array.isArray(value) ? value : [value];
   return [...new Set(source.map(cleanToken).filter(Boolean))];
@@ -139,7 +108,7 @@ function compactStringList(value = []) {
 
 function webgpuFeatureFactsFromCompatibility(value = null) {
   if (!value || typeof value !== 'object' || Array.isArray(value)) return [];
-  return compactWebGPUFeatureFacts(value.featureFacts);
+  return normalizeWebGPUFeatureFacts(value.featureFacts);
 }
 
 function webgpuFeatureFallbackReasonsFromCompatibility(value = null) {
@@ -222,7 +191,7 @@ export function resolveImmersiveWorldRendererCompatibilityFacts(art = {}) {
     .filter(Boolean);
   const allModulesCompatible = moduleFacts.length > 0 && moduleFacts.every((entry) => entry.webgpuCompatible === true);
   const moduleFallback = moduleFacts.find((entry) => entry.webgpuCompatible !== true);
-  const featureFacts = compactWebGPUFeatureFacts([
+  const featureFacts = normalizeWebGPUFeatureFacts([
     ...declaredCompatibility.flatMap((entry) => entry.featureFacts || []),
     ...moduleFacts.flatMap((entry) => entry.featureFacts || [])
   ]);
@@ -385,7 +354,7 @@ function asObject(value, fallback = {}) {
 function webgpuFeatureFactFromUserData(userData = null) {
   const source = asObject(userData, null);
   if (!source) return null;
-  return compactWebGPUFeatureFact(source.webgpuNativeFeature || {
+  return normalizeWebGPUFeatureFact(source.webgpuNativeFeature || {
     kind: source.webgpuHelperId ? 'webgpu-native-helper' : source.materialFactoryId ? 'material-factory' : null,
     id: source.webgpuHelperId || source.materialFactoryId,
     family: source.webgpuFeatureFamily,
@@ -403,7 +372,7 @@ function collectRuntimeWebGPUFeatureFacts(object = null) {
     const materials = Array.isArray(child.material) ? child.material : [child.material].filter(Boolean);
     for (const material of materials) facts.push(webgpuFeatureFactFromUserData(material.userData));
   });
-  return compactWebGPUFeatureFacts(facts);
+  return normalizeWebGPUFeatureFacts(facts);
 }
 
 function resolveImmersiveWorldCameraForRender(scene, world = {}) {
@@ -1632,20 +1601,12 @@ export class ArtworkScene {
     this.rendererSelection = this.rendererProfile.rendererSelection;
     this.renderPixelRatio = resolveImmersiveWorldRendererPixelRatio(window.devicePixelRatio || 1, { captureMode });
     this.renderTargetSamplePreference = resolveImmersiveWorldRenderTargetSamplePreference({ captureMode });
-    this.rendererRuntime = this.rendererSelection.useWebGPURenderer
-      ? createWebGPURendererRuntime({
-        canvas,
-        devicePixelRatio: this.renderPixelRatio,
-        forceWebGL: this.rendererSelection.forceWebGL,
-        rendererMode: this.rendererSelection.rendererMode,
-        rendererBackend: this.rendererSelection.rendererBackend,
-        rendererFallbackReason: this.rendererSelection.rendererFallbackReason
-      })
-      : createWebGLRendererRuntime({
-        canvas,
-        devicePixelRatio: this.renderPixelRatio,
-        rendererFallbackReason: this.rendererSelection.rendererFallbackReason
-      });
+    this.rendererRuntime = createRendererRuntimeFromSelection({
+      canvas,
+      devicePixelRatio: this.renderPixelRatio,
+      selection: this.rendererSelection,
+      webgpuRuntimeFactory: createWebGPURendererRuntime
+    });
     this.renderer = this.rendererRuntime.renderer;
     this.rendererInitialized = false;
     this.rendererInitError = null;
@@ -1685,7 +1646,7 @@ export class ArtworkScene {
     this.captureTime = 1.234;
     this.previousElapsedSeconds = null;
     this.sceneAssemblyReport = null;
-    this.webgpuFeatureFacts = compactWebGPUFeatureFacts(this.rendererCompatibilityFacts?.featureFacts || []);
+    this.webgpuFeatureFacts = normalizeWebGPUFeatureFacts(this.rendererCompatibilityFacts?.featureFacts || []);
     this.webgpuFeatureFallbackReasons = compactStringList([
       ...(Array.isArray(this.rendererCompatibilityFacts?.fallbackReasons) ? this.rendererCompatibilityFacts.fallbackReasons : []),
       this.rendererCompatibilityFacts?.fallbackReason
@@ -1907,7 +1868,7 @@ export class ArtworkScene {
       THREE,
       renderer: this.renderer
     });
-    const webgpuFeatureFacts = compactWebGPUFeatureFacts([
+    const webgpuFeatureFacts = normalizeWebGPUFeatureFacts([
       ...webgpuFeatureFactsFromCompatibility(moduleRef.rendererCompatibility || moduleRef),
       ...webgpuFeatureFactsFromCompatibility(part.rendererCompatibility),
       ...collectRuntimeWebGPUFeatureFacts(result.object)
@@ -1974,7 +1935,7 @@ export class ArtworkScene {
     }
 
     if (!isCurrentApply()) return false;
-    this.webgpuFeatureFacts = compactWebGPUFeatureFacts([
+    this.webgpuFeatureFacts = normalizeWebGPUFeatureFacts([
       ...(Array.isArray(this.rendererCompatibilityFacts?.featureFacts) ? this.rendererCompatibilityFacts.featureFacts : []),
       ...builtParts.flatMap((entry) => Array.isArray(entry.webgpuFeatureFacts) ? entry.webgpuFeatureFacts : [])
     ]);

@@ -1,3 +1,5 @@
+import { normalizeWebGPUFeatureFacts } from './webgpu-feature-facts-contract.js';
+
 export const CAPTURE_READINESS_GLOBAL = '__RUSTY_CAPTURE_STATE';
 export const CAPTURE_READINESS_REFRESH_GLOBAL = '__RUSTY_REFRESH_CAPTURE_READINESS';
 export const CAPTURE_CANVAS_ID = 'art-canvas';
@@ -164,42 +166,6 @@ function normalizeRendererProof(value = null) {
 function normalizeStringList(value = []) {
   const source = Array.isArray(value) ? value : [value];
   return [...new Set(source.map(normalizeNullableString).filter(Boolean))];
-}
-
-function compactObject(value) {
-  return Object.fromEntries(
-    Object.entries(value).filter(([, entry]) => entry !== null && entry !== undefined && entry !== '')
-  );
-}
-
-function normalizeWebGPUFeatureFact(entry = null) {
-  if (!isObject(entry)) return null;
-  const fact = compactObject({
-    kind: normalizeNullableString(entry.kind || (entry.helperId || entry.api ? 'webgpu-native-helper' : entry.factoryId || entry.materialFactoryId ? 'material-factory' : null)),
-    id: normalizeNullableString(entry.id || entry.helperId || entry.factoryId || entry.materialFactoryId),
-    family: normalizeNullableString(entry.family || entry.featureFamily || entry.factoryCategory),
-    api: normalizeNullableString(entry.api),
-    factory: normalizeNullableString(entry.factory || entry.factoryId || entry.materialFactoryId),
-    material: normalizeNullableString(entry.material || entry.materialType),
-    surface: normalizeNullableString(entry.surface || entry.runtimeSurface || entry.webgpuSafeSurface),
-    reason: normalizeNullableString(entry.reason)
-  });
-  return Object.keys(fact).length ? fact : null;
-}
-
-function normalizeWebGPUFeatureFacts(value = []) {
-  const seen = new Set();
-  const out = [];
-  for (const entry of Array.isArray(value) ? value : []) {
-    const fact = normalizeWebGPUFeatureFact(entry);
-    if (!fact) continue;
-    const key = JSON.stringify(fact);
-    if (seen.has(key)) continue;
-    seen.add(key);
-    out.push(fact);
-    if (out.length >= 24) break;
-  }
-  return out;
 }
 
 function normalizePixelThresholds(thresholds = CAPTURE_PIXEL_THRESHOLDS) {
@@ -697,6 +663,24 @@ export function isCaptureReadinessReady(state = null) {
 }
 
 export function normalizeCaptureReadinessDiagnostics(state = null) {
+  if (isObject(state?.facts)) {
+    const normalizedFacts = normalizeCaptureReadinessFacts(state.facts);
+    const classification = evaluateCaptureReadinessFacts(normalizedFacts);
+    return {
+      status: normalizeNullableString(state.status) || classification.status,
+      ready: typeof state.ready === 'boolean' ? state.ready : classification.ready,
+      terminal: typeof state.terminal === 'boolean' ? state.terminal : classification.terminal,
+      error: errorText(state.error) || classification.error,
+      reasons: Array.isArray(state.reasons) ? state.reasons : classification.reasons,
+      reasonCodes: normalizeStringList(state.reasonCodes?.length ? state.reasonCodes : classification.reasonCodes),
+      facts: normalizedFacts,
+      state: isObject(state.state) ? state.state : null,
+      sceneAssemblyReport: isObject(state.sceneAssemblyReport)
+        ? state.sceneAssemblyReport
+        : (isObject(state.state?.sceneAssemblyReport) ? state.state.sceneAssemblyReport : null)
+    };
+  }
+
   const snapshot = createCaptureReadinessSnapshot(state, {
     canvasFacts: isObject(state?.readinessFacts) ? state.readinessFacts.canvas : null
   });
@@ -709,6 +693,7 @@ export function normalizeCaptureReadinessDiagnostics(state = null) {
     reasons: classification.reasons,
     reasonCodes: classification.reasonCodes,
     facts: snapshot.facts,
-    state: isObject(state) ? state : null
+    state: isObject(state) ? state : null,
+    sceneAssemblyReport: isObject(state?.sceneAssemblyReport) ? state.sceneAssemblyReport : null
   };
 }
