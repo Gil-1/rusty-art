@@ -1,0 +1,76 @@
+{
+  "version": 2,
+  "kind": "rusty-art-public-media-assets",
+  "artworkId": "2026-06-11-0629z-patrick-bruel-case-court-upholds-attempted-rape-charge-against-belgian-w",
+  "source": {
+    "sha256": "23681b2bd1d65bcafd5fe2ccb5fd29eb64e82a5c29d3cf20ee80cf2e48b45e34",
+    "role": "daily-preview-story-desktop"
+  },
+  "sources": {
+    "primary": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-desktop",
+      "sha256": "23681b2bd1d65bcafd5fe2ccb5fd29eb64e82a5c29d3cf20ee80cf2e48b45e34"
+    },
+    "openGraph": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-open-graph",
+      "sha256": "073d5761a48bec6b1bbc629e1360eb11240ee2cfaed28a9dbbc6195717ae73cc"
+    },
+    "instagram": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-instagram",
+      "sha256": "434cd94facd22220ad46dc599f58504830d7f15330b5a0e2728f4286b294b9b0"
+    }
+  },
+  "targets": {
+    "thumb-320.jpg": {
+      "spec": {
+        "fileName": "thumb-320.jpg",
+        "width": 320,
+        "height": null,
+        "fit": "inside",
+        "withoutEnlargement": true,
+        "format": "jpeg",
+        "quality": 82
+      },
+      "publicPath": "./data/media/2026-06-11-0629z-patrick-bruel-case-court-upholds-attempted-rape-charge-against-belgian-w/thumb-320.jpg",
+      "source": {
+        "sha256": "23681b2bd1d65bcafd5fe2ccb5fd29eb64e82a5c29d3cf20ee80cf2e48b45e34",
+        "role": "daily-preview-story-desktop"
+      }
+    },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-06-11-0629z-patrick-bruel-case-court-upholds-attempted-rape-charge-against-belgian-w/og-1200x630.jpg",
+      "source": {
+        "sha256": "073d5761a48bec6b1bbc629e1360eb11240ee2cfaed28a9dbbc6195717ae73cc",
+        "role": "daily-preview-story-open-graph"
+      }
+    },
+    "instagram-1080x1440.jpg": {
+      "spec": {
+        "fileName": "instagram-1080x1440.jpg",
+        "width": 1080,
+        "height": 1440,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-06-11-0629z-patrick-bruel-case-court-upholds-attempted-rape-charge-against-belgian-w/instagram-1080x1440.jpg",
+      "source": {
+        "sha256": "434cd94facd22220ad46dc599f58504830d7f15330b5a0e2728f4286b294b9b0",
+        "role": "daily-preview-story-instagram"
+      }
+    }
+  }
+}
