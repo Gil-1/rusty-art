@@ -1,10 +1,22 @@
+import { MeshBasicNodeMaterial } from 'three/webgpu';
+import {
+  clamp as tslClamp,
+  Fn,
+  mix,
+  positionLocal,
+  sin,
+  smoothstep as tslSmoothstep,
+  uniform
+} from 'three/tsl';
 import {
   WEBGPU_NATIVE_HELPER_IDS,
   buildWebGPUNativeHelperFeatureFacts
 } from './contracts/webgpu-material-factory-catalog.js';
 
+const TAU = Math.PI * 2;
 export const IMMERSIVE_WORLD_SKYBOX_RENDER_ORDER = -1000;
 export const IMMERSIVE_WORLD_SKYBOX_DEFAULT_RADIUS = 100000;
+const ANIMATED_DIRECTION_SPACE_SKYBOX_CONTROLS = Symbol('rusty-art-animated-direction-space-skybox-controls');
 
 function asObject(value, fallback = {}) {
   return value && typeof value === 'object' && !Array.isArray(value) ? value : fallback;
@@ -17,6 +29,12 @@ function positiveNumber(value, fallback) {
 
 function positiveInteger(value, fallback, { min = 1, max = 256 } = {}) {
   const numeric = Math.floor(Number(value));
+  if (!Number.isFinite(numeric)) return fallback;
+  return Math.max(min, Math.min(max, numeric));
+}
+
+function boundedNumber(value, fallback, { min = -Infinity, max = Infinity } = {}) {
+  const numeric = Number(value);
   if (!Number.isFinite(numeric)) return fallback;
   return Math.max(min, Math.min(max, numeric));
 }
@@ -97,6 +115,90 @@ function defaultDirectionColorSampler({ THREE, dir, color, palette }) {
   const rearPressure = smoothstep(0.12, 0.92, dir.z) * 0.28;
   color.lerp(side, clamp01(sidePressure + rearPressure));
   return color;
+}
+
+function colorValue(THREE, value, fallback) {
+  return assignColor(THREE, new THREE.Color(), value, fallback);
+}
+
+function resolveAnimatedDirectionSpaceSkyboxPalette(THREE, palette = {}) {
+  if (Array.isArray(palette) && palette.length) {
+    return {
+      lower: colorValue(THREE, palette[0], '#16232d'),
+      horizon: colorValue(THREE, palette[1] ?? palette[0], '#4e4133'),
+      upper: colorValue(THREE, palette[2] ?? palette[1] ?? palette[0], '#10101f'),
+      accent: colorValue(THREE, palette[3] ?? palette[2] ?? palette[0], '#2f1b14')
+    };
+  }
+  const source = asObject(palette);
+  const resolved = resolveColorPalette(THREE, source);
+  return {
+    lower: colorValue(THREE, source.lower ?? resolved.lower, '#16232d'),
+    horizon: colorValue(THREE, source.horizon ?? resolved.horizon, '#4e4133'),
+    upper: colorValue(THREE, source.upper ?? resolved.upper, '#10101f'),
+    accent: colorValue(THREE, source.accent ?? source.side ?? resolved.side, '#2f1b14')
+  };
+}
+
+function createAnimatedDirectionSpaceSkyboxColorNode(controls) {
+  return Fn(() => {
+    const dir = positionLocal.normalize();
+    const fieldTime = controls.uTime
+      .mul(controls.uFlowSpeed)
+      .mul(controls.uMotionIntensity)
+      .add(controls.uPhase);
+    const heightWave = sin(dir.x.mul(controls.uBandScale).add(fieldTime))
+      .mul(controls.uDistortionStrength);
+    const height = dir.y.mul(0.5).add(0.5).add(heightWave);
+    const verticalMix = tslSmoothstep(0.08, 0.92, height);
+    const base = mix(controls.uLowerColor, controls.uUpperColor, verticalMix);
+    const horizonMask = tslSmoothstep(0.34, 0.02, height.sub(0.5).abs());
+    const sidePressure = tslSmoothstep(0.45, 1.0, dir.x.abs()).mul(0.35);
+    const movingBand = tslSmoothstep(
+      0.42,
+      0.92,
+      sin(dir.z.mul(controls.uBandScale).sub(fieldTime.mul(0.73))).mul(0.5).add(0.5)
+    ).mul(controls.uDistortionStrength);
+    const accentMask = tslClamp(sidePressure.add(movingBand), 0, 1);
+    return tslClamp(mix(mix(base, controls.uHorizonColor, horizonMask), controls.uAccentColor, accentMask), 0, 1);
+  })();
+}
+
+function frameTimeFacts(frameFacts = {}) {
+  const elapsed = Number(frameFacts.elapsedSeconds ?? frameFacts.time ?? 0);
+  const delta = Number(frameFacts.deltaSeconds ?? 0);
+  const motion = Number(frameFacts.motionIntensity ?? 1);
+  return {
+    time: Number.isFinite(elapsed) ? elapsed : 0,
+    deltaSeconds: Number.isFinite(delta) ? delta : 0,
+    motionIntensity: Number.isFinite(motion) ? clamp01(motion) : 1,
+    captureMode: frameFacts.captureMode === true
+  };
+}
+
+function updateAnimatedDirectionSpaceSkyboxMaterialControls(material, frameFacts = {}) {
+  const controls = material?.[ANIMATED_DIRECTION_SPACE_SKYBOX_CONTROLS];
+  if (!controls) return null;
+  const facts = frameTimeFacts(frameFacts);
+  const motionIntensity = clamp01(facts.motionIntensity * controls.baseMotionIntensity);
+  controls.uniforms.uTime.value = facts.time;
+  controls.uniforms.uMotionIntensity.value = motionIntensity;
+  const publicFacts = {
+    helperId: controls.helperId,
+    materialFactoryId: controls.materialFactoryId,
+    featureFamily: controls.featureFamily,
+    mode: 'frame-facts-elapsed-seconds',
+    captureMode: facts.captureMode,
+    time: facts.time,
+    elapsedSeconds: facts.time,
+    deltaSeconds: facts.deltaSeconds,
+    motionIntensity
+  };
+  material.userData = {
+    ...asObject(material.userData),
+    webgpuTimeControlFacts: publicFacts
+  };
+  return publicFacts;
 }
 
 export function isImmersiveWorldSkyboxMode(value) {
@@ -569,6 +671,194 @@ export function createImmersiveWorldDirectionSpaceSkyboxShell(THREE, options = {
   });
 }
 
+export function createImmersiveWorldAnimatedDirectionSpaceSkyboxMaterial(THREE, {
+  name = 'immersive-world-animated-direction-space-skybox-material',
+  palette = {},
+  opacity = 1,
+  transparent = opacity < 1,
+  side = THREE.BackSide,
+  depthWrite = false,
+  depthTest = true,
+  toneMapped = false,
+  flowSpeed = 0.12,
+  bandScale = 4.2,
+  distortionStrength = 0.08,
+  motionIntensity = 1,
+  phase = 0,
+  time = 0,
+  userData = {},
+  budget = {}
+} = {}) {
+  if (!THREE) throw new Error('createImmersiveWorldAnimatedDirectionSpaceSkyboxMaterial requires THREE.');
+  const safeOpacity = boundedNumber(opacity, 1, { min: 0, max: 1 });
+  const safeFlowSpeed = boundedNumber(flowSpeed, 0.12, { min: 0, max: 4 });
+  const safeBandScale = boundedNumber(bandScale, 4.2, { min: 0.05, max: 48 });
+  const safeDistortionStrength = boundedNumber(distortionStrength, 0.08, { min: 0, max: 1 });
+  const safeMotionIntensity = boundedNumber(motionIntensity, 1, { min: 0, max: 1 });
+  const safePhase = boundedNumber(phase, 0, { min: -100000, max: 100000 });
+  const colors = resolveAnimatedDirectionSpaceSkyboxPalette(THREE, palette);
+  const controls = {
+    uTime: uniform(boundedNumber(time, 0, { min: -100000, max: 100000 })),
+    uMotionIntensity: uniform(safeMotionIntensity),
+    uFlowSpeed: uniform(safeFlowSpeed),
+    uBandScale: uniform(safeBandScale),
+    uDistortionStrength: uniform(safeDistortionStrength),
+    uPhase: uniform(safePhase),
+    uOpacity: uniform(safeOpacity),
+    uLowerColor: uniform(colors.lower),
+    uHorizonColor: uniform(colors.horizon),
+    uUpperColor: uniform(colors.upper),
+    uAccentColor: uniform(colors.accent)
+  };
+  const material = new MeshBasicNodeMaterial({
+    name,
+    transparent: Boolean(transparent),
+    opacity: safeOpacity,
+    side,
+    depthWrite,
+    depthTest,
+    toneMapped
+  });
+  material.fog = false;
+  material.colorNode = createAnimatedDirectionSpaceSkyboxColorNode(controls);
+  material.opacityNode = controls.uOpacity;
+  material.userData = featureUserData(WEBGPU_NATIVE_HELPER_IDS.ANIMATED_DIRECTION_SPACE_SKYBOX_SHELL, {
+    budget: {
+      ...budget,
+      flowSpeed: safeFlowSpeed,
+      bandScale: safeBandScale,
+      distortionStrength: safeDistortionStrength,
+      motionIntensity: safeMotionIntensity,
+      shellCount: 1
+    },
+    userData: {
+      ...asObject(userData),
+      webgpuTimeControls: {
+        mode: 'frame-facts-elapsed-seconds',
+        liveMode: 'elapsedSeconds',
+        captureMode: 'frozen-by-capture-frame-facts',
+        uniform: 'uTime'
+      }
+    },
+    webgpuSafeSurface: 'MeshBasicNodeMaterial TSL animated direction-space skybox'
+  });
+  Object.defineProperty(material, ANIMATED_DIRECTION_SPACE_SKYBOX_CONTROLS, {
+    configurable: true,
+    value: {
+      helperId: WEBGPU_NATIVE_HELPER_IDS.ANIMATED_DIRECTION_SPACE_SKYBOX_SHELL,
+      materialFactoryId: 'sky-background-field',
+      featureFamily: 'sky-background-field',
+      baseMotionIntensity: safeMotionIntensity,
+      uniforms: controls
+    }
+  });
+  updateAnimatedDirectionSpaceSkyboxMaterialControls(material, { elapsedSeconds: time, time, motionIntensity: 1, deltaSeconds: 0 });
+  material.needsUpdate = true;
+  return material;
+}
+
+export function createImmersiveWorldAnimatedDirectionSpaceSkyboxShell(THREE, {
+  name = 'immersive-world-animated-direction-space-skybox-shell',
+  radius = IMMERSIVE_WORLD_SKYBOX_DEFAULT_RADIUS,
+  geometryKind = 'sphere',
+  widthSegments = 96,
+  heightSegments = 48,
+  cameraPinned = true,
+  palette = {},
+  opacity = 1,
+  flowSpeed = 0.12,
+  bandScale = 4.2,
+  distortionStrength = 0.08,
+  motionIntensity = 1,
+  phase = 0,
+  time = 0,
+  userData = {},
+  materialUserData = {}
+} = {}) {
+  if (!THREE) throw new Error('createImmersiveWorldAnimatedDirectionSpaceSkyboxShell requires THREE.');
+  const safeWidthSegments = positiveInteger(widthSegments, 96, { max: 192 });
+  const safeHeightSegments = positiveInteger(heightSegments, 48, { max: 128 });
+  const safeRadius = positiveNumber(radius, IMMERSIVE_WORLD_SKYBOX_DEFAULT_RADIUS);
+  const normalizedGeometryKind = String(geometryKind || 'sphere').toLowerCase();
+  const featureBudget = {
+    widthSegments: safeWidthSegments,
+    heightSegments: safeHeightSegments,
+    shellCount: 1
+  };
+  const geometry = createImmersiveWorldSkyboxGeometry(THREE, {
+    geometryKind: normalizedGeometryKind,
+    widthSegments: safeWidthSegments,
+    heightSegments: safeHeightSegments
+  });
+  const material = createImmersiveWorldAnimatedDirectionSpaceSkyboxMaterial(THREE, {
+    name: `${name}-material`,
+    palette,
+    opacity,
+    flowSpeed,
+    bandScale,
+    distortionStrength,
+    motionIntensity,
+    phase,
+    time,
+    userData: materialUserData,
+    budget: featureBudget
+  });
+  const shell = createImmersiveWorldSkyboxShell(THREE, {
+    name,
+    radius: safeRadius,
+    geometry,
+    material,
+    geometryKind: normalizedGeometryKind,
+    cameraPinned,
+    userData: {
+      ...featureUserData(WEBGPU_NATIVE_HELPER_IDS.ANIMATED_DIRECTION_SPACE_SKYBOX_SHELL, {
+        budget: featureBudget,
+        userData,
+        webgpuSafeSurface: 'MeshBasicNodeMaterial TSL animated direction-space skybox'
+      }),
+      shellCountIntent: 1,
+      singleEnvironmentShell: true,
+      nestedSkyboxCount: 0
+    }
+  });
+  shell.mesh.userData = {
+    ...asObject(shell.mesh.userData),
+    skyboxShellChild: true,
+    nestedSkybox: false
+  };
+  return shell;
+}
+
+export function updateImmersiveWorldAnimatedDirectionSpaceSkyboxShellControls(target, frameFacts = {}) {
+  const facts = [];
+  const seenMaterials = new Set();
+  const updateMaterial = (material) => {
+    if (Array.isArray(material)) {
+      material.forEach(updateMaterial);
+      return;
+    }
+    if (!material || seenMaterials.has(material)) return;
+    seenMaterials.add(material);
+    const updated = updateAnimatedDirectionSpaceSkyboxMaterialControls(material, frameFacts);
+    if (updated) facts.push(updated);
+  };
+
+  if (Array.isArray(target)) {
+    target.forEach((entry) => updateImmersiveWorldAnimatedDirectionSpaceSkyboxShellControls(entry, frameFacts).facts.forEach((fact) => facts.push(fact)));
+  } else if (target?.isMaterial) {
+    updateMaterial(target);
+  } else if (target?.isObject3D || typeof target?.traverse === 'function') {
+    target.traverse?.((child) => updateMaterial(child.material));
+  } else {
+    updateMaterial(target?.material || target);
+  }
+
+  return {
+    updated: facts.length,
+    facts
+  };
+}
+
 export function createImmersiveWorldSkyboxUtilities(THREE) {
   return Object.freeze({
     createSkyboxMaterial: (options = {}) => createImmersiveWorldSkyboxMaterial(THREE, options),
@@ -577,6 +867,7 @@ export function createImmersiveWorldSkyboxUtilities(THREE) {
     createSkyboxShell: (options = {}) => createImmersiveWorldSkyboxShell(THREE, options),
     createVertexColorSkyboxShell: (options = {}) => createImmersiveWorldVertexColorSkyboxShell(THREE, options),
     createDirectionSpaceSkyboxShell: (options = {}) => createImmersiveWorldDirectionSpaceSkyboxShell(THREE, options),
+    createAnimatedDirectionSpaceSkyboxShell: (options = {}) => createImmersiveWorldAnimatedDirectionSpaceSkyboxShell(THREE, options),
     applySkyboxDefaults: (object, options = {}) => applyImmersiveWorldSkyboxDefaults(THREE, object, options)
   });
 }

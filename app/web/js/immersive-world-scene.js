@@ -17,7 +17,10 @@ import {
   resolveImmersiveWorldSkyboxRadius,
   shouldUseImmersiveWorldSkybox
 } from './immersive-world-skybox.js';
-import { createImmersiveWorldWebGPUNativeUtilities } from './immersive-world-webgpu-helpers.js';
+import {
+  createImmersiveWorldWebGPUNativeUtilities,
+  updateImmersiveWorldWebGPUNativeMaterialControls
+} from './immersive-world-webgpu-helpers.js';
 import {
   collectRendererSceneFeatures,
   createPostPass,
@@ -1738,7 +1741,8 @@ export class ArtworkScene {
       ...diagnostics,
       renderPixelRatio: this.rendererRuntime?.getPixelRatio?.() || this.renderPixelRatio || null,
       renderTargetSamples: this.renderTargetSamples ?? 0,
-      renderTargetSamplePreference: this.renderTargetSamplePreference ?? null
+      renderTargetSamplePreference: this.renderTargetSamplePreference ?? null,
+      webgpuNativeHelperFrameFacts: this.webgpuNativeHelperFrameFacts || { updated: 0, facts: [] }
     };
   }
 
@@ -2017,6 +2021,7 @@ export class ArtworkScene {
     this.clock?.update?.(timestamp);
     const frameFacts = buildImmersiveWorldFrameFacts(this);
     updateImmersiveWorldCameraControlsForFrame(this, frameFacts);
+    this.webgpuNativeHelperFrameFacts = updateImmersiveWorldWebGPUNativeMaterialControls(this.group, frameFacts);
     for (const update of this.updateHooks) update(frameFacts);
     renderImmersiveWorldFrame(this, frameFacts);
   }

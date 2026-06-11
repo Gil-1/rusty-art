@@ -219,6 +219,9 @@ function collectForbiddenFromSurface(surface = {}, index = 0) {
   if (surface.texturedGeometryMissingUv === true || surfaceType === 'textured-geometry-missing-uv') {
     reasons.push(WEBGPU_AUTHORING_FALLBACK_REASONS.TEXTURED_GEOMETRY_MISSING_UV);
   }
+  if (surface.cpuBakedTextureGeneration === true || surfaceType === 'cpu-baked-texture-generation') {
+    reasons.push(WEBGPU_AUTHORING_FALLBACK_REASONS.CPU_BAKED_TEXTURE_GENERATION);
+  }
   return reasons.map((reason, reasonIndex) => ({
     id: `surface.${index + 1}.${reasonIndex + 1}.${reason}`,
     source: 'surface',
