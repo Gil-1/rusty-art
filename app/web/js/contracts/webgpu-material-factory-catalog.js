@@ -30,7 +30,8 @@ const WEBGL_ONLY_FORBIDDEN_SURFACES = Object.freeze([
   'onBeforeCompile',
   'legacy-glsl-post-pass',
   'custom-js-shader-surface',
-  'raw-glsl-source'
+  'raw-glsl-source',
+  'cpu-baked-texture-generation'
 ]);
 
 function deepFreeze(value) {
@@ -91,6 +92,26 @@ const WEBGPU_MATERIAL_FACTORY_DESCRIPTORS = deepFreeze([
     guidance: [
       'Use for painted, paper, canvas, ink wash, graphite, stain, and transfer surfaces.',
       'Represent texture through declarative surface controls and WebGPU-safe texture descriptors.'
+    ]
+  }),
+  descriptor({
+    id: 'scraped-paint-grain-surface',
+    category: WEBGPU_MATERIAL_FACTORY_CATEGORIES.MATTE_PAINTED_SURFACE,
+    label: 'Scraped Paint Grain Surface',
+    description: 'A bounded TSL paint/grain material for scraped bands, paper tooth, and animated pigment pressure.',
+    output: {
+      runtimeSurface: 'three-mesh-basic-node-material-tsl',
+      materialType: 'MeshBasicNodeMaterial',
+      textureTypes: [],
+      colorSpace: 'srgb',
+      transparency: 'optional-alpha',
+      proceduralInputs: ['palette', 'opacity', 'grainStrength', 'scrapeStrength', 'bandScale', 'distortionStrength', 'flowSpeed', 'motionIntensity']
+    },
+    requiredInputs: ['palette'],
+    optionalInputs: ['opacity', 'grainStrength', 'scrapeStrength', 'bandScale', 'distortionStrength', 'flowSpeed', 'motionIntensity', 'phase'],
+    guidance: [
+      'Use for shader-like scraped paint, paper grain, rubbed surfaces, and animated pigment bands on WebGPU.',
+      'Runtime utilities own the TSL node material and deterministic frame-fact time controls.'
     ]
   }),
   descriptor({
@@ -225,15 +246,21 @@ export const WEBGPU_NATIVE_HELPER_FEATURE_FAMILIES = Object.freeze({
   COLOR_FIELD: 'color-field',
   PROCEDURAL_MARKS: 'procedural-marks',
   SKY_BACKGROUND_FIELD: 'sky-background-field',
+  PAINT_GRAIN_SURFACE: 'paint-grain-surface',
   POINT_PARTICLE_FIELD: 'point-particle-field',
   INSTANCED_MARKS: 'instanced-marks'
 });
 
 export const WEBGPU_NATIVE_HELPER_IDS = Object.freeze({
   COLOR_FIELD_MATERIAL: 'color-field-material',
+  ANIMATED_COLOR_FIELD_MATERIAL: 'animated-color-field-material',
+  ANIMATED_DIRECTION_SPACE_SKYBOX_SHELL: 'animated-direction-space-skybox-shell',
+  SCRAPED_PAINT_GRAIN_MATERIAL: 'scraped-paint-grain-material',
   PROCEDURAL_MARK_MATERIAL: 'procedural-mark-material',
   POINT_PARTICLE_FIELD: 'point-particle-field',
+  ANIMATED_POINT_PARTICLE_FIELD: 'animated-point-particle-field',
   INSTANCED_MARK_FIELD: 'instanced-mark-field',
+  ANIMATED_INSTANCED_MARK_FIELD: 'animated-instanced-mark-field',
   VERTEX_COLOR_SKYBOX_SHELL: 'vertex-color-skybox-shell',
   DIRECTION_SPACE_SKYBOX_SHELL: 'direction-space-skybox-shell'
 });
@@ -300,6 +327,20 @@ const WEBGPU_NATIVE_HELPER_DESCRIPTORS = deepFreeze([
     ]
   }),
   helperDescriptor({
+    id: WEBGPU_NATIVE_HELPER_IDS.ANIMATED_COLOR_FIELD_MATERIAL,
+    functionName: 'createAnimatedColorFieldMaterial',
+    materialFactoryId: 'color-field',
+    featureFamily: WEBGPU_NATIVE_HELPER_FEATURE_FAMILIES.COLOR_FIELD,
+    outputKind: 'material',
+    runtimeSurface: 'three-mesh-basic-node-material-tsl',
+    materialType: 'MeshBasicNodeMaterial',
+    budget: { maxColorStops: 8, maxTimeUniforms: 1, maxBandScale: 24, mobileSafe: true },
+    guidance: [
+      'Use for time-driven bands, ramps, and atmospheric fields that need shader-like motion on WebGPU.',
+      'Runtime utilities own the TSL node material and frame-fact time controls; generated modules must not import three/tsl or construct NodeMaterial directly.'
+    ]
+  }),
+  helperDescriptor({
     id: WEBGPU_NATIVE_HELPER_IDS.PROCEDURAL_MARK_MATERIAL,
     functionName: 'createProceduralMarkMaterial',
     materialFactoryId: 'procedural-marks',
@@ -310,6 +351,34 @@ const WEBGPU_NATIVE_HELPER_DESCRIPTORS = deepFreeze([
     budget: { maxOpacityLayers: 1, mobileSafe: true },
     guidance: [
       'Pair with deterministic geometry, lines, sprites, or instancing for scratches, dashes, stipple, and transfer marks.'
+    ]
+  }),
+  helperDescriptor({
+    id: WEBGPU_NATIVE_HELPER_IDS.ANIMATED_DIRECTION_SPACE_SKYBOX_SHELL,
+    functionName: 'createAnimatedDirectionSpaceSkyboxShell',
+    materialFactoryId: 'sky-background-field',
+    featureFamily: WEBGPU_NATIVE_HELPER_FEATURE_FAMILIES.SKY_BACKGROUND_FIELD,
+    outputKind: 'object-bundle',
+    runtimeSurface: 'three-mesh-basic-node-material-tsl-skybox-shell',
+    materialType: 'MeshBasicNodeMaterial',
+    budget: { maxWidthSegments: 192, maxHeightSegments: 128, maxTimeUniforms: 1, shellCount: 1, mobileSafe: true },
+    guidance: [
+      'Use for animated normalized direction-space skybox fields without raw shader strings.',
+      'Creates one environment shell and relies on frame-fact time controls for capture-safe animation.'
+    ]
+  }),
+  helperDescriptor({
+    id: WEBGPU_NATIVE_HELPER_IDS.SCRAPED_PAINT_GRAIN_MATERIAL,
+    functionName: 'createScrapedPaintGrainMaterial',
+    materialFactoryId: 'scraped-paint-grain-surface',
+    featureFamily: WEBGPU_NATIVE_HELPER_FEATURE_FAMILIES.PAINT_GRAIN_SURFACE,
+    outputKind: 'material',
+    runtimeSurface: 'three-mesh-basic-node-material-tsl',
+    materialType: 'MeshBasicNodeMaterial',
+    budget: { maxColorStops: 8, maxTimeUniforms: 1, maxBandScale: 32, mobileSafe: true },
+    guidance: [
+      'Use for animated scraped paint, paper tooth, grain, rubbed pigment, and bounded fragment-effect surfaces.',
+      'Generated modules pass palette/opacity/grain/scrape/band/distortion/flow controls to the utility instead of importing TSL.'
     ]
   }),
   helperDescriptor({
@@ -326,6 +395,20 @@ const WEBGPU_NATIVE_HELPER_DESCRIPTORS = deepFreeze([
     ]
   }),
   helperDescriptor({
+    id: WEBGPU_NATIVE_HELPER_IDS.ANIMATED_POINT_PARTICLE_FIELD,
+    functionName: 'createAnimatedPointParticleField',
+    materialFactoryId: 'soft-particles',
+    featureFamily: WEBGPU_NATIVE_HELPER_FEATURE_FAMILIES.POINT_PARTICLE_FIELD,
+    outputKind: 'object-bundle',
+    runtimeSurface: 'three-points-node-material-tsl-buffer-geometry',
+    materialType: 'PointsNodeMaterial',
+    budget: { maxCount: 1500, maxSize: 0.12, maxDensity: 1, maxMotionRadius: 0.6, maxFlowSpeed: 4, maxMotionIntensity: 1, maxTimeUniforms: 1, mobileSafe: true },
+    guidance: [
+      'Use for bounded animated dust, crowd, pressure, signal, and pigment point fields on WebGPU.',
+      'Runtime utilities own the TSL point material and frame-fact time controls; generated modules must not import TSL or construct node materials directly.'
+    ]
+  }),
+  helperDescriptor({
     id: WEBGPU_NATIVE_HELPER_IDS.INSTANCED_MARK_FIELD,
     functionName: 'createInstancedMarkField',
     materialFactoryId: 'procedural-marks',
@@ -336,6 +419,20 @@ const WEBGPU_NATIVE_HELPER_DESCRIPTORS = deepFreeze([
     budget: { maxCount: 600, mobileSafe: true },
     guidance: [
       'Use for bounded repeated slashes, paper flecks, mesh billboards, and particle-style marks.'
+    ]
+  }),
+  helperDescriptor({
+    id: WEBGPU_NATIVE_HELPER_IDS.ANIMATED_INSTANCED_MARK_FIELD,
+    functionName: 'createAnimatedInstancedMarkField',
+    materialFactoryId: 'procedural-marks',
+    featureFamily: WEBGPU_NATIVE_HELPER_FEATURE_FAMILIES.INSTANCED_MARKS,
+    outputKind: 'object-bundle',
+    runtimeSurface: 'three-instanced-mesh-basic-material-frame-facts',
+    materialType: 'MeshBasicMaterial',
+    budget: { maxCount: 600, maxWidth: 0.6, maxHeight: 0.3, maxDensity: 1, maxMotionRadius: 0.8, maxFlowSpeed: 4, maxMotionIntensity: 1, mobileSafe: true },
+    guidance: [
+      'Use for bounded animated slashes, repeated pressure marks, crowd glyphs, and particle-style instanced marks.',
+      'Runtime utilities own deterministic frame-fact matrix updates so capture mode freezes and live mode advances without timers.'
     ]
   }),
   helperDescriptor({

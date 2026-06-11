@@ -23,7 +23,10 @@ import {
 } from './scene-frame-lifecycle.js';
 import { disposeObjectTree } from './scene-runtime.js';
 import { createSceneElapsedTimer } from './scene-time.js';
-import { createImmersiveWorldWebGPUNativeUtilities } from './immersive-world-webgpu-helpers.js';
+import {
+  createImmersiveWorldWebGPUNativeUtilities,
+  updateImmersiveWorldWebGPUNativeMaterialControls
+} from './immersive-world-webgpu-helpers.js';
 
 function createPostUniformState() {
   return {
@@ -153,19 +156,53 @@ export class ArtworkScene {
     const primary = palette.primary || '#7ed7ff';
     const secondary = palette.secondary || '#ffb06b';
     const anchor = palette.anchor || '#fff4d6';
+    const webgpuUtilities = createImmersiveWorldWebGPUNativeUtilities(THREE);
+
+    const skyboxProbe = webgpuUtilities.createAnimatedDirectionSpaceSkyboxShell({
+      name: 'webgpu-diagnostic-animated-direction-skybox-probe',
+      radius: 38,
+      widthSegments: 32,
+      heightSegments: 16,
+      palette: ['#0b1018', '#24364f', primary, secondary],
+      flowSpeed: 0.08,
+      bandScale: 3.6,
+      distortionStrength: 0.06,
+      motionIntensity: 0.8
+    });
+    this.group.add(skyboxProbe);
 
     const field = new THREE.Mesh(
       new THREE.PlaneGeometry(9.5, 5.4, 1, 1),
-      new THREE.MeshStandardMaterial({
-        color: new THREE.Color('#182334'),
-        roughness: 0.82,
-        metalness: 0,
-        emissive: new THREE.Color('#05070d'),
-        emissiveIntensity: 0.4
+      webgpuUtilities.createAnimatedColorFieldMaterial({
+        name: 'webgpu-diagnostic-animated-color-field-probe',
+        palette: ['#182334', primary, secondary, anchor],
+        flowSpeed: 0.18,
+        bandScale: 1.4,
+        accentStrength: 0.18,
+        toneMapped: false
       })
     );
     field.position.z = -1.2;
     this.group.add(field);
+
+    const paintPanel = new THREE.Mesh(
+      new THREE.PlaneGeometry(2.4, 1.35, 12, 6),
+      webgpuUtilities.createScrapedPaintGrainMaterial({
+        name: 'webgpu-diagnostic-scraped-paint-grain-probe',
+        palette: [anchor, secondary, '#1b1411'],
+        opacity: 0.72,
+        grainStrength: 0.34,
+        scrapeStrength: 0.42,
+        bandScale: 2.2,
+        distortionStrength: 0.14,
+        flowSpeed: 0.12,
+        motionIntensity: 0.75,
+        depthWrite: false
+      })
+    );
+    paintPanel.position.set(1.85, -1.42, 0.28);
+    paintPanel.rotation.z = -0.05;
+    this.group.add(paintPanel);
 
     const ring = new THREE.Mesh(
       new THREE.TorusGeometry(1.72, 0.045, 20, 96),
@@ -210,7 +247,6 @@ export class ArtworkScene {
       marks.add(mark);
     }
     this.group.add(marks);
-    const webgpuUtilities = createImmersiveWorldWebGPUNativeUtilities(THREE);
     const helperProbe = webgpuUtilities.createPointParticleField({
       name: 'webgpu-diagnostic-point-helper-probe',
       seed: 'webgpu-diagnostic-helper-probe',
@@ -222,6 +258,35 @@ export class ArtworkScene {
     });
     helperProbe.position.set(0, 0, 0.42);
     this.group.add(helperProbe);
+    const animatedParticles = webgpuUtilities.createAnimatedPointParticleField({
+      name: 'webgpu-diagnostic-animated-particle-probe',
+      seed: 'webgpu-diagnostic-animated-particles',
+      count: 144,
+      spread: [4.8, 2.2, 0.62],
+      palette: [primary, secondary, anchor],
+      size: 0.04,
+      opacity: 0.58,
+      motionRadius: 0.16,
+      flowSpeed: 0.32,
+      motionIntensity: 0.72
+    });
+    animatedParticles.position.set(0, 0, 0.68);
+    this.group.add(animatedParticles);
+    const animatedMarks = webgpuUtilities.createAnimatedInstancedMarkField({
+      name: 'webgpu-diagnostic-animated-mark-probe',
+      seed: 'webgpu-diagnostic-animated-marks',
+      count: 54,
+      spread: [3.7, 1.8, 0.38],
+      size: [0.18, 0.026],
+      palette: [primary, secondary, anchor],
+      opacity: 0.7,
+      motionRadius: 0.13,
+      flowSpeed: 0.28,
+      motionIntensity: 0.66,
+      depthWrite: false
+    });
+    animatedMarks.position.set(0, 0, 0.5);
+    this.group.add(animatedMarks);
     const rgbData = new Uint8Array([
       255, 0, 0,
       0, 255, 0,
@@ -259,22 +324,37 @@ export class ArtworkScene {
       renderer: this.renderer
     });
     this.webgpuFeatureFacts = normalizeWebGPUFeatureFacts([
+      skyboxProbe.userData?.webgpuNativeFeature,
+      skyboxProbe.mesh?.material?.userData?.webgpuNativeFeature,
+      field.material?.userData?.webgpuNativeFeature,
+      paintPanel.material?.userData?.webgpuNativeFeature,
       helperProbe.userData?.webgpuNativeFeature,
-      helperProbe.material?.userData?.webgpuNativeFeature
+      helperProbe.material?.userData?.webgpuNativeFeature,
+      animatedParticles.userData?.webgpuNativeFeature,
+      animatedParticles.material?.userData?.webgpuNativeFeature,
+      animatedMarks.userData?.webgpuNativeFeature,
+      animatedMarks.material?.userData?.webgpuNativeFeature
     ], { defaultReason: 'webgpu-diagnostic-helper-probe', limit: 0 });
-    this.diagnosticObjects = { ring, core, marks, helperProbe };
+    const pointHelperFamily = this.webgpuFeatureFacts.find((entry) => entry.id === 'point-particle-field')?.family || null;
+    const animatedPointHelperFamily = this.webgpuFeatureFacts.find((entry) => entry.id === 'animated-point-particle-field')?.family || null;
+    const animatedMarkHelperFamily = this.webgpuFeatureFacts.find((entry) => entry.id === 'animated-instanced-mark-field')?.family || null;
+    this.diagnosticObjects = { ring, core, marks, helperProbe, animatedParticles, animatedMarks, skyboxProbe, paintPanel };
     this.sceneAssemblyReport = {
       summary: {
-        built: 5,
+        built: 9,
         sceneKind: 'webgpu-project-diagnostic-v1',
         rendererCompatibility: this.rendererSceneFeatures.shaderCompatibility,
         webgpuFeatureFacts: this.webgpuFeatureFacts
       },
       built: [
+        { id: 'diagnostic-skybox', moduleType: 'webgpu-native-helper-probe', featureFamily: 'sky-background-field' },
         { id: 'diagnostic-field', moduleType: 'webgpu-diagnostic-field' },
+        { id: 'diagnostic-paint-grain', moduleType: 'webgpu-native-helper-probe', featureFamily: 'paint-grain-surface' },
         { id: 'diagnostic-ring', moduleType: 'webgpu-diagnostic-standard-material' },
         { id: 'diagnostic-marks', moduleType: 'webgpu-diagnostic-standard-material' },
-        { id: 'diagnostic-helper-probe', moduleType: 'webgpu-native-helper-probe', featureFamily: this.webgpuFeatureFacts[0]?.family || null },
+        { id: 'diagnostic-helper-probe', moduleType: 'webgpu-native-helper-probe', featureFamily: pointHelperFamily },
+        { id: 'diagnostic-animated-particles', moduleType: 'webgpu-native-helper-probe', featureFamily: animatedPointHelperFamily },
+        { id: 'diagnostic-animated-marks', moduleType: 'webgpu-native-helper-probe', featureFamily: animatedMarkHelperFamily },
         { id: 'diagnostic-texture-format-probe', moduleType: 'webgpu-diagnostic-texture-format-probe' }
       ],
       textureQuality: this.textureQuality,
@@ -293,11 +373,15 @@ export class ArtworkScene {
       && this.postProcessingRequest === POST_PROCESSING_MODES.WEBGPU_TSL_POST
       ? POST_PROCESSING_MODES.WEBGPU_TSL_POST
       : 'webgpu-diagnostic-direct';
-    return this.rendererRuntime?.getDiagnostics?.({
+    const diagnostics = this.rendererRuntime?.getDiagnostics?.({
       outputColorTransformMode,
       textureFormatFacts: this.textureQuality?.textureFormatFacts || [],
       webgpuFeatureFacts: this.webgpuFeatureFacts
     }) || describeRendererDiagnostics(this.renderer, { outputColorTransformMode, webgpuFeatureFacts: this.webgpuFeatureFacts });
+    return {
+      ...diagnostics,
+      webgpuNativeHelperFrameFacts: this.webgpuNativeHelperFrameFacts || { updated: 0, facts: [] }
+    };
   }
 
   setMotionIntensity(intensity = 1) {
@@ -353,6 +437,15 @@ export class ArtworkScene {
       core.rotation.x = Math.sin(t * 0.25) * 0.08 * motion;
     }
     if (marks) marks.rotation.z = -t * 0.035 * motion;
+    this.webgpuNativeHelperFrameFacts = updateImmersiveWorldWebGPUNativeMaterialControls(this.group, {
+      time: t,
+      elapsedSeconds: t,
+      deltaSeconds: this.captureMode ? 0 : null,
+      captureMode: this.captureMode,
+      frameCount: this.renderFrameCount,
+      motionIntensity: motion,
+      camera: this.camera
+    });
 
     this.postUniforms.uTime.value = t;
     this.postUniforms.uContrast.value = 1.08;
