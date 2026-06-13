@@ -1,0 +1,76 @@
+{
+  "version": 2,
+  "kind": "rusty-art-public-media-assets",
+  "artworkId": "2026-06-13-0657z-numbers-8647-appear-on-lawn-in-washington-dc-why-do-police-see-that-as-a",
+  "source": {
+    "sha256": "a6b0b0ee6c153e88150a71dd65ce29f10522b7c789dabefc05b3807aafdf875b",
+    "role": "daily-preview-story-desktop"
+  },
+  "sources": {
+    "primary": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-desktop",
+      "sha256": "a6b0b0ee6c153e88150a71dd65ce29f10522b7c789dabefc05b3807aafdf875b"
+    },
+    "openGraph": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-open-graph",
+      "sha256": "ab7d1df99b8dec04c1dc9759f8a20c29dd62e21c1452ef100a393184f66e66e7"
+    },
+    "instagram": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-instagram",
+      "sha256": "b73d16c3bd26f15dd96ab3ed7643d39fe897052d7dc4b43b434bfc023641d8b5"
+    }
+  },
+  "targets": {
+    "thumb-320.jpg": {
+      "spec": {
+        "fileName": "thumb-320.jpg",
+        "width": 320,
+        "height": null,
+        "fit": "inside",
+        "withoutEnlargement": true,
+        "format": "jpeg",
+        "quality": 82
+      },
+      "publicPath": "./data/media/2026-06-13-0657z-numbers-8647-appear-on-lawn-in-washington-dc-why-do-police-see-that-as-a/thumb-320.jpg",
+      "source": {
+        "sha256": "a6b0b0ee6c153e88150a71dd65ce29f10522b7c789dabefc05b3807aafdf875b",
+        "role": "daily-preview-story-desktop"
+      }
+    },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-06-13-0657z-numbers-8647-appear-on-lawn-in-washington-dc-why-do-police-see-that-as-a/og-1200x630.jpg",
+      "source": {
+        "sha256": "ab7d1df99b8dec04c1dc9759f8a20c29dd62e21c1452ef100a393184f66e66e7",
+        "role": "daily-preview-story-open-graph"
+      }
+    },
+    "instagram-1080x1440.jpg": {
+      "spec": {
+        "fileName": "instagram-1080x1440.jpg",
+        "width": 1080,
+        "height": 1440,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-06-13-0657z-numbers-8647-appear-on-lawn-in-washington-dc-why-do-police-see-that-as-a/instagram-1080x1440.jpg",
+      "source": {
+        "sha256": "b73d16c3bd26f15dd96ab3ed7643d39fe897052d7dc4b43b434bfc023641d8b5",
+        "role": "daily-preview-story-instagram"
+      }
+    }
+  }
+}
