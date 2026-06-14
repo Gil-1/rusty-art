@@ -1,0 +1,76 @@
+{
+  "version": 2,
+  "kind": "rusty-art-public-media-assets",
+  "artworkId": "2026-06-14-0644z-antwerp-giants-cry-tears-of-joy-after-insane-title-decider-against-ooste",
+  "source": {
+    "sha256": "eb8178409a21fc0524f08cfc1ffc098fa786347e47d75e72d004c4f418ed1bff",
+    "role": "daily-preview-story-desktop"
+  },
+  "sources": {
+    "primary": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-desktop",
+      "sha256": "eb8178409a21fc0524f08cfc1ffc098fa786347e47d75e72d004c4f418ed1bff"
+    },
+    "openGraph": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-open-graph",
+      "sha256": "f27cee8a957c0c47fc6a8ae2e53b0e89bb4d35687b0190fc285bd57ee6252213"
+    },
+    "instagram": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-instagram",
+      "sha256": "0d6761b30132b4e6d69e9d2be9b5642c0d5acc22a0e2bd2124fc87082540b042"
+    }
+  },
+  "targets": {
+    "thumb-320.jpg": {
+      "spec": {
+        "fileName": "thumb-320.jpg",
+        "width": 320,
+        "height": null,
+        "fit": "inside",
+        "withoutEnlargement": true,
+        "format": "jpeg",
+        "quality": 82
+      },
+      "publicPath": "./data/media/2026-06-14-0644z-antwerp-giants-cry-tears-of-joy-after-insane-title-decider-against-ooste/thumb-320.jpg",
+      "source": {
+        "sha256": "eb8178409a21fc0524f08cfc1ffc098fa786347e47d75e72d004c4f418ed1bff",
+        "role": "daily-preview-story-desktop"
+      }
+    },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-06-14-0644z-antwerp-giants-cry-tears-of-joy-after-insane-title-decider-against-ooste/og-1200x630.jpg",
+      "source": {
+        "sha256": "f27cee8a957c0c47fc6a8ae2e53b0e89bb4d35687b0190fc285bd57ee6252213",
+        "role": "daily-preview-story-open-graph"
+      }
+    },
+    "instagram-1080x1350.jpg": {
+      "spec": {
+        "fileName": "instagram-1080x1350.jpg",
+        "width": 1080,
+        "height": 1350,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-06-14-0644z-antwerp-giants-cry-tears-of-joy-after-insane-title-decider-against-ooste/instagram-1080x1350.jpg",
+      "source": {
+        "sha256": "0d6761b30132b4e6d69e9d2be9b5642c0d5acc22a0e2bd2124fc87082540b042",
+        "role": "daily-preview-story-instagram"
+      }
+    }
+  }
+}
