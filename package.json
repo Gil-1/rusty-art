@@ -6,6 +6,9 @@
   "packageManager": "pnpm@11.1.2",
   "description": "Public Rusty Art website and published artwork archive",
   "scripts": {
+    "build": "pnpm run web:build",
+    "preview": "vite preview",
+    "test": "node --test tests/*.test.mjs",
     "web:build": "vite build"
   },
   "dependencies": {
