@@ -1,0 +1,76 @@
+{
+  "version": 2,
+  "kind": "rusty-art-public-media-assets",
+  "artworkId": "2026-06-15-0626z-once-upon-a-faith-in-the-west-why-we-once-again-want-to-believe-strongly",
+  "source": {
+    "sha256": "a03bd4927c861d848e150d1688c6b63c60eda1c64114f6a69f8ac30e2313ff39",
+    "role": "daily-preview-story-desktop"
+  },
+  "sources": {
+    "primary": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-desktop",
+      "sha256": "a03bd4927c861d848e150d1688c6b63c60eda1c64114f6a69f8ac30e2313ff39"
+    },
+    "openGraph": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-open-graph",
+      "sha256": "f7235c4dccb74c85b6ba3c60a36a86dd135b2045a2645cc7607013714f909775"
+    },
+    "instagram": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-instagram",
+      "sha256": "d9acc3d1967f2239d51a7bbbc6f2bf321e25b08277d58b600b995cf0ab71bef5"
+    }
+  },
+  "targets": {
+    "thumb-320.jpg": {
+      "spec": {
+        "fileName": "thumb-320.jpg",
+        "width": 320,
+        "height": null,
+        "fit": "inside",
+        "withoutEnlargement": true,
+        "format": "jpeg",
+        "quality": 82
+      },
+      "publicPath": "./data/media/2026-06-15-0626z-once-upon-a-faith-in-the-west-why-we-once-again-want-to-believe-strongly/thumb-320.jpg",
+      "source": {
+        "sha256": "a03bd4927c861d848e150d1688c6b63c60eda1c64114f6a69f8ac30e2313ff39",
+        "role": "daily-preview-story-desktop"
+      }
+    },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-06-15-0626z-once-upon-a-faith-in-the-west-why-we-once-again-want-to-believe-strongly/og-1200x630.jpg",
+      "source": {
+        "sha256": "f7235c4dccb74c85b6ba3c60a36a86dd135b2045a2645cc7607013714f909775",
+        "role": "daily-preview-story-open-graph"
+      }
+    },
+    "instagram-1080x1350.jpg": {
+      "spec": {
+        "fileName": "instagram-1080x1350.jpg",
+        "width": 1080,
+        "height": 1350,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-06-15-0626z-once-upon-a-faith-in-the-west-why-we-once-again-want-to-believe-strongly/instagram-1080x1350.jpg",
+      "source": {
+        "sha256": "d9acc3d1967f2239d51a7bbbc6f2bf321e25b08277d58b600b995cf0ab71bef5",
+        "role": "daily-preview-story-instagram"
+      }
+    }
+  }
+}
