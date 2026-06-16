@@ -1,0 +1,76 @@
+{
+  "version": 2,
+  "kind": "rusty-art-public-media-assets",
+  "artworkId": "2026-06-16-0632z-substitute-lukaku-earns-red-devils-draw-against-egypt",
+  "source": {
+    "sha256": "3e10e8c303fe74eb9e7c5956e3b490a6fd5392893b59392d07bda6edb3f3ca30",
+    "role": "daily-preview-story-desktop"
+  },
+  "sources": {
+    "primary": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-desktop",
+      "sha256": "3e10e8c303fe74eb9e7c5956e3b490a6fd5392893b59392d07bda6edb3f3ca30"
+    },
+    "openGraph": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-open-graph",
+      "sha256": "009063c3a005701143c6aa337c4f1da7762ac9092903a255aa1fb470b800dd68"
+    },
+    "instagram": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-instagram",
+      "sha256": "398ca98fa9c3063981f5f4e97ea2e3247909df522c37d36c100bea1ee220156f"
+    }
+  },
+  "targets": {
+    "thumb-320.jpg": {
+      "spec": {
+        "fileName": "thumb-320.jpg",
+        "width": 320,
+        "height": null,
+        "fit": "inside",
+        "withoutEnlargement": true,
+        "format": "jpeg",
+        "quality": 82
+      },
+      "publicPath": "./data/media/2026-06-16-0632z-substitute-lukaku-earns-red-devils-draw-against-egypt/thumb-320.jpg",
+      "source": {
+        "sha256": "3e10e8c303fe74eb9e7c5956e3b490a6fd5392893b59392d07bda6edb3f3ca30",
+        "role": "daily-preview-story-desktop"
+      }
+    },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-06-16-0632z-substitute-lukaku-earns-red-devils-draw-against-egypt/og-1200x630.jpg",
+      "source": {
+        "sha256": "009063c3a005701143c6aa337c4f1da7762ac9092903a255aa1fb470b800dd68",
+        "role": "daily-preview-story-open-graph"
+      }
+    },
+    "instagram-1080x1350.jpg": {
+      "spec": {
+        "fileName": "instagram-1080x1350.jpg",
+        "width": 1080,
+        "height": 1350,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-06-16-0632z-substitute-lukaku-earns-red-devils-draw-against-egypt/instagram-1080x1350.jpg",
+      "source": {
+        "sha256": "398ca98fa9c3063981f5f4e97ea2e3247909df522c37d36c100bea1ee220156f",
+        "role": "daily-preview-story-instagram"
+      }
+    }
+  }
+}
