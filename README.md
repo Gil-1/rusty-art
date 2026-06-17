@@ -23,4 +23,4 @@ pnpm run preview
 
 Use `pnpm run web:build` for the stable automation build contract; `pnpm run build` is the direct-maintenance alias.
 Build output goes to `app/web-dist`.
-For frontend-only changes, edit frontend-owned files here, run the frontend checks, commit/push through the normal frontend Git workflow, and keep the tree clean before scheduled Daily automation runs.
+For frontend-only changes, edit frontend-owned files here, run the frontend checks, and commit/push through the normal frontend Git workflow. Scheduled Daily automation auto-commits safe dirty frontend-owned paths before running; mirrored contracts, private files, unknown root files, and `app/web/data/**` are not safe auto-commit targets.
