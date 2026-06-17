@@ -1,0 +1,76 @@
+{
+  "version": 2,
+  "kind": "rusty-art-public-media-assets",
+  "artworkId": "2026-06-17-0630z-g7-en-dus-trump-plant-meer-sancties-tegen-rusland-en-meer-militaire-steu",
+  "source": {
+    "sha256": "4d77f50cbe8e45d5d648906a716bebf7e33bfe0a6898e92c224ccc328951d584",
+    "role": "daily-preview-story-desktop"
+  },
+  "sources": {
+    "primary": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-desktop",
+      "sha256": "4d77f50cbe8e45d5d648906a716bebf7e33bfe0a6898e92c224ccc328951d584"
+    },
+    "openGraph": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-open-graph",
+      "sha256": "966fcb91c09bb9ab09677450660d0aa75cdc9fb222ae0064e26b98a51c9b3c92"
+    },
+    "instagram": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-instagram",
+      "sha256": "d8210f1f3c56a4d0ba8f59695d5822a48c60511215ca318fb2adcb5296c61ab5"
+    }
+  },
+  "targets": {
+    "thumb-320.jpg": {
+      "spec": {
+        "fileName": "thumb-320.jpg",
+        "width": 320,
+        "height": null,
+        "fit": "inside",
+        "withoutEnlargement": true,
+        "format": "jpeg",
+        "quality": 82
+      },
+      "publicPath": "./data/media/2026-06-17-0630z-g7-en-dus-trump-plant-meer-sancties-tegen-rusland-en-meer-militaire-steu/thumb-320.jpg",
+      "source": {
+        "sha256": "4d77f50cbe8e45d5d648906a716bebf7e33bfe0a6898e92c224ccc328951d584",
+        "role": "daily-preview-story-desktop"
+      }
+    },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-06-17-0630z-g7-en-dus-trump-plant-meer-sancties-tegen-rusland-en-meer-militaire-steu/og-1200x630.jpg",
+      "source": {
+        "sha256": "966fcb91c09bb9ab09677450660d0aa75cdc9fb222ae0064e26b98a51c9b3c92",
+        "role": "daily-preview-story-open-graph"
+      }
+    },
+    "instagram-1080x1350.jpg": {
+      "spec": {
+        "fileName": "instagram-1080x1350.jpg",
+        "width": 1080,
+        "height": 1350,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-06-17-0630z-g7-en-dus-trump-plant-meer-sancties-tegen-rusland-en-meer-militaire-steu/instagram-1080x1350.jpg",
+      "source": {
+        "sha256": "d8210f1f3c56a4d0ba8f59695d5822a48c60511215ca318fb2adcb5296c61ab5",
+        "role": "daily-preview-story-instagram"
+      }
+    }
+  }
+}
