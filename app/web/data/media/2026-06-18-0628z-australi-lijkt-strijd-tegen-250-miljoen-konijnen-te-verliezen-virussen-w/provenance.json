@@ -1,0 +1,76 @@
+{
+  "version": 2,
+  "kind": "rusty-art-public-media-assets",
+  "artworkId": "2026-06-18-0628z-australi-lijkt-strijd-tegen-250-miljoen-konijnen-te-verliezen-virussen-w",
+  "source": {
+    "sha256": "c34413dbb90f40f7fbc21f0f7d11fee815ef038ea588b9cda4fbc96796901438",
+    "role": "daily-preview-story-desktop"
+  },
+  "sources": {
+    "primary": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-desktop",
+      "sha256": "c34413dbb90f40f7fbc21f0f7d11fee815ef038ea588b9cda4fbc96796901438"
+    },
+    "openGraph": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-open-graph",
+      "sha256": "def9c07ec4196804e826a409096c30e2e84f2a86172170e919c6c891977c7e13"
+    },
+    "instagram": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-instagram",
+      "sha256": "bd64867809fd65712adb7fc366b567acdcf0a49a34b53d2c6e16810fc26c3497"
+    }
+  },
+  "targets": {
+    "thumb-320.jpg": {
+      "spec": {
+        "fileName": "thumb-320.jpg",
+        "width": 320,
+        "height": null,
+        "fit": "inside",
+        "withoutEnlargement": true,
+        "format": "jpeg",
+        "quality": 82
+      },
+      "publicPath": "./data/media/2026-06-18-0628z-australi-lijkt-strijd-tegen-250-miljoen-konijnen-te-verliezen-virussen-w/thumb-320.jpg",
+      "source": {
+        "sha256": "c34413dbb90f40f7fbc21f0f7d11fee815ef038ea588b9cda4fbc96796901438",
+        "role": "daily-preview-story-desktop"
+      }
+    },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-06-18-0628z-australi-lijkt-strijd-tegen-250-miljoen-konijnen-te-verliezen-virussen-w/og-1200x630.jpg",
+      "source": {
+        "sha256": "def9c07ec4196804e826a409096c30e2e84f2a86172170e919c6c891977c7e13",
+        "role": "daily-preview-story-open-graph"
+      }
+    },
+    "instagram-1080x1350.jpg": {
+      "spec": {
+        "fileName": "instagram-1080x1350.jpg",
+        "width": 1080,
+        "height": 1350,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-06-18-0628z-australi-lijkt-strijd-tegen-250-miljoen-konijnen-te-verliezen-virussen-w/instagram-1080x1350.jpg",
+      "source": {
+        "sha256": "bd64867809fd65712adb7fc366b567acdcf0a49a34b53d2c6e16810fc26c3497",
+        "role": "daily-preview-story-instagram"
+      }
+    }
+  }
+}
