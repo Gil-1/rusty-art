@@ -1,0 +1,76 @@
+{
+  "version": 2,
+  "kind": "rusty-art-public-media-assets",
+  "artworkId": "2026-06-19-0630z-plenty-of-atmosphere-even-more-rain-and-some-covers-among-the-hits-this",
+  "source": {
+    "sha256": "00b36ea71ce7323c74dd5d10891082b543f050b255524a20853eb3ec1324167e",
+    "role": "daily-preview-story-desktop"
+  },
+  "sources": {
+    "primary": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-desktop",
+      "sha256": "00b36ea71ce7323c74dd5d10891082b543f050b255524a20853eb3ec1324167e"
+    },
+    "openGraph": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-open-graph",
+      "sha256": "efba61e633aaff12fcf567d5e0660e07f0cdb2c32427393636bf60e58ccbfcb9"
+    },
+    "instagram": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-instagram",
+      "sha256": "954e97651cba088d9f4f2eb54423d37017ecd047f95532ff007218354146592b"
+    }
+  },
+  "targets": {
+    "thumb-320.jpg": {
+      "spec": {
+        "fileName": "thumb-320.jpg",
+        "width": 320,
+        "height": null,
+        "fit": "inside",
+        "withoutEnlargement": true,
+        "format": "jpeg",
+        "quality": 82
+      },
+      "publicPath": "./data/media/2026-06-19-0630z-plenty-of-atmosphere-even-more-rain-and-some-covers-among-the-hits-this/thumb-320.jpg",
+      "source": {
+        "sha256": "00b36ea71ce7323c74dd5d10891082b543f050b255524a20853eb3ec1324167e",
+        "role": "daily-preview-story-desktop"
+      }
+    },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-06-19-0630z-plenty-of-atmosphere-even-more-rain-and-some-covers-among-the-hits-this/og-1200x630.jpg",
+      "source": {
+        "sha256": "efba61e633aaff12fcf567d5e0660e07f0cdb2c32427393636bf60e58ccbfcb9",
+        "role": "daily-preview-story-open-graph"
+      }
+    },
+    "instagram-1080x1350.jpg": {
+      "spec": {
+        "fileName": "instagram-1080x1350.jpg",
+        "width": 1080,
+        "height": 1350,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-06-19-0630z-plenty-of-atmosphere-even-more-rain-and-some-covers-among-the-hits-this/instagram-1080x1350.jpg",
+      "source": {
+        "sha256": "954e97651cba088d9f4f2eb54423d37017ecd047f95532ff007218354146592b",
+        "role": "daily-preview-story-instagram"
+      }
+    }
+  }
+}
