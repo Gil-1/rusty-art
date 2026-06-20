@@ -1,0 +1,76 @@
+{
+  "version": 2,
+  "kind": "rusty-art-public-media-assets",
+  "artworkId": "2026-06-20-0624z-amnesty-demonstrates-at-place-du-trone-against-the-taliban-s-arrival-in",
+  "source": {
+    "sha256": "c47446f82b6f6470f940328c0c4904df77e0fe4be899e04a95e063e8b34cd504",
+    "role": "daily-preview-story-desktop"
+  },
+  "sources": {
+    "primary": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-desktop",
+      "sha256": "c47446f82b6f6470f940328c0c4904df77e0fe4be899e04a95e063e8b34cd504"
+    },
+    "openGraph": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-open-graph",
+      "sha256": "8c99eedea442ee96c1826b8a03387b1d0c5745a46a93c25edbd89fc6bdfceb8c"
+    },
+    "instagram": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-instagram",
+      "sha256": "2e935c814070c20ff61de841c1566803c25ad4ab673be1f568255276e5df78ea"
+    }
+  },
+  "targets": {
+    "thumb-320.jpg": {
+      "spec": {
+        "fileName": "thumb-320.jpg",
+        "width": 320,
+        "height": null,
+        "fit": "inside",
+        "withoutEnlargement": true,
+        "format": "jpeg",
+        "quality": 82
+      },
+      "publicPath": "./data/media/2026-06-20-0624z-amnesty-demonstrates-at-place-du-trone-against-the-taliban-s-arrival-in/thumb-320.jpg",
+      "source": {
+        "sha256": "c47446f82b6f6470f940328c0c4904df77e0fe4be899e04a95e063e8b34cd504",
+        "role": "daily-preview-story-desktop"
+      }
+    },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-06-20-0624z-amnesty-demonstrates-at-place-du-trone-against-the-taliban-s-arrival-in/og-1200x630.jpg",
+      "source": {
+        "sha256": "8c99eedea442ee96c1826b8a03387b1d0c5745a46a93c25edbd89fc6bdfceb8c",
+        "role": "daily-preview-story-open-graph"
+      }
+    },
+    "instagram-1080x1350.jpg": {
+      "spec": {
+        "fileName": "instagram-1080x1350.jpg",
+        "width": 1080,
+        "height": 1350,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-06-20-0624z-amnesty-demonstrates-at-place-du-trone-against-the-taliban-s-arrival-in/instagram-1080x1350.jpg",
+      "source": {
+        "sha256": "2e935c814070c20ff61de841c1566803c25ad4ab673be1f568255276e5df78ea",
+        "role": "daily-preview-story-instagram"
+      }
+    }
+  }
+}
