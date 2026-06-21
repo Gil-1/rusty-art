@@ -1,0 +1,76 @@
+{
+  "version": 2,
+  "kind": "rusty-art-public-media-assets",
+  "artworkId": "2026-06-21-0626z-rudi-garcia-s-first-reaction-to-j-r-my-doku-being-ruled-out-against-iran",
+  "source": {
+    "sha256": "cf1c3dfa68ce22bd11c15d8e7c5feff59b352f73993f57e4232368982ac5a66a",
+    "role": "daily-preview-story-desktop"
+  },
+  "sources": {
+    "primary": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-desktop",
+      "sha256": "cf1c3dfa68ce22bd11c15d8e7c5feff59b352f73993f57e4232368982ac5a66a"
+    },
+    "openGraph": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-open-graph",
+      "sha256": "5b6d30a18507a00d15798d1651ca5337353ff29d0ae7772e4089385bda673cec"
+    },
+    "instagram": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-instagram",
+      "sha256": "dbbdffb16d63e51c6a8a37cacbbdbfddfad2932eed5f319713c899611e2796bf"
+    }
+  },
+  "targets": {
+    "thumb-320.jpg": {
+      "spec": {
+        "fileName": "thumb-320.jpg",
+        "width": 320,
+        "height": null,
+        "fit": "inside",
+        "withoutEnlargement": true,
+        "format": "jpeg",
+        "quality": 82
+      },
+      "publicPath": "./data/media/2026-06-21-0626z-rudi-garcia-s-first-reaction-to-j-r-my-doku-being-ruled-out-against-iran/thumb-320.jpg",
+      "source": {
+        "sha256": "cf1c3dfa68ce22bd11c15d8e7c5feff59b352f73993f57e4232368982ac5a66a",
+        "role": "daily-preview-story-desktop"
+      }
+    },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-06-21-0626z-rudi-garcia-s-first-reaction-to-j-r-my-doku-being-ruled-out-against-iran/og-1200x630.jpg",
+      "source": {
+        "sha256": "5b6d30a18507a00d15798d1651ca5337353ff29d0ae7772e4089385bda673cec",
+        "role": "daily-preview-story-open-graph"
+      }
+    },
+    "instagram-1080x1350.jpg": {
+      "spec": {
+        "fileName": "instagram-1080x1350.jpg",
+        "width": 1080,
+        "height": 1350,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-06-21-0626z-rudi-garcia-s-first-reaction-to-j-r-my-doku-being-ruled-out-against-iran/instagram-1080x1350.jpg",
+      "source": {
+        "sha256": "dbbdffb16d63e51c6a8a37cacbbdbfddfad2932eed5f319713c899611e2796bf",
+        "role": "daily-preview-story-instagram"
+      }
+    }
+  }
+}
