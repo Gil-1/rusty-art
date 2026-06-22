@@ -1,0 +1,76 @@
+{
+  "version": 2,
+  "kind": "rusty-art-public-media-assets",
+  "artworkId": "2026-06-22-0629z-2026-world-cup-germany-narrowly-beats-ivory-coast",
+  "source": {
+    "sha256": "52292231afc78bfb6aee62064ffea6be0805f214f82306a9cc77fa15a3e31e54",
+    "role": "daily-preview-story-desktop"
+  },
+  "sources": {
+    "primary": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-desktop",
+      "sha256": "52292231afc78bfb6aee62064ffea6be0805f214f82306a9cc77fa15a3e31e54"
+    },
+    "openGraph": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-open-graph",
+      "sha256": "997eb16ebe1b0df7905eaaafa457d784dce2632f01f3c38353a84a53bdfc9240"
+    },
+    "instagram": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-instagram",
+      "sha256": "485564c12432199db3f2982638806d51c00e2de084c1261740277eec1c1f0efe"
+    }
+  },
+  "targets": {
+    "thumb-320.jpg": {
+      "spec": {
+        "fileName": "thumb-320.jpg",
+        "width": 320,
+        "height": null,
+        "fit": "inside",
+        "withoutEnlargement": true,
+        "format": "jpeg",
+        "quality": 82
+      },
+      "publicPath": "./data/media/2026-06-22-0629z-2026-world-cup-germany-narrowly-beats-ivory-coast/thumb-320.jpg",
+      "source": {
+        "sha256": "52292231afc78bfb6aee62064ffea6be0805f214f82306a9cc77fa15a3e31e54",
+        "role": "daily-preview-story-desktop"
+      }
+    },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-06-22-0629z-2026-world-cup-germany-narrowly-beats-ivory-coast/og-1200x630.jpg",
+      "source": {
+        "sha256": "997eb16ebe1b0df7905eaaafa457d784dce2632f01f3c38353a84a53bdfc9240",
+        "role": "daily-preview-story-open-graph"
+      }
+    },
+    "instagram-1080x1350.jpg": {
+      "spec": {
+        "fileName": "instagram-1080x1350.jpg",
+        "width": 1080,
+        "height": 1350,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-06-22-0629z-2026-world-cup-germany-narrowly-beats-ivory-coast/instagram-1080x1350.jpg",
+      "source": {
+        "sha256": "485564c12432199db3f2982638806d51c00e2de084c1261740277eec1c1f0efe",
+        "role": "daily-preview-story-instagram"
+      }
+    }
+  }
+}
