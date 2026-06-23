@@ -1,0 +1,76 @@
+{
+  "version": 2,
+  "kind": "rusty-art-public-media-assets",
+  "artworkId": "2026-06-23-0627z-i-assume-he-will-start-against-new-zealand",
+  "source": {
+    "sha256": "cadeb8d874177fd7ab307ab971aab26d6f747794e8d5a9253fa19d317dd7d35e",
+    "role": "daily-preview-story-desktop"
+  },
+  "sources": {
+    "primary": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-desktop",
+      "sha256": "cadeb8d874177fd7ab307ab971aab26d6f747794e8d5a9253fa19d317dd7d35e"
+    },
+    "openGraph": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-open-graph",
+      "sha256": "c2869fbd0a8e7a8e96bd84c531c28424c86f2473b845a16a57d9a52468f16b6a"
+    },
+    "instagram": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-instagram",
+      "sha256": "454e97e79daa4d1b9865e0a87bb33587327a2a58723e0e2cb6696668d0be5b1c"
+    }
+  },
+  "targets": {
+    "thumb-320.jpg": {
+      "spec": {
+        "fileName": "thumb-320.jpg",
+        "width": 320,
+        "height": null,
+        "fit": "inside",
+        "withoutEnlargement": true,
+        "format": "jpeg",
+        "quality": 82
+      },
+      "publicPath": "./data/media/2026-06-23-0627z-i-assume-he-will-start-against-new-zealand/thumb-320.jpg",
+      "source": {
+        "sha256": "cadeb8d874177fd7ab307ab971aab26d6f747794e8d5a9253fa19d317dd7d35e",
+        "role": "daily-preview-story-desktop"
+      }
+    },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-06-23-0627z-i-assume-he-will-start-against-new-zealand/og-1200x630.jpg",
+      "source": {
+        "sha256": "c2869fbd0a8e7a8e96bd84c531c28424c86f2473b845a16a57d9a52468f16b6a",
+        "role": "daily-preview-story-open-graph"
+      }
+    },
+    "instagram-1080x1350.jpg": {
+      "spec": {
+        "fileName": "instagram-1080x1350.jpg",
+        "width": 1080,
+        "height": 1350,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-06-23-0627z-i-assume-he-will-start-against-new-zealand/instagram-1080x1350.jpg",
+      "source": {
+        "sha256": "454e97e79daa4d1b9865e0a87bb33587327a2a58723e0e2cb6696668d0be5b1c",
+        "role": "daily-preview-story-instagram"
+      }
+    }
+  }
+}
