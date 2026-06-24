@@ -1,0 +1,1199 @@
+{
+  "id": "2026-06-24-0626z-belgium-on-orange-heat-alert-from-this-wednesday-temperatures-set-to-cli",
+  "date": "2026-06-24",
+  "title": "Belgium on orange heat alert from this Wednesday: temperatures set to climb to 37°C",
+  "generatedAt": "2026-06-24T06:30:25.344Z",
+  "news": {
+    "source": "lavenir",
+    "title": "Belgium on orange heat alert from this Wednesday: temperatures set to climb to 37°C",
+    "link": "https://www.lavenir.net/actu/societe/meteo/2026/06/24/la-belgique-en-alerte-orange-a-la-chaleur-des-ce-mercredi-le-thermometre-va-grimper-jusqua-37c-TAYDWNGC4RBI3DPCFHFBDTUP4M/",
+    "score": null
+  },
+  "inspiration": {
+    "artist": "László Moholy-Nagy",
+    "tags": [
+      "non-literal flow pressure",
+      "Heat",
+      "immersive-world"
+    ],
+    "links": {}
+  },
+  "seed": null,
+  "sceneStrategy": null,
+  "techStack": null,
+  "newsVisualMappings": [],
+  "qualityScore": {
+    "score": null,
+    "summary": null,
+    "heuristic": {
+      "score": null,
+      "breakdown": {}
+    },
+    "calibration": {
+      "sampleCount": 0,
+      "trustWeight": 0
+    },
+    "alignment": {
+      "totalAlign": null,
+      "components": {
+        "title": {
+          "score": null
+        },
+        "style": {
+          "score": null
+        },
+        "emotional": {
+          "score": null
+        }
+      }
+    }
+  },
+  "rationale": {
+    "intent": {
+      "signal": null,
+      "emotion": null,
+      "tension": null,
+      "balance": null,
+      "motion": null
+    },
+    "selection": {
+      "whyHeadline": null,
+      "priorityTerms": []
+    },
+    "qualitySummary": null
+  },
+  "runPolicy": null,
+  "artCreationMethod": "immersive-world-v1",
+  "world": {
+    "id": "immersive-world-belgium-orange-heat-alert-moholy-nagy",
+    "method": "immersive-world-v1",
+    "title": "Belgium on orange heat alert from this Wednesday: temperatures set to climb to 37°C",
+    "rendererAuthoringTarget": "webgpu-project-scene",
+    "environment": {
+      "owner": "world-composition",
+      "kind": "inside-facing-artist-field",
+      "color": "#efe0c8",
+      "fieldColor": "#e6d5bd",
+      "fogDensity": 0.006,
+      "radius": 96,
+      "skyboxRadius": 96,
+      "opacity": 0.94,
+      "palette": [
+        "#ebdeca",
+        "#e2ceb1",
+        "#e6d9c3",
+        "#e5d4bc",
+        "#d4cbc2",
+        "#c3a15c",
+        "#d1a312",
+        "#715f52",
+        "#403d3c",
+        "#3b3533"
+      ],
+      "compositionIntent": "A warm matte-paper surround holds the accepted Moholy-Nagy geometry as heat pressure: the background keeps negative space and paper grain, the middleground pressure disk and diagonals supply the news signal, and the foreground mark field adds measured loops, scratches, dots, and contour catches without becoming the main band."
+    },
+    "camera": {
+      "owner": "world-composition",
+      "fov": 66,
+      "near": 0.08,
+      "far": 220,
+      "position": [
+        0.22,
+        2.12,
+        14.2
+      ],
+      "target": [
+        0.55,
+        0.18,
+        -5.6
+      ],
+      "distanceSafety": {
+        "nearFarOwnedHere": true,
+        "minPartDistance": 1.7,
+        "clippingRisk": "low",
+        "reason": "Canonical public camera retained because accepted previews already read as broad horizontal abstract fields with a central heat disk and no preview evidence required portrait reframing."
+      }
+    },
+    "lighting": {
+      "owner": "world-composition",
+      "ambientColor": "#ead8bf",
+      "ambientIntensity": 0.8,
+      "keyColor": "#fff0d4",
+      "keyIntensity": 0.96,
+      "keyPosition": [
+        4,
+        6,
+        8
+      ],
+      "rimColor": "#403d3c",
+      "rimIntensity": 0.22,
+      "rimPosition": [
+        -5,
+        2,
+        -4
+      ],
+      "contrast": {
+        "mode": "integrated-part-readability",
+        "notes": "Warm high-key light preserves the pale ground from the accepted previews while the low dark rim keeps vertical bars, diagonal contours, and dot catches legible."
+      }
+    },
+    "outputColorTransform": {
+      "owner": "world-composition",
+      "mode": "final-color-contrast-only",
+      "contrast": 1.08,
+      "saturation": 1.055,
+      "exposure": 1.005,
+      "vignette": 0.045,
+      "hueShift": 0,
+      "distortion": 0
+    },
+    "parts": [
+      {
+        "id": "world-environment",
+        "partId": "world-environment",
+        "role": "world-environment",
+        "moduleRef": {
+          "type": "immersive-world-generated-module",
+          "version": 1,
+          "moduleId": "world-environment-moholy-nagy-belgium-orange-heat-alert",
+          "partId": "world-environment",
+          "hash": "991fa226db4c0f5a0faf6814708148af711295034f46c32c4eeb8c672999817d",
+          "integrity": "sha256-991fa226db4c0f5a0faf6814708148af711295034f46c32c4eeb8c672999817d",
+          "exportName": "createImmersiveWorldPart",
+          "file": "data/immersive-world/generated-modules/991fa226db4c0f5a0faf6814708148af711295034f46c32c4eeb8c672999817d.mjs",
+          "url": "./data/immersive-world/generated-modules/991fa226db4c0f5a0faf6814708148af711295034f46c32c4eeb8c672999817d.mjs",
+          "rendererCompatibility": {
+            "version": 1,
+            "targetMode": "webgpu-project-scene",
+            "compatibilityStatus": "webgpu-compatible",
+            "webgpuCompatible": true,
+            "evidenceReasons": [
+              "webgpu-safe-material",
+              "source-used-project-webgpu-material-factory",
+              "webgpu-native-helper-utility"
+            ],
+            "featureFacts": [
+              {
+                "kind": "standard-material",
+                "material": "MeshBasicMaterial",
+                "family": "standard-material-surface",
+                "reason": "webgpu-safe-material"
+              },
+              {
+                "kind": "material-factory",
+                "id": "sky-background-field",
+                "family": "sky-background-field",
+                "material": "MeshBasicMaterial",
+                "surface": "scene-background-or-large-plane",
+                "reason": "source-used-project-webgpu-material-factory"
+              },
+              {
+                "kind": "webgpu-native-helper",
+                "id": "direction-space-skybox-shell",
+                "family": "sky-background-field",
+                "factory": "sky-background-field",
+                "material": "MeshBasicMaterial",
+                "surface": "direction-space-vertex-color-skybox-shell",
+                "reason": "webgpu-native-helper-utility"
+              },
+              {
+                "kind": "material-factory",
+                "id": "color-field",
+                "family": "color-field",
+                "material": "MeshBasicMaterial",
+                "surface": "three-basic-or-standard-material",
+                "reason": "source-used-project-webgpu-material-factory"
+              },
+              {
+                "kind": "material-factory",
+                "id": "procedural-marks",
+                "family": "procedural-marks",
+                "material": "MeshBasicMaterial",
+                "surface": "instanced-geometry-material",
+                "reason": "source-used-project-webgpu-material-factory"
+              },
+              {
+                "kind": "standard-material",
+                "material": "LineBasicMaterial",
+                "family": "standard-material-surface",
+                "reason": "webgpu-safe-material"
+              },
+              {
+                "kind": "standard-material",
+                "material": "PointsMaterial",
+                "family": "standard-material-surface",
+                "reason": "webgpu-safe-material"
+              },
+              {
+                "kind": "material-factory",
+                "id": "soft-particles",
+                "family": "soft-particles",
+                "material": "PointsMaterial",
+                "surface": "three-points-material",
+                "reason": "source-used-project-webgpu-material-factory"
+              },
+              {
+                "kind": "webgpu-native-helper",
+                "id": "point-particle-field",
+                "family": "point-particle-field",
+                "factory": "soft-particles",
+                "material": "PointsMaterial",
+                "surface": "three-points-buffer-geometry",
+                "reason": "webgpu-native-helper-utility"
+              }
+            ],
+            "compatibleSurfaces": [
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "MeshBasicMaterial"
+              },
+              {
+                "reason": "source-used-project-webgpu-material-factory",
+                "materialType": "MeshBasicMaterial",
+                "runtimeSurface": "scene-background-or-large-plane",
+                "factoryId": "sky-background-field",
+                "materialFactoryId": "sky-background-field",
+                "factoryCategory": "sky-background-field",
+                "property": "materialFactoryId"
+              },
+              {
+                "reason": "webgpu-native-helper-utility",
+                "api": "utilities.createDirectionSpaceSkyboxShell",
+                "helperId": "direction-space-skybox-shell",
+                "featureFamily": "sky-background-field",
+                "outputKind": "object-bundle",
+                "materialType": "MeshBasicMaterial",
+                "runtimeSurface": "direction-space-vertex-color-skybox-shell",
+                "factoryId": "sky-background-field",
+                "materialFactoryId": "sky-background-field",
+                "factoryCategory": "sky-background-field"
+              },
+              {
+                "reason": "source-used-project-webgpu-material-factory",
+                "materialType": "MeshBasicMaterial",
+                "runtimeSurface": "three-basic-or-standard-material",
+                "factoryId": "color-field",
+                "materialFactoryId": "color-field",
+                "factoryCategory": "color-field",
+                "property": "materialFactoryId"
+              },
+              {
+                "reason": "source-used-project-webgpu-material-factory",
+                "materialType": "MeshBasicMaterial",
+                "runtimeSurface": "instanced-geometry-material",
+                "factoryId": "procedural-marks",
+                "materialFactoryId": "procedural-marks",
+                "factoryCategory": "procedural-marks",
+                "property": "materialFactoryId"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "LineBasicMaterial"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "PointsMaterial"
+              },
+              {
+                "reason": "source-used-project-webgpu-material-factory",
+                "materialType": "PointsMaterial",
+                "runtimeSurface": "three-points-material",
+                "factoryId": "soft-particles",
+                "materialFactoryId": "soft-particles",
+                "factoryCategory": "soft-particles",
+                "property": "materialFactoryId"
+              },
+              {
+                "reason": "webgpu-native-helper-utility",
+                "api": "utilities.createPointParticleField",
+                "helperId": "point-particle-field",
+                "featureFamily": "point-particle-field",
+                "outputKind": "object-bundle",
+                "materialType": "PointsMaterial",
+                "runtimeSurface": "three-points-buffer-geometry",
+                "factoryId": "soft-particles",
+                "materialFactoryId": "soft-particles",
+                "factoryCategory": "soft-particles"
+              }
+            ]
+          }
+        },
+        "params": {
+          "band": "environment",
+          "layer": "background",
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "scale": 1,
+          "opacity": 0.92,
+          "renderOrder": 0,
+          "visibilityPriority": "environment"
+        },
+        "paramSemantics": {
+          "band": "visual placement/readability band for full-world params; distinct from declared compositionOwnership.lane"
+        },
+        "evidence": {
+          "declaredCompositionOwnership": {
+            "lane": "background",
+            "owns": [
+              "background atmosphere, palette/value field, shallow depth, and active negative space",
+              "surrounding WebGPU-safe environment behavior that gives other parts room to read"
+            ],
+            "avoid": [
+              "main news-pressure band unless explicitly assigned",
+              "main barricade/grid unless explicitly assigned",
+              "main knot or focal tangle unless explicitly assigned"
+            ]
+          },
+          "compositionOwnershipSource": "part-specs.json#/parts/world-environment/compositionOwnership",
+          "compositionAdaptations": [
+            "Kept at origin as the enclosing background shell and active negative paper space.",
+            "Opacity stays just under full strength so the primary pressure disk and foreground marks can separate from the pale orange field.",
+            "Kept at origin as the background shell and pale matte negative-space field; opacity tuned below full strength for line and mark separation.",
+            "composition modified world-environment from isolated accepted-part defaults"
+          ],
+          "workshopAcceptance": [
+            "Preview attempt 2 captured desktop screenshot previews/attempt-002/002-world-environment-draft-desktop.jpg with a warm matte paper surround, dominant cropped orange heat disk, translucent diagonal heat-pressure planes, dark vertical counterweight, ruled grey construction lines, hatching, and visible paper-grain atmosphere.",
+            "Preview attempt 2 render report previews/attempt-002/desktop-render-report.json reports healthStatus ok, captureStatus ok, rendererMode webgpu, rendererBackend webgpu, rendererFallbackReason null, and compatibilityMode false.",
+            "Render report records WebGPU-safe evidence for MeshBasicMaterial, LineBasicMaterial, PointsMaterial, material factories sky-background-field/color-field/procedural-marks/soft-particles, and helper APIs utilities.createDirectionSpaceSkyboxShell and utilities.createPointParticleField.",
+            "Static check succeeded after revision with validation.pass true and no errors.",
+            "desktop:part-preview-evolution/001-world-environment-accepted-desktop.jpg"
+          ],
+          "compositionBeforeHash": "83b2e77f43f5b04e",
+          "compositionAfterHash": "d48f39bb8077a2b3"
+        },
+        "compositionOwnership": {
+          "lane": "background",
+          "owns": [
+            "background atmosphere, palette/value field, shallow depth, and active negative space",
+            "surrounding WebGPU-safe environment behavior that gives other parts room to read"
+          ],
+          "avoid": [
+            "main news-pressure band unless explicitly assigned",
+            "main barricade/grid unless explicitly assigned",
+            "main knot or focal tangle unless explicitly assigned"
+          ]
+        }
+      },
+      {
+        "id": "non-literal-flow-pressure",
+        "partId": "non-literal-flow-pressure",
+        "role": "primary-news-signal",
+        "moduleRef": {
+          "type": "immersive-world-generated-module",
+          "version": 1,
+          "moduleId": "non-literal-flow-pressure-moholy-nagy-orange-heat-pressure",
+          "partId": "non-literal-flow-pressure",
+          "hash": "5a16bf68cde3f76a903f3a8d3e5cec0ac7b89e805b9e8e8e3bc2f9ceaa85c4a6",
+          "integrity": "sha256-5a16bf68cde3f76a903f3a8d3e5cec0ac7b89e805b9e8e8e3bc2f9ceaa85c4a6",
+          "exportName": "createImmersiveWorldPart",
+          "file": "data/immersive-world/generated-modules/5a16bf68cde3f76a903f3a8d3e5cec0ac7b89e805b9e8e8e3bc2f9ceaa85c4a6.mjs",
+          "url": "./data/immersive-world/generated-modules/5a16bf68cde3f76a903f3a8d3e5cec0ac7b89e805b9e8e8e3bc2f9ceaa85c4a6.mjs",
+          "rendererCompatibility": {
+            "version": 1,
+            "targetMode": "webgpu-project-scene",
+            "compatibilityStatus": "webgpu-compatible",
+            "webgpuCompatible": true,
+            "evidenceReasons": [
+              "webgpu-safe-material"
+            ],
+            "featureFacts": [
+              {
+                "kind": "standard-material",
+                "material": "MeshBasicMaterial",
+                "family": "standard-material-surface",
+                "reason": "webgpu-safe-material"
+              },
+              {
+                "kind": "standard-material",
+                "material": "LineBasicMaterial",
+                "family": "standard-material-surface",
+                "reason": "webgpu-safe-material"
+              }
+            ],
+            "compatibleSurfaces": [
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "MeshBasicMaterial"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "LineBasicMaterial"
+              }
+            ]
+          }
+        },
+        "params": {
+          "band": "foreground",
+          "layer": "middleground",
+          "position": [
+            -0.18,
+            0.12,
+            -2.65
+          ],
+          "scale": 1.45,
+          "opacity": 0.98,
+          "renderOrder": 3,
+          "visibilityPriority": "primary"
+        },
+        "paramSemantics": {
+          "band": "visual placement/readability band for full-world params; distinct from declared compositionOwnership.lane"
+        },
+        "evidence": {
+          "declaredCompositionOwnership": {
+            "lane": "middleground",
+            "owns": [
+              "middleground selected-news pressure structure: dominant band, grid compression, barricade, or equivalent pressure form"
+            ],
+            "avoid": [
+              "full foreground artist mark field of loops, scratches, drips, splatters, and near-line behavior"
+            ]
+          },
+          "compositionOwnershipSource": "part-specs.json#/parts/non-literal-flow-pressure/compositionOwnership",
+          "compositionAdaptations": [
+            "Placed slightly left of center in middleground depth so its orange disk remains the central heat-pressure anchor without covering the full environment.",
+            "Scale is lower than the default foreground projection to keep vertical bars and grid compression readable against the surrounding negative space.",
+            "Placed as the middleground heat-pressure anchor, slightly left and scaled to preserve the central disk, diagonal wedges, vertical bars, and grid compression.",
+            "composition modified non-literal-flow-pressure from isolated accepted-part defaults"
+          ],
+          "workshopAcceptance": [
+            "Inspected the local concept-reference image directly as advisory palette/composition evidence.",
+            "Static draft validation succeeded with no errors.",
+            "Playwright desktop preview captured successfully at previews/attempt-001/001-non-literal-flow-pressure-draft-desktop.jpg.",
+            "Screenshot shows a readable Moholy-Nagy-inspired middleground pressure structure: dominant orange heat disk, translucent diagonal wedges, vertical dark bars, right-edge compressed grid bands, and small controlled accent nodes.",
+            "Render report status is captured/ok with native WebGPU backend, healthStatus ok, captureStatus ok, nonBlankRatio 0.994976, and WebGPU-safe MeshBasicMaterial/LineBasicMaterial plus color-field/procedural-marks factory evidence.",
+            "desktop:part-preview-evolution/002-non-literal-flow-pressure-accepted-desktop.jpg"
+          ],
+          "compositionBeforeHash": "da0e680740655242",
+          "compositionAfterHash": "8705a0e548c0a160"
+        },
+        "compositionOwnership": {
+          "lane": "middleground",
+          "owns": [
+            "middleground selected-news pressure structure: dominant band, grid compression, barricade, or equivalent pressure form"
+          ],
+          "avoid": [
+            "full foreground artist mark field of loops, scratches, drips, splatters, and near-line behavior"
+          ]
+        }
+      },
+      {
+        "id": "artist-mark-field",
+        "partId": "artist-mark-field",
+        "role": "artist-style-system",
+        "moduleRef": {
+          "type": "immersive-world-generated-module",
+          "version": 1,
+          "moduleId": "artist-mark-field-moholy-nagy-belgium-orange-heat-alert",
+          "partId": "artist-mark-field",
+          "hash": "ba1967ac3cc1d661dfa725e1129f738f5bd5070ef48c813e112829ad45e47347",
+          "integrity": "sha256-ba1967ac3cc1d661dfa725e1129f738f5bd5070ef48c813e112829ad45e47347",
+          "exportName": "createImmersiveWorldPart",
+          "file": "data/immersive-world/generated-modules/ba1967ac3cc1d661dfa725e1129f738f5bd5070ef48c813e112829ad45e47347.mjs",
+          "url": "./data/immersive-world/generated-modules/ba1967ac3cc1d661dfa725e1129f738f5bd5070ef48c813e112829ad45e47347.mjs",
+          "rendererCompatibility": {
+            "version": 1,
+            "targetMode": "webgpu-project-scene",
+            "compatibilityStatus": "webgpu-compatible",
+            "webgpuCompatible": true,
+            "evidenceReasons": [
+              "webgpu-safe-material",
+              "source-used-project-webgpu-material-factory"
+            ],
+            "featureFacts": [
+              {
+                "kind": "standard-material",
+                "material": "MeshBasicMaterial",
+                "family": "standard-material-surface",
+                "reason": "webgpu-safe-material"
+              },
+              {
+                "kind": "standard-material",
+                "material": "LineBasicMaterial",
+                "family": "standard-material-surface",
+                "reason": "webgpu-safe-material"
+              },
+              {
+                "kind": "material-factory",
+                "id": "color-field",
+                "family": "color-field",
+                "material": "MeshBasicMaterial",
+                "surface": "three-basic-or-standard-material",
+                "reason": "source-used-project-webgpu-material-factory"
+              },
+              {
+                "kind": "material-factory",
+                "id": "procedural-marks",
+                "family": "procedural-marks",
+                "material": "MeshBasicMaterial",
+                "surface": "instanced-geometry-material",
+                "reason": "source-used-project-webgpu-material-factory"
+              }
+            ],
+            "compatibleSurfaces": [
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "MeshBasicMaterial"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "LineBasicMaterial"
+              },
+              {
+                "reason": "source-used-project-webgpu-material-factory",
+                "materialType": "MeshBasicMaterial",
+                "runtimeSurface": "three-basic-or-standard-material",
+                "factoryId": "color-field",
+                "materialFactoryId": "color-field",
+                "factoryCategory": "color-field",
+                "property": "materialFactoryId"
+              },
+              {
+                "reason": "source-used-project-webgpu-material-factory",
+                "materialType": "MeshBasicMaterial",
+                "runtimeSurface": "instanced-geometry-material",
+                "factoryId": "procedural-marks",
+                "materialFactoryId": "procedural-marks",
+                "factoryCategory": "procedural-marks",
+                "property": "materialFactoryId"
+              }
+            ]
+          }
+        },
+        "params": {
+          "band": "foreground-marks",
+          "layer": "foreground",
+          "position": [
+            0.72,
+            0.24,
+            -1.15
+          ],
+          "scale": 0.94,
+          "opacity": 0.86,
+          "renderOrder": 4,
+          "visibilityPriority": "supporting"
+        },
+        "paramSemantics": {
+          "band": "visual placement/readability band for full-world params; distinct from declared compositionOwnership.lane"
+        },
+        "evidence": {
+          "declaredCompositionOwnership": {
+            "lane": "foreground",
+            "owns": [
+              "foreground artist mark and line behavior: loops, scratches, drips, splatters, dot/grid catches, and near readable marks"
+            ],
+            "avoid": [
+              "another dominant middleground news-pressure band, barricade/grid, or knot structure"
+            ]
+          },
+          "compositionOwnershipSource": "part-specs.json#/parts/artist-mark-field/compositionOwnership",
+          "compositionAdaptations": [
+            "Brought forward as the declared foreground artist mark system while reducing opacity so loops, scratches, dots, and splatters texture the heat signal instead of replacing it.",
+            "Offset rightward to balance the left-shifted pressure disk and preserve Moholy-Nagy asymmetry.",
+            "Held as foreground artist notation, right-offset and reduced in opacity so loops, scratches, dots, and splatters texture the pressure signal without overtaking it.",
+            "composition modified artist-mark-field from isolated accepted-part defaults"
+          ],
+          "workshopAcceptance": [
+            "Attempt 2 Playwright desktop preview succeeded with healthStatus ok and captureStatus ok.",
+            "Desktop screenshot shows a readable foreground Moholy-Nagy mark field: orange radial loops, dry diagonal scratches, vertical drips, warm splatters, dot-grid catches, and translucent hard-edge stains.",
+            "Render report proves actual WebGPU backend and WebGPU-safe MeshBasicMaterial, LineBasicMaterial, color-field, and procedural-marks evidence.",
+            "desktop:part-preview-evolution/003-artist-mark-field-accepted-desktop.jpg"
+          ],
+          "compositionBeforeHash": "31ff0e870a55ee87",
+          "compositionAfterHash": "d0f22ec65d58ffa0"
+        },
+        "compositionOwnership": {
+          "lane": "foreground",
+          "owns": [
+            "foreground artist mark and line behavior: loops, scratches, drips, splatters, dot/grid catches, and near readable marks"
+          ],
+          "avoid": [
+            "another dominant middleground news-pressure band, barricade/grid, or knot structure"
+          ]
+        }
+      }
+    ],
+    "acceptedPartsRef": "context.acceptedParts",
+    "compositionEvidence": {
+      "draftIntent": "Preserve the accepted WebGPU-compatible part modules and assemble them into a warm-earth Moholy-Nagy heat-alert field with a near-central disk, diagonal pressure, vertical/horizontal compression, and controlled foreground notation.",
+      "mediaInspected": [
+        "part-preview-evolution/001-world-environment-accepted-desktop.jpg",
+        "part-preview-evolution/002-non-literal-flow-pressure-accepted-desktop.jpg",
+        "part-preview-evolution/003-artist-mark-field-accepted-desktop.jpg"
+      ]
+    },
+    "generatedModules": [
+      {
+        "type": "immersive-world-generated-module",
+        "version": 1,
+        "moduleId": "world-environment-moholy-nagy-belgium-orange-heat-alert",
+        "partId": "world-environment",
+        "hash": "991fa226db4c0f5a0faf6814708148af711295034f46c32c4eeb8c672999817d",
+        "integrity": "sha256-991fa226db4c0f5a0faf6814708148af711295034f46c32c4eeb8c672999817d",
+        "exportName": "createImmersiveWorldPart",
+        "file": "data/immersive-world/generated-modules/991fa226db4c0f5a0faf6814708148af711295034f46c32c4eeb8c672999817d.mjs",
+        "url": "./data/immersive-world/generated-modules/991fa226db4c0f5a0faf6814708148af711295034f46c32c4eeb8c672999817d.mjs",
+        "rendererCompatibility": {
+          "version": 1,
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material",
+            "source-used-project-webgpu-material-factory",
+            "webgpu-native-helper-utility"
+          ],
+          "featureFacts": [
+            {
+              "kind": "standard-material",
+              "material": "MeshBasicMaterial",
+              "family": "standard-material-surface",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "material-factory",
+              "id": "sky-background-field",
+              "family": "sky-background-field",
+              "material": "MeshBasicMaterial",
+              "surface": "scene-background-or-large-plane",
+              "reason": "source-used-project-webgpu-material-factory"
+            },
+            {
+              "kind": "webgpu-native-helper",
+              "id": "direction-space-skybox-shell",
+              "family": "sky-background-field",
+              "factory": "sky-background-field",
+              "material": "MeshBasicMaterial",
+              "surface": "direction-space-vertex-color-skybox-shell",
+              "reason": "webgpu-native-helper-utility"
+            },
+            {
+              "kind": "material-factory",
+              "id": "color-field",
+              "family": "color-field",
+              "material": "MeshBasicMaterial",
+              "surface": "three-basic-or-standard-material",
+              "reason": "source-used-project-webgpu-material-factory"
+            },
+            {
+              "kind": "material-factory",
+              "id": "procedural-marks",
+              "family": "procedural-marks",
+              "material": "MeshBasicMaterial",
+              "surface": "instanced-geometry-material",
+              "reason": "source-used-project-webgpu-material-factory"
+            },
+            {
+              "kind": "standard-material",
+              "material": "LineBasicMaterial",
+              "family": "standard-material-surface",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "standard-material",
+              "material": "PointsMaterial",
+              "family": "standard-material-surface",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "material-factory",
+              "id": "soft-particles",
+              "family": "soft-particles",
+              "material": "PointsMaterial",
+              "surface": "three-points-material",
+              "reason": "source-used-project-webgpu-material-factory"
+            },
+            {
+              "kind": "webgpu-native-helper",
+              "id": "point-particle-field",
+              "family": "point-particle-field",
+              "factory": "soft-particles",
+              "material": "PointsMaterial",
+              "surface": "three-points-buffer-geometry",
+              "reason": "webgpu-native-helper-utility"
+            }
+          ],
+          "compatibleSurfaces": [
+            {
+              "reason": "webgpu-safe-material",
+              "materialType": "MeshBasicMaterial"
+            },
+            {
+              "reason": "source-used-project-webgpu-material-factory",
+              "materialType": "MeshBasicMaterial",
+              "runtimeSurface": "scene-background-or-large-plane",
+              "factoryId": "sky-background-field",
+              "materialFactoryId": "sky-background-field",
+              "factoryCategory": "sky-background-field",
+              "property": "materialFactoryId"
+            },
+            {
+              "reason": "webgpu-native-helper-utility",
+              "api": "utilities.createDirectionSpaceSkyboxShell",
+              "helperId": "direction-space-skybox-shell",
+              "featureFamily": "sky-background-field",
+              "outputKind": "object-bundle",
+              "materialType": "MeshBasicMaterial",
+              "runtimeSurface": "direction-space-vertex-color-skybox-shell",
+              "factoryId": "sky-background-field",
+              "materialFactoryId": "sky-background-field",
+              "factoryCategory": "sky-background-field"
+            },
+            {
+              "reason": "source-used-project-webgpu-material-factory",
+              "materialType": "MeshBasicMaterial",
+              "runtimeSurface": "three-basic-or-standard-material",
+              "factoryId": "color-field",
+              "materialFactoryId": "color-field",
+              "factoryCategory": "color-field",
+              "property": "materialFactoryId"
+            },
+            {
+              "reason": "source-used-project-webgpu-material-factory",
+              "materialType": "MeshBasicMaterial",
+              "runtimeSurface": "instanced-geometry-material",
+              "factoryId": "procedural-marks",
+              "materialFactoryId": "procedural-marks",
+              "factoryCategory": "procedural-marks",
+              "property": "materialFactoryId"
+            },
+            {
+              "reason": "webgpu-safe-material",
+              "materialType": "LineBasicMaterial"
+            },
+            {
+              "reason": "webgpu-safe-material",
+              "materialType": "PointsMaterial"
+            },
+            {
+              "reason": "source-used-project-webgpu-material-factory",
+              "materialType": "PointsMaterial",
+              "runtimeSurface": "three-points-material",
+              "factoryId": "soft-particles",
+              "materialFactoryId": "soft-particles",
+              "factoryCategory": "soft-particles",
+              "property": "materialFactoryId"
+            },
+            {
+              "reason": "webgpu-native-helper-utility",
+              "api": "utilities.createPointParticleField",
+              "helperId": "point-particle-field",
+              "featureFamily": "point-particle-field",
+              "outputKind": "object-bundle",
+              "materialType": "PointsMaterial",
+              "runtimeSurface": "three-points-buffer-geometry",
+              "factoryId": "soft-particles",
+              "materialFactoryId": "soft-particles",
+              "factoryCategory": "soft-particles"
+            }
+          ]
+        }
+      },
+      {
+        "type": "immersive-world-generated-module",
+        "version": 1,
+        "moduleId": "non-literal-flow-pressure-moholy-nagy-orange-heat-pressure",
+        "partId": "non-literal-flow-pressure",
+        "hash": "5a16bf68cde3f76a903f3a8d3e5cec0ac7b89e805b9e8e8e3bc2f9ceaa85c4a6",
+        "integrity": "sha256-5a16bf68cde3f76a903f3a8d3e5cec0ac7b89e805b9e8e8e3bc2f9ceaa85c4a6",
+        "exportName": "createImmersiveWorldPart",
+        "file": "data/immersive-world/generated-modules/5a16bf68cde3f76a903f3a8d3e5cec0ac7b89e805b9e8e8e3bc2f9ceaa85c4a6.mjs",
+        "url": "./data/immersive-world/generated-modules/5a16bf68cde3f76a903f3a8d3e5cec0ac7b89e805b9e8e8e3bc2f9ceaa85c4a6.mjs",
+        "rendererCompatibility": {
+          "version": 1,
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material"
+          ],
+          "featureFacts": [
+            {
+              "kind": "standard-material",
+              "material": "MeshBasicMaterial",
+              "family": "standard-material-surface",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "standard-material",
+              "material": "LineBasicMaterial",
+              "family": "standard-material-surface",
+              "reason": "webgpu-safe-material"
+            }
+          ],
+          "compatibleSurfaces": [
+            {
+              "reason": "webgpu-safe-material",
+              "materialType": "MeshBasicMaterial"
+            },
+            {
+              "reason": "webgpu-safe-material",
+              "materialType": "LineBasicMaterial"
+            }
+          ]
+        }
+      },
+      {
+        "type": "immersive-world-generated-module",
+        "version": 1,
+        "moduleId": "artist-mark-field-moholy-nagy-belgium-orange-heat-alert",
+        "partId": "artist-mark-field",
+        "hash": "ba1967ac3cc1d661dfa725e1129f738f5bd5070ef48c813e112829ad45e47347",
+        "integrity": "sha256-ba1967ac3cc1d661dfa725e1129f738f5bd5070ef48c813e112829ad45e47347",
+        "exportName": "createImmersiveWorldPart",
+        "file": "data/immersive-world/generated-modules/ba1967ac3cc1d661dfa725e1129f738f5bd5070ef48c813e112829ad45e47347.mjs",
+        "url": "./data/immersive-world/generated-modules/ba1967ac3cc1d661dfa725e1129f738f5bd5070ef48c813e112829ad45e47347.mjs",
+        "rendererCompatibility": {
+          "version": 1,
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material",
+            "source-used-project-webgpu-material-factory"
+          ],
+          "featureFacts": [
+            {
+              "kind": "standard-material",
+              "material": "MeshBasicMaterial",
+              "family": "standard-material-surface",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "standard-material",
+              "material": "LineBasicMaterial",
+              "family": "standard-material-surface",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "material-factory",
+              "id": "color-field",
+              "family": "color-field",
+              "material": "MeshBasicMaterial",
+              "surface": "three-basic-or-standard-material",
+              "reason": "source-used-project-webgpu-material-factory"
+            },
+            {
+              "kind": "material-factory",
+              "id": "procedural-marks",
+              "family": "procedural-marks",
+              "material": "MeshBasicMaterial",
+              "surface": "instanced-geometry-material",
+              "reason": "source-used-project-webgpu-material-factory"
+            }
+          ],
+          "compatibleSurfaces": [
+            {
+              "reason": "webgpu-safe-material",
+              "materialType": "MeshBasicMaterial"
+            },
+            {
+              "reason": "webgpu-safe-material",
+              "materialType": "LineBasicMaterial"
+            },
+            {
+              "reason": "source-used-project-webgpu-material-factory",
+              "materialType": "MeshBasicMaterial",
+              "runtimeSurface": "three-basic-or-standard-material",
+              "factoryId": "color-field",
+              "materialFactoryId": "color-field",
+              "factoryCategory": "color-field",
+              "property": "materialFactoryId"
+            },
+            {
+              "reason": "source-used-project-webgpu-material-factory",
+              "materialType": "MeshBasicMaterial",
+              "runtimeSurface": "instanced-geometry-material",
+              "factoryId": "procedural-marks",
+              "materialFactoryId": "procedural-marks",
+              "factoryCategory": "procedural-marks",
+              "property": "materialFactoryId"
+            }
+          ]
+        }
+      }
+    ],
+    "rendererAuthoring": {
+      "version": 1,
+      "targetMode": "webgpu-project-scene",
+      "requestedTarget": "webgpu-project-scene",
+      "effectiveTarget": "webgpu-project-scene",
+      "webgpuTargeted": true,
+      "legacyWebglTargeted": false,
+      "unspecified": false,
+      "compatibilityGateRequired": true
+    },
+    "rendererCompatibility": {
+      "version": 1,
+      "targetMode": "webgpu-project-scene",
+      "webgpuTargeted": true,
+      "legacyWebglTargeted": false,
+      "compatibilityGateRequired": true,
+      "compatibilityStatus": "webgpu-compatible",
+      "webgpuCompatible": true,
+      "evidenceReasons": [
+        "webgpu-safe-material",
+        "source-used-project-webgpu-material-factory",
+        "webgpu-native-helper-utility"
+      ],
+      "featureFacts": [
+        {
+          "kind": "standard-material",
+          "family": "standard-material-surface",
+          "material": "MeshBasicMaterial",
+          "reason": "webgpu-safe-material"
+        },
+        {
+          "kind": "material-factory",
+          "id": "sky-background-field",
+          "family": "sky-background-field",
+          "material": "MeshBasicMaterial",
+          "surface": "scene-background-or-large-plane",
+          "reason": "source-used-project-webgpu-material-factory"
+        },
+        {
+          "kind": "webgpu-native-helper",
+          "id": "direction-space-skybox-shell",
+          "family": "sky-background-field",
+          "factory": "sky-background-field",
+          "material": "MeshBasicMaterial",
+          "surface": "direction-space-vertex-color-skybox-shell",
+          "reason": "webgpu-native-helper-utility"
+        },
+        {
+          "kind": "material-factory",
+          "id": "color-field",
+          "family": "color-field",
+          "material": "MeshBasicMaterial",
+          "surface": "three-basic-or-standard-material",
+          "reason": "source-used-project-webgpu-material-factory"
+        },
+        {
+          "kind": "material-factory",
+          "id": "procedural-marks",
+          "family": "procedural-marks",
+          "material": "MeshBasicMaterial",
+          "surface": "instanced-geometry-material",
+          "reason": "source-used-project-webgpu-material-factory"
+        },
+        {
+          "kind": "standard-material",
+          "family": "standard-material-surface",
+          "material": "LineBasicMaterial",
+          "reason": "webgpu-safe-material"
+        },
+        {
+          "kind": "standard-material",
+          "family": "standard-material-surface",
+          "material": "PointsMaterial",
+          "reason": "webgpu-safe-material"
+        },
+        {
+          "kind": "material-factory",
+          "id": "soft-particles",
+          "family": "soft-particles",
+          "material": "PointsMaterial",
+          "surface": "three-points-material",
+          "reason": "source-used-project-webgpu-material-factory"
+        },
+        {
+          "kind": "webgpu-native-helper",
+          "id": "point-particle-field",
+          "family": "point-particle-field",
+          "factory": "soft-particles",
+          "material": "PointsMaterial",
+          "surface": "three-points-buffer-geometry",
+          "reason": "webgpu-native-helper-utility"
+        }
+      ],
+      "moduleCount": 3,
+      "compatibleModuleCount": 3,
+      "incompatibleModuleCount": 0,
+      "compositionCompatibilityDeclared": false,
+      "modules": [
+        {
+          "partId": "world-environment",
+          "role": "world-environment",
+          "moduleId": "world-environment-moholy-nagy-belgium-orange-heat-alert",
+          "hash": "991fa226db4c0f5a0faf6814708148af711295034f46c32c4eeb8c672999817d",
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material",
+            "source-used-project-webgpu-material-factory",
+            "webgpu-native-helper-utility"
+          ],
+          "featureFacts": [
+            {
+              "kind": "standard-material",
+              "family": "standard-material-surface",
+              "material": "MeshBasicMaterial",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "material-factory",
+              "id": "sky-background-field",
+              "family": "sky-background-field",
+              "material": "MeshBasicMaterial",
+              "surface": "scene-background-or-large-plane",
+              "reason": "source-used-project-webgpu-material-factory"
+            },
+            {
+              "kind": "webgpu-native-helper",
+              "id": "direction-space-skybox-shell",
+              "family": "sky-background-field",
+              "factory": "sky-background-field",
+              "material": "MeshBasicMaterial",
+              "surface": "direction-space-vertex-color-skybox-shell",
+              "reason": "webgpu-native-helper-utility"
+            },
+            {
+              "kind": "material-factory",
+              "id": "color-field",
+              "family": "color-field",
+              "material": "MeshBasicMaterial",
+              "surface": "three-basic-or-standard-material",
+              "reason": "source-used-project-webgpu-material-factory"
+            },
+            {
+              "kind": "material-factory",
+              "id": "procedural-marks",
+              "family": "procedural-marks",
+              "material": "MeshBasicMaterial",
+              "surface": "instanced-geometry-material",
+              "reason": "source-used-project-webgpu-material-factory"
+            },
+            {
+              "kind": "standard-material",
+              "family": "standard-material-surface",
+              "material": "LineBasicMaterial",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "standard-material",
+              "family": "standard-material-surface",
+              "material": "PointsMaterial",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "material-factory",
+              "id": "soft-particles",
+              "family": "soft-particles",
+              "material": "PointsMaterial",
+              "surface": "three-points-material",
+              "reason": "source-used-project-webgpu-material-factory"
+            },
+            {
+              "kind": "webgpu-native-helper",
+              "id": "point-particle-field",
+              "family": "point-particle-field",
+              "factory": "soft-particles",
+              "material": "PointsMaterial",
+              "surface": "three-points-buffer-geometry",
+              "reason": "webgpu-native-helper-utility"
+            }
+          ],
+          "compatibleSurfaceCount": 9,
+          "sourceStage": "part-workshop"
+        },
+        {
+          "partId": "non-literal-flow-pressure",
+          "role": "primary-news-signal",
+          "moduleId": "non-literal-flow-pressure-moholy-nagy-orange-heat-pressure",
+          "hash": "5a16bf68cde3f76a903f3a8d3e5cec0ac7b89e805b9e8e8e3bc2f9ceaa85c4a6",
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material"
+          ],
+          "featureFacts": [
+            {
+              "kind": "standard-material",
+              "family": "standard-material-surface",
+              "material": "MeshBasicMaterial",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "standard-material",
+              "family": "standard-material-surface",
+              "material": "LineBasicMaterial",
+              "reason": "webgpu-safe-material"
+            }
+          ],
+          "compatibleSurfaceCount": 2,
+          "sourceStage": "part-workshop"
+        },
+        {
+          "partId": "artist-mark-field",
+          "role": "artist-style-system",
+          "moduleId": "artist-mark-field-moholy-nagy-belgium-orange-heat-alert",
+          "hash": "ba1967ac3cc1d661dfa725e1129f738f5bd5070ef48c813e112829ad45e47347",
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material",
+            "source-used-project-webgpu-material-factory"
+          ],
+          "featureFacts": [
+            {
+              "kind": "standard-material",
+              "family": "standard-material-surface",
+              "material": "MeshBasicMaterial",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "standard-material",
+              "family": "standard-material-surface",
+              "material": "LineBasicMaterial",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "material-factory",
+              "id": "color-field",
+              "family": "color-field",
+              "material": "MeshBasicMaterial",
+              "surface": "three-basic-or-standard-material",
+              "reason": "source-used-project-webgpu-material-factory"
+            },
+            {
+              "kind": "material-factory",
+              "id": "procedural-marks",
+              "family": "procedural-marks",
+              "material": "MeshBasicMaterial",
+              "surface": "instanced-geometry-material",
+              "reason": "source-used-project-webgpu-material-factory"
+            }
+          ],
+          "compatibleSurfaceCount": 4,
+          "sourceStage": "part-workshop"
+        }
+      ]
+    },
+    "renderFacts": {
+      "environmentPresent": true,
+      "cameraOwnedByComposition": true,
+      "lightingOwnedByComposition": true,
+      "nearFarClippingOwned": true,
+      "acceptedPartCount": 3,
+      "generatedModuleCount": 3,
+      "generatedAssetCount": 0,
+      "rendererAuthoringTarget": "webgpu-project-scene",
+      "rendererCompatibilityStatus": "webgpu-compatible",
+      "webgpuRendererGateRequired": true,
+      "webgpuRendererCompatible": true,
+      "desktopPreviewRecorded": true,
+      "mobilePreviewRecorded": true
+    }
+  },
+  "image": {
+    "thumbnailJpeg": "./data/media/2026-06-24-0626z-belgium-on-orange-heat-alert-from-this-wednesday-temperatures-set-to-cli/thumb-320.jpg",
+    "openGraphJpeg": "./data/media/2026-06-24-0626z-belgium-on-orange-heat-alert-from-this-wednesday-temperatures-set-to-cli/og-1200x630.jpg",
+    "instagramJpeg": "./data/media/2026-06-24-0626z-belgium-on-orange-heat-alert-from-this-wednesday-temperatures-set-to-cli/instagram-1080x1350.jpg",
+    "altText": "Belgium on orange heat alert from this Wednesday: temperatures set to climb to 37°C by László Moholy-Nagy."
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "version": 2,
+  "kind": "rusty-art-public-media-assets",
+  "artworkId": "2026-06-24-0626z-belgium-on-orange-heat-alert-from-this-wednesday-temperatures-set-to-cli",
+  "source": {
+    "sha256": "5128995aa27d48f4028c0b782d7e96b10d042e780e742f65d69bafd38cbf709a",
+    "role": "daily-preview-story-desktop"
+  },
+  "sources": {
+    "primary": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-desktop",
+      "sha256": "5128995aa27d48f4028c0b782d7e96b10d042e780e742f65d69bafd38cbf709a"
+    },
+    "openGraph": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-open-graph",
+      "sha256": "c4783922be0f29b5c8cc703a3ee7799993661f6e582dcec8ee7af9c3d88f4936"
+    },
+    "instagram": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-instagram",
+      "sha256": "dc2b7ee29a9dc3d3ea5dbc64a152d53cd666cbe7fc9b9330d64f143c20bdf93f"
+    }
+  },
+  "targets": {
+    "thumb-320.jpg": {
+      "spec": {
+        "fileName": "thumb-320.jpg",
+        "width": 320,
+        "height": null,
+        "fit": "inside",
+        "withoutEnlargement": true,
+        "format": "jpeg",
+        "quality": 82
+      },
+      "publicPath": "./data/media/2026-06-24-0626z-belgium-on-orange-heat-alert-from-this-wednesday-temperatures-set-to-cli/thumb-320.jpg",
+      "source": {
+        "sha256": "5128995aa27d48f4028c0b782d7e96b10d042e780e742f65d69bafd38cbf709a",
+        "role": "daily-preview-story-desktop"
+      }
+    },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-06-24-0626z-belgium-on-orange-heat-alert-from-this-wednesday-temperatures-set-to-cli/og-1200x630.jpg",
+      "source": {
+        "sha256": "c4783922be0f29b5c8cc703a3ee7799993661f6e582dcec8ee7af9c3d88f4936",
+        "role": "daily-preview-story-open-graph"
+      }
+    },
+    "instagram-1080x1350.jpg": {
+      "spec": {
+        "fileName": "instagram-1080x1350.jpg",
+        "width": 1080,
+        "height": 1350,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-06-24-0626z-belgium-on-orange-heat-alert-from-this-wednesday-temperatures-set-to-cli/instagram-1080x1350.jpg",
+      "source": {
+        "sha256": "dc2b7ee29a9dc3d3ea5dbc64a152d53cd666cbe7fc9b9330d64f143c20bdf93f",
+        "role": "daily-preview-story-instagram"
+      }
+    }
+  }
+}
