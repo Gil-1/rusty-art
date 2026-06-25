@@ -1,0 +1,1288 @@
+{
+  "id": "2026-06-25-0626z-the-risk-of-tensions-between-prisoners-is-even-higher-inmates-are-bearin",
+  "date": "2026-06-25",
+  "title": "The risk of tensions between prisoners is even higher: inmates are bearing the full brunt of the heatwave",
+  "generatedAt": "2026-06-25T06:35:53.661Z",
+  "news": {
+    "source": "dh",
+    "title": "“The risk of tensions between prisoners is even higher”: inmates are bearing the full brunt of the heatwave",
+    "link": "https://www.dhnet.be/actu/belgique/2026/06/24/le-risque-de-tensions-entre-prisonniers-est-encore-plus-eleve-les-detenus-subissent-la-canicule-de-plein-fouet-IBAPD7S5FZCAHHDN3FARXMM5MM/",
+    "score": null
+  },
+  "inspiration": {
+    "artist": "Larry Rivers",
+    "tags": [
+      "non-literal fracture pressure",
+      "Heatwave",
+      "immersive-world"
+    ],
+    "links": {}
+  },
+  "seed": null,
+  "sceneStrategy": null,
+  "techStack": null,
+  "newsVisualMappings": [],
+  "qualityScore": {
+    "score": null,
+    "summary": null,
+    "heuristic": {
+      "score": null,
+      "breakdown": {}
+    },
+    "calibration": {
+      "sampleCount": 0,
+      "trustWeight": 0
+    },
+    "alignment": {
+      "totalAlign": null,
+      "components": {
+        "title": {
+          "score": null
+        },
+        "style": {
+          "score": null
+        },
+        "emotional": {
+          "score": null
+        }
+      }
+    }
+  },
+  "rationale": {
+    "intent": {
+      "signal": null,
+      "emotion": null,
+      "tension": null,
+      "balance": null,
+      "motion": null
+    },
+    "selection": {
+      "whyHeadline": null,
+      "priorityTerms": []
+    },
+    "qualitySummary": null
+  },
+  "runPolicy": null,
+  "artCreationMethod": "immersive-world-v1",
+  "world": {
+    "id": "immersive-world-larry-rivers-heatwave-prison-pressure",
+    "method": "immersive-world-v1",
+    "title": "The risk of tensions between prisoners is even higher: inmates are bearing the full brunt of the heatwave",
+    "slug": "immersive-world-larry-rivers-heatwave-prison-pressure",
+    "artist": "Larry Rivers",
+    "newsTitle": "“The risk of tensions between prisoners is even higher”: inmates are bearing the full brunt of the heatwave",
+    "rendererAuthoringTarget": "webgpu-project-scene",
+    "rendererAuthoring": {
+      "version": 1,
+      "targetMode": "webgpu-project-scene",
+      "requestedTarget": "webgpu-project-scene",
+      "effectiveTarget": "webgpu-project-scene",
+      "webgpuTargeted": true,
+      "legacyWebglTargeted": false,
+      "unspecified": false,
+      "compatibilityGateRequired": true
+    },
+    "rendererCompatibility": {
+      "version": 1,
+      "targetMode": "webgpu-project-scene",
+      "webgpuTargeted": true,
+      "legacyWebglTargeted": false,
+      "compatibilityGateRequired": true,
+      "compatibilityStatus": "webgpu-compatible",
+      "webgpuCompatible": true,
+      "evidenceReasons": [
+        "webgpu-safe-material",
+        "source-used-project-webgpu-material-factory",
+        "webgpu-native-helper-utility"
+      ],
+      "featureFacts": [
+        {
+          "kind": "standard-material",
+          "family": "standard-material-surface",
+          "material": "MeshBasicMaterial",
+          "reason": "webgpu-safe-material"
+        },
+        {
+          "kind": "standard-material",
+          "family": "standard-material-surface",
+          "material": "LineBasicMaterial",
+          "reason": "webgpu-safe-material"
+        },
+        {
+          "kind": "material-factory",
+          "id": "sky-background-field",
+          "family": "sky-background-field",
+          "material": "MeshBasicMaterial",
+          "surface": "scene-background-or-large-plane",
+          "reason": "source-used-project-webgpu-material-factory"
+        },
+        {
+          "kind": "webgpu-native-helper",
+          "id": "direction-space-skybox-shell",
+          "family": "sky-background-field",
+          "factory": "sky-background-field",
+          "material": "MeshBasicMaterial",
+          "surface": "direction-space-vertex-color-skybox-shell",
+          "reason": "webgpu-native-helper-utility"
+        },
+        {
+          "kind": "material-factory",
+          "id": "color-field",
+          "family": "color-field",
+          "material": "MeshBasicMaterial",
+          "surface": "three-basic-or-standard-material",
+          "reason": "source-used-project-webgpu-material-factory"
+        },
+        {
+          "kind": "material-factory",
+          "id": "procedural-marks",
+          "family": "procedural-marks",
+          "material": "MeshBasicMaterial",
+          "surface": "instanced-geometry-material",
+          "reason": "source-used-project-webgpu-material-factory"
+        },
+        {
+          "kind": "webgpu-native-helper",
+          "id": "point-particle-field",
+          "family": "point-particle-field",
+          "factory": "soft-particles",
+          "material": "PointsMaterial",
+          "surface": "three-points-buffer-geometry",
+          "reason": "webgpu-native-helper-utility"
+        },
+        {
+          "kind": "standard-material",
+          "family": "standard-material-surface",
+          "material": "PointsMaterial",
+          "reason": "webgpu-safe-material"
+        },
+        {
+          "kind": "material-factory",
+          "id": "soft-particles",
+          "family": "soft-particles",
+          "material": "PointsMaterial",
+          "surface": "three-points-material",
+          "reason": "source-used-project-webgpu-material-factory"
+        },
+        {
+          "kind": "webgpu-native-helper",
+          "id": "animated-instanced-mark-field",
+          "family": "instanced-marks",
+          "factory": "procedural-marks",
+          "material": "MeshBasicMaterial",
+          "surface": "three-instanced-mesh-basic-material-frame-facts",
+          "reason": "webgpu-native-helper-utility"
+        },
+        {
+          "kind": "webgpu-native-helper",
+          "id": "animated-point-particle-field",
+          "family": "point-particle-field",
+          "factory": "soft-particles",
+          "material": "PointsNodeMaterial",
+          "surface": "three-points-node-material-tsl-buffer-geometry",
+          "reason": "webgpu-native-helper-utility"
+        }
+      ],
+      "moduleCount": 3,
+      "compatibleModuleCount": 3,
+      "incompatibleModuleCount": 0,
+      "compositionCompatibilityDeclared": true,
+      "modules": [
+        {
+          "partId": "world-environment",
+          "role": "world-environment",
+          "moduleId": "world-environment-larry-rivers-heatwave-paper-pressure",
+          "hash": "94996b9ed9b1ed68009d9912e0ac0d6155a72e3f078030b5e06d0646c3de8f15",
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material",
+            "source-used-project-webgpu-material-factory",
+            "webgpu-native-helper-utility"
+          ],
+          "featureFacts": [
+            {
+              "kind": "standard-material",
+              "family": "standard-material-surface",
+              "material": "MeshBasicMaterial",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "standard-material",
+              "family": "standard-material-surface",
+              "material": "LineBasicMaterial",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "material-factory",
+              "id": "sky-background-field",
+              "family": "sky-background-field",
+              "material": "MeshBasicMaterial",
+              "surface": "scene-background-or-large-plane",
+              "reason": "source-used-project-webgpu-material-factory"
+            },
+            {
+              "kind": "webgpu-native-helper",
+              "id": "direction-space-skybox-shell",
+              "family": "sky-background-field",
+              "factory": "sky-background-field",
+              "material": "MeshBasicMaterial",
+              "surface": "direction-space-vertex-color-skybox-shell",
+              "reason": "webgpu-native-helper-utility"
+            },
+            {
+              "kind": "material-factory",
+              "id": "color-field",
+              "family": "color-field",
+              "material": "MeshBasicMaterial",
+              "surface": "three-basic-or-standard-material",
+              "reason": "source-used-project-webgpu-material-factory"
+            },
+            {
+              "kind": "material-factory",
+              "id": "procedural-marks",
+              "family": "procedural-marks",
+              "material": "MeshBasicMaterial",
+              "surface": "instanced-geometry-material",
+              "reason": "source-used-project-webgpu-material-factory"
+            },
+            {
+              "kind": "webgpu-native-helper",
+              "id": "point-particle-field",
+              "family": "point-particle-field",
+              "factory": "soft-particles",
+              "material": "PointsMaterial",
+              "surface": "three-points-buffer-geometry",
+              "reason": "webgpu-native-helper-utility"
+            },
+            {
+              "kind": "standard-material",
+              "family": "standard-material-surface",
+              "material": "PointsMaterial",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "material-factory",
+              "id": "soft-particles",
+              "family": "soft-particles",
+              "material": "PointsMaterial",
+              "surface": "three-points-material",
+              "reason": "source-used-project-webgpu-material-factory"
+            }
+          ],
+          "compatibleSurfaceCount": 9,
+          "sourceStage": "part-workshop"
+        },
+        {
+          "partId": "non-literal-fracture-pressure",
+          "role": "primary-news-signal",
+          "moduleId": "non-literal-fracture-pressure-larry-rivers-heatwave-fracture-pressure",
+          "hash": "4bb7cbbd430d941b1c3089035a9bf142b0187de5d1cb3497e449f9a83846ae75",
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material",
+            "source-used-project-webgpu-material-factory"
+          ],
+          "featureFacts": [
+            {
+              "kind": "standard-material",
+              "family": "standard-material-surface",
+              "material": "MeshBasicMaterial",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "material-factory",
+              "id": "color-field",
+              "family": "color-field",
+              "material": "MeshBasicMaterial",
+              "surface": "three-basic-or-standard-material",
+              "reason": "source-used-project-webgpu-material-factory"
+            },
+            {
+              "kind": "material-factory",
+              "id": "procedural-marks",
+              "family": "procedural-marks",
+              "material": "MeshBasicMaterial",
+              "surface": "instanced-geometry-material",
+              "reason": "source-used-project-webgpu-material-factory"
+            }
+          ],
+          "compatibleSurfaceCount": 3,
+          "sourceStage": "part-workshop"
+        },
+        {
+          "partId": "artist-mark-field",
+          "role": "artist-style-system",
+          "moduleId": "artist-mark-field-larry-rivers-foreground-contour-pressure",
+          "hash": "ada5a20057916cd537ac744c47793a0bacf3552ea261f11f2136ec28fbcd2be2",
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material",
+            "webgpu-native-helper-utility"
+          ],
+          "featureFacts": [
+            {
+              "kind": "standard-material",
+              "family": "standard-material-surface",
+              "material": "MeshBasicMaterial",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "standard-material",
+              "family": "standard-material-surface",
+              "material": "LineBasicMaterial",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "webgpu-native-helper",
+              "id": "animated-instanced-mark-field",
+              "family": "instanced-marks",
+              "factory": "procedural-marks",
+              "material": "MeshBasicMaterial",
+              "surface": "three-instanced-mesh-basic-material-frame-facts",
+              "reason": "webgpu-native-helper-utility"
+            },
+            {
+              "kind": "webgpu-native-helper",
+              "id": "animated-point-particle-field",
+              "family": "point-particle-field",
+              "factory": "soft-particles",
+              "material": "PointsNodeMaterial",
+              "surface": "three-points-node-material-tsl-buffer-geometry",
+              "reason": "webgpu-native-helper-utility"
+            }
+          ],
+          "compatibleSurfaceCount": 4,
+          "sourceStage": "part-workshop"
+        }
+      ]
+    },
+    "environment": {
+      "owner": "world-composition",
+      "kind": "inside-facing-artist-field",
+      "color": "#f3f1ea",
+      "fieldColor": "#dfd0bf",
+      "fogDensity": 0.007,
+      "radius": 96,
+      "skyboxRadius": 96,
+      "opacity": 0.94,
+      "palette": [
+        "#f3f3f3",
+        "#fdfdee",
+        "#dfd0bf",
+        "#d0c1af",
+        "#bfb1a0",
+        "#716f5e",
+        "#615e4f",
+        "#020303",
+        "#c83124"
+      ],
+      "compositionIntent": "A pale matte-paper surround holds the accepted Larry Rivers fragments as heat pressure: background washes preserve negative space, the middleground band keeps the compressed prisoner-tension signal near center, and the foreground mark field supplies restless loops, scratches, dots, and red catches without taking over the main barricade."
+    },
+    "camera": {
+      "owner": "world-composition",
+      "fov": 66,
+      "near": 0.08,
+      "far": 220,
+      "position": [
+        0.22,
+        2.12,
+        14.2
+      ],
+      "target": [
+        0.55,
+        0.18,
+        -5.6
+      ],
+      "distanceSafety": {
+        "nearFarOwnedHere": true,
+        "minPartDistance": 1.7,
+        "clippingRisk": "low",
+        "reason": "Canonical public camera retained for the first preview because isolated accepted parts already read as broad horizontal shallow fields with a central pressure mass."
+      }
+    },
+    "lighting": {
+      "owner": "world-composition",
+      "ambientColor": "#eadcc9",
+      "ambientIntensity": 0.82,
+      "keyColor": "#fff4de",
+      "keyIntensity": 0.92,
+      "keyPosition": [
+        4,
+        6,
+        8
+      ],
+      "rimColor": "#2f3029",
+      "rimIntensity": 0.26,
+      "rimPosition": [
+        -5,
+        2,
+        -4
+      ],
+      "contrast": {
+        "mode": "integrated-part-readability",
+        "notes": "Warm high-key light preserves paper ground and ochre wash while a low dark rim keeps black registers, silhouettes, and contour marks readable."
+      }
+    },
+    "outputColorTransform": {
+      "owner": "world-composition",
+      "mode": "final-color-contrast-only",
+      "contrast": 1.08,
+      "saturation": 1.045,
+      "exposure": 1,
+      "vignette": 0.055,
+      "hueShift": 0,
+      "distortion": 0
+    },
+    "parts": [
+      {
+        "id": "world-environment",
+        "partId": "world-environment",
+        "role": "world-environment",
+        "moduleRef": {
+          "type": "immersive-world-generated-module",
+          "version": 1,
+          "moduleId": "world-environment-larry-rivers-heatwave-paper-pressure",
+          "partId": "world-environment",
+          "hash": "94996b9ed9b1ed68009d9912e0ac0d6155a72e3f078030b5e06d0646c3de8f15",
+          "integrity": "sha256-94996b9ed9b1ed68009d9912e0ac0d6155a72e3f078030b5e06d0646c3de8f15",
+          "exportName": "createImmersiveWorldPart",
+          "file": "data/immersive-world/generated-modules/94996b9ed9b1ed68009d9912e0ac0d6155a72e3f078030b5e06d0646c3de8f15.mjs",
+          "url": "./data/immersive-world/generated-modules/94996b9ed9b1ed68009d9912e0ac0d6155a72e3f078030b5e06d0646c3de8f15.mjs",
+          "rendererCompatibility": {
+            "version": 1,
+            "targetMode": "webgpu-project-scene",
+            "compatibilityStatus": "webgpu-compatible",
+            "webgpuCompatible": true,
+            "evidenceReasons": [
+              "webgpu-safe-material",
+              "source-used-project-webgpu-material-factory",
+              "webgpu-native-helper-utility"
+            ],
+            "featureFacts": [
+              {
+                "kind": "standard-material",
+                "material": "MeshBasicMaterial",
+                "family": "standard-material-surface",
+                "reason": "webgpu-safe-material"
+              },
+              {
+                "kind": "standard-material",
+                "material": "LineBasicMaterial",
+                "family": "standard-material-surface",
+                "reason": "webgpu-safe-material"
+              },
+              {
+                "kind": "material-factory",
+                "id": "sky-background-field",
+                "family": "sky-background-field",
+                "material": "MeshBasicMaterial",
+                "surface": "scene-background-or-large-plane",
+                "reason": "source-used-project-webgpu-material-factory"
+              },
+              {
+                "kind": "webgpu-native-helper",
+                "id": "direction-space-skybox-shell",
+                "family": "sky-background-field",
+                "factory": "sky-background-field",
+                "material": "MeshBasicMaterial",
+                "surface": "direction-space-vertex-color-skybox-shell",
+                "reason": "webgpu-native-helper-utility"
+              },
+              {
+                "kind": "material-factory",
+                "id": "color-field",
+                "family": "color-field",
+                "material": "MeshBasicMaterial",
+                "surface": "three-basic-or-standard-material",
+                "reason": "source-used-project-webgpu-material-factory"
+              },
+              {
+                "kind": "material-factory",
+                "id": "procedural-marks",
+                "family": "procedural-marks",
+                "material": "MeshBasicMaterial",
+                "surface": "instanced-geometry-material",
+                "reason": "source-used-project-webgpu-material-factory"
+              },
+              {
+                "kind": "webgpu-native-helper",
+                "id": "point-particle-field",
+                "family": "point-particle-field",
+                "factory": "soft-particles",
+                "material": "PointsMaterial",
+                "surface": "three-points-buffer-geometry",
+                "reason": "webgpu-native-helper-utility"
+              },
+              {
+                "kind": "standard-material",
+                "material": "PointsMaterial",
+                "family": "standard-material-surface",
+                "reason": "webgpu-safe-material"
+              },
+              {
+                "kind": "material-factory",
+                "id": "soft-particles",
+                "family": "soft-particles",
+                "material": "PointsMaterial",
+                "surface": "three-points-material",
+                "reason": "source-used-project-webgpu-material-factory"
+              }
+            ],
+            "compatibleSurfaces": [
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "MeshBasicMaterial"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "LineBasicMaterial"
+              },
+              {
+                "reason": "source-used-project-webgpu-material-factory",
+                "materialType": "MeshBasicMaterial",
+                "runtimeSurface": "scene-background-or-large-plane",
+                "factoryId": "sky-background-field",
+                "materialFactoryId": "sky-background-field",
+                "factoryCategory": "sky-background-field",
+                "property": "materialFactoryId"
+              },
+              {
+                "reason": "webgpu-native-helper-utility",
+                "api": "utilities.createDirectionSpaceSkyboxShell",
+                "helperId": "direction-space-skybox-shell",
+                "featureFamily": "sky-background-field",
+                "outputKind": "object-bundle",
+                "materialType": "MeshBasicMaterial",
+                "runtimeSurface": "direction-space-vertex-color-skybox-shell",
+                "factoryId": "sky-background-field",
+                "materialFactoryId": "sky-background-field",
+                "factoryCategory": "sky-background-field"
+              },
+              {
+                "reason": "source-used-project-webgpu-material-factory",
+                "materialType": "MeshBasicMaterial",
+                "runtimeSurface": "three-basic-or-standard-material",
+                "factoryId": "color-field",
+                "materialFactoryId": "color-field",
+                "factoryCategory": "color-field",
+                "property": "materialFactoryId"
+              },
+              {
+                "reason": "source-used-project-webgpu-material-factory",
+                "materialType": "MeshBasicMaterial",
+                "runtimeSurface": "instanced-geometry-material",
+                "factoryId": "procedural-marks",
+                "materialFactoryId": "procedural-marks",
+                "factoryCategory": "procedural-marks",
+                "property": "materialFactoryId"
+              },
+              {
+                "reason": "webgpu-native-helper-utility",
+                "api": "utilities.createPointParticleField",
+                "helperId": "point-particle-field",
+                "featureFamily": "point-particle-field",
+                "outputKind": "object-bundle",
+                "materialType": "PointsMaterial",
+                "runtimeSurface": "three-points-buffer-geometry",
+                "factoryId": "soft-particles",
+                "materialFactoryId": "soft-particles",
+                "factoryCategory": "soft-particles"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "PointsMaterial"
+              },
+              {
+                "reason": "source-used-project-webgpu-material-factory",
+                "materialType": "PointsMaterial",
+                "runtimeSurface": "three-points-material",
+                "factoryId": "soft-particles",
+                "materialFactoryId": "soft-particles",
+                "factoryCategory": "soft-particles",
+                "property": "materialFactoryId"
+              }
+            ]
+          }
+        },
+        "params": {
+          "band": "environment",
+          "layer": "background",
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "scale": 1,
+          "opacity": 0.94,
+          "motionIntensity": 0.42,
+          "renderOrder": 0,
+          "visibilityPriority": "environment"
+        },
+        "paramSemantics": {
+          "band": "visual placement/readability band for full-world params; distinct from declared compositionOwnership.lane"
+        },
+        "evidence": {
+          "declaredCompositionOwnership": {
+            "lane": "background",
+            "owns": [
+              "background atmosphere, palette/value field, shallow depth, and active negative space",
+              "surrounding WebGPU-safe environment behavior that gives other parts room to read"
+            ],
+            "avoid": [
+              "main news-pressure band unless explicitly assigned",
+              "main barricade/grid unless explicitly assigned",
+              "main knot or focal tangle unless explicitly assigned"
+            ]
+          },
+          "compositionOwnershipSource": "part-specs.json#/parts/world-environment/compositionOwnership",
+          "workshopAcceptance": [
+            "Inspected the available concept-reference image directly as advisory-only palette/value/mood evidence.",
+            "Static check succeeded for drafts/world-environment.module.mjs with no validation errors.",
+            "Attempt 2 Playwright preview succeeded with healthStatus ok and captureStatus ok under WebGPU.",
+            "Attempt 2 screenshot shows a full-surround Larry Rivers-derived pale paper environment with ochre wash fields, grey/ink rubbed horizontal registers, cropped arcs, red heat accents, contour-line pressure, and active negative space without taking over the main barricade/grid or focal knot lanes.",
+            "Attempt 2 render report includes WebGPU helper evidence for utilities.createDirectionSpaceSkyboxShell and utilities.createPointParticleField plus WebGPU-safe MeshBasicMaterial, LineBasicMaterial, and PointsMaterial surfaces.",
+            "desktop:part-preview-evolution/001-world-environment-accepted-desktop.jpg"
+          ],
+          "compositionAdaptations": [
+            "Kept at origin as the background paper/wash shell with warm pale field, low fog, and restrained motion.",
+            "composition modified world-environment from isolated accepted-part defaults"
+          ],
+          "compositionBeforeHash": "b2bd9007100edb96",
+          "compositionAfterHash": "0ca02acae5f5d154"
+        },
+        "compositionOwnership": {
+          "lane": "background",
+          "owns": [
+            "background atmosphere, palette/value field, shallow depth, and active negative space",
+            "surrounding WebGPU-safe environment behavior that gives other parts room to read"
+          ],
+          "avoid": [
+            "main news-pressure band unless explicitly assigned",
+            "main barricade/grid unless explicitly assigned",
+            "main knot or focal tangle unless explicitly assigned"
+          ]
+        }
+      },
+      {
+        "id": "non-literal-fracture-pressure",
+        "partId": "non-literal-fracture-pressure",
+        "role": "primary-news-signal",
+        "moduleRef": {
+          "type": "immersive-world-generated-module",
+          "version": 1,
+          "moduleId": "non-literal-fracture-pressure-larry-rivers-heatwave-fracture-pressure",
+          "partId": "non-literal-fracture-pressure",
+          "hash": "4bb7cbbd430d941b1c3089035a9bf142b0187de5d1cb3497e449f9a83846ae75",
+          "integrity": "sha256-4bb7cbbd430d941b1c3089035a9bf142b0187de5d1cb3497e449f9a83846ae75",
+          "exportName": "createImmersiveWorldPart",
+          "file": "data/immersive-world/generated-modules/4bb7cbbd430d941b1c3089035a9bf142b0187de5d1cb3497e449f9a83846ae75.mjs",
+          "url": "./data/immersive-world/generated-modules/4bb7cbbd430d941b1c3089035a9bf142b0187de5d1cb3497e449f9a83846ae75.mjs",
+          "rendererCompatibility": {
+            "version": 1,
+            "targetMode": "webgpu-project-scene",
+            "compatibilityStatus": "webgpu-compatible",
+            "webgpuCompatible": true,
+            "evidenceReasons": [
+              "webgpu-safe-material",
+              "source-used-project-webgpu-material-factory"
+            ],
+            "featureFacts": [
+              {
+                "kind": "standard-material",
+                "material": "MeshBasicMaterial",
+                "family": "standard-material-surface",
+                "reason": "webgpu-safe-material"
+              },
+              {
+                "kind": "material-factory",
+                "id": "color-field",
+                "family": "color-field",
+                "material": "MeshBasicMaterial",
+                "surface": "three-basic-or-standard-material",
+                "reason": "source-used-project-webgpu-material-factory"
+              },
+              {
+                "kind": "material-factory",
+                "id": "procedural-marks",
+                "family": "procedural-marks",
+                "material": "MeshBasicMaterial",
+                "surface": "instanced-geometry-material",
+                "reason": "source-used-project-webgpu-material-factory"
+              }
+            ],
+            "compatibleSurfaces": [
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "MeshBasicMaterial"
+              },
+              {
+                "reason": "source-used-project-webgpu-material-factory",
+                "materialType": "MeshBasicMaterial",
+                "runtimeSurface": "three-basic-or-standard-material",
+                "factoryId": "color-field",
+                "materialFactoryId": "color-field",
+                "factoryCategory": "color-field",
+                "property": "materialFactoryId"
+              },
+              {
+                "reason": "source-used-project-webgpu-material-factory",
+                "materialType": "MeshBasicMaterial",
+                "runtimeSurface": "instanced-geometry-material",
+                "factoryId": "procedural-marks",
+                "materialFactoryId": "procedural-marks",
+                "factoryCategory": "procedural-marks",
+                "property": "materialFactoryId"
+              }
+            ]
+          }
+        },
+        "params": {
+          "band": "foreground",
+          "layer": "middleground",
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "scale": 1.45,
+          "opacity": 0.96,
+          "motionIntensity": 0.58,
+          "renderOrder": 3,
+          "visibilityPriority": "primary"
+        },
+        "paramSemantics": {
+          "band": "visual placement/readability band for full-world params; distinct from declared compositionOwnership.lane"
+        },
+        "evidence": {
+          "declaredCompositionOwnership": {
+            "lane": "middleground",
+            "owns": [
+              "middleground selected-news pressure structure: dominant band, grid compression, barricade, or equivalent pressure form"
+            ],
+            "avoid": [
+              "full foreground artist mark field of loops, scratches, drips, splatters, and near-line behavior"
+            ]
+          },
+          "compositionOwnershipSource": "part-specs.json#/parts/non-literal-fracture-pressure/compositionOwnership",
+          "workshopAcceptance": [
+            "Inspected the local concept reference image directly as advisory-only palette/value/composition evidence.",
+            "Static validation passed for drafts/non-literal-fracture-pressure.module.mjs with no errors.",
+            "Playwright preview attempt 2 captured desktop evidence with healthStatus ok and captureStatus ok.",
+            "Desktop screenshot shows a readable pale paper reserve, compressed central dark silhouette mass, repeated horizontal pressure registers, fracture posts, circular arcs, and controlled red heat accents.",
+            "Render report confirms WebGPU backend, MeshBasicMaterial standard surface, color-field and procedural-marks material-factory evidence, and no forbidden shader surfaces.",
+            "desktop:part-preview-evolution/002-non-literal-fracture-pressure-accepted-desktop.jpg"
+          ],
+          "compositionAdaptations": [
+            "Kept in its middleground ownership lane at origin with reduced full-world scale so the central pressure band remains readable.",
+            "composition modified non-literal-fracture-pressure from isolated accepted-part defaults"
+          ],
+          "compositionBeforeHash": "382384b45fb3a24a",
+          "compositionAfterHash": "ba2f1fe45818d129"
+        },
+        "compositionOwnership": {
+          "lane": "middleground",
+          "owns": [
+            "middleground selected-news pressure structure: dominant band, grid compression, barricade, or equivalent pressure form"
+          ],
+          "avoid": [
+            "full foreground artist mark field of loops, scratches, drips, splatters, and near-line behavior"
+          ]
+        }
+      },
+      {
+        "id": "artist-mark-field",
+        "partId": "artist-mark-field",
+        "role": "artist-style-system",
+        "moduleRef": {
+          "type": "immersive-world-generated-module",
+          "version": 1,
+          "moduleId": "artist-mark-field-larry-rivers-foreground-contour-pressure",
+          "partId": "artist-mark-field",
+          "hash": "ada5a20057916cd537ac744c47793a0bacf3552ea261f11f2136ec28fbcd2be2",
+          "integrity": "sha256-ada5a20057916cd537ac744c47793a0bacf3552ea261f11f2136ec28fbcd2be2",
+          "exportName": "createImmersiveWorldPart",
+          "file": "data/immersive-world/generated-modules/ada5a20057916cd537ac744c47793a0bacf3552ea261f11f2136ec28fbcd2be2.mjs",
+          "url": "./data/immersive-world/generated-modules/ada5a20057916cd537ac744c47793a0bacf3552ea261f11f2136ec28fbcd2be2.mjs",
+          "rendererCompatibility": {
+            "version": 1,
+            "targetMode": "webgpu-project-scene",
+            "compatibilityStatus": "webgpu-compatible",
+            "webgpuCompatible": true,
+            "evidenceReasons": [
+              "webgpu-safe-material",
+              "webgpu-native-helper-utility"
+            ],
+            "featureFacts": [
+              {
+                "kind": "standard-material",
+                "material": "MeshBasicMaterial",
+                "family": "standard-material-surface",
+                "reason": "webgpu-safe-material"
+              },
+              {
+                "kind": "standard-material",
+                "material": "LineBasicMaterial",
+                "family": "standard-material-surface",
+                "reason": "webgpu-safe-material"
+              },
+              {
+                "kind": "webgpu-native-helper",
+                "id": "animated-instanced-mark-field",
+                "family": "instanced-marks",
+                "factory": "procedural-marks",
+                "material": "MeshBasicMaterial",
+                "surface": "three-instanced-mesh-basic-material-frame-facts",
+                "reason": "webgpu-native-helper-utility"
+              },
+              {
+                "kind": "webgpu-native-helper",
+                "id": "animated-point-particle-field",
+                "family": "point-particle-field",
+                "factory": "soft-particles",
+                "material": "PointsNodeMaterial",
+                "surface": "three-points-node-material-tsl-buffer-geometry",
+                "reason": "webgpu-native-helper-utility"
+              }
+            ],
+            "compatibleSurfaces": [
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "MeshBasicMaterial"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "LineBasicMaterial"
+              },
+              {
+                "reason": "webgpu-native-helper-utility",
+                "api": "utilities.createAnimatedInstancedMarkField",
+                "helperId": "animated-instanced-mark-field",
+                "featureFamily": "instanced-marks",
+                "outputKind": "object-bundle",
+                "materialType": "MeshBasicMaterial",
+                "runtimeSurface": "three-instanced-mesh-basic-material-frame-facts",
+                "factoryId": "procedural-marks",
+                "materialFactoryId": "procedural-marks",
+                "factoryCategory": "procedural-marks"
+              },
+              {
+                "reason": "webgpu-native-helper-utility",
+                "api": "utilities.createAnimatedPointParticleField",
+                "helperId": "animated-point-particle-field",
+                "featureFamily": "point-particle-field",
+                "outputKind": "object-bundle",
+                "materialType": "PointsNodeMaterial",
+                "runtimeSurface": "three-points-node-material-tsl-buffer-geometry",
+                "factoryId": "soft-particles",
+                "materialFactoryId": "soft-particles",
+                "factoryCategory": "soft-particles"
+              }
+            ]
+          }
+        },
+        "params": {
+          "band": "foreground-marks",
+          "layer": "foreground",
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "scale": 0.86,
+          "opacity": 0.78,
+          "motionIntensity": 0.5,
+          "renderOrder": 5,
+          "visibilityPriority": "supporting"
+        },
+        "paramSemantics": {
+          "band": "visual placement/readability band for full-world params; distinct from declared compositionOwnership.lane"
+        },
+        "evidence": {
+          "declaredCompositionOwnership": {
+            "lane": "foreground",
+            "owns": [
+              "foreground artist mark and line behavior: loops, scratches, drips, splatters, dot/grid catches, and near readable marks"
+            ],
+            "avoid": [
+              "another dominant middleground news-pressure band, barricade/grid, or knot structure"
+            ]
+          },
+          "compositionOwnershipSource": "part-specs.json#/parts/artist-mark-field/compositionOwnership",
+          "workshopAcceptance": [
+            "Preview attempt 2 rendered a nonblank WebGPU desktop capture with readable foreground Larry Rivers-style contour loops, scratches, drips, splatters, stipple, and restrained dot/grid catches.",
+            "Render report for attempt 2 reported healthStatus ok, captureStatus ok, rendererMode webgpu, rendererBackend webgpu, and WebGPU feature evidence for MeshBasicMaterial, LineBasicMaterial, animated-instanced-mark-field, animated-point-particle-field, color-field, procedural-marks, and soft-particles.",
+            "The final draft stays in the foreground artist-style lane and avoids adding another dominant middleground news-pressure band or barricade structure.",
+            "desktop:part-preview-evolution/003-artist-mark-field-accepted-desktop.jpg"
+          ],
+          "compositionAdaptations": [
+            "Kept as foreground artist mark behavior at origin with reduced scale and opacity so scratches, loops, dots, and red catches texture the pressure band.",
+            "composition modified artist-mark-field from isolated accepted-part defaults"
+          ],
+          "compositionBeforeHash": "82bd45f4b1f2f6cf",
+          "compositionAfterHash": "dfa18e91eb62fac2"
+        },
+        "compositionOwnership": {
+          "lane": "foreground",
+          "owns": [
+            "foreground artist mark and line behavior: loops, scratches, drips, splatters, dot/grid catches, and near readable marks"
+          ],
+          "avoid": [
+            "another dominant middleground news-pressure band, barricade/grid, or knot structure"
+          ]
+        }
+      }
+    ],
+    "acceptedPartsRef": "context.acceptedParts",
+    "generatedModules": [
+      {
+        "type": "immersive-world-generated-module",
+        "version": 1,
+        "moduleId": "world-environment-larry-rivers-heatwave-paper-pressure",
+        "partId": "world-environment",
+        "hash": "94996b9ed9b1ed68009d9912e0ac0d6155a72e3f078030b5e06d0646c3de8f15",
+        "integrity": "sha256-94996b9ed9b1ed68009d9912e0ac0d6155a72e3f078030b5e06d0646c3de8f15",
+        "exportName": "createImmersiveWorldPart",
+        "file": "data/immersive-world/generated-modules/94996b9ed9b1ed68009d9912e0ac0d6155a72e3f078030b5e06d0646c3de8f15.mjs",
+        "url": "./data/immersive-world/generated-modules/94996b9ed9b1ed68009d9912e0ac0d6155a72e3f078030b5e06d0646c3de8f15.mjs",
+        "rendererCompatibility": {
+          "version": 1,
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material",
+            "source-used-project-webgpu-material-factory",
+            "webgpu-native-helper-utility"
+          ],
+          "featureFacts": [
+            {
+              "kind": "standard-material",
+              "material": "MeshBasicMaterial",
+              "family": "standard-material-surface",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "standard-material",
+              "material": "LineBasicMaterial",
+              "family": "standard-material-surface",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "material-factory",
+              "id": "sky-background-field",
+              "family": "sky-background-field",
+              "material": "MeshBasicMaterial",
+              "surface": "scene-background-or-large-plane",
+              "reason": "source-used-project-webgpu-material-factory"
+            },
+            {
+              "kind": "webgpu-native-helper",
+              "id": "direction-space-skybox-shell",
+              "family": "sky-background-field",
+              "factory": "sky-background-field",
+              "material": "MeshBasicMaterial",
+              "surface": "direction-space-vertex-color-skybox-shell",
+              "reason": "webgpu-native-helper-utility"
+            },
+            {
+              "kind": "material-factory",
+              "id": "color-field",
+              "family": "color-field",
+              "material": "MeshBasicMaterial",
+              "surface": "three-basic-or-standard-material",
+              "reason": "source-used-project-webgpu-material-factory"
+            },
+            {
+              "kind": "material-factory",
+              "id": "procedural-marks",
+              "family": "procedural-marks",
+              "material": "MeshBasicMaterial",
+              "surface": "instanced-geometry-material",
+              "reason": "source-used-project-webgpu-material-factory"
+            },
+            {
+              "kind": "webgpu-native-helper",
+              "id": "point-particle-field",
+              "family": "point-particle-field",
+              "factory": "soft-particles",
+              "material": "PointsMaterial",
+              "surface": "three-points-buffer-geometry",
+              "reason": "webgpu-native-helper-utility"
+            },
+            {
+              "kind": "standard-material",
+              "material": "PointsMaterial",
+              "family": "standard-material-surface",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "material-factory",
+              "id": "soft-particles",
+              "family": "soft-particles",
+              "material": "PointsMaterial",
+              "surface": "three-points-material",
+              "reason": "source-used-project-webgpu-material-factory"
+            }
+          ],
+          "compatibleSurfaces": [
+            {
+              "reason": "webgpu-safe-material",
+              "materialType": "MeshBasicMaterial"
+            },
+            {
+              "reason": "webgpu-safe-material",
+              "materialType": "LineBasicMaterial"
+            },
+            {
+              "reason": "source-used-project-webgpu-material-factory",
+              "materialType": "MeshBasicMaterial",
+              "runtimeSurface": "scene-background-or-large-plane",
+              "factoryId": "sky-background-field",
+              "materialFactoryId": "sky-background-field",
+              "factoryCategory": "sky-background-field",
+              "property": "materialFactoryId"
+            },
+            {
+              "reason": "webgpu-native-helper-utility",
+              "api": "utilities.createDirectionSpaceSkyboxShell",
+              "helperId": "direction-space-skybox-shell",
+              "featureFamily": "sky-background-field",
+              "outputKind": "object-bundle",
+              "materialType": "MeshBasicMaterial",
+              "runtimeSurface": "direction-space-vertex-color-skybox-shell",
+              "factoryId": "sky-background-field",
+              "materialFactoryId": "sky-background-field",
+              "factoryCategory": "sky-background-field"
+            },
+            {
+              "reason": "source-used-project-webgpu-material-factory",
+              "materialType": "MeshBasicMaterial",
+              "runtimeSurface": "three-basic-or-standard-material",
+              "factoryId": "color-field",
+              "materialFactoryId": "color-field",
+              "factoryCategory": "color-field",
+              "property": "materialFactoryId"
+            },
+            {
+              "reason": "source-used-project-webgpu-material-factory",
+              "materialType": "MeshBasicMaterial",
+              "runtimeSurface": "instanced-geometry-material",
+              "factoryId": "procedural-marks",
+              "materialFactoryId": "procedural-marks",
+              "factoryCategory": "procedural-marks",
+              "property": "materialFactoryId"
+            },
+            {
+              "reason": "webgpu-native-helper-utility",
+              "api": "utilities.createPointParticleField",
+              "helperId": "point-particle-field",
+              "featureFamily": "point-particle-field",
+              "outputKind": "object-bundle",
+              "materialType": "PointsMaterial",
+              "runtimeSurface": "three-points-buffer-geometry",
+              "factoryId": "soft-particles",
+              "materialFactoryId": "soft-particles",
+              "factoryCategory": "soft-particles"
+            },
+            {
+              "reason": "webgpu-safe-material",
+              "materialType": "PointsMaterial"
+            },
+            {
+              "reason": "source-used-project-webgpu-material-factory",
+              "materialType": "PointsMaterial",
+              "runtimeSurface": "three-points-material",
+              "factoryId": "soft-particles",
+              "materialFactoryId": "soft-particles",
+              "factoryCategory": "soft-particles",
+              "property": "materialFactoryId"
+            }
+          ]
+        }
+      },
+      {
+        "type": "immersive-world-generated-module",
+        "version": 1,
+        "moduleId": "non-literal-fracture-pressure-larry-rivers-heatwave-fracture-pressure",
+        "partId": "non-literal-fracture-pressure",
+        "hash": "4bb7cbbd430d941b1c3089035a9bf142b0187de5d1cb3497e449f9a83846ae75",
+        "integrity": "sha256-4bb7cbbd430d941b1c3089035a9bf142b0187de5d1cb3497e449f9a83846ae75",
+        "exportName": "createImmersiveWorldPart",
+        "file": "data/immersive-world/generated-modules/4bb7cbbd430d941b1c3089035a9bf142b0187de5d1cb3497e449f9a83846ae75.mjs",
+        "url": "./data/immersive-world/generated-modules/4bb7cbbd430d941b1c3089035a9bf142b0187de5d1cb3497e449f9a83846ae75.mjs",
+        "rendererCompatibility": {
+          "version": 1,
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material",
+            "source-used-project-webgpu-material-factory"
+          ],
+          "featureFacts": [
+            {
+              "kind": "standard-material",
+              "material": "MeshBasicMaterial",
+              "family": "standard-material-surface",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "material-factory",
+              "id": "color-field",
+              "family": "color-field",
+              "material": "MeshBasicMaterial",
+              "surface": "three-basic-or-standard-material",
+              "reason": "source-used-project-webgpu-material-factory"
+            },
+            {
+              "kind": "material-factory",
+              "id": "procedural-marks",
+              "family": "procedural-marks",
+              "material": "MeshBasicMaterial",
+              "surface": "instanced-geometry-material",
+              "reason": "source-used-project-webgpu-material-factory"
+            }
+          ],
+          "compatibleSurfaces": [
+            {
+              "reason": "webgpu-safe-material",
+              "materialType": "MeshBasicMaterial"
+            },
+            {
+              "reason": "source-used-project-webgpu-material-factory",
+              "materialType": "MeshBasicMaterial",
+              "runtimeSurface": "three-basic-or-standard-material",
+              "factoryId": "color-field",
+              "materialFactoryId": "color-field",
+              "factoryCategory": "color-field",
+              "property": "materialFactoryId"
+            },
+            {
+              "reason": "source-used-project-webgpu-material-factory",
+              "materialType": "MeshBasicMaterial",
+              "runtimeSurface": "instanced-geometry-material",
+              "factoryId": "procedural-marks",
+              "materialFactoryId": "procedural-marks",
+              "factoryCategory": "procedural-marks",
+              "property": "materialFactoryId"
+            }
+          ]
+        }
+      },
+      {
+        "type": "immersive-world-generated-module",
+        "version": 1,
+        "moduleId": "artist-mark-field-larry-rivers-foreground-contour-pressure",
+        "partId": "artist-mark-field",
+        "hash": "ada5a20057916cd537ac744c47793a0bacf3552ea261f11f2136ec28fbcd2be2",
+        "integrity": "sha256-ada5a20057916cd537ac744c47793a0bacf3552ea261f11f2136ec28fbcd2be2",
+        "exportName": "createImmersiveWorldPart",
+        "file": "data/immersive-world/generated-modules/ada5a20057916cd537ac744c47793a0bacf3552ea261f11f2136ec28fbcd2be2.mjs",
+        "url": "./data/immersive-world/generated-modules/ada5a20057916cd537ac744c47793a0bacf3552ea261f11f2136ec28fbcd2be2.mjs",
+        "rendererCompatibility": {
+          "version": 1,
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material",
+            "webgpu-native-helper-utility"
+          ],
+          "featureFacts": [
+            {
+              "kind": "standard-material",
+              "material": "MeshBasicMaterial",
+              "family": "standard-material-surface",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "standard-material",
+              "material": "LineBasicMaterial",
+              "family": "standard-material-surface",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "webgpu-native-helper",
+              "id": "animated-instanced-mark-field",
+              "family": "instanced-marks",
+              "factory": "procedural-marks",
+              "material": "MeshBasicMaterial",
+              "surface": "three-instanced-mesh-basic-material-frame-facts",
+              "reason": "webgpu-native-helper-utility"
+            },
+            {
+              "kind": "webgpu-native-helper",
+              "id": "animated-point-particle-field",
+              "family": "point-particle-field",
+              "factory": "soft-particles",
+              "material": "PointsNodeMaterial",
+              "surface": "three-points-node-material-tsl-buffer-geometry",
+              "reason": "webgpu-native-helper-utility"
+            }
+          ],
+          "compatibleSurfaces": [
+            {
+              "reason": "webgpu-safe-material",
+              "materialType": "MeshBasicMaterial"
+            },
+            {
+              "reason": "webgpu-safe-material",
+              "materialType": "LineBasicMaterial"
+            },
+            {
+              "reason": "webgpu-native-helper-utility",
+              "api": "utilities.createAnimatedInstancedMarkField",
+              "helperId": "animated-instanced-mark-field",
+              "featureFamily": "instanced-marks",
+              "outputKind": "object-bundle",
+              "materialType": "MeshBasicMaterial",
+              "runtimeSurface": "three-instanced-mesh-basic-material-frame-facts",
+              "factoryId": "procedural-marks",
+              "materialFactoryId": "procedural-marks",
+              "factoryCategory": "procedural-marks"
+            },
+            {
+              "reason": "webgpu-native-helper-utility",
+              "api": "utilities.createAnimatedPointParticleField",
+              "helperId": "animated-point-particle-field",
+              "featureFamily": "point-particle-field",
+              "outputKind": "object-bundle",
+              "materialType": "PointsNodeMaterial",
+              "runtimeSurface": "three-points-node-material-tsl-buffer-geometry",
+              "factoryId": "soft-particles",
+              "materialFactoryId": "soft-particles",
+              "factoryCategory": "soft-particles"
+            }
+          ]
+        }
+      }
+    ],
+    "renderFacts": {
+      "environmentPresent": true,
+      "cameraOwnedByComposition": true,
+      "lightingOwnedByComposition": true,
+      "nearFarClippingOwned": true,
+      "acceptedPartCount": 3,
+      "generatedModuleCount": 3,
+      "generatedAssetCount": 0,
+      "rendererAuthoringTarget": "webgpu-project-scene",
+      "rendererCompatibilityStatus": "webgpu-compatible",
+      "webgpuRendererGateRequired": true,
+      "webgpuRendererCompatible": true,
+      "desktopPreviewRecorded": true,
+      "mobilePreviewRecorded": true
+    }
+  },
+  "image": {
+    "thumbnailJpeg": "./data/media/2026-06-25-0626z-the-risk-of-tensions-between-prisoners-is-even-higher-inmates-are-bearin/thumb-320.jpg",
+    "openGraphJpeg": "./data/media/2026-06-25-0626z-the-risk-of-tensions-between-prisoners-is-even-higher-inmates-are-bearin/og-1200x630.jpg",
+    "instagramJpeg": "./data/media/2026-06-25-0626z-the-risk-of-tensions-between-prisoners-is-even-higher-inmates-are-bearin/instagram-1080x1350.jpg",
+    "altText": "The risk of tensions between prisoners is even higher: inmates are bearing the full brunt of the heatwave by Larry Rivers."
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "version": 2,
+  "kind": "rusty-art-public-media-assets",
+  "artworkId": "2026-06-25-0626z-the-risk-of-tensions-between-prisoners-is-even-higher-inmates-are-bearin",
+  "source": {
+    "sha256": "cf10c3fad899a366ef79f12001ba8e73f110a57939f153811100431b9d8fa799",
+    "role": "daily-preview-story-desktop"
+  },
+  "sources": {
+    "primary": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-desktop",
+      "sha256": "cf10c3fad899a366ef79f12001ba8e73f110a57939f153811100431b9d8fa799"
+    },
+    "openGraph": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-open-graph",
+      "sha256": "6661b155ec91e7efbf46ad8ebccc7d15f74cb638f51a559988d7e2fc61eee717"
+    },
+    "instagram": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-instagram",
+      "sha256": "20f0c2cec0b329d03224fb3b6a831fafd86249a2643cf91bd2ec0eedf2710962"
+    }
+  },
+  "targets": {
+    "thumb-320.jpg": {
+      "spec": {
+        "fileName": "thumb-320.jpg",
+        "width": 320,
+        "height": null,
+        "fit": "inside",
+        "withoutEnlargement": true,
+        "format": "jpeg",
+        "quality": 82
+      },
+      "publicPath": "./data/media/2026-06-25-0626z-the-risk-of-tensions-between-prisoners-is-even-higher-inmates-are-bearin/thumb-320.jpg",
+      "source": {
+        "sha256": "cf10c3fad899a366ef79f12001ba8e73f110a57939f153811100431b9d8fa799",
+        "role": "daily-preview-story-desktop"
+      }
+    },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-06-25-0626z-the-risk-of-tensions-between-prisoners-is-even-higher-inmates-are-bearin/og-1200x630.jpg",
+      "source": {
+        "sha256": "6661b155ec91e7efbf46ad8ebccc7d15f74cb638f51a559988d7e2fc61eee717",
+        "role": "daily-preview-story-open-graph"
+      }
+    },
+    "instagram-1080x1350.jpg": {
+      "spec": {
+        "fileName": "instagram-1080x1350.jpg",
+        "width": 1080,
+        "height": 1350,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-06-25-0626z-the-risk-of-tensions-between-prisoners-is-even-higher-inmates-are-bearin/instagram-1080x1350.jpg",
+      "source": {
+        "sha256": "20f0c2cec0b329d03224fb3b6a831fafd86249a2643cf91bd2ec0eedf2710962",
+        "role": "daily-preview-story-instagram"
+      }
+    }
+  }
+}
