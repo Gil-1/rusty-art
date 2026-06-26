@@ -1,7 +1,7 @@
 {
   "version": 1,
   "generatedAt": "2026-05-13T06:11:46.412Z",
-  "updatedAt": "2026-06-25T06:08:44.804Z",
+  "updatedAt": "2026-06-26T06:08:31.849Z",
   "entries": [
     {
       "version": 1,
@@ -6894,6 +6894,181 @@
     },
     {
       "version": 1,
+      "moduleId": "zaha-hadid-heatwave-background-environment",
+      "partId": "world-environment",
+      "hash": "35f74396dd9c8f5e33ff1620693b391bb5ec6ff1427f9229470f8d8d7ba4cf1d",
+      "integrity": "sha256-35f74396dd9c8f5e33ff1620693b391bb5ec6ff1427f9229470f8d8d7ba4cf1d",
+      "exportName": "createImmersiveWorldPart",
+      "file": "data/immersive-world/generated-modules/35f74396dd9c8f5e33ff1620693b391bb5ec6ff1427f9229470f8d8d7ba4cf1d.mjs",
+      "url": "./data/immersive-world/generated-modules/35f74396dd9c8f5e33ff1620693b391bb5ec6ff1427f9229470f8d8d7ba4cf1d.mjs",
+      "bytes": 13120,
+      "sourceHash": "5abe9cb7f03ae09b20e7c478764660b79b8caf7104e46d6a9276ef65ef7d7f66",
+      "packagedAt": "2026-06-26T06:08:31.849Z",
+      "rendererCompatibility": {
+        "version": 1,
+        "targetMode": "webgpu-project-scene",
+        "compatibilityStatus": "webgpu-compatible",
+        "webgpuCompatible": true,
+        "fallbackReason": null,
+        "fallbackReasons": [],
+        "evidenceReasons": [
+          "webgpu-safe-material",
+          "source-used-project-webgpu-material-factory",
+          "webgpu-native-helper-utility"
+        ],
+        "rendererEvidenceReasons": [],
+        "featureFacts": [
+          {
+            "kind": "standard-material",
+            "material": "MeshBasicMaterial",
+            "family": "standard-material-surface",
+            "reason": "webgpu-safe-material"
+          },
+          {
+            "kind": "standard-material",
+            "material": "LineBasicMaterial",
+            "family": "standard-material-surface",
+            "reason": "webgpu-safe-material"
+          },
+          {
+            "kind": "material-factory",
+            "id": "sky-background-field",
+            "family": "sky-background-field",
+            "material": "MeshBasicMaterial",
+            "surface": "scene-background-or-large-plane",
+            "reason": "source-used-project-webgpu-material-factory"
+          },
+          {
+            "kind": "webgpu-native-helper",
+            "id": "direction-space-skybox-shell",
+            "family": "sky-background-field",
+            "factory": "sky-background-field",
+            "material": "MeshBasicMaterial",
+            "surface": "direction-space-vertex-color-skybox-shell",
+            "reason": "webgpu-native-helper-utility"
+          },
+          {
+            "kind": "material-factory",
+            "id": "color-field",
+            "family": "color-field",
+            "material": "MeshBasicMaterial",
+            "surface": "three-basic-or-standard-material",
+            "reason": "source-used-project-webgpu-material-factory"
+          },
+          {
+            "kind": "material-factory",
+            "id": "procedural-marks",
+            "family": "procedural-marks",
+            "material": "MeshBasicMaterial",
+            "surface": "instanced-geometry-material",
+            "reason": "source-used-project-webgpu-material-factory"
+          },
+          {
+            "kind": "webgpu-native-helper",
+            "id": "point-particle-field",
+            "family": "point-particle-field",
+            "factory": "soft-particles",
+            "material": "PointsMaterial",
+            "surface": "three-points-buffer-geometry",
+            "reason": "webgpu-native-helper-utility"
+          },
+          {
+            "kind": "standard-material",
+            "material": "PointsMaterial",
+            "family": "standard-material-surface",
+            "reason": "webgpu-safe-material"
+          },
+          {
+            "kind": "material-factory",
+            "id": "soft-particles",
+            "family": "soft-particles",
+            "material": "PointsMaterial",
+            "surface": "three-points-material",
+            "reason": "source-used-project-webgpu-material-factory"
+          }
+        ],
+        "rendererFeatureFacts": [],
+        "advancedFeatureFacts": [],
+        "compatibleSurfaces": [
+          {
+            "reason": "webgpu-safe-material",
+            "materialType": "MeshBasicMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "materialType": "LineBasicMaterial"
+          },
+          {
+            "reason": "source-used-project-webgpu-material-factory",
+            "materialType": "MeshBasicMaterial",
+            "runtimeSurface": "scene-background-or-large-plane",
+            "factoryId": "sky-background-field",
+            "materialFactoryId": "sky-background-field",
+            "factoryCategory": "sky-background-field",
+            "property": "materialFactoryId"
+          },
+          {
+            "reason": "webgpu-native-helper-utility",
+            "api": "utilities.createDirectionSpaceSkyboxShell",
+            "helperId": "direction-space-skybox-shell",
+            "featureFamily": "sky-background-field",
+            "outputKind": "object-bundle",
+            "materialType": "MeshBasicMaterial",
+            "runtimeSurface": "direction-space-vertex-color-skybox-shell",
+            "factoryId": "sky-background-field",
+            "materialFactoryId": "sky-background-field",
+            "factoryCategory": "sky-background-field"
+          },
+          {
+            "reason": "source-used-project-webgpu-material-factory",
+            "materialType": "MeshBasicMaterial",
+            "runtimeSurface": "three-basic-or-standard-material",
+            "factoryId": "color-field",
+            "materialFactoryId": "color-field",
+            "factoryCategory": "color-field",
+            "property": "materialFactoryId"
+          },
+          {
+            "reason": "source-used-project-webgpu-material-factory",
+            "materialType": "MeshBasicMaterial",
+            "runtimeSurface": "instanced-geometry-material",
+            "factoryId": "procedural-marks",
+            "materialFactoryId": "procedural-marks",
+            "factoryCategory": "procedural-marks",
+            "property": "materialFactoryId"
+          },
+          {
+            "reason": "webgpu-native-helper-utility",
+            "api": "utilities.createPointParticleField",
+            "helperId": "point-particle-field",
+            "featureFamily": "point-particle-field",
+            "outputKind": "object-bundle",
+            "materialType": "PointsMaterial",
+            "runtimeSurface": "three-points-buffer-geometry",
+            "factoryId": "soft-particles",
+            "materialFactoryId": "soft-particles",
+            "factoryCategory": "soft-particles"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "materialType": "PointsMaterial"
+          },
+          {
+            "reason": "source-used-project-webgpu-material-factory",
+            "materialType": "PointsMaterial",
+            "runtimeSurface": "three-points-material",
+            "factoryId": "soft-particles",
+            "materialFactoryId": "soft-particles",
+            "factoryCategory": "soft-particles",
+            "property": "materialFactoryId"
+          }
+        ],
+        "rendererCompatibleSurfaces": [],
+        "forbiddenSurfaces": []
+      }
+    },
+    {
+      "version": 1,
       "moduleId": "world-environment-zox-fracture-pressure-skybox",
       "partId": "world-environment",
       "hash": "3696d873eb835738e375abe6d2ab588e799e9b4b9319643e4bb0b2f00eef0426",
@@ -7600,6 +7775,269 @@
       "bytes": 13645,
       "sourceHash": "b67235023b4ddc1e67751a2f8ada24b96f30c600bc0c37cd1b5e2356f76727e8",
       "packagedAt": "2026-05-14T16:45:24.894Z"
+    },
+    {
+      "version": 1,
+      "moduleId": "non-literal-fracture-pressure-draft-attempt-1",
+      "partId": "non-literal-fracture-pressure",
+      "hash": "3b0bdae75e5de56072aa157a8bd52ffd309db763053e1588a251d4a127f0b42a",
+      "integrity": "sha256-3b0bdae75e5de56072aa157a8bd52ffd309db763053e1588a251d4a127f0b42a",
+      "exportName": "createImmersiveWorldPart",
+      "file": "data/immersive-world/generated-modules/3b0bdae75e5de56072aa157a8bd52ffd309db763053e1588a251d4a127f0b42a.mjs",
+      "url": "./data/immersive-world/generated-modules/3b0bdae75e5de56072aa157a8bd52ffd309db763053e1588a251d4a127f0b42a.mjs",
+      "bytes": 11271,
+      "sourceHash": "ac46d27b4d099e341a9118882f637b8039eed062b09367f4e77e101fb1e47563",
+      "packagedAt": "2026-06-26T06:00:02.012Z",
+      "rendererCompatibility": {
+        "version": 1,
+        "targetMode": "webgpu-project-scene",
+        "compatibilityStatus": "webgpu-compatible",
+        "webgpuCompatible": true,
+        "fallbackReason": null,
+        "fallbackReasons": [],
+        "evidenceReasons": [
+          "webgpu-safe-material",
+          "source-used-project-webgpu-material-factory"
+        ],
+        "rendererEvidenceReasons": [],
+        "featureFacts": [
+          {
+            "kind": "standard-material",
+            "material": "MeshBasicMaterial",
+            "family": "standard-material-surface",
+            "reason": "webgpu-safe-material"
+          },
+          {
+            "kind": "standard-material",
+            "material": "LineBasicMaterial",
+            "family": "standard-material-surface",
+            "reason": "webgpu-safe-material"
+          },
+          {
+            "kind": "material-factory",
+            "id": "procedural-marks",
+            "family": "procedural-marks",
+            "material": "MeshBasicMaterial",
+            "surface": "instanced-geometry-material",
+            "reason": "source-used-project-webgpu-material-factory"
+          },
+          {
+            "kind": "material-factory",
+            "id": "color-field",
+            "family": "color-field",
+            "material": "MeshBasicMaterial",
+            "surface": "three-basic-or-standard-material",
+            "reason": "source-used-project-webgpu-material-factory"
+          }
+        ],
+        "rendererFeatureFacts": [],
+        "advancedFeatureFacts": [],
+        "compatibleSurfaces": [
+          {
+            "reason": "webgpu-safe-material",
+            "materialType": "MeshBasicMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "materialType": "LineBasicMaterial"
+          },
+          {
+            "reason": "source-used-project-webgpu-material-factory",
+            "materialType": "MeshBasicMaterial",
+            "runtimeSurface": "instanced-geometry-material",
+            "factoryId": "procedural-marks",
+            "materialFactoryId": "procedural-marks",
+            "factoryCategory": "procedural-marks",
+            "property": "materialFactoryId"
+          },
+          {
+            "reason": "source-used-project-webgpu-material-factory",
+            "materialType": "MeshBasicMaterial",
+            "runtimeSurface": "three-basic-or-standard-material",
+            "factoryId": "color-field",
+            "materialFactoryId": "color-field",
+            "factoryCategory": "color-field",
+            "property": "materialFactoryId"
+          }
+        ],
+        "rendererCompatibleSurfaces": [],
+        "forbiddenSurfaces": []
+      }
+    },
+    {
+      "version": 1,
+      "moduleId": "world-environment-draft-attempt-1",
+      "partId": "world-environment",
+      "hash": "3bd6f40274f09ff1828a61b08aa3f5a538f1f6639def5b93612ba5b0a910f484",
+      "integrity": "sha256-3bd6f40274f09ff1828a61b08aa3f5a538f1f6639def5b93612ba5b0a910f484",
+      "exportName": "createImmersiveWorldPart",
+      "file": "data/immersive-world/generated-modules/3bd6f40274f09ff1828a61b08aa3f5a538f1f6639def5b93612ba5b0a910f484.mjs",
+      "url": "./data/immersive-world/generated-modules/3bd6f40274f09ff1828a61b08aa3f5a538f1f6639def5b93612ba5b0a910f484.mjs",
+      "bytes": 13119,
+      "sourceHash": "fca968a36e3f8713d95a9ba619dfe37bf8bd365498d466e8218c78e9bd86f238",
+      "packagedAt": "2026-06-26T06:00:02.012Z",
+      "rendererCompatibility": {
+        "version": 1,
+        "targetMode": "webgpu-project-scene",
+        "compatibilityStatus": "webgpu-compatible",
+        "webgpuCompatible": true,
+        "fallbackReason": null,
+        "fallbackReasons": [],
+        "evidenceReasons": [
+          "webgpu-safe-material",
+          "source-used-project-webgpu-material-factory",
+          "webgpu-native-helper-utility"
+        ],
+        "rendererEvidenceReasons": [],
+        "featureFacts": [
+          {
+            "kind": "standard-material",
+            "material": "MeshBasicMaterial",
+            "family": "standard-material-surface",
+            "reason": "webgpu-safe-material"
+          },
+          {
+            "kind": "standard-material",
+            "material": "LineBasicMaterial",
+            "family": "standard-material-surface",
+            "reason": "webgpu-safe-material"
+          },
+          {
+            "kind": "material-factory",
+            "id": "sky-background-field",
+            "family": "sky-background-field",
+            "material": "MeshBasicMaterial",
+            "surface": "scene-background-or-large-plane",
+            "reason": "source-used-project-webgpu-material-factory"
+          },
+          {
+            "kind": "webgpu-native-helper",
+            "id": "direction-space-skybox-shell",
+            "family": "sky-background-field",
+            "factory": "sky-background-field",
+            "material": "MeshBasicMaterial",
+            "surface": "direction-space-vertex-color-skybox-shell",
+            "reason": "webgpu-native-helper-utility"
+          },
+          {
+            "kind": "material-factory",
+            "id": "color-field",
+            "family": "color-field",
+            "material": "MeshBasicMaterial",
+            "surface": "three-basic-or-standard-material",
+            "reason": "source-used-project-webgpu-material-factory"
+          },
+          {
+            "kind": "material-factory",
+            "id": "procedural-marks",
+            "family": "procedural-marks",
+            "material": "MeshBasicMaterial",
+            "surface": "instanced-geometry-material",
+            "reason": "source-used-project-webgpu-material-factory"
+          },
+          {
+            "kind": "webgpu-native-helper",
+            "id": "point-particle-field",
+            "family": "point-particle-field",
+            "factory": "soft-particles",
+            "material": "PointsMaterial",
+            "surface": "three-points-buffer-geometry",
+            "reason": "webgpu-native-helper-utility"
+          },
+          {
+            "kind": "standard-material",
+            "material": "PointsMaterial",
+            "family": "standard-material-surface",
+            "reason": "webgpu-safe-material"
+          },
+          {
+            "kind": "material-factory",
+            "id": "soft-particles",
+            "family": "soft-particles",
+            "material": "PointsMaterial",
+            "surface": "three-points-material",
+            "reason": "source-used-project-webgpu-material-factory"
+          }
+        ],
+        "rendererFeatureFacts": [],
+        "advancedFeatureFacts": [],
+        "compatibleSurfaces": [
+          {
+            "reason": "webgpu-safe-material",
+            "materialType": "MeshBasicMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "materialType": "LineBasicMaterial"
+          },
+          {
+            "reason": "source-used-project-webgpu-material-factory",
+            "materialType": "MeshBasicMaterial",
+            "runtimeSurface": "scene-background-or-large-plane",
+            "factoryId": "sky-background-field",
+            "materialFactoryId": "sky-background-field",
+            "factoryCategory": "sky-background-field",
+            "property": "materialFactoryId"
+          },
+          {
+            "reason": "webgpu-native-helper-utility",
+            "api": "utilities.createDirectionSpaceSkyboxShell",
+            "helperId": "direction-space-skybox-shell",
+            "featureFamily": "sky-background-field",
+            "outputKind": "object-bundle",
+            "materialType": "MeshBasicMaterial",
+            "runtimeSurface": "direction-space-vertex-color-skybox-shell",
+            "factoryId": "sky-background-field",
+            "materialFactoryId": "sky-background-field",
+            "factoryCategory": "sky-background-field"
+          },
+          {
+            "reason": "source-used-project-webgpu-material-factory",
+            "materialType": "MeshBasicMaterial",
+            "runtimeSurface": "three-basic-or-standard-material",
+            "factoryId": "color-field",
+            "materialFactoryId": "color-field",
+            "factoryCategory": "color-field",
+            "property": "materialFactoryId"
+          },
+          {
+            "reason": "source-used-project-webgpu-material-factory",
+            "materialType": "MeshBasicMaterial",
+            "runtimeSurface": "instanced-geometry-material",
+            "factoryId": "procedural-marks",
+            "materialFactoryId": "procedural-marks",
+            "factoryCategory": "procedural-marks",
+            "property": "materialFactoryId"
+          },
+          {
+            "reason": "webgpu-native-helper-utility",
+            "api": "utilities.createPointParticleField",
+            "helperId": "point-particle-field",
+            "featureFamily": "point-particle-field",
+            "outputKind": "object-bundle",
+            "materialType": "PointsMaterial",
+            "runtimeSurface": "three-points-buffer-geometry",
+            "factoryId": "soft-particles",
+            "materialFactoryId": "soft-particles",
+            "factoryCategory": "soft-particles"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "materialType": "PointsMaterial"
+          },
+          {
+            "reason": "source-used-project-webgpu-material-factory",
+            "materialType": "PointsMaterial",
+            "runtimeSurface": "three-points-material",
+            "factoryId": "soft-particles",
+            "materialFactoryId": "soft-particles",
+            "factoryCategory": "soft-particles",
+            "property": "materialFactoryId"
+          }
+        ],
+        "rendererCompatibleSurfaces": [],
+        "forbiddenSurfaces": []
+      }
     },
     {
       "version": 1,
@@ -21630,6 +22068,121 @@
     },
     {
       "version": 1,
+      "moduleId": "artist-mark-field-draft-attempt-1",
+      "partId": "artist-mark-field",
+      "hash": "b9af2e085ce44e85a4a4244c772d3ddbecc15accf127993536a91a81ebf9ba1d",
+      "integrity": "sha256-b9af2e085ce44e85a4a4244c772d3ddbecc15accf127993536a91a81ebf9ba1d",
+      "exportName": "createImmersiveWorldPart",
+      "file": "data/immersive-world/generated-modules/b9af2e085ce44e85a4a4244c772d3ddbecc15accf127993536a91a81ebf9ba1d.mjs",
+      "url": "./data/immersive-world/generated-modules/b9af2e085ce44e85a4a4244c772d3ddbecc15accf127993536a91a81ebf9ba1d.mjs",
+      "bytes": 12563,
+      "sourceHash": "12e19968c025447885d9ff030e62e2552bfe20c3af1e86036baea9f0720ca75c",
+      "packagedAt": "2026-06-26T06:00:02.012Z",
+      "rendererCompatibility": {
+        "version": 1,
+        "targetMode": "webgpu-project-scene",
+        "compatibilityStatus": "webgpu-compatible",
+        "webgpuCompatible": true,
+        "fallbackReason": null,
+        "fallbackReasons": [],
+        "evidenceReasons": [
+          "webgpu-safe-material",
+          "source-used-project-webgpu-material-factory"
+        ],
+        "rendererEvidenceReasons": [],
+        "featureFacts": [
+          {
+            "kind": "standard-material",
+            "material": "MeshBasicMaterial",
+            "family": "standard-material-surface",
+            "reason": "webgpu-safe-material"
+          },
+          {
+            "kind": "standard-material",
+            "material": "LineBasicMaterial",
+            "family": "standard-material-surface",
+            "reason": "webgpu-safe-material"
+          },
+          {
+            "kind": "standard-material",
+            "material": "PointsMaterial",
+            "family": "standard-material-surface",
+            "reason": "webgpu-safe-material"
+          },
+          {
+            "kind": "material-factory",
+            "id": "color-field",
+            "family": "color-field",
+            "material": "MeshBasicMaterial",
+            "surface": "three-basic-or-standard-material",
+            "reason": "source-used-project-webgpu-material-factory"
+          },
+          {
+            "kind": "material-factory",
+            "id": "procedural-marks",
+            "family": "procedural-marks",
+            "material": "MeshBasicMaterial",
+            "surface": "instanced-geometry-material",
+            "reason": "source-used-project-webgpu-material-factory"
+          },
+          {
+            "kind": "material-factory",
+            "id": "soft-particles",
+            "family": "soft-particles",
+            "material": "PointsMaterial",
+            "surface": "three-points-material",
+            "reason": "source-used-project-webgpu-material-factory"
+          }
+        ],
+        "rendererFeatureFacts": [],
+        "advancedFeatureFacts": [],
+        "compatibleSurfaces": [
+          {
+            "reason": "webgpu-safe-material",
+            "materialType": "MeshBasicMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "materialType": "LineBasicMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "materialType": "PointsMaterial"
+          },
+          {
+            "reason": "source-used-project-webgpu-material-factory",
+            "materialType": "MeshBasicMaterial",
+            "runtimeSurface": "three-basic-or-standard-material",
+            "factoryId": "color-field",
+            "materialFactoryId": "color-field",
+            "factoryCategory": "color-field",
+            "property": "materialFactoryId"
+          },
+          {
+            "reason": "source-used-project-webgpu-material-factory",
+            "materialType": "MeshBasicMaterial",
+            "runtimeSurface": "instanced-geometry-material",
+            "factoryId": "procedural-marks",
+            "materialFactoryId": "procedural-marks",
+            "factoryCategory": "procedural-marks",
+            "property": "materialFactoryId"
+          },
+          {
+            "reason": "source-used-project-webgpu-material-factory",
+            "materialType": "PointsMaterial",
+            "runtimeSurface": "three-points-material",
+            "factoryId": "soft-particles",
+            "materialFactoryId": "soft-particles",
+            "factoryCategory": "soft-particles",
+            "property": "materialFactoryId"
+          }
+        ],
+        "rendererCompatibleSurfaces": [],
+        "forbiddenSurfaces": []
+      }
+    },
+    {
+      "version": 1,
       "moduleId": "artist-mark-field-moholy-nagy-belgium-orange-heat-alert",
       "partId": "artist-mark-field",
       "hash": "ba1967ac3cc1d661dfa725e1129f738f5bd5070ef48c813e112829ad45e47347",
@@ -23849,6 +24402,94 @@
           {
             "reason": "webgpu-safe-material",
             "materialType": "LineBasicMaterial"
+          }
+        ],
+        "rendererCompatibleSurfaces": [],
+        "forbiddenSurfaces": []
+      }
+    },
+    {
+      "version": 1,
+      "moduleId": "zaha-hadid-heatwave-non-literal-fracture-pressure",
+      "partId": "non-literal-fracture-pressure",
+      "hash": "c7d7a8d263231bba4fa24a46cd82867391a0058444ed6be1887e8f9b8ae7cbe4",
+      "integrity": "sha256-c7d7a8d263231bba4fa24a46cd82867391a0058444ed6be1887e8f9b8ae7cbe4",
+      "exportName": "createImmersiveWorldPart",
+      "file": "data/immersive-world/generated-modules/c7d7a8d263231bba4fa24a46cd82867391a0058444ed6be1887e8f9b8ae7cbe4.mjs",
+      "url": "./data/immersive-world/generated-modules/c7d7a8d263231bba4fa24a46cd82867391a0058444ed6be1887e8f9b8ae7cbe4.mjs",
+      "bytes": 11169,
+      "sourceHash": "38c5ba4e3795fd9831150f0b9e28e500a7952280a1f64ae5cade3d27d5b38278",
+      "packagedAt": "2026-06-26T06:08:31.849Z",
+      "rendererCompatibility": {
+        "version": 1,
+        "targetMode": "webgpu-project-scene",
+        "compatibilityStatus": "webgpu-compatible",
+        "webgpuCompatible": true,
+        "fallbackReason": null,
+        "fallbackReasons": [],
+        "evidenceReasons": [
+          "webgpu-safe-material",
+          "source-used-project-webgpu-material-factory"
+        ],
+        "rendererEvidenceReasons": [],
+        "featureFacts": [
+          {
+            "kind": "standard-material",
+            "material": "MeshBasicMaterial",
+            "family": "standard-material-surface",
+            "reason": "webgpu-safe-material"
+          },
+          {
+            "kind": "standard-material",
+            "material": "LineBasicMaterial",
+            "family": "standard-material-surface",
+            "reason": "webgpu-safe-material"
+          },
+          {
+            "kind": "material-factory",
+            "id": "procedural-marks",
+            "family": "procedural-marks",
+            "material": "MeshBasicMaterial",
+            "surface": "instanced-geometry-material",
+            "reason": "source-used-project-webgpu-material-factory"
+          },
+          {
+            "kind": "material-factory",
+            "id": "color-field",
+            "family": "color-field",
+            "material": "MeshBasicMaterial",
+            "surface": "three-basic-or-standard-material",
+            "reason": "source-used-project-webgpu-material-factory"
+          }
+        ],
+        "rendererFeatureFacts": [],
+        "advancedFeatureFacts": [],
+        "compatibleSurfaces": [
+          {
+            "reason": "webgpu-safe-material",
+            "materialType": "MeshBasicMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "materialType": "LineBasicMaterial"
+          },
+          {
+            "reason": "source-used-project-webgpu-material-factory",
+            "materialType": "MeshBasicMaterial",
+            "runtimeSurface": "instanced-geometry-material",
+            "factoryId": "procedural-marks",
+            "materialFactoryId": "procedural-marks",
+            "factoryCategory": "procedural-marks",
+            "property": "materialFactoryId"
+          },
+          {
+            "reason": "source-used-project-webgpu-material-factory",
+            "materialType": "MeshBasicMaterial",
+            "runtimeSurface": "three-basic-or-standard-material",
+            "factoryId": "color-field",
+            "materialFactoryId": "color-field",
+            "factoryCategory": "color-field",
+            "property": "materialFactoryId"
           }
         ],
         "rendererCompatibleSurfaces": [],
@@ -26949,6 +27590,121 @@
             "factoryId": "procedural-marks",
             "materialFactoryId": "procedural-marks",
             "factoryCategory": "procedural-marks",
+            "property": "materialFactoryId"
+          }
+        ],
+        "rendererCompatibleSurfaces": [],
+        "forbiddenSurfaces": []
+      }
+    },
+    {
+      "version": 1,
+      "moduleId": "zaha-hadid-heatwave-artist-mark-field",
+      "partId": "artist-mark-field",
+      "hash": "e00241e5479930d2d15d7924d3724458f78d7888629e5e15c7a5e5a965f66b4e",
+      "integrity": "sha256-e00241e5479930d2d15d7924d3724458f78d7888629e5e15c7a5e5a965f66b4e",
+      "exportName": "createImmersiveWorldPart",
+      "file": "data/immersive-world/generated-modules/e00241e5479930d2d15d7924d3724458f78d7888629e5e15c7a5e5a965f66b4e.mjs",
+      "url": "./data/immersive-world/generated-modules/e00241e5479930d2d15d7924d3724458f78d7888629e5e15c7a5e5a965f66b4e.mjs",
+      "bytes": 12564,
+      "sourceHash": "5762126a692b4306328c905232dbc34f59f2c6a8d47b8b0fc59e10b42088c36f",
+      "packagedAt": "2026-06-26T06:08:31.849Z",
+      "rendererCompatibility": {
+        "version": 1,
+        "targetMode": "webgpu-project-scene",
+        "compatibilityStatus": "webgpu-compatible",
+        "webgpuCompatible": true,
+        "fallbackReason": null,
+        "fallbackReasons": [],
+        "evidenceReasons": [
+          "webgpu-safe-material",
+          "source-used-project-webgpu-material-factory"
+        ],
+        "rendererEvidenceReasons": [],
+        "featureFacts": [
+          {
+            "kind": "standard-material",
+            "material": "MeshBasicMaterial",
+            "family": "standard-material-surface",
+            "reason": "webgpu-safe-material"
+          },
+          {
+            "kind": "standard-material",
+            "material": "LineBasicMaterial",
+            "family": "standard-material-surface",
+            "reason": "webgpu-safe-material"
+          },
+          {
+            "kind": "standard-material",
+            "material": "PointsMaterial",
+            "family": "standard-material-surface",
+            "reason": "webgpu-safe-material"
+          },
+          {
+            "kind": "material-factory",
+            "id": "color-field",
+            "family": "color-field",
+            "material": "MeshBasicMaterial",
+            "surface": "three-basic-or-standard-material",
+            "reason": "source-used-project-webgpu-material-factory"
+          },
+          {
+            "kind": "material-factory",
+            "id": "procedural-marks",
+            "family": "procedural-marks",
+            "material": "MeshBasicMaterial",
+            "surface": "instanced-geometry-material",
+            "reason": "source-used-project-webgpu-material-factory"
+          },
+          {
+            "kind": "material-factory",
+            "id": "soft-particles",
+            "family": "soft-particles",
+            "material": "PointsMaterial",
+            "surface": "three-points-material",
+            "reason": "source-used-project-webgpu-material-factory"
+          }
+        ],
+        "rendererFeatureFacts": [],
+        "advancedFeatureFacts": [],
+        "compatibleSurfaces": [
+          {
+            "reason": "webgpu-safe-material",
+            "materialType": "MeshBasicMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "materialType": "LineBasicMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "materialType": "PointsMaterial"
+          },
+          {
+            "reason": "source-used-project-webgpu-material-factory",
+            "materialType": "MeshBasicMaterial",
+            "runtimeSurface": "three-basic-or-standard-material",
+            "factoryId": "color-field",
+            "materialFactoryId": "color-field",
+            "factoryCategory": "color-field",
+            "property": "materialFactoryId"
+          },
+          {
+            "reason": "source-used-project-webgpu-material-factory",
+            "materialType": "MeshBasicMaterial",
+            "runtimeSurface": "instanced-geometry-material",
+            "factoryId": "procedural-marks",
+            "materialFactoryId": "procedural-marks",
+            "factoryCategory": "procedural-marks",
+            "property": "materialFactoryId"
+          },
+          {
+            "reason": "source-used-project-webgpu-material-factory",
+            "materialType": "PointsMaterial",
+            "runtimeSurface": "three-points-material",
+            "factoryId": "soft-particles",
+            "materialFactoryId": "soft-particles",
+            "factoryCategory": "soft-particles",
             "property": "materialFactoryId"
           }
         ],
