@@ -1,0 +1,76 @@
+{
+  "version": 2,
+  "kind": "rusty-art-public-media-assets",
+  "artworkId": "2026-06-28-0628z-heatwave-in-the-province-of-luxembourg-how-far-do-current-temperatures-e",
+  "source": {
+    "sha256": "50397673ae555bd36af180a94f0798a483209a1c9617db644e52b4bd0d9886ea",
+    "role": "daily-preview-story-desktop"
+  },
+  "sources": {
+    "primary": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-desktop",
+      "sha256": "50397673ae555bd36af180a94f0798a483209a1c9617db644e52b4bd0d9886ea"
+    },
+    "openGraph": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-open-graph",
+      "sha256": "740a885c045d3791fa27263ffefd6ac845f3903a5aa0b0e660ccbb4fc173a5a3"
+    },
+    "instagram": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-instagram",
+      "sha256": "381cb01c6578bd484ad1f59151ca4893065b2be90b3baa88445d6b9a8a157d09"
+    }
+  },
+  "targets": {
+    "thumb-320.jpg": {
+      "spec": {
+        "fileName": "thumb-320.jpg",
+        "width": 320,
+        "height": null,
+        "fit": "inside",
+        "withoutEnlargement": true,
+        "format": "jpeg",
+        "quality": 82
+      },
+      "publicPath": "./data/media/2026-06-28-0628z-heatwave-in-the-province-of-luxembourg-how-far-do-current-temperatures-e/thumb-320.jpg",
+      "source": {
+        "sha256": "50397673ae555bd36af180a94f0798a483209a1c9617db644e52b4bd0d9886ea",
+        "role": "daily-preview-story-desktop"
+      }
+    },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-06-28-0628z-heatwave-in-the-province-of-luxembourg-how-far-do-current-temperatures-e/og-1200x630.jpg",
+      "source": {
+        "sha256": "740a885c045d3791fa27263ffefd6ac845f3903a5aa0b0e660ccbb4fc173a5a3",
+        "role": "daily-preview-story-open-graph"
+      }
+    },
+    "instagram-1080x1350.jpg": {
+      "spec": {
+        "fileName": "instagram-1080x1350.jpg",
+        "width": 1080,
+        "height": 1350,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-06-28-0628z-heatwave-in-the-province-of-luxembourg-how-far-do-current-temperatures-e/instagram-1080x1350.jpg",
+      "source": {
+        "sha256": "381cb01c6578bd484ad1f59151ca4893065b2be90b3baa88445d6b9a8a157d09",
+        "role": "daily-preview-story-instagram"
+      }
+    }
+  }
+}
