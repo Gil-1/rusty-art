@@ -1,0 +1,76 @@
+{
+  "version": 2,
+  "kind": "rusty-art-public-media-assets",
+  "artworkId": "2026-06-29-0627z-5-tips-to-protect-yourself-against-cyber-criminals-this-summer-holiday-p",
+  "source": {
+    "sha256": "ecc6efc6e2f4a5262e1d429751906d3fe1c217904c702ede0ae92f90a2897873",
+    "role": "daily-preview-story-desktop"
+  },
+  "sources": {
+    "primary": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-desktop",
+      "sha256": "ecc6efc6e2f4a5262e1d429751906d3fe1c217904c702ede0ae92f90a2897873"
+    },
+    "openGraph": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-open-graph",
+      "sha256": "8d4bb394b2f1f9b911c36d26a796c0f2252814c261ba875701c14880dd5d8c43"
+    },
+    "instagram": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-instagram",
+      "sha256": "f97631428b4a585cc0f6cd19b3a5dac23bf1ea493816a32baefd930585f6e7c4"
+    }
+  },
+  "targets": {
+    "thumb-320.jpg": {
+      "spec": {
+        "fileName": "thumb-320.jpg",
+        "width": 320,
+        "height": null,
+        "fit": "inside",
+        "withoutEnlargement": true,
+        "format": "jpeg",
+        "quality": 82
+      },
+      "publicPath": "./data/media/2026-06-29-0627z-5-tips-to-protect-yourself-against-cyber-criminals-this-summer-holiday-p/thumb-320.jpg",
+      "source": {
+        "sha256": "ecc6efc6e2f4a5262e1d429751906d3fe1c217904c702ede0ae92f90a2897873",
+        "role": "daily-preview-story-desktop"
+      }
+    },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-06-29-0627z-5-tips-to-protect-yourself-against-cyber-criminals-this-summer-holiday-p/og-1200x630.jpg",
+      "source": {
+        "sha256": "8d4bb394b2f1f9b911c36d26a796c0f2252814c261ba875701c14880dd5d8c43",
+        "role": "daily-preview-story-open-graph"
+      }
+    },
+    "instagram-1080x1350.jpg": {
+      "spec": {
+        "fileName": "instagram-1080x1350.jpg",
+        "width": 1080,
+        "height": 1350,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-06-29-0627z-5-tips-to-protect-yourself-against-cyber-criminals-this-summer-holiday-p/instagram-1080x1350.jpg",
+      "source": {
+        "sha256": "f97631428b4a585cc0f6cd19b3a5dac23bf1ea493816a32baefd930585f6e7c4",
+        "role": "daily-preview-story-instagram"
+      }
+    }
+  }
+}
