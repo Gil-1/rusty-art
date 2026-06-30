@@ -1,0 +1,76 @@
+{
+  "version": 2,
+  "kind": "rusty-art-public-media-assets",
+  "artworkId": "2026-06-30-0632z-tour-de-france-stage-18-preview-back-to-orcieres-merlette-where-wout-van",
+  "source": {
+    "sha256": "2df8586552595037ebe9a6229b9ca29d001af1fb983acb6395714fca109613e1",
+    "role": "daily-preview-story-desktop"
+  },
+  "sources": {
+    "primary": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-desktop",
+      "sha256": "2df8586552595037ebe9a6229b9ca29d001af1fb983acb6395714fca109613e1"
+    },
+    "openGraph": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-open-graph",
+      "sha256": "6a518c943ed22c5016e64c019b74bbff3cbe3419550919557906388c95c79530"
+    },
+    "instagram": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-instagram",
+      "sha256": "d83846f24a8355bd4f83d314ec3a4b2b3526c63c2a2e6c781267627b491d6290"
+    }
+  },
+  "targets": {
+    "thumb-320.jpg": {
+      "spec": {
+        "fileName": "thumb-320.jpg",
+        "width": 320,
+        "height": null,
+        "fit": "inside",
+        "withoutEnlargement": true,
+        "format": "jpeg",
+        "quality": 82
+      },
+      "publicPath": "./data/media/2026-06-30-0632z-tour-de-france-stage-18-preview-back-to-orcieres-merlette-where-wout-van/thumb-320.jpg",
+      "source": {
+        "sha256": "2df8586552595037ebe9a6229b9ca29d001af1fb983acb6395714fca109613e1",
+        "role": "daily-preview-story-desktop"
+      }
+    },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-06-30-0632z-tour-de-france-stage-18-preview-back-to-orcieres-merlette-where-wout-van/og-1200x630.jpg",
+      "source": {
+        "sha256": "6a518c943ed22c5016e64c019b74bbff3cbe3419550919557906388c95c79530",
+        "role": "daily-preview-story-open-graph"
+      }
+    },
+    "instagram-1080x1350.jpg": {
+      "spec": {
+        "fileName": "instagram-1080x1350.jpg",
+        "width": 1080,
+        "height": 1350,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-06-30-0632z-tour-de-france-stage-18-preview-back-to-orcieres-merlette-where-wout-van/instagram-1080x1350.jpg",
+      "source": {
+        "sha256": "d83846f24a8355bd4f83d314ec3a4b2b3526c63c2a2e6c781267627b491d6290",
+        "role": "daily-preview-story-instagram"
+      }
+    }
+  }
+}
