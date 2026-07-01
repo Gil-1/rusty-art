@@ -1,0 +1,76 @@
+{
+  "version": 2,
+  "kind": "rusty-art-public-media-assets",
+  "artworkId": "2026-07-01-0630z-tour-de-france-2026-seven-favorites-under-pressure",
+  "source": {
+    "sha256": "1a37f4eda86c31ec642445012135c803ea50f35bd0e32d61ac54fae7d0c881f7",
+    "role": "daily-preview-story-desktop"
+  },
+  "sources": {
+    "primary": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-desktop",
+      "sha256": "1a37f4eda86c31ec642445012135c803ea50f35bd0e32d61ac54fae7d0c881f7"
+    },
+    "openGraph": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-open-graph",
+      "sha256": "d7acf5b93dfa7e5c0df052db7c21c6623808579553b02c845ae4159d33248a81"
+    },
+    "instagram": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-instagram",
+      "sha256": "3b208796e01460d90ff13b1738677653a2e61b08143e051baa727291558be13b"
+    }
+  },
+  "targets": {
+    "thumb-320.jpg": {
+      "spec": {
+        "fileName": "thumb-320.jpg",
+        "width": 320,
+        "height": null,
+        "fit": "inside",
+        "withoutEnlargement": true,
+        "format": "jpeg",
+        "quality": 82
+      },
+      "publicPath": "./data/media/2026-07-01-0630z-tour-de-france-2026-seven-favorites-under-pressure/thumb-320.jpg",
+      "source": {
+        "sha256": "1a37f4eda86c31ec642445012135c803ea50f35bd0e32d61ac54fae7d0c881f7",
+        "role": "daily-preview-story-desktop"
+      }
+    },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-07-01-0630z-tour-de-france-2026-seven-favorites-under-pressure/og-1200x630.jpg",
+      "source": {
+        "sha256": "d7acf5b93dfa7e5c0df052db7c21c6623808579553b02c845ae4159d33248a81",
+        "role": "daily-preview-story-open-graph"
+      }
+    },
+    "instagram-1080x1350.jpg": {
+      "spec": {
+        "fileName": "instagram-1080x1350.jpg",
+        "width": 1080,
+        "height": 1350,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-07-01-0630z-tour-de-france-2026-seven-favorites-under-pressure/instagram-1080x1350.jpg",
+      "source": {
+        "sha256": "3b208796e01460d90ff13b1738677653a2e61b08143e051baa727291558be13b",
+        "role": "daily-preview-story-instagram"
+      }
+    }
+  }
+}
