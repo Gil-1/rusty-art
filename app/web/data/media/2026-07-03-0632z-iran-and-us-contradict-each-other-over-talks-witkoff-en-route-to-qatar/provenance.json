@@ -1,0 +1,76 @@
+{
+  "version": 2,
+  "kind": "rusty-art-public-media-assets",
+  "artworkId": "2026-07-03-0632z-iran-and-us-contradict-each-other-over-talks-witkoff-en-route-to-qatar",
+  "source": {
+    "sha256": "1ac20ee71fe98d38c153702a5e7d60db47caac3098a99cd63f765c3ce72b1c0b",
+    "role": "daily-preview-story-desktop"
+  },
+  "sources": {
+    "primary": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-desktop",
+      "sha256": "1ac20ee71fe98d38c153702a5e7d60db47caac3098a99cd63f765c3ce72b1c0b"
+    },
+    "openGraph": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-open-graph",
+      "sha256": "2b558d23e8da37a052eedb2fd526efb7f51d6c8437be14024b288272aa966531"
+    },
+    "instagram": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-instagram",
+      "sha256": "33dbf34fe4c4902750f22cee96d898c0ce979e3b115415c256bbeeed034a348a"
+    }
+  },
+  "targets": {
+    "thumb-320.jpg": {
+      "spec": {
+        "fileName": "thumb-320.jpg",
+        "width": 320,
+        "height": null,
+        "fit": "inside",
+        "withoutEnlargement": true,
+        "format": "jpeg",
+        "quality": 82
+      },
+      "publicPath": "./data/media/2026-07-03-0632z-iran-and-us-contradict-each-other-over-talks-witkoff-en-route-to-qatar/thumb-320.jpg",
+      "source": {
+        "sha256": "1ac20ee71fe98d38c153702a5e7d60db47caac3098a99cd63f765c3ce72b1c0b",
+        "role": "daily-preview-story-desktop"
+      }
+    },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-07-03-0632z-iran-and-us-contradict-each-other-over-talks-witkoff-en-route-to-qatar/og-1200x630.jpg",
+      "source": {
+        "sha256": "2b558d23e8da37a052eedb2fd526efb7f51d6c8437be14024b288272aa966531",
+        "role": "daily-preview-story-open-graph"
+      }
+    },
+    "instagram-1080x1350.jpg": {
+      "spec": {
+        "fileName": "instagram-1080x1350.jpg",
+        "width": 1080,
+        "height": 1350,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-07-03-0632z-iran-and-us-contradict-each-other-over-talks-witkoff-en-route-to-qatar/instagram-1080x1350.jpg",
+      "source": {
+        "sha256": "33dbf34fe4c4902750f22cee96d898c0ce979e3b115415c256bbeeed034a348a",
+        "role": "daily-preview-story-instagram"
+      }
+    }
+  }
+}
