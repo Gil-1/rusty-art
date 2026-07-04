@@ -1,0 +1,76 @@
+{
+  "version": 2,
+  "kind": "rusty-art-public-media-assets",
+  "artworkId": "2026-07-04-0628z-a-belgian-wins-the-80-million-euro-euro-millions-jackpot-this-friday-her",
+  "source": {
+    "sha256": "c09c5b7dcef40be9f7504a9be8d4c80f458d7d690bdb66650eb7c004113d68cb",
+    "role": "daily-preview-story-desktop"
+  },
+  "sources": {
+    "primary": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-desktop",
+      "sha256": "c09c5b7dcef40be9f7504a9be8d4c80f458d7d690bdb66650eb7c004113d68cb"
+    },
+    "openGraph": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-open-graph",
+      "sha256": "deb01f855af8416f662e01cebf1bb87a31caf795b6e3e9235a610ffe7f83dc20"
+    },
+    "instagram": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-instagram",
+      "sha256": "5ec4074db3dd369819e95ccaaf2ba35402b9ffbf74a8ead36c531fcd1e4f3d09"
+    }
+  },
+  "targets": {
+    "thumb-320.jpg": {
+      "spec": {
+        "fileName": "thumb-320.jpg",
+        "width": 320,
+        "height": null,
+        "fit": "inside",
+        "withoutEnlargement": true,
+        "format": "jpeg",
+        "quality": 82
+      },
+      "publicPath": "./data/media/2026-07-04-0628z-a-belgian-wins-the-80-million-euro-euro-millions-jackpot-this-friday-her/thumb-320.jpg",
+      "source": {
+        "sha256": "c09c5b7dcef40be9f7504a9be8d4c80f458d7d690bdb66650eb7c004113d68cb",
+        "role": "daily-preview-story-desktop"
+      }
+    },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-07-04-0628z-a-belgian-wins-the-80-million-euro-euro-millions-jackpot-this-friday-her/og-1200x630.jpg",
+      "source": {
+        "sha256": "deb01f855af8416f662e01cebf1bb87a31caf795b6e3e9235a610ffe7f83dc20",
+        "role": "daily-preview-story-open-graph"
+      }
+    },
+    "instagram-1080x1350.jpg": {
+      "spec": {
+        "fileName": "instagram-1080x1350.jpg",
+        "width": 1080,
+        "height": 1350,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-07-04-0628z-a-belgian-wins-the-80-million-euro-euro-millions-jackpot-this-friday-her/instagram-1080x1350.jpg",
+      "source": {
+        "sha256": "5ec4074db3dd369819e95ccaaf2ba35402b9ffbf74a8ead36c531fcd1e4f3d09",
+        "role": "daily-preview-story-instagram"
+      }
+    }
+  }
+}
