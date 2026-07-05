@@ -1,0 +1,76 @@
+{
+  "version": 2,
+  "kind": "rusty-art-public-media-assets",
+  "artworkId": "2026-07-05-0626z-tour-de-france-2026-visma-lease-a-bike-wins-the-first-stage-jonas-vingeg",
+  "source": {
+    "sha256": "40dcc67ed1315da801f9458d3af8a28c2e11cdaaa753e5d73f89aed0dbfc482f",
+    "role": "daily-preview-story-desktop"
+  },
+  "sources": {
+    "primary": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-desktop",
+      "sha256": "40dcc67ed1315da801f9458d3af8a28c2e11cdaaa753e5d73f89aed0dbfc482f"
+    },
+    "openGraph": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-open-graph",
+      "sha256": "4e3bb1eba28137726161e509ba4b1761ce5a5793c3972e4744e676743ef9712b"
+    },
+    "instagram": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-instagram",
+      "sha256": "0331c4c14fda141ee29697b7f2f9052f3b30a1e014f694a486ca7ef5d0c0f2e0"
+    }
+  },
+  "targets": {
+    "thumb-320.jpg": {
+      "spec": {
+        "fileName": "thumb-320.jpg",
+        "width": 320,
+        "height": null,
+        "fit": "inside",
+        "withoutEnlargement": true,
+        "format": "jpeg",
+        "quality": 82
+      },
+      "publicPath": "./data/media/2026-07-05-0626z-tour-de-france-2026-visma-lease-a-bike-wins-the-first-stage-jonas-vingeg/thumb-320.jpg",
+      "source": {
+        "sha256": "40dcc67ed1315da801f9458d3af8a28c2e11cdaaa753e5d73f89aed0dbfc482f",
+        "role": "daily-preview-story-desktop"
+      }
+    },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-07-05-0626z-tour-de-france-2026-visma-lease-a-bike-wins-the-first-stage-jonas-vingeg/og-1200x630.jpg",
+      "source": {
+        "sha256": "4e3bb1eba28137726161e509ba4b1761ce5a5793c3972e4744e676743ef9712b",
+        "role": "daily-preview-story-open-graph"
+      }
+    },
+    "instagram-1080x1350.jpg": {
+      "spec": {
+        "fileName": "instagram-1080x1350.jpg",
+        "width": 1080,
+        "height": 1350,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-07-05-0626z-tour-de-france-2026-visma-lease-a-bike-wins-the-first-stage-jonas-vingeg/instagram-1080x1350.jpg",
+      "source": {
+        "sha256": "0331c4c14fda141ee29697b7f2f9052f3b30a1e014f694a486ca7ef5d0c0f2e0",
+        "role": "daily-preview-story-instagram"
+      }
+    }
+  }
+}
