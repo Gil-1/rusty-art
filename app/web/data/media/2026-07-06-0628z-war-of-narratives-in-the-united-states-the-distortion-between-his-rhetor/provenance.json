@@ -1,0 +1,76 @@
+{
+  "version": 2,
+  "kind": "rusty-art-public-media-assets",
+  "artworkId": "2026-07-06-0628z-war-of-narratives-in-the-united-states-the-distortion-between-his-rhetor",
+  "source": {
+    "sha256": "b4b8c9904f528ebdf69c4d232cebe2bb14aaab0140a3c44ac35a387b53c8a710",
+    "role": "daily-preview-story-desktop"
+  },
+  "sources": {
+    "primary": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-desktop",
+      "sha256": "b4b8c9904f528ebdf69c4d232cebe2bb14aaab0140a3c44ac35a387b53c8a710"
+    },
+    "openGraph": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-open-graph",
+      "sha256": "0bcc8aa5c74e7c733db062ae4f1de934553a1af2148ca78897a21c090098e58e"
+    },
+    "instagram": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-instagram",
+      "sha256": "493f9bf0a8799f8a16bdef78aa94774c42c1d31274a3e1a6adc7e705595743bd"
+    }
+  },
+  "targets": {
+    "thumb-320.jpg": {
+      "spec": {
+        "fileName": "thumb-320.jpg",
+        "width": 320,
+        "height": null,
+        "fit": "inside",
+        "withoutEnlargement": true,
+        "format": "jpeg",
+        "quality": 82
+      },
+      "publicPath": "./data/media/2026-07-06-0628z-war-of-narratives-in-the-united-states-the-distortion-between-his-rhetor/thumb-320.jpg",
+      "source": {
+        "sha256": "b4b8c9904f528ebdf69c4d232cebe2bb14aaab0140a3c44ac35a387b53c8a710",
+        "role": "daily-preview-story-desktop"
+      }
+    },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-07-06-0628z-war-of-narratives-in-the-united-states-the-distortion-between-his-rhetor/og-1200x630.jpg",
+      "source": {
+        "sha256": "0bcc8aa5c74e7c733db062ae4f1de934553a1af2148ca78897a21c090098e58e",
+        "role": "daily-preview-story-open-graph"
+      }
+    },
+    "instagram-1080x1350.jpg": {
+      "spec": {
+        "fileName": "instagram-1080x1350.jpg",
+        "width": 1080,
+        "height": 1350,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-07-06-0628z-war-of-narratives-in-the-united-states-the-distortion-between-his-rhetor/instagram-1080x1350.jpg",
+      "source": {
+        "sha256": "493f9bf0a8799f8a16bdef78aa94774c42c1d31274a3e1a6adc7e705595743bd",
+        "role": "daily-preview-story-instagram"
+      }
+    }
+  }
+}

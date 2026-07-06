@@ -1,0 +1,1135 @@
+{
+  "id": "2026-07-06-0628z-war-of-narratives-in-the-united-states-the-distortion-between-his-rhetor",
+  "date": "2026-07-06",
+  "title": "War of narratives in the United States: \"The distortion between his rhetoric and reality will discourage Trump voters\"",
+  "generatedAt": "2026-07-06T06:33:26.412Z",
+  "news": {
+    "source": "levif",
+    "title": "War of narratives in the United States: \"The distortion between his rhetoric and reality will discourage Trump voters\"",
+    "link": "https://www.levif.be/international/amerique/etats-unis/guerre-des-recits-aux-etats-unis-la-distorsion-entre-son-discours-et-le-reel-decouragera-des-electeurs-de-trump/",
+    "score": null
+  },
+  "inspiration": {
+    "artist": "Willem de Kooning",
+    "tags": [
+      "non-literal fracture transformation",
+      "Trump",
+      "immersive-world"
+    ],
+    "links": {}
+  },
+  "seed": null,
+  "sceneStrategy": null,
+  "techStack": null,
+  "newsVisualMappings": [],
+  "qualityScore": {
+    "score": null,
+    "summary": null,
+    "heuristic": {
+      "score": null,
+      "breakdown": {}
+    },
+    "calibration": {
+      "sampleCount": 0,
+      "trustWeight": 0
+    },
+    "alignment": {
+      "totalAlign": null,
+      "components": {
+        "title": {
+          "score": null
+        },
+        "style": {
+          "score": null
+        },
+        "emotional": {
+          "score": null
+        }
+      }
+    }
+  },
+  "rationale": {
+    "intent": {
+      "signal": null,
+      "emotion": null,
+      "tension": null,
+      "balance": null,
+      "motion": null
+    },
+    "selection": {
+      "whyHeadline": null,
+      "priorityTerms": []
+    },
+    "qualitySummary": null
+  },
+  "runPolicy": null,
+  "artCreationMethod": "immersive-world-v1",
+  "world": {
+    "id": "immersive-world-156b3c687924",
+    "method": "immersive-world-v1",
+    "title": "War of narratives in the United States: \"The distortion between his rhetoric and reality will discourage Trump voters\"",
+    "rendererAuthoringTarget": "webgpu-project-scene",
+    "environment": {
+      "owner": "world-composition",
+      "kind": "inside-facing-painterly-paper-field",
+      "color": "#F2F3F3",
+      "fieldColor": "#DCD9D2",
+      "fogDensity": 0.009,
+      "radius": 92,
+      "skyboxRadius": 92,
+      "opacity": 0.92,
+      "palette": [
+        "#FEFEFE",
+        "#F2F3F3",
+        "#DCD9D2",
+        "#DAD5CE",
+        "#D2CCC2",
+        "#D0C0B1",
+        "#202021",
+        "#2E2E2F",
+        "#B73522",
+        "#D59622"
+      ],
+      "compositionIntent": "High-key paper/ochre surround preserves the accepted de Kooning-style environment as technical support while leaving the selected-news fracture and artist mark-field to carry the readable black contour web, right-side pressure band, and red/ochre narrative distortion."
+    },
+    "camera": {
+      "owner": "world-composition",
+      "fov": 66,
+      "near": 0.08,
+      "far": 220,
+      "position": [
+        0.22,
+        2.12,
+        14.2
+      ],
+      "target": [
+        0.55,
+        0.18,
+        -5.6
+      ],
+      "distanceSafety": {
+        "nearFarOwnedHere": true,
+        "minPartDistance": 1.7,
+        "clippingRisk": "low",
+        "reason": "Canonical public camera retained as the fixed design bookmark: this is an abstract all-over field with no explicit subject, and supplied evidence does not require a close crop or portrait-specific reframing."
+      }
+    },
+    "lighting": {
+      "owner": "world-composition",
+      "ambientColor": "#F2EEE6",
+      "ambientIntensity": 0.74,
+      "keyColor": "#FFFDF7",
+      "keyIntensity": 1.03,
+      "keyPosition": [
+        4,
+        6,
+        8
+      ],
+      "rimColor": "#B8B3AA",
+      "rimIntensity": 0.34,
+      "rimPosition": [
+        -5,
+        2,
+        -4
+      ],
+      "contrast": {
+        "mode": "integrated-part-readability",
+        "notes": "Warm paper lighting protects pale negative space and keeps dark contours readable without adding a generic glow or bloom layer."
+      }
+    },
+    "outputColorTransform": {
+      "owner": "world-composition",
+      "mode": "final-color-contrast-only",
+      "contrast": 1.07,
+      "saturation": 1.04,
+      "exposure": 1.01,
+      "vignette": 0.045,
+      "hueShift": 0,
+      "distortion": 0
+    },
+    "parts": [
+      {
+        "id": "world-environment",
+        "partId": "world-environment",
+        "role": "world-environment",
+        "moduleRef": {
+          "type": "immersive-world-generated-module",
+          "version": 1,
+          "moduleId": "de-kooning-war-narratives-world-environment",
+          "partId": "world-environment",
+          "hash": "9f1bd4b862cd4904c9f60ea2322e99de09f12612791b0e78880762fafeaccd2f",
+          "integrity": "sha256-9f1bd4b862cd4904c9f60ea2322e99de09f12612791b0e78880762fafeaccd2f",
+          "exportName": "createImmersiveWorldPart",
+          "file": "data/immersive-world/generated-modules/9f1bd4b862cd4904c9f60ea2322e99de09f12612791b0e78880762fafeaccd2f.mjs",
+          "url": "./data/immersive-world/generated-modules/9f1bd4b862cd4904c9f60ea2322e99de09f12612791b0e78880762fafeaccd2f.mjs",
+          "rendererCompatibility": {
+            "version": 1,
+            "targetMode": "webgpu-project-scene",
+            "compatibilityStatus": "webgpu-compatible",
+            "webgpuCompatible": true,
+            "evidenceReasons": [
+              "webgpu-safe-material",
+              "webgpu-native-helper-utility",
+              "source-used-project-webgpu-material-factory"
+            ],
+            "featureFacts": [
+              {
+                "kind": "standard-material",
+                "material": "MeshBasicMaterial",
+                "family": "standard-material-surface",
+                "reason": "webgpu-safe-material"
+              },
+              {
+                "kind": "standard-material",
+                "material": "LineBasicMaterial",
+                "family": "standard-material-surface",
+                "reason": "webgpu-safe-material"
+              },
+              {
+                "kind": "webgpu-native-helper",
+                "id": "direction-space-skybox-shell",
+                "family": "sky-background-field",
+                "factory": "sky-background-field",
+                "material": "MeshBasicMaterial",
+                "surface": "direction-space-vertex-color-skybox-shell",
+                "reason": "webgpu-native-helper-utility"
+              },
+              {
+                "kind": "material-factory",
+                "id": "sky-background-field",
+                "family": "sky-background-field",
+                "material": "MeshBasicMaterial",
+                "surface": "scene-background-or-large-plane",
+                "reason": "source-used-project-webgpu-material-factory"
+              },
+              {
+                "kind": "standard-material",
+                "material": "PointsMaterial",
+                "family": "standard-material-surface",
+                "reason": "webgpu-safe-material"
+              }
+            ],
+            "compatibleSurfaces": [
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "MeshBasicMaterial"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "LineBasicMaterial"
+              },
+              {
+                "reason": "webgpu-native-helper-utility",
+                "api": "utilities.createDirectionSpaceSkyboxShell",
+                "helperId": "direction-space-skybox-shell",
+                "featureFamily": "sky-background-field",
+                "outputKind": "object-bundle",
+                "materialType": "MeshBasicMaterial",
+                "runtimeSurface": "direction-space-vertex-color-skybox-shell",
+                "factoryId": "sky-background-field",
+                "materialFactoryId": "sky-background-field",
+                "factoryCategory": "sky-background-field"
+              },
+              {
+                "reason": "source-used-project-webgpu-material-factory",
+                "materialType": "MeshBasicMaterial",
+                "runtimeSurface": "scene-background-or-large-plane",
+                "factoryId": "sky-background-field",
+                "materialFactoryId": "sky-background-field",
+                "factoryCategory": "sky-background-field",
+                "property": "materialFactoryId"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "PointsMaterial"
+              }
+            ]
+          }
+        },
+        "params": {
+          "band": "technical-support",
+          "layer": "background",
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "scale": 1,
+          "opacity": 0.88,
+          "motionIntensity": 0.14,
+          "renderOrder": 0,
+          "visibilityPriority": "technical-support"
+        },
+        "paramSemantics": {
+          "band": "visual placement/readability band for full-world params; distinct from declared compositionOwnership.lane"
+        },
+        "evidence": {
+          "declaredCompositionOwnership": {
+            "lane": "technical-support",
+            "owns": [
+              "technical support/compatibility part: renderer environment object, camera-safe world context, and optional atmosphere only when declared by visualConstructionDecision",
+              "room for the selected-news transformation and optional artist-style carrier to read"
+            ],
+            "avoid": [
+              "claiming visible construction not declared by visualConstructionDecision",
+              "stealing selected-news transformation or artist-style carrier ownership"
+            ]
+          },
+          "compositionOwnershipSource": "part-specs.json#/parts/world-environment/compositionOwnership",
+          "compositionAdaptations": [
+            "Kept at the origin as the accepted WebGPU-safe technical support environment.",
+            "Opacity and motion are restrained so the environment supplies pale paper, blurred grid pressure, dark distance band, and red/ochre atmosphere without stealing selected-news transformation ownership.",
+            "Kept at origin as pale technical support, with restrained opacity and motion so it supports rather than dominates the selected-news and artist lanes.",
+            "composition modified world-environment from isolated accepted-part defaults"
+          ],
+          "workshopAcceptance": [
+            "Inspected the supplied local concept reference directly: broad high-key paper/ochre field, asymmetric black contour web, dark right-side pressure, and orange-red accents were used only as advisory palette/value/density guidance.",
+            "Static check succeeded for drafts/world-environment.module.mjs with no validation errors.",
+            "Playwright preview attempt 2 captured desktop screenshot previews/attempt-002/002-world-environment-draft-desktop.jpg with healthStatus ok and captureStatus ok.",
+            "Render report previews/attempt-002/desktop-render-report.json proves WebGPU backend rendering and WebGPU-safe feature evidence: MeshBasicMaterial, LineBasicMaterial, PointsMaterial, material factories sky-background-field/color-field/procedural-marks/soft-particles, and utilities.createDirectionSpaceSkyboxShell.",
+            "Screenshot inspection showed a nonblank high-key de Kooning support environment: pale paper field, asymmetric matte planes, visible broken contour web, dark band pressure, and red/ochre distortion accents while leaving the primary news fracture and artist mark-field lanes open.",
+            "desktop:part-preview-evolution/001-world-environment-accepted-desktop.jpg"
+          ],
+          "compositionBeforeHash": "38cb3af217775738",
+          "compositionAfterHash": "230daf3e0c4a4a53"
+        },
+        "compositionOwnership": {
+          "lane": "technical-support",
+          "owns": [
+            "technical support/compatibility part: renderer environment object, camera-safe world context, and optional atmosphere only when declared by visualConstructionDecision",
+            "room for the selected-news transformation and optional artist-style carrier to read"
+          ],
+          "avoid": [
+            "claiming visible construction not declared by visualConstructionDecision",
+            "stealing selected-news transformation or artist-style carrier ownership"
+          ]
+        }
+      },
+      {
+        "id": "non-literal-fracture-transformation",
+        "partId": "non-literal-fracture-transformation",
+        "role": "primary-news-signal",
+        "moduleRef": {
+          "type": "immersive-world-generated-module",
+          "version": 1,
+          "moduleId": "de-kooning-war-narratives-fracture-transformation",
+          "partId": "non-literal-fracture-transformation",
+          "hash": "45693fde496b58efb6e61c6545a502eb0344de8068ade8dfcb5b19be5c7a4a39",
+          "integrity": "sha256-45693fde496b58efb6e61c6545a502eb0344de8068ade8dfcb5b19be5c7a4a39",
+          "exportName": "createImmersiveWorldPart",
+          "file": "data/immersive-world/generated-modules/45693fde496b58efb6e61c6545a502eb0344de8068ade8dfcb5b19be5c7a4a39.mjs",
+          "url": "./data/immersive-world/generated-modules/45693fde496b58efb6e61c6545a502eb0344de8068ade8dfcb5b19be5c7a4a39.mjs",
+          "rendererCompatibility": {
+            "version": 1,
+            "targetMode": "webgpu-project-scene",
+            "compatibilityStatus": "webgpu-compatible",
+            "webgpuCompatible": true,
+            "evidenceReasons": [
+              "webgpu-safe-material",
+              "webgpu-native-helper-utility"
+            ],
+            "featureFacts": [
+              {
+                "kind": "standard-material",
+                "material": "MeshBasicMaterial",
+                "family": "standard-material-surface",
+                "reason": "webgpu-safe-material"
+              },
+              {
+                "kind": "standard-material",
+                "material": "LineBasicMaterial",
+                "family": "standard-material-surface",
+                "reason": "webgpu-safe-material"
+              },
+              {
+                "kind": "standard-material",
+                "material": "PointsMaterial",
+                "family": "standard-material-surface",
+                "reason": "webgpu-safe-material"
+              },
+              {
+                "kind": "webgpu-native-helper",
+                "id": "animated-instanced-mark-field",
+                "family": "instanced-marks",
+                "factory": "procedural-marks",
+                "material": "MeshBasicMaterial",
+                "surface": "three-instanced-mesh-basic-material-frame-facts",
+                "reason": "webgpu-native-helper-utility"
+              }
+            ],
+            "compatibleSurfaces": [
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "MeshBasicMaterial"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "LineBasicMaterial"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "PointsMaterial"
+              },
+              {
+                "reason": "webgpu-native-helper-utility",
+                "api": "utilities.createAnimatedInstancedMarkField",
+                "helperId": "animated-instanced-mark-field",
+                "featureFamily": "instanced-marks",
+                "outputKind": "object-bundle",
+                "materialType": "MeshBasicMaterial",
+                "runtimeSurface": "three-instanced-mesh-basic-material-frame-facts",
+                "factoryId": "procedural-marks",
+                "materialFactoryId": "procedural-marks",
+                "factoryCategory": "procedural-marks"
+              }
+            ]
+          }
+        },
+        "params": {
+          "band": "primary-readability",
+          "layer": "middleground",
+          "position": [
+            -0.08,
+            0.08,
+            -2.2
+          ],
+          "scale": 1.45,
+          "opacity": 0.92,
+          "motionIntensity": 0.2,
+          "renderOrder": 3,
+          "visibilityPriority": "primary"
+        },
+        "paramSemantics": {
+          "band": "visual placement/readability band for full-world params; distinct from declared compositionOwnership.lane"
+        },
+        "evidence": {
+          "declaredCompositionOwnership": {
+            "lane": "selected-news-transformation",
+            "owns": [
+              "selected-news transformation part: express visualConstructionDecision.selectedNewsTransformationMetaphor through the run-specific spatial/form/material/palette system"
+            ],
+            "avoid": [
+              "using a visual metaphor not declared by visualConstructionDecision",
+              "taking technical support or artist-style carrier ownership unless assigned"
+            ]
+          },
+          "compositionOwnershipSource": "part-specs.json#/parts/non-literal-fracture-transformation/compositionOwnership",
+          "compositionAdaptations": [
+            "Held in the declared selected-news transformation lane as the main readable fracture system.",
+            "Kept near center and in the mid-depth envelope so black contour crossings, right dark reality band, ochre rhetoric scrape, red Trump cue slash, and measured public grid pulse read across desktop and mobile.",
+            "Motion intensity stays low to preserve the packet's steady-grid-pulse meaning without turning the still composition into unrelated animation.",
+            "Held near center as the primary selected-news fracture system; scale and depth preserve the black contour crossings, right dark band, red Trump cue slash, ochre scrape, and measured grid pulse.",
+            "composition modified non-literal-fracture-transformation from isolated accepted-part defaults"
+          ],
+          "workshopAcceptance": [
+            "Inspected concept-reference image directly as advisory-only media: broad cream/peach geometric planes, black contour web, dark right band, ochre/red accents, all-over fractured rhythm.",
+            "Static draft check succeeded with no validation errors.",
+            "Playwright preview attempt 1 succeeded with captureStatus ok and healthStatus ok.",
+            "Desktop screenshot showed a readable asymmetric field of large pale/peach/grey planes, a heavy right dark reality band, black crossing contours, red-orange distortion slash, ochre rhetoric scrapes, drips, scratches, and measured grid-pulse pigment points.",
+            "Render report confirmed WebGPU renderer/backend, standard MeshBasicMaterial/LineBasicMaterial/PointsMaterial surfaces, materialFactoryId evidence for color-field/procedural-marks/soft-particles, and WebGPU native helper evidence for utilities.createAnimatedInstancedMarkField.",
+            "desktop:part-preview-evolution/002-non-literal-fracture-transformation-accepted-desktop.jpg"
+          ],
+          "compositionBeforeHash": "81cd6d85082e86f1",
+          "compositionAfterHash": "d816ca2624e2bc44"
+        },
+        "compositionOwnership": {
+          "lane": "selected-news-transformation",
+          "owns": [
+            "selected-news transformation part: express visualConstructionDecision.selectedNewsTransformationMetaphor through the run-specific spatial/form/material/palette system"
+          ],
+          "avoid": [
+            "using a visual metaphor not declared by visualConstructionDecision",
+            "taking technical support or artist-style carrier ownership unless assigned"
+          ]
+        }
+      },
+      {
+        "id": "artist-mark-field",
+        "partId": "artist-mark-field",
+        "role": "artist-style-system",
+        "moduleRef": {
+          "type": "immersive-world-generated-module",
+          "version": 1,
+          "moduleId": "de-kooning-war-narratives-artist-mark-field",
+          "partId": "artist-mark-field",
+          "hash": "eea14b0b461fc8e72d7c83d8cb7bdec5d7e0ac84054dfc20e65740e8fdf6c23f",
+          "integrity": "sha256-eea14b0b461fc8e72d7c83d8cb7bdec5d7e0ac84054dfc20e65740e8fdf6c23f",
+          "exportName": "createImmersiveWorldPart",
+          "file": "data/immersive-world/generated-modules/eea14b0b461fc8e72d7c83d8cb7bdec5d7e0ac84054dfc20e65740e8fdf6c23f.mjs",
+          "url": "./data/immersive-world/generated-modules/eea14b0b461fc8e72d7c83d8cb7bdec5d7e0ac84054dfc20e65740e8fdf6c23f.mjs",
+          "rendererCompatibility": {
+            "version": 1,
+            "targetMode": "webgpu-project-scene",
+            "compatibilityStatus": "webgpu-compatible",
+            "webgpuCompatible": true,
+            "evidenceReasons": [
+              "webgpu-safe-material",
+              "webgpu-native-helper-utility"
+            ],
+            "featureFacts": [
+              {
+                "kind": "standard-material",
+                "material": "MeshBasicMaterial",
+                "family": "standard-material-surface",
+                "reason": "webgpu-safe-material"
+              },
+              {
+                "kind": "standard-material",
+                "material": "LineBasicMaterial",
+                "family": "standard-material-surface",
+                "reason": "webgpu-safe-material"
+              },
+              {
+                "kind": "standard-material",
+                "material": "PointsMaterial",
+                "family": "standard-material-surface",
+                "reason": "webgpu-safe-material"
+              },
+              {
+                "kind": "webgpu-native-helper",
+                "id": "animated-instanced-mark-field",
+                "family": "instanced-marks",
+                "factory": "procedural-marks",
+                "material": "MeshBasicMaterial",
+                "surface": "three-instanced-mesh-basic-material-frame-facts",
+                "reason": "webgpu-native-helper-utility"
+              }
+            ],
+            "compatibleSurfaces": [
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "MeshBasicMaterial"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "LineBasicMaterial"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "PointsMaterial"
+              },
+              {
+                "reason": "webgpu-native-helper-utility",
+                "api": "utilities.createAnimatedInstancedMarkField",
+                "helperId": "animated-instanced-mark-field",
+                "featureFamily": "instanced-marks",
+                "outputKind": "object-bundle",
+                "materialType": "MeshBasicMaterial",
+                "runtimeSurface": "three-instanced-mesh-basic-material-frame-facts",
+                "factoryId": "procedural-marks",
+                "materialFactoryId": "procedural-marks",
+                "factoryCategory": "procedural-marks"
+              }
+            ]
+          }
+        },
+        "params": {
+          "band": "support-readability",
+          "layer": "foreground",
+          "position": [
+            0.72,
+            -0.04,
+            -2.85
+          ],
+          "scale": 0.74,
+          "opacity": 0.58,
+          "motionIntensity": 0.16,
+          "renderOrder": 4,
+          "visibilityPriority": "supporting"
+        },
+        "paramSemantics": {
+          "band": "visual placement/readability band for full-world params; distinct from declared compositionOwnership.lane"
+        },
+        "evidence": {
+          "declaredCompositionOwnership": {
+            "lane": "artist-construction",
+            "owns": [
+              "optional artist-style carrier part: carry cited artist form, material, mark, volume, object, light, void, color relation, or spatial rhythm"
+            ],
+            "avoid": [
+              "becoming mandatory when visualConstructionDecision chooses another artist-style carrier",
+              "taking selected-news transformation unless explicitly assigned"
+            ]
+          },
+          "compositionOwnershipSource": "part-specs.json#/parts/artist-mark-field/compositionOwnership",
+          "compositionAdaptations": [
+            "Preserved as the declared artist-construction carrier rather than a second primary news signal.",
+            "Offset slightly right and reduced in scale/opacity so its black contour web, pale geometric planes, scratches, ochre marks, red slash, and pigment pulse thicken the all-over field without burying the primary fracture transformation.",
+            "Foreground placement is a readability band only; ownership remains artist-construction.",
+            "Reduced and offset slightly right so the artist mark field adds scratches, contour texture, and warm accents without obscuring the primary fracture transformation.",
+            "composition modified artist-mark-field from isolated accepted-part defaults"
+          ],
+          "workshopAcceptance": [
+            "Inspected concept reference directly: warm pale ground, asymmetric cream/tan/gray planes, heavy black right band, wiry contour crossings, ochre/red accents, and drip-like verticals were used only as loose palette/value/density guidance.",
+            "Static check succeeded for drafts/artist-mark-field.module.mjs with validation.pass true and sourceHash a5354b3acd14557947679053100a7ea3f99bd74dc238baf927996a128d66b29a.",
+            "Preview attempt 2 succeeded with WebGPU renderer backend, healthStatus ok, captureStatus ok, and package hash eea14b0b461fc8e72d7c83d8cb7bdec5d7e0ac84054dfc20e65740e8fdf6c23f.",
+            "Attempt 2 screenshot showed a readable large pale/warm geometric-plane field, visible black contour web, dark right-side band, red-orange vertical slash, ochre accents, dry scratches, and secondary pigment/grid pulse.",
+            "desktop:part-preview-evolution/003-artist-mark-field-accepted-desktop.jpg"
+          ],
+          "compositionBeforeHash": "04817b31f107f98c",
+          "compositionAfterHash": "62c383c5c994360b"
+        },
+        "compositionOwnership": {
+          "lane": "artist-construction",
+          "owns": [
+            "optional artist-style carrier part: carry cited artist form, material, mark, volume, object, light, void, color relation, or spatial rhythm"
+          ],
+          "avoid": [
+            "becoming mandatory when visualConstructionDecision chooses another artist-style carrier",
+            "taking selected-news transformation unless explicitly assigned"
+          ]
+        }
+      }
+    ],
+    "acceptedPartsRef": "context.acceptedParts",
+    "compositionEvidence": {
+      "draftIntent": "Assemble accepted WebGPU-compatible de Kooning/war-narratives parts into a high-key all-over abstract field: environment as pale support, non-literal-fracture-transformation as the selected-news split, and artist-mark-field as a restrained artist-language overlay.",
+      "mediaInspected": [
+        "part-preview-evolution/001-world-environment-accepted-desktop.jpg",
+        "part-preview-evolution/002-non-literal-fracture-transformation-accepted-desktop.jpg",
+        "part-preview-evolution/003-artist-mark-field-accepted-desktop.jpg"
+      ],
+      "rendererCompatibilityPreserved": [
+        "world-environment keeps accepted MeshBasicMaterial, LineBasicMaterial, PointsMaterial, sky-background-field factory, and direction-space-skybox-shell helper evidence refs.",
+        "non-literal-fracture-transformation keeps accepted MeshBasicMaterial, LineBasicMaterial, PointsMaterial, and animated-instanced-mark-field helper evidence refs.",
+        "artist-mark-field keeps accepted MeshBasicMaterial, LineBasicMaterial, PointsMaterial, and animated-instanced-mark-field helper evidence refs."
+      ],
+      "previewEvidence": {
+        "attemptNumber": 1,
+        "desktop": "previews/attempt-001/world-composition-desktop.jpg",
+        "mobile": "previews/attempt-001/world-composition-mobile.jpg",
+        "renderReports": [
+          "previews/attempt-001/desktop-render-report.json",
+          "previews/attempt-001/mobile-render-report.json"
+        ],
+        "verdict": "Accepted after attempt 1: desktop keeps the all-over asymmetric paper field, black contour crossings, dark right pressure band, red-orange Trump cue slash, ochre scrape, and scratch/pigment texture readable. Mobile crops into the central fracture but preserves the red slash, dark band, contour web, and pale negative-space structure.",
+        "rendererNote": "Preview render reports captured with healthStatus ok and webgpuFeatureFacts present for the accepted parts. The local preview runtime reported actualRendererMode webgl-legacy / webgl2, so renderer compatibility is preserved through accepted part feature evidence rather than claimed from the preview backend."
+      },
+      "visualContract": {
+        "subject": "abstract no-subject all-over de Kooning-inspired narrative fracture field",
+        "identity": [
+          "pale paper/ochre ground",
+          "asymmetric black contour web",
+          "dark right-side pressure band",
+          "red-orange Trump cue slash",
+          "ochre rhetoric scrape",
+          "visible scratches and pigment pulse"
+        ],
+        "cameraEnvelope": {
+          "near": 1.7,
+          "design": 14.2,
+          "far": 72
+        },
+        "invariants": [
+          "primary fracture remains readable without replacing accepted modules",
+          "environment supports rather than dominates",
+          "artist mark field enriches material texture without obscuring the selected-news signal",
+          "final grade uses world.outputColorTransform only"
+        ],
+        "allowedDivergences": [
+          "final 3D assembly may be paler and more atmospheric than the concept reference because accepted parts use a camera-space paper environment",
+          "no exact concept-reference image matching is required"
+        ]
+      },
+      "skillUse": {
+        "attempted": true,
+        "used": [
+          "$threejs-visual-validation",
+          "$threejs-camera-direction",
+          "$threejs-exposure-color-grading"
+        ],
+        "takeaways": [
+          "Use the canonical public camera as the fixed design bookmark unless Playwright desktop and mobile evidence proves framing failure.",
+          "Keep output grade subtle and renderer-owned; do not use exposure to repair part balance or claim extra post pipelines.",
+          "Evaluate final acceptance from deterministic desktop and mobile screenshots plus render reports, with attention to readable value range, contour separation, accent control, and WebGPU backend health."
+        ]
+      }
+    },
+    "generatedModules": [
+      {
+        "type": "immersive-world-generated-module",
+        "version": 1,
+        "moduleId": "de-kooning-war-narratives-world-environment",
+        "partId": "world-environment",
+        "hash": "9f1bd4b862cd4904c9f60ea2322e99de09f12612791b0e78880762fafeaccd2f",
+        "integrity": "sha256-9f1bd4b862cd4904c9f60ea2322e99de09f12612791b0e78880762fafeaccd2f",
+        "exportName": "createImmersiveWorldPart",
+        "file": "data/immersive-world/generated-modules/9f1bd4b862cd4904c9f60ea2322e99de09f12612791b0e78880762fafeaccd2f.mjs",
+        "url": "./data/immersive-world/generated-modules/9f1bd4b862cd4904c9f60ea2322e99de09f12612791b0e78880762fafeaccd2f.mjs",
+        "rendererCompatibility": {
+          "version": 1,
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material",
+            "webgpu-native-helper-utility",
+            "source-used-project-webgpu-material-factory"
+          ],
+          "featureFacts": [
+            {
+              "kind": "standard-material",
+              "material": "MeshBasicMaterial",
+              "family": "standard-material-surface",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "standard-material",
+              "material": "LineBasicMaterial",
+              "family": "standard-material-surface",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "webgpu-native-helper",
+              "id": "direction-space-skybox-shell",
+              "family": "sky-background-field",
+              "factory": "sky-background-field",
+              "material": "MeshBasicMaterial",
+              "surface": "direction-space-vertex-color-skybox-shell",
+              "reason": "webgpu-native-helper-utility"
+            },
+            {
+              "kind": "material-factory",
+              "id": "sky-background-field",
+              "family": "sky-background-field",
+              "material": "MeshBasicMaterial",
+              "surface": "scene-background-or-large-plane",
+              "reason": "source-used-project-webgpu-material-factory"
+            },
+            {
+              "kind": "standard-material",
+              "material": "PointsMaterial",
+              "family": "standard-material-surface",
+              "reason": "webgpu-safe-material"
+            }
+          ],
+          "compatibleSurfaces": [
+            {
+              "reason": "webgpu-safe-material",
+              "materialType": "MeshBasicMaterial"
+            },
+            {
+              "reason": "webgpu-safe-material",
+              "materialType": "LineBasicMaterial"
+            },
+            {
+              "reason": "webgpu-native-helper-utility",
+              "api": "utilities.createDirectionSpaceSkyboxShell",
+              "helperId": "direction-space-skybox-shell",
+              "featureFamily": "sky-background-field",
+              "outputKind": "object-bundle",
+              "materialType": "MeshBasicMaterial",
+              "runtimeSurface": "direction-space-vertex-color-skybox-shell",
+              "factoryId": "sky-background-field",
+              "materialFactoryId": "sky-background-field",
+              "factoryCategory": "sky-background-field"
+            },
+            {
+              "reason": "source-used-project-webgpu-material-factory",
+              "materialType": "MeshBasicMaterial",
+              "runtimeSurface": "scene-background-or-large-plane",
+              "factoryId": "sky-background-field",
+              "materialFactoryId": "sky-background-field",
+              "factoryCategory": "sky-background-field",
+              "property": "materialFactoryId"
+            },
+            {
+              "reason": "webgpu-safe-material",
+              "materialType": "PointsMaterial"
+            }
+          ]
+        }
+      },
+      {
+        "type": "immersive-world-generated-module",
+        "version": 1,
+        "moduleId": "de-kooning-war-narratives-fracture-transformation",
+        "partId": "non-literal-fracture-transformation",
+        "hash": "45693fde496b58efb6e61c6545a502eb0344de8068ade8dfcb5b19be5c7a4a39",
+        "integrity": "sha256-45693fde496b58efb6e61c6545a502eb0344de8068ade8dfcb5b19be5c7a4a39",
+        "exportName": "createImmersiveWorldPart",
+        "file": "data/immersive-world/generated-modules/45693fde496b58efb6e61c6545a502eb0344de8068ade8dfcb5b19be5c7a4a39.mjs",
+        "url": "./data/immersive-world/generated-modules/45693fde496b58efb6e61c6545a502eb0344de8068ade8dfcb5b19be5c7a4a39.mjs",
+        "rendererCompatibility": {
+          "version": 1,
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material",
+            "webgpu-native-helper-utility"
+          ],
+          "featureFacts": [
+            {
+              "kind": "standard-material",
+              "material": "MeshBasicMaterial",
+              "family": "standard-material-surface",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "standard-material",
+              "material": "LineBasicMaterial",
+              "family": "standard-material-surface",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "standard-material",
+              "material": "PointsMaterial",
+              "family": "standard-material-surface",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "webgpu-native-helper",
+              "id": "animated-instanced-mark-field",
+              "family": "instanced-marks",
+              "factory": "procedural-marks",
+              "material": "MeshBasicMaterial",
+              "surface": "three-instanced-mesh-basic-material-frame-facts",
+              "reason": "webgpu-native-helper-utility"
+            }
+          ],
+          "compatibleSurfaces": [
+            {
+              "reason": "webgpu-safe-material",
+              "materialType": "MeshBasicMaterial"
+            },
+            {
+              "reason": "webgpu-safe-material",
+              "materialType": "LineBasicMaterial"
+            },
+            {
+              "reason": "webgpu-safe-material",
+              "materialType": "PointsMaterial"
+            },
+            {
+              "reason": "webgpu-native-helper-utility",
+              "api": "utilities.createAnimatedInstancedMarkField",
+              "helperId": "animated-instanced-mark-field",
+              "featureFamily": "instanced-marks",
+              "outputKind": "object-bundle",
+              "materialType": "MeshBasicMaterial",
+              "runtimeSurface": "three-instanced-mesh-basic-material-frame-facts",
+              "factoryId": "procedural-marks",
+              "materialFactoryId": "procedural-marks",
+              "factoryCategory": "procedural-marks"
+            }
+          ]
+        }
+      },
+      {
+        "type": "immersive-world-generated-module",
+        "version": 1,
+        "moduleId": "de-kooning-war-narratives-artist-mark-field",
+        "partId": "artist-mark-field",
+        "hash": "eea14b0b461fc8e72d7c83d8cb7bdec5d7e0ac84054dfc20e65740e8fdf6c23f",
+        "integrity": "sha256-eea14b0b461fc8e72d7c83d8cb7bdec5d7e0ac84054dfc20e65740e8fdf6c23f",
+        "exportName": "createImmersiveWorldPart",
+        "file": "data/immersive-world/generated-modules/eea14b0b461fc8e72d7c83d8cb7bdec5d7e0ac84054dfc20e65740e8fdf6c23f.mjs",
+        "url": "./data/immersive-world/generated-modules/eea14b0b461fc8e72d7c83d8cb7bdec5d7e0ac84054dfc20e65740e8fdf6c23f.mjs",
+        "rendererCompatibility": {
+          "version": 1,
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material",
+            "webgpu-native-helper-utility"
+          ],
+          "featureFacts": [
+            {
+              "kind": "standard-material",
+              "material": "MeshBasicMaterial",
+              "family": "standard-material-surface",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "standard-material",
+              "material": "LineBasicMaterial",
+              "family": "standard-material-surface",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "standard-material",
+              "material": "PointsMaterial",
+              "family": "standard-material-surface",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "webgpu-native-helper",
+              "id": "animated-instanced-mark-field",
+              "family": "instanced-marks",
+              "factory": "procedural-marks",
+              "material": "MeshBasicMaterial",
+              "surface": "three-instanced-mesh-basic-material-frame-facts",
+              "reason": "webgpu-native-helper-utility"
+            }
+          ],
+          "compatibleSurfaces": [
+            {
+              "reason": "webgpu-safe-material",
+              "materialType": "MeshBasicMaterial"
+            },
+            {
+              "reason": "webgpu-safe-material",
+              "materialType": "LineBasicMaterial"
+            },
+            {
+              "reason": "webgpu-safe-material",
+              "materialType": "PointsMaterial"
+            },
+            {
+              "reason": "webgpu-native-helper-utility",
+              "api": "utilities.createAnimatedInstancedMarkField",
+              "helperId": "animated-instanced-mark-field",
+              "featureFamily": "instanced-marks",
+              "outputKind": "object-bundle",
+              "materialType": "MeshBasicMaterial",
+              "runtimeSurface": "three-instanced-mesh-basic-material-frame-facts",
+              "factoryId": "procedural-marks",
+              "materialFactoryId": "procedural-marks",
+              "factoryCategory": "procedural-marks"
+            }
+          ]
+        }
+      }
+    ],
+    "rendererAuthoring": {
+      "version": 1,
+      "targetMode": "webgpu-project-scene",
+      "requestedTarget": "webgpu-project-scene",
+      "effectiveTarget": "webgpu-project-scene",
+      "webgpuTargeted": true,
+      "legacyWebglTargeted": false,
+      "unspecified": false,
+      "compatibilityGateRequired": true
+    },
+    "rendererCompatibility": {
+      "version": 1,
+      "targetMode": "webgpu-project-scene",
+      "webgpuTargeted": true,
+      "legacyWebglTargeted": false,
+      "compatibilityGateRequired": true,
+      "compatibilityStatus": "webgpu-compatible",
+      "webgpuCompatible": true,
+      "evidenceReasons": [
+        "webgpu-safe-material",
+        "webgpu-native-helper-utility",
+        "source-used-project-webgpu-material-factory"
+      ],
+      "featureFacts": [
+        {
+          "kind": "standard-material",
+          "family": "standard-material-surface",
+          "material": "MeshBasicMaterial",
+          "reason": "webgpu-safe-material"
+        },
+        {
+          "kind": "standard-material",
+          "family": "standard-material-surface",
+          "material": "LineBasicMaterial",
+          "reason": "webgpu-safe-material"
+        },
+        {
+          "kind": "webgpu-native-helper",
+          "id": "direction-space-skybox-shell",
+          "family": "sky-background-field",
+          "factory": "sky-background-field",
+          "material": "MeshBasicMaterial",
+          "surface": "direction-space-vertex-color-skybox-shell",
+          "reason": "webgpu-native-helper-utility"
+        },
+        {
+          "kind": "material-factory",
+          "id": "sky-background-field",
+          "family": "sky-background-field",
+          "material": "MeshBasicMaterial",
+          "surface": "scene-background-or-large-plane",
+          "reason": "source-used-project-webgpu-material-factory"
+        },
+        {
+          "kind": "standard-material",
+          "family": "standard-material-surface",
+          "material": "PointsMaterial",
+          "reason": "webgpu-safe-material"
+        },
+        {
+          "kind": "webgpu-native-helper",
+          "id": "animated-instanced-mark-field",
+          "family": "instanced-marks",
+          "factory": "procedural-marks",
+          "material": "MeshBasicMaterial",
+          "surface": "three-instanced-mesh-basic-material-frame-facts",
+          "reason": "webgpu-native-helper-utility"
+        }
+      ],
+      "moduleCount": 3,
+      "compatibleModuleCount": 3,
+      "incompatibleModuleCount": 0,
+      "compositionCompatibilityDeclared": false,
+      "modules": [
+        {
+          "partId": "world-environment",
+          "role": "world-environment",
+          "moduleId": "de-kooning-war-narratives-world-environment",
+          "hash": "9f1bd4b862cd4904c9f60ea2322e99de09f12612791b0e78880762fafeaccd2f",
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material",
+            "webgpu-native-helper-utility",
+            "source-used-project-webgpu-material-factory"
+          ],
+          "featureFacts": [
+            {
+              "kind": "standard-material",
+              "family": "standard-material-surface",
+              "material": "MeshBasicMaterial",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "standard-material",
+              "family": "standard-material-surface",
+              "material": "LineBasicMaterial",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "webgpu-native-helper",
+              "id": "direction-space-skybox-shell",
+              "family": "sky-background-field",
+              "factory": "sky-background-field",
+              "material": "MeshBasicMaterial",
+              "surface": "direction-space-vertex-color-skybox-shell",
+              "reason": "webgpu-native-helper-utility"
+            },
+            {
+              "kind": "material-factory",
+              "id": "sky-background-field",
+              "family": "sky-background-field",
+              "material": "MeshBasicMaterial",
+              "surface": "scene-background-or-large-plane",
+              "reason": "source-used-project-webgpu-material-factory"
+            },
+            {
+              "kind": "standard-material",
+              "family": "standard-material-surface",
+              "material": "PointsMaterial",
+              "reason": "webgpu-safe-material"
+            }
+          ],
+          "compatibleSurfaceCount": 5,
+          "sourceStage": "part-workshop"
+        },
+        {
+          "partId": "non-literal-fracture-transformation",
+          "role": "primary-news-signal",
+          "moduleId": "de-kooning-war-narratives-fracture-transformation",
+          "hash": "45693fde496b58efb6e61c6545a502eb0344de8068ade8dfcb5b19be5c7a4a39",
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material",
+            "webgpu-native-helper-utility"
+          ],
+          "featureFacts": [
+            {
+              "kind": "standard-material",
+              "family": "standard-material-surface",
+              "material": "MeshBasicMaterial",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "standard-material",
+              "family": "standard-material-surface",
+              "material": "LineBasicMaterial",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "standard-material",
+              "family": "standard-material-surface",
+              "material": "PointsMaterial",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "webgpu-native-helper",
+              "id": "animated-instanced-mark-field",
+              "family": "instanced-marks",
+              "factory": "procedural-marks",
+              "material": "MeshBasicMaterial",
+              "surface": "three-instanced-mesh-basic-material-frame-facts",
+              "reason": "webgpu-native-helper-utility"
+            }
+          ],
+          "compatibleSurfaceCount": 4,
+          "sourceStage": "part-workshop"
+        },
+        {
+          "partId": "artist-mark-field",
+          "role": "artist-style-system",
+          "moduleId": "de-kooning-war-narratives-artist-mark-field",
+          "hash": "eea14b0b461fc8e72d7c83d8cb7bdec5d7e0ac84054dfc20e65740e8fdf6c23f",
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material",
+            "webgpu-native-helper-utility"
+          ],
+          "featureFacts": [
+            {
+              "kind": "standard-material",
+              "family": "standard-material-surface",
+              "material": "MeshBasicMaterial",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "standard-material",
+              "family": "standard-material-surface",
+              "material": "LineBasicMaterial",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "standard-material",
+              "family": "standard-material-surface",
+              "material": "PointsMaterial",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "webgpu-native-helper",
+              "id": "animated-instanced-mark-field",
+              "family": "instanced-marks",
+              "factory": "procedural-marks",
+              "material": "MeshBasicMaterial",
+              "surface": "three-instanced-mesh-basic-material-frame-facts",
+              "reason": "webgpu-native-helper-utility"
+            }
+          ],
+          "compatibleSurfaceCount": 4,
+          "sourceStage": "part-workshop"
+        }
+      ]
+    },
+    "renderFacts": {
+      "environmentPresent": true,
+      "cameraOwnedByComposition": true,
+      "lightingOwnedByComposition": true,
+      "nearFarClippingOwned": true,
+      "acceptedPartCount": 3,
+      "generatedModuleCount": 3,
+      "generatedAssetCount": 0,
+      "rendererAuthoringTarget": "webgpu-project-scene",
+      "rendererCompatibilityStatus": "webgpu-compatible",
+      "webgpuRendererGateRequired": true,
+      "webgpuRendererCompatible": true,
+      "desktopPreviewRecorded": true,
+      "mobilePreviewRecorded": true
+    }
+  },
+  "image": {
+    "thumbnailJpeg": "./data/media/2026-07-06-0628z-war-of-narratives-in-the-united-states-the-distortion-between-his-rhetor/thumb-320.jpg",
+    "openGraphJpeg": "./data/media/2026-07-06-0628z-war-of-narratives-in-the-united-states-the-distortion-between-his-rhetor/og-1200x630.jpg",
+    "instagramJpeg": "./data/media/2026-07-06-0628z-war-of-narratives-in-the-united-states-the-distortion-between-his-rhetor/instagram-1080x1350.jpg",
+    "altText": "War of narratives in the United States: \"The distortion between his rhetoric and reality will discourage Trump voters\" by Willem de Kooning."
+  }
+}
