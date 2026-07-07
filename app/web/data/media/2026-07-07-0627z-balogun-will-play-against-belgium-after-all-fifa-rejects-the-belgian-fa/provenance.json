@@ -1,0 +1,76 @@
+{
+  "version": 2,
+  "kind": "rusty-art-public-media-assets",
+  "artworkId": "2026-07-07-0627z-balogun-will-play-against-belgium-after-all-fifa-rejects-the-belgian-fa",
+  "source": {
+    "sha256": "427ac244775f2b367975ff16ad25dd391533abe76e4903fcef084879e68a5655",
+    "role": "daily-preview-story-desktop"
+  },
+  "sources": {
+    "primary": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-desktop",
+      "sha256": "427ac244775f2b367975ff16ad25dd391533abe76e4903fcef084879e68a5655"
+    },
+    "openGraph": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-open-graph",
+      "sha256": "8a4972dab430b0d54b330c3a7b8a70d58de0f7b38b5ffb8fca44eb4280237590"
+    },
+    "instagram": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-instagram",
+      "sha256": "7b5495573fc0d76db846f3fdbf2d1db4be1df7fb9f0c5ec5943d83229f99c186"
+    }
+  },
+  "targets": {
+    "thumb-320.jpg": {
+      "spec": {
+        "fileName": "thumb-320.jpg",
+        "width": 320,
+        "height": null,
+        "fit": "inside",
+        "withoutEnlargement": true,
+        "format": "jpeg",
+        "quality": 82
+      },
+      "publicPath": "./data/media/2026-07-07-0627z-balogun-will-play-against-belgium-after-all-fifa-rejects-the-belgian-fa/thumb-320.jpg",
+      "source": {
+        "sha256": "427ac244775f2b367975ff16ad25dd391533abe76e4903fcef084879e68a5655",
+        "role": "daily-preview-story-desktop"
+      }
+    },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-07-07-0627z-balogun-will-play-against-belgium-after-all-fifa-rejects-the-belgian-fa/og-1200x630.jpg",
+      "source": {
+        "sha256": "8a4972dab430b0d54b330c3a7b8a70d58de0f7b38b5ffb8fca44eb4280237590",
+        "role": "daily-preview-story-open-graph"
+      }
+    },
+    "instagram-1080x1350.jpg": {
+      "spec": {
+        "fileName": "instagram-1080x1350.jpg",
+        "width": 1080,
+        "height": 1350,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-07-07-0627z-balogun-will-play-against-belgium-after-all-fifa-rejects-the-belgian-fa/instagram-1080x1350.jpg",
+      "source": {
+        "sha256": "7b5495573fc0d76db846f3fdbf2d1db4be1df7fb9f0c5ec5943d83229f99c186",
+        "role": "daily-preview-story-instagram"
+      }
+    }
+  }
+}
