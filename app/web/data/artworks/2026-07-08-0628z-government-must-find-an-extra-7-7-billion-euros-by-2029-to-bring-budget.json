@@ -1,0 +1,1208 @@
+{
+  "id": "2026-07-08-0628z-government-must-find-an-extra-7-7-billion-euros-by-2029-to-bring-budget",
+  "date": "2026-07-08",
+  "title": "Government must find an extra 7.7 billion euros by 2029 to bring budget under control, Monitoring Committee says in report",
+  "generatedAt": "2026-07-08T06:33:53.867Z",
+  "news": {
+    "source": "vrt",
+    "title": "Government must find an extra 7.7 billion euros by 2029 to bring budget under control, Monitoring Committee says in report",
+    "link": "https://vrtnws.be/p.xZ9R6XK0Z",
+    "score": null
+  },
+  "inspiration": {
+    "artist": "Kazimir Malevich",
+    "tags": [
+      "non-literal fracture transformation",
+      "Against",
+      "immersive-world"
+    ],
+    "links": {}
+  },
+  "seed": null,
+  "sceneStrategy": null,
+  "techStack": null,
+  "newsVisualMappings": [],
+  "qualityScore": {
+    "score": null,
+    "summary": null,
+    "heuristic": {
+      "score": null,
+      "breakdown": {}
+    },
+    "calibration": {
+      "sampleCount": 0,
+      "trustWeight": 0
+    },
+    "alignment": {
+      "totalAlign": null,
+      "components": {
+        "title": {
+          "score": null
+        },
+        "style": {
+          "score": null
+        },
+        "emotional": {
+          "score": null
+        }
+      }
+    }
+  },
+  "rationale": {
+    "intent": {
+      "signal": null,
+      "emotion": null,
+      "tension": null,
+      "balance": null,
+      "motion": null
+    },
+    "selection": {
+      "whyHeadline": null,
+      "priorityTerms": []
+    },
+    "qualitySummary": null
+  },
+  "runPolicy": null,
+  "artCreationMethod": "immersive-world-v1",
+  "world": {
+    "id": "immersive-world-malevich-budget-control-final",
+    "method": "immersive-world-v1",
+    "title": "Government must find an extra 7.7 billion euros by 2029 to bring budget under control, Monitoring Committee says in report",
+    "rendererAuthoringTarget": "webgpu-project-scene",
+    "environment": {
+      "owner": "world-composition",
+      "kind": "inside-facing-matte-paper-field",
+      "color": "#DDDAD5",
+      "fieldColor": "#DBD5D1",
+      "fogDensity": 0.008,
+      "radius": 92,
+      "skyboxRadius": 92,
+      "opacity": 0.92,
+      "palette": [
+        "#DDDAD5",
+        "#DBD5D1",
+        "#E3E3E1",
+        "#E2DEDC",
+        "#E6EAEC",
+        "#EAEBE3",
+        "#CECDCC",
+        "#0E0E0C",
+        "#02050C"
+      ],
+      "compositionIntent": "High-key matte paper surround with diagonal control rails and repeated monitoring bars; the environment remains technical support while preserving visible Malevich-style asymmetry and room for the selected-news fracture."
+    },
+    "camera": {
+      "owner": "world-composition",
+      "fov": 66,
+      "near": 0.08,
+      "far": 220,
+      "position": [
+        0.22,
+        2.12,
+        14.2
+      ],
+      "target": [
+        0.55,
+        0.18,
+        -5.6
+      ],
+      "distanceSafety": {
+        "nearFarOwnedHere": true,
+        "minPartDistance": 1.7,
+        "clippingRisk": "low",
+        "reason": "Canonical public camera retained as the fixed design bookmark: the accepted parts are broad abstract fields and no desktop/mobile evidence yet requires a custom projection."
+      }
+    },
+    "lighting": {
+      "owner": "world-composition",
+      "ambientColor": "#EDE7DE",
+      "ambientIntensity": 0.76,
+      "keyColor": "#FFFDF7",
+      "keyIntensity": 0.98,
+      "keyPosition": [
+        4,
+        6,
+        8
+      ],
+      "rimColor": "#D7E1E4",
+      "rimIntensity": 0.28,
+      "rimPosition": [
+        -5,
+        2,
+        -4
+      ],
+      "contrast": {
+        "mode": "integrated-part-readability",
+        "notes": "Warm paper light keeps pale planes from collapsing into gray while the restrained cool rim separates black rails and pale-blue reserve fields without adding a generic glow effect."
+      }
+    },
+    "outputColorTransform": {
+      "owner": "world-composition",
+      "mode": "final-color-contrast-only",
+      "contrast": 1.06,
+      "saturation": 1.03,
+      "exposure": 1.01,
+      "vignette": 0.05,
+      "hueShift": 0,
+      "distortion": 0
+    },
+    "parts": [
+      {
+        "id": "world-environment",
+        "partId": "world-environment",
+        "role": "world-environment",
+        "moduleRef": {
+          "type": "immersive-world-generated-module",
+          "version": 1,
+          "moduleId": "malevich-budget-control-world-environment",
+          "partId": "world-environment",
+          "hash": "a4f067a7535f99daaa067ad934ba554a166fad79e0b324e082456d881149b58f",
+          "integrity": "sha256-a4f067a7535f99daaa067ad934ba554a166fad79e0b324e082456d881149b58f",
+          "exportName": "createImmersiveWorldPart",
+          "file": "data/immersive-world/generated-modules/a4f067a7535f99daaa067ad934ba554a166fad79e0b324e082456d881149b58f.mjs",
+          "url": "./data/immersive-world/generated-modules/a4f067a7535f99daaa067ad934ba554a166fad79e0b324e082456d881149b58f.mjs",
+          "rendererCompatibility": {
+            "version": 1,
+            "targetMode": "webgpu-project-scene",
+            "compatibilityStatus": "webgpu-compatible",
+            "webgpuCompatible": true,
+            "evidenceReasons": [
+              "webgpu-safe-material",
+              "source-used-project-webgpu-material-factory",
+              "webgpu-native-helper-utility"
+            ],
+            "featureFacts": [
+              {
+                "kind": "standard-material",
+                "material": "MeshBasicMaterial",
+                "family": "standard-material-surface",
+                "reason": "webgpu-safe-material"
+              },
+              {
+                "kind": "standard-material",
+                "material": "LineBasicMaterial",
+                "family": "standard-material-surface",
+                "reason": "webgpu-safe-material"
+              },
+              {
+                "kind": "material-factory",
+                "id": "sky-background-field",
+                "family": "sky-background-field",
+                "material": "MeshBasicMaterial",
+                "surface": "scene-background-or-large-plane",
+                "reason": "source-used-project-webgpu-material-factory"
+              },
+              {
+                "kind": "webgpu-native-helper",
+                "id": "direction-space-skybox-shell",
+                "family": "sky-background-field",
+                "factory": "sky-background-field",
+                "material": "MeshBasicMaterial",
+                "surface": "direction-space-vertex-color-skybox-shell",
+                "reason": "webgpu-native-helper-utility"
+              },
+              {
+                "kind": "material-factory",
+                "id": "color-field",
+                "family": "color-field",
+                "material": "MeshBasicMaterial",
+                "surface": "three-basic-or-standard-material",
+                "reason": "source-used-project-webgpu-material-factory"
+              },
+              {
+                "kind": "standard-material",
+                "material": "PointsMaterial",
+                "family": "standard-material-surface",
+                "reason": "webgpu-safe-material"
+              },
+              {
+                "kind": "material-factory",
+                "id": "soft-particles",
+                "family": "soft-particles",
+                "material": "PointsMaterial",
+                "surface": "three-points-material",
+                "reason": "source-used-project-webgpu-material-factory"
+              },
+              {
+                "kind": "material-factory",
+                "id": "procedural-marks",
+                "family": "procedural-marks",
+                "material": "MeshBasicMaterial",
+                "surface": "instanced-geometry-material",
+                "reason": "source-used-project-webgpu-material-factory"
+              }
+            ],
+            "compatibleSurfaces": [
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "MeshBasicMaterial"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "LineBasicMaterial"
+              },
+              {
+                "reason": "source-used-project-webgpu-material-factory",
+                "materialType": "MeshBasicMaterial",
+                "runtimeSurface": "scene-background-or-large-plane",
+                "factoryId": "sky-background-field",
+                "materialFactoryId": "sky-background-field",
+                "factoryCategory": "sky-background-field",
+                "property": "materialFactoryId"
+              },
+              {
+                "reason": "webgpu-native-helper-utility",
+                "api": "utilities.createDirectionSpaceSkyboxShell",
+                "helperId": "direction-space-skybox-shell",
+                "featureFamily": "sky-background-field",
+                "outputKind": "object-bundle",
+                "materialType": "MeshBasicMaterial",
+                "runtimeSurface": "direction-space-vertex-color-skybox-shell",
+                "factoryId": "sky-background-field",
+                "materialFactoryId": "sky-background-field",
+                "factoryCategory": "sky-background-field"
+              },
+              {
+                "reason": "source-used-project-webgpu-material-factory",
+                "materialType": "MeshBasicMaterial",
+                "runtimeSurface": "three-basic-or-standard-material",
+                "factoryId": "color-field",
+                "materialFactoryId": "color-field",
+                "factoryCategory": "color-field",
+                "property": "materialFactoryId"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "PointsMaterial"
+              },
+              {
+                "reason": "source-used-project-webgpu-material-factory",
+                "materialType": "PointsMaterial",
+                "runtimeSurface": "three-points-material",
+                "factoryId": "soft-particles",
+                "materialFactoryId": "soft-particles",
+                "factoryCategory": "soft-particles",
+                "property": "materialFactoryId"
+              },
+              {
+                "reason": "source-used-project-webgpu-material-factory",
+                "materialType": "MeshBasicMaterial",
+                "runtimeSurface": "instanced-geometry-material",
+                "factoryId": "procedural-marks",
+                "materialFactoryId": "procedural-marks",
+                "factoryCategory": "procedural-marks",
+                "property": "materialFactoryId"
+              }
+            ]
+          }
+        },
+        "params": {
+          "band": "technical-support",
+          "layer": "background",
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "scale": 1,
+          "opacity": 0.9,
+          "motionIntensity": 0.12,
+          "renderOrder": 0,
+          "visibilityPriority": "technical-support"
+        },
+        "paramSemantics": {
+          "band": "visual placement/readability band for full-world params; distinct from declared compositionOwnership.lane"
+        },
+        "evidence": {
+          "declaredCompositionOwnership": {
+            "lane": "technical-support",
+            "owns": [
+              "technical support/compatibility part: renderer environment object, camera-safe world context, and optional atmosphere only when declared by visualConstructionDecision",
+              "room for the selected-news transformation and optional artist-style carrier to read"
+            ],
+            "avoid": [
+              "claiming visible construction not declared by visualConstructionDecision",
+              "stealing selected-news transformation or artist-style carrier ownership"
+            ]
+          },
+          "compositionOwnershipSource": "part-specs.json#/parts/world-environment/compositionOwnership",
+          "compositionAdaptations": [
+            "Kept at the origin as the accepted technical-support environment and camera-safe paper shell.",
+            "Opacity and motion are restrained so the diagonal rails, off-center anchor, and repeated monitoring bars frame the world without stealing selected-news ownership.",
+            "Kept at origin as technical support with restrained opacity and motion so the pale paper shell and diagonal rails frame the construction.",
+            "composition modified world-environment from isolated accepted-part defaults"
+          ],
+          "workshopAcceptance": [
+            "Attempt 2 desktop preview showed a nonblank pale paper surround with enlarged diagonal black/grey force rails, an off-center dark stabilizing slab, pale-blue reserve plane, thin ruling lines, and repeated monitoring bars.",
+            "Attempt 2 render report: WebGPU backend active, healthStatus ok, captureStatus ok, nonBlankRatio 0.994854, paintedCoverageRatio 0.756726, deadSpaceRatio 0.243274.",
+            "Static check passed for the final draft with no validation errors.",
+            "desktop:part-preview-evolution/001-world-environment-accepted-desktop.jpg"
+          ],
+          "compositionBeforeHash": "19b79cc718ca467b",
+          "compositionAfterHash": "89cc60f1b9e3751a"
+        },
+        "compositionOwnership": {
+          "lane": "technical-support",
+          "owns": [
+            "technical support/compatibility part: renderer environment object, camera-safe world context, and optional atmosphere only when declared by visualConstructionDecision",
+            "room for the selected-news transformation and optional artist-style carrier to read"
+          ],
+          "avoid": [
+            "claiming visible construction not declared by visualConstructionDecision",
+            "stealing selected-news transformation or artist-style carrier ownership"
+          ]
+        }
+      },
+      {
+        "id": "non-literal-fracture-transformation",
+        "partId": "non-literal-fracture-transformation",
+        "role": "primary-news-signal",
+        "moduleRef": {
+          "type": "immersive-world-generated-module",
+          "version": 1,
+          "moduleId": "malevich-budget-control-fracture-transformation",
+          "partId": "non-literal-fracture-transformation",
+          "hash": "620098d6508e7ca00efa24f4c6741081c8959da3d9ad27dca3de9bbe01b304e3",
+          "integrity": "sha256-620098d6508e7ca00efa24f4c6741081c8959da3d9ad27dca3de9bbe01b304e3",
+          "exportName": "createImmersiveWorldPart",
+          "file": "data/immersive-world/generated-modules/620098d6508e7ca00efa24f4c6741081c8959da3d9ad27dca3de9bbe01b304e3.mjs",
+          "url": "./data/immersive-world/generated-modules/620098d6508e7ca00efa24f4c6741081c8959da3d9ad27dca3de9bbe01b304e3.mjs",
+          "rendererCompatibility": {
+            "version": 1,
+            "targetMode": "webgpu-project-scene",
+            "compatibilityStatus": "webgpu-compatible",
+            "webgpuCompatible": true,
+            "evidenceReasons": [
+              "webgpu-safe-material",
+              "source-used-project-webgpu-material-factory"
+            ],
+            "featureFacts": [
+              {
+                "kind": "standard-material",
+                "material": "MeshBasicMaterial",
+                "family": "standard-material-surface",
+                "reason": "webgpu-safe-material"
+              },
+              {
+                "kind": "standard-material",
+                "material": "LineBasicMaterial",
+                "family": "standard-material-surface",
+                "reason": "webgpu-safe-material"
+              },
+              {
+                "kind": "material-factory",
+                "id": "color-field",
+                "family": "color-field",
+                "material": "MeshBasicMaterial",
+                "surface": "three-basic-or-standard-material",
+                "reason": "source-used-project-webgpu-material-factory"
+              }
+            ],
+            "compatibleSurfaces": [
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "MeshBasicMaterial"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "LineBasicMaterial"
+              },
+              {
+                "reason": "source-used-project-webgpu-material-factory",
+                "materialType": "MeshBasicMaterial",
+                "runtimeSurface": "three-basic-or-standard-material",
+                "factoryId": "color-field",
+                "materialFactoryId": "color-field",
+                "factoryCategory": "color-field",
+                "property": "materialFactoryId"
+              }
+            ]
+          }
+        },
+        "params": {
+          "band": "primary-readability",
+          "layer": "middleground",
+          "position": [
+            -0.1,
+            0.08,
+            -1.95
+          ],
+          "scale": 1.46,
+          "opacity": 0.94,
+          "motionIntensity": 0.16,
+          "renderOrder": 3,
+          "visibilityPriority": "primary"
+        },
+        "paramSemantics": {
+          "band": "visual placement/readability band for full-world params; distinct from declared compositionOwnership.lane"
+        },
+        "evidence": {
+          "declaredCompositionOwnership": {
+            "lane": "selected-news-transformation",
+            "owns": [
+              "selected-news transformation part: express visualConstructionDecision.selectedNewsTransformationMetaphor through the run-specific spatial/form/material/palette system"
+            ],
+            "avoid": [
+              "using a visual metaphor not declared by visualConstructionDecision",
+              "taking technical support or artist-style carrier ownership unless assigned"
+            ]
+          },
+          "compositionOwnershipSource": "part-specs.json#/parts/non-literal-fracture-transformation/compositionOwnership",
+          "compositionAdaptations": [
+            "Placed slightly left of the camera target and scaled as the dominant selected-news transformation so the black 7.7-billion deficit slab and long Against diagonal stay readable.",
+            "Slow kinetic-diagonal motion intensity preserves the news-derived pressure cue without turning the still Malevich construction into decorative animation.",
+            "Placed slightly left and scaled as the dominant selected-news signal so the black deficit slab and Against diagonal remain readable.",
+            "composition modified non-literal-fracture-transformation from isolated accepted-part defaults"
+          ],
+          "workshopAcceptance": [
+            "Inspected concept reference directly: pale scuffed field, off-center black slab, diagonal bars, pale blue/white fragments, sparse orbiting marks; used only as advisory palette/value/density support.",
+            "Static check succeeded for drafts/non-literal-fracture-transformation.module.mjs with validation.pass true and no errors.",
+            "Playwright desktop preview succeeded and produced previews/attempt-001/001-non-literal-fracture-transformation-draft-desktop.jpg.",
+            "Screenshot showed a nonblank, camera-safe Malevich-like abstract fracture: dominant off-center black deficit slab, long diagonal control bars, pale/blue geometric planes, repeated monitoring bars, small orbiting fragments, and visible scraped contour lines.",
+            "Render report healthStatus was ok, captureStatus ok, rendererMode webgpu, rendererBackend webgpu, with WebGPU-safe MeshBasicMaterial and LineBasicMaterial plus material-factory evidence for color-field, procedural-marks, and matte-painted-surface.",
+            "desktop:part-preview-evolution/002-non-literal-fracture-transformation-accepted-desktop.jpg"
+          ],
+          "compositionBeforeHash": "a85a44c2d3e04691",
+          "compositionAfterHash": "79d9092ac6396ec1"
+        },
+        "compositionOwnership": {
+          "lane": "selected-news-transformation",
+          "owns": [
+            "selected-news transformation part: express visualConstructionDecision.selectedNewsTransformationMetaphor through the run-specific spatial/form/material/palette system"
+          ],
+          "avoid": [
+            "using a visual metaphor not declared by visualConstructionDecision",
+            "taking technical support or artist-style carrier ownership unless assigned"
+          ]
+        }
+      },
+      {
+        "id": "artist-mark-field",
+        "partId": "artist-mark-field",
+        "role": "artist-style-system",
+        "moduleRef": {
+          "type": "immersive-world-generated-module",
+          "version": 1,
+          "moduleId": "malevich-budget-control-artist-mark-field",
+          "partId": "artist-mark-field",
+          "hash": "c5e8422e489717ff514b2c108ab50ace72928a28312be39852c2be234e9c892e",
+          "integrity": "sha256-c5e8422e489717ff514b2c108ab50ace72928a28312be39852c2be234e9c892e",
+          "exportName": "createImmersiveWorldPart",
+          "file": "data/immersive-world/generated-modules/c5e8422e489717ff514b2c108ab50ace72928a28312be39852c2be234e9c892e.mjs",
+          "url": "./data/immersive-world/generated-modules/c5e8422e489717ff514b2c108ab50ace72928a28312be39852c2be234e9c892e.mjs",
+          "rendererCompatibility": {
+            "version": 1,
+            "targetMode": "webgpu-project-scene",
+            "compatibilityStatus": "webgpu-compatible",
+            "webgpuCompatible": true,
+            "evidenceReasons": [
+              "webgpu-safe-material",
+              "webgpu-native-helper-utility"
+            ],
+            "featureFacts": [
+              {
+                "kind": "standard-material",
+                "material": "MeshBasicMaterial",
+                "family": "standard-material-surface",
+                "reason": "webgpu-safe-material"
+              },
+              {
+                "kind": "standard-material",
+                "material": "LineBasicMaterial",
+                "family": "standard-material-surface",
+                "reason": "webgpu-safe-material"
+              },
+              {
+                "kind": "standard-material",
+                "material": "PointsMaterial",
+                "family": "standard-material-surface",
+                "reason": "webgpu-safe-material"
+              },
+              {
+                "kind": "webgpu-native-helper",
+                "id": "animated-instanced-mark-field",
+                "family": "instanced-marks",
+                "factory": "procedural-marks",
+                "material": "MeshBasicMaterial",
+                "surface": "three-instanced-mesh-basic-material-frame-facts",
+                "reason": "webgpu-native-helper-utility"
+              }
+            ],
+            "compatibleSurfaces": [
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "MeshBasicMaterial"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "LineBasicMaterial"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "PointsMaterial"
+              },
+              {
+                "reason": "webgpu-native-helper-utility",
+                "api": "utilities.createAnimatedInstancedMarkField",
+                "helperId": "animated-instanced-mark-field",
+                "featureFamily": "instanced-marks",
+                "outputKind": "object-bundle",
+                "materialType": "MeshBasicMaterial",
+                "runtimeSurface": "three-instanced-mesh-basic-material-frame-facts",
+                "factoryId": "procedural-marks",
+                "materialFactoryId": "procedural-marks",
+                "factoryCategory": "procedural-marks"
+              }
+            ]
+          }
+        },
+        "params": {
+          "band": "support-readability",
+          "layer": "foreground",
+          "position": [
+            1.15,
+            -0.18,
+            -2.55
+          ],
+          "scale": 0.82,
+          "opacity": 0.62,
+          "motionIntensity": 0.12,
+          "renderOrder": 4,
+          "visibilityPriority": "supporting"
+        },
+        "paramSemantics": {
+          "band": "visual placement/readability band for full-world params; distinct from declared compositionOwnership.lane"
+        },
+        "evidence": {
+          "declaredCompositionOwnership": {
+            "lane": "artist-construction",
+            "owns": [
+              "optional artist-style carrier part: carry cited artist form, material, mark, volume, object, light, void, color relation, or spatial rhythm"
+            ],
+            "avoid": [
+              "becoming mandatory when visualConstructionDecision chooses another artist-style carrier",
+              "taking selected-news transformation unless explicitly assigned"
+            ]
+          },
+          "compositionOwnershipSource": "part-specs.json#/parts/artist-mark-field/compositionOwnership",
+          "compositionAdaptations": [
+            "Offset right and reduced so the dense scuffs, contour lines, small fragments, and ledger bars enrich the artist construction without burying the primary fracture.",
+            "Opacity remains below the selected-news signal while preserving visible handmade paint abrasion and Malevich hard-edge rhythm.",
+            "Offset right and reduced so scuffs, fragments, and ledger marks enrich the world without burying the primary fracture.",
+            "composition modified artist-mark-field from isolated accepted-part defaults"
+          ],
+          "workshopAcceptance": [
+            "Inspected the local concept-reference image directly for loose palette/value/composition mood only.",
+            "Static check succeeded for drafts/artist-mark-field.module.mjs with validation.pass true and no errors.",
+            "Attempt 2 Playwright preview succeeded with WebGPU renderer proof, healthStatus ok, captureStatus ok, and screenshot previews/attempt-002/002-artist-mark-field-draft-desktop.jpg.",
+            "Attempt 2 screenshot shows a readable Malevich-style construction: large off-center black slab, pale paper/blue anchors, diagonal control bars, right-side rhythmic ledger blocks, small orbiting fragments, and dry scuffed paint lines.",
+            "desktop:part-preview-evolution/003-artist-mark-field-accepted-desktop.jpg"
+          ],
+          "compositionBeforeHash": "b41ce726d433ed66",
+          "compositionAfterHash": "928681b7059924e0"
+        },
+        "compositionOwnership": {
+          "lane": "artist-construction",
+          "owns": [
+            "optional artist-style carrier part: carry cited artist form, material, mark, volume, object, light, void, color relation, or spatial rhythm"
+          ],
+          "avoid": [
+            "becoming mandatory when visualConstructionDecision chooses another artist-style carrier",
+            "taking selected-news transformation unless explicitly assigned"
+          ]
+        }
+      }
+    ],
+    "acceptedPartsRef": "context.acceptedParts",
+    "compositionEvidence": {
+      "draftIntent": "Assemble the three accepted WebGPU-compatible Malevich budget-control modules as an all-over abstract field: world-environment as pale technical support, non-literal-fracture-transformation as the selected-news pressure structure, and artist-mark-field as restrained near construction marks.",
+      "mediaInspected": [
+        "part-preview-evolution/001-world-environment-accepted-desktop.jpg",
+        "part-preview-evolution/002-non-literal-fracture-transformation-accepted-desktop.jpg",
+        "part-preview-evolution/003-artist-mark-field-accepted-desktop.jpg"
+      ],
+      "rendererCompatibilityPreserved": [
+        "world-environment keeps accepted MeshBasicMaterial, LineBasicMaterial, PointsMaterial, sky-background-field, color-field, soft-particles, procedural-marks, and direction-space-skybox-shell evidence refs.",
+        "non-literal-fracture-transformation keeps accepted MeshBasicMaterial, LineBasicMaterial, and color-field evidence refs.",
+        "artist-mark-field keeps accepted MeshBasicMaterial, LineBasicMaterial, PointsMaterial, and animated-instanced-mark-field evidence refs."
+      ],
+      "skillUse": {
+        "attempted": true,
+        "used": [
+          "$threejs-visual-validation",
+          "$threejs-camera-direction",
+          "$threejs-exposure-color-grading"
+        ],
+        "takeaways": [
+          "Use the canonical fixed camera as the design bookmark and judge both desktop and mobile from that stable authored frame before changing projection.",
+          "Keep color ownership in world.outputColorTransform with one subtle final contrast/saturation/exposure/vignette grade, not stacked material or post claims.",
+          "Accept the final assembly only after Playwright desktop and mobile screenshots plus render reports show nonblank WebGPU captures with the black anchor, diagonal fracture, repeated bars, and artist mark field readable."
+        ]
+      }
+    },
+    "generatedModules": [
+      {
+        "type": "immersive-world-generated-module",
+        "version": 1,
+        "moduleId": "malevich-budget-control-world-environment",
+        "partId": "world-environment",
+        "hash": "a4f067a7535f99daaa067ad934ba554a166fad79e0b324e082456d881149b58f",
+        "integrity": "sha256-a4f067a7535f99daaa067ad934ba554a166fad79e0b324e082456d881149b58f",
+        "exportName": "createImmersiveWorldPart",
+        "file": "data/immersive-world/generated-modules/a4f067a7535f99daaa067ad934ba554a166fad79e0b324e082456d881149b58f.mjs",
+        "url": "./data/immersive-world/generated-modules/a4f067a7535f99daaa067ad934ba554a166fad79e0b324e082456d881149b58f.mjs",
+        "rendererCompatibility": {
+          "version": 1,
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material",
+            "source-used-project-webgpu-material-factory",
+            "webgpu-native-helper-utility"
+          ],
+          "featureFacts": [
+            {
+              "kind": "standard-material",
+              "material": "MeshBasicMaterial",
+              "family": "standard-material-surface",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "standard-material",
+              "material": "LineBasicMaterial",
+              "family": "standard-material-surface",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "material-factory",
+              "id": "sky-background-field",
+              "family": "sky-background-field",
+              "material": "MeshBasicMaterial",
+              "surface": "scene-background-or-large-plane",
+              "reason": "source-used-project-webgpu-material-factory"
+            },
+            {
+              "kind": "webgpu-native-helper",
+              "id": "direction-space-skybox-shell",
+              "family": "sky-background-field",
+              "factory": "sky-background-field",
+              "material": "MeshBasicMaterial",
+              "surface": "direction-space-vertex-color-skybox-shell",
+              "reason": "webgpu-native-helper-utility"
+            },
+            {
+              "kind": "material-factory",
+              "id": "color-field",
+              "family": "color-field",
+              "material": "MeshBasicMaterial",
+              "surface": "three-basic-or-standard-material",
+              "reason": "source-used-project-webgpu-material-factory"
+            },
+            {
+              "kind": "standard-material",
+              "material": "PointsMaterial",
+              "family": "standard-material-surface",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "material-factory",
+              "id": "soft-particles",
+              "family": "soft-particles",
+              "material": "PointsMaterial",
+              "surface": "three-points-material",
+              "reason": "source-used-project-webgpu-material-factory"
+            },
+            {
+              "kind": "material-factory",
+              "id": "procedural-marks",
+              "family": "procedural-marks",
+              "material": "MeshBasicMaterial",
+              "surface": "instanced-geometry-material",
+              "reason": "source-used-project-webgpu-material-factory"
+            }
+          ],
+          "compatibleSurfaces": [
+            {
+              "reason": "webgpu-safe-material",
+              "materialType": "MeshBasicMaterial"
+            },
+            {
+              "reason": "webgpu-safe-material",
+              "materialType": "LineBasicMaterial"
+            },
+            {
+              "reason": "source-used-project-webgpu-material-factory",
+              "materialType": "MeshBasicMaterial",
+              "runtimeSurface": "scene-background-or-large-plane",
+              "factoryId": "sky-background-field",
+              "materialFactoryId": "sky-background-field",
+              "factoryCategory": "sky-background-field",
+              "property": "materialFactoryId"
+            },
+            {
+              "reason": "webgpu-native-helper-utility",
+              "api": "utilities.createDirectionSpaceSkyboxShell",
+              "helperId": "direction-space-skybox-shell",
+              "featureFamily": "sky-background-field",
+              "outputKind": "object-bundle",
+              "materialType": "MeshBasicMaterial",
+              "runtimeSurface": "direction-space-vertex-color-skybox-shell",
+              "factoryId": "sky-background-field",
+              "materialFactoryId": "sky-background-field",
+              "factoryCategory": "sky-background-field"
+            },
+            {
+              "reason": "source-used-project-webgpu-material-factory",
+              "materialType": "MeshBasicMaterial",
+              "runtimeSurface": "three-basic-or-standard-material",
+              "factoryId": "color-field",
+              "materialFactoryId": "color-field",
+              "factoryCategory": "color-field",
+              "property": "materialFactoryId"
+            },
+            {
+              "reason": "webgpu-safe-material",
+              "materialType": "PointsMaterial"
+            },
+            {
+              "reason": "source-used-project-webgpu-material-factory",
+              "materialType": "PointsMaterial",
+              "runtimeSurface": "three-points-material",
+              "factoryId": "soft-particles",
+              "materialFactoryId": "soft-particles",
+              "factoryCategory": "soft-particles",
+              "property": "materialFactoryId"
+            },
+            {
+              "reason": "source-used-project-webgpu-material-factory",
+              "materialType": "MeshBasicMaterial",
+              "runtimeSurface": "instanced-geometry-material",
+              "factoryId": "procedural-marks",
+              "materialFactoryId": "procedural-marks",
+              "factoryCategory": "procedural-marks",
+              "property": "materialFactoryId"
+            }
+          ]
+        }
+      },
+      {
+        "type": "immersive-world-generated-module",
+        "version": 1,
+        "moduleId": "malevich-budget-control-fracture-transformation",
+        "partId": "non-literal-fracture-transformation",
+        "hash": "620098d6508e7ca00efa24f4c6741081c8959da3d9ad27dca3de9bbe01b304e3",
+        "integrity": "sha256-620098d6508e7ca00efa24f4c6741081c8959da3d9ad27dca3de9bbe01b304e3",
+        "exportName": "createImmersiveWorldPart",
+        "file": "data/immersive-world/generated-modules/620098d6508e7ca00efa24f4c6741081c8959da3d9ad27dca3de9bbe01b304e3.mjs",
+        "url": "./data/immersive-world/generated-modules/620098d6508e7ca00efa24f4c6741081c8959da3d9ad27dca3de9bbe01b304e3.mjs",
+        "rendererCompatibility": {
+          "version": 1,
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material",
+            "source-used-project-webgpu-material-factory"
+          ],
+          "featureFacts": [
+            {
+              "kind": "standard-material",
+              "material": "MeshBasicMaterial",
+              "family": "standard-material-surface",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "standard-material",
+              "material": "LineBasicMaterial",
+              "family": "standard-material-surface",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "material-factory",
+              "id": "color-field",
+              "family": "color-field",
+              "material": "MeshBasicMaterial",
+              "surface": "three-basic-or-standard-material",
+              "reason": "source-used-project-webgpu-material-factory"
+            }
+          ],
+          "compatibleSurfaces": [
+            {
+              "reason": "webgpu-safe-material",
+              "materialType": "MeshBasicMaterial"
+            },
+            {
+              "reason": "webgpu-safe-material",
+              "materialType": "LineBasicMaterial"
+            },
+            {
+              "reason": "source-used-project-webgpu-material-factory",
+              "materialType": "MeshBasicMaterial",
+              "runtimeSurface": "three-basic-or-standard-material",
+              "factoryId": "color-field",
+              "materialFactoryId": "color-field",
+              "factoryCategory": "color-field",
+              "property": "materialFactoryId"
+            }
+          ]
+        }
+      },
+      {
+        "type": "immersive-world-generated-module",
+        "version": 1,
+        "moduleId": "malevich-budget-control-artist-mark-field",
+        "partId": "artist-mark-field",
+        "hash": "c5e8422e489717ff514b2c108ab50ace72928a28312be39852c2be234e9c892e",
+        "integrity": "sha256-c5e8422e489717ff514b2c108ab50ace72928a28312be39852c2be234e9c892e",
+        "exportName": "createImmersiveWorldPart",
+        "file": "data/immersive-world/generated-modules/c5e8422e489717ff514b2c108ab50ace72928a28312be39852c2be234e9c892e.mjs",
+        "url": "./data/immersive-world/generated-modules/c5e8422e489717ff514b2c108ab50ace72928a28312be39852c2be234e9c892e.mjs",
+        "rendererCompatibility": {
+          "version": 1,
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material",
+            "webgpu-native-helper-utility"
+          ],
+          "featureFacts": [
+            {
+              "kind": "standard-material",
+              "material": "MeshBasicMaterial",
+              "family": "standard-material-surface",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "standard-material",
+              "material": "LineBasicMaterial",
+              "family": "standard-material-surface",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "standard-material",
+              "material": "PointsMaterial",
+              "family": "standard-material-surface",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "webgpu-native-helper",
+              "id": "animated-instanced-mark-field",
+              "family": "instanced-marks",
+              "factory": "procedural-marks",
+              "material": "MeshBasicMaterial",
+              "surface": "three-instanced-mesh-basic-material-frame-facts",
+              "reason": "webgpu-native-helper-utility"
+            }
+          ],
+          "compatibleSurfaces": [
+            {
+              "reason": "webgpu-safe-material",
+              "materialType": "MeshBasicMaterial"
+            },
+            {
+              "reason": "webgpu-safe-material",
+              "materialType": "LineBasicMaterial"
+            },
+            {
+              "reason": "webgpu-safe-material",
+              "materialType": "PointsMaterial"
+            },
+            {
+              "reason": "webgpu-native-helper-utility",
+              "api": "utilities.createAnimatedInstancedMarkField",
+              "helperId": "animated-instanced-mark-field",
+              "featureFamily": "instanced-marks",
+              "outputKind": "object-bundle",
+              "materialType": "MeshBasicMaterial",
+              "runtimeSurface": "three-instanced-mesh-basic-material-frame-facts",
+              "factoryId": "procedural-marks",
+              "materialFactoryId": "procedural-marks",
+              "factoryCategory": "procedural-marks"
+            }
+          ]
+        }
+      }
+    ],
+    "rendererAuthoring": {
+      "version": 1,
+      "targetMode": "webgpu-project-scene",
+      "requestedTarget": "webgpu-project-scene",
+      "effectiveTarget": "webgpu-project-scene",
+      "webgpuTargeted": true,
+      "legacyWebglTargeted": false,
+      "unspecified": false,
+      "compatibilityGateRequired": true
+    },
+    "rendererCompatibility": {
+      "version": 1,
+      "targetMode": "webgpu-project-scene",
+      "webgpuTargeted": true,
+      "legacyWebglTargeted": false,
+      "compatibilityGateRequired": true,
+      "compatibilityStatus": "webgpu-compatible",
+      "webgpuCompatible": true,
+      "evidenceReasons": [
+        "webgpu-safe-material",
+        "source-used-project-webgpu-material-factory",
+        "webgpu-native-helper-utility"
+      ],
+      "featureFacts": [
+        {
+          "kind": "standard-material",
+          "family": "standard-material-surface",
+          "material": "MeshBasicMaterial",
+          "reason": "webgpu-safe-material"
+        },
+        {
+          "kind": "standard-material",
+          "family": "standard-material-surface",
+          "material": "LineBasicMaterial",
+          "reason": "webgpu-safe-material"
+        },
+        {
+          "kind": "material-factory",
+          "id": "sky-background-field",
+          "family": "sky-background-field",
+          "material": "MeshBasicMaterial",
+          "surface": "scene-background-or-large-plane",
+          "reason": "source-used-project-webgpu-material-factory"
+        },
+        {
+          "kind": "webgpu-native-helper",
+          "id": "direction-space-skybox-shell",
+          "family": "sky-background-field",
+          "factory": "sky-background-field",
+          "material": "MeshBasicMaterial",
+          "surface": "direction-space-vertex-color-skybox-shell",
+          "reason": "webgpu-native-helper-utility"
+        },
+        {
+          "kind": "material-factory",
+          "id": "color-field",
+          "family": "color-field",
+          "material": "MeshBasicMaterial",
+          "surface": "three-basic-or-standard-material",
+          "reason": "source-used-project-webgpu-material-factory"
+        },
+        {
+          "kind": "standard-material",
+          "family": "standard-material-surface",
+          "material": "PointsMaterial",
+          "reason": "webgpu-safe-material"
+        },
+        {
+          "kind": "material-factory",
+          "id": "soft-particles",
+          "family": "soft-particles",
+          "material": "PointsMaterial",
+          "surface": "three-points-material",
+          "reason": "source-used-project-webgpu-material-factory"
+        },
+        {
+          "kind": "material-factory",
+          "id": "procedural-marks",
+          "family": "procedural-marks",
+          "material": "MeshBasicMaterial",
+          "surface": "instanced-geometry-material",
+          "reason": "source-used-project-webgpu-material-factory"
+        },
+        {
+          "kind": "webgpu-native-helper",
+          "id": "animated-instanced-mark-field",
+          "family": "instanced-marks",
+          "factory": "procedural-marks",
+          "material": "MeshBasicMaterial",
+          "surface": "three-instanced-mesh-basic-material-frame-facts",
+          "reason": "webgpu-native-helper-utility"
+        }
+      ],
+      "moduleCount": 3,
+      "compatibleModuleCount": 3,
+      "incompatibleModuleCount": 0,
+      "compositionCompatibilityDeclared": false,
+      "modules": [
+        {
+          "partId": "world-environment",
+          "role": "world-environment",
+          "moduleId": "malevich-budget-control-world-environment",
+          "hash": "a4f067a7535f99daaa067ad934ba554a166fad79e0b324e082456d881149b58f",
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material",
+            "source-used-project-webgpu-material-factory",
+            "webgpu-native-helper-utility"
+          ],
+          "featureFacts": [
+            {
+              "kind": "standard-material",
+              "family": "standard-material-surface",
+              "material": "MeshBasicMaterial",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "standard-material",
+              "family": "standard-material-surface",
+              "material": "LineBasicMaterial",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "material-factory",
+              "id": "sky-background-field",
+              "family": "sky-background-field",
+              "material": "MeshBasicMaterial",
+              "surface": "scene-background-or-large-plane",
+              "reason": "source-used-project-webgpu-material-factory"
+            },
+            {
+              "kind": "webgpu-native-helper",
+              "id": "direction-space-skybox-shell",
+              "family": "sky-background-field",
+              "factory": "sky-background-field",
+              "material": "MeshBasicMaterial",
+              "surface": "direction-space-vertex-color-skybox-shell",
+              "reason": "webgpu-native-helper-utility"
+            },
+            {
+              "kind": "material-factory",
+              "id": "color-field",
+              "family": "color-field",
+              "material": "MeshBasicMaterial",
+              "surface": "three-basic-or-standard-material",
+              "reason": "source-used-project-webgpu-material-factory"
+            },
+            {
+              "kind": "standard-material",
+              "family": "standard-material-surface",
+              "material": "PointsMaterial",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "material-factory",
+              "id": "soft-particles",
+              "family": "soft-particles",
+              "material": "PointsMaterial",
+              "surface": "three-points-material",
+              "reason": "source-used-project-webgpu-material-factory"
+            },
+            {
+              "kind": "material-factory",
+              "id": "procedural-marks",
+              "family": "procedural-marks",
+              "material": "MeshBasicMaterial",
+              "surface": "instanced-geometry-material",
+              "reason": "source-used-project-webgpu-material-factory"
+            }
+          ],
+          "compatibleSurfaceCount": 8,
+          "sourceStage": "part-workshop"
+        },
+        {
+          "partId": "non-literal-fracture-transformation",
+          "role": "primary-news-signal",
+          "moduleId": "malevich-budget-control-fracture-transformation",
+          "hash": "620098d6508e7ca00efa24f4c6741081c8959da3d9ad27dca3de9bbe01b304e3",
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material",
+            "source-used-project-webgpu-material-factory"
+          ],
+          "featureFacts": [
+            {
+              "kind": "standard-material",
+              "family": "standard-material-surface",
+              "material": "MeshBasicMaterial",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "standard-material",
+              "family": "standard-material-surface",
+              "material": "LineBasicMaterial",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "material-factory",
+              "id": "color-field",
+              "family": "color-field",
+              "material": "MeshBasicMaterial",
+              "surface": "three-basic-or-standard-material",
+              "reason": "source-used-project-webgpu-material-factory"
+            }
+          ],
+          "compatibleSurfaceCount": 3,
+          "sourceStage": "part-workshop"
+        },
+        {
+          "partId": "artist-mark-field",
+          "role": "artist-style-system",
+          "moduleId": "malevich-budget-control-artist-mark-field",
+          "hash": "c5e8422e489717ff514b2c108ab50ace72928a28312be39852c2be234e9c892e",
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material",
+            "webgpu-native-helper-utility"
+          ],
+          "featureFacts": [
+            {
+              "kind": "standard-material",
+              "family": "standard-material-surface",
+              "material": "MeshBasicMaterial",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "standard-material",
+              "family": "standard-material-surface",
+              "material": "LineBasicMaterial",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "standard-material",
+              "family": "standard-material-surface",
+              "material": "PointsMaterial",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "webgpu-native-helper",
+              "id": "animated-instanced-mark-field",
+              "family": "instanced-marks",
+              "factory": "procedural-marks",
+              "material": "MeshBasicMaterial",
+              "surface": "three-instanced-mesh-basic-material-frame-facts",
+              "reason": "webgpu-native-helper-utility"
+            }
+          ],
+          "compatibleSurfaceCount": 4,
+          "sourceStage": "part-workshop"
+        }
+      ]
+    },
+    "renderFacts": {
+      "environmentPresent": true,
+      "cameraOwnedByComposition": true,
+      "lightingOwnedByComposition": true,
+      "nearFarClippingOwned": true,
+      "acceptedPartCount": 3,
+      "generatedModuleCount": 3,
+      "generatedAssetCount": 0,
+      "rendererAuthoringTarget": "webgpu-project-scene",
+      "rendererCompatibilityStatus": "webgpu-compatible",
+      "webgpuRendererGateRequired": true,
+      "webgpuRendererCompatible": true,
+      "desktopPreviewRecorded": true,
+      "mobilePreviewRecorded": true
+    }
+  },
+  "image": {
+    "thumbnailJpeg": "./data/media/2026-07-08-0628z-government-must-find-an-extra-7-7-billion-euros-by-2029-to-bring-budget/thumb-320.jpg",
+    "openGraphJpeg": "./data/media/2026-07-08-0628z-government-must-find-an-extra-7-7-billion-euros-by-2029-to-bring-budget/og-1200x630.jpg",
+    "instagramJpeg": "./data/media/2026-07-08-0628z-government-must-find-an-extra-7-7-billion-euros-by-2029-to-bring-budget/instagram-1080x1350.jpg",
+    "altText": "Government must find an extra 7.7 billion euros by 2029 to bring budget under control, Monitoring Committee says in report by Kazimir Malevich."
+  }
+}

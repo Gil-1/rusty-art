@@ -1,0 +1,76 @@
+{
+  "version": 2,
+  "kind": "rusty-art-public-media-assets",
+  "artworkId": "2026-07-08-0628z-government-must-find-an-extra-7-7-billion-euros-by-2029-to-bring-budget",
+  "source": {
+    "sha256": "7b4a89deea53e7f563e4cc7d8222fba6082bb1fb3ceb4249208ecbf04970451d",
+    "role": "daily-preview-story-desktop"
+  },
+  "sources": {
+    "primary": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-desktop",
+      "sha256": "7b4a89deea53e7f563e4cc7d8222fba6082bb1fb3ceb4249208ecbf04970451d"
+    },
+    "openGraph": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-open-graph",
+      "sha256": "90b3773ee74319c294ececf0dc67efc3060ae0a4ea326063d0de745b239363bd"
+    },
+    "instagram": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-instagram",
+      "sha256": "632e996d899b58c30b7cc12bfc16aa9e6b089545e9a4196c3d4947101840b53e"
+    }
+  },
+  "targets": {
+    "thumb-320.jpg": {
+      "spec": {
+        "fileName": "thumb-320.jpg",
+        "width": 320,
+        "height": null,
+        "fit": "inside",
+        "withoutEnlargement": true,
+        "format": "jpeg",
+        "quality": 82
+      },
+      "publicPath": "./data/media/2026-07-08-0628z-government-must-find-an-extra-7-7-billion-euros-by-2029-to-bring-budget/thumb-320.jpg",
+      "source": {
+        "sha256": "7b4a89deea53e7f563e4cc7d8222fba6082bb1fb3ceb4249208ecbf04970451d",
+        "role": "daily-preview-story-desktop"
+      }
+    },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-07-08-0628z-government-must-find-an-extra-7-7-billion-euros-by-2029-to-bring-budget/og-1200x630.jpg",
+      "source": {
+        "sha256": "90b3773ee74319c294ececf0dc67efc3060ae0a4ea326063d0de745b239363bd",
+        "role": "daily-preview-story-open-graph"
+      }
+    },
+    "instagram-1080x1350.jpg": {
+      "spec": {
+        "fileName": "instagram-1080x1350.jpg",
+        "width": 1080,
+        "height": 1350,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-07-08-0628z-government-must-find-an-extra-7-7-billion-euros-by-2029-to-bring-budget/instagram-1080x1350.jpg",
+      "source": {
+        "sha256": "632e996d899b58c30b7cc12bfc16aa9e6b089545e9a4196c3d4947101840b53e",
+        "role": "daily-preview-story-instagram"
+      }
+    }
+  }
+}
