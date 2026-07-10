@@ -25,10 +25,7 @@ export function createWebGPURendererRuntime({
     forceWebGL
   };
   if (Number.isFinite(Number(samples))) rendererOptions.samples = Math.max(0, Math.floor(Number(samples)));
-  if (outputBufferType != null) {
-    rendererOptions.outputBufferType = outputBufferType;
-    rendererOptions.outputType = outputBufferType;
-  }
+  if (outputBufferType != null) rendererOptions.outputBufferType = outputBufferType;
   const renderer = rendererFactory(rendererOptions);
   const selectedRendererMode = rendererMode || null;
   const selectedRendererBackend = rendererBackend || null;

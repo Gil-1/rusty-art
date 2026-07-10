@@ -84,7 +84,7 @@ test('WebGPU renderer diagnostics expose compatibility and sample quality facts'
   assert.equal(diagnostics.outputBufferType, 'UnsignedByteType');
 });
 
-test('WebGPU renderer runtime maps output buffer type to canvas output type', async () => {
+test('WebGPU renderer runtime leaves the canvas output type device-preferred', async () => {
   let rendererOptions;
   const runtime = createWebGPURendererRuntime({
     canvas: {},
@@ -100,5 +100,5 @@ test('WebGPU renderer runtime maps output buffer type to canvas output type', as
   await runtime.initialize();
 
   assert.equal(rendererOptions.outputBufferType, 1009);
-  assert.equal(rendererOptions.outputType, 1009);
+  assert.equal(rendererOptions.outputType, undefined);
 });
