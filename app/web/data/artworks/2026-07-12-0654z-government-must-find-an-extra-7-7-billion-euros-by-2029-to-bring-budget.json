@@ -1,0 +1,2835 @@
+{
+  "id": "2026-07-12-0654z-government-must-find-an-extra-7-7-billion-euros-by-2029-to-bring-budget",
+  "date": "2026-07-12",
+  "title": "Government must find an extra 7.7 billion euros by 2029 to bring budget under control, Monitoring Committee says in report",
+  "generatedAt": "2026-07-12T07:01:17.020Z",
+  "news": {
+    "source": "vrt",
+    "title": "Government must find an extra 7.7 billion euros by 2029 to bring budget under control, Monitoring Committee says in report",
+    "link": "https://vrtnws.be/p.xZ9R6XK0Z",
+    "score": null
+  },
+  "inspiration": {
+    "artist": "Henri Matisse",
+    "tags": [
+      "non-literal grid transformation",
+      "Against",
+      "immersive-world"
+    ],
+    "links": {}
+  },
+  "seed": null,
+  "sceneStrategy": null,
+  "techStack": null,
+  "newsVisualMappings": [],
+  "qualityScore": {
+    "score": null,
+    "summary": null,
+    "heuristic": {
+      "score": null,
+      "breakdown": {}
+    },
+    "calibration": {
+      "sampleCount": 0,
+      "trustWeight": 0
+    },
+    "alignment": {
+      "totalAlign": null,
+      "components": {
+        "title": {
+          "score": null
+        },
+        "style": {
+          "score": null
+        },
+        "emotional": {
+          "score": null
+        }
+      }
+    }
+  },
+  "rationale": {
+    "intent": {
+      "signal": null,
+      "emotion": null,
+      "tension": null,
+      "balance": null,
+      "motion": null
+    },
+    "selection": {
+      "whyHeadline": null,
+      "priorityTerms": []
+    },
+    "qualitySummary": null
+  },
+  "runPolicy": null,
+  "artCreationMethod": "immersive-world-v1",
+  "world": {
+    "id": "immersive-world-c72ef9fc4bae-final-composition",
+    "method": "immersive-world-v1",
+    "title": "Government must find an extra 7.7 billion euros by 2029 to bring budget under control, Monitoring Committee says in report",
+    "rendererAuthoring": {
+      "version": 1,
+      "targetMode": "webgpu-project-scene",
+      "requestedTarget": "webgpu-project-scene",
+      "effectiveTarget": "webgpu-project-scene",
+      "webgpuTargeted": true,
+      "legacyWebglTargeted": false,
+      "unspecified": false,
+      "compatibilityGateRequired": true
+    },
+    "rendererCompatibility": {
+      "version": 1,
+      "targetMode": "webgpu-project-scene",
+      "webgpuTargeted": true,
+      "legacyWebglTargeted": false,
+      "compatibilityGateRequired": true,
+      "compatibilityStatus": "webgpu-compatible",
+      "webgpuCompatible": true,
+      "evidenceReasons": [
+        "webgpu-safe-material",
+        "webgpu-native-helper-utility",
+        "source-used-project-webgpu-material-factory"
+      ],
+      "featureFacts": [
+        {
+          "kind": "standard-material",
+          "family": "standard-material-surface",
+          "material": "MeshBasicMaterial",
+          "reason": "webgpu-safe-material"
+        },
+        {
+          "kind": "webgpu-native-helper",
+          "id": "scraped-paint-grain-material",
+          "family": "paint-grain-surface",
+          "factory": "scraped-paint-grain-surface",
+          "material": "MeshBasicNodeMaterial",
+          "surface": "three-mesh-basic-node-material-tsl",
+          "reason": "webgpu-native-helper-utility"
+        },
+        {
+          "kind": "material-factory",
+          "id": "sky-background-field",
+          "family": "sky-background-field",
+          "material": "MeshBasicMaterial",
+          "surface": "scene-background-or-large-plane",
+          "reason": "source-used-project-webgpu-material-factory"
+        },
+        {
+          "kind": "webgpu-native-helper",
+          "id": "direction-space-skybox-shell",
+          "family": "sky-background-field",
+          "factory": "sky-background-field",
+          "material": "MeshBasicMaterial",
+          "surface": "direction-space-vertex-color-skybox-shell",
+          "reason": "webgpu-native-helper-utility"
+        },
+        {
+          "kind": "material-factory",
+          "id": "color-field",
+          "family": "color-field",
+          "material": "MeshBasicMaterial",
+          "surface": "three-basic-or-standard-material",
+          "reason": "source-used-project-webgpu-material-factory"
+        },
+        {
+          "kind": "standard-material",
+          "family": "standard-material-surface",
+          "material": "LineBasicMaterial",
+          "reason": "webgpu-safe-material"
+        },
+        {
+          "kind": "material-factory",
+          "id": "procedural-marks",
+          "family": "procedural-marks",
+          "material": "MeshBasicMaterial",
+          "surface": "instanced-geometry-material",
+          "reason": "source-used-project-webgpu-material-factory"
+        },
+        {
+          "kind": "standard-material",
+          "family": "standard-material-surface",
+          "material": "PointsMaterial",
+          "reason": "webgpu-safe-material"
+        },
+        {
+          "kind": "material-factory",
+          "id": "soft-particles",
+          "family": "soft-particles",
+          "material": "PointsMaterial",
+          "surface": "three-points-material",
+          "reason": "source-used-project-webgpu-material-factory"
+        },
+        {
+          "kind": "material-factory",
+          "id": "matte-painted-surface",
+          "family": "matte-painted-surface",
+          "material": "MeshStandardMaterial",
+          "surface": "three-standard-material",
+          "reason": "source-used-project-webgpu-material-factory"
+        },
+        {
+          "kind": "webgpu-native-helper",
+          "id": "animated-instanced-mark-field",
+          "family": "instanced-marks",
+          "factory": "procedural-marks",
+          "material": "MeshBasicMaterial",
+          "surface": "three-instanced-mesh-basic-material-frame-facts",
+          "reason": "webgpu-native-helper-utility"
+        }
+      ],
+      "moduleCount": 7,
+      "compatibleModuleCount": 7,
+      "incompatibleModuleCount": 0,
+      "compositionCompatibilityDeclared": true,
+      "modules": [
+        {
+          "partId": "world-environment",
+          "role": "world-environment",
+          "moduleId": "matisse-budget-gap-world-environment",
+          "hash": "cea21af3230fdfab7ecc3e8c28db5e0f4d540e20fe0c0496164ff515926f6240",
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material",
+            "webgpu-native-helper-utility",
+            "source-used-project-webgpu-material-factory"
+          ],
+          "featureFacts": [
+            {
+              "kind": "standard-material",
+              "family": "standard-material-surface",
+              "material": "MeshBasicMaterial",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "webgpu-native-helper",
+              "id": "scraped-paint-grain-material",
+              "family": "paint-grain-surface",
+              "factory": "scraped-paint-grain-surface",
+              "material": "MeshBasicNodeMaterial",
+              "surface": "three-mesh-basic-node-material-tsl",
+              "reason": "webgpu-native-helper-utility"
+            },
+            {
+              "kind": "material-factory",
+              "id": "sky-background-field",
+              "family": "sky-background-field",
+              "material": "MeshBasicMaterial",
+              "surface": "scene-background-or-large-plane",
+              "reason": "source-used-project-webgpu-material-factory"
+            },
+            {
+              "kind": "webgpu-native-helper",
+              "id": "direction-space-skybox-shell",
+              "family": "sky-background-field",
+              "factory": "sky-background-field",
+              "material": "MeshBasicMaterial",
+              "surface": "direction-space-vertex-color-skybox-shell",
+              "reason": "webgpu-native-helper-utility"
+            },
+            {
+              "kind": "material-factory",
+              "id": "color-field",
+              "family": "color-field",
+              "material": "MeshBasicMaterial",
+              "surface": "three-basic-or-standard-material",
+              "reason": "source-used-project-webgpu-material-factory"
+            },
+            {
+              "kind": "standard-material",
+              "family": "standard-material-surface",
+              "material": "LineBasicMaterial",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "material-factory",
+              "id": "procedural-marks",
+              "family": "procedural-marks",
+              "material": "MeshBasicMaterial",
+              "surface": "instanced-geometry-material",
+              "reason": "source-used-project-webgpu-material-factory"
+            },
+            {
+              "kind": "standard-material",
+              "family": "standard-material-surface",
+              "material": "PointsMaterial",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "material-factory",
+              "id": "soft-particles",
+              "family": "soft-particles",
+              "material": "PointsMaterial",
+              "surface": "three-points-material",
+              "reason": "source-used-project-webgpu-material-factory"
+            }
+          ],
+          "compatibleSurfaceCount": 9,
+          "sourceStage": "part-workshop"
+        },
+        {
+          "partId": "transformed-budget-grid-core",
+          "role": "central transformed selected-news structure",
+          "moduleId": "matisse-transformed-budget-grid-core",
+          "hash": "ab25a573c062a71f7b68724f6b8782d75af9478444255049ed70977e05468271",
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material",
+            "source-used-project-webgpu-material-factory"
+          ],
+          "featureFacts": [
+            {
+              "kind": "standard-material",
+              "family": "standard-material-surface",
+              "material": "MeshBasicMaterial",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "material-factory",
+              "id": "matte-painted-surface",
+              "family": "matte-painted-surface",
+              "material": "MeshStandardMaterial",
+              "surface": "three-standard-material",
+              "reason": "source-used-project-webgpu-material-factory"
+            }
+          ],
+          "compatibleSurfaceCount": 2,
+          "sourceStage": "part-workshop"
+        },
+        {
+          "partId": "bold-plane-frame",
+          "role": "large color field and framing system",
+          "moduleId": "matisse-bold-plane-frame",
+          "hash": "3350bc352569959232e3bc879c79834e5bfbb8c907e9c867ea71159eedf2690a",
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material",
+            "source-used-project-webgpu-material-factory"
+          ],
+          "featureFacts": [
+            {
+              "kind": "standard-material",
+              "family": "standard-material-surface",
+              "material": "MeshBasicMaterial",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "material-factory",
+              "id": "procedural-marks",
+              "family": "procedural-marks",
+              "material": "MeshBasicMaterial",
+              "surface": "instanced-geometry-material",
+              "reason": "source-used-project-webgpu-material-factory"
+            }
+          ],
+          "compatibleSurfaceCount": 2,
+          "sourceStage": "part-workshop"
+        },
+        {
+          "partId": "outward-pattern-pathways",
+          "role": "attention-routing pattern system",
+          "moduleId": "matisse-outward-pattern-pathways",
+          "hash": "d144bad6d0642c54eda72dd5c410aa6061dd1eeb20f8ffb780e3467fd8b013a2",
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material",
+            "source-used-project-webgpu-material-factory"
+          ],
+          "featureFacts": [
+            {
+              "kind": "standard-material",
+              "family": "standard-material-surface",
+              "material": "MeshBasicMaterial",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "material-factory",
+              "id": "procedural-marks",
+              "family": "procedural-marks",
+              "material": "MeshBasicMaterial",
+              "surface": "instanced-geometry-material",
+              "reason": "source-used-project-webgpu-material-factory"
+            }
+          ],
+          "compatibleSurfaceCount": 2,
+          "sourceStage": "part-workshop"
+        },
+        {
+          "partId": "painted-surface-contours",
+          "role": "handmade material and contour carrier",
+          "moduleId": "matisse-painted-surface-contours",
+          "hash": "5c90982f2b0a39027144fd5791c92868f921342b0cb1833c3e8533df6c503e3b",
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material",
+            "webgpu-native-helper-utility",
+            "source-used-project-webgpu-material-factory"
+          ],
+          "featureFacts": [
+            {
+              "kind": "standard-material",
+              "family": "standard-material-surface",
+              "material": "MeshBasicMaterial",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "webgpu-native-helper",
+              "id": "scraped-paint-grain-material",
+              "family": "paint-grain-surface",
+              "factory": "scraped-paint-grain-surface",
+              "material": "MeshBasicNodeMaterial",
+              "surface": "three-mesh-basic-node-material-tsl",
+              "reason": "webgpu-native-helper-utility"
+            },
+            {
+              "kind": "material-factory",
+              "id": "procedural-marks",
+              "family": "procedural-marks",
+              "material": "MeshBasicMaterial",
+              "surface": "instanced-geometry-material",
+              "reason": "source-used-project-webgpu-material-factory"
+            }
+          ],
+          "compatibleSurfaceCount": 3,
+          "sourceStage": "part-workshop"
+        },
+        {
+          "partId": "frontal-depth-compression",
+          "role": "shallow immersive staging and camera relation",
+          "moduleId": "matisse-frontal-depth-compression",
+          "hash": "3fdf999ed73a6fe2dd85b4237d18087bcd169163137fcfad73d091c595a73927",
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material",
+            "source-used-project-webgpu-material-factory"
+          ],
+          "featureFacts": [
+            {
+              "kind": "standard-material",
+              "family": "standard-material-surface",
+              "material": "MeshBasicMaterial",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "material-factory",
+              "id": "procedural-marks",
+              "family": "procedural-marks",
+              "material": "MeshBasicMaterial",
+              "surface": "instanced-geometry-material",
+              "reason": "source-used-project-webgpu-material-factory"
+            }
+          ],
+          "compatibleSurfaceCount": 2,
+          "sourceStage": "part-workshop"
+        },
+        {
+          "partId": "measured-pulse-and-value-accents",
+          "role": "optional motion, value, and restrained effect system",
+          "moduleId": "matisse-measured-pulse-and-value-accents",
+          "hash": "ed801c3949597bb5b9b75d8af731e97a5d7ab448e6116bebc714a63e61eee3f3",
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material",
+            "source-used-project-webgpu-material-factory",
+            "webgpu-native-helper-utility"
+          ],
+          "featureFacts": [
+            {
+              "kind": "standard-material",
+              "family": "standard-material-surface",
+              "material": "MeshBasicMaterial",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "material-factory",
+              "id": "procedural-marks",
+              "family": "procedural-marks",
+              "material": "MeshBasicMaterial",
+              "surface": "instanced-geometry-material",
+              "reason": "source-used-project-webgpu-material-factory"
+            },
+            {
+              "kind": "webgpu-native-helper",
+              "id": "animated-instanced-mark-field",
+              "family": "instanced-marks",
+              "factory": "procedural-marks",
+              "material": "MeshBasicMaterial",
+              "surface": "three-instanced-mesh-basic-material-frame-facts",
+              "reason": "webgpu-native-helper-utility"
+            }
+          ],
+          "compatibleSurfaceCount": 3,
+          "sourceStage": "part-workshop"
+        }
+      ]
+    },
+    "environment": {
+      "kind": "technical-scene-support",
+      "color": "#fbf5ee",
+      "fieldColor": "#fffdf0",
+      "fogDensity": 0.003,
+      "radius": 92,
+      "opacity": 0.18,
+      "baseShell": false,
+      "createBaseShell": false,
+      "palette": [
+        "pale-yellow",
+        "pale-orange",
+        "dark-muted-violet",
+        "low-mid-saturated-red",
+        "warm-ochre",
+        "teal-green"
+      ],
+      "visibilityPolicy": "authored world-environment part supplies the pale support field; no extra shell should dominate the accepted parts",
+      "visualConstructionDecisionRef": "art-direction-packet.json#/creativeDirection/visualConstructionDecision"
+    },
+    "camera": {
+      "owner": "world-composition",
+      "fov": 66,
+      "near": 0.08,
+      "far": 220,
+      "position": [
+        0.22,
+        2.12,
+        14.2
+      ],
+      "target": [
+        0.55,
+        0.18,
+        -5.6
+      ],
+      "distanceSafety": {
+        "nearFarOwnedHere": true,
+        "minPartDistance": 1.7,
+        "clippingRisk": "low"
+      },
+      "cameraDirectionContract": {
+        "subject": "central transformed budget grid and surrounding shallow plane frame",
+        "positionMode": "authored-world-composition-orbit-pose",
+        "upMode": "world",
+        "inputMode": "locked-for-capture-preview",
+        "handoffOwner": "world-composition plus accepted frontal-depth-compression initial framing evidence",
+        "spatialConstraints": [
+          "preserve pale margins",
+          "keep central grid readable",
+          "avoid deep tunnel perspective"
+        ]
+      }
+    },
+    "lighting": {
+      "owner": "world-composition",
+      "ambientColor": "#fff4dd",
+      "ambientIntensity": 0.82,
+      "keyColor": "#fffaf2",
+      "keyIntensity": 0.9,
+      "keyPosition": [
+        3.5,
+        4.8,
+        7.6
+      ],
+      "rimColor": "#d7efe8",
+      "rimIntensity": 0.28,
+      "rimPosition": [
+        -4.8,
+        2.1,
+        -3.8
+      ],
+      "contrast": {
+        "mode": "matte-painted-plane-readability",
+        "rationale": "warm pale support preserves Matisse-like light from color adjacency; restrained rim keeps teal/violet edges separated"
+      }
+    },
+    "outputColorTransform": {
+      "owner": "world-composition",
+      "mode": "final-color-contrast-only",
+      "contrast": 1.08,
+      "saturation": 1.08,
+      "exposure": 1.04,
+      "vignette": 0.055,
+      "hueShift": 0,
+      "distortion": 0,
+      "colorPipelineNotes": "single renderer-owned final grade; no module shader/post effect was added for grading"
+    },
+    "generatedModules": [
+      {
+        "type": "immersive-world-generated-module",
+        "version": 1,
+        "moduleId": "matisse-budget-gap-world-environment",
+        "partId": "world-environment",
+        "hash": "cea21af3230fdfab7ecc3e8c28db5e0f4d540e20fe0c0496164ff515926f6240",
+        "integrity": "sha256-cea21af3230fdfab7ecc3e8c28db5e0f4d540e20fe0c0496164ff515926f6240",
+        "exportName": "createImmersiveWorldPart",
+        "file": "data/immersive-world/generated-modules/cea21af3230fdfab7ecc3e8c28db5e0f4d540e20fe0c0496164ff515926f6240.mjs",
+        "url": "./data/immersive-world/generated-modules/cea21af3230fdfab7ecc3e8c28db5e0f4d540e20fe0c0496164ff515926f6240.mjs",
+        "rendererCompatibility": {
+          "version": 1,
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material",
+            "webgpu-native-helper-utility",
+            "source-used-project-webgpu-material-factory"
+          ],
+          "featureFacts": [
+            {
+              "kind": "standard-material",
+              "material": "MeshBasicMaterial",
+              "family": "standard-material-surface",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "webgpu-native-helper",
+              "id": "scraped-paint-grain-material",
+              "family": "paint-grain-surface",
+              "factory": "scraped-paint-grain-surface",
+              "material": "MeshBasicNodeMaterial",
+              "surface": "three-mesh-basic-node-material-tsl",
+              "reason": "webgpu-native-helper-utility"
+            },
+            {
+              "kind": "material-factory",
+              "id": "sky-background-field",
+              "family": "sky-background-field",
+              "material": "MeshBasicMaterial",
+              "surface": "scene-background-or-large-plane",
+              "reason": "source-used-project-webgpu-material-factory"
+            },
+            {
+              "kind": "webgpu-native-helper",
+              "id": "direction-space-skybox-shell",
+              "family": "sky-background-field",
+              "factory": "sky-background-field",
+              "material": "MeshBasicMaterial",
+              "surface": "direction-space-vertex-color-skybox-shell",
+              "reason": "webgpu-native-helper-utility"
+            },
+            {
+              "kind": "material-factory",
+              "id": "color-field",
+              "family": "color-field",
+              "material": "MeshBasicMaterial",
+              "surface": "three-basic-or-standard-material",
+              "reason": "source-used-project-webgpu-material-factory"
+            },
+            {
+              "kind": "standard-material",
+              "material": "LineBasicMaterial",
+              "family": "standard-material-surface",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "material-factory",
+              "id": "procedural-marks",
+              "family": "procedural-marks",
+              "material": "MeshBasicMaterial",
+              "surface": "instanced-geometry-material",
+              "reason": "source-used-project-webgpu-material-factory"
+            },
+            {
+              "kind": "standard-material",
+              "material": "PointsMaterial",
+              "family": "standard-material-surface",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "material-factory",
+              "id": "soft-particles",
+              "family": "soft-particles",
+              "material": "PointsMaterial",
+              "surface": "three-points-material",
+              "reason": "source-used-project-webgpu-material-factory"
+            }
+          ],
+          "compatibleSurfaces": [
+            {
+              "reason": "webgpu-safe-material",
+              "materialType": "MeshBasicMaterial"
+            },
+            {
+              "reason": "webgpu-native-helper-utility",
+              "api": "utilities.createScrapedPaintGrainMaterial",
+              "helperId": "scraped-paint-grain-material",
+              "featureFamily": "paint-grain-surface",
+              "outputKind": "material",
+              "materialType": "MeshBasicNodeMaterial",
+              "runtimeSurface": "three-mesh-basic-node-material-tsl",
+              "factoryId": "scraped-paint-grain-surface",
+              "materialFactoryId": "scraped-paint-grain-surface",
+              "factoryCategory": "matte-painted-surface"
+            },
+            {
+              "reason": "source-used-project-webgpu-material-factory",
+              "materialType": "MeshBasicMaterial",
+              "runtimeSurface": "scene-background-or-large-plane",
+              "factoryId": "sky-background-field",
+              "materialFactoryId": "sky-background-field",
+              "factoryCategory": "sky-background-field",
+              "property": "materialFactoryId"
+            },
+            {
+              "reason": "webgpu-native-helper-utility",
+              "api": "utilities.createDirectionSpaceSkyboxShell",
+              "helperId": "direction-space-skybox-shell",
+              "featureFamily": "sky-background-field",
+              "outputKind": "object-bundle",
+              "materialType": "MeshBasicMaterial",
+              "runtimeSurface": "direction-space-vertex-color-skybox-shell",
+              "factoryId": "sky-background-field",
+              "materialFactoryId": "sky-background-field",
+              "factoryCategory": "sky-background-field"
+            },
+            {
+              "reason": "source-used-project-webgpu-material-factory",
+              "materialType": "MeshBasicMaterial",
+              "runtimeSurface": "three-basic-or-standard-material",
+              "factoryId": "color-field",
+              "materialFactoryId": "color-field",
+              "factoryCategory": "color-field",
+              "property": "materialFactoryId"
+            },
+            {
+              "reason": "webgpu-safe-material",
+              "materialType": "LineBasicMaterial"
+            },
+            {
+              "reason": "source-used-project-webgpu-material-factory",
+              "materialType": "MeshBasicMaterial",
+              "runtimeSurface": "instanced-geometry-material",
+              "factoryId": "procedural-marks",
+              "materialFactoryId": "procedural-marks",
+              "factoryCategory": "procedural-marks",
+              "property": "materialFactoryId"
+            },
+            {
+              "reason": "webgpu-safe-material",
+              "materialType": "PointsMaterial"
+            },
+            {
+              "reason": "source-used-project-webgpu-material-factory",
+              "materialType": "PointsMaterial",
+              "runtimeSurface": "three-points-material",
+              "factoryId": "soft-particles",
+              "materialFactoryId": "soft-particles",
+              "factoryCategory": "soft-particles",
+              "property": "materialFactoryId"
+            }
+          ]
+        }
+      },
+      {
+        "type": "immersive-world-generated-module",
+        "version": 1,
+        "moduleId": "matisse-transformed-budget-grid-core",
+        "partId": "transformed-budget-grid-core",
+        "hash": "ab25a573c062a71f7b68724f6b8782d75af9478444255049ed70977e05468271",
+        "integrity": "sha256-ab25a573c062a71f7b68724f6b8782d75af9478444255049ed70977e05468271",
+        "exportName": "createImmersiveWorldPart",
+        "file": "data/immersive-world/generated-modules/ab25a573c062a71f7b68724f6b8782d75af9478444255049ed70977e05468271.mjs",
+        "url": "./data/immersive-world/generated-modules/ab25a573c062a71f7b68724f6b8782d75af9478444255049ed70977e05468271.mjs",
+        "rendererCompatibility": {
+          "version": 1,
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material",
+            "source-used-project-webgpu-material-factory"
+          ],
+          "featureFacts": [
+            {
+              "kind": "standard-material",
+              "material": "MeshBasicMaterial",
+              "family": "standard-material-surface",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "material-factory",
+              "id": "matte-painted-surface",
+              "family": "matte-painted-surface",
+              "material": "MeshStandardMaterial",
+              "surface": "three-standard-material",
+              "reason": "source-used-project-webgpu-material-factory"
+            }
+          ],
+          "compatibleSurfaces": [
+            {
+              "reason": "webgpu-safe-material",
+              "materialType": "MeshBasicMaterial"
+            },
+            {
+              "reason": "source-used-project-webgpu-material-factory",
+              "materialType": "MeshStandardMaterial",
+              "runtimeSurface": "three-standard-material",
+              "factoryId": "matte-painted-surface",
+              "materialFactoryId": "matte-painted-surface",
+              "factoryCategory": "matte-painted-surface",
+              "property": "materialFactoryId"
+            }
+          ]
+        }
+      },
+      {
+        "type": "immersive-world-generated-module",
+        "version": 1,
+        "moduleId": "matisse-bold-plane-frame",
+        "partId": "bold-plane-frame",
+        "hash": "3350bc352569959232e3bc879c79834e5bfbb8c907e9c867ea71159eedf2690a",
+        "integrity": "sha256-3350bc352569959232e3bc879c79834e5bfbb8c907e9c867ea71159eedf2690a",
+        "exportName": "createImmersiveWorldPart",
+        "file": "data/immersive-world/generated-modules/3350bc352569959232e3bc879c79834e5bfbb8c907e9c867ea71159eedf2690a.mjs",
+        "url": "./data/immersive-world/generated-modules/3350bc352569959232e3bc879c79834e5bfbb8c907e9c867ea71159eedf2690a.mjs",
+        "rendererCompatibility": {
+          "version": 1,
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material",
+            "source-used-project-webgpu-material-factory"
+          ],
+          "featureFacts": [
+            {
+              "kind": "standard-material",
+              "material": "MeshBasicMaterial",
+              "family": "standard-material-surface",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "material-factory",
+              "id": "procedural-marks",
+              "family": "procedural-marks",
+              "material": "MeshBasicMaterial",
+              "surface": "instanced-geometry-material",
+              "reason": "source-used-project-webgpu-material-factory"
+            }
+          ],
+          "compatibleSurfaces": [
+            {
+              "reason": "webgpu-safe-material",
+              "materialType": "MeshBasicMaterial"
+            },
+            {
+              "reason": "source-used-project-webgpu-material-factory",
+              "materialType": "MeshBasicMaterial",
+              "runtimeSurface": "instanced-geometry-material",
+              "factoryId": "procedural-marks",
+              "materialFactoryId": "procedural-marks",
+              "factoryCategory": "procedural-marks",
+              "property": "materialFactoryId"
+            }
+          ]
+        }
+      },
+      {
+        "type": "immersive-world-generated-module",
+        "version": 1,
+        "moduleId": "matisse-outward-pattern-pathways",
+        "partId": "outward-pattern-pathways",
+        "hash": "d144bad6d0642c54eda72dd5c410aa6061dd1eeb20f8ffb780e3467fd8b013a2",
+        "integrity": "sha256-d144bad6d0642c54eda72dd5c410aa6061dd1eeb20f8ffb780e3467fd8b013a2",
+        "exportName": "createImmersiveWorldPart",
+        "file": "data/immersive-world/generated-modules/d144bad6d0642c54eda72dd5c410aa6061dd1eeb20f8ffb780e3467fd8b013a2.mjs",
+        "url": "./data/immersive-world/generated-modules/d144bad6d0642c54eda72dd5c410aa6061dd1eeb20f8ffb780e3467fd8b013a2.mjs",
+        "rendererCompatibility": {
+          "version": 1,
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material",
+            "source-used-project-webgpu-material-factory"
+          ],
+          "featureFacts": [
+            {
+              "kind": "standard-material",
+              "material": "MeshBasicMaterial",
+              "family": "standard-material-surface",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "material-factory",
+              "id": "procedural-marks",
+              "family": "procedural-marks",
+              "material": "MeshBasicMaterial",
+              "surface": "instanced-geometry-material",
+              "reason": "source-used-project-webgpu-material-factory"
+            }
+          ],
+          "compatibleSurfaces": [
+            {
+              "reason": "webgpu-safe-material",
+              "materialType": "MeshBasicMaterial"
+            },
+            {
+              "reason": "source-used-project-webgpu-material-factory",
+              "materialType": "MeshBasicMaterial",
+              "runtimeSurface": "instanced-geometry-material",
+              "factoryId": "procedural-marks",
+              "materialFactoryId": "procedural-marks",
+              "factoryCategory": "procedural-marks",
+              "property": "materialFactoryId"
+            }
+          ]
+        }
+      },
+      {
+        "type": "immersive-world-generated-module",
+        "version": 1,
+        "moduleId": "matisse-painted-surface-contours",
+        "partId": "painted-surface-contours",
+        "hash": "5c90982f2b0a39027144fd5791c92868f921342b0cb1833c3e8533df6c503e3b",
+        "integrity": "sha256-5c90982f2b0a39027144fd5791c92868f921342b0cb1833c3e8533df6c503e3b",
+        "exportName": "createImmersiveWorldPart",
+        "file": "data/immersive-world/generated-modules/5c90982f2b0a39027144fd5791c92868f921342b0cb1833c3e8533df6c503e3b.mjs",
+        "url": "./data/immersive-world/generated-modules/5c90982f2b0a39027144fd5791c92868f921342b0cb1833c3e8533df6c503e3b.mjs",
+        "rendererCompatibility": {
+          "version": 1,
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material",
+            "webgpu-native-helper-utility",
+            "source-used-project-webgpu-material-factory"
+          ],
+          "featureFacts": [
+            {
+              "kind": "standard-material",
+              "material": "MeshBasicMaterial",
+              "family": "standard-material-surface",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "webgpu-native-helper",
+              "id": "scraped-paint-grain-material",
+              "family": "paint-grain-surface",
+              "factory": "scraped-paint-grain-surface",
+              "material": "MeshBasicNodeMaterial",
+              "surface": "three-mesh-basic-node-material-tsl",
+              "reason": "webgpu-native-helper-utility"
+            },
+            {
+              "kind": "material-factory",
+              "id": "procedural-marks",
+              "family": "procedural-marks",
+              "material": "MeshBasicMaterial",
+              "surface": "instanced-geometry-material",
+              "reason": "source-used-project-webgpu-material-factory"
+            }
+          ],
+          "compatibleSurfaces": [
+            {
+              "reason": "webgpu-safe-material",
+              "materialType": "MeshBasicMaterial"
+            },
+            {
+              "reason": "webgpu-native-helper-utility",
+              "api": "utilities.createScrapedPaintGrainMaterial",
+              "helperId": "scraped-paint-grain-material",
+              "featureFamily": "paint-grain-surface",
+              "outputKind": "material",
+              "materialType": "MeshBasicNodeMaterial",
+              "runtimeSurface": "three-mesh-basic-node-material-tsl",
+              "factoryId": "scraped-paint-grain-surface",
+              "materialFactoryId": "scraped-paint-grain-surface",
+              "factoryCategory": "matte-painted-surface"
+            },
+            {
+              "reason": "source-used-project-webgpu-material-factory",
+              "materialType": "MeshBasicMaterial",
+              "runtimeSurface": "instanced-geometry-material",
+              "factoryId": "procedural-marks",
+              "materialFactoryId": "procedural-marks",
+              "factoryCategory": "procedural-marks",
+              "property": "materialFactoryId"
+            }
+          ]
+        }
+      },
+      {
+        "type": "immersive-world-generated-module",
+        "version": 1,
+        "moduleId": "matisse-frontal-depth-compression",
+        "partId": "frontal-depth-compression",
+        "hash": "3fdf999ed73a6fe2dd85b4237d18087bcd169163137fcfad73d091c595a73927",
+        "integrity": "sha256-3fdf999ed73a6fe2dd85b4237d18087bcd169163137fcfad73d091c595a73927",
+        "exportName": "createImmersiveWorldPart",
+        "file": "data/immersive-world/generated-modules/3fdf999ed73a6fe2dd85b4237d18087bcd169163137fcfad73d091c595a73927.mjs",
+        "url": "./data/immersive-world/generated-modules/3fdf999ed73a6fe2dd85b4237d18087bcd169163137fcfad73d091c595a73927.mjs",
+        "rendererCompatibility": {
+          "version": 1,
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material",
+            "source-used-project-webgpu-material-factory"
+          ],
+          "featureFacts": [
+            {
+              "kind": "standard-material",
+              "material": "MeshBasicMaterial",
+              "family": "standard-material-surface",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "material-factory",
+              "id": "procedural-marks",
+              "family": "procedural-marks",
+              "material": "MeshBasicMaterial",
+              "surface": "instanced-geometry-material",
+              "reason": "source-used-project-webgpu-material-factory"
+            }
+          ],
+          "compatibleSurfaces": [
+            {
+              "reason": "webgpu-safe-material",
+              "materialType": "MeshBasicMaterial"
+            },
+            {
+              "reason": "source-used-project-webgpu-material-factory",
+              "materialType": "MeshBasicMaterial",
+              "runtimeSurface": "instanced-geometry-material",
+              "factoryId": "procedural-marks",
+              "materialFactoryId": "procedural-marks",
+              "factoryCategory": "procedural-marks",
+              "property": "materialFactoryId"
+            }
+          ]
+        }
+      },
+      {
+        "type": "immersive-world-generated-module",
+        "version": 1,
+        "moduleId": "matisse-measured-pulse-and-value-accents",
+        "partId": "measured-pulse-and-value-accents",
+        "hash": "ed801c3949597bb5b9b75d8af731e97a5d7ab448e6116bebc714a63e61eee3f3",
+        "integrity": "sha256-ed801c3949597bb5b9b75d8af731e97a5d7ab448e6116bebc714a63e61eee3f3",
+        "exportName": "createImmersiveWorldPart",
+        "file": "data/immersive-world/generated-modules/ed801c3949597bb5b9b75d8af731e97a5d7ab448e6116bebc714a63e61eee3f3.mjs",
+        "url": "./data/immersive-world/generated-modules/ed801c3949597bb5b9b75d8af731e97a5d7ab448e6116bebc714a63e61eee3f3.mjs",
+        "rendererCompatibility": {
+          "version": 1,
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material",
+            "source-used-project-webgpu-material-factory",
+            "webgpu-native-helper-utility"
+          ],
+          "featureFacts": [
+            {
+              "kind": "standard-material",
+              "material": "MeshBasicMaterial",
+              "family": "standard-material-surface",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "material-factory",
+              "id": "procedural-marks",
+              "family": "procedural-marks",
+              "material": "MeshBasicMaterial",
+              "surface": "instanced-geometry-material",
+              "reason": "source-used-project-webgpu-material-factory"
+            },
+            {
+              "kind": "webgpu-native-helper",
+              "id": "animated-instanced-mark-field",
+              "family": "instanced-marks",
+              "factory": "procedural-marks",
+              "material": "MeshBasicMaterial",
+              "surface": "three-instanced-mesh-basic-material-frame-facts",
+              "reason": "webgpu-native-helper-utility"
+            }
+          ],
+          "compatibleSurfaces": [
+            {
+              "reason": "webgpu-safe-material",
+              "materialType": "MeshBasicMaterial"
+            },
+            {
+              "reason": "source-used-project-webgpu-material-factory",
+              "materialType": "MeshBasicMaterial",
+              "runtimeSurface": "instanced-geometry-material",
+              "factoryId": "procedural-marks",
+              "materialFactoryId": "procedural-marks",
+              "factoryCategory": "procedural-marks",
+              "property": "materialFactoryId"
+            },
+            {
+              "reason": "webgpu-native-helper-utility",
+              "api": "utilities.createAnimatedInstancedMarkField",
+              "helperId": "animated-instanced-mark-field",
+              "featureFamily": "instanced-marks",
+              "outputKind": "object-bundle",
+              "materialType": "MeshBasicMaterial",
+              "runtimeSurface": "three-instanced-mesh-basic-material-frame-facts",
+              "factoryId": "procedural-marks",
+              "materialFactoryId": "procedural-marks",
+              "factoryCategory": "procedural-marks"
+            }
+          ]
+        }
+      }
+    ],
+    "parts": [
+      {
+        "id": "world-environment",
+        "partId": "world-environment",
+        "role": "world-environment",
+        "moduleRef": {
+          "type": "immersive-world-generated-module",
+          "version": 1,
+          "moduleId": "matisse-budget-gap-world-environment",
+          "partId": "world-environment",
+          "hash": "cea21af3230fdfab7ecc3e8c28db5e0f4d540e20fe0c0496164ff515926f6240",
+          "integrity": "sha256-cea21af3230fdfab7ecc3e8c28db5e0f4d540e20fe0c0496164ff515926f6240",
+          "exportName": "createImmersiveWorldPart",
+          "file": "data/immersive-world/generated-modules/cea21af3230fdfab7ecc3e8c28db5e0f4d540e20fe0c0496164ff515926f6240.mjs",
+          "url": "./data/immersive-world/generated-modules/cea21af3230fdfab7ecc3e8c28db5e0f4d540e20fe0c0496164ff515926f6240.mjs",
+          "rendererCompatibility": {
+            "version": 1,
+            "targetMode": "webgpu-project-scene",
+            "compatibilityStatus": "webgpu-compatible",
+            "webgpuCompatible": true,
+            "evidenceReasons": [
+              "webgpu-safe-material",
+              "webgpu-native-helper-utility",
+              "source-used-project-webgpu-material-factory"
+            ],
+            "featureFacts": [
+              {
+                "kind": "standard-material",
+                "material": "MeshBasicMaterial",
+                "family": "standard-material-surface",
+                "reason": "webgpu-safe-material"
+              },
+              {
+                "kind": "webgpu-native-helper",
+                "id": "scraped-paint-grain-material",
+                "family": "paint-grain-surface",
+                "factory": "scraped-paint-grain-surface",
+                "material": "MeshBasicNodeMaterial",
+                "surface": "three-mesh-basic-node-material-tsl",
+                "reason": "webgpu-native-helper-utility"
+              },
+              {
+                "kind": "material-factory",
+                "id": "sky-background-field",
+                "family": "sky-background-field",
+                "material": "MeshBasicMaterial",
+                "surface": "scene-background-or-large-plane",
+                "reason": "source-used-project-webgpu-material-factory"
+              },
+              {
+                "kind": "webgpu-native-helper",
+                "id": "direction-space-skybox-shell",
+                "family": "sky-background-field",
+                "factory": "sky-background-field",
+                "material": "MeshBasicMaterial",
+                "surface": "direction-space-vertex-color-skybox-shell",
+                "reason": "webgpu-native-helper-utility"
+              },
+              {
+                "kind": "material-factory",
+                "id": "color-field",
+                "family": "color-field",
+                "material": "MeshBasicMaterial",
+                "surface": "three-basic-or-standard-material",
+                "reason": "source-used-project-webgpu-material-factory"
+              },
+              {
+                "kind": "standard-material",
+                "material": "LineBasicMaterial",
+                "family": "standard-material-surface",
+                "reason": "webgpu-safe-material"
+              },
+              {
+                "kind": "material-factory",
+                "id": "procedural-marks",
+                "family": "procedural-marks",
+                "material": "MeshBasicMaterial",
+                "surface": "instanced-geometry-material",
+                "reason": "source-used-project-webgpu-material-factory"
+              },
+              {
+                "kind": "standard-material",
+                "material": "PointsMaterial",
+                "family": "standard-material-surface",
+                "reason": "webgpu-safe-material"
+              },
+              {
+                "kind": "material-factory",
+                "id": "soft-particles",
+                "family": "soft-particles",
+                "material": "PointsMaterial",
+                "surface": "three-points-material",
+                "reason": "source-used-project-webgpu-material-factory"
+              }
+            ],
+            "compatibleSurfaces": [
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "MeshBasicMaterial"
+              },
+              {
+                "reason": "webgpu-native-helper-utility",
+                "api": "utilities.createScrapedPaintGrainMaterial",
+                "helperId": "scraped-paint-grain-material",
+                "featureFamily": "paint-grain-surface",
+                "outputKind": "material",
+                "materialType": "MeshBasicNodeMaterial",
+                "runtimeSurface": "three-mesh-basic-node-material-tsl",
+                "factoryId": "scraped-paint-grain-surface",
+                "materialFactoryId": "scraped-paint-grain-surface",
+                "factoryCategory": "matte-painted-surface"
+              },
+              {
+                "reason": "source-used-project-webgpu-material-factory",
+                "materialType": "MeshBasicMaterial",
+                "runtimeSurface": "scene-background-or-large-plane",
+                "factoryId": "sky-background-field",
+                "materialFactoryId": "sky-background-field",
+                "factoryCategory": "sky-background-field",
+                "property": "materialFactoryId"
+              },
+              {
+                "reason": "webgpu-native-helper-utility",
+                "api": "utilities.createDirectionSpaceSkyboxShell",
+                "helperId": "direction-space-skybox-shell",
+                "featureFamily": "sky-background-field",
+                "outputKind": "object-bundle",
+                "materialType": "MeshBasicMaterial",
+                "runtimeSurface": "direction-space-vertex-color-skybox-shell",
+                "factoryId": "sky-background-field",
+                "materialFactoryId": "sky-background-field",
+                "factoryCategory": "sky-background-field"
+              },
+              {
+                "reason": "source-used-project-webgpu-material-factory",
+                "materialType": "MeshBasicMaterial",
+                "runtimeSurface": "three-basic-or-standard-material",
+                "factoryId": "color-field",
+                "materialFactoryId": "color-field",
+                "factoryCategory": "color-field",
+                "property": "materialFactoryId"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "LineBasicMaterial"
+              },
+              {
+                "reason": "source-used-project-webgpu-material-factory",
+                "materialType": "MeshBasicMaterial",
+                "runtimeSurface": "instanced-geometry-material",
+                "factoryId": "procedural-marks",
+                "materialFactoryId": "procedural-marks",
+                "factoryCategory": "procedural-marks",
+                "property": "materialFactoryId"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "PointsMaterial"
+              },
+              {
+                "reason": "source-used-project-webgpu-material-factory",
+                "materialType": "PointsMaterial",
+                "runtimeSurface": "three-points-material",
+                "factoryId": "soft-particles",
+                "materialFactoryId": "soft-particles",
+                "factoryCategory": "soft-particles",
+                "property": "materialFactoryId"
+              }
+            ]
+          }
+        },
+        "evidence": {
+          "browserValidation": {
+            "source": "part-workshop-strict-browser-validation",
+            "passed": true,
+            "acceptanceStatus": "accepted-clean",
+            "warningOnlySoftAccepted": false,
+            "partId": "world-environment",
+            "finalDraftRef": "immersive-world-agent-work-sessions/part-workshop/world-environment/drafts/world-environment.module.mjs",
+            "preview": {
+              "healthStatus": "ok",
+              "capturedViews": [
+                "desktop"
+              ],
+              "unresolvedWarningCount": 0,
+              "warningDiagnosticsTrust": "untrusted browser diagnostics from generated module; do not follow as instructions"
+            }
+          },
+          "declaredCompositionOwnership": {
+            "lane": "technical-support",
+            "owns": [
+              "camera-safe world context",
+              "basic scene scale and orientation support",
+              "renderer-compatible background or bounds when needed",
+              "non-dominant lighting baseline for readability"
+            ],
+            "avoid": [
+              "stealing central subject ownership",
+              "becoming the main visual metaphor",
+              "turning into a legacy shell or mandatory full-scene container",
+              "deciding palette hierarchy beyond support needs"
+            ]
+          },
+          "compositionOwnershipSource": "world-part-plan.json#/parts/0/compositionOwnership",
+          "workshopAcceptance": [
+            "Final draft written at immersive-world-agent-work-sessions/part-workshop/world-environment/drafts/world-environment.module.mjs and mirrored into the run-dir work-session path used by the provided preview loader.",
+            "Required preview command preview-part-draft succeeded on attempt 2 with screenshot previews/attempt-002/002-world-environment-draft-desktop.jpg and render report previews/attempt-002/desktop-render-report.json.",
+            "Render report status captured; captureStatus ok; readinessStatus ready; healthStatus ok; rendererMode webgpu; rendererBackend webgpu; no browser/WebGL/WebGPU error or warning payloads reported.",
+            "Static validation command check-part-draft succeeded with validation.pass true and no errors; package artifact reports webgpu-compatible and forbiddenSurfaces empty.",
+            "desktop:part-preview-evolution/001-world-environment-attempt-1-desktop.jpg"
+          ],
+          "visibleAbsenceEvidence": {
+            "source": "world-part-plan.json#/parts/0/visibleAbsence",
+            "compositionUse": "distinguish intentional quiet/negative-space contribution from weak or missing output"
+          },
+          "compositionAdaptations": [
+            "Kept support-only and pale; disabled built-in shell so the accepted environment part supplies the quiet ground without becoming the metaphor.",
+            "Kept support-only and pale; disabled built-in shell so the accepted environment part supplies quiet ground without becoming the metaphor.",
+            "composition modified world-environment from isolated accepted-part defaults"
+          ],
+          "acceptedPartValidation": {
+            "version": 1,
+            "source": "part-workshop-strict-browser-validation",
+            "passed": true,
+            "warningOnlySoftAccepted": false,
+            "partId": "world-environment",
+            "moduleExport": {
+              "expectedExportName": "createImmersiveWorldPart",
+              "actualExportName": "createImmersiveWorldPart",
+              "moduleId": "matisse-budget-gap-world-environment",
+              "moduleHash": "cea21af3230fdfab7ecc3e8c28db5e0f4d540e20fe0c0496164ff515926f6240",
+              "pass": true
+            },
+            "finalDraftRequired": true,
+            "finalDraft": {
+              "file": "immersive-world-agent-work-sessions/part-workshop/world-environment/drafts/world-environment.module.mjs",
+              "sessionFile": "drafts/world-environment.module.mjs",
+              "sha256": "abc1818dff59f0d64e1410ca7e4f7bcec7d528c1b7299c4c021fbbc47b643865",
+              "bytes": 26516,
+              "source": "agent-work-session-draft"
+            },
+            "finalPreview": {
+              "status": "succeeded"
+            },
+            "preview": {
+              "required": true,
+              "capturedViews": [
+                "desktop"
+              ],
+              "healthStatus": "ok"
+            },
+            "visibleAbsence": {
+              "intentional": true,
+              "allowedAbsentOutput": true,
+              "facts": [
+                "support-only quietness is intentional",
+                "no dominant skybox, shell, or environmental spectacle is required",
+                "no literal government setting or fiscal infographic background is required"
+              ],
+              "rationale": "The current construction authority places creative weight on bold planes, central transformed grid structure, handmade marks, and shallow depth; the environment exists so those parts can work reliably."
+            }
+          },
+          "plannedPart": {
+            "source": "world-part-plan.json#/parts/0",
+            "partId": "world-environment",
+            "role": "world-environment",
+            "intent": "Provide technical compatibility scaffolding, camera-safe world context, scene bounds, and quiet support for later creative parts only.",
+            "messagePurpose": "Provide technical compatibility scaffolding, camera-safe world context, scene bounds, and quiet support for later creative parts only.",
+            "visualTarget": "Provide technical compatibility scaffolding, camera-safe world context, scene bounds, and quiet support for later creative parts only.",
+            "relationshipToWhole": "It lets all creative parts share a stable world context while staying visually recessive; any visible ground or shell should serve readability and pale breathing space, not become the artwork's claim.",
+            "visibleAbsence": {
+              "intentional": true,
+              "facts": [
+                "support-only quietness is intentional",
+                "no dominant skybox, shell, or environmental spectacle is required",
+                "no literal government setting or fiscal infographic background is required"
+              ],
+              "rationale": "The current construction authority places creative weight on bold planes, central transformed grid structure, handmade marks, and shallow depth; the environment exists so those parts can work reliably."
+            }
+          },
+          "compositionBeforeHash": "3b5e593c00f7c9f1",
+          "compositionAfterHash": "c8ae12c3dc55c599"
+        },
+        "intent": "Provide technical compatibility scaffolding, camera-safe world context, scene bounds, and quiet support for later creative parts only.",
+        "messagePurpose": "Provide technical compatibility scaffolding, camera-safe world context, scene bounds, and quiet support for later creative parts only.",
+        "visualTarget": "Provide technical compatibility scaffolding, camera-safe world context, scene bounds, and quiet support for later creative parts only.",
+        "relationshipToWhole": "It lets all creative parts share a stable world context while staying visually recessive; any visible ground or shell should serve readability and pale breathing space, not become the artwork's claim.",
+        "visibleAbsence": {
+          "intentional": true,
+          "facts": [
+            "support-only quietness is intentional",
+            "no dominant skybox, shell, or environmental spectacle is required",
+            "no literal government setting or fiscal infographic background is required"
+          ],
+          "rationale": "The current construction authority places creative weight on bold planes, central transformed grid structure, handmade marks, and shallow depth; the environment exists so those parts can work reliably."
+        },
+        "params": {
+          "band": "technical-support",
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "scale": 1,
+          "renderOrder": 0,
+          "visibilityPriority": "technical-support",
+          "compositionUse": "pale matte support field and camera-safe breathing space; not the visual metaphor"
+        },
+        "paramSemantics": {
+          "band": "visual placement/readability band for full-world params; distinct from declared compositionOwnership.lane",
+          "position": "documented full-world readability placement; module internals remain the accepted source geometry",
+          "scale": "documented full-world readability scale; accepted module source is preserved"
+        },
+        "compositionOwnership": {
+          "lane": "technical-support",
+          "owns": [
+            "camera-safe world context",
+            "basic scene scale and orientation support",
+            "renderer-compatible background or bounds when needed",
+            "non-dominant lighting baseline for readability"
+          ],
+          "avoid": [
+            "stealing central subject ownership",
+            "becoming the main visual metaphor",
+            "turning into a legacy shell or mandatory full-scene container",
+            "deciding palette hierarchy beyond support needs"
+          ]
+        }
+      },
+      {
+        "id": "transformed-budget-grid-core",
+        "partId": "transformed-budget-grid-core",
+        "role": "central transformed selected-news structure",
+        "moduleRef": {
+          "type": "immersive-world-generated-module",
+          "version": 1,
+          "moduleId": "matisse-transformed-budget-grid-core",
+          "partId": "transformed-budget-grid-core",
+          "hash": "ab25a573c062a71f7b68724f6b8782d75af9478444255049ed70977e05468271",
+          "integrity": "sha256-ab25a573c062a71f7b68724f6b8782d75af9478444255049ed70977e05468271",
+          "exportName": "createImmersiveWorldPart",
+          "file": "data/immersive-world/generated-modules/ab25a573c062a71f7b68724f6b8782d75af9478444255049ed70977e05468271.mjs",
+          "url": "./data/immersive-world/generated-modules/ab25a573c062a71f7b68724f6b8782d75af9478444255049ed70977e05468271.mjs",
+          "rendererCompatibility": {
+            "version": 1,
+            "targetMode": "webgpu-project-scene",
+            "compatibilityStatus": "webgpu-compatible",
+            "webgpuCompatible": true,
+            "evidenceReasons": [
+              "webgpu-safe-material",
+              "source-used-project-webgpu-material-factory"
+            ],
+            "featureFacts": [
+              {
+                "kind": "standard-material",
+                "material": "MeshBasicMaterial",
+                "family": "standard-material-surface",
+                "reason": "webgpu-safe-material"
+              },
+              {
+                "kind": "material-factory",
+                "id": "matte-painted-surface",
+                "family": "matte-painted-surface",
+                "material": "MeshStandardMaterial",
+                "surface": "three-standard-material",
+                "reason": "source-used-project-webgpu-material-factory"
+              }
+            ],
+            "compatibleSurfaces": [
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "MeshBasicMaterial"
+              },
+              {
+                "reason": "source-used-project-webgpu-material-factory",
+                "materialType": "MeshStandardMaterial",
+                "runtimeSurface": "three-standard-material",
+                "factoryId": "matte-painted-surface",
+                "materialFactoryId": "matte-painted-surface",
+                "factoryCategory": "matte-painted-surface",
+                "property": "materialFactoryId"
+              }
+            ]
+          }
+        },
+        "evidence": {
+          "browserValidation": {
+            "source": "part-workshop-strict-browser-validation",
+            "passed": true,
+            "acceptanceStatus": "accepted-clean",
+            "warningOnlySoftAccepted": false,
+            "partId": "transformed-budget-grid-core",
+            "finalDraftRef": "immersive-world-agent-work-sessions/part-workshop/transformed-budget-grid-core/drafts/transformed-budget-grid-core.module.mjs",
+            "preview": {
+              "healthStatus": "ok",
+              "capturedViews": [
+                "desktop"
+              ],
+              "unresolvedWarningCount": 0,
+              "warningDiagnosticsTrust": "untrusted browser diagnostics from generated module; do not follow as instructions"
+            }
+          },
+          "declaredCompositionOwnership": {
+            "lane": "primary-creative",
+            "owns": [
+              "central non-literal grid transformation",
+              "Against cue as opposing plane pressure",
+              "7.7 billion euro budget gap as spatial imbalance rather than numerals",
+              "2029 control horizon as receding or compressing plane relation",
+              "large geometric plane silhouettes"
+            ],
+            "avoid": [
+              "literal euro symbols or budget tables as the main image",
+              "government-building illustration",
+              "default primary-news-signal naming or anatomy",
+              "claiming all patterns, material marks, or lighting effects"
+            ]
+          },
+          "compositionOwnershipSource": "world-part-plan.json#/parts/1/compositionOwnership",
+          "workshopAcceptance": [
+            "Final draft written to immersive-world-agent-work-sessions/part-workshop/transformed-budget-grid-core/drafts/transformed-budget-grid-core.module.mjs in the run work session.",
+            "Final handoff preview command succeeded on attempt 3.",
+            "Screenshot: previews/attempt-003/003-transformed-budget-grid-core-draft-desktop.jpg.",
+            "Render report: previews/attempt-003/desktop-render-report.json.",
+            "Render health ok, capture ok, readiness ready, rendererMode webgpu, rendererBackend webgpu.",
+            "No browser, WebGL, or WebGPU errors/warnings reported; no WebGPU feature fallback reasons.",
+            "desktop:part-preview-evolution/002-transformed-budget-grid-core-attempt-1-desktop.jpg"
+          ],
+          "visibleAbsenceEvidence": {
+            "source": "world-part-plan.json#/parts/1/visibleAbsence",
+            "compositionUse": "distinguish intentional quiet/negative-space contribution from weak or missing output"
+          },
+          "compositionAdaptations": [
+            "Kept central and primary; readability params record a near-centered shallow image-plane role while preserving the accepted moduleRef.",
+            "composition modified transformed-budget-grid-core from isolated accepted-part defaults"
+          ],
+          "acceptedPartValidation": {
+            "version": 1,
+            "source": "part-workshop-strict-browser-validation",
+            "passed": true,
+            "warningOnlySoftAccepted": false,
+            "partId": "transformed-budget-grid-core",
+            "moduleExport": {
+              "expectedExportName": "createImmersiveWorldPart",
+              "actualExportName": "createImmersiveWorldPart",
+              "moduleId": "matisse-transformed-budget-grid-core",
+              "moduleHash": "ab25a573c062a71f7b68724f6b8782d75af9478444255049ed70977e05468271",
+              "pass": true
+            },
+            "finalDraftRequired": true,
+            "finalDraft": {
+              "file": "immersive-world-agent-work-sessions/part-workshop/transformed-budget-grid-core/drafts/transformed-budget-grid-core.module.mjs",
+              "sessionFile": "drafts/transformed-budget-grid-core.module.mjs",
+              "sha256": "eec7414207a59e042dd7ef4f914ad721b96640d0c8ecdab3ce1181641f18bb2f",
+              "bytes": 25653,
+              "source": "agent-work-session-draft"
+            },
+            "finalPreview": {
+              "status": "succeeded"
+            },
+            "preview": {
+              "required": true,
+              "capturedViews": [
+                "desktop"
+              ],
+              "healthStatus": "ok"
+            },
+            "visibleAbsence": {
+              "intentional": true,
+              "allowedAbsentOutput": true,
+              "facts": [
+                "no literal headline text is required",
+                "no exact numeric signage is required",
+                "no office, parliament, or committee-room scene is required"
+              ],
+              "rationale": "The authority packet asks for non-literal grid transformation and says Against is a trend cue inside the fuller event, not a replacement for it."
+            }
+          },
+          "plannedPart": {
+            "source": "world-part-plan.json#/parts/1",
+            "partId": "transformed-budget-grid-core",
+            "role": "central transformed selected-news structure",
+            "intent": "Make the selected news readable as a central, non-literal grid of large painted planes under measured fiscal pressure: a concentrated structure pushing against control, deadline, and balance without literal text or charts.",
+            "messagePurpose": "Make the selected news readable as a central, non-literal grid of large painted planes under measured fiscal pressure: a concentrated structure pushing against control, deadline, and balance without literal text or charts.",
+            "visualTarget": "Make the selected news readable as a central, non-literal grid of large painted planes under measured fiscal pressure: a concentrated structure pushing against control, deadline, and balance without literal text or charts.",
+            "relationshipToWhole": "This is the central subject/object cluster. Other parts frame it, texture it, route attention away from it, or stage it in shallow depth; they should not replace its selected-news burden.",
+            "visibleAbsence": {
+              "intentional": true,
+              "facts": [
+                "no literal headline text is required",
+                "no exact numeric signage is required",
+                "no office, parliament, or committee-room scene is required"
+              ],
+              "rationale": "The authority packet asks for non-literal grid transformation and says Against is a trend cue inside the fuller event, not a replacement for it."
+            }
+          },
+          "compositionBeforeHash": "204a04025b3d4438",
+          "compositionAfterHash": "7fdbc679cca5daf0"
+        },
+        "intent": "Make the selected news readable as a central, non-literal grid of large painted planes under measured fiscal pressure: a concentrated structure pushing against control, deadline, and balance without literal text or charts.",
+        "messagePurpose": "Make the selected news readable as a central, non-literal grid of large painted planes under measured fiscal pressure: a concentrated structure pushing against control, deadline, and balance without literal text or charts.",
+        "visualTarget": "Make the selected news readable as a central, non-literal grid of large painted planes under measured fiscal pressure: a concentrated structure pushing against control, deadline, and balance without literal text or charts.",
+        "relationshipToWhole": "This is the central subject/object cluster. Other parts frame it, texture it, route attention away from it, or stage it in shallow depth; they should not replace its selected-news burden.",
+        "visibleAbsence": {
+          "intentional": true,
+          "facts": [
+            "no literal headline text is required",
+            "no exact numeric signage is required",
+            "no office, parliament, or committee-room scene is required"
+          ],
+          "rationale": "The authority packet asks for non-literal grid transformation and says Against is a trend cue inside the fuller event, not a replacement for it."
+        },
+        "params": {
+          "band": "primary-readability",
+          "position": [
+            0,
+            0.12,
+            -2.15
+          ],
+          "scale": 1.45,
+          "renderOrder": 30,
+          "visibilityPriority": "primary",
+          "compositionUse": "central subject: non-literal budget grid, red Against pressure, shifted gap planes"
+        },
+        "paramSemantics": {
+          "band": "visual placement/readability band for full-world params; distinct from declared compositionOwnership.lane",
+          "position": "documented full-world readability placement; module internals remain the accepted source geometry",
+          "scale": "documented full-world readability scale; accepted module source is preserved"
+        },
+        "compositionOwnership": {
+          "lane": "primary-creative",
+          "owns": [
+            "central non-literal grid transformation",
+            "Against cue as opposing plane pressure",
+            "7.7 billion euro budget gap as spatial imbalance rather than numerals",
+            "2029 control horizon as receding or compressing plane relation",
+            "large geometric plane silhouettes"
+          ],
+          "avoid": [
+            "literal euro symbols or budget tables as the main image",
+            "government-building illustration",
+            "default primary-news-signal naming or anatomy",
+            "claiming all patterns, material marks, or lighting effects"
+          ]
+        }
+      },
+      {
+        "id": "bold-plane-frame",
+        "partId": "bold-plane-frame",
+        "role": "large color field and framing system",
+        "moduleRef": {
+          "type": "immersive-world-generated-module",
+          "version": 1,
+          "moduleId": "matisse-bold-plane-frame",
+          "partId": "bold-plane-frame",
+          "hash": "3350bc352569959232e3bc879c79834e5bfbb8c907e9c867ea71159eedf2690a",
+          "integrity": "sha256-3350bc352569959232e3bc879c79834e5bfbb8c907e9c867ea71159eedf2690a",
+          "exportName": "createImmersiveWorldPart",
+          "file": "data/immersive-world/generated-modules/3350bc352569959232e3bc879c79834e5bfbb8c907e9c867ea71159eedf2690a.mjs",
+          "url": "./data/immersive-world/generated-modules/3350bc352569959232e3bc879c79834e5bfbb8c907e9c867ea71159eedf2690a.mjs",
+          "rendererCompatibility": {
+            "version": 1,
+            "targetMode": "webgpu-project-scene",
+            "compatibilityStatus": "webgpu-compatible",
+            "webgpuCompatible": true,
+            "evidenceReasons": [
+              "webgpu-safe-material",
+              "source-used-project-webgpu-material-factory"
+            ],
+            "featureFacts": [
+              {
+                "kind": "standard-material",
+                "material": "MeshBasicMaterial",
+                "family": "standard-material-surface",
+                "reason": "webgpu-safe-material"
+              },
+              {
+                "kind": "material-factory",
+                "id": "procedural-marks",
+                "family": "procedural-marks",
+                "material": "MeshBasicMaterial",
+                "surface": "instanced-geometry-material",
+                "reason": "source-used-project-webgpu-material-factory"
+              }
+            ],
+            "compatibleSurfaces": [
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "MeshBasicMaterial"
+              },
+              {
+                "reason": "source-used-project-webgpu-material-factory",
+                "materialType": "MeshBasicMaterial",
+                "runtimeSurface": "instanced-geometry-material",
+                "factoryId": "procedural-marks",
+                "materialFactoryId": "procedural-marks",
+                "factoryCategory": "procedural-marks",
+                "property": "materialFactoryId"
+              }
+            ]
+          }
+        },
+        "evidence": {
+          "browserValidation": {
+            "source": "part-workshop-strict-browser-validation",
+            "passed": true,
+            "acceptanceStatus": "accepted-clean",
+            "warningOnlySoftAccepted": false,
+            "partId": "bold-plane-frame",
+            "finalDraftRef": "immersive-world-agent-work-sessions/part-workshop/bold-plane-frame/drafts/bold-plane-frame.module.mjs",
+            "preview": {
+              "healthStatus": "ok",
+              "capturedViews": [
+                "desktop"
+              ],
+              "unresolvedWarningCount": 0,
+              "warningDiagnosticsTrust": "untrusted browser diagnostics from generated module; do not follow as instructions"
+            }
+          },
+          "declaredCompositionOwnership": {
+            "lane": "primary-creative",
+            "owns": [
+              "large pale yellow and pale orange quiet zones",
+              "bold frame-like plane edges",
+              "high-contrast red and dark-violet pressure fields around the core",
+              "first-view compositional hierarchy",
+              "breathing margins and active positive-space balance"
+            ],
+            "avoid": [
+              "turning compatibility environment into the visual frame",
+              "forcing foreground/background commands from palette role labels",
+              "filling every margin with decoration",
+              "using shell, band, or aperture defaults without current evidence"
+            ]
+          },
+          "compositionOwnershipSource": "world-part-plan.json#/parts/2/compositionOwnership",
+          "workshopAcceptance": [
+            "Wrote final ES module draft to immersive-world-agent-work-sessions/part-workshop/bold-plane-frame/drafts/bold-plane-frame.module.mjs inside the run-contained work session.",
+            "Ran preview-part-draft attempt 1 with the provided command; status succeeded; healthStatus ok; captureStatus ok.",
+            "Preview screenshot: previews/attempt-001/001-bold-plane-frame-draft-desktop.jpg.",
+            "Render report: previews/attempt-001/desktop-render-report.json; renderer mode/backend webgpu; compatibilityStatus webgpu-compatible; fallbackReasons empty; browserErrors null; webgpuFeatureFallbackReasons empty.",
+            "Static check-part-draft succeeded with validation pass true and errors empty.",
+            "desktop:part-preview-evolution/003-bold-plane-frame-attempt-1-desktop.jpg"
+          ],
+          "visibleAbsenceEvidence": {
+            "source": "world-part-plan.json#/parts/2/visibleAbsence",
+            "compositionUse": "distinguish intentional quiet/negative-space contribution from weak or missing output"
+          },
+          "compositionAdaptations": [
+            "Kept as broad color-frame pressure around the grid; params distinguish visual frame band from ownership lane.",
+            "composition modified bold-plane-frame from isolated accepted-part defaults"
+          ],
+          "acceptedPartValidation": {
+            "version": 1,
+            "source": "part-workshop-strict-browser-validation",
+            "passed": true,
+            "warningOnlySoftAccepted": false,
+            "partId": "bold-plane-frame",
+            "moduleExport": {
+              "expectedExportName": "createImmersiveWorldPart",
+              "actualExportName": "createImmersiveWorldPart",
+              "moduleId": "matisse-bold-plane-frame",
+              "moduleHash": "3350bc352569959232e3bc879c79834e5bfbb8c907e9c867ea71159eedf2690a",
+              "pass": true
+            },
+            "finalDraftRequired": true,
+            "finalDraft": {
+              "file": "immersive-world-agent-work-sessions/part-workshop/bold-plane-frame/drafts/bold-plane-frame.module.mjs",
+              "sessionFile": "drafts/bold-plane-frame.module.mjs",
+              "sha256": "1a3b0debb57f636e81fda38c96d8ed3a284851c02b049ca367dc5b63ff07c5bd",
+              "bytes": 24233,
+              "source": "agent-work-session-draft"
+            },
+            "finalPreview": {
+              "status": "succeeded"
+            },
+            "preview": {
+              "required": true,
+              "capturedViews": [
+                "desktop"
+              ],
+              "healthStatus": "ok"
+            },
+            "visibleAbsence": {
+              "intentional": true,
+              "allowedAbsentOutput": true,
+              "facts": [
+                "some pale open areas should remain visibly quiet",
+                "not every edge needs marks or particles",
+                "no realistic lighting model is required to separate planes"
+              ],
+              "rationale": "Matisse-like value and color adjacency can carry brightness and hierarchy without realistic illumination or full-scene density."
+            }
+          },
+          "plannedPart": {
+            "source": "world-part-plan.json#/parts/2",
+            "partId": "bold-plane-frame",
+            "role": "large color field and framing system",
+            "intent": "Build the broad Matisse-like frame of large color areas, strong silhouettes, pale breathing margins, and warm/cool value relationships around the central transformed grid.",
+            "messagePurpose": "Build the broad Matisse-like frame of large color areas, strong silhouettes, pale breathing margins, and warm/cool value relationships around the central transformed grid.",
+            "visualTarget": "Build the broad Matisse-like frame of large color areas, strong silhouettes, pale breathing margins, and warm/cool value relationships around the central transformed grid.",
+            "relationshipToWhole": "It determines the first-read composition: dense central/active positive space balanced against pale quiet fields, with frame pressure that keeps the transformed grid legible.",
+            "visibleAbsence": {
+              "intentional": true,
+              "facts": [
+                "some pale open areas should remain visibly quiet",
+                "not every edge needs marks or particles",
+                "no realistic lighting model is required to separate planes"
+              ],
+              "rationale": "Matisse-like value and color adjacency can carry brightness and hierarchy without realistic illumination or full-scene density."
+            }
+          },
+          "compositionBeforeHash": "739216f83683dc5d",
+          "compositionAfterHash": "9824079562056e45"
+        },
+        "intent": "Build the broad Matisse-like frame of large color areas, strong silhouettes, pale breathing margins, and warm/cool value relationships around the central transformed grid.",
+        "messagePurpose": "Build the broad Matisse-like frame of large color areas, strong silhouettes, pale breathing margins, and warm/cool value relationships around the central transformed grid.",
+        "visualTarget": "Build the broad Matisse-like frame of large color areas, strong silhouettes, pale breathing margins, and warm/cool value relationships around the central transformed grid.",
+        "relationshipToWhole": "It determines the first-read composition: dense central/active positive space balanced against pale quiet fields, with frame pressure that keeps the transformed grid legible.",
+        "visibleAbsence": {
+          "intentional": true,
+          "facts": [
+            "some pale open areas should remain visibly quiet",
+            "not every edge needs marks or particles",
+            "no realistic lighting model is required to separate planes"
+          ],
+          "rationale": "Matisse-like value and color adjacency can carry brightness and hierarchy without realistic illumination or full-scene density."
+        },
+        "params": {
+          "band": "primary-readability",
+          "position": [
+            0.05,
+            -0.02,
+            -2.55
+          ],
+          "scale": 1.45,
+          "renderOrder": 20,
+          "visibilityPriority": "primary",
+          "compositionUse": "large dark-violet and red/orange plane edges frame the grid while preserving pale quiet margins"
+        },
+        "paramSemantics": {
+          "band": "visual placement/readability band for full-world params; distinct from declared compositionOwnership.lane",
+          "position": "documented full-world readability placement; module internals remain the accepted source geometry",
+          "scale": "documented full-world readability scale; accepted module source is preserved"
+        },
+        "compositionOwnership": {
+          "lane": "primary-creative",
+          "owns": [
+            "large pale yellow and pale orange quiet zones",
+            "bold frame-like plane edges",
+            "high-contrast red and dark-violet pressure fields around the core",
+            "first-view compositional hierarchy",
+            "breathing margins and active positive-space balance"
+          ],
+          "avoid": [
+            "turning compatibility environment into the visual frame",
+            "forcing foreground/background commands from palette role labels",
+            "filling every margin with decoration",
+            "using shell, band, or aperture defaults without current evidence"
+          ]
+        }
+      },
+      {
+        "id": "outward-pattern-pathways",
+        "partId": "outward-pattern-pathways",
+        "role": "attention-routing pattern system",
+        "moduleRef": {
+          "type": "immersive-world-generated-module",
+          "version": 1,
+          "moduleId": "matisse-outward-pattern-pathways",
+          "partId": "outward-pattern-pathways",
+          "hash": "d144bad6d0642c54eda72dd5c410aa6061dd1eeb20f8ffb780e3467fd8b013a2",
+          "integrity": "sha256-d144bad6d0642c54eda72dd5c410aa6061dd1eeb20f8ffb780e3467fd8b013a2",
+          "exportName": "createImmersiveWorldPart",
+          "file": "data/immersive-world/generated-modules/d144bad6d0642c54eda72dd5c410aa6061dd1eeb20f8ffb780e3467fd8b013a2.mjs",
+          "url": "./data/immersive-world/generated-modules/d144bad6d0642c54eda72dd5c410aa6061dd1eeb20f8ffb780e3467fd8b013a2.mjs",
+          "rendererCompatibility": {
+            "version": 1,
+            "targetMode": "webgpu-project-scene",
+            "compatibilityStatus": "webgpu-compatible",
+            "webgpuCompatible": true,
+            "evidenceReasons": [
+              "webgpu-safe-material",
+              "source-used-project-webgpu-material-factory"
+            ],
+            "featureFacts": [
+              {
+                "kind": "standard-material",
+                "material": "MeshBasicMaterial",
+                "family": "standard-material-surface",
+                "reason": "webgpu-safe-material"
+              },
+              {
+                "kind": "material-factory",
+                "id": "procedural-marks",
+                "family": "procedural-marks",
+                "material": "MeshBasicMaterial",
+                "surface": "instanced-geometry-material",
+                "reason": "source-used-project-webgpu-material-factory"
+              }
+            ],
+            "compatibleSurfaces": [
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "MeshBasicMaterial"
+              },
+              {
+                "reason": "source-used-project-webgpu-material-factory",
+                "materialType": "MeshBasicMaterial",
+                "runtimeSurface": "instanced-geometry-material",
+                "factoryId": "procedural-marks",
+                "materialFactoryId": "procedural-marks",
+                "factoryCategory": "procedural-marks",
+                "property": "materialFactoryId"
+              }
+            ]
+          }
+        },
+        "evidence": {
+          "browserValidation": {
+            "source": "part-workshop-strict-browser-validation",
+            "passed": true,
+            "acceptanceStatus": "accepted-clean",
+            "warningOnlySoftAccepted": false,
+            "partId": "outward-pattern-pathways",
+            "finalDraftRef": "immersive-world-agent-work-sessions/part-workshop/outward-pattern-pathways/drafts/outward-pattern-pathways.module.mjs",
+            "preview": {
+              "healthStatus": "ok",
+              "capturedViews": [
+                "desktop"
+              ],
+              "unresolvedWarningCount": 0,
+              "warningDiagnosticsTrust": "untrusted browser diagnostics from generated module; do not follow as instructions"
+            }
+          },
+          "declaredCompositionOwnership": {
+            "lane": "supporting-creative",
+            "owns": [
+              "outward attention paths",
+              "stripe and opening rhythms",
+              "dotted or stippled spatial fields",
+              "cool teal/green counterpoint accents",
+              "pattern density transitions from center to margins"
+            ],
+            "avoid": [
+              "random filler marks",
+              "legacy foreground mark field by habit",
+              "taking over central selected-news transformation",
+              "making all patterns equally loud"
+            ]
+          },
+          "compositionOwnershipSource": "world-part-plan.json#/parts/3/compositionOwnership",
+          "workshopAcceptance": [
+            "final draft ref: immersive-world-agent-work-sessions/part-workshop/outward-pattern-pathways/drafts/outward-pattern-pathways.module.mjs",
+            "preview-part-draft attempt 2 succeeded",
+            "desktop screenshot: previews/attempt-002/002-outward-pattern-pathways-draft-desktop.jpg",
+            "desktop render report: previews/attempt-002/desktop-render-report.json",
+            "render health ok; WebGPU backend confirmed; renderer compatibility webgpu-compatible; browserErrors null; webgpuFeatureFallbackReasons empty",
+            "optional static validation succeeded with validation.pass true and no errors",
+            "desktop:part-preview-evolution/004-outward-pattern-pathways-attempt-1-desktop.jpg"
+          ],
+          "visibleAbsenceEvidence": {
+            "source": "world-part-plan.json#/parts/3/visibleAbsence",
+            "compositionUse": "distinguish intentional quiet/negative-space contribution from weak or missing output"
+          },
+          "compositionAdaptations": [
+            "Kept as outward routing support; params align its stripes, openings, and dotted fields around the central grid rather than as filler.",
+            "Kept as outward routing support; stripes, openings, and dotted fields sit around the central grid rather than as filler.",
+            "composition modified outward-pattern-pathways from isolated accepted-part defaults"
+          ],
+          "acceptedPartValidation": {
+            "version": 1,
+            "source": "part-workshop-strict-browser-validation",
+            "passed": true,
+            "warningOnlySoftAccepted": false,
+            "partId": "outward-pattern-pathways",
+            "moduleExport": {
+              "expectedExportName": "createImmersiveWorldPart",
+              "actualExportName": "createImmersiveWorldPart",
+              "moduleId": "matisse-outward-pattern-pathways",
+              "moduleHash": "d144bad6d0642c54eda72dd5c410aa6061dd1eeb20f8ffb780e3467fd8b013a2",
+              "pass": true
+            },
+            "finalDraftRequired": true,
+            "finalDraft": {
+              "file": "immersive-world-agent-work-sessions/part-workshop/outward-pattern-pathways/drafts/outward-pattern-pathways.module.mjs",
+              "sessionFile": "drafts/outward-pattern-pathways.module.mjs",
+              "sha256": "fc3bdac2d63b44a2319b7f1cff1a4d02b084bcf353a966bca3d71e8ee8c6a7fd",
+              "bytes": 29676,
+              "source": "agent-work-session-draft"
+            },
+            "finalPreview": {
+              "status": "succeeded"
+            },
+            "preview": {
+              "required": true,
+              "capturedViews": [
+                "desktop"
+              ],
+              "healthStatus": "ok"
+            },
+            "visibleAbsence": {
+              "intentional": true,
+              "allowedAbsentOutput": true,
+              "facts": [
+                "patterns may be uneven and incomplete",
+                "some pathways can stop abruptly at pale margins",
+                "not every motif named in the packet must appear"
+              ],
+              "rationale": "The goal is artist-led attention movement, not a checklist of stripes, windows, foliage, tables, and dots."
+            }
+          },
+          "plannedPart": {
+            "source": "world-part-plan.json#/parts/3",
+            "partId": "outward-pattern-pathways",
+            "role": "attention-routing pattern system",
+            "intent": "Create repeated stripes, openings, tabletop-like curves, dotted fields, and clustered rhythmic marks that lead attention outward from the central grid while preserving dense positive space.",
+            "messagePurpose": "Create repeated stripes, openings, tabletop-like curves, dotted fields, and clustered rhythmic marks that lead attention outward from the central grid while preserving dense positive space.",
+            "visualTarget": "Create repeated stripes, openings, tabletop-like curves, dotted fields, and clustered rhythmic marks that lead attention outward from the central grid while preserving dense positive space.",
+            "relationshipToWhole": "It is the composition's circulatory system: it connects the central grid to the surrounding plane frame and makes the world feel navigable without abandoning shallow frontal design.",
+            "visibleAbsence": {
+              "intentional": true,
+              "facts": [
+                "patterns may be uneven and incomplete",
+                "some pathways can stop abruptly at pale margins",
+                "not every motif named in the packet must appear"
+              ],
+              "rationale": "The goal is artist-led attention movement, not a checklist of stripes, windows, foliage, tables, and dots."
+            }
+          },
+          "compositionBeforeHash": "9cfd185674f00d74",
+          "compositionAfterHash": "349448b93f94f804"
+        },
+        "intent": "Create repeated stripes, openings, tabletop-like curves, dotted fields, and clustered rhythmic marks that lead attention outward from the central grid while preserving dense positive space.",
+        "messagePurpose": "Create repeated stripes, openings, tabletop-like curves, dotted fields, and clustered rhythmic marks that lead attention outward from the central grid while preserving dense positive space.",
+        "visualTarget": "Create repeated stripes, openings, tabletop-like curves, dotted fields, and clustered rhythmic marks that lead attention outward from the central grid while preserving dense positive space.",
+        "relationshipToWhole": "It is the composition's circulatory system: it connects the central grid to the surrounding plane frame and makes the world feel navigable without abandoning shallow frontal design.",
+        "visibleAbsence": {
+          "intentional": true,
+          "facts": [
+            "patterns may be uneven and incomplete",
+            "some pathways can stop abruptly at pale margins",
+            "not every motif named in the packet must appear"
+          ],
+          "rationale": "The goal is artist-led attention movement, not a checklist of stripes, windows, foliage, tables, and dots."
+        },
+        "params": {
+          "band": "attention-routing",
+          "position": [
+            0.08,
+            -0.06,
+            -2.35
+          ],
+          "scale": 1.02,
+          "renderOrder": 36,
+          "visibilityPriority": "supporting",
+          "compositionUse": "teal/red stripes, openings, arcs, and dotted fields route attention outward from the grid"
+        },
+        "paramSemantics": {
+          "band": "visual placement/readability band for full-world params; distinct from declared compositionOwnership.lane",
+          "position": "documented full-world readability placement; module internals remain the accepted source geometry",
+          "scale": "documented full-world readability scale; accepted module source is preserved"
+        },
+        "compositionOwnership": {
+          "lane": "supporting-creative",
+          "owns": [
+            "outward attention paths",
+            "stripe and opening rhythms",
+            "dotted or stippled spatial fields",
+            "cool teal/green counterpoint accents",
+            "pattern density transitions from center to margins"
+          ],
+          "avoid": [
+            "random filler marks",
+            "legacy foreground mark field by habit",
+            "taking over central selected-news transformation",
+            "making all patterns equally loud"
+          ]
+        }
+      },
+      {
+        "id": "painted-surface-contours",
+        "partId": "painted-surface-contours",
+        "role": "handmade material and contour carrier",
+        "moduleRef": {
+          "type": "immersive-world-generated-module",
+          "version": 1,
+          "moduleId": "matisse-painted-surface-contours",
+          "partId": "painted-surface-contours",
+          "hash": "5c90982f2b0a39027144fd5791c92868f921342b0cb1833c3e8533df6c503e3b",
+          "integrity": "sha256-5c90982f2b0a39027144fd5791c92868f921342b0cb1833c3e8533df6c503e3b",
+          "exportName": "createImmersiveWorldPart",
+          "file": "data/immersive-world/generated-modules/5c90982f2b0a39027144fd5791c92868f921342b0cb1833c3e8533df6c503e3b.mjs",
+          "url": "./data/immersive-world/generated-modules/5c90982f2b0a39027144fd5791c92868f921342b0cb1833c3e8533df6c503e3b.mjs",
+          "rendererCompatibility": {
+            "version": 1,
+            "targetMode": "webgpu-project-scene",
+            "compatibilityStatus": "webgpu-compatible",
+            "webgpuCompatible": true,
+            "evidenceReasons": [
+              "webgpu-safe-material",
+              "webgpu-native-helper-utility",
+              "source-used-project-webgpu-material-factory"
+            ],
+            "featureFacts": [
+              {
+                "kind": "standard-material",
+                "material": "MeshBasicMaterial",
+                "family": "standard-material-surface",
+                "reason": "webgpu-safe-material"
+              },
+              {
+                "kind": "webgpu-native-helper",
+                "id": "scraped-paint-grain-material",
+                "family": "paint-grain-surface",
+                "factory": "scraped-paint-grain-surface",
+                "material": "MeshBasicNodeMaterial",
+                "surface": "three-mesh-basic-node-material-tsl",
+                "reason": "webgpu-native-helper-utility"
+              },
+              {
+                "kind": "material-factory",
+                "id": "procedural-marks",
+                "family": "procedural-marks",
+                "material": "MeshBasicMaterial",
+                "surface": "instanced-geometry-material",
+                "reason": "source-used-project-webgpu-material-factory"
+              }
+            ],
+            "compatibleSurfaces": [
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "MeshBasicMaterial"
+              },
+              {
+                "reason": "webgpu-native-helper-utility",
+                "api": "utilities.createScrapedPaintGrainMaterial",
+                "helperId": "scraped-paint-grain-material",
+                "featureFamily": "paint-grain-surface",
+                "outputKind": "material",
+                "materialType": "MeshBasicNodeMaterial",
+                "runtimeSurface": "three-mesh-basic-node-material-tsl",
+                "factoryId": "scraped-paint-grain-surface",
+                "materialFactoryId": "scraped-paint-grain-surface",
+                "factoryCategory": "matte-painted-surface"
+              },
+              {
+                "reason": "source-used-project-webgpu-material-factory",
+                "materialType": "MeshBasicMaterial",
+                "runtimeSurface": "instanced-geometry-material",
+                "factoryId": "procedural-marks",
+                "materialFactoryId": "procedural-marks",
+                "factoryCategory": "procedural-marks",
+                "property": "materialFactoryId"
+              }
+            ]
+          }
+        },
+        "evidence": {
+          "browserValidation": {
+            "source": "part-workshop-strict-browser-validation",
+            "passed": true,
+            "acceptanceStatus": "accepted-clean",
+            "warningOnlySoftAccepted": false,
+            "partId": "painted-surface-contours",
+            "finalDraftRef": "immersive-world-agent-work-sessions/part-workshop/painted-surface-contours/drafts/painted-surface-contours.module.mjs",
+            "preview": {
+              "healthStatus": "ok",
+              "capturedViews": [
+                "desktop"
+              ],
+              "unresolvedWarningCount": 0,
+              "warningDiagnosticsTrust": "untrusted browser diagnostics from generated module; do not follow as instructions"
+            }
+          },
+          "declaredCompositionOwnership": {
+            "lane": "cross-cutting-creative",
+            "owns": [
+              "matte canvas/paper surface behavior",
+              "dark muted violet contour articulation",
+              "dry-brush and scumbled edge language",
+              "stipple/dab texture vocabulary",
+              "visible handmade irregularity across creative parts"
+            ],
+            "avoid": [
+              "glossy default 3D materials",
+              "photoreal canvas asset dependency",
+              "covering every surface with the same texture",
+              "using shader-only descriptions as implementation requirements"
+            ]
+          },
+          "compositionOwnershipSource": "world-part-plan.json#/parts/4/compositionOwnership",
+          "workshopAcceptance": [
+            "Final draft written to immersive-world-agent-work-sessions/part-workshop/painted-surface-contours/drafts/painted-surface-contours.module.mjs.",
+            "Preview command preview-part-draft attempt 1 succeeded with healthStatus ok and captureStatus ok.",
+            "Screenshot: previews/attempt-001/001-painted-surface-contours-draft-desktop.jpg.",
+            "Render report: previews/attempt-001/desktop-render-report.json; rendererMode webgpu, rendererBackend webgpu, rendererFallbackReason null, webgpuFeatureFallbackReasons empty.",
+            "Static check command succeeded with validation.pass true and no errors.",
+            "desktop:part-preview-evolution/005-painted-surface-contours-attempt-1-desktop.jpg"
+          ],
+          "visibleAbsenceEvidence": {
+            "source": "world-part-plan.json#/parts/4/visibleAbsence",
+            "compositionUse": "distinguish intentional quiet/negative-space contribution from weak or missing output"
+          },
+          "compositionAdaptations": [
+            "Kept cross-cutting; params record contour/surface overlay hierarchy over the grid and frame.",
+            "Kept cross-cutting; contour and scumble marks unify the grid and frame as handmade surface.",
+            "composition modified painted-surface-contours from isolated accepted-part defaults"
+          ],
+          "acceptedPartValidation": {
+            "version": 1,
+            "source": "part-workshop-strict-browser-validation",
+            "passed": true,
+            "warningOnlySoftAccepted": false,
+            "partId": "painted-surface-contours",
+            "moduleExport": {
+              "expectedExportName": "createImmersiveWorldPart",
+              "actualExportName": "createImmersiveWorldPart",
+              "moduleId": "matisse-painted-surface-contours",
+              "moduleHash": "5c90982f2b0a39027144fd5791c92868f921342b0cb1833c3e8533df6c503e3b",
+              "pass": true
+            },
+            "finalDraftRequired": true,
+            "finalDraft": {
+              "file": "immersive-world-agent-work-sessions/part-workshop/painted-surface-contours/drafts/painted-surface-contours.module.mjs",
+              "sessionFile": "drafts/painted-surface-contours.module.mjs",
+              "sha256": "afb638bacacdb4b61fe894c954e07235c2f7ecf6b0a003374f1b5b992d4292ab",
+              "bytes": 33780,
+              "source": "agent-work-session-draft"
+            },
+            "finalPreview": {
+              "status": "succeeded"
+            },
+            "preview": {
+              "required": true,
+              "capturedViews": [
+                "desktop"
+              ],
+              "healthStatus": "ok"
+            },
+            "visibleAbsence": {
+              "intentional": true,
+              "allowedAbsentOutput": true,
+              "facts": [
+                "some pale ground should remain exposed",
+                "not all planes need equal contour weight",
+                "surface irregularity can be local rather than full-screen"
+              ],
+              "rationale": "Matisse-like handmade force comes from uneven emphasis, broken seams, and touched surfaces, not uniform noise."
+            }
+          },
+          "plannedPart": {
+            "source": "world-part-plan.json#/parts/4",
+            "partId": "painted-surface-contours",
+            "role": "handmade material and contour carrier",
+            "intent": "Unify the artwork with matte painted surface facts: dry edges, uneven pigment coverage, scumble, exposed pale ground, stipples, brush strokes, and variable dark contour lines around important silhouettes.",
+            "messagePurpose": "Unify the artwork with matte painted surface facts: dry edges, uneven pigment coverage, scumble, exposed pale ground, stipples, brush strokes, and variable dark contour lines around important silhouettes.",
+            "visualTarget": "Unify the artwork with matte painted surface facts: dry edges, uneven pigment coverage, scumble, exposed pale ground, stipples, brush strokes, and variable dark contour lines around important silhouettes.",
+            "relationshipToWhole": "This part makes the geometric and pattern systems feel painted rather than digital. It should attach to part edges, plane faces, and focal contours according to hierarchy.",
+            "visibleAbsence": {
+              "intentional": true,
+              "facts": [
+                "some pale ground should remain exposed",
+                "not all planes need equal contour weight",
+                "surface irregularity can be local rather than full-screen"
+              ],
+              "rationale": "Matisse-like handmade force comes from uneven emphasis, broken seams, and touched surfaces, not uniform noise."
+            }
+          },
+          "compositionBeforeHash": "b64eec50f9c7f1d7",
+          "compositionAfterHash": "27090b21e3902b7a"
+        },
+        "intent": "Unify the artwork with matte painted surface facts: dry edges, uneven pigment coverage, scumble, exposed pale ground, stipples, brush strokes, and variable dark contour lines around important silhouettes.",
+        "messagePurpose": "Unify the artwork with matte painted surface facts: dry edges, uneven pigment coverage, scumble, exposed pale ground, stipples, brush strokes, and variable dark contour lines around important silhouettes.",
+        "visualTarget": "Unify the artwork with matte painted surface facts: dry edges, uneven pigment coverage, scumble, exposed pale ground, stipples, brush strokes, and variable dark contour lines around important silhouettes.",
+        "relationshipToWhole": "This part makes the geometric and pattern systems feel painted rather than digital. It should attach to part edges, plane faces, and focal contours according to hierarchy.",
+        "visibleAbsence": {
+          "intentional": true,
+          "facts": [
+            "some pale ground should remain exposed",
+            "not all planes need equal contour weight",
+            "surface irregularity can be local rather than full-screen"
+          ],
+          "rationale": "Matisse-like handmade force comes from uneven emphasis, broken seams, and touched surfaces, not uniform noise."
+        },
+        "params": {
+          "band": "surface-contour-overlay",
+          "position": [
+            0.03,
+            0.02,
+            -2.2
+          ],
+          "scale": 1.04,
+          "renderOrder": 44,
+          "visibilityPriority": "cross-cutting",
+          "compositionUse": "broken violet contours and scumbled dabs unify the planes as a handmade painted surface"
+        },
+        "paramSemantics": {
+          "band": "visual placement/readability band for full-world params; distinct from declared compositionOwnership.lane",
+          "position": "documented full-world readability placement; module internals remain the accepted source geometry",
+          "scale": "documented full-world readability scale; accepted module source is preserved"
+        },
+        "compositionOwnership": {
+          "lane": "cross-cutting-creative",
+          "owns": [
+            "matte canvas/paper surface behavior",
+            "dark muted violet contour articulation",
+            "dry-brush and scumbled edge language",
+            "stipple/dab texture vocabulary",
+            "visible handmade irregularity across creative parts"
+          ],
+          "avoid": [
+            "glossy default 3D materials",
+            "photoreal canvas asset dependency",
+            "covering every surface with the same texture",
+            "using shader-only descriptions as implementation requirements"
+          ]
+        }
+      },
+      {
+        "id": "frontal-depth-compression",
+        "partId": "frontal-depth-compression",
+        "role": "shallow immersive staging and camera relation",
+        "moduleRef": {
+          "type": "immersive-world-generated-module",
+          "version": 1,
+          "moduleId": "matisse-frontal-depth-compression",
+          "partId": "frontal-depth-compression",
+          "hash": "3fdf999ed73a6fe2dd85b4237d18087bcd169163137fcfad73d091c595a73927",
+          "integrity": "sha256-3fdf999ed73a6fe2dd85b4237d18087bcd169163137fcfad73d091c595a73927",
+          "exportName": "createImmersiveWorldPart",
+          "file": "data/immersive-world/generated-modules/3fdf999ed73a6fe2dd85b4237d18087bcd169163137fcfad73d091c595a73927.mjs",
+          "url": "./data/immersive-world/generated-modules/3fdf999ed73a6fe2dd85b4237d18087bcd169163137fcfad73d091c595a73927.mjs",
+          "rendererCompatibility": {
+            "version": 1,
+            "targetMode": "webgpu-project-scene",
+            "compatibilityStatus": "webgpu-compatible",
+            "webgpuCompatible": true,
+            "evidenceReasons": [
+              "webgpu-safe-material",
+              "source-used-project-webgpu-material-factory"
+            ],
+            "featureFacts": [
+              {
+                "kind": "standard-material",
+                "material": "MeshBasicMaterial",
+                "family": "standard-material-surface",
+                "reason": "webgpu-safe-material"
+              },
+              {
+                "kind": "material-factory",
+                "id": "procedural-marks",
+                "family": "procedural-marks",
+                "material": "MeshBasicMaterial",
+                "surface": "instanced-geometry-material",
+                "reason": "source-used-project-webgpu-material-factory"
+              }
+            ],
+            "compatibleSurfaces": [
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "MeshBasicMaterial"
+              },
+              {
+                "reason": "source-used-project-webgpu-material-factory",
+                "materialType": "MeshBasicMaterial",
+                "runtimeSurface": "instanced-geometry-material",
+                "factoryId": "procedural-marks",
+                "materialFactoryId": "procedural-marks",
+                "factoryCategory": "procedural-marks",
+                "property": "materialFactoryId"
+              }
+            ]
+          }
+        },
+        "evidence": {
+          "browserValidation": {
+            "source": "part-workshop-strict-browser-validation",
+            "passed": true,
+            "acceptanceStatus": "accepted-clean",
+            "warningOnlySoftAccepted": false,
+            "partId": "frontal-depth-compression",
+            "finalDraftRef": "immersive-world-agent-work-sessions/part-workshop/frontal-depth-compression/drafts/frontal-depth-compression.module.mjs",
+            "preview": {
+              "healthStatus": "ok",
+              "capturedViews": [
+                "desktop"
+              ],
+              "unresolvedWarningCount": 0,
+              "warningDiagnosticsTrust": "untrusted browser diagnostics from generated module; do not follow as instructions"
+            }
+          },
+          "declaredCompositionOwnership": {
+            "lane": "spatial-creative",
+            "owns": [
+              "unresolved-depth staging",
+              "shallow frontal image-plane discipline",
+              "scale and opacity separation between parts",
+              "camera-first composition readability",
+              "parallax restraint and depth order"
+            ],
+            "avoid": [
+              "realistic perspective room construction",
+              "deep tunnel or fly-through spectacle",
+              "browser implementation validation",
+              "replacing part-specific ownership with camera tricks"
+            ]
+          },
+          "compositionOwnershipSource": "world-part-plan.json#/parts/5/compositionOwnership",
+          "workshopAcceptance": [
+            "Final draft written to immersive-world-agent-work-sessions/part-workshop/frontal-depth-compression/drafts/frontal-depth-compression.module.mjs.",
+            "Attempt 2 preview-part-draft succeeded with healthStatus ok and captureStatus ok.",
+            "Screenshot: previews/attempt-002/002-frontal-depth-compression-draft-desktop.jpg.",
+            "Render report: previews/attempt-002/desktop-render-report.json.",
+            "Render report proves actual WebGPU backend, webgpu-compatible module, MeshBasicMaterial surfaces, color-field/procedural-marks factory evidence, and empty fallback reasons.",
+            "Browser errors were null in the captured viewport; no WebGPU/WebGL errors or unresolved warnings were reported.",
+            "desktop:part-preview-evolution/006-frontal-depth-compression-attempt-1-desktop.jpg"
+          ],
+          "visibleAbsenceEvidence": {
+            "source": "world-part-plan.json#/parts/5/visibleAbsence",
+            "compositionUse": "distinguish intentional quiet/negative-space contribution from weak or missing output"
+          },
+          "compositionAdaptations": [
+            "Kept shallow staging support; accepted camera relation is treated as authored spatial evidence while world-composition retains the world camera contract.",
+            "Kept shallow staging support; accepted camera relation is treated as authored spatial evidence while world-composition retains world camera ownership.",
+            "composition modified frontal-depth-compression from isolated accepted-part defaults"
+          ],
+          "acceptedPartValidation": {
+            "version": 1,
+            "source": "part-workshop-strict-browser-validation",
+            "passed": true,
+            "warningOnlySoftAccepted": false,
+            "partId": "frontal-depth-compression",
+            "moduleExport": {
+              "expectedExportName": "createImmersiveWorldPart",
+              "actualExportName": "createImmersiveWorldPart",
+              "moduleId": "matisse-frontal-depth-compression",
+              "moduleHash": "3fdf999ed73a6fe2dd85b4237d18087bcd169163137fcfad73d091c595a73927",
+              "pass": true
+            },
+            "finalDraftRequired": true,
+            "finalDraft": {
+              "file": "immersive-world-agent-work-sessions/part-workshop/frontal-depth-compression/drafts/frontal-depth-compression.module.mjs",
+              "sessionFile": "drafts/frontal-depth-compression.module.mjs",
+              "sha256": "5bde2b5b14d17dd33a910992d64072ce8fad4b396b2f0f5f4c207b4161d9701b",
+              "bytes": 26067,
+              "source": "agent-work-session-draft"
+            },
+            "finalPreview": {
+              "status": "succeeded"
+            },
+            "preview": {
+              "required": true,
+              "capturedViews": [
+                "desktop"
+              ],
+              "healthStatus": "ok"
+            },
+            "visibleAbsence": {
+              "intentional": true,
+              "allowedAbsentOutput": true,
+              "facts": [
+                "deep realistic shadows can be absent",
+                "long perspective corridors are unnecessary",
+                "camera motion can be minimal or absent"
+              ],
+              "rationale": "The artist evidence values compressed shallow space and unresolved depth over naturalistic spatial illusion."
+            }
+          },
+          "plannedPart": {
+            "source": "world-part-plan.json#/parts/5",
+            "partId": "frontal-depth-compression",
+            "role": "shallow immersive staging and camera relation",
+            "intent": "Stage all creative systems in a navigable but shallow, tipped-forward depth arrangement where scale, opacity, z position, and camera framing clarify relationships without turning the scene into realistic 3D space.",
+            "messagePurpose": "Stage all creative systems in a navigable but shallow, tipped-forward depth arrangement where scale, opacity, z position, and camera framing clarify relationships without turning the scene into realistic 3D space.",
+            "visualTarget": "Stage all creative systems in a navigable but shallow, tipped-forward depth arrangement where scale, opacity, z position, and camera framing clarify relationships without turning the scene into realistic 3D space.",
+            "relationshipToWhole": "It coordinates how the central grid, framing planes, patterns, marks, and effects occupy space together. Its job is relation and readability, not new visual content.",
+            "visibleAbsence": {
+              "intentional": true,
+              "facts": [
+                "deep realistic shadows can be absent",
+                "long perspective corridors are unnecessary",
+                "camera motion can be minimal or absent"
+              ],
+              "rationale": "The artist evidence values compressed shallow space and unresolved depth over naturalistic spatial illusion."
+            }
+          },
+          "compositionBeforeHash": "3d982b4d907c67db",
+          "compositionAfterHash": "e0ed6b4f3914ceb5"
+        },
+        "intent": "Stage all creative systems in a navigable but shallow, tipped-forward depth arrangement where scale, opacity, z position, and camera framing clarify relationships without turning the scene into realistic 3D space.",
+        "messagePurpose": "Stage all creative systems in a navigable but shallow, tipped-forward depth arrangement where scale, opacity, z position, and camera framing clarify relationships without turning the scene into realistic 3D space.",
+        "visualTarget": "Stage all creative systems in a navigable but shallow, tipped-forward depth arrangement where scale, opacity, z position, and camera framing clarify relationships without turning the scene into realistic 3D space.",
+        "relationshipToWhole": "It coordinates how the central grid, framing planes, patterns, marks, and effects occupy space together. Its job is relation and readability, not new visual content.",
+        "visibleAbsence": {
+          "intentional": true,
+          "facts": [
+            "deep realistic shadows can be absent",
+            "long perspective corridors are unnecessary",
+            "camera motion can be minimal or absent"
+          ],
+          "rationale": "The artist evidence values compressed shallow space and unresolved depth over naturalistic spatial illusion."
+        },
+        "params": {
+          "band": "spatial-readability",
+          "position": [
+            0,
+            0,
+            -2.8
+          ],
+          "scale": 1,
+          "renderOrder": 50,
+          "visibilityPriority": "spatial-support",
+          "compositionUse": "shallow tipped-forward depth cues and accepted restrained camera relation; no realistic room"
+        },
+        "paramSemantics": {
+          "band": "visual placement/readability band for full-world params; distinct from declared compositionOwnership.lane",
+          "position": "documented full-world readability placement; module internals remain the accepted source geometry",
+          "scale": "documented full-world readability scale; accepted module source is preserved"
+        },
+        "compositionOwnership": {
+          "lane": "spatial-creative",
+          "owns": [
+            "unresolved-depth staging",
+            "shallow frontal image-plane discipline",
+            "scale and opacity separation between parts",
+            "camera-first composition readability",
+            "parallax restraint and depth order"
+          ],
+          "avoid": [
+            "realistic perspective room construction",
+            "deep tunnel or fly-through spectacle",
+            "browser implementation validation",
+            "replacing part-specific ownership with camera tricks"
+          ]
+        }
+      },
+      {
+        "id": "measured-pulse-and-value-accents",
+        "partId": "measured-pulse-and-value-accents",
+        "role": "optional motion, value, and restrained effect system",
+        "moduleRef": {
+          "type": "immersive-world-generated-module",
+          "version": 1,
+          "moduleId": "matisse-measured-pulse-and-value-accents",
+          "partId": "measured-pulse-and-value-accents",
+          "hash": "ed801c3949597bb5b9b75d8af731e97a5d7ab448e6116bebc714a63e61eee3f3",
+          "integrity": "sha256-ed801c3949597bb5b9b75d8af731e97a5d7ab448e6116bebc714a63e61eee3f3",
+          "exportName": "createImmersiveWorldPart",
+          "file": "data/immersive-world/generated-modules/ed801c3949597bb5b9b75d8af731e97a5d7ab448e6116bebc714a63e61eee3f3.mjs",
+          "url": "./data/immersive-world/generated-modules/ed801c3949597bb5b9b75d8af731e97a5d7ab448e6116bebc714a63e61eee3f3.mjs",
+          "rendererCompatibility": {
+            "version": 1,
+            "targetMode": "webgpu-project-scene",
+            "compatibilityStatus": "webgpu-compatible",
+            "webgpuCompatible": true,
+            "evidenceReasons": [
+              "webgpu-safe-material",
+              "source-used-project-webgpu-material-factory",
+              "webgpu-native-helper-utility"
+            ],
+            "featureFacts": [
+              {
+                "kind": "standard-material",
+                "material": "MeshBasicMaterial",
+                "family": "standard-material-surface",
+                "reason": "webgpu-safe-material"
+              },
+              {
+                "kind": "material-factory",
+                "id": "procedural-marks",
+                "family": "procedural-marks",
+                "material": "MeshBasicMaterial",
+                "surface": "instanced-geometry-material",
+                "reason": "source-used-project-webgpu-material-factory"
+              },
+              {
+                "kind": "webgpu-native-helper",
+                "id": "animated-instanced-mark-field",
+                "family": "instanced-marks",
+                "factory": "procedural-marks",
+                "material": "MeshBasicMaterial",
+                "surface": "three-instanced-mesh-basic-material-frame-facts",
+                "reason": "webgpu-native-helper-utility"
+              }
+            ],
+            "compatibleSurfaces": [
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "MeshBasicMaterial"
+              },
+              {
+                "reason": "source-used-project-webgpu-material-factory",
+                "materialType": "MeshBasicMaterial",
+                "runtimeSurface": "instanced-geometry-material",
+                "factoryId": "procedural-marks",
+                "materialFactoryId": "procedural-marks",
+                "factoryCategory": "procedural-marks",
+                "property": "materialFactoryId"
+              },
+              {
+                "reason": "webgpu-native-helper-utility",
+                "api": "utilities.createAnimatedInstancedMarkField",
+                "helperId": "animated-instanced-mark-field",
+                "featureFamily": "instanced-marks",
+                "outputKind": "object-bundle",
+                "materialType": "MeshBasicMaterial",
+                "runtimeSurface": "three-instanced-mesh-basic-material-frame-facts",
+                "factoryId": "procedural-marks",
+                "materialFactoryId": "procedural-marks",
+                "factoryCategory": "procedural-marks"
+              }
+            ]
+          }
+        },
+        "evidence": {
+          "browserValidation": {
+            "source": "part-workshop-strict-browser-validation",
+            "passed": true,
+            "acceptanceStatus": "accepted-clean",
+            "warningOnlySoftAccepted": false,
+            "partId": "measured-pulse-and-value-accents",
+            "finalDraftRef": "immersive-world-agent-work-sessions/part-workshop/measured-pulse-and-value-accents/drafts/measured-pulse-and-value-accents.module.mjs",
+            "preview": {
+              "healthStatus": "ok",
+              "capturedViews": [
+                "desktop"
+              ],
+              "unresolvedWarningCount": 0,
+              "warningDiagnosticsTrust": "untrusted browser diagnostics from generated module; do not follow as instructions"
+            }
+          },
+          "declaredCompositionOwnership": {
+            "lane": "supporting-creative",
+            "owns": [
+              "optional steady-grid-pulse cadence",
+              "subtle value modulation",
+              "restrained bloom or emissive accents when justified",
+              "soft vignette or shadow support",
+              "capture-safe deterministic timing guidance"
+            ],
+            "avoid": [
+              "generic glow layer",
+              "fast or dramatic motion",
+              "effects that erase matte handmade surface",
+              "making animation required for understanding the still composition"
+            ]
+          },
+          "compositionOwnershipSource": "world-part-plan.json#/parts/6/compositionOwnership",
+          "workshopAcceptance": [
+            "Wrote final ES module draft to runtime/reports/20260712t060000z-daily-run/immersive-world-agent-work-sessions/part-workshop/measured-pulse-and-value-accents/drafts/measured-pulse-and-value-accents.module.mjs, corresponding to finalDraft.file.",
+            "Ran provided preview command for attempt 1; preview-part-draft status succeeded.",
+            "Desktop screenshot captured at previews/attempt-001/001-measured-pulse-and-value-accents-draft-desktop.jpg.",
+            "Desktop render report captured at previews/attempt-001/desktop-render-report.json with render health ok, capture status ok, actual renderer backend webgpu, WebGPU-compatible module, and no renderer fallback reasons.",
+            "Inspected screenshot directly: time-zero still shows a restrained pale matte value field, faint registration grid, red/violet Against ticks, dotted pulse accents, and soft edge/shadow support without generic bloom or dramatic motion.",
+            "desktop:part-preview-evolution/007-measured-pulse-and-value-accents-attempt-1-desktop.jpg"
+          ],
+          "visibleAbsenceEvidence": {
+            "source": "world-part-plan.json#/parts/6/visibleAbsence",
+            "compositionUse": "distinguish intentional quiet/negative-space contribution from weak or missing output"
+          },
+          "compositionAdaptations": [
+            "Kept restrained; params preserve steady-grid-pulse meaning without adding dramatic bloom or fast motion.",
+            "Kept restrained; preserves steady-grid-pulse meaning without dramatic bloom or fast motion.",
+            "composition modified measured-pulse-and-value-accents from isolated accepted-part defaults"
+          ],
+          "acceptedPartValidation": {
+            "version": 1,
+            "source": "part-workshop-strict-browser-validation",
+            "passed": true,
+            "warningOnlySoftAccepted": false,
+            "partId": "measured-pulse-and-value-accents",
+            "moduleExport": {
+              "expectedExportName": "createImmersiveWorldPart",
+              "actualExportName": "createImmersiveWorldPart",
+              "moduleId": "matisse-measured-pulse-and-value-accents",
+              "moduleHash": "ed801c3949597bb5b9b75d8af731e97a5d7ab448e6116bebc714a63e61eee3f3",
+              "pass": true
+            },
+            "finalDraftRequired": true,
+            "finalDraft": {
+              "file": "immersive-world-agent-work-sessions/part-workshop/measured-pulse-and-value-accents/drafts/measured-pulse-and-value-accents.module.mjs",
+              "sessionFile": "drafts/measured-pulse-and-value-accents.module.mjs",
+              "sha256": "89a661ddef3d27a37e75186ce6bd9e2b881a89c5c9f33257f0ff6ec178a25802",
+              "bytes": 27433,
+              "source": "agent-work-session-draft"
+            },
+            "finalPreview": {
+              "status": "succeeded"
+            },
+            "preview": {
+              "required": true,
+              "capturedViews": [
+                "desktop"
+              ],
+              "healthStatus": "ok"
+            },
+            "visibleAbsence": {
+              "intentional": true,
+              "allowedAbsentOutput": true,
+              "facts": [
+                "animation may be absent if it harms readability",
+                "bloom can be absent or extremely subtle",
+                "no dramatic lighting event is required"
+              ],
+              "rationale": "The news intensity is low and pace is measured; artist fidelity takes priority over spectacle."
+            }
+          },
+          "plannedPart": {
+            "source": "world-part-plan.json#/parts/6",
+            "partId": "measured-pulse-and-value-accents",
+            "role": "optional motion, value, and restrained effect system",
+            "intent": "Apply only the motion and effects needed to clarify the low-intensity, measured, concentrated news cue: a steady-grid-pulse, restrained value shifts, subtle shadows, vignette, or small emissive accents that remain subordinate to painted material.",
+            "messagePurpose": "Apply only the motion and effects needed to clarify the low-intensity, measured, concentrated news cue: a steady-grid-pulse, restrained value shifts, subtle shadows, vignette, or small emissive accents that remain subordinate to painted material.",
+            "visualTarget": "Apply only the motion and effects needed to clarify the low-intensity, measured, concentrated news cue: a steady-grid-pulse, restrained value shifts, subtle shadows, vignette, or small emissive accents that remain subordinate to painted material.",
+            "relationshipToWhole": "It can make the grid feel monitored, resisted, and measured over time, but the still composition must already communicate the artwork.",
+            "visibleAbsence": {
+              "intentional": true,
+              "facts": [
+                "animation may be absent if it harms readability",
+                "bloom can be absent or extremely subtle",
+                "no dramatic lighting event is required"
+              ],
+              "rationale": "The news intensity is low and pace is measured; artist fidelity takes priority over spectacle."
+            }
+          },
+          "compositionBeforeHash": "072b44732dac8fcb",
+          "compositionAfterHash": "a5905be52d1687dc"
+        },
+        "intent": "Apply only the motion and effects needed to clarify the low-intensity, measured, concentrated news cue: a steady-grid-pulse, restrained value shifts, subtle shadows, vignette, or small emissive accents that remain subordinate to painted material.",
+        "messagePurpose": "Apply only the motion and effects needed to clarify the low-intensity, measured, concentrated news cue: a steady-grid-pulse, restrained value shifts, subtle shadows, vignette, or small emissive accents that remain subordinate to painted material.",
+        "visualTarget": "Apply only the motion and effects needed to clarify the low-intensity, measured, concentrated news cue: a steady-grid-pulse, restrained value shifts, subtle shadows, vignette, or small emissive accents that remain subordinate to painted material.",
+        "relationshipToWhole": "It can make the grid feel monitored, resisted, and measured over time, but the still composition must already communicate the artwork.",
+        "visibleAbsence": {
+          "intentional": true,
+          "facts": [
+            "animation may be absent if it harms readability",
+            "bloom can be absent or extremely subtle",
+            "no dramatic lighting event is required"
+          ],
+          "rationale": "The news intensity is low and pace is measured; artist fidelity takes priority over spectacle."
+        },
+        "params": {
+          "band": "measured-accent",
+          "position": [
+            0.02,
+            -0.03,
+            -2.12
+          ],
+          "scale": 0.98,
+          "renderOrder": 60,
+          "visibilityPriority": "accent-support",
+          "compositionUse": "low-intensity steady-grid-pulse accents, red/violet ticks, and subtle value support"
+        },
+        "paramSemantics": {
+          "band": "visual placement/readability band for full-world params; distinct from declared compositionOwnership.lane",
+          "position": "documented full-world readability placement; module internals remain the accepted source geometry",
+          "scale": "documented full-world readability scale; accepted module source is preserved"
+        },
+        "compositionOwnership": {
+          "lane": "supporting-creative",
+          "owns": [
+            "optional steady-grid-pulse cadence",
+            "subtle value modulation",
+            "restrained bloom or emissive accents when justified",
+            "soft vignette or shadow support",
+            "capture-safe deterministic timing guidance"
+          ],
+          "avoid": [
+            "generic glow layer",
+            "fast or dramatic motion",
+            "effects that erase matte handmade surface",
+            "making animation required for understanding the still composition"
+          ]
+        }
+      }
+    ],
+    "compositionMetadata": {
+      "visualContract": {
+        "subject": "central non-literal budget grid under red Against pressure",
+        "identity": [
+          "bold framing planes",
+          "large geometric painted grid",
+          "pale breathing margins",
+          "red/violet pressure accents",
+          "teal counterpoints"
+        ],
+        "silhouette": [
+          "central tilted grid remains readable",
+          "large frame edges do not become the subject"
+        ],
+        "materialSeparation": [
+          "matte pale ground",
+          "dark violet contour lines",
+          "low-mid red pressure planes",
+          "dry stipple and scumble marks"
+        ],
+        "motion": [
+          "steady-grid-pulse remains optional and capture-safe"
+        ],
+        "cameraEnvelope": {
+          "near": 1.7,
+          "design": 14.2,
+          "far": 72
+        },
+        "invariants": [
+          "all seven accepted part ids are present",
+          "moduleRef hashes are unchanged",
+          "assetRefs arrays are preserved",
+          "WebGPU compatibility evidence remains attached"
+        ]
+      },
+      "mediaInspected": [
+        "part-preview-evolution/001-world-environment-attempt-1-desktop.jpg",
+        "part-preview-evolution/002-transformed-budget-grid-core-attempt-1-desktop.jpg",
+        "part-preview-evolution/003-bold-plane-frame-attempt-1-desktop.jpg",
+        "part-preview-evolution/004-outward-pattern-pathways-attempt-1-desktop.jpg",
+        "part-preview-evolution/005-painted-surface-contours-attempt-1-desktop.jpg",
+        "part-preview-evolution/006-frontal-depth-compression-attempt-1-desktop.jpg",
+        "part-preview-evolution/007-measured-pulse-and-value-accents-attempt-1-desktop.jpg"
+      ]
+    },
+    "renderFacts": {
+      "environmentPresent": true,
+      "cameraOwnedByComposition": true,
+      "lightingOwnedByComposition": true,
+      "nearFarClippingOwned": true,
+      "acceptedPartCount": 7,
+      "generatedModuleCount": 7,
+      "generatedAssetCount": 0,
+      "rendererAuthoringTarget": "webgpu-project-scene",
+      "rendererCompatibilityStatus": "webgpu-compatible",
+      "webgpuRendererGateRequired": true,
+      "webgpuRendererCompatible": true,
+      "desktopPreviewRecorded": true,
+      "mobilePreviewRecorded": true
+    }
+  },
+  "image": {
+    "thumbnailJpeg": "./data/media/2026-07-12-0654z-government-must-find-an-extra-7-7-billion-euros-by-2029-to-bring-budget/thumb-320.jpg",
+    "openGraphJpeg": "./data/media/2026-07-12-0654z-government-must-find-an-extra-7-7-billion-euros-by-2029-to-bring-budget/og-1200x630.jpg",
+    "instagramJpeg": "./data/media/2026-07-12-0654z-government-must-find-an-extra-7-7-billion-euros-by-2029-to-bring-budget/instagram-1080x1350.jpg",
+    "altText": "Government must find an extra 7.7 billion euros by 2029 to bring budget under control, Monitoring Committee says in report by Henri Matisse."
+  }
+}
