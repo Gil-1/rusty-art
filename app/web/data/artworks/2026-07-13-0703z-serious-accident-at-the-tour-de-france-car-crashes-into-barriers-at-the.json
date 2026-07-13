@@ -1,0 +1,3266 @@
+{
+  "id": "2026-07-13-0703z-serious-accident-at-the-tour-de-france-car-crashes-into-barriers-at-the",
+  "date": "2026-07-13",
+  "title": "Serious accident at the Tour de France: car crashes into barriers at the finish in Correze, leaving eight injured, one seriously",
+  "generatedAt": "2026-07-13T07:14:57.407Z",
+  "news": {
+    "source": "lavenir",
+    "title": "Serious accident at the Tour de France: car crashes into barriers at the finish in Correze, leaving eight injured, one seriously",
+    "link": "https://www.lavenir.net/sports/cyclisme/2026/07/12/grave-accident-sur-le-tour-de-france-une-voiture-percute-des-barrieres-a-larrivee-en-correze-huit-blesses-dont-un-grievement-PEH23JAA2VCGRBN37MU3LNXDFA/",
+    "score": null
+  },
+  "inspiration": {
+    "artist": "Bram van Velde",
+    "tags": [
+      "non-literal fracture transformation",
+      "Tour of France",
+      "immersive-world"
+    ],
+    "links": {}
+  },
+  "seed": null,
+  "sceneStrategy": null,
+  "techStack": null,
+  "newsVisualMappings": [],
+  "qualityScore": {
+    "score": null,
+    "summary": null,
+    "heuristic": {
+      "score": null,
+      "breakdown": {}
+    },
+    "calibration": {
+      "sampleCount": 0,
+      "trustWeight": 0
+    },
+    "alignment": {
+      "totalAlign": null,
+      "components": {
+        "title": {
+          "score": null
+        },
+        "style": {
+          "score": null
+        },
+        "emotional": {
+          "score": null
+        }
+      }
+    }
+  },
+  "rationale": {
+    "intent": {
+      "signal": null,
+      "emotion": null,
+      "tension": null,
+      "balance": null,
+      "motion": null
+    },
+    "selection": {
+      "whyHeadline": null,
+      "priorityTerms": []
+    },
+    "qualitySummary": null
+  },
+  "runPolicy": null,
+  "artCreationMethod": "immersive-world-v1",
+  "world": {
+    "id": "immersive-world-bram-van-velde-tour-fracture-final",
+    "method": "immersive-world-v1",
+    "title": "Serious accident at the Tour de France: car crashes into barriers at the finish in Correze, leaving eight injured, one seriously",
+    "rendererAuthoringTarget": "webgpu-project-scene",
+    "rendererAuthoring": {
+      "version": 1,
+      "targetMode": "webgpu-project-scene",
+      "requestedTarget": "webgpu-project-scene",
+      "effectiveTarget": "webgpu-project-scene",
+      "webgpuTargeted": true,
+      "legacyWebglTargeted": false,
+      "unspecified": false,
+      "compatibilityGateRequired": true
+    },
+    "rendererCompatibility": {
+      "version": 1,
+      "targetMode": "webgpu-project-scene",
+      "webgpuTargeted": true,
+      "legacyWebglTargeted": false,
+      "compatibilityGateRequired": true,
+      "compatibilityStatus": "webgpu-compatible",
+      "webgpuCompatible": true,
+      "evidenceReasons": [
+        "webgpu-safe-material",
+        "webgpu-native-helper-utility",
+        "source-used-project-webgpu-material-factory"
+      ],
+      "featureFacts": [
+        {
+          "kind": "standard-material",
+          "family": "standard-material-surface",
+          "material": "MeshBasicMaterial",
+          "reason": "webgpu-safe-material"
+        },
+        {
+          "kind": "webgpu-native-helper",
+          "id": "scraped-paint-grain-material",
+          "family": "paint-grain-surface",
+          "factory": "scraped-paint-grain-surface",
+          "material": "MeshBasicNodeMaterial",
+          "surface": "three-mesh-basic-node-material-tsl",
+          "reason": "webgpu-native-helper-utility"
+        },
+        {
+          "kind": "material-factory",
+          "id": "sky-background-field",
+          "family": "sky-background-field",
+          "material": "MeshBasicMaterial",
+          "surface": "scene-background-or-large-plane",
+          "reason": "source-used-project-webgpu-material-factory"
+        },
+        {
+          "kind": "webgpu-native-helper",
+          "id": "direction-space-skybox-shell",
+          "family": "sky-background-field",
+          "factory": "sky-background-field",
+          "material": "MeshBasicMaterial",
+          "surface": "direction-space-vertex-color-skybox-shell",
+          "reason": "webgpu-native-helper-utility"
+        },
+        {
+          "kind": "material-factory",
+          "id": "color-field",
+          "family": "color-field",
+          "material": "MeshBasicMaterial",
+          "surface": "three-basic-or-standard-material",
+          "reason": "source-used-project-webgpu-material-factory"
+        },
+        {
+          "kind": "material-factory",
+          "id": "procedural-marks",
+          "family": "procedural-marks",
+          "material": "MeshBasicMaterial",
+          "surface": "instanced-geometry-material",
+          "reason": "source-used-project-webgpu-material-factory"
+        },
+        {
+          "kind": "standard-material",
+          "family": "standard-material-surface",
+          "material": "LineBasicMaterial",
+          "reason": "webgpu-safe-material"
+        },
+        {
+          "kind": "standard-material",
+          "family": "standard-material-surface",
+          "material": "PointsMaterial",
+          "reason": "webgpu-safe-material"
+        },
+        {
+          "kind": "material-factory",
+          "id": "soft-particles",
+          "family": "soft-particles",
+          "material": "PointsMaterial",
+          "surface": "three-points-material",
+          "reason": "source-used-project-webgpu-material-factory"
+        },
+        {
+          "kind": "webgpu-native-helper",
+          "id": "animated-instanced-mark-field",
+          "family": "instanced-marks",
+          "factory": "procedural-marks",
+          "material": "MeshBasicMaterial",
+          "surface": "three-instanced-mesh-basic-material-frame-facts",
+          "reason": "webgpu-native-helper-utility"
+        },
+        {
+          "kind": "webgpu-native-helper",
+          "id": "procedural-mark-material",
+          "family": "procedural-marks",
+          "factory": "procedural-marks",
+          "material": "MeshBasicMaterial",
+          "surface": "three-basic-material",
+          "reason": "webgpu-native-helper-utility"
+        },
+        {
+          "kind": "webgpu-native-helper",
+          "id": "instanced-mark-field",
+          "family": "instanced-marks",
+          "factory": "procedural-marks",
+          "material": "MeshBasicMaterial",
+          "surface": "three-instanced-mesh-basic-material",
+          "reason": "webgpu-native-helper-utility"
+        }
+      ],
+      "moduleCount": 7,
+      "compatibleModuleCount": 7,
+      "incompatibleModuleCount": 0,
+      "compositionCompatibilityDeclared": true,
+      "modules": [
+        {
+          "partId": "world-environment",
+          "role": "world-environment",
+          "moduleId": "bram-van-velde-tour-fracture-world-environment",
+          "hash": "f68836870f952db9af7cab30e34022894a574cc3371ebbad4f7381575618a6e0",
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material",
+            "webgpu-native-helper-utility",
+            "source-used-project-webgpu-material-factory"
+          ],
+          "featureFacts": [
+            {
+              "kind": "standard-material",
+              "family": "standard-material-surface",
+              "material": "MeshBasicMaterial",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "webgpu-native-helper",
+              "id": "scraped-paint-grain-material",
+              "family": "paint-grain-surface",
+              "factory": "scraped-paint-grain-surface",
+              "material": "MeshBasicNodeMaterial",
+              "surface": "three-mesh-basic-node-material-tsl",
+              "reason": "webgpu-native-helper-utility"
+            },
+            {
+              "kind": "material-factory",
+              "id": "sky-background-field",
+              "family": "sky-background-field",
+              "material": "MeshBasicMaterial",
+              "surface": "scene-background-or-large-plane",
+              "reason": "source-used-project-webgpu-material-factory"
+            },
+            {
+              "kind": "webgpu-native-helper",
+              "id": "direction-space-skybox-shell",
+              "family": "sky-background-field",
+              "factory": "sky-background-field",
+              "material": "MeshBasicMaterial",
+              "surface": "direction-space-vertex-color-skybox-shell",
+              "reason": "webgpu-native-helper-utility"
+            },
+            {
+              "kind": "material-factory",
+              "id": "color-field",
+              "family": "color-field",
+              "material": "MeshBasicMaterial",
+              "surface": "three-basic-or-standard-material",
+              "reason": "source-used-project-webgpu-material-factory"
+            },
+            {
+              "kind": "material-factory",
+              "id": "procedural-marks",
+              "family": "procedural-marks",
+              "material": "MeshBasicMaterial",
+              "surface": "instanced-geometry-material",
+              "reason": "source-used-project-webgpu-material-factory"
+            },
+            {
+              "kind": "standard-material",
+              "family": "standard-material-surface",
+              "material": "LineBasicMaterial",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "standard-material",
+              "family": "standard-material-surface",
+              "material": "PointsMaterial",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "material-factory",
+              "id": "soft-particles",
+              "family": "soft-particles",
+              "material": "PointsMaterial",
+              "surface": "three-points-material",
+              "reason": "source-used-project-webgpu-material-factory"
+            }
+          ],
+          "compatibleSurfaceCount": 9,
+          "sourceStage": "part-workshop"
+        },
+        {
+          "partId": "asymmetrical-plane-armature",
+          "role": "creative-structural-armature",
+          "moduleId": "bram-van-velde-tour-fracture-asymmetrical-plane-armature",
+          "hash": "e37177901dc137d5be7fd572f88da7491c22cd6c201a52579861d5e10976f899",
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material",
+            "webgpu-native-helper-utility"
+          ],
+          "featureFacts": [
+            {
+              "kind": "standard-material",
+              "family": "standard-material-surface",
+              "material": "MeshBasicMaterial",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "standard-material",
+              "family": "standard-material-surface",
+              "material": "LineBasicMaterial",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "webgpu-native-helper",
+              "id": "scraped-paint-grain-material",
+              "family": "paint-grain-surface",
+              "factory": "scraped-paint-grain-surface",
+              "material": "MeshBasicNodeMaterial",
+              "surface": "three-mesh-basic-node-material-tsl",
+              "reason": "webgpu-native-helper-utility"
+            }
+          ],
+          "compatibleSurfaceCount": 3,
+          "sourceStage": "part-workshop"
+        },
+        {
+          "partId": "concentrated-fracture-transfer",
+          "role": "creative-selected-news-transformation",
+          "moduleId": "bram-van-velde-tour-fracture-concentrated-fracture-transfer",
+          "hash": "dc62bda1e840ce002a9d7366614679668e94d2c533fb18513242a08776ff5216",
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material",
+            "webgpu-native-helper-utility"
+          ],
+          "featureFacts": [
+            {
+              "kind": "standard-material",
+              "family": "standard-material-surface",
+              "material": "MeshBasicMaterial",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "standard-material",
+              "family": "standard-material-surface",
+              "material": "LineBasicMaterial",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "webgpu-native-helper",
+              "id": "scraped-paint-grain-material",
+              "family": "paint-grain-surface",
+              "factory": "scraped-paint-grain-surface",
+              "material": "MeshBasicNodeMaterial",
+              "surface": "three-mesh-basic-node-material-tsl",
+              "reason": "webgpu-native-helper-utility"
+            },
+            {
+              "kind": "webgpu-native-helper",
+              "id": "animated-instanced-mark-field",
+              "family": "instanced-marks",
+              "factory": "procedural-marks",
+              "material": "MeshBasicMaterial",
+              "surface": "three-instanced-mesh-basic-material-frame-facts",
+              "reason": "webgpu-native-helper-utility"
+            }
+          ],
+          "compatibleSurfaceCount": 4,
+          "sourceStage": "part-workshop"
+        },
+        {
+          "partId": "drawn-contour-navigation",
+          "role": "creative-line-and-rhythm-system",
+          "moduleId": "bram-van-velde-tour-fracture-drawn-contour-navigation",
+          "hash": "a42ffc6690b4bc39adaa51fd50f4dd4c61c00e8c22dca3e9c08ac1959497e2c7",
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material",
+            "webgpu-native-helper-utility"
+          ],
+          "featureFacts": [
+            {
+              "kind": "standard-material",
+              "family": "standard-material-surface",
+              "material": "MeshBasicMaterial",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "standard-material",
+              "family": "standard-material-surface",
+              "material": "LineBasicMaterial",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "webgpu-native-helper",
+              "id": "procedural-mark-material",
+              "family": "procedural-marks",
+              "factory": "procedural-marks",
+              "material": "MeshBasicMaterial",
+              "surface": "three-basic-material",
+              "reason": "webgpu-native-helper-utility"
+            },
+            {
+              "kind": "webgpu-native-helper",
+              "id": "animated-instanced-mark-field",
+              "family": "instanced-marks",
+              "factory": "procedural-marks",
+              "material": "MeshBasicMaterial",
+              "surface": "three-instanced-mesh-basic-material-frame-facts",
+              "reason": "webgpu-native-helper-utility"
+            }
+          ],
+          "compatibleSurfaceCount": 4,
+          "sourceStage": "part-workshop"
+        },
+        {
+          "partId": "oval-triangle-void-gates",
+          "role": "creative-aperture-and-target-system",
+          "moduleId": "bram-van-velde-tour-fracture-oval-triangle-void-gates",
+          "hash": "0149c8fd56a828479a780ec90118b9eb538cf620d96a107919790921c72c8763",
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material",
+            "webgpu-native-helper-utility"
+          ],
+          "featureFacts": [
+            {
+              "kind": "standard-material",
+              "family": "standard-material-surface",
+              "material": "MeshBasicMaterial",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "standard-material",
+              "family": "standard-material-surface",
+              "material": "LineBasicMaterial",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "webgpu-native-helper",
+              "id": "scraped-paint-grain-material",
+              "family": "paint-grain-surface",
+              "factory": "scraped-paint-grain-surface",
+              "material": "MeshBasicNodeMaterial",
+              "surface": "three-mesh-basic-node-material-tsl",
+              "reason": "webgpu-native-helper-utility"
+            },
+            {
+              "kind": "webgpu-native-helper",
+              "id": "procedural-mark-material",
+              "family": "procedural-marks",
+              "factory": "procedural-marks",
+              "material": "MeshBasicMaterial",
+              "surface": "three-basic-material",
+              "reason": "webgpu-native-helper-utility"
+            },
+            {
+              "kind": "standard-material",
+              "family": "standard-material-surface",
+              "material": "PointsMaterial",
+              "reason": "webgpu-safe-material"
+            }
+          ],
+          "compatibleSurfaceCount": 5,
+          "sourceStage": "part-workshop"
+        },
+        {
+          "partId": "matte-scraped-pigment-skin",
+          "role": "creative-material-unifier",
+          "moduleId": "bram-van-velde-tour-fracture-matte-scraped-pigment-skin",
+          "hash": "fdf554cd9d51d57e56a2c6ad34ff04795aac954090a03b6d43407c51caa93fc5",
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material",
+            "webgpu-native-helper-utility"
+          ],
+          "featureFacts": [
+            {
+              "kind": "standard-material",
+              "family": "standard-material-surface",
+              "material": "MeshBasicMaterial",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "standard-material",
+              "family": "standard-material-surface",
+              "material": "LineBasicMaterial",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "webgpu-native-helper",
+              "id": "scraped-paint-grain-material",
+              "family": "paint-grain-surface",
+              "factory": "scraped-paint-grain-surface",
+              "material": "MeshBasicNodeMaterial",
+              "surface": "three-mesh-basic-node-material-tsl",
+              "reason": "webgpu-native-helper-utility"
+            },
+            {
+              "kind": "webgpu-native-helper",
+              "id": "procedural-mark-material",
+              "family": "procedural-marks",
+              "factory": "procedural-marks",
+              "material": "MeshBasicMaterial",
+              "surface": "three-basic-material",
+              "reason": "webgpu-native-helper-utility"
+            },
+            {
+              "kind": "webgpu-native-helper",
+              "id": "instanced-mark-field",
+              "family": "instanced-marks",
+              "factory": "procedural-marks",
+              "material": "MeshBasicMaterial",
+              "surface": "three-instanced-mesh-basic-material",
+              "reason": "webgpu-native-helper-utility"
+            }
+          ],
+          "compatibleSurfaceCount": 5,
+          "sourceStage": "part-workshop"
+        },
+        {
+          "partId": "measured-grid-pulse-depth",
+          "role": "creative-depth-motion-and-effects-system",
+          "moduleId": "bram-van-velde-tour-fracture-measured-grid-pulse-depth",
+          "hash": "49f793f6656b978519430d36a6faa30678209c3839f4ef4d3c60bd60f4df1d2a",
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material",
+            "webgpu-native-helper-utility"
+          ],
+          "featureFacts": [
+            {
+              "kind": "standard-material",
+              "family": "standard-material-surface",
+              "material": "MeshBasicMaterial",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "standard-material",
+              "family": "standard-material-surface",
+              "material": "LineBasicMaterial",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "webgpu-native-helper",
+              "id": "scraped-paint-grain-material",
+              "family": "paint-grain-surface",
+              "factory": "scraped-paint-grain-surface",
+              "material": "MeshBasicNodeMaterial",
+              "surface": "three-mesh-basic-node-material-tsl",
+              "reason": "webgpu-native-helper-utility"
+            },
+            {
+              "kind": "webgpu-native-helper",
+              "id": "animated-instanced-mark-field",
+              "family": "instanced-marks",
+              "factory": "procedural-marks",
+              "material": "MeshBasicMaterial",
+              "surface": "three-instanced-mesh-basic-material-frame-facts",
+              "reason": "webgpu-native-helper-utility"
+            },
+            {
+              "kind": "standard-material",
+              "family": "standard-material-surface",
+              "material": "PointsMaterial",
+              "reason": "webgpu-safe-material"
+            }
+          ],
+          "compatibleSurfaceCount": 5,
+          "sourceStage": "part-workshop"
+        }
+      ]
+    },
+    "environment": {
+      "owner": "world-composition",
+      "kind": "inside-facing-matte-paper-field",
+      "color": "#F5F5F5",
+      "fieldColor": "#E7E8E4",
+      "fogDensity": 0.007,
+      "radius": 92,
+      "skyboxRadius": 92,
+      "opacity": 0.86,
+      "palette": [
+        "#F5F5F5",
+        "#FAFAFA",
+        "#01304E",
+        "#012C42",
+        "#013E60",
+        "#02233F",
+        "#2F1F1F",
+        "#211F20",
+        "#2E2E2F"
+      ],
+      "compositionIntent": "Quiet high-key matte paper surround. The environment stays technical support while allowing dark blue side weights, red-brown route contours, ovals, triangular openings, and concentrated fracture pressure to own the visual meaning."
+    },
+    "camera": {
+      "owner": "world-composition",
+      "fov": 66,
+      "near": 0.08,
+      "far": 220,
+      "position": [
+        0.22,
+        2.12,
+        14.2
+      ],
+      "target": [
+        0.55,
+        0.18,
+        -5.6
+      ],
+      "distanceSafety": {
+        "nearFarOwnedHere": true,
+        "minPartDistance": 1.7,
+        "clippingRisk": "low",
+        "reason": "Canonical public camera retained for the first fixed design bookmark; accepted parts are broad abstract fields and no full-world desktop/mobile preview evidence yet proves a custom projection is required."
+      }
+    },
+    "lighting": {
+      "owner": "world-composition",
+      "ambientColor": "#F2EFE8",
+      "ambientIntensity": 0.78,
+      "keyColor": "#FFFDF6",
+      "keyIntensity": 0.92,
+      "keyPosition": [
+        4,
+        6,
+        8
+      ],
+      "rimColor": "#B9C9D5",
+      "rimIntensity": 0.24,
+      "rimPosition": [
+        -5,
+        2,
+        -4
+      ],
+      "contrast": {
+        "mode": "integrated-part-readability",
+        "notes": "Warm paper light keeps the pale washes visible while a restrained cool rim separates dark saturated blue and near-black anchoring planes without adding spectacle."
+      }
+    },
+    "outputColorTransform": {
+      "owner": "world-composition",
+      "mode": "final-color-contrast-only",
+      "contrast": 1.05,
+      "saturation": 1.04,
+      "exposure": 1.01,
+      "vignette": 0.06,
+      "hueShift": 0,
+      "distortion": 0
+    },
+    "parts": [
+      {
+        "id": "world-environment",
+        "partId": "world-environment",
+        "role": "world-environment",
+        "moduleRef": {
+          "type": "immersive-world-generated-module",
+          "version": 1,
+          "moduleId": "bram-van-velde-tour-fracture-world-environment",
+          "partId": "world-environment",
+          "hash": "f68836870f952db9af7cab30e34022894a574cc3371ebbad4f7381575618a6e0",
+          "integrity": "sha256-f68836870f952db9af7cab30e34022894a574cc3371ebbad4f7381575618a6e0",
+          "exportName": "createImmersiveWorldPart",
+          "file": "data/immersive-world/generated-modules/f68836870f952db9af7cab30e34022894a574cc3371ebbad4f7381575618a6e0.mjs",
+          "url": "./data/immersive-world/generated-modules/f68836870f952db9af7cab30e34022894a574cc3371ebbad4f7381575618a6e0.mjs",
+          "rendererCompatibility": {
+            "version": 1,
+            "targetMode": "webgpu-project-scene",
+            "compatibilityStatus": "webgpu-compatible",
+            "webgpuCompatible": true,
+            "evidenceReasons": [
+              "webgpu-safe-material",
+              "webgpu-native-helper-utility",
+              "source-used-project-webgpu-material-factory"
+            ],
+            "featureFacts": [
+              {
+                "kind": "standard-material",
+                "material": "MeshBasicMaterial",
+                "family": "standard-material-surface",
+                "reason": "webgpu-safe-material"
+              },
+              {
+                "kind": "webgpu-native-helper",
+                "id": "scraped-paint-grain-material",
+                "family": "paint-grain-surface",
+                "factory": "scraped-paint-grain-surface",
+                "material": "MeshBasicNodeMaterial",
+                "surface": "three-mesh-basic-node-material-tsl",
+                "reason": "webgpu-native-helper-utility"
+              },
+              {
+                "kind": "material-factory",
+                "id": "sky-background-field",
+                "family": "sky-background-field",
+                "material": "MeshBasicMaterial",
+                "surface": "scene-background-or-large-plane",
+                "reason": "source-used-project-webgpu-material-factory"
+              },
+              {
+                "kind": "webgpu-native-helper",
+                "id": "direction-space-skybox-shell",
+                "family": "sky-background-field",
+                "factory": "sky-background-field",
+                "material": "MeshBasicMaterial",
+                "surface": "direction-space-vertex-color-skybox-shell",
+                "reason": "webgpu-native-helper-utility"
+              },
+              {
+                "kind": "material-factory",
+                "id": "color-field",
+                "family": "color-field",
+                "material": "MeshBasicMaterial",
+                "surface": "three-basic-or-standard-material",
+                "reason": "source-used-project-webgpu-material-factory"
+              },
+              {
+                "kind": "material-factory",
+                "id": "procedural-marks",
+                "family": "procedural-marks",
+                "material": "MeshBasicMaterial",
+                "surface": "instanced-geometry-material",
+                "reason": "source-used-project-webgpu-material-factory"
+              },
+              {
+                "kind": "standard-material",
+                "material": "LineBasicMaterial",
+                "family": "standard-material-surface",
+                "reason": "webgpu-safe-material"
+              },
+              {
+                "kind": "standard-material",
+                "material": "PointsMaterial",
+                "family": "standard-material-surface",
+                "reason": "webgpu-safe-material"
+              },
+              {
+                "kind": "material-factory",
+                "id": "soft-particles",
+                "family": "soft-particles",
+                "material": "PointsMaterial",
+                "surface": "three-points-material",
+                "reason": "source-used-project-webgpu-material-factory"
+              }
+            ],
+            "compatibleSurfaces": [
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "MeshBasicMaterial"
+              },
+              {
+                "reason": "webgpu-native-helper-utility",
+                "api": "utilities.createScrapedPaintGrainMaterial",
+                "helperId": "scraped-paint-grain-material",
+                "featureFamily": "paint-grain-surface",
+                "outputKind": "material",
+                "materialType": "MeshBasicNodeMaterial",
+                "runtimeSurface": "three-mesh-basic-node-material-tsl",
+                "factoryId": "scraped-paint-grain-surface",
+                "materialFactoryId": "scraped-paint-grain-surface",
+                "factoryCategory": "matte-painted-surface"
+              },
+              {
+                "reason": "source-used-project-webgpu-material-factory",
+                "materialType": "MeshBasicMaterial",
+                "runtimeSurface": "scene-background-or-large-plane",
+                "factoryId": "sky-background-field",
+                "materialFactoryId": "sky-background-field",
+                "factoryCategory": "sky-background-field",
+                "property": "materialFactoryId"
+              },
+              {
+                "reason": "webgpu-native-helper-utility",
+                "api": "utilities.createDirectionSpaceSkyboxShell",
+                "helperId": "direction-space-skybox-shell",
+                "featureFamily": "sky-background-field",
+                "outputKind": "object-bundle",
+                "materialType": "MeshBasicMaterial",
+                "runtimeSurface": "direction-space-vertex-color-skybox-shell",
+                "factoryId": "sky-background-field",
+                "materialFactoryId": "sky-background-field",
+                "factoryCategory": "sky-background-field"
+              },
+              {
+                "reason": "source-used-project-webgpu-material-factory",
+                "materialType": "MeshBasicMaterial",
+                "runtimeSurface": "three-basic-or-standard-material",
+                "factoryId": "color-field",
+                "materialFactoryId": "color-field",
+                "factoryCategory": "color-field",
+                "property": "materialFactoryId"
+              },
+              {
+                "reason": "source-used-project-webgpu-material-factory",
+                "materialType": "MeshBasicMaterial",
+                "runtimeSurface": "instanced-geometry-material",
+                "factoryId": "procedural-marks",
+                "materialFactoryId": "procedural-marks",
+                "factoryCategory": "procedural-marks",
+                "property": "materialFactoryId"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "LineBasicMaterial"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "PointsMaterial"
+              },
+              {
+                "reason": "source-used-project-webgpu-material-factory",
+                "materialType": "PointsMaterial",
+                "runtimeSurface": "three-points-material",
+                "factoryId": "soft-particles",
+                "materialFactoryId": "soft-particles",
+                "factoryCategory": "soft-particles",
+                "property": "materialFactoryId"
+              }
+            ]
+          }
+        },
+        "evidence": {
+          "browserValidation": {
+            "source": "part-workshop-strict-browser-validation",
+            "passed": true,
+            "acceptanceStatus": "accepted-clean",
+            "finalDraftRef": "immersive-world-agent-work-sessions/part-workshop/world-environment/drafts/world-environment.module.mjs",
+            "previewHealthStatus": "ok",
+            "capturedViews": [
+              "desktop"
+            ],
+            "allowedAbsentOutput": true,
+            "warningOnlySoftAccepted": false,
+            "unresolvedWarningCount": 0
+          },
+          "declaredCompositionOwnership": {
+            "lane": "technical-support",
+            "owns": [
+              "camera-safe world context",
+              "shared coordinate and scale assumptions",
+              "capture-safe timing defaults",
+              "non-dominant background or envelope support",
+              "renderer compatibility notes for later parts"
+            ],
+            "avoid": [
+              "stealing creative part ownership",
+              "turning the environment into the main visible artwork",
+              "claiming skybox, shell, or background dominance without evidence",
+              "validating browser implementation options",
+              "writing module source"
+            ]
+          },
+          "compositionOwnershipSource": "world-part-plan.json#/parts/0/compositionOwnership",
+          "compositionAdaptations": [
+            "Kept at origin as technical support and reduced opacity so the environment supplies pale paper depth without becoming the artwork.",
+            "Compatibility facts preserved by accepted moduleRef hash f68836870f952db9af7cab30e34022894a574cc3371ebbad4f7381575618a6e0 and accepted WebGPU evidence.",
+            "Reduced to quiet high-key technical paper support at origin.",
+            "composition modified world-environment from isolated accepted-part defaults"
+          ],
+          "workshopAcceptance": [
+            "Final draft ref: immersive-world-agent-work-sessions/part-workshop/world-environment/drafts/world-environment.module.mjs.",
+            "Static validation succeeded with sourceHash 25d1b0ad67d1d31d8e2f5a0278c9c3d8d3879aa98ca651c403ae45de1163d276 and no errors.",
+            "Final preview command preview-part-draft attempt 2 succeeded.",
+            "Screenshot: previews/attempt-002/002-world-environment-draft-desktop.jpg.",
+            "Render report: previews/attempt-002/desktop-render-report.json.",
+            "Render health ok; capture ok; renderer mode/backend WebGPU; browser, WebGL, and WebGPU warning/error lists empty.",
+            "desktop:part-preview-evolution/001-world-environment-attempt-1-desktop.jpg"
+          ],
+          "acceptedPartValidation": {
+            "version": 1,
+            "source": "part-workshop-strict-browser-validation",
+            "passed": true,
+            "warningOnlySoftAccepted": false,
+            "partId": "world-environment",
+            "moduleExport": {
+              "expectedExportName": "createImmersiveWorldPart",
+              "actualExportName": "createImmersiveWorldPart",
+              "moduleId": "bram-van-velde-tour-fracture-world-environment",
+              "moduleHash": "f68836870f952db9af7cab30e34022894a574cc3371ebbad4f7381575618a6e0",
+              "pass": true
+            },
+            "finalDraftRequired": true,
+            "finalDraft": {
+              "file": "immersive-world-agent-work-sessions/part-workshop/world-environment/drafts/world-environment.module.mjs",
+              "sessionFile": "drafts/world-environment.module.mjs",
+              "sha256": "17f39da55d51fc6e6ff9bb9ecb1343e57daaa4038b564fb22e511c372df5fa6c",
+              "bytes": 27508,
+              "source": "agent-work-session-draft"
+            },
+            "finalPreview": {
+              "status": "succeeded"
+            },
+            "preview": {
+              "required": true,
+              "capturedViews": [
+                "desktop"
+              ],
+              "healthStatus": "ok"
+            },
+            "visibleAbsence": {
+              "intentional": true,
+              "allowedAbsentOutput": true,
+              "facts": [
+                "support-only quietness is intentional",
+                "no literal road, bicycle race, car, crowd, finish-line scene, or crash tableau",
+                "no dominant shell or background container by habit"
+              ],
+              "rationale": "The artwork is abstract/no-subject and the environment is required for compatibility, not for visual primacy."
+            }
+          },
+          "plannedPart": {
+            "source": "world-part-plan.json#/parts/0",
+            "partId": "world-environment",
+            "role": "world-environment",
+            "intent": "Provide mandatory first technical compatibility scaffolding for a WebGPU project scene: camera-safe world context, shared scale, capture stability, renderer-safe material constraints, and quiet depth envelope only.",
+            "messagePurpose": "Provide mandatory first technical compatibility scaffolding for a WebGPU project scene: camera-safe world context, shared scale, capture stability, renderer-safe material constraints, and quiet depth envelope only.",
+            "visualTarget": "Provide mandatory first technical compatibility scaffolding for a WebGPU project scene: camera-safe world context, shared scale, capture stability, renderer-safe material constraints, and quiet depth envelope only.",
+            "relationshipToWhole": "It lets the creative parts occupy an all-over deep field without fighting the camera or renderer, but the visible meaning must come from the planned creative systems.",
+            "visibleAbsence": {
+              "intentional": true,
+              "facts": [
+                "support-only quietness is intentional",
+                "no literal road, bicycle race, car, crowd, finish-line scene, or crash tableau",
+                "no dominant shell or background container by habit"
+              ],
+              "rationale": "The artwork is abstract/no-subject and the environment is required for compatibility, not for visual primacy."
+            }
+          },
+          "compositionBeforeHash": "12d3533f9b24ed0e",
+          "compositionAfterHash": "35d22fb316b118aa"
+        },
+        "intent": "Provide mandatory first technical compatibility scaffolding for a WebGPU project scene: camera-safe world context, shared scale, capture stability, renderer-safe material constraints, and quiet depth envelope only.",
+        "messagePurpose": "Provide mandatory first technical compatibility scaffolding for a WebGPU project scene: camera-safe world context, shared scale, capture stability, renderer-safe material constraints, and quiet depth envelope only.",
+        "visualTarget": "Provide mandatory first technical compatibility scaffolding for a WebGPU project scene: camera-safe world context, shared scale, capture stability, renderer-safe material constraints, and quiet depth envelope only.",
+        "relationshipToWhole": "It lets the creative parts occupy an all-over deep field without fighting the camera or renderer, but the visible meaning must come from the planned creative systems.",
+        "visibleAbsence": {
+          "intentional": true,
+          "facts": [
+            "support-only quietness is intentional",
+            "no literal road, bicycle race, car, crowd, finish-line scene, or crash tableau",
+            "no dominant shell or background container by habit"
+          ],
+          "rationale": "The artwork is abstract/no-subject and the environment is required for compatibility, not for visual primacy."
+        },
+        "params": {
+          "band": "technical-support",
+          "layer": "background",
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "scale": 1,
+          "opacity": 0.72,
+          "motionIntensity": 0.08,
+          "renderOrder": 0,
+          "visibilityPriority": "technical-support"
+        },
+        "paramSemantics": {
+          "band": "visual placement/readability band for full-world params; distinct from declared compositionOwnership.lane"
+        },
+        "compositionOwnership": {
+          "lane": "technical-support",
+          "owns": [
+            "camera-safe world context",
+            "shared coordinate and scale assumptions",
+            "capture-safe timing defaults",
+            "non-dominant background or envelope support",
+            "renderer compatibility notes for later parts"
+          ],
+          "avoid": [
+            "stealing creative part ownership",
+            "turning the environment into the main visible artwork",
+            "claiming skybox, shell, or background dominance without evidence",
+            "validating browser implementation options",
+            "writing module source"
+          ]
+        }
+      },
+      {
+        "id": "asymmetrical-plane-armature",
+        "partId": "asymmetrical-plane-armature",
+        "role": "creative-structural-armature",
+        "moduleRef": {
+          "type": "immersive-world-generated-module",
+          "version": 1,
+          "moduleId": "bram-van-velde-tour-fracture-asymmetrical-plane-armature",
+          "partId": "asymmetrical-plane-armature",
+          "hash": "e37177901dc137d5be7fd572f88da7491c22cd6c201a52579861d5e10976f899",
+          "integrity": "sha256-e37177901dc137d5be7fd572f88da7491c22cd6c201a52579861d5e10976f899",
+          "exportName": "createImmersiveWorldPart",
+          "file": "data/immersive-world/generated-modules/e37177901dc137d5be7fd572f88da7491c22cd6c201a52579861d5e10976f899.mjs",
+          "url": "./data/immersive-world/generated-modules/e37177901dc137d5be7fd572f88da7491c22cd6c201a52579861d5e10976f899.mjs",
+          "rendererCompatibility": {
+            "version": 1,
+            "targetMode": "webgpu-project-scene",
+            "compatibilityStatus": "webgpu-compatible",
+            "webgpuCompatible": true,
+            "evidenceReasons": [
+              "webgpu-safe-material",
+              "webgpu-native-helper-utility"
+            ],
+            "featureFacts": [
+              {
+                "kind": "standard-material",
+                "material": "MeshBasicMaterial",
+                "family": "standard-material-surface",
+                "reason": "webgpu-safe-material"
+              },
+              {
+                "kind": "standard-material",
+                "material": "LineBasicMaterial",
+                "family": "standard-material-surface",
+                "reason": "webgpu-safe-material"
+              },
+              {
+                "kind": "webgpu-native-helper",
+                "id": "scraped-paint-grain-material",
+                "family": "paint-grain-surface",
+                "factory": "scraped-paint-grain-surface",
+                "material": "MeshBasicNodeMaterial",
+                "surface": "three-mesh-basic-node-material-tsl",
+                "reason": "webgpu-native-helper-utility"
+              }
+            ],
+            "compatibleSurfaces": [
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "MeshBasicMaterial"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "LineBasicMaterial"
+              },
+              {
+                "reason": "webgpu-native-helper-utility",
+                "api": "utilities.createScrapedPaintGrainMaterial",
+                "helperId": "scraped-paint-grain-material",
+                "featureFamily": "paint-grain-surface",
+                "outputKind": "material",
+                "materialType": "MeshBasicNodeMaterial",
+                "runtimeSurface": "three-mesh-basic-node-material-tsl",
+                "factoryId": "scraped-paint-grain-surface",
+                "materialFactoryId": "scraped-paint-grain-surface",
+                "factoryCategory": "matte-painted-surface"
+              }
+            ]
+          }
+        },
+        "evidence": {
+          "browserValidation": {
+            "source": "part-workshop-strict-browser-validation",
+            "passed": true,
+            "acceptanceStatus": "accepted-clean",
+            "finalDraftRef": "immersive-world-agent-work-sessions/part-workshop/asymmetrical-plane-armature/drafts/asymmetrical-plane-armature.module.mjs",
+            "previewHealthStatus": "ok",
+            "capturedViews": [
+              "desktop"
+            ],
+            "allowedAbsentOutput": true,
+            "warningOnlySoftAccepted": false,
+            "unresolvedWarningCount": 0
+          },
+          "declaredCompositionOwnership": {
+            "lane": "creative-structure",
+            "owns": [
+              "large-scale geometric-plane hierarchy",
+              "asymmetrical balance",
+              "horizontal and diagonal structural spans",
+              "vertical side weights",
+              "dark saturated blue and near-black anchoring masses",
+              "broad pale paper negative spaces inside the structure"
+            ],
+            "avoid": [
+              "default central panel, band, grid, stripe, or shell",
+              "literal race infrastructure",
+              "symmetrical centered focal sculpture",
+              "overfilling all depth layers"
+            ]
+          },
+          "compositionOwnershipSource": "world-part-plan.json#/parts/1/compositionOwnership",
+          "compositionAdaptations": [
+            "Made the main readable all-over armature near the canonical camera target while preserving asymmetry, side weights, horizontal bars, diagonals, loops, and dark anchors.",
+            "Compatibility facts preserved by accepted moduleRef hash e37177901dc137d5be7fd572f88da7491c22cd6c201a52579861d5e10976f899 and accepted WebGPU evidence.",
+            "Set as primary all-over armature around the canonical camera target.",
+            "composition modified asymmetrical-plane-armature from isolated accepted-part defaults"
+          ],
+          "workshopAcceptance": [
+            "Final draft written to immersive-world-agent-work-sessions/part-workshop/asymmetrical-plane-armature/drafts/asymmetrical-plane-armature.module.mjs.",
+            "preview-part-draft attempt 2 succeeded with screenshot previews/attempt-002/002-asymmetrical-plane-armature-draft-desktop.jpg and render report previews/attempt-002/desktop-render-report.json.",
+            "Render healthStatus ok, captureStatus ok, rendererMode webgpu, rendererBackend webgpu, compatibilityStatus webgpu-compatible.",
+            "Static check-part-draft succeeded with validation pass true and no errors.",
+            "Browser/WebGL/WebGPU error and warning lists are clean for handoff; unresolved warnings are empty.",
+            "desktop:part-preview-evolution/002-asymmetrical-plane-armature-attempt-1-desktop.jpg"
+          ],
+          "acceptedPartValidation": {
+            "version": 1,
+            "source": "part-workshop-strict-browser-validation",
+            "passed": true,
+            "warningOnlySoftAccepted": false,
+            "partId": "asymmetrical-plane-armature",
+            "moduleExport": {
+              "expectedExportName": "createImmersiveWorldPart",
+              "actualExportName": "createImmersiveWorldPart",
+              "moduleId": "bram-van-velde-tour-fracture-asymmetrical-plane-armature",
+              "moduleHash": "e37177901dc137d5be7fd572f88da7491c22cd6c201a52579861d5e10976f899",
+              "pass": true
+            },
+            "finalDraftRequired": true,
+            "finalDraft": {
+              "file": "immersive-world-agent-work-sessions/part-workshop/asymmetrical-plane-armature/drafts/asymmetrical-plane-armature.module.mjs",
+              "sessionFile": "drafts/asymmetrical-plane-armature.module.mjs",
+              "sha256": "cf0e96f327416d8c487c317e8044e48ee56106c203298707d6a6b175639d6d4b",
+              "bytes": 26837,
+              "source": "agent-work-session-draft"
+            },
+            "finalPreview": {
+              "status": "succeeded"
+            },
+            "preview": {
+              "required": true,
+              "capturedViews": [
+                "desktop"
+              ],
+              "healthStatus": "ok"
+            },
+            "visibleAbsence": {
+              "intentional": true,
+              "allowedAbsentOutput": true,
+              "facts": [
+                "no single centered object",
+                "no literal barrier wall",
+                "no fixed legacy foreground/background split",
+                "no glossy modeled architecture"
+              ],
+              "rationale": "The authority packet requires abstract/no-subject all-over construction and evidence-backed geometric planes, not representational props."
+            }
+          },
+          "plannedPart": {
+            "source": "world-part-plan.json#/parts/1",
+            "partId": "asymmetrical-plane-armature",
+            "role": "creative-structural-armature",
+            "intent": "Build the main all-over internal construction from large geometric planes, horizontal bars, diagonals, loops, vertical side weights, and dark anchoring zones.",
+            "messagePurpose": "Build the main all-over internal construction from large geometric planes, horizontal bars, diagonals, loops, vertical side weights, and dark anchoring zones.",
+            "visualTarget": "Build the main all-over internal construction from large geometric planes, horizontal bars, diagonals, loops, vertical side weights, and dark anchoring zones.",
+            "relationshipToWhole": "This is the skeletal ordering system that makes every other part feel intentional: fractures interrupt it, contours travel along it, voids open inside it, and material skin unifies it.",
+            "visibleAbsence": {
+              "intentional": true,
+              "facts": [
+                "no single centered object",
+                "no literal barrier wall",
+                "no fixed legacy foreground/background split",
+                "no glossy modeled architecture"
+              ],
+              "rationale": "The authority packet requires abstract/no-subject all-over construction and evidence-backed geometric planes, not representational props."
+            }
+          },
+          "compositionBeforeHash": "eafe456216478254",
+          "compositionAfterHash": "d1e975d8e92260a6"
+        },
+        "intent": "Build the main all-over internal construction from large geometric planes, horizontal bars, diagonals, loops, vertical side weights, and dark anchoring zones.",
+        "messagePurpose": "Build the main all-over internal construction from large geometric planes, horizontal bars, diagonals, loops, vertical side weights, and dark anchoring zones.",
+        "visualTarget": "Build the main all-over internal construction from large geometric planes, horizontal bars, diagonals, loops, vertical side weights, and dark anchoring zones.",
+        "relationshipToWhole": "This is the skeletal ordering system that makes every other part feel intentional: fractures interrupt it, contours travel along it, voids open inside it, and material skin unifies it.",
+        "visibleAbsence": {
+          "intentional": true,
+          "facts": [
+            "no single centered object",
+            "no literal barrier wall",
+            "no fixed legacy foreground/background split",
+            "no glossy modeled architecture"
+          ],
+          "rationale": "The authority packet requires abstract/no-subject all-over construction and evidence-backed geometric planes, not representational props."
+        },
+        "params": {
+          "band": "primary-readability",
+          "layer": "middleground",
+          "position": [
+            -0.2,
+            0.08,
+            -1.9
+          ],
+          "scale": 1.45,
+          "opacity": 0.94,
+          "motionIntensity": 0.14,
+          "renderOrder": 3,
+          "visibilityPriority": "primary"
+        },
+        "paramSemantics": {
+          "band": "visual placement/readability band for full-world params; distinct from declared compositionOwnership.lane"
+        },
+        "compositionOwnership": {
+          "lane": "creative-structure",
+          "owns": [
+            "large-scale geometric-plane hierarchy",
+            "asymmetrical balance",
+            "horizontal and diagonal structural spans",
+            "vertical side weights",
+            "dark saturated blue and near-black anchoring masses",
+            "broad pale paper negative spaces inside the structure"
+          ],
+          "avoid": [
+            "default central panel, band, grid, stripe, or shell",
+            "literal race infrastructure",
+            "symmetrical centered focal sculpture",
+            "overfilling all depth layers"
+          ]
+        }
+      },
+      {
+        "id": "concentrated-fracture-transfer",
+        "partId": "concentrated-fracture-transfer",
+        "role": "creative-selected-news-transformation",
+        "moduleRef": {
+          "type": "immersive-world-generated-module",
+          "version": 1,
+          "moduleId": "bram-van-velde-tour-fracture-concentrated-fracture-transfer",
+          "partId": "concentrated-fracture-transfer",
+          "hash": "dc62bda1e840ce002a9d7366614679668e94d2c533fb18513242a08776ff5216",
+          "integrity": "sha256-dc62bda1e840ce002a9d7366614679668e94d2c533fb18513242a08776ff5216",
+          "exportName": "createImmersiveWorldPart",
+          "file": "data/immersive-world/generated-modules/dc62bda1e840ce002a9d7366614679668e94d2c533fb18513242a08776ff5216.mjs",
+          "url": "./data/immersive-world/generated-modules/dc62bda1e840ce002a9d7366614679668e94d2c533fb18513242a08776ff5216.mjs",
+          "rendererCompatibility": {
+            "version": 1,
+            "targetMode": "webgpu-project-scene",
+            "compatibilityStatus": "webgpu-compatible",
+            "webgpuCompatible": true,
+            "evidenceReasons": [
+              "webgpu-safe-material",
+              "webgpu-native-helper-utility"
+            ],
+            "featureFacts": [
+              {
+                "kind": "standard-material",
+                "material": "MeshBasicMaterial",
+                "family": "standard-material-surface",
+                "reason": "webgpu-safe-material"
+              },
+              {
+                "kind": "standard-material",
+                "material": "LineBasicMaterial",
+                "family": "standard-material-surface",
+                "reason": "webgpu-safe-material"
+              },
+              {
+                "kind": "webgpu-native-helper",
+                "id": "scraped-paint-grain-material",
+                "family": "paint-grain-surface",
+                "factory": "scraped-paint-grain-surface",
+                "material": "MeshBasicNodeMaterial",
+                "surface": "three-mesh-basic-node-material-tsl",
+                "reason": "webgpu-native-helper-utility"
+              },
+              {
+                "kind": "webgpu-native-helper",
+                "id": "animated-instanced-mark-field",
+                "family": "instanced-marks",
+                "factory": "procedural-marks",
+                "material": "MeshBasicMaterial",
+                "surface": "three-instanced-mesh-basic-material-frame-facts",
+                "reason": "webgpu-native-helper-utility"
+              }
+            ],
+            "compatibleSurfaces": [
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "MeshBasicMaterial"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "LineBasicMaterial"
+              },
+              {
+                "reason": "webgpu-native-helper-utility",
+                "api": "utilities.createScrapedPaintGrainMaterial",
+                "helperId": "scraped-paint-grain-material",
+                "featureFamily": "paint-grain-surface",
+                "outputKind": "material",
+                "materialType": "MeshBasicNodeMaterial",
+                "runtimeSurface": "three-mesh-basic-node-material-tsl",
+                "factoryId": "scraped-paint-grain-surface",
+                "materialFactoryId": "scraped-paint-grain-surface",
+                "factoryCategory": "matte-painted-surface"
+              },
+              {
+                "reason": "webgpu-native-helper-utility",
+                "api": "utilities.createAnimatedInstancedMarkField",
+                "helperId": "animated-instanced-mark-field",
+                "featureFamily": "instanced-marks",
+                "outputKind": "object-bundle",
+                "materialType": "MeshBasicMaterial",
+                "runtimeSurface": "three-instanced-mesh-basic-material-frame-facts",
+                "factoryId": "procedural-marks",
+                "materialFactoryId": "procedural-marks",
+                "factoryCategory": "procedural-marks"
+              }
+            ]
+          }
+        },
+        "evidence": {
+          "browserValidation": {
+            "source": "part-workshop-strict-browser-validation",
+            "passed": true,
+            "acceptanceStatus": "accepted-clean",
+            "finalDraftRef": "immersive-world-agent-work-sessions/part-workshop/concentrated-fracture-transfer/drafts/concentrated-fracture-transfer.module.mjs",
+            "previewHealthStatus": "ok",
+            "capturedViews": [
+              "desktop"
+            ],
+            "allowedAbsentOutput": true,
+            "warningOnlySoftAccepted": false,
+            "unresolvedWarningCount": 0
+          },
+          "declaredCompositionOwnership": {
+            "lane": "creative-news-metaphor",
+            "owns": [
+              "non-literal fracture transformation",
+              "concentrated spread of disruption",
+              "measured low-intensity pressure",
+              "abstract barrier-like deflection through plane relationships",
+              "Tour of France cue as contextual weighting, not literal subject"
+            ],
+            "avoid": [
+              "cars, injured people, cyclists, finish banners, roads, emergency scenes, or literal news illustration",
+              "sensational crash effects",
+              "high-speed explosive motion",
+              "using Tour of France as a replacement for the full event meaning"
+            ]
+          },
+          "compositionOwnershipSource": "world-part-plan.json#/parts/2/compositionOwnership",
+          "compositionAdaptations": [
+            "Overlapped near the armature's right-center pressure area so the accepted fracture reads as compressed disruption inside the structure, not a separate literal scene.",
+            "Compatibility facts preserved by accepted moduleRef hash dc62bda1e840ce002a9d7366614679668e94d2c533fb18513242a08776ff5216 and accepted WebGPU evidence.",
+            "Overlapped into the right-center pressure pocket as the selected-news fracture.",
+            "composition modified concentrated-fracture-transfer from isolated accepted-part defaults"
+          ],
+          "workshopAcceptance": [
+            "final draft: immersive-world-agent-work-sessions/part-workshop/concentrated-fracture-transfer/drafts/concentrated-fracture-transfer.module.mjs",
+            "preview-part-draft attempt 2 succeeded",
+            "desktop screenshot: previews/attempt-002/002-concentrated-fracture-transfer-draft-desktop.jpg",
+            "desktop render report: previews/attempt-002/desktop-render-report.json",
+            "render health ok; WebGPU backend proved; no browser errors; no unresolved warnings",
+            "check-part-draft succeeded with validation pass and no errors",
+            "desktop:part-preview-evolution/003-concentrated-fracture-transfer-attempt-1-desktop.jpg"
+          ],
+          "acceptedPartValidation": {
+            "version": 1,
+            "source": "part-workshop-strict-browser-validation",
+            "passed": true,
+            "warningOnlySoftAccepted": false,
+            "partId": "concentrated-fracture-transfer",
+            "moduleExport": {
+              "expectedExportName": "createImmersiveWorldPart",
+              "actualExportName": "createImmersiveWorldPart",
+              "moduleId": "bram-van-velde-tour-fracture-concentrated-fracture-transfer",
+              "moduleHash": "dc62bda1e840ce002a9d7366614679668e94d2c533fb18513242a08776ff5216",
+              "pass": true
+            },
+            "finalDraftRequired": true,
+            "finalDraft": {
+              "file": "immersive-world-agent-work-sessions/part-workshop/concentrated-fracture-transfer/drafts/concentrated-fracture-transfer.module.mjs",
+              "sessionFile": "drafts/concentrated-fracture-transfer.module.mjs",
+              "sha256": "f295f46230353c7603e8557a84eaafe211825f41aefb1477d4a774eb8f5643a9",
+              "bytes": 26861,
+              "source": "agent-work-session-draft"
+            },
+            "finalPreview": {
+              "status": "succeeded"
+            },
+            "preview": {
+              "required": true,
+              "capturedViews": [
+                "desktop"
+              ],
+              "healthStatus": "ok"
+            },
+            "visibleAbsence": {
+              "intentional": true,
+              "allowedAbsentOutput": true,
+              "facts": [
+                "the accident is not depicted directly",
+                "the Tour de France appears only as an abstract cue of route, pressure, and finish-line concentration",
+                "no gore, emergency symbolism, or documentary detail"
+              ],
+              "rationale": "The selected-news transformation must use the declared visual construction system and preserve measured intensity."
+            }
+          },
+          "plannedPart": {
+            "source": "world-part-plan.json#/parts/2",
+            "partId": "concentrated-fracture-transfer",
+            "role": "creative-selected-news-transformation",
+            "intent": "Translate the Tour de France finish accident into non-literal compressed fracture: deflected planes, broken wedges, side-pressure collision, and concentrated disruption inside the armature.",
+            "messagePurpose": "Translate the Tour de France finish accident into non-literal compressed fracture: deflected planes, broken wedges, side-pressure collision, and concentrated disruption inside the armature.",
+            "visualTarget": "Translate the Tour de France finish accident into non-literal compressed fracture: deflected planes, broken wedges, side-pressure collision, and concentrated disruption inside the armature.",
+            "relationshipToWhole": "It gives the artwork its news-specific charge by bending and breaking the plane armature without taking over as a literal narrative scene.",
+            "visibleAbsence": {
+              "intentional": true,
+              "facts": [
+                "the accident is not depicted directly",
+                "the Tour de France appears only as an abstract cue of route, pressure, and finish-line concentration",
+                "no gore, emergency symbolism, or documentary detail"
+              ],
+              "rationale": "The selected-news transformation must use the declared visual construction system and preserve measured intensity."
+            }
+          },
+          "compositionBeforeHash": "7a32feb6bd83908f",
+          "compositionAfterHash": "db759c7afb1f0780"
+        },
+        "intent": "Translate the Tour de France finish accident into non-literal compressed fracture: deflected planes, broken wedges, side-pressure collision, and concentrated disruption inside the armature.",
+        "messagePurpose": "Translate the Tour de France finish accident into non-literal compressed fracture: deflected planes, broken wedges, side-pressure collision, and concentrated disruption inside the armature.",
+        "visualTarget": "Translate the Tour de France finish accident into non-literal compressed fracture: deflected planes, broken wedges, side-pressure collision, and concentrated disruption inside the armature.",
+        "relationshipToWhole": "It gives the artwork its news-specific charge by bending and breaking the plane armature without taking over as a literal narrative scene.",
+        "visibleAbsence": {
+          "intentional": true,
+          "facts": [
+            "the accident is not depicted directly",
+            "the Tour de France appears only as an abstract cue of route, pressure, and finish-line concentration",
+            "no gore, emergency symbolism, or documentary detail"
+          ],
+          "rationale": "The selected-news transformation must use the declared visual construction system and preserve measured intensity."
+        },
+        "params": {
+          "band": "primary-readability",
+          "layer": "middleground",
+          "position": [
+            0.55,
+            0.04,
+            -2.6
+          ],
+          "scale": 1.45,
+          "opacity": 0.86,
+          "motionIntensity": 0.16,
+          "renderOrder": 4,
+          "visibilityPriority": "primary"
+        },
+        "paramSemantics": {
+          "band": "visual placement/readability band for full-world params; distinct from declared compositionOwnership.lane"
+        },
+        "compositionOwnership": {
+          "lane": "creative-news-metaphor",
+          "owns": [
+            "non-literal fracture transformation",
+            "concentrated spread of disruption",
+            "measured low-intensity pressure",
+            "abstract barrier-like deflection through plane relationships",
+            "Tour of France cue as contextual weighting, not literal subject"
+          ],
+          "avoid": [
+            "cars, injured people, cyclists, finish banners, roads, emergency scenes, or literal news illustration",
+            "sensational crash effects",
+            "high-speed explosive motion",
+            "using Tour of France as a replacement for the full event meaning"
+          ]
+        }
+      },
+      {
+        "id": "drawn-contour-navigation",
+        "partId": "drawn-contour-navigation",
+        "role": "creative-line-and-rhythm-system",
+        "moduleRef": {
+          "type": "immersive-world-generated-module",
+          "version": 1,
+          "moduleId": "bram-van-velde-tour-fracture-drawn-contour-navigation",
+          "partId": "drawn-contour-navigation",
+          "hash": "a42ffc6690b4bc39adaa51fd50f4dd4c61c00e8c22dca3e9c08ac1959497e2c7",
+          "integrity": "sha256-a42ffc6690b4bc39adaa51fd50f4dd4c61c00e8c22dca3e9c08ac1959497e2c7",
+          "exportName": "createImmersiveWorldPart",
+          "file": "data/immersive-world/generated-modules/a42ffc6690b4bc39adaa51fd50f4dd4c61c00e8c22dca3e9c08ac1959497e2c7.mjs",
+          "url": "./data/immersive-world/generated-modules/a42ffc6690b4bc39adaa51fd50f4dd4c61c00e8c22dca3e9c08ac1959497e2c7.mjs",
+          "rendererCompatibility": {
+            "version": 1,
+            "targetMode": "webgpu-project-scene",
+            "compatibilityStatus": "webgpu-compatible",
+            "webgpuCompatible": true,
+            "evidenceReasons": [
+              "webgpu-safe-material",
+              "webgpu-native-helper-utility"
+            ],
+            "featureFacts": [
+              {
+                "kind": "standard-material",
+                "material": "MeshBasicMaterial",
+                "family": "standard-material-surface",
+                "reason": "webgpu-safe-material"
+              },
+              {
+                "kind": "standard-material",
+                "material": "LineBasicMaterial",
+                "family": "standard-material-surface",
+                "reason": "webgpu-safe-material"
+              },
+              {
+                "kind": "webgpu-native-helper",
+                "id": "procedural-mark-material",
+                "family": "procedural-marks",
+                "factory": "procedural-marks",
+                "material": "MeshBasicMaterial",
+                "surface": "three-basic-material",
+                "reason": "webgpu-native-helper-utility"
+              },
+              {
+                "kind": "webgpu-native-helper",
+                "id": "animated-instanced-mark-field",
+                "family": "instanced-marks",
+                "factory": "procedural-marks",
+                "material": "MeshBasicMaterial",
+                "surface": "three-instanced-mesh-basic-material-frame-facts",
+                "reason": "webgpu-native-helper-utility"
+              }
+            ],
+            "compatibleSurfaces": [
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "MeshBasicMaterial"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "LineBasicMaterial"
+              },
+              {
+                "reason": "webgpu-native-helper-utility",
+                "api": "utilities.createProceduralMarkMaterial",
+                "helperId": "procedural-mark-material",
+                "featureFamily": "procedural-marks",
+                "outputKind": "material",
+                "materialType": "MeshBasicMaterial",
+                "runtimeSurface": "three-basic-material",
+                "factoryId": "procedural-marks",
+                "materialFactoryId": "procedural-marks",
+                "factoryCategory": "procedural-marks"
+              },
+              {
+                "reason": "webgpu-native-helper-utility",
+                "api": "utilities.createAnimatedInstancedMarkField",
+                "helperId": "animated-instanced-mark-field",
+                "featureFamily": "instanced-marks",
+                "outputKind": "object-bundle",
+                "materialType": "MeshBasicMaterial",
+                "runtimeSurface": "three-instanced-mesh-basic-material-frame-facts",
+                "factoryId": "procedural-marks",
+                "materialFactoryId": "procedural-marks",
+                "factoryCategory": "procedural-marks"
+              }
+            ]
+          }
+        },
+        "evidence": {
+          "browserValidation": {
+            "source": "part-workshop-strict-browser-validation",
+            "passed": true,
+            "acceptanceStatus": "accepted-clean",
+            "finalDraftRef": "immersive-world-agent-work-sessions/part-workshop/drawn-contour-navigation/drafts/drawn-contour-navigation.module.mjs",
+            "previewHealthStatus": "ok",
+            "capturedViews": [
+              "desktop"
+            ],
+            "allowedAbsentOutput": true,
+            "warningOnlySoftAccepted": false,
+            "unresolvedWarningCount": 0
+          },
+          "declaredCompositionOwnership": {
+            "lane": "creative-mark-rhythm",
+            "owns": [
+              "variable-width black, dark grey, navy, and red-orange contour paths",
+              "loops and repeated arcs",
+              "edge pressure around planes and voids",
+              "hand-drawn restatement and uneven line quality",
+              "navigation between foreground, middleground, and depth pockets"
+            ],
+            "avoid": [
+              "generic foreground mark field by habit",
+              "uniform vector-perfect outlines",
+              "dense noise that obscures plane hierarchy",
+              "replacing the selected-news fracture with decorative scribble"
+            ]
+          },
+          "compositionOwnershipSource": "world-part-plan.json#/parts/3/compositionOwnership",
+          "compositionAdaptations": [
+            "Placed as a foreground route overlay with reduced opacity so contours guide through the armature, ovals, and fracture pocket without obscuring the plane hierarchy.",
+            "Compatibility facts preserved by accepted moduleRef hash a42ffc6690b4bc39adaa51fd50f4dd4c61c00e8c22dca3e9c08ac1959497e2c7 and accepted WebGPU evidence.",
+            "Used as a restrained foreground route system through planes and apertures.",
+            "composition modified drawn-contour-navigation from isolated accepted-part defaults"
+          ],
+          "workshopAcceptance": [
+            "Final draft ref: immersive-world-agent-work-sessions/part-workshop/drawn-contour-navigation/drafts/drawn-contour-navigation.module.mjs.",
+            "Final handoff preview attempt 2 succeeded with screenshot previews/attempt-002/002-drawn-contour-navigation-draft-desktop.jpg and render report previews/attempt-002/desktop-render-report.json.",
+            "Render health ok; captureStatus ok; rendererMode webgpu; rendererBackend webgpu; sceneInitError null; browserErrors null; webgpuFeatureFallbackReasons empty; browserWarnings/webglWarnings/webgpuWarnings empty.",
+            "Optional static validation check-part-draft succeeded with pass true and zero errors.",
+            "desktop:part-preview-evolution/004-drawn-contour-navigation-attempt-1-desktop.jpg"
+          ],
+          "acceptedPartValidation": {
+            "version": 1,
+            "source": "part-workshop-strict-browser-validation",
+            "passed": true,
+            "warningOnlySoftAccepted": false,
+            "partId": "drawn-contour-navigation",
+            "moduleExport": {
+              "expectedExportName": "createImmersiveWorldPart",
+              "actualExportName": "createImmersiveWorldPart",
+              "moduleId": "bram-van-velde-tour-fracture-drawn-contour-navigation",
+              "moduleHash": "a42ffc6690b4bc39adaa51fd50f4dd4c61c00e8c22dca3e9c08ac1959497e2c7",
+              "pass": true
+            },
+            "finalDraftRequired": true,
+            "finalDraft": {
+              "file": "immersive-world-agent-work-sessions/part-workshop/drawn-contour-navigation/drafts/drawn-contour-navigation.module.mjs",
+              "sessionFile": "drafts/drawn-contour-navigation.module.mjs",
+              "sha256": "4150031147d68aa02edcf253693a5e346b63d4f70961a3420004cbce82e3e131",
+              "bytes": 35363,
+              "source": "agent-work-session-draft"
+            },
+            "finalPreview": {
+              "status": "succeeded"
+            },
+            "preview": {
+              "required": true,
+              "capturedViews": [
+                "desktop"
+              ],
+              "healthStatus": "ok"
+            },
+            "visibleAbsence": {
+              "intentional": true,
+              "allowedAbsentOutput": true,
+              "facts": [
+                "no text labels or documentary annotations",
+                "no fixed grid overlay",
+                "no neon/glow outline style",
+                "no line system detached from the planes"
+              ],
+              "rationale": "The artist evidence supports handmade contour lines as structural rhythm and edge pressure, not graphic UI marks."
+            }
+          },
+          "plannedPart": {
+            "source": "world-part-plan.json#/parts/3",
+            "partId": "drawn-contour-navigation",
+            "role": "creative-line-and-rhythm-system",
+            "intent": "Create spatial contour-line routes that guide the eye through colored outlines, arcs, loops, crossings, wedges, and dark structural strokes.",
+            "messagePurpose": "Create spatial contour-line routes that guide the eye through colored outlines, arcs, loops, crossings, wedges, and dark structural strokes.",
+            "visualTarget": "Create spatial contour-line routes that guide the eye through colored outlines, arcs, loops, crossings, wedges, and dark structural strokes.",
+            "relationshipToWhole": "It supplies the eye path through the armature and apertures, making the abstract space legible as movement without literal action.",
+            "visibleAbsence": {
+              "intentional": true,
+              "facts": [
+                "no text labels or documentary annotations",
+                "no fixed grid overlay",
+                "no neon/glow outline style",
+                "no line system detached from the planes"
+              ],
+              "rationale": "The artist evidence supports handmade contour lines as structural rhythm and edge pressure, not graphic UI marks."
+            }
+          },
+          "compositionBeforeHash": "c62ef90fd33a4ca8",
+          "compositionAfterHash": "cd568bdcb42f48ad"
+        },
+        "intent": "Create spatial contour-line routes that guide the eye through colored outlines, arcs, loops, crossings, wedges, and dark structural strokes.",
+        "messagePurpose": "Create spatial contour-line routes that guide the eye through colored outlines, arcs, loops, crossings, wedges, and dark structural strokes.",
+        "visualTarget": "Create spatial contour-line routes that guide the eye through colored outlines, arcs, loops, crossings, wedges, and dark structural strokes.",
+        "relationshipToWhole": "It supplies the eye path through the armature and apertures, making the abstract space legible as movement without literal action.",
+        "visibleAbsence": {
+          "intentional": true,
+          "facts": [
+            "no text labels or documentary annotations",
+            "no fixed grid overlay",
+            "no neon/glow outline style",
+            "no line system detached from the planes"
+          ],
+          "rationale": "The artist evidence supports handmade contour lines as structural rhythm and edge pressure, not graphic UI marks."
+        },
+        "params": {
+          "band": "support-readability",
+          "layer": "foreground",
+          "position": [
+            -0.25,
+            0.16,
+            -2.2
+          ],
+          "scale": 0.92,
+          "opacity": 0.78,
+          "motionIntensity": 0.13,
+          "renderOrder": 6,
+          "visibilityPriority": "supporting"
+        },
+        "paramSemantics": {
+          "band": "visual placement/readability band for full-world params; distinct from declared compositionOwnership.lane"
+        },
+        "compositionOwnership": {
+          "lane": "creative-mark-rhythm",
+          "owns": [
+            "variable-width black, dark grey, navy, and red-orange contour paths",
+            "loops and repeated arcs",
+            "edge pressure around planes and voids",
+            "hand-drawn restatement and uneven line quality",
+            "navigation between foreground, middleground, and depth pockets"
+          ],
+          "avoid": [
+            "generic foreground mark field by habit",
+            "uniform vector-perfect outlines",
+            "dense noise that obscures plane hierarchy",
+            "replacing the selected-news fracture with decorative scribble"
+          ]
+        }
+      },
+      {
+        "id": "oval-triangle-void-gates",
+        "partId": "oval-triangle-void-gates",
+        "role": "creative-aperture-and-target-system",
+        "moduleRef": {
+          "type": "immersive-world-generated-module",
+          "version": 1,
+          "moduleId": "bram-van-velde-tour-fracture-oval-triangle-void-gates",
+          "partId": "oval-triangle-void-gates",
+          "hash": "0149c8fd56a828479a780ec90118b9eb538cf620d96a107919790921c72c8763",
+          "integrity": "sha256-0149c8fd56a828479a780ec90118b9eb538cf620d96a107919790921c72c8763",
+          "exportName": "createImmersiveWorldPart",
+          "file": "data/immersive-world/generated-modules/0149c8fd56a828479a780ec90118b9eb538cf620d96a107919790921c72c8763.mjs",
+          "url": "./data/immersive-world/generated-modules/0149c8fd56a828479a780ec90118b9eb538cf620d96a107919790921c72c8763.mjs",
+          "rendererCompatibility": {
+            "version": 1,
+            "targetMode": "webgpu-project-scene",
+            "compatibilityStatus": "webgpu-compatible",
+            "webgpuCompatible": true,
+            "evidenceReasons": [
+              "webgpu-safe-material",
+              "webgpu-native-helper-utility"
+            ],
+            "featureFacts": [
+              {
+                "kind": "standard-material",
+                "material": "MeshBasicMaterial",
+                "family": "standard-material-surface",
+                "reason": "webgpu-safe-material"
+              },
+              {
+                "kind": "standard-material",
+                "material": "LineBasicMaterial",
+                "family": "standard-material-surface",
+                "reason": "webgpu-safe-material"
+              },
+              {
+                "kind": "webgpu-native-helper",
+                "id": "scraped-paint-grain-material",
+                "family": "paint-grain-surface",
+                "factory": "scraped-paint-grain-surface",
+                "material": "MeshBasicNodeMaterial",
+                "surface": "three-mesh-basic-node-material-tsl",
+                "reason": "webgpu-native-helper-utility"
+              },
+              {
+                "kind": "webgpu-native-helper",
+                "id": "procedural-mark-material",
+                "family": "procedural-marks",
+                "factory": "procedural-marks",
+                "material": "MeshBasicMaterial",
+                "surface": "three-basic-material",
+                "reason": "webgpu-native-helper-utility"
+              },
+              {
+                "kind": "standard-material",
+                "material": "PointsMaterial",
+                "family": "standard-material-surface",
+                "reason": "webgpu-safe-material"
+              }
+            ],
+            "compatibleSurfaces": [
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "MeshBasicMaterial"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "LineBasicMaterial"
+              },
+              {
+                "reason": "webgpu-native-helper-utility",
+                "api": "utilities.createScrapedPaintGrainMaterial",
+                "helperId": "scraped-paint-grain-material",
+                "featureFamily": "paint-grain-surface",
+                "outputKind": "material",
+                "materialType": "MeshBasicNodeMaterial",
+                "runtimeSurface": "three-mesh-basic-node-material-tsl",
+                "factoryId": "scraped-paint-grain-surface",
+                "materialFactoryId": "scraped-paint-grain-surface",
+                "factoryCategory": "matte-painted-surface"
+              },
+              {
+                "reason": "webgpu-native-helper-utility",
+                "api": "utilities.createProceduralMarkMaterial",
+                "helperId": "procedural-mark-material",
+                "featureFamily": "procedural-marks",
+                "outputKind": "material",
+                "materialType": "MeshBasicMaterial",
+                "runtimeSurface": "three-basic-material",
+                "factoryId": "procedural-marks",
+                "materialFactoryId": "procedural-marks",
+                "factoryCategory": "procedural-marks"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "PointsMaterial"
+              }
+            ]
+          }
+        },
+        "evidence": {
+          "browserValidation": {
+            "source": "part-workshop-strict-browser-validation",
+            "passed": true,
+            "acceptanceStatus": "accepted-clean",
+            "finalDraftRef": "immersive-world-agent-work-sessions/part-workshop/oval-triangle-void-gates/drafts/oval-triangle-void-gates.module.mjs",
+            "previewHealthStatus": "ok",
+            "capturedViews": [
+              "desktop"
+            ],
+            "allowedAbsentOutput": true,
+            "warningOnlySoftAccepted": false,
+            "unresolvedWarningCount": 0
+          },
+          "declaredCompositionOwnership": {
+            "lane": "creative-spatial-openings",
+            "owns": [
+              "oval light marks",
+              "triangular openings",
+              "pale paper voids",
+              "radial-symbol accents when needed",
+              "small focal pauses inside the all-over composition"
+            ],
+            "avoid": [
+              "central target by default",
+              "literal wheels, helmets, finish-line signage, or injury symbols",
+              "overusing holes until the armature loses compression",
+              "making apertures glossy or lens-like"
+            ]
+          },
+          "compositionOwnershipSource": "world-part-plan.json#/parts/4/compositionOwnership",
+          "compositionAdaptations": [
+            "Threaded through the middle depth as pale ovals and triangular pauses, supporting navigation without becoming a literal bicycle-wheel or single central target.",
+            "Compatibility facts preserved by accepted moduleRef hash 0149c8fd56a828479a780ec90118b9eb538cf620d96a107919790921c72c8763 and accepted WebGPU evidence.",
+            "Threaded into middle depth as pale oval and triangular pauses.",
+            "composition modified oval-triangle-void-gates from isolated accepted-part defaults"
+          ],
+          "workshopAcceptance": [
+            "Final draft ref: immersive-world-agent-work-sessions/part-workshop/oval-triangle-void-gates/drafts/oval-triangle-void-gates.module.mjs",
+            "Final handoff preview command preview-part-draft attempt 3 succeeded.",
+            "Screenshot: previews/attempt-003/003-oval-triangle-void-gates-draft-desktop.jpg",
+            "Render report: previews/attempt-003/desktop-render-report.json",
+            "Render health ok, capture ok, readiness ready, sceneInitError null, rendererMode webgpu, rendererBackend webgpu, webgpuFeatureFallbackReasons empty, browserErrors null.",
+            "Optional static check-part-draft succeeded with pass true and no validation errors.",
+            "desktop:part-preview-evolution/005-oval-triangle-void-gates-attempt-1-desktop.jpg"
+          ],
+          "acceptedPartValidation": {
+            "version": 1,
+            "source": "part-workshop-strict-browser-validation",
+            "passed": true,
+            "warningOnlySoftAccepted": false,
+            "partId": "oval-triangle-void-gates",
+            "moduleExport": {
+              "expectedExportName": "createImmersiveWorldPart",
+              "actualExportName": "createImmersiveWorldPart",
+              "moduleId": "bram-van-velde-tour-fracture-oval-triangle-void-gates",
+              "moduleHash": "0149c8fd56a828479a780ec90118b9eb538cf620d96a107919790921c72c8763",
+              "pass": true
+            },
+            "finalDraftRequired": true,
+            "finalDraft": {
+              "file": "immersive-world-agent-work-sessions/part-workshop/oval-triangle-void-gates/drafts/oval-triangle-void-gates.module.mjs",
+              "sessionFile": "drafts/oval-triangle-void-gates.module.mjs",
+              "sha256": "01b7a657414d930cba218fcae6a78b754fa608f767e5cfc0b44b4c982d76c335",
+              "bytes": 31509,
+              "source": "agent-work-session-draft"
+            },
+            "finalPreview": {
+              "status": "succeeded"
+            },
+            "preview": {
+              "required": true,
+              "capturedViews": [
+                "desktop"
+              ],
+              "healthStatus": "ok"
+            },
+            "visibleAbsence": {
+              "intentional": true,
+              "allowedAbsentOutput": true,
+              "facts": [
+                "no single target dominates the artwork",
+                "no literal bicycle-wheel motif",
+                "no readable icons or symbols",
+                "some openings remain ambiguous rather than fully cut through"
+              ],
+              "rationale": "The authority calls for ovals and triangular openings as abstract construction, not subject symbols."
+            }
+          },
+          "plannedPart": {
+            "source": "world-part-plan.json#/parts/4",
+            "partId": "oval-triangle-void-gates",
+            "role": "creative-aperture-and-target-system",
+            "intent": "Place oval targets, triangular openings, pale interior voids, and radial-symbol echoes as navigable gaps within the dense all-over field.",
+            "messagePurpose": "Place oval targets, triangular openings, pale interior voids, and radial-symbol echoes as navigable gaps within the dense all-over field.",
+            "visualTarget": "Place oval targets, triangular openings, pale interior voids, and radial-symbol echoes as navigable gaps within the dense all-over field.",
+            "relationshipToWhole": "These forms make the viewer travel through the composition: contours thread through them, fractures press against them, and pale value opens breathing space.",
+            "visibleAbsence": {
+              "intentional": true,
+              "facts": [
+                "no single target dominates the artwork",
+                "no literal bicycle-wheel motif",
+                "no readable icons or symbols",
+                "some openings remain ambiguous rather than fully cut through"
+              ],
+              "rationale": "The authority calls for ovals and triangular openings as abstract construction, not subject symbols."
+            }
+          },
+          "compositionBeforeHash": "b4c8657a3adcb2ba",
+          "compositionAfterHash": "fc774ef4a6456bca"
+        },
+        "intent": "Place oval targets, triangular openings, pale interior voids, and radial-symbol echoes as navigable gaps within the dense all-over field.",
+        "messagePurpose": "Place oval targets, triangular openings, pale interior voids, and radial-symbol echoes as navigable gaps within the dense all-over field.",
+        "visualTarget": "Place oval targets, triangular openings, pale interior voids, and radial-symbol echoes as navigable gaps within the dense all-over field.",
+        "relationshipToWhole": "These forms make the viewer travel through the composition: contours thread through them, fractures press against them, and pale value opens breathing space.",
+        "visibleAbsence": {
+          "intentional": true,
+          "facts": [
+            "no single target dominates the artwork",
+            "no literal bicycle-wheel motif",
+            "no readable icons or symbols",
+            "some openings remain ambiguous rather than fully cut through"
+          ],
+          "rationale": "The authority calls for ovals and triangular openings as abstract construction, not subject symbols."
+        },
+        "params": {
+          "band": "support-readability",
+          "layer": "middleground",
+          "position": [
+            0.2,
+            -0.08,
+            -3.05
+          ],
+          "scale": 0.82,
+          "opacity": 0.72,
+          "motionIntensity": 0.08,
+          "renderOrder": 5,
+          "visibilityPriority": "supporting"
+        },
+        "paramSemantics": {
+          "band": "visual placement/readability band for full-world params; distinct from declared compositionOwnership.lane"
+        },
+        "compositionOwnership": {
+          "lane": "creative-spatial-openings",
+          "owns": [
+            "oval light marks",
+            "triangular openings",
+            "pale paper voids",
+            "radial-symbol accents when needed",
+            "small focal pauses inside the all-over composition"
+          ],
+          "avoid": [
+            "central target by default",
+            "literal wheels, helmets, finish-line signage, or injury symbols",
+            "overusing holes until the armature loses compression",
+            "making apertures glossy or lens-like"
+          ]
+        }
+      },
+      {
+        "id": "matte-scraped-pigment-skin",
+        "partId": "matte-scraped-pigment-skin",
+        "role": "creative-material-unifier",
+        "moduleRef": {
+          "type": "immersive-world-generated-module",
+          "version": 1,
+          "moduleId": "bram-van-velde-tour-fracture-matte-scraped-pigment-skin",
+          "partId": "matte-scraped-pigment-skin",
+          "hash": "fdf554cd9d51d57e56a2c6ad34ff04795aac954090a03b6d43407c51caa93fc5",
+          "integrity": "sha256-fdf554cd9d51d57e56a2c6ad34ff04795aac954090a03b6d43407c51caa93fc5",
+          "exportName": "createImmersiveWorldPart",
+          "file": "data/immersive-world/generated-modules/fdf554cd9d51d57e56a2c6ad34ff04795aac954090a03b6d43407c51caa93fc5.mjs",
+          "url": "./data/immersive-world/generated-modules/fdf554cd9d51d57e56a2c6ad34ff04795aac954090a03b6d43407c51caa93fc5.mjs",
+          "rendererCompatibility": {
+            "version": 1,
+            "targetMode": "webgpu-project-scene",
+            "compatibilityStatus": "webgpu-compatible",
+            "webgpuCompatible": true,
+            "evidenceReasons": [
+              "webgpu-safe-material",
+              "webgpu-native-helper-utility"
+            ],
+            "featureFacts": [
+              {
+                "kind": "standard-material",
+                "material": "MeshBasicMaterial",
+                "family": "standard-material-surface",
+                "reason": "webgpu-safe-material"
+              },
+              {
+                "kind": "standard-material",
+                "material": "LineBasicMaterial",
+                "family": "standard-material-surface",
+                "reason": "webgpu-safe-material"
+              },
+              {
+                "kind": "webgpu-native-helper",
+                "id": "scraped-paint-grain-material",
+                "family": "paint-grain-surface",
+                "factory": "scraped-paint-grain-surface",
+                "material": "MeshBasicNodeMaterial",
+                "surface": "three-mesh-basic-node-material-tsl",
+                "reason": "webgpu-native-helper-utility"
+              },
+              {
+                "kind": "webgpu-native-helper",
+                "id": "procedural-mark-material",
+                "family": "procedural-marks",
+                "factory": "procedural-marks",
+                "material": "MeshBasicMaterial",
+                "surface": "three-basic-material",
+                "reason": "webgpu-native-helper-utility"
+              },
+              {
+                "kind": "webgpu-native-helper",
+                "id": "instanced-mark-field",
+                "family": "instanced-marks",
+                "factory": "procedural-marks",
+                "material": "MeshBasicMaterial",
+                "surface": "three-instanced-mesh-basic-material",
+                "reason": "webgpu-native-helper-utility"
+              }
+            ],
+            "compatibleSurfaces": [
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "MeshBasicMaterial"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "LineBasicMaterial"
+              },
+              {
+                "reason": "webgpu-native-helper-utility",
+                "api": "utilities.createScrapedPaintGrainMaterial",
+                "helperId": "scraped-paint-grain-material",
+                "featureFamily": "paint-grain-surface",
+                "outputKind": "material",
+                "materialType": "MeshBasicNodeMaterial",
+                "runtimeSurface": "three-mesh-basic-node-material-tsl",
+                "factoryId": "scraped-paint-grain-surface",
+                "materialFactoryId": "scraped-paint-grain-surface",
+                "factoryCategory": "matte-painted-surface"
+              },
+              {
+                "reason": "webgpu-native-helper-utility",
+                "api": "utilities.createProceduralMarkMaterial",
+                "helperId": "procedural-mark-material",
+                "featureFamily": "procedural-marks",
+                "outputKind": "material",
+                "materialType": "MeshBasicMaterial",
+                "runtimeSurface": "three-basic-material",
+                "factoryId": "procedural-marks",
+                "materialFactoryId": "procedural-marks",
+                "factoryCategory": "procedural-marks"
+              },
+              {
+                "reason": "webgpu-native-helper-utility",
+                "api": "utilities.createInstancedMarkField",
+                "helperId": "instanced-mark-field",
+                "featureFamily": "instanced-marks",
+                "outputKind": "object-bundle",
+                "materialType": "MeshBasicMaterial",
+                "runtimeSurface": "three-instanced-mesh-basic-material",
+                "factoryId": "procedural-marks",
+                "materialFactoryId": "procedural-marks",
+                "factoryCategory": "procedural-marks"
+              }
+            ]
+          }
+        },
+        "evidence": {
+          "browserValidation": {
+            "source": "part-workshop-strict-browser-validation",
+            "passed": true,
+            "acceptanceStatus": "accepted-clean",
+            "finalDraftRef": "immersive-world-agent-work-sessions/part-workshop/matte-scraped-pigment-skin/drafts/matte-scraped-pigment-skin.module.mjs",
+            "previewHealthStatus": "ok",
+            "capturedViews": [
+              "desktop"
+            ],
+            "allowedAbsentOutput": true,
+            "warningOnlySoftAccepted": false,
+            "unresolvedWarningCount": 0
+          },
+          "declaredCompositionOwnership": {
+            "lane": "creative-material",
+            "owns": [
+              "matte surface discipline",
+              "brush drag and dry scumble vocabulary",
+              "scraped paint grain",
+              "thin wash versus opaque fill differences",
+              "small drips and rubbed edge imperfections",
+              "paper or canvas texture cues"
+            ],
+            "avoid": [
+              "glossy default 3D materials",
+              "photoreal canvas as a dominant asset requirement",
+              "large CPU-baked procedural textures",
+              "material effects that overpower form and value"
+            ]
+          },
+          "compositionOwnershipSource": "world-part-plan.json#/parts/5/compositionOwnership",
+          "compositionAdaptations": [
+            "Used as a low-opacity unifying surface skin over and around the structural planes so brush drag, scumble, drips, and scraped edges bind the assembly without overpowering form.",
+            "Compatibility facts preserved by accepted moduleRef hash fdf554cd9d51d57e56a2c6ad34ff04795aac954090a03b6d43407c51caa93fc5 and accepted WebGPU evidence.",
+            "Applied as low-opacity material unifier over the shallow assembly.",
+            "composition modified matte-scraped-pigment-skin from isolated accepted-part defaults"
+          ],
+          "workshopAcceptance": [
+            "Final draft file: immersive-world-agent-work-sessions/part-workshop/matte-scraped-pigment-skin/drafts/matte-scraped-pigment-skin.module.mjs.",
+            "Final handoff preview command succeeded on attempt 2.",
+            "Screenshot: previews/attempt-002/002-matte-scraped-pigment-skin-draft-desktop.jpg.",
+            "Render report: previews/attempt-002/desktop-render-report.json.",
+            "Render health ok; rendererMode webgpu; rendererBackend webgpu; sceneInitError null; browser errors null; webgpuFeatureFallbackReasons empty.",
+            "Static check succeeded with validation.pass true and no errors.",
+            "desktop:part-preview-evolution/006-matte-scraped-pigment-skin-attempt-1-desktop.jpg"
+          ],
+          "acceptedPartValidation": {
+            "version": 1,
+            "source": "part-workshop-strict-browser-validation",
+            "passed": true,
+            "warningOnlySoftAccepted": false,
+            "partId": "matte-scraped-pigment-skin",
+            "moduleExport": {
+              "expectedExportName": "createImmersiveWorldPart",
+              "actualExportName": "createImmersiveWorldPart",
+              "moduleId": "bram-van-velde-tour-fracture-matte-scraped-pigment-skin",
+              "moduleHash": "fdf554cd9d51d57e56a2c6ad34ff04795aac954090a03b6d43407c51caa93fc5",
+              "pass": true
+            },
+            "finalDraftRequired": true,
+            "finalDraft": {
+              "file": "immersive-world-agent-work-sessions/part-workshop/matte-scraped-pigment-skin/drafts/matte-scraped-pigment-skin.module.mjs",
+              "sessionFile": "drafts/matte-scraped-pigment-skin.module.mjs",
+              "sha256": "4cb145e3a6950816a885e1bea980c13eeca6b59e70b34538fcc8526520913366",
+              "bytes": 33019,
+              "source": "agent-work-session-draft"
+            },
+            "finalPreview": {
+              "status": "succeeded"
+            },
+            "preview": {
+              "required": true,
+              "capturedViews": [
+                "desktop"
+              ],
+              "healthStatus": "ok"
+            },
+            "visibleAbsence": {
+              "intentional": true,
+              "allowedAbsentOutput": true,
+              "facts": [
+                "no metallic, glass, plastic, or wet-surface realism",
+                "no stock texture asset dependency",
+                "no generic bloom/glow as a substitute for material tactility"
+              ],
+              "rationale": "The material authority explicitly requires matte handmade surfaces and warns against generic 3D material defaults."
+            }
+          },
+          "plannedPart": {
+            "source": "world-part-plan.json#/parts/5",
+            "partId": "matte-scraped-pigment-skin",
+            "role": "creative-material-unifier",
+            "intent": "Unify planes, contours, voids, and fracture elements with matte painted/printed surface behavior: visible brush drag, thin washes, opaque fills, scraped passages, drips, and uneven hand-laid edges.",
+            "messagePurpose": "Unify planes, contours, voids, and fracture elements with matte painted/printed surface behavior: visible brush drag, thin washes, opaque fills, scraped passages, drips, and uneven hand-laid edges.",
+            "visualTarget": "Unify planes, contours, voids, and fracture elements with matte painted/printed surface behavior: visible brush drag, thin washes, opaque fills, scraped passages, drips, and uneven hand-laid edges.",
+            "relationshipToWhole": "It makes the world feel physically painted rather than digitally assembled, and it keeps all creative systems in the Bram van Velde material register.",
+            "visibleAbsence": {
+              "intentional": true,
+              "facts": [
+                "no metallic, glass, plastic, or wet-surface realism",
+                "no stock texture asset dependency",
+                "no generic bloom/glow as a substitute for material tactility"
+              ],
+              "rationale": "The material authority explicitly requires matte handmade surfaces and warns against generic 3D material defaults."
+            }
+          },
+          "compositionBeforeHash": "d98136aaf05bad2d",
+          "compositionAfterHash": "6deb65351e30548e"
+        },
+        "intent": "Unify planes, contours, voids, and fracture elements with matte painted/printed surface behavior: visible brush drag, thin washes, opaque fills, scraped passages, drips, and uneven hand-laid edges.",
+        "messagePurpose": "Unify planes, contours, voids, and fracture elements with matte painted/printed surface behavior: visible brush drag, thin washes, opaque fills, scraped passages, drips, and uneven hand-laid edges.",
+        "visualTarget": "Unify planes, contours, voids, and fracture elements with matte painted/printed surface behavior: visible brush drag, thin washes, opaque fills, scraped passages, drips, and uneven hand-laid edges.",
+        "relationshipToWhole": "It makes the world feel physically painted rather than digitally assembled, and it keeps all creative systems in the Bram van Velde material register.",
+        "visibleAbsence": {
+          "intentional": true,
+          "facts": [
+            "no metallic, glass, plastic, or wet-surface realism",
+            "no stock texture asset dependency",
+            "no generic bloom/glow as a substitute for material tactility"
+          ],
+          "rationale": "The material authority explicitly requires matte handmade surfaces and warns against generic 3D material defaults."
+        },
+        "params": {
+          "band": "support-readability",
+          "layer": "foreground",
+          "position": [
+            -0.1,
+            -0.02,
+            -2.75
+          ],
+          "scale": 0.88,
+          "opacity": 0.64,
+          "motionIntensity": 0.06,
+          "renderOrder": 7,
+          "visibilityPriority": "supporting"
+        },
+        "paramSemantics": {
+          "band": "visual placement/readability band for full-world params; distinct from declared compositionOwnership.lane"
+        },
+        "compositionOwnership": {
+          "lane": "creative-material",
+          "owns": [
+            "matte surface discipline",
+            "brush drag and dry scumble vocabulary",
+            "scraped paint grain",
+            "thin wash versus opaque fill differences",
+            "small drips and rubbed edge imperfections",
+            "paper or canvas texture cues"
+          ],
+          "avoid": [
+            "glossy default 3D materials",
+            "photoreal canvas as a dominant asset requirement",
+            "large CPU-baked procedural textures",
+            "material effects that overpower form and value"
+          ]
+        }
+      },
+      {
+        "id": "measured-grid-pulse-depth",
+        "partId": "measured-grid-pulse-depth",
+        "role": "creative-depth-motion-and-effects-system",
+        "moduleRef": {
+          "type": "immersive-world-generated-module",
+          "version": 1,
+          "moduleId": "bram-van-velde-tour-fracture-measured-grid-pulse-depth",
+          "partId": "measured-grid-pulse-depth",
+          "hash": "49f793f6656b978519430d36a6faa30678209c3839f4ef4d3c60bd60f4df1d2a",
+          "integrity": "sha256-49f793f6656b978519430d36a6faa30678209c3839f4ef4d3c60bd60f4df1d2a",
+          "exportName": "createImmersiveWorldPart",
+          "file": "data/immersive-world/generated-modules/49f793f6656b978519430d36a6faa30678209c3839f4ef4d3c60bd60f4df1d2a.mjs",
+          "url": "./data/immersive-world/generated-modules/49f793f6656b978519430d36a6faa30678209c3839f4ef4d3c60bd60f4df1d2a.mjs",
+          "rendererCompatibility": {
+            "version": 1,
+            "targetMode": "webgpu-project-scene",
+            "compatibilityStatus": "webgpu-compatible",
+            "webgpuCompatible": true,
+            "evidenceReasons": [
+              "webgpu-safe-material",
+              "webgpu-native-helper-utility"
+            ],
+            "featureFacts": [
+              {
+                "kind": "standard-material",
+                "material": "MeshBasicMaterial",
+                "family": "standard-material-surface",
+                "reason": "webgpu-safe-material"
+              },
+              {
+                "kind": "standard-material",
+                "material": "LineBasicMaterial",
+                "family": "standard-material-surface",
+                "reason": "webgpu-safe-material"
+              },
+              {
+                "kind": "webgpu-native-helper",
+                "id": "scraped-paint-grain-material",
+                "family": "paint-grain-surface",
+                "factory": "scraped-paint-grain-surface",
+                "material": "MeshBasicNodeMaterial",
+                "surface": "three-mesh-basic-node-material-tsl",
+                "reason": "webgpu-native-helper-utility"
+              },
+              {
+                "kind": "webgpu-native-helper",
+                "id": "animated-instanced-mark-field",
+                "family": "instanced-marks",
+                "factory": "procedural-marks",
+                "material": "MeshBasicMaterial",
+                "surface": "three-instanced-mesh-basic-material-frame-facts",
+                "reason": "webgpu-native-helper-utility"
+              },
+              {
+                "kind": "standard-material",
+                "material": "PointsMaterial",
+                "family": "standard-material-surface",
+                "reason": "webgpu-safe-material"
+              }
+            ],
+            "compatibleSurfaces": [
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "MeshBasicMaterial"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "LineBasicMaterial"
+              },
+              {
+                "reason": "webgpu-native-helper-utility",
+                "api": "utilities.createScrapedPaintGrainMaterial",
+                "helperId": "scraped-paint-grain-material",
+                "featureFamily": "paint-grain-surface",
+                "outputKind": "material",
+                "materialType": "MeshBasicNodeMaterial",
+                "runtimeSurface": "three-mesh-basic-node-material-tsl",
+                "factoryId": "scraped-paint-grain-surface",
+                "materialFactoryId": "scraped-paint-grain-surface",
+                "factoryCategory": "matte-painted-surface"
+              },
+              {
+                "reason": "webgpu-native-helper-utility",
+                "api": "utilities.createAnimatedInstancedMarkField",
+                "helperId": "animated-instanced-mark-field",
+                "featureFamily": "instanced-marks",
+                "outputKind": "object-bundle",
+                "materialType": "MeshBasicMaterial",
+                "runtimeSurface": "three-instanced-mesh-basic-material-frame-facts",
+                "factoryId": "procedural-marks",
+                "materialFactoryId": "procedural-marks",
+                "factoryCategory": "procedural-marks"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "PointsMaterial"
+              }
+            ]
+          }
+        },
+        "evidence": {
+          "browserValidation": {
+            "source": "part-workshop-strict-browser-validation",
+            "passed": true,
+            "acceptanceStatus": "accepted-clean",
+            "finalDraftRef": "immersive-world-agent-work-sessions/part-workshop/measured-grid-pulse-depth/drafts/measured-grid-pulse-depth.module.mjs",
+            "previewHealthStatus": "ok",
+            "capturedViews": [
+              "desktop"
+            ],
+            "allowedAbsentOutput": true,
+            "warningOnlySoftAccepted": false,
+            "unresolvedWarningCount": 0
+          },
+          "declaredCompositionOwnership": {
+            "lane": "creative-depth-motion-effects",
+            "owns": [
+              "deep-atmospheric spatial recession",
+              "subtle parallax and scale separation",
+              "optional steady-grid-pulse animation",
+              "localized low-intensity motion around fracture and contours",
+              "subordinate soft particles, vignette, value contrast, or emissive accents",
+              "capture-safe elapsed-time behavior"
+            ],
+            "avoid": [
+              "generic effect layer",
+              "fast crash animation",
+              "large glowing spectacle",
+              "motion that destroys handmade ambiguity",
+              "non-deterministic capture behavior"
+            ]
+          },
+          "compositionOwnershipSource": "world-part-plan.json#/parts/6/compositionOwnership",
+          "compositionAdaptations": [
+            "Set behind the main armature as a quiet depth and measured-pulse layer, keeping the still frame readable without fast crash animation or generic effects.",
+            "Compatibility facts preserved by accepted moduleRef hash 49f793f6656b978519430d36a6faa30678209c3839f4ef4d3c60bd60f4df1d2a and accepted WebGPU evidence.",
+            "Moved behind the armature as subdued atmospheric recession and steady-grid-pulse support.",
+            "composition modified measured-grid-pulse-depth from isolated accepted-part defaults"
+          ],
+          "workshopAcceptance": [
+            "Final draft written to immersive-world-agent-work-sessions/part-workshop/measured-grid-pulse-depth/drafts/measured-grid-pulse-depth.module.mjs.",
+            "Attempt 2 preview-part-draft succeeded with screenshot previews/attempt-002/002-measured-grid-pulse-depth-draft-desktop.jpg and render report previews/attempt-002/desktop-render-report.json.",
+            "Attempt 2 render health ok, capture ok, rendererMode webgpu, rendererBackend webgpu, sceneInitError null, no browser warnings, no browser/page/console errors, and no WebGPU fallback reasons.",
+            "Attempt 1 exposed the exact warning THREE.AttributeNode: Vertex attribute \"uv\" not found on geometry.; the repair removed the helper point field and attempt 2 has empty warning lists.",
+            "Optional check-part-draft succeeded with validation pass true and no errors.",
+            "desktop:part-preview-evolution/007-measured-grid-pulse-depth-attempt-1-desktop.jpg"
+          ],
+          "acceptedPartValidation": {
+            "version": 1,
+            "source": "part-workshop-strict-browser-validation",
+            "passed": true,
+            "warningOnlySoftAccepted": false,
+            "partId": "measured-grid-pulse-depth",
+            "moduleExport": {
+              "expectedExportName": "createImmersiveWorldPart",
+              "actualExportName": "createImmersiveWorldPart",
+              "moduleId": "bram-van-velde-tour-fracture-measured-grid-pulse-depth",
+              "moduleHash": "49f793f6656b978519430d36a6faa30678209c3839f4ef4d3c60bd60f4df1d2a",
+              "pass": true
+            },
+            "finalDraftRequired": true,
+            "finalDraft": {
+              "file": "immersive-world-agent-work-sessions/part-workshop/measured-grid-pulse-depth/drafts/measured-grid-pulse-depth.module.mjs",
+              "sessionFile": "drafts/measured-grid-pulse-depth.module.mjs",
+              "sha256": "6445d35fe93ad06f89e3b2040ecb5b00f86d47186f4948eb2140991ad844a8f2",
+              "bytes": 33662,
+              "source": "agent-work-session-draft"
+            },
+            "finalPreview": {
+              "status": "succeeded"
+            },
+            "preview": {
+              "required": true,
+              "capturedViews": [
+                "desktop"
+              ],
+              "healthStatus": "ok"
+            },
+            "visibleAbsence": {
+              "intentional": true,
+              "allowedAbsentOutput": true,
+              "facts": [
+                "animation may be absent or minimal",
+                "no literal moving vehicles or cyclists",
+                "no heavy bloom, smoke, sparks, or cinematic accident effects",
+                "still frame must carry the artwork without motion"
+              ],
+              "rationale": "Motion is optional by policy and should serve the artist-led construction, not replace it."
+            }
+          },
+          "plannedPart": {
+            "source": "world-part-plan.json#/parts/6",
+            "partId": "measured-grid-pulse-depth",
+            "role": "creative-depth-motion-and-effects-system",
+            "intent": "Provide deep-atmospheric recession and optional steady-grid-pulse cadence that expresses measured, concentrated pressure while keeping the still composition readable.",
+            "messagePurpose": "Provide deep-atmospheric recession and optional steady-grid-pulse cadence that expresses measured, concentrated pressure while keeping the still composition readable.",
+            "visualTarget": "Provide deep-atmospheric recession and optional steady-grid-pulse cadence that expresses measured, concentrated pressure while keeping the still composition readable.",
+            "relationshipToWhole": "It makes the shallow painting language immersive by spacing layers through the camera and adding restrained cadence only where it clarifies the news weighting.",
+            "visibleAbsence": {
+              "intentional": true,
+              "facts": [
+                "animation may be absent or minimal",
+                "no literal moving vehicles or cyclists",
+                "no heavy bloom, smoke, sparks, or cinematic accident effects",
+                "still frame must carry the artwork without motion"
+              ],
+              "rationale": "Motion is optional by policy and should serve the artist-led construction, not replace it."
+            }
+          },
+          "compositionBeforeHash": "483ad488d405dfdd",
+          "compositionAfterHash": "9918626e3986de88"
+        },
+        "intent": "Provide deep-atmospheric recession and optional steady-grid-pulse cadence that expresses measured, concentrated pressure while keeping the still composition readable.",
+        "messagePurpose": "Provide deep-atmospheric recession and optional steady-grid-pulse cadence that expresses measured, concentrated pressure while keeping the still composition readable.",
+        "visualTarget": "Provide deep-atmospheric recession and optional steady-grid-pulse cadence that expresses measured, concentrated pressure while keeping the still composition readable.",
+        "relationshipToWhole": "It makes the shallow painting language immersive by spacing layers through the camera and adding restrained cadence only where it clarifies the news weighting.",
+        "visibleAbsence": {
+          "intentional": true,
+          "facts": [
+            "animation may be absent or minimal",
+            "no literal moving vehicles or cyclists",
+            "no heavy bloom, smoke, sparks, or cinematic accident effects",
+            "still frame must carry the artwork without motion"
+          ],
+          "rationale": "Motion is optional by policy and should serve the artist-led construction, not replace it."
+        },
+        "params": {
+          "band": "support-readability",
+          "layer": "background",
+          "position": [
+            -0.3,
+            -0.12,
+            -4.15
+          ],
+          "scale": 0.72,
+          "opacity": 0.54,
+          "motionIntensity": 0.12,
+          "renderOrder": 2,
+          "visibilityPriority": "supporting"
+        },
+        "paramSemantics": {
+          "band": "visual placement/readability band for full-world params; distinct from declared compositionOwnership.lane"
+        },
+        "compositionOwnership": {
+          "lane": "creative-depth-motion-effects",
+          "owns": [
+            "deep-atmospheric spatial recession",
+            "subtle parallax and scale separation",
+            "optional steady-grid-pulse animation",
+            "localized low-intensity motion around fracture and contours",
+            "subordinate soft particles, vignette, value contrast, or emissive accents",
+            "capture-safe elapsed-time behavior"
+          ],
+          "avoid": [
+            "generic effect layer",
+            "fast crash animation",
+            "large glowing spectacle",
+            "motion that destroys handmade ambiguity",
+            "non-deterministic capture behavior"
+          ]
+        }
+      }
+    ],
+    "compositionEvidence": {
+      "draftIntent": "Assemble seven accepted WebGPU-compatible Bram van Velde Tour-fracture modules as one all-over abstract field: environment as quiet paper support, asymmetrical-plane-armature as the main structure, concentrated-fracture-transfer as the selected-news pressure, contour/void/material parts as readable overlays, and measured-grid-pulse-depth as subdued recession.",
+      "mediaInspected": [
+        "part-preview-evolution/001-world-environment-attempt-1-desktop.jpg",
+        "part-preview-evolution/002-asymmetrical-plane-armature-attempt-1-desktop.jpg",
+        "part-preview-evolution/003-concentrated-fracture-transfer-attempt-1-desktop.jpg",
+        "part-preview-evolution/004-drawn-contour-navigation-attempt-1-desktop.jpg",
+        "part-preview-evolution/005-oval-triangle-void-gates-attempt-1-desktop.jpg",
+        "part-preview-evolution/006-matte-scraped-pigment-skin-attempt-1-desktop.jpg",
+        "part-preview-evolution/007-measured-grid-pulse-depth-attempt-1-desktop.jpg"
+      ],
+      "rendererCompatibilityPreserved": [
+        "No module source was created or replaced.",
+        "Every accepted part keeps its accepted moduleRef hash and empty assetRefs.",
+        "Accepted WebGPU facts remain attached to the referenced generated modules and accepted-part evidence; composition uses only world/camera/lighting/output grade and part params."
+      ],
+      "skillUse": {
+        "attempted": true,
+        "used": [
+          "$threejs-visual-validation",
+          "$threejs-camera-direction",
+          "$threejs-exposure-color-grading"
+        ],
+        "takeaways": [
+          "Use the canonical fixed camera as the design bookmark and judge both desktop and mobile before changing projection.",
+          "Keep color ownership in world.outputColorTransform with one subtle final contrast/saturation/exposure/vignette grade.",
+          "Accept only after Playwright desktop and mobile captures plus render reports show nonblank WebGPU output with value range, focal contrast, edge separation, material marks, and controlled accent energy."
+        ]
+      }
+    },
+    "generatedModules": [
+      {
+        "type": "immersive-world-generated-module",
+        "version": 1,
+        "moduleId": "bram-van-velde-tour-fracture-world-environment",
+        "partId": "world-environment",
+        "hash": "f68836870f952db9af7cab30e34022894a574cc3371ebbad4f7381575618a6e0",
+        "integrity": "sha256-f68836870f952db9af7cab30e34022894a574cc3371ebbad4f7381575618a6e0",
+        "exportName": "createImmersiveWorldPart",
+        "file": "data/immersive-world/generated-modules/f68836870f952db9af7cab30e34022894a574cc3371ebbad4f7381575618a6e0.mjs",
+        "url": "./data/immersive-world/generated-modules/f68836870f952db9af7cab30e34022894a574cc3371ebbad4f7381575618a6e0.mjs",
+        "rendererCompatibility": {
+          "version": 1,
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material",
+            "webgpu-native-helper-utility",
+            "source-used-project-webgpu-material-factory"
+          ],
+          "featureFacts": [
+            {
+              "kind": "standard-material",
+              "material": "MeshBasicMaterial",
+              "family": "standard-material-surface",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "webgpu-native-helper",
+              "id": "scraped-paint-grain-material",
+              "family": "paint-grain-surface",
+              "factory": "scraped-paint-grain-surface",
+              "material": "MeshBasicNodeMaterial",
+              "surface": "three-mesh-basic-node-material-tsl",
+              "reason": "webgpu-native-helper-utility"
+            },
+            {
+              "kind": "material-factory",
+              "id": "sky-background-field",
+              "family": "sky-background-field",
+              "material": "MeshBasicMaterial",
+              "surface": "scene-background-or-large-plane",
+              "reason": "source-used-project-webgpu-material-factory"
+            },
+            {
+              "kind": "webgpu-native-helper",
+              "id": "direction-space-skybox-shell",
+              "family": "sky-background-field",
+              "factory": "sky-background-field",
+              "material": "MeshBasicMaterial",
+              "surface": "direction-space-vertex-color-skybox-shell",
+              "reason": "webgpu-native-helper-utility"
+            },
+            {
+              "kind": "material-factory",
+              "id": "color-field",
+              "family": "color-field",
+              "material": "MeshBasicMaterial",
+              "surface": "three-basic-or-standard-material",
+              "reason": "source-used-project-webgpu-material-factory"
+            },
+            {
+              "kind": "material-factory",
+              "id": "procedural-marks",
+              "family": "procedural-marks",
+              "material": "MeshBasicMaterial",
+              "surface": "instanced-geometry-material",
+              "reason": "source-used-project-webgpu-material-factory"
+            },
+            {
+              "kind": "standard-material",
+              "material": "LineBasicMaterial",
+              "family": "standard-material-surface",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "standard-material",
+              "material": "PointsMaterial",
+              "family": "standard-material-surface",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "material-factory",
+              "id": "soft-particles",
+              "family": "soft-particles",
+              "material": "PointsMaterial",
+              "surface": "three-points-material",
+              "reason": "source-used-project-webgpu-material-factory"
+            }
+          ],
+          "compatibleSurfaces": [
+            {
+              "reason": "webgpu-safe-material",
+              "materialType": "MeshBasicMaterial"
+            },
+            {
+              "reason": "webgpu-native-helper-utility",
+              "api": "utilities.createScrapedPaintGrainMaterial",
+              "helperId": "scraped-paint-grain-material",
+              "featureFamily": "paint-grain-surface",
+              "outputKind": "material",
+              "materialType": "MeshBasicNodeMaterial",
+              "runtimeSurface": "three-mesh-basic-node-material-tsl",
+              "factoryId": "scraped-paint-grain-surface",
+              "materialFactoryId": "scraped-paint-grain-surface",
+              "factoryCategory": "matte-painted-surface"
+            },
+            {
+              "reason": "source-used-project-webgpu-material-factory",
+              "materialType": "MeshBasicMaterial",
+              "runtimeSurface": "scene-background-or-large-plane",
+              "factoryId": "sky-background-field",
+              "materialFactoryId": "sky-background-field",
+              "factoryCategory": "sky-background-field",
+              "property": "materialFactoryId"
+            },
+            {
+              "reason": "webgpu-native-helper-utility",
+              "api": "utilities.createDirectionSpaceSkyboxShell",
+              "helperId": "direction-space-skybox-shell",
+              "featureFamily": "sky-background-field",
+              "outputKind": "object-bundle",
+              "materialType": "MeshBasicMaterial",
+              "runtimeSurface": "direction-space-vertex-color-skybox-shell",
+              "factoryId": "sky-background-field",
+              "materialFactoryId": "sky-background-field",
+              "factoryCategory": "sky-background-field"
+            },
+            {
+              "reason": "source-used-project-webgpu-material-factory",
+              "materialType": "MeshBasicMaterial",
+              "runtimeSurface": "three-basic-or-standard-material",
+              "factoryId": "color-field",
+              "materialFactoryId": "color-field",
+              "factoryCategory": "color-field",
+              "property": "materialFactoryId"
+            },
+            {
+              "reason": "source-used-project-webgpu-material-factory",
+              "materialType": "MeshBasicMaterial",
+              "runtimeSurface": "instanced-geometry-material",
+              "factoryId": "procedural-marks",
+              "materialFactoryId": "procedural-marks",
+              "factoryCategory": "procedural-marks",
+              "property": "materialFactoryId"
+            },
+            {
+              "reason": "webgpu-safe-material",
+              "materialType": "LineBasicMaterial"
+            },
+            {
+              "reason": "webgpu-safe-material",
+              "materialType": "PointsMaterial"
+            },
+            {
+              "reason": "source-used-project-webgpu-material-factory",
+              "materialType": "PointsMaterial",
+              "runtimeSurface": "three-points-material",
+              "factoryId": "soft-particles",
+              "materialFactoryId": "soft-particles",
+              "factoryCategory": "soft-particles",
+              "property": "materialFactoryId"
+            }
+          ]
+        }
+      },
+      {
+        "type": "immersive-world-generated-module",
+        "version": 1,
+        "moduleId": "bram-van-velde-tour-fracture-asymmetrical-plane-armature",
+        "partId": "asymmetrical-plane-armature",
+        "hash": "e37177901dc137d5be7fd572f88da7491c22cd6c201a52579861d5e10976f899",
+        "integrity": "sha256-e37177901dc137d5be7fd572f88da7491c22cd6c201a52579861d5e10976f899",
+        "exportName": "createImmersiveWorldPart",
+        "file": "data/immersive-world/generated-modules/e37177901dc137d5be7fd572f88da7491c22cd6c201a52579861d5e10976f899.mjs",
+        "url": "./data/immersive-world/generated-modules/e37177901dc137d5be7fd572f88da7491c22cd6c201a52579861d5e10976f899.mjs",
+        "rendererCompatibility": {
+          "version": 1,
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material",
+            "webgpu-native-helper-utility"
+          ],
+          "featureFacts": [
+            {
+              "kind": "standard-material",
+              "material": "MeshBasicMaterial",
+              "family": "standard-material-surface",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "standard-material",
+              "material": "LineBasicMaterial",
+              "family": "standard-material-surface",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "webgpu-native-helper",
+              "id": "scraped-paint-grain-material",
+              "family": "paint-grain-surface",
+              "factory": "scraped-paint-grain-surface",
+              "material": "MeshBasicNodeMaterial",
+              "surface": "three-mesh-basic-node-material-tsl",
+              "reason": "webgpu-native-helper-utility"
+            }
+          ],
+          "compatibleSurfaces": [
+            {
+              "reason": "webgpu-safe-material",
+              "materialType": "MeshBasicMaterial"
+            },
+            {
+              "reason": "webgpu-safe-material",
+              "materialType": "LineBasicMaterial"
+            },
+            {
+              "reason": "webgpu-native-helper-utility",
+              "api": "utilities.createScrapedPaintGrainMaterial",
+              "helperId": "scraped-paint-grain-material",
+              "featureFamily": "paint-grain-surface",
+              "outputKind": "material",
+              "materialType": "MeshBasicNodeMaterial",
+              "runtimeSurface": "three-mesh-basic-node-material-tsl",
+              "factoryId": "scraped-paint-grain-surface",
+              "materialFactoryId": "scraped-paint-grain-surface",
+              "factoryCategory": "matte-painted-surface"
+            }
+          ]
+        }
+      },
+      {
+        "type": "immersive-world-generated-module",
+        "version": 1,
+        "moduleId": "bram-van-velde-tour-fracture-concentrated-fracture-transfer",
+        "partId": "concentrated-fracture-transfer",
+        "hash": "dc62bda1e840ce002a9d7366614679668e94d2c533fb18513242a08776ff5216",
+        "integrity": "sha256-dc62bda1e840ce002a9d7366614679668e94d2c533fb18513242a08776ff5216",
+        "exportName": "createImmersiveWorldPart",
+        "file": "data/immersive-world/generated-modules/dc62bda1e840ce002a9d7366614679668e94d2c533fb18513242a08776ff5216.mjs",
+        "url": "./data/immersive-world/generated-modules/dc62bda1e840ce002a9d7366614679668e94d2c533fb18513242a08776ff5216.mjs",
+        "rendererCompatibility": {
+          "version": 1,
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material",
+            "webgpu-native-helper-utility"
+          ],
+          "featureFacts": [
+            {
+              "kind": "standard-material",
+              "material": "MeshBasicMaterial",
+              "family": "standard-material-surface",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "standard-material",
+              "material": "LineBasicMaterial",
+              "family": "standard-material-surface",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "webgpu-native-helper",
+              "id": "scraped-paint-grain-material",
+              "family": "paint-grain-surface",
+              "factory": "scraped-paint-grain-surface",
+              "material": "MeshBasicNodeMaterial",
+              "surface": "three-mesh-basic-node-material-tsl",
+              "reason": "webgpu-native-helper-utility"
+            },
+            {
+              "kind": "webgpu-native-helper",
+              "id": "animated-instanced-mark-field",
+              "family": "instanced-marks",
+              "factory": "procedural-marks",
+              "material": "MeshBasicMaterial",
+              "surface": "three-instanced-mesh-basic-material-frame-facts",
+              "reason": "webgpu-native-helper-utility"
+            }
+          ],
+          "compatibleSurfaces": [
+            {
+              "reason": "webgpu-safe-material",
+              "materialType": "MeshBasicMaterial"
+            },
+            {
+              "reason": "webgpu-safe-material",
+              "materialType": "LineBasicMaterial"
+            },
+            {
+              "reason": "webgpu-native-helper-utility",
+              "api": "utilities.createScrapedPaintGrainMaterial",
+              "helperId": "scraped-paint-grain-material",
+              "featureFamily": "paint-grain-surface",
+              "outputKind": "material",
+              "materialType": "MeshBasicNodeMaterial",
+              "runtimeSurface": "three-mesh-basic-node-material-tsl",
+              "factoryId": "scraped-paint-grain-surface",
+              "materialFactoryId": "scraped-paint-grain-surface",
+              "factoryCategory": "matte-painted-surface"
+            },
+            {
+              "reason": "webgpu-native-helper-utility",
+              "api": "utilities.createAnimatedInstancedMarkField",
+              "helperId": "animated-instanced-mark-field",
+              "featureFamily": "instanced-marks",
+              "outputKind": "object-bundle",
+              "materialType": "MeshBasicMaterial",
+              "runtimeSurface": "three-instanced-mesh-basic-material-frame-facts",
+              "factoryId": "procedural-marks",
+              "materialFactoryId": "procedural-marks",
+              "factoryCategory": "procedural-marks"
+            }
+          ]
+        }
+      },
+      {
+        "type": "immersive-world-generated-module",
+        "version": 1,
+        "moduleId": "bram-van-velde-tour-fracture-drawn-contour-navigation",
+        "partId": "drawn-contour-navigation",
+        "hash": "a42ffc6690b4bc39adaa51fd50f4dd4c61c00e8c22dca3e9c08ac1959497e2c7",
+        "integrity": "sha256-a42ffc6690b4bc39adaa51fd50f4dd4c61c00e8c22dca3e9c08ac1959497e2c7",
+        "exportName": "createImmersiveWorldPart",
+        "file": "data/immersive-world/generated-modules/a42ffc6690b4bc39adaa51fd50f4dd4c61c00e8c22dca3e9c08ac1959497e2c7.mjs",
+        "url": "./data/immersive-world/generated-modules/a42ffc6690b4bc39adaa51fd50f4dd4c61c00e8c22dca3e9c08ac1959497e2c7.mjs",
+        "rendererCompatibility": {
+          "version": 1,
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material",
+            "webgpu-native-helper-utility"
+          ],
+          "featureFacts": [
+            {
+              "kind": "standard-material",
+              "material": "MeshBasicMaterial",
+              "family": "standard-material-surface",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "standard-material",
+              "material": "LineBasicMaterial",
+              "family": "standard-material-surface",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "webgpu-native-helper",
+              "id": "procedural-mark-material",
+              "family": "procedural-marks",
+              "factory": "procedural-marks",
+              "material": "MeshBasicMaterial",
+              "surface": "three-basic-material",
+              "reason": "webgpu-native-helper-utility"
+            },
+            {
+              "kind": "webgpu-native-helper",
+              "id": "animated-instanced-mark-field",
+              "family": "instanced-marks",
+              "factory": "procedural-marks",
+              "material": "MeshBasicMaterial",
+              "surface": "three-instanced-mesh-basic-material-frame-facts",
+              "reason": "webgpu-native-helper-utility"
+            }
+          ],
+          "compatibleSurfaces": [
+            {
+              "reason": "webgpu-safe-material",
+              "materialType": "MeshBasicMaterial"
+            },
+            {
+              "reason": "webgpu-safe-material",
+              "materialType": "LineBasicMaterial"
+            },
+            {
+              "reason": "webgpu-native-helper-utility",
+              "api": "utilities.createProceduralMarkMaterial",
+              "helperId": "procedural-mark-material",
+              "featureFamily": "procedural-marks",
+              "outputKind": "material",
+              "materialType": "MeshBasicMaterial",
+              "runtimeSurface": "three-basic-material",
+              "factoryId": "procedural-marks",
+              "materialFactoryId": "procedural-marks",
+              "factoryCategory": "procedural-marks"
+            },
+            {
+              "reason": "webgpu-native-helper-utility",
+              "api": "utilities.createAnimatedInstancedMarkField",
+              "helperId": "animated-instanced-mark-field",
+              "featureFamily": "instanced-marks",
+              "outputKind": "object-bundle",
+              "materialType": "MeshBasicMaterial",
+              "runtimeSurface": "three-instanced-mesh-basic-material-frame-facts",
+              "factoryId": "procedural-marks",
+              "materialFactoryId": "procedural-marks",
+              "factoryCategory": "procedural-marks"
+            }
+          ]
+        }
+      },
+      {
+        "type": "immersive-world-generated-module",
+        "version": 1,
+        "moduleId": "bram-van-velde-tour-fracture-oval-triangle-void-gates",
+        "partId": "oval-triangle-void-gates",
+        "hash": "0149c8fd56a828479a780ec90118b9eb538cf620d96a107919790921c72c8763",
+        "integrity": "sha256-0149c8fd56a828479a780ec90118b9eb538cf620d96a107919790921c72c8763",
+        "exportName": "createImmersiveWorldPart",
+        "file": "data/immersive-world/generated-modules/0149c8fd56a828479a780ec90118b9eb538cf620d96a107919790921c72c8763.mjs",
+        "url": "./data/immersive-world/generated-modules/0149c8fd56a828479a780ec90118b9eb538cf620d96a107919790921c72c8763.mjs",
+        "rendererCompatibility": {
+          "version": 1,
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material",
+            "webgpu-native-helper-utility"
+          ],
+          "featureFacts": [
+            {
+              "kind": "standard-material",
+              "material": "MeshBasicMaterial",
+              "family": "standard-material-surface",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "standard-material",
+              "material": "LineBasicMaterial",
+              "family": "standard-material-surface",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "webgpu-native-helper",
+              "id": "scraped-paint-grain-material",
+              "family": "paint-grain-surface",
+              "factory": "scraped-paint-grain-surface",
+              "material": "MeshBasicNodeMaterial",
+              "surface": "three-mesh-basic-node-material-tsl",
+              "reason": "webgpu-native-helper-utility"
+            },
+            {
+              "kind": "webgpu-native-helper",
+              "id": "procedural-mark-material",
+              "family": "procedural-marks",
+              "factory": "procedural-marks",
+              "material": "MeshBasicMaterial",
+              "surface": "three-basic-material",
+              "reason": "webgpu-native-helper-utility"
+            },
+            {
+              "kind": "standard-material",
+              "material": "PointsMaterial",
+              "family": "standard-material-surface",
+              "reason": "webgpu-safe-material"
+            }
+          ],
+          "compatibleSurfaces": [
+            {
+              "reason": "webgpu-safe-material",
+              "materialType": "MeshBasicMaterial"
+            },
+            {
+              "reason": "webgpu-safe-material",
+              "materialType": "LineBasicMaterial"
+            },
+            {
+              "reason": "webgpu-native-helper-utility",
+              "api": "utilities.createScrapedPaintGrainMaterial",
+              "helperId": "scraped-paint-grain-material",
+              "featureFamily": "paint-grain-surface",
+              "outputKind": "material",
+              "materialType": "MeshBasicNodeMaterial",
+              "runtimeSurface": "three-mesh-basic-node-material-tsl",
+              "factoryId": "scraped-paint-grain-surface",
+              "materialFactoryId": "scraped-paint-grain-surface",
+              "factoryCategory": "matte-painted-surface"
+            },
+            {
+              "reason": "webgpu-native-helper-utility",
+              "api": "utilities.createProceduralMarkMaterial",
+              "helperId": "procedural-mark-material",
+              "featureFamily": "procedural-marks",
+              "outputKind": "material",
+              "materialType": "MeshBasicMaterial",
+              "runtimeSurface": "three-basic-material",
+              "factoryId": "procedural-marks",
+              "materialFactoryId": "procedural-marks",
+              "factoryCategory": "procedural-marks"
+            },
+            {
+              "reason": "webgpu-safe-material",
+              "materialType": "PointsMaterial"
+            }
+          ]
+        }
+      },
+      {
+        "type": "immersive-world-generated-module",
+        "version": 1,
+        "moduleId": "bram-van-velde-tour-fracture-matte-scraped-pigment-skin",
+        "partId": "matte-scraped-pigment-skin",
+        "hash": "fdf554cd9d51d57e56a2c6ad34ff04795aac954090a03b6d43407c51caa93fc5",
+        "integrity": "sha256-fdf554cd9d51d57e56a2c6ad34ff04795aac954090a03b6d43407c51caa93fc5",
+        "exportName": "createImmersiveWorldPart",
+        "file": "data/immersive-world/generated-modules/fdf554cd9d51d57e56a2c6ad34ff04795aac954090a03b6d43407c51caa93fc5.mjs",
+        "url": "./data/immersive-world/generated-modules/fdf554cd9d51d57e56a2c6ad34ff04795aac954090a03b6d43407c51caa93fc5.mjs",
+        "rendererCompatibility": {
+          "version": 1,
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material",
+            "webgpu-native-helper-utility"
+          ],
+          "featureFacts": [
+            {
+              "kind": "standard-material",
+              "material": "MeshBasicMaterial",
+              "family": "standard-material-surface",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "standard-material",
+              "material": "LineBasicMaterial",
+              "family": "standard-material-surface",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "webgpu-native-helper",
+              "id": "scraped-paint-grain-material",
+              "family": "paint-grain-surface",
+              "factory": "scraped-paint-grain-surface",
+              "material": "MeshBasicNodeMaterial",
+              "surface": "three-mesh-basic-node-material-tsl",
+              "reason": "webgpu-native-helper-utility"
+            },
+            {
+              "kind": "webgpu-native-helper",
+              "id": "procedural-mark-material",
+              "family": "procedural-marks",
+              "factory": "procedural-marks",
+              "material": "MeshBasicMaterial",
+              "surface": "three-basic-material",
+              "reason": "webgpu-native-helper-utility"
+            },
+            {
+              "kind": "webgpu-native-helper",
+              "id": "instanced-mark-field",
+              "family": "instanced-marks",
+              "factory": "procedural-marks",
+              "material": "MeshBasicMaterial",
+              "surface": "three-instanced-mesh-basic-material",
+              "reason": "webgpu-native-helper-utility"
+            }
+          ],
+          "compatibleSurfaces": [
+            {
+              "reason": "webgpu-safe-material",
+              "materialType": "MeshBasicMaterial"
+            },
+            {
+              "reason": "webgpu-safe-material",
+              "materialType": "LineBasicMaterial"
+            },
+            {
+              "reason": "webgpu-native-helper-utility",
+              "api": "utilities.createScrapedPaintGrainMaterial",
+              "helperId": "scraped-paint-grain-material",
+              "featureFamily": "paint-grain-surface",
+              "outputKind": "material",
+              "materialType": "MeshBasicNodeMaterial",
+              "runtimeSurface": "three-mesh-basic-node-material-tsl",
+              "factoryId": "scraped-paint-grain-surface",
+              "materialFactoryId": "scraped-paint-grain-surface",
+              "factoryCategory": "matte-painted-surface"
+            },
+            {
+              "reason": "webgpu-native-helper-utility",
+              "api": "utilities.createProceduralMarkMaterial",
+              "helperId": "procedural-mark-material",
+              "featureFamily": "procedural-marks",
+              "outputKind": "material",
+              "materialType": "MeshBasicMaterial",
+              "runtimeSurface": "three-basic-material",
+              "factoryId": "procedural-marks",
+              "materialFactoryId": "procedural-marks",
+              "factoryCategory": "procedural-marks"
+            },
+            {
+              "reason": "webgpu-native-helper-utility",
+              "api": "utilities.createInstancedMarkField",
+              "helperId": "instanced-mark-field",
+              "featureFamily": "instanced-marks",
+              "outputKind": "object-bundle",
+              "materialType": "MeshBasicMaterial",
+              "runtimeSurface": "three-instanced-mesh-basic-material",
+              "factoryId": "procedural-marks",
+              "materialFactoryId": "procedural-marks",
+              "factoryCategory": "procedural-marks"
+            }
+          ]
+        }
+      },
+      {
+        "type": "immersive-world-generated-module",
+        "version": 1,
+        "moduleId": "bram-van-velde-tour-fracture-measured-grid-pulse-depth",
+        "partId": "measured-grid-pulse-depth",
+        "hash": "49f793f6656b978519430d36a6faa30678209c3839f4ef4d3c60bd60f4df1d2a",
+        "integrity": "sha256-49f793f6656b978519430d36a6faa30678209c3839f4ef4d3c60bd60f4df1d2a",
+        "exportName": "createImmersiveWorldPart",
+        "file": "data/immersive-world/generated-modules/49f793f6656b978519430d36a6faa30678209c3839f4ef4d3c60bd60f4df1d2a.mjs",
+        "url": "./data/immersive-world/generated-modules/49f793f6656b978519430d36a6faa30678209c3839f4ef4d3c60bd60f4df1d2a.mjs",
+        "rendererCompatibility": {
+          "version": 1,
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material",
+            "webgpu-native-helper-utility"
+          ],
+          "featureFacts": [
+            {
+              "kind": "standard-material",
+              "material": "MeshBasicMaterial",
+              "family": "standard-material-surface",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "standard-material",
+              "material": "LineBasicMaterial",
+              "family": "standard-material-surface",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "webgpu-native-helper",
+              "id": "scraped-paint-grain-material",
+              "family": "paint-grain-surface",
+              "factory": "scraped-paint-grain-surface",
+              "material": "MeshBasicNodeMaterial",
+              "surface": "three-mesh-basic-node-material-tsl",
+              "reason": "webgpu-native-helper-utility"
+            },
+            {
+              "kind": "webgpu-native-helper",
+              "id": "animated-instanced-mark-field",
+              "family": "instanced-marks",
+              "factory": "procedural-marks",
+              "material": "MeshBasicMaterial",
+              "surface": "three-instanced-mesh-basic-material-frame-facts",
+              "reason": "webgpu-native-helper-utility"
+            },
+            {
+              "kind": "standard-material",
+              "material": "PointsMaterial",
+              "family": "standard-material-surface",
+              "reason": "webgpu-safe-material"
+            }
+          ],
+          "compatibleSurfaces": [
+            {
+              "reason": "webgpu-safe-material",
+              "materialType": "MeshBasicMaterial"
+            },
+            {
+              "reason": "webgpu-safe-material",
+              "materialType": "LineBasicMaterial"
+            },
+            {
+              "reason": "webgpu-native-helper-utility",
+              "api": "utilities.createScrapedPaintGrainMaterial",
+              "helperId": "scraped-paint-grain-material",
+              "featureFamily": "paint-grain-surface",
+              "outputKind": "material",
+              "materialType": "MeshBasicNodeMaterial",
+              "runtimeSurface": "three-mesh-basic-node-material-tsl",
+              "factoryId": "scraped-paint-grain-surface",
+              "materialFactoryId": "scraped-paint-grain-surface",
+              "factoryCategory": "matte-painted-surface"
+            },
+            {
+              "reason": "webgpu-native-helper-utility",
+              "api": "utilities.createAnimatedInstancedMarkField",
+              "helperId": "animated-instanced-mark-field",
+              "featureFamily": "instanced-marks",
+              "outputKind": "object-bundle",
+              "materialType": "MeshBasicMaterial",
+              "runtimeSurface": "three-instanced-mesh-basic-material-frame-facts",
+              "factoryId": "procedural-marks",
+              "materialFactoryId": "procedural-marks",
+              "factoryCategory": "procedural-marks"
+            },
+            {
+              "reason": "webgpu-safe-material",
+              "materialType": "PointsMaterial"
+            }
+          ]
+        }
+      }
+    ],
+    "renderFacts": {
+      "environmentPresent": true,
+      "cameraOwnedByComposition": true,
+      "lightingOwnedByComposition": true,
+      "nearFarClippingOwned": true,
+      "acceptedPartCount": 7,
+      "generatedModuleCount": 7,
+      "generatedAssetCount": 0,
+      "rendererAuthoringTarget": "webgpu-project-scene",
+      "rendererCompatibilityStatus": "webgpu-compatible",
+      "webgpuRendererGateRequired": true,
+      "webgpuRendererCompatible": true,
+      "desktopPreviewRecorded": true,
+      "mobilePreviewRecorded": true
+    }
+  },
+  "image": {
+    "thumbnailJpeg": "./data/media/2026-07-13-0703z-serious-accident-at-the-tour-de-france-car-crashes-into-barriers-at-the/thumb-320.jpg",
+    "openGraphJpeg": "./data/media/2026-07-13-0703z-serious-accident-at-the-tour-de-france-car-crashes-into-barriers-at-the/og-1200x630.jpg",
+    "instagramJpeg": "./data/media/2026-07-13-0703z-serious-accident-at-the-tour-de-france-car-crashes-into-barriers-at-the/instagram-1080x1350.jpg",
+    "altText": "Serious accident at the Tour de France: car crashes into barriers at the finish in Correze, leaving eight injured, one seriously by Bram van Velde."
+  }
+}
