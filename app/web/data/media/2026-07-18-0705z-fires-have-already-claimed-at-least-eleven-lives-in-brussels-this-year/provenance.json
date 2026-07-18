@@ -1,0 +1,76 @@
+{
+  "version": 2,
+  "kind": "rusty-art-public-media-assets",
+  "artworkId": "2026-07-18-0705z-fires-have-already-claimed-at-least-eleven-lives-in-brussels-this-year",
+  "source": {
+    "sha256": "a07c119b580515f3ab7b65982a44e22071c7f5ba814b5e74d9728152783b8979",
+    "role": "daily-preview-story-desktop"
+  },
+  "sources": {
+    "primary": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-desktop",
+      "sha256": "a07c119b580515f3ab7b65982a44e22071c7f5ba814b5e74d9728152783b8979"
+    },
+    "openGraph": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-open-graph",
+      "sha256": "bc6b925da8783edd16a85241d1a615ad2699554fd44a65283ce24055256133ff"
+    },
+    "instagram": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-instagram",
+      "sha256": "985007d0684471f8724e2aee13976c766cc146763f1d005e2764d1a663b44fa7"
+    }
+  },
+  "targets": {
+    "thumb-320.jpg": {
+      "spec": {
+        "fileName": "thumb-320.jpg",
+        "width": 320,
+        "height": null,
+        "fit": "inside",
+        "withoutEnlargement": true,
+        "format": "jpeg",
+        "quality": 82
+      },
+      "publicPath": "./data/media/2026-07-18-0705z-fires-have-already-claimed-at-least-eleven-lives-in-brussels-this-year/thumb-320.jpg",
+      "source": {
+        "sha256": "a07c119b580515f3ab7b65982a44e22071c7f5ba814b5e74d9728152783b8979",
+        "role": "daily-preview-story-desktop"
+      }
+    },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-07-18-0705z-fires-have-already-claimed-at-least-eleven-lives-in-brussels-this-year/og-1200x630.jpg",
+      "source": {
+        "sha256": "bc6b925da8783edd16a85241d1a615ad2699554fd44a65283ce24055256133ff",
+        "role": "daily-preview-story-open-graph"
+      }
+    },
+    "instagram-1080x1350.jpg": {
+      "spec": {
+        "fileName": "instagram-1080x1350.jpg",
+        "width": 1080,
+        "height": 1350,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-07-18-0705z-fires-have-already-claimed-at-least-eleven-lives-in-brussels-this-year/instagram-1080x1350.jpg",
+      "source": {
+        "sha256": "985007d0684471f8724e2aee13976c766cc146763f1d005e2764d1a663b44fa7",
+        "role": "daily-preview-story-instagram"
+      }
+    }
+  }
+}

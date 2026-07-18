@@ -1,0 +1,4119 @@
+{
+  "id": "2026-07-18-0705z-fires-have-already-claimed-at-least-eleven-lives-in-brussels-this-year",
+  "date": "2026-07-18",
+  "title": "Fires have already claimed at least eleven lives in Brussels this year",
+  "generatedAt": "2026-07-18T07:21:00.268Z",
+  "news": {
+    "source": "bruzz",
+    "title": "Fires have already claimed at least eleven lives in Brussels this year",
+    "link": "https://www.bruzz.be/actua/veiligheid/branden-eisten-dit-jaar-al-minstens-elf-levens-brussel-2026-07-15",
+    "score": null
+  },
+  "inspiration": {
+    "artist": "Rudolf Bauer",
+    "tags": [
+      "non-literal flow transformation",
+      "Brussels",
+      "immersive-world"
+    ],
+    "links": {}
+  },
+  "seed": null,
+  "sceneStrategy": null,
+  "techStack": null,
+  "newsVisualMappings": [],
+  "qualityScore": {
+    "score": null,
+    "summary": null,
+    "heuristic": {
+      "score": null,
+      "breakdown": {}
+    },
+    "calibration": {
+      "sampleCount": 0,
+      "trustWeight": 0
+    },
+    "alignment": {
+      "totalAlign": null,
+      "components": {
+        "title": {
+          "score": null
+        },
+        "style": {
+          "score": null
+        },
+        "emotional": {
+          "score": null
+        }
+      }
+    }
+  },
+  "rationale": {
+    "intent": {
+      "signal": null,
+      "emotion": null,
+      "tension": null,
+      "balance": null,
+      "motion": null
+    },
+    "selection": {
+      "whyHeadline": null,
+      "priorityTerms": []
+    },
+    "qualitySummary": null
+  },
+  "runPolicy": null,
+  "artCreationMethod": "immersive-world-v1",
+  "world": {
+    "id": "immersive-world-rudolf-bauer-brussels-fire-final",
+    "method": "immersive-world-v1",
+    "title": "Fires have already claimed at least eleven lives in Brussels this year",
+    "date": "2026-07-18",
+    "generatedAt": "2026-07-18T06:00:00.000Z",
+    "artCreationMethod": "immersive-world-v1",
+    "news": {
+      "title": "Fires have already claimed at least eleven lives in Brussels this year",
+      "source": "bruzz",
+      "summary": "Selected news: Fires have already claimed at least eleven lives in Brussels this year.",
+      "message": "Selected news meaning: Fires have already claimed at least eleven lives in Brussels this year. News intensity is low, pace is measured, spread is concentrated.",
+      "trendLabel": "Brussels",
+      "trendKey": "brussel"
+    },
+    "inspiration": {
+      "artist": "Rudolf Bauer",
+      "movement": "handmade abstract geometry",
+      "summary": "Matte mixed drawing and painting language using asymmetrical radial symbols, diagonal thrusts, sweeping arcs, translucent washes, and selective contour-line notation."
+    },
+    "rendererAuthoringTarget": "webgpu-project-scene",
+    "rendererAuthoring": {
+      "version": 1,
+      "targetMode": "webgpu-project-scene",
+      "requestedTarget": "webgpu-project-scene",
+      "effectiveTarget": "webgpu-project-scene",
+      "webgpuTargeted": true,
+      "legacyWebglTargeted": false,
+      "unspecified": false,
+      "compatibilityGateRequired": true
+    },
+    "rendererCompatibility": {
+      "version": 1,
+      "targetMode": "webgpu-project-scene",
+      "webgpuTargeted": true,
+      "legacyWebglTargeted": false,
+      "compatibilityGateRequired": true,
+      "compatibilityStatus": "webgpu-compatible",
+      "webgpuCompatible": true,
+      "evidenceReasons": [
+        "webgpu-safe-material",
+        "source-used-project-webgpu-material-factory",
+        "webgpu-native-helper-utility"
+      ],
+      "featureFacts": [
+        {
+          "kind": "standard-material",
+          "family": "standard-material-surface",
+          "material": "MeshBasicMaterial",
+          "reason": "webgpu-safe-material"
+        },
+        {
+          "kind": "standard-material",
+          "family": "standard-material-surface",
+          "material": "MeshStandardMaterial",
+          "reason": "webgpu-safe-material"
+        },
+        {
+          "kind": "material-factory",
+          "id": "sky-background-field",
+          "family": "sky-background-field",
+          "material": "MeshBasicMaterial",
+          "surface": "scene-background-or-large-plane",
+          "reason": "source-used-project-webgpu-material-factory"
+        },
+        {
+          "kind": "webgpu-native-helper",
+          "id": "direction-space-skybox-shell",
+          "family": "sky-background-field",
+          "factory": "sky-background-field",
+          "material": "MeshBasicMaterial",
+          "surface": "direction-space-vertex-color-skybox-shell",
+          "reason": "webgpu-native-helper-utility"
+        },
+        {
+          "kind": "material-factory",
+          "id": "matte-painted-surface",
+          "family": "matte-painted-surface",
+          "material": "MeshStandardMaterial",
+          "surface": "three-standard-material",
+          "reason": "source-used-project-webgpu-material-factory"
+        },
+        {
+          "kind": "standard-material",
+          "family": "standard-material-surface",
+          "material": "LineBasicMaterial",
+          "reason": "webgpu-safe-material"
+        },
+        {
+          "kind": "material-factory",
+          "id": "procedural-marks",
+          "family": "procedural-marks",
+          "material": "MeshBasicMaterial",
+          "surface": "instanced-geometry-material",
+          "reason": "source-used-project-webgpu-material-factory"
+        },
+        {
+          "kind": "standard-material",
+          "family": "standard-material-surface",
+          "material": "PointsMaterial",
+          "reason": "webgpu-safe-material"
+        },
+        {
+          "kind": "material-factory",
+          "id": "soft-particles",
+          "family": "soft-particles",
+          "material": "PointsMaterial",
+          "surface": "three-points-material",
+          "reason": "source-used-project-webgpu-material-factory"
+        },
+        {
+          "kind": "webgpu-native-helper",
+          "id": "animated-color-field-material",
+          "family": "color-field",
+          "factory": "color-field",
+          "material": "MeshBasicNodeMaterial",
+          "surface": "three-mesh-basic-node-material-tsl",
+          "reason": "webgpu-native-helper-utility"
+        },
+        {
+          "kind": "webgpu-native-helper",
+          "id": "scraped-paint-grain-material",
+          "family": "paint-grain-surface",
+          "factory": "scraped-paint-grain-surface",
+          "material": "MeshBasicNodeMaterial",
+          "surface": "three-mesh-basic-node-material-tsl",
+          "reason": "webgpu-native-helper-utility"
+        },
+        {
+          "kind": "webgpu-native-helper",
+          "id": "instanced-mark-field",
+          "family": "instanced-marks",
+          "factory": "procedural-marks",
+          "material": "MeshBasicMaterial",
+          "surface": "three-instanced-mesh-basic-material",
+          "reason": "webgpu-native-helper-utility"
+        },
+        {
+          "kind": "standard-material",
+          "family": "standard-material-surface",
+          "material": "MeshLambertMaterial",
+          "reason": "webgpu-safe-material"
+        }
+      ],
+      "moduleCount": 7,
+      "compatibleModuleCount": 7,
+      "incompatibleModuleCount": 0,
+      "compositionCompatibilityDeclared": true,
+      "modules": [
+        {
+          "partId": "world-environment",
+          "role": "world-environment",
+          "moduleId": "rudolf-bauer-brussels-fire-world-environment",
+          "hash": "58f83d2f21a7abe2424dab8da3b8f32465866cdc853551495589570d5d58bb3e",
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material",
+            "source-used-project-webgpu-material-factory",
+            "webgpu-native-helper-utility"
+          ],
+          "featureFacts": [
+            {
+              "kind": "standard-material",
+              "family": "standard-material-surface",
+              "material": "MeshBasicMaterial",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "standard-material",
+              "family": "standard-material-surface",
+              "material": "MeshStandardMaterial",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "material-factory",
+              "id": "sky-background-field",
+              "family": "sky-background-field",
+              "material": "MeshBasicMaterial",
+              "surface": "scene-background-or-large-plane",
+              "reason": "source-used-project-webgpu-material-factory"
+            },
+            {
+              "kind": "webgpu-native-helper",
+              "id": "direction-space-skybox-shell",
+              "family": "sky-background-field",
+              "factory": "sky-background-field",
+              "material": "MeshBasicMaterial",
+              "surface": "direction-space-vertex-color-skybox-shell",
+              "reason": "webgpu-native-helper-utility"
+            },
+            {
+              "kind": "material-factory",
+              "id": "matte-painted-surface",
+              "family": "matte-painted-surface",
+              "material": "MeshStandardMaterial",
+              "surface": "three-standard-material",
+              "reason": "source-used-project-webgpu-material-factory"
+            },
+            {
+              "kind": "standard-material",
+              "family": "standard-material-surface",
+              "material": "LineBasicMaterial",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "material-factory",
+              "id": "procedural-marks",
+              "family": "procedural-marks",
+              "material": "MeshBasicMaterial",
+              "surface": "instanced-geometry-material",
+              "reason": "source-used-project-webgpu-material-factory"
+            },
+            {
+              "kind": "standard-material",
+              "family": "standard-material-surface",
+              "material": "PointsMaterial",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "material-factory",
+              "id": "soft-particles",
+              "family": "soft-particles",
+              "material": "PointsMaterial",
+              "surface": "three-points-material",
+              "reason": "source-used-project-webgpu-material-factory"
+            }
+          ],
+          "compatibleSurfaceCount": 9,
+          "sourceStage": "part-workshop"
+        },
+        {
+          "partId": "wash-depth-atmosphere",
+          "role": "deep-atmospheric material field",
+          "moduleId": "rudolf-bauer-brussels-fire-wash-depth-atmosphere",
+          "hash": "2b6862e3090a0c2a40cd1e190261d1a275bf453be5835c9536ddb13307c0e61a",
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material",
+            "webgpu-native-helper-utility"
+          ],
+          "featureFacts": [
+            {
+              "kind": "standard-material",
+              "family": "standard-material-surface",
+              "material": "MeshBasicMaterial",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "webgpu-native-helper",
+              "id": "animated-color-field-material",
+              "family": "color-field",
+              "factory": "color-field",
+              "material": "MeshBasicNodeMaterial",
+              "surface": "three-mesh-basic-node-material-tsl",
+              "reason": "webgpu-native-helper-utility"
+            },
+            {
+              "kind": "webgpu-native-helper",
+              "id": "scraped-paint-grain-material",
+              "family": "paint-grain-surface",
+              "factory": "scraped-paint-grain-surface",
+              "material": "MeshBasicNodeMaterial",
+              "surface": "three-mesh-basic-node-material-tsl",
+              "reason": "webgpu-native-helper-utility"
+            },
+            {
+              "kind": "standard-material",
+              "family": "standard-material-surface",
+              "material": "LineBasicMaterial",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "standard-material",
+              "family": "standard-material-surface",
+              "material": "PointsMaterial",
+              "reason": "webgpu-safe-material"
+            }
+          ],
+          "compatibleSurfaceCount": 5,
+          "sourceStage": "part-workshop"
+        },
+        {
+          "partId": "diagonal-arc-armature",
+          "role": "asymmetrical spatial armature",
+          "moduleId": "rudolf-bauer-brussels-fire-diagonal-arc-armature",
+          "hash": "75ec5cf0ccf3d9a6a10fd0172f81faed0de6a0a18a68f3fa6ff80d2924436a4c",
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material"
+          ],
+          "featureFacts": [
+            {
+              "kind": "standard-material",
+              "family": "standard-material-surface",
+              "material": "MeshBasicMaterial",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "standard-material",
+              "family": "standard-material-surface",
+              "material": "LineBasicMaterial",
+              "reason": "webgpu-safe-material"
+            }
+          ],
+          "compatibleSurfaceCount": 2,
+          "sourceStage": "part-workshop"
+        },
+        {
+          "partId": "radial-anchor-constellation",
+          "role": "mixed-scale radial symbolic focal system",
+          "moduleId": "rudolf-bauer-brussels-fire-radial-anchor-constellation",
+          "hash": "2c1f55aa2c3b24d2941345010d60feb22af811748fd5a87561ada865192a1410",
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material"
+          ],
+          "featureFacts": [
+            {
+              "kind": "standard-material",
+              "family": "standard-material-surface",
+              "material": "MeshBasicMaterial",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "standard-material",
+              "family": "standard-material-surface",
+              "material": "LineBasicMaterial",
+              "reason": "webgpu-safe-material"
+            }
+          ],
+          "compatibleSurfaceCount": 2,
+          "sourceStage": "part-workshop"
+        },
+        {
+          "partId": "brussels-concentrated-flow",
+          "role": "selected-news transformation system",
+          "moduleId": "rudolf-bauer-brussels-fire-brussels-concentrated-flow",
+          "hash": "7b4bc62d2df2642adaa0ad23e019b47412fc83c84ad7db8338c7b1e535553668",
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material"
+          ],
+          "featureFacts": [
+            {
+              "kind": "standard-material",
+              "family": "standard-material-surface",
+              "material": "MeshBasicMaterial",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "standard-material",
+              "family": "standard-material-surface",
+              "material": "LineBasicMaterial",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "standard-material",
+              "family": "standard-material-surface",
+              "material": "PointsMaterial",
+              "reason": "webgpu-safe-material"
+            }
+          ],
+          "compatibleSurfaceCount": 3,
+          "sourceStage": "part-workshop"
+        },
+        {
+          "partId": "contour-web-and-notational-beats",
+          "role": "contour-line rhythm and small-mark articulation",
+          "moduleId": "rudolf-bauer-brussels-fire-contour-web-and-notational-beats",
+          "hash": "e5d69243eee33fcf288723b731cfa5463c407e8ced06e607e1c863a79ea1aac3",
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material",
+            "webgpu-native-helper-utility"
+          ],
+          "featureFacts": [
+            {
+              "kind": "standard-material",
+              "family": "standard-material-surface",
+              "material": "LineBasicMaterial",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "standard-material",
+              "family": "standard-material-surface",
+              "material": "MeshBasicMaterial",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "webgpu-native-helper",
+              "id": "instanced-mark-field",
+              "family": "instanced-marks",
+              "factory": "procedural-marks",
+              "material": "MeshBasicMaterial",
+              "surface": "three-instanced-mesh-basic-material",
+              "reason": "webgpu-native-helper-utility"
+            }
+          ],
+          "compatibleSurfaceCount": 3,
+          "sourceStage": "part-workshop"
+        },
+        {
+          "partId": "measured-pulse-light",
+          "role": "restrained value, lighting, and optional cadence",
+          "moduleId": "rudolf-bauer-brussels-fire-measured-pulse-light",
+          "hash": "f09ba14569517b61070aa2892477f472b291f4f6a80c8942cccf8f155b7805df",
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material"
+          ],
+          "featureFacts": [
+            {
+              "kind": "standard-material",
+              "family": "standard-material-surface",
+              "material": "MeshLambertMaterial",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "standard-material",
+              "family": "standard-material-surface",
+              "material": "MeshBasicMaterial",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "standard-material",
+              "family": "standard-material-surface",
+              "material": "LineBasicMaterial",
+              "reason": "webgpu-safe-material"
+            }
+          ],
+          "compatibleSurfaceCount": 3,
+          "sourceStage": "part-workshop"
+        }
+      ]
+    },
+    "environment": {
+      "owner": "world-composition",
+      "kind": "inside-facing-matte-paper-field",
+      "color": "#D1CBBE",
+      "fieldColor": "#DFD0C1",
+      "fogDensity": 0.006,
+      "radius": 92,
+      "skyboxRadius": 92,
+      "opacity": 0.92,
+      "palette": [
+        "#D1CBBE",
+        "#DFD0C1",
+        "#FEFEFE",
+        "#CAC4B3",
+        "#C3BEB0",
+        "#A1BEBE",
+        "#9FB1A0",
+        "#B95A37",
+        "#594673",
+        "#1D211F"
+      ],
+      "compositionIntent": "High-key matte paper surround for a Rudolf Bauer-like field: pale warm ground, cool teal counterpoints, diagonal thrusts, off-center radial anchors, and a concentrated Brussels loss-flow cue. Environment remains technical support."
+    },
+    "camera": {
+      "owner": "world-composition",
+      "fov": 66,
+      "near": 0.08,
+      "far": 220,
+      "position": [
+        0.22,
+        2.12,
+        14.2
+      ],
+      "target": [
+        0.55,
+        0.18,
+        -5.6
+      ],
+      "distanceSafety": {
+        "nearFarOwnedHere": true,
+        "minPartDistance": 1.7,
+        "clippingRisk": "low",
+        "reason": "Canonical public camera retained for attempt 1 as the fixed design bookmark; camera-direction review says projection should change only after viewport evidence shows failure."
+      }
+    },
+    "lighting": {
+      "owner": "world-composition",
+      "ambientColor": "#E8DED0",
+      "ambientIntensity": 0.72,
+      "keyColor": "#FFFDF7",
+      "keyIntensity": 0.86,
+      "keyPosition": [
+        -3.8,
+        5.2,
+        7.4
+      ],
+      "rimColor": "#A1BEBE",
+      "rimIntensity": 0.22,
+      "rimPosition": [
+        5.5,
+        2.1,
+        -4.8
+      ],
+      "contrast": {
+        "mode": "integrated-part-readability",
+        "notes": "Warm paper light supports pale washes; restrained teal rim separates dark contour marks and radial disks without adding spectacle or fire-like glow."
+      }
+    },
+    "outputColorTransform": {
+      "owner": "world-composition",
+      "mode": "final-color-contrast-only",
+      "contrast": 1.07,
+      "saturation": 1.06,
+      "exposure": 1,
+      "vignette": 0.04,
+      "hueShift": 0,
+      "distortion": 0
+    },
+    "parts": [
+      {
+        "id": "world-environment",
+        "partId": "world-environment",
+        "role": "world-environment",
+        "moduleRef": {
+          "type": "immersive-world-generated-module",
+          "version": 1,
+          "moduleId": "rudolf-bauer-brussels-fire-world-environment",
+          "partId": "world-environment",
+          "hash": "58f83d2f21a7abe2424dab8da3b8f32465866cdc853551495589570d5d58bb3e",
+          "integrity": "sha256-58f83d2f21a7abe2424dab8da3b8f32465866cdc853551495589570d5d58bb3e",
+          "exportName": "createImmersiveWorldPart",
+          "file": "data/immersive-world/generated-modules/58f83d2f21a7abe2424dab8da3b8f32465866cdc853551495589570d5d58bb3e.mjs",
+          "url": "./data/immersive-world/generated-modules/58f83d2f21a7abe2424dab8da3b8f32465866cdc853551495589570d5d58bb3e.mjs",
+          "rendererCompatibility": {
+            "version": 1,
+            "targetMode": "webgpu-project-scene",
+            "compatibilityStatus": "webgpu-compatible",
+            "webgpuCompatible": true,
+            "evidenceReasons": [
+              "webgpu-safe-material",
+              "source-used-project-webgpu-material-factory",
+              "webgpu-native-helper-utility"
+            ],
+            "featureFacts": [
+              {
+                "kind": "standard-material",
+                "material": "MeshBasicMaterial",
+                "family": "standard-material-surface",
+                "reason": "webgpu-safe-material"
+              },
+              {
+                "kind": "standard-material",
+                "material": "MeshStandardMaterial",
+                "family": "standard-material-surface",
+                "reason": "webgpu-safe-material"
+              },
+              {
+                "kind": "material-factory",
+                "id": "sky-background-field",
+                "family": "sky-background-field",
+                "material": "MeshBasicMaterial",
+                "surface": "scene-background-or-large-plane",
+                "reason": "source-used-project-webgpu-material-factory"
+              },
+              {
+                "kind": "webgpu-native-helper",
+                "id": "direction-space-skybox-shell",
+                "family": "sky-background-field",
+                "factory": "sky-background-field",
+                "material": "MeshBasicMaterial",
+                "surface": "direction-space-vertex-color-skybox-shell",
+                "reason": "webgpu-native-helper-utility"
+              },
+              {
+                "kind": "material-factory",
+                "id": "matte-painted-surface",
+                "family": "matte-painted-surface",
+                "material": "MeshStandardMaterial",
+                "surface": "three-standard-material",
+                "reason": "source-used-project-webgpu-material-factory"
+              },
+              {
+                "kind": "standard-material",
+                "material": "LineBasicMaterial",
+                "family": "standard-material-surface",
+                "reason": "webgpu-safe-material"
+              },
+              {
+                "kind": "material-factory",
+                "id": "procedural-marks",
+                "family": "procedural-marks",
+                "material": "MeshBasicMaterial",
+                "surface": "instanced-geometry-material",
+                "reason": "source-used-project-webgpu-material-factory"
+              },
+              {
+                "kind": "standard-material",
+                "material": "PointsMaterial",
+                "family": "standard-material-surface",
+                "reason": "webgpu-safe-material"
+              },
+              {
+                "kind": "material-factory",
+                "id": "soft-particles",
+                "family": "soft-particles",
+                "material": "PointsMaterial",
+                "surface": "three-points-material",
+                "reason": "source-used-project-webgpu-material-factory"
+              }
+            ],
+            "compatibleSurfaces": [
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "MeshBasicMaterial"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "MeshStandardMaterial"
+              },
+              {
+                "reason": "source-used-project-webgpu-material-factory",
+                "materialType": "MeshBasicMaterial",
+                "runtimeSurface": "scene-background-or-large-plane",
+                "factoryId": "sky-background-field",
+                "materialFactoryId": "sky-background-field",
+                "factoryCategory": "sky-background-field",
+                "property": "materialFactoryId"
+              },
+              {
+                "reason": "webgpu-native-helper-utility",
+                "api": "utilities.createDirectionSpaceSkyboxShell",
+                "helperId": "direction-space-skybox-shell",
+                "featureFamily": "sky-background-field",
+                "outputKind": "object-bundle",
+                "materialType": "MeshBasicMaterial",
+                "runtimeSurface": "direction-space-vertex-color-skybox-shell",
+                "factoryId": "sky-background-field",
+                "materialFactoryId": "sky-background-field",
+                "factoryCategory": "sky-background-field"
+              },
+              {
+                "reason": "source-used-project-webgpu-material-factory",
+                "materialType": "MeshStandardMaterial",
+                "runtimeSurface": "three-standard-material",
+                "factoryId": "matte-painted-surface",
+                "materialFactoryId": "matte-painted-surface",
+                "factoryCategory": "matte-painted-surface",
+                "property": "materialFactoryId"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "LineBasicMaterial"
+              },
+              {
+                "reason": "source-used-project-webgpu-material-factory",
+                "materialType": "MeshBasicMaterial",
+                "runtimeSurface": "instanced-geometry-material",
+                "factoryId": "procedural-marks",
+                "materialFactoryId": "procedural-marks",
+                "factoryCategory": "procedural-marks",
+                "property": "materialFactoryId"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "PointsMaterial"
+              },
+              {
+                "reason": "source-used-project-webgpu-material-factory",
+                "materialType": "PointsMaterial",
+                "runtimeSurface": "three-points-material",
+                "factoryId": "soft-particles",
+                "materialFactoryId": "soft-particles",
+                "factoryCategory": "soft-particles",
+                "property": "materialFactoryId"
+              }
+            ]
+          }
+        },
+        "evidence": {
+          "browserValidation": {
+            "source": "part-workshop-strict-browser-validation",
+            "passed": true,
+            "acceptanceStatus": "accepted-clean",
+            "finalDraftRef": "immersive-world-agent-work-sessions/part-workshop/world-environment/drafts/world-environment.module.mjs",
+            "previewHealthStatus": "ok",
+            "capturedViews": [
+              "desktop"
+            ],
+            "allowedAbsentOutput": true,
+            "warningOnlySoftAccepted": false,
+            "unresolvedWarningCount": 0
+          },
+          "declaredCompositionOwnership": {
+            "lane": "technical-support",
+            "owns": [
+              "camera-safe world context",
+              "scene scale and stable spatial envelope",
+              "non-dominant background or surround support",
+              "capture-safe timing hooks and quiet environmental bounds",
+              "compatibility evidence handoff for later part workers"
+            ],
+            "avoid": [
+              "claiming the main visual metaphor",
+              "becoming a pale shell by habit",
+              "becoming a central panel, grid, aperture, or target",
+              "owning Brussels meaning",
+              "owning the radial focal system",
+              "owning decorative marks or effects"
+            ]
+          },
+          "compositionOwnershipSource": "world-part-plan.json#/parts/0/compositionOwnership",
+          "compositionAdaptations": [
+            "Kept at the origin as the accepted technical-support environment and pale matte direction-space support.",
+            "Motion and opacity remain subordinate so the support does not own the radial focus, Brussels meaning, or line articulation.",
+            "Kept as quiet technical support and added recognized world-level WebGPU metadata.",
+            "composition modified world-environment from isolated accepted-part defaults"
+          ],
+          "workshopAcceptance": [
+            "Inspected available local concept-reference image as advisory-only palette/value/mood evidence.",
+            "Final draft ref: immersive-world-agent-work-sessions/part-workshop/world-environment/drafts/world-environment.module.mjs.",
+            "Static validation succeeded for the final draft with source hash e58f737a6b0c7b000f75251865514ad03d56cf17eab75b5fada2af497ecf46d5.",
+            "Final handoff preview command preview-part-draft succeeded on attempt 3.",
+            "Screenshot: previews/attempt-003/003-world-environment-draft-desktop.jpg.",
+            "Render report: previews/attempt-003/desktop-render-report.json.",
+            "Render health ok; capture status ok; actual renderer backend WebGPU; WebGPU-native direction-space skybox helper evidence present; no browser/WebGL/WebGPU errors reported.",
+            "desktop:part-preview-evolution/001-world-environment-attempt-1-desktop.jpg"
+          ],
+          "acceptedPartValidation": {
+            "version": 1,
+            "source": "part-workshop-strict-browser-validation",
+            "previewScope": "isolated-part",
+            "passed": true,
+            "warningOnlySoftAccepted": false,
+            "partId": "world-environment",
+            "moduleExport": {
+              "expectedExportName": "createImmersiveWorldPart",
+              "actualExportName": "createImmersiveWorldPart",
+              "moduleId": "rudolf-bauer-brussels-fire-world-environment",
+              "moduleHash": "58f83d2f21a7abe2424dab8da3b8f32465866cdc853551495589570d5d58bb3e",
+              "pass": true
+            },
+            "finalDraftRequired": true,
+            "finalDraft": {
+              "file": "immersive-world-agent-work-sessions/part-workshop/world-environment/drafts/world-environment.module.mjs",
+              "sessionFile": "drafts/world-environment.module.mjs",
+              "sha256": "0ed09e430599fdc9278676d79e352374dc7f4beb2efa5df55971b9abcc4ff892",
+              "bytes": 28280,
+              "source": "agent-work-session-draft"
+            },
+            "finalPreview": {
+              "status": "succeeded"
+            },
+            "preview": {
+              "required": true,
+              "capturedViews": [
+                "desktop"
+              ],
+              "healthStatus": "ok",
+              "infoFacts": [
+                {
+                  "code": "webgpu-native-feature-use",
+                  "severity": "info",
+                  "message": "desktop capture proved actual WebGPU backend with WebGPU-native feature facts.",
+                  "details": {
+                    "view": "desktop",
+                    "rendererMode": "webgpu",
+                    "rendererBackend": "webgpu",
+                    "selectedRendererMode": "webgpu",
+                    "selectedRendererBackend": "webgpu",
+                    "actualRendererMode": "webgpu",
+                    "actualRendererBackend": "webgpu",
+                    "rendererProof": {
+                      "isWebGPURenderer": true,
+                      "backendIsWebGPUBackend": true,
+                      "backendIsWebGLBackend": false,
+                      "backendType": "VD"
+                    },
+                    "webgpuFeatureFacts": [
+                      {
+                        "kind": "standard-material",
+                        "family": "standard-material-surface",
+                        "material": "MeshBasicMaterial",
+                        "reason": "webgpu-safe-material"
+                      },
+                      {
+                        "kind": "standard-material",
+                        "family": "standard-material-surface",
+                        "material": "MeshStandardMaterial",
+                        "reason": "webgpu-safe-material"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "sky-background-field",
+                        "family": "sky-background-field",
+                        "material": "MeshBasicMaterial",
+                        "surface": "scene-background-or-large-plane",
+                        "reason": "source-used-project-webgpu-material-factory"
+                      },
+                      {
+                        "kind": "webgpu-native-helper",
+                        "id": "direction-space-skybox-shell",
+                        "family": "sky-background-field",
+                        "factory": "sky-background-field",
+                        "material": "MeshBasicMaterial",
+                        "surface": "direction-space-vertex-color-skybox-shell",
+                        "reason": "webgpu-native-helper-utility"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "matte-painted-surface",
+                        "family": "matte-painted-surface",
+                        "material": "MeshStandardMaterial",
+                        "surface": "three-standard-material",
+                        "reason": "source-used-project-webgpu-material-factory"
+                      },
+                      {
+                        "kind": "standard-material",
+                        "family": "standard-material-surface",
+                        "material": "LineBasicMaterial",
+                        "reason": "webgpu-safe-material"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "procedural-marks",
+                        "family": "procedural-marks",
+                        "material": "MeshBasicMaterial",
+                        "surface": "instanced-geometry-material",
+                        "reason": "source-used-project-webgpu-material-factory"
+                      },
+                      {
+                        "kind": "standard-material",
+                        "family": "standard-material-surface",
+                        "material": "PointsMaterial",
+                        "reason": "webgpu-safe-material"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "soft-particles",
+                        "family": "soft-particles",
+                        "material": "PointsMaterial",
+                        "surface": "three-points-material",
+                        "reason": "source-used-project-webgpu-material-factory"
+                      },
+                      {
+                        "kind": "webgpu-native-helper",
+                        "id": "direction-space-skybox-shell",
+                        "family": "sky-background-field",
+                        "api": "utilities.createDirectionSpaceSkyboxShell",
+                        "factory": "sky-background-field",
+                        "material": "MeshBasicMaterial",
+                        "surface": "direction-space-vertex-color-skybox-shell"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "matte-painted-surface",
+                        "factory": "matte-painted-surface",
+                        "reason": "runtime-material-factory-userdata"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "matte-painted-surface",
+                        "factory": "matte-painted-surface",
+                        "surface": "MeshStandardMaterial PlaneGeometry with UVs",
+                        "reason": "runtime-material-factory-userdata"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "matte-painted-surface",
+                        "factory": "matte-painted-surface",
+                        "surface": "MeshStandardMaterial",
+                        "reason": "runtime-material-factory-userdata"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "procedural-marks",
+                        "factory": "procedural-marks",
+                        "surface": "LineBasicMaterial BufferGeometry vertex colors with UVs",
+                        "reason": "runtime-material-factory-userdata"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "procedural-marks",
+                        "factory": "procedural-marks",
+                        "surface": "LineBasicMaterial",
+                        "reason": "runtime-material-factory-userdata"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "soft-particles",
+                        "factory": "soft-particles",
+                        "surface": "PointsMaterial BufferGeometry vertex colors with UVs",
+                        "reason": "runtime-material-factory-userdata"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "soft-particles",
+                        "factory": "soft-particles",
+                        "surface": "PointsMaterial",
+                        "reason": "runtime-material-factory-userdata"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "visibleAbsence": {
+              "intentional": true,
+              "allowedAbsentOutput": true,
+              "facts": [
+                "support-only quietness is intentional",
+                "no dominant skybox or shell is required",
+                "no literal Brussels skyline or fire scene is owned here",
+                "no central target, band, grid, or pale shell is introduced by compatibility need"
+              ],
+              "rationale": "The environment exists to make the later creative parts spatially and technically coherent, not to decide the artwork's visible anatomy."
+            }
+          },
+          "plannedPart": {
+            "source": "world-part-plan.json#/parts/0",
+            "partId": "world-environment",
+            "role": "world-environment",
+            "intent": "Provide technical compatibility support, camera-safe world context, capture-stable scene scaffolding, and non-dominant depth reference for a WebGPU project scene.",
+            "messagePurpose": "Provide technical compatibility support, camera-safe world context, capture-stable scene scaffolding, and non-dominant depth reference for a WebGPU project scene.",
+            "visualTarget": "Provide technical compatibility support, camera-safe world context, capture-stable scene scaffolding, and non-dominant depth reference for a WebGPU project scene.",
+            "relationshipToWhole": "Supports the immersive piece by giving all creative systems a stable world container while remaining visually subordinate to the asymmetrical Bauer construction.",
+            "visibleAbsence": {
+              "intentional": true,
+              "facts": [
+                "support-only quietness is intentional",
+                "no dominant skybox or shell is required",
+                "no literal Brussels skyline or fire scene is owned here",
+                "no central target, band, grid, or pale shell is introduced by compatibility need"
+              ],
+              "rationale": "The environment exists to make the later creative parts spatially and technically coherent, not to decide the artwork's visible anatomy."
+            }
+          },
+          "compositionBeforeHash": "2518b06d1d511124",
+          "compositionAfterHash": "b4471248679b0616"
+        },
+        "intent": "Provide technical compatibility support, camera-safe world context, capture-stable scene scaffolding, and non-dominant depth reference for a WebGPU project scene.",
+        "messagePurpose": "Provide technical compatibility support, camera-safe world context, capture-stable scene scaffolding, and non-dominant depth reference for a WebGPU project scene.",
+        "visualTarget": "Provide technical compatibility support, camera-safe world context, capture-stable scene scaffolding, and non-dominant depth reference for a WebGPU project scene.",
+        "relationshipToWhole": "Supports the immersive piece by giving all creative systems a stable world container while remaining visually subordinate to the asymmetrical Bauer construction.",
+        "visibleAbsence": {
+          "intentional": true,
+          "facts": [
+            "support-only quietness is intentional",
+            "no dominant skybox or shell is required",
+            "no literal Brussels skyline or fire scene is owned here",
+            "no central target, band, grid, or pale shell is introduced by compatibility need"
+          ],
+          "rationale": "The environment exists to make the later creative parts spatially and technically coherent, not to decide the artwork's visible anatomy."
+        },
+        "params": {
+          "band": "technical-support",
+          "layer": "background",
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "scale": 1,
+          "opacity": 0.9,
+          "motionIntensity": 0.16,
+          "renderOrder": 0,
+          "visibilityPriority": "technical-support"
+        },
+        "paramSemantics": {
+          "band": "visual placement/readability band for full-world params; distinct from declared compositionOwnership.lane"
+        },
+        "compositionOwnership": {
+          "lane": "technical-support",
+          "owns": [
+            "camera-safe world context",
+            "scene scale and stable spatial envelope",
+            "non-dominant background or surround support",
+            "capture-safe timing hooks and quiet environmental bounds",
+            "compatibility evidence handoff for later part workers"
+          ],
+          "avoid": [
+            "claiming the main visual metaphor",
+            "becoming a pale shell by habit",
+            "becoming a central panel, grid, aperture, or target",
+            "owning Brussels meaning",
+            "owning the radial focal system",
+            "owning decorative marks or effects"
+          ]
+        }
+      },
+      {
+        "id": "wash-depth-atmosphere",
+        "partId": "wash-depth-atmosphere",
+        "role": "deep-atmospheric material field",
+        "moduleRef": {
+          "type": "immersive-world-generated-module",
+          "version": 1,
+          "moduleId": "rudolf-bauer-brussels-fire-wash-depth-atmosphere",
+          "partId": "wash-depth-atmosphere",
+          "hash": "2b6862e3090a0c2a40cd1e190261d1a275bf453be5835c9536ddb13307c0e61a",
+          "integrity": "sha256-2b6862e3090a0c2a40cd1e190261d1a275bf453be5835c9536ddb13307c0e61a",
+          "exportName": "createImmersiveWorldPart",
+          "file": "data/immersive-world/generated-modules/2b6862e3090a0c2a40cd1e190261d1a275bf453be5835c9536ddb13307c0e61a.mjs",
+          "url": "./data/immersive-world/generated-modules/2b6862e3090a0c2a40cd1e190261d1a275bf453be5835c9536ddb13307c0e61a.mjs",
+          "rendererCompatibility": {
+            "version": 1,
+            "targetMode": "webgpu-project-scene",
+            "compatibilityStatus": "webgpu-compatible",
+            "webgpuCompatible": true,
+            "evidenceReasons": [
+              "webgpu-safe-material",
+              "webgpu-native-helper-utility"
+            ],
+            "featureFacts": [
+              {
+                "kind": "standard-material",
+                "material": "MeshBasicMaterial",
+                "family": "standard-material-surface",
+                "reason": "webgpu-safe-material"
+              },
+              {
+                "kind": "webgpu-native-helper",
+                "id": "animated-color-field-material",
+                "family": "color-field",
+                "factory": "color-field",
+                "material": "MeshBasicNodeMaterial",
+                "surface": "three-mesh-basic-node-material-tsl",
+                "reason": "webgpu-native-helper-utility"
+              },
+              {
+                "kind": "webgpu-native-helper",
+                "id": "scraped-paint-grain-material",
+                "family": "paint-grain-surface",
+                "factory": "scraped-paint-grain-surface",
+                "material": "MeshBasicNodeMaterial",
+                "surface": "three-mesh-basic-node-material-tsl",
+                "reason": "webgpu-native-helper-utility"
+              },
+              {
+                "kind": "standard-material",
+                "material": "LineBasicMaterial",
+                "family": "standard-material-surface",
+                "reason": "webgpu-safe-material"
+              },
+              {
+                "kind": "standard-material",
+                "material": "PointsMaterial",
+                "family": "standard-material-surface",
+                "reason": "webgpu-safe-material"
+              }
+            ],
+            "compatibleSurfaces": [
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "MeshBasicMaterial"
+              },
+              {
+                "reason": "webgpu-native-helper-utility",
+                "api": "utilities.createAnimatedColorFieldMaterial",
+                "helperId": "animated-color-field-material",
+                "featureFamily": "color-field",
+                "outputKind": "material",
+                "materialType": "MeshBasicNodeMaterial",
+                "runtimeSurface": "three-mesh-basic-node-material-tsl",
+                "factoryId": "color-field",
+                "materialFactoryId": "color-field",
+                "factoryCategory": "color-field"
+              },
+              {
+                "reason": "webgpu-native-helper-utility",
+                "api": "utilities.createScrapedPaintGrainMaterial",
+                "helperId": "scraped-paint-grain-material",
+                "featureFamily": "paint-grain-surface",
+                "outputKind": "material",
+                "materialType": "MeshBasicNodeMaterial",
+                "runtimeSurface": "three-mesh-basic-node-material-tsl",
+                "factoryId": "scraped-paint-grain-surface",
+                "materialFactoryId": "scraped-paint-grain-surface",
+                "factoryCategory": "matte-painted-surface"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "LineBasicMaterial"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "PointsMaterial"
+              }
+            ]
+          }
+        },
+        "evidence": {
+          "browserValidation": {
+            "source": "part-workshop-strict-browser-validation",
+            "passed": true,
+            "acceptanceStatus": "accepted-clean",
+            "finalDraftRef": "immersive-world-agent-work-sessions/part-workshop/wash-depth-atmosphere/drafts/wash-depth-atmosphere.module.mjs",
+            "previewHealthStatus": "ok",
+            "capturedViews": [
+              "desktop"
+            ],
+            "allowedAbsentOutput": true,
+            "warningOnlySoftAccepted": false,
+            "unresolvedWarningCount": 0
+          },
+          "declaredCompositionOwnership": {
+            "lane": "creative-material-space",
+            "owns": [
+              "watercolor-wash surface identity",
+              "matte analog finish",
+              "warm-earth and pale paper value field",
+              "cool-green-teal atmospheric counterpoints",
+              "soft halos, blurred transitions, brushed grain, and dry scumbles",
+              "depth by overlap, transparency, gradients, and dark underlayers"
+            ],
+            "avoid": [
+              "glossy default 3D material",
+              "photoreal smoke or fire effects",
+              "hard mechanical surfaces",
+              "literal skybox dominance",
+              "overriding radial and diagonal composition ownership"
+            ]
+          },
+          "compositionOwnershipSource": "world-part-plan.json#/parts/1/compositionOwnership",
+          "compositionAdaptations": [
+            "Sits just behind the focal systems as the tactile matte support, preserving warm-earth wash and cool teal counterwash seen in the accepted preview.",
+            "The Brussels underwash marks remain buried in the material field rather than becoming the selected-news owner.",
+            "Used as the broad matte wash field with warm paper values and teal counterpoints.",
+            "composition modified wash-depth-atmosphere from isolated accepted-part defaults"
+          ],
+          "workshopAcceptance": [
+            "Final draft file: immersive-world-agent-work-sessions/part-workshop/wash-depth-atmosphere/drafts/wash-depth-atmosphere.module.mjs.",
+            "Static validation succeeded: checks/check-result.json, pass true, errors empty.",
+            "Final Playwright preview succeeded: previews/attempt-003/preview-result.json.",
+            "Final screenshot captured: previews/attempt-003/003-wash-depth-atmosphere-draft-desktop.jpg.",
+            "Final render report: previews/attempt-003/desktop-render-report.json, healthStatus ok, captureStatus ok, rendererBackend webgpu, fallbackReason null.",
+            "Final viewport browserErrors was null in the report, with no warning/error entries recorded; browser/WebGL/WebGPU warning and error lists are treated as empty for handoff.",
+            "Attempt 1 and 2 warnings were repaired by replacing helper-owned particle geometry with standard PointsMaterial geometry carrying explicit uv attributes.",
+            "desktop:part-preview-evolution/002-wash-depth-atmosphere-attempt-1-desktop.jpg"
+          ],
+          "acceptedPartValidation": {
+            "version": 1,
+            "source": "part-workshop-strict-browser-validation",
+            "previewScope": "isolated-part",
+            "passed": true,
+            "warningOnlySoftAccepted": false,
+            "partId": "wash-depth-atmosphere",
+            "moduleExport": {
+              "expectedExportName": "createImmersiveWorldPart",
+              "actualExportName": "createImmersiveWorldPart",
+              "moduleId": "rudolf-bauer-brussels-fire-wash-depth-atmosphere",
+              "moduleHash": "2b6862e3090a0c2a40cd1e190261d1a275bf453be5835c9536ddb13307c0e61a",
+              "pass": true
+            },
+            "finalDraftRequired": true,
+            "finalDraft": {
+              "file": "immersive-world-agent-work-sessions/part-workshop/wash-depth-atmosphere/drafts/wash-depth-atmosphere.module.mjs",
+              "sessionFile": "drafts/wash-depth-atmosphere.module.mjs",
+              "sha256": "75004485d69185557be45dbd13ffb73e5b82425ab70333d2f1e6c01913e684ce",
+              "bytes": 22044,
+              "source": "agent-work-session-draft"
+            },
+            "finalPreview": {
+              "status": "succeeded"
+            },
+            "preview": {
+              "required": true,
+              "capturedViews": [
+                "desktop"
+              ],
+              "healthStatus": "ok",
+              "infoFacts": [
+                {
+                  "code": "webgpu-native-feature-use",
+                  "severity": "info",
+                  "message": "desktop capture proved actual WebGPU backend with WebGPU-native feature facts.",
+                  "details": {
+                    "view": "desktop",
+                    "rendererMode": "webgpu",
+                    "rendererBackend": "webgpu",
+                    "selectedRendererMode": "webgpu",
+                    "selectedRendererBackend": "webgpu",
+                    "actualRendererMode": "webgpu",
+                    "actualRendererBackend": "webgpu",
+                    "rendererProof": {
+                      "isWebGPURenderer": true,
+                      "backendIsWebGPUBackend": true,
+                      "backendIsWebGLBackend": false,
+                      "backendType": "VD"
+                    },
+                    "webgpuFeatureFacts": [
+                      {
+                        "kind": "standard-material",
+                        "family": "standard-material-surface",
+                        "material": "MeshBasicMaterial",
+                        "reason": "webgpu-safe-material"
+                      },
+                      {
+                        "kind": "standard-material",
+                        "family": "standard-material-surface",
+                        "material": "MeshStandardMaterial",
+                        "reason": "webgpu-safe-material"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "sky-background-field",
+                        "family": "sky-background-field",
+                        "material": "MeshBasicMaterial",
+                        "surface": "scene-background-or-large-plane",
+                        "reason": "source-used-project-webgpu-material-factory"
+                      },
+                      {
+                        "kind": "webgpu-native-helper",
+                        "id": "direction-space-skybox-shell",
+                        "family": "sky-background-field",
+                        "factory": "sky-background-field",
+                        "material": "MeshBasicMaterial",
+                        "surface": "direction-space-vertex-color-skybox-shell",
+                        "reason": "webgpu-native-helper-utility"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "matte-painted-surface",
+                        "family": "matte-painted-surface",
+                        "material": "MeshStandardMaterial",
+                        "surface": "three-standard-material",
+                        "reason": "source-used-project-webgpu-material-factory"
+                      },
+                      {
+                        "kind": "standard-material",
+                        "family": "standard-material-surface",
+                        "material": "LineBasicMaterial",
+                        "reason": "webgpu-safe-material"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "procedural-marks",
+                        "family": "procedural-marks",
+                        "material": "MeshBasicMaterial",
+                        "surface": "instanced-geometry-material",
+                        "reason": "source-used-project-webgpu-material-factory"
+                      },
+                      {
+                        "kind": "standard-material",
+                        "family": "standard-material-surface",
+                        "material": "PointsMaterial",
+                        "reason": "webgpu-safe-material"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "soft-particles",
+                        "family": "soft-particles",
+                        "material": "PointsMaterial",
+                        "surface": "three-points-material",
+                        "reason": "source-used-project-webgpu-material-factory"
+                      },
+                      {
+                        "kind": "webgpu-native-helper",
+                        "id": "animated-color-field-material",
+                        "family": "color-field",
+                        "factory": "color-field",
+                        "material": "MeshBasicNodeMaterial",
+                        "surface": "three-mesh-basic-node-material-tsl",
+                        "reason": "webgpu-native-helper-utility"
+                      },
+                      {
+                        "kind": "webgpu-native-helper",
+                        "id": "scraped-paint-grain-material",
+                        "family": "paint-grain-surface",
+                        "factory": "scraped-paint-grain-surface",
+                        "material": "MeshBasicNodeMaterial",
+                        "surface": "three-mesh-basic-node-material-tsl",
+                        "reason": "webgpu-native-helper-utility"
+                      },
+                      {
+                        "kind": "webgpu-native-helper",
+                        "id": "direction-space-skybox-shell",
+                        "family": "sky-background-field",
+                        "api": "utilities.createDirectionSpaceSkyboxShell",
+                        "factory": "sky-background-field",
+                        "material": "MeshBasicMaterial",
+                        "surface": "direction-space-vertex-color-skybox-shell"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "matte-painted-surface",
+                        "factory": "matte-painted-surface",
+                        "reason": "runtime-material-factory-userdata"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "matte-painted-surface",
+                        "factory": "matte-painted-surface",
+                        "surface": "MeshStandardMaterial PlaneGeometry with UVs",
+                        "reason": "runtime-material-factory-userdata"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "matte-painted-surface",
+                        "factory": "matte-painted-surface",
+                        "surface": "MeshStandardMaterial",
+                        "reason": "runtime-material-factory-userdata"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "procedural-marks",
+                        "factory": "procedural-marks",
+                        "surface": "LineBasicMaterial BufferGeometry vertex colors with UVs",
+                        "reason": "runtime-material-factory-userdata"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "procedural-marks",
+                        "factory": "procedural-marks",
+                        "surface": "LineBasicMaterial",
+                        "reason": "runtime-material-factory-userdata"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "soft-particles",
+                        "factory": "soft-particles",
+                        "surface": "PointsMaterial BufferGeometry vertex colors with UVs",
+                        "reason": "runtime-material-factory-userdata"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "soft-particles",
+                        "factory": "soft-particles",
+                        "surface": "PointsMaterial",
+                        "reason": "runtime-material-factory-userdata"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "scraped-paint-grain-surface",
+                        "factory": "scraped-paint-grain-surface",
+                        "reason": "runtime-material-factory-userdata"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "color-field",
+                        "factory": "color-field",
+                        "reason": "runtime-material-factory-userdata"
+                      },
+                      {
+                        "kind": "webgpu-native-helper",
+                        "id": "animated-color-field-material",
+                        "family": "color-field",
+                        "api": "utilities.createAnimatedColorFieldMaterial",
+                        "factory": "color-field",
+                        "material": "MeshBasicNodeMaterial",
+                        "surface": "three-mesh-basic-node-material-tsl"
+                      },
+                      {
+                        "kind": "webgpu-native-helper",
+                        "id": "scraped-paint-grain-material",
+                        "family": "paint-grain-surface",
+                        "api": "utilities.createScrapedPaintGrainMaterial",
+                        "factory": "scraped-paint-grain-surface",
+                        "material": "MeshBasicNodeMaterial",
+                        "surface": "three-mesh-basic-node-material-tsl"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "procedural-marks",
+                        "factory": "procedural-marks",
+                        "reason": "runtime-material-factory-userdata"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "visibleAbsence": {
+              "intentional": true,
+              "allowedAbsentOutput": true,
+              "facts": [
+                "no realistic horizon is required",
+                "no literal paper rectangle or gallery canvas is required",
+                "no glossy volumetric smoke is used",
+                "no external texture asset is required"
+              ],
+              "rationale": "The material should feel like analog abstraction translated into space, not a literal canvas or atmospheric simulation."
+            }
+          },
+          "plannedPart": {
+            "source": "world-part-plan.json#/parts/1",
+            "partId": "wash-depth-atmosphere",
+            "role": "deep-atmospheric material field",
+            "intent": "Create the tactile matte support of the world: brushed washes, dry scumbles, transparent overlays, warm-earth ground values, cool teal-green counterpoints, rubbed transitions, and shallow ambiguous depth.",
+            "messagePurpose": "Create the tactile matte support of the world: brushed washes, dry scumbles, transparent overlays, warm-earth ground values, cool teal-green counterpoints, rubbed transitions, and shallow ambiguous depth.",
+            "visualTarget": "Create the tactile matte support of the world: brushed washes, dry scumbles, transparent overlays, warm-earth ground values, cool teal-green counterpoints, rubbed transitions, and shallow ambiguous depth.",
+            "relationshipToWhole": "Acts as the atmospheric painted support through which the radial symbols, diagonal armature, contour web, and selected-news flow become an immersive Bauer-like world.",
+            "visibleAbsence": {
+              "intentional": true,
+              "facts": [
+                "no realistic horizon is required",
+                "no literal paper rectangle or gallery canvas is required",
+                "no glossy volumetric smoke is used",
+                "no external texture asset is required"
+              ],
+              "rationale": "The material should feel like analog abstraction translated into space, not a literal canvas or atmospheric simulation."
+            }
+          },
+          "compositionBeforeHash": "eebefb4058acd693",
+          "compositionAfterHash": "89e0b80f4d9a6830"
+        },
+        "intent": "Create the tactile matte support of the world: brushed washes, dry scumbles, transparent overlays, warm-earth ground values, cool teal-green counterpoints, rubbed transitions, and shallow ambiguous depth.",
+        "messagePurpose": "Create the tactile matte support of the world: brushed washes, dry scumbles, transparent overlays, warm-earth ground values, cool teal-green counterpoints, rubbed transitions, and shallow ambiguous depth.",
+        "visualTarget": "Create the tactile matte support of the world: brushed washes, dry scumbles, transparent overlays, warm-earth ground values, cool teal-green counterpoints, rubbed transitions, and shallow ambiguous depth.",
+        "relationshipToWhole": "Acts as the atmospheric painted support through which the radial symbols, diagonal armature, contour web, and selected-news flow become an immersive Bauer-like world.",
+        "visibleAbsence": {
+          "intentional": true,
+          "facts": [
+            "no realistic horizon is required",
+            "no literal paper rectangle or gallery canvas is required",
+            "no glossy volumetric smoke is used",
+            "no external texture asset is required"
+          ],
+          "rationale": "The material should feel like analog abstraction translated into space, not a literal canvas or atmospheric simulation."
+        },
+        "params": {
+          "band": "primary-readability",
+          "layer": "background-middleground",
+          "position": [
+            0,
+            0,
+            -0.35
+          ],
+          "scale": 1.45,
+          "opacity": 0.96,
+          "motionIntensity": 0.18,
+          "renderOrder": 3,
+          "visibilityPriority": "primary"
+        },
+        "paramSemantics": {
+          "band": "visual placement/readability band for full-world params; distinct from declared compositionOwnership.lane"
+        },
+        "compositionOwnership": {
+          "lane": "creative-material-space",
+          "owns": [
+            "watercolor-wash surface identity",
+            "matte analog finish",
+            "warm-earth and pale paper value field",
+            "cool-green-teal atmospheric counterpoints",
+            "soft halos, blurred transitions, brushed grain, and dry scumbles",
+            "depth by overlap, transparency, gradients, and dark underlayers"
+          ],
+          "avoid": [
+            "glossy default 3D material",
+            "photoreal smoke or fire effects",
+            "hard mechanical surfaces",
+            "literal skybox dominance",
+            "overriding radial and diagonal composition ownership"
+          ]
+        }
+      },
+      {
+        "id": "diagonal-arc-armature",
+        "partId": "diagonal-arc-armature",
+        "role": "asymmetrical spatial armature",
+        "moduleRef": {
+          "type": "immersive-world-generated-module",
+          "version": 1,
+          "moduleId": "rudolf-bauer-brussels-fire-diagonal-arc-armature",
+          "partId": "diagonal-arc-armature",
+          "hash": "75ec5cf0ccf3d9a6a10fd0172f81faed0de6a0a18a68f3fa6ff80d2924436a4c",
+          "integrity": "sha256-75ec5cf0ccf3d9a6a10fd0172f81faed0de6a0a18a68f3fa6ff80d2924436a4c",
+          "exportName": "createImmersiveWorldPart",
+          "file": "data/immersive-world/generated-modules/75ec5cf0ccf3d9a6a10fd0172f81faed0de6a0a18a68f3fa6ff80d2924436a4c.mjs",
+          "url": "./data/immersive-world/generated-modules/75ec5cf0ccf3d9a6a10fd0172f81faed0de6a0a18a68f3fa6ff80d2924436a4c.mjs",
+          "rendererCompatibility": {
+            "version": 1,
+            "targetMode": "webgpu-project-scene",
+            "compatibilityStatus": "webgpu-compatible",
+            "webgpuCompatible": true,
+            "evidenceReasons": [
+              "webgpu-safe-material"
+            ],
+            "featureFacts": [
+              {
+                "kind": "standard-material",
+                "material": "MeshBasicMaterial",
+                "family": "standard-material-surface",
+                "reason": "webgpu-safe-material"
+              },
+              {
+                "kind": "standard-material",
+                "material": "LineBasicMaterial",
+                "family": "standard-material-surface",
+                "reason": "webgpu-safe-material"
+              }
+            ],
+            "compatibleSurfaces": [
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "MeshBasicMaterial"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "LineBasicMaterial"
+              }
+            ]
+          }
+        },
+        "evidence": {
+          "browserValidation": {
+            "source": "part-workshop-strict-browser-validation",
+            "passed": true,
+            "acceptanceStatus": "accepted-clean",
+            "finalDraftRef": "immersive-world-agent-work-sessions/part-workshop/diagonal-arc-armature/drafts/diagonal-arc-armature.module.mjs",
+            "previewHealthStatus": "ok",
+            "capturedViews": [
+              "desktop"
+            ],
+            "allowedAbsentOutput": true,
+            "warningOnlySoftAccepted": false,
+            "unresolvedWarningCount": 0
+          },
+          "declaredCompositionOwnership": {
+            "lane": "creative-composition-structure",
+            "owns": [
+              "main diagonal thrusts",
+              "sweeping curve paths",
+              "balancing bars and beam-like forms",
+              "secondary geometric planes",
+              "off-center spatial balance",
+              "large-scale rhythm before detail"
+            ],
+            "avoid": [
+              "central band or grid default",
+              "symmetrical target construction",
+              "literal architecture",
+              "filling every layer by habit",
+              "stealing all circular focal ownership from radial-anchor-constellation"
+            ]
+          },
+          "compositionOwnershipSource": "world-part-plan.json#/parts/2/compositionOwnership",
+          "compositionAdaptations": [
+            "Held near the camera target so diagonal thrusts and open arcs continue to organize the full field.",
+            "Scale remains close to accepted preview so it structures without stealing the radial anchor's focal ownership.",
+            "Kept as the large asymmetrical diagonal and arc structure.",
+            "composition modified diagonal-arc-armature from isolated accepted-part defaults"
+          ],
+          "workshopAcceptance": [
+            "Draft written to immersive-world-agent-work-sessions/part-workshop/diagonal-arc-armature/drafts/diagonal-arc-armature.module.mjs inside the run work session.",
+            "Static check succeeded with sourceHash ed211ddafa94e93d52473edc1e40fb83d20378b123e1928efb1d1cf63101eb30 and no validation errors.",
+            "Preview command preview-part-draft attempt 1 succeeded; screenshot previews/attempt-001/001-diagonal-arc-armature-draft-desktop.jpg and report previews/attempt-001/desktop-render-report.json were inspected.",
+            "Render report healthStatus ok, captureStatus ok, readiness ready, actual renderer backend webgpu, compatibilityStatus webgpu-compatible, forbiddenSurfaces empty.",
+            "No browser warning, browser error, WebGL warning, or WebGPU warning fields were present in the inspected report; browserErrors was null.",
+            "desktop:part-preview-evolution/003-diagonal-arc-armature-attempt-1-desktop.jpg"
+          ],
+          "acceptedPartValidation": {
+            "version": 1,
+            "source": "part-workshop-strict-browser-validation",
+            "previewScope": "isolated-part",
+            "passed": true,
+            "warningOnlySoftAccepted": false,
+            "partId": "diagonal-arc-armature",
+            "moduleExport": {
+              "expectedExportName": "createImmersiveWorldPart",
+              "actualExportName": "createImmersiveWorldPart",
+              "moduleId": "rudolf-bauer-brussels-fire-diagonal-arc-armature",
+              "moduleHash": "75ec5cf0ccf3d9a6a10fd0172f81faed0de6a0a18a68f3fa6ff80d2924436a4c",
+              "pass": true
+            },
+            "finalDraftRequired": true,
+            "finalDraft": {
+              "file": "immersive-world-agent-work-sessions/part-workshop/diagonal-arc-armature/drafts/diagonal-arc-armature.module.mjs",
+              "sessionFile": "drafts/diagonal-arc-armature.module.mjs",
+              "sha256": "97d487dd4b81509e6ec0526b37728494d7b98239ab80de38003cd75df016d4ff",
+              "bytes": 34178,
+              "source": "agent-work-session-draft"
+            },
+            "finalPreview": {
+              "status": "succeeded"
+            },
+            "preview": {
+              "required": true,
+              "capturedViews": [
+                "desktop"
+              ],
+              "healthStatus": "ok",
+              "infoFacts": [
+                {
+                  "code": "webgpu-native-feature-use",
+                  "severity": "info",
+                  "message": "desktop capture proved actual WebGPU backend with WebGPU-native feature facts.",
+                  "details": {
+                    "view": "desktop",
+                    "rendererMode": "webgpu",
+                    "rendererBackend": "webgpu",
+                    "selectedRendererMode": "webgpu",
+                    "selectedRendererBackend": "webgpu",
+                    "actualRendererMode": "webgpu",
+                    "actualRendererBackend": "webgpu",
+                    "rendererProof": {
+                      "isWebGPURenderer": true,
+                      "backendIsWebGPUBackend": true,
+                      "backendIsWebGLBackend": false,
+                      "backendType": "VD"
+                    },
+                    "webgpuFeatureFacts": [
+                      {
+                        "kind": "standard-material",
+                        "family": "standard-material-surface",
+                        "material": "MeshBasicMaterial",
+                        "reason": "webgpu-safe-material"
+                      },
+                      {
+                        "kind": "standard-material",
+                        "family": "standard-material-surface",
+                        "material": "MeshStandardMaterial",
+                        "reason": "webgpu-safe-material"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "sky-background-field",
+                        "family": "sky-background-field",
+                        "material": "MeshBasicMaterial",
+                        "surface": "scene-background-or-large-plane",
+                        "reason": "source-used-project-webgpu-material-factory"
+                      },
+                      {
+                        "kind": "webgpu-native-helper",
+                        "id": "direction-space-skybox-shell",
+                        "family": "sky-background-field",
+                        "factory": "sky-background-field",
+                        "material": "MeshBasicMaterial",
+                        "surface": "direction-space-vertex-color-skybox-shell",
+                        "reason": "webgpu-native-helper-utility"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "matte-painted-surface",
+                        "family": "matte-painted-surface",
+                        "material": "MeshStandardMaterial",
+                        "surface": "three-standard-material",
+                        "reason": "source-used-project-webgpu-material-factory"
+                      },
+                      {
+                        "kind": "standard-material",
+                        "family": "standard-material-surface",
+                        "material": "LineBasicMaterial",
+                        "reason": "webgpu-safe-material"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "procedural-marks",
+                        "family": "procedural-marks",
+                        "material": "MeshBasicMaterial",
+                        "surface": "instanced-geometry-material",
+                        "reason": "source-used-project-webgpu-material-factory"
+                      },
+                      {
+                        "kind": "standard-material",
+                        "family": "standard-material-surface",
+                        "material": "PointsMaterial",
+                        "reason": "webgpu-safe-material"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "soft-particles",
+                        "family": "soft-particles",
+                        "material": "PointsMaterial",
+                        "surface": "three-points-material",
+                        "reason": "source-used-project-webgpu-material-factory"
+                      },
+                      {
+                        "kind": "webgpu-native-helper",
+                        "id": "direction-space-skybox-shell",
+                        "family": "sky-background-field",
+                        "api": "utilities.createDirectionSpaceSkyboxShell",
+                        "factory": "sky-background-field",
+                        "material": "MeshBasicMaterial",
+                        "surface": "direction-space-vertex-color-skybox-shell"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "matte-painted-surface",
+                        "factory": "matte-painted-surface",
+                        "reason": "runtime-material-factory-userdata"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "matte-painted-surface",
+                        "factory": "matte-painted-surface",
+                        "surface": "MeshStandardMaterial PlaneGeometry with UVs",
+                        "reason": "runtime-material-factory-userdata"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "matte-painted-surface",
+                        "factory": "matte-painted-surface",
+                        "surface": "MeshStandardMaterial",
+                        "reason": "runtime-material-factory-userdata"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "procedural-marks",
+                        "factory": "procedural-marks",
+                        "surface": "LineBasicMaterial BufferGeometry vertex colors with UVs",
+                        "reason": "runtime-material-factory-userdata"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "procedural-marks",
+                        "factory": "procedural-marks",
+                        "surface": "LineBasicMaterial",
+                        "reason": "runtime-material-factory-userdata"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "soft-particles",
+                        "factory": "soft-particles",
+                        "surface": "PointsMaterial BufferGeometry vertex colors with UVs",
+                        "reason": "runtime-material-factory-userdata"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "soft-particles",
+                        "factory": "soft-particles",
+                        "surface": "PointsMaterial",
+                        "reason": "runtime-material-factory-userdata"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "scraped-paint-grain-surface",
+                        "factory": "scraped-paint-grain-surface",
+                        "reason": "runtime-material-factory-userdata"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "scraped-paint-grain-surface",
+                        "factory": "scraped-paint-grain-surface",
+                        "surface": "MeshBasicMaterial",
+                        "reason": "runtime-material-factory-userdata"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "matte-painted-surface",
+                        "factory": "matte-painted-surface",
+                        "surface": "MeshBasicMaterial",
+                        "reason": "runtime-material-factory-userdata"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "procedural-marks",
+                        "factory": "procedural-marks",
+                        "reason": "runtime-material-factory-userdata"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "procedural-marks",
+                        "factory": "procedural-marks",
+                        "surface": "MeshBasicMaterial",
+                        "reason": "runtime-material-factory-userdata"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "visibleAbsence": {
+              "intentional": true,
+              "allowedAbsentOutput": true,
+              "facts": [
+                "no centered grid is used",
+                "no literal structural frame is required",
+                "no realistic perspective corridor is required",
+                "negative space remains available for pale wash and breathing room"
+              ],
+              "rationale": "The construction decision needs rhythm-driven asymmetry and shallow ambiguous depth, not conventional scene architecture."
+            }
+          },
+          "plannedPart": {
+            "source": "world-part-plan.json#/parts/2",
+            "partId": "diagonal-arc-armature",
+            "role": "asymmetrical spatial armature",
+            "intent": "Own the large-scale asymmetrical structure: diagonal thrusts, sweeping curves, balancing bars, beams, wedges, and planar anchors that move the viewer's eye through the world.",
+            "messagePurpose": "Own the large-scale asymmetrical structure: diagonal thrusts, sweeping curves, balancing bars, beams, wedges, and planar anchors that move the viewer's eye through the world.",
+            "visualTarget": "Own the large-scale asymmetrical structure: diagonal thrusts, sweeping curves, balancing bars, beams, wedges, and planar anchors that move the viewer's eye through the world.",
+            "relationshipToWhole": "Gives the piece its readable Bauer spatial organization so the focal symbols, Brussels flow, and contour marks are arranged by diagonal and orbital motion rather than scattered decoration.",
+            "visibleAbsence": {
+              "intentional": true,
+              "facts": [
+                "no centered grid is used",
+                "no literal structural frame is required",
+                "no realistic perspective corridor is required",
+                "negative space remains available for pale wash and breathing room"
+              ],
+              "rationale": "The construction decision needs rhythm-driven asymmetry and shallow ambiguous depth, not conventional scene architecture."
+            }
+          },
+          "compositionBeforeHash": "9303f4a5c758de10",
+          "compositionAfterHash": "3ee254fca529aa24"
+        },
+        "intent": "Own the large-scale asymmetrical structure: diagonal thrusts, sweeping curves, balancing bars, beams, wedges, and planar anchors that move the viewer's eye through the world.",
+        "messagePurpose": "Own the large-scale asymmetrical structure: diagonal thrusts, sweeping curves, balancing bars, beams, wedges, and planar anchors that move the viewer's eye through the world.",
+        "visualTarget": "Own the large-scale asymmetrical structure: diagonal thrusts, sweeping curves, balancing bars, beams, wedges, and planar anchors that move the viewer's eye through the world.",
+        "relationshipToWhole": "Gives the piece its readable Bauer spatial organization so the focal symbols, Brussels flow, and contour marks are arranged by diagonal and orbital motion rather than scattered decoration.",
+        "visibleAbsence": {
+          "intentional": true,
+          "facts": [
+            "no centered grid is used",
+            "no literal structural frame is required",
+            "no realistic perspective corridor is required",
+            "negative space remains available for pale wash and breathing room"
+          ],
+          "rationale": "The construction decision needs rhythm-driven asymmetry and shallow ambiguous depth, not conventional scene architecture."
+        },
+        "params": {
+          "band": "structural-readability",
+          "layer": "middleground",
+          "position": [
+            -0.2,
+            0.02,
+            0.02
+          ],
+          "scale": 1.02,
+          "opacity": 0.94,
+          "motionIntensity": 0.14,
+          "renderOrder": 3,
+          "visibilityPriority": "structure"
+        },
+        "paramSemantics": {
+          "band": "visual placement/readability band for full-world params; distinct from declared compositionOwnership.lane"
+        },
+        "compositionOwnership": {
+          "lane": "creative-composition-structure",
+          "owns": [
+            "main diagonal thrusts",
+            "sweeping curve paths",
+            "balancing bars and beam-like forms",
+            "secondary geometric planes",
+            "off-center spatial balance",
+            "large-scale rhythm before detail"
+          ],
+          "avoid": [
+            "central band or grid default",
+            "symmetrical target construction",
+            "literal architecture",
+            "filling every layer by habit",
+            "stealing all circular focal ownership from radial-anchor-constellation"
+          ]
+        }
+      },
+      {
+        "id": "radial-anchor-constellation",
+        "partId": "radial-anchor-constellation",
+        "role": "mixed-scale radial symbolic focal system",
+        "moduleRef": {
+          "type": "immersive-world-generated-module",
+          "version": 1,
+          "moduleId": "rudolf-bauer-brussels-fire-radial-anchor-constellation",
+          "partId": "radial-anchor-constellation",
+          "hash": "2c1f55aa2c3b24d2941345010d60feb22af811748fd5a87561ada865192a1410",
+          "integrity": "sha256-2c1f55aa2c3b24d2941345010d60feb22af811748fd5a87561ada865192a1410",
+          "exportName": "createImmersiveWorldPart",
+          "file": "data/immersive-world/generated-modules/2c1f55aa2c3b24d2941345010d60feb22af811748fd5a87561ada865192a1410.mjs",
+          "url": "./data/immersive-world/generated-modules/2c1f55aa2c3b24d2941345010d60feb22af811748fd5a87561ada865192a1410.mjs",
+          "rendererCompatibility": {
+            "version": 1,
+            "targetMode": "webgpu-project-scene",
+            "compatibilityStatus": "webgpu-compatible",
+            "webgpuCompatible": true,
+            "evidenceReasons": [
+              "webgpu-safe-material"
+            ],
+            "featureFacts": [
+              {
+                "kind": "standard-material",
+                "material": "MeshBasicMaterial",
+                "family": "standard-material-surface",
+                "reason": "webgpu-safe-material"
+              },
+              {
+                "kind": "standard-material",
+                "material": "LineBasicMaterial",
+                "family": "standard-material-surface",
+                "reason": "webgpu-safe-material"
+              }
+            ],
+            "compatibleSurfaces": [
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "MeshBasicMaterial"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "LineBasicMaterial"
+              }
+            ]
+          }
+        },
+        "evidence": {
+          "browserValidation": {
+            "source": "part-workshop-strict-browser-validation",
+            "passed": true,
+            "acceptanceStatus": "accepted-clean",
+            "finalDraftRef": "immersive-world-agent-work-sessions/part-workshop/radial-anchor-constellation/drafts/radial-anchor-constellation.module.mjs",
+            "previewHealthStatus": "ok",
+            "capturedViews": [
+              "desktop"
+            ],
+            "allowedAbsentOutput": true,
+            "warningOnlySoftAccepted": false,
+            "unresolvedWarningCount": 0
+          },
+          "declaredCompositionOwnership": {
+            "lane": "creative-focal-forms",
+            "owns": [
+              "primary radial-symbol hierarchy",
+              "central anchoring disk or mass when composition needs it",
+              "clustered circular accents",
+              "crescents, ovals, wedges, and nested frames",
+              "mixed scale focal attention",
+              "symbolic non-literal form language"
+            ],
+            "avoid": [
+              "generic target or aperture",
+              "literal fire icons",
+              "literal memorial symbols",
+              "perfect symmetry",
+              "taking over all linework or atmospheric wash"
+            ]
+          },
+          "compositionOwnershipSource": "world-part-plan.json#/parts/3/compositionOwnership",
+          "compositionAdaptations": [
+            "Given primary readability so the warm disk, teal oval, crescent, nested triangle, and dot cluster become the central but off-balance symbolic focus.",
+            "Still avoids a bullseye or literal fire/casualty symbol.",
+            "Preserved as the off-balance focal radial-symbol cluster.",
+            "composition modified radial-anchor-constellation from isolated accepted-part defaults"
+          ],
+          "workshopAcceptance": [
+            "Final draft file: immersive-world-agent-work-sessions/part-workshop/radial-anchor-constellation/drafts/radial-anchor-constellation.module.mjs.",
+            "Static validation succeeded: immersive-world-agent-work-sessions/part-workshop/radial-anchor-constellation/checks/check-result.json.",
+            "Preview attempt 2 succeeded with healthStatus ok and captureStatus ok.",
+            "Screenshot: immersive-world-agent-work-sessions/part-workshop/radial-anchor-constellation/previews/attempt-002/002-radial-anchor-constellation-draft-desktop.jpg.",
+            "Render report: immersive-world-agent-work-sessions/part-workshop/radial-anchor-constellation/previews/attempt-002/desktop-render-report.json.",
+            "Render report proves actual WebGPU backend, webgpu-compatible module packaging, MeshBasicMaterial and LineBasicMaterial safe surfaces, and material factory evidence for matte-painted-surface, scraped-paint-grain-surface, and procedural-marks.",
+            "No browser, WebGL, or WebGPU errors were reported in final preview evidence.",
+            "desktop:part-preview-evolution/004-radial-anchor-constellation-attempt-1-desktop.jpg"
+          ],
+          "acceptedPartValidation": {
+            "version": 1,
+            "source": "part-workshop-strict-browser-validation",
+            "previewScope": "isolated-part",
+            "passed": true,
+            "warningOnlySoftAccepted": false,
+            "partId": "radial-anchor-constellation",
+            "moduleExport": {
+              "expectedExportName": "createImmersiveWorldPart",
+              "actualExportName": "createImmersiveWorldPart",
+              "moduleId": "rudolf-bauer-brussels-fire-radial-anchor-constellation",
+              "moduleHash": "2c1f55aa2c3b24d2941345010d60feb22af811748fd5a87561ada865192a1410",
+              "pass": true
+            },
+            "finalDraftRequired": true,
+            "finalDraft": {
+              "file": "immersive-world-agent-work-sessions/part-workshop/radial-anchor-constellation/drafts/radial-anchor-constellation.module.mjs",
+              "sessionFile": "drafts/radial-anchor-constellation.module.mjs",
+              "sha256": "4d1ba5e6b18fbd31120e5805ecf78137526a3ce3ffaced972af6912848ee841d",
+              "bytes": 38925,
+              "source": "agent-work-session-draft"
+            },
+            "finalPreview": {
+              "status": "succeeded"
+            },
+            "preview": {
+              "required": true,
+              "capturedViews": [
+                "desktop"
+              ],
+              "healthStatus": "ok",
+              "infoFacts": [
+                {
+                  "code": "webgpu-native-feature-use",
+                  "severity": "info",
+                  "message": "desktop capture proved actual WebGPU backend with WebGPU-native feature facts.",
+                  "details": {
+                    "view": "desktop",
+                    "rendererMode": "webgpu",
+                    "rendererBackend": "webgpu",
+                    "selectedRendererMode": "webgpu",
+                    "selectedRendererBackend": "webgpu",
+                    "actualRendererMode": "webgpu",
+                    "actualRendererBackend": "webgpu",
+                    "rendererProof": {
+                      "isWebGPURenderer": true,
+                      "backendIsWebGPUBackend": true,
+                      "backendIsWebGLBackend": false,
+                      "backendType": "VD"
+                    },
+                    "webgpuFeatureFacts": [
+                      {
+                        "kind": "standard-material",
+                        "family": "standard-material-surface",
+                        "material": "MeshBasicMaterial",
+                        "reason": "webgpu-safe-material"
+                      },
+                      {
+                        "kind": "standard-material",
+                        "family": "standard-material-surface",
+                        "material": "MeshStandardMaterial",
+                        "reason": "webgpu-safe-material"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "sky-background-field",
+                        "family": "sky-background-field",
+                        "material": "MeshBasicMaterial",
+                        "surface": "scene-background-or-large-plane",
+                        "reason": "source-used-project-webgpu-material-factory"
+                      },
+                      {
+                        "kind": "webgpu-native-helper",
+                        "id": "direction-space-skybox-shell",
+                        "family": "sky-background-field",
+                        "factory": "sky-background-field",
+                        "material": "MeshBasicMaterial",
+                        "surface": "direction-space-vertex-color-skybox-shell",
+                        "reason": "webgpu-native-helper-utility"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "matte-painted-surface",
+                        "family": "matte-painted-surface",
+                        "material": "MeshStandardMaterial",
+                        "surface": "three-standard-material",
+                        "reason": "source-used-project-webgpu-material-factory"
+                      },
+                      {
+                        "kind": "standard-material",
+                        "family": "standard-material-surface",
+                        "material": "LineBasicMaterial",
+                        "reason": "webgpu-safe-material"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "procedural-marks",
+                        "family": "procedural-marks",
+                        "material": "MeshBasicMaterial",
+                        "surface": "instanced-geometry-material",
+                        "reason": "source-used-project-webgpu-material-factory"
+                      },
+                      {
+                        "kind": "standard-material",
+                        "family": "standard-material-surface",
+                        "material": "PointsMaterial",
+                        "reason": "webgpu-safe-material"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "soft-particles",
+                        "family": "soft-particles",
+                        "material": "PointsMaterial",
+                        "surface": "three-points-material",
+                        "reason": "source-used-project-webgpu-material-factory"
+                      },
+                      {
+                        "kind": "webgpu-native-helper",
+                        "id": "direction-space-skybox-shell",
+                        "family": "sky-background-field",
+                        "api": "utilities.createDirectionSpaceSkyboxShell",
+                        "factory": "sky-background-field",
+                        "material": "MeshBasicMaterial",
+                        "surface": "direction-space-vertex-color-skybox-shell"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "matte-painted-surface",
+                        "factory": "matte-painted-surface",
+                        "reason": "runtime-material-factory-userdata"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "matte-painted-surface",
+                        "factory": "matte-painted-surface",
+                        "surface": "MeshStandardMaterial PlaneGeometry with UVs",
+                        "reason": "runtime-material-factory-userdata"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "matte-painted-surface",
+                        "factory": "matte-painted-surface",
+                        "surface": "MeshStandardMaterial",
+                        "reason": "runtime-material-factory-userdata"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "procedural-marks",
+                        "factory": "procedural-marks",
+                        "surface": "LineBasicMaterial BufferGeometry vertex colors with UVs",
+                        "reason": "runtime-material-factory-userdata"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "procedural-marks",
+                        "factory": "procedural-marks",
+                        "surface": "LineBasicMaterial",
+                        "reason": "runtime-material-factory-userdata"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "soft-particles",
+                        "factory": "soft-particles",
+                        "surface": "PointsMaterial BufferGeometry vertex colors with UVs",
+                        "reason": "runtime-material-factory-userdata"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "soft-particles",
+                        "factory": "soft-particles",
+                        "surface": "PointsMaterial",
+                        "reason": "runtime-material-factory-userdata"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "matte-painted-surface",
+                        "factory": "matte-painted-surface",
+                        "surface": "MeshBasicMaterial",
+                        "reason": "runtime-material-factory-userdata"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "scraped-paint-grain-surface",
+                        "factory": "scraped-paint-grain-surface",
+                        "reason": "runtime-material-factory-userdata"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "scraped-paint-grain-surface",
+                        "factory": "scraped-paint-grain-surface",
+                        "surface": "MeshBasicMaterial",
+                        "reason": "runtime-material-factory-userdata"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "procedural-marks",
+                        "factory": "procedural-marks",
+                        "reason": "runtime-material-factory-userdata"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "procedural-marks",
+                        "factory": "procedural-marks",
+                        "surface": "MeshBasicMaterial",
+                        "reason": "runtime-material-factory-userdata"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "visibleAbsence": {
+              "intentional": true,
+              "allowedAbsentOutput": true,
+              "facts": [
+                "no single bullseye target is used",
+                "no literal flame, smoke plume, or casualty icon is used",
+                "no fixed foreground role is assumed",
+                "some forms remain partial, occluded, or haloed to preserve ambiguous depth"
+              ],
+              "rationale": "The authority calls for radial symbols and clustered circular accents, but the legacy guard forbids turning that into a habitual central target."
+            }
+          },
+          "plannedPart": {
+            "source": "world-part-plan.json#/parts/3",
+            "partId": "radial-anchor-constellation",
+            "role": "mixed-scale radial symbolic focal system",
+            "intent": "Create the central-but-off-balance symbolic focus from mixed-scale disks, ovals, crescents, rings, nested triangle frames, wedges, and clustered circular accents.",
+            "messagePurpose": "Create the central-but-off-balance symbolic focus from mixed-scale disks, ovals, crescents, rings, nested triangle frames, wedges, and clustered circular accents.",
+            "visualTarget": "Create the central-but-off-balance symbolic focus from mixed-scale disks, ovals, crescents, rings, nested triangle frames, wedges, and clustered circular accents.",
+            "relationshipToWhole": "Supplies the piece's symbolic focal grammar, giving the Brussels flow and diagonal armature a set of readable geometric anchors without becoming literal illustration.",
+            "visibleAbsence": {
+              "intentional": true,
+              "facts": [
+                "no single bullseye target is used",
+                "no literal flame, smoke plume, or casualty icon is used",
+                "no fixed foreground role is assumed",
+                "some forms remain partial, occluded, or haloed to preserve ambiguous depth"
+              ],
+              "rationale": "The authority calls for radial symbols and clustered circular accents, but the legacy guard forbids turning that into a habitual central target."
+            }
+          },
+          "compositionBeforeHash": "19d8eb2028fc7ca4",
+          "compositionAfterHash": "dcdbd77a23f13211"
+        },
+        "intent": "Create the central-but-off-balance symbolic focus from mixed-scale disks, ovals, crescents, rings, nested triangle frames, wedges, and clustered circular accents.",
+        "messagePurpose": "Create the central-but-off-balance symbolic focus from mixed-scale disks, ovals, crescents, rings, nested triangle frames, wedges, and clustered circular accents.",
+        "visualTarget": "Create the central-but-off-balance symbolic focus from mixed-scale disks, ovals, crescents, rings, nested triangle frames, wedges, and clustered circular accents.",
+        "relationshipToWhole": "Supplies the piece's symbolic focal grammar, giving the Brussels flow and diagonal armature a set of readable geometric anchors without becoming literal illustration.",
+        "visibleAbsence": {
+          "intentional": true,
+          "facts": [
+            "no single bullseye target is used",
+            "no literal flame, smoke plume, or casualty icon is used",
+            "no fixed foreground role is assumed",
+            "some forms remain partial, occluded, or haloed to preserve ambiguous depth"
+          ],
+          "rationale": "The authority calls for radial symbols and clustered circular accents, but the legacy guard forbids turning that into a habitual central target."
+        },
+        "params": {
+          "band": "primary-readability",
+          "layer": "foreground-middleground",
+          "position": [
+            0.05,
+            0,
+            0.22
+          ],
+          "scale": 1.45,
+          "opacity": 0.98,
+          "motionIntensity": 0.12,
+          "renderOrder": 4,
+          "visibilityPriority": "primary"
+        },
+        "paramSemantics": {
+          "band": "visual placement/readability band for full-world params; distinct from declared compositionOwnership.lane"
+        },
+        "compositionOwnership": {
+          "lane": "creative-focal-forms",
+          "owns": [
+            "primary radial-symbol hierarchy",
+            "central anchoring disk or mass when composition needs it",
+            "clustered circular accents",
+            "crescents, ovals, wedges, and nested frames",
+            "mixed scale focal attention",
+            "symbolic non-literal form language"
+          ],
+          "avoid": [
+            "generic target or aperture",
+            "literal fire icons",
+            "literal memorial symbols",
+            "perfect symmetry",
+            "taking over all linework or atmospheric wash"
+          ]
+        }
+      },
+      {
+        "id": "brussels-concentrated-flow",
+        "partId": "brussels-concentrated-flow",
+        "role": "selected-news transformation system",
+        "moduleRef": {
+          "type": "immersive-world-generated-module",
+          "version": 1,
+          "moduleId": "rudolf-bauer-brussels-fire-brussels-concentrated-flow",
+          "partId": "brussels-concentrated-flow",
+          "hash": "7b4bc62d2df2642adaa0ad23e019b47412fc83c84ad7db8338c7b1e535553668",
+          "integrity": "sha256-7b4bc62d2df2642adaa0ad23e019b47412fc83c84ad7db8338c7b1e535553668",
+          "exportName": "createImmersiveWorldPart",
+          "file": "data/immersive-world/generated-modules/7b4bc62d2df2642adaa0ad23e019b47412fc83c84ad7db8338c7b1e535553668.mjs",
+          "url": "./data/immersive-world/generated-modules/7b4bc62d2df2642adaa0ad23e019b47412fc83c84ad7db8338c7b1e535553668.mjs",
+          "rendererCompatibility": {
+            "version": 1,
+            "targetMode": "webgpu-project-scene",
+            "compatibilityStatus": "webgpu-compatible",
+            "webgpuCompatible": true,
+            "evidenceReasons": [
+              "webgpu-safe-material"
+            ],
+            "featureFacts": [
+              {
+                "kind": "standard-material",
+                "material": "MeshBasicMaterial",
+                "family": "standard-material-surface",
+                "reason": "webgpu-safe-material"
+              },
+              {
+                "kind": "standard-material",
+                "material": "LineBasicMaterial",
+                "family": "standard-material-surface",
+                "reason": "webgpu-safe-material"
+              },
+              {
+                "kind": "standard-material",
+                "material": "PointsMaterial",
+                "family": "standard-material-surface",
+                "reason": "webgpu-safe-material"
+              }
+            ],
+            "compatibleSurfaces": [
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "MeshBasicMaterial"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "LineBasicMaterial"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "PointsMaterial"
+              }
+            ]
+          }
+        },
+        "evidence": {
+          "browserValidation": {
+            "source": "part-workshop-strict-browser-validation",
+            "passed": true,
+            "acceptanceStatus": "accepted-clean",
+            "finalDraftRef": "immersive-world-agent-work-sessions/part-workshop/brussels-concentrated-flow/drafts/brussels-concentrated-flow.module.mjs",
+            "previewHealthStatus": "ok",
+            "capturedViews": [
+              "desktop"
+            ],
+            "allowedAbsentOutput": true,
+            "warningOnlySoftAccepted": false,
+            "unresolvedWarningCount": 0
+          },
+          "declaredCompositionOwnership": {
+            "lane": "creative-news-metaphor",
+            "owns": [
+              "selected-news meaning preservation",
+              "Brussels as selected-news visual cue",
+              "concentrated spread rather than all-over disaster",
+              "measured low-intensity cadence",
+              "eleven or more quiet circular loss beats",
+              "flow transformation that follows arcs, diagonals, and clustered radial symbols"
+            ],
+            "avoid": [
+              "literal flames",
+              "literal casualties",
+              "news headline text",
+              "photographic Brussels landmarks",
+              "generic fire particles",
+              "turning low-intensity news weighting into spectacle"
+            ]
+          },
+          "compositionOwnershipSource": "world-part-plan.json#/parts/4/compositionOwnership",
+          "compositionAdaptations": [
+            "Given primary-news readability so the eleven quiet loss beats and muted Brussels coordinate locus remain legible inside the radial/diagonal system.",
+            "The low motion value preserves the measured steady-grid-pulse meaning and avoids fire-like flicker or spectacle.",
+            "Kept as the concentrated selected-news flow with quiet circular loss beats.",
+            "composition modified brussels-concentrated-flow from isolated accepted-part defaults"
+          ],
+          "workshopAcceptance": [
+            "Final draft ref: immersive-world-agent-work-sessions/part-workshop/brussels-concentrated-flow/drafts/brussels-concentrated-flow.module.mjs.",
+            "Preview attempt 3 succeeded: previews/attempt-003/003-brussels-concentrated-flow-draft-desktop.jpg and previews/attempt-003/desktop-render-report.json.",
+            "Static check-part-draft succeeded with validation.pass true and no errors.",
+            "Render captureStatus ok, readiness ready, actual renderer backend webgpu, compatibility webgpu-compatible.",
+            "No browser console/page errors were reported in final evidence; browserErrors is null. No WebGL/WebGPU error lists were reported.",
+            "Warning-only soft acceptance after repair: final deterministic health warning is foreground-occupancy-too-low, with foregroundOccupancyRatio 0.01566 and boundingBoxCoverageRatio 0.072809. This is preserved as unresolved evidence for an intentionally concentrated selected-news part.",
+            "desktop:part-preview-evolution/005-brussels-concentrated-flow-attempt-1-desktop.jpg"
+          ],
+          "acceptedPartValidation": {
+            "version": 1,
+            "source": "part-workshop-strict-browser-validation",
+            "previewScope": "isolated-part",
+            "passed": true,
+            "warningOnlySoftAccepted": false,
+            "partId": "brussels-concentrated-flow",
+            "moduleExport": {
+              "expectedExportName": "createImmersiveWorldPart",
+              "actualExportName": "createImmersiveWorldPart",
+              "moduleId": "rudolf-bauer-brussels-fire-brussels-concentrated-flow",
+              "moduleHash": "7b4bc62d2df2642adaa0ad23e019b47412fc83c84ad7db8338c7b1e535553668",
+              "pass": true
+            },
+            "finalDraftRequired": true,
+            "finalDraft": {
+              "file": "immersive-world-agent-work-sessions/part-workshop/brussels-concentrated-flow/drafts/brussels-concentrated-flow.module.mjs",
+              "sessionFile": "drafts/brussels-concentrated-flow.module.mjs",
+              "sha256": "f050e438082d1cc5cc5249c7cc05f6a924045862a4ce1ad97ce9dd5c881a73ec",
+              "bytes": 34342,
+              "source": "agent-work-session-draft"
+            },
+            "finalPreview": {
+              "status": "succeeded"
+            },
+            "preview": {
+              "required": true,
+              "capturedViews": [
+                "desktop"
+              ],
+              "healthStatus": "ok",
+              "infoFacts": [
+                {
+                  "code": "webgpu-native-feature-use",
+                  "severity": "info",
+                  "message": "desktop capture proved actual WebGPU backend with WebGPU-native feature facts.",
+                  "details": {
+                    "view": "desktop",
+                    "rendererMode": "webgpu",
+                    "rendererBackend": "webgpu",
+                    "selectedRendererMode": "webgpu",
+                    "selectedRendererBackend": "webgpu",
+                    "actualRendererMode": "webgpu",
+                    "actualRendererBackend": "webgpu",
+                    "rendererProof": {
+                      "isWebGPURenderer": true,
+                      "backendIsWebGPUBackend": true,
+                      "backendIsWebGLBackend": false,
+                      "backendType": "VD"
+                    },
+                    "webgpuFeatureFacts": [
+                      {
+                        "kind": "standard-material",
+                        "family": "standard-material-surface",
+                        "material": "MeshBasicMaterial",
+                        "reason": "webgpu-safe-material"
+                      },
+                      {
+                        "kind": "standard-material",
+                        "family": "standard-material-surface",
+                        "material": "MeshStandardMaterial",
+                        "reason": "webgpu-safe-material"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "sky-background-field",
+                        "family": "sky-background-field",
+                        "material": "MeshBasicMaterial",
+                        "surface": "scene-background-or-large-plane",
+                        "reason": "source-used-project-webgpu-material-factory"
+                      },
+                      {
+                        "kind": "webgpu-native-helper",
+                        "id": "direction-space-skybox-shell",
+                        "family": "sky-background-field",
+                        "factory": "sky-background-field",
+                        "material": "MeshBasicMaterial",
+                        "surface": "direction-space-vertex-color-skybox-shell",
+                        "reason": "webgpu-native-helper-utility"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "matte-painted-surface",
+                        "family": "matte-painted-surface",
+                        "material": "MeshStandardMaterial",
+                        "surface": "three-standard-material",
+                        "reason": "source-used-project-webgpu-material-factory"
+                      },
+                      {
+                        "kind": "standard-material",
+                        "family": "standard-material-surface",
+                        "material": "LineBasicMaterial",
+                        "reason": "webgpu-safe-material"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "procedural-marks",
+                        "family": "procedural-marks",
+                        "material": "MeshBasicMaterial",
+                        "surface": "instanced-geometry-material",
+                        "reason": "source-used-project-webgpu-material-factory"
+                      },
+                      {
+                        "kind": "standard-material",
+                        "family": "standard-material-surface",
+                        "material": "PointsMaterial",
+                        "reason": "webgpu-safe-material"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "soft-particles",
+                        "family": "soft-particles",
+                        "material": "PointsMaterial",
+                        "surface": "three-points-material",
+                        "reason": "source-used-project-webgpu-material-factory"
+                      },
+                      {
+                        "kind": "webgpu-native-helper",
+                        "id": "direction-space-skybox-shell",
+                        "family": "sky-background-field",
+                        "api": "utilities.createDirectionSpaceSkyboxShell",
+                        "factory": "sky-background-field",
+                        "material": "MeshBasicMaterial",
+                        "surface": "direction-space-vertex-color-skybox-shell"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "matte-painted-surface",
+                        "factory": "matte-painted-surface",
+                        "reason": "runtime-material-factory-userdata"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "matte-painted-surface",
+                        "factory": "matte-painted-surface",
+                        "surface": "MeshStandardMaterial PlaneGeometry with UVs",
+                        "reason": "runtime-material-factory-userdata"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "matte-painted-surface",
+                        "factory": "matte-painted-surface",
+                        "surface": "MeshStandardMaterial",
+                        "reason": "runtime-material-factory-userdata"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "procedural-marks",
+                        "factory": "procedural-marks",
+                        "surface": "LineBasicMaterial BufferGeometry vertex colors with UVs",
+                        "reason": "runtime-material-factory-userdata"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "procedural-marks",
+                        "factory": "procedural-marks",
+                        "surface": "LineBasicMaterial",
+                        "reason": "runtime-material-factory-userdata"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "soft-particles",
+                        "factory": "soft-particles",
+                        "surface": "PointsMaterial BufferGeometry vertex colors with UVs",
+                        "reason": "runtime-material-factory-userdata"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "soft-particles",
+                        "factory": "soft-particles",
+                        "surface": "PointsMaterial",
+                        "reason": "runtime-material-factory-userdata"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "matte-painted-surface",
+                        "factory": "matte-painted-surface",
+                        "surface": "MeshBasicMaterial",
+                        "reason": "runtime-material-factory-userdata"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "procedural-marks",
+                        "factory": "procedural-marks",
+                        "reason": "runtime-material-factory-userdata"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "procedural-marks",
+                        "factory": "procedural-marks",
+                        "surface": "MeshBasicMaterial",
+                        "reason": "runtime-material-factory-userdata"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "soft-particles",
+                        "factory": "soft-particles",
+                        "reason": "runtime-material-factory-userdata"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "visibleAbsence": {
+              "intentional": true,
+              "allowedAbsentOutput": true,
+              "facts": [
+                "no flames are shown",
+                "no bodies or rescue scene is shown",
+                "no literal city map or skyline is required",
+                "no dramatic explosion or emergency-light treatment is used",
+                "the news remains transformed through visual construction rather than illustrated directly"
+              ],
+              "rationale": "The packet says the news facts are weighting facts and the metaphor must come from the visual construction decision."
+            }
+          },
+          "plannedPart": {
+            "source": "world-part-plan.json#/parts/4",
+            "partId": "brussels-concentrated-flow",
+            "role": "selected-news transformation system",
+            "intent": "Carry the selected news through a measured, concentrated, non-literal flow transformation with a Brussels cue and at-least-eleven quiet loss beats, all subordinated to Bauer-style radial and diagonal abstraction.",
+            "messagePurpose": "Carry the selected news through a measured, concentrated, non-literal flow transformation with a Brussels cue and at-least-eleven quiet loss beats, all subordinated to Bauer-style radial and diagonal abstraction.",
+            "visualTarget": "Carry the selected news through a measured, concentrated, non-literal flow transformation with a Brussels cue and at-least-eleven quiet loss beats, all subordinated to Bauer-style radial and diagonal abstraction.",
+            "relationshipToWhole": "Gives the artwork its reason for existing: the Brussels fire-deaths cue becomes a concentrated spatial flow of restrained signs moving through Bauer's asymmetrical symbolic field.",
+            "visibleAbsence": {
+              "intentional": true,
+              "facts": [
+                "no flames are shown",
+                "no bodies or rescue scene is shown",
+                "no literal city map or skyline is required",
+                "no dramatic explosion or emergency-light treatment is used",
+                "the news remains transformed through visual construction rather than illustrated directly"
+              ],
+              "rationale": "The packet says the news facts are weighting facts and the metaphor must come from the visual construction decision."
+            }
+          },
+          "compositionBeforeHash": "bd30e8abd9e34f3e",
+          "compositionAfterHash": "cb467dc0d029bfb3"
+        },
+        "intent": "Carry the selected news through a measured, concentrated, non-literal flow transformation with a Brussels cue and at-least-eleven quiet loss beats, all subordinated to Bauer-style radial and diagonal abstraction.",
+        "messagePurpose": "Carry the selected news through a measured, concentrated, non-literal flow transformation with a Brussels cue and at-least-eleven quiet loss beats, all subordinated to Bauer-style radial and diagonal abstraction.",
+        "visualTarget": "Carry the selected news through a measured, concentrated, non-literal flow transformation with a Brussels cue and at-least-eleven quiet loss beats, all subordinated to Bauer-style radial and diagonal abstraction.",
+        "relationshipToWhole": "Gives the artwork its reason for existing: the Brussels fire-deaths cue becomes a concentrated spatial flow of restrained signs moving through Bauer's asymmetrical symbolic field.",
+        "visibleAbsence": {
+          "intentional": true,
+          "facts": [
+            "no flames are shown",
+            "no bodies or rescue scene is shown",
+            "no literal city map or skyline is required",
+            "no dramatic explosion or emergency-light treatment is used",
+            "the news remains transformed through visual construction rather than illustrated directly"
+          ],
+          "rationale": "The packet says the news facts are weighting facts and the metaphor must come from the visual construction decision."
+        },
+        "params": {
+          "band": "primary-readability",
+          "layer": "foreground-middleground",
+          "position": [
+            0.04,
+            0.01,
+            0.32
+          ],
+          "scale": 1.45,
+          "opacity": 0.98,
+          "motionIntensity": 0.1,
+          "renderOrder": 5,
+          "visibilityPriority": "primary"
+        },
+        "paramSemantics": {
+          "band": "visual placement/readability band for full-world params; distinct from declared compositionOwnership.lane"
+        },
+        "compositionOwnership": {
+          "lane": "creative-news-metaphor",
+          "owns": [
+            "selected-news meaning preservation",
+            "Brussels as selected-news visual cue",
+            "concentrated spread rather than all-over disaster",
+            "measured low-intensity cadence",
+            "eleven or more quiet circular loss beats",
+            "flow transformation that follows arcs, diagonals, and clustered radial symbols"
+          ],
+          "avoid": [
+            "literal flames",
+            "literal casualties",
+            "news headline text",
+            "photographic Brussels landmarks",
+            "generic fire particles",
+            "turning low-intensity news weighting into spectacle"
+          ]
+        }
+      },
+      {
+        "id": "contour-web-and-notational-beats",
+        "partId": "contour-web-and-notational-beats",
+        "role": "contour-line rhythm and small-mark articulation",
+        "moduleRef": {
+          "type": "immersive-world-generated-module",
+          "version": 1,
+          "moduleId": "rudolf-bauer-brussels-fire-contour-web-and-notational-beats",
+          "partId": "contour-web-and-notational-beats",
+          "hash": "e5d69243eee33fcf288723b731cfa5463c407e8ced06e607e1c863a79ea1aac3",
+          "integrity": "sha256-e5d69243eee33fcf288723b731cfa5463c407e8ced06e607e1c863a79ea1aac3",
+          "exportName": "createImmersiveWorldPart",
+          "file": "data/immersive-world/generated-modules/e5d69243eee33fcf288723b731cfa5463c407e8ced06e607e1c863a79ea1aac3.mjs",
+          "url": "./data/immersive-world/generated-modules/e5d69243eee33fcf288723b731cfa5463c407e8ced06e607e1c863a79ea1aac3.mjs",
+          "rendererCompatibility": {
+            "version": 1,
+            "targetMode": "webgpu-project-scene",
+            "compatibilityStatus": "webgpu-compatible",
+            "webgpuCompatible": true,
+            "evidenceReasons": [
+              "webgpu-safe-material",
+              "webgpu-native-helper-utility"
+            ],
+            "featureFacts": [
+              {
+                "kind": "standard-material",
+                "material": "LineBasicMaterial",
+                "family": "standard-material-surface",
+                "reason": "webgpu-safe-material"
+              },
+              {
+                "kind": "standard-material",
+                "material": "MeshBasicMaterial",
+                "family": "standard-material-surface",
+                "reason": "webgpu-safe-material"
+              },
+              {
+                "kind": "webgpu-native-helper",
+                "id": "instanced-mark-field",
+                "family": "instanced-marks",
+                "factory": "procedural-marks",
+                "material": "MeshBasicMaterial",
+                "surface": "three-instanced-mesh-basic-material",
+                "reason": "webgpu-native-helper-utility"
+              }
+            ],
+            "compatibleSurfaces": [
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "LineBasicMaterial"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "MeshBasicMaterial"
+              },
+              {
+                "reason": "webgpu-native-helper-utility",
+                "api": "utilities.createInstancedMarkField",
+                "helperId": "instanced-mark-field",
+                "featureFamily": "instanced-marks",
+                "outputKind": "object-bundle",
+                "materialType": "MeshBasicMaterial",
+                "runtimeSurface": "three-instanced-mesh-basic-material",
+                "factoryId": "procedural-marks",
+                "materialFactoryId": "procedural-marks",
+                "factoryCategory": "procedural-marks"
+              }
+            ]
+          }
+        },
+        "evidence": {
+          "browserValidation": {
+            "source": "part-workshop-strict-browser-validation",
+            "passed": true,
+            "acceptanceStatus": "accepted-clean",
+            "finalDraftRef": "immersive-world-agent-work-sessions/part-workshop/contour-web-and-notational-beats/drafts/contour-web-and-notational-beats.module.mjs",
+            "previewHealthStatus": "ok",
+            "capturedViews": [
+              "desktop"
+            ],
+            "allowedAbsentOutput": true,
+            "warningOnlySoftAccepted": false,
+            "unresolvedWarningCount": 0
+          },
+          "declaredCompositionOwnership": {
+            "lane": "creative-line-mark-articulation",
+            "owns": [
+              "thin black or mid-muted-grey contour loops",
+              "variable-width drawn line character",
+              "hatching and edge pressure",
+              "small notational incidents",
+              "rhythmic connectors between anchors",
+              "selected edge emphasis on geometric forms"
+            ],
+            "avoid": [
+              "generic foreground mark field",
+              "uniform decorative noise",
+              "heavy outlines around every object",
+              "making the scene purely mechanical",
+              "overwriting the flow part's news-specific beats"
+            ]
+          },
+          "compositionOwnershipSource": "world-part-plan.json#/parts/5/compositionOwnership",
+          "compositionAdaptations": [
+            "Slightly restrained relative to the broad accepted preview so the contour web binds the field without flattening or overcrowding the radial/news focus.",
+            "Preserves selective loops, hatching, radiating bars, small beats, and broken Brussels cell notation with measured gaps.",
+            "Integrated as selective contour-line rhythm and notational marks.",
+            "composition modified contour-web-and-notational-beats from isolated accepted-part defaults"
+          ],
+          "workshopAcceptance": [
+            "Final draft file is immersive-world-agent-work-sessions/part-workshop/contour-web-and-notational-beats/drafts/contour-web-and-notational-beats.module.mjs.",
+            "Static check succeeded with validation.pass true and sourceHash e26354032d29dc34c5b3b5f831f32b5b422d38b396de95419f186f027b10b656.",
+            "Final preview command preview-part-draft attempt 2 succeeded.",
+            "Final screenshot ref: previews/attempt-002/002-contour-web-and-notational-beats-draft-desktop.jpg.",
+            "Final render report ref: previews/attempt-002/desktop-render-report.json.",
+            "Render healthStatus ok, captureStatus ok, rendererMode webgpu, rendererBackend webgpu, rendererCompatibilityStatus webgpu-compatible.",
+            "WebGPU feature facts include LineBasicMaterial, MeshBasicMaterial, matte-painted-surface, procedural-marks, and utilities.createInstancedMarkField evidence.",
+            "No browser, WebGL, or WebGPU errors were reported in final handoff evidence.",
+            "desktop:part-preview-evolution/006-contour-web-and-notational-beats-attempt-1-desktop.jpg"
+          ],
+          "acceptedPartValidation": {
+            "version": 1,
+            "source": "part-workshop-strict-browser-validation",
+            "previewScope": "isolated-part",
+            "passed": true,
+            "warningOnlySoftAccepted": false,
+            "partId": "contour-web-and-notational-beats",
+            "moduleExport": {
+              "expectedExportName": "createImmersiveWorldPart",
+              "actualExportName": "createImmersiveWorldPart",
+              "moduleId": "rudolf-bauer-brussels-fire-contour-web-and-notational-beats",
+              "moduleHash": "e5d69243eee33fcf288723b731cfa5463c407e8ced06e607e1c863a79ea1aac3",
+              "pass": true
+            },
+            "finalDraftRequired": true,
+            "finalDraft": {
+              "file": "immersive-world-agent-work-sessions/part-workshop/contour-web-and-notational-beats/drafts/contour-web-and-notational-beats.module.mjs",
+              "sessionFile": "drafts/contour-web-and-notational-beats.module.mjs",
+              "sha256": "dc84b56184c7b2e9d6b9b8fe036ec3f63bdf1aae287fb8290354491e8d42224e",
+              "bytes": 34730,
+              "source": "agent-work-session-draft"
+            },
+            "finalPreview": {
+              "status": "succeeded"
+            },
+            "preview": {
+              "required": true,
+              "capturedViews": [
+                "desktop"
+              ],
+              "healthStatus": "ok",
+              "infoFacts": [
+                {
+                  "code": "webgpu-native-feature-use",
+                  "severity": "info",
+                  "message": "desktop capture proved actual WebGPU backend with WebGPU-native feature facts.",
+                  "details": {
+                    "view": "desktop",
+                    "rendererMode": "webgpu",
+                    "rendererBackend": "webgpu",
+                    "selectedRendererMode": "webgpu",
+                    "selectedRendererBackend": "webgpu",
+                    "actualRendererMode": "webgpu",
+                    "actualRendererBackend": "webgpu",
+                    "rendererProof": {
+                      "isWebGPURenderer": true,
+                      "backendIsWebGPUBackend": true,
+                      "backendIsWebGLBackend": false,
+                      "backendType": "VD"
+                    },
+                    "webgpuFeatureFacts": [
+                      {
+                        "kind": "standard-material",
+                        "family": "standard-material-surface",
+                        "material": "MeshBasicMaterial",
+                        "reason": "webgpu-safe-material"
+                      },
+                      {
+                        "kind": "standard-material",
+                        "family": "standard-material-surface",
+                        "material": "MeshStandardMaterial",
+                        "reason": "webgpu-safe-material"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "sky-background-field",
+                        "family": "sky-background-field",
+                        "material": "MeshBasicMaterial",
+                        "surface": "scene-background-or-large-plane",
+                        "reason": "source-used-project-webgpu-material-factory"
+                      },
+                      {
+                        "kind": "webgpu-native-helper",
+                        "id": "direction-space-skybox-shell",
+                        "family": "sky-background-field",
+                        "factory": "sky-background-field",
+                        "material": "MeshBasicMaterial",
+                        "surface": "direction-space-vertex-color-skybox-shell",
+                        "reason": "webgpu-native-helper-utility"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "matte-painted-surface",
+                        "family": "matte-painted-surface",
+                        "material": "MeshStandardMaterial",
+                        "surface": "three-standard-material",
+                        "reason": "source-used-project-webgpu-material-factory"
+                      },
+                      {
+                        "kind": "standard-material",
+                        "family": "standard-material-surface",
+                        "material": "LineBasicMaterial",
+                        "reason": "webgpu-safe-material"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "procedural-marks",
+                        "family": "procedural-marks",
+                        "material": "MeshBasicMaterial",
+                        "surface": "instanced-geometry-material",
+                        "reason": "source-used-project-webgpu-material-factory"
+                      },
+                      {
+                        "kind": "standard-material",
+                        "family": "standard-material-surface",
+                        "material": "PointsMaterial",
+                        "reason": "webgpu-safe-material"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "soft-particles",
+                        "family": "soft-particles",
+                        "material": "PointsMaterial",
+                        "surface": "three-points-material",
+                        "reason": "source-used-project-webgpu-material-factory"
+                      },
+                      {
+                        "kind": "webgpu-native-helper",
+                        "id": "instanced-mark-field",
+                        "family": "instanced-marks",
+                        "factory": "procedural-marks",
+                        "material": "MeshBasicMaterial",
+                        "surface": "three-instanced-mesh-basic-material",
+                        "reason": "webgpu-native-helper-utility"
+                      },
+                      {
+                        "kind": "webgpu-native-helper",
+                        "id": "direction-space-skybox-shell",
+                        "family": "sky-background-field",
+                        "api": "utilities.createDirectionSpaceSkyboxShell",
+                        "factory": "sky-background-field",
+                        "material": "MeshBasicMaterial",
+                        "surface": "direction-space-vertex-color-skybox-shell"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "matte-painted-surface",
+                        "factory": "matte-painted-surface",
+                        "reason": "runtime-material-factory-userdata"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "matte-painted-surface",
+                        "factory": "matte-painted-surface",
+                        "surface": "MeshStandardMaterial PlaneGeometry with UVs",
+                        "reason": "runtime-material-factory-userdata"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "matte-painted-surface",
+                        "factory": "matte-painted-surface",
+                        "surface": "MeshStandardMaterial",
+                        "reason": "runtime-material-factory-userdata"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "procedural-marks",
+                        "factory": "procedural-marks",
+                        "surface": "LineBasicMaterial BufferGeometry vertex colors with UVs",
+                        "reason": "runtime-material-factory-userdata"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "procedural-marks",
+                        "factory": "procedural-marks",
+                        "surface": "LineBasicMaterial",
+                        "reason": "runtime-material-factory-userdata"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "soft-particles",
+                        "factory": "soft-particles",
+                        "surface": "PointsMaterial BufferGeometry vertex colors with UVs",
+                        "reason": "runtime-material-factory-userdata"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "soft-particles",
+                        "factory": "soft-particles",
+                        "surface": "PointsMaterial",
+                        "reason": "runtime-material-factory-userdata"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "matte-painted-surface",
+                        "factory": "matte-painted-surface",
+                        "surface": "MeshBasicMaterial",
+                        "reason": "runtime-material-factory-userdata"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "procedural-marks",
+                        "factory": "procedural-marks",
+                        "reason": "runtime-material-factory-userdata"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "procedural-marks",
+                        "factory": "procedural-marks",
+                        "surface": "MeshBasicMaterial",
+                        "reason": "runtime-material-factory-userdata"
+                      },
+                      {
+                        "kind": "webgpu-native-helper",
+                        "id": "instanced-mark-field",
+                        "family": "instanced-marks",
+                        "api": "utilities.createInstancedMarkField",
+                        "factory": "procedural-marks",
+                        "material": "MeshBasicMaterial",
+                        "surface": "three-instanced-mesh-basic-material"
+                      },
+                      {
+                        "kind": "webgpu-native-helper",
+                        "id": "procedural-mark-material",
+                        "family": "procedural-marks",
+                        "api": "utilities.createProceduralMarkMaterial",
+                        "factory": "procedural-marks",
+                        "material": "MeshBasicMaterial",
+                        "surface": "three-basic-material"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "visibleAbsence": {
+              "intentional": true,
+              "allowedAbsentOutput": true,
+              "facts": [
+                "not every form receives an outline",
+                "marks are not evenly distributed",
+                "no mandatory foreground layer is assumed",
+                "empty intervals between marks preserve measured pace"
+              ],
+              "rationale": "Bauer's line evidence is rhythmic and selective; a dense all-over mark default would weaken the composition and the news weighting."
+            }
+          },
+          "plannedPart": {
+            "source": "world-part-plan.json#/parts/5",
+            "partId": "contour-web-and-notational-beats",
+            "role": "contour-line rhythm and small-mark articulation",
+            "intent": "Add drawn contour loops, variable-width line pressure, jagged strokes, hatching, radiating marks, and small circular accents that guide the eye between focal anchors and smaller incidents.",
+            "messagePurpose": "Add drawn contour loops, variable-width line pressure, jagged strokes, hatching, radiating marks, and small circular accents that guide the eye between focal anchors and smaller incidents.",
+            "visualTarget": "Add drawn contour loops, variable-width line pressure, jagged strokes, hatching, radiating marks, and small circular accents that guide the eye between focal anchors and smaller incidents.",
+            "relationshipToWhole": "Turns the larger geometry into a hand-marked field, keeping the viewer's eye moving along diagonals, arcs, and repeated dots without flattening the world.",
+            "visibleAbsence": {
+              "intentional": true,
+              "facts": [
+                "not every form receives an outline",
+                "marks are not evenly distributed",
+                "no mandatory foreground layer is assumed",
+                "empty intervals between marks preserve measured pace"
+              ],
+              "rationale": "Bauer's line evidence is rhythmic and selective; a dense all-over mark default would weaken the composition and the news weighting."
+            }
+          },
+          "compositionBeforeHash": "1f1d41634ec7d6f2",
+          "compositionAfterHash": "2c433751a2f7a0aa"
+        },
+        "intent": "Add drawn contour loops, variable-width line pressure, jagged strokes, hatching, radiating marks, and small circular accents that guide the eye between focal anchors and smaller incidents.",
+        "messagePurpose": "Add drawn contour loops, variable-width line pressure, jagged strokes, hatching, radiating marks, and small circular accents that guide the eye between focal anchors and smaller incidents.",
+        "visualTarget": "Add drawn contour loops, variable-width line pressure, jagged strokes, hatching, radiating marks, and small circular accents that guide the eye between focal anchors and smaller incidents.",
+        "relationshipToWhole": "Turns the larger geometry into a hand-marked field, keeping the viewer's eye moving along diagonals, arcs, and repeated dots without flattening the world.",
+        "visibleAbsence": {
+          "intentional": true,
+          "facts": [
+            "not every form receives an outline",
+            "marks are not evenly distributed",
+            "no mandatory foreground layer is assumed",
+            "empty intervals between marks preserve measured pace"
+          ],
+          "rationale": "Bauer's line evidence is rhythmic and selective; a dense all-over mark default would weaken the composition and the news weighting."
+        },
+        "params": {
+          "band": "articulation-readability",
+          "layer": "foreground",
+          "position": [
+            0,
+            0,
+            0.12
+          ],
+          "scale": 0.94,
+          "opacity": 0.88,
+          "motionIntensity": 0.08,
+          "renderOrder": 6,
+          "visibilityPriority": "line-articulation"
+        },
+        "paramSemantics": {
+          "band": "visual placement/readability band for full-world params; distinct from declared compositionOwnership.lane"
+        },
+        "compositionOwnership": {
+          "lane": "creative-line-mark-articulation",
+          "owns": [
+            "thin black or mid-muted-grey contour loops",
+            "variable-width drawn line character",
+            "hatching and edge pressure",
+            "small notational incidents",
+            "rhythmic connectors between anchors",
+            "selected edge emphasis on geometric forms"
+          ],
+          "avoid": [
+            "generic foreground mark field",
+            "uniform decorative noise",
+            "heavy outlines around every object",
+            "making the scene purely mechanical",
+            "overwriting the flow part's news-specific beats"
+          ]
+        }
+      },
+      {
+        "id": "measured-pulse-light",
+        "partId": "measured-pulse-light",
+        "role": "restrained value, lighting, and optional cadence",
+        "moduleRef": {
+          "type": "immersive-world-generated-module",
+          "version": 1,
+          "moduleId": "rudolf-bauer-brussels-fire-measured-pulse-light",
+          "partId": "measured-pulse-light",
+          "hash": "f09ba14569517b61070aa2892477f472b291f4f6a80c8942cccf8f155b7805df",
+          "integrity": "sha256-f09ba14569517b61070aa2892477f472b291f4f6a80c8942cccf8f155b7805df",
+          "exportName": "createImmersiveWorldPart",
+          "file": "data/immersive-world/generated-modules/f09ba14569517b61070aa2892477f472b291f4f6a80c8942cccf8f155b7805df.mjs",
+          "url": "./data/immersive-world/generated-modules/f09ba14569517b61070aa2892477f472b291f4f6a80c8942cccf8f155b7805df.mjs",
+          "rendererCompatibility": {
+            "version": 1,
+            "targetMode": "webgpu-project-scene",
+            "compatibilityStatus": "webgpu-compatible",
+            "webgpuCompatible": true,
+            "evidenceReasons": [
+              "webgpu-safe-material"
+            ],
+            "featureFacts": [
+              {
+                "kind": "standard-material",
+                "material": "MeshLambertMaterial",
+                "family": "standard-material-surface",
+                "reason": "webgpu-safe-material"
+              },
+              {
+                "kind": "standard-material",
+                "material": "MeshBasicMaterial",
+                "family": "standard-material-surface",
+                "reason": "webgpu-safe-material"
+              },
+              {
+                "kind": "standard-material",
+                "material": "LineBasicMaterial",
+                "family": "standard-material-surface",
+                "reason": "webgpu-safe-material"
+              }
+            ],
+            "compatibleSurfaces": [
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "MeshLambertMaterial"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "MeshBasicMaterial"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "LineBasicMaterial"
+              }
+            ]
+          }
+        },
+        "evidence": {
+          "browserValidation": {
+            "source": "part-workshop-strict-browser-validation",
+            "passed": true,
+            "acceptanceStatus": "accepted-clean",
+            "finalDraftRef": "immersive-world-agent-work-sessions/part-workshop/measured-pulse-light/drafts/measured-pulse-light.module.mjs",
+            "previewHealthStatus": "ok",
+            "capturedViews": [
+              "desktop"
+            ],
+            "allowedAbsentOutput": true,
+            "warningOnlySoftAccepted": false,
+            "unresolvedWarningCount": 0
+          },
+          "declaredCompositionOwnership": {
+            "lane": "creative-light-motion-support",
+            "owns": [
+              "restrained value contrast",
+              "soft vignette and shadow consideration",
+              "subtle bloom or emissive accents only when clarifying the signal",
+              "optional steady-grid-pulse timing",
+              "capture-mode static or fixed-time behavior",
+              "elapsedSeconds-based deterministic motion guidance"
+            ],
+            "avoid": [
+              "generic glow layer",
+              "emergency-light spectacle",
+              "fast fire-like flicker",
+              "motion that makes the still composition unreadable",
+              "taking over material color choices"
+            ]
+          },
+          "compositionOwnershipSource": "world-part-plan.json#/parts/6/compositionOwnership",
+          "compositionAdaptations": [
+            "Kept as a subordinate value and cadence pass, with no bloom dependency or emergency-light treatment.",
+            "The eleven pulse nodes remain a quiet secondary echo of the selected-news flow.",
+            "Left subordinate as restrained value and cadence support.",
+            "composition modified measured-pulse-light from isolated accepted-part defaults"
+          ],
+          "workshopAcceptance": [
+            "Final draft written to immersive-world-agent-work-sessions/part-workshop/measured-pulse-light/drafts/measured-pulse-light.module.mjs and session-contained run-dir draft validated.",
+            "Static check succeeded with sourceHash 98de4db21a3bdbf562babb2f8e19aa8932d258901680ae94f2da803ba9884c62 and no validation errors.",
+            "Required preview-part-draft attempt 1 succeeded; screenshot previews/attempt-001/001-measured-pulse-light-draft-desktop.jpg and render report previews/attempt-001/desktop-render-report.json.",
+            "Render health ok, captureStatus ok, actual backend WebGPU, renderer compatible, no browser/WebGL/WebGPU errors or warnings recorded.",
+            "desktop:part-preview-evolution/007-measured-pulse-light-attempt-1-desktop.jpg"
+          ],
+          "acceptedPartValidation": {
+            "version": 1,
+            "source": "part-workshop-strict-browser-validation",
+            "previewScope": "isolated-part",
+            "passed": true,
+            "warningOnlySoftAccepted": false,
+            "partId": "measured-pulse-light",
+            "moduleExport": {
+              "expectedExportName": "createImmersiveWorldPart",
+              "actualExportName": "createImmersiveWorldPart",
+              "moduleId": "rudolf-bauer-brussels-fire-measured-pulse-light",
+              "moduleHash": "f09ba14569517b61070aa2892477f472b291f4f6a80c8942cccf8f155b7805df",
+              "pass": true
+            },
+            "finalDraftRequired": true,
+            "finalDraft": {
+              "file": "immersive-world-agent-work-sessions/part-workshop/measured-pulse-light/drafts/measured-pulse-light.module.mjs",
+              "sessionFile": "drafts/measured-pulse-light.module.mjs",
+              "sha256": "028a37de577f7c66363d72f3f80c00c31d9a9832a26da51a6fb99dfecde3325f",
+              "bytes": 23413,
+              "source": "agent-work-session-draft"
+            },
+            "finalPreview": {
+              "status": "succeeded"
+            },
+            "preview": {
+              "required": true,
+              "capturedViews": [
+                "desktop"
+              ],
+              "healthStatus": "ok",
+              "infoFacts": [
+                {
+                  "code": "webgpu-native-feature-use",
+                  "severity": "info",
+                  "message": "desktop capture proved actual WebGPU backend with WebGPU-native feature facts.",
+                  "details": {
+                    "view": "desktop",
+                    "rendererMode": "webgpu",
+                    "rendererBackend": "webgpu",
+                    "selectedRendererMode": "webgpu",
+                    "selectedRendererBackend": "webgpu",
+                    "actualRendererMode": "webgpu",
+                    "actualRendererBackend": "webgpu",
+                    "rendererProof": {
+                      "isWebGPURenderer": true,
+                      "backendIsWebGPUBackend": true,
+                      "backendIsWebGLBackend": false,
+                      "backendType": "VD"
+                    },
+                    "webgpuFeatureFacts": [
+                      {
+                        "kind": "standard-material",
+                        "family": "standard-material-surface",
+                        "material": "MeshBasicMaterial",
+                        "reason": "webgpu-safe-material"
+                      },
+                      {
+                        "kind": "standard-material",
+                        "family": "standard-material-surface",
+                        "material": "MeshStandardMaterial",
+                        "reason": "webgpu-safe-material"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "sky-background-field",
+                        "family": "sky-background-field",
+                        "material": "MeshBasicMaterial",
+                        "surface": "scene-background-or-large-plane",
+                        "reason": "source-used-project-webgpu-material-factory"
+                      },
+                      {
+                        "kind": "webgpu-native-helper",
+                        "id": "direction-space-skybox-shell",
+                        "family": "sky-background-field",
+                        "factory": "sky-background-field",
+                        "material": "MeshBasicMaterial",
+                        "surface": "direction-space-vertex-color-skybox-shell",
+                        "reason": "webgpu-native-helper-utility"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "matte-painted-surface",
+                        "family": "matte-painted-surface",
+                        "material": "MeshStandardMaterial",
+                        "surface": "three-standard-material",
+                        "reason": "source-used-project-webgpu-material-factory"
+                      },
+                      {
+                        "kind": "standard-material",
+                        "family": "standard-material-surface",
+                        "material": "LineBasicMaterial",
+                        "reason": "webgpu-safe-material"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "procedural-marks",
+                        "family": "procedural-marks",
+                        "material": "MeshBasicMaterial",
+                        "surface": "instanced-geometry-material",
+                        "reason": "source-used-project-webgpu-material-factory"
+                      },
+                      {
+                        "kind": "standard-material",
+                        "family": "standard-material-surface",
+                        "material": "PointsMaterial",
+                        "reason": "webgpu-safe-material"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "soft-particles",
+                        "family": "soft-particles",
+                        "material": "PointsMaterial",
+                        "surface": "three-points-material",
+                        "reason": "source-used-project-webgpu-material-factory"
+                      },
+                      {
+                        "kind": "standard-material",
+                        "family": "standard-material-surface",
+                        "material": "MeshLambertMaterial",
+                        "reason": "webgpu-safe-material"
+                      },
+                      {
+                        "kind": "webgpu-native-helper",
+                        "id": "direction-space-skybox-shell",
+                        "family": "sky-background-field",
+                        "api": "utilities.createDirectionSpaceSkyboxShell",
+                        "factory": "sky-background-field",
+                        "material": "MeshBasicMaterial",
+                        "surface": "direction-space-vertex-color-skybox-shell"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "matte-painted-surface",
+                        "factory": "matte-painted-surface",
+                        "reason": "runtime-material-factory-userdata"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "matte-painted-surface",
+                        "factory": "matte-painted-surface",
+                        "surface": "MeshStandardMaterial PlaneGeometry with UVs",
+                        "reason": "runtime-material-factory-userdata"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "matte-painted-surface",
+                        "factory": "matte-painted-surface",
+                        "surface": "MeshStandardMaterial",
+                        "reason": "runtime-material-factory-userdata"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "procedural-marks",
+                        "factory": "procedural-marks",
+                        "surface": "LineBasicMaterial BufferGeometry vertex colors with UVs",
+                        "reason": "runtime-material-factory-userdata"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "procedural-marks",
+                        "factory": "procedural-marks",
+                        "surface": "LineBasicMaterial",
+                        "reason": "runtime-material-factory-userdata"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "soft-particles",
+                        "factory": "soft-particles",
+                        "surface": "PointsMaterial BufferGeometry vertex colors with UVs",
+                        "reason": "runtime-material-factory-userdata"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "soft-particles",
+                        "factory": "soft-particles",
+                        "surface": "PointsMaterial",
+                        "reason": "runtime-material-factory-userdata"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "matte-painted-surface",
+                        "factory": "matte-painted-surface",
+                        "surface": "MeshBasicMaterial",
+                        "reason": "runtime-material-factory-userdata"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "color-field",
+                        "factory": "color-field",
+                        "reason": "runtime-material-factory-userdata"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "color-field",
+                        "factory": "color-field",
+                        "surface": "MeshBasicMaterial",
+                        "reason": "runtime-material-factory-userdata"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "procedural-marks",
+                        "factory": "procedural-marks",
+                        "reason": "runtime-material-factory-userdata"
+                      },
+                      {
+                        "kind": "material-factory",
+                        "id": "procedural-marks",
+                        "factory": "procedural-marks",
+                        "surface": "MeshBasicMaterial",
+                        "reason": "runtime-material-factory-userdata"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "visibleAbsence": {
+              "intentional": true,
+              "allowedAbsentOutput": true,
+              "facts": [
+                "animation may be absent if the still composition is stronger",
+                "bloom may be minimal or absent",
+                "no fire flicker is required",
+                "no high-drama vignette is required",
+                "lighting remains subordinate to matte painted material"
+              ],
+              "rationale": "The authority packet explicitly permits static fallback and warns that effects must not become generic."
+            }
+          },
+          "plannedPart": {
+            "source": "world-part-plan.json#/parts/6",
+            "partId": "measured-pulse-light",
+            "role": "restrained value, lighting, and optional cadence",
+            "intent": "Tune subordinate light, shadow, vignette, bloom, and optional steady-grid-pulse motion so the piece reads as low-intensity, measured, concentrated, tactile, and still-complete.",
+            "messagePurpose": "Tune subordinate light, shadow, vignette, bloom, and optional steady-grid-pulse motion so the piece reads as low-intensity, measured, concentrated, tactile, and still-complete.",
+            "visualTarget": "Tune subordinate light, shadow, vignette, bloom, and optional steady-grid-pulse motion so the piece reads as low-intensity, measured, concentrated, tactile, and still-complete.",
+            "relationshipToWhole": "Protects the measured emotional register and readability of the whole scene, adding cadence only where it clarifies the selected-news transformation and Bauer rhythm.",
+            "visibleAbsence": {
+              "intentional": true,
+              "facts": [
+                "animation may be absent if the still composition is stronger",
+                "bloom may be minimal or absent",
+                "no fire flicker is required",
+                "no high-drama vignette is required",
+                "lighting remains subordinate to matte painted material"
+              ],
+              "rationale": "The authority packet explicitly permits static fallback and warns that effects must not become generic."
+            }
+          },
+          "compositionBeforeHash": "d60200896b99ab1a",
+          "compositionAfterHash": "add293d61c135bed"
+        },
+        "intent": "Tune subordinate light, shadow, vignette, bloom, and optional steady-grid-pulse motion so the piece reads as low-intensity, measured, concentrated, tactile, and still-complete.",
+        "messagePurpose": "Tune subordinate light, shadow, vignette, bloom, and optional steady-grid-pulse motion so the piece reads as low-intensity, measured, concentrated, tactile, and still-complete.",
+        "visualTarget": "Tune subordinate light, shadow, vignette, bloom, and optional steady-grid-pulse motion so the piece reads as low-intensity, measured, concentrated, tactile, and still-complete.",
+        "relationshipToWhole": "Protects the measured emotional register and readability of the whole scene, adding cadence only where it clarifies the selected-news transformation and Bauer rhythm.",
+        "visibleAbsence": {
+          "intentional": true,
+          "facts": [
+            "animation may be absent if the still composition is stronger",
+            "bloom may be minimal or absent",
+            "no fire flicker is required",
+            "no high-drama vignette is required",
+            "lighting remains subordinate to matte painted material"
+          ],
+          "rationale": "The authority packet explicitly permits static fallback and warns that effects must not become generic."
+        },
+        "params": {
+          "band": "value-support",
+          "layer": "foreground-middleground",
+          "position": [
+            0,
+            0,
+            0.08
+          ],
+          "scale": 1,
+          "opacity": 0.8,
+          "motionIntensity": 0.08,
+          "renderOrder": 7,
+          "visibilityPriority": "light-motion-support"
+        },
+        "paramSemantics": {
+          "band": "visual placement/readability band for full-world params; distinct from declared compositionOwnership.lane"
+        },
+        "compositionOwnership": {
+          "lane": "creative-light-motion-support",
+          "owns": [
+            "restrained value contrast",
+            "soft vignette and shadow consideration",
+            "subtle bloom or emissive accents only when clarifying the signal",
+            "optional steady-grid-pulse timing",
+            "capture-mode static or fixed-time behavior",
+            "elapsedSeconds-based deterministic motion guidance"
+          ],
+          "avoid": [
+            "generic glow layer",
+            "emergency-light spectacle",
+            "fast fire-like flicker",
+            "motion that makes the still composition unreadable",
+            "taking over material color choices"
+          ]
+        }
+      }
+    ],
+    "acceptedPartsRef": "context.acceptedParts",
+    "compositionEvidence": {
+      "draftIntent": "Assemble all seven accepted WebGPU-compatible Rudolf Bauer Brussels-fire modules as a pale, asymmetrical, rhythm-driven field: matte wash support, diagonal and arc armature, off-center radial anchor, concentrated Brussels flow with at least eleven quiet loss beats, selective contour notation, and restrained value cadence.",
+      "mediaInspected": [
+        "part-preview-evolution/001-world-environment-attempt-1-desktop.jpg",
+        "part-preview-evolution/002-wash-depth-atmosphere-attempt-1-desktop.jpg",
+        "part-preview-evolution/003-diagonal-arc-armature-attempt-1-desktop.jpg",
+        "part-preview-evolution/004-radial-anchor-constellation-attempt-1-desktop.jpg",
+        "part-preview-evolution/005-brussels-concentrated-flow-attempt-1-desktop.jpg",
+        "part-preview-evolution/006-contour-web-and-notational-beats-attempt-1-desktop.jpg",
+        "part-preview-evolution/007-measured-pulse-light-attempt-1-desktop.jpg"
+      ],
+      "rendererCompatibilityPreserved": [
+        "All accepted module ids, part ids, hashes, integrity strings, urls, export names, roles, and empty assetRefs are preserved.",
+        "WebGPU evidence reasons are preserved in moduleRef.rendererCompatibility: standard MeshBasic/Standard/Lambert, LineBasic, Points materials; accepted project factories; and accepted WebGPU-native helpers where the part proved them.",
+        "No WebGL-only shader assumptions, raw GLSL surfaces, onBeforeCompile patches, CPU texture baking, or legacy post effects are introduced at world composition."
+      ],
+      "skillUse": {
+        "attempted": true,
+        "used": [
+          "$threejs-skill-router",
+          "$threejs-camera-direction",
+          "$threejs-visual-validation"
+        ],
+        "takeaways": [
+          "Use the canonical fixed camera as the design bookmark for the first viewport evidence pass; alter projection only if desktop/mobile evidence proves it misses the authored subject scale.",
+          "Treat final preview as fixed-seed, fixed-camera validation evidence: desktop and mobile must both capture nonblank WebGPU frames with readable focal disk, diagonal/arc paths, contour web, and Brussels eleven-beat cue.",
+          "Keep output grading subtle and renderer-owned; do not compensate for weak staging with stacked post or material color claims."
+        ]
+      }
+    },
+    "generatedModules": [
+      {
+        "type": "immersive-world-generated-module",
+        "version": 1,
+        "moduleId": "rudolf-bauer-brussels-fire-world-environment",
+        "partId": "world-environment",
+        "hash": "58f83d2f21a7abe2424dab8da3b8f32465866cdc853551495589570d5d58bb3e",
+        "integrity": "sha256-58f83d2f21a7abe2424dab8da3b8f32465866cdc853551495589570d5d58bb3e",
+        "exportName": "createImmersiveWorldPart",
+        "file": "data/immersive-world/generated-modules/58f83d2f21a7abe2424dab8da3b8f32465866cdc853551495589570d5d58bb3e.mjs",
+        "url": "./data/immersive-world/generated-modules/58f83d2f21a7abe2424dab8da3b8f32465866cdc853551495589570d5d58bb3e.mjs",
+        "rendererCompatibility": {
+          "version": 1,
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material",
+            "source-used-project-webgpu-material-factory",
+            "webgpu-native-helper-utility"
+          ],
+          "featureFacts": [
+            {
+              "kind": "standard-material",
+              "material": "MeshBasicMaterial",
+              "family": "standard-material-surface",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "standard-material",
+              "material": "MeshStandardMaterial",
+              "family": "standard-material-surface",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "material-factory",
+              "id": "sky-background-field",
+              "family": "sky-background-field",
+              "material": "MeshBasicMaterial",
+              "surface": "scene-background-or-large-plane",
+              "reason": "source-used-project-webgpu-material-factory"
+            },
+            {
+              "kind": "webgpu-native-helper",
+              "id": "direction-space-skybox-shell",
+              "family": "sky-background-field",
+              "factory": "sky-background-field",
+              "material": "MeshBasicMaterial",
+              "surface": "direction-space-vertex-color-skybox-shell",
+              "reason": "webgpu-native-helper-utility"
+            },
+            {
+              "kind": "material-factory",
+              "id": "matte-painted-surface",
+              "family": "matte-painted-surface",
+              "material": "MeshStandardMaterial",
+              "surface": "three-standard-material",
+              "reason": "source-used-project-webgpu-material-factory"
+            },
+            {
+              "kind": "standard-material",
+              "material": "LineBasicMaterial",
+              "family": "standard-material-surface",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "material-factory",
+              "id": "procedural-marks",
+              "family": "procedural-marks",
+              "material": "MeshBasicMaterial",
+              "surface": "instanced-geometry-material",
+              "reason": "source-used-project-webgpu-material-factory"
+            },
+            {
+              "kind": "standard-material",
+              "material": "PointsMaterial",
+              "family": "standard-material-surface",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "material-factory",
+              "id": "soft-particles",
+              "family": "soft-particles",
+              "material": "PointsMaterial",
+              "surface": "three-points-material",
+              "reason": "source-used-project-webgpu-material-factory"
+            }
+          ],
+          "compatibleSurfaces": [
+            {
+              "reason": "webgpu-safe-material",
+              "materialType": "MeshBasicMaterial"
+            },
+            {
+              "reason": "webgpu-safe-material",
+              "materialType": "MeshStandardMaterial"
+            },
+            {
+              "reason": "source-used-project-webgpu-material-factory",
+              "materialType": "MeshBasicMaterial",
+              "runtimeSurface": "scene-background-or-large-plane",
+              "factoryId": "sky-background-field",
+              "materialFactoryId": "sky-background-field",
+              "factoryCategory": "sky-background-field",
+              "property": "materialFactoryId"
+            },
+            {
+              "reason": "webgpu-native-helper-utility",
+              "api": "utilities.createDirectionSpaceSkyboxShell",
+              "helperId": "direction-space-skybox-shell",
+              "featureFamily": "sky-background-field",
+              "outputKind": "object-bundle",
+              "materialType": "MeshBasicMaterial",
+              "runtimeSurface": "direction-space-vertex-color-skybox-shell",
+              "factoryId": "sky-background-field",
+              "materialFactoryId": "sky-background-field",
+              "factoryCategory": "sky-background-field"
+            },
+            {
+              "reason": "source-used-project-webgpu-material-factory",
+              "materialType": "MeshStandardMaterial",
+              "runtimeSurface": "three-standard-material",
+              "factoryId": "matte-painted-surface",
+              "materialFactoryId": "matte-painted-surface",
+              "factoryCategory": "matte-painted-surface",
+              "property": "materialFactoryId"
+            },
+            {
+              "reason": "webgpu-safe-material",
+              "materialType": "LineBasicMaterial"
+            },
+            {
+              "reason": "source-used-project-webgpu-material-factory",
+              "materialType": "MeshBasicMaterial",
+              "runtimeSurface": "instanced-geometry-material",
+              "factoryId": "procedural-marks",
+              "materialFactoryId": "procedural-marks",
+              "factoryCategory": "procedural-marks",
+              "property": "materialFactoryId"
+            },
+            {
+              "reason": "webgpu-safe-material",
+              "materialType": "PointsMaterial"
+            },
+            {
+              "reason": "source-used-project-webgpu-material-factory",
+              "materialType": "PointsMaterial",
+              "runtimeSurface": "three-points-material",
+              "factoryId": "soft-particles",
+              "materialFactoryId": "soft-particles",
+              "factoryCategory": "soft-particles",
+              "property": "materialFactoryId"
+            }
+          ]
+        }
+      },
+      {
+        "type": "immersive-world-generated-module",
+        "version": 1,
+        "moduleId": "rudolf-bauer-brussels-fire-wash-depth-atmosphere",
+        "partId": "wash-depth-atmosphere",
+        "hash": "2b6862e3090a0c2a40cd1e190261d1a275bf453be5835c9536ddb13307c0e61a",
+        "integrity": "sha256-2b6862e3090a0c2a40cd1e190261d1a275bf453be5835c9536ddb13307c0e61a",
+        "exportName": "createImmersiveWorldPart",
+        "file": "data/immersive-world/generated-modules/2b6862e3090a0c2a40cd1e190261d1a275bf453be5835c9536ddb13307c0e61a.mjs",
+        "url": "./data/immersive-world/generated-modules/2b6862e3090a0c2a40cd1e190261d1a275bf453be5835c9536ddb13307c0e61a.mjs",
+        "rendererCompatibility": {
+          "version": 1,
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material",
+            "webgpu-native-helper-utility"
+          ],
+          "featureFacts": [
+            {
+              "kind": "standard-material",
+              "material": "MeshBasicMaterial",
+              "family": "standard-material-surface",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "webgpu-native-helper",
+              "id": "animated-color-field-material",
+              "family": "color-field",
+              "factory": "color-field",
+              "material": "MeshBasicNodeMaterial",
+              "surface": "three-mesh-basic-node-material-tsl",
+              "reason": "webgpu-native-helper-utility"
+            },
+            {
+              "kind": "webgpu-native-helper",
+              "id": "scraped-paint-grain-material",
+              "family": "paint-grain-surface",
+              "factory": "scraped-paint-grain-surface",
+              "material": "MeshBasicNodeMaterial",
+              "surface": "three-mesh-basic-node-material-tsl",
+              "reason": "webgpu-native-helper-utility"
+            },
+            {
+              "kind": "standard-material",
+              "material": "LineBasicMaterial",
+              "family": "standard-material-surface",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "standard-material",
+              "material": "PointsMaterial",
+              "family": "standard-material-surface",
+              "reason": "webgpu-safe-material"
+            }
+          ],
+          "compatibleSurfaces": [
+            {
+              "reason": "webgpu-safe-material",
+              "materialType": "MeshBasicMaterial"
+            },
+            {
+              "reason": "webgpu-native-helper-utility",
+              "api": "utilities.createAnimatedColorFieldMaterial",
+              "helperId": "animated-color-field-material",
+              "featureFamily": "color-field",
+              "outputKind": "material",
+              "materialType": "MeshBasicNodeMaterial",
+              "runtimeSurface": "three-mesh-basic-node-material-tsl",
+              "factoryId": "color-field",
+              "materialFactoryId": "color-field",
+              "factoryCategory": "color-field"
+            },
+            {
+              "reason": "webgpu-native-helper-utility",
+              "api": "utilities.createScrapedPaintGrainMaterial",
+              "helperId": "scraped-paint-grain-material",
+              "featureFamily": "paint-grain-surface",
+              "outputKind": "material",
+              "materialType": "MeshBasicNodeMaterial",
+              "runtimeSurface": "three-mesh-basic-node-material-tsl",
+              "factoryId": "scraped-paint-grain-surface",
+              "materialFactoryId": "scraped-paint-grain-surface",
+              "factoryCategory": "matte-painted-surface"
+            },
+            {
+              "reason": "webgpu-safe-material",
+              "materialType": "LineBasicMaterial"
+            },
+            {
+              "reason": "webgpu-safe-material",
+              "materialType": "PointsMaterial"
+            }
+          ]
+        }
+      },
+      {
+        "type": "immersive-world-generated-module",
+        "version": 1,
+        "moduleId": "rudolf-bauer-brussels-fire-diagonal-arc-armature",
+        "partId": "diagonal-arc-armature",
+        "hash": "75ec5cf0ccf3d9a6a10fd0172f81faed0de6a0a18a68f3fa6ff80d2924436a4c",
+        "integrity": "sha256-75ec5cf0ccf3d9a6a10fd0172f81faed0de6a0a18a68f3fa6ff80d2924436a4c",
+        "exportName": "createImmersiveWorldPart",
+        "file": "data/immersive-world/generated-modules/75ec5cf0ccf3d9a6a10fd0172f81faed0de6a0a18a68f3fa6ff80d2924436a4c.mjs",
+        "url": "./data/immersive-world/generated-modules/75ec5cf0ccf3d9a6a10fd0172f81faed0de6a0a18a68f3fa6ff80d2924436a4c.mjs",
+        "rendererCompatibility": {
+          "version": 1,
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material"
+          ],
+          "featureFacts": [
+            {
+              "kind": "standard-material",
+              "material": "MeshBasicMaterial",
+              "family": "standard-material-surface",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "standard-material",
+              "material": "LineBasicMaterial",
+              "family": "standard-material-surface",
+              "reason": "webgpu-safe-material"
+            }
+          ],
+          "compatibleSurfaces": [
+            {
+              "reason": "webgpu-safe-material",
+              "materialType": "MeshBasicMaterial"
+            },
+            {
+              "reason": "webgpu-safe-material",
+              "materialType": "LineBasicMaterial"
+            }
+          ]
+        }
+      },
+      {
+        "type": "immersive-world-generated-module",
+        "version": 1,
+        "moduleId": "rudolf-bauer-brussels-fire-radial-anchor-constellation",
+        "partId": "radial-anchor-constellation",
+        "hash": "2c1f55aa2c3b24d2941345010d60feb22af811748fd5a87561ada865192a1410",
+        "integrity": "sha256-2c1f55aa2c3b24d2941345010d60feb22af811748fd5a87561ada865192a1410",
+        "exportName": "createImmersiveWorldPart",
+        "file": "data/immersive-world/generated-modules/2c1f55aa2c3b24d2941345010d60feb22af811748fd5a87561ada865192a1410.mjs",
+        "url": "./data/immersive-world/generated-modules/2c1f55aa2c3b24d2941345010d60feb22af811748fd5a87561ada865192a1410.mjs",
+        "rendererCompatibility": {
+          "version": 1,
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material"
+          ],
+          "featureFacts": [
+            {
+              "kind": "standard-material",
+              "material": "MeshBasicMaterial",
+              "family": "standard-material-surface",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "standard-material",
+              "material": "LineBasicMaterial",
+              "family": "standard-material-surface",
+              "reason": "webgpu-safe-material"
+            }
+          ],
+          "compatibleSurfaces": [
+            {
+              "reason": "webgpu-safe-material",
+              "materialType": "MeshBasicMaterial"
+            },
+            {
+              "reason": "webgpu-safe-material",
+              "materialType": "LineBasicMaterial"
+            }
+          ]
+        }
+      },
+      {
+        "type": "immersive-world-generated-module",
+        "version": 1,
+        "moduleId": "rudolf-bauer-brussels-fire-brussels-concentrated-flow",
+        "partId": "brussels-concentrated-flow",
+        "hash": "7b4bc62d2df2642adaa0ad23e019b47412fc83c84ad7db8338c7b1e535553668",
+        "integrity": "sha256-7b4bc62d2df2642adaa0ad23e019b47412fc83c84ad7db8338c7b1e535553668",
+        "exportName": "createImmersiveWorldPart",
+        "file": "data/immersive-world/generated-modules/7b4bc62d2df2642adaa0ad23e019b47412fc83c84ad7db8338c7b1e535553668.mjs",
+        "url": "./data/immersive-world/generated-modules/7b4bc62d2df2642adaa0ad23e019b47412fc83c84ad7db8338c7b1e535553668.mjs",
+        "rendererCompatibility": {
+          "version": 1,
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material"
+          ],
+          "featureFacts": [
+            {
+              "kind": "standard-material",
+              "material": "MeshBasicMaterial",
+              "family": "standard-material-surface",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "standard-material",
+              "material": "LineBasicMaterial",
+              "family": "standard-material-surface",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "standard-material",
+              "material": "PointsMaterial",
+              "family": "standard-material-surface",
+              "reason": "webgpu-safe-material"
+            }
+          ],
+          "compatibleSurfaces": [
+            {
+              "reason": "webgpu-safe-material",
+              "materialType": "MeshBasicMaterial"
+            },
+            {
+              "reason": "webgpu-safe-material",
+              "materialType": "LineBasicMaterial"
+            },
+            {
+              "reason": "webgpu-safe-material",
+              "materialType": "PointsMaterial"
+            }
+          ]
+        }
+      },
+      {
+        "type": "immersive-world-generated-module",
+        "version": 1,
+        "moduleId": "rudolf-bauer-brussels-fire-contour-web-and-notational-beats",
+        "partId": "contour-web-and-notational-beats",
+        "hash": "e5d69243eee33fcf288723b731cfa5463c407e8ced06e607e1c863a79ea1aac3",
+        "integrity": "sha256-e5d69243eee33fcf288723b731cfa5463c407e8ced06e607e1c863a79ea1aac3",
+        "exportName": "createImmersiveWorldPart",
+        "file": "data/immersive-world/generated-modules/e5d69243eee33fcf288723b731cfa5463c407e8ced06e607e1c863a79ea1aac3.mjs",
+        "url": "./data/immersive-world/generated-modules/e5d69243eee33fcf288723b731cfa5463c407e8ced06e607e1c863a79ea1aac3.mjs",
+        "rendererCompatibility": {
+          "version": 1,
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material",
+            "webgpu-native-helper-utility"
+          ],
+          "featureFacts": [
+            {
+              "kind": "standard-material",
+              "material": "LineBasicMaterial",
+              "family": "standard-material-surface",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "standard-material",
+              "material": "MeshBasicMaterial",
+              "family": "standard-material-surface",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "webgpu-native-helper",
+              "id": "instanced-mark-field",
+              "family": "instanced-marks",
+              "factory": "procedural-marks",
+              "material": "MeshBasicMaterial",
+              "surface": "three-instanced-mesh-basic-material",
+              "reason": "webgpu-native-helper-utility"
+            }
+          ],
+          "compatibleSurfaces": [
+            {
+              "reason": "webgpu-safe-material",
+              "materialType": "LineBasicMaterial"
+            },
+            {
+              "reason": "webgpu-safe-material",
+              "materialType": "MeshBasicMaterial"
+            },
+            {
+              "reason": "webgpu-native-helper-utility",
+              "api": "utilities.createInstancedMarkField",
+              "helperId": "instanced-mark-field",
+              "featureFamily": "instanced-marks",
+              "outputKind": "object-bundle",
+              "materialType": "MeshBasicMaterial",
+              "runtimeSurface": "three-instanced-mesh-basic-material",
+              "factoryId": "procedural-marks",
+              "materialFactoryId": "procedural-marks",
+              "factoryCategory": "procedural-marks"
+            }
+          ]
+        }
+      },
+      {
+        "type": "immersive-world-generated-module",
+        "version": 1,
+        "moduleId": "rudolf-bauer-brussels-fire-measured-pulse-light",
+        "partId": "measured-pulse-light",
+        "hash": "f09ba14569517b61070aa2892477f472b291f4f6a80c8942cccf8f155b7805df",
+        "integrity": "sha256-f09ba14569517b61070aa2892477f472b291f4f6a80c8942cccf8f155b7805df",
+        "exportName": "createImmersiveWorldPart",
+        "file": "data/immersive-world/generated-modules/f09ba14569517b61070aa2892477f472b291f4f6a80c8942cccf8f155b7805df.mjs",
+        "url": "./data/immersive-world/generated-modules/f09ba14569517b61070aa2892477f472b291f4f6a80c8942cccf8f155b7805df.mjs",
+        "rendererCompatibility": {
+          "version": 1,
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material"
+          ],
+          "featureFacts": [
+            {
+              "kind": "standard-material",
+              "material": "MeshLambertMaterial",
+              "family": "standard-material-surface",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "standard-material",
+              "material": "MeshBasicMaterial",
+              "family": "standard-material-surface",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "standard-material",
+              "material": "LineBasicMaterial",
+              "family": "standard-material-surface",
+              "reason": "webgpu-safe-material"
+            }
+          ],
+          "compatibleSurfaces": [
+            {
+              "reason": "webgpu-safe-material",
+              "materialType": "MeshLambertMaterial"
+            },
+            {
+              "reason": "webgpu-safe-material",
+              "materialType": "MeshBasicMaterial"
+            },
+            {
+              "reason": "webgpu-safe-material",
+              "materialType": "LineBasicMaterial"
+            }
+          ]
+        }
+      }
+    ],
+    "renderFacts": {
+      "environmentPresent": true,
+      "cameraOwnedByComposition": true,
+      "lightingOwnedByComposition": true,
+      "nearFarClippingOwned": true,
+      "acceptedPartCount": 7,
+      "generatedModuleCount": 7,
+      "generatedAssetCount": 0,
+      "rendererAuthoringTarget": "webgpu-project-scene",
+      "rendererCompatibilityStatus": "webgpu-compatible",
+      "webgpuRendererGateRequired": true,
+      "webgpuRendererCompatible": true,
+      "desktopPreviewRecorded": true,
+      "mobilePreviewRecorded": true
+    }
+  },
+  "image": {
+    "thumbnailJpeg": "./data/media/2026-07-18-0705z-fires-have-already-claimed-at-least-eleven-lives-in-brussels-this-year/thumb-320.jpg",
+    "openGraphJpeg": "./data/media/2026-07-18-0705z-fires-have-already-claimed-at-least-eleven-lives-in-brussels-this-year/og-1200x630.jpg",
+    "instagramJpeg": "./data/media/2026-07-18-0705z-fires-have-already-claimed-at-least-eleven-lives-in-brussels-this-year/instagram-1080x1350.jpg",
+    "altText": "Fires have already claimed at least eleven lives in Brussels this year by Rudolf Bauer."
+  }
+}
