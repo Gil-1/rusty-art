@@ -1,7 +1,7 @@
 {
   "version": 1,
   "generatedAt": "2026-05-13T06:11:46.412Z",
-  "updatedAt": "2026-07-21T06:08:40.998Z",
+  "updatedAt": "2026-07-23T10:43:50.694Z",
   "entries": [
     {
       "version": 1,
@@ -4217,6 +4217,69 @@
             "materialType": "PointsMaterial"
           }
         ],
+        "forbiddenSurfaces": []
+      }
+    },
+    {
+      "version": 1,
+      "moduleId": "world-environment-draft-attempt-1",
+      "partId": "world-environment",
+      "hash": "174466bc515c21fb86f296cd302dca2f2d33456e7ba13655e87f016eeffe7e0f",
+      "integrity": "sha256-174466bc515c21fb86f296cd302dca2f2d33456e7ba13655e87f016eeffe7e0f",
+      "exportName": "createImmersiveWorldPart",
+      "file": "data/immersive-world/generated-modules/174466bc515c21fb86f296cd302dca2f2d33456e7ba13655e87f016eeffe7e0f.mjs",
+      "url": "./data/immersive-world/generated-modules/174466bc515c21fb86f296cd302dca2f2d33456e7ba13655e87f016eeffe7e0f.mjs",
+      "bytes": 14437,
+      "sourceHash": "7db0f6ced79f1d499cb9a6cfea8280e153a9a8a94d05e8a739f8f2c035c3ca32",
+      "packagedAt": "2026-07-23T08:13:33.394Z",
+      "rendererCompatibility": {
+        "version": 1,
+        "targetMode": "webgpu-project-scene",
+        "compatibilityStatus": "webgpu-compatible",
+        "webgpuCompatible": true,
+        "fallbackReason": null,
+        "fallbackReasons": [],
+        "evidenceReasons": [
+          "webgpu-safe-material"
+        ],
+        "rendererEvidenceReasons": [],
+        "featureFacts": [
+          {
+            "kind": "standard-material",
+            "material": "MeshLambertMaterial",
+            "family": "standard-material-surface",
+            "reason": "webgpu-safe-material"
+          },
+          {
+            "kind": "standard-material",
+            "material": "MeshBasicMaterial",
+            "family": "standard-material-surface",
+            "reason": "webgpu-safe-material"
+          },
+          {
+            "kind": "standard-material",
+            "material": "LineBasicMaterial",
+            "family": "standard-material-surface",
+            "reason": "webgpu-safe-material"
+          }
+        ],
+        "rendererFeatureFacts": [],
+        "advancedFeatureFacts": [],
+        "compatibleSurfaces": [
+          {
+            "reason": "webgpu-safe-material",
+            "materialType": "MeshLambertMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "materialType": "MeshBasicMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "materialType": "LineBasicMaterial"
+          }
+        ],
+        "rendererCompatibleSurfaces": [],
         "forbiddenSurfaces": []
       }
     },
@@ -12251,6 +12314,77 @@
     },
     {
       "version": 1,
+      "moduleId": "youngerman-brussels-quiet-world-environment",
+      "partId": "world-environment",
+      "hash": "3e82b9c64c449ec192342ca073cd5db85afbdc602cddcded717c3664798ba11b",
+      "integrity": "sha256-3e82b9c64c449ec192342ca073cd5db85afbdc602cddcded717c3664798ba11b",
+      "exportName": "createImmersiveWorldPart",
+      "file": "data/immersive-world/generated-modules/3e82b9c64c449ec192342ca073cd5db85afbdc602cddcded717c3664798ba11b.mjs",
+      "url": "./data/immersive-world/generated-modules/3e82b9c64c449ec192342ca073cd5db85afbdc602cddcded717c3664798ba11b.mjs",
+      "bytes": 9267,
+      "sourceHash": "7b28a6f7cab7a5e3e1e11d97292249fa8b8b5fe3bb6b09e1b2eadd4a4ce1a796",
+      "packagedAt": "2026-07-23T10:43:50.694Z",
+      "rendererCompatibility": {
+        "version": 1,
+        "targetMode": "webgpu-project-scene",
+        "compatibilityStatus": "webgpu-compatible",
+        "webgpuCompatible": true,
+        "fallbackReason": null,
+        "fallbackReasons": [],
+        "evidenceReasons": [
+          "webgpu-safe-material",
+          "source-used-project-webgpu-material-factory"
+        ],
+        "rendererEvidenceReasons": [],
+        "featureFacts": [
+          {
+            "kind": "standard-material",
+            "material": "MeshBasicMaterial",
+            "family": "standard-material-surface",
+            "reason": "webgpu-safe-material"
+          },
+          {
+            "kind": "material-factory",
+            "id": "matte-painted-surface",
+            "family": "matte-painted-surface",
+            "material": "MeshStandardMaterial",
+            "surface": "three-standard-material",
+            "reason": "source-used-project-webgpu-material-factory"
+          },
+          {
+            "kind": "standard-material",
+            "material": "LineBasicMaterial",
+            "family": "standard-material-surface",
+            "reason": "webgpu-safe-material"
+          }
+        ],
+        "rendererFeatureFacts": [],
+        "advancedFeatureFacts": [],
+        "compatibleSurfaces": [
+          {
+            "reason": "webgpu-safe-material",
+            "materialType": "MeshBasicMaterial"
+          },
+          {
+            "reason": "source-used-project-webgpu-material-factory",
+            "materialType": "MeshStandardMaterial",
+            "runtimeSurface": "three-standard-material",
+            "factoryId": "matte-painted-surface",
+            "materialFactoryId": "matte-painted-surface",
+            "factoryCategory": "matte-painted-surface",
+            "property": "materialFactoryId"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "materialType": "LineBasicMaterial"
+          }
+        ],
+        "rendererCompatibleSurfaces": [],
+        "forbiddenSurfaces": []
+      }
+    },
+    {
+      "version": 1,
       "moduleId": "world-environment.pollock-hantavirus-pressure-skybox.v1",
       "partId": "world-environment",
       "hash": "3f9ca7aac8a7501364fae28f1ad9cb6d9381d16f466c98e8895aba88d3665880",
@@ -12469,6 +12603,59 @@
             "materialFactoryId": "soft-particles",
             "factoryCategory": "soft-particles",
             "property": "materialFactoryId"
+          }
+        ],
+        "rendererCompatibleSurfaces": [],
+        "forbiddenSurfaces": []
+      }
+    },
+    {
+      "version": 1,
+      "moduleId": "unresolved-depth-plane-stack-draft-attempt-1",
+      "partId": "unresolved-depth-plane-stack",
+      "hash": "40c259c65bcf6c8830ff56d7aa8519ae5fe828f95d24e229821ef20755cf1fe9",
+      "integrity": "sha256-40c259c65bcf6c8830ff56d7aa8519ae5fe828f95d24e229821ef20755cf1fe9",
+      "exportName": "createImmersiveWorldPart",
+      "file": "data/immersive-world/generated-modules/40c259c65bcf6c8830ff56d7aa8519ae5fe828f95d24e229821ef20755cf1fe9.mjs",
+      "url": "./data/immersive-world/generated-modules/40c259c65bcf6c8830ff56d7aa8519ae5fe828f95d24e229821ef20755cf1fe9.mjs",
+      "bytes": 16727,
+      "sourceHash": "7acf7829d64b935c8250598199734acbdf422fc92e5fb3af1c053f9c9d8c0259",
+      "packagedAt": "2026-07-23T10:31:16.937Z",
+      "rendererCompatibility": {
+        "version": 1,
+        "targetMode": "webgpu-project-scene",
+        "compatibilityStatus": "webgpu-compatible",
+        "webgpuCompatible": true,
+        "fallbackReason": null,
+        "fallbackReasons": [],
+        "evidenceReasons": [
+          "webgpu-safe-material"
+        ],
+        "rendererEvidenceReasons": [],
+        "featureFacts": [
+          {
+            "kind": "standard-material",
+            "material": "MeshBasicMaterial",
+            "family": "standard-material-surface",
+            "reason": "webgpu-safe-material"
+          },
+          {
+            "kind": "standard-material",
+            "material": "LineBasicMaterial",
+            "family": "standard-material-surface",
+            "reason": "webgpu-safe-material"
+          }
+        ],
+        "rendererFeatureFacts": [],
+        "advancedFeatureFacts": [],
+        "compatibleSurfaces": [
+          {
+            "reason": "webgpu-safe-material",
+            "materialType": "MeshBasicMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "materialType": "LineBasicMaterial"
           }
         ],
         "rendererCompatibleSurfaces": [],
@@ -14487,6 +14674,59 @@
             "property": "fragmentShader"
           }
         ]
+      }
+    },
+    {
+      "version": 1,
+      "moduleId": "youngerman-brussels-vertical-strip-rhythm",
+      "partId": "vertical-strip-rhythm",
+      "hash": "4878e245930b37b3d4cc384b96dcf63a901ce433f7663bdd4eb918987ea836bc",
+      "integrity": "sha256-4878e245930b37b3d4cc384b96dcf63a901ce433f7663bdd4eb918987ea836bc",
+      "exportName": "createImmersiveWorldPart",
+      "file": "data/immersive-world/generated-modules/4878e245930b37b3d4cc384b96dcf63a901ce433f7663bdd4eb918987ea836bc.mjs",
+      "url": "./data/immersive-world/generated-modules/4878e245930b37b3d4cc384b96dcf63a901ce433f7663bdd4eb918987ea836bc.mjs",
+      "bytes": 15798,
+      "sourceHash": "250b035ab9125f4f3a5655e64059661751446343a78c9e463f9689b7d9506adc",
+      "packagedAt": "2026-07-23T10:43:50.694Z",
+      "rendererCompatibility": {
+        "version": 1,
+        "targetMode": "webgpu-project-scene",
+        "compatibilityStatus": "webgpu-compatible",
+        "webgpuCompatible": true,
+        "fallbackReason": null,
+        "fallbackReasons": [],
+        "evidenceReasons": [
+          "webgpu-safe-material"
+        ],
+        "rendererEvidenceReasons": [],
+        "featureFacts": [
+          {
+            "kind": "standard-material",
+            "material": "MeshBasicMaterial",
+            "family": "standard-material-surface",
+            "reason": "webgpu-safe-material"
+          },
+          {
+            "kind": "standard-material",
+            "material": "LineBasicMaterial",
+            "family": "standard-material-surface",
+            "reason": "webgpu-safe-material"
+          }
+        ],
+        "rendererFeatureFacts": [],
+        "advancedFeatureFacts": [],
+        "compatibleSurfaces": [
+          {
+            "reason": "webgpu-safe-material",
+            "materialType": "MeshBasicMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "materialType": "LineBasicMaterial"
+          }
+        ],
+        "rendererCompatibleSurfaces": [],
+        "forbiddenSurfaces": []
       }
     },
     {
@@ -20341,6 +20581,59 @@
     },
     {
       "version": 1,
+      "moduleId": "youngerman-brussels-cold-counterfield",
+      "partId": "brussels-cold-counterfield",
+      "hash": "6b471a7124c54337da6247c98f9f800354a96ac9536c6d6eed1282811329ef5b",
+      "integrity": "sha256-6b471a7124c54337da6247c98f9f800354a96ac9536c6d6eed1282811329ef5b",
+      "exportName": "createImmersiveWorldPart",
+      "file": "data/immersive-world/generated-modules/6b471a7124c54337da6247c98f9f800354a96ac9536c6d6eed1282811329ef5b.mjs",
+      "url": "./data/immersive-world/generated-modules/6b471a7124c54337da6247c98f9f800354a96ac9536c6d6eed1282811329ef5b.mjs",
+      "bytes": 16611,
+      "sourceHash": "2742dc430c0d4c7b2b85812b59b4b8df949d11d5b9878b17fd95edcb64db1056",
+      "packagedAt": "2026-07-23T10:43:50.694Z",
+      "rendererCompatibility": {
+        "version": 1,
+        "targetMode": "webgpu-project-scene",
+        "compatibilityStatus": "webgpu-compatible",
+        "webgpuCompatible": true,
+        "fallbackReason": null,
+        "fallbackReasons": [],
+        "evidenceReasons": [
+          "webgpu-safe-material"
+        ],
+        "rendererEvidenceReasons": [],
+        "featureFacts": [
+          {
+            "kind": "standard-material",
+            "material": "MeshBasicMaterial",
+            "family": "standard-material-surface",
+            "reason": "webgpu-safe-material"
+          },
+          {
+            "kind": "standard-material",
+            "material": "LineBasicMaterial",
+            "family": "standard-material-surface",
+            "reason": "webgpu-safe-material"
+          }
+        ],
+        "rendererFeatureFacts": [],
+        "advancedFeatureFacts": [],
+        "compatibleSurfaces": [
+          {
+            "reason": "webgpu-safe-material",
+            "materialType": "MeshBasicMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "materialType": "LineBasicMaterial"
+          }
+        ],
+        "rendererCompatibleSurfaces": [],
+        "forbiddenSurfaces": []
+      }
+    },
+    {
+      "version": 1,
       "moduleId": "world-environment-ivan-kliun-fracture-pressure-atmosphere",
       "partId": "world-environment",
       "hash": "6bc0100cbe34e84d87279b908f549f5a31691fc862ebbce344427cf6fa9d5300",
@@ -24349,6 +24642,81 @@
     },
     {
       "version": 1,
+      "moduleId": "youngerman-brussels-matte-paper-grain-system",
+      "partId": "matte-paper-grain-system",
+      "hash": "85372bcabd4d849903913b891eef63e9e58783477e1c07d2a30dd217d836014f",
+      "integrity": "sha256-85372bcabd4d849903913b891eef63e9e58783477e1c07d2a30dd217d836014f",
+      "exportName": "createImmersiveWorldPart",
+      "file": "data/immersive-world/generated-modules/85372bcabd4d849903913b891eef63e9e58783477e1c07d2a30dd217d836014f.mjs",
+      "url": "./data/immersive-world/generated-modules/85372bcabd4d849903913b891eef63e9e58783477e1c07d2a30dd217d836014f.mjs",
+      "bytes": 21217,
+      "sourceHash": "8fcd2af0da9da5d0ea78025d4ad3588f6fcb2034ce3ecb2c3f14e9c2500ae640",
+      "packagedAt": "2026-07-23T10:43:50.694Z",
+      "rendererCompatibility": {
+        "version": 1,
+        "targetMode": "webgpu-project-scene",
+        "compatibilityStatus": "webgpu-compatible",
+        "webgpuCompatible": true,
+        "fallbackReason": null,
+        "fallbackReasons": [],
+        "evidenceReasons": [
+          "webgpu-safe-material",
+          "webgpu-native-helper-utility"
+        ],
+        "rendererEvidenceReasons": [],
+        "featureFacts": [
+          {
+            "kind": "standard-material",
+            "material": "MeshBasicMaterial",
+            "family": "standard-material-surface",
+            "reason": "webgpu-safe-material"
+          },
+          {
+            "kind": "standard-material",
+            "material": "LineBasicMaterial",
+            "family": "standard-material-surface",
+            "reason": "webgpu-safe-material"
+          },
+          {
+            "kind": "webgpu-native-helper",
+            "id": "scraped-paint-grain-material",
+            "family": "paint-grain-surface",
+            "factory": "scraped-paint-grain-surface",
+            "material": "MeshBasicNodeMaterial",
+            "surface": "three-mesh-basic-node-material-tsl",
+            "reason": "webgpu-native-helper-utility"
+          }
+        ],
+        "rendererFeatureFacts": [],
+        "advancedFeatureFacts": [],
+        "compatibleSurfaces": [
+          {
+            "reason": "webgpu-safe-material",
+            "materialType": "MeshBasicMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "materialType": "LineBasicMaterial"
+          },
+          {
+            "reason": "webgpu-native-helper-utility",
+            "api": "utilities.createScrapedPaintGrainMaterial",
+            "helperId": "scraped-paint-grain-material",
+            "featureFamily": "paint-grain-surface",
+            "outputKind": "material",
+            "materialType": "MeshBasicNodeMaterial",
+            "runtimeSurface": "three-mesh-basic-node-material-tsl",
+            "factoryId": "scraped-paint-grain-surface",
+            "materialFactoryId": "scraped-paint-grain-surface",
+            "factoryCategory": "matte-painted-surface"
+          }
+        ],
+        "rendererCompatibleSurfaces": [],
+        "forbiddenSurfaces": []
+      }
+    },
+    {
+      "version": 1,
       "moduleId": "non-literal-flow-pressure-draft-attempt-2",
       "partId": "non-literal-flow-pressure",
       "hash": "857110c07730b42f078dfaa1ec15c98a9a60b3376940f6d0400a04d971760357",
@@ -26227,6 +26595,59 @@
             "property": "fragmentShader"
           }
         ]
+      }
+    },
+    {
+      "version": 1,
+      "moduleId": "contour-edge-pressure-draft-attempt-1",
+      "partId": "contour-edge-pressure",
+      "hash": "8fa4a3dceffde19e1164a20a8bc6668adc8679781e6cc44bdef46619518e9277",
+      "integrity": "sha256-8fa4a3dceffde19e1164a20a8bc6668adc8679781e6cc44bdef46619518e9277",
+      "exportName": "createImmersiveWorldPart",
+      "file": "data/immersive-world/generated-modules/8fa4a3dceffde19e1164a20a8bc6668adc8679781e6cc44bdef46619518e9277.mjs",
+      "url": "./data/immersive-world/generated-modules/8fa4a3dceffde19e1164a20a8bc6668adc8679781e6cc44bdef46619518e9277.mjs",
+      "bytes": 17045,
+      "sourceHash": "d9d701387a176dd29f79f78ed427ec627e47f0ba7c1877251036964880f2ef9a",
+      "packagedAt": "2026-07-23T10:31:16.937Z",
+      "rendererCompatibility": {
+        "version": 1,
+        "targetMode": "webgpu-project-scene",
+        "compatibilityStatus": "webgpu-compatible",
+        "webgpuCompatible": true,
+        "fallbackReason": null,
+        "fallbackReasons": [],
+        "evidenceReasons": [
+          "webgpu-safe-material"
+        ],
+        "rendererEvidenceReasons": [],
+        "featureFacts": [
+          {
+            "kind": "standard-material",
+            "material": "MeshBasicMaterial",
+            "family": "standard-material-surface",
+            "reason": "webgpu-safe-material"
+          },
+          {
+            "kind": "standard-material",
+            "material": "LineBasicMaterial",
+            "family": "standard-material-surface",
+            "reason": "webgpu-safe-material"
+          }
+        ],
+        "rendererFeatureFacts": [],
+        "advancedFeatureFacts": [],
+        "compatibleSurfaces": [
+          {
+            "reason": "webgpu-safe-material",
+            "materialType": "MeshBasicMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "materialType": "LineBasicMaterial"
+          }
+        ],
+        "rendererCompatibleSurfaces": [],
+        "forbiddenSurfaces": []
       }
     },
     {
@@ -30339,6 +30760,77 @@
     },
     {
       "version": 1,
+      "moduleId": "world-environment-draft-attempt-1",
+      "partId": "world-environment",
+      "hash": "a4e13bbad11f3d86a8e076edce7c40036389e767463ffc226bb83d27e7b9d398",
+      "integrity": "sha256-a4e13bbad11f3d86a8e076edce7c40036389e767463ffc226bb83d27e7b9d398",
+      "exportName": "createImmersiveWorldPart",
+      "file": "data/immersive-world/generated-modules/a4e13bbad11f3d86a8e076edce7c40036389e767463ffc226bb83d27e7b9d398.mjs",
+      "url": "./data/immersive-world/generated-modules/a4e13bbad11f3d86a8e076edce7c40036389e767463ffc226bb83d27e7b9d398.mjs",
+      "bytes": 8582,
+      "sourceHash": "17f87651305cf7c894eb1e34db81afeba7e4d2fe07ef7ffe25328badd8e83bb5",
+      "packagedAt": "2026-07-23T10:31:16.937Z",
+      "rendererCompatibility": {
+        "version": 1,
+        "targetMode": "webgpu-project-scene",
+        "compatibilityStatus": "webgpu-compatible",
+        "webgpuCompatible": true,
+        "fallbackReason": null,
+        "fallbackReasons": [],
+        "evidenceReasons": [
+          "webgpu-safe-material",
+          "source-used-project-webgpu-material-factory"
+        ],
+        "rendererEvidenceReasons": [],
+        "featureFacts": [
+          {
+            "kind": "standard-material",
+            "material": "MeshBasicMaterial",
+            "family": "standard-material-surface",
+            "reason": "webgpu-safe-material"
+          },
+          {
+            "kind": "material-factory",
+            "id": "matte-painted-surface",
+            "family": "matte-painted-surface",
+            "material": "MeshStandardMaterial",
+            "surface": "three-standard-material",
+            "reason": "source-used-project-webgpu-material-factory"
+          },
+          {
+            "kind": "standard-material",
+            "material": "LineBasicMaterial",
+            "family": "standard-material-surface",
+            "reason": "webgpu-safe-material"
+          }
+        ],
+        "rendererFeatureFacts": [],
+        "advancedFeatureFacts": [],
+        "compatibleSurfaces": [
+          {
+            "reason": "webgpu-safe-material",
+            "materialType": "MeshBasicMaterial"
+          },
+          {
+            "reason": "source-used-project-webgpu-material-factory",
+            "materialType": "MeshStandardMaterial",
+            "runtimeSurface": "three-standard-material",
+            "factoryId": "matte-painted-surface",
+            "materialFactoryId": "matte-painted-surface",
+            "factoryCategory": "matte-painted-surface",
+            "property": "materialFactoryId"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "materialType": "LineBasicMaterial"
+          }
+        ],
+        "rendererCompatibleSurfaces": [],
+        "forbiddenSurfaces": []
+      }
+    },
+    {
+      "version": 1,
       "moduleId": "malevich-budget-control-world-environment",
       "partId": "world-environment",
       "hash": "a4f067a7535f99daaa067ad934ba554a166fad79e0b324e082456d881149b58f",
@@ -31617,6 +32109,59 @@
     },
     {
       "version": 1,
+      "moduleId": "youngerman-brussels-unresolved-depth-plane-stack",
+      "partId": "unresolved-depth-plane-stack",
+      "hash": "af4f78f75c4761660b7bba02834b845dee30c2d9df749013b586e72d47d4e23d",
+      "integrity": "sha256-af4f78f75c4761660b7bba02834b845dee30c2d9df749013b586e72d47d4e23d",
+      "exportName": "createImmersiveWorldPart",
+      "file": "data/immersive-world/generated-modules/af4f78f75c4761660b7bba02834b845dee30c2d9df749013b586e72d47d4e23d.mjs",
+      "url": "./data/immersive-world/generated-modules/af4f78f75c4761660b7bba02834b845dee30c2d9df749013b586e72d47d4e23d.mjs",
+      "bytes": 16850,
+      "sourceHash": "1c5dbcdae0439333935131e0abed2e4d0e82e548cc20d84ed1456022fcc7278c",
+      "packagedAt": "2026-07-23T10:43:50.694Z",
+      "rendererCompatibility": {
+        "version": 1,
+        "targetMode": "webgpu-project-scene",
+        "compatibilityStatus": "webgpu-compatible",
+        "webgpuCompatible": true,
+        "fallbackReason": null,
+        "fallbackReasons": [],
+        "evidenceReasons": [
+          "webgpu-safe-material"
+        ],
+        "rendererEvidenceReasons": [],
+        "featureFacts": [
+          {
+            "kind": "standard-material",
+            "material": "MeshBasicMaterial",
+            "family": "standard-material-surface",
+            "reason": "webgpu-safe-material"
+          },
+          {
+            "kind": "standard-material",
+            "material": "LineBasicMaterial",
+            "family": "standard-material-surface",
+            "reason": "webgpu-safe-material"
+          }
+        ],
+        "rendererFeatureFacts": [],
+        "advancedFeatureFacts": [],
+        "compatibleSurfaces": [
+          {
+            "reason": "webgpu-safe-material",
+            "materialType": "MeshBasicMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "materialType": "LineBasicMaterial"
+          }
+        ],
+        "rendererCompatibleSurfaces": [],
+        "forbiddenSurfaces": []
+      }
+    },
+    {
+      "version": 1,
       "moduleId": "world-environment-frank-bowling-bico-against-flow-pressure",
       "partId": "world-environment",
       "hash": "af5fdcd8cddb380cc33d7b4a72b4d6c53e823fa8dc27fee22ec15f2a95431539",
@@ -31735,6 +32280,69 @@
             "materialType": "PointsMaterial"
           }
         ],
+        "forbiddenSurfaces": []
+      }
+    },
+    {
+      "version": 1,
+      "moduleId": "world-environment-draft-attempt-1",
+      "partId": "world-environment",
+      "hash": "af968f585120aa0015ec9b227ba7fd088d2c1f39b599c916a108f8e257be9552",
+      "integrity": "sha256-af968f585120aa0015ec9b227ba7fd088d2c1f39b599c916a108f8e257be9552",
+      "exportName": "createImmersiveWorldPart",
+      "file": "data/immersive-world/generated-modules/af968f585120aa0015ec9b227ba7fd088d2c1f39b599c916a108f8e257be9552.mjs",
+      "url": "./data/immersive-world/generated-modules/af968f585120aa0015ec9b227ba7fd088d2c1f39b599c916a108f8e257be9552.mjs",
+      "bytes": 14388,
+      "sourceHash": "32c46d1800480ecb5eafb9d6d9598deec9cb7068d1296c8eb209169875a421ef",
+      "packagedAt": "2026-07-23T08:13:33.394Z",
+      "rendererCompatibility": {
+        "version": 1,
+        "targetMode": "webgpu-project-scene",
+        "compatibilityStatus": "webgpu-compatible",
+        "webgpuCompatible": true,
+        "fallbackReason": null,
+        "fallbackReasons": [],
+        "evidenceReasons": [
+          "webgpu-safe-material"
+        ],
+        "rendererEvidenceReasons": [],
+        "featureFacts": [
+          {
+            "kind": "standard-material",
+            "material": "MeshLambertMaterial",
+            "family": "standard-material-surface",
+            "reason": "webgpu-safe-material"
+          },
+          {
+            "kind": "standard-material",
+            "material": "MeshBasicMaterial",
+            "family": "standard-material-surface",
+            "reason": "webgpu-safe-material"
+          },
+          {
+            "kind": "standard-material",
+            "material": "LineBasicMaterial",
+            "family": "standard-material-surface",
+            "reason": "webgpu-safe-material"
+          }
+        ],
+        "rendererFeatureFacts": [],
+        "advancedFeatureFacts": [],
+        "compatibleSurfaces": [
+          {
+            "reason": "webgpu-safe-material",
+            "materialType": "MeshLambertMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "materialType": "MeshBasicMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "materialType": "LineBasicMaterial"
+          }
+        ],
+        "rendererCompatibleSurfaces": [],
         "forbiddenSurfaces": []
       }
     },
@@ -34519,6 +35127,59 @@
             "materialFactoryId": "soft-particles",
             "factoryCategory": "soft-particles",
             "property": "materialFactoryId"
+          }
+        ],
+        "rendererCompatibleSurfaces": [],
+        "forbiddenSurfaces": []
+      }
+    },
+    {
+      "version": 1,
+      "moduleId": "youngerman-brussels-contour-edge-pressure",
+      "partId": "contour-edge-pressure",
+      "hash": "bf7e9940c61f11afb1d9d4ab5461dfa0ebb883faec4a45693fbf1e95eecd8dca",
+      "integrity": "sha256-bf7e9940c61f11afb1d9d4ab5461dfa0ebb883faec4a45693fbf1e95eecd8dca",
+      "exportName": "createImmersiveWorldPart",
+      "file": "data/immersive-world/generated-modules/bf7e9940c61f11afb1d9d4ab5461dfa0ebb883faec4a45693fbf1e95eecd8dca.mjs",
+      "url": "./data/immersive-world/generated-modules/bf7e9940c61f11afb1d9d4ab5461dfa0ebb883faec4a45693fbf1e95eecd8dca.mjs",
+      "bytes": 17042,
+      "sourceHash": "90b134674215c43fe7b80b5c588ada26590c1984a9a1c30fc71624d63578daa8",
+      "packagedAt": "2026-07-23T10:43:50.694Z",
+      "rendererCompatibility": {
+        "version": 1,
+        "targetMode": "webgpu-project-scene",
+        "compatibilityStatus": "webgpu-compatible",
+        "webgpuCompatible": true,
+        "fallbackReason": null,
+        "fallbackReasons": [],
+        "evidenceReasons": [
+          "webgpu-safe-material"
+        ],
+        "rendererEvidenceReasons": [],
+        "featureFacts": [
+          {
+            "kind": "standard-material",
+            "material": "MeshBasicMaterial",
+            "family": "standard-material-surface",
+            "reason": "webgpu-safe-material"
+          },
+          {
+            "kind": "standard-material",
+            "material": "LineBasicMaterial",
+            "family": "standard-material-surface",
+            "reason": "webgpu-safe-material"
+          }
+        ],
+        "rendererFeatureFacts": [],
+        "advancedFeatureFacts": [],
+        "compatibleSurfaces": [
+          {
+            "reason": "webgpu-safe-material",
+            "materialType": "MeshBasicMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "materialType": "LineBasicMaterial"
           }
         ],
         "rendererCompatibleSurfaces": [],
@@ -37504,6 +38165,59 @@
             "materialType": "MeshBasicMaterial"
           }
         ],
+        "forbiddenSurfaces": []
+      }
+    },
+    {
+      "version": 1,
+      "moduleId": "youngerman-brussels-central-fracture-emblem",
+      "partId": "central-fracture-emblem",
+      "hash": "cd71aff092564f6a76092bf5739e73721b6d2b782882609e82c0e846fcfe3832",
+      "integrity": "sha256-cd71aff092564f6a76092bf5739e73721b6d2b782882609e82c0e846fcfe3832",
+      "exportName": "createImmersiveWorldPart",
+      "file": "data/immersive-world/generated-modules/cd71aff092564f6a76092bf5739e73721b6d2b782882609e82c0e846fcfe3832.mjs",
+      "url": "./data/immersive-world/generated-modules/cd71aff092564f6a76092bf5739e73721b6d2b782882609e82c0e846fcfe3832.mjs",
+      "bytes": 15903,
+      "sourceHash": "554da032eff4e204bc6f0c37493d13ebe0b0168f3ff258f27107c3abbe9c94e3",
+      "packagedAt": "2026-07-23T10:43:50.694Z",
+      "rendererCompatibility": {
+        "version": 1,
+        "targetMode": "webgpu-project-scene",
+        "compatibilityStatus": "webgpu-compatible",
+        "webgpuCompatible": true,
+        "fallbackReason": null,
+        "fallbackReasons": [],
+        "evidenceReasons": [
+          "webgpu-safe-material"
+        ],
+        "rendererEvidenceReasons": [],
+        "featureFacts": [
+          {
+            "kind": "standard-material",
+            "material": "MeshBasicMaterial",
+            "family": "standard-material-surface",
+            "reason": "webgpu-safe-material"
+          },
+          {
+            "kind": "standard-material",
+            "material": "LineBasicMaterial",
+            "family": "standard-material-surface",
+            "reason": "webgpu-safe-material"
+          }
+        ],
+        "rendererFeatureFacts": [],
+        "advancedFeatureFacts": [],
+        "compatibleSurfaces": [
+          {
+            "reason": "webgpu-safe-material",
+            "materialType": "MeshBasicMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "materialType": "LineBasicMaterial"
+          }
+        ],
+        "rendererCompatibleSurfaces": [],
         "forbiddenSurfaces": []
       }
     },
@@ -40770,6 +41484,59 @@
     },
     {
       "version": 1,
+      "moduleId": "world-environment-draft-attempt-2",
+      "partId": "world-environment",
+      "hash": "de9a68c1c6c7909a8e418d622f0dc2f576b6e4415d42df9f36f164b8e993d6fc",
+      "integrity": "sha256-de9a68c1c6c7909a8e418d622f0dc2f576b6e4415d42df9f36f164b8e993d6fc",
+      "exportName": "createImmersiveWorldPart",
+      "file": "data/immersive-world/generated-modules/de9a68c1c6c7909a8e418d622f0dc2f576b6e4415d42df9f36f164b8e993d6fc.mjs",
+      "url": "./data/immersive-world/generated-modules/de9a68c1c6c7909a8e418d622f0dc2f576b6e4415d42df9f36f164b8e993d6fc.mjs",
+      "bytes": 10146,
+      "sourceHash": "66a51c1c6f2837c837359c7864e4388ece6b0d165a2c93367b48474a767b9c70",
+      "packagedAt": "2026-07-23T10:04:53.478Z",
+      "rendererCompatibility": {
+        "version": 1,
+        "targetMode": "webgpu-project-scene",
+        "compatibilityStatus": "webgpu-compatible",
+        "webgpuCompatible": true,
+        "fallbackReason": null,
+        "fallbackReasons": [],
+        "evidenceReasons": [
+          "webgpu-safe-material"
+        ],
+        "rendererEvidenceReasons": [],
+        "featureFacts": [
+          {
+            "kind": "standard-material",
+            "material": "MeshBasicMaterial",
+            "family": "standard-material-surface",
+            "reason": "webgpu-safe-material"
+          },
+          {
+            "kind": "standard-material",
+            "material": "LineBasicMaterial",
+            "family": "standard-material-surface",
+            "reason": "webgpu-safe-material"
+          }
+        ],
+        "rendererFeatureFacts": [],
+        "advancedFeatureFacts": [],
+        "compatibleSurfaces": [
+          {
+            "reason": "webgpu-safe-material",
+            "materialType": "MeshBasicMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "materialType": "LineBasicMaterial"
+          }
+        ],
+        "rendererCompatibleSurfaces": [],
+        "forbiddenSurfaces": []
+      }
+    },
+    {
+      "version": 1,
       "moduleId": "non-literal-fracture-pressure-alma-thomas-rain-fracture-pressure",
       "partId": "non-literal-fracture-pressure",
       "hash": "deea117b9182d95df4e355f89f82cc4388e5a6a38ab02c7302153ce5a5925cd0",
@@ -43755,6 +44522,67 @@
     },
     {
       "version": 1,
+      "moduleId": "youngerman-brussels-steady-grid-pulse-controller",
+      "partId": "steady-grid-pulse-controller",
+      "hash": "f00e0aab91eb8c359e76d8e26b484221765473fade347c00a45908ef757fb289",
+      "integrity": "sha256-f00e0aab91eb8c359e76d8e26b484221765473fade347c00a45908ef757fb289",
+      "exportName": "createImmersiveWorldPart",
+      "file": "data/immersive-world/generated-modules/f00e0aab91eb8c359e76d8e26b484221765473fade347c00a45908ef757fb289.mjs",
+      "url": "./data/immersive-world/generated-modules/f00e0aab91eb8c359e76d8e26b484221765473fade347c00a45908ef757fb289.mjs",
+      "bytes": 9436,
+      "sourceHash": "dfadd3f4c86ddf5368faa0981a0c828b684efd300834336293a612a4023a13be",
+      "packagedAt": "2026-07-23T10:43:50.694Z",
+      "rendererCompatibility": {
+        "version": 1,
+        "targetMode": "webgpu-project-scene",
+        "compatibilityStatus": "webgpu-compatible",
+        "webgpuCompatible": true,
+        "fallbackReason": null,
+        "fallbackReasons": [],
+        "evidenceReasons": [
+          "webgpu-safe-material",
+          "source-used-project-webgpu-material-factory"
+        ],
+        "rendererEvidenceReasons": [],
+        "featureFacts": [
+          {
+            "kind": "standard-material",
+            "material": "LineBasicMaterial",
+            "family": "standard-material-surface",
+            "reason": "webgpu-safe-material"
+          },
+          {
+            "kind": "material-factory",
+            "id": "procedural-marks",
+            "family": "procedural-marks",
+            "material": "MeshBasicMaterial",
+            "surface": "instanced-geometry-material",
+            "reason": "source-used-project-webgpu-material-factory"
+          }
+        ],
+        "rendererFeatureFacts": [],
+        "advancedFeatureFacts": [],
+        "compatibleSurfaces": [
+          {
+            "reason": "webgpu-safe-material",
+            "materialType": "LineBasicMaterial"
+          },
+          {
+            "reason": "source-used-project-webgpu-material-factory",
+            "materialType": "MeshBasicMaterial",
+            "runtimeSurface": "instanced-geometry-material",
+            "factoryId": "procedural-marks",
+            "materialFactoryId": "procedural-marks",
+            "factoryCategory": "procedural-marks",
+            "property": "materialFactoryId"
+          }
+        ],
+        "rendererCompatibleSurfaces": [],
+        "forbiddenSurfaces": []
+      }
+    },
+    {
+      "version": 1,
       "moduleId": "compressed-surround-field-draft-attempt-1",
       "partId": "compressed-surround-field",
       "hash": "f06d48bf9879bcb462641172e60436cf69ab5a48c6ea5ec3f430b7e894c0f982",
@@ -45229,6 +46057,59 @@
             "materialFactoryId": "soft-particles",
             "factoryCategory": "soft-particles",
             "property": "materialFactoryId"
+          }
+        ],
+        "rendererCompatibleSurfaces": [],
+        "forbiddenSurfaces": []
+      }
+    },
+    {
+      "version": 1,
+      "moduleId": "world-environment-draft-attempt-1",
+      "partId": "world-environment",
+      "hash": "f77e8e7a29a48de204b44d57f1b1ec9ce7fba5f73982196278c49510dd8c28c1",
+      "integrity": "sha256-f77e8e7a29a48de204b44d57f1b1ec9ce7fba5f73982196278c49510dd8c28c1",
+      "exportName": "createImmersiveWorldPart",
+      "file": "data/immersive-world/generated-modules/f77e8e7a29a48de204b44d57f1b1ec9ce7fba5f73982196278c49510dd8c28c1.mjs",
+      "url": "./data/immersive-world/generated-modules/f77e8e7a29a48de204b44d57f1b1ec9ce7fba5f73982196278c49510dd8c28c1.mjs",
+      "bytes": 10151,
+      "sourceHash": "fdcf415f81f6619bddf3d7b9ffb32f5e8180e8e903ff6d083477026b09349fb2",
+      "packagedAt": "2026-07-23T10:04:53.478Z",
+      "rendererCompatibility": {
+        "version": 1,
+        "targetMode": "webgpu-project-scene",
+        "compatibilityStatus": "webgpu-compatible",
+        "webgpuCompatible": true,
+        "fallbackReason": null,
+        "fallbackReasons": [],
+        "evidenceReasons": [
+          "webgpu-safe-material"
+        ],
+        "rendererEvidenceReasons": [],
+        "featureFacts": [
+          {
+            "kind": "standard-material",
+            "material": "MeshBasicMaterial",
+            "family": "standard-material-surface",
+            "reason": "webgpu-safe-material"
+          },
+          {
+            "kind": "standard-material",
+            "material": "LineBasicMaterial",
+            "family": "standard-material-surface",
+            "reason": "webgpu-safe-material"
+          }
+        ],
+        "rendererFeatureFacts": [],
+        "advancedFeatureFacts": [],
+        "compatibleSurfaces": [
+          {
+            "reason": "webgpu-safe-material",
+            "materialType": "MeshBasicMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "materialType": "LineBasicMaterial"
           }
         ],
         "rendererCompatibleSurfaces": [],

@@ -1,0 +1,76 @@
+{
+  "version": 2,
+  "kind": "rusty-art-public-media-assets",
+  "artworkId": "2026-07-23-1149z-this-is-how-bad-bunny-wrapped-up-his-world-tour-in-brussels-why-belgium",
+  "source": {
+    "sha256": "c797792d152b929babbaf55ed88dd316a1e97e53610743ab9e8d54cf0fa16e56",
+    "role": "daily-preview-story-desktop"
+  },
+  "sources": {
+    "primary": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-desktop",
+      "sha256": "c797792d152b929babbaf55ed88dd316a1e97e53610743ab9e8d54cf0fa16e56"
+    },
+    "openGraph": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-open-graph",
+      "sha256": "885bebbca133fb6d7c02d3fa7d3cbe0cccf3779ccc3e7552b5aa0811676d6225"
+    },
+    "instagram": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-instagram",
+      "sha256": "87a6394fc15470d3ae7592f071782c198c627b4725288e30c57f51fa894cae5b"
+    }
+  },
+  "targets": {
+    "thumb-320.jpg": {
+      "spec": {
+        "fileName": "thumb-320.jpg",
+        "width": 320,
+        "height": null,
+        "fit": "inside",
+        "withoutEnlargement": true,
+        "format": "jpeg",
+        "quality": 82
+      },
+      "publicPath": "./data/media/2026-07-23-1149z-this-is-how-bad-bunny-wrapped-up-his-world-tour-in-brussels-why-belgium/thumb-320.jpg",
+      "source": {
+        "sha256": "c797792d152b929babbaf55ed88dd316a1e97e53610743ab9e8d54cf0fa16e56",
+        "role": "daily-preview-story-desktop"
+      }
+    },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-07-23-1149z-this-is-how-bad-bunny-wrapped-up-his-world-tour-in-brussels-why-belgium/og-1200x630.jpg",
+      "source": {
+        "sha256": "885bebbca133fb6d7c02d3fa7d3cbe0cccf3779ccc3e7552b5aa0811676d6225",
+        "role": "daily-preview-story-open-graph"
+      }
+    },
+    "instagram-1080x1350.jpg": {
+      "spec": {
+        "fileName": "instagram-1080x1350.jpg",
+        "width": 1080,
+        "height": 1350,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-07-23-1149z-this-is-how-bad-bunny-wrapped-up-his-world-tour-in-brussels-why-belgium/instagram-1080x1350.jpg",
+      "source": {
+        "sha256": "87a6394fc15470d3ae7592f071782c198c627b4725288e30c57f51fa894cae5b",
+        "role": "daily-preview-story-instagram"
+      }
+    }
+  }
+}
