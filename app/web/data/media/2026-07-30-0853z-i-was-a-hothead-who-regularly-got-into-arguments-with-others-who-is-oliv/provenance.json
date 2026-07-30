@@ -1,0 +1,76 @@
+{
+  "version": 2,
+  "kind": "rusty-art-public-media-assets",
+  "artworkId": "2026-07-30-0853z-i-was-a-hothead-who-regularly-got-into-arguments-with-others-who-is-oliv",
+  "source": {
+    "sha256": "24a6318d23b8b29718d77fd9b2e54b1b00d51171cdb5b7aea262fa600af35946",
+    "role": "daily-preview-story-desktop"
+  },
+  "sources": {
+    "primary": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-desktop",
+      "sha256": "24a6318d23b8b29718d77fd9b2e54b1b00d51171cdb5b7aea262fa600af35946"
+    },
+    "openGraph": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-open-graph",
+      "sha256": "0c73125ac4acedc00e1de0b3cc53d4dcb039f4ed40a769b2ed511fbc5d814d60"
+    },
+    "instagram": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-instagram",
+      "sha256": "7ca6a2c371a716621c5b4350678a0936564f3654bc9995ff75c5bc7ccafe9e9b"
+    }
+  },
+  "targets": {
+    "thumb-320.jpg": {
+      "spec": {
+        "fileName": "thumb-320.jpg",
+        "width": 320,
+        "height": null,
+        "fit": "inside",
+        "withoutEnlargement": true,
+        "format": "jpeg",
+        "quality": 82
+      },
+      "publicPath": "./data/media/2026-07-30-0853z-i-was-a-hothead-who-regularly-got-into-arguments-with-others-who-is-oliv/thumb-320.jpg",
+      "source": {
+        "sha256": "24a6318d23b8b29718d77fd9b2e54b1b00d51171cdb5b7aea262fa600af35946",
+        "role": "daily-preview-story-desktop"
+      }
+    },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-07-30-0853z-i-was-a-hothead-who-regularly-got-into-arguments-with-others-who-is-oliv/og-1200x630.jpg",
+      "source": {
+        "sha256": "0c73125ac4acedc00e1de0b3cc53d4dcb039f4ed40a769b2ed511fbc5d814d60",
+        "role": "daily-preview-story-open-graph"
+      }
+    },
+    "instagram-1080x1350.jpg": {
+      "spec": {
+        "fileName": "instagram-1080x1350.jpg",
+        "width": 1080,
+        "height": 1350,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-07-30-0853z-i-was-a-hothead-who-regularly-got-into-arguments-with-others-who-is-oliv/instagram-1080x1350.jpg",
+      "source": {
+        "sha256": "7ca6a2c371a716621c5b4350678a0936564f3654bc9995ff75c5bc7ccafe9e9b",
+        "role": "daily-preview-story-instagram"
+      }
+    }
+  }
+}
