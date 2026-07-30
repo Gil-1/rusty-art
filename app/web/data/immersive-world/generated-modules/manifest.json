@@ -1,7 +1,7 @@
 {
   "version": 1,
   "generatedAt": "2026-05-13T06:11:46.412Z",
-  "updatedAt": "2026-07-30T15:48:51.013Z",
+  "updatedAt": "2026-07-30T16:53:01.192Z",
   "entries": [
     {
       "version": 1,
@@ -11651,6 +11651,49 @@
       "bytes": 16740,
       "sourceHash": "6f6cb251e0daee98a3268811e455650ef10b2ccb3faee42b56ceae56b64c6ce4",
       "packagedAt": "2026-07-30T07:44:00.383Z",
+      "rendererCompatibility": {
+        "version": 1,
+        "targetMode": "webgpu-project-scene",
+        "compatibilityStatus": "webgpu-compatible",
+        "webgpuCompatible": true,
+        "fallbackReason": null,
+        "fallbackReasons": [],
+        "evidenceReasons": [
+          "webgpu-safe-material"
+        ],
+        "rendererEvidenceReasons": [],
+        "featureFacts": [
+          {
+            "kind": "standard-material",
+            "material": "MeshBasicMaterial",
+            "family": "standard-material-surface",
+            "reason": "webgpu-safe-material"
+          }
+        ],
+        "rendererFeatureFacts": [],
+        "advancedFeatureFacts": [],
+        "compatibleSurfaces": [
+          {
+            "reason": "webgpu-safe-material",
+            "materialType": "MeshBasicMaterial"
+          }
+        ],
+        "rendererCompatibleSurfaces": [],
+        "forbiddenSurfaces": []
+      }
+    },
+    {
+      "version": 1,
+      "moduleId": "favre-antman-transforming-grid-lattice",
+      "partId": "transforming-grid-lattice",
+      "hash": "35c6dfae191ca7e8fc719a79875b3230ee34c769fb68711d093e3482ec292230",
+      "integrity": "sha256-35c6dfae191ca7e8fc719a79875b3230ee34c769fb68711d093e3482ec292230",
+      "exportName": "createImmersiveWorldPart",
+      "file": "data/immersive-world/generated-modules/35c6dfae191ca7e8fc719a79875b3230ee34c769fb68711d093e3482ec292230.mjs",
+      "url": "./data/immersive-world/generated-modules/35c6dfae191ca7e8fc719a79875b3230ee34c769fb68711d093e3482ec292230.mjs",
+      "bytes": 15676,
+      "sourceHash": "52d19d944a9b587513905aaf911c834747e49d5f5e5ddf4464db77c4b33744ae",
+      "packagedAt": "2026-07-30T16:53:00.547Z",
       "rendererCompatibility": {
         "version": 1,
         "targetMode": "webgpu-project-scene",
@@ -27072,6 +27115,59 @@
             "factoryId": "procedural-marks",
             "materialFactoryId": "procedural-marks",
             "factoryCategory": "procedural-marks"
+          }
+        ],
+        "rendererCompatibleSurfaces": [],
+        "forbiddenSurfaces": []
+      }
+    },
+    {
+      "version": 1,
+      "moduleId": "favre-antman-world-environment",
+      "partId": "world-environment",
+      "hash": "8160a0c1347efef849b8b3f934f8de4463531f401d7d5d7825f0c0f034d789f9",
+      "integrity": "sha256-8160a0c1347efef849b8b3f934f8de4463531f401d7d5d7825f0c0f034d789f9",
+      "exportName": "createImmersiveWorldPart",
+      "file": "data/immersive-world/generated-modules/8160a0c1347efef849b8b3f934f8de4463531f401d7d5d7825f0c0f034d789f9.mjs",
+      "url": "./data/immersive-world/generated-modules/8160a0c1347efef849b8b3f934f8de4463531f401d7d5d7825f0c0f034d789f9.mjs",
+      "bytes": 13230,
+      "sourceHash": "3054cd6fe9d46d8470a878af07b89eca97b0984e97f3d477e55f91b532f6f95a",
+      "packagedAt": "2026-07-30T16:53:00.254Z",
+      "rendererCompatibility": {
+        "version": 1,
+        "targetMode": "webgpu-project-scene",
+        "compatibilityStatus": "webgpu-compatible",
+        "webgpuCompatible": true,
+        "fallbackReason": null,
+        "fallbackReasons": [],
+        "evidenceReasons": [
+          "webgpu-safe-material"
+        ],
+        "rendererEvidenceReasons": [],
+        "featureFacts": [
+          {
+            "kind": "standard-material",
+            "material": "MeshBasicMaterial",
+            "family": "standard-material-surface",
+            "reason": "webgpu-safe-material"
+          },
+          {
+            "kind": "standard-material",
+            "material": "LineBasicMaterial",
+            "family": "standard-material-surface",
+            "reason": "webgpu-safe-material"
+          }
+        ],
+        "rendererFeatureFacts": [],
+        "advancedFeatureFacts": [],
+        "compatibleSurfaces": [
+          {
+            "reason": "webgpu-safe-material",
+            "materialType": "MeshBasicMaterial"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "materialType": "LineBasicMaterial"
           }
         ],
         "rendererCompatibleSurfaces": [],

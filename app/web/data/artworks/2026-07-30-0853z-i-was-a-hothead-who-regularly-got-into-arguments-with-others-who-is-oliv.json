@@ -112,7 +112,7 @@
           "partId": "world-environment",
           "role": "world-environment",
           "moduleId": "favre-antman-world-environment",
-          "hash": "2c0bf5712115b5508d58ee0cd6f1d5c707764b410221229087f172b7e77e0b60",
+          "hash": "8160a0c1347efef849b8b3f934f8de4463531f401d7d5d7825f0c0f034d789f9",
           "targetMode": "webgpu-project-scene",
           "compatibilityStatus": "webgpu-compatible",
           "webgpuCompatible": true,
@@ -162,7 +162,7 @@
           "partId": "transforming-grid-lattice",
           "role": "creative-transformation-system",
           "moduleId": "favre-antman-transforming-grid-lattice",
-          "hash": "ad68fe8715d63db65029ec1f68fe2d6d9f9da98356adc9dd4110118b4da46537",
+          "hash": "35c6dfae191ca7e8fc719a79875b3230ee34c769fb68711d093e3482ec292230",
           "targetMode": "webgpu-project-scene",
           "compatibilityStatus": "webgpu-compatible",
           "webgpuCompatible": true,
@@ -391,11 +391,11 @@
           "version": 1,
           "moduleId": "favre-antman-world-environment",
           "partId": "world-environment",
-          "hash": "2c0bf5712115b5508d58ee0cd6f1d5c707764b410221229087f172b7e77e0b60",
-          "integrity": "sha256-2c0bf5712115b5508d58ee0cd6f1d5c707764b410221229087f172b7e77e0b60",
+          "hash": "8160a0c1347efef849b8b3f934f8de4463531f401d7d5d7825f0c0f034d789f9",
+          "integrity": "sha256-8160a0c1347efef849b8b3f934f8de4463531f401d7d5d7825f0c0f034d789f9",
           "exportName": "createImmersiveWorldPart",
-          "file": "data/immersive-world/generated-modules/2c0bf5712115b5508d58ee0cd6f1d5c707764b410221229087f172b7e77e0b60.mjs",
-          "url": "./data/immersive-world/generated-modules/2c0bf5712115b5508d58ee0cd6f1d5c707764b410221229087f172b7e77e0b60.mjs",
+          "file": "data/immersive-world/generated-modules/8160a0c1347efef849b8b3f934f8de4463531f401d7d5d7825f0c0f034d789f9.mjs",
+          "url": "./data/immersive-world/generated-modules/8160a0c1347efef849b8b3f934f8de4463531f401d7d5d7825f0c0f034d789f9.mjs",
           "rendererCompatibility": {
             "version": 1,
             "targetMode": "webgpu-project-scene",
@@ -1360,10 +1360,10 @@
           "band": "technical-support",
           "position": [
             0,
-            0.5,
+            0,
             0
           ],
-          "scale": 0.23,
+          "scale": 0.3,
           "renderOrder": 0,
           "visibilityPriority": "technical-support"
         },
@@ -2323,10 +2323,10 @@
           "band": "primary-readability",
           "position": [
             0,
-            0.5,
+            0,
             0
           ],
-          "scale": 0.23,
+          "scale": 0.3,
           "renderOrder": 3,
           "visibilityPriority": "primary"
         },
@@ -2359,11 +2359,11 @@
           "version": 1,
           "moduleId": "favre-antman-transforming-grid-lattice",
           "partId": "transforming-grid-lattice",
-          "hash": "ad68fe8715d63db65029ec1f68fe2d6d9f9da98356adc9dd4110118b4da46537",
-          "integrity": "sha256-ad68fe8715d63db65029ec1f68fe2d6d9f9da98356adc9dd4110118b4da46537",
+          "hash": "35c6dfae191ca7e8fc719a79875b3230ee34c769fb68711d093e3482ec292230",
+          "integrity": "sha256-35c6dfae191ca7e8fc719a79875b3230ee34c769fb68711d093e3482ec292230",
           "exportName": "createImmersiveWorldPart",
-          "file": "data/immersive-world/generated-modules/ad68fe8715d63db65029ec1f68fe2d6d9f9da98356adc9dd4110118b4da46537.mjs",
-          "url": "./data/immersive-world/generated-modules/ad68fe8715d63db65029ec1f68fe2d6d9f9da98356adc9dd4110118b4da46537.mjs",
+          "file": "data/immersive-world/generated-modules/35c6dfae191ca7e8fc719a79875b3230ee34c769fb68711d093e3482ec292230.mjs",
+          "url": "./data/immersive-world/generated-modules/35c6dfae191ca7e8fc719a79875b3230ee34c769fb68711d093e3482ec292230.mjs",
           "rendererCompatibility": {
             "version": 1,
             "targetMode": "webgpu-project-scene",
@@ -3286,10 +3286,10 @@
           "band": "support-readability",
           "position": [
             0,
-            0.5,
+            0,
             0
           ],
-          "scale": 0.23,
+          "scale": 0.3,
           "renderOrder": 2,
           "visibilityPriority": "supporting"
         },
@@ -4249,10 +4249,10 @@
           "band": "support-readability",
           "position": [
             0,
-            0.5,
+            0,
             0
           ],
-          "scale": 0.23,
+          "scale": 0.3,
           "renderOrder": 3,
           "visibilityPriority": "supporting"
         },
@@ -5144,10 +5144,10 @@
           "band": "support-readability",
           "position": [
             0,
-            0.5,
+            0,
             0
           ],
-          "scale": 0.23,
+          "scale": 0.3,
           "renderOrder": 4,
           "visibilityPriority": "supporting"
         },
@@ -6100,10 +6100,10 @@
           "band": "support-readability",
           "position": [
             0,
-            0.5,
+            0,
             0
           ],
-          "scale": 0.23,
+          "scale": 0.3,
           "renderOrder": 5,
           "visibilityPriority": "supporting"
         },
@@ -7051,10 +7051,10 @@
           "band": "support-readability",
           "position": [
             0,
-            0.5,
+            0,
             0
           ],
-          "scale": 0.23,
+          "scale": 0.3,
           "renderOrder": 6,
           "visibilityPriority": "supporting"
         },
@@ -7939,10 +7939,10 @@
           "band": "support-readability",
           "position": [
             0,
-            0.5,
+            0,
             0
           ],
-          "scale": 0.23,
+          "scale": 0.3,
           "renderOrder": 7,
           "visibilityPriority": "supporting"
         },
@@ -7974,11 +7974,11 @@
         "version": 1,
         "moduleId": "favre-antman-world-environment",
         "partId": "world-environment",
-        "hash": "2c0bf5712115b5508d58ee0cd6f1d5c707764b410221229087f172b7e77e0b60",
-        "integrity": "sha256-2c0bf5712115b5508d58ee0cd6f1d5c707764b410221229087f172b7e77e0b60",
+        "hash": "8160a0c1347efef849b8b3f934f8de4463531f401d7d5d7825f0c0f034d789f9",
+        "integrity": "sha256-8160a0c1347efef849b8b3f934f8de4463531f401d7d5d7825f0c0f034d789f9",
         "exportName": "createImmersiveWorldPart",
-        "file": "data/immersive-world/generated-modules/2c0bf5712115b5508d58ee0cd6f1d5c707764b410221229087f172b7e77e0b60.mjs",
-        "url": "./data/immersive-world/generated-modules/2c0bf5712115b5508d58ee0cd6f1d5c707764b410221229087f172b7e77e0b60.mjs",
+        "file": "data/immersive-world/generated-modules/8160a0c1347efef849b8b3f934f8de4463531f401d7d5d7825f0c0f034d789f9.mjs",
+        "url": "./data/immersive-world/generated-modules/8160a0c1347efef849b8b3f934f8de4463531f401d7d5d7825f0c0f034d789f9.mjs",
         "rendererCompatibility": {
           "version": 1,
           "targetMode": "webgpu-project-scene",
@@ -8052,11 +8052,11 @@
         "version": 1,
         "moduleId": "favre-antman-transforming-grid-lattice",
         "partId": "transforming-grid-lattice",
-        "hash": "ad68fe8715d63db65029ec1f68fe2d6d9f9da98356adc9dd4110118b4da46537",
-        "integrity": "sha256-ad68fe8715d63db65029ec1f68fe2d6d9f9da98356adc9dd4110118b4da46537",
+        "hash": "35c6dfae191ca7e8fc719a79875b3230ee34c769fb68711d093e3482ec292230",
+        "integrity": "sha256-35c6dfae191ca7e8fc719a79875b3230ee34c769fb68711d093e3482ec292230",
         "exportName": "createImmersiveWorldPart",
-        "file": "data/immersive-world/generated-modules/ad68fe8715d63db65029ec1f68fe2d6d9f9da98356adc9dd4110118b4da46537.mjs",
-        "url": "./data/immersive-world/generated-modules/ad68fe8715d63db65029ec1f68fe2d6d9f9da98356adc9dd4110118b4da46537.mjs",
+        "file": "data/immersive-world/generated-modules/35c6dfae191ca7e8fc719a79875b3230ee34c769fb68711d093e3482ec292230.mjs",
+        "url": "./data/immersive-world/generated-modules/35c6dfae191ca7e8fc719a79875b3230ee34c769fb68711d093e3482ec292230.mjs",
         "rendererCompatibility": {
           "version": 1,
           "targetMode": "webgpu-project-scene",
@@ -8276,7 +8276,7 @@
       "summary": "Final assembly uses accepted WebGPU-safe parts as a layered Favre-like matte graphic field: dark void, transformed grid, radial anchors, profile silhouettes, stripe/cord rhythm, Anderlecht diagonals, and restrained red heat cue.",
       "decisions": [
         "Retained the canonical composition camera because isolated and cumulative preview evidence showed readable forms from the same distance envelope; no pre-preview evidence justified a noncanonical lens change.",
-        "Set environment radius to 42 to preserve accepted part preview scale and prevent the all-over field from becoming a cropped wall of oversized marks.",
+        "Applied uniform scale 0.30 and centered position [0, 0, 0] to all eight authored parts; final desktop, mobile, Open Graph, and Instagram captures show full-frame bounding coverage without changing the canonical camera or environment.",
         "Kept motion as optional steady-grid-pulse with captureMode frozen by the accepted modules; no new animation metaphor was introduced.",
         "Used only renderer-owned outputColorTransform for subtle exposure/saturation/contrast; no module helper or WebGL post-processing assumption was added."
       ],
