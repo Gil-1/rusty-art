@@ -1,0 +1,76 @@
+{
+  "version": 2,
+  "kind": "rusty-art-public-media-assets",
+  "artworkId": "2026-08-10-0702z-braine-advances-work-at-every-level",
+  "source": {
+    "sha256": "26bbd34b9f2bc25bdc009a813e6920bd7861c8272077151d710d0b667ecd4415",
+    "role": "daily-preview-story-desktop"
+  },
+  "sources": {
+    "primary": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-desktop",
+      "sha256": "26bbd34b9f2bc25bdc009a813e6920bd7861c8272077151d710d0b667ecd4415"
+    },
+    "openGraph": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-open-graph",
+      "sha256": "54b099883863f61596bfd35a0d24e9cb72d282fd856a16f1ba1d3aec33b2f6f5"
+    },
+    "instagram": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-instagram",
+      "sha256": "a89ae2dcee77a63dc7995d1bc8c9235867d2f2666abeb18ad277ac9bfef0b1f9"
+    }
+  },
+  "targets": {
+    "thumb-320.jpg": {
+      "spec": {
+        "fileName": "thumb-320.jpg",
+        "width": 320,
+        "height": null,
+        "fit": "inside",
+        "withoutEnlargement": true,
+        "format": "jpeg",
+        "quality": 82
+      },
+      "publicPath": "./data/media/2026-08-10-0702z-braine-advances-work-at-every-level/thumb-320.jpg",
+      "source": {
+        "sha256": "26bbd34b9f2bc25bdc009a813e6920bd7861c8272077151d710d0b667ecd4415",
+        "role": "daily-preview-story-desktop"
+      }
+    },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-08-10-0702z-braine-advances-work-at-every-level/og-1200x630.jpg",
+      "source": {
+        "sha256": "54b099883863f61596bfd35a0d24e9cb72d282fd856a16f1ba1d3aec33b2f6f5",
+        "role": "daily-preview-story-open-graph"
+      }
+    },
+    "instagram-1080x1350.jpg": {
+      "spec": {
+        "fileName": "instagram-1080x1350.jpg",
+        "width": 1080,
+        "height": 1350,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-08-10-0702z-braine-advances-work-at-every-level/instagram-1080x1350.jpg",
+      "source": {
+        "sha256": "a89ae2dcee77a63dc7995d1bc8c9235867d2f2666abeb18ad277ac9bfef0b1f9",
+        "role": "daily-preview-story-instagram"
+      }
+    }
+  }
+}
