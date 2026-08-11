@@ -1,0 +1,76 @@
+{
+  "version": 2,
+  "kind": "rusty-art-public-media-assets",
+  "artworkId": "2026-08-11-0712z-strait-of-hormuz-fully-cleared-of-mines-donald-trump-says-announcing-the",
+  "source": {
+    "sha256": "8f3feb8903eac4275cad15c5ee1f2a286dbdbbba59581a50c49f35b288db1411",
+    "role": "daily-preview-story-desktop"
+  },
+  "sources": {
+    "primary": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-desktop",
+      "sha256": "8f3feb8903eac4275cad15c5ee1f2a286dbdbbba59581a50c49f35b288db1411"
+    },
+    "openGraph": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-open-graph",
+      "sha256": "9756aac3474bfb36768d2dbb6736c8f2bddcfde12edd0710665ca3d8db9af23e"
+    },
+    "instagram": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-instagram",
+      "sha256": "bbbaf5ab5b76bc654f1a7f9a95bf41f7a48a011048272192971164add3375df7"
+    }
+  },
+  "targets": {
+    "thumb-320.jpg": {
+      "spec": {
+        "fileName": "thumb-320.jpg",
+        "width": 320,
+        "height": null,
+        "fit": "inside",
+        "withoutEnlargement": true,
+        "format": "jpeg",
+        "quality": 82
+      },
+      "publicPath": "./data/media/2026-08-11-0712z-strait-of-hormuz-fully-cleared-of-mines-donald-trump-says-announcing-the/thumb-320.jpg",
+      "source": {
+        "sha256": "8f3feb8903eac4275cad15c5ee1f2a286dbdbbba59581a50c49f35b288db1411",
+        "role": "daily-preview-story-desktop"
+      }
+    },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-08-11-0712z-strait-of-hormuz-fully-cleared-of-mines-donald-trump-says-announcing-the/og-1200x630.jpg",
+      "source": {
+        "sha256": "9756aac3474bfb36768d2dbb6736c8f2bddcfde12edd0710665ca3d8db9af23e",
+        "role": "daily-preview-story-open-graph"
+      }
+    },
+    "instagram-1080x1350.jpg": {
+      "spec": {
+        "fileName": "instagram-1080x1350.jpg",
+        "width": 1080,
+        "height": 1350,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-08-11-0712z-strait-of-hormuz-fully-cleared-of-mines-donald-trump-says-announcing-the/instagram-1080x1350.jpg",
+      "source": {
+        "sha256": "bbbaf5ab5b76bc654f1a7f9a95bf41f7a48a011048272192971164add3375df7",
+        "role": "daily-preview-story-instagram"
+      }
+    }
+  }
+}
