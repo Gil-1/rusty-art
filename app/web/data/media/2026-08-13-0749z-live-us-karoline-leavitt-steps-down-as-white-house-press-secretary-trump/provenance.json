@@ -1,0 +1,76 @@
+{
+  "version": 2,
+  "kind": "rusty-art-public-media-assets",
+  "artworkId": "2026-08-13-0749z-live-us-karoline-leavitt-steps-down-as-white-house-press-secretary-trump",
+  "source": {
+    "sha256": "fdd23cda6709a8efb6e0d386e279482ebe82d9046d5498ff1525c0781e758b68",
+    "role": "daily-preview-story-desktop"
+  },
+  "sources": {
+    "primary": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-desktop",
+      "sha256": "fdd23cda6709a8efb6e0d386e279482ebe82d9046d5498ff1525c0781e758b68"
+    },
+    "openGraph": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-open-graph",
+      "sha256": "7ad38f3df2ec496ae4c6ab0c6851306db8cae379f3b9b0fd5c54dad604e8da96"
+    },
+    "instagram": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-instagram",
+      "sha256": "25fff177da3048b43cd5ff98ec42565fba9e8057238d5d9351e787671019cc45"
+    }
+  },
+  "targets": {
+    "thumb-320.jpg": {
+      "spec": {
+        "fileName": "thumb-320.jpg",
+        "width": 320,
+        "height": null,
+        "fit": "inside",
+        "withoutEnlargement": true,
+        "format": "jpeg",
+        "quality": 82
+      },
+      "publicPath": "./data/media/2026-08-13-0749z-live-us-karoline-leavitt-steps-down-as-white-house-press-secretary-trump/thumb-320.jpg",
+      "source": {
+        "sha256": "fdd23cda6709a8efb6e0d386e279482ebe82d9046d5498ff1525c0781e758b68",
+        "role": "daily-preview-story-desktop"
+      }
+    },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-08-13-0749z-live-us-karoline-leavitt-steps-down-as-white-house-press-secretary-trump/og-1200x630.jpg",
+      "source": {
+        "sha256": "7ad38f3df2ec496ae4c6ab0c6851306db8cae379f3b9b0fd5c54dad604e8da96",
+        "role": "daily-preview-story-open-graph"
+      }
+    },
+    "instagram-1080x1350.jpg": {
+      "spec": {
+        "fileName": "instagram-1080x1350.jpg",
+        "width": 1080,
+        "height": 1350,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-08-13-0749z-live-us-karoline-leavitt-steps-down-as-white-house-press-secretary-trump/instagram-1080x1350.jpg",
+      "source": {
+        "sha256": "25fff177da3048b43cd5ff98ec42565fba9e8057238d5d9351e787671019cc45",
+        "role": "daily-preview-story-instagram"
+      }
+    }
+  }
+}
