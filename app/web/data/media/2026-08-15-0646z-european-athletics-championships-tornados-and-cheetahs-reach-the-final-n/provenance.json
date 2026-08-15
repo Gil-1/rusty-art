@@ -1,0 +1,76 @@
+{
+  "version": 2,
+  "kind": "rusty-art-public-media-assets",
+  "artworkId": "2026-08-15-0646z-european-athletics-championships-tornados-and-cheetahs-reach-the-final-n",
+  "source": {
+    "sha256": "90076aad331c1d4cfca3b68366ff75917d077d1f097b141ef09f764940449fed",
+    "role": "daily-preview-story-desktop"
+  },
+  "sources": {
+    "primary": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-desktop",
+      "sha256": "90076aad331c1d4cfca3b68366ff75917d077d1f097b141ef09f764940449fed"
+    },
+    "openGraph": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-open-graph",
+      "sha256": "699d4de71130bb579ddcd1494d4daa9a5648fec8072edff7d84d6bf67cef6a55"
+    },
+    "instagram": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-instagram",
+      "sha256": "cc9512f06e08b5773f0337b5724eb4254915faca1a01a42c719a4a89132f4da5"
+    }
+  },
+  "targets": {
+    "thumb-320.jpg": {
+      "spec": {
+        "fileName": "thumb-320.jpg",
+        "width": 320,
+        "height": null,
+        "fit": "inside",
+        "withoutEnlargement": true,
+        "format": "jpeg",
+        "quality": 82
+      },
+      "publicPath": "./data/media/2026-08-15-0646z-european-athletics-championships-tornados-and-cheetahs-reach-the-final-n/thumb-320.jpg",
+      "source": {
+        "sha256": "90076aad331c1d4cfca3b68366ff75917d077d1f097b141ef09f764940449fed",
+        "role": "daily-preview-story-desktop"
+      }
+    },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-08-15-0646z-european-athletics-championships-tornados-and-cheetahs-reach-the-final-n/og-1200x630.jpg",
+      "source": {
+        "sha256": "699d4de71130bb579ddcd1494d4daa9a5648fec8072edff7d84d6bf67cef6a55",
+        "role": "daily-preview-story-open-graph"
+      }
+    },
+    "instagram-1080x1350.jpg": {
+      "spec": {
+        "fileName": "instagram-1080x1350.jpg",
+        "width": 1080,
+        "height": 1350,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-08-15-0646z-european-athletics-championships-tornados-and-cheetahs-reach-the-final-n/instagram-1080x1350.jpg",
+      "source": {
+        "sha256": "cc9512f06e08b5773f0337b5724eb4254915faca1a01a42c719a4a89132f4da5",
+        "role": "daily-preview-story-instagram"
+      }
+    }
+  }
+}
