@@ -1,0 +1,76 @@
+{
+  "version": 2,
+  "kind": "rusty-art-public-media-assets",
+  "artworkId": "2026-08-17-0708z-world-cup-aperture-four-stadium-pressures",
+  "source": {
+    "sha256": "11f8a7618f3dc8f6b73a4346cc0ae3fe2122a8c108a78a965aad96809570d902",
+    "role": "daily-preview-story-desktop"
+  },
+  "sources": {
+    "primary": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-desktop",
+      "sha256": "11f8a7618f3dc8f6b73a4346cc0ae3fe2122a8c108a78a965aad96809570d902"
+    },
+    "openGraph": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-open-graph",
+      "sha256": "bbffedbf14b0c4833b31463b4db2cacf87d3b8b0256c4958c3fdc18ab4655472"
+    },
+    "instagram": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-instagram",
+      "sha256": "784de2c542b3fd6384208825a083ef048e597f086b8fb6c7b7c2553188a6e258"
+    }
+  },
+  "targets": {
+    "thumb-320.jpg": {
+      "spec": {
+        "fileName": "thumb-320.jpg",
+        "width": 320,
+        "height": null,
+        "fit": "inside",
+        "withoutEnlargement": true,
+        "format": "jpeg",
+        "quality": 82
+      },
+      "publicPath": "./data/media/2026-08-17-0708z-world-cup-aperture-four-stadium-pressures/thumb-320.jpg",
+      "source": {
+        "sha256": "11f8a7618f3dc8f6b73a4346cc0ae3fe2122a8c108a78a965aad96809570d902",
+        "role": "daily-preview-story-desktop"
+      }
+    },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-08-17-0708z-world-cup-aperture-four-stadium-pressures/og-1200x630.jpg",
+      "source": {
+        "sha256": "bbffedbf14b0c4833b31463b4db2cacf87d3b8b0256c4958c3fdc18ab4655472",
+        "role": "daily-preview-story-open-graph"
+      }
+    },
+    "instagram-1080x1350.jpg": {
+      "spec": {
+        "fileName": "instagram-1080x1350.jpg",
+        "width": 1080,
+        "height": 1350,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-08-17-0708z-world-cup-aperture-four-stadium-pressures/instagram-1080x1350.jpg",
+      "source": {
+        "sha256": "784de2c542b3fd6384208825a083ef048e597f086b8fb6c7b7c2553188a6e258",
+        "role": "daily-preview-story-instagram"
+      }
+    }
+  }
+}
