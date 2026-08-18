@@ -1,0 +1,76 @@
+{
+  "version": 2,
+  "kind": "rusty-art-public-media-assets",
+  "artworkId": "2026-08-18-0726z-fire-in-the-high-fens-why-the-be-alert-system-was-not-activated-in-luxem",
+  "source": {
+    "sha256": "43ae3493c49a4d4d2683d74b27d5016b71d4f512f401ed61e2f437da54e9ac34",
+    "role": "daily-preview-story-desktop"
+  },
+  "sources": {
+    "primary": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-desktop",
+      "sha256": "43ae3493c49a4d4d2683d74b27d5016b71d4f512f401ed61e2f437da54e9ac34"
+    },
+    "openGraph": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-open-graph",
+      "sha256": "083799cf94f7e8b48f7f3f45bbd6fa6b916fe96c1632b5a317ebbf355db51594"
+    },
+    "instagram": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-instagram",
+      "sha256": "c8563dc0c7cf4c7456203fec6f15fa06907a455672cf11132a17a1e9d56ef556"
+    }
+  },
+  "targets": {
+    "thumb-320.jpg": {
+      "spec": {
+        "fileName": "thumb-320.jpg",
+        "width": 320,
+        "height": null,
+        "fit": "inside",
+        "withoutEnlargement": true,
+        "format": "jpeg",
+        "quality": 82
+      },
+      "publicPath": "./data/media/2026-08-18-0726z-fire-in-the-high-fens-why-the-be-alert-system-was-not-activated-in-luxem/thumb-320.jpg",
+      "source": {
+        "sha256": "43ae3493c49a4d4d2683d74b27d5016b71d4f512f401ed61e2f437da54e9ac34",
+        "role": "daily-preview-story-desktop"
+      }
+    },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-08-18-0726z-fire-in-the-high-fens-why-the-be-alert-system-was-not-activated-in-luxem/og-1200x630.jpg",
+      "source": {
+        "sha256": "083799cf94f7e8b48f7f3f45bbd6fa6b916fe96c1632b5a317ebbf355db51594",
+        "role": "daily-preview-story-open-graph"
+      }
+    },
+    "instagram-1080x1350.jpg": {
+      "spec": {
+        "fileName": "instagram-1080x1350.jpg",
+        "width": 1080,
+        "height": 1350,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-08-18-0726z-fire-in-the-high-fens-why-the-be-alert-system-was-not-activated-in-luxem/instagram-1080x1350.jpg",
+      "source": {
+        "sha256": "c8563dc0c7cf4c7456203fec6f15fa06907a455672cf11132a17a1e9d56ef556",
+        "role": "daily-preview-story-instagram"
+      }
+    }
+  }
+}
