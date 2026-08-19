@@ -1,0 +1,76 @@
+{
+  "version": 2,
+  "kind": "rusty-art-public-media-assets",
+  "artworkId": "2026-08-19-0712z-here-s-why-l-a-salam-may-no-longer-present-france-2-s-8-p-m-news-at-the",
+  "source": {
+    "sha256": "8cd39ecc15ec660b4fac72d768aa780f1e05af15970322970fb8d1d3652bda1e",
+    "role": "daily-preview-story-desktop"
+  },
+  "sources": {
+    "primary": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-desktop",
+      "sha256": "8cd39ecc15ec660b4fac72d768aa780f1e05af15970322970fb8d1d3652bda1e"
+    },
+    "openGraph": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-open-graph",
+      "sha256": "d4b9ab0de3e688e17b90c3bc43df46c0bf26a93f447a0bba10de95a6da1f91a8"
+    },
+    "instagram": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-instagram",
+      "sha256": "e4d5c5753e665576ce9f95998061550b06db2507ecda39d9340c85196ffd6171"
+    }
+  },
+  "targets": {
+    "thumb-320.jpg": {
+      "spec": {
+        "fileName": "thumb-320.jpg",
+        "width": 320,
+        "height": null,
+        "fit": "inside",
+        "withoutEnlargement": true,
+        "format": "jpeg",
+        "quality": 82
+      },
+      "publicPath": "./data/media/2026-08-19-0712z-here-s-why-l-a-salam-may-no-longer-present-france-2-s-8-p-m-news-at-the/thumb-320.jpg",
+      "source": {
+        "sha256": "8cd39ecc15ec660b4fac72d768aa780f1e05af15970322970fb8d1d3652bda1e",
+        "role": "daily-preview-story-desktop"
+      }
+    },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-08-19-0712z-here-s-why-l-a-salam-may-no-longer-present-france-2-s-8-p-m-news-at-the/og-1200x630.jpg",
+      "source": {
+        "sha256": "d4b9ab0de3e688e17b90c3bc43df46c0bf26a93f447a0bba10de95a6da1f91a8",
+        "role": "daily-preview-story-open-graph"
+      }
+    },
+    "instagram-1080x1350.jpg": {
+      "spec": {
+        "fileName": "instagram-1080x1350.jpg",
+        "width": 1080,
+        "height": 1350,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-08-19-0712z-here-s-why-l-a-salam-may-no-longer-present-france-2-s-8-p-m-news-at-the/instagram-1080x1350.jpg",
+      "source": {
+        "sha256": "e4d5c5753e665576ce9f95998061550b06db2507ecda39d9340c85196ffd6171",
+        "role": "daily-preview-story-instagram"
+      }
+    }
+  }
+}
