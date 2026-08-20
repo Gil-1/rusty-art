@@ -1,0 +1,76 @@
+{
+  "version": 2,
+  "kind": "rusty-art-public-media-assets",
+  "artworkId": "2026-08-20-0711z-live-high-fens-fire-wet-weather-is-slowing-flare-ups-but-not-enough-to-e",
+  "source": {
+    "sha256": "9c17c24fd27bea630248cb5abff2ebeebcef595fe028b915986aa468ab45f8df",
+    "role": "daily-preview-story-desktop"
+  },
+  "sources": {
+    "primary": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-desktop",
+      "sha256": "9c17c24fd27bea630248cb5abff2ebeebcef595fe028b915986aa468ab45f8df"
+    },
+    "openGraph": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-open-graph",
+      "sha256": "1dd25b58a1892845d48e2ec46956c14b613bbe42d8785225c944597e4afcf3d5"
+    },
+    "instagram": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-instagram",
+      "sha256": "3f22d35abd7b141653f3a28a3df2da18626416bdfebb24021685c3b394b2a508"
+    }
+  },
+  "targets": {
+    "thumb-320.jpg": {
+      "spec": {
+        "fileName": "thumb-320.jpg",
+        "width": 320,
+        "height": null,
+        "fit": "inside",
+        "withoutEnlargement": true,
+        "format": "jpeg",
+        "quality": 82
+      },
+      "publicPath": "./data/media/2026-08-20-0711z-live-high-fens-fire-wet-weather-is-slowing-flare-ups-but-not-enough-to-e/thumb-320.jpg",
+      "source": {
+        "sha256": "9c17c24fd27bea630248cb5abff2ebeebcef595fe028b915986aa468ab45f8df",
+        "role": "daily-preview-story-desktop"
+      }
+    },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-08-20-0711z-live-high-fens-fire-wet-weather-is-slowing-flare-ups-but-not-enough-to-e/og-1200x630.jpg",
+      "source": {
+        "sha256": "1dd25b58a1892845d48e2ec46956c14b613bbe42d8785225c944597e4afcf3d5",
+        "role": "daily-preview-story-open-graph"
+      }
+    },
+    "instagram-1080x1350.jpg": {
+      "spec": {
+        "fileName": "instagram-1080x1350.jpg",
+        "width": 1080,
+        "height": 1350,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-08-20-0711z-live-high-fens-fire-wet-weather-is-slowing-flare-ups-but-not-enough-to-e/instagram-1080x1350.jpg",
+      "source": {
+        "sha256": "3f22d35abd7b141653f3a28a3df2da18626416bdfebb24021685c3b394b2a508",
+        "role": "daily-preview-story-instagram"
+      }
+    }
+  }
+}
