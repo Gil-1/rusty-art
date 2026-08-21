@@ -1,0 +1,76 @@
+{
+  "version": 2,
+  "kind": "rusty-art-public-media-assets",
+  "artworkId": "2026-08-21-0724z-live-high-fens-wildfire-blaze-under-control-but-political-tensions-run-h",
+  "source": {
+    "sha256": "6269dd645821c2cad34305b1916e16f4024493e1601efe8e71fef5877ab6c32d",
+    "role": "daily-preview-story-desktop"
+  },
+  "sources": {
+    "primary": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-desktop",
+      "sha256": "6269dd645821c2cad34305b1916e16f4024493e1601efe8e71fef5877ab6c32d"
+    },
+    "openGraph": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-open-graph",
+      "sha256": "7b9ebec384acfa61c3e6cb760247ad3bd465362cb32a0a7544be9e8d6474d0da"
+    },
+    "instagram": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-instagram",
+      "sha256": "c14aa0fe726f62e49ee0ae58d0d106dbe9e318c2b153ea55fbf610f2848eae49"
+    }
+  },
+  "targets": {
+    "thumb-320.jpg": {
+      "spec": {
+        "fileName": "thumb-320.jpg",
+        "width": 320,
+        "height": null,
+        "fit": "inside",
+        "withoutEnlargement": true,
+        "format": "jpeg",
+        "quality": 82
+      },
+      "publicPath": "./data/media/2026-08-21-0724z-live-high-fens-wildfire-blaze-under-control-but-political-tensions-run-h/thumb-320.jpg",
+      "source": {
+        "sha256": "6269dd645821c2cad34305b1916e16f4024493e1601efe8e71fef5877ab6c32d",
+        "role": "daily-preview-story-desktop"
+      }
+    },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-08-21-0724z-live-high-fens-wildfire-blaze-under-control-but-political-tensions-run-h/og-1200x630.jpg",
+      "source": {
+        "sha256": "7b9ebec384acfa61c3e6cb760247ad3bd465362cb32a0a7544be9e8d6474d0da",
+        "role": "daily-preview-story-open-graph"
+      }
+    },
+    "instagram-1080x1350.jpg": {
+      "spec": {
+        "fileName": "instagram-1080x1350.jpg",
+        "width": 1080,
+        "height": 1350,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-08-21-0724z-live-high-fens-wildfire-blaze-under-control-but-political-tensions-run-h/instagram-1080x1350.jpg",
+      "source": {
+        "sha256": "c14aa0fe726f62e49ee0ae58d0d106dbe9e318c2b153ea55fbf610f2848eae49",
+        "role": "daily-preview-story-instagram"
+      }
+    }
+  }
+}
