@@ -1,0 +1,76 @@
+{
+  "version": 2,
+  "kind": "rusty-art-public-media-assets",
+  "artworkId": "2026-08-23-0719z-return-through-the-pane-room",
+  "source": {
+    "sha256": "d598aa1b4e29efc126211806b6fcc05bc724134ca56c1023656d64b94aca5924",
+    "role": "daily-preview-story-desktop"
+  },
+  "sources": {
+    "primary": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-desktop",
+      "sha256": "d598aa1b4e29efc126211806b6fcc05bc724134ca56c1023656d64b94aca5924"
+    },
+    "openGraph": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-open-graph",
+      "sha256": "69ab38f03af0f4df67e08b850478ad2daebb883e697599889c11ff587c1a7588"
+    },
+    "instagram": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-instagram",
+      "sha256": "b6a428b9978fc85c8c7b44f6a979f97f65b1637bfa5298880bc7df7d0a81e1aa"
+    }
+  },
+  "targets": {
+    "thumb-320.jpg": {
+      "spec": {
+        "fileName": "thumb-320.jpg",
+        "width": 320,
+        "height": null,
+        "fit": "inside",
+        "withoutEnlargement": true,
+        "format": "jpeg",
+        "quality": 82
+      },
+      "publicPath": "./data/media/2026-08-23-0719z-return-through-the-pane-room/thumb-320.jpg",
+      "source": {
+        "sha256": "d598aa1b4e29efc126211806b6fcc05bc724134ca56c1023656d64b94aca5924",
+        "role": "daily-preview-story-desktop"
+      }
+    },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-08-23-0719z-return-through-the-pane-room/og-1200x630.jpg",
+      "source": {
+        "sha256": "69ab38f03af0f4df67e08b850478ad2daebb883e697599889c11ff587c1a7588",
+        "role": "daily-preview-story-open-graph"
+      }
+    },
+    "instagram-1080x1350.jpg": {
+      "spec": {
+        "fileName": "instagram-1080x1350.jpg",
+        "width": 1080,
+        "height": 1350,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-08-23-0719z-return-through-the-pane-room/instagram-1080x1350.jpg",
+      "source": {
+        "sha256": "b6a428b9978fc85c8c7b44f6a979f97f65b1637bfa5298880bc7df7d0a81e1aa",
+        "role": "daily-preview-story-instagram"
+      }
+    }
+  }
+}
