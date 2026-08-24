@@ -144,6 +144,14 @@ test('capture target accepts the Instagram profile only in capture mode', () => 
   assert.equal(publicTarget.captureProfile, null);
 });
 
+test('capture route converts deterministic milliseconds to seconds', () => {
+  assert.equal(resolveCaptureTargetFromSearchParams('?capture=1&captureTimeMs=0').captureTimeSeconds, 0);
+  assert.equal(resolveCaptureTargetFromSearchParams('?capture=1&captureTimeMs=1000').captureTimeSeconds, 1);
+  assert.equal(resolveCaptureTargetFromSearchParams('?capture=1&captureTimeMs=-1').captureTimeSeconds, null);
+  assert.equal(resolveCaptureTargetFromSearchParams('?capture=1&captureTimeMs=nope').captureTimeSeconds, null);
+  assert.equal(resolveCaptureTargetFromSearchParams('?captureTimeMs=1000').captureTimeSeconds, null);
+});
+
 test('Instagram capture applies its own camera without mutating the public camera', () => {
   const world = { camera: cloneJson(PUBLIC_CAMERA), environment: {} };
   const beforePublicCamera = cloneJson(world.camera);

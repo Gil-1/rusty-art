@@ -44,7 +44,7 @@ function createFakeCanvas() {
   return canvas;
 }
 
-function createControllerWithFakeScene({ onImport = null } = {}) {
+function createControllerWithFakeScene({ onImport = null, captureMode = false, captureTimeSeconds = null } = {}) {
   const scenes = [];
   const replacedCanvases = [];
   const canvas = createFakeCanvas();
@@ -86,13 +86,19 @@ function createControllerWithFakeScene({ onImport = null } = {}) {
     stop() {
       this.stopped = true;
     }
+
+    setCaptureMode(...args) {
+      this.captureModeArgs = args;
+    }
   }
 
   const controller = createRuntimeController({
     canvas,
+    captureMode,
+    captureTimeSeconds,
     captureStateController: { update() {} },
-    fetchArtwork: async () => null,
-    getActiveFile: () => null,
+    fetchArtwork: async () => captureMode ? createArtwork('capture', 'webgpu') : null,
+    getActiveFile: () => captureMode ? './data/artworks/capture.json' : null,
     getMotionIntensity: () => 1,
     importImmersiveWorldSceneModule: async () => {
       importCallCount += 1;
@@ -112,6 +118,14 @@ function createControllerWithFakeScene({ onImport = null } = {}) {
 
   return { controller, scenes, canvas, replacedCanvases, getImportCallCount: () => importCallCount };
 }
+
+test('runtime controller renders capture motion at the requested deterministic time', async () => {
+  const { controller, scenes } = createControllerWithFakeScene({ captureMode: true, captureTimeSeconds: 1 });
+
+  await controller.bootSceneNow();
+
+  assert.deepEqual(scenes[0].captureModeArgs, [true, 1, { captureProfile: null }]);
+});
 
 test('runtime controller recreates immersive scene when renderer profile changes', async () => {
   const { controller, scenes, replacedCanvases } = createControllerWithFakeScene();

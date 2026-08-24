@@ -22,6 +22,7 @@ export function resolveRuntimeShellOptions({
   return {
     captureMode: captureRoute.captureMode,
     captureProfile: captureRoute.captureProfile,
+    captureTimeSeconds: captureRoute.captureTimeSeconds,
     requestedIndex: captureRoute.requestedIndex ?? artworkRoute.index,
     requestedArtworkSlug: captureRoute.requestedArtworkSlug || artworkRoute.slug,
     captureTarget: captureRoute.target,

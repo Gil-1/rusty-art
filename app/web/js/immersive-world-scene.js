@@ -1650,7 +1650,7 @@ export class ArtworkScene {
     this.captureMode = Boolean(captureMode);
     this.captureProfile = this.captureMode ? normalizeCaptureProfile(captureProfile) : null;
     this.instagramCaptureCamera = instagramCaptureCamera;
-    this.motionIntensity = this.captureMode ? 0 : 1;
+    this.motionIntensity = 1;
     this.captureTime = 1.234;
     this.previousElapsedSeconds = null;
     this.sceneAssemblyReport = null;
@@ -1759,7 +1759,7 @@ export class ArtworkScene {
     this.captureProfile = this.captureMode ? normalizeCaptureProfile(captureProfile) : null;
     this.captureTime = Number.isFinite(freezeTime) ? freezeTime : 1.234;
     this.previousElapsedSeconds = null;
-    this.setMotionIntensity(this.captureMode ? 0 : this.motionIntensity);
+    if (this.captureMode) this.setMotionIntensity(1);
   }
 
   clearWorld() {

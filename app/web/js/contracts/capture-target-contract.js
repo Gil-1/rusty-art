@@ -43,6 +43,12 @@ export function normalizeCaptureProfile(value = null) {
   return null;
 }
 
+export function parseCaptureTimeSeconds(value = null) {
+  if (value == null || String(value).trim() === '') return null;
+  const milliseconds = Number(value);
+  return Number.isFinite(milliseconds) && milliseconds >= 0 ? milliseconds / 1000 : null;
+}
+
 function normalizeArchiveFacts(facts = {}) {
   const source = /** @type {Record<string, any>} */ (facts && typeof facts === 'object' ? facts : {});
   const manifest = source.manifest && typeof source.manifest === 'object'
@@ -251,6 +257,7 @@ export function resolveCaptureTargetFromSearchParams(input = '') {
   return {
     captureMode,
     captureProfile: captureMode ? normalizeCaptureProfile(params.get('captureProfile')) : null,
+    captureTimeSeconds: captureMode ? parseCaptureTimeSeconds(params.get('captureTimeMs')) : null,
     forcedView: params.get('view'),
     requestedIndex: target.type === CAPTURE_TARGET_TYPES.LATEST ? null : requestedIndex,
     requestedArtworkSlug: slug,
