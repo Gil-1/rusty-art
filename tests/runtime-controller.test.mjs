@@ -124,7 +124,7 @@ test('runtime controller renders capture motion at the requested deterministic t
 
   await controller.bootSceneNow();
 
-  assert.deepEqual(scenes[0].captureModeArgs, [true, 1, { captureProfile: null }]);
+  assert.deepEqual(scenes[0].captureModeArgs, [true, 1, { captureProfile: null, timedSimulation: true }]);
 });
 
 test('runtime controller recreates immersive scene when renderer profile changes', async () => {

@@ -413,7 +413,10 @@ export function createRuntimeController({
       return null;
     }
 
-    if (captureMode) loadedScene.setCaptureMode?.(true, captureTimeSeconds ?? 1.234, { captureProfile });
+    if (captureMode) loadedScene.setCaptureMode?.(true, captureTimeSeconds ?? 1.234, {
+      captureProfile,
+      timedSimulation: captureTimeSeconds != null
+    });
     if (activeFileAtStart && activeArtAtStart && getActiveFile() === activeFileAtStart) {
       captureStateController?.update({ activeFile: activeFileAtStart });
       await applyArtworkToScene({
