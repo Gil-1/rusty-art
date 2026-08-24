@@ -1430,6 +1430,12 @@ export function buildImmersiveWorldFrameFacts(scene) {
   };
 }
 
+export function buildImmersiveWorldPartFrameFacts(scene, frameFacts) {
+  return scene.timedCaptureSimulation
+    ? { ...frameFacts, captureMode: false, deterministicTimedCapture: true }
+    : frameFacts;
+}
+
 export function applyImmersiveWorldPostUniforms(scene, frameFacts = {}) {
   const transform = scene.outputColorTransform || scene.postBase || resolveImmersiveWorldOutputColorTransform({});
   const elapsedSeconds = Number(frameFacts.elapsedSeconds ?? frameFacts.time ?? 0);
@@ -1648,9 +1654,10 @@ export class ArtworkScene {
     this.outputColorTransform = resolveImmersiveWorldOutputColorTransform({});
     this.postBase = this.outputColorTransform;
     this.captureMode = Boolean(captureMode);
+    this.timedCaptureSimulation = false;
     this.captureProfile = this.captureMode ? normalizeCaptureProfile(captureProfile) : null;
     this.instagramCaptureCamera = instagramCaptureCamera;
-    this.motionIntensity = this.captureMode ? 0 : 1;
+    this.motionIntensity = 1;
     this.captureTime = 1.234;
     this.previousElapsedSeconds = null;
     this.sceneAssemblyReport = null;
@@ -1754,12 +1761,16 @@ export class ArtworkScene {
     this.onLoadProgress?.({ progress, label });
   }
 
-  setCaptureMode(enabled = false, freezeTime = 1.234, { captureProfile = this.captureProfile } = {}) {
+  setCaptureMode(enabled = false, freezeTime = 1.234, {
+    captureProfile = this.captureProfile,
+    timedSimulation = false
+  } = {}) {
     this.captureMode = Boolean(enabled);
+    this.timedCaptureSimulation = this.captureMode && Boolean(timedSimulation);
     this.captureProfile = this.captureMode ? normalizeCaptureProfile(captureProfile) : null;
     this.captureTime = Number.isFinite(freezeTime) ? freezeTime : 1.234;
     this.previousElapsedSeconds = null;
-    this.setMotionIntensity(this.captureMode ? 0 : this.motionIntensity);
+    if (this.captureMode) this.setMotionIntensity(1);
   }
 
   clearWorld() {
@@ -2022,7 +2033,8 @@ export class ArtworkScene {
     const frameFacts = buildImmersiveWorldFrameFacts(this);
     updateImmersiveWorldCameraControlsForFrame(this, frameFacts);
     this.webgpuNativeHelperFrameFacts = updateImmersiveWorldWebGPUNativeMaterialControls(this.group, frameFacts);
-    for (const update of this.updateHooks) update(frameFacts);
+    const partFrameFacts = buildImmersiveWorldPartFrameFacts(this, frameFacts);
+    for (const update of this.updateHooks) update(partFrameFacts);
     renderImmersiveWorldFrame(this, frameFacts);
   }
 

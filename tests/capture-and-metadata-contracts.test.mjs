@@ -1,5 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import * as THREE from 'three';
 
 import {
   applyCaptureReadinessPatch,
@@ -10,8 +11,10 @@ import {
 } from '../app/web/js/contracts/capture-target-contract.js';
 import {
   applyImmersiveWorldCameraConfig,
+  buildImmersiveWorldPartFrameFacts,
   INSTAGRAM_CAPTURE_CAMERA
 } from '../app/web/js/immersive-world-scene.js';
+import { createImmersiveWorldPart } from '../app/web/data/immersive-world/generated-modules/88bc10fa12797ad5747afe79e4a4b50e4eda4f35189291f982613ef2ae27cb69.mjs';
 import { renderMeta } from '../app/web/js/main-render.js';
 
 const PUBLIC_CAMERA = Object.freeze({
@@ -142,6 +145,31 @@ test('capture target accepts the Instagram profile only in capture mode', () => 
   assert.equal(captureTarget.captureProfile, 'instagram');
   assert.equal(publicTarget.captureMode, false);
   assert.equal(publicTarget.captureProfile, null);
+});
+
+test('capture route converts deterministic milliseconds to seconds', () => {
+  assert.equal(resolveCaptureTargetFromSearchParams('?capture=1&captureTimeMs=0').captureTimeSeconds, 0);
+  assert.equal(resolveCaptureTargetFromSearchParams('?capture=1&captureTimeMs=1000').captureTimeSeconds, 1);
+  assert.equal(resolveCaptureTargetFromSearchParams('?capture=1&captureTimeMs=-1').captureTimeSeconds, null);
+  assert.equal(resolveCaptureTargetFromSearchParams('?capture=1&captureTimeMs=nope').captureTimeSeconds, null);
+  assert.equal(resolveCaptureTargetFromSearchParams('?captureTimeMs=1000').captureTimeSeconds, null);
+});
+
+test('timed capture advances a generated part while static capture stays frozen', () => {
+  const generatedPart = createImmersiveWorldPart({ THREE, seed: 'timed-capture-test', utilities: {} });
+  const animatedNode = generatedPart.object.getObjectByName('measured-wash-bloom-register-0');
+  const timedScene = { captureMode: true, timedCaptureSimulation: true };
+
+  generatedPart.update(buildImmersiveWorldPartFrameFacts(timedScene, {
+    captureMode: true, elapsedSeconds: 0, time: 0, motionIntensity: 1,
+  }));
+  const atZero = animatedNode.position.y;
+  generatedPart.update(buildImmersiveWorldPartFrameFacts(timedScene, {
+    captureMode: true, elapsedSeconds: 1, time: 1, motionIntensity: 1,
+  }));
+
+  assert.notEqual(animatedNode.position.y, atZero);
+  assert.equal(buildImmersiveWorldPartFrameFacts({ captureMode: true }, { captureMode: true }).captureMode, true);
 });
 
 test('Instagram capture applies its own camera without mutating the public camera', () => {

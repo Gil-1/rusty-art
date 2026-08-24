@@ -69,6 +69,7 @@ const shellOptions = resolveRuntimeShellOptions({
 const {
   captureMode,
   captureProfile,
+  captureTimeSeconds,
   requestedIndex,
   requestedArtworkSlug,
   rendererRequest,
@@ -137,6 +138,7 @@ const runtimeController = createRuntimeController({
   canvas,
   captureMode,
   captureProfile,
+  captureTimeSeconds,
   rendererRequest,
   postProcessingRequest,
   captureStateController,
