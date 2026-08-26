@@ -22,7 +22,8 @@ const WEBGPU_EVIDENCE_REASONS = Object.freeze({
   PROJECT_FACTORY: 'project-webgpu-material-factory',
   SAFE_MATERIAL: 'webgpu-safe-material',
   EXPLICIT_COMPATIBLE: 'explicit-webgpu-compatible',
-  DECLARATIVE_DESCRIPTOR: 'declarative-material-descriptor'
+  DECLARATIVE_DESCRIPTOR: 'declarative-material-descriptor',
+  NATIVE_HELPER_UTILITY: 'webgpu-native-helper-utility'
 });
 
 const WEBGPU_FALLBACK_REASONS = Object.freeze({
@@ -233,6 +234,7 @@ function hasRecognizedWebGPUEvidence(value = {}) {
     const normalized = String(entry || '').trim().toLowerCase();
     return normalized === WEBGPU_EVIDENCE_REASONS.PROJECT_FACTORY
       || normalized === WEBGPU_EVIDENCE_REASONS.DECLARATIVE_DESCRIPTOR
+      || normalized === WEBGPU_EVIDENCE_REASONS.NATIVE_HELPER_UTILITY
       || normalized === 'no-raw-glsl'
       || normalized === 'tsl-node-material'
       || normalized === 'webgpu-safe-material';
