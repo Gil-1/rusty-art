@@ -1,0 +1,1050 @@
+{
+  "version": 1,
+  "artCreationMethod": "immersive-world-v1",
+  "id": "2026-08-27-1547z-brussels-teachers-return-to-school-why-don-t-they-make-the-holidays-the",
+  "date": "2026-08-27",
+  "title": "Brussels teachers return to school: ‘Why don’t they make the holidays the same?’",
+  "news": {
+    "title": "Brussels teachers return to school: ‘Why don’t they make the holidays the same?’",
+    "source": "bruzz",
+    "link": "https://www.bruzz.be/actua/onderwijs/brusselse-leerkrachten-terug-naar-school-waarom-trekken-ze-vakanties-niet-gelijk-2026-08-24"
+  },
+  "inspiration": {
+    "artist": "László Moholy-Nagy",
+    "tags": [
+      "non-literal flow transformation",
+      "Brussel",
+      "immersive-world"
+    ]
+  },
+  "seed": "e7c1ef88ef8e7892",
+  "rendererAuthoring": {
+    "version": 1,
+    "targetMode": "webgpu-project-scene",
+    "requestedTarget": "webgpu-project-scene",
+    "effectiveTarget": "webgpu-project-scene",
+    "webgpuTargeted": true,
+    "legacyWebglTargeted": false,
+    "unspecified": false,
+    "compatibilityGateRequired": true
+  },
+  "rendererCompatibility": {
+    "version": 1,
+    "targetMode": "webgpu-project-scene",
+    "webgpuTargeted": true,
+    "legacyWebglTargeted": false,
+    "compatibilityGateRequired": true,
+    "compatibilityStatus": "webgpu-compatible",
+    "webgpuCompatible": true,
+    "evidenceReasons": [
+      "webgpu-safe-material"
+    ],
+    "featureFacts": [
+      {
+        "kind": "standard-material",
+        "family": "standard-material-surface",
+        "material": "MeshBasicMaterial",
+        "reason": "webgpu-safe-material"
+      },
+      {
+        "kind": "standard-material",
+        "family": "standard-material-surface",
+        "material": "MeshStandardMaterial",
+        "reason": "webgpu-safe-material"
+      }
+    ],
+    "moduleCount": 2,
+    "compatibleModuleCount": 2,
+    "incompatibleModuleCount": 0,
+    "compositionCompatibilityDeclared": false,
+    "modules": [
+      {
+        "partId": "world-environment",
+        "role": "world-environment",
+        "moduleId": "compiled-v1-world-environment-43d8ba3b740d",
+        "hash": "43d8ba3b740d18e655f7edd72c98b2836ba7cb0ffdec05694985d13539bb113b",
+        "targetMode": "webgpu-project-scene",
+        "compatibilityStatus": "webgpu-compatible",
+        "webgpuCompatible": true,
+        "evidenceReasons": [
+          "webgpu-safe-material"
+        ],
+        "featureFacts": [
+          {
+            "kind": "standard-material",
+            "family": "standard-material-surface",
+            "material": "MeshBasicMaterial",
+            "reason": "webgpu-safe-material"
+          },
+          {
+            "kind": "standard-material",
+            "family": "standard-material-surface",
+            "material": "MeshStandardMaterial",
+            "reason": "webgpu-safe-material"
+          }
+        ],
+        "compatibleSurfaceCount": 2,
+        "forbiddenSurfaceCount": 0,
+        "sourceStage": "part-workshop"
+      },
+      {
+        "partId": "concordance-modulator",
+        "role": "world-part-2",
+        "moduleId": "compiled-v1-concordance-modulator-ea4f9634b6d8",
+        "hash": "ea4f9634b6d8618a8f5f59f5386d4ebae4226cbb0d8bbc4a96cad83e80d51cc2",
+        "targetMode": "webgpu-project-scene",
+        "compatibilityStatus": "webgpu-compatible",
+        "webgpuCompatible": true,
+        "evidenceReasons": [
+          "webgpu-safe-material"
+        ],
+        "featureFacts": [
+          {
+            "kind": "standard-material",
+            "family": "standard-material-surface",
+            "material": "MeshStandardMaterial",
+            "reason": "webgpu-safe-material"
+          },
+          {
+            "kind": "standard-material",
+            "family": "standard-material-surface",
+            "material": "MeshBasicMaterial",
+            "reason": "webgpu-safe-material"
+          }
+        ],
+        "compatibleSurfaceCount": 2,
+        "forbiddenSurfaceCount": 0,
+        "sourceStage": "part-workshop"
+      }
+    ]
+  },
+  "world": {
+    "id": "immersive-world-34b9b4b47b63",
+    "method": "immersive-world-v1",
+    "title": "Brussels teachers return to school: ‘Why don’t they make the holidays the same?’",
+    "environment": {
+      "kind": "technical-scene-support",
+      "color": "#090b12",
+      "fieldColor": "#172031",
+      "fogDensity": 0.018,
+      "radius": 92,
+      "opacity": 0.92,
+      "palette": [
+        "yellow"
+      ],
+      "visibilityPolicy": "technical environment object; visible shell/skybox/background dominance requires visualConstructionDecision evidence",
+      "visualConstructionDecisionRef": "art-direction-packet.json#/creativeDirection/visualConstructionDecision"
+    },
+    "camera": {
+      "owner": "world-composition",
+      "fov": 66,
+      "near": 0.08,
+      "far": 220,
+      "position": [
+        0.22,
+        2.12,
+        14.2
+      ],
+      "target": [
+        0.55,
+        0.18,
+        -5.6
+      ],
+      "distanceSafety": {
+        "nearFarOwnedHere": true,
+        "minPartDistance": 1.7,
+        "clippingRisk": "low"
+      }
+    },
+    "lighting": {
+      "owner": "world-composition",
+      "ambientColor": "#8aa0c8",
+      "ambientIntensity": 0.62,
+      "keyColor": "#ffffff",
+      "keyIntensity": 1.08,
+      "keyPosition": [
+        4,
+        6,
+        8
+      ],
+      "rimColor": "#d9c7ff",
+      "rimIntensity": 0.7,
+      "rimPosition": [
+        -5,
+        2,
+        -4
+      ],
+      "contrast": {
+        "mode": "integrated-part-readability"
+      }
+    },
+    "outputColorTransform": {
+      "owner": "world-composition",
+      "mode": "final-color-contrast-only",
+      "contrast": 1,
+      "saturation": 1.02,
+      "exposure": 1.01,
+      "vignette": 0.05,
+      "hueShift": 0,
+      "distortion": 0
+    },
+    "parts": [
+      {
+        "id": "world-environment",
+        "partId": "world-environment",
+        "role": "world-environment",
+        "moduleRef": {
+          "type": "immersive-world-generated-module",
+          "version": 1,
+          "moduleId": "compiled-v1-world-environment-43d8ba3b740d",
+          "partId": "world-environment",
+          "hash": "43d8ba3b740d18e655f7edd72c98b2836ba7cb0ffdec05694985d13539bb113b",
+          "integrity": "sha256-43d8ba3b740d18e655f7edd72c98b2836ba7cb0ffdec05694985d13539bb113b",
+          "exportName": "createImmersiveWorldPart",
+          "file": "data/immersive-world/generated-modules/43d8ba3b740d18e655f7edd72c98b2836ba7cb0ffdec05694985d13539bb113b.mjs",
+          "url": "./data/immersive-world/generated-modules/43d8ba3b740d18e655f7edd72c98b2836ba7cb0ffdec05694985d13539bb113b.mjs",
+          "rendererCompatibility": {
+            "version": 1,
+            "targetMode": "webgpu-project-scene",
+            "compatibilityStatus": "webgpu-compatible",
+            "webgpuCompatible": true,
+            "evidenceReasons": [
+              "webgpu-safe-material"
+            ],
+            "featureFacts": [
+              {
+                "kind": "standard-material",
+                "material": "MeshBasicMaterial",
+                "family": "standard-material-surface",
+                "reason": "webgpu-safe-material"
+              },
+              {
+                "kind": "standard-material",
+                "material": "MeshStandardMaterial",
+                "family": "standard-material-surface",
+                "reason": "webgpu-safe-material"
+              }
+            ],
+            "compatibleSurfaces": [
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "MeshBasicMaterial"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "MeshStandardMaterial"
+              }
+            ]
+          }
+        },
+        "evidence": {
+          "declaredCompositionOwnership": {
+            "lane": "technical-support",
+            "owns": [
+              "technical support/compatibility part: renderer environment object, camera-safe world context, and optional atmosphere only when declared by visualConstructionDecision",
+              "room for the selected-news transformation and optional artist-style carrier to read"
+            ],
+            "avoid": [
+              "claiming visible construction not declared by visualConstructionDecision",
+              "stealing selected-news transformation or artist-style carrier ownership"
+            ]
+          },
+          "compositionOwnershipSource": "world-part-plan.json#/parts/0/compositionOwnership",
+          "goalEvidence": [
+            {
+              "goalIdentity": "assignment-goal:sha256:250817ba267dc0939e7cce35abc9f0234ef3a87bae8beb6fbdac8933090392f9",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:a0b86c42005a5fe0e5ad39f6956608a1ae222e9a0a995c6c9defffdfb42acafb"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:31f49e5180e613a8f8512498078a3365a7efb3e286da1885b7d29b9ec2398aac",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:a0b86c42005a5fe0e5ad39f6956608a1ae222e9a0a995c6c9defffdfb42acafb"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:2d161e5fd6288d69bba011234deb2b9e05be77d1d6823e41851a1761db055f4e",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:a0b86c42005a5fe0e5ad39f6956608a1ae222e9a0a995c6c9defffdfb42acafb"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:ac6324ed87405f31924c2fc82cf27b79740cf7763a4a2e8fedfe036927d36a95",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:a0b86c42005a5fe0e5ad39f6956608a1ae222e9a0a995c6c9defffdfb42acafb"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:ed55ae3f971eedf9b78d1e297f069c6b8dc47006ab176c926e7617ec925ba0b9",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:a0b86c42005a5fe0e5ad39f6956608a1ae222e9a0a995c6c9defffdfb42acafb"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:ab5af69ff1a9e85cd96d0862803dfa5a777613d9ec93f12e5d8d81321097b119",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:a0b86c42005a5fe0e5ad39f6956608a1ae222e9a0a995c6c9defffdfb42acafb"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:a97eeeefbfcc7d11e5ceb923f4c902a6e2157512d2545a4f8c3d5f416c2df663",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:a0b86c42005a5fe0e5ad39f6956608a1ae222e9a0a995c6c9defffdfb42acafb"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:5dc948560147ec669d80ed910dad5b09272dedd74f382adc21c67144c1f5cce4",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:a0b86c42005a5fe0e5ad39f6956608a1ae222e9a0a995c6c9defffdfb42acafb"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:12a9bff2f9d3e23baf5ed29b227d2cd96e06de629f3017dda3d52eda038e7413",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:a0b86c42005a5fe0e5ad39f6956608a1ae222e9a0a995c6c9defffdfb42acafb"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:617f2db5f6f2aa1f8cdd65d111c09af78ee82132173026d343d556f5c8eb5748",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:a0b86c42005a5fe0e5ad39f6956608a1ae222e9a0a995c6c9defffdfb42acafb"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:59529ffe9cf1832571ca1672416e007332a92f49313d5f3e90e69862498119e4",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:a0b86c42005a5fe0e5ad39f6956608a1ae222e9a0a995c6c9defffdfb42acafb"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:25ed7f361554a479bb83aef98b0ba75b0b91af5035b4131da64c91a0a5810fde",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:a0b86c42005a5fe0e5ad39f6956608a1ae222e9a0a995c6c9defffdfb42acafb"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:2f69e28ab0fa82dcfb88328e2a8bbeb31c0c5c04befcfee7aa326e6f27585d31",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:a0b86c42005a5fe0e5ad39f6956608a1ae222e9a0a995c6c9defffdfb42acafb"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:9c277651ceddfdbf4873e1fcf46a62bbb96eb61febdcb894110a0b11c46f9a08",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:a0b86c42005a5fe0e5ad39f6956608a1ae222e9a0a995c6c9defffdfb42acafb"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:77cb9d98babc1fce090b397886b7f4e0314386de6582fab0f2f21efd9dac1a4c",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:a0b86c42005a5fe0e5ad39f6956608a1ae222e9a0a995c6c9defffdfb42acafb"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:e3ec9876b366289868f002e13388aec83a9f825e4bc171089658b4aa46164427",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:a0b86c42005a5fe0e5ad39f6956608a1ae222e9a0a995c6c9defffdfb42acafb"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:13758394dd4ab1be9204d839c72e5baa4c6d296735a0477ea25ef7a0be9c4d0f",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:a0b86c42005a5fe0e5ad39f6956608a1ae222e9a0a995c6c9defffdfb42acafb"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:56418160bccb2ed4c9a0ecc1d5be95e9543cc0e769974f5167b251700f08f6fd",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:a0b86c42005a5fe0e5ad39f6956608a1ae222e9a0a995c6c9defffdfb42acafb"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:017b74c6532d1082606f712a113fbff992d358b1a83b9c6eb3eaeab930edda59",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:a0b86c42005a5fe0e5ad39f6956608a1ae222e9a0a995c6c9defffdfb42acafb"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:af52f326023d30f727fd1eb92b9558cb70c77e51b6fd5ee04599e4c180faba4a",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:a0b86c42005a5fe0e5ad39f6956608a1ae222e9a0a995c6c9defffdfb42acafb"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:900fa4b73c960a661eb6ac4614062c41031714105da649f43679d274d47a5127",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:a0b86c42005a5fe0e5ad39f6956608a1ae222e9a0a995c6c9defffdfb42acafb"
+              ]
+            }
+          ],
+          "workshopAcceptance": [
+            "[object Object]"
+          ],
+          "acceptedPartValidation": {
+            "version": 1,
+            "source": "compiled-v1-part-workshop",
+            "passed": true,
+            "previewScope": "isolated-part",
+            "preview": {
+              "required": false
+            },
+            "finalDraft": {
+              "file": "source/world-environment.module.mjs",
+              "sha256": "sha256:811fee6710d88db86f0951d4e7fffc29cceb2ceec0eb66e437db1448d06182d1",
+              "bytes": 12907
+            },
+            "finalPreview": {
+              "reference": "part-workshop-evidence:screenshot:sha256:a0b86c42005a5fe0e5ad39f6956608a1ae222e9a0a995c6c9defffdfb42acafb",
+              "sha256": "sha256:a0b86c42005a5fe0e5ad39f6956608a1ae222e9a0a995c6c9defffdfb42acafb",
+              "attemptIdentity": "part-workshop-attempt:sha256:97b1e5f831362084a3e38924b978fd692ba8e88d63252b3537c6376d2a040dce",
+              "sourceHash": "sha256:36f5f9b7fccfc2ab4df6c0e415f1101dadf25c6cf396fb04df44231497570dfc",
+              "packageIdentity": "part-package:sha256:fc4de308a2f9bd934969ec3a52558f76a41b5006f5ecd44d4cbe2976e8810a83",
+              "status": "succeeded"
+            },
+            "verificationExpectation": {
+              "version": 1,
+              "source": "world-part-plan-assignment",
+              "partId": "world-environment",
+              "positiveContribution": {
+                "role": "world-environment",
+                "intent": "Provide technical scene support and camera-safe context; visible environment construction requires cited evidence.",
+                "visualTarget": "technical world-environment support; visible construction only if visualConstructionDecision declares it",
+                "relationshipToWhole": "Provides technical world support while creative parts own visible construction.",
+                "owns": [
+                  "technical support/compatibility part: renderer environment object, camera-safe world context, and optional atmosphere only when declared by visualConstructionDecision",
+                  "room for the selected-news transformation and optional artist-style carrier to read"
+                ]
+              },
+              "ownershipBoundary": {
+                "lane": "technical-support",
+                "owns": [
+                  "technical support/compatibility part: renderer environment object, camera-safe world context, and optional atmosphere only when declared by visualConstructionDecision",
+                  "room for the selected-news transformation and optional artist-style carrier to read"
+                ],
+                "avoid": [
+                  "claiming visible construction not declared by visualConstructionDecision",
+                  "stealing selected-news transformation or artist-style carrier ownership"
+                ]
+              },
+              "technicalEvidence": {
+                "required": [
+                  "generated-module-package",
+                  "createImmersiveWorldPart-export",
+                  "packaged-browser-capture",
+                  "render-health-telemetry"
+                ],
+                "rendererTargetMode": "webgpu-project-scene",
+                "rendererCompatibilityRequired": true,
+                "webgpuEvidenceRequired": true
+              },
+              "outputPresence": {
+                "policy": "quiet-or-absent-output-allowed",
+                "visibleOutputRequired": false,
+                "quietOrAbsentOutputAllowed": true
+              },
+              "literalMotifProhibitions": [
+                "claiming visible construction not declared by visualConstructionDecision",
+                "stealing selected-news transformation or artist-style carrier ownership"
+              ],
+              "deterministicImageChecks": {
+                "blankCapture": false,
+                "foregroundOccupancy": false,
+                "focalAnchor": false,
+                "mobileCentralSignal": false,
+                "environmentBackgroundVisibility": false
+              },
+              "authority": {
+                "deterministicInspectableEvidenceOnly": true,
+                "aestheticFidelityClaimed": false,
+                "visualObservationGating": false
+              }
+            }
+          },
+          "plannedPart": {
+            "source": "world-part-plan.json#/parts/0",
+            "partId": "world-environment",
+            "role": "world-environment",
+            "intent": "Provide technical scene support and camera-safe context; visible environment construction requires cited evidence.",
+            "messagePurpose": "Provide technical scene support and camera-safe context; visible environment construction requires cited evidence.",
+            "visualTarget": "technical world-environment support; visible construction only if visualConstructionDecision declares it",
+            "relationshipToWhole": "Provides technical world support while creative parts own visible construction.",
+            "visibleAbsence": {
+              "intentional": true,
+              "facts": [
+                "Visible absence is intentionally part of this part."
+              ],
+              "rationale": "The plan explicitly assigns visible absence to this part."
+            }
+          }
+        },
+        "intent": "Provide technical scene support and camera-safe context; visible environment construction requires cited evidence.",
+        "messagePurpose": "Provide technical scene support and camera-safe context; visible environment construction requires cited evidence.",
+        "visualTarget": "technical world-environment support; visible construction only if visualConstructionDecision declares it",
+        "relationshipToWhole": "Provides technical world support while creative parts own visible construction.",
+        "visibleAbsence": {
+          "intentional": true,
+          "facts": [
+            "Visible absence is intentionally part of this part."
+          ],
+          "rationale": "The plan explicitly assigns visible absence to this part."
+        },
+        "params": {
+          "band": "technical-support",
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "scale": 1,
+          "renderOrder": 0,
+          "visibilityPriority": "technical-support"
+        },
+        "paramSemantics": {
+          "band": "visual placement/readability band for full-world params; distinct from declared compositionOwnership.lane"
+        },
+        "compositionOwnership": {
+          "lane": "technical-support",
+          "owns": [
+            "technical support/compatibility part: renderer environment object, camera-safe world context, and optional atmosphere only when declared by visualConstructionDecision",
+            "room for the selected-news transformation and optional artist-style carrier to read"
+          ],
+          "avoid": [
+            "claiming visible construction not declared by visualConstructionDecision",
+            "stealing selected-news transformation or artist-style carrier ownership"
+          ]
+        }
+      },
+      {
+        "id": "concordance-modulator",
+        "partId": "concordance-modulator",
+        "role": "world-part-2",
+        "moduleRef": {
+          "type": "immersive-world-generated-module",
+          "version": 1,
+          "moduleId": "compiled-v1-concordance-modulator-ea4f9634b6d8",
+          "partId": "concordance-modulator",
+          "hash": "ea4f9634b6d8618a8f5f59f5386d4ebae4226cbb0d8bbc4a96cad83e80d51cc2",
+          "integrity": "sha256-ea4f9634b6d8618a8f5f59f5386d4ebae4226cbb0d8bbc4a96cad83e80d51cc2",
+          "exportName": "createImmersiveWorldPart",
+          "file": "data/immersive-world/generated-modules/ea4f9634b6d8618a8f5f59f5386d4ebae4226cbb0d8bbc4a96cad83e80d51cc2.mjs",
+          "url": "./data/immersive-world/generated-modules/ea4f9634b6d8618a8f5f59f5386d4ebae4226cbb0d8bbc4a96cad83e80d51cc2.mjs",
+          "rendererCompatibility": {
+            "version": 1,
+            "targetMode": "webgpu-project-scene",
+            "compatibilityStatus": "webgpu-compatible",
+            "webgpuCompatible": true,
+            "evidenceReasons": [
+              "webgpu-safe-material"
+            ],
+            "featureFacts": [
+              {
+                "kind": "standard-material",
+                "material": "MeshStandardMaterial",
+                "family": "standard-material-surface",
+                "reason": "webgpu-safe-material"
+              },
+              {
+                "kind": "standard-material",
+                "material": "MeshBasicMaterial",
+                "family": "standard-material-surface",
+                "reason": "webgpu-safe-material"
+              }
+            ],
+            "compatibleSurfaces": [
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "MeshStandardMaterial"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "MeshBasicMaterial"
+              }
+            ]
+          }
+        },
+        "evidence": {
+          "declaredCompositionOwnership": {
+            "lane": "part-specific",
+            "owns": [
+              "the explicit world-part-2 purpose, visual target, and any assigned spatial behavior"
+            ],
+            "avoid": [
+              "adding construction outside this part purpose, visual target, declared ownership, and visualConstructionDecision"
+            ]
+          },
+          "compositionOwnershipSource": "world-part-plan.json#/parts/1/compositionOwnership",
+          "goalEvidence": [
+            {
+              "goalIdentity": "assignment-goal:sha256:250817ba267dc0939e7cce35abc9f0234ef3a87bae8beb6fbdac8933090392f9",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:6e5fe185cb82d8de4f9ff50359248bacc7fcaa313e1ea2854d9c94725eba7298"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:31f49e5180e613a8f8512498078a3365a7efb3e286da1885b7d29b9ec2398aac",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:6e5fe185cb82d8de4f9ff50359248bacc7fcaa313e1ea2854d9c94725eba7298"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:f2c384ccd4772dfc317189f07be939b9301badf93cf242b87c2a114ccb5dbb0f",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:6e5fe185cb82d8de4f9ff50359248bacc7fcaa313e1ea2854d9c94725eba7298"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:c7dad1153d8cfc0be9339aa01ed11dcc1aa978101df45842a9ee19df1681a4f4",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:6e5fe185cb82d8de4f9ff50359248bacc7fcaa313e1ea2854d9c94725eba7298"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:32ef2fff1fd7470c26659f6f19077dc9bc575d689312df572a75fa8996f2794f",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:6e5fe185cb82d8de4f9ff50359248bacc7fcaa313e1ea2854d9c94725eba7298"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:aed8860a9a727f58e7929f23b6d9781603ea64ba4749de9fba83d30bfe8f1ffd",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:6e5fe185cb82d8de4f9ff50359248bacc7fcaa313e1ea2854d9c94725eba7298"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:aabd7228ba6e511ac13af4009c71a96dfe436bd62a10ad7317dbf020cc3533ce",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:6e5fe185cb82d8de4f9ff50359248bacc7fcaa313e1ea2854d9c94725eba7298"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:5dc948560147ec669d80ed910dad5b09272dedd74f382adc21c67144c1f5cce4",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:6e5fe185cb82d8de4f9ff50359248bacc7fcaa313e1ea2854d9c94725eba7298"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:0dea63d005255655117f4201ec8b595142ff65086fea3fc0125ea6e8bb67352a",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:6e5fe185cb82d8de4f9ff50359248bacc7fcaa313e1ea2854d9c94725eba7298"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:dd12ecf219a76ab9615b0046f6c1474af8dd20ed0f4e2345dce00486e118c377",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:6e5fe185cb82d8de4f9ff50359248bacc7fcaa313e1ea2854d9c94725eba7298"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:b8b3c8291cfb9a430378648c6282606dd1f24073f20964af54da19848e128395",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:6e5fe185cb82d8de4f9ff50359248bacc7fcaa313e1ea2854d9c94725eba7298"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:1c9e8da6cb089be8bd7f7fed93c536644ecfab3d3549efdfd8f8084c5a4152a1",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:6e5fe185cb82d8de4f9ff50359248bacc7fcaa313e1ea2854d9c94725eba7298"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:802f080721129e2b6c2377d9fe47a4a2d23219aaf27073d90dfbeddeae5fe38f",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:6e5fe185cb82d8de4f9ff50359248bacc7fcaa313e1ea2854d9c94725eba7298"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:eecd46f84f3bf2636f03c826d5871fac8b1c3dd15462a961924d61ad1cc434cf",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:6e5fe185cb82d8de4f9ff50359248bacc7fcaa313e1ea2854d9c94725eba7298"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:77cb9d98babc1fce090b397886b7f4e0314386de6582fab0f2f21efd9dac1a4c",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:6e5fe185cb82d8de4f9ff50359248bacc7fcaa313e1ea2854d9c94725eba7298"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:e3ec9876b366289868f002e13388aec83a9f825e4bc171089658b4aa46164427",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:6e5fe185cb82d8de4f9ff50359248bacc7fcaa313e1ea2854d9c94725eba7298"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:13758394dd4ab1be9204d839c72e5baa4c6d296735a0477ea25ef7a0be9c4d0f",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:6e5fe185cb82d8de4f9ff50359248bacc7fcaa313e1ea2854d9c94725eba7298"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:56418160bccb2ed4c9a0ecc1d5be95e9543cc0e769974f5167b251700f08f6fd",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:6e5fe185cb82d8de4f9ff50359248bacc7fcaa313e1ea2854d9c94725eba7298"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:017b74c6532d1082606f712a113fbff992d358b1a83b9c6eb3eaeab930edda59",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:6e5fe185cb82d8de4f9ff50359248bacc7fcaa313e1ea2854d9c94725eba7298"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:af52f326023d30f727fd1eb92b9558cb70c77e51b6fd5ee04599e4c180faba4a",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:6e5fe185cb82d8de4f9ff50359248bacc7fcaa313e1ea2854d9c94725eba7298"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:900fa4b73c960a661eb6ac4614062c41031714105da649f43679d274d47a5127",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:6e5fe185cb82d8de4f9ff50359248bacc7fcaa313e1ea2854d9c94725eba7298"
+              ]
+            }
+          ],
+          "workshopAcceptance": [
+            "[object Object]"
+          ],
+          "acceptedPartValidation": {
+            "version": 1,
+            "source": "compiled-v1-part-workshop",
+            "passed": true,
+            "previewScope": "isolated-part",
+            "preview": {
+              "required": false
+            },
+            "finalDraft": {
+              "file": "source/concordance-modulator.module.mjs",
+              "sha256": "sha256:4bb43a8c4cc015e517616b69c01159ae32cb42b063406c6d175aaa8099265689",
+              "bytes": 25589
+            },
+            "finalPreview": {
+              "reference": "part-workshop-evidence:screenshot:sha256:6e5fe185cb82d8de4f9ff50359248bacc7fcaa313e1ea2854d9c94725eba7298",
+              "sha256": "sha256:6e5fe185cb82d8de4f9ff50359248bacc7fcaa313e1ea2854d9c94725eba7298",
+              "attemptIdentity": "part-workshop-attempt:sha256:03c3f88e9887329ffa28c9c2d6608cfad0d5c67636f4ddcddf46bc9437e2d253",
+              "sourceHash": "sha256:4ee0ccbe10808cd2d67b4c5a0637146abf9adbdca58c96ea0e7867dbda8c9ec1",
+              "packageIdentity": "part-package:sha256:5a9e9a04bdac1af99511b2dcb429488399f5ee6e952cb7a223418b469088b0c9",
+              "status": "succeeded"
+            },
+            "verificationExpectation": {
+              "version": 1,
+              "source": "world-part-plan-assignment",
+              "partId": "concordance-modulator",
+              "positiveContribution": {
+                "role": "world-part-2",
+                "intent": "Selected news meaning: Brussels teachers return to school: ‘Why don’t they make the holidays the same?’. News intensity is low, pace is measured, spread is concentrated; these are weighting facts only, and the visual metaphor comes from visualConstructionDecision. Build one readable non-literal image structure.",
+                "visualTarget": "visible world-part-2 that carries non-literal flow transformation within visualConstructionDecision",
+                "relationshipToWhole": "Contributes its planned ownership lane to the whole immersive artwork.",
+                "owns": [
+                  "the explicit world-part-2 purpose, visual target, and any assigned spatial behavior"
+                ]
+              },
+              "ownershipBoundary": {
+                "lane": "part-specific",
+                "owns": [
+                  "the explicit world-part-2 purpose, visual target, and any assigned spatial behavior"
+                ],
+                "avoid": [
+                  "adding construction outside this part purpose, visual target, declared ownership, and visualConstructionDecision"
+                ]
+              },
+              "technicalEvidence": {
+                "required": [
+                  "generated-module-package",
+                  "createImmersiveWorldPart-export",
+                  "packaged-browser-capture",
+                  "render-health-telemetry"
+                ],
+                "rendererTargetMode": "webgpu-project-scene",
+                "rendererCompatibilityRequired": true,
+                "webgpuEvidenceRequired": true
+              },
+              "outputPresence": {
+                "policy": "visible-contribution-required",
+                "visibleOutputRequired": true,
+                "quietOrAbsentOutputAllowed": false
+              },
+              "literalMotifProhibitions": [
+                "adding construction outside this part purpose, visual target, declared ownership, and visualConstructionDecision"
+              ],
+              "deterministicImageChecks": {
+                "blankCapture": true,
+                "foregroundOccupancy": false,
+                "focalAnchor": false,
+                "mobileCentralSignal": false,
+                "environmentBackgroundVisibility": false
+              },
+              "authority": {
+                "deterministicInspectableEvidenceOnly": true,
+                "aestheticFidelityClaimed": false,
+                "visualObservationGating": false
+              }
+            }
+          },
+          "plannedPart": {
+            "source": "world-part-plan.json#/parts/1",
+            "partId": "concordance-modulator",
+            "role": "world-part-2",
+            "intent": "Selected news meaning: Brussels teachers return to school: ‘Why don’t they make the holidays the same?’. News intensity is low, pace is measured, spread is concentrated; these are weighting facts only, and the visual metaphor comes from visualConstructionDecision. Build one readable non-literal image structure.",
+            "messagePurpose": "Selected news meaning: Brussels teachers return to school: ‘Why don’t they make the holidays the same?’. News intensity is low, pace is measured, spread is concentrated; these are weighting facts only, and the visual metaphor comes from visualConstructionDecision. Build one readable non-literal image structure.",
+            "visualTarget": "visible world-part-2 that carries non-literal flow transformation within visualConstructionDecision",
+            "relationshipToWhole": "Contributes its planned ownership lane to the whole immersive artwork.",
+            "visibleAbsence": {
+              "intentional": false,
+              "facts": [
+                "This part must be visibly present."
+              ],
+              "rationale": "The plan requires visible contribution from this part."
+            }
+          }
+        },
+        "intent": "Selected news meaning: Brussels teachers return to school: ‘Why don’t they make the holidays the same?’. News intensity is low, pace is measured, spread is concentrated; these are weighting facts only, and the visual metaphor comes from visualConstructionDecision. Build one readable non-literal image structure.",
+        "messagePurpose": "Selected news meaning: Brussels teachers return to school: ‘Why don’t they make the holidays the same?’. News intensity is low, pace is measured, spread is concentrated; these are weighting facts only, and the visual metaphor comes from visualConstructionDecision. Build one readable non-literal image structure.",
+        "visualTarget": "visible world-part-2 that carries non-literal flow transformation within visualConstructionDecision",
+        "relationshipToWhole": "Contributes its planned ownership lane to the whole immersive artwork.",
+        "visibleAbsence": {
+          "intentional": false,
+          "facts": [
+            "This part must be visibly present."
+          ],
+          "rationale": "The plan requires visible contribution from this part."
+        },
+        "params": {
+          "band": "primary-readability",
+          "position": [
+            0,
+            0.15,
+            -1.8
+          ],
+          "scale": 1.52,
+          "renderOrder": 3,
+          "visibilityPriority": "primary"
+        },
+        "paramSemantics": {
+          "band": "visual placement/readability band for full-world params; distinct from declared compositionOwnership.lane"
+        },
+        "compositionOwnership": {
+          "lane": "part-specific",
+          "owns": [
+            "the explicit world-part-2 purpose, visual target, and any assigned spatial behavior"
+          ],
+          "avoid": [
+            "adding construction outside this part purpose, visual target, declared ownership, and visualConstructionDecision"
+          ]
+        }
+      }
+    ],
+    "generatedModules": [
+      {
+        "type": "immersive-world-generated-module",
+        "version": 1,
+        "moduleId": "compiled-v1-world-environment-43d8ba3b740d",
+        "partId": "world-environment",
+        "hash": "43d8ba3b740d18e655f7edd72c98b2836ba7cb0ffdec05694985d13539bb113b",
+        "integrity": "sha256-43d8ba3b740d18e655f7edd72c98b2836ba7cb0ffdec05694985d13539bb113b",
+        "exportName": "createImmersiveWorldPart",
+        "file": "data/immersive-world/generated-modules/43d8ba3b740d18e655f7edd72c98b2836ba7cb0ffdec05694985d13539bb113b.mjs",
+        "url": "./data/immersive-world/generated-modules/43d8ba3b740d18e655f7edd72c98b2836ba7cb0ffdec05694985d13539bb113b.mjs",
+        "rendererCompatibility": {
+          "version": 1,
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material"
+          ],
+          "featureFacts": [
+            {
+              "kind": "standard-material",
+              "material": "MeshBasicMaterial",
+              "family": "standard-material-surface",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "standard-material",
+              "material": "MeshStandardMaterial",
+              "family": "standard-material-surface",
+              "reason": "webgpu-safe-material"
+            }
+          ],
+          "compatibleSurfaces": [
+            {
+              "reason": "webgpu-safe-material",
+              "materialType": "MeshBasicMaterial"
+            },
+            {
+              "reason": "webgpu-safe-material",
+              "materialType": "MeshStandardMaterial"
+            }
+          ]
+        }
+      },
+      {
+        "type": "immersive-world-generated-module",
+        "version": 1,
+        "moduleId": "compiled-v1-concordance-modulator-ea4f9634b6d8",
+        "partId": "concordance-modulator",
+        "hash": "ea4f9634b6d8618a8f5f59f5386d4ebae4226cbb0d8bbc4a96cad83e80d51cc2",
+        "integrity": "sha256-ea4f9634b6d8618a8f5f59f5386d4ebae4226cbb0d8bbc4a96cad83e80d51cc2",
+        "exportName": "createImmersiveWorldPart",
+        "file": "data/immersive-world/generated-modules/ea4f9634b6d8618a8f5f59f5386d4ebae4226cbb0d8bbc4a96cad83e80d51cc2.mjs",
+        "url": "./data/immersive-world/generated-modules/ea4f9634b6d8618a8f5f59f5386d4ebae4226cbb0d8bbc4a96cad83e80d51cc2.mjs",
+        "rendererCompatibility": {
+          "version": 1,
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material"
+          ],
+          "featureFacts": [
+            {
+              "kind": "standard-material",
+              "material": "MeshStandardMaterial",
+              "family": "standard-material-surface",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "standard-material",
+              "material": "MeshBasicMaterial",
+              "family": "standard-material-surface",
+              "reason": "webgpu-safe-material"
+            }
+          ],
+          "compatibleSurfaces": [
+            {
+              "reason": "webgpu-safe-material",
+              "materialType": "MeshStandardMaterial"
+            },
+            {
+              "reason": "webgpu-safe-material",
+              "materialType": "MeshBasicMaterial"
+            }
+          ]
+        }
+      }
+    ],
+    "rendererAuthoring": {
+      "version": 1,
+      "targetMode": "webgpu-project-scene",
+      "requestedTarget": "webgpu-project-scene",
+      "effectiveTarget": "webgpu-project-scene",
+      "webgpuTargeted": true,
+      "legacyWebglTargeted": false,
+      "unspecified": false,
+      "compatibilityGateRequired": true
+    },
+    "rendererCompatibility": {
+      "version": 1,
+      "targetMode": "webgpu-project-scene",
+      "webgpuTargeted": true,
+      "legacyWebglTargeted": false,
+      "compatibilityGateRequired": true,
+      "compatibilityStatus": "webgpu-compatible",
+      "webgpuCompatible": true,
+      "evidenceReasons": [
+        "webgpu-safe-material"
+      ],
+      "featureFacts": [
+        {
+          "kind": "standard-material",
+          "family": "standard-material-surface",
+          "material": "MeshBasicMaterial",
+          "reason": "webgpu-safe-material"
+        },
+        {
+          "kind": "standard-material",
+          "family": "standard-material-surface",
+          "material": "MeshStandardMaterial",
+          "reason": "webgpu-safe-material"
+        }
+      ],
+      "moduleCount": 2,
+      "compatibleModuleCount": 2,
+      "incompatibleModuleCount": 0,
+      "compositionCompatibilityDeclared": false,
+      "modules": [
+        {
+          "partId": "world-environment",
+          "role": "world-environment",
+          "moduleId": "compiled-v1-world-environment-43d8ba3b740d",
+          "hash": "43d8ba3b740d18e655f7edd72c98b2836ba7cb0ffdec05694985d13539bb113b",
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material"
+          ],
+          "featureFacts": [
+            {
+              "kind": "standard-material",
+              "family": "standard-material-surface",
+              "material": "MeshBasicMaterial",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "standard-material",
+              "family": "standard-material-surface",
+              "material": "MeshStandardMaterial",
+              "reason": "webgpu-safe-material"
+            }
+          ],
+          "compatibleSurfaceCount": 2,
+          "forbiddenSurfaceCount": 0,
+          "sourceStage": "part-workshop"
+        },
+        {
+          "partId": "concordance-modulator",
+          "role": "world-part-2",
+          "moduleId": "compiled-v1-concordance-modulator-ea4f9634b6d8",
+          "hash": "ea4f9634b6d8618a8f5f59f5386d4ebae4226cbb0d8bbc4a96cad83e80d51cc2",
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material"
+          ],
+          "featureFacts": [
+            {
+              "kind": "standard-material",
+              "family": "standard-material-surface",
+              "material": "MeshStandardMaterial",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "standard-material",
+              "family": "standard-material-surface",
+              "material": "MeshBasicMaterial",
+              "reason": "webgpu-safe-material"
+            }
+          ],
+          "compatibleSurfaceCount": 2,
+          "forbiddenSurfaceCount": 0,
+          "sourceStage": "part-workshop"
+        }
+      ]
+    },
+    "renderFacts": {
+      "environmentPresent": true,
+      "cameraOwnedByComposition": true,
+      "lightingOwnedByComposition": true,
+      "nearFarClippingOwned": true,
+      "acceptedPartCount": 2,
+      "generatedModuleCount": 2,
+      "generatedAssetCount": 0,
+      "rendererAuthoringTarget": "webgpu-project-scene",
+      "rendererCompatibilityStatus": "webgpu-compatible",
+      "webgpuRendererGateRequired": true,
+      "webgpuRendererCompatible": true,
+      "desktopPreviewRecorded": true,
+      "mobilePreviewRecorded": true,
+      "surroundPreviewRecorded": true
+    }
+  },
+  "image": {
+    "thumbnailJpeg": "./data/media/2026-08-27-1547z-brussels-teachers-return-to-school-why-don-t-they-make-the-holidays-the/thumb-320.jpg",
+    "openGraphJpeg": "./data/media/2026-08-27-1547z-brussels-teachers-return-to-school-why-don-t-they-make-the-holidays-the/og-1200x630.jpg",
+    "instagramJpeg": "./data/media/2026-08-27-1547z-brussels-teachers-return-to-school-why-don-t-they-make-the-holidays-the/instagram-1080x1350.jpg",
+    "altText": "Brussels teachers return to school: ‘Why don’t they make the holidays the same?’ by László Moholy-Nagy."
+  }
+}
