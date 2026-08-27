@@ -1,0 +1,983 @@
+{
+  "id": "2026-08-27-0434z-sluikstort-op-domein-militair-hospitaal-stad-brussel-en-defensie-wijzen",
+  "date": "2026-08-27",
+  "title": "Sluikstort op domein Militair Hospitaal: Stad Brussel en Defensie wijzen naar elkaar",
+  "generatedAt": "2026-08-27T04:39:44.138Z",
+  "news": {
+    "source": "bruzz",
+    "title": "Sluikstort op domein Militair Hospitaal: Stad Brussel en Defensie wijzen naar elkaar",
+    "link": "https://www.bruzz.be/actua/samenleving/sluikstort-op-domein-militair-hospitaal-stad-brussel-en-defensie-wijzen-naar-elkaar-2026-08-26",
+    "score": null
+  },
+  "inspiration": {
+    "artist": "Robert Natkin",
+    "tags": [
+      "non-literal flow transformation",
+      "Brussel",
+      "immersive-world"
+    ],
+    "links": {}
+  },
+  "seed": null,
+  "sceneStrategy": null,
+  "techStack": null,
+  "newsVisualMappings": [],
+  "qualityScore": {
+    "score": null,
+    "summary": null,
+    "heuristic": {
+      "score": null,
+      "breakdown": {}
+    },
+    "calibration": {
+      "sampleCount": 0,
+      "trustWeight": 0
+    },
+    "alignment": {
+      "totalAlign": null,
+      "components": {
+        "title": {
+          "score": null
+        },
+        "style": {
+          "score": null
+        },
+        "emotional": {
+          "score": null
+        }
+      }
+    }
+  },
+  "rationale": {
+    "intent": {
+      "signal": null,
+      "emotion": null,
+      "tension": null,
+      "balance": null,
+      "motion": null
+    },
+    "selection": {
+      "whyHeadline": null,
+      "priorityTerms": []
+    },
+    "qualitySummary": null
+  },
+  "runPolicy": null,
+  "artCreationMethod": "immersive-world-v1",
+  "world": {
+    "id": "immersive-world-686ed893b96f",
+    "method": "immersive-world-v1",
+    "title": "Sluikstort op domein Militair Hospitaal: Stad Brussel en Defensie wijzen naar elkaar",
+    "rendererAuthoringTarget": "webgpu-project-scene",
+    "environment": {
+      "kind": "technical-scene-support",
+      "color": "#171014",
+      "fieldColor": "#6d4938",
+      "fogDensity": 0.009,
+      "radius": 92,
+      "opacity": 0.92,
+      "visibilityPolicy": "technical environment object; the accepted warm surround supplies camera-safe continuity and intentional quiet while the selected-news part owns visible construction",
+      "visualConstructionDecisionRef": "art-direction-packet.json#/creativeDirection/visualConstructionDecision"
+    },
+    "camera": {
+      "owner": "world-composition",
+      "fov": 66,
+      "near": 0.08,
+      "far": 220,
+      "position": [
+        0.22,
+        2.12,
+        14.2
+      ],
+      "target": [
+        0.55,
+        0.18,
+        -5.6
+      ],
+      "distanceSafety": {
+        "nearFarOwnedHere": true,
+        "minPartDistance": 1.7,
+        "clippingRisk": "low"
+      }
+    },
+    "lighting": {
+      "owner": "world-composition",
+      "ambientColor": "#d4a078",
+      "ambientIntensity": 0.38,
+      "keyColor": "#ffe0aa",
+      "keyIntensity": 0.78,
+      "keyPosition": [
+        4,
+        6,
+        8
+      ],
+      "rimColor": "#d8754b",
+      "rimIntensity": 0.38,
+      "rimPosition": [
+        -5,
+        2,
+        -4
+      ],
+      "contrast": {
+        "mode": "integrated-part-readability"
+      }
+    },
+    "outputColorTransform": {
+      "owner": "world-composition",
+      "mode": "final-color-contrast-only",
+      "contrast": 1.04,
+      "saturation": 1.05,
+      "exposure": 1,
+      "vignette": 0.04,
+      "hueShift": 0,
+      "distortion": 0
+    },
+    "parts": [
+      {
+        "id": "world-environment",
+        "partId": "world-environment",
+        "role": "world-environment",
+        "moduleRef": {
+          "type": "immersive-world-generated-module",
+          "version": 1,
+          "moduleId": "compiled-v1-world-environment-7e1317c9136d",
+          "partId": "world-environment",
+          "hash": "7e1317c9136d47744c1db3ce884989797cd32f7bf4ef338a9ee487dfa10046d2",
+          "integrity": "sha256-7e1317c9136d47744c1db3ce884989797cd32f7bf4ef338a9ee487dfa10046d2",
+          "exportName": "createImmersiveWorldPart",
+          "file": "data/immersive-world/generated-modules/7e1317c9136d47744c1db3ce884989797cd32f7bf4ef338a9ee487dfa10046d2.mjs",
+          "url": "./data/immersive-world/generated-modules/7e1317c9136d47744c1db3ce884989797cd32f7bf4ef338a9ee487dfa10046d2.mjs",
+          "rendererCompatibility": {
+            "version": 1,
+            "targetMode": "webgpu-project-scene",
+            "compatibilityStatus": "webgpu-compatible",
+            "webgpuCompatible": true,
+            "evidenceReasons": [
+              "webgpu-safe-material"
+            ],
+            "featureFacts": [
+              {
+                "kind": "standard-material",
+                "material": "MeshBasicMaterial",
+                "family": "standard-material-surface",
+                "reason": "webgpu-safe-material"
+              }
+            ],
+            "compatibleSurfaces": [
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "MeshBasicMaterial"
+              }
+            ]
+          }
+        },
+        "evidence": {
+          "declaredCompositionOwnership": {
+            "lane": "technical-support",
+            "owns": [
+              "technical support/compatibility part: renderer environment object, camera-safe world context, and optional atmosphere only when declared by visualConstructionDecision",
+              "room for the selected-news transformation and optional artist-style carrier to read"
+            ],
+            "avoid": [
+              "claiming visible construction not declared by visualConstructionDecision",
+              "stealing selected-news transformation or artist-style carrier ownership"
+            ]
+          },
+          "compositionOwnershipSource": "world-part-plan.json#/parts/0/compositionOwnership",
+          "goalEvidence": [
+            {
+              "goalIdentity": "assignment-goal:sha256:f504e39c4adc946091262ef9df942f874ca385d04acd6906b307c8148ba04029",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:312253bc193d1e3d7910dd9c08a77ab353ccc48a7e66e6e875067b4e94fced00"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:8303f2d00f5f12af003487445e94ac95ed32e341f27b6a47a67b3f276e2e4e1d",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:312253bc193d1e3d7910dd9c08a77ab353ccc48a7e66e6e875067b4e94fced00"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:10ef8ed3ab6c2e05a1345382e130d1a635025cbe908cf0b9edf812472b0021a5",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:312253bc193d1e3d7910dd9c08a77ab353ccc48a7e66e6e875067b4e94fced00"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:15054ff9f06aefb26b1d438a04cce68ff7745a0e62391fd6f5db970405e5eec9",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:312253bc193d1e3d7910dd9c08a77ab353ccc48a7e66e6e875067b4e94fced00"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:31eaa75924db65208977b1018ab37c12893b0f90c31c56d494185e25b914bd62",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:312253bc193d1e3d7910dd9c08a77ab353ccc48a7e66e6e875067b4e94fced00"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:72d156c14f239d8361af7be86f782a4862e6ffcdd864f4d2160a290a379ba48b",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:312253bc193d1e3d7910dd9c08a77ab353ccc48a7e66e6e875067b4e94fced00"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:95657028b20f302a8bbb5ed544e804603d9c5b9437a3a8407730d9ac282a2e1b",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:312253bc193d1e3d7910dd9c08a77ab353ccc48a7e66e6e875067b4e94fced00"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:5dc948560147ec669d80ed910dad5b09272dedd74f382adc21c67144c1f5cce4",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:312253bc193d1e3d7910dd9c08a77ab353ccc48a7e66e6e875067b4e94fced00"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:fedb174a6b28062adb33fdeaefb5ed6ef26e28893469b1f028b433212ef636ee",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:312253bc193d1e3d7910dd9c08a77ab353ccc48a7e66e6e875067b4e94fced00"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:3f1e5b8628a0f6a721339bcbc8f15e8c6c1f18aeee0884ca1e7663f6288022ef",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:312253bc193d1e3d7910dd9c08a77ab353ccc48a7e66e6e875067b4e94fced00"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:996e09e036e5608676a688b118dbe55825efaf96159a580b926d39ab009ba69a",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:312253bc193d1e3d7910dd9c08a77ab353ccc48a7e66e6e875067b4e94fced00"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:a8a3ba6ff5ab7a3862757bbbf91ddcd28f34609d5393ba9c8c81ae2a427e48a5",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:312253bc193d1e3d7910dd9c08a77ab353ccc48a7e66e6e875067b4e94fced00"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:2f69e28ab0fa82dcfb88328e2a8bbeb31c0c5c04befcfee7aa326e6f27585d31",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:312253bc193d1e3d7910dd9c08a77ab353ccc48a7e66e6e875067b4e94fced00"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:b13d63e206ce08d0f96372422293240df089b7e65f303acf7b8df73d77522fdb",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:312253bc193d1e3d7910dd9c08a77ab353ccc48a7e66e6e875067b4e94fced00"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:0eea883e7224f7940df171dbcb3fe11eee5433aef129d29d8e46433fd056865d",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:312253bc193d1e3d7910dd9c08a77ab353ccc48a7e66e6e875067b4e94fced00"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:6776c64d0c970beef519ceaee63db5ebba0f81d92924e3b416c0aef3b183da7c",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:312253bc193d1e3d7910dd9c08a77ab353ccc48a7e66e6e875067b4e94fced00"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:14b2536b89598c79fa0b9e68385a3c7d1d25a1bbba7fa4d19306eb934d732f98",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:312253bc193d1e3d7910dd9c08a77ab353ccc48a7e66e6e875067b4e94fced00"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:daae3ba191d9c775b29264cddbd496cf184d9ba28f72e250b60e83c54e7068f2",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:312253bc193d1e3d7910dd9c08a77ab353ccc48a7e66e6e875067b4e94fced00"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:28181260213ac8cea1ee8b494a10699bdded8dc812ccdc95198008392a6f2f39",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:312253bc193d1e3d7910dd9c08a77ab353ccc48a7e66e6e875067b4e94fced00"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:80c5c750901cae0d24ef19c6142e81495c2de916f61c7d3eeb60ed136a5224f9",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:312253bc193d1e3d7910dd9c08a77ab353ccc48a7e66e6e875067b4e94fced00"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:93507fe4d417e00c8c9aecedce140795f5099722121a10f94fd10f4c2afab9fc",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:312253bc193d1e3d7910dd9c08a77ab353ccc48a7e66e6e875067b4e94fced00"
+              ]
+            }
+          ],
+          "visibleAbsenceIntentional": true,
+          "rendererCompatibilityEvidenceReasons": [
+            "webgpu-safe-material"
+          ],
+          "compatibleSurfaces": [
+            {
+              "reason": "webgpu-safe-material",
+              "materialType": "MeshBasicMaterial"
+            }
+          ],
+          "workshopAcceptance": [
+            "[object Object]"
+          ],
+          "acceptedPartValidation": {
+            "version": 1,
+            "source": "compiled-v1-part-workshop",
+            "passed": true,
+            "previewScope": "isolated-part",
+            "preview": {
+              "required": false
+            },
+            "finalDraft": {
+              "file": "source/world-environment.module.mjs",
+              "sha256": "sha256:6e3a1f6ecc52b786243d274e7b46796a22c95b872e787bcfc9118c4a1f54d48e",
+              "bytes": 8084
+            },
+            "finalPreview": {
+              "reference": "part-workshop-evidence:screenshot:sha256:312253bc193d1e3d7910dd9c08a77ab353ccc48a7e66e6e875067b4e94fced00",
+              "sha256": "sha256:312253bc193d1e3d7910dd9c08a77ab353ccc48a7e66e6e875067b4e94fced00",
+              "attemptIdentity": "part-workshop-attempt:sha256:97b1e5f831362084a3e38924b978fd692ba8e88d63252b3537c6376d2a040dce",
+              "sourceHash": "sha256:3037dcae4064342a01ae6230e3c606a103a202b029c852a8ff8d69230f09d35c",
+              "packageIdentity": "part-package:sha256:ecbb7e98312a927f9a8e660fbec62f3a62be29f295fb304e8b8d0148441412ca",
+              "status": "succeeded"
+            },
+            "verificationExpectation": {
+              "version": 1,
+              "source": "world-part-plan-assignment",
+              "partId": "world-environment",
+              "positiveContribution": {
+                "role": "world-environment",
+                "intent": "Provide technical scene support and camera-safe context; visible environment construction requires cited evidence.",
+                "visualTarget": "technical world-environment support; visible construction only if visualConstructionDecision declares it",
+                "relationshipToWhole": "Provides technical world support while creative parts own visible construction.",
+                "owns": [
+                  "technical support/compatibility part: renderer environment object, camera-safe world context, and optional atmosphere only when declared by visualConstructionDecision",
+                  "room for the selected-news transformation and optional artist-style carrier to read"
+                ]
+              },
+              "ownershipBoundary": {
+                "lane": "technical-support",
+                "owns": [
+                  "technical support/compatibility part: renderer environment object, camera-safe world context, and optional atmosphere only when declared by visualConstructionDecision",
+                  "room for the selected-news transformation and optional artist-style carrier to read"
+                ],
+                "avoid": [
+                  "claiming visible construction not declared by visualConstructionDecision",
+                  "stealing selected-news transformation or artist-style carrier ownership"
+                ]
+              },
+              "technicalEvidence": {
+                "required": [
+                  "generated-module-package",
+                  "createImmersiveWorldPart-export",
+                  "packaged-browser-capture",
+                  "render-health-telemetry"
+                ],
+                "rendererTargetMode": "webgpu-project-scene",
+                "rendererCompatibilityRequired": true,
+                "webgpuEvidenceRequired": true
+              },
+              "outputPresence": {
+                "policy": "quiet-or-absent-output-allowed",
+                "visibleOutputRequired": false,
+                "quietOrAbsentOutputAllowed": true
+              },
+              "literalMotifProhibitions": [
+                "claiming visible construction not declared by visualConstructionDecision",
+                "stealing selected-news transformation or artist-style carrier ownership"
+              ],
+              "deterministicImageChecks": {
+                "blankCapture": false,
+                "foregroundOccupancy": false,
+                "focalAnchor": false,
+                "mobileCentralSignal": false,
+                "environmentBackgroundVisibility": false
+              },
+              "authority": {
+                "deterministicInspectableEvidenceOnly": true,
+                "aestheticFidelityClaimed": false,
+                "visualObservationGating": false
+              }
+            }
+          },
+          "plannedPart": {
+            "source": "world-part-plan.json#/parts/0",
+            "partId": "world-environment",
+            "role": "world-environment",
+            "intent": "Provide technical scene support and camera-safe context; visible environment construction requires cited evidence.",
+            "messagePurpose": "Provide technical scene support and camera-safe context; visible environment construction requires cited evidence.",
+            "visualTarget": "technical world-environment support; visible construction only if visualConstructionDecision declares it",
+            "relationshipToWhole": "Provides technical world support while creative parts own visible construction.",
+            "visibleAbsence": {
+              "intentional": true,
+              "facts": [
+                "Visible absence is intentionally part of this part."
+              ],
+              "rationale": "The plan explicitly assigns visible absence to this part."
+            }
+          },
+          "compositionAdaptations": [
+            "Preserved at the origin and retained as technical support; restrained fog, warm supplemental lighting, and intentional quiet provide continuous surround coverage without taking visible-construction ownership."
+          ],
+          "compositionBeforeHash": "096d15737cd50dfa",
+          "compositionAfterHash": "12fc8f1187ea452b"
+        },
+        "intent": "Provide technical scene support and camera-safe context; visible environment construction requires cited evidence.",
+        "messagePurpose": "Provide technical scene support and camera-safe context; visible environment construction requires cited evidence.",
+        "visualTarget": "technical world-environment support; visible construction only if visualConstructionDecision declares it",
+        "relationshipToWhole": "Provides technical world support while creative parts own visible construction.",
+        "visibleAbsence": {
+          "intentional": true,
+          "facts": [
+            "Visible absence is intentionally part of this part."
+          ],
+          "rationale": "The plan explicitly assigns visible absence to this part."
+        },
+        "params": {
+          "band": "technical-support",
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "scale": 1,
+          "renderOrder": 0,
+          "visibilityPriority": "technical-support"
+        },
+        "paramSemantics": {
+          "band": "visual placement/readability band for full-world params; distinct from declared compositionOwnership.lane"
+        },
+        "compositionOwnership": {
+          "lane": "technical-support",
+          "owns": [
+            "technical support/compatibility part: renderer environment object, camera-safe world context, and optional atmosphere only when declared by visualConstructionDecision",
+            "room for the selected-news transformation and optional artist-style carrier to read"
+          ],
+          "avoid": [
+            "claiming visible construction not declared by visualConstructionDecision",
+            "stealing selected-news transformation or artist-style carrier ownership"
+          ]
+        }
+      },
+      {
+        "id": "reciprocal-burden-arcade",
+        "partId": "reciprocal-burden-arcade",
+        "role": "world-part-2",
+        "moduleRef": {
+          "type": "immersive-world-generated-module",
+          "version": 1,
+          "moduleId": "compiled-v1-reciprocal-burden-arcade-8e8b953c6bbb",
+          "partId": "reciprocal-burden-arcade",
+          "hash": "8e8b953c6bbb2b6304009142709f35291c9c918c1b8557d52276e444572125ec",
+          "integrity": "sha256-8e8b953c6bbb2b6304009142709f35291c9c918c1b8557d52276e444572125ec",
+          "exportName": "createImmersiveWorldPart",
+          "file": "data/immersive-world/generated-modules/8e8b953c6bbb2b6304009142709f35291c9c918c1b8557d52276e444572125ec.mjs",
+          "url": "./data/immersive-world/generated-modules/8e8b953c6bbb2b6304009142709f35291c9c918c1b8557d52276e444572125ec.mjs",
+          "rendererCompatibility": {
+            "version": 1,
+            "targetMode": "webgpu-project-scene",
+            "compatibilityStatus": "webgpu-compatible",
+            "webgpuCompatible": true,
+            "evidenceReasons": [
+              "webgpu-safe-material"
+            ],
+            "featureFacts": [
+              {
+                "kind": "standard-material",
+                "material": "MeshStandardMaterial",
+                "family": "standard-material-surface",
+                "reason": "webgpu-safe-material"
+              }
+            ],
+            "compatibleSurfaces": [
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "MeshStandardMaterial"
+              }
+            ]
+          }
+        },
+        "evidence": {
+          "declaredCompositionOwnership": {
+            "lane": "part-specific",
+            "owns": [
+              "the explicit world-part-2 purpose, visual target, and any assigned spatial behavior"
+            ],
+            "avoid": [
+              "adding construction outside this part purpose, visual target, declared ownership, and visualConstructionDecision"
+            ]
+          },
+          "compositionOwnershipSource": "world-part-plan.json#/parts/1/compositionOwnership",
+          "goalEvidence": [
+            {
+              "goalIdentity": "assignment-goal:sha256:f504e39c4adc946091262ef9df942f874ca385d04acd6906b307c8148ba04029",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:016a5f2deb6ca3f1e22689287ddd3d3f7fe07d4ddadce1c9726ad6936a6b0290"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:8303f2d00f5f12af003487445e94ac95ed32e341f27b6a47a67b3f276e2e4e1d",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:016a5f2deb6ca3f1e22689287ddd3d3f7fe07d4ddadce1c9726ad6936a6b0290"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:1fcc7d0fdab526e0d964dcc31fc2b9bd3cb2dd9355fc48ffdf20189b5c77c1ef",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:016a5f2deb6ca3f1e22689287ddd3d3f7fe07d4ddadce1c9726ad6936a6b0290"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:9282cabb071f325f5b2135f413e01c0926efb10be15aa8eb37d109144ab8c325",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:016a5f2deb6ca3f1e22689287ddd3d3f7fe07d4ddadce1c9726ad6936a6b0290"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:f6aeea928b6401eb92c00e776b1848eb7f5124f205a8d0f4b05d1e560053f612",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:016a5f2deb6ca3f1e22689287ddd3d3f7fe07d4ddadce1c9726ad6936a6b0290"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:252a78c24f517c5e7e5a706203982ecdeb44232030931edee5e21a05a9b650ff",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:016a5f2deb6ca3f1e22689287ddd3d3f7fe07d4ddadce1c9726ad6936a6b0290"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:47cf5c4875077fda4d8f5c28379f02c6cbd96034da578a51d1bd42371bdf0e59",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:016a5f2deb6ca3f1e22689287ddd3d3f7fe07d4ddadce1c9726ad6936a6b0290"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:5dc948560147ec669d80ed910dad5b09272dedd74f382adc21c67144c1f5cce4",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:016a5f2deb6ca3f1e22689287ddd3d3f7fe07d4ddadce1c9726ad6936a6b0290"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:dd1f0d0934917483788aa9c6f28a4f303aa047e9f3ae44bd2fcb5ce912701651",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:016a5f2deb6ca3f1e22689287ddd3d3f7fe07d4ddadce1c9726ad6936a6b0290"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:b6bd01e525a50aa3a4ef4cd564475721d0b3d8afc407f1252ee4fc8588ccd2d4",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:016a5f2deb6ca3f1e22689287ddd3d3f7fe07d4ddadce1c9726ad6936a6b0290"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:fb8d15bfd306a66c265958fe1f9278690426de3685e976fc797a3b01dca295b8",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:016a5f2deb6ca3f1e22689287ddd3d3f7fe07d4ddadce1c9726ad6936a6b0290"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:538aa080ac3224bdf26c770e823999dd39442175a1c22ab8e55d70c1209a5098",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:016a5f2deb6ca3f1e22689287ddd3d3f7fe07d4ddadce1c9726ad6936a6b0290"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:8080d51f1115361dbb8622d68fc501368b3886897fa208e32e26250331fcaf33",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:016a5f2deb6ca3f1e22689287ddd3d3f7fe07d4ddadce1c9726ad6936a6b0290"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:a8372061e788a65c97d96e221b09c742bf3df873d2e268f132d2931369f16be1",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:016a5f2deb6ca3f1e22689287ddd3d3f7fe07d4ddadce1c9726ad6936a6b0290"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:0eea883e7224f7940df171dbcb3fe11eee5433aef129d29d8e46433fd056865d",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:016a5f2deb6ca3f1e22689287ddd3d3f7fe07d4ddadce1c9726ad6936a6b0290"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:6776c64d0c970beef519ceaee63db5ebba0f81d92924e3b416c0aef3b183da7c",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:016a5f2deb6ca3f1e22689287ddd3d3f7fe07d4ddadce1c9726ad6936a6b0290"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:14b2536b89598c79fa0b9e68385a3c7d1d25a1bbba7fa4d19306eb934d732f98",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:016a5f2deb6ca3f1e22689287ddd3d3f7fe07d4ddadce1c9726ad6936a6b0290"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:daae3ba191d9c775b29264cddbd496cf184d9ba28f72e250b60e83c54e7068f2",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:016a5f2deb6ca3f1e22689287ddd3d3f7fe07d4ddadce1c9726ad6936a6b0290"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:28181260213ac8cea1ee8b494a10699bdded8dc812ccdc95198008392a6f2f39",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:016a5f2deb6ca3f1e22689287ddd3d3f7fe07d4ddadce1c9726ad6936a6b0290"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:80c5c750901cae0d24ef19c6142e81495c2de916f61c7d3eeb60ed136a5224f9",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:016a5f2deb6ca3f1e22689287ddd3d3f7fe07d4ddadce1c9726ad6936a6b0290"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:93507fe4d417e00c8c9aecedce140795f5099722121a10f94fd10f4c2afab9fc",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:016a5f2deb6ca3f1e22689287ddd3d3f7fe07d4ddadce1c9726ad6936a6b0290"
+              ]
+            }
+          ],
+          "visibleContributionRequired": true,
+          "rendererCompatibilityEvidenceReasons": [
+            "webgpu-safe-material"
+          ],
+          "compatibleSurfaces": [
+            {
+              "reason": "webgpu-safe-material",
+              "materialType": "MeshStandardMaterial"
+            }
+          ],
+          "compositionUse": "The enlarged arcade remains one readable non-literal structure: incomplete opposing civic flanks, concentrated fragments, and measured counterflow carry the mutual deflection of responsibility without literal illustration.",
+          "workshopAcceptance": [
+            "[object Object]"
+          ],
+          "acceptedPartValidation": {
+            "version": 1,
+            "source": "compiled-v1-part-workshop",
+            "passed": true,
+            "previewScope": "isolated-part",
+            "preview": {
+              "required": false
+            },
+            "finalDraft": {
+              "file": "source/reciprocal-burden-arcade.module.mjs",
+              "sha256": "sha256:d4cf110c3a3bcfb9d1b1f33122a0d0874bedea5355ffb8f1da0a523c3de7e38b",
+              "bytes": 23472
+            },
+            "finalPreview": {
+              "reference": "part-workshop-evidence:screenshot:sha256:016a5f2deb6ca3f1e22689287ddd3d3f7fe07d4ddadce1c9726ad6936a6b0290",
+              "sha256": "sha256:016a5f2deb6ca3f1e22689287ddd3d3f7fe07d4ddadce1c9726ad6936a6b0290",
+              "attemptIdentity": "part-workshop-attempt:sha256:874d9343e93a5a5e6b4e681666704e9301066e15e568d09cce788926ebf4280f",
+              "sourceHash": "sha256:6fc989552ab7284f1375c6738d8bc8721aedddb1de25982cc6506be768e2a901",
+              "packageIdentity": "part-package:sha256:bdc56bb32c8d6a6f293a88c1ce817b9afb3951af9d0c4a74895d67e207b16152",
+              "status": "succeeded"
+            },
+            "verificationExpectation": {
+              "version": 1,
+              "source": "world-part-plan-assignment",
+              "partId": "reciprocal-burden-arcade",
+              "positiveContribution": {
+                "role": "world-part-2",
+                "intent": "Selected news meaning: Sluikstort op domein Militair Hospitaal: Stad Brussel en Defensie wijzen naar elkaar. News intensity is low, pace is measured, spread is concentrated; these are weighting facts only, and the visual metaphor comes from visualConstructionDecision. Build one readable non-literal image structure.",
+                "visualTarget": "visible world-part-2 that carries non-literal flow transformation within visualConstructionDecision",
+                "relationshipToWhole": "Contributes its planned ownership lane to the whole immersive artwork.",
+                "owns": [
+                  "the explicit world-part-2 purpose, visual target, and any assigned spatial behavior"
+                ]
+              },
+              "ownershipBoundary": {
+                "lane": "part-specific",
+                "owns": [
+                  "the explicit world-part-2 purpose, visual target, and any assigned spatial behavior"
+                ],
+                "avoid": [
+                  "adding construction outside this part purpose, visual target, declared ownership, and visualConstructionDecision"
+                ]
+              },
+              "technicalEvidence": {
+                "required": [
+                  "generated-module-package",
+                  "createImmersiveWorldPart-export",
+                  "packaged-browser-capture",
+                  "render-health-telemetry"
+                ],
+                "rendererTargetMode": "webgpu-project-scene",
+                "rendererCompatibilityRequired": true,
+                "webgpuEvidenceRequired": true
+              },
+              "outputPresence": {
+                "policy": "visible-contribution-required",
+                "visibleOutputRequired": true,
+                "quietOrAbsentOutputAllowed": false
+              },
+              "literalMotifProhibitions": [
+                "adding construction outside this part purpose, visual target, declared ownership, and visualConstructionDecision"
+              ],
+              "deterministicImageChecks": {
+                "blankCapture": true,
+                "foregroundOccupancy": false,
+                "focalAnchor": false,
+                "mobileCentralSignal": false,
+                "environmentBackgroundVisibility": false
+              },
+              "authority": {
+                "deterministicInspectableEvidenceOnly": true,
+                "aestheticFidelityClaimed": false,
+                "visualObservationGating": false
+              }
+            }
+          },
+          "plannedPart": {
+            "source": "world-part-plan.json#/parts/1",
+            "partId": "reciprocal-burden-arcade",
+            "role": "world-part-2",
+            "intent": "Selected news meaning: Sluikstort op domein Militair Hospitaal: Stad Brussel en Defensie wijzen naar elkaar. News intensity is low, pace is measured, spread is concentrated; these are weighting facts only, and the visual metaphor comes from visualConstructionDecision. Build one readable non-literal image structure.",
+            "messagePurpose": "Selected news meaning: Sluikstort op domein Militair Hospitaal: Stad Brussel en Defensie wijzen naar elkaar. News intensity is low, pace is measured, spread is concentrated; these are weighting facts only, and the visual metaphor comes from visualConstructionDecision. Build one readable non-literal image structure.",
+            "visualTarget": "visible world-part-2 that carries non-literal flow transformation within visualConstructionDecision",
+            "relationshipToWhole": "Contributes its planned ownership lane to the whole immersive artwork.",
+            "visibleAbsence": {
+              "intentional": false,
+              "facts": [
+                "This part must be visibly present."
+              ],
+              "rationale": "The plan requires visible contribution from this part."
+            }
+          },
+          "compositionAdaptations": [
+            "Placed at [0,-0.35,-1.8] with scale 1.52 so its opposing civic flanks, concentrated fragments, steady counterflow, and far lattice form one readable news-derived structure across desktop and mobile.",
+            "composition modified reciprocal-burden-arcade from isolated accepted-part defaults"
+          ],
+          "compositionBeforeHash": "7d59f8f9e4e67c89",
+          "compositionAfterHash": "935000374716c16f"
+        },
+        "intent": "Selected news meaning: Sluikstort op domein Militair Hospitaal: Stad Brussel en Defensie wijzen naar elkaar. News intensity is low, pace is measured, spread is concentrated; these are weighting facts only, and the visual metaphor comes from visualConstructionDecision. Build one readable non-literal image structure.",
+        "messagePurpose": "Selected news meaning: Sluikstort op domein Militair Hospitaal: Stad Brussel en Defensie wijzen naar elkaar. News intensity is low, pace is measured, spread is concentrated; these are weighting facts only, and the visual metaphor comes from visualConstructionDecision. Build one readable non-literal image structure.",
+        "visualTarget": "visible world-part-2 that carries non-literal flow transformation within visualConstructionDecision",
+        "relationshipToWhole": "Contributes its planned ownership lane to the whole immersive artwork.",
+        "visibleAbsence": {
+          "intentional": false,
+          "facts": [
+            "This part must be visibly present."
+          ],
+          "rationale": "The plan requires visible contribution from this part."
+        },
+        "params": {
+          "band": "primary-readability",
+          "position": [
+            0,
+            -0.35,
+            -1.8
+          ],
+          "scale": 1.52,
+          "renderOrder": 3,
+          "visibilityPriority": "primary"
+        },
+        "paramSemantics": {
+          "band": "visual placement/readability band for full-world params; distinct from declared compositionOwnership.lane"
+        },
+        "compositionOwnership": {
+          "lane": "part-specific",
+          "owns": [
+            "the explicit world-part-2 purpose, visual target, and any assigned spatial behavior"
+          ],
+          "avoid": [
+            "adding construction outside this part purpose, visual target, declared ownership, and visualConstructionDecision"
+          ]
+        }
+      }
+    ],
+    "acceptedPartsRef": "context.acceptedParts",
+    "compositionContract": {
+      "visualConstructionDecisionRef": "art-direction-packet.json#/creativeDirection/visualConstructionDecision",
+      "spatialOrganization": "Build one readable non-literal image structure.",
+      "paletteRoleMapping": "Orange, red, and yellow remain construction and pressure accents within the accepted made surfaces.",
+      "motionInterpretation": "steady",
+      "cameraPolicy": "supplied camera preserved unchanged; framing solved through the reciprocal-burden-arcade transform",
+      "outputOwnership": "world.outputColorTransform is the sole final grade; accepted parts own no tone mapping"
+    },
+    "generatedModules": [
+      {
+        "type": "immersive-world-generated-module",
+        "version": 1,
+        "moduleId": "compiled-v1-world-environment-7e1317c9136d",
+        "partId": "world-environment",
+        "hash": "7e1317c9136d47744c1db3ce884989797cd32f7bf4ef338a9ee487dfa10046d2",
+        "integrity": "sha256-7e1317c9136d47744c1db3ce884989797cd32f7bf4ef338a9ee487dfa10046d2",
+        "exportName": "createImmersiveWorldPart",
+        "file": "data/immersive-world/generated-modules/7e1317c9136d47744c1db3ce884989797cd32f7bf4ef338a9ee487dfa10046d2.mjs",
+        "url": "./data/immersive-world/generated-modules/7e1317c9136d47744c1db3ce884989797cd32f7bf4ef338a9ee487dfa10046d2.mjs",
+        "rendererCompatibility": {
+          "version": 1,
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material"
+          ],
+          "featureFacts": [
+            {
+              "kind": "standard-material",
+              "material": "MeshBasicMaterial",
+              "family": "standard-material-surface",
+              "reason": "webgpu-safe-material"
+            }
+          ],
+          "compatibleSurfaces": [
+            {
+              "reason": "webgpu-safe-material",
+              "materialType": "MeshBasicMaterial"
+            }
+          ]
+        }
+      },
+      {
+        "type": "immersive-world-generated-module",
+        "version": 1,
+        "moduleId": "compiled-v1-reciprocal-burden-arcade-8e8b953c6bbb",
+        "partId": "reciprocal-burden-arcade",
+        "hash": "8e8b953c6bbb2b6304009142709f35291c9c918c1b8557d52276e444572125ec",
+        "integrity": "sha256-8e8b953c6bbb2b6304009142709f35291c9c918c1b8557d52276e444572125ec",
+        "exportName": "createImmersiveWorldPart",
+        "file": "data/immersive-world/generated-modules/8e8b953c6bbb2b6304009142709f35291c9c918c1b8557d52276e444572125ec.mjs",
+        "url": "./data/immersive-world/generated-modules/8e8b953c6bbb2b6304009142709f35291c9c918c1b8557d52276e444572125ec.mjs",
+        "rendererCompatibility": {
+          "version": 1,
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material"
+          ],
+          "featureFacts": [
+            {
+              "kind": "standard-material",
+              "material": "MeshStandardMaterial",
+              "family": "standard-material-surface",
+              "reason": "webgpu-safe-material"
+            }
+          ],
+          "compatibleSurfaces": [
+            {
+              "reason": "webgpu-safe-material",
+              "materialType": "MeshStandardMaterial"
+            }
+          ]
+        }
+      }
+    ],
+    "rendererAuthoring": {
+      "version": 1,
+      "targetMode": "webgpu-project-scene",
+      "requestedTarget": "webgpu-project-scene",
+      "effectiveTarget": "webgpu-project-scene",
+      "webgpuTargeted": true,
+      "legacyWebglTargeted": false,
+      "unspecified": false,
+      "compatibilityGateRequired": true
+    },
+    "rendererCompatibility": {
+      "version": 1,
+      "targetMode": "webgpu-project-scene",
+      "webgpuTargeted": true,
+      "legacyWebglTargeted": false,
+      "compatibilityGateRequired": true,
+      "compatibilityStatus": "webgpu-compatible",
+      "webgpuCompatible": true,
+      "evidenceReasons": [
+        "webgpu-safe-material"
+      ],
+      "featureFacts": [
+        {
+          "kind": "standard-material",
+          "family": "standard-material-surface",
+          "material": "MeshBasicMaterial",
+          "reason": "webgpu-safe-material"
+        },
+        {
+          "kind": "standard-material",
+          "family": "standard-material-surface",
+          "material": "MeshStandardMaterial",
+          "reason": "webgpu-safe-material"
+        }
+      ],
+      "moduleCount": 2,
+      "compatibleModuleCount": 2,
+      "incompatibleModuleCount": 0,
+      "compositionCompatibilityDeclared": false,
+      "modules": [
+        {
+          "partId": "world-environment",
+          "role": "world-environment",
+          "moduleId": "compiled-v1-world-environment-7e1317c9136d",
+          "hash": "7e1317c9136d47744c1db3ce884989797cd32f7bf4ef338a9ee487dfa10046d2",
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material"
+          ],
+          "featureFacts": [
+            {
+              "kind": "standard-material",
+              "family": "standard-material-surface",
+              "material": "MeshBasicMaterial",
+              "reason": "webgpu-safe-material"
+            }
+          ],
+          "compatibleSurfaceCount": 1,
+          "forbiddenSurfaceCount": 0,
+          "sourceStage": "part-workshop"
+        },
+        {
+          "partId": "reciprocal-burden-arcade",
+          "role": "world-part-2",
+          "moduleId": "compiled-v1-reciprocal-burden-arcade-8e8b953c6bbb",
+          "hash": "8e8b953c6bbb2b6304009142709f35291c9c918c1b8557d52276e444572125ec",
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material"
+          ],
+          "featureFacts": [
+            {
+              "kind": "standard-material",
+              "family": "standard-material-surface",
+              "material": "MeshStandardMaterial",
+              "reason": "webgpu-safe-material"
+            }
+          ],
+          "compatibleSurfaceCount": 1,
+          "forbiddenSurfaceCount": 0,
+          "sourceStage": "part-workshop"
+        }
+      ]
+    },
+    "renderFacts": {
+      "environmentPresent": true,
+      "cameraOwnedByComposition": true,
+      "lightingOwnedByComposition": true,
+      "nearFarClippingOwned": true,
+      "acceptedPartCount": 2,
+      "generatedModuleCount": 2,
+      "generatedAssetCount": 0,
+      "rendererAuthoringTarget": "webgpu-project-scene",
+      "rendererCompatibilityStatus": "webgpu-compatible",
+      "webgpuRendererGateRequired": true,
+      "webgpuRendererCompatible": true,
+      "desktopPreviewRecorded": true,
+      "mobilePreviewRecorded": true,
+      "surroundPreviewRecorded": true
+    }
+  },
+  "image": {
+    "thumbnailJpeg": "./data/media/2026-08-27-0434z-sluikstort-op-domein-militair-hospitaal-stad-brussel-en-defensie-wijzen/thumb-320.jpg",
+    "openGraphJpeg": "./data/media/2026-08-27-0434z-sluikstort-op-domein-militair-hospitaal-stad-brussel-en-defensie-wijzen/og-1200x630.jpg",
+    "instagramJpeg": "./data/media/2026-08-27-0434z-sluikstort-op-domein-militair-hospitaal-stad-brussel-en-defensie-wijzen/instagram-1080x1350.jpg",
+    "altText": "Sluikstort op domein Militair Hospitaal: Stad Brussel en Defensie wijzen naar elkaar by Robert Natkin."
+  }
+}

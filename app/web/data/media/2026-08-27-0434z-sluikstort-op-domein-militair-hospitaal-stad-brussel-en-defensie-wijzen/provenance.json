@@ -1,0 +1,76 @@
+{
+  "version": 2,
+  "kind": "rusty-art-public-media-assets",
+  "artworkId": "2026-08-27-0434z-sluikstort-op-domein-militair-hospitaal-stad-brussel-en-defensie-wijzen",
+  "source": {
+    "sha256": "adb52b5565ac047638cc0fd5c47642bc20619ba5a419b5df586816d77deb121b",
+    "role": "daily-preview-story-desktop"
+  },
+  "sources": {
+    "primary": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-desktop",
+      "sha256": "adb52b5565ac047638cc0fd5c47642bc20619ba5a419b5df586816d77deb121b"
+    },
+    "openGraph": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-open-graph",
+      "sha256": "97966389132046fff88e95e932efac8ef1504388e805ea017b5ec78d30298694"
+    },
+    "instagram": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-instagram",
+      "sha256": "78446f0365a92ec10b1158676f9c822851b2c923308f6a1e44ec499b4c8d463d"
+    }
+  },
+  "targets": {
+    "thumb-320.jpg": {
+      "spec": {
+        "fileName": "thumb-320.jpg",
+        "width": 320,
+        "height": null,
+        "fit": "inside",
+        "withoutEnlargement": true,
+        "format": "jpeg",
+        "quality": 82
+      },
+      "publicPath": "./data/media/2026-08-27-0434z-sluikstort-op-domein-militair-hospitaal-stad-brussel-en-defensie-wijzen/thumb-320.jpg",
+      "source": {
+        "sha256": "adb52b5565ac047638cc0fd5c47642bc20619ba5a419b5df586816d77deb121b",
+        "role": "daily-preview-story-desktop"
+      }
+    },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-08-27-0434z-sluikstort-op-domein-militair-hospitaal-stad-brussel-en-defensie-wijzen/og-1200x630.jpg",
+      "source": {
+        "sha256": "97966389132046fff88e95e932efac8ef1504388e805ea017b5ec78d30298694",
+        "role": "daily-preview-story-open-graph"
+      }
+    },
+    "instagram-1080x1350.jpg": {
+      "spec": {
+        "fileName": "instagram-1080x1350.jpg",
+        "width": 1080,
+        "height": 1350,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-08-27-0434z-sluikstort-op-domein-militair-hospitaal-stad-brussel-en-defensie-wijzen/instagram-1080x1350.jpg",
+      "source": {
+        "sha256": "78446f0365a92ec10b1158676f9c822851b2c923308f6a1e44ec499b4c8d463d",
+        "role": "daily-preview-story-instagram"
+      }
+    }
+  }
+}
