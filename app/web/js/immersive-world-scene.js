@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import { PMREMGenerator } from 'three/webgpu';
 import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 import { CAPTURE_PROFILES, normalizeCaptureProfile } from './contracts/capture-target-contract.js';
 import {
@@ -1851,7 +1852,7 @@ export class ArtworkScene {
     }
     if (!this.neutralEnvironmentRenderTarget) {
       const room = new RoomEnvironment();
-      const pmrem = new THREE.PMREMGenerator(this.renderer);
+      const pmrem = new PMREMGenerator(this.renderer);
       this.neutralEnvironmentRenderTarget = pmrem.fromScene(room);
       room.dispose();
       pmrem.dispose();
