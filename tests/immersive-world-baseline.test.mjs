@@ -9,6 +9,19 @@ import {
   resolveImmersiveWorldRendererProfile
 } from '../app/web/js/immersive-world-scene.js';
 import { POST_PROCESSING_MODES, RENDERER_MODES } from '../app/web/js/scene-rendering.js';
+import {
+  NEUTRAL_WEBGPU_LIGHTING,
+  NEUTRAL_WEBGPU_OUTPUT_COLOR_TRANSFORM
+} from '../app/web/js/contracts/immersive-world-baseline-contract.js';
+
+test('neutral WebGPU baseline contract exposes the shared lighting and output defaults', () => {
+  assert.equal(NEUTRAL_WEBGPU_LIGHTING.mode, 'neutral-webgpu');
+  assert.equal(NEUTRAL_WEBGPU_LIGHTING.keyIntensity, 3);
+  assert.deepEqual(NEUTRAL_WEBGPU_LIGHTING.keyTarget, [0, 0, -5]);
+  assert.equal(NEUTRAL_WEBGPU_LIGHTING.shadows.enabled, true);
+  assert.equal(NEUTRAL_WEBGPU_OUTPUT_COLOR_TRANSFORM.toneMapping, 'neutral');
+  assert.equal(NEUTRAL_WEBGPU_OUTPUT_COLOR_TRANSFORM.exposure, 1);
+});
 
 test('WebGPU capture uses the same TSL post path as interactive rendering', () => {
   const profile = resolveImmersiveWorldRendererProfile({

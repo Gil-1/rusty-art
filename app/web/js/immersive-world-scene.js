@@ -6,6 +6,11 @@ import {
 } from './contracts/webgpu-feature-facts-contract.js';
 import { WEBGPU_ACCEPTED_MATERIAL_MAP_PROPERTIES } from './contracts/webgpu-material-map-contract.js';
 import {
+  NEUTRAL_WEBGPU_LIGHTING,
+  NEUTRAL_WEBGPU_LIGHTING_MODE,
+  NEUTRAL_WEBGPU_TONE_MAPPING
+} from './contracts/immersive-world-baseline-contract.js';
+import {
   applyViewportOrbitFrame,
   bindOrbitInput,
   updateCameraFromOrbit
@@ -100,7 +105,6 @@ const LEGACY_WEBGL_FALLBACK_REASON = 'legacy-webgl-authoring-mode';
 const WEBGPU_EVIDENCE_MISSING_REASON = 'webgpu-evidence-missing';
 const GENERATED_MODULE_UNKNOWN_REASON = 'generated-module-unknown';
 const WEBGPU_DIRECT_OUTPUT_COLOR_TRANSFORM_MODE = 'webgpu-direct';
-const NEUTRAL_WEBGPU_LIGHTING_MODE = 'neutral-webgpu';
 
 function cleanToken(value) {
   return String(value || '').trim().toLowerCase().replace(/[_\s]+/g, '-');
@@ -413,7 +417,9 @@ export function resolveImmersiveWorldOutputColorTransform(world = {}) {
     || {};
   return {
     owner: source.owner || null,
-    toneMapping: cleanToken(source.toneMapping) === 'neutral' ? 'neutral' : DEFAULT_OUTPUT_COLOR_TRANSFORM.toneMapping,
+    toneMapping: cleanToken(source.toneMapping) === NEUTRAL_WEBGPU_TONE_MAPPING
+      ? NEUTRAL_WEBGPU_TONE_MAPPING
+      : DEFAULT_OUTPUT_COLOR_TRANSFORM.toneMapping,
     contrast: clampedNumber(source.contrast, DEFAULT_OUTPUT_COLOR_TRANSFORM.contrast, OUTPUT_COLOR_TRANSFORM_LIMITS.contrast),
     saturation: clampedNumber(source.saturation, DEFAULT_OUTPUT_COLOR_TRANSFORM.saturation, OUTPUT_COLOR_TRANSFORM_LIMITS.saturation),
     exposure: clampedNumber(source.exposure, DEFAULT_OUTPUT_COLOR_TRANSFORM.exposure, OUTPUT_COLOR_TRANSFORM_LIMITS.exposure),
@@ -446,7 +452,7 @@ export function createImmersiveWorldPostPass(renderTarget) {
 export function applyImmersiveWorldOutputColorTransform(scene, world = {}) {
   const transform = resolveImmersiveWorldOutputColorTransform(world);
   if (scene.renderer) {
-    scene.renderer.toneMapping = transform.toneMapping === 'neutral'
+    scene.renderer.toneMapping = transform.toneMapping === NEUTRAL_WEBGPU_TONE_MAPPING
       ? THREE.NeutralToneMapping
       : THREE.ACESFilmicToneMapping;
   }
@@ -456,8 +462,10 @@ export function applyImmersiveWorldOutputColorTransform(scene, world = {}) {
 }
 
 function shadowMapSize(value) {
-  const requested = Math.floor(number(value, 2048));
-  return [512, 1024, 2048, 4096].includes(requested) ? requested : 2048;
+  const requested = Math.floor(number(value, NEUTRAL_WEBGPU_LIGHTING.shadows.mapSize));
+  return [512, 1024, 2048, 4096].includes(requested)
+    ? requested
+    : NEUTRAL_WEBGPU_LIGHTING.shadows.mapSize;
 }
 
 function supportsNeutralShadowMaterial(material) {
@@ -1884,7 +1892,7 @@ export class ArtworkScene {
     key.target.position.set(keyTarget[0], keyTarget[1], keyTarget[2]);
     key.castShadow = shadowsEnabled;
     if (shadowsEnabled) {
-      const bounds = Math.max(1, number(shadows.bounds, 18));
+      const bounds = Math.max(1, number(shadows.bounds, NEUTRAL_WEBGPU_LIGHTING.shadows.bounds));
       const mapSize = shadowMapSize(shadows.mapSize);
       this.renderer.shadowMap.enabled = true;
       this.renderer.shadowMap.type = THREE.PCFShadowMap;
@@ -1893,10 +1901,10 @@ export class ArtworkScene {
       key.shadow.camera.right = bounds;
       key.shadow.camera.top = bounds;
       key.shadow.camera.bottom = -bounds;
-      key.shadow.camera.near = Math.max(0.01, number(shadows.near, 0.5));
-      key.shadow.camera.far = Math.max(key.shadow.camera.near + 1, number(shadows.far, 80));
-      key.shadow.bias = number(shadows.bias, 0);
-      key.shadow.normalBias = number(shadows.normalBias, 0);
+      key.shadow.camera.near = Math.max(0.01, number(shadows.near, NEUTRAL_WEBGPU_LIGHTING.shadows.near));
+      key.shadow.camera.far = Math.max(key.shadow.camera.near + 1, number(shadows.far, NEUTRAL_WEBGPU_LIGHTING.shadows.far));
+      key.shadow.bias = number(shadows.bias, NEUTRAL_WEBGPU_LIGHTING.shadows.bias);
+      key.shadow.normalBias = number(shadows.normalBias, NEUTRAL_WEBGPU_LIGHTING.shadows.normalBias);
       key.shadow.camera.updateProjectionMatrix();
     } else if (this.renderer.shadowMap) {
       this.renderer.shadowMap.enabled = false;
