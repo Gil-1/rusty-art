@@ -71,15 +71,7 @@ test('neutral lighting creates one shadow-casting directional key', () => {
     rendererSelection: { useWebGPURenderer: true }
   }, {
     lighting: {
-      mode: 'neutral-webgpu',
-      ambientColor: '#ffffff',
-      ambientIntensity: 0.3,
-      keyColor: '#ffffff',
-      keyIntensity: 3,
-      keyPosition: [5, 8, 6],
-      keyTarget: [0, 0, -5],
-      rimIntensity: 0,
-      shadows: { enabled: true, mapSize: 2048, bounds: 18, near: 0.5, far: 80 }
+      mode: 'neutral-webgpu'
     }
   });
 
@@ -88,6 +80,8 @@ test('neutral lighting creates one shadow-casting directional key', () => {
   assert.equal(renderer.shadowMap.type, THREE.PCFShadowMap);
   assert.equal(group.children.filter((child) => child.isPointLight).length, 0);
   assert.equal(group.children.filter((child) => child.isAmbientLight).length, 0);
+  assert.equal(key.intensity, 3);
+  assert.deepEqual(key.position.toArray(), [5, 8, 6]);
   assert.equal(key.castShadow, true);
   assert.deepEqual(key.target.position.toArray(), [0, 0, -5]);
   assert.equal(key.shadow.mapSize.width, 2048);
@@ -119,11 +113,13 @@ test('neutral environment defaults to a visible background without fog', () => {
   const scene = new THREE.Scene();
   const group = new THREE.Group();
   ArtworkScene.prototype.applyEnvironment.call({ scene, group }, {
-    lighting: { mode: 'neutral-webgpu' }
+    lighting: { mode: 'neutral-webgpu' },
+    environment: { color: '#112233' }
   });
 
-  assert.equal(scene.background.getHexString(), '73777d');
+  assert.equal(scene.background.getHexString(), '112233');
   assert.equal(scene.fog, null);
+  assert.equal(group.children[0].material.color.getHexString(), '73777d');
 });
 
 test('neutral shadows include opaque lit meshes and suppress competing global lights', () => {
@@ -147,7 +143,7 @@ test('neutral shadows include opaque lit meshes and suppress competing global li
 test('neutral baseline selects neutral tone mapping without changing exposure defaults', () => {
   const scene = { renderer: { toneMapping: THREE.ACESFilmicToneMapping } };
   const transform = applyImmersiveWorldOutputColorTransform(scene, {
-    outputColorTransform: { toneMapping: 'neutral' }
+    lighting: { mode: 'neutral-webgpu' }
   });
 
   assert.equal(scene.renderer.toneMapping, THREE.NeutralToneMapping);

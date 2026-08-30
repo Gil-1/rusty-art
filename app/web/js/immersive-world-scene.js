@@ -11,6 +11,7 @@ import {
   NEUTRAL_WEBGPU_ENVIRONMENT,
   NEUTRAL_WEBGPU_LIGHTING,
   NEUTRAL_WEBGPU_LIGHTING_MODE,
+  NEUTRAL_WEBGPU_OUTPUT_COLOR_TRANSFORM,
   NEUTRAL_WEBGPU_TONE_MAPPING
 } from './contracts/immersive-world-baseline-contract.js';
 import {
@@ -418,17 +419,20 @@ export function resolveImmersiveWorldOutputColorTransform(world = {}) {
     || asObject(world.colorTransform, null)
     || asObject(world.colorGrade, null)
     || {};
+  const defaults = cleanToken(world.lighting?.mode) === NEUTRAL_WEBGPU_LIGHTING_MODE
+    ? NEUTRAL_WEBGPU_OUTPUT_COLOR_TRANSFORM
+    : DEFAULT_OUTPUT_COLOR_TRANSFORM;
   return {
     owner: source.owner || null,
-    toneMapping: cleanToken(source.toneMapping) === NEUTRAL_WEBGPU_TONE_MAPPING
+    toneMapping: cleanToken(source.toneMapping || defaults.toneMapping) === NEUTRAL_WEBGPU_TONE_MAPPING
       ? NEUTRAL_WEBGPU_TONE_MAPPING
       : DEFAULT_OUTPUT_COLOR_TRANSFORM.toneMapping,
-    contrast: clampedNumber(source.contrast, DEFAULT_OUTPUT_COLOR_TRANSFORM.contrast, OUTPUT_COLOR_TRANSFORM_LIMITS.contrast),
-    saturation: clampedNumber(source.saturation, DEFAULT_OUTPUT_COLOR_TRANSFORM.saturation, OUTPUT_COLOR_TRANSFORM_LIMITS.saturation),
-    exposure: clampedNumber(source.exposure, DEFAULT_OUTPUT_COLOR_TRANSFORM.exposure, OUTPUT_COLOR_TRANSFORM_LIMITS.exposure),
-    vignette: clampedNumber(source.vignette, DEFAULT_OUTPUT_COLOR_TRANSFORM.vignette, OUTPUT_COLOR_TRANSFORM_LIMITS.vignette),
-    hueShift: clampedNumber(source.hueShift, DEFAULT_OUTPUT_COLOR_TRANSFORM.hueShift, OUTPUT_COLOR_TRANSFORM_LIMITS.hueShift),
-    distortion: clampedNumber(source.distortion, DEFAULT_OUTPUT_COLOR_TRANSFORM.distortion, OUTPUT_COLOR_TRANSFORM_LIMITS.distortion)
+    contrast: clampedNumber(source.contrast, defaults.contrast, OUTPUT_COLOR_TRANSFORM_LIMITS.contrast),
+    saturation: clampedNumber(source.saturation, defaults.saturation, OUTPUT_COLOR_TRANSFORM_LIMITS.saturation),
+    exposure: clampedNumber(source.exposure, defaults.exposure, OUTPUT_COLOR_TRANSFORM_LIMITS.exposure),
+    vignette: clampedNumber(source.vignette, defaults.vignette, OUTPUT_COLOR_TRANSFORM_LIMITS.vignette),
+    hueShift: clampedNumber(source.hueShift, defaults.hueShift, OUTPUT_COLOR_TRANSFORM_LIMITS.hueShift),
+    distortion: clampedNumber(source.distortion, defaults.distortion, OUTPUT_COLOR_TRANSFORM_LIMITS.distortion)
   };
 }
 
@@ -1858,7 +1862,7 @@ export class ArtworkScene {
       pmrem.dispose();
     }
     this.scene.environment = this.neutralEnvironmentRenderTarget.texture;
-    this.scene.environmentIntensity = number(lighting.environmentIntensity, 1);
+    this.scene.environmentIntensity = number(lighting.environmentIntensity, NEUTRAL_WEBGPU_LIGHTING.environmentIntensity);
     return { kind: 'room-pmrem', enabled: true, intensity: this.scene.environmentIntensity };
   }
 
@@ -1887,7 +1891,7 @@ export class ArtworkScene {
     const geometry = new THREE.SphereGeometry(radius, 48, 24);
     const material = new THREE.MeshBasicMaterial({
       color: color(
-        environment.fieldColor || palette.field || bg,
+        environment.fieldColor || palette.field,
         neutral ? NEUTRAL_WEBGPU_ENVIRONMENT.fieldColor : bg
       ),
       side: THREE.BackSide,
@@ -1912,17 +1916,21 @@ export class ArtworkScene {
   applyLighting(world) {
     const lighting = asObject(world.lighting);
     const mode = cleanToken(lighting.mode);
+    const neutral = mode === NEUTRAL_WEBGPU_LIGHTING_MODE;
     const shadows = asObject(lighting.shadows);
-    const shadowsEnabled = mode === NEUTRAL_WEBGPU_LIGHTING_MODE && shadows.enabled === true;
-    const ambientIntensity = mode === NEUTRAL_WEBGPU_LIGHTING_MODE
-      ? number(lighting.ambientFallbackIntensity, 0.3)
+    const shadowsEnabled = neutral && (shadows.enabled ?? NEUTRAL_WEBGPU_LIGHTING.shadows.enabled) === true;
+    const ambientIntensity = neutral
+      ? number(lighting.ambientFallbackIntensity, NEUTRAL_WEBGPU_LIGHTING.ambientFallbackIntensity)
       : number(lighting.ambientIntensity, 0.62);
-    const ambient = new THREE.AmbientLight(color(lighting.ambientColor, '#8aa0c8'), ambientIntensity);
-    const key = new THREE.DirectionalLight(color(lighting.keyColor, '#ffffff'), number(lighting.keyIntensity, 1.05));
-    const rimIntensity = number(lighting.rimIntensity, 0.7);
-    const keyPosition = vector3(lighting.keyPosition, [4, 6, 8]);
-    const keyTarget = vector3(lighting.keyTarget, [0, 0, 0]);
-    const rimPosition = vector3(lighting.rimPosition, [-5, 2, -4]);
+    const ambient = new THREE.AmbientLight(color(lighting.ambientColor, neutral ? NEUTRAL_WEBGPU_LIGHTING.ambientColor : '#8aa0c8'), ambientIntensity);
+    const key = new THREE.DirectionalLight(
+      color(lighting.keyColor, neutral ? NEUTRAL_WEBGPU_LIGHTING.keyColor : '#ffffff'),
+      number(lighting.keyIntensity, neutral ? NEUTRAL_WEBGPU_LIGHTING.keyIntensity : 1.05)
+    );
+    const rimIntensity = number(lighting.rimIntensity, neutral ? NEUTRAL_WEBGPU_LIGHTING.rimIntensity : 0.7);
+    const keyPosition = vector3(lighting.keyPosition, neutral ? NEUTRAL_WEBGPU_LIGHTING.keyPosition : [4, 6, 8]);
+    const keyTarget = vector3(lighting.keyTarget, neutral ? NEUTRAL_WEBGPU_LIGHTING.keyTarget : [0, 0, 0]);
+    const rimPosition = vector3(lighting.rimPosition, neutral ? NEUTRAL_WEBGPU_LIGHTING.rimPosition : [-5, 2, -4]);
     key.position.set(keyPosition[0], keyPosition[1], keyPosition[2]);
     key.target.position.set(keyTarget[0], keyTarget[1], keyTarget[2]);
     key.castShadow = shadowsEnabled;
@@ -1944,11 +1952,16 @@ export class ArtworkScene {
     } else if (this.renderer.shadowMap) {
       this.renderer.shadowMap.enabled = false;
     }
-    if (mode !== NEUTRAL_WEBGPU_LIGHTING_MODE || !this.rendererSelection.useWebGPURenderer) this.group.add(ambient);
+    if (!neutral || !this.rendererSelection.useWebGPURenderer) this.group.add(ambient);
     this.group.add(key);
     this.group.add(key.target);
     if (rimIntensity > 0) {
-      const rim = new THREE.PointLight(color(lighting.rimColor, '#d9c7ff'), rimIntensity, 32, 2);
+      const rim = new THREE.PointLight(
+        color(lighting.rimColor, neutral ? NEUTRAL_WEBGPU_LIGHTING.rimColor : '#d9c7ff'),
+        rimIntensity,
+        32,
+        2
+      );
       rim.position.set(rimPosition[0], rimPosition[1], rimPosition[2]);
       this.group.add(rim);
     }
