@@ -105,10 +105,10 @@ const WEBGPU_MATERIAL_FACTORY_DESCRIPTORS = deepFreeze([
       textureTypes: [],
       colorSpace: 'srgb',
       transparency: 'optional-alpha',
-      proceduralInputs: ['palette', 'opacity', 'grainStrength', 'scrapeStrength', 'bandScale', 'distortionStrength', 'flowSpeed', 'motionIntensity']
+      proceduralInputs: ['palette', 'opacity', 'grainStrength', 'grainScale', 'scrapeStrength', 'bandScale', 'distortionStrength', 'flowSpeed', 'motionIntensity']
     },
     requiredInputs: ['palette'],
-    optionalInputs: ['opacity', 'grainStrength', 'scrapeStrength', 'bandScale', 'distortionStrength', 'flowSpeed', 'motionIntensity', 'phase'],
+    optionalInputs: ['opacity', 'grainStrength', 'grainScale', 'scrapeStrength', 'bandScale', 'distortionStrength', 'flowSpeed', 'motionIntensity', 'phase'],
     guidance: [
       'Use for shader-like scraped paint, paper grain, rubbed surfaces, and animated pigment bands on WebGPU.',
       'Runtime utilities own the TSL node material and deterministic frame-fact time controls.'
@@ -375,10 +375,10 @@ const WEBGPU_NATIVE_HELPER_DESCRIPTORS = deepFreeze([
     outputKind: 'material',
     runtimeSurface: 'three-mesh-basic-node-material-tsl',
     materialType: 'MeshBasicNodeMaterial',
-    budget: { maxColorStops: 8, maxTimeUniforms: 1, maxBandScale: 32, mobileSafe: true },
+    budget: { maxColorStops: 8, maxTimeUniforms: 1, maxBandScale: 32, maxGrainScale: 1024, mobileSafe: true },
     guidance: [
       'Use for animated scraped paint, paper tooth, grain, rubbed pigment, and bounded fragment-effect surfaces.',
-      'Generated modules pass palette/opacity/grain/scrape/band/distortion/flow controls to the utility instead of importing TSL.'
+      'Generated modules pass palette/opacity/grain strength/grain scale/scrape/band/distortion/flow controls to the utility instead of importing TSL.'
     ]
   }),
   helperDescriptor({

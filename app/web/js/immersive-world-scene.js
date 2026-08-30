@@ -718,12 +718,11 @@ export function applyImmersiveWorldTextureQuality(object, {
           texture.magFilter = three.LinearFilter;
           changed = true;
         }
-        if (texture.minFilter !== three.LinearFilter) {
-          texture.minFilter = three.LinearFilter;
-          changed = true;
-        }
-        if (texture.generateMipmaps) {
-          texture.generateMipmaps = false;
+        const minFilter = texture.generateMipmaps
+          ? three.LinearMipmapLinearFilter
+          : three.LinearFilter;
+        if (texture.minFilter !== minFilter) {
+          texture.minFilter = minFilter;
           changed = true;
         }
         if (texture.anisotropy !== anisotropy) {
