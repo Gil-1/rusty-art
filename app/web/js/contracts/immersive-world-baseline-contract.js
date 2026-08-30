@@ -9,8 +9,10 @@ export const NEUTRAL_WEBGPU_ENVIRONMENT = Object.freeze({
 
 export const NEUTRAL_WEBGPU_LIGHTING = Object.freeze({
   mode: NEUTRAL_WEBGPU_LIGHTING_MODE,
+  environmentMode: 'room-environment-pmrem',
   ambientColor: '#ffffff',
-  ambientIntensity: 0.3,
+  ambientIntensity: 0,
+  ambientFallbackIntensity: 0.3,
   environmentIntensity: 1,
   keyColor: '#ffffff',
   keyIntensity: 3,

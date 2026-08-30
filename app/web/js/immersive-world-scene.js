@@ -1913,7 +1913,10 @@ export class ArtworkScene {
     const mode = cleanToken(lighting.mode);
     const shadows = asObject(lighting.shadows);
     const shadowsEnabled = mode === NEUTRAL_WEBGPU_LIGHTING_MODE && shadows.enabled === true;
-    const ambient = new THREE.AmbientLight(color(lighting.ambientColor, '#8aa0c8'), number(lighting.ambientIntensity, 0.62));
+    const ambientIntensity = mode === NEUTRAL_WEBGPU_LIGHTING_MODE
+      ? number(lighting.ambientFallbackIntensity, 0.3)
+      : number(lighting.ambientIntensity, 0.62);
+    const ambient = new THREE.AmbientLight(color(lighting.ambientColor, '#8aa0c8'), ambientIntensity);
     const key = new THREE.DirectionalLight(color(lighting.keyColor, '#ffffff'), number(lighting.keyIntensity, 1.05));
     const rimIntensity = number(lighting.rimIntensity, 0.7);
     const keyPosition = vector3(lighting.keyPosition, [4, 6, 8]);

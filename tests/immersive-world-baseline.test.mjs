@@ -19,6 +19,9 @@ import {
 
 test('neutral WebGPU baseline contract exposes the shared lighting and output defaults', () => {
   assert.equal(NEUTRAL_WEBGPU_LIGHTING.mode, 'neutral-webgpu');
+  assert.equal(NEUTRAL_WEBGPU_LIGHTING.environmentMode, 'room-environment-pmrem');
+  assert.equal(NEUTRAL_WEBGPU_LIGHTING.ambientIntensity, 0);
+  assert.equal(NEUTRAL_WEBGPU_LIGHTING.ambientFallbackIntensity, 0.3);
   assert.deepEqual(NEUTRAL_WEBGPU_ENVIRONMENT, {
     color: '#73777d',
     fieldColor: '#73777d',
@@ -91,6 +94,25 @@ test('neutral lighting creates one shadow-casting directional key', () => {
   assert.equal(key.shadow.camera.left, -18);
   assert.equal(key.shadow.camera.far, 80);
   assert.equal(lighting.mode, 'neutral-webgpu');
+});
+
+test('neutral lighting keeps ambient fill only for renderer fallback', () => {
+  const group = new THREE.Group();
+  ArtworkScene.prototype.applyLighting.call({
+    group,
+    renderer: { shadowMap: {} },
+    rendererSelection: { useWebGPURenderer: false }
+  }, {
+    lighting: {
+      mode: 'neutral-webgpu',
+      ambientIntensity: 0,
+      ambientFallbackIntensity: 0.3,
+      rimIntensity: 0,
+      shadows: { enabled: true }
+    }
+  });
+
+  assert.equal(group.children.find((child) => child.isAmbientLight).intensity, 0.3);
 });
 
 test('neutral environment defaults to a visible background without fog', () => {
