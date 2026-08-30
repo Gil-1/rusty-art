@@ -1,8 +1,10 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import fs from 'node:fs';
 import * as THREE from 'three';
 
 import { applyImmersiveWorldTextureQuality } from '../app/web/js/immersive-world-scene.js';
+import { createImmersiveWorldScrapedPaintGrainMaterial } from '../app/web/js/immersive-world-webgpu-helpers.js';
 
 function objectWithMaterial(material) {
   return {
@@ -50,9 +52,9 @@ test('immersive world texture quality normalizes accepted advanced material maps
   assert.equal(rgbTexture.wrapS, THREE.RepeatWrapping);
   assert.equal(rgbTexture.wrapT, THREE.MirroredRepeatWrapping);
   assert.equal(rgbTexture.flipY, false);
-  assert.equal(rgbTexture.minFilter, THREE.LinearFilter);
+  assert.equal(rgbTexture.minFilter, THREE.LinearMipmapLinearFilter);
   assert.equal(rgbTexture.magFilter, THREE.LinearFilter);
-  assert.equal(rgbTexture.generateMipmaps, false);
+  assert.equal(rgbTexture.generateMipmaps, true);
   assert.equal(facts.inspectedTextures, 2);
   assert.equal(facts.normalizedTextures >= 1, true);
   assert.equal(facts.unsupportedTextures, 0);
@@ -125,9 +127,9 @@ test('immersive world texture quality accepts RGBA canvas-style unsigned-byte up
   assert.equal(texture.wrapS, THREE.RepeatWrapping);
   assert.equal(texture.wrapT, THREE.MirroredRepeatWrapping);
   assert.equal(texture.flipY, true);
-  assert.equal(texture.minFilter, THREE.LinearFilter);
+  assert.equal(texture.minFilter, THREE.LinearMipmapLinearFilter);
   assert.equal(texture.magFilter, THREE.LinearFilter);
-  assert.equal(texture.generateMipmaps, false);
+  assert.equal(texture.generateMipmaps, true);
   assert.deepEqual(
     facts.textureFormatFacts.find((entry) => entry.field === 'clearcoatMap'),
     {
@@ -147,4 +149,29 @@ test('immersive world texture quality accepts RGBA canvas-style unsigned-byte up
     facts.textureFormatFacts.some((entry) => entry.field === 'clearcoatMap' && entry.reason === 'rgba-unsigned-byte'),
     true
   );
+});
+
+test('immersive world texture quality preserves textures that deliberately disable mipmaps', () => {
+  const texture = new THREE.Texture({ width: 2, height: 2 });
+  texture.generateMipmaps = false;
+  texture.minFilter = THREE.NearestFilter;
+  const material = new THREE.MeshBasicMaterial({ map: texture });
+
+  applyImmersiveWorldTextureQuality(objectWithMaterial(material), { THREE });
+
+  assert.equal(texture.generateMipmaps, false);
+  assert.equal(texture.minFilter, THREE.LinearFilter);
+});
+
+test('scraped paint grain uses continuous footprint-filtered noise at an independent scale', () => {
+  const material = createImmersiveWorldScrapedPaintGrainMaterial(THREE, {
+    bandScale: 3.4,
+    grainScale: 384
+  });
+  const source = fs.readFileSync(new URL('../app/web/js/immersive-world-webgpu-helpers.js', import.meta.url), 'utf8');
+
+  assert.equal(material.userData.webgpuArtDirectionParameters.grainScale, 384);
+  assert.match(source, /mx_noise_float\(grainCoordinates\)/);
+  assert.match(source, /fwidth\(grainCoordinates\)/);
+  assert.doesNotMatch(source, /const grainCell = floor\(/);
 });

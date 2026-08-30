@@ -2,11 +2,10 @@ import { MeshBasicNodeMaterial, PointsNodeMaterial } from 'three/webgpu';
 import {
   clamp as tslClamp,
   cos,
-  dot,
-  floor,
-  fract,
+  fwidth,
   Fn,
   mix,
+  mx_noise_float,
   positionLocal,
   sin,
   smoothstep,
@@ -359,10 +358,15 @@ function createScrapedPaintGrainColorNode(controls) {
       .mul(0.5)
       .add(0.5);
     const scrape = smoothstep(0.55, 0.92, scrapeWave).mul(controls.uScrapeStrength);
-    const grainCell = floor(coordinates.mul(controls.uGrainScale).add(vec2(fieldTime.mul(0.17), fieldTime.mul(0.11))));
-    const grain = fract(sin(dot(grainCell, vec2(12.9898, 78.233))).mul(43758.5453123))
-      .sub(0.5)
-      .mul(controls.uGrainStrength);
+    const grainCoordinates = uv()
+      .mul(controls.uGrainScale)
+      .add(vec2(fieldTime.mul(0.17), fieldTime.mul(0.11)));
+    const grainFootprint = fwidth(grainCoordinates);
+    const grainVisibility = smoothstep(0.5, 1, grainFootprint.x.max(grainFootprint.y)).oneMinus();
+    const grain = mx_noise_float(grainCoordinates)
+      .mul(0.5)
+      .mul(controls.uGrainStrength)
+      .mul(grainVisibility);
     const paint = mix(controls.uColorA, controls.uColorB, band);
     return tslClamp(mix(paint, controls.uColorC, scrape).add(grain), 0, 1);
   })();
@@ -406,6 +410,7 @@ export function createImmersiveWorldScrapedPaintGrainMaterial(THREE, {
   depthTest = true,
   toneMapped = false,
   grainStrength = 0.28,
+  grainScale = 256,
   scrapeStrength = 0.36,
   bandScale = 2.4,
   distortionStrength = 0.12,
@@ -418,6 +423,7 @@ export function createImmersiveWorldScrapedPaintGrainMaterial(THREE, {
   if (!THREE) throw new Error('createImmersiveWorldScrapedPaintGrainMaterial requires THREE.');
   const safeOpacity = boundedNumber(opacity, 0.88, { min: 0, max: 1 });
   const safeGrainStrength = boundedNumber(grainStrength, 0.28, { min: 0, max: 1 });
+  const safeGrainScale = boundedNumber(grainScale, 256, { min: 8, max: 1024 });
   const safeScrapeStrength = boundedNumber(scrapeStrength, 0.36, { min: 0, max: 1 });
   const safeBandScale = boundedNumber(bandScale, 2.4, { min: 0.05, max: 32 });
   const safeDistortionStrength = boundedNumber(distortionStrength, 0.12, { min: 0, max: 1 });
@@ -435,7 +441,7 @@ export function createImmersiveWorldScrapedPaintGrainMaterial(THREE, {
     uMotionIntensity: uniform(safeMotionIntensity),
     uFlowSpeed: uniform(safeFlowSpeed),
     uBandScale: uniform(safeBandScale),
-    uGrainScale: uniform(Math.max(4, safeBandScale * 28)),
+    uGrainScale: uniform(safeGrainScale),
     uScrapeScale: uniform(Math.max(0.1, safeBandScale * 7)),
     uGrainStrength: uniform(safeGrainStrength),
     uScrapeStrength: uniform(safeScrapeStrength),
@@ -470,6 +476,7 @@ export function createImmersiveWorldScrapedPaintGrainMaterial(THREE, {
         palette: Array.isArray(palette) ? Math.min(palette.length, 8) : 3,
         opacity: safeOpacity,
         grainStrength: safeGrainStrength,
+        grainScale: safeGrainScale,
         scrapeStrength: safeScrapeStrength,
         bandScale: safeBandScale,
         distortionStrength: safeDistortionStrength,
@@ -481,6 +488,7 @@ export function createImmersiveWorldScrapedPaintGrainMaterial(THREE, {
       colorStops: Array.isArray(palette) ? Math.min(palette.length, 8) : 3,
       opacity: safeOpacity,
       grainStrength: safeGrainStrength,
+      grainScale: safeGrainScale,
       scrapeStrength: safeScrapeStrength,
       bandScale: safeBandScale,
       distortionStrength: safeDistortionStrength,
