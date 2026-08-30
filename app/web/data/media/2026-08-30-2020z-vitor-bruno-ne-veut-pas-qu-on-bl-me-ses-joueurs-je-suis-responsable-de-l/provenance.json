@@ -1,0 +1,76 @@
+{
+  "version": 2,
+  "kind": "rusty-art-public-media-assets",
+  "artworkId": "2026-08-30-2020z-vitor-bruno-ne-veut-pas-qu-on-bl-me-ses-joueurs-je-suis-responsable-de-l",
+  "source": {
+    "sha256": "d26611813915f10ebbd4016b84d201c6b88758d4a6a5d645b0939e655f4afa5c",
+    "role": "daily-preview-story-desktop"
+  },
+  "sources": {
+    "primary": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-desktop",
+      "sha256": "d26611813915f10ebbd4016b84d201c6b88758d4a6a5d645b0939e655f4afa5c"
+    },
+    "openGraph": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-open-graph",
+      "sha256": "c42106d8b006b40193cc15b0ae9557ba0e78dbbe0c9b803f337ab730d5df0507"
+    },
+    "instagram": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-instagram",
+      "sha256": "7938a53472c8f574309b0cadcbafd8c4371393a6054955f6234fbce7b2cf412d"
+    }
+  },
+  "targets": {
+    "thumb-320.jpg": {
+      "spec": {
+        "fileName": "thumb-320.jpg",
+        "width": 320,
+        "height": null,
+        "fit": "inside",
+        "withoutEnlargement": true,
+        "format": "jpeg",
+        "quality": 82
+      },
+      "publicPath": "./data/media/2026-08-30-2020z-vitor-bruno-ne-veut-pas-qu-on-bl-me-ses-joueurs-je-suis-responsable-de-l/thumb-320.jpg",
+      "source": {
+        "sha256": "d26611813915f10ebbd4016b84d201c6b88758d4a6a5d645b0939e655f4afa5c",
+        "role": "daily-preview-story-desktop"
+      }
+    },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-08-30-2020z-vitor-bruno-ne-veut-pas-qu-on-bl-me-ses-joueurs-je-suis-responsable-de-l/og-1200x630.jpg",
+      "source": {
+        "sha256": "c42106d8b006b40193cc15b0ae9557ba0e78dbbe0c9b803f337ab730d5df0507",
+        "role": "daily-preview-story-open-graph"
+      }
+    },
+    "instagram-1080x1350.jpg": {
+      "spec": {
+        "fileName": "instagram-1080x1350.jpg",
+        "width": 1080,
+        "height": 1350,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-08-30-2020z-vitor-bruno-ne-veut-pas-qu-on-bl-me-ses-joueurs-je-suis-responsable-de-l/instagram-1080x1350.jpg",
+      "source": {
+        "sha256": "7938a53472c8f574309b0cadcbafd8c4371393a6054955f6234fbce7b2cf412d",
+        "role": "daily-preview-story-instagram"
+      }
+    }
+  }
+}
