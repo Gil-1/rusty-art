@@ -1,0 +1,591 @@
+{
+  "id": "2026-08-30-0907z-anderlecht-middenvelder-nathan-saliba-voor-15-miljoen-euro-naar-villarre",
+  "date": "2026-08-30",
+  "title": "Anderlecht-middenvelder Nathan Saliba voor 15 miljoen euro naar Villarreal",
+  "generatedAt": "2026-08-30T09:11:47.451Z",
+  "news": {
+    "source": "bruzz",
+    "title": "Anderlecht-middenvelder Nathan Saliba voor 15 miljoen euro naar Villarreal",
+    "link": "https://www.bruzz.be/actua/sport/anderlecht-middenvelder-nathan-saliba-voor-15-miljoen-euro-naar-villarreal-2026-08-26",
+    "score": null
+  },
+  "inspiration": {
+    "artist": "Georges Mathieu",
+    "tags": [
+      "non-literal fracture transformation",
+      "Anderlecht",
+      "immersive-world"
+    ],
+    "links": {}
+  },
+  "seed": null,
+  "sceneStrategy": null,
+  "techStack": null,
+  "newsVisualMappings": [],
+  "qualityScore": {
+    "score": null,
+    "summary": null,
+    "heuristic": {
+      "score": null,
+      "breakdown": {}
+    },
+    "calibration": {
+      "sampleCount": 0,
+      "trustWeight": 0
+    },
+    "alignment": {
+      "totalAlign": null,
+      "components": {
+        "title": {
+          "score": null
+        },
+        "style": {
+          "score": null
+        },
+        "emotional": {
+          "score": null
+        }
+      }
+    }
+  },
+  "rationale": {
+    "intent": {
+      "signal": null,
+      "emotion": null,
+      "tension": null,
+      "balance": null,
+      "motion": null
+    },
+    "selection": {
+      "whyHeadline": null,
+      "priorityTerms": []
+    },
+    "qualitySummary": null
+  },
+  "runPolicy": null,
+  "artCreationMethod": "immersive-world-v1",
+  "world": {
+    "id": "immersive-world-1d589dbc55a5",
+    "method": "immersive-world-v1",
+    "title": "Anderlecht-middenvelder Nathan Saliba voor 15 miljoen euro naar Villarreal",
+    "environment": {
+      "kind": "technical-scene-support",
+      "color": "#220509",
+      "fieldColor": "#600711",
+      "fogDensity": 0.018,
+      "radius": 72,
+      "opacity": 0.92,
+      "palette": [
+        "red",
+        "warm-earth"
+      ],
+      "visibilityPolicy": "technical environment object; visible shell/skybox/background dominance requires visualConstructionDecision evidence",
+      "visualConstructionDecisionRef": "art-direction-packet.json#/creativeDirection/visualConstructionDecision"
+    },
+    "camera": {
+      "owner": "world-composition",
+      "fov": 66,
+      "near": 0.08,
+      "far": 220,
+      "position": [
+        0.22,
+        2.12,
+        14.2
+      ],
+      "target": [
+        0.55,
+        0.18,
+        -5.6
+      ],
+      "distanceSafety": {
+        "nearFarOwnedHere": true,
+        "minPartDistance": 1.7,
+        "clippingRisk": "low"
+      }
+    },
+    "lighting": {
+      "owner": "world-composition",
+      "ambientColor": "#7b2b24",
+      "ambientIntensity": 0.62,
+      "keyColor": "#ffd0a1",
+      "keyIntensity": 1.08,
+      "keyPosition": [
+        4,
+        6,
+        8
+      ],
+      "rimColor": "#c13a24",
+      "rimIntensity": 0.7,
+      "rimPosition": [
+        -5,
+        2,
+        -4
+      ],
+      "contrast": {
+        "mode": "integrated-part-readability"
+      }
+    },
+    "outputColorTransform": {
+      "owner": "world-composition",
+      "mode": "final-color-contrast-only",
+      "contrast": 1,
+      "saturation": 1.02,
+      "exposure": 1.01,
+      "vignette": 0.05,
+      "hueShift": 0,
+      "distortion": 0
+    },
+    "parts": [
+      {
+        "id": "world-environment",
+        "partId": "world-environment",
+        "role": "world-environment",
+        "moduleRef": {
+          "type": "immersive-world-generated-module",
+          "version": 1,
+          "moduleId": "compiled-v1-world-environment-e03dd66e9b51",
+          "partId": "world-environment",
+          "hash": "e03dd66e9b511db56f66373be10ad516080b209140ef666cf7d8c0a2c5a29ef7",
+          "integrity": "sha256-e03dd66e9b511db56f66373be10ad516080b209140ef666cf7d8c0a2c5a29ef7",
+          "exportName": "createImmersiveWorldPart",
+          "file": "data/immersive-world/generated-modules/e03dd66e9b511db56f66373be10ad516080b209140ef666cf7d8c0a2c5a29ef7.mjs",
+          "url": "./data/immersive-world/generated-modules/e03dd66e9b511db56f66373be10ad516080b209140ef666cf7d8c0a2c5a29ef7.mjs",
+          "rendererCompatibility": {
+            "version": 1,
+            "targetMode": "webgpu-project-scene",
+            "compatibilityStatus": "webgpu-compatible",
+            "webgpuCompatible": true,
+            "evidenceReasons": [
+              "webgpu-safe-material"
+            ],
+            "featureFacts": [
+              {
+                "kind": "standard-material",
+                "material": "MeshBasicMaterial",
+                "family": "standard-material-surface",
+                "reason": "webgpu-safe-material"
+              }
+            ],
+            "compatibleSurfaces": [
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "MeshBasicMaterial"
+              }
+            ]
+          }
+        },
+        "evidence": {
+          "declaredCompositionOwnership": {
+            "lane": "technical-support",
+            "owns": [
+              "technical support/compatibility part: renderer environment object, camera-safe world context, and optional atmosphere only when declared by visualConstructionDecision",
+              "room for the selected-news transformation and optional artist-style carrier to read"
+            ],
+            "avoid": [
+              "claiming visible construction not declared by visualConstructionDecision",
+              "stealing selected-news transformation or artist-style carrier ownership"
+            ]
+          },
+          "compositionOwnershipSource": "world-part-plan.json#/parts/0/compositionOwnership",
+          "goalEvidence": [
+            {
+              "goalIdentity": "assignment-goal:sha256:fab8dd75ed74d38bcd1f665df5be064d00cd2ae7de531662758593c985ff9ad9",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:391b8a786588c80801069d6fc7ea90d290501183537c76dbf9c9882e06b47e73"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:75075c984d587a4f2690c781822f1fec8ccaa1281da2c5d08cb4fbb0f3295477",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:391b8a786588c80801069d6fc7ea90d290501183537c76dbf9c9882e06b47e73"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:a87550b3d023412e2d48f40bc471e7039a4634de53db78bc52414391190bd748",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:391b8a786588c80801069d6fc7ea90d290501183537c76dbf9c9882e06b47e73"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:4b980c210836eef74a20bf18473090e679c06b42038a4ae34d392aa0e3b473e6",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:391b8a786588c80801069d6fc7ea90d290501183537c76dbf9c9882e06b47e73"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:6c762587a3e52e86a8e93f0d07f2e994e2dfe7fe763ccba18ed1a0d4c5ba2749",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:391b8a786588c80801069d6fc7ea90d290501183537c76dbf9c9882e06b47e73"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:d15c179226bc8c62c715d699c839e5b84cb374aa1654036e020bddeda04b76f6",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:391b8a786588c80801069d6fc7ea90d290501183537c76dbf9c9882e06b47e73"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:9276f5f5db030ccf8a37eac0880d92268facb5e03701ac9cbc4d7ac48f97e5e9",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:391b8a786588c80801069d6fc7ea90d290501183537c76dbf9c9882e06b47e73"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:5dc948560147ec669d80ed910dad5b09272dedd74f382adc21c67144c1f5cce4",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:391b8a786588c80801069d6fc7ea90d290501183537c76dbf9c9882e06b47e73"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:d2b873e46d5563b3177f64b871d43754e6d6bab7bc7058ba1a1ecedad9b59592",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:391b8a786588c80801069d6fc7ea90d290501183537c76dbf9c9882e06b47e73"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:803df2d62f19463dae4b8ec537ea71f919e56c2bb9553e1e10b6b86579ca6cef",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:391b8a786588c80801069d6fc7ea90d290501183537c76dbf9c9882e06b47e73"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:e6e7a90a62c3a9fd664f56b996a8ac655ae3c481bd64e3c808ef5173d261da28",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:391b8a786588c80801069d6fc7ea90d290501183537c76dbf9c9882e06b47e73"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:d94d413decc432be1ed8544a917c433b1efd829f213ae718093d50aebfa5f479",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:391b8a786588c80801069d6fc7ea90d290501183537c76dbf9c9882e06b47e73"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:2f69e28ab0fa82dcfb88328e2a8bbeb31c0c5c04befcfee7aa326e6f27585d31",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:391b8a786588c80801069d6fc7ea90d290501183537c76dbf9c9882e06b47e73"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:b81a358e4986f55be68088a7ba5164314800e1236453e8759b3c03a31be148a1",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:391b8a786588c80801069d6fc7ea90d290501183537c76dbf9c9882e06b47e73"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:9bed3799c4a6a92da94f98925106f77ba603bc0d4ce86e966db778697c695fb1",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:391b8a786588c80801069d6fc7ea90d290501183537c76dbf9c9882e06b47e73"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:5b6cabb476179a2cf45f65c25a7a5d31dd3f7f8fe9853d64df3bfe892d9913a1",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:391b8a786588c80801069d6fc7ea90d290501183537c76dbf9c9882e06b47e73"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:4639e69ddba73425378785189cac6fde3ddd95d5e03716813ba334a2233b7c10",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:391b8a786588c80801069d6fc7ea90d290501183537c76dbf9c9882e06b47e73"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:66a4e019459078a482cc0d94e57d0825da3a36db0d8416db0a986f40064f4d2e",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:391b8a786588c80801069d6fc7ea90d290501183537c76dbf9c9882e06b47e73"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:09f9fda8317da52f325460088604bd02b8666ed17aa4b1c8e75ef4da0a9cbe8a",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:391b8a786588c80801069d6fc7ea90d290501183537c76dbf9c9882e06b47e73"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:360a82b1adf2cf0d0967679360e0bd827f6c505a1c0206212c35735cb4c4d435",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:391b8a786588c80801069d6fc7ea90d290501183537c76dbf9c9882e06b47e73"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:e0bc5736197718219615db9354b4458386150c63e22db1c8f389d042cf7425a7",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:391b8a786588c80801069d6fc7ea90d290501183537c76dbf9c9882e06b47e73"
+              ]
+            }
+          ],
+          "intent": "Provide technical scene support and camera-safe context; visible environment construction requires cited evidence.",
+          "visibleAbsence": {
+            "intentional": true,
+            "rationale": "The accepted plan explicitly assigns visible absence to this technical-support part."
+          },
+          "rendererCompatibility": {
+            "targetMode": "webgpu-project-scene",
+            "status": "webgpu-compatible",
+            "evidenceReason": "webgpu-safe-material",
+            "compatibleSurface": "MeshBasicMaterial"
+          },
+          "workshopAcceptance": [
+            "[object Object]"
+          ],
+          "acceptedPartValidation": {
+            "version": 1,
+            "source": "compiled-v1-part-workshop",
+            "passed": true,
+            "previewScope": "isolated-part",
+            "preview": {
+              "required": false
+            },
+            "finalDraft": {
+              "file": "source/world-environment.module.mjs",
+              "sha256": "sha256:3dfd0d2bfa15712f48e2e05bf5fe42575e1a078d1e22645ff00ef9bc1ddb6718",
+              "bytes": 5038
+            },
+            "finalPreview": {
+              "reference": "part-workshop-evidence:screenshot:sha256:391b8a786588c80801069d6fc7ea90d290501183537c76dbf9c9882e06b47e73",
+              "sha256": "sha256:391b8a786588c80801069d6fc7ea90d290501183537c76dbf9c9882e06b47e73",
+              "attemptIdentity": "part-workshop-attempt:sha256:97b1e5f831362084a3e38924b978fd692ba8e88d63252b3537c6376d2a040dce",
+              "sourceHash": "sha256:95ef55528a8eedfbe7f9c077a7334e7c446470c0af8868fc3f88241a2f9e4302",
+              "packageIdentity": "part-package:sha256:958bd3d14ba36cffaeea911e13db0a36f0c1fe155e5f9b88e76ac372a38ea446",
+              "status": "succeeded"
+            },
+            "verificationExpectation": {
+              "version": 1,
+              "source": "world-part-plan-assignment",
+              "partId": "world-environment",
+              "positiveContribution": {
+                "role": "world-environment",
+                "intent": "Provide technical scene support and camera-safe context; visible environment construction requires cited evidence.",
+                "visualTarget": "technical world-environment support; visible construction only if visualConstructionDecision declares it",
+                "relationshipToWhole": "Provides technical world support while creative parts own visible construction.",
+                "owns": [
+                  "technical support/compatibility part: renderer environment object, camera-safe world context, and optional atmosphere only when declared by visualConstructionDecision",
+                  "room for the selected-news transformation and optional artist-style carrier to read"
+                ]
+              },
+              "ownershipBoundary": {
+                "lane": "technical-support",
+                "owns": [
+                  "technical support/compatibility part: renderer environment object, camera-safe world context, and optional atmosphere only when declared by visualConstructionDecision",
+                  "room for the selected-news transformation and optional artist-style carrier to read"
+                ],
+                "avoid": [
+                  "claiming visible construction not declared by visualConstructionDecision",
+                  "stealing selected-news transformation or artist-style carrier ownership"
+                ]
+              },
+              "technicalEvidence": {
+                "required": [
+                  "generated-module-package",
+                  "createImmersiveWorldPart-export",
+                  "packaged-browser-capture",
+                  "render-health-telemetry"
+                ],
+                "rendererTargetMode": "webgpu-project-scene",
+                "rendererCompatibilityRequired": true,
+                "webgpuEvidenceRequired": true
+              },
+              "outputPresence": {
+                "policy": "quiet-or-absent-output-allowed",
+                "visibleOutputRequired": false,
+                "quietOrAbsentOutputAllowed": true
+              },
+              "literalMotifProhibitions": [
+                "claiming visible construction not declared by visualConstructionDecision",
+                "stealing selected-news transformation or artist-style carrier ownership"
+              ],
+              "deterministicImageChecks": {
+                "blankCapture": false,
+                "foregroundOccupancy": false,
+                "focalAnchor": false,
+                "mobileCentralSignal": false,
+                "environmentBackgroundVisibility": false
+              },
+              "authority": {
+                "deterministicInspectableEvidenceOnly": true,
+                "aestheticFidelityClaimed": false,
+                "visualObservationGating": false
+              }
+            }
+          },
+          "plannedPart": {
+            "source": "world-part-plan.json#/parts/0",
+            "partId": "world-environment",
+            "role": "world-environment",
+            "intent": "Provide technical scene support and camera-safe context; visible environment construction requires cited evidence.",
+            "messagePurpose": "Provide technical scene support and camera-safe context; visible environment construction requires cited evidence.",
+            "visualTarget": "technical world-environment support; visible construction only if visualConstructionDecision declares it",
+            "relationshipToWhole": "Provides technical world support while creative parts own visible construction.",
+            "visibleAbsence": {
+              "intentional": true,
+              "facts": [
+                "Visible absence is intentionally part of this part."
+              ],
+              "rationale": "The plan explicitly assigns visible absence to this part."
+            }
+          },
+          "compositionAdaptations": [
+            "Preserved the accepted moduleRef, role, technical-support ownership, empty assetRefs, origin root, and scale. Set the authored surround radius to 72 and aligned fallback environment and lighting colors with the warm-earth red palette."
+          ],
+          "compositionBeforeHash": "7e0a006461a027ae",
+          "compositionAfterHash": "ab0adfaf0d68335f"
+        },
+        "intent": "Provide technical scene support and camera-safe context; visible environment construction requires cited evidence.",
+        "messagePurpose": "Provide technical scene support and camera-safe context; visible environment construction requires cited evidence.",
+        "visualTarget": "technical world-environment support; visible construction only if visualConstructionDecision declares it",
+        "relationshipToWhole": "Provides technical world support while creative parts own visible construction.",
+        "visibleAbsence": {
+          "intentional": true,
+          "facts": [
+            "Visible absence is intentionally part of this part."
+          ],
+          "rationale": "The plan explicitly assigns visible absence to this part."
+        },
+        "params": {
+          "band": "technical-support",
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "scale": 1,
+          "renderOrder": 0,
+          "visibilityPriority": "technical-support"
+        },
+        "paramSemantics": {
+          "band": "visual placement/readability band for full-world params; distinct from declared compositionOwnership.lane"
+        },
+        "compositionOwnership": {
+          "lane": "technical-support",
+          "owns": [
+            "technical support/compatibility part: renderer environment object, camera-safe world context, and optional atmosphere only when declared by visualConstructionDecision",
+            "room for the selected-news transformation and optional artist-style carrier to read"
+          ],
+          "avoid": [
+            "claiming visible construction not declared by visualConstructionDecision",
+            "stealing selected-news transformation or artist-style carrier ownership"
+          ]
+        }
+      }
+    ],
+    "acceptedPartsRef": "context.acceptedParts",
+    "generatedModules": [
+      {
+        "type": "immersive-world-generated-module",
+        "version": 1,
+        "moduleId": "compiled-v1-world-environment-e03dd66e9b51",
+        "partId": "world-environment",
+        "hash": "e03dd66e9b511db56f66373be10ad516080b209140ef666cf7d8c0a2c5a29ef7",
+        "integrity": "sha256-e03dd66e9b511db56f66373be10ad516080b209140ef666cf7d8c0a2c5a29ef7",
+        "exportName": "createImmersiveWorldPart",
+        "file": "data/immersive-world/generated-modules/e03dd66e9b511db56f66373be10ad516080b209140ef666cf7d8c0a2c5a29ef7.mjs",
+        "url": "./data/immersive-world/generated-modules/e03dd66e9b511db56f66373be10ad516080b209140ef666cf7d8c0a2c5a29ef7.mjs",
+        "rendererCompatibility": {
+          "version": 1,
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material"
+          ],
+          "featureFacts": [
+            {
+              "kind": "standard-material",
+              "material": "MeshBasicMaterial",
+              "family": "standard-material-surface",
+              "reason": "webgpu-safe-material"
+            }
+          ],
+          "compatibleSurfaces": [
+            {
+              "reason": "webgpu-safe-material",
+              "materialType": "MeshBasicMaterial"
+            }
+          ]
+        }
+      }
+    ],
+    "rendererAuthoring": {
+      "version": 1,
+      "targetMode": "webgpu-project-scene",
+      "requestedTarget": "webgpu-project-scene",
+      "effectiveTarget": "webgpu-project-scene",
+      "webgpuTargeted": true,
+      "legacyWebglTargeted": false,
+      "unspecified": false,
+      "compatibilityGateRequired": true
+    },
+    "rendererCompatibility": {
+      "version": 1,
+      "targetMode": "webgpu-project-scene",
+      "webgpuTargeted": true,
+      "legacyWebglTargeted": false,
+      "compatibilityGateRequired": true,
+      "compatibilityStatus": "webgpu-compatible",
+      "webgpuCompatible": true,
+      "evidenceReasons": [
+        "webgpu-safe-material"
+      ],
+      "featureFacts": [
+        {
+          "kind": "standard-material",
+          "family": "standard-material-surface",
+          "material": "MeshBasicMaterial",
+          "reason": "webgpu-safe-material"
+        }
+      ],
+      "moduleCount": 1,
+      "compatibleModuleCount": 1,
+      "incompatibleModuleCount": 0,
+      "compositionCompatibilityDeclared": false,
+      "modules": [
+        {
+          "partId": "world-environment",
+          "role": "world-environment",
+          "moduleId": "compiled-v1-world-environment-e03dd66e9b51",
+          "hash": "e03dd66e9b511db56f66373be10ad516080b209140ef666cf7d8c0a2c5a29ef7",
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material"
+          ],
+          "featureFacts": [
+            {
+              "kind": "standard-material",
+              "family": "standard-material-surface",
+              "material": "MeshBasicMaterial",
+              "reason": "webgpu-safe-material"
+            }
+          ],
+          "compatibleSurfaceCount": 1,
+          "forbiddenSurfaceCount": 0,
+          "sourceStage": "part-workshop"
+        }
+      ]
+    },
+    "renderFacts": {
+      "environmentPresent": true,
+      "cameraOwnedByComposition": true,
+      "lightingOwnedByComposition": true,
+      "nearFarClippingOwned": true,
+      "acceptedPartCount": 1,
+      "generatedModuleCount": 1,
+      "generatedAssetCount": 0,
+      "rendererAuthoringTarget": "webgpu-project-scene",
+      "rendererCompatibilityStatus": "webgpu-compatible",
+      "webgpuRendererGateRequired": true,
+      "webgpuRendererCompatible": true,
+      "desktopPreviewRecorded": true,
+      "mobilePreviewRecorded": true,
+      "surroundPreviewRecorded": true
+    }
+  },
+  "image": {
+    "thumbnailJpeg": "./data/media/2026-08-30-0907z-anderlecht-middenvelder-nathan-saliba-voor-15-miljoen-euro-naar-villarre/thumb-320.jpg",
+    "openGraphJpeg": "./data/media/2026-08-30-0907z-anderlecht-middenvelder-nathan-saliba-voor-15-miljoen-euro-naar-villarre/og-1200x630.jpg",
+    "instagramJpeg": "./data/media/2026-08-30-0907z-anderlecht-middenvelder-nathan-saliba-voor-15-miljoen-euro-naar-villarre/instagram-1080x1350.jpg",
+    "altText": "Anderlecht-middenvelder Nathan Saliba voor 15 miljoen euro naar Villarreal by Georges Mathieu."
+  }
+}

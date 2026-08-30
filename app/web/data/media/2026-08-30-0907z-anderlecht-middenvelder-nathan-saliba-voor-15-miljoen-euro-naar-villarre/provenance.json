@@ -1,0 +1,76 @@
+{
+  "version": 2,
+  "kind": "rusty-art-public-media-assets",
+  "artworkId": "2026-08-30-0907z-anderlecht-middenvelder-nathan-saliba-voor-15-miljoen-euro-naar-villarre",
+  "source": {
+    "sha256": "d47f2089f03030c1f3a5c30d2f16040419177bcbaab5e2e3b0e248d3a6a6dd7a",
+    "role": "daily-preview-story-desktop"
+  },
+  "sources": {
+    "primary": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-desktop",
+      "sha256": "d47f2089f03030c1f3a5c30d2f16040419177bcbaab5e2e3b0e248d3a6a6dd7a"
+    },
+    "openGraph": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-open-graph",
+      "sha256": "7db10d6372d1b316bbd132dc933d65ad2383ba95f66e59b9e646acaefea3dbd9"
+    },
+    "instagram": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-instagram",
+      "sha256": "5df624e41568f73912d116fbb2a49442647b31042a0edb5e48aab0e4b9407170"
+    }
+  },
+  "targets": {
+    "thumb-320.jpg": {
+      "spec": {
+        "fileName": "thumb-320.jpg",
+        "width": 320,
+        "height": null,
+        "fit": "inside",
+        "withoutEnlargement": true,
+        "format": "jpeg",
+        "quality": 82
+      },
+      "publicPath": "./data/media/2026-08-30-0907z-anderlecht-middenvelder-nathan-saliba-voor-15-miljoen-euro-naar-villarre/thumb-320.jpg",
+      "source": {
+        "sha256": "d47f2089f03030c1f3a5c30d2f16040419177bcbaab5e2e3b0e248d3a6a6dd7a",
+        "role": "daily-preview-story-desktop"
+      }
+    },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-08-30-0907z-anderlecht-middenvelder-nathan-saliba-voor-15-miljoen-euro-naar-villarre/og-1200x630.jpg",
+      "source": {
+        "sha256": "7db10d6372d1b316bbd132dc933d65ad2383ba95f66e59b9e646acaefea3dbd9",
+        "role": "daily-preview-story-open-graph"
+      }
+    },
+    "instagram-1080x1350.jpg": {
+      "spec": {
+        "fileName": "instagram-1080x1350.jpg",
+        "width": 1080,
+        "height": 1350,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-08-30-0907z-anderlecht-middenvelder-nathan-saliba-voor-15-miljoen-euro-naar-villarre/instagram-1080x1350.jpg",
+      "source": {
+        "sha256": "5df624e41568f73912d116fbb2a49442647b31042a0edb5e48aab0e4b9407170",
+        "role": "daily-preview-story-instagram"
+      }
+    }
+  }
+}
