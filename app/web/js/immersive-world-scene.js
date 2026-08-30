@@ -1,10 +1,19 @@
 import * as THREE from 'three';
+import { PMREMGenerator } from 'three/webgpu';
+import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 import { CAPTURE_PROFILES, normalizeCaptureProfile } from './contracts/capture-target-contract.js';
 import {
   normalizeWebGPUFeatureFact,
   normalizeWebGPUFeatureFacts
 } from './contracts/webgpu-feature-facts-contract.js';
 import { WEBGPU_ACCEPTED_MATERIAL_MAP_PROPERTIES } from './contracts/webgpu-material-map-contract.js';
+import {
+  NEUTRAL_WEBGPU_ENVIRONMENT,
+  NEUTRAL_WEBGPU_LIGHTING,
+  NEUTRAL_WEBGPU_LIGHTING_MODE,
+  NEUTRAL_WEBGPU_OUTPUT_COLOR_TRANSFORM,
+  NEUTRAL_WEBGPU_TONE_MAPPING
+} from './contracts/immersive-world-baseline-contract.js';
 import {
   applyViewportOrbitFrame,
   bindOrbitInput,
@@ -100,7 +109,6 @@ const LEGACY_WEBGL_FALLBACK_REASON = 'legacy-webgl-authoring-mode';
 const WEBGPU_EVIDENCE_MISSING_REASON = 'webgpu-evidence-missing';
 const GENERATED_MODULE_UNKNOWN_REASON = 'generated-module-unknown';
 const WEBGPU_DIRECT_OUTPUT_COLOR_TRANSFORM_MODE = 'webgpu-direct';
-const NEUTRAL_WEBGPU_LIGHTING_MODE = 'neutral-webgpu';
 
 function cleanToken(value) {
   return String(value || '').trim().toLowerCase().replace(/[_\s]+/g, '-');
@@ -411,15 +419,20 @@ export function resolveImmersiveWorldOutputColorTransform(world = {}) {
     || asObject(world.colorTransform, null)
     || asObject(world.colorGrade, null)
     || {};
+  const defaults = cleanToken(world.lighting?.mode) === NEUTRAL_WEBGPU_LIGHTING_MODE
+    ? NEUTRAL_WEBGPU_OUTPUT_COLOR_TRANSFORM
+    : DEFAULT_OUTPUT_COLOR_TRANSFORM;
   return {
     owner: source.owner || null,
-    toneMapping: cleanToken(source.toneMapping) === 'neutral' ? 'neutral' : DEFAULT_OUTPUT_COLOR_TRANSFORM.toneMapping,
-    contrast: clampedNumber(source.contrast, DEFAULT_OUTPUT_COLOR_TRANSFORM.contrast, OUTPUT_COLOR_TRANSFORM_LIMITS.contrast),
-    saturation: clampedNumber(source.saturation, DEFAULT_OUTPUT_COLOR_TRANSFORM.saturation, OUTPUT_COLOR_TRANSFORM_LIMITS.saturation),
-    exposure: clampedNumber(source.exposure, DEFAULT_OUTPUT_COLOR_TRANSFORM.exposure, OUTPUT_COLOR_TRANSFORM_LIMITS.exposure),
-    vignette: clampedNumber(source.vignette, DEFAULT_OUTPUT_COLOR_TRANSFORM.vignette, OUTPUT_COLOR_TRANSFORM_LIMITS.vignette),
-    hueShift: clampedNumber(source.hueShift, DEFAULT_OUTPUT_COLOR_TRANSFORM.hueShift, OUTPUT_COLOR_TRANSFORM_LIMITS.hueShift),
-    distortion: clampedNumber(source.distortion, DEFAULT_OUTPUT_COLOR_TRANSFORM.distortion, OUTPUT_COLOR_TRANSFORM_LIMITS.distortion)
+    toneMapping: cleanToken(source.toneMapping || defaults.toneMapping) === NEUTRAL_WEBGPU_TONE_MAPPING
+      ? NEUTRAL_WEBGPU_TONE_MAPPING
+      : DEFAULT_OUTPUT_COLOR_TRANSFORM.toneMapping,
+    contrast: clampedNumber(source.contrast, defaults.contrast, OUTPUT_COLOR_TRANSFORM_LIMITS.contrast),
+    saturation: clampedNumber(source.saturation, defaults.saturation, OUTPUT_COLOR_TRANSFORM_LIMITS.saturation),
+    exposure: clampedNumber(source.exposure, defaults.exposure, OUTPUT_COLOR_TRANSFORM_LIMITS.exposure),
+    vignette: clampedNumber(source.vignette, defaults.vignette, OUTPUT_COLOR_TRANSFORM_LIMITS.vignette),
+    hueShift: clampedNumber(source.hueShift, defaults.hueShift, OUTPUT_COLOR_TRANSFORM_LIMITS.hueShift),
+    distortion: clampedNumber(source.distortion, defaults.distortion, OUTPUT_COLOR_TRANSFORM_LIMITS.distortion)
   };
 }
 
@@ -432,8 +445,8 @@ export function isNeutralImmersiveWorldOutputColorTransform(transform = {}) {
     && Math.abs(number(transform.distortion, DEFAULT_OUTPUT_COLOR_TRANSFORM.distortion)) < 0.0001;
 }
 
-export function resolveImmersiveWorldWebGPURuntimeOptions({ captureMode = false } = {}) {
-  return captureMode ? { outputBufferType: THREE.UnsignedByteType } : {};
+export function resolveImmersiveWorldWebGPURuntimeOptions() {
+  return {};
 }
 
 export function createImmersiveWorldPostPass(renderTarget) {
@@ -446,7 +459,7 @@ export function createImmersiveWorldPostPass(renderTarget) {
 export function applyImmersiveWorldOutputColorTransform(scene, world = {}) {
   const transform = resolveImmersiveWorldOutputColorTransform(world);
   if (scene.renderer) {
-    scene.renderer.toneMapping = transform.toneMapping === 'neutral'
+    scene.renderer.toneMapping = transform.toneMapping === NEUTRAL_WEBGPU_TONE_MAPPING
       ? THREE.NeutralToneMapping
       : THREE.ACESFilmicToneMapping;
   }
@@ -456,8 +469,10 @@ export function applyImmersiveWorldOutputColorTransform(scene, world = {}) {
 }
 
 function shadowMapSize(value) {
-  const requested = Math.floor(number(value, 2048));
-  return [512, 1024, 2048, 4096].includes(requested) ? requested : 2048;
+  const requested = Math.floor(number(value, NEUTRAL_WEBGPU_LIGHTING.shadows.mapSize));
+  return [512, 1024, 2048, 4096].includes(requested)
+    ? requested
+    : NEUTRAL_WEBGPU_LIGHTING.shadows.mapSize;
 }
 
 function supportsNeutralShadowMaterial(material) {
@@ -1671,6 +1686,7 @@ export class ArtworkScene {
     this.rendererInitialized = false;
     this.rendererInitError = null;
     this.scene = new THREE.Scene();
+    this.neutralEnvironmentRenderTarget = null;
     this.camera = new THREE.PerspectiveCamera(65, 1, 0.1, 200);
     this.group = new THREE.Group();
     this.scene.add(this.group);
@@ -1830,12 +1846,37 @@ export class ArtworkScene {
     this.previousElapsedSeconds = null;
   }
 
+  applyEnvironmentLighting(world) {
+    const lighting = asObject(world.lighting);
+    const enabled = cleanToken(lighting.mode) === NEUTRAL_WEBGPU_LIGHTING_MODE
+      && this.rendererSelection.useWebGPURenderer;
+    if (!enabled) {
+      this.scene.environment = null;
+      return { kind: 'ambient-fallback', enabled: false };
+    }
+    if (!this.neutralEnvironmentRenderTarget) {
+      const room = new RoomEnvironment();
+      const pmrem = new PMREMGenerator(this.renderer);
+      this.neutralEnvironmentRenderTarget = pmrem.fromScene(room);
+      room.dispose();
+      pmrem.dispose();
+    }
+    this.scene.environment = this.neutralEnvironmentRenderTarget.texture;
+    this.scene.environmentIntensity = number(lighting.environmentIntensity, NEUTRAL_WEBGPU_LIGHTING.environmentIntensity);
+    return { kind: 'room-pmrem', enabled: true, intensity: this.scene.environmentIntensity };
+  }
+
   applyEnvironment(world) {
     const environment = asObject(world.environment);
     const palette = asObject(world.palette);
-    const bg = color(environment.color || palette.background || palette.bg, '#090b12');
+    const neutral = cleanToken(world.lighting?.mode) === NEUTRAL_WEBGPU_LIGHTING_MODE;
+    const bg = color(
+      environment.color || palette.background || palette.bg,
+      neutral ? NEUTRAL_WEBGPU_ENVIRONMENT.color : '#090b12'
+    );
+    const fogDensity = number(environment.fogDensity, neutral ? NEUTRAL_WEBGPU_ENVIRONMENT.fogDensity : 0.018);
     this.scene.background = new THREE.Color(bg);
-    this.scene.fog = new THREE.FogExp2(bg, number(environment.fogDensity, 0.018));
+    this.scene.fog = fogDensity > 0 ? new THREE.FogExp2(bg, fogDensity) : null;
 
     const radius = resolveImmersiveWorldSkyboxRadius(world);
     if (!shouldCreateImmersiveWorldBaseEnvironmentShell(world)) {
@@ -1849,7 +1890,10 @@ export class ArtworkScene {
 
     const geometry = new THREE.SphereGeometry(radius, 48, 24);
     const material = new THREE.MeshBasicMaterial({
-      color: color(environment.fieldColor || palette.field || bg, bg),
+      color: color(
+        environment.fieldColor || palette.field,
+        neutral ? NEUTRAL_WEBGPU_ENVIRONMENT.fieldColor : bg
+      ),
       side: THREE.BackSide,
       transparent: true,
       opacity: number(environment.opacity, 0.9),
@@ -1872,19 +1916,26 @@ export class ArtworkScene {
   applyLighting(world) {
     const lighting = asObject(world.lighting);
     const mode = cleanToken(lighting.mode);
+    const neutral = mode === NEUTRAL_WEBGPU_LIGHTING_MODE;
     const shadows = asObject(lighting.shadows);
-    const shadowsEnabled = mode === NEUTRAL_WEBGPU_LIGHTING_MODE && shadows.enabled === true;
-    const ambient = new THREE.AmbientLight(color(lighting.ambientColor, '#8aa0c8'), number(lighting.ambientIntensity, 0.62));
-    const key = new THREE.DirectionalLight(color(lighting.keyColor, '#ffffff'), number(lighting.keyIntensity, 1.05));
-    const rimIntensity = number(lighting.rimIntensity, 0.7);
-    const keyPosition = vector3(lighting.keyPosition, [4, 6, 8]);
-    const keyTarget = vector3(lighting.keyTarget, [0, 0, 0]);
-    const rimPosition = vector3(lighting.rimPosition, [-5, 2, -4]);
+    const shadowsEnabled = neutral && (shadows.enabled ?? NEUTRAL_WEBGPU_LIGHTING.shadows.enabled) === true;
+    const ambientIntensity = neutral
+      ? number(lighting.ambientFallbackIntensity, NEUTRAL_WEBGPU_LIGHTING.ambientFallbackIntensity)
+      : number(lighting.ambientIntensity, 0.62);
+    const ambient = new THREE.AmbientLight(color(lighting.ambientColor, neutral ? NEUTRAL_WEBGPU_LIGHTING.ambientColor : '#8aa0c8'), ambientIntensity);
+    const key = new THREE.DirectionalLight(
+      color(lighting.keyColor, neutral ? NEUTRAL_WEBGPU_LIGHTING.keyColor : '#ffffff'),
+      number(lighting.keyIntensity, neutral ? NEUTRAL_WEBGPU_LIGHTING.keyIntensity : 1.05)
+    );
+    const rimIntensity = number(lighting.rimIntensity, neutral ? NEUTRAL_WEBGPU_LIGHTING.rimIntensity : 0.7);
+    const keyPosition = vector3(lighting.keyPosition, neutral ? NEUTRAL_WEBGPU_LIGHTING.keyPosition : [4, 6, 8]);
+    const keyTarget = vector3(lighting.keyTarget, neutral ? NEUTRAL_WEBGPU_LIGHTING.keyTarget : [0, 0, 0]);
+    const rimPosition = vector3(lighting.rimPosition, neutral ? NEUTRAL_WEBGPU_LIGHTING.rimPosition : [-5, 2, -4]);
     key.position.set(keyPosition[0], keyPosition[1], keyPosition[2]);
     key.target.position.set(keyTarget[0], keyTarget[1], keyTarget[2]);
     key.castShadow = shadowsEnabled;
     if (shadowsEnabled) {
-      const bounds = Math.max(1, number(shadows.bounds, 18));
+      const bounds = Math.max(1, number(shadows.bounds, NEUTRAL_WEBGPU_LIGHTING.shadows.bounds));
       const mapSize = shadowMapSize(shadows.mapSize);
       this.renderer.shadowMap.enabled = true;
       this.renderer.shadowMap.type = THREE.PCFShadowMap;
@@ -1893,19 +1944,24 @@ export class ArtworkScene {
       key.shadow.camera.right = bounds;
       key.shadow.camera.top = bounds;
       key.shadow.camera.bottom = -bounds;
-      key.shadow.camera.near = Math.max(0.01, number(shadows.near, 0.5));
-      key.shadow.camera.far = Math.max(key.shadow.camera.near + 1, number(shadows.far, 80));
-      key.shadow.bias = number(shadows.bias, 0);
-      key.shadow.normalBias = number(shadows.normalBias, 0);
+      key.shadow.camera.near = Math.max(0.01, number(shadows.near, NEUTRAL_WEBGPU_LIGHTING.shadows.near));
+      key.shadow.camera.far = Math.max(key.shadow.camera.near + 1, number(shadows.far, NEUTRAL_WEBGPU_LIGHTING.shadows.far));
+      key.shadow.bias = number(shadows.bias, NEUTRAL_WEBGPU_LIGHTING.shadows.bias);
+      key.shadow.normalBias = number(shadows.normalBias, NEUTRAL_WEBGPU_LIGHTING.shadows.normalBias);
       key.shadow.camera.updateProjectionMatrix();
     } else if (this.renderer.shadowMap) {
       this.renderer.shadowMap.enabled = false;
     }
-    this.group.add(ambient);
+    if (!neutral || !this.rendererSelection.useWebGPURenderer) this.group.add(ambient);
     this.group.add(key);
     this.group.add(key.target);
     if (rimIntensity > 0) {
-      const rim = new THREE.PointLight(color(lighting.rimColor, '#d9c7ff'), rimIntensity, 32, 2);
+      const rim = new THREE.PointLight(
+        color(lighting.rimColor, neutral ? NEUTRAL_WEBGPU_LIGHTING.rimColor : '#d9c7ff'),
+        rimIntensity,
+        32,
+        2
+      );
       rim.position.set(rimPosition[0], rimPosition[1], rimPosition[2]);
       this.group.add(rim);
     }
@@ -2009,9 +2065,12 @@ export class ArtworkScene {
     this.applyConfigGeneration = generation;
     const isCurrentApply = () => generation === this.applyConfigGeneration;
 
+    await this.rendererReady;
+    if (!isCurrentApply()) return false;
     this.clearWorld();
     applyImmersiveWorldOutputColorTransform(this, world);
     const environment = this.applyEnvironment(world);
+    const environmentLighting = this.applyEnvironmentLighting(world);
     this.emitLoadProgress(0.48, 'Building environment');
     const lighting = this.applyLighting(world);
     const camera = this.applyCamera(world);
@@ -2054,6 +2113,7 @@ export class ArtworkScene {
       status: 'ok',
       worldId: world.id || config.id || null,
       environment,
+      environmentLighting,
       lighting,
       camera,
       cameraAlignment: camera.alignment,
@@ -2131,6 +2191,9 @@ export class ArtworkScene {
     this.cameraInputTeardown?.();
     this.cameraInputTeardown = null;
     this.clearWorld();
+    this.scene.environment = null;
+    this.neutralEnvironmentRenderTarget?.dispose?.();
+    this.neutralEnvironmentRenderTarget = null;
     this.tslPostPipeline?.dispose?.();
     if (this.postScene) disposeObjectTree(this.postScene);
     this.renderTarget?.dispose?.();
