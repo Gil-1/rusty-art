@@ -1,0 +1,986 @@
+{
+  "id": "2026-08-30-1250z-club-brugge-rejects-15-million-bid-for-romeo-vermant-arthur-theate-retur",
+  "date": "2026-08-30",
+  "title": "Club Brugge rejects €15 million bid for Romeo Vermant, Arthur Theate returns to Bologna",
+  "generatedAt": "2026-08-30T12:58:28.412Z",
+  "news": {
+    "source": "nieuwsblad",
+    "title": "Club Brugge rejects €15 million bid for Romeo Vermant, Arthur Theate returns to Bologna",
+    "link": "https://www.nieuwsblad.be/sport/voetbal/club-brugge-weigert-bod-van-15-miljoen-euro-op-romeo-vermant-arthur-theate-keert-terug-naar-bologna/154753038.html",
+    "score": null
+  },
+  "inspiration": {
+    "artist": "Ad Reinhardt",
+    "tags": [
+      "non-literal grid transformation",
+      "Anderlecht",
+      "immersive-world"
+    ],
+    "links": {}
+  },
+  "seed": null,
+  "sceneStrategy": null,
+  "techStack": null,
+  "newsVisualMappings": [],
+  "qualityScore": {
+    "score": null,
+    "summary": null,
+    "heuristic": {
+      "score": null,
+      "breakdown": {}
+    },
+    "calibration": {
+      "sampleCount": 0,
+      "trustWeight": 0
+    },
+    "alignment": {
+      "totalAlign": null,
+      "components": {
+        "title": {
+          "score": null
+        },
+        "style": {
+          "score": null
+        },
+        "emotional": {
+          "score": null
+        }
+      }
+    }
+  },
+  "rationale": {
+    "intent": {
+      "signal": null,
+      "emotion": null,
+      "tension": null,
+      "balance": null,
+      "motion": null
+    },
+    "selection": {
+      "whyHeadline": null,
+      "priorityTerms": []
+    },
+    "qualitySummary": null
+  },
+  "runPolicy": null,
+  "artCreationMethod": "immersive-world-v1",
+  "world": {
+    "id": "immersive-world-ae966492dd0c",
+    "method": "immersive-world-v1",
+    "title": "Club Brugge rejects €15 million bid for Romeo Vermant, Arthur Theate returns to Bologna",
+    "environment": {
+      "kind": "technical-scene-support",
+      "color": "#050504",
+      "fieldColor": "#120d09",
+      "fogDensity": 0.012,
+      "radius": 72,
+      "opacity": 0.96,
+      "palette": [
+        "#050504",
+        "#120d09",
+        "#2b1d12",
+        "#d8aa43"
+      ],
+      "visibilityPolicy": "technical environment object; visible shell preserves the accepted near-black warm-earth surrounding field",
+      "visualConstructionDecisionRef": "art-direction-packet.json#/creativeDirection/visualConstructionDecision"
+    },
+    "camera": {
+      "owner": "world-composition",
+      "fov": 66,
+      "near": 0.08,
+      "far": 220,
+      "position": [
+        0.22,
+        2.12,
+        14.2
+      ],
+      "target": [
+        0.55,
+        0.18,
+        -5.6
+      ],
+      "distanceSafety": {
+        "nearFarOwnedHere": true,
+        "minPartDistance": 1.7,
+        "clippingRisk": "low"
+      }
+    },
+    "lighting": {
+      "owner": "world-composition",
+      "ambientColor": "#9a8368",
+      "ambientIntensity": 0.72,
+      "keyColor": "#ffe0a8",
+      "keyIntensity": 1.3,
+      "keyPosition": [
+        -5,
+        7,
+        9
+      ],
+      "rimColor": "#8c6cc7",
+      "rimIntensity": 0.58,
+      "rimPosition": [
+        6,
+        3,
+        -3
+      ],
+      "contrast": {
+        "mode": "integrated-part-readability"
+      }
+    },
+    "outputColorTransform": {
+      "owner": "world-composition",
+      "mode": "final-color-contrast-only",
+      "contrast": 1.04,
+      "saturation": 1.04,
+      "exposure": 1.03,
+      "vignette": 0.03,
+      "hueShift": 0,
+      "distortion": 0
+    },
+    "parts": [
+      {
+        "id": "world-environment",
+        "partId": "world-environment",
+        "role": "world-environment",
+        "moduleRef": {
+          "type": "immersive-world-generated-module",
+          "version": 1,
+          "moduleId": "compiled-v1-world-environment-a6a9716de6ed",
+          "partId": "world-environment",
+          "hash": "a6a9716de6edad14ec6e4650076d922d30e61c2b5696092af3a1ff719bc57fc3",
+          "integrity": "sha256-a6a9716de6edad14ec6e4650076d922d30e61c2b5696092af3a1ff719bc57fc3",
+          "exportName": "createImmersiveWorldPart",
+          "file": "data/immersive-world/generated-modules/a6a9716de6edad14ec6e4650076d922d30e61c2b5696092af3a1ff719bc57fc3.mjs",
+          "url": "./data/immersive-world/generated-modules/a6a9716de6edad14ec6e4650076d922d30e61c2b5696092af3a1ff719bc57fc3.mjs",
+          "rendererCompatibility": {
+            "version": 1,
+            "targetMode": "webgpu-project-scene",
+            "compatibilityStatus": "webgpu-compatible",
+            "webgpuCompatible": true,
+            "evidenceReasons": [
+              "webgpu-native-helper-utility"
+            ],
+            "featureFacts": [
+              {
+                "kind": "webgpu-native-helper",
+                "id": "direction-space-skybox-shell",
+                "family": "sky-background-field",
+                "factory": "sky-background-field",
+                "material": "MeshBasicMaterial",
+                "surface": "direction-space-vertex-color-skybox-shell",
+                "reason": "webgpu-native-helper-utility"
+              }
+            ],
+            "compatibleSurfaces": [
+              {
+                "reason": "webgpu-native-helper-utility",
+                "api": "utilities.createDirectionSpaceSkyboxShell",
+                "helperId": "direction-space-skybox-shell",
+                "featureFamily": "sky-background-field",
+                "outputKind": "object-bundle",
+                "materialType": "MeshBasicMaterial",
+                "runtimeSurface": "direction-space-vertex-color-skybox-shell",
+                "factoryId": "sky-background-field",
+                "materialFactoryId": "sky-background-field",
+                "factoryCategory": "sky-background-field"
+              }
+            ]
+          }
+        },
+        "evidence": {
+          "declaredCompositionOwnership": {
+            "lane": "technical-support",
+            "owns": [
+              "technical support/compatibility part: renderer environment object, camera-safe world context, and optional atmosphere only when declared by visualConstructionDecision",
+              "room for the selected-news transformation and optional artist-style carrier to read"
+            ],
+            "avoid": [
+              "claiming visible construction not declared by visualConstructionDecision",
+              "stealing selected-news transformation or artist-style carrier ownership"
+            ]
+          },
+          "compositionOwnershipSource": "world-part-plan.json#/parts/0/compositionOwnership",
+          "goalEvidence": [
+            {
+              "goalIdentity": "assignment-goal:sha256:bab25ba1a13d9d287f9ea1505c591936b4fb795929e5afa4f75de14080214bb5",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:f3b23981481634791e3b8540311334850edfaeefc788233c73080ea456780b53"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:c5fc1aa1d38e357f4b37edc85cc47a3f00517697258ed010000546c4ffe26e08",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:f3b23981481634791e3b8540311334850edfaeefc788233c73080ea456780b53"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:55b001404b406824149aaf53c67f4d16a8506f620f71079140fb24435536e36f",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:f3b23981481634791e3b8540311334850edfaeefc788233c73080ea456780b53"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:57df250fc07e6c3e4bfd49696dc9869956d754814db81c7b6ff4d13bc17272eb",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:f3b23981481634791e3b8540311334850edfaeefc788233c73080ea456780b53"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:90110b1c8e97b6d0754a890d280ae7e8148227ed9aea2b0db04a77de26d26166",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:f3b23981481634791e3b8540311334850edfaeefc788233c73080ea456780b53"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:1ad136e9cd50c15be39a621d9b292ae12eb5671857e0ab0ec241672c3d98215f",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:f3b23981481634791e3b8540311334850edfaeefc788233c73080ea456780b53"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:cc4e6f602aa7b5a21eab6db45157a17869c291a1aa55553edbc5e8763a541ec7",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:f3b23981481634791e3b8540311334850edfaeefc788233c73080ea456780b53"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:5dc948560147ec669d80ed910dad5b09272dedd74f382adc21c67144c1f5cce4",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:f3b23981481634791e3b8540311334850edfaeefc788233c73080ea456780b53"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:f6e429ffcdc9822c796bac8e938def3b0d37edbb9e033c400cd650a5f525dd89",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:f3b23981481634791e3b8540311334850edfaeefc788233c73080ea456780b53"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:96dc2d7794c980b20e35b33080e97abfebbe60765f0e59f39d00b6cf07414284",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:f3b23981481634791e3b8540311334850edfaeefc788233c73080ea456780b53"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:67914741d2ec4a79c0a190e60dd0870897dd7b64a1580b69db26a23ea1fd5f50",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:f3b23981481634791e3b8540311334850edfaeefc788233c73080ea456780b53"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:da9f00042c7d51729d18b3c14123302e7dc0cb0116b4c791ea5aea652be52bb1",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:f3b23981481634791e3b8540311334850edfaeefc788233c73080ea456780b53"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:2f69e28ab0fa82dcfb88328e2a8bbeb31c0c5c04befcfee7aa326e6f27585d31",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:f3b23981481634791e3b8540311334850edfaeefc788233c73080ea456780b53"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:6b2e1e62895d48b1be0a855525f953e672afdff83c1299bb6cfda5bb0b9190a8",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:f3b23981481634791e3b8540311334850edfaeefc788233c73080ea456780b53"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:12fdd222d736d9e89561e2714927bd77d930ddc1f8de7f9f3cbccbcdace7543e",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:f3b23981481634791e3b8540311334850edfaeefc788233c73080ea456780b53"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:bb4cc0417d9c789a9eb75d1b3d5c834b1cc92aece6609379481c22e5ae95a381",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:f3b23981481634791e3b8540311334850edfaeefc788233c73080ea456780b53"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:a4cf570bf8d91d01eb8b3e21e7dee2330e1174482e211a24e12031772273588a",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:f3b23981481634791e3b8540311334850edfaeefc788233c73080ea456780b53"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:a737112ef5efb45b94c4273ee58cbf4877ebe88d4e11a2a959a6c7b558c13bf5",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:f3b23981481634791e3b8540311334850edfaeefc788233c73080ea456780b53"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:0848f634e0c75a6dcc95c23cc83132093674845737f76730383def264bc6c567",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:f3b23981481634791e3b8540311334850edfaeefc788233c73080ea456780b53"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:15ebc4a077e7d5efb2df9c67b5aaa0ac519881391b5246b1392cb7cc4327c51c",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:f3b23981481634791e3b8540311334850edfaeefc788233c73080ea456780b53"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:2790cd509469af17b23a325d621fd934d6325baa80da4c62ab55df066545f515",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:f3b23981481634791e3b8540311334850edfaeefc788233c73080ea456780b53"
+              ]
+            }
+          ],
+          "workshopAcceptance": [
+            "[object Object]"
+          ],
+          "acceptedPartValidation": {
+            "version": 1,
+            "source": "compiled-v1-part-workshop",
+            "passed": true,
+            "previewScope": "isolated-part",
+            "preview": {
+              "required": false
+            },
+            "finalDraft": {
+              "file": "source/world-environment.module.mjs",
+              "sha256": "sha256:51cfbfa0f0d0f784e51b973abe57db5ab849c6672c28a60ee42d67baa2432b95",
+              "bytes": 5438
+            },
+            "finalPreview": {
+              "reference": "part-workshop-evidence:screenshot:sha256:f3b23981481634791e3b8540311334850edfaeefc788233c73080ea456780b53",
+              "sha256": "sha256:f3b23981481634791e3b8540311334850edfaeefc788233c73080ea456780b53",
+              "attemptIdentity": "part-workshop-attempt:sha256:97b1e5f831362084a3e38924b978fd692ba8e88d63252b3537c6376d2a040dce",
+              "sourceHash": "sha256:b2ba400e0cfbb6f7925f63965e99369185d51a21199d34947a44cc8f37033fd3",
+              "packageIdentity": "part-package:sha256:1a9929767daf0480f0cc99bad720e31ebef452cd112ff18cd78f473dddbfeea3",
+              "status": "succeeded"
+            },
+            "verificationExpectation": {
+              "version": 1,
+              "source": "world-part-plan-assignment",
+              "partId": "world-environment",
+              "positiveContribution": {
+                "role": "world-environment",
+                "intent": "Provide technical scene support and camera-safe context; visible environment construction requires cited evidence.",
+                "visualTarget": "technical world-environment support; visible construction only if visualConstructionDecision declares it",
+                "relationshipToWhole": "Provides technical world support while creative parts own visible construction.",
+                "owns": [
+                  "technical support/compatibility part: renderer environment object, camera-safe world context, and optional atmosphere only when declared by visualConstructionDecision",
+                  "room for the selected-news transformation and optional artist-style carrier to read"
+                ]
+              },
+              "ownershipBoundary": {
+                "lane": "technical-support",
+                "owns": [
+                  "technical support/compatibility part: renderer environment object, camera-safe world context, and optional atmosphere only when declared by visualConstructionDecision",
+                  "room for the selected-news transformation and optional artist-style carrier to read"
+                ],
+                "avoid": [
+                  "claiming visible construction not declared by visualConstructionDecision",
+                  "stealing selected-news transformation or artist-style carrier ownership"
+                ]
+              },
+              "technicalEvidence": {
+                "required": [
+                  "generated-module-package",
+                  "createImmersiveWorldPart-export",
+                  "packaged-browser-capture",
+                  "render-health-telemetry"
+                ],
+                "rendererTargetMode": "webgpu-project-scene",
+                "rendererCompatibilityRequired": true,
+                "webgpuEvidenceRequired": true
+              },
+              "outputPresence": {
+                "policy": "quiet-or-absent-output-allowed",
+                "visibleOutputRequired": false,
+                "quietOrAbsentOutputAllowed": true
+              },
+              "literalMotifProhibitions": [
+                "claiming visible construction not declared by visualConstructionDecision",
+                "stealing selected-news transformation or artist-style carrier ownership"
+              ],
+              "deterministicImageChecks": {
+                "blankCapture": false,
+                "foregroundOccupancy": false,
+                "focalAnchor": false,
+                "mobileCentralSignal": false,
+                "environmentBackgroundVisibility": false
+              },
+              "authority": {
+                "deterministicInspectableEvidenceOnly": true,
+                "aestheticFidelityClaimed": false,
+                "visualObservationGating": false
+              }
+            }
+          },
+          "plannedPart": {
+            "source": "world-part-plan.json#/parts/0",
+            "partId": "world-environment",
+            "role": "world-environment",
+            "intent": "Provide technical scene support and camera-safe context; visible environment construction requires cited evidence.",
+            "messagePurpose": "Provide technical scene support and camera-safe context; visible environment construction requires cited evidence.",
+            "visualTarget": "technical world-environment support; visible construction only if visualConstructionDecision declares it",
+            "relationshipToWhole": "Provides technical world support while creative parts own visible construction.",
+            "visibleAbsence": {
+              "intentional": true,
+              "facts": [
+                "Visible absence is intentionally part of this part."
+              ],
+              "rationale": "The plan explicitly assigns visible absence to this part."
+            }
+          },
+          "compositionAdaptations": [
+            "Preserved the accepted camera-pinned near-black environment at the origin and bounded its warm-earth surrounding field to radius 72."
+          ],
+          "compositionBeforeHash": "05dc0764bed0ee80",
+          "compositionAfterHash": "05dc0764bed0ee80"
+        },
+        "intent": "Provide technical scene support and camera-safe context; visible environment construction requires cited evidence.",
+        "messagePurpose": "Provide technical scene support and camera-safe context; visible environment construction requires cited evidence.",
+        "visualTarget": "technical world-environment support; visible construction only if visualConstructionDecision declares it",
+        "relationshipToWhole": "Provides technical world support while creative parts own visible construction.",
+        "visibleAbsence": {
+          "intentional": true,
+          "facts": [
+            "Visible absence is intentionally part of this part."
+          ],
+          "rationale": "The plan explicitly assigns visible absence to this part."
+        },
+        "params": {
+          "band": "technical-support",
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "scale": 1,
+          "renderOrder": 0,
+          "visibilityPriority": "technical-support"
+        },
+        "paramSemantics": {
+          "band": "visual placement/readability band for full-world params; distinct from declared compositionOwnership.lane"
+        },
+        "compositionOwnership": {
+          "lane": "technical-support",
+          "owns": [
+            "technical support/compatibility part: renderer environment object, camera-safe world context, and optional atmosphere only when declared by visualConstructionDecision",
+            "room for the selected-news transformation and optional artist-style carrier to read"
+          ],
+          "avoid": [
+            "claiming visible construction not declared by visualConstructionDecision",
+            "stealing selected-news transformation or artist-style carrier ownership"
+          ]
+        }
+      },
+      {
+        "id": "withheld-transfer-court",
+        "partId": "withheld-transfer-court",
+        "role": "world-part-2",
+        "moduleRef": {
+          "type": "immersive-world-generated-module",
+          "version": 1,
+          "moduleId": "compiled-v1-withheld-transfer-court-a9496598c5cb",
+          "partId": "withheld-transfer-court",
+          "hash": "a9496598c5cbbbf2bcd6d5287223bf29a44d5976c25cfe10940e12b79e29f855",
+          "integrity": "sha256-a9496598c5cbbbf2bcd6d5287223bf29a44d5976c25cfe10940e12b79e29f855",
+          "exportName": "createImmersiveWorldPart",
+          "file": "data/immersive-world/generated-modules/a9496598c5cbbbf2bcd6d5287223bf29a44d5976c25cfe10940e12b79e29f855.mjs",
+          "url": "./data/immersive-world/generated-modules/a9496598c5cbbbf2bcd6d5287223bf29a44d5976c25cfe10940e12b79e29f855.mjs",
+          "rendererCompatibility": {
+            "version": 1,
+            "targetMode": "webgpu-project-scene",
+            "compatibilityStatus": "webgpu-compatible",
+            "webgpuCompatible": true,
+            "evidenceReasons": [
+              "webgpu-safe-material"
+            ],
+            "featureFacts": [
+              {
+                "kind": "standard-material",
+                "material": "MeshStandardMaterial",
+                "family": "standard-material-surface",
+                "reason": "webgpu-safe-material"
+              }
+            ],
+            "compatibleSurfaces": [
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "MeshStandardMaterial"
+              }
+            ]
+          }
+        },
+        "evidence": {
+          "declaredCompositionOwnership": {
+            "lane": "part-specific",
+            "owns": [
+              "the explicit world-part-2 purpose, visual target, and any assigned spatial behavior"
+            ],
+            "avoid": [
+              "adding construction outside this part purpose, visual target, declared ownership, and visualConstructionDecision"
+            ]
+          },
+          "compositionOwnershipSource": "world-part-plan.json#/parts/1/compositionOwnership",
+          "goalEvidence": [
+            {
+              "goalIdentity": "assignment-goal:sha256:bab25ba1a13d9d287f9ea1505c591936b4fb795929e5afa4f75de14080214bb5",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:057d56861acab0e13fdb242cef52dea3e4d4280f1cda1353d5722da02e55898c"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:c5fc1aa1d38e357f4b37edc85cc47a3f00517697258ed010000546c4ffe26e08",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:057d56861acab0e13fdb242cef52dea3e4d4280f1cda1353d5722da02e55898c"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:53b86189c260476acebefc832a6f2e1efe499188c531cadc9bc21432de0414a4",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:057d56861acab0e13fdb242cef52dea3e4d4280f1cda1353d5722da02e55898c"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:3b45a30ea3be9f9c7197ae5d0c91bc2329ebd32171e51371f7012785452001c7",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:057d56861acab0e13fdb242cef52dea3e4d4280f1cda1353d5722da02e55898c"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:92135540ca6322de20510af841e4fac6110e003aacb9d4bc139b48f5b0bdd600",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:057d56861acab0e13fdb242cef52dea3e4d4280f1cda1353d5722da02e55898c"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:4e4d75234f42028c2fc7b0a7583f84f16d64c721a85b329736603852619ad512",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:057d56861acab0e13fdb242cef52dea3e4d4280f1cda1353d5722da02e55898c"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:cf9b5117c37e51c7ac76c976155748e52bc143d9b262691e4870778edd4efb41",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:057d56861acab0e13fdb242cef52dea3e4d4280f1cda1353d5722da02e55898c"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:5dc948560147ec669d80ed910dad5b09272dedd74f382adc21c67144c1f5cce4",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:057d56861acab0e13fdb242cef52dea3e4d4280f1cda1353d5722da02e55898c"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:ea84336b55ef692c6c88938533e542880090bdbe7fc8540efb309e22f971da2a",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:057d56861acab0e13fdb242cef52dea3e4d4280f1cda1353d5722da02e55898c"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:6cabb351b89ea7e3bb9a9911f027591de636f34f2da2b29c78df21159996d70a",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:057d56861acab0e13fdb242cef52dea3e4d4280f1cda1353d5722da02e55898c"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:f90bd44bb5797b31b78d3c15c0699afb3af9218cf496704f24ea1b33fa2418f1",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:057d56861acab0e13fdb242cef52dea3e4d4280f1cda1353d5722da02e55898c"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:7ce28334b2fd0760b733416e768d9854f3e49779b982efcb5b6a6ac8954ca57b",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:057d56861acab0e13fdb242cef52dea3e4d4280f1cda1353d5722da02e55898c"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:b96ec20940a5a1f2f7e557ca9f2363cdd1fa13b4b69c30578e314f845c804bdc",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:057d56861acab0e13fdb242cef52dea3e4d4280f1cda1353d5722da02e55898c"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:998cc71ea655c6777d9186d03c6bf6c25f47755228c55a650c555abe21a07e53",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:057d56861acab0e13fdb242cef52dea3e4d4280f1cda1353d5722da02e55898c"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:12fdd222d736d9e89561e2714927bd77d930ddc1f8de7f9f3cbccbcdace7543e",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:057d56861acab0e13fdb242cef52dea3e4d4280f1cda1353d5722da02e55898c"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:bb4cc0417d9c789a9eb75d1b3d5c834b1cc92aece6609379481c22e5ae95a381",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:057d56861acab0e13fdb242cef52dea3e4d4280f1cda1353d5722da02e55898c"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:a4cf570bf8d91d01eb8b3e21e7dee2330e1174482e211a24e12031772273588a",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:057d56861acab0e13fdb242cef52dea3e4d4280f1cda1353d5722da02e55898c"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:a737112ef5efb45b94c4273ee58cbf4877ebe88d4e11a2a959a6c7b558c13bf5",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:057d56861acab0e13fdb242cef52dea3e4d4280f1cda1353d5722da02e55898c"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:0848f634e0c75a6dcc95c23cc83132093674845737f76730383def264bc6c567",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:057d56861acab0e13fdb242cef52dea3e4d4280f1cda1353d5722da02e55898c"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:15ebc4a077e7d5efb2df9c67b5aaa0ac519881391b5246b1392cb7cc4327c51c",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:057d56861acab0e13fdb242cef52dea3e4d4280f1cda1353d5722da02e55898c"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:2790cd509469af17b23a325d621fd934d6325baa80da4c62ab55df066545f515",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:057d56861acab0e13fdb242cef52dea3e4d4280f1cda1353d5722da02e55898c"
+              ]
+            }
+          ],
+          "workshopAcceptance": [
+            "[object Object]"
+          ],
+          "acceptedPartValidation": {
+            "version": 1,
+            "source": "compiled-v1-part-workshop",
+            "passed": true,
+            "previewScope": "isolated-part",
+            "preview": {
+              "required": false
+            },
+            "finalDraft": {
+              "file": "source/withheld-transfer-court.module.mjs",
+              "sha256": "sha256:93edc31aa3c8dad4f7882bc5600bfe6e4fac46691850eb8cf3d44cbd696084c5",
+              "bytes": 19529
+            },
+            "finalPreview": {
+              "reference": "part-workshop-evidence:screenshot:sha256:057d56861acab0e13fdb242cef52dea3e4d4280f1cda1353d5722da02e55898c",
+              "sha256": "sha256:057d56861acab0e13fdb242cef52dea3e4d4280f1cda1353d5722da02e55898c",
+              "attemptIdentity": "part-workshop-attempt:sha256:3582ed059fd07d30f7fd7b1a1f756a4858198c594447fd27cc36487dc8da4243",
+              "sourceHash": "sha256:5ac68be6351603baf9ad19089637612100415ef8f672832f34368e349efb4972",
+              "packageIdentity": "part-package:sha256:829377a848da75f3798568e3d90bb4876fb30eda051b4ec6ac7e2dd44fb58cd5",
+              "status": "succeeded"
+            },
+            "verificationExpectation": {
+              "version": 1,
+              "source": "world-part-plan-assignment",
+              "partId": "withheld-transfer-court",
+              "positiveContribution": {
+                "role": "world-part-2",
+                "intent": "Selected news meaning: Club Brugge rejects €15 million bid for Romeo Vermant, Arthur Theate returns to Bologna. News intensity is low, pace is measured, spread is concentrated; these are weighting facts only, and the visual metaphor comes from visualConstructionDecision. Use \"Anderlecht\" only as the trend cue inside that fuller event, not as a replacement for the event. Build one readable non-literal image structure.",
+                "visualTarget": "visible world-part-2 that carries non-literal grid transformation within visualConstructionDecision",
+                "relationshipToWhole": "Contributes its planned ownership lane to the whole immersive artwork.",
+                "owns": [
+                  "the explicit world-part-2 purpose, visual target, and any assigned spatial behavior"
+                ]
+              },
+              "ownershipBoundary": {
+                "lane": "part-specific",
+                "owns": [
+                  "the explicit world-part-2 purpose, visual target, and any assigned spatial behavior"
+                ],
+                "avoid": [
+                  "adding construction outside this part purpose, visual target, declared ownership, and visualConstructionDecision"
+                ]
+              },
+              "technicalEvidence": {
+                "required": [
+                  "generated-module-package",
+                  "createImmersiveWorldPart-export",
+                  "packaged-browser-capture",
+                  "render-health-telemetry"
+                ],
+                "rendererTargetMode": "webgpu-project-scene",
+                "rendererCompatibilityRequired": true,
+                "webgpuEvidenceRequired": true
+              },
+              "outputPresence": {
+                "policy": "visible-contribution-required",
+                "visibleOutputRequired": true,
+                "quietOrAbsentOutputAllowed": false
+              },
+              "literalMotifProhibitions": [
+                "adding construction outside this part purpose, visual target, declared ownership, and visualConstructionDecision"
+              ],
+              "deterministicImageChecks": {
+                "blankCapture": true,
+                "foregroundOccupancy": false,
+                "focalAnchor": false,
+                "mobileCentralSignal": false,
+                "environmentBackgroundVisibility": false
+              },
+              "authority": {
+                "deterministicInspectableEvidenceOnly": true,
+                "aestheticFidelityClaimed": false,
+                "visualObservationGating": false
+              }
+            }
+          },
+          "plannedPart": {
+            "source": "world-part-plan.json#/parts/1",
+            "partId": "withheld-transfer-court",
+            "role": "world-part-2",
+            "intent": "Selected news meaning: Club Brugge rejects €15 million bid for Romeo Vermant, Arthur Theate returns to Bologna. News intensity is low, pace is measured, spread is concentrated; these are weighting facts only, and the visual metaphor comes from visualConstructionDecision. Use \"Anderlecht\" only as the trend cue inside that fuller event, not as a replacement for the event. Build one readable non-literal image structure.",
+            "messagePurpose": "Selected news meaning: Club Brugge rejects €15 million bid for Romeo Vermant, Arthur Theate returns to Bologna. News intensity is low, pace is measured, spread is concentrated; these are weighting facts only, and the visual metaphor comes from visualConstructionDecision. Use \"Anderlecht\" only as the trend cue inside that fuller event, not as a replacement for the event. Build one readable non-literal image structure.",
+            "visualTarget": "visible world-part-2 that carries non-literal grid transformation within visualConstructionDecision",
+            "relationshipToWhole": "Contributes its planned ownership lane to the whole immersive artwork.",
+            "visibleAbsence": {
+              "intentional": false,
+              "facts": [
+                "This part must be visibly present."
+              ],
+              "rationale": "The plan requires visible contribution from this part."
+            }
+          },
+          "compositionAdaptations": [
+            "Preserved the accepted radial court as the sole primary-readability structure, with its gold withheld route and violet return route visible across desktop and mobile."
+          ],
+          "compositionBeforeHash": "487c7443b4f10b1b",
+          "compositionAfterHash": "487c7443b4f10b1b"
+        },
+        "intent": "Selected news meaning: Club Brugge rejects €15 million bid for Romeo Vermant, Arthur Theate returns to Bologna. News intensity is low, pace is measured, spread is concentrated; these are weighting facts only, and the visual metaphor comes from visualConstructionDecision. Use \"Anderlecht\" only as the trend cue inside that fuller event, not as a replacement for the event. Build one readable non-literal image structure.",
+        "messagePurpose": "Selected news meaning: Club Brugge rejects €15 million bid for Romeo Vermant, Arthur Theate returns to Bologna. News intensity is low, pace is measured, spread is concentrated; these are weighting facts only, and the visual metaphor comes from visualConstructionDecision. Use \"Anderlecht\" only as the trend cue inside that fuller event, not as a replacement for the event. Build one readable non-literal image structure.",
+        "visualTarget": "visible world-part-2 that carries non-literal grid transformation within visualConstructionDecision",
+        "relationshipToWhole": "Contributes its planned ownership lane to the whole immersive artwork.",
+        "visibleAbsence": {
+          "intentional": false,
+          "facts": [
+            "This part must be visibly present."
+          ],
+          "rationale": "The plan requires visible contribution from this part."
+        },
+        "params": {
+          "band": "primary-readability",
+          "position": [
+            0,
+            0.15,
+            -1.8
+          ],
+          "scale": 1.52,
+          "renderOrder": 3,
+          "visibilityPriority": "primary"
+        },
+        "paramSemantics": {
+          "band": "visual placement/readability band for full-world params; distinct from declared compositionOwnership.lane"
+        },
+        "compositionOwnership": {
+          "lane": "part-specific",
+          "owns": [
+            "the explicit world-part-2 purpose, visual target, and any assigned spatial behavior"
+          ],
+          "avoid": [
+            "adding construction outside this part purpose, visual target, declared ownership, and visualConstructionDecision"
+          ]
+        }
+      }
+    ],
+    "generatedModules": [
+      {
+        "type": "immersive-world-generated-module",
+        "version": 1,
+        "moduleId": "compiled-v1-world-environment-a6a9716de6ed",
+        "partId": "world-environment",
+        "hash": "a6a9716de6edad14ec6e4650076d922d30e61c2b5696092af3a1ff719bc57fc3",
+        "integrity": "sha256-a6a9716de6edad14ec6e4650076d922d30e61c2b5696092af3a1ff719bc57fc3",
+        "exportName": "createImmersiveWorldPart",
+        "file": "data/immersive-world/generated-modules/a6a9716de6edad14ec6e4650076d922d30e61c2b5696092af3a1ff719bc57fc3.mjs",
+        "url": "./data/immersive-world/generated-modules/a6a9716de6edad14ec6e4650076d922d30e61c2b5696092af3a1ff719bc57fc3.mjs",
+        "rendererCompatibility": {
+          "version": 1,
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-native-helper-utility"
+          ],
+          "featureFacts": [
+            {
+              "kind": "webgpu-native-helper",
+              "id": "direction-space-skybox-shell",
+              "family": "sky-background-field",
+              "factory": "sky-background-field",
+              "material": "MeshBasicMaterial",
+              "surface": "direction-space-vertex-color-skybox-shell",
+              "reason": "webgpu-native-helper-utility"
+            }
+          ],
+          "compatibleSurfaces": [
+            {
+              "reason": "webgpu-native-helper-utility",
+              "api": "utilities.createDirectionSpaceSkyboxShell",
+              "helperId": "direction-space-skybox-shell",
+              "featureFamily": "sky-background-field",
+              "outputKind": "object-bundle",
+              "materialType": "MeshBasicMaterial",
+              "runtimeSurface": "direction-space-vertex-color-skybox-shell",
+              "factoryId": "sky-background-field",
+              "materialFactoryId": "sky-background-field",
+              "factoryCategory": "sky-background-field"
+            }
+          ]
+        }
+      },
+      {
+        "type": "immersive-world-generated-module",
+        "version": 1,
+        "moduleId": "compiled-v1-withheld-transfer-court-a9496598c5cb",
+        "partId": "withheld-transfer-court",
+        "hash": "a9496598c5cbbbf2bcd6d5287223bf29a44d5976c25cfe10940e12b79e29f855",
+        "integrity": "sha256-a9496598c5cbbbf2bcd6d5287223bf29a44d5976c25cfe10940e12b79e29f855",
+        "exportName": "createImmersiveWorldPart",
+        "file": "data/immersive-world/generated-modules/a9496598c5cbbbf2bcd6d5287223bf29a44d5976c25cfe10940e12b79e29f855.mjs",
+        "url": "./data/immersive-world/generated-modules/a9496598c5cbbbf2bcd6d5287223bf29a44d5976c25cfe10940e12b79e29f855.mjs",
+        "rendererCompatibility": {
+          "version": 1,
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material"
+          ],
+          "featureFacts": [
+            {
+              "kind": "standard-material",
+              "material": "MeshStandardMaterial",
+              "family": "standard-material-surface",
+              "reason": "webgpu-safe-material"
+            }
+          ],
+          "compatibleSurfaces": [
+            {
+              "reason": "webgpu-safe-material",
+              "materialType": "MeshStandardMaterial"
+            }
+          ]
+        }
+      }
+    ],
+    "rendererAuthoring": {
+      "version": 1,
+      "targetMode": "webgpu-project-scene",
+      "requestedTarget": "webgpu-project-scene",
+      "effectiveTarget": "webgpu-project-scene",
+      "webgpuTargeted": true,
+      "legacyWebglTargeted": false,
+      "unspecified": false,
+      "compatibilityGateRequired": true
+    },
+    "rendererCompatibility": {
+      "version": 1,
+      "targetMode": "webgpu-project-scene",
+      "webgpuTargeted": true,
+      "legacyWebglTargeted": false,
+      "compatibilityGateRequired": true,
+      "compatibilityStatus": "webgpu-compatible",
+      "webgpuCompatible": true,
+      "evidenceReasons": [
+        "webgpu-native-helper-utility",
+        "webgpu-safe-material"
+      ],
+      "featureFacts": [
+        {
+          "kind": "webgpu-native-helper",
+          "id": "direction-space-skybox-shell",
+          "family": "sky-background-field",
+          "factory": "sky-background-field",
+          "material": "MeshBasicMaterial",
+          "surface": "direction-space-vertex-color-skybox-shell",
+          "reason": "webgpu-native-helper-utility"
+        },
+        {
+          "kind": "standard-material",
+          "family": "standard-material-surface",
+          "material": "MeshStandardMaterial",
+          "reason": "webgpu-safe-material"
+        }
+      ],
+      "moduleCount": 2,
+      "compatibleModuleCount": 2,
+      "incompatibleModuleCount": 0,
+      "compositionCompatibilityDeclared": false,
+      "modules": [
+        {
+          "partId": "world-environment",
+          "role": "world-environment",
+          "moduleId": "compiled-v1-world-environment-a6a9716de6ed",
+          "hash": "a6a9716de6edad14ec6e4650076d922d30e61c2b5696092af3a1ff719bc57fc3",
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-native-helper-utility"
+          ],
+          "featureFacts": [
+            {
+              "kind": "webgpu-native-helper",
+              "id": "direction-space-skybox-shell",
+              "family": "sky-background-field",
+              "factory": "sky-background-field",
+              "material": "MeshBasicMaterial",
+              "surface": "direction-space-vertex-color-skybox-shell",
+              "reason": "webgpu-native-helper-utility"
+            }
+          ],
+          "compatibleSurfaceCount": 1,
+          "forbiddenSurfaceCount": 0,
+          "sourceStage": "part-workshop"
+        },
+        {
+          "partId": "withheld-transfer-court",
+          "role": "world-part-2",
+          "moduleId": "compiled-v1-withheld-transfer-court-a9496598c5cb",
+          "hash": "a9496598c5cbbbf2bcd6d5287223bf29a44d5976c25cfe10940e12b79e29f855",
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material"
+          ],
+          "featureFacts": [
+            {
+              "kind": "standard-material",
+              "family": "standard-material-surface",
+              "material": "MeshStandardMaterial",
+              "reason": "webgpu-safe-material"
+            }
+          ],
+          "compatibleSurfaceCount": 1,
+          "forbiddenSurfaceCount": 0,
+          "sourceStage": "part-workshop"
+        }
+      ]
+    },
+    "renderFacts": {
+      "environmentPresent": true,
+      "cameraOwnedByComposition": true,
+      "lightingOwnedByComposition": true,
+      "nearFarClippingOwned": true,
+      "acceptedPartCount": 2,
+      "generatedModuleCount": 2,
+      "generatedAssetCount": 0,
+      "rendererAuthoringTarget": "webgpu-project-scene",
+      "rendererCompatibilityStatus": "webgpu-compatible",
+      "webgpuRendererGateRequired": true,
+      "webgpuRendererCompatible": true,
+      "desktopPreviewRecorded": true,
+      "mobilePreviewRecorded": true,
+      "surroundPreviewRecorded": true
+    }
+  },
+  "image": {
+    "thumbnailJpeg": "./data/media/2026-08-30-1250z-club-brugge-rejects-15-million-bid-for-romeo-vermant-arthur-theate-retur/thumb-320.jpg",
+    "openGraphJpeg": "./data/media/2026-08-30-1250z-club-brugge-rejects-15-million-bid-for-romeo-vermant-arthur-theate-retur/og-1200x630.jpg",
+    "instagramJpeg": "./data/media/2026-08-30-1250z-club-brugge-rejects-15-million-bid-for-romeo-vermant-arthur-theate-retur/instagram-1080x1350.jpg",
+    "altText": "Club Brugge rejects €15 million bid for Romeo Vermant, Arthur Theate returns to Bologna by Ad Reinhardt."
+  }
+}
