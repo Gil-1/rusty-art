@@ -1,10 +1,17 @@
 export const NEUTRAL_WEBGPU_LIGHTING_MODE = 'neutral-webgpu';
 export const NEUTRAL_WEBGPU_TONE_MAPPING = 'neutral';
 
+export const NEUTRAL_WEBGPU_ENVIRONMENT = Object.freeze({
+  color: '#73777d',
+  fieldColor: '#73777d',
+  fogDensity: 0
+});
+
 export const NEUTRAL_WEBGPU_LIGHTING = Object.freeze({
   mode: NEUTRAL_WEBGPU_LIGHTING_MODE,
   ambientColor: '#ffffff',
   ambientIntensity: 0.3,
+  environmentIntensity: 1,
   keyColor: '#ffffff',
   keyIntensity: 3,
   keyPosition: Object.freeze([5, 8, 6]),
@@ -51,4 +58,3 @@ export function buildNeutralWebGPUOutputColorTransform(owner, mode = 'final-colo
     mode
   };
 }
-

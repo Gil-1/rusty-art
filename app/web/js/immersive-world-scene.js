@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 import { CAPTURE_PROFILES, normalizeCaptureProfile } from './contracts/capture-target-contract.js';
 import {
   normalizeWebGPUFeatureFact,
@@ -6,6 +7,7 @@ import {
 } from './contracts/webgpu-feature-facts-contract.js';
 import { WEBGPU_ACCEPTED_MATERIAL_MAP_PROPERTIES } from './contracts/webgpu-material-map-contract.js';
 import {
+  NEUTRAL_WEBGPU_ENVIRONMENT,
   NEUTRAL_WEBGPU_LIGHTING,
   NEUTRAL_WEBGPU_LIGHTING_MODE,
   NEUTRAL_WEBGPU_TONE_MAPPING
@@ -438,8 +440,8 @@ export function isNeutralImmersiveWorldOutputColorTransform(transform = {}) {
     && Math.abs(number(transform.distortion, DEFAULT_OUTPUT_COLOR_TRANSFORM.distortion)) < 0.0001;
 }
 
-export function resolveImmersiveWorldWebGPURuntimeOptions({ captureMode = false } = {}) {
-  return captureMode ? { outputBufferType: THREE.UnsignedByteType } : {};
+export function resolveImmersiveWorldWebGPURuntimeOptions() {
+  return {};
 }
 
 export function createImmersiveWorldPostPass(renderTarget) {
@@ -1679,6 +1681,7 @@ export class ArtworkScene {
     this.rendererInitialized = false;
     this.rendererInitError = null;
     this.scene = new THREE.Scene();
+    this.neutralEnvironmentRenderTarget = null;
     this.camera = new THREE.PerspectiveCamera(65, 1, 0.1, 200);
     this.group = new THREE.Group();
     this.scene.add(this.group);
@@ -1838,12 +1841,37 @@ export class ArtworkScene {
     this.previousElapsedSeconds = null;
   }
 
+  applyEnvironmentLighting(world) {
+    const lighting = asObject(world.lighting);
+    const enabled = cleanToken(lighting.mode) === NEUTRAL_WEBGPU_LIGHTING_MODE
+      && this.rendererSelection.useWebGPURenderer;
+    if (!enabled) {
+      this.scene.environment = null;
+      return { kind: 'ambient-fallback', enabled: false };
+    }
+    if (!this.neutralEnvironmentRenderTarget) {
+      const room = new RoomEnvironment();
+      const pmrem = new THREE.PMREMGenerator(this.renderer);
+      this.neutralEnvironmentRenderTarget = pmrem.fromScene(room);
+      room.dispose();
+      pmrem.dispose();
+    }
+    this.scene.environment = this.neutralEnvironmentRenderTarget.texture;
+    this.scene.environmentIntensity = number(lighting.environmentIntensity, 1);
+    return { kind: 'room-pmrem', enabled: true, intensity: this.scene.environmentIntensity };
+  }
+
   applyEnvironment(world) {
     const environment = asObject(world.environment);
     const palette = asObject(world.palette);
-    const bg = color(environment.color || palette.background || palette.bg, '#090b12');
+    const neutral = cleanToken(world.lighting?.mode) === NEUTRAL_WEBGPU_LIGHTING_MODE;
+    const bg = color(
+      environment.color || palette.background || palette.bg,
+      neutral ? NEUTRAL_WEBGPU_ENVIRONMENT.color : '#090b12'
+    );
+    const fogDensity = number(environment.fogDensity, neutral ? NEUTRAL_WEBGPU_ENVIRONMENT.fogDensity : 0.018);
     this.scene.background = new THREE.Color(bg);
-    this.scene.fog = new THREE.FogExp2(bg, number(environment.fogDensity, 0.018));
+    this.scene.fog = fogDensity > 0 ? new THREE.FogExp2(bg, fogDensity) : null;
 
     const radius = resolveImmersiveWorldSkyboxRadius(world);
     if (!shouldCreateImmersiveWorldBaseEnvironmentShell(world)) {
@@ -1857,7 +1885,10 @@ export class ArtworkScene {
 
     const geometry = new THREE.SphereGeometry(radius, 48, 24);
     const material = new THREE.MeshBasicMaterial({
-      color: color(environment.fieldColor || palette.field || bg, bg),
+      color: color(
+        environment.fieldColor || palette.field || bg,
+        neutral ? NEUTRAL_WEBGPU_ENVIRONMENT.fieldColor : bg
+      ),
       side: THREE.BackSide,
       transparent: true,
       opacity: number(environment.opacity, 0.9),
@@ -1909,7 +1940,7 @@ export class ArtworkScene {
     } else if (this.renderer.shadowMap) {
       this.renderer.shadowMap.enabled = false;
     }
-    this.group.add(ambient);
+    if (mode !== NEUTRAL_WEBGPU_LIGHTING_MODE || !this.rendererSelection.useWebGPURenderer) this.group.add(ambient);
     this.group.add(key);
     this.group.add(key.target);
     if (rimIntensity > 0) {
@@ -2017,9 +2048,12 @@ export class ArtworkScene {
     this.applyConfigGeneration = generation;
     const isCurrentApply = () => generation === this.applyConfigGeneration;
 
+    await this.rendererReady;
+    if (!isCurrentApply()) return false;
     this.clearWorld();
     applyImmersiveWorldOutputColorTransform(this, world);
     const environment = this.applyEnvironment(world);
+    const environmentLighting = this.applyEnvironmentLighting(world);
     this.emitLoadProgress(0.48, 'Building environment');
     const lighting = this.applyLighting(world);
     const camera = this.applyCamera(world);
@@ -2062,6 +2096,7 @@ export class ArtworkScene {
       status: 'ok',
       worldId: world.id || config.id || null,
       environment,
+      environmentLighting,
       lighting,
       camera,
       cameraAlignment: camera.alignment,
@@ -2139,6 +2174,9 @@ export class ArtworkScene {
     this.cameraInputTeardown?.();
     this.cameraInputTeardown = null;
     this.clearWorld();
+    this.scene.environment = null;
+    this.neutralEnvironmentRenderTarget?.dispose?.();
+    this.neutralEnvironmentRenderTarget = null;
     this.tslPostPipeline?.dispose?.();
     if (this.postScene) disposeObjectTree(this.postScene);
     this.renderTarget?.dispose?.();

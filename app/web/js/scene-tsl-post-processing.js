@@ -7,6 +7,7 @@ import {
   float,
   Fn,
   mat3,
+  max,
   mix,
   pass,
   sin,
@@ -112,7 +113,7 @@ function buildHueShiftNode(colorNode, shiftNode) {
   const hue = atan(yiq.z, yiq.y).add(shiftNode);
   const chroma = sqrt(yiq.y.mul(yiq.y).add(yiq.z.mul(yiq.z)));
   const shifted = vec3(yiq.x, chroma.mul(cos(hue)), chroma.mul(sin(hue)));
-  return clamp(toRgb.mul(shifted), 0, 1);
+  return max(toRgb.mul(shifted), 0);
 }
 
 export function createTslPostProcessingOutputNode(inputTextureNode, controls, {
