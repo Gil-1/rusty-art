@@ -68,6 +68,7 @@ const DEFAULT_ORBIT_POSE = Object.freeze({
   phi: Math.PI / 2.2
 });
 const DEFAULT_OUTPUT_COLOR_TRANSFORM = Object.freeze({
+  toneMapping: 'aces-filmic',
   contrast: 1,
   saturation: 1,
   exposure: 1,
@@ -99,6 +100,7 @@ const LEGACY_WEBGL_FALLBACK_REASON = 'legacy-webgl-authoring-mode';
 const WEBGPU_EVIDENCE_MISSING_REASON = 'webgpu-evidence-missing';
 const GENERATED_MODULE_UNKNOWN_REASON = 'generated-module-unknown';
 const WEBGPU_DIRECT_OUTPUT_COLOR_TRANSFORM_MODE = 'webgpu-direct';
+const NEUTRAL_WEBGPU_LIGHTING_MODE = 'neutral-webgpu';
 
 function cleanToken(value) {
   return String(value || '').trim().toLowerCase().replace(/[_\s]+/g, '-');
@@ -279,7 +281,7 @@ export function resolveImmersiveWorldRendererProfile({
   const rendererRequest = resolveImmersiveWorldRendererRequest({ art, requestedMode });
   const resolvedPostProcessingRequest = rendererRequest === RENDERER_MODES.WEBGL_LEGACY
     ? postProcessingRequest
-    : (captureMode ? POST_PROCESSING_MODES.WEBGL_GLSL_POST : POST_PROCESSING_MODES.WEBGPU_TSL_POST);
+    : POST_PROCESSING_MODES.WEBGPU_TSL_POST;
   const rendererSceneFeatures = collectRendererSceneFeatures({
     art,
     sceneKind: 'immersive-world-v1',
@@ -411,6 +413,7 @@ export function resolveImmersiveWorldOutputColorTransform(world = {}) {
     || {};
   return {
     owner: source.owner || null,
+    toneMapping: cleanToken(source.toneMapping) === 'neutral' ? 'neutral' : DEFAULT_OUTPUT_COLOR_TRANSFORM.toneMapping,
     contrast: clampedNumber(source.contrast, DEFAULT_OUTPUT_COLOR_TRANSFORM.contrast, OUTPUT_COLOR_TRANSFORM_LIMITS.contrast),
     saturation: clampedNumber(source.saturation, DEFAULT_OUTPUT_COLOR_TRANSFORM.saturation, OUTPUT_COLOR_TRANSFORM_LIMITS.saturation),
     exposure: clampedNumber(source.exposure, DEFAULT_OUTPUT_COLOR_TRANSFORM.exposure, OUTPUT_COLOR_TRANSFORM_LIMITS.exposure),
@@ -442,9 +445,52 @@ export function createImmersiveWorldPostPass(renderTarget) {
 
 export function applyImmersiveWorldOutputColorTransform(scene, world = {}) {
   const transform = resolveImmersiveWorldOutputColorTransform(world);
+  if (scene.renderer) {
+    scene.renderer.toneMapping = transform.toneMapping === 'neutral'
+      ? THREE.NeutralToneMapping
+      : THREE.ACESFilmicToneMapping;
+  }
   scene.outputColorTransform = transform;
   scene.postBase = transform;
   return transform;
+}
+
+function shadowMapSize(value) {
+  const requested = Math.floor(number(value, 2048));
+  return [512, 1024, 2048, 4096].includes(requested) ? requested : 2048;
+}
+
+function supportsNeutralShadowMaterial(material) {
+  return material?.transparent !== true
+    && number(material?.opacity, 1) >= 1
+    && Boolean(
+      material?.isMeshStandardMaterial
+      || material?.isMeshPhysicalMaterial
+      || material?.isMeshLambertMaterial
+      || material?.isMeshPhongMaterial
+      || material?.isMeshToonMaterial
+    );
+}
+
+export function applyImmersiveWorldShadowParticipation(root, {
+  suppressSharedLights = false
+} = {}) {
+  let eligibleMeshCount = 0;
+  let disabledSharedLightCount = 0;
+  root?.traverse?.((child) => {
+    if (suppressSharedLights && (child.isAmbientLight || child.isHemisphereLight || child.isDirectionalLight)) {
+      child.visible = false;
+      disabledSharedLightCount += 1;
+      return;
+    }
+    if (!child.isMesh || child.userData?.shadowParticipation === 'none' || child.userData?.skybox) return;
+    const materials = Array.isArray(child.material) ? child.material : [child.material];
+    if (!materials.length || !materials.every(supportsNeutralShadowMaterial)) return;
+    child.castShadow = true;
+    child.receiveShadow = true;
+    eligibleMeshCount += 1;
+  });
+  return { eligibleMeshCount, disabledSharedLightCount };
 }
 
 const MATERIAL_TEXTURE_FIELDS = WEBGPU_ACCEPTED_MATERIAL_MAP_PROPERTIES;
@@ -1825,16 +1871,50 @@ export class ArtworkScene {
 
   applyLighting(world) {
     const lighting = asObject(world.lighting);
+    const mode = cleanToken(lighting.mode);
+    const shadows = asObject(lighting.shadows);
+    const shadowsEnabled = mode === NEUTRAL_WEBGPU_LIGHTING_MODE && shadows.enabled === true;
     const ambient = new THREE.AmbientLight(color(lighting.ambientColor, '#8aa0c8'), number(lighting.ambientIntensity, 0.62));
     const key = new THREE.DirectionalLight(color(lighting.keyColor, '#ffffff'), number(lighting.keyIntensity, 1.05));
-    const rim = new THREE.PointLight(color(lighting.rimColor, '#d9c7ff'), number(lighting.rimIntensity, 0.7), 32, 2);
+    const rimIntensity = number(lighting.rimIntensity, 0.7);
     const keyPosition = vector3(lighting.keyPosition, [4, 6, 8]);
+    const keyTarget = vector3(lighting.keyTarget, [0, 0, 0]);
     const rimPosition = vector3(lighting.rimPosition, [-5, 2, -4]);
     key.position.set(keyPosition[0], keyPosition[1], keyPosition[2]);
-    rim.position.set(rimPosition[0], rimPosition[1], rimPosition[2]);
+    key.target.position.set(keyTarget[0], keyTarget[1], keyTarget[2]);
+    key.castShadow = shadowsEnabled;
+    if (shadowsEnabled) {
+      const bounds = Math.max(1, number(shadows.bounds, 18));
+      const mapSize = shadowMapSize(shadows.mapSize);
+      this.renderer.shadowMap.enabled = true;
+      this.renderer.shadowMap.type = THREE.PCFShadowMap;
+      key.shadow.mapSize.set(mapSize, mapSize);
+      key.shadow.camera.left = -bounds;
+      key.shadow.camera.right = bounds;
+      key.shadow.camera.top = bounds;
+      key.shadow.camera.bottom = -bounds;
+      key.shadow.camera.near = Math.max(0.01, number(shadows.near, 0.5));
+      key.shadow.camera.far = Math.max(key.shadow.camera.near + 1, number(shadows.far, 80));
+      key.shadow.bias = number(shadows.bias, 0);
+      key.shadow.normalBias = number(shadows.normalBias, 0);
+      key.shadow.camera.updateProjectionMatrix();
+    } else if (this.renderer.shadowMap) {
+      this.renderer.shadowMap.enabled = false;
+    }
     this.group.add(ambient);
     this.group.add(key);
-    this.group.add(rim);
+    this.group.add(key.target);
+    if (rimIntensity > 0) {
+      const rim = new THREE.PointLight(color(lighting.rimColor, '#d9c7ff'), rimIntensity, 32, 2);
+      rim.position.set(rimPosition[0], rimPosition[1], rimPosition[2]);
+      this.group.add(rim);
+    }
+    return {
+      mode: mode || 'legacy-art-directed',
+      shadowsEnabled,
+      keyTarget,
+      rimEnabled: rimIntensity > 0
+    };
   }
 
   async buildPart({ part, world, config, index, generation }) {
@@ -1884,6 +1964,10 @@ export class ArtworkScene {
     }
     const shaderMaterialNormalization = normalizeGeneratedModuleShaderMaterials(result.object);
     const environmentAdaptation = adaptWorldEnvironmentObject({ object: result.object, part, world });
+    const neutralLighting = cleanToken(world.lighting?.mode) === NEUTRAL_WEBGPU_LIGHTING_MODE;
+    const shadowParticipation = neutralLighting
+      ? applyImmersiveWorldShadowParticipation(result.object, { suppressSharedLights: true })
+      : null;
     const textureQuality = applyImmersiveWorldTextureQuality(result.object, {
       THREE,
       renderer: this.renderer
@@ -1909,6 +1993,7 @@ export class ArtworkScene {
       webgpuFeatureFacts,
       webgpuFeatureFallbackReasons,
       textureQuality,
+      shadowParticipation: shadowParticipation || undefined,
       shaderMaterialNormalization: shaderMaterialNormalization.patchedUniforms > 0 ? shaderMaterialNormalization : undefined,
       environmentAdaptation: environmentAdaptation.adapted ? environmentAdaptation : undefined
     };
@@ -1928,7 +2013,7 @@ export class ArtworkScene {
     applyImmersiveWorldOutputColorTransform(this, world);
     const environment = this.applyEnvironment(world);
     this.emitLoadProgress(0.48, 'Building environment');
-    this.applyLighting(world);
+    const lighting = this.applyLighting(world);
     const camera = this.applyCamera(world);
 
     const builtParts = [];
@@ -1969,6 +2054,7 @@ export class ArtworkScene {
       status: 'ok',
       worldId: world.id || config.id || null,
       environment,
+      lighting,
       camera,
       cameraAlignment: camera.alignment,
       renderer: this.getRendererDiagnostics(),
