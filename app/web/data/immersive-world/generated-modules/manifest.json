@@ -1,7 +1,7 @@
 {
   "version": 1,
   "generatedAt": "2026-05-13T06:11:46.412Z",
-  "updatedAt": "2026-08-30T20:06:54.586Z",
+  "updatedAt": "2026-08-31T12:59:44.688Z",
   "entries": [
     {
       "version": 1,
@@ -2397,6 +2397,49 @@
       "bytes": 7357,
       "sourceHash": "bc125b4f88666584eaf43a5e828589e020df3296de25e19fea4df5e680eb8af3",
       "packagedAt": "2026-05-13T13:55:54.957Z"
+    },
+    {
+      "version": 1,
+      "moduleId": "compiled-v1-folded-supporters-table-0647ba93c55a",
+      "partId": "folded-supporters-table",
+      "hash": "0647ba93c55a6c496097cc3f455743e9b24d216a793772febaf030ecf33afca7",
+      "integrity": "sha256-0647ba93c55a6c496097cc3f455743e9b24d216a793772febaf030ecf33afca7",
+      "exportName": "createImmersiveWorldPart",
+      "file": "data/immersive-world/generated-modules/0647ba93c55a6c496097cc3f455743e9b24d216a793772febaf030ecf33afca7.mjs",
+      "url": "./data/immersive-world/generated-modules/0647ba93c55a6c496097cc3f455743e9b24d216a793772febaf030ecf33afca7.mjs",
+      "bytes": 6554,
+      "sourceHash": "2cb734a132619e28771856c3deebde57aef50b9f8ea27e5c93bb478a1c102f01",
+      "packagedAt": "2026-08-31T06:20:10.947Z",
+      "rendererCompatibility": {
+        "version": 1,
+        "targetMode": "webgpu-project-scene",
+        "compatibilityStatus": "webgpu-compatible",
+        "webgpuCompatible": true,
+        "fallbackReason": null,
+        "fallbackReasons": [],
+        "evidenceReasons": [
+          "webgpu-safe-material"
+        ],
+        "rendererEvidenceReasons": [],
+        "featureFacts": [
+          {
+            "kind": "standard-material",
+            "material": "MeshStandardMaterial",
+            "family": "standard-material-surface",
+            "reason": "webgpu-safe-material"
+          }
+        ],
+        "rendererFeatureFacts": [],
+        "advancedFeatureFacts": [],
+        "compatibleSurfaces": [
+          {
+            "reason": "webgpu-safe-material",
+            "materialType": "MeshStandardMaterial"
+          }
+        ],
+        "rendererCompatibleSurfaces": [],
+        "forbiddenSurfaces": []
+      }
     },
     {
       "version": 1,
@@ -14115,6 +14158,60 @@
           {
             "reason": "webgpu-safe-material",
             "materialType": "LineBasicMaterial"
+          }
+        ],
+        "rendererCompatibleSurfaces": [],
+        "forbiddenSurfaces": []
+      }
+    },
+    {
+      "version": 1,
+      "moduleId": "world-environment-draft-attempt-1",
+      "partId": "world-environment",
+      "hash": "2c111da76a0ee148b74d244cb5a7345222b8a9f6dd4150687ca5a67f395377ca",
+      "integrity": "sha256-2c111da76a0ee148b74d244cb5a7345222b8a9f6dd4150687ca5a67f395377ca",
+      "exportName": "createImmersiveWorldPart",
+      "file": "data/immersive-world/generated-modules/2c111da76a0ee148b74d244cb5a7345222b8a9f6dd4150687ca5a67f395377ca.mjs",
+      "url": "./data/immersive-world/generated-modules/2c111da76a0ee148b74d244cb5a7345222b8a9f6dd4150687ca5a67f395377ca.mjs",
+      "bytes": 3090,
+      "sourceHash": "de868a8709c0f8e616c2d65cbfe1e4a3dc6f38e985f7e7383451c8629874c02f",
+      "packagedAt": "2026-08-31T12:36:43.732Z",
+      "rendererCompatibility": {
+        "version": 1,
+        "targetMode": "webgpu-project-scene",
+        "compatibilityStatus": "webgpu-compatible",
+        "webgpuCompatible": true,
+        "fallbackReason": null,
+        "fallbackReasons": [],
+        "evidenceReasons": [
+          "webgpu-native-helper-utility"
+        ],
+        "rendererEvidenceReasons": [],
+        "featureFacts": [
+          {
+            "kind": "webgpu-native-helper",
+            "id": "direction-space-skybox-shell",
+            "family": "sky-background-field",
+            "factory": "sky-background-field",
+            "material": "MeshBasicMaterial",
+            "surface": "direction-space-vertex-color-skybox-shell",
+            "reason": "webgpu-native-helper-utility"
+          }
+        ],
+        "rendererFeatureFacts": [],
+        "advancedFeatureFacts": [],
+        "compatibleSurfaces": [
+          {
+            "reason": "webgpu-native-helper-utility",
+            "api": "utilities.createDirectionSpaceSkyboxShell",
+            "helperId": "direction-space-skybox-shell",
+            "featureFamily": "sky-background-field",
+            "outputKind": "object-bundle",
+            "materialType": "MeshBasicMaterial",
+            "runtimeSurface": "direction-space-vertex-color-skybox-shell",
+            "factoryId": "sky-background-field",
+            "materialFactoryId": "sky-background-field",
+            "factoryCategory": "sky-background-field"
           }
         ],
         "rendererCompatibleSurfaces": [],
@@ -31246,6 +31343,71 @@
             "materialFactoryId": "soft-particles",
             "factoryCategory": "soft-particles",
             "property": "materialFactoryId"
+          }
+        ],
+        "rendererCompatibleSurfaces": [],
+        "forbiddenSurfaces": []
+      }
+    },
+    {
+      "version": 1,
+      "moduleId": "compiled-v1-world-environment-67ea05aa0f31",
+      "partId": "world-environment",
+      "hash": "67ea05aa0f31f800ee3e04e027c6070d15ec188e326deebd265d2d8adf5297b1",
+      "integrity": "sha256-67ea05aa0f31f800ee3e04e027c6070d15ec188e326deebd265d2d8adf5297b1",
+      "exportName": "createImmersiveWorldPart",
+      "file": "data/immersive-world/generated-modules/67ea05aa0f31f800ee3e04e027c6070d15ec188e326deebd265d2d8adf5297b1.mjs",
+      "url": "./data/immersive-world/generated-modules/67ea05aa0f31f800ee3e04e027c6070d15ec188e326deebd265d2d8adf5297b1.mjs",
+      "bytes": 5229,
+      "sourceHash": "749f4c172fbfab15c6aef3cec5021fc4e5c55d632bd3ae4bdcfe42574ca80074",
+      "packagedAt": "2026-08-31T12:59:44.688Z",
+      "rendererCompatibility": {
+        "version": 1,
+        "targetMode": "webgpu-project-scene",
+        "compatibilityStatus": "webgpu-compatible",
+        "webgpuCompatible": true,
+        "fallbackReason": null,
+        "fallbackReasons": [],
+        "evidenceReasons": [
+          "webgpu-native-helper-utility",
+          "webgpu-safe-material"
+        ],
+        "rendererEvidenceReasons": [],
+        "featureFacts": [
+          {
+            "kind": "webgpu-native-helper",
+            "id": "direction-space-skybox-shell",
+            "family": "sky-background-field",
+            "factory": "sky-background-field",
+            "material": "MeshBasicMaterial",
+            "surface": "direction-space-vertex-color-skybox-shell",
+            "reason": "webgpu-native-helper-utility"
+          },
+          {
+            "kind": "standard-material",
+            "material": "MeshStandardMaterial",
+            "family": "standard-material-surface",
+            "reason": "webgpu-safe-material"
+          }
+        ],
+        "rendererFeatureFacts": [],
+        "advancedFeatureFacts": [],
+        "compatibleSurfaces": [
+          {
+            "reason": "webgpu-native-helper-utility",
+            "api": "utilities.createDirectionSpaceSkyboxShell",
+            "helperId": "direction-space-skybox-shell",
+            "featureFamily": "sky-background-field",
+            "outputKind": "object-bundle",
+            "materialType": "MeshBasicMaterial",
+            "runtimeSurface": "direction-space-vertex-color-skybox-shell",
+            "factoryId": "sky-background-field",
+            "materialFactoryId": "sky-background-field",
+            "factoryCategory": "sky-background-field"
+          },
+          {
+            "reason": "webgpu-safe-material",
+            "materialType": "MeshStandardMaterial"
           }
         ],
         "rendererCompatibleSurfaces": [],
@@ -61777,6 +61939,60 @@
     },
     {
       "version": 1,
+      "moduleId": "compiled-v1-world-environment-d0b1930e5abc",
+      "partId": "world-environment",
+      "hash": "d0b1930e5abcc605d4b5cba131fe22a8b56faf3d650ee6e49aab09a05f145ab8",
+      "integrity": "sha256-d0b1930e5abcc605d4b5cba131fe22a8b56faf3d650ee6e49aab09a05f145ab8",
+      "exportName": "createImmersiveWorldPart",
+      "file": "data/immersive-world/generated-modules/d0b1930e5abcc605d4b5cba131fe22a8b56faf3d650ee6e49aab09a05f145ab8.mjs",
+      "url": "./data/immersive-world/generated-modules/d0b1930e5abcc605d4b5cba131fe22a8b56faf3d650ee6e49aab09a05f145ab8.mjs",
+      "bytes": 2342,
+      "sourceHash": "3010897594a3d0d9fa06fd2f54eba2235742067210664cce4a838c4243bd83bc",
+      "packagedAt": "2026-08-31T06:20:10.947Z",
+      "rendererCompatibility": {
+        "version": 1,
+        "targetMode": "webgpu-project-scene",
+        "compatibilityStatus": "webgpu-compatible",
+        "webgpuCompatible": true,
+        "fallbackReason": null,
+        "fallbackReasons": [],
+        "evidenceReasons": [
+          "webgpu-native-helper-utility"
+        ],
+        "rendererEvidenceReasons": [],
+        "featureFacts": [
+          {
+            "kind": "webgpu-native-helper",
+            "id": "direction-space-skybox-shell",
+            "family": "sky-background-field",
+            "factory": "sky-background-field",
+            "material": "MeshBasicMaterial",
+            "surface": "direction-space-vertex-color-skybox-shell",
+            "reason": "webgpu-native-helper-utility"
+          }
+        ],
+        "rendererFeatureFacts": [],
+        "advancedFeatureFacts": [],
+        "compatibleSurfaces": [
+          {
+            "reason": "webgpu-native-helper-utility",
+            "api": "utilities.createDirectionSpaceSkyboxShell",
+            "helperId": "direction-space-skybox-shell",
+            "featureFamily": "sky-background-field",
+            "outputKind": "object-bundle",
+            "materialType": "MeshBasicMaterial",
+            "runtimeSurface": "direction-space-vertex-color-skybox-shell",
+            "factoryId": "sky-background-field",
+            "materialFactoryId": "sky-background-field",
+            "factoryCategory": "sky-background-field"
+          }
+        ],
+        "rendererCompatibleSurfaces": [],
+        "forbiddenSurfaces": []
+      }
+    },
+    {
+      "version": 1,
       "moduleId": "non-literal-grid-pressure-draft-attempt-1",
       "partId": "non-literal-grid-pressure",
       "hash": "d0bad751a22e56c6ea0d187df0f611e16227bd4cf3ff07f5c2126e218ce5ab24",
@@ -72703,6 +72919,67 @@
           {
             "reason": "webgpu-safe-material",
             "materialType": "LineBasicMaterial"
+          }
+        ],
+        "rendererCompatibleSurfaces": [],
+        "forbiddenSurfaces": []
+      }
+    },
+    {
+      "version": 1,
+      "moduleId": "compiled-v1-radial-return-field-f8682ec7fd9b",
+      "partId": "radial-return-field",
+      "hash": "f8682ec7fd9bea6e5d45eac6964980b782564c09c257ccd3068a1be6b07d8d18",
+      "integrity": "sha256-f8682ec7fd9bea6e5d45eac6964980b782564c09c257ccd3068a1be6b07d8d18",
+      "exportName": "createImmersiveWorldPart",
+      "file": "data/immersive-world/generated-modules/f8682ec7fd9bea6e5d45eac6964980b782564c09c257ccd3068a1be6b07d8d18.mjs",
+      "url": "./data/immersive-world/generated-modules/f8682ec7fd9bea6e5d45eac6964980b782564c09c257ccd3068a1be6b07d8d18.mjs",
+      "bytes": 5790,
+      "sourceHash": "b09350affa105f1f1fa45af7d1277276f89d5da0e104569dc3a0d4723ea79965",
+      "packagedAt": "2026-08-31T12:59:44.688Z",
+      "rendererCompatibility": {
+        "version": 1,
+        "targetMode": "webgpu-project-scene",
+        "compatibilityStatus": "webgpu-compatible",
+        "webgpuCompatible": true,
+        "fallbackReason": null,
+        "fallbackReasons": [],
+        "evidenceReasons": [
+          "webgpu-safe-material",
+          "source-used-project-webgpu-material-factory"
+        ],
+        "rendererEvidenceReasons": [],
+        "featureFacts": [
+          {
+            "kind": "standard-material",
+            "material": "MeshStandardMaterial",
+            "family": "standard-material-surface",
+            "reason": "webgpu-safe-material"
+          },
+          {
+            "kind": "material-factory",
+            "id": "matte-painted-surface",
+            "family": "matte-painted-surface",
+            "material": "MeshStandardMaterial",
+            "surface": "three-standard-material",
+            "reason": "source-used-project-webgpu-material-factory"
+          }
+        ],
+        "rendererFeatureFacts": [],
+        "advancedFeatureFacts": [],
+        "compatibleSurfaces": [
+          {
+            "reason": "webgpu-safe-material",
+            "materialType": "MeshStandardMaterial"
+          },
+          {
+            "reason": "source-used-project-webgpu-material-factory",
+            "materialType": "MeshStandardMaterial",
+            "runtimeSurface": "three-standard-material",
+            "factoryId": "matte-painted-surface",
+            "materialFactoryId": "matte-painted-surface",
+            "factoryCategory": "matte-painted-surface",
+            "property": "materialFactoryId"
           }
         ],
         "rendererCompatibleSurfaces": [],

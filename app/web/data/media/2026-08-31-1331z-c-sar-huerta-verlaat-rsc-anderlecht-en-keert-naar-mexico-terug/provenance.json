@@ -1,0 +1,76 @@
+{
+  "version": 2,
+  "kind": "rusty-art-public-media-assets",
+  "artworkId": "2026-08-31-1331z-c-sar-huerta-verlaat-rsc-anderlecht-en-keert-naar-mexico-terug",
+  "source": {
+    "sha256": "f739f0a5fe0da515e3afcff6bce8ed98d42f32ee58605250843cd367c9b4ef5a",
+    "role": "daily-preview-story-desktop"
+  },
+  "sources": {
+    "primary": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-desktop",
+      "sha256": "f739f0a5fe0da515e3afcff6bce8ed98d42f32ee58605250843cd367c9b4ef5a"
+    },
+    "openGraph": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-open-graph",
+      "sha256": "97b6aafda90fbc1e449c9f333602560af57f46f57550c6a208df97c25f91dfc2"
+    },
+    "instagram": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-instagram",
+      "sha256": "728d02ba55ab25810dc852f7e59a1d7e11737622751cfd86673b77fa0ee0b524"
+    }
+  },
+  "targets": {
+    "thumb-320.jpg": {
+      "spec": {
+        "fileName": "thumb-320.jpg",
+        "width": 320,
+        "height": null,
+        "fit": "inside",
+        "withoutEnlargement": true,
+        "format": "jpeg",
+        "quality": 82
+      },
+      "publicPath": "./data/media/2026-08-31-1331z-c-sar-huerta-verlaat-rsc-anderlecht-en-keert-naar-mexico-terug/thumb-320.jpg",
+      "source": {
+        "sha256": "f739f0a5fe0da515e3afcff6bce8ed98d42f32ee58605250843cd367c9b4ef5a",
+        "role": "daily-preview-story-desktop"
+      }
+    },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-08-31-1331z-c-sar-huerta-verlaat-rsc-anderlecht-en-keert-naar-mexico-terug/og-1200x630.jpg",
+      "source": {
+        "sha256": "97b6aafda90fbc1e449c9f333602560af57f46f57550c6a208df97c25f91dfc2",
+        "role": "daily-preview-story-open-graph"
+      }
+    },
+    "instagram-1080x1350.jpg": {
+      "spec": {
+        "fileName": "instagram-1080x1350.jpg",
+        "width": 1080,
+        "height": 1350,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-08-31-1331z-c-sar-huerta-verlaat-rsc-anderlecht-en-keert-naar-mexico-terug/instagram-1080x1350.jpg",
+      "source": {
+        "sha256": "728d02ba55ab25810dc852f7e59a1d7e11737622751cfd86673b77fa0ee0b524",
+        "role": "daily-preview-story-instagram"
+      }
+    }
+  }
+}
