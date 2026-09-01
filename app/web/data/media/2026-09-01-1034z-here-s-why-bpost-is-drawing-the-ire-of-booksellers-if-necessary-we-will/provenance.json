@@ -1,0 +1,76 @@
+{
+  "version": 2,
+  "kind": "rusty-art-public-media-assets",
+  "artworkId": "2026-09-01-1034z-here-s-why-bpost-is-drawing-the-ire-of-booksellers-if-necessary-we-will",
+  "source": {
+    "sha256": "1aaf5e066e59ed6c95295ad3492de39a97ef70a8a0a1c055430f3998b366551a",
+    "role": "daily-preview-story-desktop"
+  },
+  "sources": {
+    "primary": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-desktop",
+      "sha256": "1aaf5e066e59ed6c95295ad3492de39a97ef70a8a0a1c055430f3998b366551a"
+    },
+    "openGraph": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-open-graph",
+      "sha256": "a97ea8d192903c641fe622035dc777663263e84b9b4731f61d69e78520ba90b0"
+    },
+    "instagram": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-instagram",
+      "sha256": "b5cbdb9a1b63df048d8fa8a03fe16ef960c3804e4829fd41735a55af43d54e68"
+    }
+  },
+  "targets": {
+    "thumb-320.jpg": {
+      "spec": {
+        "fileName": "thumb-320.jpg",
+        "width": 320,
+        "height": null,
+        "fit": "inside",
+        "withoutEnlargement": true,
+        "format": "jpeg",
+        "quality": 82
+      },
+      "publicPath": "./data/media/2026-09-01-1034z-here-s-why-bpost-is-drawing-the-ire-of-booksellers-if-necessary-we-will/thumb-320.jpg",
+      "source": {
+        "sha256": "1aaf5e066e59ed6c95295ad3492de39a97ef70a8a0a1c055430f3998b366551a",
+        "role": "daily-preview-story-desktop"
+      }
+    },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-09-01-1034z-here-s-why-bpost-is-drawing-the-ire-of-booksellers-if-necessary-we-will/og-1200x630.jpg",
+      "source": {
+        "sha256": "a97ea8d192903c641fe622035dc777663263e84b9b4731f61d69e78520ba90b0",
+        "role": "daily-preview-story-open-graph"
+      }
+    },
+    "instagram-1080x1350.jpg": {
+      "spec": {
+        "fileName": "instagram-1080x1350.jpg",
+        "width": 1080,
+        "height": 1350,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-09-01-1034z-here-s-why-bpost-is-drawing-the-ire-of-booksellers-if-necessary-we-will/instagram-1080x1350.jpg",
+      "source": {
+        "sha256": "b5cbdb9a1b63df048d8fa8a03fe16ef960c3804e4829fd41735a55af43d54e68",
+        "role": "daily-preview-story-instagram"
+      }
+    }
+  }
+}
