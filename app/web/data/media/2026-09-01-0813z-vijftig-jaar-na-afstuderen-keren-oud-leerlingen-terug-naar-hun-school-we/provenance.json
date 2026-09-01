@@ -1,0 +1,76 @@
+{
+  "version": 2,
+  "kind": "rusty-art-public-media-assets",
+  "artworkId": "2026-09-01-0813z-vijftig-jaar-na-afstuderen-keren-oud-leerlingen-terug-naar-hun-school-we",
+  "source": {
+    "sha256": "e29df9f51d4b337a45722dce9e15d1419d60847b11c4e47327628b6a4b1d1b87",
+    "role": "daily-preview-story-desktop"
+  },
+  "sources": {
+    "primary": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-desktop",
+      "sha256": "e29df9f51d4b337a45722dce9e15d1419d60847b11c4e47327628b6a4b1d1b87"
+    },
+    "openGraph": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-open-graph",
+      "sha256": "c1a10486265f95379487d605d03b43fc678f6da240346cc53c260f8846966414"
+    },
+    "instagram": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-instagram",
+      "sha256": "b81dcac48a7b4cc63d8ecd6f216606a0e88e434dc11b2f6b548fb3facf6b76a5"
+    }
+  },
+  "targets": {
+    "thumb-320.jpg": {
+      "spec": {
+        "fileName": "thumb-320.jpg",
+        "width": 320,
+        "height": null,
+        "fit": "inside",
+        "withoutEnlargement": true,
+        "format": "jpeg",
+        "quality": 82
+      },
+      "publicPath": "./data/media/2026-09-01-0813z-vijftig-jaar-na-afstuderen-keren-oud-leerlingen-terug-naar-hun-school-we/thumb-320.jpg",
+      "source": {
+        "sha256": "e29df9f51d4b337a45722dce9e15d1419d60847b11c4e47327628b6a4b1d1b87",
+        "role": "daily-preview-story-desktop"
+      }
+    },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-09-01-0813z-vijftig-jaar-na-afstuderen-keren-oud-leerlingen-terug-naar-hun-school-we/og-1200x630.jpg",
+      "source": {
+        "sha256": "c1a10486265f95379487d605d03b43fc678f6da240346cc53c260f8846966414",
+        "role": "daily-preview-story-open-graph"
+      }
+    },
+    "instagram-1080x1350.jpg": {
+      "spec": {
+        "fileName": "instagram-1080x1350.jpg",
+        "width": 1080,
+        "height": 1350,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-09-01-0813z-vijftig-jaar-na-afstuderen-keren-oud-leerlingen-terug-naar-hun-school-we/instagram-1080x1350.jpg",
+      "source": {
+        "sha256": "b81dcac48a7b4cc63d8ecd6f216606a0e88e434dc11b2f6b548fb3facf6b76a5",
+        "role": "daily-preview-story-instagram"
+      }
+    }
+  }
+}
