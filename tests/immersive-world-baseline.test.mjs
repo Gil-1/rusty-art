@@ -5,6 +5,7 @@ import * as THREE from 'three';
 
 import {
   ArtworkScene,
+  mountImmersiveWorldPart,
   applyImmersiveWorldOutputColorTransform,
   applyImmersiveWorldShadowParticipation,
   resolveImmersiveWorldWebGPURuntimeOptions,
@@ -16,6 +17,39 @@ import {
   NEUTRAL_WEBGPU_LIGHTING,
   NEUTRAL_WEBGPU_OUTPUT_COLOR_TRANSFORM
 } from '../app/web/js/contracts/immersive-world-baseline-contract.js';
+
+test('part composition transforms use an isolated mount and remain opt-in', () => {
+  const transformedRoot = new THREE.Group();
+  const transformedObject = new THREE.Group();
+  transformedObject.position.set(7, 8, 9);
+  const mount = mountImmersiveWorldPart(transformedRoot, transformedObject, {
+    params: { position: [100, 100, 100] },
+    compositionTransform: {
+      position: [1, 2, 3],
+      rotation: [0.1, 0.2, 0.3],
+      scale: 2
+    }
+  });
+
+  assert.notEqual(mount, transformedObject);
+  assert.equal(transformedRoot.children[0], mount);
+  assert.equal(mount.children[0], transformedObject);
+  assert.deepEqual(mount.position.toArray(), [1, 2, 3]);
+  assert.deepEqual(mount.rotation.toArray().slice(0, 3), [0.1, 0.2, 0.3]);
+  assert.deepEqual(mount.scale.toArray(), [2, 2, 2]);
+  assert.deepEqual(transformedObject.position.toArray(), [7, 8, 9]);
+
+  const legacyRoot = new THREE.Group();
+  const legacyObject = new THREE.Group();
+  const legacyMount = mountImmersiveWorldPart(legacyRoot, legacyObject, {
+    params: { position: [4, 5, 6], scale: 3 }
+  });
+
+  assert.equal(legacyMount, legacyObject);
+  assert.equal(legacyRoot.children[0], legacyObject);
+  assert.deepEqual(legacyObject.position.toArray(), [0, 0, 0]);
+  assert.deepEqual(legacyObject.scale.toArray(), [1, 1, 1]);
+});
 
 test('neutral WebGPU baseline contract exposes the shared lighting and output defaults', () => {
   assert.equal(NEUTRAL_WEBGPU_LIGHTING.mode, 'neutral-webgpu');
