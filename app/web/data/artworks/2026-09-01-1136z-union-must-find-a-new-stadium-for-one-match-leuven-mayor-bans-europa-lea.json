@@ -1,0 +1,1008 @@
+{
+  "id": "2026-09-01-1136z-union-must-find-a-new-stadium-for-one-match-leuven-mayor-bans-europa-lea",
+  "date": "2026-09-01",
+  "title": "Union must find a new stadium (for one match): Leuven mayor bans Europa League match against Israeli team in his city",
+  "generatedAt": "2026-09-01T11:48:45.017Z",
+  "news": {
+    "source": "hln",
+    "title": "Union must find a new stadium (for one match): Leuven mayor bans Europa League match against Israeli team in his city",
+    "link": "https://www.hln.be/union/union-moet-eenmalig-op-zoek-naar-een-nieuw-stadion-leuvens-burgemeester-verbiedt-europa-league-match-tegen-israelische-ploeg-in-zijn-stad~a8b7ab56/",
+    "score": null
+  },
+  "inspiration": {
+    "artist": "Gerhard Richter",
+    "tags": [
+      "non-literal fracture transformation",
+      "Union",
+      "immersive-world"
+    ],
+    "links": {}
+  },
+  "seed": null,
+  "sceneStrategy": null,
+  "techStack": null,
+  "newsVisualMappings": [],
+  "qualityScore": {
+    "score": null,
+    "summary": null,
+    "heuristic": {
+      "score": null,
+      "breakdown": {}
+    },
+    "calibration": {
+      "sampleCount": 0,
+      "trustWeight": 0
+    },
+    "alignment": {
+      "totalAlign": null,
+      "components": {
+        "title": {
+          "score": null
+        },
+        "style": {
+          "score": null
+        },
+        "emotional": {
+          "score": null
+        }
+      }
+    }
+  },
+  "rationale": {
+    "intent": {
+      "signal": null,
+      "emotion": null,
+      "tension": null,
+      "balance": null,
+      "motion": null
+    },
+    "selection": {
+      "whyHeadline": null,
+      "priorityTerms": []
+    },
+    "qualitySummary": null
+  },
+  "runPolicy": null,
+  "artCreationMethod": "immersive-world-v1",
+  "world": {
+    "id": "immersive-world-d9121d227ff0",
+    "method": "immersive-world-v1",
+    "title": "Union must find a new stadium (for one match): Leuven mayor bans Europa League match against Israeli team in his city",
+    "environment": {
+      "color": "#73777d",
+      "fieldColor": "#73777d",
+      "fogDensity": 0,
+      "kind": "technical-scene-support",
+      "radius": 92,
+      "opacity": 0.92,
+      "visibilityPolicy": "technical environment object; visible shell/skybox/background dominance requires visualConstructionDecision evidence",
+      "visualConstructionDecisionRef": "art-direction-packet.json#/creativeDirection/visualConstructionDecision"
+    },
+    "camera": {
+      "owner": "world-composition",
+      "fov": 66,
+      "near": 0.08,
+      "far": 220,
+      "position": [
+        0.22,
+        2.12,
+        14.2
+      ],
+      "target": [
+        0.55,
+        0.18,
+        -5.6
+      ],
+      "distanceSafety": {
+        "nearFarOwnedHere": true,
+        "minPartDistance": 1.7,
+        "clippingRisk": "low"
+      }
+    },
+    "lighting": {
+      "mode": "neutral-webgpu",
+      "environmentMode": "room-environment-pmrem",
+      "ambientColor": "#ffffff",
+      "ambientIntensity": 0,
+      "ambientFallbackIntensity": 0.3,
+      "environmentIntensity": 1,
+      "keyColor": "#ffffff",
+      "keyIntensity": 3,
+      "keyPosition": [
+        5,
+        8,
+        6
+      ],
+      "keyTarget": [
+        0,
+        0,
+        -5
+      ],
+      "rimColor": "#ffffff",
+      "rimIntensity": 0,
+      "rimPosition": [
+        -5,
+        2,
+        -4
+      ],
+      "shadows": {
+        "enabled": true,
+        "mapSize": 2048,
+        "bounds": 18,
+        "near": 0.5,
+        "far": 80,
+        "bias": 0,
+        "normalBias": 0
+      },
+      "owner": "world-composition",
+      "contrast": {
+        "mode": "integrated-part-readability"
+      }
+    },
+    "outputColorTransform": {
+      "toneMapping": "neutral",
+      "contrast": 1,
+      "saturation": 1,
+      "exposure": 1,
+      "vignette": 0,
+      "hueShift": 0,
+      "distortion": 0,
+      "owner": "world-composition",
+      "mode": "final-color-contrast-only"
+    },
+    "parts": [
+      {
+        "id": "world-environment",
+        "partId": "world-environment",
+        "role": "world-environment",
+        "moduleRef": {
+          "type": "immersive-world-generated-module",
+          "version": 1,
+          "moduleId": "compiled-v1-world-environment-395269a11b3f",
+          "partId": "world-environment",
+          "hash": "395269a11b3f7383c9297e37ddc0051de58d9510725cb9763c81635f57a65113",
+          "integrity": "sha256-395269a11b3f7383c9297e37ddc0051de58d9510725cb9763c81635f57a65113",
+          "exportName": "createImmersiveWorldPart",
+          "file": "data/immersive-world/generated-modules/395269a11b3f7383c9297e37ddc0051de58d9510725cb9763c81635f57a65113.mjs",
+          "url": "./data/immersive-world/generated-modules/395269a11b3f7383c9297e37ddc0051de58d9510725cb9763c81635f57a65113.mjs",
+          "rendererCompatibility": {
+            "version": 1,
+            "targetMode": "webgpu-project-scene",
+            "compatibilityStatus": "webgpu-compatible",
+            "webgpuCompatible": true,
+            "evidenceReasons": [
+              "webgpu-safe-material"
+            ],
+            "featureFacts": [
+              {
+                "kind": "standard-material",
+                "material": "MeshStandardMaterial",
+                "family": "standard-material-surface",
+                "reason": "webgpu-safe-material"
+              }
+            ],
+            "compatibleSurfaces": [
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "MeshStandardMaterial"
+              }
+            ]
+          }
+        },
+        "evidence": {
+          "declaredCompositionOwnership": {
+            "lane": "technical-support",
+            "owns": [
+              "technical support/compatibility part: renderer environment object, camera-safe world context, and optional atmosphere only when declared by visualConstructionDecision",
+              "room for the selected-news transformation and optional artist-style carrier to read"
+            ],
+            "avoid": [
+              "claiming visible construction not declared by visualConstructionDecision",
+              "stealing selected-news transformation or artist-style carrier ownership"
+            ]
+          },
+          "compositionOwnershipSource": "world-part-plan.json#/parts/0/compositionOwnership",
+          "goalEvidence": [
+            {
+              "goalIdentity": "assignment-goal:sha256:0999a5d038bc70273df266d09356e0b94d2e5448ce14e332e9b3dbccf90bb647",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:fa0065d692317d66418a9450b9ffe9a2f544ad0a88cd27da2f17bdf755a0b27e"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:ed394a8209401c30b65dd1a026094c0516e2cefa94199fd596dcdb82449f3b71",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:fa0065d692317d66418a9450b9ffe9a2f544ad0a88cd27da2f17bdf755a0b27e"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:940f561062f13f3eaa1ff45ab3394ad7d2c9cc98f066ad5e6e526a3e8912b626",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:fa0065d692317d66418a9450b9ffe9a2f544ad0a88cd27da2f17bdf755a0b27e"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:384b057befe60d58707ddc2fc9910f8b66705d1da0cb16f9050b01f286dff096",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:fa0065d692317d66418a9450b9ffe9a2f544ad0a88cd27da2f17bdf755a0b27e"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:b40df5228ea28c0a116e829ea15f34bca3596b80b618e4713627608af2bf1c46",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:fa0065d692317d66418a9450b9ffe9a2f544ad0a88cd27da2f17bdf755a0b27e"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:683e0f397b13a98ff20432c40224f2d1ed36f05565a36df7dcc8d369984b58ac",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:fa0065d692317d66418a9450b9ffe9a2f544ad0a88cd27da2f17bdf755a0b27e"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:cfcdd923acc3b1de6dcdccf9d92f78ac5f17f101355b874634e44ad992da1674",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:fa0065d692317d66418a9450b9ffe9a2f544ad0a88cd27da2f17bdf755a0b27e"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:5dc948560147ec669d80ed910dad5b09272dedd74f382adc21c67144c1f5cce4",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:fa0065d692317d66418a9450b9ffe9a2f544ad0a88cd27da2f17bdf755a0b27e"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:24d2426bc7f3f9def21962b87180db0edab938759b3a6b1893e226502b163149",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:fa0065d692317d66418a9450b9ffe9a2f544ad0a88cd27da2f17bdf755a0b27e"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:15e82b0d6571b206f7a9bca80eb8e91e3a0230d473520f448e21e779ea4fa02f",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:fa0065d692317d66418a9450b9ffe9a2f544ad0a88cd27da2f17bdf755a0b27e"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:f29d9d24936e2be23c6c3bc7e880f7c09a55397867ad857424e06e3a9fb41c8b",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:fa0065d692317d66418a9450b9ffe9a2f544ad0a88cd27da2f17bdf755a0b27e"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:f76958b1f5b8bcf4fa6f5347f16c06c0b06e08c04ff7b8636c51c44bf3dfa584",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:fa0065d692317d66418a9450b9ffe9a2f544ad0a88cd27da2f17bdf755a0b27e"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:2f69e28ab0fa82dcfb88328e2a8bbeb31c0c5c04befcfee7aa326e6f27585d31",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:fa0065d692317d66418a9450b9ffe9a2f544ad0a88cd27da2f17bdf755a0b27e"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:66d26b90c7611ed4657393c63c8854da37b05fed91c8ec06b7b745a93cd8b102",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:fa0065d692317d66418a9450b9ffe9a2f544ad0a88cd27da2f17bdf755a0b27e"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:15a6fcfda60d38890587a54e7dce2a0fe7be093d95c86a447db7f0dd62816199",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:fa0065d692317d66418a9450b9ffe9a2f544ad0a88cd27da2f17bdf755a0b27e"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:edb113fe1443fc8c06f8ca1fbeac1499dae65c183b98e72a07f7eba10f556b9c",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:fa0065d692317d66418a9450b9ffe9a2f544ad0a88cd27da2f17bdf755a0b27e"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:e0d9b5bdd2b0649381fe700c21fe169ba8b16ec305b43201e1b31fef5853f00c",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:fa0065d692317d66418a9450b9ffe9a2f544ad0a88cd27da2f17bdf755a0b27e"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:811cfa2bb168fac6ed8d48272ac819f57a2008085277f4e29ffca96e0f3b3da0",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:fa0065d692317d66418a9450b9ffe9a2f544ad0a88cd27da2f17bdf755a0b27e"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:c2db99bc7223d121eedfb3244e4e7d9fd9a7c267995f1b9be209d54dbfb1514e",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:fa0065d692317d66418a9450b9ffe9a2f544ad0a88cd27da2f17bdf755a0b27e"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:04b5f5c333f8796d47f9968e06aca35dbc3bff16d040a1e5d02a1ed6bda76d4a",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:fa0065d692317d66418a9450b9ffe9a2f544ad0a88cd27da2f17bdf755a0b27e"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:1151a5e7822de27fc400d88c3ccb36bd9ef07040f83ac1aaa24ba20385e66e03",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:fa0065d692317d66418a9450b9ffe9a2f544ad0a88cd27da2f17bdf755a0b27e"
+              ]
+            }
+          ],
+          "workshopAcceptance": [
+            "[object Object]"
+          ],
+          "acceptedPartValidation": {
+            "version": 1,
+            "source": "compiled-v1-part-workshop",
+            "passed": true,
+            "previewScope": "isolated-part",
+            "preview": {
+              "required": false
+            },
+            "finalDraft": {
+              "file": "source/world-environment.module.mjs",
+              "sha256": "sha256:3621aa55bab9b228cdbec591a92441849ce0040208ac3d81890def6a34252824",
+              "bytes": 7534
+            },
+            "finalPreview": {
+              "reference": "part-workshop-evidence:screenshot:sha256:fa0065d692317d66418a9450b9ffe9a2f544ad0a88cd27da2f17bdf755a0b27e",
+              "sha256": "sha256:fa0065d692317d66418a9450b9ffe9a2f544ad0a88cd27da2f17bdf755a0b27e",
+              "attemptIdentity": "part-workshop-attempt:sha256:97b1e5f831362084a3e38924b978fd692ba8e88d63252b3537c6376d2a040dce",
+              "sourceHash": "sha256:5362263ad4a5b227d1aa32a24d510efe1af42ce2a000f06dc77d78de041abe2c",
+              "packageIdentity": "part-package:sha256:dccdc56653b1d6c598aee8b1509d34d9d952c1865ddc546f731bae10dcaa59ac",
+              "status": "succeeded"
+            },
+            "verificationExpectation": {
+              "version": 1,
+              "source": "world-part-plan-assignment",
+              "partId": "world-environment",
+              "positiveContribution": {
+                "role": "world-environment",
+                "intent": "Provide technical scene support and camera-safe context; visible environment construction requires cited evidence.",
+                "visualTarget": "technical world-environment support; visible construction only if visualConstructionDecision declares it",
+                "relationshipToWhole": "Provides technical world support while creative parts own visible construction.",
+                "owns": [
+                  "technical support/compatibility part: renderer environment object, camera-safe world context, and optional atmosphere only when declared by visualConstructionDecision",
+                  "room for the selected-news transformation and optional artist-style carrier to read"
+                ]
+              },
+              "ownershipBoundary": {
+                "lane": "technical-support",
+                "owns": [
+                  "technical support/compatibility part: renderer environment object, camera-safe world context, and optional atmosphere only when declared by visualConstructionDecision",
+                  "room for the selected-news transformation and optional artist-style carrier to read"
+                ],
+                "avoid": [
+                  "claiming visible construction not declared by visualConstructionDecision",
+                  "stealing selected-news transformation or artist-style carrier ownership"
+                ]
+              },
+              "technicalEvidence": {
+                "required": [
+                  "generated-module-package",
+                  "createImmersiveWorldPart-export",
+                  "packaged-browser-capture",
+                  "render-health-telemetry"
+                ],
+                "rendererTargetMode": "webgpu-project-scene",
+                "rendererCompatibilityRequired": true,
+                "webgpuEvidenceRequired": true
+              },
+              "outputPresence": {
+                "policy": "quiet-or-absent-output-allowed",
+                "visibleOutputRequired": false,
+                "quietOrAbsentOutputAllowed": true
+              },
+              "literalMotifProhibitions": [
+                "claiming visible construction not declared by visualConstructionDecision",
+                "stealing selected-news transformation or artist-style carrier ownership"
+              ],
+              "deterministicImageChecks": {
+                "blankCapture": false,
+                "foregroundOccupancy": false,
+                "focalAnchor": false,
+                "mobileCentralSignal": false,
+                "environmentBackgroundVisibility": false
+              },
+              "authority": {
+                "deterministicInspectableEvidenceOnly": true,
+                "aestheticFidelityClaimed": false,
+                "visualObservationGating": false
+              }
+            }
+          },
+          "plannedPart": {
+            "source": "world-part-plan.json#/parts/0",
+            "partId": "world-environment",
+            "role": "world-environment",
+            "intent": "Provide technical scene support and camera-safe context; visible environment construction requires cited evidence.",
+            "messagePurpose": "Provide technical scene support and camera-safe context; visible environment construction requires cited evidence.",
+            "visualTarget": "technical world-environment support; visible construction only if visualConstructionDecision declares it",
+            "relationshipToWhole": "Provides technical world support while creative parts own visible construction.",
+            "visibleAbsence": {
+              "intentional": true,
+              "facts": [
+                "Visible absence is intentionally part of this part."
+              ],
+              "rationale": "The plan explicitly assigns visible absence to this part."
+            }
+          }
+        },
+        "intent": "Provide technical scene support and camera-safe context; visible environment construction requires cited evidence.",
+        "messagePurpose": "Provide technical scene support and camera-safe context; visible environment construction requires cited evidence.",
+        "visualTarget": "technical world-environment support; visible construction only if visualConstructionDecision declares it",
+        "relationshipToWhole": "Provides technical world support while creative parts own visible construction.",
+        "visibleAbsence": {
+          "intentional": true,
+          "facts": [
+            "Visible absence is intentionally part of this part."
+          ],
+          "rationale": "The plan explicitly assigns visible absence to this part."
+        },
+        "params": {
+          "band": "technical-support",
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "scale": 1,
+          "renderOrder": 0,
+          "visibilityPriority": "technical-support"
+        },
+        "paramSemantics": {
+          "band": "visual placement/readability band for full-world params; distinct from declared compositionOwnership.lane"
+        },
+        "compositionOwnership": {
+          "lane": "technical-support",
+          "owns": [
+            "technical support/compatibility part: renderer environment object, camera-safe world context, and optional atmosphere only when declared by visualConstructionDecision",
+            "room for the selected-news transformation and optional artist-style carrier to read"
+          ],
+          "avoid": [
+            "claiming visible construction not declared by visualConstructionDecision",
+            "stealing selected-news transformation or artist-style carrier ownership"
+          ]
+        }
+      },
+      {
+        "id": "fractured-union-radial-field",
+        "partId": "fractured-union-radial-field",
+        "role": "world-part-2",
+        "moduleRef": {
+          "type": "immersive-world-generated-module",
+          "version": 1,
+          "moduleId": "compiled-v1-fractured-union-radial-field-663a999b430b",
+          "partId": "fractured-union-radial-field",
+          "hash": "663a999b430bb3299e67dd56975fa3f4262c9b500cb0d6cabccc5c2bd344c82f",
+          "integrity": "sha256-663a999b430bb3299e67dd56975fa3f4262c9b500cb0d6cabccc5c2bd344c82f",
+          "exportName": "createImmersiveWorldPart",
+          "file": "data/immersive-world/generated-modules/663a999b430bb3299e67dd56975fa3f4262c9b500cb0d6cabccc5c2bd344c82f.mjs",
+          "url": "./data/immersive-world/generated-modules/663a999b430bb3299e67dd56975fa3f4262c9b500cb0d6cabccc5c2bd344c82f.mjs",
+          "rendererCompatibility": {
+            "version": 1,
+            "targetMode": "webgpu-project-scene",
+            "compatibilityStatus": "webgpu-compatible",
+            "webgpuCompatible": true,
+            "evidenceReasons": [
+              "webgpu-safe-material",
+              "source-used-project-webgpu-material-factory"
+            ],
+            "featureFacts": [
+              {
+                "kind": "standard-material",
+                "material": "MeshStandardMaterial",
+                "family": "standard-material-surface",
+                "reason": "webgpu-safe-material"
+              },
+              {
+                "kind": "material-factory",
+                "id": "matte-painted-surface",
+                "family": "matte-painted-surface",
+                "material": "MeshStandardMaterial",
+                "surface": "three-standard-material",
+                "reason": "source-used-project-webgpu-material-factory"
+              }
+            ],
+            "compatibleSurfaces": [
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "MeshStandardMaterial"
+              },
+              {
+                "reason": "source-used-project-webgpu-material-factory",
+                "materialType": "MeshStandardMaterial",
+                "runtimeSurface": "three-standard-material",
+                "factoryId": "matte-painted-surface",
+                "materialFactoryId": "matte-painted-surface",
+                "factoryCategory": "matte-painted-surface",
+                "property": "materialFactoryId"
+              }
+            ]
+          }
+        },
+        "evidence": {
+          "declaredCompositionOwnership": {
+            "lane": "part-specific",
+            "owns": [
+              "the explicit world-part-2 purpose, visual target, and any assigned spatial behavior"
+            ],
+            "avoid": [
+              "adding construction outside this part purpose, visual target, declared ownership, and visualConstructionDecision"
+            ]
+          },
+          "compositionOwnershipSource": "world-part-plan.json#/parts/1/compositionOwnership",
+          "goalEvidence": [
+            {
+              "goalIdentity": "assignment-goal:sha256:0999a5d038bc70273df266d09356e0b94d2e5448ce14e332e9b3dbccf90bb647",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:331d051462f0c4ff5c26eecfd52ec6049ccdb5461b447d4672a8826be9bf0b64"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:ed394a8209401c30b65dd1a026094c0516e2cefa94199fd596dcdb82449f3b71",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:331d051462f0c4ff5c26eecfd52ec6049ccdb5461b447d4672a8826be9bf0b64"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:3f33e632b9f43629622dc3225e6527ec86fc58073dd213e85b1791de8ad155dc",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:331d051462f0c4ff5c26eecfd52ec6049ccdb5461b447d4672a8826be9bf0b64"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:832e358dc8bc73ef12bea7ab8d2198dabfe666c7c1941d0b649ecacf6ee14dd4",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:331d051462f0c4ff5c26eecfd52ec6049ccdb5461b447d4672a8826be9bf0b64"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:1d04266ca7bcf94ddfbc62d374eaf8edd446f3a953d640be0f2b1359642ec86b",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:331d051462f0c4ff5c26eecfd52ec6049ccdb5461b447d4672a8826be9bf0b64"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:f64b0a33b8ce7f90715a718c4a9431b1bc75b455d2192f094cffdbe1b1177511",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:331d051462f0c4ff5c26eecfd52ec6049ccdb5461b447d4672a8826be9bf0b64"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:8e9ba00a12394ea384045073477f6813a75182a367c487d928395852f338f1d8",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:331d051462f0c4ff5c26eecfd52ec6049ccdb5461b447d4672a8826be9bf0b64"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:5dc948560147ec669d80ed910dad5b09272dedd74f382adc21c67144c1f5cce4",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:331d051462f0c4ff5c26eecfd52ec6049ccdb5461b447d4672a8826be9bf0b64"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:488876c12fb90e34d935f665b643bf647171a5733058b453c1b0b33ecb3e8f1c",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:331d051462f0c4ff5c26eecfd52ec6049ccdb5461b447d4672a8826be9bf0b64"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:10e9b228ec9613ed0afa0b3c7a202fdcd101caf8b16487e1f486cd3039dd7249",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:331d051462f0c4ff5c26eecfd52ec6049ccdb5461b447d4672a8826be9bf0b64"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:954df4a9958a33f9d08decab84873349097272cfa11b2c6380e058106d14f2b9",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:331d051462f0c4ff5c26eecfd52ec6049ccdb5461b447d4672a8826be9bf0b64"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:3df06b769e66c4b56f9124d71699fe9f226a56cf50fca28b1cc5a1d0a3472bc8",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:331d051462f0c4ff5c26eecfd52ec6049ccdb5461b447d4672a8826be9bf0b64"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:a59fc8d83cb7793e5bb2b8323aadaf8e912e55bcd7edacd4cc19feb96998da77",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:331d051462f0c4ff5c26eecfd52ec6049ccdb5461b447d4672a8826be9bf0b64"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:0e8814bfa356fb30c0f67fc7da0476a6201133bdc71de415d9f821b0d11c0ca5",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:331d051462f0c4ff5c26eecfd52ec6049ccdb5461b447d4672a8826be9bf0b64"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:15a6fcfda60d38890587a54e7dce2a0fe7be093d95c86a447db7f0dd62816199",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:331d051462f0c4ff5c26eecfd52ec6049ccdb5461b447d4672a8826be9bf0b64"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:edb113fe1443fc8c06f8ca1fbeac1499dae65c183b98e72a07f7eba10f556b9c",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:331d051462f0c4ff5c26eecfd52ec6049ccdb5461b447d4672a8826be9bf0b64"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:e0d9b5bdd2b0649381fe700c21fe169ba8b16ec305b43201e1b31fef5853f00c",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:331d051462f0c4ff5c26eecfd52ec6049ccdb5461b447d4672a8826be9bf0b64"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:811cfa2bb168fac6ed8d48272ac819f57a2008085277f4e29ffca96e0f3b3da0",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:331d051462f0c4ff5c26eecfd52ec6049ccdb5461b447d4672a8826be9bf0b64"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:c2db99bc7223d121eedfb3244e4e7d9fd9a7c267995f1b9be209d54dbfb1514e",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:331d051462f0c4ff5c26eecfd52ec6049ccdb5461b447d4672a8826be9bf0b64"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:04b5f5c333f8796d47f9968e06aca35dbc3bff16d040a1e5d02a1ed6bda76d4a",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:331d051462f0c4ff5c26eecfd52ec6049ccdb5461b447d4672a8826be9bf0b64"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:1151a5e7822de27fc400d88c3ccb36bd9ef07040f83ac1aaa24ba20385e66e03",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:331d051462f0c4ff5c26eecfd52ec6049ccdb5461b447d4672a8826be9bf0b64"
+              ]
+            }
+          ],
+          "workshopAcceptance": [
+            "[object Object]"
+          ],
+          "acceptedPartValidation": {
+            "version": 1,
+            "source": "compiled-v1-part-workshop",
+            "passed": true,
+            "previewScope": "isolated-part",
+            "preview": {
+              "required": false
+            },
+            "finalDraft": {
+              "file": "source/fractured-union-radial-field.module.mjs",
+              "sha256": "sha256:3b256740b1fafe5bea3aea34c8351c0a3b139be14b3ab8d048dbf0e2178e89ca",
+              "bytes": 14157
+            },
+            "finalPreview": {
+              "reference": "part-workshop-evidence:screenshot:sha256:331d051462f0c4ff5c26eecfd52ec6049ccdb5461b447d4672a8826be9bf0b64",
+              "sha256": "sha256:331d051462f0c4ff5c26eecfd52ec6049ccdb5461b447d4672a8826be9bf0b64",
+              "attemptIdentity": "part-workshop-attempt:sha256:b4776759152824d823f6be994e13d66a10fe706f069d59d2320c5edc81948027",
+              "sourceHash": "sha256:d38d5f32c201b1e7ab6281ff6482e163d2135a2c69fa04a59dd41703b4ddeb9b",
+              "packageIdentity": "part-package:sha256:5ef53c6c6a561fd89ace870c85c2842baf9a476a8902897c17de763592ec090c",
+              "status": "succeeded"
+            },
+            "verificationExpectation": {
+              "version": 1,
+              "source": "world-part-plan-assignment",
+              "partId": "fractured-union-radial-field",
+              "positiveContribution": {
+                "role": "world-part-2",
+                "intent": "Selected news meaning: Union must find a new stadium (for one match): Leuven mayor bans Europa League match against Israeli team in his city. News intensity is rising, pace is measured, spread is concentrated; these are weighting facts only, and the visual metaphor comes from visualConstructionDecision. Build one readable non-literal image structure.",
+                "visualTarget": "visible world-part-2 that carries non-literal fracture transformation within visualConstructionDecision",
+                "relationshipToWhole": "Contributes its planned ownership lane to the whole immersive artwork.",
+                "owns": [
+                  "the explicit world-part-2 purpose, visual target, and any assigned spatial behavior"
+                ]
+              },
+              "ownershipBoundary": {
+                "lane": "part-specific",
+                "owns": [
+                  "the explicit world-part-2 purpose, visual target, and any assigned spatial behavior"
+                ],
+                "avoid": [
+                  "adding construction outside this part purpose, visual target, declared ownership, and visualConstructionDecision"
+                ]
+              },
+              "technicalEvidence": {
+                "required": [
+                  "generated-module-package",
+                  "createImmersiveWorldPart-export",
+                  "packaged-browser-capture",
+                  "render-health-telemetry"
+                ],
+                "rendererTargetMode": "webgpu-project-scene",
+                "rendererCompatibilityRequired": true,
+                "webgpuEvidenceRequired": true
+              },
+              "outputPresence": {
+                "policy": "visible-contribution-required",
+                "visibleOutputRequired": true,
+                "quietOrAbsentOutputAllowed": false
+              },
+              "literalMotifProhibitions": [
+                "adding construction outside this part purpose, visual target, declared ownership, and visualConstructionDecision"
+              ],
+              "deterministicImageChecks": {
+                "blankCapture": true,
+                "foregroundOccupancy": false,
+                "focalAnchor": false,
+                "mobileCentralSignal": false,
+                "environmentBackgroundVisibility": false
+              },
+              "authority": {
+                "deterministicInspectableEvidenceOnly": true,
+                "aestheticFidelityClaimed": false,
+                "visualObservationGating": false
+              }
+            }
+          },
+          "plannedPart": {
+            "source": "world-part-plan.json#/parts/1",
+            "partId": "fractured-union-radial-field",
+            "role": "world-part-2",
+            "intent": "Selected news meaning: Union must find a new stadium (for one match): Leuven mayor bans Europa League match against Israeli team in his city. News intensity is rising, pace is measured, spread is concentrated; these are weighting facts only, and the visual metaphor comes from visualConstructionDecision. Build one readable non-literal image structure.",
+            "messagePurpose": "Selected news meaning: Union must find a new stadium (for one match): Leuven mayor bans Europa League match against Israeli team in his city. News intensity is rising, pace is measured, spread is concentrated; these are weighting facts only, and the visual metaphor comes from visualConstructionDecision. Build one readable non-literal image structure.",
+            "visualTarget": "visible world-part-2 that carries non-literal fracture transformation within visualConstructionDecision",
+            "relationshipToWhole": "Contributes its planned ownership lane to the whole immersive artwork.",
+            "visibleAbsence": {
+              "intentional": false,
+              "facts": [
+                "This part must be visibly present."
+              ],
+              "rationale": "The plan requires visible contribution from this part."
+            }
+          }
+        },
+        "intent": "Selected news meaning: Union must find a new stadium (for one match): Leuven mayor bans Europa League match against Israeli team in his city. News intensity is rising, pace is measured, spread is concentrated; these are weighting facts only, and the visual metaphor comes from visualConstructionDecision. Build one readable non-literal image structure.",
+        "messagePurpose": "Selected news meaning: Union must find a new stadium (for one match): Leuven mayor bans Europa League match against Israeli team in his city. News intensity is rising, pace is measured, spread is concentrated; these are weighting facts only, and the visual metaphor comes from visualConstructionDecision. Build one readable non-literal image structure.",
+        "visualTarget": "visible world-part-2 that carries non-literal fracture transformation within visualConstructionDecision",
+        "relationshipToWhole": "Contributes its planned ownership lane to the whole immersive artwork.",
+        "visibleAbsence": {
+          "intentional": false,
+          "facts": [
+            "This part must be visibly present."
+          ],
+          "rationale": "The plan requires visible contribution from this part."
+        },
+        "params": {
+          "band": "primary-readability",
+          "position": [
+            0,
+            0.15,
+            -1.8
+          ],
+          "scale": 1.52,
+          "renderOrder": 3,
+          "visibilityPriority": "primary"
+        },
+        "paramSemantics": {
+          "band": "visual placement/readability band for full-world params; distinct from declared compositionOwnership.lane"
+        },
+        "compositionOwnership": {
+          "lane": "part-specific",
+          "owns": [
+            "the explicit world-part-2 purpose, visual target, and any assigned spatial behavior"
+          ],
+          "avoid": [
+            "adding construction outside this part purpose, visual target, declared ownership, and visualConstructionDecision"
+          ]
+        }
+      }
+    ],
+    "generatedModules": [
+      {
+        "type": "immersive-world-generated-module",
+        "version": 1,
+        "moduleId": "compiled-v1-world-environment-395269a11b3f",
+        "partId": "world-environment",
+        "hash": "395269a11b3f7383c9297e37ddc0051de58d9510725cb9763c81635f57a65113",
+        "integrity": "sha256-395269a11b3f7383c9297e37ddc0051de58d9510725cb9763c81635f57a65113",
+        "exportName": "createImmersiveWorldPart",
+        "file": "data/immersive-world/generated-modules/395269a11b3f7383c9297e37ddc0051de58d9510725cb9763c81635f57a65113.mjs",
+        "url": "./data/immersive-world/generated-modules/395269a11b3f7383c9297e37ddc0051de58d9510725cb9763c81635f57a65113.mjs",
+        "rendererCompatibility": {
+          "version": 1,
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material"
+          ],
+          "featureFacts": [
+            {
+              "kind": "standard-material",
+              "material": "MeshStandardMaterial",
+              "family": "standard-material-surface",
+              "reason": "webgpu-safe-material"
+            }
+          ],
+          "compatibleSurfaces": [
+            {
+              "reason": "webgpu-safe-material",
+              "materialType": "MeshStandardMaterial"
+            }
+          ]
+        }
+      },
+      {
+        "type": "immersive-world-generated-module",
+        "version": 1,
+        "moduleId": "compiled-v1-fractured-union-radial-field-663a999b430b",
+        "partId": "fractured-union-radial-field",
+        "hash": "663a999b430bb3299e67dd56975fa3f4262c9b500cb0d6cabccc5c2bd344c82f",
+        "integrity": "sha256-663a999b430bb3299e67dd56975fa3f4262c9b500cb0d6cabccc5c2bd344c82f",
+        "exportName": "createImmersiveWorldPart",
+        "file": "data/immersive-world/generated-modules/663a999b430bb3299e67dd56975fa3f4262c9b500cb0d6cabccc5c2bd344c82f.mjs",
+        "url": "./data/immersive-world/generated-modules/663a999b430bb3299e67dd56975fa3f4262c9b500cb0d6cabccc5c2bd344c82f.mjs",
+        "rendererCompatibility": {
+          "version": 1,
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material",
+            "source-used-project-webgpu-material-factory"
+          ],
+          "featureFacts": [
+            {
+              "kind": "standard-material",
+              "material": "MeshStandardMaterial",
+              "family": "standard-material-surface",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "material-factory",
+              "id": "matte-painted-surface",
+              "family": "matte-painted-surface",
+              "material": "MeshStandardMaterial",
+              "surface": "three-standard-material",
+              "reason": "source-used-project-webgpu-material-factory"
+            }
+          ],
+          "compatibleSurfaces": [
+            {
+              "reason": "webgpu-safe-material",
+              "materialType": "MeshStandardMaterial"
+            },
+            {
+              "reason": "source-used-project-webgpu-material-factory",
+              "materialType": "MeshStandardMaterial",
+              "runtimeSurface": "three-standard-material",
+              "factoryId": "matte-painted-surface",
+              "materialFactoryId": "matte-painted-surface",
+              "factoryCategory": "matte-painted-surface",
+              "property": "materialFactoryId"
+            }
+          ]
+        }
+      }
+    ],
+    "rendererAuthoring": {
+      "version": 1,
+      "targetMode": "webgpu-project-scene",
+      "requestedTarget": "webgpu-project-scene",
+      "effectiveTarget": "webgpu-project-scene",
+      "webgpuTargeted": true,
+      "legacyWebglTargeted": false,
+      "unspecified": false,
+      "compatibilityGateRequired": true
+    },
+    "rendererCompatibility": {
+      "version": 1,
+      "targetMode": "webgpu-project-scene",
+      "webgpuTargeted": true,
+      "legacyWebglTargeted": false,
+      "compatibilityGateRequired": true,
+      "compatibilityStatus": "webgpu-compatible",
+      "webgpuCompatible": true,
+      "evidenceReasons": [
+        "webgpu-safe-material",
+        "source-used-project-webgpu-material-factory"
+      ],
+      "featureFacts": [
+        {
+          "kind": "standard-material",
+          "family": "standard-material-surface",
+          "material": "MeshStandardMaterial",
+          "reason": "webgpu-safe-material"
+        },
+        {
+          "kind": "material-factory",
+          "id": "matte-painted-surface",
+          "family": "matte-painted-surface",
+          "material": "MeshStandardMaterial",
+          "surface": "three-standard-material",
+          "reason": "source-used-project-webgpu-material-factory"
+        }
+      ],
+      "moduleCount": 2,
+      "compatibleModuleCount": 2,
+      "incompatibleModuleCount": 0,
+      "compositionCompatibilityDeclared": false,
+      "modules": [
+        {
+          "partId": "world-environment",
+          "role": "world-environment",
+          "moduleId": "compiled-v1-world-environment-395269a11b3f",
+          "hash": "395269a11b3f7383c9297e37ddc0051de58d9510725cb9763c81635f57a65113",
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material"
+          ],
+          "featureFacts": [
+            {
+              "kind": "standard-material",
+              "family": "standard-material-surface",
+              "material": "MeshStandardMaterial",
+              "reason": "webgpu-safe-material"
+            }
+          ],
+          "compatibleSurfaceCount": 1,
+          "forbiddenSurfaceCount": 0,
+          "sourceStage": "part-workshop"
+        },
+        {
+          "partId": "fractured-union-radial-field",
+          "role": "world-part-2",
+          "moduleId": "compiled-v1-fractured-union-radial-field-663a999b430b",
+          "hash": "663a999b430bb3299e67dd56975fa3f4262c9b500cb0d6cabccc5c2bd344c82f",
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material",
+            "source-used-project-webgpu-material-factory"
+          ],
+          "featureFacts": [
+            {
+              "kind": "standard-material",
+              "family": "standard-material-surface",
+              "material": "MeshStandardMaterial",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "material-factory",
+              "id": "matte-painted-surface",
+              "family": "matte-painted-surface",
+              "material": "MeshStandardMaterial",
+              "surface": "three-standard-material",
+              "reason": "source-used-project-webgpu-material-factory"
+            }
+          ],
+          "compatibleSurfaceCount": 2,
+          "forbiddenSurfaceCount": 0,
+          "sourceStage": "part-workshop"
+        }
+      ]
+    },
+    "renderFacts": {
+      "environmentPresent": true,
+      "cameraOwnedByComposition": true,
+      "lightingOwnedByComposition": true,
+      "nearFarClippingOwned": true,
+      "acceptedPartCount": 2,
+      "generatedModuleCount": 2,
+      "generatedAssetCount": 0,
+      "rendererAuthoringTarget": "webgpu-project-scene",
+      "rendererCompatibilityStatus": "webgpu-compatible",
+      "webgpuRendererGateRequired": true,
+      "webgpuRendererCompatible": true,
+      "desktopPreviewRecorded": true,
+      "mobilePreviewRecorded": true,
+      "surroundPreviewRecorded": true
+    }
+  },
+  "image": {
+    "thumbnailJpeg": "./data/media/2026-09-01-1136z-union-must-find-a-new-stadium-for-one-match-leuven-mayor-bans-europa-lea/thumb-320.jpg",
+    "openGraphJpeg": "./data/media/2026-09-01-1136z-union-must-find-a-new-stadium-for-one-match-leuven-mayor-bans-europa-lea/og-1200x630.jpg",
+    "instagramJpeg": "./data/media/2026-09-01-1136z-union-must-find-a-new-stadium-for-one-match-leuven-mayor-bans-europa-lea/instagram-1080x1350.jpg",
+    "altText": "Union must find a new stadium (for one match): Leuven mayor bans Europa League match against Israeli team in his city by Gerhard Richter."
+  }
+}

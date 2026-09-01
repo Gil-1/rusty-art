@@ -1,0 +1,76 @@
+{
+  "version": 2,
+  "kind": "rusty-art-public-media-assets",
+  "artworkId": "2026-09-01-1136z-union-must-find-a-new-stadium-for-one-match-leuven-mayor-bans-europa-lea",
+  "source": {
+    "sha256": "6d13f4a2bd3bd7da57e742da3d61a2cc7eeaf11e720e6c84d823a9476bdbf360",
+    "role": "daily-preview-story-desktop"
+  },
+  "sources": {
+    "primary": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-desktop",
+      "sha256": "6d13f4a2bd3bd7da57e742da3d61a2cc7eeaf11e720e6c84d823a9476bdbf360"
+    },
+    "openGraph": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-open-graph",
+      "sha256": "e43486c350fabd1370ad7197dee7070d69e8b72bb2d5371539c4ad1f87c24d5b"
+    },
+    "instagram": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-instagram",
+      "sha256": "a815f85b85a02b526245bee025787529d7a31c1c29cf48acb127f984fab0c240"
+    }
+  },
+  "targets": {
+    "thumb-320.jpg": {
+      "spec": {
+        "fileName": "thumb-320.jpg",
+        "width": 320,
+        "height": null,
+        "fit": "inside",
+        "withoutEnlargement": true,
+        "format": "jpeg",
+        "quality": 82
+      },
+      "publicPath": "./data/media/2026-09-01-1136z-union-must-find-a-new-stadium-for-one-match-leuven-mayor-bans-europa-lea/thumb-320.jpg",
+      "source": {
+        "sha256": "6d13f4a2bd3bd7da57e742da3d61a2cc7eeaf11e720e6c84d823a9476bdbf360",
+        "role": "daily-preview-story-desktop"
+      }
+    },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-09-01-1136z-union-must-find-a-new-stadium-for-one-match-leuven-mayor-bans-europa-lea/og-1200x630.jpg",
+      "source": {
+        "sha256": "e43486c350fabd1370ad7197dee7070d69e8b72bb2d5371539c4ad1f87c24d5b",
+        "role": "daily-preview-story-open-graph"
+      }
+    },
+    "instagram-1080x1350.jpg": {
+      "spec": {
+        "fileName": "instagram-1080x1350.jpg",
+        "width": 1080,
+        "height": 1350,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-09-01-1136z-union-must-find-a-new-stadium-for-one-match-leuven-mayor-bans-europa-lea/instagram-1080x1350.jpg",
+      "source": {
+        "sha256": "a815f85b85a02b526245bee025787529d7a31c1c29cf48acb127f984fab0c240",
+        "role": "daily-preview-story-instagram"
+      }
+    }
+  }
+}
