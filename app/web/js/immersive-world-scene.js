@@ -1126,6 +1126,18 @@ export function applyImmersiveWorldPartPlacement(object, params = {}) {
   return { applied: positionApplied || rotationApplied || scaleApplied || facingApplied, positionApplied, rotationApplied, scaleApplied, facingApplied };
 }
 
+export function mountImmersiveWorldPart(group, object, part = {}) {
+  if (!part?.compositionTransform) {
+    group.add(object);
+    return object;
+  }
+  const mount = new THREE.Group();
+  applyImmersiveWorldPartPlacement(mount, part.compositionTransform);
+  mount.add(object);
+  group.add(mount);
+  return mount;
+}
+
 export function createImmersiveWorldInstancedShapeField(THREE, {
   geometry,
   material,
@@ -2037,7 +2049,7 @@ export class ArtworkScene {
       ...webgpuFeatureFallbackReasonsFromCompatibility(part.rendererCompatibility)
     ]);
     result.object.name = result.object.name || part.id || `immersive-world-part-${index + 1}`;
-    this.group.add(result.object);
+    mountImmersiveWorldPart(this.group, result.object, part);
     if (result.update) this.updateHooks.push(result.update);
     if (result.dispose) this.disposeHooks.push(result.dispose);
     return {

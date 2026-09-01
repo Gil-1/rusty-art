@@ -17,6 +17,54 @@ import {
   NEUTRAL_WEBGPU_OUTPUT_COLOR_TRANSFORM
 } from '../app/web/js/contracts/immersive-world-baseline-contract.js';
 
+test('buildPart mounts composition transforms without changing legacy hierarchy', async () => {
+  const moduleRef = {
+    url: 'data/immersive-world/generated-modules/88bc10fa12797ad5747afe79e4a4b50e4eda4f35189291f982613ef2ae27cb69.mjs'
+  };
+  const build = async (part) => {
+    const context = {
+      applyConfigGeneration: 1,
+      group: new THREE.Group(),
+      camera: new THREE.PerspectiveCamera(),
+      renderer: null,
+      updateHooks: [],
+      disposeHooks: []
+    };
+    await ArtworkScene.prototype.buildPart.call(context, {
+      part: { id: 'test-part', moduleRef, ...part },
+      world: {},
+      config: { seed: 'composition-transform-test' },
+      index: 0,
+      generation: 1
+    });
+    return context;
+  };
+  const transformedContext = await build({
+    params: { position: [100, 100, 100] },
+    compositionTransform: {
+      position: [1, 2, 3],
+      rotation: [0.1, 0.2, 0.3],
+      scale: 2
+    }
+  });
+
+  const mount = transformedContext.group.children[0];
+  assert.equal(mount.children.length, 1);
+  assert.equal(mount.children[0].userData.moduleId, 'larry-rivers-hormuz-slow-wash-bloom-rhythm');
+  assert.deepEqual(mount.position.toArray(), [1, 2, 3]);
+  assert.deepEqual(mount.rotation.toArray().slice(0, 3), [0.1, 0.2, 0.3]);
+  assert.deepEqual(mount.scale.toArray(), [2, 2, 2]);
+  assert.deepEqual(mount.children[0].position.toArray(), [0, 0, 0]);
+
+  const legacyContext = await build({ params: { position: [4, 5, 6], scale: 3 } });
+
+  assert.equal(legacyContext.group.children.length, 1);
+  assert.equal(legacyContext.group.children[0].userData.moduleId, 'larry-rivers-hormuz-slow-wash-bloom-rhythm');
+  assert.deepEqual(legacyContext.group.children[0].position.toArray(), [0, 0, 0]);
+
+  for (const dispose of [...transformedContext.disposeHooks, ...legacyContext.disposeHooks]) dispose();
+});
+
 test('neutral WebGPU baseline contract exposes the shared lighting and output defaults', () => {
   assert.equal(NEUTRAL_WEBGPU_LIGHTING.mode, 'neutral-webgpu');
   assert.equal(NEUTRAL_WEBGPU_LIGHTING.environmentMode, 'room-environment-pmrem');
