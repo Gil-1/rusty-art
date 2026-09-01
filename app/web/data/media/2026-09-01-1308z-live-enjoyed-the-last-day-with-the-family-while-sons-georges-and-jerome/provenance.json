@@ -1,0 +1,76 @@
+{
+  "version": 2,
+  "kind": "rusty-art-public-media-assets",
+  "artworkId": "2026-09-01-1308z-live-enjoyed-the-last-day-with-the-family-while-sons-georges-and-jerome",
+  "source": {
+    "sha256": "d3365a22aabd7acc6ba586a23a3cac400bc6920e5865c3d7a74c1be17e1c45b1",
+    "role": "daily-preview-story-desktop"
+  },
+  "sources": {
+    "primary": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-desktop",
+      "sha256": "d3365a22aabd7acc6ba586a23a3cac400bc6920e5865c3d7a74c1be17e1c45b1"
+    },
+    "openGraph": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-open-graph",
+      "sha256": "6b213654ef30b8a77bed7ce3f3e936d1c8b861f1a974c3c4ee895f73bd7e8c5f"
+    },
+    "instagram": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-instagram",
+      "sha256": "141c4a5b0df8ceeab1e6bb4d11bdc4e82628fd0417281074f5a7109af6f351e6"
+    }
+  },
+  "targets": {
+    "thumb-320.jpg": {
+      "spec": {
+        "fileName": "thumb-320.jpg",
+        "width": 320,
+        "height": null,
+        "fit": "inside",
+        "withoutEnlargement": true,
+        "format": "jpeg",
+        "quality": 82
+      },
+      "publicPath": "./data/media/2026-09-01-1308z-live-enjoyed-the-last-day-with-the-family-while-sons-georges-and-jerome/thumb-320.jpg",
+      "source": {
+        "sha256": "d3365a22aabd7acc6ba586a23a3cac400bc6920e5865c3d7a74c1be17e1c45b1",
+        "role": "daily-preview-story-desktop"
+      }
+    },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-09-01-1308z-live-enjoyed-the-last-day-with-the-family-while-sons-georges-and-jerome/og-1200x630.jpg",
+      "source": {
+        "sha256": "6b213654ef30b8a77bed7ce3f3e936d1c8b861f1a974c3c4ee895f73bd7e8c5f",
+        "role": "daily-preview-story-open-graph"
+      }
+    },
+    "instagram-1080x1350.jpg": {
+      "spec": {
+        "fileName": "instagram-1080x1350.jpg",
+        "width": 1080,
+        "height": 1350,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-09-01-1308z-live-enjoyed-the-last-day-with-the-family-while-sons-georges-and-jerome/instagram-1080x1350.jpg",
+      "source": {
+        "sha256": "141c4a5b0df8ceeab1e6bb4d11bdc4e82628fd0417281074f5a7109af6f351e6",
+        "role": "daily-preview-story-instagram"
+      }
+    }
+  }
+}

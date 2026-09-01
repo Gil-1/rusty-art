@@ -1,0 +1,1103 @@
+{
+  "id": "2026-09-01-1308z-live-enjoyed-the-last-day-with-the-family-while-sons-georges-and-jerome",
+  "date": "2026-09-01",
+  "title": "LIVE. “Enjoyed the last day with the family”: while sons Georges and Jerome are back at school, Wout van Aert goes in search of his first stage win",
+  "generatedAt": "2026-09-01T13:25:48.961Z",
+  "news": {
+    "source": "hln",
+    "title": "LIVE. “Enjoyed the last day with the family”: while sons Georges and Jerome are back at school, Wout van Aert goes in search of his first stage win",
+    "link": "https://www.hln.be/vuelta/live-genoten-van-laatste-dag-met-familie-terwijl-zoontjes-georges-en-jerome-terug-op-school-zitten-gaat-wout-van-aert-op-zoek-naar-eerste-ritzege~a2e4fe86/",
+    "score": null
+  },
+  "inspiration": {
+    "artist": "Walter Quirt",
+    "tags": [
+      "non-literal fracture transformation",
+      "Union",
+      "immersive-world"
+    ],
+    "links": {}
+  },
+  "seed": null,
+  "sceneStrategy": null,
+  "techStack": null,
+  "newsVisualMappings": [],
+  "qualityScore": {
+    "score": null,
+    "summary": null,
+    "heuristic": {
+      "score": null,
+      "breakdown": {}
+    },
+    "calibration": {
+      "sampleCount": 0,
+      "trustWeight": 0
+    },
+    "alignment": {
+      "totalAlign": null,
+      "components": {
+        "title": {
+          "score": null
+        },
+        "style": {
+          "score": null
+        },
+        "emotional": {
+          "score": null
+        }
+      }
+    }
+  },
+  "rationale": {
+    "intent": {
+      "signal": null,
+      "emotion": null,
+      "tension": null,
+      "balance": null,
+      "motion": null
+    },
+    "selection": {
+      "whyHeadline": null,
+      "priorityTerms": []
+    },
+    "qualitySummary": null
+  },
+  "runPolicy": null,
+  "artCreationMethod": "immersive-world-v1",
+  "world": {
+    "id": "immersive-world-059ddc3c3adf",
+    "method": "immersive-world-v1",
+    "title": "LIVE. “Enjoyed the last day with the family”: while sons Georges and Jerome are back at school, Wout van Aert goes in search of his first stage win",
+    "date": "2026-09-01",
+    "rendererAuthoringTarget": "webgpu-project-scene",
+    "environment": {
+      "color": "#6f625b",
+      "fieldColor": "#6f625b",
+      "fogDensity": 0,
+      "kind": "technical-scene-support",
+      "radius": 92,
+      "opacity": 1,
+      "visibilityPolicy": "accepted camera-pinned painted surround and floor provide broad warm-teal context while the fractured concourse owns the readable construction",
+      "visualConstructionDecisionRef": "art-direction-packet.json#/creativeDirection/visualConstructionDecision"
+    },
+    "camera": {
+      "owner": "world-composition",
+      "fov": 66,
+      "near": 0.08,
+      "far": 220,
+      "position": [
+        0.22,
+        2.12,
+        14.2
+      ],
+      "target": [
+        0.55,
+        0.18,
+        -5.6
+      ],
+      "distanceSafety": {
+        "nearFarOwnedHere": true,
+        "minPartDistance": 1.7,
+        "clippingRisk": "low"
+      }
+    },
+    "lighting": {
+      "mode": "neutral-webgpu",
+      "environmentMode": "room-environment-pmrem",
+      "ambientColor": "#fff0dc",
+      "ambientIntensity": 0.06,
+      "ambientFallbackIntensity": 0.22,
+      "environmentIntensity": 0.62,
+      "keyColor": "#fff0d4",
+      "keyIntensity": 1.4,
+      "keyPosition": [
+        5,
+        9,
+        7
+      ],
+      "keyTarget": [
+        0.55,
+        0.1,
+        -8
+      ],
+      "rimColor": "#6ca09c",
+      "rimIntensity": 0.34,
+      "rimPosition": [
+        -6,
+        3,
+        -5
+      ],
+      "shadows": {
+        "enabled": true,
+        "mapSize": 2048,
+        "bounds": 40,
+        "near": 0.5,
+        "far": 100,
+        "bias": 0,
+        "normalBias": 0.015
+      },
+      "owner": "world-composition",
+      "contrast": {
+        "mode": "integrated-part-readability"
+      }
+    },
+    "outputColorTransform": {
+      "toneMapping": "neutral",
+      "contrast": 1.08,
+      "saturation": 1.06,
+      "exposure": 0.98,
+      "vignette": 0.035,
+      "hueShift": 0,
+      "distortion": 0,
+      "owner": "world-composition",
+      "mode": "final-color-contrast-only"
+    },
+    "parts": [
+      {
+        "id": "world-environment",
+        "partId": "world-environment",
+        "role": "world-environment",
+        "moduleRef": {
+          "type": "immersive-world-generated-module",
+          "version": 1,
+          "moduleId": "compiled-v1-world-environment-9ca0c78ba724",
+          "partId": "world-environment",
+          "hash": "9ca0c78ba724e1c1f4256712a21d40e8607956f5d837650dd26dfd44242e145a",
+          "integrity": "sha256-9ca0c78ba724e1c1f4256712a21d40e8607956f5d837650dd26dfd44242e145a",
+          "exportName": "createImmersiveWorldPart",
+          "file": "data/immersive-world/generated-modules/9ca0c78ba724e1c1f4256712a21d40e8607956f5d837650dd26dfd44242e145a.mjs",
+          "url": "./data/immersive-world/generated-modules/9ca0c78ba724e1c1f4256712a21d40e8607956f5d837650dd26dfd44242e145a.mjs",
+          "rendererCompatibility": {
+            "version": 1,
+            "targetMode": "webgpu-project-scene",
+            "compatibilityStatus": "webgpu-compatible",
+            "webgpuCompatible": true,
+            "evidenceReasons": [
+              "webgpu-native-helper-utility",
+              "webgpu-safe-material"
+            ],
+            "featureFacts": [
+              {
+                "kind": "webgpu-native-helper",
+                "id": "vertex-color-skybox-shell",
+                "family": "sky-background-field",
+                "factory": "sky-background-field",
+                "material": "MeshBasicMaterial",
+                "surface": "vertex-color-skybox-shell",
+                "reason": "webgpu-native-helper-utility"
+              },
+              {
+                "kind": "standard-material",
+                "material": "MeshStandardMaterial",
+                "family": "standard-material-surface",
+                "reason": "webgpu-safe-material"
+              }
+            ],
+            "compatibleSurfaces": [
+              {
+                "reason": "webgpu-native-helper-utility",
+                "api": "utilities.createVertexColorSkyboxShell",
+                "helperId": "vertex-color-skybox-shell",
+                "featureFamily": "sky-background-field",
+                "outputKind": "object-bundle",
+                "materialType": "MeshBasicMaterial",
+                "runtimeSurface": "vertex-color-skybox-shell",
+                "factoryId": "sky-background-field",
+                "materialFactoryId": "sky-background-field",
+                "factoryCategory": "sky-background-field"
+              },
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "MeshStandardMaterial"
+              }
+            ]
+          }
+        },
+        "evidence": {
+          "declaredCompositionOwnership": {
+            "lane": "technical-support",
+            "owns": [
+              "technical support/compatibility part: renderer environment object, camera-safe world context, and optional atmosphere only when declared by visualConstructionDecision",
+              "room for the selected-news transformation and optional artist-style carrier to read"
+            ],
+            "avoid": [
+              "claiming visible construction not declared by visualConstructionDecision",
+              "stealing selected-news transformation or artist-style carrier ownership"
+            ]
+          },
+          "compositionOwnershipSource": "world-part-plan.json#/parts/0/compositionOwnership",
+          "goalEvidence": [
+            {
+              "goalIdentity": "assignment-goal:sha256:d63fb47bea309d2e361cf82330f01c4765fedc978c3bfa25581d21be609990fe",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:4dd651cf8344869dfdfab3f6bbb0b1d027cdeca2f7b6a7fc5a22dbf0044b41bc"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:bbfc0ea21f4e855b49a1421f285936eaa631a07c3e6fdfeb91ef92ce4de2248d",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:4dd651cf8344869dfdfab3f6bbb0b1d027cdeca2f7b6a7fc5a22dbf0044b41bc"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:c2b725d8d77d70011012530e7e9cf773413bbba9474f7ec5e8313c6b37d806b6",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:4dd651cf8344869dfdfab3f6bbb0b1d027cdeca2f7b6a7fc5a22dbf0044b41bc"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:9dcbee0ed705e1e9eee1edcb3bf59b5ed3ef1430fc5732f52d9fcb7fa40257ae",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:4dd651cf8344869dfdfab3f6bbb0b1d027cdeca2f7b6a7fc5a22dbf0044b41bc"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:a74406fcbc745359d8451f685e89cdcbb343a354a88b5fdf6a3e6ff59b121a32",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:4dd651cf8344869dfdfab3f6bbb0b1d027cdeca2f7b6a7fc5a22dbf0044b41bc"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:6c9939b200ab92c6bc73abb47bd809cf47616595c3583c8cd0e1d92412ee5029",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:4dd651cf8344869dfdfab3f6bbb0b1d027cdeca2f7b6a7fc5a22dbf0044b41bc"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:2cdfbc671eba554d22374010d8101b633e5d3f67f535a9ef0a59afbe9f771366",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:4dd651cf8344869dfdfab3f6bbb0b1d027cdeca2f7b6a7fc5a22dbf0044b41bc"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:5dc948560147ec669d80ed910dad5b09272dedd74f382adc21c67144c1f5cce4",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:4dd651cf8344869dfdfab3f6bbb0b1d027cdeca2f7b6a7fc5a22dbf0044b41bc"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:2327453e4f542d8d2aa0161c45f1e3a38b0280391628a65b2be44a2465571724",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:4dd651cf8344869dfdfab3f6bbb0b1d027cdeca2f7b6a7fc5a22dbf0044b41bc"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:7f7dcd50a43e15fdf80399642037f21edc46b3b581a2004afe71301919e29357",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:4dd651cf8344869dfdfab3f6bbb0b1d027cdeca2f7b6a7fc5a22dbf0044b41bc"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:2c9460753f089b1af1096fc3d38d12b46c23e4b5df82036519bf4e3875f5789b",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:4dd651cf8344869dfdfab3f6bbb0b1d027cdeca2f7b6a7fc5a22dbf0044b41bc"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:a4a03a9dea55dae91aa449921ba290db121ea83039ea7a088dbbe53d45cabc29",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:4dd651cf8344869dfdfab3f6bbb0b1d027cdeca2f7b6a7fc5a22dbf0044b41bc"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:2f69e28ab0fa82dcfb88328e2a8bbeb31c0c5c04befcfee7aa326e6f27585d31",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:4dd651cf8344869dfdfab3f6bbb0b1d027cdeca2f7b6a7fc5a22dbf0044b41bc"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:a897354e24d5cd7f3b5df1ac3f10592edea3c7485f616165d498454a325b1b6e",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:4dd651cf8344869dfdfab3f6bbb0b1d027cdeca2f7b6a7fc5a22dbf0044b41bc"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:880b19ecd61e4d13a9cdae2a5e48ae4d206a8824d8f3f535e2135b6848339e1f",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:4dd651cf8344869dfdfab3f6bbb0b1d027cdeca2f7b6a7fc5a22dbf0044b41bc"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:d4ac11ed266c5f770aed4294f0cf2372bb458a3462f487d6df76df46bbcc2bd9",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:4dd651cf8344869dfdfab3f6bbb0b1d027cdeca2f7b6a7fc5a22dbf0044b41bc"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:b02f53d60a74d6c5f94b19f36b74acbfa659723a2f17793b8e4917f4fb648f48",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:4dd651cf8344869dfdfab3f6bbb0b1d027cdeca2f7b6a7fc5a22dbf0044b41bc"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:2e432f5ce2d0523a1169c8f280760f1dab38b3d8e5ee39fb90c53d535722bac1",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:4dd651cf8344869dfdfab3f6bbb0b1d027cdeca2f7b6a7fc5a22dbf0044b41bc"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:ebb0789ec878f273bc8b230b363125a41f7745a5ced2d0380499603ab46cbcc3",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:4dd651cf8344869dfdfab3f6bbb0b1d027cdeca2f7b6a7fc5a22dbf0044b41bc"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:07aa981e4d5a50de7a6ee6a77d95a48c4feef7ad8cbce24b18ae54f63c95e2e8",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:4dd651cf8344869dfdfab3f6bbb0b1d027cdeca2f7b6a7fc5a22dbf0044b41bc"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:aa0e50f36bc436172fed7966bfd2f2db758b698bf13f300506887a97f7e8d701",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:4dd651cf8344869dfdfab3f6bbb0b1d027cdeca2f7b6a7fc5a22dbf0044b41bc"
+              ]
+            }
+          ],
+          "workshopAcceptance": [
+            "[object Object]"
+          ],
+          "acceptedPartValidation": {
+            "version": 1,
+            "source": "compiled-v1-part-workshop",
+            "passed": true,
+            "previewScope": "isolated-part",
+            "preview": {
+              "required": false
+            },
+            "finalDraft": {
+              "file": "source/world-environment.module.mjs",
+              "sha256": "sha256:435693a29176f196773eb40c2b43aeeef336f41e53058270b9a2b6c074e75926",
+              "bytes": 6094
+            },
+            "finalPreview": {
+              "reference": "part-workshop-evidence:screenshot:sha256:4dd651cf8344869dfdfab3f6bbb0b1d027cdeca2f7b6a7fc5a22dbf0044b41bc",
+              "sha256": "sha256:4dd651cf8344869dfdfab3f6bbb0b1d027cdeca2f7b6a7fc5a22dbf0044b41bc",
+              "attemptIdentity": "part-workshop-attempt:sha256:97b1e5f831362084a3e38924b978fd692ba8e88d63252b3537c6376d2a040dce",
+              "sourceHash": "sha256:264025de6bc0fba184eadebfe6d9e6607a6a5df9968ee44db31cd42f822791ec",
+              "packageIdentity": "part-package:sha256:165c0e94f91230a39b2e40495ea82e777b1e8f7496bac02c69b6e281cc8efceb",
+              "status": "succeeded"
+            },
+            "verificationExpectation": {
+              "version": 1,
+              "source": "world-part-plan-assignment",
+              "partId": "world-environment",
+              "positiveContribution": {
+                "role": "world-environment",
+                "intent": "Provide technical scene support and camera-safe context; visible environment construction requires cited evidence.",
+                "visualTarget": "technical world-environment support; visible construction only if visualConstructionDecision declares it",
+                "relationshipToWhole": "Provides technical world support while creative parts own visible construction.",
+                "owns": [
+                  "technical support/compatibility part: renderer environment object, camera-safe world context, and optional atmosphere only when declared by visualConstructionDecision",
+                  "room for the selected-news transformation and optional artist-style carrier to read"
+                ]
+              },
+              "ownershipBoundary": {
+                "lane": "technical-support",
+                "owns": [
+                  "technical support/compatibility part: renderer environment object, camera-safe world context, and optional atmosphere only when declared by visualConstructionDecision",
+                  "room for the selected-news transformation and optional artist-style carrier to read"
+                ],
+                "avoid": [
+                  "claiming visible construction not declared by visualConstructionDecision",
+                  "stealing selected-news transformation or artist-style carrier ownership"
+                ]
+              },
+              "technicalEvidence": {
+                "required": [
+                  "generated-module-package",
+                  "createImmersiveWorldPart-export",
+                  "packaged-browser-capture",
+                  "render-health-telemetry"
+                ],
+                "rendererTargetMode": "webgpu-project-scene",
+                "rendererCompatibilityRequired": true,
+                "webgpuEvidenceRequired": true
+              },
+              "outputPresence": {
+                "policy": "quiet-or-absent-output-allowed",
+                "visibleOutputRequired": false,
+                "quietOrAbsentOutputAllowed": true
+              },
+              "literalMotifProhibitions": [
+                "claiming visible construction not declared by visualConstructionDecision",
+                "stealing selected-news transformation or artist-style carrier ownership"
+              ],
+              "deterministicImageChecks": {
+                "blankCapture": false,
+                "foregroundOccupancy": false,
+                "focalAnchor": false,
+                "mobileCentralSignal": false,
+                "environmentBackgroundVisibility": false
+              },
+              "authority": {
+                "deterministicInspectableEvidenceOnly": true,
+                "aestheticFidelityClaimed": false,
+                "visualObservationGating": false
+              }
+            }
+          },
+          "plannedPart": {
+            "source": "world-part-plan.json#/parts/0",
+            "partId": "world-environment",
+            "role": "world-environment",
+            "intent": "Provide technical scene support and camera-safe context; visible environment construction requires cited evidence.",
+            "messagePurpose": "Provide technical scene support and camera-safe context; visible environment construction requires cited evidence.",
+            "visualTarget": "technical world-environment support; visible construction only if visualConstructionDecision declares it",
+            "relationshipToWhole": "Provides technical world support while creative parts own visible construction.",
+            "visibleAbsence": {
+              "intentional": true,
+              "facts": [
+                "Visible absence is intentionally part of this part."
+              ],
+              "rationale": "The plan explicitly assigns visible absence to this part."
+            }
+          },
+          "compositionAdaptations": [
+            "Preserved the accepted environment at the origin and full scale.",
+            "composition modified world-environment from isolated accepted-part defaults"
+          ],
+          "compositionBeforeHash": "07f3ed2bcce4f905",
+          "compositionAfterHash": "58ab5f587f84f5a6"
+        },
+        "intent": "Provide technical scene support and camera-safe context; visible environment construction requires cited evidence.",
+        "messagePurpose": "Provide technical scene support and camera-safe context; visible environment construction requires cited evidence.",
+        "visualTarget": "technical world-environment support; visible construction only if visualConstructionDecision declares it",
+        "relationshipToWhole": "Provides technical world support while creative parts own visible construction.",
+        "visibleAbsence": {
+          "intentional": true,
+          "facts": [
+            "Visible absence is intentionally part of this part."
+          ],
+          "rationale": "The plan explicitly assigns visible absence to this part."
+        },
+        "params": {
+          "band": "technical-support",
+          "renderOrder": 0,
+          "visibilityPriority": "technical-support"
+        },
+        "compositionTransform": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": 1
+        },
+        "paramSemantics": {
+          "band": "visual placement/readability band for full-world params; distinct from declared compositionOwnership.lane",
+          "renderOrder": "readability metadata only; it does not change declared ownership"
+        },
+        "compositionOwnership": {
+          "lane": "technical-support",
+          "owns": [
+            "technical support/compatibility part: renderer environment object, camera-safe world context, and optional atmosphere only when declared by visualConstructionDecision",
+            "room for the selected-news transformation and optional artist-style carrier to read"
+          ],
+          "avoid": [
+            "claiming visible construction not declared by visualConstructionDecision",
+            "stealing selected-news transformation or artist-style carrier ownership"
+          ]
+        }
+      },
+      {
+        "id": "fractured-union-concourse",
+        "partId": "fractured-union-concourse",
+        "role": "world-part-2",
+        "moduleRef": {
+          "type": "immersive-world-generated-module",
+          "version": 1,
+          "moduleId": "compiled-v1-fractured-union-concourse-51c286bbf488",
+          "partId": "fractured-union-concourse",
+          "hash": "51c286bbf488369612b9841fba8de9d7dfd07d6a455937f65ddd39b9e0574779",
+          "integrity": "sha256-51c286bbf488369612b9841fba8de9d7dfd07d6a455937f65ddd39b9e0574779",
+          "exportName": "createImmersiveWorldPart",
+          "file": "data/immersive-world/generated-modules/51c286bbf488369612b9841fba8de9d7dfd07d6a455937f65ddd39b9e0574779.mjs",
+          "url": "./data/immersive-world/generated-modules/51c286bbf488369612b9841fba8de9d7dfd07d6a455937f65ddd39b9e0574779.mjs",
+          "rendererCompatibility": {
+            "version": 1,
+            "targetMode": "webgpu-project-scene",
+            "compatibilityStatus": "webgpu-compatible",
+            "webgpuCompatible": true,
+            "evidenceReasons": [
+              "webgpu-safe-material",
+              "source-used-project-webgpu-material-factory"
+            ],
+            "featureFacts": [
+              {
+                "kind": "standard-material",
+                "material": "MeshStandardMaterial",
+                "family": "standard-material-surface",
+                "reason": "webgpu-safe-material"
+              },
+              {
+                "kind": "material-factory",
+                "id": "matte-painted-surface",
+                "family": "matte-painted-surface",
+                "material": "MeshStandardMaterial",
+                "surface": "three-standard-material",
+                "reason": "source-used-project-webgpu-material-factory"
+              }
+            ],
+            "compatibleSurfaces": [
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "MeshStandardMaterial"
+              },
+              {
+                "reason": "source-used-project-webgpu-material-factory",
+                "materialType": "MeshStandardMaterial",
+                "runtimeSurface": "three-standard-material",
+                "factoryId": "matte-painted-surface",
+                "materialFactoryId": "matte-painted-surface",
+                "factoryCategory": "matte-painted-surface",
+                "property": "materialFactoryId"
+              }
+            ]
+          }
+        },
+        "evidence": {
+          "declaredCompositionOwnership": {
+            "lane": "part-specific",
+            "owns": [
+              "the explicit world-part-2 purpose, visual target, and any assigned spatial behavior"
+            ],
+            "avoid": [
+              "adding construction outside this part purpose, visual target, declared ownership, and visualConstructionDecision"
+            ]
+          },
+          "compositionOwnershipSource": "world-part-plan.json#/parts/1/compositionOwnership",
+          "goalEvidence": [
+            {
+              "goalIdentity": "assignment-goal:sha256:d63fb47bea309d2e361cf82330f01c4765fedc978c3bfa25581d21be609990fe",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:40f3bd41b0b14090c7525ea24b001b175432240e7f66a65808b3b3a08ca4ee77"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:bbfc0ea21f4e855b49a1421f285936eaa631a07c3e6fdfeb91ef92ce4de2248d",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:40f3bd41b0b14090c7525ea24b001b175432240e7f66a65808b3b3a08ca4ee77"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:73ad443afa43986a34fb5eb10c55d8aaa282d2fc6509cbc78b89f1b5ca5345e2",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:40f3bd41b0b14090c7525ea24b001b175432240e7f66a65808b3b3a08ca4ee77"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:d7f4da4cbcf74646a5ee5ee91451e28bcc3daaadf4efa63579ee5a603ddcc378",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:40f3bd41b0b14090c7525ea24b001b175432240e7f66a65808b3b3a08ca4ee77"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:1074c25af7dc24aa18fe7bdea669cfc1a082463ab1a74a77d1061c1481d1755b",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:40f3bd41b0b14090c7525ea24b001b175432240e7f66a65808b3b3a08ca4ee77"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:bc577005eb6ba58ec609cbea8c7e1b1063ac0c6aebd4a48618a0b4db0c5745d0",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:40f3bd41b0b14090c7525ea24b001b175432240e7f66a65808b3b3a08ca4ee77"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:a0d335847791dbf0ff87d9e3c1e9e128519921c6488979c7d9c41271d86cf938",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:40f3bd41b0b14090c7525ea24b001b175432240e7f66a65808b3b3a08ca4ee77"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:5dc948560147ec669d80ed910dad5b09272dedd74f382adc21c67144c1f5cce4",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:40f3bd41b0b14090c7525ea24b001b175432240e7f66a65808b3b3a08ca4ee77"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:124f9f9c5ea97380d73f08280f166b9cb2f2fa36d5991b2ac8a4f0dabe95886b",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:40f3bd41b0b14090c7525ea24b001b175432240e7f66a65808b3b3a08ca4ee77"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:81baed59d1c49dab6e595634ac5b78af956ce4eb361d2eed3d2ea1db38b01547",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:40f3bd41b0b14090c7525ea24b001b175432240e7f66a65808b3b3a08ca4ee77"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:aefd7a747f48a8c1b66540db38fe590c1ed61f5e97f994cd04c1f6afc05636a5",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:40f3bd41b0b14090c7525ea24b001b175432240e7f66a65808b3b3a08ca4ee77"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:a2616fa6714c8588bc300338b3b79f066635fdaa4d13a9887c1c3fb1700d26fc",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:40f3bd41b0b14090c7525ea24b001b175432240e7f66a65808b3b3a08ca4ee77"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:4910137aac3d7fc2160176a3d958b6e984f36caf9ec2ebf7cdfdf478d3ee5eaa",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:40f3bd41b0b14090c7525ea24b001b175432240e7f66a65808b3b3a08ca4ee77"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:4b0e98cdcd554d2bf696d4e9e19c571ed8d58afc2f80a50d94bf56944f71a03a",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:40f3bd41b0b14090c7525ea24b001b175432240e7f66a65808b3b3a08ca4ee77"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:880b19ecd61e4d13a9cdae2a5e48ae4d206a8824d8f3f535e2135b6848339e1f",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:40f3bd41b0b14090c7525ea24b001b175432240e7f66a65808b3b3a08ca4ee77"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:d4ac11ed266c5f770aed4294f0cf2372bb458a3462f487d6df76df46bbcc2bd9",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:40f3bd41b0b14090c7525ea24b001b175432240e7f66a65808b3b3a08ca4ee77"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:b02f53d60a74d6c5f94b19f36b74acbfa659723a2f17793b8e4917f4fb648f48",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:40f3bd41b0b14090c7525ea24b001b175432240e7f66a65808b3b3a08ca4ee77"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:2e432f5ce2d0523a1169c8f280760f1dab38b3d8e5ee39fb90c53d535722bac1",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:40f3bd41b0b14090c7525ea24b001b175432240e7f66a65808b3b3a08ca4ee77"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:ebb0789ec878f273bc8b230b363125a41f7745a5ced2d0380499603ab46cbcc3",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:40f3bd41b0b14090c7525ea24b001b175432240e7f66a65808b3b3a08ca4ee77"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:07aa981e4d5a50de7a6ee6a77d95a48c4feef7ad8cbce24b18ae54f63c95e2e8",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:40f3bd41b0b14090c7525ea24b001b175432240e7f66a65808b3b3a08ca4ee77"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:aa0e50f36bc436172fed7966bfd2f2db758b698bf13f300506887a97f7e8d701",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:40f3bd41b0b14090c7525ea24b001b175432240e7f66a65808b3b3a08ca4ee77"
+              ]
+            }
+          ],
+          "workshopAcceptance": [
+            "[object Object]"
+          ],
+          "acceptedPartValidation": {
+            "version": 1,
+            "source": "compiled-v1-part-workshop",
+            "passed": true,
+            "previewScope": "isolated-part",
+            "preview": {
+              "required": false
+            },
+            "finalDraft": {
+              "file": "source/fractured-union-concourse.module.mjs",
+              "sha256": "sha256:fdc5bbc37a16e5f771873821867f53be2acf3a27f1909e0f89fe671ba7e56c38",
+              "bytes": 14999
+            },
+            "finalPreview": {
+              "reference": "part-workshop-evidence:screenshot:sha256:40f3bd41b0b14090c7525ea24b001b175432240e7f66a65808b3b3a08ca4ee77",
+              "sha256": "sha256:40f3bd41b0b14090c7525ea24b001b175432240e7f66a65808b3b3a08ca4ee77",
+              "attemptIdentity": "part-workshop-attempt:sha256:8830cd10d4c18985b9277d786441ec517679cfdd886d1196e369de96ce3118ef",
+              "sourceHash": "sha256:c0d5f099dae025811c10bc5900a845cc64e0dc97a3cd5c5570ba6d70b3c0c686",
+              "packageIdentity": "part-package:sha256:c4156dd17f5a44aa129990a3566aa0e6d2e55c37ad3095cee479edb9c485e260",
+              "status": "succeeded"
+            },
+            "verificationExpectation": {
+              "version": 1,
+              "source": "world-part-plan-assignment",
+              "partId": "fractured-union-concourse",
+              "positiveContribution": {
+                "role": "world-part-2",
+                "intent": "Selected news meaning: LIVE. “Enjoyed the last day with the family”: while sons Georges and Jerome are back at school, Wout van Aert goes in search of his first stage win. News intensity is rising, pace is measured, spread is concentrated; these are weighting facts only, and the visual metaphor comes from visualConstructionDecision. Use \"Union\" only as the trend cue inside that fuller event, not as a replacement for the event. Build one readable non-literal image structure.",
+                "visualTarget": "visible world-part-2 that carries non-literal fracture transformation within visualConstructionDecision",
+                "relationshipToWhole": "Contributes its planned ownership lane to the whole immersive artwork.",
+                "owns": [
+                  "the explicit world-part-2 purpose, visual target, and any assigned spatial behavior"
+                ]
+              },
+              "ownershipBoundary": {
+                "lane": "part-specific",
+                "owns": [
+                  "the explicit world-part-2 purpose, visual target, and any assigned spatial behavior"
+                ],
+                "avoid": [
+                  "adding construction outside this part purpose, visual target, declared ownership, and visualConstructionDecision"
+                ]
+              },
+              "technicalEvidence": {
+                "required": [
+                  "generated-module-package",
+                  "createImmersiveWorldPart-export",
+                  "packaged-browser-capture",
+                  "render-health-telemetry"
+                ],
+                "rendererTargetMode": "webgpu-project-scene",
+                "rendererCompatibilityRequired": true,
+                "webgpuEvidenceRequired": true
+              },
+              "outputPresence": {
+                "policy": "visible-contribution-required",
+                "visibleOutputRequired": true,
+                "quietOrAbsentOutputAllowed": false
+              },
+              "literalMotifProhibitions": [
+                "adding construction outside this part purpose, visual target, declared ownership, and visualConstructionDecision"
+              ],
+              "deterministicImageChecks": {
+                "blankCapture": true,
+                "foregroundOccupancy": false,
+                "focalAnchor": false,
+                "mobileCentralSignal": false,
+                "environmentBackgroundVisibility": false
+              },
+              "authority": {
+                "deterministicInspectableEvidenceOnly": true,
+                "aestheticFidelityClaimed": false,
+                "visualObservationGating": false
+              }
+            }
+          },
+          "plannedPart": {
+            "source": "world-part-plan.json#/parts/1",
+            "partId": "fractured-union-concourse",
+            "role": "world-part-2",
+            "intent": "Selected news meaning: LIVE. “Enjoyed the last day with the family”: while sons Georges and Jerome are back at school, Wout van Aert goes in search of his first stage win. News intensity is rising, pace is measured, spread is concentrated; these are weighting facts only, and the visual metaphor comes from visualConstructionDecision. Use \"Union\" only as the trend cue inside that fuller event, not as a replacement for the event. Build one readable non-literal image structure.",
+            "messagePurpose": "Selected news meaning: LIVE. “Enjoyed the last day with the family”: while sons Georges and Jerome are back at school, Wout van Aert goes in search of his first stage win. News intensity is rising, pace is measured, spread is concentrated; these are weighting facts only, and the visual metaphor comes from visualConstructionDecision. Use \"Union\" only as the trend cue inside that fuller event, not as a replacement for the event. Build one readable non-literal image structure.",
+            "visualTarget": "visible world-part-2 that carries non-literal fracture transformation within visualConstructionDecision",
+            "relationshipToWhole": "Contributes its planned ownership lane to the whole immersive artwork.",
+            "visibleAbsence": {
+              "intentional": false,
+              "facts": [
+                "This part must be visibly present."
+              ],
+              "rationale": "The plan requires visible contribution from this part."
+            }
+          },
+          "compositionAdaptations": [
+            "Retained the connected front-to-back route span, lifted its near continuation clear of the fixed camera, and pitched its forward routes into the primary frames without modifying accepted geometry or references.",
+            "composition modified fractured-union-concourse from isolated accepted-part defaults"
+          ],
+          "compositionBeforeHash": "24b4110ae16e3a92",
+          "compositionAfterHash": "0e46cbb25dea8cfe"
+        },
+        "intent": "Selected news meaning: LIVE. “Enjoyed the last day with the family”: while sons Georges and Jerome are back at school, Wout van Aert goes in search of his first stage win. News intensity is rising, pace is measured, spread is concentrated; these are weighting facts only, and the visual metaphor comes from visualConstructionDecision. Use \"Union\" only as the trend cue inside that fuller event, not as a replacement for the event. Build one readable non-literal image structure.",
+        "messagePurpose": "Selected news meaning: LIVE. “Enjoyed the last day with the family”: while sons Georges and Jerome are back at school, Wout van Aert goes in search of his first stage win. News intensity is rising, pace is measured, spread is concentrated; these are weighting facts only, and the visual metaphor comes from visualConstructionDecision. Use \"Union\" only as the trend cue inside that fuller event, not as a replacement for the event. Build one readable non-literal image structure.",
+        "visualTarget": "visible world-part-2 that carries non-literal fracture transformation within visualConstructionDecision",
+        "relationshipToWhole": "Contributes its planned ownership lane to the whole immersive artwork.",
+        "visibleAbsence": {
+          "intentional": false,
+          "facts": [
+            "This part must be visibly present."
+          ],
+          "rationale": "The plan requires visible contribution from this part."
+        },
+        "params": {
+          "band": "primary-readability",
+          "renderOrder": 3,
+          "visibilityPriority": "primary",
+          "scale": 1.45
+        },
+        "compositionTransform": {
+          "position": [
+            0.55,
+            12,
+            26.5
+          ],
+          "rotation": [
+            -0.2,
+            -0.12,
+            0
+          ],
+          "scale": 1.68
+        },
+        "paramSemantics": {
+          "band": "visual placement/readability band for full-world params; distinct from declared compositionOwnership.lane",
+          "renderOrder": "readability metadata only; it does not change declared ownership"
+        },
+        "compositionOwnership": {
+          "lane": "part-specific",
+          "owns": [
+            "the explicit world-part-2 purpose, visual target, and any assigned spatial behavior"
+          ],
+          "avoid": [
+            "adding construction outside this part purpose, visual target, declared ownership, and visualConstructionDecision"
+          ]
+        }
+      }
+    ],
+    "generatedModules": [
+      {
+        "type": "immersive-world-generated-module",
+        "version": 1,
+        "moduleId": "compiled-v1-world-environment-9ca0c78ba724",
+        "partId": "world-environment",
+        "hash": "9ca0c78ba724e1c1f4256712a21d40e8607956f5d837650dd26dfd44242e145a",
+        "integrity": "sha256-9ca0c78ba724e1c1f4256712a21d40e8607956f5d837650dd26dfd44242e145a",
+        "exportName": "createImmersiveWorldPart",
+        "file": "data/immersive-world/generated-modules/9ca0c78ba724e1c1f4256712a21d40e8607956f5d837650dd26dfd44242e145a.mjs",
+        "url": "./data/immersive-world/generated-modules/9ca0c78ba724e1c1f4256712a21d40e8607956f5d837650dd26dfd44242e145a.mjs",
+        "rendererCompatibility": {
+          "version": 1,
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-native-helper-utility",
+            "webgpu-safe-material"
+          ],
+          "featureFacts": [
+            {
+              "kind": "webgpu-native-helper",
+              "id": "vertex-color-skybox-shell",
+              "family": "sky-background-field",
+              "factory": "sky-background-field",
+              "material": "MeshBasicMaterial",
+              "surface": "vertex-color-skybox-shell",
+              "reason": "webgpu-native-helper-utility"
+            },
+            {
+              "kind": "standard-material",
+              "material": "MeshStandardMaterial",
+              "family": "standard-material-surface",
+              "reason": "webgpu-safe-material"
+            }
+          ],
+          "compatibleSurfaces": [
+            {
+              "reason": "webgpu-native-helper-utility",
+              "api": "utilities.createVertexColorSkyboxShell",
+              "helperId": "vertex-color-skybox-shell",
+              "featureFamily": "sky-background-field",
+              "outputKind": "object-bundle",
+              "materialType": "MeshBasicMaterial",
+              "runtimeSurface": "vertex-color-skybox-shell",
+              "factoryId": "sky-background-field",
+              "materialFactoryId": "sky-background-field",
+              "factoryCategory": "sky-background-field"
+            },
+            {
+              "reason": "webgpu-safe-material",
+              "materialType": "MeshStandardMaterial"
+            }
+          ]
+        }
+      },
+      {
+        "type": "immersive-world-generated-module",
+        "version": 1,
+        "moduleId": "compiled-v1-fractured-union-concourse-51c286bbf488",
+        "partId": "fractured-union-concourse",
+        "hash": "51c286bbf488369612b9841fba8de9d7dfd07d6a455937f65ddd39b9e0574779",
+        "integrity": "sha256-51c286bbf488369612b9841fba8de9d7dfd07d6a455937f65ddd39b9e0574779",
+        "exportName": "createImmersiveWorldPart",
+        "file": "data/immersive-world/generated-modules/51c286bbf488369612b9841fba8de9d7dfd07d6a455937f65ddd39b9e0574779.mjs",
+        "url": "./data/immersive-world/generated-modules/51c286bbf488369612b9841fba8de9d7dfd07d6a455937f65ddd39b9e0574779.mjs",
+        "rendererCompatibility": {
+          "version": 1,
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material",
+            "source-used-project-webgpu-material-factory"
+          ],
+          "featureFacts": [
+            {
+              "kind": "standard-material",
+              "material": "MeshStandardMaterial",
+              "family": "standard-material-surface",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "material-factory",
+              "id": "matte-painted-surface",
+              "family": "matte-painted-surface",
+              "material": "MeshStandardMaterial",
+              "surface": "three-standard-material",
+              "reason": "source-used-project-webgpu-material-factory"
+            }
+          ],
+          "compatibleSurfaces": [
+            {
+              "reason": "webgpu-safe-material",
+              "materialType": "MeshStandardMaterial"
+            },
+            {
+              "reason": "source-used-project-webgpu-material-factory",
+              "materialType": "MeshStandardMaterial",
+              "runtimeSurface": "three-standard-material",
+              "factoryId": "matte-painted-surface",
+              "materialFactoryId": "matte-painted-surface",
+              "factoryCategory": "matte-painted-surface",
+              "property": "materialFactoryId"
+            }
+          ]
+        }
+      }
+    ],
+    "rendererAuthoring": {
+      "version": 1,
+      "targetMode": "webgpu-project-scene",
+      "requestedTarget": "webgpu-project-scene",
+      "effectiveTarget": "webgpu-project-scene",
+      "webgpuTargeted": true,
+      "legacyWebglTargeted": false,
+      "unspecified": false,
+      "compatibilityGateRequired": true
+    },
+    "rendererCompatibility": {
+      "version": 1,
+      "targetMode": "webgpu-project-scene",
+      "webgpuTargeted": true,
+      "legacyWebglTargeted": false,
+      "compatibilityGateRequired": true,
+      "compatibilityStatus": "webgpu-compatible",
+      "webgpuCompatible": true,
+      "evidenceReasons": [
+        "webgpu-native-helper-utility",
+        "webgpu-safe-material",
+        "source-used-project-webgpu-material-factory"
+      ],
+      "featureFacts": [
+        {
+          "kind": "webgpu-native-helper",
+          "id": "vertex-color-skybox-shell",
+          "family": "sky-background-field",
+          "factory": "sky-background-field",
+          "material": "MeshBasicMaterial",
+          "surface": "vertex-color-skybox-shell",
+          "reason": "webgpu-native-helper-utility"
+        },
+        {
+          "kind": "standard-material",
+          "family": "standard-material-surface",
+          "material": "MeshStandardMaterial",
+          "reason": "webgpu-safe-material"
+        },
+        {
+          "kind": "material-factory",
+          "id": "matte-painted-surface",
+          "family": "matte-painted-surface",
+          "material": "MeshStandardMaterial",
+          "surface": "three-standard-material",
+          "reason": "source-used-project-webgpu-material-factory"
+        }
+      ],
+      "moduleCount": 2,
+      "compatibleModuleCount": 2,
+      "incompatibleModuleCount": 0,
+      "compositionCompatibilityDeclared": false,
+      "modules": [
+        {
+          "partId": "world-environment",
+          "role": "world-environment",
+          "moduleId": "compiled-v1-world-environment-9ca0c78ba724",
+          "hash": "9ca0c78ba724e1c1f4256712a21d40e8607956f5d837650dd26dfd44242e145a",
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-native-helper-utility",
+            "webgpu-safe-material"
+          ],
+          "featureFacts": [
+            {
+              "kind": "webgpu-native-helper",
+              "id": "vertex-color-skybox-shell",
+              "family": "sky-background-field",
+              "factory": "sky-background-field",
+              "material": "MeshBasicMaterial",
+              "surface": "vertex-color-skybox-shell",
+              "reason": "webgpu-native-helper-utility"
+            },
+            {
+              "kind": "standard-material",
+              "family": "standard-material-surface",
+              "material": "MeshStandardMaterial",
+              "reason": "webgpu-safe-material"
+            }
+          ],
+          "compatibleSurfaceCount": 2,
+          "forbiddenSurfaceCount": 0,
+          "sourceStage": "part-workshop"
+        },
+        {
+          "partId": "fractured-union-concourse",
+          "role": "world-part-2",
+          "moduleId": "compiled-v1-fractured-union-concourse-51c286bbf488",
+          "hash": "51c286bbf488369612b9841fba8de9d7dfd07d6a455937f65ddd39b9e0574779",
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material",
+            "source-used-project-webgpu-material-factory"
+          ],
+          "featureFacts": [
+            {
+              "kind": "standard-material",
+              "family": "standard-material-surface",
+              "material": "MeshStandardMaterial",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "material-factory",
+              "id": "matte-painted-surface",
+              "family": "matte-painted-surface",
+              "material": "MeshStandardMaterial",
+              "surface": "three-standard-material",
+              "reason": "source-used-project-webgpu-material-factory"
+            }
+          ],
+          "compatibleSurfaceCount": 2,
+          "forbiddenSurfaceCount": 0,
+          "sourceStage": "part-workshop"
+        }
+      ]
+    },
+    "renderFacts": {
+      "environmentPresent": true,
+      "cameraOwnedByComposition": true,
+      "lightingOwnedByComposition": true,
+      "nearFarClippingOwned": true,
+      "acceptedPartCount": 2,
+      "generatedModuleCount": 2,
+      "generatedAssetCount": 0,
+      "rendererAuthoringTarget": "webgpu-project-scene",
+      "rendererCompatibilityStatus": "webgpu-compatible",
+      "webgpuRendererGateRequired": true,
+      "webgpuRendererCompatible": true,
+      "desktopPreviewRecorded": true,
+      "mobilePreviewRecorded": true,
+      "surroundPreviewRecorded": true
+    }
+  },
+  "image": {
+    "thumbnailJpeg": "./data/media/2026-09-01-1308z-live-enjoyed-the-last-day-with-the-family-while-sons-georges-and-jerome/thumb-320.jpg",
+    "openGraphJpeg": "./data/media/2026-09-01-1308z-live-enjoyed-the-last-day-with-the-family-while-sons-georges-and-jerome/og-1200x630.jpg",
+    "instagramJpeg": "./data/media/2026-09-01-1308z-live-enjoyed-the-last-day-with-the-family-while-sons-georges-and-jerome/instagram-1080x1350.jpg",
+    "altText": "LIVE. “Enjoyed the last day with the family”: while sons Georges and Jerome are back at school, Wout van Aert goes in search of his first stage win by Walter Quirt."
+  }
+}
