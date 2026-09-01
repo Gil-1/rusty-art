@@ -1,0 +1,1017 @@
+{
+  "id": "2026-09-01-0631z-kempen-based-company-heylen-group-buys-audi-site-in-forest-3-000-new-job",
+  "date": "2026-09-01",
+  "title": "Kempen-based company Heylen Group buys Audi site in Forest: 3,000 new jobs on the way",
+  "generatedAt": "2026-09-01T06:33:31.144Z",
+  "news": {
+    "source": "vrt",
+    "title": "Kempen-based company Heylen Group buys Audi site in Forest: 3,000 new jobs on the way",
+    "link": "https://vrtnws.be/p.QAX4l6w0x",
+    "score": null
+  },
+  "inspiration": {
+    "artist": "Larry Rivers",
+    "tags": [
+      "non-literal fracture transformation",
+      "Heylen Warehouses",
+      "immersive-world"
+    ],
+    "links": {}
+  },
+  "seed": null,
+  "sceneStrategy": null,
+  "techStack": null,
+  "newsVisualMappings": [],
+  "qualityScore": {
+    "score": null,
+    "summary": null,
+    "heuristic": {
+      "score": null,
+      "breakdown": {}
+    },
+    "calibration": {
+      "sampleCount": 0,
+      "trustWeight": 0
+    },
+    "alignment": {
+      "totalAlign": null,
+      "components": {
+        "title": {
+          "score": null
+        },
+        "style": {
+          "score": null
+        },
+        "emotional": {
+          "score": null
+        }
+      }
+    }
+  },
+  "rationale": {
+    "intent": {
+      "signal": null,
+      "emotion": null,
+      "tension": null,
+      "balance": null,
+      "motion": null
+    },
+    "selection": {
+      "whyHeadline": null,
+      "priorityTerms": []
+    },
+    "qualitySummary": null
+  },
+  "runPolicy": null,
+  "artCreationMethod": "immersive-world-v1",
+  "world": {
+    "id": "immersive-world-038c4a32b9e6",
+    "method": "immersive-world-v1",
+    "title": "Kempen-based company Heylen Group buys Audi site in Forest: 3,000 new jobs on the way",
+    "environment": {
+      "color": "#73777d",
+      "fieldColor": "#73777d",
+      "fogDensity": 0,
+      "kind": "technical-scene-support",
+      "radius": 92,
+      "opacity": 0.92,
+      "palette": [
+        "blue"
+      ],
+      "visibilityPolicy": "technical environment object; visible shell/skybox/background dominance requires visualConstructionDecision evidence",
+      "visualConstructionDecisionRef": "art-direction-packet.json#/creativeDirection/visualConstructionDecision"
+    },
+    "camera": {
+      "owner": "world-composition",
+      "fov": 66,
+      "near": 0.08,
+      "far": 220,
+      "position": [
+        0.22,
+        2.12,
+        14.2
+      ],
+      "target": [
+        0.55,
+        0.18,
+        -5.6
+      ],
+      "distanceSafety": {
+        "nearFarOwnedHere": true,
+        "minPartDistance": 1.7,
+        "clippingRisk": "low"
+      }
+    },
+    "lighting": {
+      "mode": "neutral-webgpu",
+      "environmentMode": "room-environment-pmrem",
+      "ambientColor": "#ffffff",
+      "ambientIntensity": 0,
+      "ambientFallbackIntensity": 0.3,
+      "environmentIntensity": 1,
+      "keyColor": "#ffffff",
+      "keyIntensity": 3,
+      "keyPosition": [
+        5,
+        8,
+        6
+      ],
+      "keyTarget": [
+        0,
+        0,
+        -5
+      ],
+      "rimColor": "#ffffff",
+      "rimIntensity": 0,
+      "rimPosition": [
+        -5,
+        2,
+        -4
+      ],
+      "shadows": {
+        "enabled": true,
+        "mapSize": 2048,
+        "bounds": 18,
+        "near": 0.5,
+        "far": 80,
+        "bias": 0,
+        "normalBias": 0
+      },
+      "owner": "world-composition",
+      "contrast": {
+        "mode": "integrated-part-readability"
+      }
+    },
+    "outputColorTransform": {
+      "toneMapping": "neutral",
+      "contrast": 1,
+      "saturation": 1,
+      "exposure": 1,
+      "vignette": 0,
+      "hueShift": 0,
+      "distortion": 0,
+      "owner": "world-composition",
+      "mode": "final-color-contrast-only"
+    },
+    "parts": [
+      {
+        "id": "world-environment",
+        "partId": "world-environment",
+        "role": "world-environment",
+        "moduleRef": {
+          "type": "immersive-world-generated-module",
+          "version": 1,
+          "moduleId": "compiled-v1-world-environment-aad9514575a5",
+          "partId": "world-environment",
+          "hash": "aad9514575a5ce76dc63d381fae6094908407b91d492e313c5100a4ea860dcfd",
+          "integrity": "sha256-aad9514575a5ce76dc63d381fae6094908407b91d492e313c5100a4ea860dcfd",
+          "exportName": "createImmersiveWorldPart",
+          "file": "data/immersive-world/generated-modules/aad9514575a5ce76dc63d381fae6094908407b91d492e313c5100a4ea860dcfd.mjs",
+          "url": "./data/immersive-world/generated-modules/aad9514575a5ce76dc63d381fae6094908407b91d492e313c5100a4ea860dcfd.mjs",
+          "rendererCompatibility": {
+            "version": 1,
+            "targetMode": "webgpu-project-scene",
+            "compatibilityStatus": "webgpu-compatible",
+            "webgpuCompatible": true,
+            "evidenceReasons": [
+              "webgpu-safe-material",
+              "source-used-project-webgpu-material-factory"
+            ],
+            "featureFacts": [
+              {
+                "kind": "standard-material",
+                "material": "MeshStandardMaterial",
+                "family": "standard-material-surface",
+                "reason": "webgpu-safe-material"
+              },
+              {
+                "kind": "material-factory",
+                "id": "matte-painted-surface",
+                "family": "matte-painted-surface",
+                "material": "MeshStandardMaterial",
+                "surface": "three-standard-material",
+                "reason": "source-used-project-webgpu-material-factory"
+              }
+            ],
+            "compatibleSurfaces": [
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "MeshStandardMaterial"
+              },
+              {
+                "reason": "source-used-project-webgpu-material-factory",
+                "materialType": "MeshStandardMaterial",
+                "runtimeSurface": "three-standard-material",
+                "factoryId": "matte-painted-surface",
+                "materialFactoryId": "matte-painted-surface",
+                "factoryCategory": "matte-painted-surface",
+                "property": "materialFactoryId"
+              }
+            ]
+          }
+        },
+        "evidence": {
+          "declaredCompositionOwnership": {
+            "lane": "technical-support",
+            "owns": [
+              "technical support/compatibility part: renderer environment object, camera-safe world context, and optional atmosphere only when declared by visualConstructionDecision",
+              "room for the selected-news transformation and optional artist-style carrier to read"
+            ],
+            "avoid": [
+              "claiming visible construction not declared by visualConstructionDecision",
+              "stealing selected-news transformation or artist-style carrier ownership"
+            ]
+          },
+          "compositionOwnershipSource": "world-part-plan.json#/parts/0/compositionOwnership",
+          "goalEvidence": [
+            {
+              "goalIdentity": "assignment-goal:sha256:0f087a85f5fb39def062fbc5055be3c284a39611d0263ed69226bce2a2358a93",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:314b404c2f17ee580be0868fc80144d84edd765f7660aeaf61586995afd3f169"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:9b9fb8885c30ea2bfe40486a9dc6612d17ce67baa8352f7bc13d1b89bc6cd93e",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:314b404c2f17ee580be0868fc80144d84edd765f7660aeaf61586995afd3f169"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:5c6f37c90970177d3fab53cd50427703500b18cec197023067de46db935b4d25",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:314b404c2f17ee580be0868fc80144d84edd765f7660aeaf61586995afd3f169"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:894950a82ebc4ab8079779ef318c5289a20cce64bc5caec3f5f625be9418e6aa",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:314b404c2f17ee580be0868fc80144d84edd765f7660aeaf61586995afd3f169"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:75d4f0075859e95f85f1fc263bcfe3fa2b45f5566c94baf55efd1db79722d6d0",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:314b404c2f17ee580be0868fc80144d84edd765f7660aeaf61586995afd3f169"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:8563e5077fd3256c54f165a09201d71ee20b15df7b7f88e1bdf46d0d01c9f108",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:314b404c2f17ee580be0868fc80144d84edd765f7660aeaf61586995afd3f169"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:132a46c72cf6c0262e4c180d7ce2bf37cbb9d8ec72842e14486a114d8bdc3fc5",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:314b404c2f17ee580be0868fc80144d84edd765f7660aeaf61586995afd3f169"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:5dc948560147ec669d80ed910dad5b09272dedd74f382adc21c67144c1f5cce4",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:314b404c2f17ee580be0868fc80144d84edd765f7660aeaf61586995afd3f169"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:7232fa37b865859cd62158fc8c84f32c2c810d65dd552493c7e0235c65c4bc16",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:314b404c2f17ee580be0868fc80144d84edd765f7660aeaf61586995afd3f169"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:6d1ba45ff5872c39673b06b51cfefe42c70060de5ae97febf97230d92d9ca72d",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:314b404c2f17ee580be0868fc80144d84edd765f7660aeaf61586995afd3f169"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:cdb13061c19c369897be00af534b26d8f21a4fdca25b319b6a01cc678163bbc5",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:314b404c2f17ee580be0868fc80144d84edd765f7660aeaf61586995afd3f169"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:f82af6938093e19c4da13fe1841bedb8ba6b7a5780af66aecad973afc3bbd804",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:314b404c2f17ee580be0868fc80144d84edd765f7660aeaf61586995afd3f169"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:2f69e28ab0fa82dcfb88328e2a8bbeb31c0c5c04befcfee7aa326e6f27585d31",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:314b404c2f17ee580be0868fc80144d84edd765f7660aeaf61586995afd3f169"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:fb8d4a9aaa26e67dc22f5336fda601ee707c721f5d32eb3ee3cb6d21e8864d2e",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:314b404c2f17ee580be0868fc80144d84edd765f7660aeaf61586995afd3f169"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:8a5c93d35f8531a954db3f77e873b3cc85c5261e91193f6fc49f233946a50f50",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:314b404c2f17ee580be0868fc80144d84edd765f7660aeaf61586995afd3f169"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:f1f4bf82b5b7ab7afe3be56e2a14c4ea76ea707af3269c1360ae8f4e986f08a6",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:314b404c2f17ee580be0868fc80144d84edd765f7660aeaf61586995afd3f169"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:2828e49d19d8da71a87bcbfa3b44f4f424a2efbecbd6d6f31200cd14d9fda95e",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:314b404c2f17ee580be0868fc80144d84edd765f7660aeaf61586995afd3f169"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:6a49821b3ee59518edbdca90337b1c428ee676ecb2e11d0ecbe478747d8f0293",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:314b404c2f17ee580be0868fc80144d84edd765f7660aeaf61586995afd3f169"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:b988be53efc8ad7323bf47642f72c4a5e6ef76d98739a45a6f2ebd75ceff3ea4",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:314b404c2f17ee580be0868fc80144d84edd765f7660aeaf61586995afd3f169"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:e4988501843c380bc0cd03c08c683156e21778551dc22d3197748b32f170c742",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:314b404c2f17ee580be0868fc80144d84edd765f7660aeaf61586995afd3f169"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:6045aed8edc392b4848d473f92640e27163d16538d8eec0aae9b0d3aa04002f2",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:314b404c2f17ee580be0868fc80144d84edd765f7660aeaf61586995afd3f169"
+              ]
+            }
+          ],
+          "workshopAcceptance": [
+            "[object Object]"
+          ],
+          "acceptedPartValidation": {
+            "version": 1,
+            "source": "compiled-v1-part-workshop",
+            "passed": true,
+            "previewScope": "isolated-part",
+            "preview": {
+              "required": false
+            },
+            "finalDraft": {
+              "file": "source/world-environment.module.mjs",
+              "sha256": "sha256:ca56b02e9c1443cf8aadf150530a5b0b73d349f71dc69332c0a481d3aa1f2351",
+              "bytes": 7298
+            },
+            "finalPreview": {
+              "reference": "part-workshop-evidence:screenshot:sha256:314b404c2f17ee580be0868fc80144d84edd765f7660aeaf61586995afd3f169",
+              "sha256": "sha256:314b404c2f17ee580be0868fc80144d84edd765f7660aeaf61586995afd3f169",
+              "attemptIdentity": "part-workshop-attempt:sha256:97b1e5f831362084a3e38924b978fd692ba8e88d63252b3537c6376d2a040dce",
+              "sourceHash": "sha256:0497b159674b9d59ebfa84d7e625de5b615881fed9f71475706fbf3768e27ab3",
+              "packageIdentity": "part-package:sha256:051007812f32baa4b9323ae7c65a83d6063e36681317297a2698e1c616461afe",
+              "status": "succeeded"
+            },
+            "verificationExpectation": {
+              "version": 1,
+              "source": "world-part-plan-assignment",
+              "partId": "world-environment",
+              "positiveContribution": {
+                "role": "world-environment",
+                "intent": "Provide technical scene support and camera-safe context; visible environment construction requires cited evidence.",
+                "visualTarget": "technical world-environment support; visible construction only if visualConstructionDecision declares it",
+                "relationshipToWhole": "Provides technical world support while creative parts own visible construction.",
+                "owns": [
+                  "technical support/compatibility part: renderer environment object, camera-safe world context, and optional atmosphere only when declared by visualConstructionDecision",
+                  "room for the selected-news transformation and optional artist-style carrier to read"
+                ]
+              },
+              "ownershipBoundary": {
+                "lane": "technical-support",
+                "owns": [
+                  "technical support/compatibility part: renderer environment object, camera-safe world context, and optional atmosphere only when declared by visualConstructionDecision",
+                  "room for the selected-news transformation and optional artist-style carrier to read"
+                ],
+                "avoid": [
+                  "claiming visible construction not declared by visualConstructionDecision",
+                  "stealing selected-news transformation or artist-style carrier ownership"
+                ]
+              },
+              "technicalEvidence": {
+                "required": [
+                  "generated-module-package",
+                  "createImmersiveWorldPart-export",
+                  "packaged-browser-capture",
+                  "render-health-telemetry"
+                ],
+                "rendererTargetMode": "webgpu-project-scene",
+                "rendererCompatibilityRequired": true,
+                "webgpuEvidenceRequired": true
+              },
+              "outputPresence": {
+                "policy": "quiet-or-absent-output-allowed",
+                "visibleOutputRequired": false,
+                "quietOrAbsentOutputAllowed": true
+              },
+              "literalMotifProhibitions": [
+                "claiming visible construction not declared by visualConstructionDecision",
+                "stealing selected-news transformation or artist-style carrier ownership"
+              ],
+              "deterministicImageChecks": {
+                "blankCapture": false,
+                "foregroundOccupancy": false,
+                "focalAnchor": false,
+                "mobileCentralSignal": false,
+                "environmentBackgroundVisibility": false
+              },
+              "authority": {
+                "deterministicInspectableEvidenceOnly": true,
+                "aestheticFidelityClaimed": false,
+                "visualObservationGating": false
+              }
+            }
+          },
+          "plannedPart": {
+            "source": "world-part-plan.json#/parts/0",
+            "partId": "world-environment",
+            "role": "world-environment",
+            "intent": "Provide technical scene support and camera-safe context; visible environment construction requires cited evidence.",
+            "messagePurpose": "Provide technical scene support and camera-safe context; visible environment construction requires cited evidence.",
+            "visualTarget": "technical world-environment support; visible construction only if visualConstructionDecision declares it",
+            "relationshipToWhole": "Provides technical world support while creative parts own visible construction.",
+            "visibleAbsence": {
+              "intentional": true,
+              "facts": [
+                "Visible absence is intentionally part of this part."
+              ],
+              "rationale": "The plan explicitly assigns visible absence to this part."
+            }
+          }
+        },
+        "intent": "Provide technical scene support and camera-safe context; visible environment construction requires cited evidence.",
+        "messagePurpose": "Provide technical scene support and camera-safe context; visible environment construction requires cited evidence.",
+        "visualTarget": "technical world-environment support; visible construction only if visualConstructionDecision declares it",
+        "relationshipToWhole": "Provides technical world support while creative parts own visible construction.",
+        "visibleAbsence": {
+          "intentional": true,
+          "facts": [
+            "Visible absence is intentionally part of this part."
+          ],
+          "rationale": "The plan explicitly assigns visible absence to this part."
+        },
+        "params": {
+          "band": "technical-support",
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "scale": 1,
+          "renderOrder": 0,
+          "visibilityPriority": "technical-support"
+        },
+        "paramSemantics": {
+          "band": "visual placement/readability band for full-world params; distinct from declared compositionOwnership.lane"
+        },
+        "compositionOwnership": {
+          "lane": "technical-support",
+          "owns": [
+            "technical support/compatibility part: renderer environment object, camera-safe world context, and optional atmosphere only when declared by visualConstructionDecision",
+            "room for the selected-news transformation and optional artist-style carrier to read"
+          ],
+          "avoid": [
+            "claiming visible construction not declared by visualConstructionDecision",
+            "stealing selected-news transformation or artist-style carrier ownership"
+          ]
+        }
+      },
+      {
+        "id": "civic-fracture-field",
+        "partId": "civic-fracture-field",
+        "role": "world-part-2",
+        "moduleRef": {
+          "type": "immersive-world-generated-module",
+          "version": 1,
+          "moduleId": "compiled-v1-civic-fracture-field-5a097bc3b37b",
+          "partId": "civic-fracture-field",
+          "hash": "5a097bc3b37b05d1e60a4d289037ddfb0979805c9cc2a0677f3ec6b92e3d5dbf",
+          "integrity": "sha256-5a097bc3b37b05d1e60a4d289037ddfb0979805c9cc2a0677f3ec6b92e3d5dbf",
+          "exportName": "createImmersiveWorldPart",
+          "file": "data/immersive-world/generated-modules/5a097bc3b37b05d1e60a4d289037ddfb0979805c9cc2a0677f3ec6b92e3d5dbf.mjs",
+          "url": "./data/immersive-world/generated-modules/5a097bc3b37b05d1e60a4d289037ddfb0979805c9cc2a0677f3ec6b92e3d5dbf.mjs",
+          "rendererCompatibility": {
+            "version": 1,
+            "targetMode": "webgpu-project-scene",
+            "compatibilityStatus": "webgpu-compatible",
+            "webgpuCompatible": true,
+            "evidenceReasons": [
+              "webgpu-safe-material"
+            ],
+            "featureFacts": [
+              {
+                "kind": "standard-material",
+                "material": "MeshBasicMaterial",
+                "family": "standard-material-surface",
+                "reason": "webgpu-safe-material"
+              }
+            ],
+            "compatibleSurfaces": [
+              {
+                "reason": "webgpu-safe-material",
+                "materialType": "MeshBasicMaterial"
+              }
+            ]
+          }
+        },
+        "evidence": {
+          "declaredCompositionOwnership": {
+            "lane": "part-specific",
+            "owns": [
+              "the explicit world-part-2 purpose, visual target, and any assigned spatial behavior"
+            ],
+            "avoid": [
+              "adding construction outside this part purpose, visual target, declared ownership, and visualConstructionDecision"
+            ]
+          },
+          "compositionOwnershipSource": "world-part-plan.json#/parts/1/compositionOwnership",
+          "goalEvidence": [
+            {
+              "goalIdentity": "assignment-goal:sha256:0f087a85f5fb39def062fbc5055be3c284a39611d0263ed69226bce2a2358a93",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:0820f0b3911d7f2374726aa2d642b99c2595d640f35d8f2a4995f6126317bbb5"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:9b9fb8885c30ea2bfe40486a9dc6612d17ce67baa8352f7bc13d1b89bc6cd93e",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:0820f0b3911d7f2374726aa2d642b99c2595d640f35d8f2a4995f6126317bbb5"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:8200884feb7981b6c759399d103254e6786b1d41f52d73e20422769463fd3db4",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:0820f0b3911d7f2374726aa2d642b99c2595d640f35d8f2a4995f6126317bbb5"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:cffe276f4be8a3085efc22ab50c12f78861726df6f40ddfc6b6205ab65e14a36",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:0820f0b3911d7f2374726aa2d642b99c2595d640f35d8f2a4995f6126317bbb5"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:c0c28fabd70918e7ce4847fd3f6d7e50e966479d108448b2049237add31bfe7d",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:0820f0b3911d7f2374726aa2d642b99c2595d640f35d8f2a4995f6126317bbb5"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:cbb7b1d7b86792c0e5475667f79ed1511791aeb798e4aadeed33e7283125ff03",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:0820f0b3911d7f2374726aa2d642b99c2595d640f35d8f2a4995f6126317bbb5"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:08c8c9f57b966cdafe3214dde40bde14a5f122717bace837a167c339ae18c65c",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:0820f0b3911d7f2374726aa2d642b99c2595d640f35d8f2a4995f6126317bbb5"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:5dc948560147ec669d80ed910dad5b09272dedd74f382adc21c67144c1f5cce4",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:0820f0b3911d7f2374726aa2d642b99c2595d640f35d8f2a4995f6126317bbb5"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:487d19ce81fc9e14cfaf99e7f0ff9563c3c7c7a86f60e8c17c414d93b8a80a29",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:0820f0b3911d7f2374726aa2d642b99c2595d640f35d8f2a4995f6126317bbb5"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:7aa82466d0502ffe5f9da17a0f09d23caa94a24aca6bc9544449056993366419",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:0820f0b3911d7f2374726aa2d642b99c2595d640f35d8f2a4995f6126317bbb5"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:2cbb69c549d1cb7bbeab62d5f5f1fbf2c947e3a603e9b4290092361ca4a05360",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:0820f0b3911d7f2374726aa2d642b99c2595d640f35d8f2a4995f6126317bbb5"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:1bffc6a985f087183343cbe936a2a64b806999076c4ab270849da001afad1d25",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:0820f0b3911d7f2374726aa2d642b99c2595d640f35d8f2a4995f6126317bbb5"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:b2db88dde110b97995c5e5ed0796385c09db079992403899b906d21c1da18375",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:0820f0b3911d7f2374726aa2d642b99c2595d640f35d8f2a4995f6126317bbb5"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:4fa7793795541f42ec6be9a122e562f1165163b9a84f2eb593f588970c94044a",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:0820f0b3911d7f2374726aa2d642b99c2595d640f35d8f2a4995f6126317bbb5"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:8a5c93d35f8531a954db3f77e873b3cc85c5261e91193f6fc49f233946a50f50",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:0820f0b3911d7f2374726aa2d642b99c2595d640f35d8f2a4995f6126317bbb5"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:f1f4bf82b5b7ab7afe3be56e2a14c4ea76ea707af3269c1360ae8f4e986f08a6",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:0820f0b3911d7f2374726aa2d642b99c2595d640f35d8f2a4995f6126317bbb5"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:2828e49d19d8da71a87bcbfa3b44f4f424a2efbecbd6d6f31200cd14d9fda95e",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:0820f0b3911d7f2374726aa2d642b99c2595d640f35d8f2a4995f6126317bbb5"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:6a49821b3ee59518edbdca90337b1c428ee676ecb2e11d0ecbe478747d8f0293",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:0820f0b3911d7f2374726aa2d642b99c2595d640f35d8f2a4995f6126317bbb5"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:b988be53efc8ad7323bf47642f72c4a5e6ef76d98739a45a6f2ebd75ceff3ea4",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:0820f0b3911d7f2374726aa2d642b99c2595d640f35d8f2a4995f6126317bbb5"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:e4988501843c380bc0cd03c08c683156e21778551dc22d3197748b32f170c742",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:0820f0b3911d7f2374726aa2d642b99c2595d640f35d8f2a4995f6126317bbb5"
+              ]
+            },
+            {
+              "goalIdentity": "assignment-goal:sha256:6045aed8edc392b4848d473f92640e27163d16538d8eec0aae9b0d3aa04002f2",
+              "evidenceReferences": [
+                "part-workshop-evidence:screenshot:sha256:0820f0b3911d7f2374726aa2d642b99c2595d640f35d8f2a4995f6126317bbb5"
+              ]
+            }
+          ],
+          "workshopAcceptance": [
+            "[object Object]"
+          ],
+          "acceptedPartValidation": {
+            "version": 1,
+            "source": "compiled-v1-part-workshop",
+            "passed": true,
+            "previewScope": "isolated-part",
+            "preview": {
+              "required": false
+            },
+            "finalDraft": {
+              "file": "source/civic-fracture-field.module.mjs",
+              "sha256": "sha256:6aebf0167b3f2cae298c19574fac3c92f3d37fb8ad58634b2b440fa2d8da639a",
+              "bytes": 16035
+            },
+            "finalPreview": {
+              "reference": "part-workshop-evidence:screenshot:sha256:0820f0b3911d7f2374726aa2d642b99c2595d640f35d8f2a4995f6126317bbb5",
+              "sha256": "sha256:0820f0b3911d7f2374726aa2d642b99c2595d640f35d8f2a4995f6126317bbb5",
+              "attemptIdentity": "part-workshop-attempt:sha256:b10812a914a2d831a067737ae646ea110f720a185075496658a257758e653e48",
+              "sourceHash": "sha256:6b4c48098bc09d7b0ea86d05184ad475414d3c0e5f2cdb46386a8a11248a0610",
+              "packageIdentity": "part-package:sha256:d2d569408719d1ad1b704190868fb5f2f403564d10d62a93a557f5b62babb89a",
+              "status": "succeeded"
+            },
+            "verificationExpectation": {
+              "version": 1,
+              "source": "world-part-plan-assignment",
+              "partId": "civic-fracture-field",
+              "positiveContribution": {
+                "role": "world-part-2",
+                "intent": "Selected news meaning: Kempen-based company Heylen Group buys Audi site in Forest: 3,000 new jobs on the way. News intensity is high, pace is urgent, spread is collective; these are weighting facts only, and the visual metaphor comes from visualConstructionDecision. Use \"Heylen Warehouses\" only as the trend cue inside that fuller event, not as a replacement for the event. Build one readable non-literal image structure.",
+                "visualTarget": "visible world-part-2 that carries non-literal fracture transformation within visualConstructionDecision",
+                "relationshipToWhole": "Contributes its planned ownership lane to the whole immersive artwork.",
+                "owns": [
+                  "the explicit world-part-2 purpose, visual target, and any assigned spatial behavior"
+                ]
+              },
+              "ownershipBoundary": {
+                "lane": "part-specific",
+                "owns": [
+                  "the explicit world-part-2 purpose, visual target, and any assigned spatial behavior"
+                ],
+                "avoid": [
+                  "adding construction outside this part purpose, visual target, declared ownership, and visualConstructionDecision"
+                ]
+              },
+              "technicalEvidence": {
+                "required": [
+                  "generated-module-package",
+                  "createImmersiveWorldPart-export",
+                  "packaged-browser-capture",
+                  "render-health-telemetry"
+                ],
+                "rendererTargetMode": "webgpu-project-scene",
+                "rendererCompatibilityRequired": true,
+                "webgpuEvidenceRequired": true
+              },
+              "outputPresence": {
+                "policy": "visible-contribution-required",
+                "visibleOutputRequired": true,
+                "quietOrAbsentOutputAllowed": false
+              },
+              "literalMotifProhibitions": [
+                "adding construction outside this part purpose, visual target, declared ownership, and visualConstructionDecision"
+              ],
+              "deterministicImageChecks": {
+                "blankCapture": true,
+                "foregroundOccupancy": false,
+                "focalAnchor": false,
+                "mobileCentralSignal": false,
+                "environmentBackgroundVisibility": false
+              },
+              "authority": {
+                "deterministicInspectableEvidenceOnly": true,
+                "aestheticFidelityClaimed": false,
+                "visualObservationGating": false
+              }
+            }
+          },
+          "plannedPart": {
+            "source": "world-part-plan.json#/parts/1",
+            "partId": "civic-fracture-field",
+            "role": "world-part-2",
+            "intent": "Selected news meaning: Kempen-based company Heylen Group buys Audi site in Forest: 3,000 new jobs on the way. News intensity is high, pace is urgent, spread is collective; these are weighting facts only, and the visual metaphor comes from visualConstructionDecision. Use \"Heylen Warehouses\" only as the trend cue inside that fuller event, not as a replacement for the event. Build one readable non-literal image structure.",
+            "messagePurpose": "Selected news meaning: Kempen-based company Heylen Group buys Audi site in Forest: 3,000 new jobs on the way. News intensity is high, pace is urgent, spread is collective; these are weighting facts only, and the visual metaphor comes from visualConstructionDecision. Use \"Heylen Warehouses\" only as the trend cue inside that fuller event, not as a replacement for the event. Build one readable non-literal image structure.",
+            "visualTarget": "visible world-part-2 that carries non-literal fracture transformation within visualConstructionDecision",
+            "relationshipToWhole": "Contributes its planned ownership lane to the whole immersive artwork.",
+            "visibleAbsence": {
+              "intentional": false,
+              "facts": [
+                "This part must be visibly present."
+              ],
+              "rationale": "The plan requires visible contribution from this part."
+            }
+          }
+        },
+        "intent": "Selected news meaning: Kempen-based company Heylen Group buys Audi site in Forest: 3,000 new jobs on the way. News intensity is high, pace is urgent, spread is collective; these are weighting facts only, and the visual metaphor comes from visualConstructionDecision. Use \"Heylen Warehouses\" only as the trend cue inside that fuller event, not as a replacement for the event. Build one readable non-literal image structure.",
+        "messagePurpose": "Selected news meaning: Kempen-based company Heylen Group buys Audi site in Forest: 3,000 new jobs on the way. News intensity is high, pace is urgent, spread is collective; these are weighting facts only, and the visual metaphor comes from visualConstructionDecision. Use \"Heylen Warehouses\" only as the trend cue inside that fuller event, not as a replacement for the event. Build one readable non-literal image structure.",
+        "visualTarget": "visible world-part-2 that carries non-literal fracture transformation within visualConstructionDecision",
+        "relationshipToWhole": "Contributes its planned ownership lane to the whole immersive artwork.",
+        "visibleAbsence": {
+          "intentional": false,
+          "facts": [
+            "This part must be visibly present."
+          ],
+          "rationale": "The plan requires visible contribution from this part."
+        },
+        "params": {
+          "band": "primary-readability",
+          "position": [
+            0,
+            0.15,
+            -1.8
+          ],
+          "scale": 1.52,
+          "renderOrder": 3,
+          "visibilityPriority": "primary"
+        },
+        "paramSemantics": {
+          "band": "visual placement/readability band for full-world params; distinct from declared compositionOwnership.lane"
+        },
+        "compositionOwnership": {
+          "lane": "part-specific",
+          "owns": [
+            "the explicit world-part-2 purpose, visual target, and any assigned spatial behavior"
+          ],
+          "avoid": [
+            "adding construction outside this part purpose, visual target, declared ownership, and visualConstructionDecision"
+          ]
+        }
+      }
+    ],
+    "generatedModules": [
+      {
+        "type": "immersive-world-generated-module",
+        "version": 1,
+        "moduleId": "compiled-v1-world-environment-aad9514575a5",
+        "partId": "world-environment",
+        "hash": "aad9514575a5ce76dc63d381fae6094908407b91d492e313c5100a4ea860dcfd",
+        "integrity": "sha256-aad9514575a5ce76dc63d381fae6094908407b91d492e313c5100a4ea860dcfd",
+        "exportName": "createImmersiveWorldPart",
+        "file": "data/immersive-world/generated-modules/aad9514575a5ce76dc63d381fae6094908407b91d492e313c5100a4ea860dcfd.mjs",
+        "url": "./data/immersive-world/generated-modules/aad9514575a5ce76dc63d381fae6094908407b91d492e313c5100a4ea860dcfd.mjs",
+        "rendererCompatibility": {
+          "version": 1,
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material",
+            "source-used-project-webgpu-material-factory"
+          ],
+          "featureFacts": [
+            {
+              "kind": "standard-material",
+              "material": "MeshStandardMaterial",
+              "family": "standard-material-surface",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "material-factory",
+              "id": "matte-painted-surface",
+              "family": "matte-painted-surface",
+              "material": "MeshStandardMaterial",
+              "surface": "three-standard-material",
+              "reason": "source-used-project-webgpu-material-factory"
+            }
+          ],
+          "compatibleSurfaces": [
+            {
+              "reason": "webgpu-safe-material",
+              "materialType": "MeshStandardMaterial"
+            },
+            {
+              "reason": "source-used-project-webgpu-material-factory",
+              "materialType": "MeshStandardMaterial",
+              "runtimeSurface": "three-standard-material",
+              "factoryId": "matte-painted-surface",
+              "materialFactoryId": "matte-painted-surface",
+              "factoryCategory": "matte-painted-surface",
+              "property": "materialFactoryId"
+            }
+          ]
+        }
+      },
+      {
+        "type": "immersive-world-generated-module",
+        "version": 1,
+        "moduleId": "compiled-v1-civic-fracture-field-5a097bc3b37b",
+        "partId": "civic-fracture-field",
+        "hash": "5a097bc3b37b05d1e60a4d289037ddfb0979805c9cc2a0677f3ec6b92e3d5dbf",
+        "integrity": "sha256-5a097bc3b37b05d1e60a4d289037ddfb0979805c9cc2a0677f3ec6b92e3d5dbf",
+        "exportName": "createImmersiveWorldPart",
+        "file": "data/immersive-world/generated-modules/5a097bc3b37b05d1e60a4d289037ddfb0979805c9cc2a0677f3ec6b92e3d5dbf.mjs",
+        "url": "./data/immersive-world/generated-modules/5a097bc3b37b05d1e60a4d289037ddfb0979805c9cc2a0677f3ec6b92e3d5dbf.mjs",
+        "rendererCompatibility": {
+          "version": 1,
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material"
+          ],
+          "featureFacts": [
+            {
+              "kind": "standard-material",
+              "material": "MeshBasicMaterial",
+              "family": "standard-material-surface",
+              "reason": "webgpu-safe-material"
+            }
+          ],
+          "compatibleSurfaces": [
+            {
+              "reason": "webgpu-safe-material",
+              "materialType": "MeshBasicMaterial"
+            }
+          ]
+        }
+      }
+    ],
+    "rendererAuthoring": {
+      "version": 1,
+      "targetMode": "webgpu-project-scene",
+      "requestedTarget": "webgpu-project-scene",
+      "effectiveTarget": "webgpu-project-scene",
+      "webgpuTargeted": true,
+      "legacyWebglTargeted": false,
+      "unspecified": false,
+      "compatibilityGateRequired": true
+    },
+    "rendererCompatibility": {
+      "version": 1,
+      "targetMode": "webgpu-project-scene",
+      "webgpuTargeted": true,
+      "legacyWebglTargeted": false,
+      "compatibilityGateRequired": true,
+      "compatibilityStatus": "webgpu-compatible",
+      "webgpuCompatible": true,
+      "evidenceReasons": [
+        "webgpu-safe-material",
+        "source-used-project-webgpu-material-factory"
+      ],
+      "featureFacts": [
+        {
+          "kind": "standard-material",
+          "family": "standard-material-surface",
+          "material": "MeshStandardMaterial",
+          "reason": "webgpu-safe-material"
+        },
+        {
+          "kind": "material-factory",
+          "id": "matte-painted-surface",
+          "family": "matte-painted-surface",
+          "material": "MeshStandardMaterial",
+          "surface": "three-standard-material",
+          "reason": "source-used-project-webgpu-material-factory"
+        },
+        {
+          "kind": "standard-material",
+          "family": "standard-material-surface",
+          "material": "MeshBasicMaterial",
+          "reason": "webgpu-safe-material"
+        }
+      ],
+      "moduleCount": 2,
+      "compatibleModuleCount": 2,
+      "incompatibleModuleCount": 0,
+      "compositionCompatibilityDeclared": false,
+      "modules": [
+        {
+          "partId": "world-environment",
+          "role": "world-environment",
+          "moduleId": "compiled-v1-world-environment-aad9514575a5",
+          "hash": "aad9514575a5ce76dc63d381fae6094908407b91d492e313c5100a4ea860dcfd",
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material",
+            "source-used-project-webgpu-material-factory"
+          ],
+          "featureFacts": [
+            {
+              "kind": "standard-material",
+              "family": "standard-material-surface",
+              "material": "MeshStandardMaterial",
+              "reason": "webgpu-safe-material"
+            },
+            {
+              "kind": "material-factory",
+              "id": "matte-painted-surface",
+              "family": "matte-painted-surface",
+              "material": "MeshStandardMaterial",
+              "surface": "three-standard-material",
+              "reason": "source-used-project-webgpu-material-factory"
+            }
+          ],
+          "compatibleSurfaceCount": 2,
+          "forbiddenSurfaceCount": 0,
+          "sourceStage": "part-workshop"
+        },
+        {
+          "partId": "civic-fracture-field",
+          "role": "world-part-2",
+          "moduleId": "compiled-v1-civic-fracture-field-5a097bc3b37b",
+          "hash": "5a097bc3b37b05d1e60a4d289037ddfb0979805c9cc2a0677f3ec6b92e3d5dbf",
+          "targetMode": "webgpu-project-scene",
+          "compatibilityStatus": "webgpu-compatible",
+          "webgpuCompatible": true,
+          "evidenceReasons": [
+            "webgpu-safe-material"
+          ],
+          "featureFacts": [
+            {
+              "kind": "standard-material",
+              "family": "standard-material-surface",
+              "material": "MeshBasicMaterial",
+              "reason": "webgpu-safe-material"
+            }
+          ],
+          "compatibleSurfaceCount": 1,
+          "forbiddenSurfaceCount": 0,
+          "sourceStage": "part-workshop"
+        }
+      ]
+    },
+    "renderFacts": {
+      "environmentPresent": true,
+      "cameraOwnedByComposition": true,
+      "lightingOwnedByComposition": true,
+      "nearFarClippingOwned": true,
+      "acceptedPartCount": 2,
+      "generatedModuleCount": 2,
+      "generatedAssetCount": 0,
+      "rendererAuthoringTarget": "webgpu-project-scene",
+      "rendererCompatibilityStatus": "webgpu-compatible",
+      "webgpuRendererGateRequired": true,
+      "webgpuRendererCompatible": true,
+      "desktopPreviewRecorded": true,
+      "mobilePreviewRecorded": true,
+      "surroundPreviewRecorded": true
+    }
+  },
+  "image": {
+    "thumbnailJpeg": "./data/media/2026-09-01-0631z-kempen-based-company-heylen-group-buys-audi-site-in-forest-3-000-new-job/thumb-320.jpg",
+    "openGraphJpeg": "./data/media/2026-09-01-0631z-kempen-based-company-heylen-group-buys-audi-site-in-forest-3-000-new-job/og-1200x630.jpg",
+    "instagramJpeg": "./data/media/2026-09-01-0631z-kempen-based-company-heylen-group-buys-audi-site-in-forest-3-000-new-job/instagram-1080x1350.jpg",
+    "altText": "Kempen-based company Heylen Group buys Audi site in Forest: 3,000 new jobs on the way by Larry Rivers."
+  }
+}

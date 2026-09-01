@@ -1,0 +1,76 @@
+{
+  "version": 2,
+  "kind": "rusty-art-public-media-assets",
+  "artworkId": "2026-09-01-0631z-kempen-based-company-heylen-group-buys-audi-site-in-forest-3-000-new-job",
+  "source": {
+    "sha256": "da7078ca23180e0ed3381e00d6a73a411de205b3c52223aac102aac357bf1967",
+    "role": "daily-preview-story-desktop"
+  },
+  "sources": {
+    "primary": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-desktop",
+      "sha256": "da7078ca23180e0ed3381e00d6a73a411de205b3c52223aac102aac357bf1967"
+    },
+    "openGraph": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-open-graph",
+      "sha256": "377b4035e88d75123d481992ad5263fca00e9f9c18bc23b5b20cc94df88a1c52"
+    },
+    "instagram": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-instagram",
+      "sha256": "ad987e9046df7bfdf504b14dc5e79c6bdddcfa593972a8342b88e20bf861c4c7"
+    }
+  },
+  "targets": {
+    "thumb-320.jpg": {
+      "spec": {
+        "fileName": "thumb-320.jpg",
+        "width": 320,
+        "height": null,
+        "fit": "inside",
+        "withoutEnlargement": true,
+        "format": "jpeg",
+        "quality": 82
+      },
+      "publicPath": "./data/media/2026-09-01-0631z-kempen-based-company-heylen-group-buys-audi-site-in-forest-3-000-new-job/thumb-320.jpg",
+      "source": {
+        "sha256": "da7078ca23180e0ed3381e00d6a73a411de205b3c52223aac102aac357bf1967",
+        "role": "daily-preview-story-desktop"
+      }
+    },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-09-01-0631z-kempen-based-company-heylen-group-buys-audi-site-in-forest-3-000-new-job/og-1200x630.jpg",
+      "source": {
+        "sha256": "377b4035e88d75123d481992ad5263fca00e9f9c18bc23b5b20cc94df88a1c52",
+        "role": "daily-preview-story-open-graph"
+      }
+    },
+    "instagram-1080x1350.jpg": {
+      "spec": {
+        "fileName": "instagram-1080x1350.jpg",
+        "width": 1080,
+        "height": 1350,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-09-01-0631z-kempen-based-company-heylen-group-buys-audi-site-in-forest-3-000-new-job/instagram-1080x1350.jpg",
+      "source": {
+        "sha256": "ad987e9046df7bfdf504b14dc5e79c6bdddcfa593972a8342b88e20bf861c4c7",
+        "role": "daily-preview-story-instagram"
+      }
+    }
+  }
+}
