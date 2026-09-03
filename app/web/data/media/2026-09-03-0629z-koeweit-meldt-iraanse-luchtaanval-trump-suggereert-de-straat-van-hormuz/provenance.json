@@ -1,0 +1,76 @@
+{
+  "version": 2,
+  "kind": "rusty-art-public-media-assets",
+  "artworkId": "2026-09-03-0629z-koeweit-meldt-iraanse-luchtaanval-trump-suggereert-de-straat-van-hormuz",
+  "source": {
+    "sha256": "603d66921006e53dcf26f63d1fb8225a2658037c91839959d052158f7ff76988",
+    "role": "daily-preview-story-desktop"
+  },
+  "sources": {
+    "primary": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-desktop",
+      "sha256": "603d66921006e53dcf26f63d1fb8225a2658037c91839959d052158f7ff76988"
+    },
+    "openGraph": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-open-graph",
+      "sha256": "65524129bc98e074ef3a57f8a83f5585ac07c4ea0567eb2b3262f6afbc09c6fd"
+    },
+    "instagram": {
+      "kind": "run-capture",
+      "role": "daily-preview-story-instagram",
+      "sha256": "f8cb2455814885a781b138cbe61d5237e1c0a044c365b8c81f1ce6455587271f"
+    }
+  },
+  "targets": {
+    "thumb-320.jpg": {
+      "spec": {
+        "fileName": "thumb-320.jpg",
+        "width": 320,
+        "height": null,
+        "fit": "inside",
+        "withoutEnlargement": true,
+        "format": "jpeg",
+        "quality": 82
+      },
+      "publicPath": "./data/media/2026-09-03-0629z-koeweit-meldt-iraanse-luchtaanval-trump-suggereert-de-straat-van-hormuz/thumb-320.jpg",
+      "source": {
+        "sha256": "603d66921006e53dcf26f63d1fb8225a2658037c91839959d052158f7ff76988",
+        "role": "daily-preview-story-desktop"
+      }
+    },
+    "og-1200x630.jpg": {
+      "spec": {
+        "fileName": "og-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-09-03-0629z-koeweit-meldt-iraanse-luchtaanval-trump-suggereert-de-straat-van-hormuz/og-1200x630.jpg",
+      "source": {
+        "sha256": "65524129bc98e074ef3a57f8a83f5585ac07c4ea0567eb2b3262f6afbc09c6fd",
+        "role": "daily-preview-story-open-graph"
+      }
+    },
+    "instagram-1080x1350.jpg": {
+      "spec": {
+        "fileName": "instagram-1080x1350.jpg",
+        "width": 1080,
+        "height": 1350,
+        "fit": "cover",
+        "withoutEnlargement": false,
+        "format": "jpeg",
+        "quality": 86
+      },
+      "publicPath": "./data/media/2026-09-03-0629z-koeweit-meldt-iraanse-luchtaanval-trump-suggereert-de-straat-van-hormuz/instagram-1080x1350.jpg",
+      "source": {
+        "sha256": "f8cb2455814885a781b138cbe61d5237e1c0a044c365b8c81f1ce6455587271f",
+        "role": "daily-preview-story-instagram"
+      }
+    }
+  }
+}
